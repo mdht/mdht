@@ -1,0 +1,43 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h1 align="center">CDA Tools: Model-Driven Clinical Documents</h1>
+<p><a href="/index.html">Back to Model-Driven Healthcare Tools home page</a></p>
+<div class="h2">
+<h2>Overview</h2>
+<p>CDA Tools is a component within the modeling tools project. This
+component will develop a UML approach for constraining HL7 Clinical
+Document Architecture (CDA) to create reusable templates and
+implementation guides. Tooling for consumers and implementers of CDA
+will be produced by generating runtime components from models of
+implementation guides. Objectives of the CDA Tools are to:</p>
+<ul>
+	<li>Provide a UML platform for modeling CDA implementation guide
+	specifications.</li>
+	<li>Validate the UML formalization approach using existing CDA
+	templates and implementation guides.</li>
+	<li>Develop exemplars for creating new implementation guides.</li>
+	<li>Generate Java runtime components from the UML models that
+	enable programmatic creation of CDA document instances that conform to
+	an implementation guide, and validate document instances against CDA
+	template constraints.</li>
+</ul>
+<p>For a more detailed description of this project's objectives, see
+HL7 News (April 2009), <a
+	href="https://mdht.projects.openhealthtools.org/files/documents/34/167/ModelingCDA_HL7News.pdf"
+	target="_blank">Modeling CDA with Standards-Based Tools</a>.</p>
+</div>
+
+<div class="h2">
+<h2>Example Process Flow</h2>
+<ul>
+	<li>Import CDA UML model from MIF</li>
+	<li>Restrict CDA model with template constraints, e.g. CCD
+	templates</li>
+	<li>Transform to EMF Ecore model</li>
+	<li>Generate complete Java library specific to each implementation
+	guide with all constraints</li>
+	<li>Use Java API library to support CDA instance creation and
+	validation by applications</li>
+</ul>
+<p>&nbsp;</p>
+<p><img alt="CDA Process Flow" src="images/ProcessFlow.png" /></p>
+</div>
