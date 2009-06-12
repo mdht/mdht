@@ -1,0 +1,19 @@
+<project>
+
+	<!--
+	<target name="renameAnnotationElements">
+		<replace file="model/datatypes.emx" token="&lt;annotation&gt;" value="&lt;annotations&gt;"/>
+		<replace file="model/datatypes.emx" token="&lt;/annotation&gt;" value="&lt;/annotations&gt;"/>
+		<eclipse.refreshLocal resource="org.openhealthtools.mdht.uml.hl7.datatypes" depth="infinite"/>
+	</target>
+	-->
+	
+	<target name="convertEmxToUml">
+	  <!--
+	  <copy file="model/datatypes.emx" tofile="model/datatypes.uml"/>
+	  -->
+	  <xslt in="model/datatypes.emx" out="model/datatypes.uml" style="resources/emx2uml.xsl"/>
+	  <replace file="model/datatypes.uml" token=".emx" value=".uml"/>
+	</target>
+
+</project>
