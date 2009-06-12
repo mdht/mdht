@@ -1,0 +1,19 @@
+<project>
+
+	<!--
+	<target name="renameAnnotationElements">
+		<replace file="model/vocab.emx" token="&lt;annotation&gt;" value="&lt;annotations&gt;"/>
+		<replace file="model/vocab.emx" token="&lt;/annotation&gt;" value="&lt;/annotations&gt;"/>
+		<eclipse.refreshLocal resource="org.openhealthtools.mdht.uml.hl7.vocab" depth="infinite"/>
+	</target>
+	-->
+	
+	<target name="convertEmxToUml">
+	  <!--
+	  <copy file="model/vocab.emx" tofile="model/vocab.uml"/>
+	  -->
+	  <xslt in="model/vocab.emx" out="model/vocab.uml" style="resources/emx2uml.xsl"/>
+	  <replace file="model/vocab.uml" token=".emx" value=".uml"/>
+	</target>
+
+</project>
