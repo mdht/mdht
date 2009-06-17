@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+	<!--  Define MIF2 Vocabulary Extension Browse Provider -->
+	<extension point="org.openhealthtools.mdht.uml.hdf.vocabularyprovider">
+		<vocabularyprovider selectiondelegate="org.openhealthtools.mdht.uml.hl7.ui.vocabulary.MIF2VocabularySelectionDelegate" />
+	</extension>
+
+	<!--  Define MIF2 Import Export Menu  -->
+	<extension point="org.eclipse.ui.popupMenus">
+
+		<objectContribution id="org.openhealthtools.mdht.uml.hl7.ui.importmif" objectClass="org.eclipse.core.resources.IFile">
+			<menu id="hl7tools" label="%menu_HL7Tools" path="additions">
+				<separator name="edit" />
+			</menu>
+			<visibility>
+				<or>
+					<objectState name="extension" value="mif" />
+					<objectState name="extension" value="coremif" />
+				</or>
+			</visibility>
+			<action class="org.openhealthtools.mdht.uml.hl7.ui.actions.ImportMIFAction"
+				    enablesFor="1" 
+				    id="org.openhealthtools.mdht.uml.hl7.ui.importmifaction"
+				    label="%action.label.ImportMIF" 
+				    menubarPath="hl7tools/edit" />
+		</objectContribution>
+
+		<objectContribution adaptable="true" id="org.openhealthtools.mdht.uml.hl7.ui.exportmif" objectClass="org.eclipse.core.resources.IFile">
+			<menu label="%menu_HL7Tools" path="additions" id="hl7tools">
+				<separator name="edit" />
+			</menu>
+			<visibility>
+				<or>
+					<objectState name="extension" value="emx" />
+					<objectState name="extension" value="uml" />
+				</or>
+			</visibility>
+			<action label="%action_label_ExportUMLtoMIF"
+				    class="org.openhealthtools.mdht.uml.hl7.ui.actions.ExportMIFAction"
+				    menubarPath="hl7tools/edit" 
+				    enablesFor="1"
+				    id="org.openhealthtools.mdht.uml.hl7.ui.exportmifaction" />
+		</objectContribution>
+
+	</extension>
+
+</plugin>
