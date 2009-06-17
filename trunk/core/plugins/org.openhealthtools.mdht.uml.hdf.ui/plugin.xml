@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<!--
+  Copyright (c) 2006, 2008 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson (XMLmodeling.com) - initial API and implementation
+      
+  $Id$
+-->
+
+<plugin>
+
+  <extension-point id="org.openhealthtools.mdht.uml.hdf.vocabularyprovider" 
+	name="vocabularyprovider" schema="schema/VocabularyProvider.exsd"/>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+      		adaptable="true"
+            objectClass="org.eclipse.gmf.runtime.notation.View"
+            id="objectContribution.uml.contrib1">
+         <menu
+               label="%menu_HL7Tools"
+               path="additions"
+               id="hl7tools">
+            <separator
+                  name="transform">
+            </separator>
+         </menu>
+         <action
+               label="%menu_AssignRimColors"
+               class="org.openhealthtools.mdht.uml.hdf.ui.actions.AssignRIMColors"
+               menubarPath="hl7tools/transform"
+               enablesFor="1"
+               id="org.openhealthtools.mdht.uml.hdf.ui.actions.AssignRIMColors">
+         </action>
+      </objectContribution>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+      		adaptable="true"
+            objectClass="org.eclipse.uml2.uml.Element"
+            id="objectContribution.uml.contrib2">
+         <menu
+               label="%menu_HL7Tools"
+               path="additions"
+               id="hl7tools">
+            <separator
+                  name="transform">
+            </separator>
+         </menu>
+         <visibility>
+            <or>
+              <objectClass name="org.eclipse.uml2.uml.Package"/>
+              <objectClass name="org.eclipse.uml2.uml.Class"/>
+            </or>
+         </visibility>
+         <action
+               label="%menu_ReportConceptDomains"
+               class="org.openhealthtools.mdht.uml.hdf.ui.actions.ReportConceptDomainsAction"
+               menubarPath="hl7tools/transform"
+               enablesFor="1"
+               id="org.openhealthtools.mdht.uml.hdf.ui.actions.ReportConceptDomainsAction">
+         </action>
+      </objectContribution>
+   </extension>
+   
+  <!-- 
+    - Navigator Properties
+    -->
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="org.openhealthtools.mdht.uml.hdf.ui.properties">   
+         <propertyTab
+               label="%HealthcarePropertyTab.label"
+               afterTab="property.tab.GeneralPropertySection"
+               category="domain"
+               id="property.tab.HL7PropertySection">           
+         </propertyTab> 
+      </propertyTabs>
+   </extension>
+ 
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+       <propertySections contributorId="org.openhealthtools.mdht.uml.hdf.ui.properties">
+          <propertySection tab="property.tab.HL7PropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7DefinitionSection" 
+	 	     id="property.section.hl7.HL7DefinitionSection">
+	            <input type="org.eclipse.uml2.uml.Class"/>
+	            <input type="org.eclipse.uml2.uml.Property"/>
+	            <input type="org.eclipse.uml2.uml.Package"/>
+	      </propertySection>
+          <propertySection
+             afterSection="property.section.hl7.HL7DefinitionSection"
+             class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7PropertySection"
+             id="property.section.hl7.HL7PropertySection"
+             tab="property.tab.HL7PropertySection">
+	            <input type="org.eclipse.uml2.uml.Property"/>
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.HL7PropertySection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7AttributeSection" 
+	 	     id="property.section.HL7AttributeSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.HL7AttributeFilter">
+	      </propertySection>
+	      
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.HL7AttributeSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.VocabularyConstraintsSection" 
+	 	     id="property.section.VocabularyConstraintsSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.CodedAttributeFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.VocabularyConstraintsSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.ConceptDomainConstraintSection" 
+	 	     id="property.section.ConceptDomainConstraintSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.ConceptDomainFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.ConceptDomainConstraintSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.CodeSystemConstraintSection" 
+	 	     id="property.section.CodeSystemConstraintSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.CodeSystemFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.CodeSystemConstraintSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.ValueSetConstraintSection" 
+	 	     id="property.section.ValueSetConstraintSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.ValueSetFilter">
+	      </propertySection>
+      </propertySections>
+   </extension> 
+ 
+  <!-- 
+    - Class Diagram Properties
+    -->
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="org.openhealthtools.mdht.uml.hdf.diagram.clazz">    
+         <propertyTab
+               label="%HealthcarePropertyTab.label"
+               afterTab="property.tab.GeneralPropertySection"
+               category="domain"
+               id="property.tab.HL7PropertySection">           
+         </propertyTab> 
+      </propertyTabs>
+   </extension>
+ 
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+       <propertySections contributorId="org.openhealthtools.mdht.uml.hdf.diagram.clazz">
+          <propertySection tab="property.tab.HL7PropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7DefinitionSection" 
+	 	     id="property.section.hl7.HL7DefinitionSection">
+	            <input type="org.eclipse.uml2.uml.Class"/>
+	            <input type="org.eclipse.uml2.uml.Property"/>
+	            <input type="org.eclipse.uml2.uml.Package"/>
+	      </propertySection>
+	      
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.hl7.HL7DefinitionSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7TemplateSection" 
+	 	     id="property.section.HL7TemplateSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.HL7TemplateFilter">
+	      </propertySection>
+	      
+          <propertySection
+             afterSection="property.section.hl7.HL7DefinitionSection"
+             class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7PropertySection"
+             id="property.section.hl7.HL7PropertySection"
+             tab="property.tab.HL7PropertySection">
+	            <input type="org.eclipse.uml2.uml.Property"/>
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.HL7PropertySection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7AttributeSection" 
+	 	     id="property.section.HL7AttributeSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.HL7AttributeFilter">
+	      </propertySection>
+	      
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.HL7AttributeSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.VocabularyConstraintsSection" 
+	 	     id="property.section.VocabularyConstraintsSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.CodedAttributeFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.VocabularyConstraintsSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.ConceptDomainConstraintSection" 
+	 	     id="property.section.ConceptDomainConstraintSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.ConceptDomainFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.ConceptDomainConstraintSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.CodeSystemConstraintSection" 
+	 	     id="property.section.CodeSystemConstraintSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.CodeSystemFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.CodeSystemConstraintSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.ValueSetConstraintSection" 
+	 	     id="property.section.ValueSetConstraintSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.ValueSetFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.ValueSetConstraintSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.EnumerationConstraintSection" 
+	 	     id="property.section.EnumerationConstraintSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.EnumerationConstraintFilter">
+	      </propertySection>
+      </propertySections>
+   </extension> 
+   
+   <!--
+      Clone Editor Dialog
+   -->
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+      		adaptable="true"
+            objectClass="org.eclipse.uml2.uml.Element"
+            id="org.openhealthtools.mdht.uml.hdf.ui.clone.contribution1">
+         <menu
+               label="%menu_HL7Tools"
+               path="additions"
+               id="hl7tools">
+            <separator
+                  name="edit">
+            </separator>
+         </menu>
+         <visibility>
+              <objectClass name="org.eclipse.uml2.uml.Class"/>
+         </visibility>
+         <action
+               label="%menu_OpenCloneEditor"
+               class="org.openhealthtools.mdht.uml.hdf.ui.actions.OpenCloneEditorAction"
+               menubarPath="hl7tools/edit"
+               enablesFor="1"
+               id="org.openhealthtools.mdht.uml.hdf.ui.actions.openCloneEditorAction">
+         </action>
+      </objectContribution>
+      
+      <objectContribution
+      		adaptable="true"
+            objectClass="org.eclipse.gmf.runtime.notation.View"
+            id="org.openhealthtools.mdht.uml.hdf.ui.clone.contribution2">
+         <menu
+               label="%menu_HL7Tools"
+               path="additions"
+               id="hl7tools">
+            <separator
+                  name="edit">
+            </separator>
+         </menu>
+         <action
+               label="%menu_OpenCloneEditor"
+               class="org.openhealthtools.mdht.uml.hdf.ui.actions.OpenCloneEditorAction"
+               menubarPath="hl7tools/edit"
+               enablesFor="1"
+               id="org.openhealthtools.mdht.uml.hdf.ui.actions.openCloneEditorAction">
+         </action>
+      </objectContribution>
+   </extension>
+ 
+</plugin>
