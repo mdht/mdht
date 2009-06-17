@@ -4,33 +4,33 @@
 !*******************************************************************************************
 !***************  SVN PDE BUILD CONTRIBUTION  ********************************************** 
 
-feature@org.openhealthtools.mdht.uml=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/features/org.openhealthtools.mdht.uml-feature
+feature@org.openhealthtools.mdht.uml=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/features/org.openhealthtools.mdht.uml-feature
 
-plugin@org.openhealthtools.mdht.emf.hl7.mif2=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.emf.hl7.mif2
+plugin@org.openhealthtools.mdht.emf.hl7.mif2=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.emf.hl7.mif2
 
-plugin@org.openhealthtools.mdht.uml.common=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.uml.common
+plugin@org.openhealthtools.mdht.uml.common=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.common
 
-plugin@org.openhealthtools.mdht.uml.common.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.uml.common.ui
+plugin@org.openhealthtools.mdht.uml.common.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.common.ui
 
-plugin@org.openhealthtools.mdht.uml-feature=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.uml-feature
+plugin@org.openhealthtools.mdht.uml-feature=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml-feature
 
-plugin@org.openhealthtools.mdht.uml.hdf=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.uml.hdf
+plugin@org.openhealthtools.mdht.uml.hdf=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hdf
 
-plugin@org.openhealthtools.mdht.uml.hdf2ecore=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.uml.hdf2ecore
+plugin@org.openhealthtools.mdht.uml.hdf2ecore=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hdf2ecore
 
-plugin@org.openhealthtools.mdht.uml.hdf2xsd=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.uml.hdf2xsd
+plugin@org.openhealthtools.mdht.uml.hdf2xsd=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hdf2xsd
 
-plugin@org.openhealthtools.mdht.uml.hdf.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.uml.hdf.ui
+plugin@org.openhealthtools.mdht.uml.hdf.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hdf.ui
 
-plugin@org.openhealthtools.mdht.uml.hl7.ant=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.uml.hl7.ant
+plugin@org.openhealthtools.mdht.uml.hl7.ant=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.ant
 
-plugin@org.openhealthtools.mdht.uml.hl7.core=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.uml.hl7.core
+plugin@org.openhealthtools.mdht.uml.hl7.core=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.core
 
-plugin@org.openhealthtools.mdht.uml.hl7.mif2uml=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.uml.hl7.mif2uml
+plugin@org.openhealthtools.mdht.uml.hl7.mif2uml=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.mif2uml
 
-plugin@org.openhealthtools.mdht.uml.hl7.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.uml.hl7.ui
+plugin@org.openhealthtools.mdht.uml.hl7.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.ui
 
-plugin@org.openhealthtools.mdht.uml.hl7.validation=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/modeling-mdt,,core/plugins/org.openhealthtools.mdht.uml.hl7.validation
+plugin@org.openhealthtools.mdht.uml.hl7.validation=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.validation
 
 
 
