@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?emf-validation
+	version="1.0"
+	nl="constraints/classes" ?>
+
+<includedConstraints>
+    <constraints categories="org.openhealthtools.mdht.uml.hl7.validation/correctness">
+   </constraints>
+
+    <constraints categories="org.openhealthtools.mdht.uml.hl7.validation/completeness">
+   </constraints>
+</includedConstraints>
