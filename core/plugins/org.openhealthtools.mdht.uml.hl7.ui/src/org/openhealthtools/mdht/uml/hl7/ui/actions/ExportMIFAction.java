@@ -82,12 +82,16 @@ public class ExportMIFAction
 	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		if (selection instanceof IStructuredSelection) {			
-			action.setEnabled( !((IStructuredSelection) selection).isEmpty());
-		} else {
-			action.setEnabled( false);
-		}
+		if (selection instanceof IStructuredSelection)
+			currentSelection = (IStructuredSelection) selection;
+		else
+			currentSelection = null;
+		
+		action.setEnabled(currentSelection != null && !currentSelection.isEmpty());
 	}
+	
+	
+	
 	
 	
 	/**
