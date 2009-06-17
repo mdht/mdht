@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.openhealthtools.mdht.uml.hdf2ecore;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.openhealthtools.mdht.uml.hdf2ecore.internal.Activator
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.uml2.uml,
+ org.openhealthtools.mdht.uml.hdf,
+ org.openhealthtools.mdht.uml.common
+Bundle-ActivationPolicy: lazy
+Export-Package: org.openhealthtools.mdht.uml.hdf2ecore.transform
+Bundle-ClassPath: .
+
