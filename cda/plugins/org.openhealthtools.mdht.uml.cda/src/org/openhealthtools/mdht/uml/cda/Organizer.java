@@ -453,4 +453,316 @@ public interface Organizer extends EObject {
 	 */
 	void setMoodCode(ActMood value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model actRequired="true" actOrdered="false"
+	 * @generated
+	 */
+	void addAct(Act act);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model encounterRequired="true" encounterOrdered="false"
+	 * @generated
+	 */
+	void addEncounter(Encounter encounter);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model observationRequired="true" observationOrdered="false"
+	 * @generated
+	 */
+	void addObservation(Observation observation);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model observationMediaRequired="true" observationMediaOrdered="false"
+	 * @generated
+	 */
+	void addObservationMedia(ObservationMedia observationMedia);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model newOrganizerRequired="true" newOrganizerOrdered="false"
+	 * @generated
+	 */
+	void addOrganizer(Organizer newOrganizer);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model procedureRequired="true" procedureOrdered="false"
+	 * @generated
+	 */
+	void addProcedure(Procedure procedure);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model regionOfInterestRequired="true" regionOfInterestOrdered="false"
+	 * @generated
+	 */
+	void addRegionOfInterest(RegionOfInterest regionOfInterest);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model substanceAdministrationRequired="true" substanceAdministrationOrdered="false"
+	 * @generated
+	 */
+	void addSubstanceAdministration(SubstanceAdministration substanceAdministration);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model supplyRequired="true" supplyOrdered="false"
+	 * @generated
+	 */
+	void addSupply(Supply supply);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.component.act
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.act'"
+	 * @generated
+	 */
+	EList<Act> getAct();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.component.encounter
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.encounter'"
+	 * @generated
+	 */
+	EList<Encounter> getEncounter();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.component.observation
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.observation'"
+	 * @generated
+	 */
+	EList<Observation> getObservation();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.component.observationMedia
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.observationMedia'"
+	 * @generated
+	 */
+	EList<ObservationMedia> getObservationMedia();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.component.organizer
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.organizer'"
+	 * @generated
+	 */
+	EList<Organizer> getOrganizer();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.component.procedure
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.procedure'"
+	 * @generated
+	 */
+	EList<Procedure> getProcedure();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.component.regionOfInterest
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.regionOfInterest'"
+	 * @generated
+	 */
+	EList<RegionOfInterest> getRegionOfInterest();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.component.substanceAdministration
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.substanceAdministration'"
+	 * @generated
+	 */
+	EList<SubstanceAdministration> getSubstanceAdministration();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.component.supply
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.supply'"
+	 * @generated
+	 */
+	EList<Supply> getSupply();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))'"
+	 * @generated
+	 */
+	boolean hasActTemplate(String templateId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" codeRequired="true" codeOrdered="false" codeSystemRequired="true" codeSystemOrdered="false" codeSystemNameRequired="true" codeSystemNameOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName'"
+	 * @generated
+	 */
+	boolean hasCode(String code, String codeSystem, String codeSystemName);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))'"
+	 * @generated
+	 */
+	boolean hasEncounterTemplate(String templateId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservationMedia()->exists(media : cda::ObservationMedia | media.hasTemplateId(templateId))
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservationMedia()->exists(media : cda::ObservationMedia | media.hasTemplateId(templateId))'"
+	 * @generated
+	 */
+	boolean hasObservationMediaTemplate(String templateId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))'"
+	 * @generated
+	 */
+	boolean hasObservationTemplate(String templateId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))'"
+	 * @generated
+	 */
+	boolean hasOrganizerTemplate(String templateId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))'"
+	 * @generated
+	 */
+	boolean hasProcedureTemplate(String templateId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))'"
+	 * @generated
+	 */
+	boolean hasRegionOfInterestTemplate(String templateId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))'"
+	 * @generated
+	 */
+	boolean hasSubstanceAdministrationTemplate(String templateId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))'"
+	 * @generated
+	 */
+	boolean hasSupplyTemplate(String templateId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.templateId->exists(id : datatypes::II | id.root = templateId)
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = templateId)'"
+	 * @generated
+	 */
+	boolean hasTemplateId(String templateId);
+
 } // Organizer

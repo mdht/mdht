@@ -763,10 +763,74 @@ public interface ClinicalDocument extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" indexRequired="true" indexOrdered="false"
+	 * <!-- begin-model-doc -->
+	 * self.recordTarget.patientRole.patient
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget.patientRole.patient'"
 	 * @generated
 	 */
-	Section getSection(int index);
+	EList<Patient> getPatient();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.recordTarget.patientRole
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget.patientRole'"
+	 * @generated
+	 */
+	EList<PatientRole> getPatientRole();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.component.structuredBody.component.section
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.structuredBody.component.section'"
+	 * @generated
+	 */
+	EList<Section> getSection();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" codeRequired="true" codeOrdered="false" codeSystemRequired="true" codeSystemOrdered="false" codeSystemNameRequired="true" codeSystemNameOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName'"
+	 * @generated
+	 */
+	boolean hasCode(String code, String codeSystem, String codeSystemName);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))'"
+	 * @generated
+	 */
+	boolean hasSectionTemplate(String templateId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.templateId->exists(id : datatypes::II | id.root = templateId)
+	 * <!-- end-model-doc -->
+	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = templateId)'"
+	 * @generated
+	 */
+	boolean hasTemplateId(String templateId);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -779,25 +843,9 @@ public interface ClinicalDocument extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" indexRequired="true" indexOrdered="false"
-	 * @generated
-	 */
-	PatientRole getPatientRole(int index);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model patientRequired="true" patientOrdered="false"
 	 * @generated
 	 */
 	void addPatient(Patient patient);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" indexRequired="true" indexOrdered="false"
-	 * @generated
-	 */
-	Patient getPatient(int index);
 
 } // ClinicalDocument
