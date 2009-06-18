@@ -1,0 +1,1 @@
+ /opt/IBM/SDP/jdk/bin/java  -cp ../org.eclipse.releng.basebuilder/plugins/org.eclipse.equinox.launcher.jar org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -DbuildType=N  -buildfile build.xml -target clean,main  -Dcomponent=openhealthtools-mdht-pde-build  
