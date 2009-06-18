@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.NamedElement;
@@ -243,7 +244,7 @@ public class PropertyUtil {
 		// vocabBinding
 		if ((style & IHL7Appearance.DISP_VOCABULARY) != 0) {
 			String vocab = getHDFVocabularyConstraint(property);
-			if (vocab != null) {
+			if (vocab != null && vocab.length() > 0) {
 				if (buffer.length() > 0)
 					buffer.append(" ");
 				buffer.append(vocab);
@@ -251,9 +252,9 @@ public class PropertyUtil {
 		}
 
 		// fixedValue
-		if (property.isReadOnly()) {
-			buffer.append(" readOnly");
-		}
+//		if (property.isReadOnly()) {
+//			buffer.append(" readOnly");
+//		}
 		
 		// enumeration
 		// allowedRange
@@ -262,7 +263,7 @@ public class PropertyUtil {
 		// updateMode
 		if ((style & IHL7Appearance.DISP_UPDATE_MODE) != 0) {
 			String updateMode = getHDFUpdateMode(property);
-			if (updateMode != null) {
+			if (updateMode != null && updateMode.length() > 0) {
 				if (buffer.length() > 0)
 					buffer.append(" ");
 				buffer.append(updateMode);
@@ -361,7 +362,7 @@ public class PropertyUtil {
 			// Code System
 			else if (codeSystem != null) {
 				Boolean isImmutable = (Boolean) getHDFAttributeValue(property, IHDFProfileConstants.IS_IMMUTABLE);
-				String code = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE_PRINT_NAME);
+				String code = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE);
 				
 				if (Boolean.TRUE.equals(isImmutable) && code != null) {
 					value.append("= ");
@@ -371,7 +372,7 @@ public class PropertyUtil {
 					String name = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE_SYSTEM_NAME);
 					String oid = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE_SYSTEM_OID);
 
-					value.append("< C:");
+					value.append("= C:");
 					if (name != null) {
 						value.append(name);
 					}
@@ -389,7 +390,7 @@ public class PropertyUtil {
 			else if (conceptDomain != null) {
 				Object name = property.getValue(conceptDomain, IHDFProfileConstants.CONCEPT_DOMAIN_NAME);
 				if (name != null) {
-					value.append("< " + name);
+					value.append("< CD:" + name);
 				}
 			}
 		}
@@ -424,17 +425,21 @@ public class PropertyUtil {
 
 	private static String getHDFUpdateMode(Property property) {
 		StringBuffer value = new StringBuffer();
-		EnumerationLiteral mode = (EnumerationLiteral) getHDFAttributeValue(property, IHDFProfileConstants.UPDATE_MODE_DEFAULT);
+		String mode = getHDFAttributeString(property, IHDFProfileConstants.UPDATE_MODE_DEFAULT);
 		List modeList = (List) getHDFAttributeValue(property, IHDFProfileConstants.UPDATE_MODES_ALLOWED);
 		
-		if (mode != null) {
+		if (mode != null && mode.length() > 0
+				|| (modeList != null && !modeList.isEmpty())) {
+			if (mode.length() == 0)
+				mode = "?";
+			
 			value.append("{");
-			value.append(mode.getName());
+			value.append(mode);
 			
 			if (modeList != null && !modeList.isEmpty()) {
 				value.append(": ");
 				for (int i=0; i<modeList.size(); i++) {
-					EnumerationLiteral aMode = (EnumerationLiteral) modeList.get(i);
+					EEnumLiteral aMode = (EEnumLiteral) modeList.get(i);
 					if (i > 0)
 						value.append(",");
 					value.append(aMode.getName());
