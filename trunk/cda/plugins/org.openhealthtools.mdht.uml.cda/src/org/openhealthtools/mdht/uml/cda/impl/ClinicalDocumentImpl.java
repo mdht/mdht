@@ -1330,8 +1330,53 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Section getSection(int index) {
-		return ClinicalDocumentOperations.getSection(this, index);
+	public EList<Patient> getPatient() {
+		return ClinicalDocumentOperations.getPatient(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<PatientRole> getPatientRole() {
+		return ClinicalDocumentOperations.getPatientRole(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Section> getSection() {
+		return ClinicalDocumentOperations.getSection(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasCode(String code, String codeSystem, String codeSystemName) {
+		return ClinicalDocumentOperations.hasCode(this, code, codeSystem, codeSystemName);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasSectionTemplate(String templateId) {
+		return ClinicalDocumentOperations.hasSectionTemplate(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasTemplateId(String templateId) {
+		return ClinicalDocumentOperations.hasTemplateId(this, templateId);
 	}
 
 	/**
@@ -1348,26 +1393,8 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PatientRole getPatientRole(int index) {
-		return ClinicalDocumentOperations.getPatientRole(this, index);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public void addPatient(Patient patient) {
 		ClinicalDocumentOperations.addPatient(this, patient);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Patient getPatient(int index) {
-		return ClinicalDocumentOperations.getPatient(this, index);
 	}
 
 	/**

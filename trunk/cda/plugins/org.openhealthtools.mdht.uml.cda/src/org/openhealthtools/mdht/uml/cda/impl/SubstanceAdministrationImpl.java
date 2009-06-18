@@ -28,20 +28,29 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Consumable;
+import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Informant12;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
+import org.openhealthtools.mdht.uml.cda.Observation;
+import org.openhealthtools.mdht.uml.cda.ObservationMedia;
+import org.openhealthtools.mdht.uml.cda.Organizer;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.Precondition;
+import org.openhealthtools.mdht.uml.cda.Procedure;
 import org.openhealthtools.mdht.uml.cda.Reference;
+import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.Specimen;
 import org.openhealthtools.mdht.uml.cda.Subject;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 
+import org.openhealthtools.mdht.uml.cda.Supply;
+import org.openhealthtools.mdht.uml.cda.internal.operations.SubstanceAdministrationOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
@@ -1255,6 +1264,267 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 		negationInd = newNegationInd;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__NEGATION_IND, oldNegationInd, negationInd));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addAct(Act act) {
+		SubstanceAdministrationOperations.addAct(this, act);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addEncounter(Encounter encounter) {
+		SubstanceAdministrationOperations.addEncounter(this, encounter);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addObservation(Observation observation) {
+		SubstanceAdministrationOperations.addObservation(this, observation);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addObservationMedia(ObservationMedia observationMedia) {
+		SubstanceAdministrationOperations.addObservationMedia(this, observationMedia);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addOrganizer(Organizer organizer) {
+		SubstanceAdministrationOperations.addOrganizer(this, organizer);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addProcedure(Procedure procedure) {
+		SubstanceAdministrationOperations.addProcedure(this, procedure);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addRegionOfInterest(RegionOfInterest regionOfInterest) {
+		SubstanceAdministrationOperations.addRegionOfInterest(this, regionOfInterest);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addSubstanceAdministration(SubstanceAdministration newSubstanceAdministration) {
+		SubstanceAdministrationOperations.addSubstanceAdministration(this, newSubstanceAdministration);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addSupply(Supply supply) {
+		SubstanceAdministrationOperations.addSupply(this, supply);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Act> getAct() {
+		return SubstanceAdministrationOperations.getAct(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Encounter> getEncounter() {
+		return SubstanceAdministrationOperations.getEncounter(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Observation> getObservation() {
+		return SubstanceAdministrationOperations.getObservation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ObservationMedia> getObservationMedia() {
+		return SubstanceAdministrationOperations.getObservationMedia(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Organizer> getOrganizer() {
+		return SubstanceAdministrationOperations.getOrganizer(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Procedure> getProcedure() {
+		return SubstanceAdministrationOperations.getProcedure(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<RegionOfInterest> getRegionOfInterest() {
+		return SubstanceAdministrationOperations.getRegionOfInterest(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<SubstanceAdministration> getSubstanceAdministration() {
+		return SubstanceAdministrationOperations.getSubstanceAdministration(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Supply> getSupply() {
+		return SubstanceAdministrationOperations.getSupply(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasActTemplate(String templateId) {
+		return SubstanceAdministrationOperations.hasActTemplate(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasCode(String code, String codeSystem, String codeSystemName) {
+		return SubstanceAdministrationOperations.hasCode(this, code, codeSystem, codeSystemName);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasEncounterTemplate(String templateId) {
+		return SubstanceAdministrationOperations.hasEncounterTemplate(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasObservationMediaTemplate(String templateId) {
+		return SubstanceAdministrationOperations.hasObservationMediaTemplate(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasObservationTemplate(String templateId) {
+		return SubstanceAdministrationOperations.hasObservationTemplate(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasOrganizerTemplate(String templateId) {
+		return SubstanceAdministrationOperations.hasOrganizerTemplate(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasProcedureTemplate(String templateId) {
+		return SubstanceAdministrationOperations.hasProcedureTemplate(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasRegionOfInterestTemplate(String templateId) {
+		return SubstanceAdministrationOperations.hasRegionOfInterestTemplate(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasSubstanceAdministrationTemplate(String templateId) {
+		return SubstanceAdministrationOperations.hasSubstanceAdministrationTemplate(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasSupplyTemplate(String templateId) {
+		return SubstanceAdministrationOperations.hasSupplyTemplate(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasTemplateId(String templateId) {
+		return SubstanceAdministrationOperations.hasTemplateId(this, templateId);
 	}
 
 	/**
