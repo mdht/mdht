@@ -64,12 +64,9 @@ public class CDAResourceFactoryImpl extends ResourceFactoryImpl implements CDARe
 		result.setEncoding(CDAResource.DEFAULT_ENCODING);
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_SAVE_TYPE_INFORMATION,
 			new XMLSave.XMLTypeInfo() {
-				@Override
 				public boolean shouldSaveType(EClass objectType, EClassifier featureType, EStructuralFeature feature) {
 					return objectType != featureType && objectType.getEPackage().getNsURI().equals(DatatypesPackage.eNS_URI);
 				}
-				
-				@Override
 				public boolean shouldSaveType(EClass objectType, EClass featureType, EStructuralFeature feature) {
 					return false;
 				}
