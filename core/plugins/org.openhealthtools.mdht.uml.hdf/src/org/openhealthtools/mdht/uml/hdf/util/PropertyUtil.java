@@ -197,10 +197,13 @@ public class PropertyUtil {
 		}
 
 		if ((style & IHL7Appearance.DISP_DFLT_VALUE) != 0) {
-			// default value
-			if (property.getDefault() != null) {
-				buffer.append(" = ");
-				buffer.append(property.getDefault());
+			// omit default value for immutable attributes with code
+			if (!hasImmutableCode(property)) {
+				// default value
+				if (property.getDefault() != null) {
+					buffer.append(" = ");
+					buffer.append(property.getDefault());
+				}
 			}
 		}
 
@@ -302,6 +305,22 @@ public class PropertyUtil {
 		}
 		
 		return value;
+	}
+	
+	private static boolean hasImmutableCode(Property property) {
+		Stereotype codeSystem = HL7ResourceUtil.getAppliedHDFStereotype(
+				property, IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
+
+		if (codeSystem != null) {
+			Boolean isImmutable = (Boolean) getHDFAttributeValue(property, IHDFProfileConstants.IS_IMMUTABLE);
+			String code = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE);
+			
+			if (Boolean.TRUE.equals(isImmutable) && code != null) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 	private static String getHDFVocabularyConstraint(Property property) {
@@ -430,9 +449,6 @@ public class PropertyUtil {
 		
 		if (mode != null && mode.length() > 0
 				|| (modeList != null && !modeList.isEmpty())) {
-			if (mode.length() == 0)
-				mode = "?";
-			
 			value.append("{");
 			value.append(mode);
 			
