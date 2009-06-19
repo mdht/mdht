@@ -113,10 +113,13 @@ public class HL7TemplateSection extends AbstractModelerPropertySection {
 						templateIdModified = false;
 						this.setLabel("Set HL7 Template ID");
 
-						if (stereotype != null)
+						if (stereotype != null) {
+							String value = templateIdText.getText().trim();
 							namedElement.setValue(stereotype, 
 									IHDFProfileConstants.HL7_TEMPLATE_ID,
-									templateIdText.getText().trim());
+									value.length()>0 ? value : null);
+
+						}
 					}
 					else {
 						return Status.CANCEL_STATUS;

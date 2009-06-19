@@ -22,6 +22,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.NotificationImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -50,6 +51,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.hdf.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.hdf.util.HL7ResourceUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
@@ -133,54 +135,77 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
 					}
-					if (idModified) {
+					else if (idModified) {
 						idModified = false;
 						this.setLabel("Set Code System ID");
 
-						if (stereotype != null)
+						if (stereotype != null) {
+							String value = idText.getText().trim();
 							property.setValue(stereotype, 
 									IHDFProfileConstants.CODE_SYSTEM_OID,
-									idText.getText().trim());
+									value.length()>0 ? value : null);
+						}
 					}
-					if (nameModified) {
+					else if (nameModified) {
 						nameModified = false;
 						this.setLabel("Set Code System Name");
 
-						if (stereotype != null)
+						if (stereotype != null) {
+							String value = nameText.getText().trim();
 							property.setValue(stereotype, 
 									IHDFProfileConstants.CODE_SYSTEM_NAME,
-									nameText.getText().trim());
+									value.length()>0 ? value : null);
+						}
 					}
-					if (versionDateModified) {
+					else if (versionDateModified) {
 						versionDateModified = false;
 						this.setLabel("Set Code System Version");
 
-						if (stereotype != null)
+						if (stereotype != null) {
+							String value = versionDateText.getText().trim();
 							property.setValue(stereotype, 
 									IHDFProfileConstants.CODE_SYSTEM_VERSION,
-									versionDateText.getText().trim());
+									value.length()>0 ? value : null);
+						}
 					}
-					if (codeModified) {
+					else if (codeModified) {
 						codeModified = false;
 						this.setLabel("Set Code");
 
-						if (stereotype != null)
+						if (stereotype != null) {
+							String value = codeText.getText().trim();
 							property.setValue(stereotype, 
 									IHDFProfileConstants.CODE,
-									codeText.getText().trim());
+									value.length()>0 ? value : null);
+						}
 					}
-					if (codePrintNameModified) {
+					else if (codePrintNameModified) {
 						codePrintNameModified = false;
 						this.setLabel("Set Code Print Name");
 
-						if (stereotype != null)
+						if (stereotype != null) {
+							String value = codePrintNameText.getText().trim();
 							property.setValue(stereotype, 
 									IHDFProfileConstants.CODE_PRINT_NAME,
-									codePrintNameText.getText().trim());
+									value.length()>0 ? value : null);
+						}
 					}
 					else {
 						return Status.CANCEL_STATUS;
 					}
+
+					// fire notification for any stereotype property changes to update views
+					// this is a bogus notification of change to property name, but can't find a better option
+					Notification notification = new NotificationImpl(
+							Notification.SET, null, property.getName()) {
+						public Object getNotifier() {
+							return property;
+						}
+						public int getFeatureID(Class expectedClass) {
+							return UMLPackage.PROPERTY__NAME;
+						}
+					};
+					property.eNotify(notification);
 					
 			        return Status.OK_STATUS;
 			    }};

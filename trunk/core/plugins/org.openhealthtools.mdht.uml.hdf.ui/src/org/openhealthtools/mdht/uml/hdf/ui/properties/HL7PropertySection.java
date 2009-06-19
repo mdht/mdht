@@ -22,6 +22,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.NotificationImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -48,6 +49,7 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hdf.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.hdf.ui.internal.l10n.Messages;
@@ -127,6 +129,19 @@ public class HL7PropertySection extends AbstractModelerPropertySection {
 					else {
 						return Status.CANCEL_STATUS;
 					}
+
+					// fire notification for any stereotype property changes to update views
+					// this is a bogus notification of change to property name, but can't find a better option
+					Notification notification = new NotificationImpl(
+							Notification.SET, null, property.getName()) {
+						public Object getNotifier() {
+							return property;
+						}
+						public int getFeatureID(Class expectedClass) {
+							return UMLPackage.PROPERTY__NAME;
+						}
+					};
+					property.eNotify(notification);
 					
 			        return Status.OK_STATUS;
 			    }};
