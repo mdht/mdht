@@ -22,6 +22,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.NotificationImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -55,6 +56,7 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hdf.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.hdf.ui.internal.l10n.Messages;
@@ -150,28 +152,37 @@ public class ValueSetConstraintSection extends AbstractConstraintSection {
 						idModified = false;
 						this.setLabel("Set Value Set ID");
 
-						if (stereotype != null)
+						if (stereotype != null) {
+							String value = idText.getText().trim();
 							property.setValue(stereotype, 
 									IHDFProfileConstants.VALUE_SET_OID,
-									idText.getText().trim());
+									value.length()>0 ? value : null);
+
+						}
 					}
 					else if (nameModified) {
 						nameModified = false;
 						this.setLabel("Set Value Set Name");
 
-						if (stereotype != null)
+						if (stereotype != null) {
+							String value = nameText.getText().trim();
 							property.setValue(stereotype, 
 									IHDFProfileConstants.VALUE_SET_NAME,
-									nameText.getText().trim());
+									value.length()>0 ? value : null);
+
+						}
 					}
 					else if (versionDateModified) {
 						versionDateModified = false;
 						this.setLabel("Set Value Set Version");
 
-						if (stereotype != null)
+						if (stereotype != null) {
+							String value = versionDateText.getText().trim();
 							property.setValue(stereotype, 
 									IHDFProfileConstants.VALUE_SET_VERSION_DATE,
-									versionDateText.getText().trim());
+									value.length()>0 ? value : null);
+
+						}
 					}
 					else if (codingStrengthModified) {
 						codingStrengthModified = false;
@@ -207,14 +218,30 @@ public class ValueSetConstraintSection extends AbstractConstraintSection {
 						codeModified = false;
 						this.setLabel("Set Root Code");
 
-						if (stereotype != null)
+						if (stereotype != null) {
+							String value = codeText.getText().trim();
 							property.setValue(stereotype, 
 									IHDFProfileConstants.VALUE_SET_ROOT_CODE,
-									codeText.getText().trim());
+									value.length()>0 ? value : null);
+
+						}
 					}
 					else {
 						return Status.CANCEL_STATUS;
 					}
+
+					// fire notification for any stereotype property changes to update views
+					// this is a bogus notification of change to property name, but can't find a better option
+					Notification notification = new NotificationImpl(
+							Notification.SET, null, property.getName()) {
+						public Object getNotifier() {
+							return property;
+						}
+						public int getFeatureID(Class expectedClass) {
+							return UMLPackage.PROPERTY__NAME;
+						}
+					};
+					property.eNotify(notification);
 					
 			        return Status.OK_STATUS;
 			    }};

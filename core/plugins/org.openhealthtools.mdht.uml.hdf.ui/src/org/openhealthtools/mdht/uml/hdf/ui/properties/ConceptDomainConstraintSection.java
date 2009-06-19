@@ -22,6 +22,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.NotificationImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -50,6 +51,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.hdf.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.hdf.util.HL7ResourceUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
@@ -117,14 +119,29 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 						conceptDomainNameModified = false;
 						this.setLabel("Set Concept Domain Name");
 
-						if (stereotype != null)
+						if (stereotype != null) {
+							String value = conceptDomainNameText.getText().trim();
 							property.setValue(stereotype, 
 									IHDFProfileConstants.CONCEPT_DOMAIN_NAME,
-									conceptDomainNameText.getText().trim());
+									value.length()>0 ? value : null);
+						}
 					}
 					else {
 						return Status.CANCEL_STATUS;
 					}
+
+					// fire notification for any stereotype property changes to update views
+					// this is a bogus notification of change to property name, but can't find a better option
+					Notification notification = new NotificationImpl(
+							Notification.SET, null, property.getName()) {
+						public Object getNotifier() {
+							return property;
+						}
+						public int getFeatureID(Class expectedClass) {
+							return UMLPackage.PROPERTY__NAME;
+						}
+					};
+					property.eNotify(notification);
 					
 			        return Status.OK_STATUS;
 			    }};
@@ -143,17 +160,10 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 		}
 	}
 
-
-
-	
-	
 	public void createControls(final Composite parent,
 			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		
-		
 
-		
 		Composite composite = getWidgetFactory()
 				.createGroup(parent, "Concept Domain");
         FormLayout layout = new FormLayout();
@@ -171,8 +181,6 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(conceptDomainNameText, 0, SWT.CENTER);
 		nameLabel.setLayoutData(data);
-
-		
 		
 		data = new FormData();
 		data.left = new FormAttachment(nameLabel, 0);
@@ -180,15 +188,12 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 		data.top = new FormAttachment(0,2, ITabbedPropertyConstants.VSPACE);
 		conceptDomainNameText.setLayoutData(data);
 		
-		
 		if (hasVocabularyExtension()) {
-
 			vocabularyBrowseButton = getWidgetFactory().createButton(composite, "Browse...", SWT.PUSH); //$NON-NLS-1$
 			
 			vocabularyBrowseButton.addSelectionListener(new SelectionAdapter() {
 				
 				public void widgetSelected(SelectionEvent event) {
-
 					IVocabularySelectionDelegate.IConceptConstraint conceptConstraint = (IVocabularySelectionDelegate.IConceptConstraint) browseVocabulary(IVocabularySelectionDelegate.Constraint.CONCEPTS);
 
 					if (conceptConstraint != null) {
@@ -198,26 +203,14 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 														new Object[] {conceptConstraint.getConcept()}, 
 														getPart());
 					}
-
 				}
 			});
 
 			data = new FormData();
-			
 			data.left = new FormAttachment(conceptDomainNameText, 0);
-			
 			data.height = getButtonHeight();
-			
 			vocabularyBrowseButton.setLayoutData(data);
-			
-
 		} 
-		
-		
-	 
-
-	
-
 	}
 
 	protected boolean isReadOnly() {
