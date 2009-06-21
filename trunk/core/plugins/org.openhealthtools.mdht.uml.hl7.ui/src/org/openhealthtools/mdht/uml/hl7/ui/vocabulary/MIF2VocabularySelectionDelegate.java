@@ -96,7 +96,7 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 		 */
 		private class MIF2CommentSwitch extends Mif2Switch<Object> {
 
-			@Override
+			
 			public Object caseFormalConstraint(FormalConstraint formalConstraint) {
 
 				for (ComplexMarkupWithLanguage complexMarkupWithLanguage : formalConstraint.getCombinedText()) {
@@ -110,7 +110,7 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 				return formalConstraint;
 			}
 
-			@Override
+			
 			public Object caseComplexMarkupWithLanguage(ComplexMarkupWithLanguage object) {
 
 				processFeatureMap("", "", object.getMixed());
@@ -118,17 +118,17 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 				return object;
 			}
 
-			@Override
+			
 			public Object caseDesignComment(DesignComment designComment) {
 				return designComment;
 			}
 
-			@Override
+			
 			public Object caseCascadableAnnotation(CascadableAnnotation object) {
 				return object;
 			}
 
-			@Override
+			
 			public Object caseFormalExpression(FormalExpression formal) {
 
 				processFeatureMap("<" + prefix + "pre>", "</" + prefix + "pre>", formal.getMixed());
@@ -136,7 +136,7 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 				return formal;
 			}
 
-			@Override
+			
 			public Object defaultCase(EObject object) {
 				// Go Boom - We have something in the MIF2 that was not
 				// expected!
@@ -163,38 +163,38 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			commentBuffer.append(comment);
 		}
 
-		@Override
+		
 		public Object caseObject(org.openhealthtools.mdht.emf.w3c.xhtml.Object objectTag) {
 
 			processFeatureMap("<" + prefix + "object name=\"" + objectTag.getName().toString() + "\">", "</" + prefix + "object>", objectTag.getMixed());
 			return objectTag;
 		}
 
-		@Override
+		
 		public Object caseB(B b) {
 			processFeatureMap("<" + prefix + "code>", "</" + prefix + "code>", b.getMixed());
 
 			return b;
 		}
 
-		@Override
+		
 		public Object caseThead(Thead object) {
 			return object;
 		}
 
-		@Override
+		
 		public Object caseCol(Col object) {
 
 			return object;
 		}
 
-		@Override
+		
 		public Object caseCaption(Caption caption) {
 			processFeatureMap("<" + prefix + "code>", "</" + prefix + "code>", caption.getMixed());
 			return caption;
 		}
 
-		@Override
+		
 		public Object caseTable(Table table) {
 
 			String attributes = new String();
@@ -273,103 +273,103 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 		}
 
 
-		@Override
+		
 		public Object caseParam(Param object) {
 			commentBuffer.append("<" + prefix + "param name=\"" + object.getName().toString() + "\" value=\"" + object.getValue().toString() + "\"/></" + prefix + "param>");
 			return object;
 		}
 
-		@Override
+		
 		public Object caseSub(Sub sub) {
 			processFeatureMap("<" + prefix + "sub>", "</" + prefix + "sub>", sub.getMixed());
 			return sub;
 		}
 
-		@Override
+		
 		public Object caseSup(Sup sup) {
 			processFeatureMap("<" + prefix + "sup>", "</" + prefix + "sup>", sup.getMixed());
 			return sup;
 		}
 
-		@Override
+		
 		public Object caseVar(Var object) {
 			return object;
 		}
 
-		@Override
+		
 		public Object caseImg(Img img) {
 			return img;
 		}
 
-		@Override
+		
 		public Object caseI(I i) {
 			processFeatureMap("<" + prefix + "i>", "</" + prefix + "i>", i.getMixed());
 			return i;
 		}
 
-		@Override
+		
 		public Object caseLi(Li li) {
 			processFeatureMap("<" + prefix + "li>", "</" + prefix + "li>", li.getMixed());
 			return li;
 		}
 
-		@Override
+		
 		public Object caseOl(Ol object) {
 			processFeatureMap("<" + prefix + "ol>", "</" + prefix + "ol>", object.getLi());
 			return object;
 		}
 
-		@Override
+		
 		public Object caseTbody(Tbody object) {
 			return object;
 		}
 
-		@Override
+		
 		public Object caseTd(Td object) {
 			return object;
 		}
 
-		@Override
+		
 		public Object caseTh(Th object) {
 			return object;
 		}
 
-		@Override
+		
 		public Object caseTr(Tr object) {
 			return object;
 		}
 
-		@Override
+		
 		public Object casePre(Pre pre) {
 			processFeatureMap("<" + prefix + "pre>", "</" + prefix + "pre>", pre.getMixed());
 			return pre;
 		}
 
-		@Override
+		
 		public Object caseSpan(Span span) {
 			processFeatureMap("<" + prefix + "span>", "</" + prefix + "span>", span.getMixed());
 			return span;
 		}
 
-		@Override
+		
 		public Object caseBlockquote(Blockquote blockquote) {
 			processFeatureMap("<" + prefix + "blockquote>", "</" + prefix + "blockquote>", blockquote.getMixed());
 			return blockquote;
 		}
 
-		@Override
+		
 		public Object caseA(A anchor) {
 			processFeatureMap("<" + prefix + "a>", "</" + prefix + "a>", anchor.getMixed());
 			return anchor;
 		}
 
-		@Override
+		
 		public Object caseStrong(Strong strong) {
 			processFeatureMap("<" + prefix + "strong>", "</" + prefix + "strong>", strong.getMixed());
 			return strong;
 		}
 
-		@Override
+		
 		public Object caseBr(Br br) {
 
 			commentBuffer.append("</" + prefix + "br>");
@@ -377,7 +377,7 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			return br;
 		}
 
-		@Override
+		
 		public Object caseUl(Ul ul) {
 			processFeatureMap("<" + prefix + "ul>", "</" + prefix + "ul>", ul.getLi());
 			return ul;
@@ -393,7 +393,7 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			}
 		}
 
-		@Override
+		
 		public Object caseP(P paragraph) {
 
 			processFeatureMap("<" + prefix + "p>", "</" + prefix + "p>", paragraph.getMixed());
@@ -401,14 +401,14 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			return paragraph;
 		}
 
-		@Override
+		
 		public Object caseDiv(Div div) {
 			processFeatureMap("<" + prefix + "div title=\" " + div.getTitle() + " \" >", "</" + prefix + "div>", div.getMixed());
 
 			return div;
 		}
 
-		@Override
+		
 		public Object defaultCase(EObject object) {
 			mif2CommentSwitch.doSwitch(object);
 			return object;
@@ -443,7 +443,7 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			}
 			 DocumentationSwitch documentationSwitch = new DocumentationSwitch();
 			 
-			@Override
+			
 			public Object caseCodeSystem(CodeSystem codeSystem) {
 
 			
@@ -474,7 +474,7 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 				return codeSystem;
 			}
 
-			@Override
+			
 			public Object caseConceptDomain(ConceptDomain conceptDomain) {
 
 				if ( (conceptDomain.getAnnotations() != null) && 
@@ -502,7 +502,7 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 				return conceptDomain;
 			}
 
-			@Override
+			
 			public Object caseValueSet(ValueSet valueSet) {
 				
 
@@ -546,7 +546,7 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 
 
 
-		@Override
+		
 		public void helpRequested(HelpEvent e) {
 			
 			ITreeSelection selection = (ITreeSelection) treeSelectionDialog.getViewer().getSelection();
@@ -684,19 +684,19 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			return versionDate;
 		}
 
-		@Override
+		
 		public String getCodingStrength() {
 
 			return codingStrength;
 		}
 
-		@Override
+		
 		public String getRevisionFrequency() {
 
 			return revisionFrequency;
 		}
 
-		@Override
+		
 		public String getRootCode() {
 
 			return rootCode;
