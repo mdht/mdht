@@ -18,10 +18,9 @@ import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.GregorianCalendar;
 import java.util.HashMap;
-
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -34,19 +33,21 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-import org.openhealthtools.mdht.emf.hl7.mif2.BindingRealm;
-import org.openhealthtools.mdht.emf.hl7.mif2.CodeStatusKind;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystem;
-import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystemVersion;
-import org.openhealthtools.mdht.emf.hl7.mif2.Concept;
 import org.openhealthtools.mdht.emf.hl7.mif2.ConceptDomain;
 import org.openhealthtools.mdht.emf.hl7.mif2.ConceptDomainRef;
+import org.openhealthtools.mdht.emf.hl7.mif2.ContentDefinition;
 import org.openhealthtools.mdht.emf.hl7.mif2.ContextBinding;
 import org.openhealthtools.mdht.emf.hl7.mif2.PackageBase;
 import org.openhealthtools.mdht.emf.hl7.mif2.ValueSet;
 import org.openhealthtools.mdht.emf.hl7.mif2.ValueSetVersion;
 import org.openhealthtools.mdht.emf.hl7.mif2.VocabularyModel;
+import org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2Switch;
 import org.openhealthtools.mdht.uml.hdf.ui.properties.IVocabularySelectionDelegate.Constraint;
+import org.openhealthtools.mdht.uml.hdf.util.HL7ResourceUtil;
+import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 
 /**
  * Mif2VocabularyContentProvider Mif2VocabularyContentProvider supports the
@@ -57,10 +58,16 @@ import org.openhealthtools.mdht.uml.hdf.ui.properties.IVocabularySelectionDelega
  * 
  * See HL7 MIF2 Vocabulary Definition for more information (Insert Link Here)
  * 
+ * TODO Version Support - The vocabulary supports multiple versions of all
+ * the values sets, code systems, etc. The current assumption is the first
+ * version encountered is the active one. Versions are implemented using dates
+ * so we need to add logic/configuration to set vocabulary date.
+ * 
+ * 
  * @author Sean Muir
  * 
  */
-public class Mif2VocabularyContentProvider extends org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2Switch<Object> implements ITreeContentProvider {
+public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements ITreeContentProvider {
 	
 	
 
@@ -72,77 +79,45 @@ public class Mif2VocabularyContentProvider extends org.openhealthtools.mdht.emf.
 	private VocabularyModel vocabularyModel;
 
 	/**
-	 * Used to select correct version of the vocabulary; TODO Add preference to
-	 * set what version date should be used for vocabulary
-	 */
-	private long vocabularyVersionDateTime = GregorianCalendar.getInstance().getTimeInMillis();
-
-	/**
-	 * displayAll - Some values are set to unselectable in the model - not sure
-	 * of all the needs so we have a flag to filter on need to add to
-	 * preferences
-	 * 
-	 * 
-	 */
-	private boolean displayAll = false;
-
-	/**
-	 * sort results or not - default to true add preference
-	 * Future Logic
-	 */
-	@SuppressWarnings("unused")
-	private boolean sort = true;
-
-	/**
-	 * Do we want to flatten the vocabulary model or hierarchical
-	 */
-	private boolean flatten = false;
-
-	/**
 	 * Cached map of ValueSets and CodeSystems used to prevent looping.
 	 */
-	private HashMap<String, ValueSet> valueSetMap = new HashMap<String, ValueSet>();
+	private Map<String, ValueSet> valueSetMap = new HashMap<String, ValueSet>();
 
-	private HashMap<String, ValueSet> valueSetMapByName = new HashMap<String, ValueSet>();
+	private Map<String, ValueSet> valueSetMapByName = new HashMap<String, ValueSet>();
 
-	private HashMap<String, CodeSystem> codeSystemMap = new HashMap<String, CodeSystem>();
+	private Map<String, CodeSystem> codeSystemMap = new HashMap<String, CodeSystem>();
 
-	private HashMap<String, ConceptDomain> conceptDomainMap = new HashMap<String, ConceptDomain>();
+	private Map<String, ConceptDomain> conceptDomainMap = new HashMap<String, ConceptDomain>();
 
-	private HashMap<String, ContextBinding> contextBindingMap = new HashMap<String, ContextBinding>();
+	private Map<String, ContextBinding> contextBindingMap = new HashMap<String, ContextBinding>();
+	
+	private Map<String, ContextBinding> valueSetTocontextBindingMap = new HashMap<String, ContextBinding>();
 
 	/**
 	 * Used to return empty list; null might be sufficient
 	 */
-	final static ArrayList<Object> none = new ArrayList<Object>();
+	final static List<Object> NONE = new ArrayList<Object>();
 
 	/**
 	 * Bucket to return results of doSwitch
 	 */
-	Object[] children = null;
+	private Object[] children = null;
 	
-	static org.openhealthtools.mdht.emf.hl7.mif2.PackageBase mifModel = null;
+	private static PackageBase mifModel = null;
 	
-	public org.openhealthtools.mdht.emf.hl7.mif2.PackageBase getMIFModel() { return mifModel; }
+	public PackageBase getMIFModel() { return mifModel; }
 	
 	
 	// Move to util if not there already
-	protected PackageBase loadMIFFile(ResourceSet resourceSet, URI modelURI) {
+	protected PackageBase loadMIFFile(final ResourceSet resourceSet,final URI modelURI) {
 		Resource resource = null;
 		PackageBase mifModel = null;
 
 		// don't abandon processing if parse error in MIF file
 		try {
 			resource = resourceSet.getResource(modelURI, true);
-
-			for (org.eclipse.emf.ecore.resource.Resource.Diagnostic diagnostic : resource.getErrors()) {
-				System.out.println(diagnostic);
-			}
-
 		} catch (Exception emfException) {
 			resource = resourceSet.getResource(modelURI, false);
-
-			System.out.println(emfException.toString());
 		}
 		if (resource != null) {
 			TreeIterator<Object> iterator = EcoreUtil.getAllContents(resource, false);
@@ -164,40 +139,40 @@ public class Mif2VocabularyContentProvider extends org.openhealthtools.mdht.emf.
 	public void loadMIF2Vocabulary()
 	{
 		
-		// Cache instance of vocabulary model to ensure quicker response time
-		// might be a resource hog and need to be managed differently - in memory indexes and not the whole model
-		// Have not refactored complete implementation to take advantage, yet
-		if (mifModel == null)
-		{
-		 if (ResourcesPlugin.getWorkspace().getPathVariableManager().isDefined(HL7_MIF2_VOCABULARY_PATH))
-		 {
-				org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new ResourceSetImpl();
-			
-				resourceSet.getLoadOptions().put(XMIResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
-				
-				
+		/* Cache instance of vocabulary model to ensure quicker response time
+		* might be a resource hog and need to be managed differently - in memory indexes and not the whole model
+		* Have not refactored complete implementation to take advantage, yet */
+		 if (mifModel == null && ResourcesPlugin.getWorkspace().getPathVariableManager().isDefined(HL7_MIF2_VOCABULARY_PATH)) {
+			org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new ResourceSetImpl();
+
+			resourceSet.getLoadOptions().put(XMIResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+
 			File file = ResourcesPlugin.getWorkspace().getPathVariableManager().getValue(HL7_MIF2_VOCABULARY_PATH).toFile();
 			URI uri;
-			
-			 
 
-					try {
-						uri = URI.createURI(file.toURI().toURL().toString());
-						mifModel = loadMIFFile(resourceSet, uri);
-					} catch (MalformedURLException e) {
-						// Consume exception - mifModel status checked later+
-					}
-					
-				
-		 }
+			try {
+				uri = URI.createURI(file.toURI().toURL().toString());
+				mifModel = loadMIFFile(resourceSet, uri);
+			} catch (MalformedURLException e) {
+				// Consume exception - mifModel status checked later+
+			}
+
 		}
 
 		
 		
 	}
 	
-	// Default to concepts
-	Constraint constraint = Constraint.CONCEPTS;
+	/**
+	 * Default to concepts
+	 */
+	private Constraint constraint = Constraint.CONCEPTS;
+	
+	/**
+	 * Current property from UML model
+	 */
+	private Property property;
+	
 	
 	/*
 	 * (non-Javadoc)
@@ -209,43 +184,40 @@ public class Mif2VocabularyContentProvider extends org.openhealthtools.mdht.emf.
 	public Object[] getChildren(Object element) {
 		// Call the doSwitch to create children content based on node
 
-		if (element != null) {
+		if (element instanceof String) {
+			children = NONE.toArray();
+		} else if (element instanceof EObject) {
 			doSwitch((EObject) element);
 		} else {
-			children = none.toArray();
+			children = NONE.toArray();
 		}
-//		}
+
 		
 		return children;
 	}
 
 	public class ConceptDomainComparator implements Comparator<ConceptDomain> {
 
-		public int compare(ConceptDomain o1, ConceptDomain o2) {
+		public int compare(ConceptDomain conceptDomain1, ConceptDomain conceptDomain2) {
+			return conceptDomain1.getName().compareTo(conceptDomain2.getName());
+		}
+	}
+	
+	public class CodeSystemComparator implements Comparator<CodeSystem> {
+
+		public int compare(CodeSystem codeSystem1, CodeSystem codeSystem2) {
+			return codeSystem1.getName().compareTo(codeSystem2.getName());
+		}
+	}
+	
+	public class ValueSetComparator implements Comparator<ValueSet> {
+
+		public int compare(ValueSet o1, ValueSet o2) {
 			return o1.getName().compareTo(o2.getName());
 		}
-	}
+	}	
 
-	public class ConceptComparator implements Comparator<Concept> {
-
-		public int compare(Concept o1, Concept o2) {
-
-			String o1code = "";
-			String o2code = "";
-
-			if (o1.getCode().size() > 0) {
-				o1code = o1.getCode().get(0).getCode();
-			}
-
-			if (o2.getCode().size() > 0) {
-				o2code = o2.getCode().get(0).getCode();
-			}
-
-			return o1code.compareTo(o2code);
-		}
-	}
-
-	@Override
+	
 	public Object caseConceptDomain(ConceptDomain targetConceptDomain) {
 
 		ArrayList<ConceptDomain> conceptDomains = new ArrayList<ConceptDomain>();
@@ -262,448 +234,302 @@ public class Mif2VocabularyContentProvider extends org.openhealthtools.mdht.emf.
 
 		}
 
-		if (conceptDomains.size() > 0) {
+		if (!conceptDomains.isEmpty()) {
 			Collections.sort(conceptDomains, new ConceptDomainComparator());
 
 			children = conceptDomains.toArray();
 		} else {
 
-			children = none.toArray();
-
-//			// Data Integrity Problems - Using All Upper Case
-//			if (valueSetMapByName.containsKey(targetConceptDomain.getName().toUpperCase())) {
-//				ValueSet valueSet = valueSetMapByName.get(targetConceptDomain.getName().toUpperCase());
-//
-//				// / make method
-//				ValueSetVersion valueSetCurrentVersion = null;
-//				long currentDif = Long.MAX_VALUE;
-//				long currentVersionDateTime = 0;
-//
-//				// Get correct version of valueset
-//				for (ValueSetVersion valueSetVersion : valueSet.getVersion()) {
-//
-//					XMLGregorianCalendar versionDate = valueSetVersion.getVersionDate();
-//					currentVersionDateTime = 0;
-//
-//					// If we have a valid data and the date is valid - get the
-//					// time in millis
-//					if (versionDate != null && versionDate.isValid()) {
-//
-//						GregorianCalendar gc = new GregorianCalendar(versionDate.getYear(), versionDate.getMonth(), versionDate.getDay());
-//
-//						currentVersionDateTime = gc.getTimeInMillis();
-//
-//					}
-//
-//					// If current version time is less then the vocabulary
-//					// version time
-//					// see if it is the latest available version
-//					if (currentVersionDateTime < vocabularyVersionDateTime) {
-//						if ((vocabularyVersionDateTime - currentVersionDateTime) < currentDif) {
-//							valueSetCurrentVersion = valueSetVersion;
-//							currentDif = vocabularyVersionDateTime - currentVersionDateTime;
-//						}
-//
-//					}
-//
-//				}
-//
-//				// If we found a version and the version has stuff
-//				if (valueSetCurrentVersion != null && valueSetCurrentVersion.getContent() != null) {
-//
-//					ContentDefinition cd = valueSetCurrentVersion.getContent();
-//
-//					HashMap<String, String> codes = new HashMap<String, String>();
-//
-//					for (CodeBasedContentDefinition cbcd : cd.getCodeBasedContent()) {
-//						codes.put(cbcd.getCode(), cbcd.getCode());
-//					}
-//
-//					if (codeSystemMap.containsKey(valueSetCurrentVersion.getContent().getCodeSystem())) {
-//						CodeSystem codeSystem = codeSystemMap.get(valueSetCurrentVersion.getContent().getCodeSystem());
-//
-//						CodeSystemVersion codeSystemCurrentVersion = null;
-//						// reset Dif to use again
-//						currentDif = Long.MAX_VALUE;
-//
-//						// This time find latest code system version - lots of
-//						// versions running around
-//						for (CodeSystemVersion codeSystemVersion : codeSystem.getReleasedVersion()) {
-//
-//							XMLGregorianCalendar versionDate = codeSystemVersion.getReleaseDate();
-//
-//							currentVersionDateTime = 0;
-//
-//							// If we have a valid data and the date is valid -
-//							// get the
-//							// time in millis
-//							if (versionDate != null && versionDate.isValid()) {
-//								GregorianCalendar gc = new GregorianCalendar(versionDate.getYear(), versionDate.getMonth(), versionDate.getDay());
-//
-//								currentVersionDateTime = gc.getTimeInMillis();
-//							}
-//
-//							// If current version time is less then the
-//							// vocabulary
-//							// version time
-//							// see if it is the latest available version
-//							if (currentVersionDateTime < vocabularyVersionDateTime) {
-//								if ((vocabularyVersionDateTime - currentVersionDateTime) < currentDif) {
-//									codeSystemCurrentVersion = codeSystemVersion;
-//									currentDif = vocabularyVersionDateTime - currentVersionDateTime;
-//								}
-//
-//							}
-//
-//							// If we are displaying all concepts - set children
-//							// - do not filter by status
-//							if (displayAll) {
-//								children = codeSystemCurrentVersion.getConcept().toArray();
-//							} else {
-//
-//								// else we filter by status
-//								ArrayList<Concept> concepts = new ArrayList<Concept>();
-//								for (Concept concept : codeSystemCurrentVersion.getConcept()) {
-//									if (concept.isIsSelectable()) {
-//										Code code = concept.getCode().get(0);
-//										if (codes.containsKey(code.getCode())) {
-//											if (!code.getStatus().equals(CodeStatusKind.RETIRED)) {
-//												concepts.add(concept);
-//											}
-//										} else {
-//											// look at relationships - TODO
-//											// seems to have relationshipName
-//											// but not sure how it all ties
-//											// together
-//											for (ConceptRelationship conceptRelationship : concept.getConceptRelationship()) {
-//												if (codes.containsKey(conceptRelationship.getTargetConcept().getCode())) {
-//													concepts.add(concept);
-//												} else if (codes.containsKey(conceptRelationship.getTargetConcept().getCode())) {
-//
-//												}
-//											}
-//										}
-//									}
-//								}
-//
-//								Collections.sort(concepts, new ConceptComparator());
-//
-//								children = concepts.toArray();
-//
-//							}
-//
-//						}
-//
-//					}
-//				}
-//			}
-
+			children = NONE.toArray();
 		}
 
 		return targetConceptDomain;
+	}
+	
+	boolean intialized = false;
+	
+	private void initializeSets()
+	{
+
+		if (!intialized) {
+
+			intialized = true;
+			ArrayList<ValueSet> valueSets = new ArrayList<ValueSet>();
+
+			valueSets.addAll(vocabularyModel.getValueSet());
+
+			Collections.sort(valueSets, new ValueSetComparator());
+
+			// Initialize maps valueSet and codeSystem maps
+			for (ValueSet valueSet : valueSets) {
+				if (valueSet.getId() != null) {
+					valueSetMap.put(valueSet.getId(), valueSet);
+				}
+			}
+
+			for (ValueSet valueSet : valueSets) {
+				if (valueSet.getName() != null) {
+					valueSetMapByName.put(valueSet.getName().toUpperCase(), valueSet);
+				}
+			}
+
+			for (CodeSystem codeSystem : vocabularyModel.getCodeSystem()) {
+				if (codeSystem.getCodeSystemId() != null) {
+					if (!codeSystem.getReleasedVersion().isEmpty() && codeSystem.getReleasedVersion().get(0).isHl7MaintainedIndicator()) {
+						codeSystemMap.put(codeSystem.getCodeSystemId(), codeSystem);
+					}
+
+				}
+			}
+
+			for (ConceptDomain conceptDomain : vocabularyModel.getConceptDomain()) {
+				if (conceptDomain.getName() != null) {
+					conceptDomainMap.put(conceptDomain.getName(), conceptDomain);
+				}
+			}
+
+			for (ContextBinding contextBinding : vocabularyModel.getContextBinding()) {
+				if (contextBinding.getConceptDomain() != null) {
+					contextBindingMap.put(contextBinding.getConceptDomain(), contextBinding);
+				}
+			}
+		}
 	}
 
 //	boolean concepts = false;
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2Switch#caseVocabularyModel(org.openhealthtools.mdht.emf.hl7.mif2.VocabularyModel)
+	 * @seeorg.openhealthtools.mif2.util.Mif2Switch#caseVocabularyModel(org.
+	 * openhealthtools.mif2.VocabularyModel)
 	 */
-	@Override
+	
 	public Object caseVocabularyModel(VocabularyModel vocabularyModel) {
 
 		// Cache the model
 		this.vocabularyModel = vocabularyModel;
 
-
-		// Initialize maps valueSet and codeSystem maps
-		for (ValueSet valueSet : vocabularyModel.getValueSet()) {
-			if (valueSet.getId() != null) {
-				valueSetMap.put(valueSet.getId(), valueSet);
-			}
-		}
-
-		for (ValueSet valueSet : vocabularyModel.getValueSet()) {
-			if (valueSet.getName() != null) {
-				valueSetMapByName.put(valueSet.getName().toUpperCase(), valueSet);
-			}
-		}
-
-		for (CodeSystem codeSystem : vocabularyModel.getCodeSystem()) {
-			if (codeSystem.getCodeSystemId() != null) {
-				codeSystemMap.put(codeSystem.getCodeSystemId(), codeSystem);
-			}
-		}
-
-		for (ConceptDomain conceptDomain : vocabularyModel.getConceptDomain()) {
-			if (conceptDomain.getName() != null) {
-				conceptDomainMap.put(conceptDomain.getName(), conceptDomain);
-			}
-		}
-
-		for (ContextBinding contextBinding : vocabularyModel.getContextBinding()) {
-			if (contextBinding.getConceptDomain() != null) {
-				contextBindingMap.put(contextBinding.getConceptDomain(), contextBinding);
-			}
-		}
+		initializeSets();
+		
+		
+//		Collections.sort(vocabularyModel.getValueSet().toArray());
 
 		
 		if (constraint.equals(Constraint.CODESYSTEMS)) {
 			// select the binding realms as the children for the model
-			children = vocabularyModel.getBindingRealm().toArray();
+			filterCodeSystems(property);
 		} else {
-			if (constraint.equals(Constraint.CONCEPTS)) {
-
-				ArrayList<ConceptDomain> conceptDomains = new ArrayList<ConceptDomain>();
-				for (ConceptDomain conceptDomain : vocabularyModel
-						.getConceptDomain()) {
-
-					if (conceptDomain.getSpecializedByDomain().size() == 0
-							&& conceptDomain.getSpecializesDomain().size() == 0) {
-						conceptDomains.add(conceptDomain);
-					}
-					children = conceptDomains.toArray();
-				}
-			} else
-			{
-				if (constraint.equals(Constraint.VALUESSETS))
-				{
-					children = valueSetMap.values().toArray();
-				}
+			if (constraint.equals(Constraint.VALUESSETS)) {
+				filterValueSets(property);
+			} else {
+				filterConcepts(property);
 			}
-
 		}
+		
+		
+		
 		return vocabularyModel;
 	}
-
-	public class ContextBindingComparator implements Comparator<ContextBinding> {
-
-		public int compare(ContextBinding o1, ContextBinding o2) {
-			return o1.getConceptDomain().compareTo(o2.getConceptDomain());
-		}
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2Switch#caseBindingRealm(org.openhealthtools
-	 * .mif2.BindingRealm)
+	
+	/**
+	 * filterValueSets returns the complete set of currently defined value sets within the mif vocabulary if no concept domain has been selected or returns a filtered set of context bindings based on concept domain
+	 * @param conceptDomain
 	 */
-	@Override
-	public Object caseBindingRealm(BindingRealm object) {
+	private void filterValueSets(Property property)
+	{
+		ArrayList<ValueSet> valueSets = new ArrayList<ValueSet>();
 
-		// Do we need to support the pseudo BindingRealm "hierarchy" or have
-		// it as a flag
+		String conceptDomainFilter = null;
+		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+		if (stereotype != null) {
+			conceptDomainFilter = (String) property.getValue(stereotype, IHDFProfileConstants.CONCEPT_DOMAIN_NAME);
+		}
+		
+		String realm= null;
+		stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property.getNearestPackage(), IHDFProfileConstants.HDF_PACKAGE);
+		if (stereotype != null) {
+			realm= (String) property.getNearestPackage().getValue(stereotype, IHDFProfileConstants.PACKAGE_REALM_NAMESPACE);
+		}
+		
 
-		ArrayList<ContextBinding> contextBindings = new ArrayList<ContextBinding>();
+		if (conceptDomainFilter != null && conceptDomainFilter.length() > 0) {
 
-		// Not sure we need to cache this result or is it cached as part of
-		// the treeview and not called again
-		for (ContextBinding contextBinding : vocabularyModel.getContextBinding()) {
-			if (contextBinding.getBindingRealmName() != null && contextBinding.getBindingRealmName().equals(object.getName())) {
+			for (ContextBinding contextBinding : contextBindingMap.values()) {
+				
+				if ((conceptDomainFilter != null && conceptDomainFilter.equals(contextBinding.getConceptDomain()))) {
+					
+					if (realm != null && realm.equals(contextBinding.getBindingRealmName() ))
+					{					
+						ValueSet valueSet = valueSetMap.get(contextBinding.getValueSet() );
+						valueSets.add(valueSet);							
+						valueSetTocontextBindingMap.put(valueSet.getId(),contextBinding );					
+					} 					
+				}
 
-				if (!flatten) {
-					if (conceptDomainMap.containsKey(contextBinding.getConceptDomain())) {
-						ConceptDomain conceptDomain = conceptDomainMap.get(contextBinding.getConceptDomain());
+			}
+		
+		} else {
+			for (ContextBinding contextBinding : contextBindingMap.values()) {
+				if (realm != null && realm.equals(contextBinding.getBindingRealmName())) {					
+					ValueSet valueSet = valueSetMap.get(contextBinding.getValueSet() );
+					valueSets.add(valueSet);						
+					valueSetTocontextBindingMap.put(valueSet.getId(),contextBinding );				
+				}
+			}
 
-						// If our concept is not "specialized" by some domain -
-						// then we add
-						if (conceptDomain.getSpecializesDomain().size() == 0) {
-							contextBindings.add(contextBinding);
-						}
+		}
 
-					}
-				} else {
-					contextBindings.add(contextBinding);
+		children = valueSets.toArray();
+		
+		if (children.length == 0)
+		{
+			children = new String[] {"No Selectable Value Sets for " + conceptDomainFilter};
+		}
+		
+	}
+	
+	private void filterConcepts(Property property)
+	{
+		
+		String conceptDomainFilter = null;
+		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+		if (stereotype != null) {
+			conceptDomainFilter = (String) property.getValue(stereotype, IHDFProfileConstants.CONCEPT_DOMAIN_NAME);
+		}
+		
+		ArrayList<ConceptDomain> conceptDomains = new ArrayList<ConceptDomain>();
+		
+		if (false && conceptDomainFilter != null && conceptDomainFilter.length() > 0 && conceptDomainMap.containsKey(conceptDomainFilter)) {
+			conceptDomains.add(conceptDomainMap.get(conceptDomainFilter));
+		} else {
+			for (ConceptDomain conceptDomain : vocabularyModel.getConceptDomain()) {
+
+				if (conceptDomain.getSpecializedByDomain().size() == 0 && conceptDomain.getSpecializesDomain().size() == 0) {
+					conceptDomains.add(conceptDomain);
 				}
 
 			}
 		}
-
-		Collections.sort(contextBindings, new ContextBindingComparator());
-
-		children = contextBindings.toArray();
-
-		return object;
+		
+		children = conceptDomains.toArray();
 	}
+	
+	
+	
+	private void filterCodeSystems(Property property)
+	{
+		ArrayList<CodeSystem> codeSystems = new ArrayList<CodeSystem>();
+
+		codeSystems.addAll(codeSystemMap.values());
+
+		Collections.sort(codeSystems, new CodeSystemComparator());
+
+		children = codeSystems.toArray();
+	}
+
+	
+	
+	public Object caseValueSet(ValueSet valueSet) {
+		
+		
+		children = NONE.toArray();
+
+		ArrayList<ValueSet> valueSets = new ArrayList<ValueSet>();
+
+		ContextBinding contextBinding = null;
+
+		if (valueSetTocontextBindingMap.containsKey(valueSet.getId())) {
+			contextBinding = valueSetTocontextBindingMap.get(valueSet.getId());
+		}
+
+		if (valueSet.getVersion().size() > 0) {
+			ValueSetVersion valueSetVersion = valueSet.getVersion().get(0);
+			if (valueSetVersion.getContent() != null) {
+				if (valueSetVersion.getContent().getCombinedContent() != null) {
+					for (ContentDefinition cd : valueSetVersion.getContent().getCombinedContent().getUnionWithContent()) {
+						if (cd.getValueSetRef() != null) {
+							if (valueSetMap.containsKey(cd.getValueSetRef().getId())) {
+								valueSets.add(valueSetMap.get(cd.getValueSetRef().getId()));
+								if (contextBinding != null) {
+									valueSetTocontextBindingMap.put(cd.getValueSetRef().getId(), contextBinding);
+								}
+
+							}
+						}
+					}
+				}
+
+			}
+
+		}
+	
+		
+		children = valueSets.toArray();
+		
+		
+		return valueSet;
+	}
+	
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2Switch#caseContextBinding(org.openhealthtools.mdht.emf.hl7.mif2.ContextBinding)
+	 * @seeorg.openhealthtools.mif2.util.Mif2Switch#caseContextBinding(org.
+	 * openhealthtools.mif2.ContextBinding)
 	 */
-	@Override
-	public Object caseContextBinding(ContextBinding contextBinding) {
-
+	
+	public Object caseContextBinding(ContextBinding currentBinding) {
+		
 		// Reset Children - not sure if this the best way
-		children = none.toArray();
-//		boolean unSpecialized = true;
+		children = NONE.toArray();
+		
+		ArrayList<ContextBinding> contextBindings = new ArrayList<ContextBinding>();
+		
+		HashMap<String,ConceptDomainRef> conceptDomainRefs = new HashMap<String,ConceptDomainRef>(); 
+		
+		// Walk the concept hierarchy to determine the list of child concepts to filter with 
+		for (ConceptDomain conceptDomain : conceptDomainMap.values()) {
+			for (ConceptDomainRef conceptDomainRef : conceptDomain.getSpecializesDomain()) {
+				if (currentBinding.getConceptDomain().equalsIgnoreCase(conceptDomainRef.getName())) {				
+					conceptDomainRefs.put(conceptDomain.getName(), conceptDomainRef);
+				} 
+			}
 
-		// If we are not flattening the model - then the search loop is on
-		if (!flatten) {
-			// ArrayList<ContextBinding> contextBindings = new
-			// ArrayList<ContextBinding>();
+		}
+		
+		String realm= null;
+		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property.getNearestPackage(), IHDFProfileConstants.HDF_PACKAGE);
+		if (stereotype != null) {
+			realm= (String) property.getNearestPackage().getValue(stereotype, IHDFProfileConstants.PACKAGE_REALM_NAMESPACE);
+		}
 
-			ArrayList<ConceptDomain> conceptDomains = new ArrayList<ConceptDomain>();
+		// Using the child concepts - walk the collection of context bindings 
+		for (String concept : conceptDomainRefs.keySet()) {
 
-			// loop over the conceptDomains
-			for (ConceptDomain conceptDomain : conceptDomainMap.values()) {
-				// Loop over the Specializes Domain - seems to have only roughly
-				// emulating a child/parent
-				for (ConceptDomainRef conceptDomainRef : conceptDomain.getSpecializesDomain()) {
-					// Does the conceptDomainRef name equal our current context
-					// bindings
-
-					if (contextBinding.getConceptDomain().equals(conceptDomainRef.getName())) {
-//						unSpecialized = false;
-						conceptDomains.add(conceptDomain);
-
-					}
-
-					// conceptDomains.add(conceptDomain);
-
-					/***********
-					 * if (contextBinding.getConceptDomain().equals(
-					 * conceptDomainRef.getName())) { // If so - set
-					 * unSpecialized to false to prevent // downstream
-					 * processing of codes unSpecialized = false; // Get a
-					 * referenced binding if one exist - not a given if
-					 * (contextBindingMap.containsKey(conceptDomain.getName()))
-					 * { contextBindings.add(contextBindingMap.get(conceptDomain
-					 * .getName())); } }
-					 ************/
+			for (ContextBinding contextBinding : contextBindingMap.values()) {
+				if ((concept != null && concept.equals(contextBinding.getConceptDomain()))) {
+					if (realm != null && realm.equals(contextBinding.getBindingRealmName())) {
+						contextBindings.add(contextBinding);
+					} 
 				}
 
 			}
-
-			Collections.sort(conceptDomains, new ConceptDomainComparator());
-			// Set children to our bindings collection
-			children = conceptDomains.toArray();
-
-		}
-
-		// If we are flattening or unSpecialized (leaf node essentially) -
-		// process codes flatten || unSpecialized
-		if (true) {
-
-			// Find our related valueset
-			if (valueSetMap.containsKey(contextBinding.getValueSet())) {
-				ValueSet valueSet = valueSetMap.get(contextBinding.getValueSet());
-
-				ValueSetVersion valueSetCurrentVersion = null;
-				long currentDif = Long.MAX_VALUE;
-				long currentVersionDateTime = 0;
-
-				// Get correct version of valueset
-				for (ValueSetVersion valueSetVersion : valueSet.getVersion()) {
-
-					XMLGregorianCalendar versionDate = valueSetVersion.getVersionDate();
-					currentVersionDateTime = 0;
-
-					// If we have a valid data and the date is valid - get the
-					// time in millis
-					if (versionDate != null && versionDate.isValid()) {
-
-						GregorianCalendar gc = new GregorianCalendar(versionDate.getYear(), versionDate.getMonth(), versionDate.getDay());
-
-						currentVersionDateTime = gc.getTimeInMillis();
-
-					}
-
-					// If current version time is less then the vocabulary
-					// version time
-					// see if it is the latest available version
-					if (currentVersionDateTime < vocabularyVersionDateTime) {
-						if ((vocabularyVersionDateTime - currentVersionDateTime) < currentDif) {
-							valueSetCurrentVersion = valueSetVersion;
-							currentDif = vocabularyVersionDateTime - currentVersionDateTime;
-						}
-
-					}
-
-				}
-
-				// If we found a version and the version has stuff
-				if (valueSetCurrentVersion != null && valueSetCurrentVersion.getContent() != null) {
-					if (codeSystemMap.containsKey(valueSetCurrentVersion.getContent().getCodeSystem())) {
-						CodeSystem codeSystem = codeSystemMap.get(valueSetCurrentVersion.getContent().getCodeSystem());
-
-						CodeSystemVersion codeSystemCurrentVersion = null;
-						// reset Dif to use again
-						currentDif = Long.MAX_VALUE;
-
-						// This time find latest code system version - lots of
-						// versions running around
-						for (CodeSystemVersion codeSystemVersion : codeSystem.getReleasedVersion()) {
-
-							XMLGregorianCalendar versionDate = codeSystemVersion.getReleaseDate();
-
-							currentVersionDateTime = 0;
-
-							// If we have a valid data and the date is valid -
-							// get the
-							// time in millis
-							if (versionDate != null && versionDate.isValid()) {
-								GregorianCalendar gc = new GregorianCalendar(versionDate.getYear(), versionDate.getMonth(), versionDate.getDay());
-
-								currentVersionDateTime = gc.getTimeInMillis();
-							}
-
-							// If current version time is less then the
-							// vocabulary
-							// version time
-							// see if it is the latest available version
-							if (currentVersionDateTime < vocabularyVersionDateTime) {
-								if ((vocabularyVersionDateTime - currentVersionDateTime) < currentDif) {
-									codeSystemCurrentVersion = codeSystemVersion;
-									currentDif = vocabularyVersionDateTime - currentVersionDateTime;
-								}
-
-							}
-
-							// If we are displaying all concepts - set children
-							// - do not filter by status
-							if (displayAll) {
-								children = codeSystemCurrentVersion.getConcept().toArray();
-							} else {
-
-								// else we filter by status
-								ArrayList<Concept> concepts = new ArrayList<Concept>();
-								for (Concept concept : codeSystemCurrentVersion.getConcept()) {
-									if (concept.isIsSelectable()) {
-										if (!concept.getCode().get(0).getStatus().equals(CodeStatusKind.RETIRED)) {
-											concepts.add(concept);
-										}
-									}
-								}
-								children = concepts.toArray();
-
-							}
-
-						}
-
-					}
-				}
-			}
-		}
-		return contextBinding;
+		}		
+		
+		children = contextBindings.toArray();
+				
+		return currentBinding;
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2Switch#defaultCase(org.eclipse.emf.
+	 * org.openhealthtools.mif2.util.Mif2Switch#defaultCase(org.eclipse.emf.
 	 * ecore.EObject)
 	 */
-	@Override
+	
 	public Object defaultCase(EObject object) {
-		// TODO Auto-generated method stub
-		// children = null;
-
 		ArrayList<Object> none = new ArrayList<Object>();
 		children = none.toArray();
 		return object;
@@ -712,10 +538,10 @@ public class Mif2VocabularyContentProvider extends org.openhealthtools.mdht.emf.
 	/**
 	 * 
 	 */
-	public Mif2VocabularyContentProvider(Constraint constraint) {
+	public Mif2VocabularyContentProvider(org.eclipse.uml2.uml.Property property,Constraint constraint) {
 		super();
 		this.constraint = constraint;
-
+		this.property = property;		
 	}
 
 	/*
@@ -771,4 +597,225 @@ public class Mif2VocabularyContentProvider extends org.openhealthtools.mdht.emf.
 		// do nothing
 	}
 
+
+	
+	public ContextBinding getActiveBinding(ValueSet valueSet)
+	{
+		ContextBinding contextBinding = null;
+		if (valueSetTocontextBindingMap.containsKey(valueSet.getId()))
+		{
+			contextBinding = valueSetTocontextBindingMap.get(valueSet.getId());
+		}
+		return contextBinding;
+	}
+
+
+	/**
+	 * getCodeSystemSelection returns the selection path in order to highligh and pre-select code system based on current value.
+	 * CodeSystems are currently non-hierarchical so the selection path is codeSystemMap
+	 * @return Object[]
+	 */
+	public Object[] getCodeSystemSelection() {
+		
+		Object[] codeSystemSelection = null;
+
+		if (mifModel != null) {
+			this.vocabularyModel = (VocabularyModel) mifModel;
+			initializeSets();
+		}
+
+		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
+
+		if (stereotype != null) {
+			String codeSystemOid = (String) property.getValue(stereotype, IHDFProfileConstants.CODE_SYSTEM_OID);
+
+			if (codeSystemMap.containsKey(codeSystemOid)) {
+				codeSystemSelection = new Object[] { codeSystemMap.get(codeSystemOid) };
+			}
+
+		}
+		
+		return codeSystemSelection ;
+		
+	}
+
+	/**
+	 * getConceptDomainSelection returns the selection path in order to
+	 * highlight and pre-select concept domain based on current value
+	 * 
+	 * Concept Domains are hierarchical and require the walking of the hierarchy
+	 * from specific to generalized. The approach assumes a single inheritance
+	 * tree while not currently a rule in the vocabulary the current content
+	 * implies this to be true.
+	 * 
+	 * @return Object[]
+	 */
+	public Object[] getConceptDomainSelection()
+	{
+		
+		if (mifModel != null)
+		{
+			this.vocabularyModel = (VocabularyModel)mifModel;
+			
+			initializeSets();
+		}
+		
+		Object[] conceptSelectionPath = null;
+		String conceptDomainFilter = null;
+		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+		if (stereotype != null) {
+			conceptDomainFilter = (String) property.getValue(stereotype, IHDFProfileConstants.CONCEPT_DOMAIN_NAME);
+		}
+		
+
+		// If we have a concept domain filter and the filter is valid
+		if (conceptDomainFilter != null  && conceptDomainMap.containsKey(conceptDomainFilter) )			
+		{
+			ArrayList<ConceptDomain> conceptDomains = new ArrayList<ConceptDomain>();
+		
+			// Retrieve the current concept based on the domain filter and push results
+			ConceptDomain currentConceptDomain = conceptDomainMap.get(conceptDomainFilter);
+		
+			conceptDomains.add(currentConceptDomain);
+			
+			
+			// If current concept specializes a domain - the assumption here is there can be one and only one domain specialization
+			while (currentConceptDomain.getSpecializesDomain().size() > 0 )
+			{
+				// If the domain specialization is valid, push the concept domain and set the specialized concept domain to the current
+				// In effect stepping up on rung in the hierarchy
+				if (conceptDomainMap.containsKey(currentConceptDomain.getSpecializesDomain().get(0).getName())) {
+					currentConceptDomain = conceptDomainMap.get(currentConceptDomain.getSpecializesDomain().get(0).getName());
+					conceptDomains.add(currentConceptDomain);
+				} else
+				{
+					// If we do not have a valid concept, stop looking
+					break;
+				}
+			}		
+			
+			
+			// Reverse the order for the tree selection logic
+			Collections.reverse(conceptDomains);
+			conceptSelectionPath = conceptDomains.toArray();
+		}
+	
+		
+		
+		return conceptSelectionPath;
+	}
+	
+	/**
+	 * getValueSetSelection returns the selection path in order to highligh and
+	 * pre-select value set on current value
+	 * 
+	 * ValueSets are hierarchical and require the walking of the hierarchy from
+	 * specific to generalized. The approach assumes a single inheritance tree
+	 * while not currently a rule in the HL7 MIF2 vocabulary the current content
+	 * implies this to be true.
+	 * 
+	 * @return Object[]
+	 */
+	public Object[] getValueSetSelection() {
+		
+		Object[] valueSetSelection = null;
+
+		if (mifModel != null) {
+			this.vocabularyModel = (VocabularyModel) mifModel;
+			initializeSets();
+		}
+
+		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.VALUE_SET_CONSTRAINT);
+
+		if (stereotype != null) {
+			
+			String valueSetOid = (String) property.getValue(stereotype, IHDFProfileConstants.VALUE_SET_OID);
+
+			ArrayList<ValueSet > valueSets  = new ArrayList<ValueSet >();
+			
+			if (valueSetMap.containsKey(valueSetOid)) {
+				ValueSet valueSet = valueSetMap.get(valueSetOid);
+				
+				valueSets.add(valueSet);
+
+				while (  (valueSet=findValueSetParent(valueSet)) != null  )
+				{
+					valueSets.add(valueSet);	
+				}
+		
+				Collections.reverse(valueSets);
+				valueSetSelection =  valueSets.toArray();
+				
+			}
+
+		 }
+		
+		return valueSetSelection ;
+	}
+	
+	/**
+	 * findValueSetParent search the collection of value sets in the value set
+	 * map for a matching id and returns the matching value set if found.
+	 * 
+	 * ValueSets are build bottom up. In other words you create a generalized
+	 * value set by adding two or more specific value sets. In order to find the
+	 * correct parent of a value set, we search the copmlete set of value sets
+	 * looking for a reference to the current child value set in the value set
+	 * references. Once again - this assumes a single inheritance tree which is
+	 * not enforced by the vocabulary but is implied in the current data.
+	 * 
+	 * @param child
+	 * @return ValueSet
+	 */
+	private ValueSet findValueSetParent(ValueSet child) {
+		String childID = child.getId();
+
+		ValueSet parent = null;
+
+		if (childID != null) {
+
+			// Search the collection of value sets to locate a reference to the child value set.
+			for (ValueSet vs : valueSetMap.values()) {
+				if (vs.getVersion().size() > 0) {
+					ValueSetVersion vsv = vs.getVersion().get(0);
+
+					// Valueset Hierarchy is in stored in the combined content/unionwithcontent/valuesetreferences
+					if ((vsv.getContent() != null) && 
+						(vsv.getContent().getCombinedContent() != null) && 
+						(vsv.getContent().getCombinedContent().getUnionWithContent() != null)) {
+						
+						for (ContentDefinition cd : vsv.getContent().getCombinedContent().getUnionWithContent()) {
+							if (cd.getValueSetRef() != null) {
+								if (childID.equals(cd.getValueSetRef().getId())) {
+									parent = vs;
+									// If we found a parent value
+									break;
+								}
+
+							}
+							
+						}
+						
+						
+						
+					}
+				}
+				if (parent != null) {
+					break;
+				}
+			}
+		}
+
+		return parent;
+
+	}
+	
+	
+	
+
 }
+
+	
+	
+	
+	
