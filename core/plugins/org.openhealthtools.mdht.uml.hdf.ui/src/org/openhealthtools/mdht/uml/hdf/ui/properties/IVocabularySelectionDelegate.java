@@ -53,6 +53,9 @@ public interface IVocabularySelectionDelegate {
 		String getID();
 		String getName();
 		String getVersionDate();
+		String getRootCode();
+		String getCodingStrength();
+		String getRevisionFrequency();
 		
 	}
 	
