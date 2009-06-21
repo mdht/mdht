@@ -23,10 +23,15 @@ import org.eclipse.swt.widgets.Display;
 import org.openhealthtools.mdht.emf.hl7.mif2.BindingRealm;
 import org.openhealthtools.mdht.emf.hl7.mif2.Code;
 import org.openhealthtools.mdht.emf.hl7.mif2.CodeStatusKind;
+import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystem;
 import org.openhealthtools.mdht.emf.hl7.mif2.Concept;
 import org.openhealthtools.mdht.emf.hl7.mif2.ConceptDomain;
 import org.openhealthtools.mdht.emf.hl7.mif2.ContextBinding;
 import org.openhealthtools.mdht.emf.hl7.mif2.ValueSet;
+import org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2Switch;
+
+
+
 
 /**
  * 
@@ -54,7 +59,9 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 	}
 
 	public Color getForeground(Object element) {
-		vocabularyModelColorProviderSwitch.doSwitch((EObject) element);
+		if (element instanceof EObject) {
+			vocabularyModelColorProviderSwitch.doSwitch((EObject) element);
+		}
 		return vocabularyModelColorProviderSwitch.foregroundColor;
 	}
 
@@ -69,7 +76,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 	 * @author eclipse
 	 * 
 	 */
-	private class VocabularyModelColorProviderSwitch extends org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2Switch<Object> {
+	private class VocabularyModelColorProviderSwitch extends Mif2Switch<Object> {
 
 		// foreground color bucket set by the doSwitch
 		public Color foregroundColor = null;
@@ -91,7 +98,23 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 			return object;
 		}
 
-		@Override
+		
+		
+		public Object caseCodeSystem(CodeSystem codeSystem) {
+			// TODO Auto-generated method stub
+			
+			if (codeSystem.getReleasedVersion().size() > 0)
+			{
+				if (!codeSystem.getReleasedVersion().get(0).isHl7ApprovedIndicator())
+				{
+					foregroundColor = display.getSystemColor(SWT.COLOR_RED);	
+				}
+			}
+			
+			return codeSystem;
+		}
+
+		
 		public Object caseCode(Code object) {
 
 			if (object.getStatus().equals(CodeStatusKind.PROPOSED)) {
@@ -103,7 +126,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 			return object;
 		}
 
-		@Override
+		
 		public Object defaultCase(EObject object) {
 			foregroundColor = display.getSystemColor(SWT.COLOR_BLACK);
 			return object;
@@ -117,7 +140,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 	 * @author eclipse
 	 * 
 	 */
-	private class VocabularyModelLabelProviderSwitch extends org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2Switch<Object> {
+	private class VocabularyModelLabelProviderSwitch extends Mif2Switch<Object> {
 
 		// label bucket set by the doSwitch
 		public String label;
@@ -125,7 +148,15 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 		
 		
 		
-		@Override
+		
+		public Object caseCodeSystem(CodeSystem codeSystem) {
+					
+			label = codeSystem.getName() + " : " + codeSystem.getCodeSystemId(); 
+
+			return codeSystem;
+		}
+
+		
 		public Object caseValueSet(ValueSet valueSet) {
 			
 			label = valueSet.getName() +" : " + valueSet.getId();
@@ -133,14 +164,14 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 			return valueSet;
 		}
 
-		@Override
+		
 		public Object caseBindingRealm(BindingRealm object) {
 			// TODO Auto-generated method stub
 			label = object.getName();
 			return object;
 		}
 
-		@Override
+		
 		public Object caseContextBinding(ContextBinding object) {
 			label = object.getConceptDomain();// + ":" + object.getValueSet() +
 			// ":" +
@@ -151,10 +182,15 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 		 public Object caseConceptDomain(ConceptDomain conceptDomain)
 		 {
 			 label = conceptDomain.getName();
+			 
+			 
+//				CommentSwitch commentSwitch = new CommentSwitch(transformerOptions);
+				
+				
 			 return conceptDomain;
 		 }
 
-		@Override
+		
 		public Object defaultCase(EObject object) {
 			// If we can not find it - We set to class name to give some
 			// guidance on troubleshooting and not just throw exception
@@ -163,7 +199,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 			return object;
 		}
 
-		@Override
+		
 		public Object caseConcept(Concept object) {
 
 			// TODO We are only gettign one Code  and we grab it
@@ -174,6 +210,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 					label += " : " + object.getPrintName().get(0).getText();
 				}
 			}
+	
 
 			return object;
 		}
@@ -182,8 +219,14 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 
 	public String getText(Object element) {
 		// Fire the switch and use resulting label value
-		vocabularyModelLabelProviderSwitch.doSwitch((EObject) element);
-		return vocabularyModelLabelProviderSwitch.label;
+		if (element instanceof EObject) {
+			vocabularyModelLabelProviderSwitch.doSwitch((EObject) element);
+			return vocabularyModelLabelProviderSwitch.label;
+		} else
+		{
+			return (String)element;
+		}
+	
 	}
 
 	public void addListener(ILabelProviderListener listener) {
@@ -206,4 +249,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 	public org.eclipse.swt.graphics.Image getImage(Object element) {		
 		return null;
 	}
+	
+	
+
 }

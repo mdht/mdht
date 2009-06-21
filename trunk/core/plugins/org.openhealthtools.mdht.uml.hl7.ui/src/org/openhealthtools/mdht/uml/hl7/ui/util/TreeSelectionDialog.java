@@ -17,19 +17,14 @@ package org.openhealthtools.mdht.uml.hl7.ui.util;
 import java.util.ArrayList;
 
 import org.eclipse.jface.dialogs.Dialog;
-import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.ITreeSelection;
 import org.eclipse.jface.viewers.TreePath;
+import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.events.HelpListener;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
@@ -127,44 +122,51 @@ public class TreeSelectionDialog extends SelectionDialog {
 	 *            org.eclipse.swt.widgets.Composite
 	 */
 	private void addSelectionButtons(Composite composite) {
-		Composite buttonComposite = new Composite(composite, SWT.NONE);
-		GridLayout layout = new GridLayout();
-
-		layout.numColumns = 0;
-		layout.marginWidth = 0;
-		layout.horizontalSpacing = convertHorizontalDLUsToPixels(IDialogConstants.HORIZONTAL_SPACING);
-		buttonComposite.setLayout(layout);
-		buttonComposite.setLayoutData(new GridData(SWT.END, SWT.TOP, true, false));
-
-		Button selectButton = createButton(buttonComposite, IDialogConstants.SELECT_ALL_ID, SELECT_ALL_TITLE, false);
-
-		SelectionListener listener = new SelectionAdapter() {
-			public void widgetSelected(SelectionEvent e) {
-				//                listViewer.setAllChecked(true);
-			}
-		};
-		selectButton.addSelectionListener(listener);
-
-		Button deselectButton = createButton(buttonComposite, IDialogConstants.DESELECT_ALL_ID, DESELECT_ALL_TITLE, false);
-
-		listener = new SelectionAdapter() {
-			public void widgetSelected(SelectionEvent e) {
-				//                listViewer.setAllChecked(false);
-			}
-		};
-		deselectButton.addSelectionListener(listener);
+//		Composite buttonComposite = new Composite(composite, SWT.NONE);
+//		GridLayout layout = new GridLayout();
+//
+//		layout.numColumns = 0;
+//		layout.marginWidth = 0;
+//		layout.horizontalSpacing = convertHorizontalDLUsToPixels(IDialogConstants.HORIZONTAL_SPACING);
+//		buttonComposite.setLayout(layout);
+//		buttonComposite.setLayoutData(new GridData(SWT.END, SWT.TOP, true, false));
+//
+//		Button selectButton = createButton(buttonComposite, IDialogConstants.SELECT_ALL_ID, SELECT_ALL_TITLE, false);
+//
+//		SelectionListener listener = new SelectionAdapter() {
+//			public void widgetSelected(SelectionEvent e) {
+//				//                listViewer.setAllChecked(true);
+//			}
+//		};
+//		selectButton.addSelectionListener(listener);
+//
+//		Button deselectButton = createButton(buttonComposite, IDialogConstants.DESELECT_ALL_ID, DESELECT_ALL_TITLE, false);
+//
+//		listener = new SelectionAdapter() {
+//			public void widgetSelected(SelectionEvent e) {
+//				//                listViewer.setAllChecked(false);
+//			}
+//		};
+//		deselectButton.addSelectionListener(listener);
 	}
 
+	
+	Object[] selectionPath = null;
+	
 	/**
 	 * Visually checks the previously-specified elements in this dialog's list
 	 * viewer.
 	 */
-	private void checkInitialSelections() {
-		//        Iterator itemsToCheck = getInitialElementSelections().iterator();
-		//
-		//        while (itemsToCheck.hasNext()) {
-		//			listViewer.setChecked(itemsToCheck.next(), true);
-		//		}
+	public void setInitialSelections(Object[] selectionPath) {
+		
+		this.selectionPath = selectionPath;
+		
+	}
+	
+	HelpListener helpListener;
+	public void setHelpListener(HelpListener helpListener)
+	{
+		this.helpListener = helpListener;
 	}
 
 	/*
@@ -182,7 +184,7 @@ public class TreeSelectionDialog extends SelectionDialog {
 	/*
 	 * (non-Javadoc) Method declared on Dialog.
 	 */
-	protected Control createDialogArea(Composite parent) {
+	protected Control createDialogArea(final Composite parent) {
 		// page group
 		Composite composite = (Composite) super.createDialogArea(parent);
 
@@ -204,10 +206,6 @@ public class TreeSelectionDialog extends SelectionDialog {
 
 		initializeViewer();
 
-		// initialize page
-		if (!getInitialElementSelections().isEmpty()) {
-			checkInitialSelections();
-		}
 
 		Dialog.applyDialogFont(composite);
 
@@ -219,7 +217,7 @@ public class TreeSelectionDialog extends SelectionDialog {
 	 * 
 	 * @return the viewer, or <code>null</code> if not yet created
 	 */
-	protected TreeViewer getViewer() {
+	public TreeViewer getViewer() {
 		return treeViewer;
 	}
 
@@ -228,6 +226,18 @@ public class TreeSelectionDialog extends SelectionDialog {
 	 */
 	private void initializeViewer() {
 		treeViewer.setInput(inputElement);
+		
+		if (selectionPath != null){
+			treeViewer.setSelection(new TreeSelection(new TreePath(selectionPath)));
+		}
+
+		
+		if (helpListener != null)
+		{
+			treeViewer.addHelpListener(helpListener );
+		}
+//		treeViewer.setSelection(new StructuredSelection(inputElement),true);
+
 	}
 
 	/**
