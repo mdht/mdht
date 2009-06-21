@@ -56,7 +56,7 @@ public class AbstractConstraintSection extends AbstractModelerPropertySection {
 
 				IVocabularySelectionDelegate vocabularySelectionDelegate = (IVocabularySelectionDelegate) vocabularyDelegateTarget;
 
-				 return (IVocabularySelectionDelegate.IVocabularyConstraint) vocabularySelectionDelegate.chooseVocabularyConstraint(getPart().getSite().getShell(), null,
+				 return (IVocabularySelectionDelegate.IVocabularyConstraint) vocabularySelectionDelegate.chooseVocabularyConstraint(getPart().getSite().getShell(), property,
 						constraint);
 
 			}

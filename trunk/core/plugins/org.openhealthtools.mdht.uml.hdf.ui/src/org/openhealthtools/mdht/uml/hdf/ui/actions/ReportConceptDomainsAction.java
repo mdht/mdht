@@ -23,6 +23,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -41,6 +42,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
@@ -107,7 +109,7 @@ public class ReportConceptDomainsAction implements IObjectActionDelegate {
 
 
 	private void reportConceptDomains() {
-		UMLSwitch vocabulary = new UMLSwitch() {
+		UMLSwitch<Object> vocabulary = new UMLSwitch<Object>() {
 			
 			@Override
 			public Object caseClass(Class clazz) {
@@ -118,8 +120,8 @@ public class ReportConceptDomainsAction implements IObjectActionDelegate {
 					return null;
 				}
 				// choice group members may be in referenced CMETs
-				List specializations = clazz.getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
-				for (Iterator iter = specializations.iterator(); iter.hasNext();) {
+				EList<DirectedRelationship> specializations = clazz.getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
+				for (Iterator<DirectedRelationship> iter = specializations.iterator(); iter.hasNext();) {
 					Generalization generalization = (Generalization) iter.next();
 					Package memberPackage = generalization.getSpecific().getNearestPackage();
 					if (clazz.getNearestPackage() != memberPackage
@@ -164,7 +166,7 @@ public class ReportConceptDomainsAction implements IObjectActionDelegate {
 		int elementIndex = 0;
 		while (elements.size() > elementIndex) {
 			try {
-				TreeIterator iterator = EcoreUtil.getAllContents(
+				TreeIterator<Object> iterator = EcoreUtil.getAllContents(
 						Collections.singletonList(elements.get(elementIndex)));
 				while (iterator != null && iterator.hasNext()) {
 					EObject child = (EObject) iterator.next();
