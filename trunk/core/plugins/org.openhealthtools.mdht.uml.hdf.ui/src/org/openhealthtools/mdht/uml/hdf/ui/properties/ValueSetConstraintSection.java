@@ -70,8 +70,6 @@ import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
  */
 public class ValueSetConstraintSection extends AbstractConstraintSection {
 
-	private Property property;
-
 	private Text idText;
 	private boolean idModified = false;
 	private Text nameText;
