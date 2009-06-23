@@ -65,7 +65,7 @@ public class CDAUtil {
 		return resource.getContents().get(0);
 	}
 	
-	// TODO: Create a more generic mechanism for initializing an instance from annotations.
+	// TODO: Create a more generic mechanism for populating an instance from annotations.
 	public static void init(EObject object) {
 		CDAUtil.addTemplateIds(object);
 		CDAUtil.setCode(object);
