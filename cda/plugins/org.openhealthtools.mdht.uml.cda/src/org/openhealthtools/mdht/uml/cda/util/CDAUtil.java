@@ -30,6 +30,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -63,6 +64,12 @@ public class CDAUtil {
 		new CDAResourceHandler().postLoad(resource, in, null);
 		return resource.getContents().get(0);
 	}
+	
+	// TODO: Create a more generic mechanism for initializing an instance from annotations.
+	public static void init(EObject object) {
+		CDAUtil.addTemplateIds(object);
+		CDAUtil.setCode(object);
+	}
 
 	public static II getTemplateId(EClass eClass) {
 		II templateId = null;
@@ -78,6 +85,31 @@ public class CDAUtil {
 		return templateId;
 	}
 	
+	public static EObject getCode(EClass eClass) {
+		EObject codeObject = null;
+		String code = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.code");
+		String codeSystem = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.codeSystem");
+		String codeSystemName = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.codeSystemName");
+		String displayName = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.displayName");
+		if (code != null) {
+			EStructuralFeature feature = eClass.getEStructuralFeature("code");
+			if (feature != null) {
+				codeObject = DatatypesFactory.eINSTANCE.create((EClass) feature.getEType());
+				codeObject.eSet(codeObject.eClass().getEStructuralFeature("code"), code);
+				if (codeSystem != null) {
+					codeObject.eSet(codeObject.eClass().getEStructuralFeature("codeSystem"), codeSystem);
+				}
+				if (codeSystemName != null) {
+					codeObject.eSet(codeObject.eClass().getEStructuralFeature("codeSystemName"), codeSystemName);
+				}
+				if (displayName != null) {
+					codeObject.eSet(codeObject.eClass().getEStructuralFeature("displayName"), displayName);
+				}
+			}
+		}
+		return codeObject;
+	}
+
 	@SuppressWarnings("unchecked")
 	public static void addTemplateIds(EObject object) {
 		EList<II> list = (EList<II>) object.eGet(object.eClass().getEStructuralFeature("templateId"));
@@ -94,6 +126,13 @@ public class CDAUtil {
 		}
 	}
 
+	public static void setCode(EObject object) {
+		EObject code = CDAUtil.getCode(object.eClass());
+		if (code != null) {
+			object.eSet(object.eClass().getEStructuralFeature("code"), code);
+		}
+	}
+	
 	public static void printDocument(Document doc, OutputStream out) throws Exception {
 		TransformerFactory factory = TransformerFactory.newInstance();
 		factory.setAttribute("indent-number", new Integer(2));
@@ -124,6 +163,7 @@ public class CDAUtil {
 		}
 	}
 	
+	// TODO: Refactor this into an OCL constraint.
 	public static boolean validateClinicalStatementChoiceGroup(EObject object) {
 		List<EObject> choiceGroup = new ArrayList<EObject>();
 		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("act")));
