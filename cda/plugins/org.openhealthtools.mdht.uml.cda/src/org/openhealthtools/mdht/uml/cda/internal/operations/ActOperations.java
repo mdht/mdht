@@ -27,8 +27,10 @@ import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.expressions.OCLExpression;
 
 import org.openhealthtools.mdht.uml.cda.Act;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Encounter;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.ObservationMedia;
 import org.openhealthtools.mdht.uml.cda.Organizer;
@@ -101,100 +103,100 @@ public class ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addAct(Act act, Act newAct) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setAct(newAct);
+		act.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addEncounter(Act act, Encounter encounter) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setEncounter(encounter);
+		act.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addObservation(Act act, Observation observation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setObservation(observation);
+		act.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addObservationMedia(Act act, ObservationMedia observationMedia) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setObservationMedia(observationMedia);
+		act.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addOrganizer(Act act, Organizer organizer) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setOrganizer(organizer);
+		act.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addProcedure(Act act, Procedure procedure) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setProcedure(procedure);
+		act.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addRegionOfInterest(Act act, RegionOfInterest regionOfInterest) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setRegionOfInterest(regionOfInterest);
+		act.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addSubstanceAdministration(Act act, SubstanceAdministration substanceAdministration) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setSubstanceAdministration(substanceAdministration);
+		act.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addSupply(Act act, Supply supply) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setSupply(supply);
+		act.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**

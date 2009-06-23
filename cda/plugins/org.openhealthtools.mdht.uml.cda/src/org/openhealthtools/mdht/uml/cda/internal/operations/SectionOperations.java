@@ -27,8 +27,11 @@ import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.expressions.OCLExpression;
 
 import org.openhealthtools.mdht.uml.cda.Act;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
+import org.openhealthtools.mdht.uml.cda.Component5;
 import org.openhealthtools.mdht.uml.cda.Encounter;
+import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.ObservationMedia;
 import org.openhealthtools.mdht.uml.cda.Organizer;
@@ -105,111 +108,111 @@ public class SectionOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addAct(Section section, Act act) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Entry entry = CDAFactory.eINSTANCE.createEntry();
+		entry.setAct(act);
+		section.getEntry().add(entry);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addEncounter(Section section, Encounter encounter) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Entry entry = CDAFactory.eINSTANCE.createEntry();
+		entry.setEncounter(encounter);
+		section.getEntry().add(entry);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addObservation(Section section, Observation observation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Entry entry = CDAFactory.eINSTANCE.createEntry();
+		entry.setObservation(observation);
+		section.getEntry().add(entry);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addObservationMedia(Section section, ObservationMedia observationMedia) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Entry entry = CDAFactory.eINSTANCE.createEntry();
+		entry.setObservationMedia(observationMedia);
+		section.getEntry().add(entry);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addOrganizer(Section section, Organizer organizer) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Entry entry = CDAFactory.eINSTANCE.createEntry();
+		entry.setOrganizer(organizer);
+		section.getEntry().add(entry);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addProcedure(Section section, Procedure procedure) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Entry entry = CDAFactory.eINSTANCE.createEntry();
+		entry.setProcedure(procedure);
+		section.getEntry().add(entry);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addRegionOfInterest(Section section, RegionOfInterest regionOfInterest) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Entry entry = CDAFactory.eINSTANCE.createEntry();
+		entry.setRegionOfInterest(regionOfInterest);
+		section.getEntry().add(entry);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addSection(Section section, Section newSection) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Component5 component5 = CDAFactory.eINSTANCE.createComponent5();
+		component5.setSection(newSection);
+		section.getComponent().add(component5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addSubstanceAdministration(Section section, SubstanceAdministration substanceAdministration) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Entry entry = CDAFactory.eINSTANCE.createEntry();
+		entry.setSubstanceAdministration(substanceAdministration);
+		section.getEntry().add(entry);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addSupply(Section section, Supply supply) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Entry entry = CDAFactory.eINSTANCE.createEntry();
+		entry.setSupply(supply);
+		section.getEntry().add(entry);
 	}
 
 	/**

@@ -27,8 +27,10 @@ import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.expressions.OCLExpression;
 
 import org.openhealthtools.mdht.uml.cda.Act;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Encounter;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.ObservationMedia;
 import org.openhealthtools.mdht.uml.cda.Organizer;
@@ -101,100 +103,100 @@ public class EncounterOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addAct(Encounter encounter, Act act) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setAct(act);
+		encounter.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addEncounter(Encounter encounter, Encounter newEncounter) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setEncounter(newEncounter);
+		encounter.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addObservation(Encounter encounter, Observation observation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setObservation(observation);
+		encounter.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addObservationMedia(Encounter encounter, ObservationMedia observationMedia) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setObservationMedia(observationMedia);
+		encounter.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addOrganizer(Encounter encounter, Organizer organizer) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setOrganizer(organizer);
+		encounter.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addProcedure(Encounter encounter, Procedure procedure) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setProcedure(procedure);
+		encounter.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addRegionOfInterest(Encounter encounter, RegionOfInterest regionOfInterest) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setRegionOfInterest(regionOfInterest);
+		encounter.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addSubstanceAdministration(Encounter encounter, SubstanceAdministration substanceAdministration) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setSubstanceAdministration(substanceAdministration);
+		encounter.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addSupply(Encounter encounter, Supply supply) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setSupply(supply);
+		encounter.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**

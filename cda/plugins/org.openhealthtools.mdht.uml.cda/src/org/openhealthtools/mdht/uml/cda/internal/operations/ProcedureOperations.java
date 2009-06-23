@@ -27,8 +27,10 @@ import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.expressions.OCLExpression;
 
 import org.openhealthtools.mdht.uml.cda.Act;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Encounter;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.ObservationMedia;
 import org.openhealthtools.mdht.uml.cda.Organizer;
@@ -101,100 +103,100 @@ public class ProcedureOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addAct(Procedure procedure, Act act) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setAct(act);
+		procedure.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addEncounter(Procedure procedure, Encounter encounter) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setEncounter(encounter);
+		procedure.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addObservation(Procedure procedure, Observation observation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setObservation(observation);
+		procedure.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addObservationMedia(Procedure procedure, ObservationMedia observationMedia) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setObservationMedia(observationMedia);
+		procedure.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addOrganizer(Procedure procedure, Organizer organizer) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setOrganizer(organizer);
+		procedure.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addProcedure(Procedure procedure, Procedure newProcedure) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setProcedure(newProcedure);
+		procedure.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addRegionOfInterest(Procedure procedure, RegionOfInterest regionOfInterest) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setRegionOfInterest(regionOfInterest);
+		procedure.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addSubstanceAdministration(Procedure procedure, SubstanceAdministration substanceAdministration) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setSubstanceAdministration(substanceAdministration);
+		procedure.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  void addSupply(Procedure procedure, Supply supply) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
+		entryRelationship.setSupply(supply);
+		procedure.getEntryRelationship().add(entryRelationship);
 	}
 
 	/**
