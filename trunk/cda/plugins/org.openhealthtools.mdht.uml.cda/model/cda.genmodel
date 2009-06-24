@@ -26,7 +26,7 @@
   <foreignModel>cda.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="CDA" basePackage="org.openhealthtools.mdht.uml"
       disposableProviderFactory="true" loadInitialization="true" literalsInterface="false"
-      ecorePackage="cda.ecore#/" resourceInterfaces="true" operationsPackage="org.openhealthtools.mdht.uml.cda.internal.operations">
+      ecorePackage="cda.ecore#/" resourceInterfaces="true" operationsPackage="org.openhealthtools.mdht.uml.cda.operations">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//ClinicalDocument">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//ClinicalDocument/realmCode"/>
