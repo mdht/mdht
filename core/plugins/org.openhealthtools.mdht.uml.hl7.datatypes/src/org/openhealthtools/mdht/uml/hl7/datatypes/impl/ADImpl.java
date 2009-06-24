@@ -31,7 +31,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ADXP;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
-import org.openhealthtools.mdht.uml.hl7.datatypes.internal.operations.ADOperations;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.ADOperations;
 import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
 
 /**

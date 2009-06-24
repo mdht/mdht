@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
-import org.openhealthtools.mdht.uml.hl7.datatypes.internal.operations.ONOperations;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.ONOperations;
 
 /**
  * <!-- begin-user-doc -->

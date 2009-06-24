@@ -30,7 +30,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ENXP;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
-import org.openhealthtools.mdht.uml.hl7.datatypes.internal.operations.ENOperations;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.ENOperations;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityNameUse;
 
 /**
