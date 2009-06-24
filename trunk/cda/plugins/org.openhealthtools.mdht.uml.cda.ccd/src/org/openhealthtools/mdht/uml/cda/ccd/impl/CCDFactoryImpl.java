@@ -66,6 +66,7 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case CCDPackage.CONTINUITY_OF_CARE_DOCUMENT: return createContinuityOfCareDocument();
 			case CCDPackage.PROBLEM_ACT: return createProblemAct();
 			case CCDPackage.PROBLEM_OBSERVATION: return createProblemObservation();
 			case CCDPackage.A: return createA();
@@ -74,6 +75,16 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContinuityOfCareDocument createContinuityOfCareDocument() {
+		ContinuityOfCareDocumentImpl continuityOfCareDocument = new ContinuityOfCareDocumentImpl();
+		return continuityOfCareDocument;
 	}
 
 	/**

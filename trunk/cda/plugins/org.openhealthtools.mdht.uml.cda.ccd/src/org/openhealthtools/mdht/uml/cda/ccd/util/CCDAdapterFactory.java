@@ -20,6 +20,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.openhealthtools.mdht.uml.cda.Act;
+import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Observation;
 
 import org.openhealthtools.mdht.uml.cda.ccd.*;
@@ -81,6 +82,10 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 	protected CCDSwitch<Adapter> modelSwitch =
 		new CCDSwitch<Adapter>() {
 			@Override
+			public Adapter caseContinuityOfCareDocument(ContinuityOfCareDocument object) {
+				return createContinuityOfCareDocumentAdapter();
+			}
+			@Override
 			public Adapter caseProblemAct(ProblemAct object) {
 				return createProblemActAdapter();
 			}
@@ -99,6 +104,10 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseC(C object) {
 				return createCAdapter();
+			}
+			@Override
+			public Adapter caseClinicalDocument(ClinicalDocument object) {
+				return createClinicalDocumentAdapter();
 			}
 			@Override
 			public Adapter caseAct(Act object) {
@@ -127,6 +136,20 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument <em>Continuity Of Care Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument
+	 * @generated
+	 */
+	public Adapter createContinuityOfCareDocumentAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct <em>Problem Act</em>}'.
@@ -195,6 +218,20 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument <em>Clinical Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument
+	 * @generated
+	 */
+	public Adapter createClinicalDocumentAdapter() {
 		return null;
 	}
 

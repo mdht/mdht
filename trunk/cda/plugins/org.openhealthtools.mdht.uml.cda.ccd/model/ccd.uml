@@ -4,6 +4,11 @@
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
       <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg?cda?"/>
     </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ze7UsGESEd69D7zx7EkLMA" name="ContinuityOfCareDocument">
+      <generalization xmi:id="_tf1eQGESEd69D7zx7EkLMA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_S9OzADxXEd6JwqSGecoePg?cda/ClinicalDocument?"/>
+      </generalization>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="ProblemAct">
       <ownedRule xmi:id="_Iw2WMDxlEd6JwqSGecoePg" name="templateId" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_Iw2WMTxlEd6JwqSGecoePg">
@@ -14,7 +19,7 @@
       <ownedRule xmi:id="_7l0sIGBPEd6N94MqzCgt-g" name="code" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_7l0sIWBPEd6N94MqzCgt-g">
           <language>OCL</language>
-          <body>self.nullFlavor = vocab::NullFlavor::NA</body>
+          <body>self.code.nullFlavor = #vocab::NullFlavor::NA</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
@@ -58,7 +63,7 @@
   </uml:Package>
   <Ecore:EPackage xmi:id="_sGrZIDxWEd6JwqSGecoePg" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="ccd" nsPrefix="ccd" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd" basePackage="org.openhealthtools.mdht.uml.cda" prefix="CCD"/>
   <Ecore:EClass xmi:id="_OjEDIEV-Ed6QuJiOJFSRPQ" base_Class="_GgvgUDxbEd6JwqSGecoePg">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.27' code.nullFlavor='NA'</annotation>
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.27' code.nullFlavor='NA' constraints.diagnostic.error='templateId code'</annotation>
   </Ecore:EClass>
   <Ecore:EClass xmi:id="_PTpLgEV-Ed6QuJiOJFSRPQ" base_Class="_IjIO0DxbEd6JwqSGecoePg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.28'</annotation>

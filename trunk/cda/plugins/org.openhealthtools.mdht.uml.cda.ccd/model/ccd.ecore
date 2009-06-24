@@ -3,10 +3,12 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ccd"
     nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd" nsPrefix="ccd">
+  <eClassifiers xsi:type="ecore:EClass" name="ContinuityOfCareDocument" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//ClinicalDocument"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProblemAct" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Act">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.27"/>
       <details key="code.nullFlavor" value="NA"/>
+      <details key="constraints.diagnostic.error" value="templateId code"/>
     </eAnnotations>
     <eOperations name="templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -32,10 +34,10 @@
     </eOperations>
     <eOperations name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.nullFlavor = vocab::NullFlavor::NA"/>
+        <details key="body" value="self.code.nullFlavor = #vocab::NullFlavor::NA"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.nullFlavor = vocab::NullFlavor::NA"/>
+        <details key="documentation" value="self.code.nullFlavor = #vocab::NullFlavor::NA"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

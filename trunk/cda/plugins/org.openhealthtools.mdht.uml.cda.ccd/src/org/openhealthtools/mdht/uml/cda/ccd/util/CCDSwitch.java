@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 import org.openhealthtools.mdht.uml.cda.Act;
+import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Observation;
 
 import org.openhealthtools.mdht.uml.cda.ccd.*;
@@ -96,6 +97,13 @@ public class CCDSwitch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case CCDPackage.CONTINUITY_OF_CARE_DOCUMENT: {
+				ContinuityOfCareDocument continuityOfCareDocument = (ContinuityOfCareDocument)theEObject;
+				T result = caseContinuityOfCareDocument(continuityOfCareDocument);
+				if (result == null) result = caseClinicalDocument(continuityOfCareDocument);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CCDPackage.PROBLEM_ACT: {
 				ProblemAct problemAct = (ProblemAct)theEObject;
 				T result = caseProblemAct(problemAct);
@@ -139,6 +147,21 @@ public class CCDSwitch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Continuity Of Care Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Continuity Of Care Document</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContinuityOfCareDocument(ContinuityOfCareDocument object) {
+		return null;
 	}
 
 	/**
@@ -213,6 +236,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseC(C object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Clinical Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Clinical Document</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseClinicalDocument(ClinicalDocument object) {
 		return null;
 	}
 

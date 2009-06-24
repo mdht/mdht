@@ -119,6 +119,8 @@ public class CCDValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
+			case CCDPackage.CONTINUITY_OF_CARE_DOCUMENT:
+				return validateContinuityOfCareDocument((ContinuityOfCareDocument)value, diagnostics, context);
 			case CCDPackage.PROBLEM_ACT:
 				return validateProblemAct((ProblemAct)value, diagnostics, context);
 			case CCDPackage.PROBLEM_OBSERVATION:
@@ -132,6 +134,15 @@ public class CCDValidator extends EObjectValidator {
 			default:
 				return true;
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContinuityOfCareDocument(ContinuityOfCareDocument continuityOfCareDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(continuityOfCareDocument, diagnostics, context);
 	}
 
 	/**
@@ -261,10 +272,7 @@ public class CCDValidator extends EObjectValidator {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		// TODO
-		// Specialize this to return a resource locator for messages specific to this validator.
-		// Ensure that you remove @generated or mark it @generated NOT
-		return super.getResourceLocator();
+		return CCDPlugin.INSTANCE;
 	}
 
 } //CCDValidator

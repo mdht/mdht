@@ -32,6 +32,15 @@ public interface CCDFactory extends EFactory {
 	CCDFactory eINSTANCE = org.openhealthtools.mdht.uml.cda.ccd.impl.CCDFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Continuity Of Care Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Continuity Of Care Document</em>'.
+	 * @generated
+	 */
+	ContinuityOfCareDocument createContinuityOfCareDocument();
+
+	/**
 	 * Returns a new object of class '<em>Problem Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
