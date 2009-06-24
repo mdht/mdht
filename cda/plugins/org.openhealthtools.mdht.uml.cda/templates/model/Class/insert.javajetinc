@@ -1,5 +1,5 @@
 <%if (isImplementation) {%>
-  <%if (!UML2GenModelUtil.isOperationsClasses(genPackage) && UML2GenModelUtil.hasOCLOperationBodies(genClass) && !UML2GenModelUtil.hasOCLOperationBodies(genClass.getClassExtendsGenClass())) {%>
+  <%if (!UML2GenModelUtil.isOperationsClasses(genPackage) && UML2GenModelUtil.hasOCLOperationBodies(genClass) && (!UML2GenModelUtil.hasOCLOperationBodies(genClass.getClassExtendsGenClass()) || (UML2GenModelUtil.hasOCLOperationBodies(genClass.getClassExtendsGenClass()) && UML2GenModelUtil.isOperationsClasses(genClass.getClassExtendsGenClass().getGenPackage())))) {%>
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->
