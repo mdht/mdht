@@ -25,7 +25,7 @@
   </genAnnotations>
   <foreignModel>datatypes.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="Datatypes" basePackage="org.openhealthtools.mdht.uml.hl7"
-      disposableProviderFactory="true" ecorePackage="datatypes.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.hl7.datatypes.internal.operations">
+      disposableProviderFactory="true" ecorePackage="datatypes.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.hl7.datatypes.operations">
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="datatypes.ecore#//BinaryDataEncoding">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="datatypes.ecore#//BinaryDataEncoding/B64"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="datatypes.ecore#//BinaryDataEncoding/TXT"/>
