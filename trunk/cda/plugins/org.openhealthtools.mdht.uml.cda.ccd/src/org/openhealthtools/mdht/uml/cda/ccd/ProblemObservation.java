@@ -33,11 +33,11 @@ public interface ProblemObservation extends Observation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.28')
+	 * self.hasTemplateId('2.16.840.1.113883.10.20.1.28')
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = \'2.16.840.1.113883.10.20.1.28\')'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.28\')'"
 	 * @generated
 	 */
 	boolean templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -45,14 +45,7 @@ public interface ProblemObservation extends Observation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * org.openhealthtools.mdht.uml.cda.util.CDAUtil.addTemplateIds(this);
-	 * return this;
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='org.openhealthtools.mdht.uml.cda.util.CDAUtil.addTemplateIds(this);\r\nreturn this;'"
 	 * @generated
 	 */
-	ProblemObservation init();
-
+	public ProblemObservation init();
 } // ProblemObservation

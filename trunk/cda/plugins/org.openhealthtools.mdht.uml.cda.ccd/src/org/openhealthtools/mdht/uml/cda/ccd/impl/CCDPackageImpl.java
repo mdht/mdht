@@ -284,7 +284,14 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(problemActEClass, this.getProblemAct(), "init", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = addEOperation(problemActEClass, ecorePackage.getEBoolean(), "code", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(problemObservationEClass, ProblemObservation.class, "ProblemObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -297,19 +304,11 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(problemObservationEClass, this.getProblemObservation(), "init", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
 		initEClass(aEClass, org.openhealthtools.mdht.uml.cda.ccd.A.class, "A", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		addEOperation(aEClass, this.getA(), "init", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(bEClass, org.openhealthtools.mdht.uml.cda.ccd.B.class, "B", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(bEClass, this.getB(), "init", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
 		initEClass(cEClass, org.openhealthtools.mdht.uml.cda.ccd.C.class, "C", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		addEOperation(cEClass, this.getC(), "init", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -331,32 +330,33 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		  (problemActEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "2.16.840.1.113883.10.20.1.27"
-		   });							
+			 "templateId.root", "2.16.840.1.113883.10.20.1.27",
+			 "code.nullFlavor", "NA"
+		   });										
 		addAnnotation
 		  (problemObservationEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.28"
-		   });							
+		   });						
 		addAnnotation
 		  (aEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.2.3"
-		   });			
+		   });		
 		addAnnotation
 		  (bEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "4.5.6"
-		   });			
+		   });		
 		addAnnotation
 		  (cEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "7.8.9"
-		   });	
+		   });
 	}
 
 } //CCDPackageImpl

@@ -52,8 +52,7 @@ public class CImpl extends BImpl implements C {
 	 * @generated
 	 */
 	public C init() {
-		org.openhealthtools.mdht.uml.cda.util.CDAUtil.addTemplateIds(this);
-		return this;
+    		org.openhealthtools.mdht.uml.cda.util.CDAUtil.init(this);
+    		return this;
 	}
-
 } //CImpl

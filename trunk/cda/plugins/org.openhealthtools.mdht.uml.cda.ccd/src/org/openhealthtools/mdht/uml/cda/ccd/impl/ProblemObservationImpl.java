@@ -14,26 +14,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 
 import java.util.Map;
 
-import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.emf.ecore.util.EObjectValidator;
-
-import org.eclipse.ocl.ParserException;
-
-import org.eclipse.ocl.ecore.Constraint;
-import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
-
-import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-
+import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemObservationOperations;
 import org.openhealthtools.mdht.uml.cda.impl.ObservationImpl;
 
 /**
@@ -66,54 +51,12 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Template Id</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.28')";
-
-	/**
-	 * The cached OCL invariant for the '{@link #templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Template Id</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CCDPackage.Literals.PROBLEM_OBSERVATION);
-			try {
-				TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		if (!EOCL_ENV.createQuery(TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(this)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CCDValidator.DIAGNOSTIC_SOURCE,
-						 CCDValidator.PROBLEM_OBSERVATION__TEMPLATE_ID,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "templateId", EObjectValidator.getObjectLabel(this, context) }),
-						 new Object [] { this }));
-			}
-			return false;
-		}
-		return true;
+		return ProblemObservationOperations.templateId(this, diagnostics, context);
 	}
 
 	/**
@@ -122,17 +65,7 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * @generated
 	 */
 	public ProblemObservation init() {
-		org.openhealthtools.mdht.uml.cda.util.CDAUtil.addTemplateIds(this);
-		return this;
+    		org.openhealthtools.mdht.uml.cda.util.CDAUtil.init(this);
+    		return this;
 	}
-
-	/**
-	 * The cached environment for evaluating OCL expressions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected static final OCL EOCL_ENV = OCL.newInstance();
-
 } //ProblemObservationImpl
