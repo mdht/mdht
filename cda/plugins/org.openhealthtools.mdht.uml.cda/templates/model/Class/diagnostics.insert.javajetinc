@@ -1,0 +1,44 @@
+<%
+String oclExp = UML2GenModelUtil.getUpperName(genOperation.getName()) + (genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))) + "__EOCL_EXP";
+
+EClass eClass = genClass.getEcoreClass();
+String name = genOperation.getName();
+
+String severity = null;
+String messageKey = null;
+
+String annotation = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.optional");
+if (annotation != null && Arrays.binarySearch(annotation.split(" "), name) >= 0) {
+	severity = "INFO";
+	messageKey = "_UI_ConstraintOptional_diagnostic";
+}
+
+annotation = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.recommended");
+if (annotation != null && Arrays.binarySearch(annotation.split(" "), name) >= 0) {
+	severity = "WARNING";
+	messageKey = "_UI_ConstraintRecommended_diagnostic";
+}
+
+annotation = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.required");
+if (annotation != null && Arrays.binarySearch(annotation.split(" "), name) >= 0) {
+	severity = "ERROR";
+	messageKey = "_UI_ConstraintRequired_diagnostic";
+}
+
+if (severity != null) {%>
+				<%=diagnostics%>.add
+					(new <%=genModel.getImportedName("org.eclipse.emf.common.util.BasicDiagnostic")%>
+						(<%=genModel.getImportedName("org.eclipse.emf.common.util.Diagnostic")%>.<%=severity%>,
+						 <%=opClass.getGenPackage().getImportedValidatorClassName()%>.DIAGNOSTIC_SOURCE,
+						 <%=opClass.getGenPackage().getImportedValidatorClassName()%>.<%=opClass.getOperationID(genOperation)%>,
+						 org.openhealthtools.mdht.uml.cda.util.CDAValidator.INSTANCE.getResourceLocator().getString("<%=messageKey%>", new Object[] { "<%=genOperation.getName()%>", <%=oclExp%>, <%=genModel.getImportedName("org.eclipse.emf.ecore.util.EObjectValidator")%>.getObjectLabel(this, <%=context%>) }),<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%>
+						 new Object [] { this }));
+<%} else {%>
+				<%=diagnostics%>.add
+					(new <%=genModel.getImportedName("org.eclipse.emf.common.util.BasicDiagnostic")%>
+						(<%=genModel.getImportedName("org.eclipse.emf.common.util.Diagnostic")%>.ERROR,
+						 <%=opClass.getGenPackage().getImportedValidatorClassName()%>.DIAGNOSTIC_SOURCE,
+						 <%=opClass.getGenPackage().getImportedValidatorClassName()%>.<%=opClass.getOperationID(genOperation)%>,
+						 <%=genModel.getImportedName("org.eclipse.emf.ecore.plugin.EcorePlugin")%>.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "<%=genOperation.getName()%>", <%=genModel.getImportedName("org.eclipse.emf.ecore.util.EObjectValidator")%>.getObjectLabel(this, <%=context%>) }),<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%>
+						 new Object [] { this }));
+<%}%>
