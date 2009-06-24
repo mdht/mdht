@@ -51,7 +51,7 @@ import org.openhealthtools.mdht.uml.cda.RelatedDocument;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.StructuredBody;
 
-import org.openhealthtools.mdht.uml.cda.internal.operations.ClinicalDocumentOperations;
+import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;

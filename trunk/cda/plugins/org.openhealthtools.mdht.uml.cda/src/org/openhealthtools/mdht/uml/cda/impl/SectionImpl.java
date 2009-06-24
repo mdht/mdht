@@ -47,7 +47,7 @@ import org.openhealthtools.mdht.uml.cda.Subject;
 
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
-import org.openhealthtools.mdht.uml.cda.internal.operations.SectionOperations;
+import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;

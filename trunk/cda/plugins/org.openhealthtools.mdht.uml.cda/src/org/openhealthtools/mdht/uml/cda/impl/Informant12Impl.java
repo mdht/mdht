@@ -30,7 +30,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Informant12;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.RelatedEntity;
-import org.openhealthtools.mdht.uml.cda.internal.operations.Informant12Operations;
+import org.openhealthtools.mdht.uml.cda.operations.Informant12Operations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.vocab.ContextControl;

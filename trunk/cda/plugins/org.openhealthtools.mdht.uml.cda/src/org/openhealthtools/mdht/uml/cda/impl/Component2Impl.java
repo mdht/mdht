@@ -30,7 +30,7 @@ import org.openhealthtools.mdht.uml.cda.Component2;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.NonXMLBody;
 import org.openhealthtools.mdht.uml.cda.StructuredBody;
-import org.openhealthtools.mdht.uml.cda.internal.operations.Component2Operations;
+import org.openhealthtools.mdht.uml.cda.operations.Component2Operations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipHasComponent;
