@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.cda.util;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,11 +27,13 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -43,6 +46,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class CDAUtil {
+	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
+	
 	public static void save(EObject object, OutputStream out) throws Exception {
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.getContents().add(object);
@@ -51,6 +56,81 @@ public class CDAUtil {
 	
 	public static EObject load(InputStream in) throws Exception {
 		return load(in, false);
+	}
+	
+	public static boolean validate(EObject object, DiagnosticHandler handler) {
+		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(object);
+		if (handler != null) {
+			processDiagnostic(handler, diagnostic);
+			handler.close();
+		}
+		return diagnostic.getSeverity() != Diagnostic.ERROR;
+	}
+	
+	private static void processDiagnostic(DiagnosticHandler handler, Diagnostic diagnostic) {
+		handleDiagnostic(handler, diagnostic);
+		for (Diagnostic childDiagnostic : diagnostic.getChildren()) {
+			processDiagnostic(handler, childDiagnostic);
+		}
+	}
+	
+	private static void handleDiagnostic(DiagnosticHandler handler, Diagnostic diagnostic) {
+		switch (diagnostic.getSeverity()) {
+		case Diagnostic.OK:
+			handler.handleOkDiagnostic(diagnostic);
+			break;
+		case Diagnostic.WARNING:
+			handler.handleWarningDiagnostic(diagnostic);
+			break;
+		case Diagnostic.INFO:
+			handler.handleInfoDiagnostic(diagnostic);
+			break;
+		case Diagnostic.ERROR:
+			handler.handleErrorDiagnostic(diagnostic);
+			break;
+		case Diagnostic.CANCEL:
+			handler.handleCancelDiagnostic(diagnostic);
+			break;
+		}
+	}
+	
+	public static class DiagnosticHandler {		
+		private PrintStream out = null;
+		
+		public DiagnosticHandler(OutputStream os) {
+			out = new PrintStream(os);
+		}
+
+		public DiagnosticHandler() {
+			out = System.out;
+		}
+		
+		public void close() {
+			if (out != null && !out.equals(System.out)) {
+				out.close();
+				out = null;
+			}
+		}
+		
+		public void handleOkDiagnostic(Diagnostic diagnostic) {
+			out.println("OK: " + diagnostic.getMessage());
+		}
+		
+		public void handleErrorDiagnostic(Diagnostic diagnostic) {
+			out.println("ERROR: " + diagnostic.getMessage());
+		}
+		
+		public void handleWarningDiagnostic(Diagnostic diagnostic) {
+			out.println("WARNING: " + diagnostic.getMessage());
+		}
+		
+		public void handleInfoDiagnostic(Diagnostic diagnostic) {
+			out.println("INFO: " + diagnostic.getMessage());
+		}
+		
+		public void handleCancelDiagnostic(Diagnostic diagnostic) {
+			out.println("CANCEL: " + diagnostic.getMessage());
+		}
 	}
 
 	public static EObject load(InputStream in, boolean adjustNamespace) throws Exception {
@@ -74,8 +154,8 @@ public class CDAUtil {
 
 	public static II getTemplateId(EClass eClass) {
 		II templateId = null;
-		String root = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "templateId.root");
-		String extension = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "templateId.extension");
+		String root = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "templateId.root");
+		String extension = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "templateId.extension");
 		if (root != null) {
 			templateId = DatatypesFactory.eINSTANCE.createII();
 			templateId.setRoot(root);
@@ -88,13 +168,11 @@ public class CDAUtil {
 	
 	public static EObject getCode(EClass eClass) {
 		EObject codeObject = null;
-		String code = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.code");
-		String codeSystem = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.codeSystem");
-		String codeSystemName = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.codeSystemName");
-		String displayName = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.displayName");
-		String nullFlavor = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.nullFlavor");
-
-		System.out.println("nullFlavor=" + nullFlavor);
+		String code = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "code.code");
+		String codeSystem = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "code.codeSystem");
+		String codeSystemName = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "code.codeSystemName");
+		String displayName = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "code.displayName");
+		String nullFlavor = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "code.nullFlavor");
 		
 		if (code != null || nullFlavor != null) {
 			EStructuralFeature feature = eClass.getEStructuralFeature("code");

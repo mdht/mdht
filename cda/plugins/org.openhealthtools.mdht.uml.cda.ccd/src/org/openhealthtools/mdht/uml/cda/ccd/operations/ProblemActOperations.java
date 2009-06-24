@@ -1,12 +1,6 @@
 /**
- * Copyright (c) 2009 IBM Corporation
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     IBM Corporation - initial API and implementation
+ * <copyright>
+ * </copyright>
  *
  * $Id$
  */
@@ -17,17 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
-
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-
 import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
 
 /**
@@ -104,7 +94,7 @@ public class ProblemActOperations extends ActOperations {
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_ACT__TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "templateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(problemAct, context) }),
+						 CCDPlugin.INSTANCE.getString("templateId"),
 						 new Object [] { problemAct }));
 			}
 			return false;
@@ -120,7 +110,7 @@ public class ProblemActOperations extends ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.nullFlavor = vocab::NullFlavor::NA";
+	protected static final String CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.code.nullFlavor = #vocab::NullFlavor::NA";
 
 	/**
 	 * The cached OCL invariant for the '{@link #code(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Code</em>}' invariant operation.
@@ -136,7 +126,7 @@ public class ProblemActOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.nullFlavor = vocab::NullFlavor::NA
+	 * self.code.nullFlavor = #vocab::NullFlavor::NA
 	 * @param problemAct The receiving '<em><b>Problem Act</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -161,7 +151,7 @@ public class ProblemActOperations extends ActOperations {
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_ACT__CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "code", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(problemAct, context) }),
+						 CCDPlugin.INSTANCE.getString("code"),
 						 new Object [] { problemAct }));
 			}
 			return false;

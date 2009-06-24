@@ -24,6 +24,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPackage;
 
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 
@@ -36,6 +37,13 @@ import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
  * @generated
  */
 public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass continuityOfCareDocumentEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,6 +164,15 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getContinuityOfCareDocument() {
+		return continuityOfCareDocumentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getProblemAct() {
 		return problemActEClass;
 	}
@@ -224,6 +241,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		isCreated = true;
 
 		// Create classes and their features
+		continuityOfCareDocumentEClass = createEClass(CONTINUITY_OF_CARE_DOCUMENT);
+
 		problemActEClass = createEClass(PROBLEM_ACT);
 
 		problemObservationEClass = createEClass(PROBLEM_OBSERVATION);
@@ -266,6 +285,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		continuityOfCareDocumentEClass.getESuperTypes().add(theCDAPackage.getClinicalDocument());
 		problemActEClass.getESuperTypes().add(theCDAPackage.getAct());
 		problemObservationEClass.getESuperTypes().add(theCDAPackage.getObservation());
 		aEClass.getESuperTypes().add(this.getProblemAct());
@@ -273,6 +293,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		cEClass.getESuperTypes().add(this.getB());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(continuityOfCareDocumentEClass, ContinuityOfCareDocument.class, "ContinuityOfCareDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(problemActEClass, ProblemAct.class, "ProblemAct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		EOperation op = addEOperation(problemActEClass, ecorePackage.getEBoolean(), "templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -331,7 +353,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.27",
-			 "code.nullFlavor", "NA"
+			 "code.nullFlavor", "NA",
+			 "constraints.diagnostic.error", "templateId code"
 		   });										
 		addAnnotation
 		  (problemObservationEClass, 

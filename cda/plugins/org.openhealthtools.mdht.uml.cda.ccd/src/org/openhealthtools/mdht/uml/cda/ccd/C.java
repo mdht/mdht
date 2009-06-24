@@ -12,7 +12,6 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>C</b></em>'.
@@ -24,6 +23,7 @@ package org.openhealthtools.mdht.uml.cda.ccd;
  * @generated
  */
 public interface C extends B {
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

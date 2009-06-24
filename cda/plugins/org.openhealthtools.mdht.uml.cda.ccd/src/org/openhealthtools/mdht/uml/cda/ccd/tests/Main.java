@@ -12,19 +12,18 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.tests;
 
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.openhealthtools.mdht.uml.cda.ccd.C;
-import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.ccd.C;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.resource.CDAResource;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.w3c.dom.Document;
@@ -32,7 +31,7 @@ import org.w3c.dom.Document;
 public class Main {
 	public static void main(String[] args) throws Exception {
 		ProblemObservation problemObservation = CCDFactory.eINSTANCE.createProblemObservation().init();		
-		ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct().init();
+		ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct();
 		C c = CCDFactory.eINSTANCE.createC().init();
 		
 		Section sect = CDAFactory.eINSTANCE.createSection();
@@ -40,9 +39,17 @@ public class Main {
 		sect.addAct(problemAct);
 		sect.addAct(c);
 		
-		ClinicalDocument doc = CDAFactory.eINSTANCE.createClinicalDocument();
+//		ClinicalDocument doc = CDAFactory.eINSTANCE.createClinicalDocument();
+//		doc.addSection(sect);
+		
+		ContinuityOfCareDocument doc = CCDFactory.eINSTANCE.createContinuityOfCareDocument();
 		doc.addSection(sect);
 		
+		CDAUtil.save(doc, System.out);
+		
+		CDAUtil.validate(doc, new CDAUtil.DiagnosticHandler());
+		
+		/*
 		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(doc);
 		System.out.println(diagnostic);
 		if (diagnostic.getSeverity() == Diagnostic.OK) {
@@ -50,6 +57,7 @@ public class Main {
 		} else {
 			System.out.println("Document is invalid CCD!");
 		}
+		*/
 
 		Resource.Factory factory = CDAResource.Factory.INSTANCE;
 		XMLResource resource = (XMLResource) factory.createResource(URI.createURI(CDAPackage.eNS_URI));
