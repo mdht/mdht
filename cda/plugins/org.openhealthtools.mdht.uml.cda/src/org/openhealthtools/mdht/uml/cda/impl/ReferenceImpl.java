@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.ExternalObservation;
 import org.openhealthtools.mdht.uml.cda.ExternalProcedure;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Reference;
-import org.openhealthtools.mdht.uml.cda.internal.operations.ReferenceOperations;
+import org.openhealthtools.mdht.uml.cda.operations.ReferenceOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;

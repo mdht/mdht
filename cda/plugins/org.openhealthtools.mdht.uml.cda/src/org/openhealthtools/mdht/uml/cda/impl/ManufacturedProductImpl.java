@@ -31,7 +31,7 @@ import org.openhealthtools.mdht.uml.cda.LabeledDrug;
 import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
 import org.openhealthtools.mdht.uml.cda.Material;
 import org.openhealthtools.mdht.uml.cda.Organization;
-import org.openhealthtools.mdht.uml.cda.internal.operations.ManufacturedProductOperations;
+import org.openhealthtools.mdht.uml.cda.operations.ManufacturedProductOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;

@@ -31,7 +31,7 @@ import org.openhealthtools.mdht.uml.cda.Entity;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.PlayingEntity;
-import org.openhealthtools.mdht.uml.cda.internal.operations.ParticipantRoleOperations;
+import org.openhealthtools.mdht.uml.cda.operations.ParticipantRoleOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;

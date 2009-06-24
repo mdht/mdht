@@ -38,6 +38,7 @@ import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResourceHandler;
 import org.openhealthtools.mdht.uml.cda.resource.CDAResource;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -91,11 +92,17 @@ public class CDAUtil {
 		String codeSystem = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.codeSystem");
 		String codeSystemName = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.codeSystemName");
 		String displayName = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.displayName");
-		if (code != null) {
+		String nullFlavor = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "code.nullFlavor");
+
+		System.out.println("nullFlavor=" + nullFlavor);
+		
+		if (code != null || nullFlavor != null) {
 			EStructuralFeature feature = eClass.getEStructuralFeature("code");
 			if (feature != null) {
 				codeObject = DatatypesFactory.eINSTANCE.create((EClass) feature.getEType());
-				codeObject.eSet(codeObject.eClass().getEStructuralFeature("code"), code);
+				if (code != null) {
+					codeObject.eSet(codeObject.eClass().getEStructuralFeature("code"), code);
+				}
 				if (codeSystem != null) {
 					codeObject.eSet(codeObject.eClass().getEStructuralFeature("codeSystem"), codeSystem);
 				}
@@ -104,6 +111,9 @@ public class CDAUtil {
 				}
 				if (displayName != null) {
 					codeObject.eSet(codeObject.eClass().getEStructuralFeature("displayName"), displayName);
+				}
+				if (nullFlavor != null) {
+					codeObject.eSet(codeObject.eClass().getEStructuralFeature("nullFlavor"), NullFlavor.get(nullFlavor));
 				}
 			}
 		}
@@ -127,7 +137,14 @@ public class CDAUtil {
 	}
 
 	public static void setCode(EObject object) {
-		EObject code = CDAUtil.getCode(object.eClass());
+		EObject code = null;
+		for (EClass eClass : object.eClass().getEAllSuperTypes()) {
+			code = CDAUtil.getCode(eClass);
+			if (code != null) {
+				object.eSet(object.eClass().getEStructuralFeature("code"), code);
+			}
+		}
+		code = CDAUtil.getCode(object.eClass());
 		if (code != null) {
 			object.eSet(object.eClass().getEStructuralFeature("code"), code);
 		}

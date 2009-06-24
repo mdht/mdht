@@ -50,7 +50,7 @@ import org.openhealthtools.mdht.uml.cda.Subject;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 
-import org.openhealthtools.mdht.uml.cda.internal.operations.SupplyOperations;
+import org.openhealthtools.mdht.uml.cda.operations.SupplyOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
