@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 
-import org.openhealthtools.mdht.uml.hl7.datatypes.internal.operations.EDOperations;
+import org.openhealthtools.mdht.uml.hl7.datatypes.operations.EDOperations;
 import org.openhealthtools.mdht.uml.hl7.vocab.CompressionAlgorithm;
 import org.openhealthtools.mdht.uml.hl7.vocab.IntegrityCheckAlgorithm;
 
