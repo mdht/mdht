@@ -52,8 +52,7 @@ public class AImpl extends ProblemActImpl implements A {
 	 * @generated
 	 */
 	public A init() {
-		org.openhealthtools.mdht.uml.cda.util.CDAUtil.addTemplateIds(this);
-		return this;
+    		org.openhealthtools.mdht.uml.cda.util.CDAUtil.init(this);
+    		return this;
 	}
-
 } //AImpl

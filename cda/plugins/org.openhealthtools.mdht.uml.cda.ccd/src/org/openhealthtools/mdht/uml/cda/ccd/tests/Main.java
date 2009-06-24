@@ -19,11 +19,11 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.openhealthtools.mdht.uml.cda.ccd.C;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
-import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.resource.CDAResource;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -31,16 +31,14 @@ import org.w3c.dom.Document;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		ProblemObservation problemObservation = CCDFactory.eINSTANCE.createProblemObservation().init();
-		
-		Entry entry = CDAFactory.eINSTANCE.createEntry();
-		entry.setObservation(problemObservation);
-		
+		ProblemObservation problemObservation = CCDFactory.eINSTANCE.createProblemObservation().init();		
+		ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct().init();
 		C c = CCDFactory.eINSTANCE.createC().init();
-		entry.setAct(c);
 		
 		Section sect = CDAFactory.eINSTANCE.createSection();
-		sect.getEntry().add(entry);
+		sect.addObservation(problemObservation);
+		sect.addAct(problemAct);
+		sect.addAct(c);
 		
 		ClinicalDocument doc = CDAFactory.eINSTANCE.createClinicalDocument();
 		doc.addSection(sect);

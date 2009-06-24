@@ -27,14 +27,7 @@ public interface A extends ProblemAct {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * org.openhealthtools.mdht.uml.cda.util.CDAUtil.addTemplateIds(this);
-	 * return this;
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='org.openhealthtools.mdht.uml.cda.util.CDAUtil.addTemplateIds(this);\r\nreturn this;'"
 	 * @generated
 	 */
-	A init();
-
+	public A init();
 } // A
