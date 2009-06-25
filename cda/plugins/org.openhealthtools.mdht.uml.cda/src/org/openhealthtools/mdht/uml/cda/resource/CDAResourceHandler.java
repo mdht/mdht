@@ -48,7 +48,7 @@ public class CDAResourceHandler extends BasicResourceHandler {
 		for (Iterator<FeatureMap.Entry> iter = featureMap.iterator(); iter.hasNext();) {
 			FeatureMap.Entry entry = iter.next();
 			EStructuralFeature feature = entry.getEStructuralFeature();
-			System.out.println("Unknown Feature: feature=" + feature+", value=" + entry.getValue());
+			System.out.println("Unknown Feature: feature=" + feature +", value=" + entry.getValue());
 			if (handleUnknownFeature(owner, feature, entry.getValue())) {
 //				iter.remove();
 			}
