@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+
+   <feature url="features/net.sourceforge.xmlmodeling.uml.xsd_3.0.0.qualifier.jar" id="net.sourceforge.xmlmodeling.uml.xsd" version="3.0.0.qualifier">
+      <category name="org.openhealthtools.mdht.uml.cat"/>
+   </feature>
+
+  <feature url="features/org.openhealthtools.mdht.uml_0.5.0.qualifier.jar" id="org.openhealthtools.mdht.uml" version="0.5.0.qualifier">
+      <category name="org.openhealthtools.mdht.uml.cat"/>
+   </feature>
+
+
+<feature url="features/org.openhealthtools.mdht.uml.rsm_0.5.0.qualifier.jar" id="org.openhealthtools.mdht.uml.rsm" version="0.5.0.qualifier">
+      <category name="org.openhealthtools.mdht.uml.rsm.cat"/>
+   </feature>
+
+
+ <feature url="features/org.openhealthtools.mdht.uml.cda_0.1.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda" version="0.1.0.qualifier">
+      <category name="org.openhealthtools.mdht.uml.cda.cat"/>
+   </feature>
+
+
+
+
+
+  
+ 
+
+   <category-def name="org.openhealthtools.mdht.uml.cat" label="Model Driven Health Tools for UML"/>l
+
+   <category-def name="org.openhealthtools.mdht.uml.rsm.cat" label="Model Driven Health Tools for Rational Software Modeler"/>
+ 
+   <category-def name="org.openhealthtools.mdht.uml.cda.cat" label="Model Driven Health Tools for CDA"/>
+
+
+
+
+</site>
