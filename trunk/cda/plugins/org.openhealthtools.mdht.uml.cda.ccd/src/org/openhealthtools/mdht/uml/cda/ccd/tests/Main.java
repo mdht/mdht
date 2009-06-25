@@ -31,7 +31,7 @@ import org.w3c.dom.Document;
 public class Main {
 	public static void main(String[] args) throws Exception {
 		ProblemObservation problemObservation = CCDFactory.eINSTANCE.createProblemObservation().init();		
-		ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct();
+		ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct().init();
 		C c = CCDFactory.eINSTANCE.createC().init();
 		
 		Section sect = CDAFactory.eINSTANCE.createSection();

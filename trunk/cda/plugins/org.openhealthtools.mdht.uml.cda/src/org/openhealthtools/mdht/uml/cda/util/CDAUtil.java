@@ -51,7 +51,21 @@ public class CDAUtil {
 	public static void save(EObject object, OutputStream out) throws Exception {
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.getContents().add(object);
-		resource.save(out, null);
+		Document doc = newDocument();
+		resource.save(doc, null, null);
+		Element root = doc.getDocumentElement();
+		if (!CDAPackage.eNS_URI.equals(root.getNamespaceURI())) {
+			root.removeAttributeNS(ExtendedMetaData.XMLNS_URI, root.getPrefix());
+			root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns:" + CDAPackage.eNS_PREFIX, CDAPackage.eNS_URI);
+			root.setPrefix(CDAPackage.eNS_PREFIX);
+		}
+		// TODO: if no schemaLocation attribute, set one here
+		printDocument(doc, out);
+	}
+	
+	public static void setSchemaLocation(Document doc) {
+		Element root = doc.getDocumentElement();
+		root.setAttributeNS("", "xsi:schemaLocation", "");
 	}
 	
 	public static EObject load(InputStream in) throws Exception {
@@ -234,9 +248,7 @@ public class CDAUtil {
 		Transformer transformer = factory.newTransformer();
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-		System.out.println("");
 		transformer.transform(new DOMSource(doc), new StreamResult(new OutputStreamWriter(out, "utf-8")));
-		System.out.println("");
 	}
 	
 	public static DocumentBuilder newDocumentBuilder() throws Exception {
@@ -251,8 +263,8 @@ public class CDAUtil {
 	
 	public static void adjustNamespace(Document doc) {
 		Element root = doc.getDocumentElement();
-		if (root.hasAttribute("xmlns")) {
-			root.removeAttribute("xmlns");
+		if (root.hasAttributeNS(null, "xmlns")) {
+			root.removeAttributeNS(null, "xmlns");
 			root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns:" + CDAPackage.eNS_PREFIX, CDAPackage.eNS_URI);
 			root.setPrefix(CDAPackage.eNS_PREFIX);
 		}
