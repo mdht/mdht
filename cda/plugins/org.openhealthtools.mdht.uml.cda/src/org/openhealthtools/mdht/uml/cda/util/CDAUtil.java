@@ -73,8 +73,8 @@ public class CDAUtil {
 	
 	public static void adjustNamespace(Document doc) {
 		Element root = doc.getDocumentElement();
-		if (root.hasAttributeNS(null, "xmlns")) {
-			root.removeAttributeNS(null, "xmlns");
+		if (root.hasAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns")) {
+			root.removeAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns");
 		} else if (!CDAPackage.eNS_URI.equals(root.getNamespaceURI())) {
 			root.removeAttributeNS(ExtendedMetaData.XMLNS_URI, root.getPrefix());
 		}
