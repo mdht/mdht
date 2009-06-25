@@ -192,7 +192,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0abHQVwvEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_7yAmwFxZEd6ZEsfifJz_3w" name="hasCode" bodyCondition="_M0oaQFxaEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_7yAmwFxZEd6ZEsfifJz_3w" name="hasCode" isQuery="true" bodyCondition="_M0oaQFxaEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_M0oaQFxaEd6ZEsfifJz_3w" name="body" constrainedElement="_7yAmwFxZEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_M0oaQVxaEd6ZEsfifJz_3w">
             <language>OCL</language>
