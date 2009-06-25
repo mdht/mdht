@@ -2,8 +2,25 @@
 ! SVN map files format
 ! <type>@<id>=SVN,<tag>[:revision],<svnRepositoryURL>,<preTagPath>,<postTagPath>
 !*******************************************************************************************
-!***************  SVN PDE BUILD CONTRIBUTION  ********************************************** 
+!***************  SVN PDE BUILD CONTRIBUTION FOR MDHT  ********************************************** 
 
+!***************  XML Modeling Feature FEATURE  ********************************************** 
+feature@net.sourceforge.xmlmodeling.uml.xsd=SVN,trunk,https://xmlmodeling.svn.sourceforge.net/svnroot/xmlmodeling,,features/net.sourceforge.xmlmodeling.uml.xsd-feature
+
+plugin@net.sourceforge.xmlmodeling.uml.xsd.profile=SVN,trunk,https://xmlmodeling.svn.sourceforge.net/svnroot/xmlmodeling,,plugins/net.sourceforge.xmlmodeling.uml.xsd.profile
+
+!***************  OHT CDA FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda-feature
+
+plugin@org.openhealthtools.mdht.uml.hl7.vocab=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.vocab
+
+plugin@org.openhealthtools.mdht.uml.hl7.datatypes=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.datatypes
+
+plugin@org.openhealthtools.mdht.uml.cda.ccd=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ccd
+
+plugin@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda
+
+!***************  OHT MDHT FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.uml=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/features/org.openhealthtools.mdht.uml-feature
 
 plugin@org.openhealthtools.mdht.emf.hl7.mif2=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.emf.hl7.mif2
@@ -31,6 +48,13 @@ plugin@org.openhealthtools.mdht.uml.hl7.mif2uml=SVN,trunk,https://mdht.projects.
 plugin@org.openhealthtools.mdht.uml.hl7.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.ui
 
 plugin@org.openhealthtools.mdht.uml.hl7.validation=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.validation
+
+!***************  OHT MDHT RSM FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml.rsm=SVN,trunk,https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling,,features/org.openhealthtools.mdht.uml.rsm-feature
+
+plugin@org.openhealthtools.mdht.uml.hdf.tooling.rsm=SVN,trunk,https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling/,,plugins/org.openhealthtools.mdht.uml.hdf.tooling.rsm
+
+plugin@org.openhealthtools.mdht.uml.hdf.ui.rsm=SVN,trunk,https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling/,,plugins/org.openhealthtools.mdht.uml.hdf.ui.rsm
 
 
 

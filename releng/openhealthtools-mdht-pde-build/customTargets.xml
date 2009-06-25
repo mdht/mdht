@@ -52,7 +52,7 @@
 	
 	<target name="getMapFiles" depends="checkLocalMaps" unless="skipMaps">
 		<property name="mapsCheckoutTag" value="HEAD" />	
-		<svn username="seanmuir"  >
+		<svn javahl="false" username="seanmuir" password="oht2009" >
 		<export srcurl="${maps.URL}" revision="${maps.revision}" destpath="${buildDirectory}/maps" force="true"/>
 		</svn>
 
@@ -184,7 +184,6 @@
 	<!-- Steps to do to publish the build results -->
 	<!-- ===================================================================== -->
 	<target name="publish">
-
 	</target>
 
 	<!-- ===================================================================== -->

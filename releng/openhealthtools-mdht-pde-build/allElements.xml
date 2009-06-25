@@ -9,11 +9,29 @@
  	<!-- Add on <ant> task for each top level element being built.             -->
  	<!-- ===================================================================== -->
  	<target name="allElementsDelegator">
-<echo message="-------------------------------------------------------------------------->${target}" />
+
+
+		<ant antfile="${genericTargets}" target="${target}">
+	 		<property name="type" value="feature" />
+	 		<property name="id" value="net.sourceforge.xmlmodeling.uml.xsd" />
+ 		</ant>
+
+
  		<ant antfile="${genericTargets}" target="${target}">
 	 		<property name="type" value="feature" />
 	 		<property name="id" value="org.openhealthtools.mdht.uml" />
  		</ant>
+ 		<ant antfile="${genericTargets}" target="${target}">
+	 		<property name="type" value="feature" />
+	 		<property name="id" value="org.openhealthtools.mdht.uml.cda" />
+ 		</ant>
+
+
+	       <ant antfile="${genericTargets}" target="${target}">
+	 		<property name="type" value="feature" />
+	 		<property name="id" value="org.openhealthtools.mdht.uml.rsm" />
+ 		</ant>
+
  	</target>
  
  	<!-- ===================================================================== -->
@@ -23,7 +41,21 @@
  	<!-- Add one target for each root element and each configuration           -->
  	<!-- Replace element.id with the id of the top level element being built   -->
  	<!-- ===================================================================== -->
+	<target name="assemble.net.sourceforge.xmlmodeling.uml.xsd">
+ 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+ 	</target> 
+
+
  	<target name="assemble.org.openhealthtools.mdht.uml">
  		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+ 	</target> 
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda">
+ 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
  	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.rsm">
+ 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+ 	</target>
+
 </project>
