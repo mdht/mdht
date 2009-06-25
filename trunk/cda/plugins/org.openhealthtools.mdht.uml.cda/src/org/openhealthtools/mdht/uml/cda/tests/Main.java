@@ -14,16 +14,11 @@ package org.openhealthtools.mdht.uml.cda.tests;
 
 import java.io.FileInputStream;
 
-import javax.xml.parsers.DocumentBuilder;
-
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Organization;
@@ -31,19 +26,14 @@ import org.openhealthtools.mdht.uml.cda.Patient;
 import org.openhealthtools.mdht.uml.cda.PatientRole;
 import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.RecordTarget;
-import org.openhealthtools.mdht.uml.cda.resource.CDAResource;
-import org.openhealthtools.mdht.uml.cda.resource.CDAResourceHandler;
 import org.openhealthtools.mdht.uml.cda.util.BasicDiagnosticHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CV;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-import org.w3c.dom.Document;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
@@ -84,10 +74,7 @@ public class Main {
 		name.addGiven("Henry").addFamily("Levin").addSuffix("the 7th");
 		patient.setName(name);
 		
-//		CE administrativeGenderCode = DatatypesFactory.eINSTANCE.createCE("M", "2.16.840.1.113883.5.1");
-		CV administrativeGenderCode = DatatypesFactory.eINSTANCE.createCV();
-		administrativeGenderCode.setCode("M");
-		administrativeGenderCode.setCodeSystem("2.16.840.1.113883.5.1");
+		CE administrativeGenderCode = DatatypesFactory.eINSTANCE.createCE("M", "2.16.840.1.113883.5.1");
 		patient.setAdministrativeGenderCode(administrativeGenderCode);
 		
 		TS birthTime = DatatypesFactory.eINSTANCE.createTS("19320924");
@@ -112,27 +99,8 @@ public class Main {
 		name.addGiven("Bob").addFamily("Dolin").addSuffix("MD");
 		assignedPerson.getName().add(name);
 		
-		/*
-		Resource.Factory factory = CDAResource.Factory.INSTANCE;
-		CDAResource resource = (CDAResource) factory.createResource(URI.createURI(CDAPackage.eNS_URI));
-		resource.getContents().add(doc);
+		CDAUtil.save(doc, System.out);
 		
-		Document document = CDAUtil.newDocument();
-		resource.save(document, null, null);
-		CDAUtil.adjustNamespace(document);
-		CDAUtil.setSchemaLocation(document);
-		CDAUtil.writeDocument(document, System.out);
-		*/
-		
-		CDAPackage.eINSTANCE.eClass();
-		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
-		DocumentBuilder builder = CDAUtil.newDocumentBuilder();
-		Document document = builder.parse(new FileInputStream("resources/SampleCDADocument.xml"));
-		resource.load(document, null);
-		new CDAResourceHandler().postLoad(resource, null, null);
-		CDAUtil.writeDocument(document, System.out);
-		
-		/*
 		EObject object = CDAUtil.load(new FileInputStream("resources/SampleCDADocument.xml"));
 		System.out.println(object);
 		CDAUtil.save(object, System.out);
@@ -149,6 +117,5 @@ public class Main {
 		} else {
 			System.out.println("Document is invalid");
 		}
-		*/
 	}
 }
