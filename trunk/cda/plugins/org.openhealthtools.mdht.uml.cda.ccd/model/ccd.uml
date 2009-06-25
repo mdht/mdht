@@ -5,6 +5,12 @@
       <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg?cda?"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ze7UsGESEd69D7zx7EkLMA" name="ContinuityOfCareDocument">
+      <ownedRule xmi:id="_hOEA0GGlEd6fgsyFIHi17Q" name="templateId" constrainedElement="_Ze7UsGESEd69D7zx7EkLMA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_hONKwGGlEd6fgsyFIHi17Q">
+          <language>OCL</language>
+          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1')</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_tf1eQGESEd69D7zx7EkLMA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_S9OzADxXEd6JwqSGecoePg?cda/ClinicalDocument?"/>
       </generalization>
@@ -76,5 +82,8 @@
   </Ecore:EClass>
   <Ecore:EClass xmi:id="_HwUSEEWAEd6QuJiOJFSRPQ" base_Class="__TP_IEV_Ed6QuJiOJFSRPQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='7.8.9'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_fIRjkGGmEd6fgsyFIHi17Q" xmlName="ClinicalDocument" base_Class="_Ze7UsGESEd69D7zx7EkLMA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1'</annotation>
   </Ecore:EClass>
 </xmi:XMI>

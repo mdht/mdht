@@ -10,12 +10,15 @@
  *
  * $Id$
  */
-package org.openhealthtools.mdht.uml.cda.internal.resource;
+package org.openhealthtools.mdht.uml.cda.resource;
 
 import java.io.InputStream;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.BasicResourceHandler;
 import org.eclipse.emf.ecore.xml.type.AnyType;
@@ -36,7 +39,23 @@ public class CDAResourceHandler extends BasicResourceHandler {
 		}
 	}
 	
-	private void handleUnknownData(EObject key, AnyType value) {
-		System.out.println(key);
+	private void handleUnknownData(EObject eObj, AnyType unknownData) {
+		handleUnknownFeatures(eObj, unknownData.getMixed());
+		handleUnknownFeatures(eObj, unknownData.getAnyAttribute());
+	}
+
+	private void handleUnknownFeatures(EObject owner, FeatureMap featureMap) {
+		for (Iterator<FeatureMap.Entry> iter = featureMap.iterator(); iter.hasNext();) {
+			FeatureMap.Entry entry = iter.next();
+			EStructuralFeature feature = entry.getEStructuralFeature();
+			System.out.println("Unknown Feature: feature=" + feature+", value=" + entry.getValue());
+			if (handleUnknownFeature(owner, feature, entry.getValue())) {
+//				iter.remove();
+			}
+		}
+	}
+	
+	private boolean handleUnknownFeature(EObject owner, EStructuralFeature feature, Object value) {
+		return true;
 	}
 }
