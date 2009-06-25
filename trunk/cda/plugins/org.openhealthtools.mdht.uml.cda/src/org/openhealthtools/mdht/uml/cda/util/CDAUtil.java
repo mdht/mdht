@@ -119,8 +119,9 @@ public class CDAUtil {
 		Queue<Diagnostic> queue = new LinkedList<Diagnostic>();
 		queue.offer(diagnostic);
 		while (!queue.isEmpty()) {
-			handleDiagnostic(queue.remove(), handler);	// visit
-			for (Diagnostic childDiagnostic : diagnostic.getChildren()) {	// process successors
+			Diagnostic d = queue.remove();
+			handleDiagnostic(d, handler);	// visit
+			for (Diagnostic childDiagnostic : d.getChildren()) {	// process successors
 				queue.offer(childDiagnostic);
 			}
 		}
