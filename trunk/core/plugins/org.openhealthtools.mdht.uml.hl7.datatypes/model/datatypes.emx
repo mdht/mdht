@@ -74,7 +74,7 @@
         </ownedParameter>
         <ownedParameter xmi:id="_lIxHMFBfEd6aGcsNlPFt8A" name="Parameter1" type="_CowXkDxaEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_VUFVMD9CEd6uA6ElmbQH3Q" name="getText">
+      <ownedOperation xmi:id="_VUFVMD9CEd6uA6ElmbQH3Q" name="getText" isQuery="true">
         <ownedParameter xmi:id="_V-QTkD9CEd6uA6ElmbQH3Q" name="Parameter1" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
