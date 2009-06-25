@@ -32,7 +32,7 @@ public class CDAResourceHandler extends BasicResourceHandler {
 	@Override
 	public void postLoad(XMLResource resource, InputStream inputStream, Map<?, ?> options) {
 		System.out.println("CDAResourceHandler.postLoad");
-		final Map<EObject, AnyType> extMap = resource.getEObjectToExtensionMap();
+		Map<EObject, AnyType> extMap = resource.getEObjectToExtensionMap();
 		for (EObject key : extMap.keySet()) {
 			AnyType value = extMap.get(key);
 			handleUnknownData(key, value);
@@ -48,7 +48,7 @@ public class CDAResourceHandler extends BasicResourceHandler {
 		for (Iterator<FeatureMap.Entry> iter = featureMap.iterator(); iter.hasNext();) {
 			FeatureMap.Entry entry = iter.next();
 			EStructuralFeature feature = entry.getEStructuralFeature();
-			System.out.println("Unknown Feature: feature=" + feature +", value=" + entry.getValue());
+			System.out.println("Unknown Feature: feature=" + feature + ", value=" + entry.getValue());
 			if (handleUnknownFeature(owner, feature, entry.getValue())) {
 //				iter.remove();
 			}
