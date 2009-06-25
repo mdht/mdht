@@ -50,12 +50,20 @@ public class CCDValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.openhealthtools.mdht.uml.cda.ccd";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Template Id' of 'Continuity Of Care Document'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONTINUITY_OF_CARE_DOCUMENT__TEMPLATE_ID = 1;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Template Id' of 'Problem Act'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_ACT__TEMPLATE_ID = 1;
+	public static final int PROBLEM_ACT__TEMPLATE_ID = 2;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Code' of 'Problem Act'.
@@ -63,7 +71,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_ACT__CODE = 2;
+	public static final int PROBLEM_ACT__CODE = 3;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Template Id' of 'Problem Observation'.
@@ -71,7 +79,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_OBSERVATION__TEMPLATE_ID = 3;
+	public static final int PROBLEM_OBSERVATION__TEMPLATE_ID = 4;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -79,7 +87,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 3;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 4;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -142,7 +150,25 @@ public class CCDValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateContinuityOfCareDocument(ContinuityOfCareDocument continuityOfCareDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(continuityOfCareDocument, diagnostics, context);
+		boolean result = validate_EveryMultiplicityConforms(continuityOfCareDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(continuityOfCareDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(continuityOfCareDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(continuityOfCareDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(continuityOfCareDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(continuityOfCareDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(continuityOfCareDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_templateId(continuityOfCareDocument, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the templateId constraint of '<em>Continuity Of Care Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContinuityOfCareDocument_templateId(ContinuityOfCareDocument continuityOfCareDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return continuityOfCareDocument.templateId(diagnostics, context);
 	}
 
 	/**

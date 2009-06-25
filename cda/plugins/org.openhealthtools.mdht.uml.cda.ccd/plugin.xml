@@ -25,6 +25,11 @@
    <extension
          point="org.openhealthtools.mdht.uml.cda.extension">
       <entry
+            eClass="ContinuityOfCareDocument"
+            id="2.16.840.1.113883.10.20.1"
+            nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd">
+      </entry>
+      <entry
             eClass="ProblemAct"
             id="2.16.840.1.113883.10.20.1.27"
             nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd">

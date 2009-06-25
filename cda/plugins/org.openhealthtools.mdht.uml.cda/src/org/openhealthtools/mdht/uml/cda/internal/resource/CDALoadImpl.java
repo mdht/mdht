@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl;
+import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.internal.registry.CDARegistry;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.w3c.dom.Element;
@@ -43,13 +44,14 @@ public class CDALoadImpl extends XMLLoadImpl {
 		processNode(node);
 		super.traverse(node, attributesProxy, handler, lexicalHandler);
 	}
-	
+
 	@Override
 	protected void traverseElement(Element element, XMLLoadImpl.AttributesProxy attributesProxy, DefaultHandler handler, LexicalHandler lexicalHandler) throws SAXException {
 		processNode(element);
 		super.traverseElement(element, attributesProxy, handler, lexicalHandler);
 	}
 	
+	// TODO: We may want to break this up into several methods (e.g. handlePartTypes, handleDataTypes, handleTemplates).
 	private void processNode(Node node) {
 		if (node instanceof Element) {
 			Element element = (Element) node;
@@ -109,6 +111,11 @@ public class CDALoadImpl extends XMLLoadImpl {
 				}
 				
 				element.setAttributeNS(XMLResource.XSI_URI, "xsi:type", nsPrefix + ":" + result.getName());
+
+				if (element.equals(root)) {
+					element.setPrefix(nsPrefix);
+					element.removeAttributeNS(ExtendedMetaData.XMLNS_URI, CDAPackage.eNS_PREFIX);
+				}
 			}
 		}
 	}

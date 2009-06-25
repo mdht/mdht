@@ -295,12 +295,21 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(continuityOfCareDocumentEClass, ContinuityOfCareDocument.class, "ContinuityOfCareDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(problemActEClass, ProblemAct.class, "ProblemAct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		EOperation op = addEOperation(problemActEClass, ecorePackage.getEBoolean(), "templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(continuityOfCareDocumentEClass, ecorePackage.getEBoolean(), "templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(problemActEClass, ProblemAct.class, "ProblemAct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(problemActEClass, ecorePackage.getEBoolean(), "templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
@@ -336,8 +345,26 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+		createExtendedMetaDataAnnotations();
 		// http://www.openhealthtools.org/mdht/uml/cda/annotation
 		createAnnotationAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createExtendedMetaDataAnnotations() {
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";		
+		addAnnotation
+		  (continuityOfCareDocumentEClass, 
+		   source, 
+		   new String[] {
+			 "name", "ClinicalDocument"
+		   });																						
 	}
 
 	/**
@@ -347,7 +374,13 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * @generated
 	 */
 	protected void createAnnotationAnnotations() {
-		String source = "http://www.openhealthtools.org/mdht/uml/cda/annotation";		
+		String source = "http://www.openhealthtools.org/mdht/uml/cda/annotation";			
+		addAnnotation
+		  (continuityOfCareDocumentEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "2.16.840.1.113883.10.20.1"
+		   });						
 		addAnnotation
 		  (problemActEClass, 
 		   source, 

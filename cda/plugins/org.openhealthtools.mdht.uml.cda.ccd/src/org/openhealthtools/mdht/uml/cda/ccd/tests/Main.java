@@ -14,10 +14,8 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
-import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.C;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
@@ -39,38 +37,23 @@ public class Main {
 		sect.addAct(problemAct);
 		sect.addAct(c);
 		
-//		ClinicalDocument doc = CDAFactory.eINSTANCE.createClinicalDocument();
-//		doc.addSection(sect);
-		
-		ContinuityOfCareDocument doc = CCDFactory.eINSTANCE.createContinuityOfCareDocument();
+		ContinuityOfCareDocument doc = CCDFactory.eINSTANCE.createContinuityOfCareDocument().init();
 		doc.addSection(sect);
-		
-		CDAUtil.save(doc, System.out);
-		
-		CDAUtil.validate(doc, new CDAUtil.DiagnosticHandler());
-		
-		/*
-		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(doc);
-		System.out.println(diagnostic);
-		if (diagnostic.getSeverity() == Diagnostic.OK) {
-			System.out.println("Document is valid CCD!");
-		} else {
-			System.out.println("Document is invalid CCD!");
-		}
-		*/
 
 		Resource.Factory factory = CDAResource.Factory.INSTANCE;
-		XMLResource resource = (XMLResource) factory.createResource(URI.createURI(CDAPackage.eNS_URI));
+		CDAResource resource = (CDAResource) factory.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.getContents().add(doc);
-
-		Document document = resource.save(null, null, null);
-		CDAUtil.printDocument(document, System.out);
-
-		resource = (XMLResource) factory.createResource(URI.createURI(CDAPackage.eNS_URI));
-		resource.load(document, null);
-		CDAUtil.printDocument(document, System.out);
 		
-		ClinicalDocument clinicalDocument = (ClinicalDocument) resource.getContents().get(0);
-		System.out.println(clinicalDocument.getComponent().getStructuredBody().getComponent().get(0).getSection().getEntry().get(0).getObservation());
+		Document document = CDAUtil.newDocument();
+		resource.save(document, null, null);
+		CDAUtil.adjustNamespace(document);
+		CDAUtil.setSchemaLocation(document);
+		CDAUtil.writeDocument(document, System.out);
+		
+		resource = (CDAResource) factory.createResource(URI.createURI(CDAPackage.eNS_URI));
+		resource.load(document, null);
+		CDAUtil.writeDocument(document, System.out);
+		
+		System.out.println(resource.getContents().get(0));
 	}
 }

@@ -15,9 +15,10 @@ package org.openhealthtools.mdht.uml.cda.util;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -37,8 +38,8 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
-import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResourceHandler;
 import org.openhealthtools.mdht.uml.cda.resource.CDAResource;
+import org.openhealthtools.mdht.uml.cda.resource.CDAResourceHandler;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -47,51 +48,91 @@ import org.w3c.dom.Element;
 
 public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
+	public static final String CDA_SCHEMA_LOCATION = CDAPackage.eNS_URI + " infrastructure/cda/CDA.xsd";
+	
+	public static EObject load(InputStream in) throws Exception {
+		CDAPackage.eINSTANCE.eClass();
+		DocumentBuilder builder = newDocumentBuilder();
+		Document doc = builder.parse(in);
+		adjustNamespace(doc);
+		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
+		resource.load(doc, null);
+		new CDAResourceHandler().postLoad(resource, in, null);
+		return resource.getContents().get(0);
+	}
 	
 	public static void save(EObject object, OutputStream out) throws Exception {
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.getContents().add(object);
 		Document doc = newDocument();
 		resource.save(doc, null, null);
+		adjustNamespace(doc);
+		setSchemaLocation(doc);
+		writeDocument(doc, out);
+	}
+	
+	public static void adjustNamespace(Document doc) {
 		Element root = doc.getDocumentElement();
-		if (!CDAPackage.eNS_URI.equals(root.getNamespaceURI())) {
+		if (root.hasAttributeNS(null, "xmlns")) {
+			root.removeAttributeNS(null, "xmlns");
+		} else if (!CDAPackage.eNS_URI.equals(root.getNamespaceURI())) {
 			root.removeAttributeNS(ExtendedMetaData.XMLNS_URI, root.getPrefix());
-			root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns:" + CDAPackage.eNS_PREFIX, CDAPackage.eNS_URI);
-			root.setPrefix(CDAPackage.eNS_PREFIX);
 		}
-		// TODO: if no schemaLocation attribute, set one here
-		printDocument(doc, out);
+		root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns:" + CDAPackage.eNS_PREFIX, CDAPackage.eNS_URI);
+		root.setPrefix(CDAPackage.eNS_PREFIX);
 	}
 	
 	public static void setSchemaLocation(Document doc) {
 		Element root = doc.getDocumentElement();
-		root.setAttributeNS("", "xsi:schemaLocation", "");
+		root.setAttributeNS(ExtendedMetaData.XSI_URI, "xsi:schemaLocation", CDA_SCHEMA_LOCATION);
 	}
 	
-	public static EObject load(InputStream in) throws Exception {
-		return load(in, false);
+	public static void writeDocument(Document doc, OutputStream out) throws Exception {
+		TransformerFactory factory = TransformerFactory.newInstance();
+		factory.setAttribute("indent-number", new Integer(2));
+		Transformer transformer = factory.newTransformer();
+		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+		transformer.transform(new DOMSource(doc), new StreamResult(new OutputStreamWriter(out, "utf-8")));
+	}
+	
+	public static DocumentBuilder newDocumentBuilder() throws Exception {
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setNamespaceAware(true);
+		return factory.newDocumentBuilder();
+	}
+	
+	public static Document newDocument() throws Exception {
+		return newDocumentBuilder().newDocument();
 	}
 	
 	public static boolean validate(EObject object, DiagnosticHandler handler) {
 		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(object);
 		if (handler != null) {
-			processDiagnostic(handler, diagnostic);
-			handler.close();
+			processDiagnostic(diagnostic, handler);
 		}
 		return diagnostic.getSeverity() != Diagnostic.ERROR;
 	}
-	
-	private static void processDiagnostic(DiagnosticHandler handler, Diagnostic diagnostic) {
-		handleDiagnostic(handler, diagnostic);
-		for (Diagnostic childDiagnostic : diagnostic.getChildren()) {
-			processDiagnostic(handler, childDiagnostic);
+
+	// iterative breadth-first traversal of diagnostic tree
+	public static void processDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
+		Queue<Diagnostic> queue = new LinkedList<Diagnostic>();
+		queue.offer(diagnostic);
+		while (!queue.isEmpty()) {
+			handleDiagnostic(queue.remove(), handler);	// visit
+			for (Diagnostic childDiagnostic : diagnostic.getChildren()) {	// process successors
+				queue.offer(childDiagnostic);
+			}
 		}
 	}
 	
-	private static void handleDiagnostic(DiagnosticHandler handler, Diagnostic diagnostic) {
+	public static void handleDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
 		switch (diagnostic.getSeverity()) {
 		case Diagnostic.OK:
 			handler.handleOkDiagnostic(diagnostic);
+			break;
+		case Diagnostic.ERROR:
+			handler.handleErrorDiagnostic(diagnostic);
 			break;
 		case Diagnostic.WARNING:
 			handler.handleWarningDiagnostic(diagnostic);
@@ -99,67 +140,49 @@ public class CDAUtil {
 		case Diagnostic.INFO:
 			handler.handleInfoDiagnostic(diagnostic);
 			break;
-		case Diagnostic.ERROR:
-			handler.handleErrorDiagnostic(diagnostic);
-			break;
 		case Diagnostic.CANCEL:
 			handler.handleCancelDiagnostic(diagnostic);
 			break;
 		}
 	}
 	
-	public static class DiagnosticHandler {		
-		private PrintStream out = null;
-		
-		public DiagnosticHandler(OutputStream os) {
-			out = new PrintStream(os);
-		}
+	public interface DiagnosticHandler {
+		public void handleOkDiagnostic(Diagnostic diagnostic);
+		public void handleErrorDiagnostic(Diagnostic diagnostic);
+		public void handleWarningDiagnostic(Diagnostic diagnostic);
+		public void handleInfoDiagnostic(Diagnostic diagnostic);
+		public void handleCancelDiagnostic(Diagnostic diagnostic);
+	}
 
-		public DiagnosticHandler() {
-			out = System.out;
-		}
-		
-		public void close() {
-			if (out != null && !out.equals(System.out)) {
-				out.close();
-				out = null;
+	// TODO: Refactor this into an OCL constraint.
+	public static boolean validateClinicalStatementChoiceGroup(EObject object) {
+		List<EObject> choiceGroup = new ArrayList<EObject>();
+		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("act")));
+		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("encounter")));
+		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("observation")));
+		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("observationMedia")));
+		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("organizer")));
+		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("procedure")));
+		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("regionOfInterest")));
+		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("substanceAdministration")));
+		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("supply")));
+		return validateChoiceGroup(choiceGroup);
+	}
+
+	public static boolean validateChoiceGroup(List<EObject> choiceGroup) {
+		boolean defined = false;
+		for (EObject member : choiceGroup) {
+			if (member != null) {
+				if (defined) {
+					return false;
+				} else {
+					defined = true;
+				}
 			}
 		}
-		
-		public void handleOkDiagnostic(Diagnostic diagnostic) {
-			out.println("OK: " + diagnostic.getMessage());
-		}
-		
-		public void handleErrorDiagnostic(Diagnostic diagnostic) {
-			out.println("ERROR: " + diagnostic.getMessage());
-		}
-		
-		public void handleWarningDiagnostic(Diagnostic diagnostic) {
-			out.println("WARNING: " + diagnostic.getMessage());
-		}
-		
-		public void handleInfoDiagnostic(Diagnostic diagnostic) {
-			out.println("INFO: " + diagnostic.getMessage());
-		}
-		
-		public void handleCancelDiagnostic(Diagnostic diagnostic) {
-			out.println("CANCEL: " + diagnostic.getMessage());
-		}
+		return defined;
 	}
 
-	public static EObject load(InputStream in, boolean adjustNamespace) throws Exception {
-		CDAPackage.eINSTANCE.eClass();
-		DocumentBuilder builder = newDocumentBuilder();
-		Document doc = builder.parse(in);
-		if (adjustNamespace) {
-			adjustNamespace(doc);
-		}
-		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
-		resource.load(doc, null);
-		new CDAResourceHandler().postLoad(resource, in, null);
-		return resource.getContents().get(0);
-	}
-	
 	// TODO: Create a generic mechanism for populating an instance from annotations.
 	public static void init(EObject object) {
 		CDAUtil.addTemplateIds(object);
@@ -240,62 +263,5 @@ public class CDAUtil {
 		if (code != null) {
 			object.eSet(object.eClass().getEStructuralFeature("code"), code);
 		}
-	}
-	
-	public static void printDocument(Document doc, OutputStream out) throws Exception {
-		TransformerFactory factory = TransformerFactory.newInstance();
-		factory.setAttribute("indent-number", new Integer(2));
-		Transformer transformer = factory.newTransformer();
-		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-		transformer.transform(new DOMSource(doc), new StreamResult(new OutputStreamWriter(out, "utf-8")));
-	}
-	
-	public static DocumentBuilder newDocumentBuilder() throws Exception {
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		factory.setNamespaceAware(true);
-		return factory.newDocumentBuilder();
-	}
-	
-	public static Document newDocument() throws Exception {
-		return newDocumentBuilder().newDocument();
-	}
-	
-	public static void adjustNamespace(Document doc) {
-		Element root = doc.getDocumentElement();
-		if (root.hasAttributeNS(null, "xmlns")) {
-			root.removeAttributeNS(null, "xmlns");
-			root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns:" + CDAPackage.eNS_PREFIX, CDAPackage.eNS_URI);
-			root.setPrefix(CDAPackage.eNS_PREFIX);
-		}
-	}
-	
-	// TODO: Refactor this into an OCL constraint.
-	public static boolean validateClinicalStatementChoiceGroup(EObject object) {
-		List<EObject> choiceGroup = new ArrayList<EObject>();
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("act")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("encounter")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("observation")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("observationMedia")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("organizer")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("procedure")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("regionOfInterest")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("substanceAdministration")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("supply")));
-		return validateChoiceGroup(choiceGroup);
-	}
-
-	public static boolean validateChoiceGroup(List<EObject> choiceGroup) {
-		boolean defined = false;
-		for (EObject member : choiceGroup) {
-			if (member != null) {
-				if (defined) {
-					return false;
-				} else {
-					defined = true;
-				}
-			}
-		}
-		return defined;
 	}
 }
