@@ -23,7 +23,8 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.hdf.util.IRIMProfileConstants;
 import org.openhealthtools.mdht.uml.hl7.validation.internal.HL7AbstractConstraint;
 import org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.rimconstraints.MultipleRIMStereotypeConstraint;
-import org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.rimconstraints.RIMStereotypePropertiesConstraint;
+import org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.rimconstraints.RIMAttributeRedifinitionConstraint;
+import org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.rimconstraints.RIMMandatoryAttributesConstraint;
 import org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.rimconstraints.SingleRIMStereotypeConstraint;
 
 /**
@@ -46,7 +47,8 @@ public class Classes extends HL7AbstractConstraint {
 	private static void initialize() {
 		SingleRIMStereotypeConstraint.register();
 		MultipleRIMStereotypeConstraint.register();
-		RIMStereotypePropertiesConstraint.register();
+		RIMMandatoryAttributesConstraint.register();
+		RIMAttributeRedifinitionConstraint.register();
 
 	}
 

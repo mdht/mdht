@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.Classes;
  * values should be considered.
  * 
  */
+@Deprecated
 public class RIMStereotypePropertiesConstraint extends HL7AbstractConstraint {
 	
 	private static final String ID_RIMSTEREOTYPEPROPERTY = CLASSES_GROUP + "RIMStereotypesProperties";
