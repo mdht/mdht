@@ -17,7 +17,36 @@
 			<message>%multipleRIMStereotypes.message
 			</message>
 		</constraint>
+		
+	
+		<constraint id="classes.RIMMandatoryAttributes" lang="Java"
+			class="org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.Classes"
+			severity="WARNING" mode="Batch" name="%RIMMandatoryAttributes.name"
+			statusCode="2">
+			<target class="Class" />
+			<description>%RIMMandatoryAttributes.description
+			</description>
+			<message>%RIMMandatoryAttributes.message
+			</message>
+		</constraint>
+		
+		
+		<constraint id="classes.RIMAttributeRedifinition" lang="Java"
+			class="org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.Classes"
+			severity="WARNING" mode="Batch" name="%RIMAttributeRedifinition.name"
+			statusCode="2">
+			<target class="Class" />
+			<description>%RIMAttributeRedifinition.description
+			</description>
+			<message>%RIMAttributeRedifinition.message
+			</message>
+		</constraint>
+		
+		
 
+<!--
+		Constraint is currently deprecated.  Keeping code because style might change, again...
+		
 		<constraint id="classes.RIMStereotypesProperties" lang="Java"
 			class="org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.Classes"
 			severity="WARNING" mode="Batch" name="%RIMStereotypesProperties.name"
@@ -28,7 +57,7 @@
 			<message>%RIMStereotypesProperties.message
 			</message>
 		</constraint>
-
+  -->
 	</constraints>
 
 	<constraints categories="org.openhealthtools.mdht.uml.hl7.validation/completeness">
