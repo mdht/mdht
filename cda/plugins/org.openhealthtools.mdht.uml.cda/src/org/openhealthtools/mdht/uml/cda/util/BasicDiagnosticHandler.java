@@ -17,17 +17,22 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil.DiagnosticHandler;
 
 public class BasicDiagnosticHandler implements DiagnosticHandler {
 	public void handleCancelDiagnostic(Diagnostic diagnostic) {
+		// do nothing
 	}
 
 	public void handleErrorDiagnostic(Diagnostic diagnostic) {
+		// do nothing
 	}
 
 	public void handleInfoDiagnostic(Diagnostic diagnostic) {
+		// do nothing
 	}
 
 	public void handleOkDiagnostic(Diagnostic diagnostic) {
+		// do nothing
 	}
 
 	public void handleWarningDiagnostic(Diagnostic diagnostic) {
+		// do nothing
 	}
 }
