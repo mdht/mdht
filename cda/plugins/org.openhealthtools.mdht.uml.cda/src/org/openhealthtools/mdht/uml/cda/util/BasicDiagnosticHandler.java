@@ -16,30 +16,18 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil.DiagnosticHandler;
 
 public class BasicDiagnosticHandler implements DiagnosticHandler {
-
 	public void handleCancelDiagnostic(Diagnostic diagnostic) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public void handleErrorDiagnostic(Diagnostic diagnostic) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public void handleInfoDiagnostic(Diagnostic diagnostic) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public void handleOkDiagnostic(Diagnostic diagnostic) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public void handleWarningDiagnostic(Diagnostic diagnostic) {
-		// TODO Auto-generated method stub
-
 	}
-
 }
