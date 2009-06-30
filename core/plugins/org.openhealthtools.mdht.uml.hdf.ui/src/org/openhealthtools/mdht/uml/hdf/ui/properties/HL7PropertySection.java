@@ -289,9 +289,9 @@ public class HL7PropertySection extends AbstractModelerPropertySection {
 		}
 
 		if (stereotype != null) {
-			boolean isChecked = Boolean.TRUE == 
+			boolean isChecked = Boolean.TRUE.equals(
 				(Boolean) property.getValue(stereotype, 
-						IHDFProfileConstants.IS_MANDATORY);
+						IHDFProfileConstants.IS_MANDATORY));
 			isMandatory.setSelection(isChecked);
 		}
 		else {

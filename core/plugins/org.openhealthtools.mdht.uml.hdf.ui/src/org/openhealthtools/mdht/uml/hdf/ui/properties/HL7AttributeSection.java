@@ -318,9 +318,9 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 		maxLengthText.addFocusListener(focusListener);
 
 		if (stereotype != null) {
-			boolean isChecked = Boolean.TRUE == 
+			boolean isChecked = Boolean.TRUE.equals(
 				(Boolean) property.getValue(stereotype, 
-						IHDFProfileConstants.IS_IMMUTABLE);
+						IHDFProfileConstants.IS_IMMUTABLE));
 			isImmutable.setSelection(isChecked);
 		}
 		else {
