@@ -360,9 +360,11 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 					
 					if (realm != null && realm.equals(contextBinding.getBindingRealmName() ))
 					{					
-						ValueSet valueSet = valueSetMap.get(contextBinding.getValueSet() );
-						valueSets.add(valueSet);							
-						valueSetTocontextBindingMap.put(valueSet.getId(),contextBinding );					
+						ValueSet valueSet = valueSetMap.get(contextBinding.getValueSet());
+						if (valueSet != null) {
+							valueSets.add(valueSet);
+							valueSetTocontextBindingMap.put(valueSet.getId(), contextBinding);
+						}
 					} 					
 				}
 
@@ -370,10 +372,12 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 		
 		} else {
 			for (ContextBinding contextBinding : contextBindingMap.values()) {
-				if (realm != null && realm.equals(contextBinding.getBindingRealmName())) {					
-					ValueSet valueSet = valueSetMap.get(contextBinding.getValueSet() );
-					valueSets.add(valueSet);						
-					valueSetTocontextBindingMap.put(valueSet.getId(),contextBinding );				
+				if (realm != null && realm.equals(contextBinding.getBindingRealmName())) {
+					ValueSet valueSet = valueSetMap.get(contextBinding.getValueSet());
+					if (valueSet != null) {
+						valueSets.add(valueSet);
+						valueSetTocontextBindingMap.put(valueSet.getId(), contextBinding);
+					}
 				}
 			}
 
