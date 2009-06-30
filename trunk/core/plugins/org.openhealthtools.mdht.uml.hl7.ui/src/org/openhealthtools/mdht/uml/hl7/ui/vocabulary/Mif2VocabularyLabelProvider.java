@@ -49,7 +49,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 		super();
 		this.display = display;
 		vocabularyModelColorProviderSwitch = new VocabularyModelColorProviderSwitch(this.display);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 
@@ -90,9 +90,16 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 
 		public Object caseConcept(Concept object) {
 
-			for (Code code : object.getCode()) {
-				doSwitch(code);
-				break;
+			if (!object.getCode().isEmpty()) {
+				if (object.getCode().get(0).getStatus() != null) {
+					if (object.getCode().get(0).getStatus().equals(CodeStatusKind.PROPOSED)) {
+						foregroundColor = display.getSystemColor(SWT.COLOR_GREEN);
+					} else if (object.getCode().get(0).getStatus().equals(CodeStatusKind.RETIRED)) {
+						foregroundColor = display.getSystemColor(SWT.COLOR_RED);
+					} else {
+						foregroundColor = display.getSystemColor(SWT.COLOR_BLUE);
+					}
+				}
 			}
 
 			return object;
@@ -101,8 +108,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 		
 		
 		public Object caseCodeSystem(CodeSystem codeSystem) {
-			// TODO Auto-generated method stub
-			
+
 			if (codeSystem.getReleasedVersion().size() > 0)
 			{
 				if (!codeSystem.getReleasedVersion().get(0).isHl7ApprovedIndicator())
@@ -116,13 +122,15 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 
 		
 		public Object caseCode(Code object) {
-
-			if (object.getStatus().equals(CodeStatusKind.PROPOSED)) {
-				foregroundColor = display.getSystemColor(SWT.COLOR_GREEN);
-			} else {
-				foregroundColor = display.getSystemColor(SWT.COLOR_BLUE);
+			if (object.getStatus() != null) {
+				if (object.getStatus().equals(CodeStatusKind.PROPOSED)) {
+					foregroundColor = display.getSystemColor(SWT.COLOR_GREEN);
+				} else if (object.getStatus().equals(CodeStatusKind.RETIRED)) {
+					foregroundColor = display.getSystemColor(SWT.COLOR_RED);
+				} else {
+					foregroundColor = display.getSystemColor(SWT.COLOR_BLUE);
+				}
 			}
-
 			return object;
 		}
 
@@ -144,11 +152,13 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 
 		// label bucket set by the doSwitch
 		public String label;
+		
+		public Object caseCode(Code code) {
+			label = code.getCode();
+			return code;
+		}
 
-		
-		
-		
-		
+
 		public Object caseCodeSystem(CodeSystem codeSystem) {
 					
 			label = codeSystem.getName() + " : " + codeSystem.getCodeSystemId(); 
@@ -165,8 +175,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 		}
 
 		
-		public Object caseBindingRealm(BindingRealm object) {
-			// TODO Auto-generated method stub
+		public Object caseBindingRealm(BindingRealm object) {			
 			label = object.getName();
 			return object;
 		}
@@ -194,17 +203,13 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 		public Object defaultCase(EObject object) {
 			// If we can not find it - We set to class name to give some
 			// guidance on troubleshooting and not just throw exception
-
 			label = "default" + object.getClass().getCanonicalName();
 			return object;
 		}
 
 		
 		public Object caseConcept(Concept object) {
-
-			// TODO We are only gettign one Code  and we grab it
-			// need to figure out if that is the future
-			if (object.getCode().size() > 0) {
+			if (!object.getCode().isEmpty()) {
 				label = object.getCode().get(0).getCode();
 				if (object.getPrintName().size() > 0) {
 					label += " : " + object.getPrintName().get(0).getText();

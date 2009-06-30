@@ -36,6 +36,8 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystem;
+import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystemVersion;
+import org.openhealthtools.mdht.emf.hl7.mif2.Concept;
 import org.openhealthtools.mdht.emf.hl7.mif2.ConceptDomain;
 import org.openhealthtools.mdht.emf.hl7.mif2.ConceptDomainRef;
 import org.openhealthtools.mdht.emf.hl7.mif2.ContentDefinition;
@@ -209,6 +211,19 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 			return codeSystem1.getName().compareTo(codeSystem2.getName());
 		}
 	}
+
+	public class ConceptComparator implements Comparator<Concept> {
+
+		public int compare(Concept concept1, Concept concept2) {
+			int result = 0;
+			// If we have codes and the first code is not empty, compare them else return 0 - or equal
+			if ((!concept1.getCode().isEmpty()) && (!concept2.getCode().isEmpty()) && concept1.getCode().get(0).getCode() != null) {
+				result = concept1.getCode().get(0).getCode().compareTo(concept2.getCode().get(0).getCode());
+			}
+			return result;
+		}
+	}
+
 	
 	public class ValueSetComparator implements Comparator<ValueSet> {
 
@@ -218,6 +233,27 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 	}	
 
 	
+	public Object caseCodeSystem(CodeSystem codeSystem) {
+
+		ArrayList<Concept> concepts = new ArrayList<Concept>();
+
+		if (!codeSystem.getReleasedVersion().isEmpty()) {
+			CodeSystemVersion csv = codeSystem.getReleasedVersion().get(0);
+
+			for (Concept concept : csv.getConcept()) {
+				if (concept.isIsSelectable()) {
+					concepts.add(concept);
+				}
+			}
+			Collections.sort(concepts, new ConceptComparator());
+		}
+
+		children = concepts.toArray();
+
+		return codeSystem;
+	}
+
+
 	public Object caseConceptDomain(ConceptDomain targetConceptDomain) {
 
 		ArrayList<ConceptDomain> conceptDomains = new ArrayList<ConceptDomain>();

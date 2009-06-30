@@ -15,8 +15,6 @@ package org.openhealthtools.mdht.uml.hl7.ui.vocabulary;
 
 import java.util.Collections;
 
-import javax.xml.datatype.XMLGregorianCalendar;
-
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -37,6 +35,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.emf.hl7.mif2.CascadableAnnotation;
 import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystem;
 import org.openhealthtools.mdht.emf.hl7.mif2.ComplexMarkupWithLanguage;
+import org.openhealthtools.mdht.emf.hl7.mif2.Concept;
 import org.openhealthtools.mdht.emf.hl7.mif2.ConceptDomain;
 import org.openhealthtools.mdht.emf.hl7.mif2.ContextBinding;
 import org.openhealthtools.mdht.emf.hl7.mif2.DesignComment;
@@ -530,6 +529,36 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 				
 				return valueSet;
 			}
+
+
+			public Object caseConcept(Concept concept) {
+				
+				if ( (concept.getAnnotations() != null) &&
+						 (concept.getAnnotations().getDocumentation() != null) &&
+						 (concept.getAnnotations().getDocumentation().getDefinition() != null) && 
+						 (concept.getAnnotations().getDocumentation().getDefinition().getText().size() > 0) ) {
+						for (TreeIterator<Object> iterator = EcoreUtil.getAllContents(Collections
+
+						.singletonList(concept.getAnnotations().getDocumentation().getDefinition())); iterator.hasNext();) {
+
+							EObject child = (EObject) iterator.next();
+
+							if (child instanceof ComplexMarkupWithLanguage) {
+								documentationSwitch.doSwitch(child);
+							}
+							if (child instanceof FormalConstraint) {
+								documentationSwitch.doSwitch(child);
+							}
+						}
+
+					} else {
+						documentationSwitch.appendComment("No Documentation Found for Code");					
+					}
+				
+				return super.caseConcept(concept);
+			}
+			
+			
 			
 		}
 		
@@ -608,17 +637,25 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 		String systemOid;
 		String systemVersion;
 
-		public CodeSystemConstraint(CodeSystem codeSystem) {
-
-			codePrintName = codeSystem.getName();
-			systemOid = codeSystem.getCodeSystemId();
-
+		public CodeSystemConstraint(CodeSystem codeSystem, Concept concept) {
 			
+			this.systemName = codeSystem.getName();
+
+			this.systemOid = codeSystem.getCodeSystemId();
+
 			// If there is a released version and there is a date associated with it
 			// Get the xml format of the date which appears to be  yyyy-mm-dd
 			if (!codeSystem.getReleasedVersion().isEmpty() && 
 				 codeSystem.getReleasedVersion().get(0).getReleaseDate() != null) {
-				systemVersion = codeSystem.getReleasedVersion().get(0).getReleaseDate().toXMLFormat();
+				this.systemVersion = codeSystem.getReleasedVersion().get(0).getReleaseDate().toXMLFormat();
+
+			}
+			
+			if (concept != null) {
+				this.code = concept.getCode().get(0).getCode();
+				if (!concept.getPrintName().isEmpty()) {
+					this.codePrintName = concept.getPrintName().get(0).getText();					
+				}
 
 			}
 
@@ -763,9 +800,14 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 							constraintResult = new ConceptConstraint((ConceptDomain) results[0]);
 						}
 					} else if (constraint.equals(Constraint.CODESYSTEMS)) {
+						
 						if (results[0] instanceof CodeSystem) {
-							constraintResult = new CodeSystemConstraint((CodeSystem) results[0]);
+							constraintResult = new CodeSystemConstraint((CodeSystem) results[0],null);
+						} else if (results[0] instanceof Concept)
+						{
+							constraintResult = new CodeSystemConstraint((CodeSystem) results[1],(Concept)results[0]);
 						}
+						
 					} else if (constraint.equals(Constraint.VALUESSETS)) {
 						if (results[0] instanceof ValueSet) {
 							ValueSet valueSet = (ValueSet) results[0];
