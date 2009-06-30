@@ -13,6 +13,7 @@
 
 package org.openhealthtools.mdht.uml.hdf.ui.properties;
 
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -30,6 +31,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.hdf.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.hdf.util.HL7ResourceUtil;
+
 
 public class HDFUIUtil {
 
@@ -52,33 +54,34 @@ public class HDFUIUtil {
 			IStatus result = Status.OK_STATUS;
 			
 			Stereotype apppliedStereotype = HL7ResourceUtil.getAppliedHDFStereotype(element, stereotype);
+			
 
 			if (apppliedStereotype != null) {
-				
+
 				if (properties.length == values.length) {
-				int valueCtr=0;
-				
-				for (String property : properties) {
-					element.setValue(apppliedStereotype, property , values[valueCtr++]);
-				}
-				
-				
-				// fire notification for any stereotype property changes to update views
-				// this is a bogus notification of change to property name, but can't find a better option
-				Notification notification = new NotificationImpl(
-						Notification.SET, null, null) {
-					public Object getNotifier() {
-						return element;
+					int valueCtr = 0;
+
+					for (String property : properties) {
+						element.setValue(apppliedStereotype, property, values[valueCtr++]);
 					}
-					public int getFeatureID(Class expectedClass) {
-						return UMLPackage.PROPERTY__NAME;
+
+					// If we have at least on value, create a notification to
+					// update views
+					if (values.length > 0) {
+						Notification notification = new NotificationImpl(Notification.SET, null, values[0]) {
+							public Object getNotifier() {
+								return element;
+							}
+
+							public int getFeatureID(Class expectedClass) {
+								return UMLPackage.PROPERTY__NAME;
+							}
+						};
+						element.eNotify(notification);
 					}
-				};
-				element.eNotify(notification);
-				
-				} else
-				{
-				 result = Status.CANCEL_STATUS;	
+
+				} else {
+					result = Status.CANCEL_STATUS;
 				}
 			}
 
