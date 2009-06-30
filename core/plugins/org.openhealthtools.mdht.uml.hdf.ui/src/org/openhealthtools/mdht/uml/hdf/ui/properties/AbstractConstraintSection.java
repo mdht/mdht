@@ -14,12 +14,15 @@ package org.openhealthtools.mdht.uml.hdf.ui.properties;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.NotificationImpl;
 import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.hdf.ui.properties.IVocabularySelectionDelegate.IVocabularyConstraint;
 
 public class AbstractConstraintSection extends AbstractModelerPropertySection {
@@ -79,5 +82,22 @@ public class AbstractConstraintSection extends AbstractModelerPropertySection {
 	        gc.dispose();
 	        shell.dispose();
 	        return buttonHeight;
+	}
+	
+	
+	
+	protected void updateViews() {
+		
+		Notification notification = new NotificationImpl(Notification.SET, null, property.getName()) {
+			public Object getNotifier() {
+				return property;
+			}
+
+			public int getFeatureID(Class expectedClass) {
+				return UMLPackage.PROPERTY__NAME;
+			}
+		};
+		property.eNotify(notification);
+
 	}
 }
