@@ -20,6 +20,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemActOperations;
 import org.openhealthtools.mdht.uml.cda.impl.ActImpl;
+import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +75,7 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * @generated
 	 */
 	public ProblemAct init() {
-    		org.openhealthtools.mdht.uml.cda.util.CDAUtil.init(this);
+    		CDAUtil.init(this);
     		return this;
 	}
 } //ProblemActImpl

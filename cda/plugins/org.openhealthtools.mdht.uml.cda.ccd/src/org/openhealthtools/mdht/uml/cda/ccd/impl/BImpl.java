@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.openhealthtools.mdht.uml.cda.ccd.B;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +53,7 @@ public class BImpl extends AImpl implements B {
 	 * @generated
 	 */
 	public B init() {
-    		org.openhealthtools.mdht.uml.cda.util.CDAUtil.init(this);
+    		CDAUtil.init(this);
     		return this;
 	}
 } //BImpl
