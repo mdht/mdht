@@ -19,18 +19,11 @@
       <category name="org.openhealthtools.mdht.uml.cda.cat"/>
    </feature>
 
+   <category-def name="org.openhealthtools.mdht.uml.cat" label="MDHT for Health Informatics"/>l
 
-
-
-
-  
+   <category-def name="org.openhealthtools.mdht.uml.rsm.cat" label="MDHT for IBM Rational Software Modeler (RSM)"/>
  
-
-   <category-def name="org.openhealthtools.mdht.uml.cat" label="Model Driven Health Tools for UML"/>l
-
-   <category-def name="org.openhealthtools.mdht.uml.rsm.cat" label="Model Driven Health Tools for Rational Software Modeler"/>
- 
-   <category-def name="org.openhealthtools.mdht.uml.cda.cat" label="Model Driven Health Tools for CDA"/>
+   <category-def name="org.openhealthtools.mdht.uml.cda.cat" label="MDHT for Clinical Document Architecture (CDA)"/>
 
 
 
