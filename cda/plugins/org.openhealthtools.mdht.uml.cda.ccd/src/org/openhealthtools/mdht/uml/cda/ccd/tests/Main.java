@@ -48,11 +48,11 @@ public class Main {
 		resource.save(document, null, null);
 		CDAUtil.adjustNamespace(document);
 		CDAUtil.setSchemaLocation(document);
-		CDAUtil.writeDocument(document, System.out);
+		CDAUtil.save(document, System.out);
 		
 		resource = (CDAResource) factory.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.load(document, null);
-		CDAUtil.writeDocument(document, System.out);
+		CDAUtil.save(document, System.out);
 		
 		System.out.println(resource.getContents().get(0));
 	}
