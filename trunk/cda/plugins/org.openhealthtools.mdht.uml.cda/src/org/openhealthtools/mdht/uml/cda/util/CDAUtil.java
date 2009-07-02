@@ -68,7 +68,7 @@ public class CDAUtil {
 		resource.save(doc, null, null);
 		adjustNamespace(doc);
 		setSchemaLocation(doc);
-		writeDocument(doc, out);
+		save(doc, out);
 	}
 	
 	public static void adjustNamespace(Document doc) {
@@ -87,7 +87,7 @@ public class CDAUtil {
 		root.setAttributeNS(ExtendedMetaData.XSI_URI, "xsi:schemaLocation", CDA_SCHEMA_LOCATION);
 	}
 	
-	public static void writeDocument(Document doc, OutputStream out) throws Exception {
+	public static void save(Document doc, OutputStream out) throws Exception {
 		TransformerFactory factory = TransformerFactory.newInstance();
 		factory.setAttribute("indent-number", new Integer(2));
 		Transformer transformer = factory.newTransformer();
@@ -186,8 +186,8 @@ public class CDAUtil {
 
 	// TODO: Create a generic mechanism for populating an instance from annotations.
 	public static void init(EObject object) {
-		CDAUtil.addTemplateIds(object);
-		CDAUtil.setCode(object);
+		addTemplateIds(object);
+		setCode(object);
 	}
 
 	public static II getTemplateId(EClass eClass) {
