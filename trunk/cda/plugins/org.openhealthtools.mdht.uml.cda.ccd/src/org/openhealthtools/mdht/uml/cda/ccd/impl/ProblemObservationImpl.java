@@ -20,6 +20,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemObservationOperations;
 import org.openhealthtools.mdht.uml.cda.impl.ObservationImpl;
+import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,7 +66,7 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * @generated
 	 */
 	public ProblemObservation init() {
-    		org.openhealthtools.mdht.uml.cda.util.CDAUtil.init(this);
+    		CDAUtil.init(this);
     		return this;
 	}
 } //ProblemObservationImpl

@@ -15,6 +15,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ContinuityOfCareDocumentOperations;
 import org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl;
+import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +61,7 @@ public class ContinuityOfCareDocumentImpl extends ClinicalDocumentImpl implement
 	 * @generated
 	 */
 	public ContinuityOfCareDocument init() {
-    		org.openhealthtools.mdht.uml.cda.util.CDAUtil.init(this);
+    		CDAUtil.init(this);
     		return this;
 	}
 } //ContinuityOfCareDocumentImpl
