@@ -16,9 +16,12 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
@@ -36,9 +39,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.resource.CDAResource;
-import org.openhealthtools.mdht.uml.cda.resource.CDAResourceHandler;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -50,14 +54,48 @@ public class CDAUtil {
 	public static final String CDA_SCHEMA_LOCATION = CDAPackage.eNS_URI + " infrastructure/cda/CDA.xsd";
 	
 	public static EObject load(InputStream in) throws Exception {
+		return load(in, null);
+	}
+	
+	public static EObject load(InputStream in, UnknownFeatureHandler handler) throws Exception {
 		CDAPackage.eINSTANCE.eClass();
 		DocumentBuilder builder = newDocumentBuilder();
 		Document doc = builder.parse(in);
 		adjustNamespace(doc);
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.load(doc, null);
-		new CDAResourceHandler().postLoad(resource, in, null);
+		if (handler != null) {
+			processResource(resource, handler);
+		}
 		return resource.getContents().get(0);
+	}
+	
+	private static void processResource(CDAResource resource, UnknownFeatureHandler handler) {
+		Map<EObject, AnyType> extMap = resource.getEObjectToExtensionMap();
+		for (EObject key : extMap.keySet()) {
+			AnyType value = extMap.get(key);
+			handleUnknownData(key, value, handler);
+		}
+	}
+	
+	private static void handleUnknownData(EObject eObject, AnyType unknownData, UnknownFeatureHandler handler) {
+		handleUnknownFeatures(eObject, unknownData.getMixed(), handler);
+		handleUnknownFeatures(eObject, unknownData.getAnyAttribute(), handler);
+	}
+
+	private static void handleUnknownFeatures(EObject owner, FeatureMap featureMap, UnknownFeatureHandler handler) {
+		Iterator<FeatureMap.Entry> iterator = featureMap.iterator();
+		while (iterator.hasNext()) {
+			FeatureMap.Entry entry = iterator.next();
+			EStructuralFeature feature = entry.getEStructuralFeature();
+			if (handler.handleUnknownFeature(owner, feature, entry.getValue())) {
+				iterator.remove();
+			}
+		}
+	}
+	
+	public interface UnknownFeatureHandler {
+		public boolean handleUnknownFeature(EObject owner, EStructuralFeature feature, Object value);
 	}
 	
 	public static void save(EObject object, OutputStream out) throws Exception {
@@ -70,7 +108,7 @@ public class CDAUtil {
 		save(doc, out);
 	}
 	
-	public static void adjustNamespace(Document doc) {
+	private static void adjustNamespace(Document doc) {
 		Element root = doc.getDocumentElement();
 		if (root.getPrefix() == null) {
 			root.removeAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns");
@@ -81,12 +119,12 @@ public class CDAUtil {
 		root.setPrefix(CDAPackage.eNS_PREFIX);
 	}
 	
-	public static void setSchemaLocation(Document doc) {
+	private static void setSchemaLocation(Document doc) {
 		Element root = doc.getDocumentElement();
 		root.setAttributeNS(ExtendedMetaData.XSI_URI, "xsi:schemaLocation", CDA_SCHEMA_LOCATION);
 	}
 	
-	public static void save(Document doc, OutputStream out) throws Exception {
+	private static void save(Document doc, OutputStream out) throws Exception {
 		TransformerFactory factory = TransformerFactory.newInstance();
 		factory.setAttribute("indent-number", new Integer(2));
 		Transformer transformer = factory.newTransformer();
@@ -95,13 +133,13 @@ public class CDAUtil {
 		transformer.transform(new DOMSource(doc), new StreamResult(new OutputStreamWriter(out, "utf-8")));
 	}
 	
-	public static DocumentBuilder newDocumentBuilder() throws Exception {
+	private static DocumentBuilder newDocumentBuilder() throws Exception {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setNamespaceAware(true);
 		return factory.newDocumentBuilder();
 	}
 	
-	public static Document newDocument() throws Exception {
+	private static Document newDocument() throws Exception {
 		return newDocumentBuilder().newDocument();
 	}
 	
@@ -114,7 +152,7 @@ public class CDAUtil {
 	}
 
 	// iterative breadth-first traversal of diagnostic tree using queue
-	public static void processDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
+	private static void processDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
 		Queue<Diagnostic> queue = new LinkedList<Diagnostic>();
 		queue.offer(diagnostic);	// root
 		while (!queue.isEmpty()) {
@@ -128,7 +166,7 @@ public class CDAUtil {
 	
 	/*
 	// iterative depth-first traversal of diagnostic tree using stack
-	public static void processDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
+	private static void processDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
 		Stack<Diagnostic> stack = new Stack<Diagnostic>();
 		stack.push(diagnostic);		// root
 		while (!stack.isEmpty()) {
@@ -141,7 +179,7 @@ public class CDAUtil {
 	}
 	*/
 	
-	public static void handleDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
+	private static void handleDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
 		switch (diagnostic.getSeverity()) {
 		case Diagnostic.OK:
 			handler.handleOkDiagnostic(diagnostic);
@@ -204,7 +242,7 @@ public class CDAUtil {
 		setCode(object);
 	}
 
-	public static II getTemplateId(EClass eClass) {
+	private static II getTemplateId(EClass eClass) {
 		II templateId = null;
 		String root = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "templateId.root");
 		String extension = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "templateId.extension");
@@ -218,7 +256,7 @@ public class CDAUtil {
 		return templateId;
 	}
 	
-	public static EObject getCode(EClass eClass) {
+	private static EObject getCode(EClass eClass) {
 		EObject codeObject = null;
 		String code = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "code.code");
 		String codeSystem = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "code.codeSystem");
@@ -251,7 +289,7 @@ public class CDAUtil {
 	}
 
 	@SuppressWarnings("unchecked")
-	public static void addTemplateIds(EObject object) {
+	private static void addTemplateIds(EObject object) {
 		EList<II> list = (EList<II>) object.eGet(object.eClass().getEStructuralFeature("templateId"));
 		II templateId = null;
 		for (EClass eClass : object.eClass().getEAllSuperTypes()) {
@@ -266,7 +304,7 @@ public class CDAUtil {
 		}
 	}
 
-	public static void setCode(EObject object) {
+	private static void setCode(EObject object) {
 		EObject code = null;
 		for (EClass eClass : object.eClass().getEAllSuperTypes()) {
 			code = CDAUtil.getCode(eClass);
