@@ -651,8 +651,8 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 
 
 	/**
-	 * getCodeSystemSelection returns the selection path in order to highligh and pre-select code system based on current value.
-	 * CodeSystems are currently non-hierarchical so the selection path is codeSystemMap
+	 * getCodeSystemSelection returns the selection path in order to highlight and pre-select code system and code based on current value.
+	 * CodeSystems are currently non-hierarchical so the selection path is codeSystemMap and the code
 	 * @return Object[]
 	 */
 	public Object[] getCodeSystemSelection() {
@@ -667,10 +667,39 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
 
 		if (stereotype != null) {
+			
 			String codeSystemOid = (String) property.getValue(stereotype, IHDFProfileConstants.CODE_SYSTEM_OID);
 
+			String code = (String) property.getValue(stereotype, IHDFProfileConstants.CODE);
+
 			if (codeSystemMap.containsKey(codeSystemOid)) {
-				codeSystemSelection = new Object[] { codeSystemMap.get(codeSystemOid) };
+
+				CodeSystem selectedCodeSystem = codeSystemMap.get(codeSystemOid);
+				Concept selectedConcept = null;
+
+				if (!selectedCodeSystem.getReleasedVersion().isEmpty()) {
+
+					// TODO Add version logic to vocabulary
+					CodeSystemVersion csv = selectedCodeSystem.getReleasedVersion().get(0);
+
+					for (Concept concept : csv.getConcept()) {
+					
+						if (concept.isIsSelectable() && !concept.getCode().isEmpty() && concept.getCode().get(0).getCode().equals(code)) {
+		
+							selectedConcept = concept;
+							break;
+						}
+						
+					}
+				}
+
+				// If we found a match to the code - return code system and concept else return the codesystem
+				if (selectedConcept != null) {
+					codeSystemSelection = new Object[] { selectedCodeSystem, selectedConcept };
+				} else {
+					codeSystemSelection = new Object[] { selectedCodeSystem };
+
+				}
 			}
 
 		}
