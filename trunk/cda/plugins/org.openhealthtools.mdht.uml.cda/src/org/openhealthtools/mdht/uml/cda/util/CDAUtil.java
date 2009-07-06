@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
@@ -114,10 +113,10 @@ public class CDAUtil {
 		return diagnostic.getSeverity() != Diagnostic.ERROR;
 	}
 
-	// iterative breadth-first traversal of diagnostic tree
+	// iterative breadth-first traversal of diagnostic tree using queue
 	public static void processDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
 		Queue<Diagnostic> queue = new LinkedList<Diagnostic>();
-		queue.offer(diagnostic);
+		queue.offer(diagnostic);	// root
 		while (!queue.isEmpty()) {
 			Diagnostic d = queue.remove();
 			handleDiagnostic(d, handler);	// visit
@@ -126,6 +125,21 @@ public class CDAUtil {
 			}
 		}
 	}
+	
+	/*
+	// iterative depth-first traversal of diagnostic tree using stack
+	public static void processDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
+		Stack<Diagnostic> stack = new Stack<Diagnostic>();
+		stack.push(diagnostic);		// root
+		while (!stack.isEmpty()) {
+			Diagnostic d = stack.pop();
+			handleDiagnostic(d, handler);	// visit
+			for (Diagnostic childDiagnostic : d.getChildren()) {	// process successors
+				stack.push(childDiagnostic);
+			}
+		}
+	}
+	*/
 	
 	public static void handleDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
 		switch (diagnostic.getSeverity()) {
