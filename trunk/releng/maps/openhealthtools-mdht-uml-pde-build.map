@@ -57,6 +57,14 @@ plugin@org.openhealthtools.mdht.uml.hdf.tooling.rsm=SVN,trunk,https://oht-modeli
 plugin@org.openhealthtools.mdht.uml.hdf.ui.rsm=SVN,trunk,https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling/,,plugins/org.openhealthtools.mdht.uml.hdf.ui.rsm
 
 
+!***************  OHT MDHT TEST FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/features/org.openhealthtools.mdht.uml.test-feature
+
+plugin@org.openhealthtools.mdht.emf.hl7.mif2=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/tests/org.openhealthtools.mdht.uml.common.test
+
+
+
+
 
 
 
