@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
+import org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -89,6 +90,24 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 	 */
 	public FeatureMap getAny() {
 		return (FeatureMap)getMixed().<FeatureMap.Entry>list(CDAPackage.eINSTANCE.getStrucDocText_Any());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addText(String text) {
+		StrucDocTextOperations.addText(this, text);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getText() {
+		return StrucDocTextOperations.getText(this);
 	}
 
 	/**
