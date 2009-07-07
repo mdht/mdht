@@ -15,7 +15,6 @@ package org.openhealthtools.mdht.uml.cda.tests;
 import java.io.FileInputStream;
 
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
@@ -26,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.Patient;
 import org.openhealthtools.mdht.uml.cda.PatientRole;
 import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.RecordTarget;
-import org.openhealthtools.mdht.uml.cda.util.BasicDiagnosticHandler;
+import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -101,13 +100,13 @@ public class Main {
 		
 		CDAUtil.save(doc, System.out);
 		
-		EObject object = CDAUtil.load(new FileInputStream("resources/SampleCDADocument.xml"));
-		System.out.println(object);
-		CDAUtil.save(object, System.out);
+		ClinicalDocument clinicalDocument = CDAUtil.load(new FileInputStream("resources/SampleCDADocument.xml"));
+		System.out.println(clinicalDocument);
+		CDAUtil.save(clinicalDocument, System.out);
 		
-		boolean valid = CDAUtil.validate(object, new BasicDiagnosticHandler() {
+		boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 			@Override
-			public void handleErrorDiagnostic(Diagnostic diagnostic) {
+			public void handleError(Diagnostic diagnostic) {
 				System.out.println("ERROR: " + diagnostic.getMessage());
 			}
 		});
