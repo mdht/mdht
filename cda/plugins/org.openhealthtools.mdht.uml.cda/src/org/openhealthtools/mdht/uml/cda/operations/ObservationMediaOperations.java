@@ -66,7 +66,6 @@ import org.openhealthtools.mdht.uml.cda.Supply;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getSubstanceAdministration() <em>Get Substance Administration</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getSupply() <em>Get Supply</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#hasActTemplate(java.lang.String) <em>Has Act Template</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#hasCode(java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#hasEncounterTemplate(java.lang.String) <em>Has Encounter Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#hasObservationMediaTemplate(java.lang.String) <em>Has Observation Media Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#hasObservationTemplate(java.lang.String) <em>Has Observation Template</em>}</li>
@@ -660,54 +659,6 @@ public class ObservationMediaOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #hasCode(ObservationMedia, java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #hasCode(ObservationMedia, java.lang.String, java.lang.String, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HAS_CODE__STRING_STRING_STRING__EOCL_EXP = "self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName";
-
-	/**
-	 * The cached OCL query for the '{@link #hasCode(ObservationMedia, java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}' query operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #hasCode(ObservationMedia, java.lang.String, java.lang.String, java.lang.String)
-	 * @generated
-	 * @ordered
-	 */
-	protected static OCLExpression<EClassifier> HAS_CODE__STRING_STRING_STRING__EOCL_QRY;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
-	 * @param observationMedia The receiving '<em><b>Observation Media</b></em>' model object.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
-	public static  boolean hasCode(ObservationMedia observationMedia, String code, String codeSystem, String codeSystemName) {
-		if (HAS_CODE__STRING_STRING_STRING__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(19));
-			try {
-				HAS_CODE__STRING_STRING_STRING__EOCL_QRY = helper.createQuery(HAS_CODE__STRING_STRING_STRING__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		OCL.Query query = EOCL_ENV.createQuery(HAS_CODE__STRING_STRING_STRING__EOCL_QRY);
-		EvaluationEnvironment<?, ?, ?, ?, ?> environment = query.getEvaluationEnvironment();
-		environment.add("code", code);
-		environment.add("codeSystem", codeSystem);
-		environment.add("codeSystemName", codeSystemName);
-		return ((Boolean) query.evaluate(observationMedia)).booleanValue();
-	}
-
-	/**
 	 * The cached OCL expression body for the '{@link #hasEncounterTemplate(ObservationMedia, java.lang.String) <em>Has Encounter Template</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -739,7 +690,7 @@ public class ObservationMediaOperations {
 	public static  boolean hasEncounterTemplate(ObservationMedia observationMedia, String templateId) {
 		if (HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(20));
+			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(19));
 			try {
 				HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -785,7 +736,7 @@ public class ObservationMediaOperations {
 	public static  boolean hasObservationMediaTemplate(ObservationMedia observationMedia, String templateId) {
 		if (HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(21));
+			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(20));
 			try {
 				HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -831,7 +782,7 @@ public class ObservationMediaOperations {
 	public static  boolean hasObservationTemplate(ObservationMedia observationMedia, String templateId) {
 		if (HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(22));
+			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(21));
 			try {
 				HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -877,7 +828,7 @@ public class ObservationMediaOperations {
 	public static  boolean hasOrganizerTemplate(ObservationMedia observationMedia, String templateId) {
 		if (HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(23));
+			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(22));
 			try {
 				HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -923,7 +874,7 @@ public class ObservationMediaOperations {
 	public static  boolean hasProcedureTemplate(ObservationMedia observationMedia, String templateId) {
 		if (HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(24));
+			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(23));
 			try {
 				HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -969,7 +920,7 @@ public class ObservationMediaOperations {
 	public static  boolean hasRegionOfInterestTemplate(ObservationMedia observationMedia, String templateId) {
 		if (HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(25));
+			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(24));
 			try {
 				HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1015,7 +966,7 @@ public class ObservationMediaOperations {
 	public static  boolean hasSubstanceAdministrationTemplate(ObservationMedia observationMedia, String templateId) {
 		if (HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(26));
+			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(25));
 			try {
 				HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1061,7 +1012,7 @@ public class ObservationMediaOperations {
 	public static  boolean hasSupplyTemplate(ObservationMedia observationMedia, String templateId) {
 		if (HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(27));
+			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(26));
 			try {
 				HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1107,7 +1058,7 @@ public class ObservationMediaOperations {
 	public static  boolean hasTemplateId(ObservationMedia observationMedia, String templateId) {
 		if (HAS_TEMPLATE_ID__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(28));
+			helper.setOperationContext(CDAPackage.eINSTANCE.getObservationMedia(), CDAPackage.eINSTANCE.getObservationMedia().getEAllOperations().get(27));
 			try {
 				HAS_TEMPLATE_ID__STRING__EOCL_QRY = helper.createQuery(HAS_TEMPLATE_ID__STRING__EOCL_EXP);
 			}
