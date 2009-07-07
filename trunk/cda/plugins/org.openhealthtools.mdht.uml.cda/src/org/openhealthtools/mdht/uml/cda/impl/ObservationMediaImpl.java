@@ -903,15 +903,6 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean hasCode(String code, String codeSystem, String codeSystemName) {
-		return ObservationMediaOperations.hasCode(this, code, codeSystem, codeSystemName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean hasEncounterTemplate(String templateId) {
 		return ObservationMediaOperations.hasEncounterTemplate(this, templateId);
 	}
