@@ -56,8 +56,8 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemActOperations.templateId(this, diagnostics, context);
+	public boolean ProblemAct_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.ProblemAct_templateId(this, diagnostics, context);
 	}
 
 	/**
@@ -65,8 +65,8 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemActOperations.code(this, diagnostics, context);
+	public boolean ProblemAct_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.ProblemAct_code(this, diagnostics, context);
 	}
 
 	/**

@@ -70,7 +70,7 @@
         <children xmi:id="_IReTLFbGEd6ShYMM6mMCTg" type="Stereotype"/>
         <children xmi:id="_IReTLVbGEd6ShYMM6mMCTg" type="ValueSpecification"/>
         <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IReTLlbGEd6ShYMM6mMCTg" fillColor="13356031" lineColor="8421631" showStereotype="Label"/>
-        <element xmi:type="uml:Constraint" href="ccd.emx#_Iw2WMDxlEd6JwqSGecoePg?ccd/ProblemAct/templateId?"/>
+        <element xmi:type="uml:Constraint" href="ccd.emx#_Iw2WMDxlEd6JwqSGecoePg?ccd/ProblemAct/ProblemAct_templateId?"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IReTL1bGEd6ShYMM6mMCTg" x="15533" y="951"/>
       </children>
       <children xmi:id="_IReTMFbGEd6ShYMM6mMCTg">
@@ -196,7 +196,7 @@
         <children xmi:id="_Bh9TZmBQEd6N94MqzCgt-g" type="Stereotype"/>
         <children xmi:id="_Bh9TZ2BQEd6N94MqzCgt-g" type="ValueSpecification"/>
         <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_Bh9TYWBQEd6N94MqzCgt-g" fillColor="13356031" lineColor="8421631" showStereotype="Label"/>
-        <element xmi:type="uml:Constraint" href="ccd.emx#_7l0sIGBPEd6N94MqzCgt-g?ccd/ProblemAct/code?"/>
+        <element xmi:type="uml:Constraint" href="ccd.emx#_7l0sIGBPEd6N94MqzCgt-g?ccd/ProblemAct/ProblemAct_code?"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bh9TYmBQEd6N94MqzCgt-g" x="29164" y="951"/>
       </children>
       <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_APYr4VbGEd6ShYMM6mMCTg"/>

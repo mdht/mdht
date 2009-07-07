@@ -58,20 +58,20 @@ public class CCDValidator extends EObjectValidator {
 	public static final int CONTINUITY_OF_CARE_DOCUMENT__TEMPLATE_ID = 1;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Template Id' of 'Problem Act'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Problem Act template Id' of 'Problem Act'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_ACT__TEMPLATE_ID = 2;
+	public static final int PROBLEM_ACT__PROBLEM_ACT_TEMPLATE_ID = 2;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Code' of 'Problem Act'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Problem Act code' of 'Problem Act'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_ACT__CODE = 3;
+	public static final int PROBLEM_ACT__PROBLEM_ACT_CODE = 3;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Template Id' of 'Problem Observation'.
@@ -184,29 +184,29 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(problemAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemAct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemAct, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemAct_templateId(problemAct, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemAct_code(problemAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemAct_ProblemAct_templateId(problemAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemAct_ProblemAct_code(problemAct, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the templateId constraint of '<em>Problem Act</em>'.
+	 * Validates the ProblemAct_templateId constraint of '<em>Problem Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemAct_templateId(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemAct.templateId(diagnostics, context);
+	public boolean validateProblemAct_ProblemAct_templateId(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemAct.ProblemAct_templateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the code constraint of '<em>Problem Act</em>'.
+	 * Validates the ProblemAct_code constraint of '<em>Problem Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemAct_code(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemAct.code(diagnostics, context);
+	public boolean validateProblemAct_ProblemAct_code(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemAct.ProblemAct_code(diagnostics, context);
 	}
 
 	/**
@@ -249,8 +249,8 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(a, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(a, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(a, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemAct_templateId(a, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemAct_code(a, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemAct_ProblemAct_templateId(a, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemAct_ProblemAct_code(a, diagnostics, context);
 		return result;
 	}
 
@@ -267,8 +267,8 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(b, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(b, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(b, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemAct_templateId(b, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemAct_code(b, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemAct_ProblemAct_templateId(b, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemAct_ProblemAct_code(b, diagnostics, context);
 		return result;
 	}
 
@@ -285,8 +285,8 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemAct_templateId(c, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemAct_code(c, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemAct_ProblemAct_templateId(c, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemAct_ProblemAct_code(c, diagnostics, context);
 		return result;
 	}
 

@@ -26,7 +26,8 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 public class Main {
 	public static void main(String[] args) throws Exception {
 		ProblemObservation problemObservation = CCDFactory.eINSTANCE.createProblemObservation().init();		
-		ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct().init();
+//		ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct().init();
+		ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct();
 		C c = CCDFactory.eINSTANCE.createC().init();
 		
 		Section sect = CDAFactory.eINSTANCE.createSection();
