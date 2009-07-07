@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemAct()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.27' code.nullFlavor='NA' constraints.diagnostic.error='templateId code'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.27' code.nullFlavor='NA' constraints.validation.error='ProblemAct_code ProblemAct_templateId'"
  * @generated
  */
 public interface ProblemAct extends Act {
@@ -40,7 +40,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.27\')'"
 	 * @generated
 	 */
-	boolean templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean ProblemAct_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.code.nullFlavor = #vocab::NullFlavor::NA'"
 	 * @generated
 	 */
-	boolean code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean ProblemAct_code(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

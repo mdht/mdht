@@ -16,13 +16,13 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="ProblemAct">
-      <ownedRule xmi:id="_Iw2WMDxlEd6JwqSGecoePg" name="templateId" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+      <ownedRule xmi:id="_Iw2WMDxlEd6JwqSGecoePg" name="ProblemAct_templateId" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_Iw2WMTxlEd6JwqSGecoePg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.27')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_7l0sIGBPEd6N94MqzCgt-g" name="code" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+      <ownedRule xmi:id="_7l0sIGBPEd6N94MqzCgt-g" name="ProblemAct_code" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_7l0sIWBPEd6N94MqzCgt-g">
           <language>OCL</language>
           <body>self.code.nullFlavor = #vocab::NullFlavor::NA</body>
@@ -69,7 +69,7 @@
   </uml:Package>
   <Ecore:EPackage xmi:id="_sGrZIDxWEd6JwqSGecoePg" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="ccd" nsPrefix="ccd" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd" basePackage="org.openhealthtools.mdht.uml.cda" prefix="CCD"/>
   <Ecore:EClass xmi:id="_OjEDIEV-Ed6QuJiOJFSRPQ" base_Class="_GgvgUDxbEd6JwqSGecoePg">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.27' code.nullFlavor='NA' constraints.diagnostic.error='templateId code'</annotation>
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.27' code.nullFlavor='NA' constraints.validation.error='ProblemAct_code ProblemAct_templateId'</annotation>
   </Ecore:EClass>
   <Ecore:EClass xmi:id="_PTpLgEV-Ed6QuJiOJFSRPQ" base_Class="_IjIO0DxbEd6JwqSGecoePg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.28'</annotation>

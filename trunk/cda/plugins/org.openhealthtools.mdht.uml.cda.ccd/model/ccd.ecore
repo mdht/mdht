@@ -37,9 +37,9 @@
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.27"/>
       <details key="code.nullFlavor" value="NA"/>
-      <details key="constraints.diagnostic.error" value="templateId code"/>
+      <details key="constraints.validation.error" value="ProblemAct_code ProblemAct_templateId"/>
     </eAnnotations>
-    <eOperations name="templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemAct_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.hasTemplateId('2.16.840.1.113883.10.20.1.27')"/>
       </eAnnotations>
@@ -61,7 +61,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemAct_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.code.nullFlavor = #vocab::NullFlavor::NA"/>
       </eAnnotations>
