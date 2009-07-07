@@ -269,6 +269,33 @@
       <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_QscA0VwvEd6ZEsfifJz_3w"/>
       <element xsi:nil="true"/>
     </contents>
+    <contents xmi:type="notation:Diagram" xmi:id="_pgbVsGsTEd6Mc4CaAXYrKA" type="Class" name="StrucDocText">
+      <children xmi:id="_q3AuIGsTEd6Mc4CaAXYrKA">
+        <children xmi:id="_q3AuI2sTEd6Mc4CaAXYrKA" type="ImageCompartment">
+          <layoutConstraint xmi:type="notation:Size" xmi:id="_q3AuJGsTEd6Mc4CaAXYrKA" width="1320" height="1320"/>
+        </children>
+        <children xmi:id="_q3AuJWsTEd6Mc4CaAXYrKA" type="Stereotype"/>
+        <children xmi:id="_q3AuJmsTEd6Mc4CaAXYrKA" type="Name"/>
+        <children xmi:id="_q3AuJ2sTEd6Mc4CaAXYrKA" type="Parent"/>
+        <children xmi:id="_q3AuKGsTEd6Mc4CaAXYrKA" type="AttributeCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_q3AuKWsTEd6Mc4CaAXYrKA"/>
+        </children>
+        <children xmi:id="_q3AuKmsTEd6Mc4CaAXYrKA" type="OperationCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_q3AuK2sTEd6Mc4CaAXYrKA"/>
+        </children>
+        <children xmi:id="_q3AuLGsTEd6Mc4CaAXYrKA" visible="false" type="SignalCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_q3AuLWsTEd6Mc4CaAXYrKA"/>
+        </children>
+        <children xmi:id="_q3AuLmsTEd6Mc4CaAXYrKA" visible="false" type="StructureCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_q3AuL2sTEd6Mc4CaAXYrKA"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_q3AuIWsTEd6Mc4CaAXYrKA" showListSignature="true" showStereotype="Label"/>
+        <element xmi:type="uml:Class" href="cda.emx#_0jvq8E8AEd6ohP_YEXs4Wg?cda/StrucDocText?"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q3AuImsTEd6Mc4CaAXYrKA" x="6340" y="5706"/>
+      </children>
+      <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_pgbVsWsTEd6Mc4CaAXYrKA"/>
+      <element xsi:nil="true"/>
+    </contents>
   </eAnnotations>
   <profileApplication xmi:id="_Xj2tZ1bFEd6ShYMM6mMCTg">
     <eAnnotations xmi:id="_Xj2taFbFEd6ShYMM6mMCTg" source="http://www.eclipse.org/uml2/2.0.0/UML">
