@@ -68,4 +68,20 @@ public interface StrucDocText extends EObject {
 	 */
 	FeatureMap getAny();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model textRequired="true" textOrdered="false"
+	 * @generated
+	 */
+	void addText(String text);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	String getText();
+
 } // StrucDocText
