@@ -62,6 +62,7 @@ feature@org.openhealthtools.mdht.test=SVN,trunk,https://mdht.projects.openhealth
 
 fragment@org.openhealthtools.mdht.uml.common.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/tests/org.openhealthtools.mdht.uml.common.test
 
+fragment@org.openhealthtools.mdht.uml.hdf.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/tests/org.openhealthtools.mdht.uml.hdf.test
 
 
 
