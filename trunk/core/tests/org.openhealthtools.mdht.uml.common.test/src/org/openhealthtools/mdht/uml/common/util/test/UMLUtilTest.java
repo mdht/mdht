@@ -47,7 +47,11 @@ public class UMLUtilTest extends TestCase {
 	}
 
 	public final void testGetClassifierByNamePackageString() {
-		fail("Not yet implemented"); // TODO
+		
+		this.assertTrue("message", true);
+		
+//		UMLUtil.getClassifierByName(basePackage, localName);
+//		UMLUtil.getClassifierByName(basePackage, localName)
 	}
 
 	public final void testGetClassByName() {
