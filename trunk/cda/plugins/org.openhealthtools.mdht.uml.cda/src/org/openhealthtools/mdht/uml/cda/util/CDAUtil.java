@@ -40,8 +40,10 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
+import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.resource.CDAResource;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -53,11 +55,11 @@ public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 	public static final String CDA_SCHEMA_LOCATION = CDAPackage.eNS_URI + " infrastructure/cda/CDA.xsd";
 	
-	public static EObject load(InputStream in) throws Exception {
+	public static ClinicalDocument load(InputStream in) throws Exception {
 		return load(in, null);
 	}
 	
-	public static EObject load(InputStream in, UnknownFeatureHandler handler) throws Exception {
+	public static ClinicalDocument load(InputStream in, LoadHandler handler) throws Exception {
 		CDAPackage.eINSTANCE.eClass();
 		DocumentBuilder builder = newDocumentBuilder();
 		Document doc = builder.parse(in);
@@ -67,10 +69,10 @@ public class CDAUtil {
 		if (handler != null) {
 			processResource(resource, handler);
 		}
-		return resource.getContents().get(0);
+		return (ClinicalDocument) resource.getContents().get(0);
 	}
 	
-	private static void processResource(CDAResource resource, UnknownFeatureHandler handler) {
+	private static void processResource(XMLResource resource, LoadHandler handler) {
 		Map<EObject, AnyType> extMap = resource.getEObjectToExtensionMap();
 		for (EObject key : extMap.keySet()) {
 			AnyType value = extMap.get(key);
@@ -78,12 +80,12 @@ public class CDAUtil {
 		}
 	}
 	
-	private static void handleUnknownData(EObject eObject, AnyType unknownData, UnknownFeatureHandler handler) {
-		handleUnknownFeatures(eObject, unknownData.getMixed(), handler);
-		handleUnknownFeatures(eObject, unknownData.getAnyAttribute(), handler);
+	private static void handleUnknownData(EObject object, AnyType unknownData, LoadHandler handler) {
+		handleUnknownFeatures(object, unknownData.getMixed(), handler);
+		handleUnknownFeatures(object, unknownData.getAnyAttribute(), handler);
 	}
 
-	private static void handleUnknownFeatures(EObject owner, FeatureMap featureMap, UnknownFeatureHandler handler) {
+	private static void handleUnknownFeatures(EObject owner, FeatureMap featureMap, LoadHandler handler) {
 		Iterator<FeatureMap.Entry> iterator = featureMap.iterator();
 		while (iterator.hasNext()) {
 			FeatureMap.Entry entry = iterator.next();
@@ -94,22 +96,22 @@ public class CDAUtil {
 		}
 	}
 	
-	public interface UnknownFeatureHandler {
+	public interface LoadHandler {
 		public boolean handleUnknownFeature(EObject owner, EStructuralFeature feature, Object value);
 	}
 	
-	public static void save(EObject object, OutputStream out) throws Exception {
+	public static void save(ClinicalDocument clinicalDocument, OutputStream out) throws Exception {
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
-		resource.getContents().add(object);
-		Document doc = newDocument();
-		resource.save(doc, null, null);
-		adjustNamespace(doc);
-		setSchemaLocation(doc);
-		save(doc, out);
+		resource.getContents().add(clinicalDocument);
+		Document document = newDocument();
+		resource.save(document, null, null);
+		adjustNamespace(document);
+		setSchemaLocation(document);
+		save(document, out);
 	}
 	
-	private static void adjustNamespace(Document doc) {
-		Element root = doc.getDocumentElement();
+	private static void adjustNamespace(Document document) {
+		Element root = document.getDocumentElement();
 		if (root.getPrefix() == null) {
 			root.removeAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns");
 		} else {
@@ -119,18 +121,18 @@ public class CDAUtil {
 		root.setPrefix(CDAPackage.eNS_PREFIX);
 	}
 	
-	private static void setSchemaLocation(Document doc) {
-		Element root = doc.getDocumentElement();
+	private static void setSchemaLocation(Document document) {
+		Element root = document.getDocumentElement();
 		root.setAttributeNS(ExtendedMetaData.XSI_URI, "xsi:schemaLocation", CDA_SCHEMA_LOCATION);
 	}
 	
-	private static void save(Document doc, OutputStream out) throws Exception {
+	private static void save(Document document, OutputStream out) throws Exception {
 		TransformerFactory factory = TransformerFactory.newInstance();
 		factory.setAttribute("indent-number", new Integer(2));
 		Transformer transformer = factory.newTransformer();
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-		transformer.transform(new DOMSource(doc), new StreamResult(new OutputStreamWriter(out, "utf-8")));
+		transformer.transform(new DOMSource(document), new StreamResult(new OutputStreamWriter(out, "utf-8")));
 	}
 	
 	private static DocumentBuilder newDocumentBuilder() throws Exception {
@@ -143,7 +145,11 @@ public class CDAUtil {
 		return newDocumentBuilder().newDocument();
 	}
 	
-	public static boolean validate(EObject object, DiagnosticHandler handler) {
+	public static boolean validate(EObject object) {
+		return validate(object, null);
+	}
+	
+	public static boolean validate(EObject object, ValidationHandler handler) {
 		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(object);
 		if (handler != null) {
 			processDiagnostic(diagnostic, handler);
@@ -152,7 +158,7 @@ public class CDAUtil {
 	}
 
 	// iterative breadth-first traversal of diagnostic tree using queue
-	private static void processDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
+	private static void processDiagnostic(Diagnostic diagnostic, ValidationHandler handler) {
 		Queue<Diagnostic> queue = new LinkedList<Diagnostic>();
 		queue.offer(diagnostic);	// root
 		while (!queue.isEmpty()) {
@@ -179,32 +185,24 @@ public class CDAUtil {
 	}
 	*/
 	
-	private static void handleDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
+	private static void handleDiagnostic(Diagnostic diagnostic, ValidationHandler handler) {
 		switch (diagnostic.getSeverity()) {
-		case Diagnostic.OK:
-			handler.handleOkDiagnostic(diagnostic);
-			break;
 		case Diagnostic.ERROR:
-			handler.handleErrorDiagnostic(diagnostic);
+			handler.handleError(diagnostic);
 			break;
 		case Diagnostic.WARNING:
-			handler.handleWarningDiagnostic(diagnostic);
+			handler.handleWarning(diagnostic);
 			break;
 		case Diagnostic.INFO:
-			handler.handleInfoDiagnostic(diagnostic);
-			break;
-		case Diagnostic.CANCEL:
-			handler.handleCancelDiagnostic(diagnostic);
+			handler.handleInfo(diagnostic);
 			break;
 		}
 	}
 	
-	public interface DiagnosticHandler {
-		public void handleOkDiagnostic(Diagnostic diagnostic);
-		public void handleErrorDiagnostic(Diagnostic diagnostic);
-		public void handleWarningDiagnostic(Diagnostic diagnostic);
-		public void handleInfoDiagnostic(Diagnostic diagnostic);
-		public void handleCancelDiagnostic(Diagnostic diagnostic);
+	public interface ValidationHandler {
+		public void handleError(Diagnostic diagnostic);
+		public void handleWarning(Diagnostic diagnostic);
+		public void handleInfo(Diagnostic diagnostic);
 	}
 
 	// TODO: Refactor this into an OCL constraint.
