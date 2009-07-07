@@ -1023,6 +1023,10 @@
           createChild="true" ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/mixed"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/any"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//StrucDocText/addText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//StrucDocText/addText/text"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//StrucDocText/getText"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Subject">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1874,11 +1878,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getSupply"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/hasActTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ObservationMedia/hasActTemplate/templateId"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/hasCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ObservationMedia/hasCode/code"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ObservationMedia/hasCode/codeSystem"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ObservationMedia/hasCode/codeSystemName"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/hasEncounterTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ObservationMedia/hasEncounterTemplate/templateId"/>
