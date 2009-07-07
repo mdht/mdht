@@ -585,7 +585,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_RwHnYFxbEd6ZEsfifJz_3w" name="hasCode" bodyCondition="_RwHnYVxbEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_RwHnYFxbEd6ZEsfifJz_3w" name="hasCode" isQuery="true" bodyCondition="_RwHnYVxbEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_RwHnYVxbEd6ZEsfifJz_3w" name="body" constrainedElement="_RwHnYFxbEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_RwHnYlxbEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -1224,7 +1224,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_hG4gkFxcEd6ZEsfifJz_3w" name="hasCode" bodyCondition="_hG4gkVxcEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_hG4gkFxcEd6ZEsfifJz_3w" name="hasCode" isQuery="true" bodyCondition="_hG4gkVxcEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_hG4gkVxcEd6ZEsfifJz_3w" name="body" constrainedElement="_hG4gkFxcEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_hG4gklxcEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -1654,7 +1654,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_hHLbgFxcEd6ZEsfifJz_3w" name="hasCode" bodyCondition="_hHLbgVxcEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_hHLbgFxcEd6ZEsfifJz_3w" name="hasCode" isQuery="true" bodyCondition="_hHLbgVxcEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_hHLbgVxcEd6ZEsfifJz_3w" name="body" constrainedElement="_hHLbgFxcEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_hHLbglxcEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -2365,7 +2365,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_hHeWcFxcEd6ZEsfifJz_3w" name="hasCode" bodyCondition="_hHeWcVxcEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_hHeWcFxcEd6ZEsfifJz_3w" name="hasCode" isQuery="true" bodyCondition="_hHeWcVxcEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_hHeWcVxcEd6ZEsfifJz_3w" name="body" constrainedElement="_hHeWcFxcEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_hHeWclxcEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -2744,26 +2744,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <ownedParameter xmi:id="_DJBcJFxQEd6ZEsfifJz_3w" name="Parameter1" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_hHLbh1xcEd6ZEsfifJz_3w" name="hasCode" bodyCondition="_hHLbiFxcEd6ZEsfifJz_3w">
-        <ownedRule xmi:id="_hHLbiFxcEd6ZEsfifJz_3w" name="body" constrainedElement="_hHLbh1xcEd6ZEsfifJz_3w">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_hHLbiVxcEd6ZEsfifJz_3w">
-            <language>OCL</language>
-            <body>self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_hHLbilxcEd6ZEsfifJz_3w" name="code">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_hHLbi1xcEd6ZEsfifJz_3w" name="codeSystem">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_hHLbjFxcEd6ZEsfifJz_3w" name="codeSystemName">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_hHLbjVxcEd6ZEsfifJz_3w" name="Parameter1" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
@@ -3189,7 +3169,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_hHeWd1xcEd6ZEsfifJz_3w" name="hasCode" bodyCondition="_hHeWeFxcEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_hHeWd1xcEd6ZEsfifJz_3w" name="hasCode" isQuery="true" bodyCondition="_hHeWeFxcEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_hHeWeFxcEd6ZEsfifJz_3w" name="body" constrainedElement="_hHeWd1xcEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_hHeWeVxcEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -3611,7 +3591,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_hHoHcFxcEd6ZEsfifJz_3w" name="hasCode" bodyCondition="_hHoHcVxcEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_hHoHcFxcEd6ZEsfifJz_3w" name="hasCode" isQuery="true" bodyCondition="_hHoHcVxcEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_hHoHcVxcEd6ZEsfifJz_3w" name="body" constrainedElement="_hHoHcFxcEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_hHoHclxcEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -4030,7 +4010,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_hHUld1xcEd6ZEsfifJz_3w" name="hasCode" bodyCondition="_hHUleFxcEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_hHUld1xcEd6ZEsfifJz_3w" name="hasCode" isQuery="true" bodyCondition="_hHUleFxcEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_hHUleFxcEd6ZEsfifJz_3w" name="body" constrainedElement="_hHUld1xcEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_hHUleVxcEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -4420,7 +4400,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_hHBqgFxcEd6ZEsfifJz_3w" name="hasCode" bodyCondition="_hHBqgVxcEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_hHBqgFxcEd6ZEsfifJz_3w" name="hasCode" isQuery="true" bodyCondition="_hHBqgVxcEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_hHBqgVxcEd6ZEsfifJz_3w" name="body" constrainedElement="_hHBqgFxcEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_hHBqglxcEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -4798,7 +4778,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_hHUlcFxcEd6ZEsfifJz_3w" name="hasCode" bodyCondition="_hHUlcVxcEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_hHUlcFxcEd6ZEsfifJz_3w" name="hasCode" isQuery="true" bodyCondition="_hHUlcVxcEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_hHUlcVxcEd6ZEsfifJz_3w" name="body" constrainedElement="_hHUlcFxcEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_hHUlclxcEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -9303,6 +9283,16 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7ovXsU8AEd6ohP_YEXs4Wg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7ovXsE8AEd6ohP_YEXs4Wg"/>
       </ownedAttribute>
+      <ownedOperation xmi:id="_umBWgGsTEd6Mc4CaAXYrKA" name="addText">
+        <ownedParameter xmi:id="_vpEu8GsTEd6Mc4CaAXYrKA" name="text">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_w_WlYGsTEd6Mc4CaAXYrKA" name="getText">
+        <ownedParameter xmi:id="_xynOUGsTEd6Mc4CaAXYrKA" name="Parameter1" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <profileApplication xmi:id="_ii81lzxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_ii81mDxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
