@@ -20,7 +20,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
-import org.openhealthtools.mdht.uml.cda.util.BasicDiagnosticHandler;
+import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 public class Main {
@@ -39,9 +39,9 @@ public class Main {
 		
 		CDAUtil.save(doc, System.out);
 		
-		CDAUtil.validate(doc, new BasicDiagnosticHandler() {
+		CDAUtil.validate(doc, new BasicValidationHandler() {
 			@Override
-			public void handleErrorDiagnostic(Diagnostic diagnostic) {
+			public void handleError(Diagnostic diagnostic) {
 				System.out.println("ERROR: " + diagnostic.getMessage());
 			}
 		});
