@@ -58,9 +58,7 @@ public class EDOperations {
 	 */
 	public static  String getText(ED ed) {
 		StringBuffer text = new StringBuffer("");
-		FeatureMap featureMap = ed.getMixed();
-		for (int i = 0; i < featureMap.size(); i++) {
-			FeatureMap.Entry entry = featureMap.get(i);
+		for (FeatureMap.Entry entry : ed.getMixed()) {
 			if (FeatureMapUtil.isText(entry)) {
 				text.append(entry.getValue().toString());
 			}

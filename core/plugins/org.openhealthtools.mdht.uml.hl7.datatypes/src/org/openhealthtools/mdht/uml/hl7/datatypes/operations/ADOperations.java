@@ -1946,9 +1946,7 @@ public class ADOperations {
 	 */
 	public static  String getText(AD ad) {
 		StringBuffer text = new StringBuffer("");
-		FeatureMap featureMap = ad.getMixed();
-		for (int i = 0; i < featureMap.size(); i++) {
-			FeatureMap.Entry entry = featureMap.get(i);
+		for (FeatureMap.Entry entry : ad.getMixed()) {
 			if (FeatureMapUtil.isText(entry)) {
 				text.append(entry.getValue().toString());
 			}

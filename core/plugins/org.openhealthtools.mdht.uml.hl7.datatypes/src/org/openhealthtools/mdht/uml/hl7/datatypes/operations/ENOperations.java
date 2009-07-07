@@ -428,9 +428,7 @@ public class ENOperations {
 	 */
 	public static  String getText(EN en) {
 		StringBuffer text = new StringBuffer("");
-		FeatureMap featureMap = en.getMixed();
-		for (int i = 0; i < featureMap.size(); i++) {
-			FeatureMap.Entry entry = featureMap.get(i);
+		for (FeatureMap.Entry entry : en.getMixed()) {
 			if (FeatureMapUtil.isText(entry)) {
 				text.append(entry.getValue().toString());
 			}
