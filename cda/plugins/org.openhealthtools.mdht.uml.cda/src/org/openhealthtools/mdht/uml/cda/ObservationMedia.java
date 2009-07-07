@@ -649,18 +649,6 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
-	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" codeRequired="true" codeOrdered="false" codeSystemRequired="true" codeSystemOrdered="false" codeSystemNameRequired="true" codeSystemNameOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName'"
-	 * @generated
-	 */
-	boolean hasCode(String code, String codeSystem, String codeSystemName);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
 	 * self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
