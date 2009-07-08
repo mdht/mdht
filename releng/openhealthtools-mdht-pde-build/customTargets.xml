@@ -1,10 +1,14 @@
 <project name="Build specific targets and properties" default="noDefault">
 
+	<property name="emma.enabled" value="true" />
+
+	<property name="tests.enabled" value="true" />
+
 	<!-- ===================================================================== -->
 	<!-- Run a given ${target} on all elements being built -->
 	<!-- Add on <ant> task for each top level element being built. -->
-	<!-- ===================================================================== -->	
-	<property name="allElementsFile" value="${builder}/allElements.xml"/>
+	<!-- ===================================================================== -->
+	<property name="allElementsFile" value="${builder}/allElements.xml" />
 	<import file="${allElementsFile}" />
 	<target name="allElements">
 		<antcall target="allElementsDelegator" />
@@ -12,48 +16,48 @@
 
 	<!-- ===================================================================== -->
 	<target name="getBaseComponents" depends="checkLocalBase" unless="skipBase">
-		<antcall target="getEclipseBase"/> 
-		<antcall target="getPDE"/>
+		<antcall target="getEclipseBase" />
+		<antcall target="getPDE" />
 	</target>
-	
+
 	<target name="checkLocalBase">
 		<available file="${base}" property="skipBase" />
 	</target>
 
 	<target name="getEclipseBase">
-		<antcall target="downloadEclipse"/>
+		<antcall target="downloadEclipse" />
 		<unzip dest="${base}" overwrite="true" src="${builderBaseDir}/${eclipseZipName}" />
 	</target>
 
 	<target name="getPDE">
-		<antcall target="downloadPDE"/>
+		<antcall target="downloadPDE" />
 		<unzip dest="${base}" overwrite="true" src="${builderBaseDir}/${pdeZipName}" />
 	</target>
 
-	
+
 	<!-- ======================== Download zips ============================== -->
 	<target name="downloadEclipse" depends="checkForDownloads" unless="eclipseZipExists">
-		<get src="${eclipseBaseURL}" dest="${builderBaseDir}/${eclipseZipName}" verbose="true"/>
+		<get src="${eclipseBaseURL}" dest="${builderBaseDir}/${eclipseZipName}" verbose="true" />
 	</target>
-	
+
 	<target name="downloadPDE" depends="checkForDownloads" unless="pdeZipExists">
-		<get src="${pdeZipURL}" dest="${builderBaseDir}/${pdeZipName}" verbose="true"/>
+		<get src="${pdeZipURL}" dest="${builderBaseDir}/${pdeZipName}" verbose="true" />
 	</target>
 
 	<target name="checkForDownloads">
 		<available file="${builderBaseDir}/${eclipseZipName}" property="eclipseZipExists" />
 		<available file="${builderBaseDir}/${pdeZipName}" property="pdeZipExists" />
 	</target>
-	
+
 	<!-- ===================================================================== -->
 	<!-- Check out map files from correct repository -->
 	<!-- Replace values for mapsCheckoutTag as desired. -->
 	<!-- ===================================================================== -->
-	
+
 	<target name="getMapFiles" depends="checkLocalMaps" unless="skipMaps">
-		<property name="mapsCheckoutTag" value="HEAD" />	
-		<svn javahl="false" username="seanmuir" password="oht2009" >
-		<export srcurl="${maps.URL}" revision="${maps.revision}" destpath="${buildDirectory}/maps" force="true"/>
+		<property name="mapsCheckoutTag" value="HEAD" />
+		<svn javahl="false" username="seanmuir" password="oht2009">
+			<export srcurl="${maps.URL}" revision="${maps.revision}" destpath="${buildDirectory}/maps" force="true" />
 		</svn>
 
 	</target>
@@ -86,6 +90,129 @@
 		</unzip>
 	</target>
 
+
+	<target name="runTests">
+
+		<loadproperties srcFile="${buildDirectory}/finalPluginsVersions.properties" />
+
+
+		<mkdir dir="${buildDirectory}/${buildLabel}/testlogs" />
+
+		<mkdir dir="${buildDirectory}/${buildLabel}/reports" />
+
+		<mkdir dir="${buildDirectory}/${buildLabel}/emma" />
+
+		<mkdir dir="${buildDirectory}/${buildLabel}/emma/instrumentation" />
+
+		<mkdir dir="${buildDirectory}/${buildLabel}/emma/coverage" />
+
+		<!-- If using emma- use instrumented location - else use repository for jars -->
+		<condition property="junittestdirectory" value="${buildDirectory}/${buildLabel}/emma/instrumentation/lib">
+			<equals arg1="${emma.enabled}" arg2="true" />
+		</condition>
+
+		<condition property="junittestdirectory" value="${p2.repo.dir}/plugins">
+			<not>
+				<equals arg1="${emma.enabled}" arg2="true" />
+			</not>
+		</condition>
+
+
+
+
+
+		<emma enabled="${emma.enabled}">
+
+			<instr mode="fullcopy" metadatafile="${buildDirectory}/${buildLabel}/emma/coverage/metadata.emma" 
+					       outdir="${buildDirectory}/${buildLabel}/emma/instrumentation" merge="true">
+				<instrpath>
+					<fileset dir="${p2.repo.dir}/plugins" includes="**/*_${org.openhealthtools.mdht.uml.hdf}.jar" />
+				</instrpath>
+
+				<filter includes="org.openhealthtools.*" excludes="com.*, net.*" />
+
+			</instr>
+
+
+		</emma>
+
+
+		<!-- TODO - This class path is cut and pasted from pde generate ant task - need to generated versus hard code it -->
+		<!-- TODO - Same for emma jars (instrumentation) -->
+		<junit printsummary="yes" fork="yes" forkmode="once">
+			<classpath>
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.junit_3.8.2.v20080602-1318/junit.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.core.runtime_3.4.0.v20080512.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.osgi_3.4.3.R34x_v20081215-1030.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/com.ibm.cds_2.0.4.200802251155.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.equinox.transforms.hook_1.0.0.v20080610.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.equinox.common_3.4.0.v20080421-2006.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.core.jobs_3.4.1.R34x_v20081128.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20080610/runtime_registry_compatibility.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20080610" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.equinox.registry_3.4.0.v20080516-0950.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.equinox.preferences_3.2.201.R34x_v20080709.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.core.contenttype_3.3.0.v20080604-1400.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.core.runtime.compatibility.auth_3.2.100.v20070502.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.equinox.app_1.1.0.v20080421-2006.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.osgi.services_3.1.200.v20071203.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/javax.servlet_2.4.0.v200806031604.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.uml2.uml_2.2.2.v200811051031.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.emf.ecore_2.4.2.v200902171115.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.emf.common_2.4.0.v200902171115.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.core.resources_3.4.2.R34x_v20090126.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.core.resources.compatibility_3.4.0.v20080604-1400.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.ant.core_3.2.0.v20080529.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.core.variables_3.2.100.v20080529-1300.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.core.expressions_3.4.2.r342_v20090313.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.core.filesystem_1.2.0.v20080604-1400.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.core.filesystem.linux.x86_1.2.0.v20080604-1400.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.emf.ecore.xmi_2.4.1.v200902171115.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.uml2.common_1.4.0.v200805131030.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/com.ibm.xtools.uml.cacheadapter_7.0.300.v20090311_0510.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/com.ibm.xtools.emf.collections_7.0.0.v20090311_0510.jar" />
+				<pathelement path="/opt/IBM/SDPShared/plugins/org.eclipse.emf.mapping.ecore2xml_2.4.0.v200902171115.jar" />
+				<pathelement path="/usr/share/ant/lib/emma_ant.jar" />
+				<pathelement path="/usr/share/ant/lib/emma.jar" />
+
+				<fileset dir="${junittestdirectory}" includes="**/*${org.openhealthtools.mdht.uml.common.test}.jar" />
+
+			</classpath>
+
+			<formatter type="xml" />
+
+			<test name="org.openhealthtools.mdht.uml.common.util.test.AllTests" todir="${buildDirectory}/${buildLabel}/testlogs" haltonfailure="no" />
+
+			<test name="org.openhealthtools.mdht.uml.hdf.util.test.AllTests" todir="${buildDirectory}/${buildLabel}/testlogs" haltonfailure="no" />
+
+			<jvmarg value="-Demma.coverage.out.file=${buildDirectory}/${buildLabel}/emma/coverage/coverage.ec" />
+			<jvmarg value="-Demma.coverage.out.merge=true" />
+		</junit>
+
+ 		<junitreport todir="${buildDirectory}/${buildLabel}/reports">
+  			<fileset dir="${buildDirectory}/${buildLabel}/testlogs">
+    				<include name="TEST-*.xml"/>
+  			</fileset>
+  			<report format="frames" todir="${buildDirectory}/${buildLabel}/reports/html"/>
+		</junitreport>
+
+		<emma enabled="${emma.enabled}">
+			<report sourcepath="${src.dir}">
+				<fileset dir="${buildDirectory}/${buildLabel}/emma/coverage">
+					<include name="*.ec" />
+					<include name="*.emma" />
+
+				</fileset>
+
+				<txt outfile="${buildDirectory}/${buildLabel}/reports/coverage.txt" />
+				<html outfile="${buildDirectory}/${buildLabel}/reports/coverage.html" />
+			</report>
+		</emma>
+
+
+
+	</target>
+
 	<!-- ===================================================================== -->
 	<!-- Steps to do before setup -->
 	<!-- ===================================================================== -->
@@ -96,7 +223,7 @@
 	<!-- Steps to do after setup but before starting the build proper -->
 	<!-- ===================================================================== -->
 	<target name="postSetup">
-		<property file="${builderBaseDir}/build.cfg"/>
+		<property file="${builderBaseDir}/build.cfg" />
 		<antcall target="getBaseComponents" />
 	</target>
 
@@ -145,7 +272,7 @@
 	<!-- Steps to do before running assemble. -->
 	<!-- ===================================================================== -->
 	<target name="preAssemble">
-<echo message="preAssembly" />
+		<echo message="preAssembly" />
 	</target>
 
 	<!-- ===================================================================== -->
@@ -172,12 +299,35 @@
 	<!-- ===================================================================== -->
 	<target name="postBuild">
 		<antcall target="gatherLogs" />
+
+		<if>
+ 			<equals arg1="${tests.enabled}" arg2="true" />
+ 		<then>
+			<antcall target="runTests" />
+ 		</then>
+ 		<else>
+   			<echo message="JUnit Test will not be run" />
+		</else>
+		</if>
+
+		
+
+
+
+
+
+
+
 	</target>
 
 	<!-- ===================================================================== -->
 	<!-- Steps to do to test the build results -->
 	<!-- ===================================================================== -->
 	<target name="test">
+
+
+
+
 	</target>
 
 	<!-- ===================================================================== -->
