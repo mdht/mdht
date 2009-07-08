@@ -27,9 +27,17 @@
   <genPackages xsi:type="genmodel:GenPackage" prefix="CCD" basePackage="org.openhealthtools.mdht.uml.cda"
       disposableProviderFactory="true" ecorePackage="ccd.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.cda.ccd.operations">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ContinuityOfCareDocument">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ContinuityOfCareDocument/templateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/templateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/templateId/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocument_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocument_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocument_templateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocument_code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocument_code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocument_code/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocument_title">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocument_title/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocument_title/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ProblemAct">
@@ -48,8 +56,35 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemObservation/templateId/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//A"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//B"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//C"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//FamilyHistorySection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//FamilyHistorySection/FamilyHistorySection_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FamilyHistorySection/FamilyHistorySection_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FamilyHistorySection/FamilyHistorySection_templateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//FamilyHistorySection/FamilyHistorySection_code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FamilyHistorySection/FamilyHistorySection_code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FamilyHistorySection/FamilyHistorySection_code/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//FamilyHistorySection/FamilyHistorySection_title">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FamilyHistorySection/FamilyHistorySection_title/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FamilyHistorySection/FamilyHistorySection_title/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//FamilyHistorySection/FamilyHistorySection_text">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FamilyHistorySection/FamilyHistorySection_text/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FamilyHistorySection/FamilyHistorySection_text/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//FamilyHistoryObservation">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//FamilyHistoryObservation/FamilyHistoryObservation_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FamilyHistoryObservation/FamilyHistoryObservation_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FamilyHistoryObservation/FamilyHistoryObservation_templateId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//FamilyHistoryOrganizer">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//FamilyHistoryOrganizer/FamilyHistoryOrganizer_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FamilyHistoryOrganizer/FamilyHistoryOrganizer_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FamilyHistoryOrganizer/FamilyHistoryOrganizer_templateId/context"/>
+      </genOperations>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
