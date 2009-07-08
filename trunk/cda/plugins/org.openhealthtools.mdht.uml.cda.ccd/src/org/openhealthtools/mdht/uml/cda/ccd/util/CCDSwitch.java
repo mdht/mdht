@@ -21,6 +21,8 @@ import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Observation;
 
+import org.openhealthtools.mdht.uml.cda.Organizer;
+import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.*;
 
 /**
@@ -118,30 +120,24 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.A: {
-				A a = (A)theEObject;
-				T result = caseA(a);
-				if (result == null) result = caseProblemAct(a);
-				if (result == null) result = caseAct(a);
+			case CCDPackage.FAMILY_HISTORY_SECTION: {
+				FamilyHistorySection familyHistorySection = (FamilyHistorySection)theEObject;
+				T result = caseFamilyHistorySection(familyHistorySection);
+				if (result == null) result = caseSection(familyHistorySection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.B: {
-				B b = (B)theEObject;
-				T result = caseB(b);
-				if (result == null) result = caseA(b);
-				if (result == null) result = caseProblemAct(b);
-				if (result == null) result = caseAct(b);
+			case CCDPackage.FAMILY_HISTORY_OBSERVATION: {
+				FamilyHistoryObservation familyHistoryObservation = (FamilyHistoryObservation)theEObject;
+				T result = caseFamilyHistoryObservation(familyHistoryObservation);
+				if (result == null) result = caseObservation(familyHistoryObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.C: {
-				C c = (C)theEObject;
-				T result = caseC(c);
-				if (result == null) result = caseB(c);
-				if (result == null) result = caseA(c);
-				if (result == null) result = caseProblemAct(c);
-				if (result == null) result = caseAct(c);
+			case CCDPackage.FAMILY_HISTORY_ORGANIZER: {
+				FamilyHistoryOrganizer familyHistoryOrganizer = (FamilyHistoryOrganizer)theEObject;
+				T result = caseFamilyHistoryOrganizer(familyHistoryOrganizer);
+				if (result == null) result = caseOrganizer(familyHistoryOrganizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -195,47 +191,47 @@ public class CCDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>A</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Family History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>A</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Family History Section</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseA(A object) {
+	public T caseFamilyHistorySection(FamilyHistorySection object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>B</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Family History Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>B</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Family History Observation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseB(B object) {
+	public T caseFamilyHistoryObservation(FamilyHistoryObservation object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>C</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Family History Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>C</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Family History Organizer</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseC(C object) {
+	public T caseFamilyHistoryOrganizer(FamilyHistoryOrganizer object) {
 		return null;
 	}
 
@@ -281,6 +277,36 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseObservation(Observation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSection(Section object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Organizer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOrganizer(Organizer object) {
 		return null;
 	}
 

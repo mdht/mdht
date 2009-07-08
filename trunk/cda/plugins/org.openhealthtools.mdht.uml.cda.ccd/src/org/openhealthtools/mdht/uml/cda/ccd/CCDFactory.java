@@ -59,31 +59,31 @@ public interface CCDFactory extends EFactory {
 	ProblemObservation createProblemObservation();
 
 	/**
-	 * Returns a new object of class '<em>A</em>'.
+	 * Returns a new object of class '<em>Family History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>A</em>'.
+	 * @return a new object of class '<em>Family History Section</em>'.
 	 * @generated
 	 */
-	A createA();
+	FamilyHistorySection createFamilyHistorySection();
 
 	/**
-	 * Returns a new object of class '<em>B</em>'.
+	 * Returns a new object of class '<em>Family History Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>B</em>'.
+	 * @return a new object of class '<em>Family History Observation</em>'.
 	 * @generated
 	 */
-	B createB();
+	FamilyHistoryObservation createFamilyHistoryObservation();
 
 	/**
-	 * Returns a new object of class '<em>C</em>'.
+	 * Returns a new object of class '<em>Family History Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>C</em>'.
+	 * @return a new object of class '<em>Family History Organizer</em>'.
 	 * @generated
 	 */
-	C createC();
+	FamilyHistoryOrganizer createFamilyHistoryOrganizer();
 
 	/**
 	 * Returns the package supported by this factory.
