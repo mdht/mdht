@@ -870,14 +870,14 @@ public interface CCDPackage extends EPackage {
 	int PROBLEM_OBSERVATION_FEATURE_COUNT = CDAPackage.OBSERVATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.AImpl <em>A</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistorySectionImpl <em>Family History Section</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.AImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getA()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistorySectionImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getFamilyHistorySection()
 	 * @generated
 	 */
-	int A = 3;
+	int FAMILY_HISTORY_SECTION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -886,7 +886,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__REALM_CODE = PROBLEM_ACT__REALM_CODE;
+	int FAMILY_HISTORY_SECTION__REALM_CODE = CDAPackage.SECTION__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -895,7 +895,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__TYPE_ID = PROBLEM_ACT__TYPE_ID;
+	int FAMILY_HISTORY_SECTION__TYPE_ID = CDAPackage.SECTION__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -904,16 +904,16 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__TEMPLATE_ID = PROBLEM_ACT__TEMPLATE_ID;
+	int FAMILY_HISTORY_SECTION__TEMPLATE_ID = CDAPackage.SECTION__TEMPLATE_ID;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int A__ID = PROBLEM_ACT__ID;
+	int FAMILY_HISTORY_SECTION__ID = CDAPackage.SECTION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -922,7 +922,16 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__CODE = PROBLEM_ACT__CODE;
+	int FAMILY_HISTORY_SECTION__CODE = CDAPackage.SECTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__TITLE = CDAPackage.SECTION__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -931,34 +940,16 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__TEXT = PROBLEM_ACT__TEXT;
+	int FAMILY_HISTORY_SECTION__TEXT = CDAPackage.SECTION__TEXT;
 
 	/**
-	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int A__STATUS_CODE = PROBLEM_ACT__STATUS_CODE;
-
-	/**
-	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A__EFFECTIVE_TIME = PROBLEM_ACT__EFFECTIVE_TIME;
-
-	/**
-	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A__PRIORITY_CODE = PROBLEM_ACT__PRIORITY_CODE;
+	int FAMILY_HISTORY_SECTION__CONFIDENTIALITY_CODE = CDAPackage.SECTION__CONFIDENTIALITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -967,7 +958,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__LANGUAGE_CODE = PROBLEM_ACT__LANGUAGE_CODE;
+	int FAMILY_HISTORY_SECTION__LANGUAGE_CODE = CDAPackage.SECTION__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -976,25 +967,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__SUBJECT = PROBLEM_ACT__SUBJECT;
-
-	/**
-	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A__SPECIMEN = PROBLEM_ACT__SPECIMEN;
-
-	/**
-	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A__PERFORMER = PROBLEM_ACT__PERFORMER;
+	int FAMILY_HISTORY_SECTION__SUBJECT = CDAPackage.SECTION__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -1003,7 +976,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__AUTHOR = PROBLEM_ACT__AUTHOR;
+	int FAMILY_HISTORY_SECTION__AUTHOR = CDAPackage.SECTION__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -1012,43 +985,34 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__INFORMANT = PROBLEM_ACT__INFORMANT;
+	int FAMILY_HISTORY_SECTION__INFORMANT = CDAPackage.SECTION__INFORMANT;
 
 	/**
-	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int A__PARTICIPANT = PROBLEM_ACT__PARTICIPANT;
+	int FAMILY_HISTORY_SECTION__ENTRY = CDAPackage.SECTION__ENTRY;
 
 	/**
-	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int A__ENTRY_RELATIONSHIP = PROBLEM_ACT__ENTRY_RELATIONSHIP;
+	int FAMILY_HISTORY_SECTION__COMPONENT = CDAPackage.SECTION__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int A__REFERENCE = PROBLEM_ACT__REFERENCE;
-
-	/**
-	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A__PRECONDITION = PROBLEM_ACT__PRECONDITION;
+	int FAMILY_HISTORY_SECTION__SECTION_ID = CDAPackage.SECTION__SECTION_ID;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1057,7 +1021,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__NULL_FLAVOR = PROBLEM_ACT__NULL_FLAVOR;
+	int FAMILY_HISTORY_SECTION__NULL_FLAVOR = CDAPackage.SECTION__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1066,7 +1030,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__CLASS_CODE = PROBLEM_ACT__CLASS_CODE;
+	int FAMILY_HISTORY_SECTION__CLASS_CODE = CDAPackage.SECTION__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -1075,35 +1039,26 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__MOOD_CODE = PROBLEM_ACT__MOOD_CODE;
+	int FAMILY_HISTORY_SECTION__MOOD_CODE = CDAPackage.SECTION__MOOD_CODE;
 
 	/**
-	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
+	 * The number of structural features of the '<em>Family History Section</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int A__NEGATION_IND = PROBLEM_ACT__NEGATION_IND;
+	int FAMILY_HISTORY_SECTION_FEATURE_COUNT = CDAPackage.SECTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>A</em>' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistoryObservationImpl <em>Family History Observation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int A_FEATURE_COUNT = PROBLEM_ACT_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.BImpl <em>B</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.BImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getB()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistoryObservationImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getFamilyHistoryObservation()
 	 * @generated
 	 */
-	int B = 4;
+	int FAMILY_HISTORY_OBSERVATION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -1112,7 +1067,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__REALM_CODE = A__REALM_CODE;
+	int FAMILY_HISTORY_OBSERVATION__REALM_CODE = CDAPackage.OBSERVATION__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1121,7 +1076,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__TYPE_ID = A__TYPE_ID;
+	int FAMILY_HISTORY_OBSERVATION__TYPE_ID = CDAPackage.OBSERVATION__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1130,7 +1085,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__TEMPLATE_ID = A__TEMPLATE_ID;
+	int FAMILY_HISTORY_OBSERVATION__TEMPLATE_ID = CDAPackage.OBSERVATION__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -1139,7 +1094,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__ID = A__ID;
+	int FAMILY_HISTORY_OBSERVATION__ID = CDAPackage.OBSERVATION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -1148,7 +1103,16 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__CODE = A__CODE;
+	int FAMILY_HISTORY_OBSERVATION__CODE = CDAPackage.OBSERVATION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Derivation Expr</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_OBSERVATION__DERIVATION_EXPR = CDAPackage.OBSERVATION__DERIVATION_EXPR;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -1157,7 +1121,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__TEXT = A__TEXT;
+	int FAMILY_HISTORY_OBSERVATION__TEXT = CDAPackage.OBSERVATION__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -1166,7 +1130,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__STATUS_CODE = A__STATUS_CODE;
+	int FAMILY_HISTORY_OBSERVATION__STATUS_CODE = CDAPackage.OBSERVATION__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -1175,7 +1139,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__EFFECTIVE_TIME = A__EFFECTIVE_TIME;
+	int FAMILY_HISTORY_OBSERVATION__EFFECTIVE_TIME = CDAPackage.OBSERVATION__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -1184,7 +1148,16 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__PRIORITY_CODE = A__PRIORITY_CODE;
+	int FAMILY_HISTORY_OBSERVATION__PRIORITY_CODE = CDAPackage.OBSERVATION__PRIORITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Repeat Number</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_OBSERVATION__REPEAT_NUMBER = CDAPackage.OBSERVATION__REPEAT_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -1193,7 +1166,43 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__LANGUAGE_CODE = A__LANGUAGE_CODE;
+	int FAMILY_HISTORY_OBSERVATION__LANGUAGE_CODE = CDAPackage.OBSERVATION__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_OBSERVATION__VALUE = CDAPackage.OBSERVATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Interpretation Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_OBSERVATION__INTERPRETATION_CODE = CDAPackage.OBSERVATION__INTERPRETATION_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Method Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_OBSERVATION__METHOD_CODE = CDAPackage.OBSERVATION__METHOD_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Target Site Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_OBSERVATION__TARGET_SITE_CODE = CDAPackage.OBSERVATION__TARGET_SITE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -1202,7 +1211,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__SUBJECT = A__SUBJECT;
+	int FAMILY_HISTORY_OBSERVATION__SUBJECT = CDAPackage.OBSERVATION__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -1211,7 +1220,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__SPECIMEN = A__SPECIMEN;
+	int FAMILY_HISTORY_OBSERVATION__SPECIMEN = CDAPackage.OBSERVATION__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -1220,7 +1229,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__PERFORMER = A__PERFORMER;
+	int FAMILY_HISTORY_OBSERVATION__PERFORMER = CDAPackage.OBSERVATION__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -1229,7 +1238,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__AUTHOR = A__AUTHOR;
+	int FAMILY_HISTORY_OBSERVATION__AUTHOR = CDAPackage.OBSERVATION__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -1238,7 +1247,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__INFORMANT = A__INFORMANT;
+	int FAMILY_HISTORY_OBSERVATION__INFORMANT = CDAPackage.OBSERVATION__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -1247,7 +1256,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__PARTICIPANT = A__PARTICIPANT;
+	int FAMILY_HISTORY_OBSERVATION__PARTICIPANT = CDAPackage.OBSERVATION__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -1256,7 +1265,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__ENTRY_RELATIONSHIP = A__ENTRY_RELATIONSHIP;
+	int FAMILY_HISTORY_OBSERVATION__ENTRY_RELATIONSHIP = CDAPackage.OBSERVATION__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -1265,7 +1274,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__REFERENCE = A__REFERENCE;
+	int FAMILY_HISTORY_OBSERVATION__REFERENCE = CDAPackage.OBSERVATION__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -1274,7 +1283,16 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__PRECONDITION = A__PRECONDITION;
+	int FAMILY_HISTORY_OBSERVATION__PRECONDITION = CDAPackage.OBSERVATION__PRECONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Reference Range</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_OBSERVATION__REFERENCE_RANGE = CDAPackage.OBSERVATION__REFERENCE_RANGE;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1283,7 +1301,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__NULL_FLAVOR = A__NULL_FLAVOR;
+	int FAMILY_HISTORY_OBSERVATION__NULL_FLAVOR = CDAPackage.OBSERVATION__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1292,7 +1310,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__CLASS_CODE = A__CLASS_CODE;
+	int FAMILY_HISTORY_OBSERVATION__CLASS_CODE = CDAPackage.OBSERVATION__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -1301,7 +1319,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__MOOD_CODE = A__MOOD_CODE;
+	int FAMILY_HISTORY_OBSERVATION__MOOD_CODE = CDAPackage.OBSERVATION__MOOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -1310,26 +1328,26 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int B__NEGATION_IND = A__NEGATION_IND;
+	int FAMILY_HISTORY_OBSERVATION__NEGATION_IND = CDAPackage.OBSERVATION__NEGATION_IND;
 
 	/**
-	 * The number of structural features of the '<em>B</em>' class.
+	 * The number of structural features of the '<em>Family History Observation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int B_FEATURE_COUNT = A_FEATURE_COUNT + 0;
+	int FAMILY_HISTORY_OBSERVATION_FEATURE_COUNT = CDAPackage.OBSERVATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.CImpl <em>C</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistoryOrganizerImpl <em>Family History Organizer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getC()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistoryOrganizerImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getFamilyHistoryOrganizer()
 	 * @generated
 	 */
-	int C = 5;
+	int FAMILY_HISTORY_ORGANIZER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -1338,7 +1356,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__REALM_CODE = B__REALM_CODE;
+	int FAMILY_HISTORY_ORGANIZER__REALM_CODE = CDAPackage.ORGANIZER__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1347,7 +1365,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__TYPE_ID = B__TYPE_ID;
+	int FAMILY_HISTORY_ORGANIZER__TYPE_ID = CDAPackage.ORGANIZER__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1356,7 +1374,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__TEMPLATE_ID = B__TEMPLATE_ID;
+	int FAMILY_HISTORY_ORGANIZER__TEMPLATE_ID = CDAPackage.ORGANIZER__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -1365,7 +1383,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__ID = B__ID;
+	int FAMILY_HISTORY_ORGANIZER__ID = CDAPackage.ORGANIZER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -1374,16 +1392,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__CODE = B__CODE;
-
-	/**
-	 * The feature id for the '<em><b>Text</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int C__TEXT = B__TEXT;
+	int FAMILY_HISTORY_ORGANIZER__CODE = CDAPackage.ORGANIZER__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -1392,7 +1401,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__STATUS_CODE = B__STATUS_CODE;
+	int FAMILY_HISTORY_ORGANIZER__STATUS_CODE = CDAPackage.ORGANIZER__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -1401,25 +1410,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__EFFECTIVE_TIME = B__EFFECTIVE_TIME;
-
-	/**
-	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int C__PRIORITY_CODE = B__PRIORITY_CODE;
-
-	/**
-	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int C__LANGUAGE_CODE = B__LANGUAGE_CODE;
+	int FAMILY_HISTORY_ORGANIZER__EFFECTIVE_TIME = CDAPackage.ORGANIZER__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -1428,7 +1419,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__SUBJECT = B__SUBJECT;
+	int FAMILY_HISTORY_ORGANIZER__SUBJECT = CDAPackage.ORGANIZER__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -1437,7 +1428,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__SPECIMEN = B__SPECIMEN;
+	int FAMILY_HISTORY_ORGANIZER__SPECIMEN = CDAPackage.ORGANIZER__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -1446,7 +1437,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__PERFORMER = B__PERFORMER;
+	int FAMILY_HISTORY_ORGANIZER__PERFORMER = CDAPackage.ORGANIZER__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -1455,7 +1446,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__AUTHOR = B__AUTHOR;
+	int FAMILY_HISTORY_ORGANIZER__AUTHOR = CDAPackage.ORGANIZER__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -1464,7 +1455,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__INFORMANT = B__INFORMANT;
+	int FAMILY_HISTORY_ORGANIZER__INFORMANT = CDAPackage.ORGANIZER__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -1473,16 +1464,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__PARTICIPANT = B__PARTICIPANT;
-
-	/**
-	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int C__ENTRY_RELATIONSHIP = B__ENTRY_RELATIONSHIP;
+	int FAMILY_HISTORY_ORGANIZER__PARTICIPANT = CDAPackage.ORGANIZER__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -1491,7 +1473,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__REFERENCE = B__REFERENCE;
+	int FAMILY_HISTORY_ORGANIZER__REFERENCE = CDAPackage.ORGANIZER__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -1500,7 +1482,16 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__PRECONDITION = B__PRECONDITION;
+	int FAMILY_HISTORY_ORGANIZER__PRECONDITION = CDAPackage.ORGANIZER__PRECONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_ORGANIZER__COMPONENT = CDAPackage.ORGANIZER__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1509,7 +1500,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__NULL_FLAVOR = B__NULL_FLAVOR;
+	int FAMILY_HISTORY_ORGANIZER__NULL_FLAVOR = CDAPackage.ORGANIZER__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1518,7 +1509,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__CLASS_CODE = B__CLASS_CODE;
+	int FAMILY_HISTORY_ORGANIZER__CLASS_CODE = CDAPackage.ORGANIZER__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -1527,26 +1518,16 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int C__MOOD_CODE = B__MOOD_CODE;
+	int FAMILY_HISTORY_ORGANIZER__MOOD_CODE = CDAPackage.ORGANIZER__MOOD_CODE;
 
 	/**
-	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
+	 * The number of structural features of the '<em>Family History Organizer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int C__NEGATION_IND = B__NEGATION_IND;
-
-	/**
-	 * The number of structural features of the '<em>C</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int C_FEATURE_COUNT = B_FEATURE_COUNT + 0;
-
+	int FAMILY_HISTORY_ORGANIZER_FEATURE_COUNT = CDAPackage.ORGANIZER_FEATURE_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument <em>Continuity Of Care Document</em>}'.
@@ -1579,34 +1560,34 @@ public interface CCDPackage extends EPackage {
 	EClass getProblemObservation();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.A <em>A</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection <em>Family History Section</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>A</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.A
+	 * @return the meta object for class '<em>Family History Section</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection
 	 * @generated
 	 */
-	EClass getA();
+	EClass getFamilyHistorySection();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.B <em>B</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation <em>Family History Observation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>B</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.B
+	 * @return the meta object for class '<em>Family History Observation</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation
 	 * @generated
 	 */
-	EClass getB();
+	EClass getFamilyHistoryObservation();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.C <em>C</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryOrganizer <em>Family History Organizer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>C</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.C
+	 * @return the meta object for class '<em>Family History Organizer</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryOrganizer
 	 * @generated
 	 */
-	EClass getC();
+	EClass getFamilyHistoryOrganizer();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1661,34 +1642,34 @@ public interface CCDPackage extends EPackage {
 		EClass PROBLEM_OBSERVATION = eINSTANCE.getProblemObservation();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.AImpl <em>A</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistorySectionImpl <em>Family History Section</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.AImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getA()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistorySectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getFamilyHistorySection()
 		 * @generated
 		 */
-		EClass A = eINSTANCE.getA();
+		EClass FAMILY_HISTORY_SECTION = eINSTANCE.getFamilyHistorySection();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.BImpl <em>B</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistoryObservationImpl <em>Family History Observation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.BImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getB()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistoryObservationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getFamilyHistoryObservation()
 		 * @generated
 		 */
-		EClass B = eINSTANCE.getB();
+		EClass FAMILY_HISTORY_OBSERVATION = eINSTANCE.getFamilyHistoryObservation();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.CImpl <em>C</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistoryOrganizerImpl <em>Family History Organizer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getC()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistoryOrganizerImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getFamilyHistoryOrganizer()
 		 * @generated
 		 */
-		EClass C = eINSTANCE.getC();
+		EClass FAMILY_HISTORY_ORGANIZER = eINSTANCE.getFamilyHistoryOrganizer();
 
 	}
 

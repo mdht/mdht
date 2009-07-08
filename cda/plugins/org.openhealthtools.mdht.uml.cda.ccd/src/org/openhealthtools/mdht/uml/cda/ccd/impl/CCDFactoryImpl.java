@@ -69,9 +69,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.CONTINUITY_OF_CARE_DOCUMENT: return createContinuityOfCareDocument();
 			case CCDPackage.PROBLEM_ACT: return createProblemAct();
 			case CCDPackage.PROBLEM_OBSERVATION: return createProblemObservation();
-			case CCDPackage.A: return createA();
-			case CCDPackage.B: return createB();
-			case CCDPackage.C: return createC();
+			case CCDPackage.FAMILY_HISTORY_SECTION: return createFamilyHistorySection();
+			case CCDPackage.FAMILY_HISTORY_OBSERVATION: return createFamilyHistoryObservation();
+			case CCDPackage.FAMILY_HISTORY_ORGANIZER: return createFamilyHistoryOrganizer();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -112,9 +112,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public A createA() {
-		AImpl a = new AImpl();
-		return a;
+	public FamilyHistorySection createFamilyHistorySection() {
+		FamilyHistorySectionImpl familyHistorySection = new FamilyHistorySectionImpl();
+		return familyHistorySection;
 	}
 
 	/**
@@ -122,9 +122,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public B createB() {
-		BImpl b = new BImpl();
-		return b;
+	public FamilyHistoryObservation createFamilyHistoryObservation() {
+		FamilyHistoryObservationImpl familyHistoryObservation = new FamilyHistoryObservationImpl();
+		return familyHistoryObservation;
 	}
 
 	/**
@@ -132,9 +132,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public C createC() {
-		CImpl c = new CImpl();
-		return c;
+	public FamilyHistoryOrganizer createFamilyHistoryOrganizer() {
+		FamilyHistoryOrganizerImpl familyHistoryOrganizer = new FamilyHistoryOrganizerImpl();
+		return familyHistoryOrganizer;
 	}
 
 	/**
