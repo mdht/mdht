@@ -39,20 +39,5 @@
             id="2.16.840.1.113883.10.20.1.28"
             nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd">
       </entry>
-      <entry
-            eClass="A"
-            id="1.2.3"
-            nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd">
-      </entry>
-      <entry
-            eClass="B"
-            id="4.5.6"
-            nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd">
-      </entry>
-      <entry
-            eClass="C"
-            id="7.8.9"
-            nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd">
-      </entry>
    </extension>
 </plugin>
