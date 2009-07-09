@@ -234,6 +234,14 @@ public class CDAUtil {
 		return defined;
 	}
 
+	// walk up the containment tree until we reach the ClinicalDocument or we run out of containers
+	public static ClinicalDocument getClinicalDocument(EObject object) {
+		while (object != null && !(object instanceof ClinicalDocument)) {
+			object = object.eContainer();
+		}
+		return (ClinicalDocument) object;
+	}
+	
 	// TODO: Create a generic mechanism for populating an instance from annotations.
 	public static void init(EObject object) {
 		addTemplateIds(object);
