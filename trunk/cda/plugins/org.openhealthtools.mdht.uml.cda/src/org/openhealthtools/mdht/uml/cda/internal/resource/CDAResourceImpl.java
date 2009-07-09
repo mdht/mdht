@@ -17,7 +17,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.xmi.XMLLoad;
 import org.eclipse.emf.ecore.xmi.XMLSave;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
-import org.openhealthtools.mdht.uml.cda.resource.CDAResource;
 
 /**
  * <!-- begin-user-doc -->
