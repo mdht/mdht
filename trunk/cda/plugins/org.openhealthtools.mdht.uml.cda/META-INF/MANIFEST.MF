@@ -12,7 +12,6 @@ Export-Package: org.openhealthtools.mdht.uml.cda,
  org.openhealthtools.mdht.uml.cda.internal.registry;x-internal:=true,
  org.openhealthtools.mdht.uml.cda.internal.resource;x-internal:=true,
  org.openhealthtools.mdht.uml.cda.operations,
- org.openhealthtools.mdht.uml.cda.resource,
  org.openhealthtools.mdht.uml.cda.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
