@@ -5,17 +5,66 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class UMLUtilTest extends TestCase {
 
+	Package testPackage = null;
+
+	Package subPackage = null;
+
+	NamedElement subElement = null;
+
+	final static String UNIQUECLASSNAME = "UniqueClassName";
+
+	final static String UNIQUEDATATYPENAME = "UniqueDataTypeName";
+
+	final static String UNIQUEENUMERATIONNAME = "UniqueEnumerationName";
+
+	final static String UNIQUEPACKAGENAME = "UniquePackageName";
+
+	final static String NONAME = "NoNameNoNameNoNameNoName";
+
+	final static String SAMENAME = "SameNameSameNameSameNameSameNameSameNameSameName";
+
+	final static String SUBPACKAGENAME = "SubPackageName";
+
+	final static String SUBELEMENTNAME = "SubElementName";
+
+	protected void setUp() throws Exception {
+
+		testPackage = UMLFactory.eINSTANCE.createPackage();
+
+		subPackage = (Package) testPackage.createPackagedElement(SUBPACKAGENAME, testPackage.eClass());
+
+		subElement = subPackage.createOwnedClass(SUBELEMENTNAME, false);
+
+		testPackage.createOwnedPrimitiveType(UNIQUEDATATYPENAME);
+
+		testPackage.createOwnedClass(UNIQUECLASSNAME, false);
+
+		testPackage.createOwnedEnumeration(UNIQUEENUMERATIONNAME);
+
+		testPackage.createOwnedPrimitiveType(SAMENAME);
+
+		testPackage.createOwnedClass(SAMENAME, false);
+
+		testPackage.createOwnedEnumeration(SAMENAME);
+
+		super.setUp();
+	}
+
 	public final void testGetAllParentNames() {
-		
+
 		String[] names = new String[] { "org.openhealthtools.mdht.uml.parent", "org.openhealthtools.mdht.uml.child1", "org.openhealthtools.mdht.uml.child2" };
 
-		
 		Class generalization = null;
 		for (String name : names) {
 
@@ -28,34 +77,66 @@ public class UMLUtilTest extends TestCase {
 		}
 
 		List<String> results = UMLUtil.getAllParentNames(generalization);
-		
+
 		// Results should be in reverse order
 		Collections.reverse(results);
 
 		for (int index = 0; index < results.size(); index++) {
-			if (!names[index].equals(results.get(index))) {
-				System.out.println(names[index] + " verus "+results.get(index));
-				fail("testGetAllParentNames"); 	
-			
-				
-//				fail("testGetAllParentNames "); // + names[index] + " not equal to " + results.get(index));
-			}
-		}	
-		
-	 		
+
+			assertEquals(names[index], results.get(index));
+
+		}
 
 	}
 
 	public final void testGetClassifierByNamePackageString() {
-		
-		this.assertTrue("message", true);
-		
-//		UMLUtil.getClassifierByName(basePackage, localName);
-//		UMLUtil.getClassifierByName(basePackage, localName)
+
+		Classifier classifierByName = UMLUtil.getClassifierByName(testPackage, UNIQUECLASSNAME);
+
+		assertNotNull(classifierByName);
+
+		assertEquals(classifierByName.getName(), UNIQUECLASSNAME);
+
+		classifierByName = UMLUtil.getClassifierByName(testPackage, NONAME);
+
+		assertNull(classifierByName);
+
+		classifierByName = UMLUtil.getClassifierByName(testPackage, null);
+
+		assertNull(classifierByName);
+
+		classifierByName = UMLUtil.getClassifierByName(null, null);
+
+		assertNull(classifierByName);
+
 	}
 
 	public final void testGetClassByName() {
-		fail("Not yet implemented"); // TODO
+
+		Class classByName = UMLUtil.getClassByName(testPackage, UNIQUECLASSNAME);
+
+		assertNotNull(classByName);
+
+		assertEquals(classByName.getName(), UNIQUECLASSNAME);
+
+		classByName = UMLUtil.getClassByName(testPackage, SAMENAME);
+
+		assertNotNull(classByName);
+
+		assertEquals(classByName.getName(), SAMENAME);
+
+		classByName = UMLUtil.getClassByName(testPackage, NONAME);
+
+		assertNull(classByName);
+
+		classByName = UMLUtil.getClassByName(testPackage, null);
+
+		assertNull(classByName);
+
+		classByName = UMLUtil.getClassByName(null, null);
+
+		assertNull(classByName);
+
 	}
 
 	public final void testGetDataTypeByName() {
@@ -63,19 +144,86 @@ public class UMLUtilTest extends TestCase {
 	}
 
 	public final void testGetEnumerationByName() {
-		fail("Not yet implemented"); // TODO
+
+		Enumeration enumerationByName = UMLUtil.getEnumerationByName(testPackage, UNIQUEENUMERATIONNAME);
+
+		assertNotNull(enumerationByName);
+
+		assertEquals(enumerationByName.getName(), UNIQUEENUMERATIONNAME);
+
+		enumerationByName = UMLUtil.getEnumerationByName(testPackage, SAMENAME);
+
+		assertNotNull(enumerationByName);
+
+		assertEquals(enumerationByName.getName(), SAMENAME);
+
+		enumerationByName = UMLUtil.getEnumerationByName(testPackage, NONAME);
+
+		assertNull(enumerationByName);
+
+		enumerationByName = UMLUtil.getEnumerationByName(testPackage, null);
+
+		assertNull(enumerationByName);
+
+		enumerationByName = UMLUtil.getEnumerationByName(null, null);
+
+		assertNull(enumerationByName);
+
 	}
 
 	public final void testGetClassifierByNamePackageStringEClass() {
-		fail("Not yet implemented"); // TODO
+
+		Classifier classiferByClassifier = UMLUtil.getClassifierByName(testPackage, SAMENAME, UMLFactory.eINSTANCE.createClass().eClass());
+
+		assertNotNull(classiferByClassifier);
+
+		assertTrue((classiferByClassifier instanceof Class));
+
+		classiferByClassifier = UMLUtil.getClassifierByName(testPackage, SAMENAME, UMLFactory.eINSTANCE.createEnumeration().eClass());
+
+		assertNotNull(classiferByClassifier);
+
+		assertTrue((classiferByClassifier instanceof Enumeration));
+
+		classiferByClassifier = UMLUtil.getClassifierByName(testPackage, NONAME, UMLFactory.eINSTANCE.createClass().eClass());
+
+		assertNull(classiferByClassifier);
+
+		classiferByClassifier = UMLUtil.getClassifierByName(testPackage, NONAME, UMLFactory.eINSTANCE.createEnumeration().eClass());
+
+		assertNull(classiferByClassifier);
+
+		classiferByClassifier = UMLUtil.getClassifierByName(testPackage, NONAME, null);
+
+		assertNull(classiferByClassifier);
+
+		classiferByClassifier = UMLUtil.getClassifierByName(testPackage, null, null);
+
+		assertNull(classiferByClassifier);
+
+		classiferByClassifier = UMLUtil.getClassifierByName(null, null, null);
+
+		assertNull(classiferByClassifier);
+
 	}
 
 	public final void testGetTopPackagePackage() {
-		fail("Not yet implemented"); // TODO
+
+		Package topPackage = UMLUtil.getTopPackage(subPackage);
+
+		assertEquals(testPackage, topPackage);
+
+		topPackage.equals(testPackage);
+
 	}
 
 	public final void testGetTopPackageNamedElement() {
-		fail("Not yet implemented"); // TODO
+		Package topPackage = UMLUtil.getTopPackage(subElement);
+
+		assertEquals(testPackage, topPackage);
+
+		topPackage.equals(testPackage);
+
 	}
 
 	public final void testGetNearestNamespace() {
@@ -91,19 +239,40 @@ public class UMLUtilTest extends TestCase {
 	}
 
 	public final void testGetPackageQualifiedName() {
-		fail("Not yet implemented"); // TODO
+
+		String pqn1 = UMLUtil.getPackageQualifiedName(subElement);
+
+		String pqn2 = UMLUtil.getPackageQualifiedName(subPackage);
+
+		assertNotSame(pqn1, pqn2);
+		
 	}
 
 	public final void testCloneStereotypesElementElement() {
-		fail("Not yet implemented"); // TODO
+		
+		fail("Not yet implemented"); // TODO	
 	}
 
 	public final void testCloneStereotypesClassClass() {
+		
+		
 		fail("Not yet implemented"); // TODO
 	}
 
 	public final void testAddAliasName() {
-		fail("Not yet implemented"); // TODO
+		
+		final  String ALIASTTEST="AliasTest";
+		
+		final String UML2ALIAS = "uml2.alias";
+		
+		UMLUtil.addAliasName(testPackage, ALIASTTEST);
+		
+		EAnnotation eAnnotation = testPackage.getEAnnotation(UML2ALIAS);
+		
+		assertTrue(eAnnotation.getDetails().containsKey(ALIASTTEST));
+		
+		
+	
 	}
 
 	public final void testSetEObjectIDElement() {
