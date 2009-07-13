@@ -22,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Observation;
 
 import org.openhealthtools.mdht.uml.cda.Organizer;
+import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.*;
 
@@ -120,6 +121,41 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CCDPackage.PROBLEM_SECTION: {
+				ProblemSection problemSection = (ProblemSection)theEObject;
+				T result = caseProblemSection(problemSection);
+				if (result == null) result = caseSection(problemSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PROBLEM_STATUS: {
+				ProblemStatus problemStatus = (ProblemStatus)theEObject;
+				T result = caseProblemStatus(problemStatus);
+				if (result == null) result = caseObservation(problemStatus);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PROBLEM_HEALTH_STATUS: {
+				ProblemHealthStatus problemHealthStatus = (ProblemHealthStatus)theEObject;
+				T result = caseProblemHealthStatus(problemHealthStatus);
+				if (result == null) result = caseObservation(problemHealthStatus);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.EPISODE_OBSERVATION: {
+				EpisodeObservation episodeObservation = (EpisodeObservation)theEObject;
+				T result = caseEpisodeObservation(episodeObservation);
+				if (result == null) result = caseObservation(episodeObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PATIENT_AWARENESS: {
+				PatientAwareness patientAwareness = (PatientAwareness)theEObject;
+				T result = casePatientAwareness(patientAwareness);
+				if (result == null) result = caseParticipant2(patientAwareness);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CCDPackage.FAMILY_HISTORY_SECTION: {
 				FamilyHistorySection familyHistorySection = (FamilyHistorySection)theEObject;
 				T result = caseFamilyHistorySection(familyHistorySection);
@@ -187,6 +223,81 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseProblemObservation(ProblemObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProblemSection(ProblemSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Status</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Status</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProblemStatus(ProblemStatus object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Health Status</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Health Status</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProblemHealthStatus(ProblemHealthStatus object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Episode Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Episode Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEpisodeObservation(EpisodeObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Patient Awareness</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Patient Awareness</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePatientAwareness(PatientAwareness object) {
 		return null;
 	}
 
@@ -292,6 +403,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseSection(Section object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Participant2</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Participant2</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParticipant2(Participant2 object) {
 		return null;
 	}
 
