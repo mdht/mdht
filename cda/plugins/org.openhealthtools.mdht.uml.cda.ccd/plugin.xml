@@ -39,5 +39,25 @@
             id="2.16.840.1.113883.10.20.1.28"
             nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd">
       </entry>
+      <entry
+            eClass="EpisodeObservation"
+            id="2.16.840.1.113883.10.20.1.41"
+            nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd">
+      </entry>
+      <entry
+            eClass="PatientAwareness"
+            id="2.16.840.1.113883.10.20.1.48"
+            nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd">
+      </entry>
+      <entry
+            eClass="ProblemStatus"
+            id="2.16.840.1.113883.10.20.1.50"
+            nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd">
+      </entry>
+      <entry
+            eClass="ProblemHealthStatus"
+            id="2.16.840.1.113883.10.20.1.51"
+            nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd">
+      </entry>
    </extension>
 </plugin>
