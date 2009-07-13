@@ -12,10 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.tests;
 
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
@@ -24,9 +22,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
-import org.openhealthtools.mdht.uml.cda.resource.CDAResource;
+import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
-import org.w3c.dom.Document;
 
 public class Main {
 	public static void main(String[] args) throws Exception {	
@@ -46,20 +43,13 @@ public class Main {
 		ContinuityOfCareDocument doc = CCDFactory.eINSTANCE.createContinuityOfCareDocument().init();
 		doc.addSection(sect);
 
-		Resource.Factory factory = CDAResource.Factory.INSTANCE;
-		CDAResource resource = (CDAResource) factory.createResource(URI.createURI(CDAPackage.eNS_URI));
-		resource.getContents().add(doc);
+		CDAUtil.save(doc, System.out);
 		
-		Document document = CDAUtil.newDocument();
-		resource.save(document, null, null);
-		CDAUtil.adjustNamespace(document);
-		CDAUtil.setSchemaLocation(document);
-		CDAUtil.writeDocument(document, System.out);
-		
-		resource = (CDAResource) factory.createResource(URI.createURI(CDAPackage.eNS_URI));
-		resource.load(document, null);
-		CDAUtil.writeDocument(document, System.out);
-		
-		System.out.println(resource.getContents().get(0));
+		CDAUtil.validate(doc, new BasicValidationHandler() {
+			@Override
+			public void handleError(Diagnostic diagnostic) {
+				System.out.println("ERROR: " + diagnostic.getMessage());
+			}
+		});
 	}
 }
