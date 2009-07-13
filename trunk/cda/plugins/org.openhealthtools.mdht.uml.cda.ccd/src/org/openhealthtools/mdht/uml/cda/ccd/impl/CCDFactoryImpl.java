@@ -69,6 +69,11 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.CONTINUITY_OF_CARE_DOCUMENT: return createContinuityOfCareDocument();
 			case CCDPackage.PROBLEM_ACT: return createProblemAct();
 			case CCDPackage.PROBLEM_OBSERVATION: return createProblemObservation();
+			case CCDPackage.PROBLEM_SECTION: return createProblemSection();
+			case CCDPackage.PROBLEM_STATUS: return createProblemStatus();
+			case CCDPackage.PROBLEM_HEALTH_STATUS: return createProblemHealthStatus();
+			case CCDPackage.EPISODE_OBSERVATION: return createEpisodeObservation();
+			case CCDPackage.PATIENT_AWARENESS: return createPatientAwareness();
 			case CCDPackage.FAMILY_HISTORY_SECTION: return createFamilyHistorySection();
 			case CCDPackage.FAMILY_HISTORY_OBSERVATION: return createFamilyHistoryObservation();
 			case CCDPackage.FAMILY_HISTORY_ORGANIZER: return createFamilyHistoryOrganizer();
@@ -105,6 +110,56 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public ProblemObservation createProblemObservation() {
 		ProblemObservationImpl problemObservation = new ProblemObservationImpl();
 		return problemObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProblemSection createProblemSection() {
+		ProblemSectionImpl problemSection = new ProblemSectionImpl();
+		return problemSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProblemStatus createProblemStatus() {
+		ProblemStatusImpl problemStatus = new ProblemStatusImpl();
+		return problemStatus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProblemHealthStatus createProblemHealthStatus() {
+		ProblemHealthStatusImpl problemHealthStatus = new ProblemHealthStatusImpl();
+		return problemHealthStatus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EpisodeObservation createEpisodeObservation() {
+		EpisodeObservationImpl episodeObservation = new EpisodeObservationImpl();
+		return episodeObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PatientAwareness createPatientAwareness() {
+		PatientAwarenessImpl patientAwareness = new PatientAwarenessImpl();
+		return patientAwareness;
 	}
 
 	/**

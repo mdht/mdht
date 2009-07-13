@@ -59,6 +59,51 @@ public interface CCDFactory extends EFactory {
 	ProblemObservation createProblemObservation();
 
 	/**
+	 * Returns a new object of class '<em>Problem Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Problem Section</em>'.
+	 * @generated
+	 */
+	ProblemSection createProblemSection();
+
+	/**
+	 * Returns a new object of class '<em>Problem Status</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Problem Status</em>'.
+	 * @generated
+	 */
+	ProblemStatus createProblemStatus();
+
+	/**
+	 * Returns a new object of class '<em>Problem Health Status</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Problem Health Status</em>'.
+	 * @generated
+	 */
+	ProblemHealthStatus createProblemHealthStatus();
+
+	/**
+	 * Returns a new object of class '<em>Episode Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Episode Observation</em>'.
+	 * @generated
+	 */
+	EpisodeObservation createEpisodeObservation();
+
+	/**
+	 * Returns a new object of class '<em>Patient Awareness</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Patient Awareness</em>'.
+	 * @generated
+	 */
+	PatientAwareness createPatientAwareness();
+
+	/**
 	 * Returns a new object of class '<em>Family History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
