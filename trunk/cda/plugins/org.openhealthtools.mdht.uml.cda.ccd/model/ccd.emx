@@ -59,6 +59,55 @@
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vjPMEGaGEd6Hk_bPOfEjYA" name="ProblemSection">
+      <generalization xmi:id="_xw8ZwGaGEd6Hk_bPOfEjYA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_TrwngGaJEd6Hk_bPOfEjYA" name="ProblemStatus">
+      <ownedRule xmi:id="_TrwngWaJEd6Hk_bPOfEjYA" name="templateId" constrainedElement="_TrwngGaJEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_TrwngmaJEd6Hk_bPOfEjYA">
+          <language>OCL</language>
+          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.28')</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_Trwng2aJEd6Hk_bPOfEjYA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_T6kfkGaJEd6Hk_bPOfEjYA" name="ProblemHealthStatus">
+      <ownedRule xmi:id="_T6kfkWaJEd6Hk_bPOfEjYA" name="templateId" constrainedElement="_T6kfkGaJEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_T6kfkmaJEd6Hk_bPOfEjYA">
+          <language>OCL</language>
+          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.28')</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_T6kfk2aJEd6Hk_bPOfEjYA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_AwcXkGaKEd6Hk_bPOfEjYA" name="EpisodeObservation">
+      <ownedRule xmi:id="_AwcXkWaKEd6Hk_bPOfEjYA" name="templateId" constrainedElement="_AwcXkGaKEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_AwcXkmaKEd6Hk_bPOfEjYA">
+          <language>OCL</language>
+          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.28')</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_AwcXk2aKEd6Hk_bPOfEjYA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_3cYVwGaKEd6Hk_bPOfEjYA" name="PatientAwareness">
+      <ownedRule xmi:id="_3cYVwWaKEd6Hk_bPOfEjYA" name="templateId" constrainedElement="_3cYVwGaKEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3cYVwmaKEd6Hk_bPOfEjYA">
+          <language>OCL</language>
+          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.28')</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_3cYVw2aKEd6Hk_bPOfEjYA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_51DLwEcZEd6besF9iFIJkQ?cda/Participant2?"/>
+      </generalization>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5ET7oGwWEd6q29qQGU-SBA" name="FamilyHistorySection">
       <ownedRule xmi:id="_Z1y0sGwXEd6q29qQGU-SBA" name="FamilyHistorySection_templateId" constrainedElement="_5ET7oGwWEd6q29qQGU-SBA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_Z1y0sWwXEd6q29qQGU-SBA">
@@ -142,10 +191,25 @@
   <Ecore:EClass xmi:id="_PTpLgEV-Ed6QuJiOJFSRPQ" base_Class="_IjIO0DxbEd6JwqSGecoePg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.28'</annotation>
   </Ecore:EClass>
+  <Ecore:EClass xmi:id="_4CP_wGaGEd6Hk_bPOfEjYA" base_Class="_vjPMEGaGEd6Hk_bPOfEjYA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.11' code.code='11450-4' code.codeSystem='2.16.840.1.113883.6.1' constraints.diagnostic.error='templateId code'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_AoTRgGwXEd6q29qQGU-SBA" base_Class="_7tlrAGwWEd6q29qQGU-SBA"/>
   <Ecore:EClass xmi:id="_fIRjkGGmEd6fgsyFIHi17Q" xmlName="ClinicalDocument" base_Class="_Ze7UsGESEd69D7zx7EkLMA">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_AoTRgGwXEd6q29qQGU-SBA" base_Class="_7tlrAGwWEd6q29qQGU-SBA"/>
+  <Ecore:EClass xmi:id="_TrxOkGaJEd6Hk_bPOfEjYA" base_Class="_TrwngGaJEd6Hk_bPOfEjYA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.50'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_T6kflGaJEd6Hk_bPOfEjYA" base_Class="_T6kfkGaJEd6Hk_bPOfEjYA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.51'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_Awc-oGaKEd6Hk_bPOfEjYA" base_Class="_AwcXkGaKEd6Hk_bPOfEjYA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.41'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_3cY80GaKEd6Hk_bPOfEjYA" base_Class="_3cYVwGaKEd6Hk_bPOfEjYA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.48'</annotation>
+  </Ecore:EClass>
   <Ecore:EClass xmi:id="_AocbcGwXEd6q29qQGU-SBA" base_Class="_9QFYgGwWEd6q29qQGU-SBA"/>
   <Ecore:EClass xmi:id="_AocbcWwXEd6q29qQGU-SBA" base_Class="_5ET7oGwWEd6q29qQGU-SBA"/>
 </xmi:XMI>
