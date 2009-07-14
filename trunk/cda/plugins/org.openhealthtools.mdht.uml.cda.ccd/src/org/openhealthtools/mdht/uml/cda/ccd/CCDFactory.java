@@ -131,6 +131,60 @@ public interface CCDFactory extends EFactory {
 	FamilyHistoryOrganizer createFamilyHistoryOrganizer();
 
 	/**
+	 * Returns a new object of class '<em>Result Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Result Organizer</em>'.
+	 * @generated
+	 */
+	ResultOrganizer createResultOrganizer();
+
+	/**
+	 * Returns a new object of class '<em>Result Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Result Observation</em>'.
+	 * @generated
+	 */
+	ResultObservation createResultObservation();
+
+	/**
+	 * Returns a new object of class '<em>Social History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Social History Section</em>'.
+	 * @generated
+	 */
+	SocialHistorySection createSocialHistorySection();
+
+	/**
+	 * Returns a new object of class '<em>Social History Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Social History Observation</em>'.
+	 * @generated
+	 */
+	SocialHistoryObservation createSocialHistoryObservation();
+
+	/**
+	 * Returns a new object of class '<em>Encounters Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Encounters Section</em>'.
+	 * @generated
+	 */
+	EncountersSection createEncountersSection();
+
+	/**
+	 * Returns a new object of class '<em>Immunizations Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Immunizations Section</em>'.
+	 * @generated
+	 */
+	ImmunizationsSection createImmunizationsSection();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

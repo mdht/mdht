@@ -177,6 +177,48 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CCDPackage.RESULT_ORGANIZER: {
+				ResultOrganizer resultOrganizer = (ResultOrganizer)theEObject;
+				T result = caseResultOrganizer(resultOrganizer);
+				if (result == null) result = caseOrganizer(resultOrganizer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.RESULT_OBSERVATION: {
+				ResultObservation resultObservation = (ResultObservation)theEObject;
+				T result = caseResultObservation(resultObservation);
+				if (result == null) result = caseObservation(resultObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.SOCIAL_HISTORY_SECTION: {
+				SocialHistorySection socialHistorySection = (SocialHistorySection)theEObject;
+				T result = caseSocialHistorySection(socialHistorySection);
+				if (result == null) result = caseSection(socialHistorySection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.SOCIAL_HISTORY_OBSERVATION: {
+				SocialHistoryObservation socialHistoryObservation = (SocialHistoryObservation)theEObject;
+				T result = caseSocialHistoryObservation(socialHistoryObservation);
+				if (result == null) result = caseObservation(socialHistoryObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.ENCOUNTERS_SECTION: {
+				EncountersSection encountersSection = (EncountersSection)theEObject;
+				T result = caseEncountersSection(encountersSection);
+				if (result == null) result = caseSection(encountersSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.IMMUNIZATIONS_SECTION: {
+				ImmunizationsSection immunizationsSection = (ImmunizationsSection)theEObject;
+				T result = caseImmunizationsSection(immunizationsSection);
+				if (result == null) result = caseSection(immunizationsSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -343,6 +385,96 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseFamilyHistoryOrganizer(FamilyHistoryOrganizer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Result Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Result Organizer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResultOrganizer(ResultOrganizer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Result Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Result Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResultObservation(ResultObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Social History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Social History Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSocialHistorySection(SocialHistorySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Social History Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Social History Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSocialHistoryObservation(SocialHistoryObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Encounters Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Encounters Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEncountersSection(EncountersSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Immunizations Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Immunizations Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImmunizationsSection(ImmunizationsSection object) {
 		return null;
 	}
 
