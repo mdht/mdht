@@ -77,6 +77,12 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.FAMILY_HISTORY_SECTION: return createFamilyHistorySection();
 			case CCDPackage.FAMILY_HISTORY_OBSERVATION: return createFamilyHistoryObservation();
 			case CCDPackage.FAMILY_HISTORY_ORGANIZER: return createFamilyHistoryOrganizer();
+			case CCDPackage.RESULT_ORGANIZER: return createResultOrganizer();
+			case CCDPackage.RESULT_OBSERVATION: return createResultObservation();
+			case CCDPackage.SOCIAL_HISTORY_SECTION: return createSocialHistorySection();
+			case CCDPackage.SOCIAL_HISTORY_OBSERVATION: return createSocialHistoryObservation();
+			case CCDPackage.ENCOUNTERS_SECTION: return createEncountersSection();
+			case CCDPackage.IMMUNIZATIONS_SECTION: return createImmunizationsSection();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -190,6 +196,66 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public FamilyHistoryOrganizer createFamilyHistoryOrganizer() {
 		FamilyHistoryOrganizerImpl familyHistoryOrganizer = new FamilyHistoryOrganizerImpl();
 		return familyHistoryOrganizer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResultOrganizer createResultOrganizer() {
+		ResultOrganizerImpl resultOrganizer = new ResultOrganizerImpl();
+		return resultOrganizer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResultObservation createResultObservation() {
+		ResultObservationImpl resultObservation = new ResultObservationImpl();
+		return resultObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SocialHistorySection createSocialHistorySection() {
+		SocialHistorySectionImpl socialHistorySection = new SocialHistorySectionImpl();
+		return socialHistorySection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SocialHistoryObservation createSocialHistoryObservation() {
+		SocialHistoryObservationImpl socialHistoryObservation = new SocialHistoryObservationImpl();
+		return socialHistoryObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EncountersSection createEncountersSection() {
+		EncountersSectionImpl encountersSection = new EncountersSectionImpl();
+		return encountersSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImmunizationsSection createImmunizationsSection() {
+		ImmunizationsSectionImpl immunizationsSection = new ImmunizationsSectionImpl();
+		return immunizationsSection;
 	}
 
 	/**
