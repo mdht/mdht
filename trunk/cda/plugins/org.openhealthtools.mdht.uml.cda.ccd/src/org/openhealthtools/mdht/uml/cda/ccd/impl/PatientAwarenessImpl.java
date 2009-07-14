@@ -54,8 +54,8 @@ public class PatientAwarenessImpl extends Participant2Impl implements PatientAwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PatientAwarenessOperations.templateId(this, diagnostics, context);
+	public boolean PatientAwareness_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientAwarenessOperations.PatientAwareness_templateId(this, diagnostics, context);
 	}
 
 	/**

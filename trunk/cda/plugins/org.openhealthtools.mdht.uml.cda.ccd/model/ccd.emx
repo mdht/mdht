@@ -49,7 +49,7 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_IjIO0DxbEd6JwqSGecoePg" name="ProblemObservation">
-      <ownedRule xmi:id="_V9mEUDxlEd6JwqSGecoePg" name="templateId" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
+      <ownedRule xmi:id="_V9mEUDxlEd6JwqSGecoePg" name="ProblemObservation_templateId" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_V9mEUTxlEd6JwqSGecoePg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.28')</body>
@@ -60,15 +60,21 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_vjPMEGaGEd6Hk_bPOfEjYA" name="ProblemSection">
+      <ownedRule xmi:id="_6zthwG_9Ed6TA9cpnZvngg" name="ProblemSection_templateId" constrainedElement="_T6kfkGaJEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_6zthwW_9Ed6TA9cpnZvngg">
+          <language>OCL</language>
+          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.11')</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_xw8ZwGaGEd6Hk_bPOfEjYA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_TrwngGaJEd6Hk_bPOfEjYA" name="ProblemStatus">
-      <ownedRule xmi:id="_TrwngWaJEd6Hk_bPOfEjYA" name="templateId" constrainedElement="_TrwngGaJEd6Hk_bPOfEjYA">
+      <ownedRule xmi:id="_TrwngWaJEd6Hk_bPOfEjYA" name="ProblemStatus_templateId" constrainedElement="_TrwngGaJEd6Hk_bPOfEjYA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_TrwngmaJEd6Hk_bPOfEjYA">
           <language>OCL</language>
-          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.28')</body>
+          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.50')</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_Trwng2aJEd6Hk_bPOfEjYA">
@@ -76,10 +82,10 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_T6kfkGaJEd6Hk_bPOfEjYA" name="ProblemHealthStatus">
-      <ownedRule xmi:id="_T6kfkWaJEd6Hk_bPOfEjYA" name="templateId" constrainedElement="_T6kfkGaJEd6Hk_bPOfEjYA">
+      <ownedRule xmi:id="_T6kfkWaJEd6Hk_bPOfEjYA" name="ProblemHealthStatus_templateId" constrainedElement="_T6kfkGaJEd6Hk_bPOfEjYA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_T6kfkmaJEd6Hk_bPOfEjYA">
           <language>OCL</language>
-          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.28')</body>
+          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.51')</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_T6kfk2aJEd6Hk_bPOfEjYA">
@@ -87,10 +93,10 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_AwcXkGaKEd6Hk_bPOfEjYA" name="EpisodeObservation">
-      <ownedRule xmi:id="_AwcXkWaKEd6Hk_bPOfEjYA" name="templateId" constrainedElement="_AwcXkGaKEd6Hk_bPOfEjYA">
+      <ownedRule xmi:id="_AwcXkWaKEd6Hk_bPOfEjYA" name="EpisodeObservation_templateId" constrainedElement="_AwcXkGaKEd6Hk_bPOfEjYA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_AwcXkmaKEd6Hk_bPOfEjYA">
           <language>OCL</language>
-          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.28')</body>
+          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.41')</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_AwcXk2aKEd6Hk_bPOfEjYA">
@@ -98,10 +104,10 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_3cYVwGaKEd6Hk_bPOfEjYA" name="PatientAwareness">
-      <ownedRule xmi:id="_3cYVwWaKEd6Hk_bPOfEjYA" name="templateId" constrainedElement="_3cYVwGaKEd6Hk_bPOfEjYA">
+      <ownedRule xmi:id="_3cYVwWaKEd6Hk_bPOfEjYA" name="PatientAwareness_templateId" constrainedElement="_3cYVwGaKEd6Hk_bPOfEjYA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_3cYVwmaKEd6Hk_bPOfEjYA">
           <language>OCL</language>
-          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.28')</body>
+          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.48')</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_3cYVw2aKEd6Hk_bPOfEjYA">
