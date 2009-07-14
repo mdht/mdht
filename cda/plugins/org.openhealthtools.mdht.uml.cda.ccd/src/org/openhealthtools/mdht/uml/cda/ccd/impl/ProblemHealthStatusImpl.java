@@ -54,8 +54,8 @@ public class ProblemHealthStatusImpl extends ObservationImpl implements ProblemH
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemHealthStatusOperations.templateId(this, diagnostics, context);
+	public boolean ProblemHealthStatus_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemHealthStatusOperations.ProblemHealthStatus_templateId(this, diagnostics, context);
 	}
 
 	/**

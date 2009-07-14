@@ -54,8 +54,8 @@ public class EpisodeObservationImpl extends ObservationImpl implements EpisodeOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EpisodeObservationOperations.templateId(this, diagnostics, context);
+	public boolean EpisodeObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.EpisodeObservation_templateId(this, diagnostics, context);
 	}
 
 	/**

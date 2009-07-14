@@ -6,11 +6,14 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.impl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 
+import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemSectionOperations;
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -41,6 +44,15 @@ public class ProblemSectionImpl extends SectionImpl implements ProblemSection {
 	@Override
 	protected EClass eStaticClass() {
 		return CCDPackage.Literals.PROBLEM_SECTION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ProblemSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemSectionOperations.ProblemSection_templateId(this, diagnostics, context);
 	}
 
 	/**

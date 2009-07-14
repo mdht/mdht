@@ -56,8 +56,8 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemObservationOperations.templateId(this, diagnostics, context);
+	public boolean ProblemObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.ProblemObservation_templateId(this, diagnostics, context);
 	}
 
 	/**
