@@ -101,10 +101,10 @@
     </eOperations>
     <eOperations name="ProblemAct_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.code.nullFlavor = #vocab::NullFlavor::NA"/>
+        <details key="body" value="self.code.nullFlavor = vocab::NullFlavor::NA"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.code.nullFlavor = #vocab::NullFlavor::NA"/>
+        <details key="documentation" value="self.code.nullFlavor = vocab::NullFlavor::NA"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

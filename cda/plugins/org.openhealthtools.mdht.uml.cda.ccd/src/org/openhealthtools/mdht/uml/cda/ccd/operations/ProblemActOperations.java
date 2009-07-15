@@ -110,7 +110,7 @@ public class ProblemActOperations extends ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_ACT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.code.nullFlavor = #vocab::NullFlavor::NA";
+	protected static final String PROBLEM_ACT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.code.nullFlavor = vocab::NullFlavor::NA";
 
 	/**
 	 * The cached OCL invariant for the '{@link #ProblemAct_code(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act code</em>}' invariant operation.
@@ -126,7 +126,7 @@ public class ProblemActOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.code.nullFlavor = #vocab::NullFlavor::NA
+	 * self.code.nullFlavor = vocab::NullFlavor::NA
 	 * @param problemAct The receiving '<em><b>Problem Act</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

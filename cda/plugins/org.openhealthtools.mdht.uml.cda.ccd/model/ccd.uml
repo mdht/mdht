@@ -37,7 +37,7 @@
       <ownedRule xmi:id="_7l0sIGBPEd6N94MqzCgt-g" name="ProblemAct_code" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_7l0sIWBPEd6N94MqzCgt-g">
           <language>OCL</language>
-          <body>self.code.nullFlavor = #vocab::NullFlavor::NA</body>
+          <body>self.code.nullFlavor = vocab::NullFlavor::NA</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
