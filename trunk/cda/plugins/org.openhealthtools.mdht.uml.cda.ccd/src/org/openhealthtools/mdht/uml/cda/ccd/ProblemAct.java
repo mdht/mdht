@@ -46,11 +46,11 @@ public interface ProblemAct extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.code.nullFlavor = #vocab::NullFlavor::NA
+	 * self.code.nullFlavor = vocab::NullFlavor::NA
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.code.nullFlavor = #vocab::NullFlavor::NA'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.code.nullFlavor = vocab::NullFlavor::NA'"
 	 * @generated
 	 */
 	boolean ProblemAct_code(DiagnosticChain diagnostics, Map<Object, Object> context);
