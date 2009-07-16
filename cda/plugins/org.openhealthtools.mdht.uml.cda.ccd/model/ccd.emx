@@ -231,6 +231,11 @@
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_mO8KEHJWEd6cacuAk5qrhg" name="EncountersActivity">
+      <generalization xmi:id="_vuapUHJjEd6cacuAk5qrhg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_AAXtEEbvEd6besF9iFIJkQ?cda/Encounter?"/>
+      </generalization>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -302,4 +307,5 @@
   <Ecore:EClass xmi:id="_E1PlIHDPEd6eItyqb1FoWg" base_Class="_CinbMHDPEd6eItyqb1FoWg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.6'</annotation>
   </Ecore:EClass>
+  <Ecore:EClass xmi:id="_oB0c8HJWEd6cacuAk5qrhg" base_Class="_mO8KEHJWEd6cacuAk5qrhg"/>
 </xmi:XMI>
