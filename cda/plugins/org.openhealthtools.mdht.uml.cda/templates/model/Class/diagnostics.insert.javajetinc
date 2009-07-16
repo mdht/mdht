@@ -6,17 +6,17 @@ String name = genOperation.getName();
 
 String severity = null;
 
-String annotation = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.diagnostic.info");
+String annotation = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.info");
 if (annotation != null && Arrays.asList(annotation.split(" ")).contains(name)) {
 	severity = "INFO";
 }
 
-annotation = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.diagnostic.warning");
+annotation = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.warning");
 if (annotation != null && Arrays.asList(annotation.split(" ")).contains(name)) {
 	severity = "WARNING";
 }
 
-annotation = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.diagnostic.error");
+annotation = EcoreUtil.getAnnotation(eClass, "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.error");
 if (annotation != null && Arrays.asList(annotation.split(" ")).contains(name)) {
 	severity = "ERROR";
 }
