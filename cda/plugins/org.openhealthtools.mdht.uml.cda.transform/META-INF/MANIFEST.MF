@@ -9,7 +9,6 @@ Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.uml,
  org.openhealthtools.mdht.uml.hdf,
- org.openhealthtools.mdht.uml.cda,
  org.eclipse.core.resources
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.cda.transform

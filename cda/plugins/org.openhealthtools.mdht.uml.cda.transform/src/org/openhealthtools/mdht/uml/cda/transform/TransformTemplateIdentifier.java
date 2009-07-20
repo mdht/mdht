@@ -28,10 +28,11 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.eclipse.uml2.uml.util.UMLUtil;
-import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 
 public class TransformTemplateIdentifier extends UMLSwitch {
+
+	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 
 	protected EcoreTransformerOptions transformerOptions;
 
@@ -75,7 +76,7 @@ public class TransformTemplateIdentifier extends UMLSwitch {
 		//TODO check if this source/key already exits
 		
 		String templateId = (String) umlClass.getValue(hl7Template, IHDFProfileConstants.HL7_TEMPLATE_ID);
-		annotations.add(CDAUtil.CDA_ANNOTATION_SOURCE + " templateId.root='" + templateId + "'");
+		annotations.add(CDA_ANNOTATION_SOURCE + " templateId.root='" + templateId + "'");
 		
 		umlClass.setValue(eClassStereotype, "annotations", annotations);
 	}
