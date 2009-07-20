@@ -14,6 +14,13 @@ package org.openhealthtools.mdht.uml.cda.transform;
 
 import java.util.List;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.OpaqueExpression;
@@ -73,20 +80,36 @@ public class TransformTemplateIdentifier extends UMLSwitch {
 		umlClass.setValue(eClassStereotype, "annotations", annotations);
 	}
 	
-	/*
-   <extension point="org.openhealthtools.mdht.uml.cda.extension">
-      <entry
-            eClass="MedicalDocument"
-            id="1.3.6.1.4.1.19376.1.5.3.1.1.1"
-            nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd/ihe">
-      </entry>
-   </extension>
-	 */
 	private void addExtensionPoint(Class umlClass, Stereotype hl7Template) {
-		//TODO insert extension point into plugin.xml
-		
+		String templateId = (String) umlClass.getValue(hl7Template, IHDFProfileConstants.HL7_TEMPLATE_ID);
+		String nsURI = null;
+		IFile pluginXML = null;
+
 		// get nsURI from the ePackage stereotype
+		org.eclipse.uml2.uml.Package umlPackage = umlClass.getNearestPackage();
+		Stereotype ePackage = EcoreTransformUtil.getAppliedEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
+		if (ePackage != null) {
+			nsURI = (String) umlPackage.getValue(ePackage, "nsURI");
+		}
 		
+		// get project file path
+		String modelFilePath = umlClass.eResource().getURI().toFileString();
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		IPath location = Path.fromOSString(modelFilePath);
+		IFile[] files = workspace.getRoot().findFilesForLocation(location);
+		if (files.length > 0) {
+			IProject project = files[0].getProject();
+			IResource file = project.findMember("plugin.xml");
+			if (file instanceof IFile && file.exists()) {
+				pluginXML = (IFile)file;
+			}
+		}
+		
+		if (templateId != null && nsURI != null) {
+			//insert extension point into plugin.xml
+			PluginXMLUtil pluginUtil = new PluginXMLUtil(pluginXML);
+			pluginUtil.addTemplateExtension(umlClass.getName(), templateId, nsURI);
+		}
 	}
 
 	private void addMessage(Class umlClass, Stereotype hl7Template) {

@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.hdf.util.HL7Resource;
 
 public abstract class EcoreTransformUtil {
 
-	protected Stereotype getAppliedEcoreStereotype(Element element,
+	public static Stereotype getAppliedEcoreStereotype(Element element,
 			String name) {
 		return element.getAppliedStereotype("Ecore" //$NON-NLS-1$
 			+ NamedElement.SEPARATOR + name);
