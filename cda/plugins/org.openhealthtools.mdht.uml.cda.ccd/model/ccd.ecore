@@ -569,4 +569,5 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EncountersActivity" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Encounter"/>
 </ecore:EPackage>
