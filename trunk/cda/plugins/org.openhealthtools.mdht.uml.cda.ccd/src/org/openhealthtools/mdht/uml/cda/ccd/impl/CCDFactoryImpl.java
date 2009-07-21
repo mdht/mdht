@@ -83,6 +83,7 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.SOCIAL_HISTORY_OBSERVATION: return createSocialHistoryObservation();
 			case CCDPackage.ENCOUNTERS_SECTION: return createEncountersSection();
 			case CCDPackage.IMMUNIZATIONS_SECTION: return createImmunizationsSection();
+			case CCDPackage.ENCOUNTERS_ACTIVITY: return createEncountersActivity();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -256,6 +257,16 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public ImmunizationsSection createImmunizationsSection() {
 		ImmunizationsSectionImpl immunizationsSection = new ImmunizationsSectionImpl();
 		return immunizationsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EncountersActivity createEncountersActivity() {
+		EncountersActivityImpl encountersActivity = new EncountersActivityImpl();
+		return encountersActivity;
 	}
 
 	/**

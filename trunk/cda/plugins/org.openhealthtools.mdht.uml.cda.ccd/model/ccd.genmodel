@@ -3,9 +3,8 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.cda.ccd/src"
     modelPluginID="org.openhealthtools.mdht.uml.cda.ccd" templateDirectory="/org.openhealthtools.mdht.uml.cda/templates"
-    dynamicTemplates="true" redirection="" modelName="Ccd" modelPluginClass="CCDPlugin"
-    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="5.0" copyrightFields="false"
-    usedGenPackages="../../org.openhealthtools.mdht.uml.cda/model/cda.genmodel#//cda ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab">
+    dynamicTemplates="true" modelName="Ccd" modelPluginClass="CCDPlugin" importerID="org.eclipse.uml2.uml.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.openhealthtools.mdht.uml.cda/model/cda.genmodel#//cda ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
     <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
@@ -153,5 +152,6 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSection_templateId/context"/>
       </genOperations>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//EncountersActivity"/>
   </genPackages>
 </genmodel:GenModel>

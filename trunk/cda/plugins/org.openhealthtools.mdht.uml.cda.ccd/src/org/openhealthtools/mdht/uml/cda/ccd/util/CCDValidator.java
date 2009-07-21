@@ -313,6 +313,8 @@ public class CCDValidator extends EObjectValidator {
 				return validateEncountersSection((EncountersSection)value, diagnostics, context);
 			case CCDPackage.IMMUNIZATIONS_SECTION:
 				return validateImmunizationsSection((ImmunizationsSection)value, diagnostics, context);
+			case CCDPackage.ENCOUNTERS_ACTIVITY:
+				return validateEncountersActivity((EncountersActivity)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -841,6 +843,15 @@ public class CCDValidator extends EObjectValidator {
 	 */
 	public boolean validateImmunizationsSection_ImmunizationsSection_templateId(ImmunizationsSection immunizationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return immunizationsSection.ImmunizationsSection_templateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncountersActivity(EncountersActivity encountersActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(encountersActivity, diagnostics, context);
 	}
 
 	/**

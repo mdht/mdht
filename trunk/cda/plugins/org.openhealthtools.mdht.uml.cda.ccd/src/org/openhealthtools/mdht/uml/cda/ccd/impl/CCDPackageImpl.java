@@ -25,6 +25,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
+import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation;
@@ -169,6 +170,13 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * @generated
 	 */
 	private EClass immunizationsSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass encountersActivityEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -408,6 +416,15 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEncountersActivity() {
+		return encountersActivityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CCDFactory getCCDFactory() {
 		return (CCDFactory)getEFactoryInstance();
 	}
@@ -464,6 +481,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		encountersSectionEClass = createEClass(ENCOUNTERS_SECTION);
 
 		immunizationsSectionEClass = createEClass(IMMUNIZATIONS_SECTION);
+
+		encountersActivityEClass = createEClass(ENCOUNTERS_ACTIVITY);
 	}
 
 	/**
@@ -514,6 +533,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		socialHistoryObservationEClass.getESuperTypes().add(theCDAPackage.getObservation());
 		encountersSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		immunizationsSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
+		encountersActivityEClass.getESuperTypes().add(theCDAPackage.getEncounter());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(continuityOfCareDocumentEClass, ContinuityOfCareDocument.class, "ContinuityOfCareDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -756,6 +776,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(encountersActivityEClass, EncountersActivity.class, "EncountersActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

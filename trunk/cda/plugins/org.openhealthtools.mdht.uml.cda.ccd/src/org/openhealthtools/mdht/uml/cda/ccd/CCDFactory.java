@@ -185,6 +185,15 @@ public interface CCDFactory extends EFactory {
 	ImmunizationsSection createImmunizationsSection();
 
 	/**
+	 * Returns a new object of class '<em>Encounters Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Encounters Activity</em>'.
+	 * @generated
+	 */
+	EncountersActivity createEncountersActivity();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

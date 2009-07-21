@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.Observation;
 
 import org.openhealthtools.mdht.uml.cda.Organizer;
@@ -153,6 +154,10 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 				return createImmunizationsSectionAdapter();
 			}
 			@Override
+			public Adapter caseEncountersActivity(EncountersActivity object) {
+				return createEncountersActivityAdapter();
+			}
+			@Override
 			public Adapter caseClinicalDocument(ClinicalDocument object) {
 				return createClinicalDocumentAdapter();
 			}
@@ -175,6 +180,10 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseOrganizer(Organizer object) {
 				return createOrganizerAdapter();
+			}
+			@Override
+			public Adapter caseEncounter(Encounter object) {
+				return createEncounterAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -435,6 +444,20 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity <em>Encounters Activity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity
+	 * @generated
+	 */
+	public Adapter createEncountersActivityAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument <em>Clinical Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -515,6 +538,20 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOrganizerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.Encounter <em>Encounter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter
+	 * @generated
+	 */
+	public Adapter createEncounterAdapter() {
 		return null;
 	}
 
