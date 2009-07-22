@@ -12,8 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
-import java.util.List;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -31,8 +29,6 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 
 public class TransformTemplateIdentifier extends UMLSwitch {
-
-	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 
 	protected EcoreTransformerOptions transformerOptions;
 
@@ -68,17 +64,11 @@ public class TransformTemplateIdentifier extends UMLSwitch {
 	}
 
 	private void addAnnotation(Class umlClass, Stereotype hl7Template) {
-		Stereotype eClassStereotype = EcoreTransformUtil.getEcoreStereotype(umlClass, UMLUtil.STEREOTYPE__E_CLASS);
-		UMLUtil.safeApplyStereotype(umlClass, eClassStereotype);
-		
-		//TODO need utility methods for parsing EClass annotations into key/value map
-		List<String> annotations = (List<String>) umlClass.getValue(eClassStereotype, "annotations");
-		//TODO check if this source/key already exits
-		
 		String templateId = (String) umlClass.getValue(hl7Template, IHDFProfileConstants.HL7_TEMPLATE_ID);
-		annotations.add(CDA_ANNOTATION_SOURCE + " templateId.root='" + templateId + "'");
 		
-		umlClass.setValue(eClassStereotype, "annotations", annotations);
+		AnnotationsUtil annotationsUtil = new AnnotationsUtil(umlClass);
+		annotationsUtil.setAnnotation(umlClass, "templateId.root", templateId);
+		annotationsUtil.saveAnnotations();
 	}
 	
 	private void addExtensionPoint(Class umlClass, Stereotype hl7Template) {
@@ -88,31 +78,42 @@ public class TransformTemplateIdentifier extends UMLSwitch {
 
 		// get nsURI from the ePackage stereotype
 		org.eclipse.uml2.uml.Package umlPackage = umlClass.getNearestPackage();
-		Stereotype ePackage = EcoreTransformUtil.getAppliedEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
-		if (ePackage != null) {
+		Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
+		if (umlPackage.isStereotypeApplied(ePackage)) {
 			nsURI = (String) umlPackage.getValue(ePackage, "nsURI");
+		}
+		else {
+			UMLUtil.safeApplyStereotype(umlPackage, ePackage);
+		}
+		if (nsURI == null) {
+			nsURI = "http://www.openhealthtools/" + umlPackage.eResource().getURI().lastSegment();
+			umlPackage.setValue(ePackage, "nsURI", nsURI);
 		}
 		
 		// get project file path
 		String modelFilePath = umlClass.eResource().getURI().toFileString();
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IPath location = Path.fromOSString(modelFilePath);
-		IFile[] files = workspace.getRoot().findFilesForLocation(location);
+		IPath modelLocation = Path.fromOSString(modelFilePath);
+		IFile[] files = workspace.getRoot().findFilesForLocation(modelLocation);
 		if (files.length > 0) {
 			IProject project = files[0].getProject();
 			IResource file = project.findMember("plugin.xml");
-			if (file instanceof IFile && file.exists()) {
+			if (file instanceof IFile) {
 				pluginXML = (IFile)file;
+			}
+			else {
+				// create new plugin.xml
+				pluginXML = project.getFile("plugin.xml");
 			}
 		}
 		
-		if (templateId != null && nsURI != null) {
+		if (pluginXML != null && templateId != null) {
 			//insert extension point into plugin.xml
 			PluginXMLUtil pluginUtil = new PluginXMLUtil(pluginXML);
 			pluginUtil.addTemplateExtension(umlClass.getName(), templateId, nsURI);
 		}
 	}
-
+	
 	private void addMessage(Class umlClass, Stereotype hl7Template) {
 		//TODO insert message key=value into plugin.properties
 		

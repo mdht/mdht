@@ -13,6 +13,9 @@
 package org.openhealthtools.mdht.uml.cda.transform;
 
 import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -23,11 +26,14 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.Text;
 
 public class PluginXMLUtil {
 	public static final String CDA_EXTENSION_POINT = "org.openhealthtools.mdht.uml.cda.extension";
@@ -48,14 +54,16 @@ public class PluginXMLUtil {
    </extension>
 	 */
 	public void addTemplateExtension(String eClass, String templateId, String nsURI) {
-		if (pluginXML == null || !pluginXML.exists()) {
-			// create a new file
-			
-		}
-		
 		try {
 			DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-			Document document = docBuilder.parse(pluginXML.getLocation().toFile());
+			Document document = null;
+			if (pluginXML.exists()) {
+				document = docBuilder.parse(pluginXML.getLocation().toFile());
+			}
+			else {
+				// create a new file
+				document = docBuilder.newDocument();
+			}
 			
 			Element plugin = document.getDocumentElement();
 			if (plugin == null) {
@@ -142,18 +150,52 @@ public class PluginXMLUtil {
 		return entry;
 	}
 	
-	private void save(Document doc, IPath filePath) {
+	private void save(Document document, IPath filePath) {
 		try {
-			Transformer serializer = TransformerFactory.newInstance().newTransformer();
-            serializer.setOutputProperty(OutputKeys.INDENT, "yes");
-            serializer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "3");
-
-            serializer.transform(new DOMSource(doc), new StreamResult(
-					new FileOutputStream(filePath.toFile())));
+			removeWhitespaceNodes(document);
+			
+			TransformerFactory factory = TransformerFactory.newInstance();
+			factory.setAttribute("indent-number", new Integer(3));
+			Transformer transformer = factory.newTransformer();
+			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+			transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+			
+			FileOutputStream out = new FileOutputStream(filePath.toFile());
+			transformer.transform(new DOMSource(document), new StreamResult(
+					new OutputStreamWriter(out, "utf-8")));
+			out.close();
+			
+            // refresh the workspace file
+            pluginXML.getParent().refreshLocal(IResource.DEPTH_ONE, null);
 		}
 		catch (Exception e) {
 			Logger.logException(e);
 		}
 	}
 	
+	/**
+	 * Remove whitespace-only text nodes.
+	 */
+	private void removeWhitespaceNodes(Node node) {
+		List<Node> removeList = new ArrayList<Node>();
+		NodeList childNodes = node.getChildNodes();
+		for (int i = 0; i < childNodes.getLength(); i++) {
+			Node child = childNodes.item(i);
+			if (child instanceof Text) {
+				Text text = (Text) child;
+				if (text.getData().trim().length() == 0) {
+					removeList.add(child);
+				}
+			} else if (child.hasChildNodes()) {
+				removeWhitespaceNodes(child);
+			}
+		}
+		for (int i = 0; i < removeList.size(); i++) {
+			Node n = removeList.get(i);
+			Node p = n.getParentNode();
+			if (p != null) {
+				p.removeChild(n);
+			}
+		}
+	}
 }
