@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResource;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -240,6 +241,14 @@ public class CDAUtil {
 			object = object.eContainer();
 		}
 		return (ClinicalDocument) object;
+	}
+	
+	// walk up the containment tree until we reach a Section or we run out of containers
+	public static Section getSection(EObject object) {
+		while (object != null & !(object instanceof Section)) {
+			object = object.eContainer();
+		}
+		return (Section) object;
 	}
 	
 	// TODO: Create a generic mechanism for populating an instance from annotations.
