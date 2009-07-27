@@ -1356,6 +1356,9 @@
     <eOperations name="addSupply" ordered="false" lowerBound="1">
       <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
     </eOperations>
+    <eOperations name="createStrucDocText" ordered="false" lowerBound="1" eType="#//StrucDocText">
+      <eParameters name="xmlString" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
     <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>

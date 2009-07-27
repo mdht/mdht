@@ -567,6 +567,12 @@
       <ownedOperation xmi:id="_egR-oFxEEd6ZEsfifJz_3w" name="addSupply">
         <ownedParameter xmi:id="_fvQTMFxEEd6ZEsfifJz_3w" name="supply" type="_3gL0sEbuEd6besF9iFIJkQ"/>
       </ownedOperation>
+      <ownedOperation xmi:id="_6rQcwHrnEd648OeXdSIbLg" name="createStrucDocText">
+        <ownedParameter xmi:id="_9qSZsHrnEd648OeXdSIbLg" name="xmlString">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_9ql7sHrnEd648OeXdSIbLg" name="Parameter1" type="_0jvq8E8AEd6ohP_YEXs4Wg" direction="return"/>
+      </ownedOperation>
       <ownedOperation xmi:id="_zg9jIFxEEd6ZEsfifJz_3w" name="hasActTemplate" isQuery="true" bodyCondition="_h4rBUFxFEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_h4rBUFxFEd6ZEsfifJz_3w" name="body" constrainedElement="_zg9jIFxEEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_h4rBUVxFEd6ZEsfifJz_3w">

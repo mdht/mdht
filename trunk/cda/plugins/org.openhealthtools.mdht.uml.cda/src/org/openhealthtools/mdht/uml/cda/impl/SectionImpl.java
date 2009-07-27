@@ -1024,6 +1024,15 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public StrucDocText createStrucDocText(String xmlString) {
+		return SectionOperations.createStrucDocText(this, xmlString);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean hasActTemplate(String templateId) {
 		return SectionOperations.hasActTemplate(this, templateId);
 	}

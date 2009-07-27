@@ -969,6 +969,9 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/addSupply">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/addSupply/supply"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/createStrucDocText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/createStrucDocText/xmlString"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/hasActTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/hasActTemplate/templateId"/>
       </genOperations>
