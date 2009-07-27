@@ -621,6 +621,14 @@ public interface Organizer extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	ClinicalDocument getClinicalDocument();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.component.encounter
 	 * <!-- end-model-doc -->
@@ -689,6 +697,14 @@ public interface Organizer extends EObject {
 	 * @generated
 	 */
 	EList<RegionOfInterest> getRegionOfInterest();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	Section getSection();
 
 	/**
 	 * <!-- begin-user-doc -->

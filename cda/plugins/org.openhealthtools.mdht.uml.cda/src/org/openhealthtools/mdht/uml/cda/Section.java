@@ -652,6 +652,134 @@ public interface Section extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * self.entry.act
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.act'"
+	 * @generated
+	 */
+	EList<Act> getAct();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 * @generated
+	 */
+	ClinicalDocument getClinicalDocument();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entry.encounter
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.encounter'"
+	 * @generated
+	 */
+	EList<Encounter> getEncounter();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entry.observation
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.observation'"
+	 * @generated
+	 */
+	EList<Observation> getObservation();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entry.observationMedia
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.observationMedia'"
+	 * @generated
+	 */
+	EList<ObservationMedia> getObservationMedia();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entry.organizer
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.organizer'"
+	 * @generated
+	 */
+	EList<Organizer> getOrganizer();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entry.procedure
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.procedure'"
+	 * @generated
+	 */
+	EList<Procedure> getProcedure();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entry.regionOfInterest
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.regionOfInterest'"
+	 * @generated
+	 */
+	EList<RegionOfInterest> getRegionOfInterest();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.component.section
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.section'"
+	 * @generated
+	 */
+	EList<Section> getSection();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entry.substanceAdministration
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.substanceAdministration'"
+	 * @generated
+	 */
+	EList<SubstanceAdministration> getSubstanceAdministration();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entry.supply
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.supply'"
+	 * @generated
+	 */
+	EList<Supply> getSupply();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
 	 * self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
@@ -791,125 +919,5 @@ public interface Section extends EObject {
 	 * @generated
 	 */
 	boolean hasTemplateId(String templateId);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.act
-	 * <!-- end-model-doc -->
-	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.act'"
-	 * @generated
-	 */
-	EList<Act> getAct();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.encounter
-	 * <!-- end-model-doc -->
-	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.encounter'"
-	 * @generated
-	 */
-	EList<Encounter> getEncounter();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.observation
-	 * <!-- end-model-doc -->
-	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.observation'"
-	 * @generated
-	 */
-	EList<Observation> getObservation();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.observationMedia
-	 * <!-- end-model-doc -->
-	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.observationMedia'"
-	 * @generated
-	 */
-	EList<ObservationMedia> getObservationMedia();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.organizer
-	 * <!-- end-model-doc -->
-	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.organizer'"
-	 * @generated
-	 */
-	EList<Organizer> getOrganizer();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.procedure
-	 * <!-- end-model-doc -->
-	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.procedure'"
-	 * @generated
-	 */
-	EList<Procedure> getProcedure();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.regionOfInterest
-	 * <!-- end-model-doc -->
-	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.regionOfInterest'"
-	 * @generated
-	 */
-	EList<RegionOfInterest> getRegionOfInterest();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.component.section
-	 * <!-- end-model-doc -->
-	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.section'"
-	 * @generated
-	 */
-	EList<Section> getSection();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.substanceAdministration
-	 * <!-- end-model-doc -->
-	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.substanceAdministration'"
-	 * @generated
-	 */
-	EList<SubstanceAdministration> getSubstanceAdministration();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry.supply
-	 * <!-- end-model-doc -->
-	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.supply'"
-	 * @generated
-	 */
-	EList<Supply> getSupply();
-
+	
 } // Section

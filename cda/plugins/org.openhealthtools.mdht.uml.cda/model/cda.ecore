@@ -1458,6 +1458,95 @@
     <eOperations name="createStrucDocText" ordered="false" lowerBound="1" eType="#//StrucDocText">
       <eParameters name="xmlString" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.entry.act"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.entry.act"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
+    <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
+        eType="#//Encounter">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.entry.encounter"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.entry.encounter"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
+        eType="#//Observation">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.entry.observation"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.entry.observation"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
+        eType="#//ObservationMedia">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.entry.observationMedia"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.entry.observationMedia"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getOrganizer" ordered="false" unique="false" upperBound="-1"
+        eType="#//Organizer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.entry.organizer"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.entry.organizer"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getProcedure" ordered="false" unique="false" upperBound="-1"
+        eType="#//Procedure">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.entry.procedure"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.entry.procedure"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
+        eType="#//RegionOfInterest">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.entry.regionOfInterest"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.entry.regionOfInterest"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getSection" ordered="false" unique="false" upperBound="-1"
+        eType="#//Section">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.component.section"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.component.section"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
+        upperBound="-1" eType="#//SubstanceAdministration">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.entry.substanceAdministration"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.entry.substanceAdministration"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.entry.supply"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.entry.supply"/>
+      </eAnnotations>
+    </eOperations>
     <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))"/>
@@ -1570,94 +1659,6 @@
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = templateId)"/>
       </eAnnotations>
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
-    <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry.act"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry.act"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
-        eType="#//Encounter">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry.encounter"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry.encounter"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
-        eType="#//Observation">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry.observation"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry.observation"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
-        eType="#//ObservationMedia">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry.observationMedia"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry.observationMedia"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="getOrganizer" ordered="false" unique="false" upperBound="-1"
-        eType="#//Organizer">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry.organizer"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry.organizer"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="getProcedure" ordered="false" unique="false" upperBound="-1"
-        eType="#//Procedure">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry.procedure"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry.procedure"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
-        eType="#//RegionOfInterest">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry.regionOfInterest"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry.regionOfInterest"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="getSection" ordered="false" unique="false" upperBound="-1"
-        eType="#//Section">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.component.section"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.component.section"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
-        upperBound="-1" eType="#//SubstanceAdministration">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry.substanceAdministration"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry.substanceAdministration"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry.supply"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry.supply"/>
-      </eAnnotations>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//CS"
@@ -1907,6 +1908,7 @@
         <details key="body" value="self.entryRelationship.act"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1961,6 +1963,7 @@
         <details key="body" value="self.entryRelationship.regionOfInterest"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2471,6 +2474,7 @@
         <details key="body" value="self.entryRelationship.act"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2525,6 +2529,7 @@
         <details key="body" value="self.entryRelationship.regionOfInterest"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2937,6 +2942,7 @@
         <details key="body" value="self.entryRelationship.act"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2991,6 +2997,7 @@
         <details key="body" value="self.entryRelationship.regionOfInterest"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3273,6 +3280,7 @@
         <details key="body" value="self.entryRelationship.act"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3327,6 +3335,7 @@
         <details key="body" value="self.entryRelationship.regionOfInterest"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3525,6 +3534,7 @@
         <details key="body" value="self.component.act"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3579,6 +3589,7 @@
         <details key="body" value="self.component.regionOfInterest"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3849,6 +3860,7 @@
         <details key="body" value="self.entryRelationship.act"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3903,6 +3915,7 @@
         <details key="body" value="self.entryRelationship.regionOfInterest"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4126,6 +4139,7 @@
         <details key="body" value="self.entryRelationship.act"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4180,6 +4194,7 @@
         <details key="body" value="self.entryRelationship.regionOfInterest"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4394,6 +4409,7 @@
         <details key="body" value="self.entryRelationship.act"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4448,6 +4464,7 @@
         <details key="body" value="self.entryRelationship.regionOfInterest"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4796,6 +4813,7 @@
         <details key="body" value="self.entryRelationship.act"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4850,6 +4868,7 @@
         <details key="body" value="self.entryRelationship.regionOfInterest"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

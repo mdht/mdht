@@ -573,6 +573,129 @@
         </ownedParameter>
         <ownedParameter xmi:id="_9ql7sHrnEd648OeXdSIbLg" name="Parameter1" type="_0jvq8E8AEd6ohP_YEXs4Wg" direction="return"/>
       </ownedOperation>
+      <ownedOperation xmi:id="_mP-gIFxCEd6ZEsfifJz_3w" name="getAct" isQuery="true" bodyCondition="_HnA9UFxDEd6ZEsfifJz_3w">
+        <ownedRule xmi:id="_HnA9UFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_mP-gIFxCEd6ZEsfifJz_3w">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_HnA9UVxDEd6ZEsfifJz_3w">
+            <language>OCL</language>
+            <body>self.entry.act</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_n6EqcFxCEd6ZEsfifJz_3w" name="Parameter1" type="_YiANsDxYEd6JwqSGecoePg" isUnique="false" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n6EqclxCEd6ZEsfifJz_3w" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n6EqcVxCEd6ZEsfifJz_3w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_5qS8wHrsEd648OeXdSIbLg" name="getClinicalDocument" isQuery="true">
+        <ownedParameter xmi:id="_8ErUgHrsEd648OeXdSIbLg" name="Parameter1" type="_S9OzADxXEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_p0aQMFxCEd6ZEsfifJz_3w" name="getEncounter" isQuery="true" bodyCondition="_PozpgFxDEd6ZEsfifJz_3w">
+        <ownedRule xmi:id="_PozpgFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_p0aQMFxCEd6ZEsfifJz_3w">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_PozpgVxDEd6ZEsfifJz_3w">
+            <language>OCL</language>
+            <body>self.entry.encounter</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_regagFxCEd6ZEsfifJz_3w" name="Parameter1" type="_AAXtEEbvEd6besF9iFIJkQ" isUnique="false" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_reqLgVxCEd6ZEsfifJz_3w" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_reqLgFxCEd6ZEsfifJz_3w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_s4g6YFxCEd6ZEsfifJz_3w" name="getObservation" isQuery="true" bodyCondition="_Tjc6IFxDEd6ZEsfifJz_3w">
+        <ownedRule xmi:id="_Tjc6IFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_s4g6YFxCEd6ZEsfifJz_3w">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Tjc6IVxDEd6ZEsfifJz_3w">
+            <language>OCL</language>
+            <body>self.entry.observation</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_vYjOMFxCEd6ZEsfifJz_3w" name="Parameter1" type="_bJyIQDxYEd6JwqSGecoePg" isUnique="false" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vYs_MVxCEd6ZEsfifJz_3w" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vYs_MFxCEd6ZEsfifJz_3w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_vtHI8FxCEd6ZEsfifJz_3w" name="getObservationMedia" isQuery="true" bodyCondition="_Xij0AFxDEd6ZEsfifJz_3w">
+        <ownedRule xmi:id="_Xij0AFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_vtHI8FxCEd6ZEsfifJz_3w">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Xis98FxDEd6ZEsfifJz_3w">
+            <language>OCL</language>
+            <body>self.entry.observationMedia</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_yQlLQFxCEd6ZEsfifJz_3w" name="Parameter1" type="_OnY2QEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQlLQlxCEd6ZEsfifJz_3w" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQlLQVxCEd6ZEsfifJz_3w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1pY6IFxCEd6ZEsfifJz_3w" name="getOrganizer" isQuery="true" bodyCondition="_aoS14FxDEd6ZEsfifJz_3w">
+        <ownedRule xmi:id="_aoS14FxDEd6ZEsfifJz_3w" name="body" constrainedElement="_1pY6IFxCEd6ZEsfifJz_3w">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_aoS14VxDEd6ZEsfifJz_3w">
+            <language>OCL</language>
+            <body>self.entry.organizer</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_37uJIFxCEd6ZEsfifJz_3w" name="Parameter1" type="_B6aX4EbvEd6besF9iFIJkQ" isUnique="false" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3736IVxCEd6ZEsfifJz_3w" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3736IFxCEd6ZEsfifJz_3w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_48sd8FxCEd6ZEsfifJz_3w" name="getProcedure" isQuery="true" bodyCondition="_et9DsFxDEd6ZEsfifJz_3w">
+        <ownedRule xmi:id="_et9DsFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_48sd8FxCEd6ZEsfifJz_3w">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_et9DsVxDEd6ZEsfifJz_3w">
+            <language>OCL</language>
+            <body>self.entry.procedure</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_6k2ukFxCEd6ZEsfifJz_3w" name="Parameter1" type="_-jiisEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6k2uklxCEd6ZEsfifJz_3w" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6k2ukVxCEd6ZEsfifJz_3w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_67zO8FxCEd6ZEsfifJz_3w" name="getRegionOfInterest" isQuery="true" bodyCondition="_tJrtcFxDEd6ZEsfifJz_3w">
+        <ownedRule xmi:id="_tJrtcFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_67zO8FxCEd6ZEsfifJz_3w">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_tJrtcVxDEd6ZEsfifJz_3w">
+            <language>OCL</language>
+            <body>self.entry.regionOfInterest</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_9TCzIFxCEd6ZEsfifJz_3w" name="Parameter1" type="_zegkcEbtEd6besF9iFIJkQ" isUnique="false" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9TMkIFxCEd6ZEsfifJz_3w" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9TCzIVxCEd6ZEsfifJz_3w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_b3c10FwxEd6ZEsfifJz_3w" name="getSection" isQuery="true" bodyCondition="_b3c10VwxEd6ZEsfifJz_3w">
+        <ownedRule xmi:id="_b3c10VwxEd6ZEsfifJz_3w" name="body" constrainedElement="_b3c10FwxEd6ZEsfifJz_3w">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_b3c10lwxEd6ZEsfifJz_3w">
+            <language>OCL</language>
+            <body>self.component.section</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_b3c101wxEd6ZEsfifJz_3w" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" isUnique="false" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b3c11FwxEd6ZEsfifJz_3w" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b3c11VwxEd6ZEsfifJz_3w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_-AfvAFxCEd6ZEsfifJz_3w" name="getSubstanceAdministration" isQuery="true" bodyCondition="_1F9ngFxDEd6ZEsfifJz_3w">
+        <ownedRule xmi:id="_1F9ngFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_-AfvAFxCEd6ZEsfifJz_3w">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_1F9ngVxDEd6ZEsfifJz_3w">
+            <language>OCL</language>
+            <body>self.entry.substanceAdministration</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="__ryMIFxCEd6ZEsfifJz_3w" name="Parameter1" type="_nazskEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__r7WEVxCEd6ZEsfifJz_3w" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__r7WEFxCEd6ZEsfifJz_3w"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_CCIYcFxDEd6ZEsfifJz_3w" name="getSupply" isQuery="true" bodyCondition="_4omn0FxDEd6ZEsfifJz_3w">
+        <ownedRule xmi:id="_4omn0FxDEd6ZEsfifJz_3w" name="body" constrainedElement="_CCIYcFxDEd6ZEsfifJz_3w">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_4omn0VxDEd6ZEsfifJz_3w">
+            <language>OCL</language>
+            <body>self.entry.supply</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_DUsMgFxDEd6ZEsfifJz_3w" name="Parameter1" type="_3gL0sEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DU1WcVxDEd6ZEsfifJz_3w" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DU1WcFxDEd6ZEsfifJz_3w"/>
+        </ownedParameter>
+      </ownedOperation>
       <ownedOperation xmi:id="_zg9jIFxEEd6ZEsfifJz_3w" name="hasActTemplate" isQuery="true" bodyCondition="_h4rBUFxFEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_h4rBUFxFEd6ZEsfifJz_3w" name="body" constrainedElement="_zg9jIFxEEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_h4rBUVxFEd6ZEsfifJz_3w">
@@ -745,126 +868,6 @@
         </ownedParameter>
         <ownedParameter xmi:id="_LiI0RFwxEd6ZEsfifJz_3w" name="Parameter1" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_mP-gIFxCEd6ZEsfifJz_3w" name="getAct" isQuery="true" bodyCondition="_HnA9UFxDEd6ZEsfifJz_3w">
-        <ownedRule xmi:id="_HnA9UFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_mP-gIFxCEd6ZEsfifJz_3w">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_HnA9UVxDEd6ZEsfifJz_3w">
-            <language>OCL</language>
-            <body>self.entry.act</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_n6EqcFxCEd6ZEsfifJz_3w" name="Parameter1" type="_YiANsDxYEd6JwqSGecoePg" isUnique="false" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n6EqclxCEd6ZEsfifJz_3w" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n6EqcVxCEd6ZEsfifJz_3w"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_p0aQMFxCEd6ZEsfifJz_3w" name="getEncounter" isQuery="true" bodyCondition="_PozpgFxDEd6ZEsfifJz_3w">
-        <ownedRule xmi:id="_PozpgFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_p0aQMFxCEd6ZEsfifJz_3w">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_PozpgVxDEd6ZEsfifJz_3w">
-            <language>OCL</language>
-            <body>self.entry.encounter</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_regagFxCEd6ZEsfifJz_3w" name="Parameter1" type="_AAXtEEbvEd6besF9iFIJkQ" isUnique="false" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_reqLgVxCEd6ZEsfifJz_3w" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_reqLgFxCEd6ZEsfifJz_3w"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_s4g6YFxCEd6ZEsfifJz_3w" name="getObservation" isQuery="true" bodyCondition="_Tjc6IFxDEd6ZEsfifJz_3w">
-        <ownedRule xmi:id="_Tjc6IFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_s4g6YFxCEd6ZEsfifJz_3w">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Tjc6IVxDEd6ZEsfifJz_3w">
-            <language>OCL</language>
-            <body>self.entry.observation</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_vYjOMFxCEd6ZEsfifJz_3w" name="Parameter1" type="_bJyIQDxYEd6JwqSGecoePg" isUnique="false" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vYs_MVxCEd6ZEsfifJz_3w" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vYs_MFxCEd6ZEsfifJz_3w"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_vtHI8FxCEd6ZEsfifJz_3w" name="getObservationMedia" isQuery="true" bodyCondition="_Xij0AFxDEd6ZEsfifJz_3w">
-        <ownedRule xmi:id="_Xij0AFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_vtHI8FxCEd6ZEsfifJz_3w">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_Xis98FxDEd6ZEsfifJz_3w">
-            <language>OCL</language>
-            <body>self.entry.observationMedia</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_yQlLQFxCEd6ZEsfifJz_3w" name="Parameter1" type="_OnY2QEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yQlLQlxCEd6ZEsfifJz_3w" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQlLQVxCEd6ZEsfifJz_3w"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_1pY6IFxCEd6ZEsfifJz_3w" name="getOrganizer" isQuery="true" bodyCondition="_aoS14FxDEd6ZEsfifJz_3w">
-        <ownedRule xmi:id="_aoS14FxDEd6ZEsfifJz_3w" name="body" constrainedElement="_1pY6IFxCEd6ZEsfifJz_3w">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_aoS14VxDEd6ZEsfifJz_3w">
-            <language>OCL</language>
-            <body>self.entry.organizer</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_37uJIFxCEd6ZEsfifJz_3w" name="Parameter1" type="_B6aX4EbvEd6besF9iFIJkQ" isUnique="false" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3736IVxCEd6ZEsfifJz_3w" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3736IFxCEd6ZEsfifJz_3w"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_48sd8FxCEd6ZEsfifJz_3w" name="getProcedure" isQuery="true" bodyCondition="_et9DsFxDEd6ZEsfifJz_3w">
-        <ownedRule xmi:id="_et9DsFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_48sd8FxCEd6ZEsfifJz_3w">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_et9DsVxDEd6ZEsfifJz_3w">
-            <language>OCL</language>
-            <body>self.entry.procedure</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_6k2ukFxCEd6ZEsfifJz_3w" name="Parameter1" type="_-jiisEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6k2uklxCEd6ZEsfifJz_3w" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6k2ukVxCEd6ZEsfifJz_3w"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_67zO8FxCEd6ZEsfifJz_3w" name="getRegionOfInterest" isQuery="true" bodyCondition="_tJrtcFxDEd6ZEsfifJz_3w">
-        <ownedRule xmi:id="_tJrtcFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_67zO8FxCEd6ZEsfifJz_3w">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_tJrtcVxDEd6ZEsfifJz_3w">
-            <language>OCL</language>
-            <body>self.entry.regionOfInterest</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_9TCzIFxCEd6ZEsfifJz_3w" name="Parameter1" type="_zegkcEbtEd6besF9iFIJkQ" isUnique="false" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9TMkIFxCEd6ZEsfifJz_3w" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9TCzIVxCEd6ZEsfifJz_3w"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_b3c10FwxEd6ZEsfifJz_3w" name="getSection" isQuery="true" bodyCondition="_b3c10VwxEd6ZEsfifJz_3w">
-        <ownedRule xmi:id="_b3c10VwxEd6ZEsfifJz_3w" name="body" constrainedElement="_b3c10FwxEd6ZEsfifJz_3w">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_b3c10lwxEd6ZEsfifJz_3w">
-            <language>OCL</language>
-            <body>self.component.section</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_b3c101wxEd6ZEsfifJz_3w" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" isUnique="false" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b3c11FwxEd6ZEsfifJz_3w" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b3c11VwxEd6ZEsfifJz_3w"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_-AfvAFxCEd6ZEsfifJz_3w" name="getSubstanceAdministration" isQuery="true" bodyCondition="_1F9ngFxDEd6ZEsfifJz_3w">
-        <ownedRule xmi:id="_1F9ngFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_-AfvAFxCEd6ZEsfifJz_3w">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_1F9ngVxDEd6ZEsfifJz_3w">
-            <language>OCL</language>
-            <body>self.entry.substanceAdministration</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="__ryMIFxCEd6ZEsfifJz_3w" name="Parameter1" type="_nazskEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__r7WEVxCEd6ZEsfifJz_3w" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__r7WEFxCEd6ZEsfifJz_3w"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_CCIYcFxDEd6ZEsfifJz_3w" name="getSupply" isQuery="true" bodyCondition="_4omn0FxDEd6ZEsfifJz_3w">
-        <ownedRule xmi:id="_4omn0FxDEd6ZEsfifJz_3w" name="body" constrainedElement="_CCIYcFxDEd6ZEsfifJz_3w">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_4omn0VxDEd6ZEsfifJz_3w">
-            <language>OCL</language>
-            <body>self.entry.supply</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:id="_DUsMgFxDEd6ZEsfifJz_3w" name="Parameter1" type="_3gL0sEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DU1WcVxDEd6ZEsfifJz_3w" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DU1WcFxDEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
@@ -1116,6 +1119,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YHUNUVxLEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_GvcOEHrtEd648OeXdSIbLg" name="getClinicalDocument" isQuery="true">
+        <ownedParameter xmi:id="_ILFssHrtEd648OeXdSIbLg" name="Parameter1" type="_S9OzADxXEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
       <ownedOperation xmi:id="_YHUNUlxLEd6ZEsfifJz_3w" name="getEncounter" isQuery="true" bodyCondition="_YHUNU1xLEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_YHUNU1xLEd6ZEsfifJz_3w" name="body" constrainedElement="_YHUNUlxLEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_YHUNVFxLEd6ZEsfifJz_3w">
@@ -1187,6 +1193,9 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YHUNXFxLEd6ZEsfifJz_3w" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YHUNXVxLEd6ZEsfifJz_3w"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_IhI1MHrtEd648OeXdSIbLg" name="getSection" isQuery="true">
+        <ownedParameter xmi:id="_KItP8HrtEd648OeXdSIbLg" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_YHdXPFxLEd6ZEsfifJz_3w" name="getSubstanceAdministration" isQuery="true" bodyCondition="_YHdXPVxLEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_YHdXPVxLEd6ZEsfifJz_3w" name="body" constrainedElement="_YHdXPFxLEd6ZEsfifJz_3w">
@@ -1546,6 +1555,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IoaZ4VxMEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_z2_r8HrtEd648OeXdSIbLg" name="getClinicalDocument" isQuery="true">
+        <ownedParameter xmi:id="_1y-QcHrtEd648OeXdSIbLg" name="Parameter1" type="_S9OzADxXEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
       <ownedOperation xmi:id="_IoaZ4lxMEd6ZEsfifJz_3w" name="getEncounter" isQuery="true" bodyCondition="_IoaZ41xMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_IoaZ41xMEd6ZEsfifJz_3w" name="body" constrainedElement="_IoaZ4lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_IoaZ5FxMEd6ZEsfifJz_3w">
@@ -1617,6 +1629,9 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IoaaBFxMEd6ZEsfifJz_3w" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IoaaBVxMEd6ZEsfifJz_3w"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_2qGswHrtEd648OeXdSIbLg" name="getSection" isQuery="true">
+        <ownedParameter xmi:id="_3o1l4HrtEd648OeXdSIbLg" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_IoaZ6FxMEd6ZEsfifJz_3w" name="getSubstanceAdministration" isQuery="true" bodyCondition="_IoaZ6VxMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_IoaZ6VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_IoaZ6FxMEd6ZEsfifJz_3w">
@@ -2257,6 +2272,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_huBMYVxMEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_IUiRsHrvEd648OeXdSIbLg" name="getClinicalDocument" isQuery="true">
+        <ownedParameter xmi:id="_JlTWAHrvEd648OeXdSIbLg" name="Parameter1" type="_S9OzADxXEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
       <ownedOperation xmi:id="_huBMYlxMEd6ZEsfifJz_3w" name="getEncounter" isQuery="true" bodyCondition="_huBMY1xMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_huBMY1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_huBMYlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_huBMZFxMEd6ZEsfifJz_3w">
@@ -2328,6 +2346,9 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_huBMhFxMEd6ZEsfifJz_3w" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_huBMhVxMEd6ZEsfifJz_3w"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_KHuGkHrvEd648OeXdSIbLg" name="getSection" isQuery="true">
+        <ownedParameter xmi:id="_KyL_4HrvEd648OeXdSIbLg" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_huBMaFxMEd6ZEsfifJz_3w" name="getSubstanceAdministration" isQuery="true" bodyCondition="_huBMaVxMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_huBMaVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_huBMaFxMEd6ZEsfifJz_3w">
@@ -2639,6 +2660,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RUFJgVxMEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_tMZmwHruEd648OeXdSIbLg" name="getClinicalDocument" isQuery="true">
+        <ownedParameter xmi:id="_uScBwHruEd648OeXdSIbLg" name="Parameter1" type="_S9OzADxXEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
       <ownedOperation xmi:id="_RUFJglxMEd6ZEsfifJz_3w" name="getEncounter" isQuery="true" bodyCondition="_RUFJg1xMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_RUFJg1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_RUFJglxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_RUFJhFxMEd6ZEsfifJz_3w">
@@ -2710,6 +2734,9 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RUO6hlxMEd6ZEsfifJz_3w" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RUO6h1xMEd6ZEsfifJz_3w"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_uoo7QHruEd648OeXdSIbLg" name="getSection" isQuery="true">
+        <ownedParameter xmi:id="_vbc4QHruEd648OeXdSIbLg" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_RUFJiFxMEd6ZEsfifJz_3w" name="getSubstanceAdministration" isQuery="true" bodyCondition="_RUFJiVxMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_RUFJiVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_RUFJiFxMEd6ZEsfifJz_3w">
@@ -3061,6 +3088,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kpxL0VxMEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_OwQX8HrvEd648OeXdSIbLg" name="getClinicalDocument" isQuery="true">
+        <ownedParameter xmi:id="_P7D-MHrvEd648OeXdSIbLg" name="Parameter1" type="_S9OzADxXEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
       <ownedOperation xmi:id="_kpxL0lxMEd6ZEsfifJz_3w" name="getEncounter" isQuery="true" bodyCondition="_kpxL01xMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_kpxL01xMEd6ZEsfifJz_3w" name="body" constrainedElement="_kpxL0lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_kpxL1FxMEd6ZEsfifJz_3w">
@@ -3132,6 +3162,9 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kp68w1xMEd6ZEsfifJz_3w" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kp68xFxMEd6ZEsfifJz_3w"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_QMDAgHrvEd648OeXdSIbLg" name="getSection" isQuery="true">
+        <ownedParameter xmi:id="_Q5WLYHrvEd648OeXdSIbLg" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_kpxL2FxMEd6ZEsfifJz_3w" name="getSubstanceAdministration" isQuery="true" bodyCondition="_kpxL2VxMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_kpxL2VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_kpxL2FxMEd6ZEsfifJz_3w">
@@ -3483,6 +3516,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lo8w4VxMEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_a2g_IHrvEd648OeXdSIbLg" name="getClinicalDocument" isQuery="true">
+        <ownedParameter xmi:id="_cCqpMHrvEd648OeXdSIbLg" name="Parameter1" type="_S9OzADxXEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
       <ownedOperation xmi:id="_lo8w4lxMEd6ZEsfifJz_3w" name="getEncounter" isQuery="true" bodyCondition="_lo8w41xMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_lo8w41xMEd6ZEsfifJz_3w" name="body" constrainedElement="_lo8w4lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_lo8w5FxMEd6ZEsfifJz_3w">
@@ -3554,6 +3590,9 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lpGh0VxMEd6ZEsfifJz_3w" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lpGh0lxMEd6ZEsfifJz_3w"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_cVllMHrvEd648OeXdSIbLg" name="getSection" isQuery="true">
+        <ownedParameter xmi:id="_dM3ygHrvEd648OeXdSIbLg" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_lo8w6FxMEd6ZEsfifJz_3w" name="getSubstanceAdministration" isQuery="true" bodyCondition="_lo8w6VxMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_lo8w6VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_lo8w6FxMEd6ZEsfifJz_3w">
@@ -3902,6 +3941,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gid_QVxMEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_-6YEYHruEd648OeXdSIbLg" name="getClinicalDocument" isQuery="true">
+        <ownedParameter xmi:id="_AqldwHrvEd648OeXdSIbLg" name="Parameter1" type="_S9OzADxXEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
       <ownedOperation xmi:id="_ginwMFxMEd6ZEsfifJz_3w" name="getEncounter" isQuery="true" bodyCondition="_ginwMVxMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_ginwMVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_ginwMFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_ginwMlxMEd6ZEsfifJz_3w">
@@ -3973,6 +4015,9 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ginwUlxMEd6ZEsfifJz_3w" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ginwU1xMEd6ZEsfifJz_3w"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_BU6NIHrvEd648OeXdSIbLg" name="getSection" isQuery="true">
+        <ownedParameter xmi:id="_CGrBQHrvEd648OeXdSIbLg" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_ginwNlxMEd6ZEsfifJz_3w" name="getSubstanceAdministration" isQuery="true" bodyCondition="_ginwN1xMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_ginwN1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_ginwNlxMEd6ZEsfifJz_3w">
@@ -4292,6 +4337,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GKBEy1xMEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_nVmn8HrtEd648OeXdSIbLg" name="getClinicalDocument" isQuery="true">
+        <ownedParameter xmi:id="_o-0BcHrtEd648OeXdSIbLg" name="Parameter1" type="_S9OzADxXEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
       <ownedOperation xmi:id="_GKBEzFxMEd6ZEsfifJz_3w" name="getEncounter" isQuery="true" bodyCondition="_GKBEzVxMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_GKBEzVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_GKBEzFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_GKBEzlxMEd6ZEsfifJz_3w">
@@ -4363,6 +4411,9 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GKBE7lxMEd6ZEsfifJz_3w" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GKBE71xMEd6ZEsfifJz_3w"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_pV5rwHrtEd648OeXdSIbLg" name="getSection" isQuery="true">
+        <ownedParameter xmi:id="_qavz8HrtEd648OeXdSIbLg" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_GKBE0lxMEd6ZEsfifJz_3w" name="getSubstanceAdministration" isQuery="true" bodyCondition="_GKBE01xMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_GKBE01xMEd6ZEsfifJz_3w" name="body" constrainedElement="_GKBE0lxMEd6ZEsfifJz_3w">
@@ -4670,6 +4721,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WZOeYVxMEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_2piPkHruEd648OeXdSIbLg" name="getClinicalDocument" isQuery="true">
+        <ownedParameter xmi:id="_4eg0MHruEd648OeXdSIbLg" name="Parameter1" type="_S9OzADxXEd6JwqSGecoePg" direction="return"/>
+      </ownedOperation>
       <ownedOperation xmi:id="_WZOeYlxMEd6ZEsfifJz_3w" name="getEncounter" isQuery="true" bodyCondition="_WZOeY1xMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_WZOeY1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_WZOeYlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_WZOeZFxMEd6ZEsfifJz_3w">
@@ -4741,6 +4795,9 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WZXoVlxMEd6ZEsfifJz_3w" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WZXoV1xMEd6ZEsfifJz_3w"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_4wsJUHruEd648OeXdSIbLg" name="getSection" isQuery="true">
+        <ownedParameter xmi:id="_5dF8UHruEd648OeXdSIbLg" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_WZOeaFxMEd6ZEsfifJz_3w" name="getSubstanceAdministration" isQuery="true" bodyCondition="_WZOeaVxMEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_WZOeaVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_WZOeaFxMEd6ZEsfifJz_3w">
