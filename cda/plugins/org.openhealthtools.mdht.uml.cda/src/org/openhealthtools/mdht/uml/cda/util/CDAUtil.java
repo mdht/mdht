@@ -15,10 +15,8 @@ package org.openhealthtools.mdht.uml.cda.util;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
@@ -204,35 +202,6 @@ public class CDAUtil {
 		public void handleError(Diagnostic diagnostic);
 		public void handleWarning(Diagnostic diagnostic);
 		public void handleInfo(Diagnostic diagnostic);
-	}
-
-	// TODO: Refactor this into an OCL constraint.
-	public static boolean validateClinicalStatementChoiceGroup(EObject object) {
-		List<EObject> choiceGroup = new ArrayList<EObject>();
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("act")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("encounter")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("observation")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("observationMedia")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("organizer")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("procedure")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("regionOfInterest")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("substanceAdministration")));
-		choiceGroup.add((EObject) object.eGet(object.eClass().getEStructuralFeature("supply")));
-		return validateChoiceGroup(choiceGroup);
-	}
-
-	public static boolean validateChoiceGroup(List<EObject> choiceGroup) {
-		boolean defined = false;
-		for (EObject member : choiceGroup) {
-			if (member != null) {
-				if (defined) {
-					return false;
-				} else {
-					defined = true;
-				}
-			}
-		}
-		return defined;
 	}
 
 	// walk up the containment tree until we reach the ClinicalDocument or we run out of containers

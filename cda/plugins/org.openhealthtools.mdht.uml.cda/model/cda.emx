@@ -879,7 +879,7 @@
       <ownedRule xmi:id="_8IM9wFBnEd6aGcsNlPFt8A" name="clinicalStatement" constrainedElement="_r0FX0DxXEd6JwqSGecoePg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_8IM9wVBnEd6aGcsNlPFt8A">
           <language>OCL</language>
-          <body>self.clinicalStatement()</body>
+          <body>Bag{self.act.oclIsUndefined(), self.encounter.oclIsUndefined(), self.observation.oclIsUndefined(), self.observationMedia.oclIsUndefined(), self.organizer.oclIsUndefined(), self.procedure.oclIsUndefined(), self.regionOfInterest.oclIsUndefined(), self.substanceAdministration.oclIsUndefined(), self.supply.oclIsUndefined()}->one(x | x = false)</body>
         </specification>
       </ownedRule>
       <ownedAttribute xmi:id="_fRJBLkxwEd6h-an5IXo-DA" name="realmCode" visibility="private" aggregation="composite">
@@ -954,11 +954,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBooleanObject"/>
         </defaultValue>
       </ownedAttribute>
-      <ownedOperation xmi:id="__hBm0FB_Ed6aGcsNlPFt8A" name="clinicalStatement" isQuery="true">
-        <ownedParameter xmi:id="_CEMHIFCAEd6aGcsNlPFt8A" name="Parameter1" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_6d0BUDxXEd6JwqSGecoePg" memberEnd="_6d0BUTxXEd6JwqSGecoePg _6d0BVDxXEd6JwqSGecoePg">
       <ownedEnd xmi:id="_6d0BVDxXEd6JwqSGecoePg" name="" visibility="private" type="_UOJoUDxXEd6JwqSGecoePg" association="_6d0BUDxXEd6JwqSGecoePg">
@@ -5469,7 +5464,7 @@
       <ownedRule xmi:id="_Dv49UFBnEd6aGcsNlPFt8A" name="clinicalStatement" constrainedElement="_cEUTcEcEEd6besF9iFIJkQ">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_Dv49UVBnEd6aGcsNlPFt8A">
           <language>OCL</language>
-          <body>self.clinicalStatement()</body>
+          <body>Bag{self.act.oclIsUndefined(), self.encounter.oclIsUndefined(), self.observation.oclIsUndefined(), self.observationMedia.oclIsUndefined(), self.organizer.oclIsUndefined(), self.procedure.oclIsUndefined(), self.regionOfInterest.oclIsUndefined(), self.substanceAdministration.oclIsUndefined(), self.supply.oclIsUndefined()}->one(x | x = false)</body>
         </specification>
       </ownedRule>
       <ownedAttribute xmi:id="_fQsVIExwEd6h-an5IXo-DA" name="realmCode" visibility="private" aggregation="composite">
@@ -5554,11 +5549,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBooleanObject"/>
         </defaultValue>
       </ownedAttribute>
-      <ownedOperation xmi:id="_q1hXMFB2Ed6aGcsNlPFt8A" name="clinicalStatement" isQuery="true">
-        <ownedParameter xmi:id="_va7p0FB7Ed6aGcsNlPFt8A" name="Parameter1" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_dJUMoEcEEd6besF9iFIJkQ" name="Component5">
       <ownedAttribute xmi:id="_fQsVLExwEd6h-an5IXo-DA" name="realmCode" visibility="private" aggregation="composite">
@@ -6060,7 +6050,7 @@
       <ownedRule xmi:id="_3tOnQFBnEd6aGcsNlPFt8A" name="clinicalStatement" constrainedElement="_BoxMQEcFEd6besF9iFIJkQ">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_3tOnQVBnEd6aGcsNlPFt8A">
           <language>OCL</language>
-          <body>self.clinicalStatement()</body>
+          <body>Bag{self.act.oclIsUndefined(), self.encounter.oclIsUndefined(), self.observation.oclIsUndefined(), self.observationMedia.oclIsUndefined(), self.organizer.oclIsUndefined(), self.procedure.oclIsUndefined(), self.regionOfInterest.oclIsUndefined(), self.substanceAdministration.oclIsUndefined(), self.supply.oclIsUndefined()}->one(x | x = false)</body>
         </specification>
       </ownedRule>
       <ownedAttribute xmi:id="_fRSyEExwEd6h-an5IXo-DA" name="realmCode" visibility="private" aggregation="composite">
@@ -6149,11 +6139,6 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_D27psUo2Ed6c3qsAxlFHaQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_D27psEo2Ed6c3qsAxlFHaQ"/>
       </ownedAttribute>
-      <ownedOperation xmi:id="_K1EG4FCAEd6aGcsNlPFt8A" name="clinicalStatement" isQuery="true">
-        <ownedParameter xmi:id="_MrFNUFCAEd6aGcsNlPFt8A" name="Parameter1" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_GRyJUEcGEd6besF9iFIJkQ" memberEnd="_GRyJUUcGEd6besF9iFIJkQ _GRyJVEcGEd6besF9iFIJkQ">
       <ownedEnd xmi:id="_GRyJVEcGEd6besF9iFIJkQ" name="" visibility="private" type="_BoxMQEcFEd6besF9iFIJkQ" association="_GRyJUEcGEd6besF9iFIJkQ">
@@ -6439,7 +6424,7 @@
       <ownedRule xmi:id="_HkmIkFBoEd6aGcsNlPFt8A" name="externalActChoice" constrainedElement="_NDnXkEcIEd6besF9iFIJkQ">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_HkmIkVBoEd6aGcsNlPFt8A">
           <language>OCL</language>
-          <body>self.externalActChoice()</body>
+          <body>Bag{self.externalAct.oclIsUndefined(), self.externalDocument.oclIsUndefined(), self.externalObservation.oclIsUndefined(), self.externalProcedure.oclIsUndefined()}->one(x | x = false)</body>
         </specification>
       </ownedRule>
       <ownedAttribute xmi:id="_fSx_6ExwEd6h-an5IXo-DA" name="realmCode" visibility="private" aggregation="composite">
@@ -6485,11 +6470,6 @@
       <ownedAttribute xmi:id="_7QZToErjEd6FXKclYGEDCw" name="typeCode" visibility="private">
         <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__zOoWUDcEd6xYZuu1VKCVw?vocab/x_ActRelationshipExternalReference?"/>
       </ownedAttribute>
-      <ownedOperation xmi:id="_QjV4UFCAEd6aGcsNlPFt8A" name="externalActChoice" isQuery="true">
-        <ownedParameter xmi:id="_R27nIFCAEd6aGcsNlPFt8A" name="Parameter1" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_QYQYIEcIEd6besF9iFIJkQ" memberEnd="_QYQYIUcIEd6besF9iFIJkQ _QYaJIEcIEd6besF9iFIJkQ">
       <ownedEnd xmi:id="_QYaJIEcIEd6besF9iFIJkQ" name="" visibility="private" type="_NDnXkEcIEd6besF9iFIJkQ" association="_QYQYIEcIEd6besF9iFIJkQ">
