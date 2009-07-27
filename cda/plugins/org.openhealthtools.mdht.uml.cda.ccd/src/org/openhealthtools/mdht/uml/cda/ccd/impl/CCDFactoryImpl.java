@@ -66,6 +66,7 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case CCDPackage.MEDICATION_SECTION: return createMedicationSection();
 			case CCDPackage.CONTINUITY_OF_CARE_DOCUMENT: return createContinuityOfCareDocument();
 			case CCDPackage.PROBLEM_ACT: return createProblemAct();
 			case CCDPackage.PROBLEM_OBSERVATION: return createProblemObservation();
@@ -84,9 +85,21 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.ENCOUNTERS_SECTION: return createEncountersSection();
 			case CCDPackage.IMMUNIZATIONS_SECTION: return createImmunizationsSection();
 			case CCDPackage.ENCOUNTERS_ACTIVITY: return createEncountersActivity();
+			case CCDPackage.MEDICATION_ACTIVITY: return createMedicationActivity();
+			case CCDPackage.SUPPLY_ACTIVITY: return createSupplyActivity();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationSection createMedicationSection() {
+		MedicationSectionImpl medicationSection = new MedicationSectionImpl();
+		return medicationSection;
 	}
 
 	/**
@@ -267,6 +280,26 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public EncountersActivity createEncountersActivity() {
 		EncountersActivityImpl encountersActivity = new EncountersActivityImpl();
 		return encountersActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationActivity createMedicationActivity() {
+		MedicationActivityImpl medicationActivity = new MedicationActivityImpl();
+		return medicationActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SupplyActivity createSupplyActivity() {
+		SupplyActivityImpl supplyActivity = new SupplyActivityImpl();
+		return supplyActivity;
 	}
 
 	/**

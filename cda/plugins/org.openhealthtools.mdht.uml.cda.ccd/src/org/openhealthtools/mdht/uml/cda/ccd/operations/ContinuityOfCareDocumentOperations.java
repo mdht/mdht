@@ -32,9 +32,9 @@ import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#ContinuityOfCareDocument_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Continuity Of Care Document template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#ContinuityOfCareDocument_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Continuity Of Care Document code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#ContinuityOfCareDocument_title(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Continuity Of Care Document title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#ContinuityOfCareDocument_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Continuity Of Care Document template Id</em>}</li>
  * </ul>
  * </p>
  *

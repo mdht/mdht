@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemAct()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.27' code.nullFlavor='NA' constraints.validation.error='ProblemAct_code ProblemAct_templateId'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.nullFlavor='NA' templateId.root='2.16.840.1.113883.10.20.1.27' constraints.validation.error='ProblemAct_code ProblemAct_templateId'"
  * @generated
  */
 public interface ProblemAct extends Act {
