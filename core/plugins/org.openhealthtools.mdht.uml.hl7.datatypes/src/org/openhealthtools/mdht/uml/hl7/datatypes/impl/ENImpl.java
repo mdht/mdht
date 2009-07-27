@@ -111,9 +111,27 @@ public class ENImpl extends ANYImpl implements EN {
 	 */
 	public EList<EntityNameUse> getUse() {
 		if (use == null) {
-			use = new EDataTypeUniqueEList<EntityNameUse>(EntityNameUse.class, this, DatatypesPackage.EN__USE);
+			use = new EDataTypeUniqueEList.Unsettable<EntityNameUse>(EntityNameUse.class, this, DatatypesPackage.EN__USE);
 		}
 		return use;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetUse() {
+		if (use != null) ((InternalEList.Unsettable<?>)use).unset();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetUse() {
+		return use != null && ((InternalEList.Unsettable<?>)use).isSet();
 	}
 
 	/**
@@ -436,7 +454,7 @@ public class ENImpl extends ANYImpl implements EN {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.EN__USE:
-				getUse().clear();
+				unsetUse();
 				return;
 			case DatatypesPackage.EN__VALID_TIME:
 				setValidTime((IVL_TS)null);
@@ -475,7 +493,7 @@ public class ENImpl extends ANYImpl implements EN {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.EN__USE:
-				return use != null && !use.isEmpty();
+				return isSetUse();
 			case DatatypesPackage.EN__VALID_TIME:
 				return validTime != null;
 			case DatatypesPackage.EN__DELIMITER:

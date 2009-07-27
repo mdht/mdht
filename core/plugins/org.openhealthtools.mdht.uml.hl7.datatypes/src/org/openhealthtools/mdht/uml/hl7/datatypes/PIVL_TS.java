@@ -97,9 +97,11 @@ public interface PIVL_TS extends SXCM_TS {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Alignment</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.CalendarCycle
+	 * @see #isSetAlignment()
+	 * @see #unsetAlignment()
 	 * @see #setAlignment(CalendarCycle)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getPIVL_TS_Alignment()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	CalendarCycle getAlignment();
@@ -110,10 +112,35 @@ public interface PIVL_TS extends SXCM_TS {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Alignment</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.CalendarCycle
+	 * @see #isSetAlignment()
+	 * @see #unsetAlignment()
 	 * @see #getAlignment()
 	 * @generated
 	 */
 	void setAlignment(CalendarCycle value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS#getAlignment <em>Alignment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetAlignment()
+	 * @see #getAlignment()
+	 * @see #setAlignment(CalendarCycle)
+	 * @generated
+	 */
+	void unsetAlignment();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS#getAlignment <em>Alignment</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Alignment</em>' attribute is set.
+	 * @see #unsetAlignment()
+	 * @see #getAlignment()
+	 * @see #setAlignment(CalendarCycle)
+	 * @generated
+	 */
+	boolean isSetAlignment();
 
 	/**
 	 * Returns the value of the '<em><b>Institution Specified</b></em>' attribute.

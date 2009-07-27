@@ -42,9 +42,11 @@ public interface ADXP extends ST {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Part Type</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.AddressPartType
+	 * @see #isSetPartType()
+	 * @see #unsetPartType()
 	 * @see #setPartType(AddressPartType)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getADXP_PartType()
-	 * @model transient="true" ordered="false"
+	 * @model unsettable="true" transient="true" ordered="false"
 	 * @generated
 	 */
 	AddressPartType getPartType();
@@ -55,9 +57,34 @@ public interface ADXP extends ST {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Part Type</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.AddressPartType
+	 * @see #isSetPartType()
+	 * @see #unsetPartType()
 	 * @see #getPartType()
 	 * @generated
 	 */
 	void setPartType(AddressPartType value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ADXP#getPartType <em>Part Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetPartType()
+	 * @see #getPartType()
+	 * @see #setPartType(AddressPartType)
+	 * @generated
+	 */
+	void unsetPartType();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ADXP#getPartType <em>Part Type</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Part Type</em>' attribute is set.
+	 * @see #unsetPartType()
+	 * @see #getPartType()
+	 * @see #setPartType(AddressPartType)
+	 * @generated
+	 */
+	boolean isSetPartType();
 
 } // ADXP

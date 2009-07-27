@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ENXP;
 
@@ -64,6 +65,15 @@ public class ENXPImpl extends STImpl implements ENXP {
 	 * @ordered
 	 */
 	protected EntityNamePartType partType = PART_TYPE_EDEFAULT;
+
+	/**
+	 * This is true if the Part Type attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean partTypeESet;
 
 	/**
 	 * The cached value of the '{@link #getQualifier() <em>Qualifier</em>}' attribute list.
@@ -111,8 +121,33 @@ public class ENXPImpl extends STImpl implements ENXP {
 	public void setPartType(EntityNamePartType newPartType) {
 		EntityNamePartType oldPartType = partType;
 		partType = newPartType == null ? PART_TYPE_EDEFAULT : newPartType;
+		boolean oldPartTypeESet = partTypeESet;
+		partTypeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ENXP__PART_TYPE, oldPartType, partType));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ENXP__PART_TYPE, oldPartType, partType, !oldPartTypeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetPartType() {
+		EntityNamePartType oldPartType = partType;
+		boolean oldPartTypeESet = partTypeESet;
+		partType = PART_TYPE_EDEFAULT;
+		partTypeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ENXP__PART_TYPE, oldPartType, PART_TYPE_EDEFAULT, oldPartTypeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetPartType() {
+		return partTypeESet;
 	}
 
 	/**
@@ -122,9 +157,27 @@ public class ENXPImpl extends STImpl implements ENXP {
 	 */
 	public EList<EntityNamePartQualifier> getQualifier() {
 		if (qualifier == null) {
-			qualifier = new EDataTypeUniqueEList<EntityNamePartQualifier>(EntityNamePartQualifier.class, this, DatatypesPackage.ENXP__QUALIFIER);
+			qualifier = new EDataTypeUniqueEList.Unsettable<EntityNamePartQualifier>(EntityNamePartQualifier.class, this, DatatypesPackage.ENXP__QUALIFIER);
 		}
 		return qualifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetQualifier() {
+		if (qualifier != null) ((InternalEList.Unsettable<?>)qualifier).unset();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetQualifier() {
+		return qualifier != null && ((InternalEList.Unsettable<?>)qualifier).isSet();
 	}
 
 	/**
@@ -172,10 +225,10 @@ public class ENXPImpl extends STImpl implements ENXP {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.ENXP__PART_TYPE:
-				setPartType(PART_TYPE_EDEFAULT);
+				unsetPartType();
 				return;
 			case DatatypesPackage.ENXP__QUALIFIER:
-				getQualifier().clear();
+				unsetQualifier();
 				return;
 		}
 		super.eUnset(featureID);
@@ -190,9 +243,9 @@ public class ENXPImpl extends STImpl implements ENXP {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.ENXP__PART_TYPE:
-				return partType != PART_TYPE_EDEFAULT;
+				return isSetPartType();
 			case DatatypesPackage.ENXP__QUALIFIER:
-				return qualifier != null && !qualifier.isEmpty();
+				return isSetQualifier();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,7 +261,7 @@ public class ENXPImpl extends STImpl implements ENXP {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (partType: ");
-		result.append(partType);
+		if (partTypeESet) result.append(partType); else result.append("<unset>");
 		result.append(", qualifier: ");
 		result.append(qualifier);
 		result.append(')');

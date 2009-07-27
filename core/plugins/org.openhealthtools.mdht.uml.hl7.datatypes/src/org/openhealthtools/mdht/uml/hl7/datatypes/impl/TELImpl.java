@@ -104,9 +104,27 @@ public class TELImpl extends URLImpl implements TEL {
 	 */
 	public EList<TelecommunicationAddressUse> getUse() {
 		if (use == null) {
-			use = new EDataTypeUniqueEList<TelecommunicationAddressUse>(TelecommunicationAddressUse.class, this, DatatypesPackage.TEL__USE);
+			use = new EDataTypeUniqueEList.Unsettable<TelecommunicationAddressUse>(TelecommunicationAddressUse.class, this, DatatypesPackage.TEL__USE);
 		}
 		return use;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetUse() {
+		if (use != null) ((InternalEList.Unsettable<?>)use).unset();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetUse() {
+		return use != null && ((InternalEList.Unsettable<?>)use).isSet();
 	}
 
 	/**
@@ -172,7 +190,7 @@ public class TELImpl extends URLImpl implements TEL {
 				getUseablePeriod().clear();
 				return;
 			case DatatypesPackage.TEL__USE:
-				getUse().clear();
+				unsetUse();
 				return;
 		}
 		super.eUnset(featureID);
@@ -189,7 +207,7 @@ public class TELImpl extends URLImpl implements TEL {
 			case DatatypesPackage.TEL__USEABLE_PERIOD:
 				return useablePeriod != null && !useablePeriod.isEmpty();
 			case DatatypesPackage.TEL__USE:
-				return use != null && !use.isEmpty();
+				return isSetUse();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -61,9 +61,11 @@ public interface BIN extends ANY {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Representation</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.BinaryDataEncoding
+	 * @see #isSetRepresentation()
+	 * @see #unsetRepresentation()
 	 * @see #setRepresentation(BinaryDataEncoding)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getBIN_Representation()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	BinaryDataEncoding getRepresentation();
@@ -74,9 +76,34 @@ public interface BIN extends ANY {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Representation</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.BinaryDataEncoding
+	 * @see #isSetRepresentation()
+	 * @see #unsetRepresentation()
 	 * @see #getRepresentation()
 	 * @generated
 	 */
 	void setRepresentation(BinaryDataEncoding value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.BIN#getRepresentation <em>Representation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetRepresentation()
+	 * @see #getRepresentation()
+	 * @see #setRepresentation(BinaryDataEncoding)
+	 * @generated
+	 */
+	void unsetRepresentation();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.BIN#getRepresentation <em>Representation</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Representation</em>' attribute is set.
+	 * @see #unsetRepresentation()
+	 * @see #getRepresentation()
+	 * @see #setRepresentation(BinaryDataEncoding)
+	 * @generated
+	 */
+	boolean isSetRepresentation();
 
 } // BIN

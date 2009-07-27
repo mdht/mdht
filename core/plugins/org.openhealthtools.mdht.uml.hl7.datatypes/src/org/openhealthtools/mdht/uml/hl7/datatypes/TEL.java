@@ -62,10 +62,33 @@ public interface TEL extends URL {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Use</em>' attribute list.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.TelecommunicationAddressUse
+	 * @see #isSetUse()
+	 * @see #unsetUse()
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getTEL_Use()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	EList<TelecommunicationAddressUse> getUse();
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUse <em>Use</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetUse()
+	 * @see #getUse()
+	 * @generated
+	 */
+	void unsetUse();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUse <em>Use</em>}' attribute list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Use</em>' attribute list is set.
+	 * @see #unsetUse()
+	 * @see #getUse()
+	 * @generated
+	 */
+	boolean isSetUse();
 
 } // TEL

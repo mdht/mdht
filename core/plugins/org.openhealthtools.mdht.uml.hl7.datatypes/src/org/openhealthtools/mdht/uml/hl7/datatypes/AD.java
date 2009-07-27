@@ -97,11 +97,34 @@ public interface AD extends ANY {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Use</em>' attribute list.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse
+	 * @see #isSetUse()
+	 * @see #unsetUse()
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_Use()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	EList<PostalAddressUse> getUse();
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUse <em>Use</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetUse()
+	 * @see #getUse()
+	 * @generated
+	 */
+	void unsetUse();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUse <em>Use</em>}' attribute list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Use</em>' attribute list is set.
+	 * @see #unsetUse()
+	 * @see #getUse()
+	 * @generated
+	 */
+	boolean isSetUse();
 
 	/**
 	 * Returns the value of the '<em><b>Is Not Ordered</b></em>' attribute.

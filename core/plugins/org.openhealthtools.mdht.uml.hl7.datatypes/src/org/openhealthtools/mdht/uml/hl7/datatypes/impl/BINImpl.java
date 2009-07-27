@@ -74,6 +74,15 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 	protected BinaryDataEncoding representation = REPRESENTATION_EDEFAULT;
 
 	/**
+	 * This is true if the Representation attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean representationESet;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -121,8 +130,33 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 	public void setRepresentation(BinaryDataEncoding newRepresentation) {
 		BinaryDataEncoding oldRepresentation = representation;
 		representation = newRepresentation == null ? REPRESENTATION_EDEFAULT : newRepresentation;
+		boolean oldRepresentationESet = representationESet;
+		representationESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.BIN__REPRESENTATION, oldRepresentation, representation));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.BIN__REPRESENTATION, oldRepresentation, representation, !oldRepresentationESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetRepresentation() {
+		BinaryDataEncoding oldRepresentation = representation;
+		boolean oldRepresentationESet = representationESet;
+		representation = REPRESENTATION_EDEFAULT;
+		representationESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.BIN__REPRESENTATION, oldRepresentation, REPRESENTATION_EDEFAULT, oldRepresentationESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetRepresentation() {
+		return representationESet;
 	}
 
 	/**
@@ -186,7 +220,7 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 				getMixed().clear();
 				return;
 			case DatatypesPackage.BIN__REPRESENTATION:
-				setRepresentation(REPRESENTATION_EDEFAULT);
+				unsetRepresentation();
 				return;
 		}
 		super.eUnset(featureID);
@@ -203,7 +237,7 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 			case DatatypesPackage.BIN__MIXED:
 				return mixed != null && !mixed.isEmpty();
 			case DatatypesPackage.BIN__REPRESENTATION:
-				return representation != REPRESENTATION_EDEFAULT;
+				return isSetRepresentation();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,7 +255,7 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 		result.append(" (mixed: ");
 		result.append(mixed);
 		result.append(", representation: ");
-		result.append(representation);
+		if (representationESet) result.append(representation); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

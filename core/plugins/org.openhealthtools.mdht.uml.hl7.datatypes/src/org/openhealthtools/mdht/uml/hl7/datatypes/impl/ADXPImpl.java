@@ -58,6 +58,15 @@ public class ADXPImpl extends STImpl implements ADXP {
 	protected AddressPartType partType = PART_TYPE_EDEFAULT;
 
 	/**
+	 * This is true if the Part Type attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean partTypeESet;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -93,8 +102,33 @@ public class ADXPImpl extends STImpl implements ADXP {
 	public void setPartType(AddressPartType newPartType) {
 		AddressPartType oldPartType = partType;
 		partType = newPartType == null ? PART_TYPE_EDEFAULT : newPartType;
+		boolean oldPartTypeESet = partTypeESet;
+		partTypeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ADXP__PART_TYPE, oldPartType, partType));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ADXP__PART_TYPE, oldPartType, partType, !oldPartTypeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetPartType() {
+		AddressPartType oldPartType = partType;
+		boolean oldPartTypeESet = partTypeESet;
+		partType = PART_TYPE_EDEFAULT;
+		partTypeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ADXP__PART_TYPE, oldPartType, PART_TYPE_EDEFAULT, oldPartTypeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetPartType() {
+		return partTypeESet;
 	}
 
 	/**
@@ -135,7 +169,7 @@ public class ADXPImpl extends STImpl implements ADXP {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.ADXP__PART_TYPE:
-				setPartType(PART_TYPE_EDEFAULT);
+				unsetPartType();
 				return;
 		}
 		super.eUnset(featureID);
@@ -150,7 +184,7 @@ public class ADXPImpl extends STImpl implements ADXP {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.ADXP__PART_TYPE:
-				return partType != PART_TYPE_EDEFAULT;
+				return isSetPartType();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -166,7 +200,7 @@ public class ADXPImpl extends STImpl implements ADXP {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (partType: ");
-		result.append(partType);
+		if (partTypeESet) result.append(partType); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

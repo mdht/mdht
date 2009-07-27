@@ -5,7 +5,8 @@
     nsURI="http://www.openhealthtools.org/mdht/uml/hl7/datatypes" nsPrefix="datatypes">
   <eClassifiers xsi:type="ecore:EClass" name="ANY" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BIN" abstract="true" eSuperTypes="#//ANY">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -19,7 +20,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="representation" ordered="false"
-        eType="#//BinaryDataEncoding"/>
+        eType="#//BinaryDataEncoding" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BinaryDataEncoding">
     <eLiterals name="B64"/>
@@ -42,17 +43,20 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="compression" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//CompressionAlgorithm"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//CompressionAlgorithm"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="integrityCheck" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteArray"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="integrityCheckAlgorithm"
-        ordered="false" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//IntegrityCheckAlgorithm"/>
+        ordered="false" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//IntegrityCheckAlgorithm"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TEL" eSuperTypes="#//URL">
     <eStructuralFeatures xsi:type="ecore:EReference" name="useablePeriod" ordered="false"
         upperBound="-1" eType="#//SXCM_TS" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="use" ordered="false" upperBound="-1"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//TelecommunicationAddressUse"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//TelecommunicationAddressUse"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="URL" abstract="true" eSuperTypes="#//ANY">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
@@ -61,7 +65,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SXCM_TS" eSuperTypes="#//TS">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//SetOperator"
-        defaultValueLiteral="I"/>
+        defaultValueLiteral="I" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TS" eSuperTypes="#//QTY">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
@@ -829,7 +833,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="useablePeriod" ordered="false"
         upperBound="-1" eType="#//SXCM_TS" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="use" ordered="false" upperBound="-1"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//PostalAddressUse"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//PostalAddressUse"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNotOrdered" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delimiter" upperBound="-1"
@@ -1067,7 +1072,7 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="partType" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//AddressPartType"
-        transient="true"/>
+        transient="true" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EN" eSuperTypes="#//ANY">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -1203,7 +1208,8 @@
     </eOperations>
     <eOperations name="getText" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="use" ordered="false" upperBound="-1"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityNameUse"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityNameUse"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="validTime" ordered="false"
         eType="#//IVL_TS" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delimiter" upperBound="-1"
@@ -1292,9 +1298,10 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="partType" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityNamePartType"
-        transient="true"/>
+        transient="true" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifier" ordered="false"
-        upperBound="-1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityNamePartQualifier"/>
+        upperBound="-1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityNamePartQualifier"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ON" eSuperTypes="#//EN">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -1417,7 +1424,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SXCM_INT" eSuperTypes="#//INT">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//SetOperator"
-        defaultValueLiteral="I"/>
+        defaultValueLiteral="I" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IVXB_INT" eSuperTypes="#//INT">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inclusive" ordered="false"
@@ -1442,7 +1449,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SXCM_PQ" eSuperTypes="#//PQ">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//SetOperator"
-        defaultValueLiteral="I"/>
+        defaultValueLiteral="I" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IVL_PQ" eSuperTypes="#//SXCM_PQ">
     <eStructuralFeatures xsi:type="ecore:EReference" name="low" ordered="false" eType="#//IVXB_PQ"
@@ -1466,7 +1473,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="period" ordered="false"
         eType="#//PQ" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignment" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//CalendarCycle"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//CalendarCycle"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="institutionSpecified" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="false"/>

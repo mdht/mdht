@@ -85,6 +85,15 @@ public class PIVL_TSImpl extends SXCM_TSImpl implements PIVL_TS {
 	protected CalendarCycle alignment = ALIGNMENT_EDEFAULT;
 
 	/**
+	 * This is true if the Alignment attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean alignmentESet;
+
+	/**
 	 * The default value of the '{@link #getInstitutionSpecified() <em>Institution Specified</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -226,8 +235,33 @@ public class PIVL_TSImpl extends SXCM_TSImpl implements PIVL_TS {
 	public void setAlignment(CalendarCycle newAlignment) {
 		CalendarCycle oldAlignment = alignment;
 		alignment = newAlignment == null ? ALIGNMENT_EDEFAULT : newAlignment;
+		boolean oldAlignmentESet = alignmentESet;
+		alignmentESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.PIVL_TS__ALIGNMENT, oldAlignment, alignment));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.PIVL_TS__ALIGNMENT, oldAlignment, alignment, !oldAlignmentESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetAlignment() {
+		CalendarCycle oldAlignment = alignment;
+		boolean oldAlignmentESet = alignmentESet;
+		alignment = ALIGNMENT_EDEFAULT;
+		alignmentESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.PIVL_TS__ALIGNMENT, oldAlignment, ALIGNMENT_EDEFAULT, oldAlignmentESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetAlignment() {
+		return alignmentESet;
 	}
 
 	/**
@@ -326,7 +360,7 @@ public class PIVL_TSImpl extends SXCM_TSImpl implements PIVL_TS {
 				setPeriod((PQ)null);
 				return;
 			case DatatypesPackage.PIVL_TS__ALIGNMENT:
-				setAlignment(ALIGNMENT_EDEFAULT);
+				unsetAlignment();
 				return;
 			case DatatypesPackage.PIVL_TS__INSTITUTION_SPECIFIED:
 				setInstitutionSpecified(INSTITUTION_SPECIFIED_EDEFAULT);
@@ -348,7 +382,7 @@ public class PIVL_TSImpl extends SXCM_TSImpl implements PIVL_TS {
 			case DatatypesPackage.PIVL_TS__PERIOD:
 				return period != null;
 			case DatatypesPackage.PIVL_TS__ALIGNMENT:
-				return alignment != ALIGNMENT_EDEFAULT;
+				return isSetAlignment();
 			case DatatypesPackage.PIVL_TS__INSTITUTION_SPECIFIED:
 				return INSTITUTION_SPECIFIED_EDEFAULT == null ? institutionSpecified != null : !INSTITUTION_SPECIFIED_EDEFAULT.equals(institutionSpecified);
 		}
@@ -366,7 +400,7 @@ public class PIVL_TSImpl extends SXCM_TSImpl implements PIVL_TS {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (alignment: ");
-		result.append(alignment);
+		if (alignmentESet) result.append(alignment); else result.append("<unset>");
 		result.append(", institutionSpecified: ");
 		result.append(institutionSpecified);
 		result.append(')');
