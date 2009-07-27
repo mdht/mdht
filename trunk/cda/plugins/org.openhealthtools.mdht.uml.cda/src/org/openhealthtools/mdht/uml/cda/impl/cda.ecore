@@ -1359,6 +1359,25 @@
     <eOperations name="createStrucDocText" ordered="false" lowerBound="1" eType="#//StrucDocText">
       <eParameters name="xmlString" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
+    <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
+        eType="#//Encounter"/>
+    <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
+        eType="#//Observation"/>
+    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
+        eType="#//ObservationMedia"/>
+    <eOperations name="getOrganizer" ordered="false" unique="false" upperBound="-1"
+        eType="#//Organizer"/>
+    <eOperations name="getProcedure" ordered="false" unique="false" upperBound="-1"
+        eType="#//Procedure"/>
+    <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
+        eType="#//RegionOfInterest"/>
+    <eOperations name="getSection" ordered="false" unique="false" upperBound="-1"
+        eType="#//Section"/>
+    <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
+        upperBound="-1" eType="#//SubstanceAdministration"/>
+    <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply"/>
     <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
@@ -1400,24 +1419,6 @@
     <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
-    <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
-        eType="#//Encounter"/>
-    <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
-        eType="#//Observation"/>
-    <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
-        eType="#//ObservationMedia"/>
-    <eOperations name="getOrganizer" ordered="false" unique="false" upperBound="-1"
-        eType="#//Organizer"/>
-    <eOperations name="getProcedure" ordered="false" unique="false" upperBound="-1"
-        eType="#//Procedure"/>
-    <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
-        eType="#//RegionOfInterest"/>
-    <eOperations name="getSection" ordered="false" unique="false" upperBound="-1"
-        eType="#//Section"/>
-    <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
-        upperBound="-1" eType="#//SubstanceAdministration"/>
-    <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true"/>
@@ -1646,6 +1647,7 @@
       <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
     </eOperations>
     <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter"/>
     <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
@@ -1658,6 +1660,7 @@
         eType="#//Procedure"/>
     <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
         eType="#//RegionOfInterest"/>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration"/>
     <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply"/>
@@ -2055,6 +2058,7 @@
       <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
     </eOperations>
     <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter"/>
     <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
@@ -2067,6 +2071,7 @@
         eType="#//Procedure"/>
     <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
         eType="#//RegionOfInterest"/>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration"/>
     <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply"/>
@@ -2379,6 +2384,7 @@
       <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
     </eOperations>
     <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter"/>
     <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
@@ -2391,6 +2397,7 @@
         eType="#//Procedure"/>
     <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
         eType="#//RegionOfInterest"/>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration"/>
     <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply"/>
@@ -2586,6 +2593,7 @@
       <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
     </eOperations>
     <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter"/>
     <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
@@ -2598,6 +2606,7 @@
         eType="#//Procedure"/>
     <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
         eType="#//RegionOfInterest"/>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration"/>
     <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply"/>
@@ -2715,6 +2724,7 @@
       <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
     </eOperations>
     <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter"/>
     <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
@@ -2727,6 +2737,7 @@
         eType="#//Procedure"/>
     <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
         eType="#//RegionOfInterest"/>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration"/>
     <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply"/>
@@ -2897,6 +2908,7 @@
       <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
     </eOperations>
     <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter"/>
     <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
@@ -2909,6 +2921,7 @@
         eType="#//Procedure"/>
     <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
         eType="#//RegionOfInterest"/>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration"/>
     <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply"/>
@@ -3045,6 +3058,7 @@
       <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
     </eOperations>
     <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter"/>
     <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
@@ -3057,6 +3071,7 @@
         eType="#//Procedure"/>
     <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
         eType="#//RegionOfInterest"/>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration"/>
     <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply"/>
@@ -3184,6 +3199,7 @@
       <eParameters name="supply" ordered="false" lowerBound="1" eType="#//Supply"/>
     </eOperations>
     <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter"/>
     <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
@@ -3196,6 +3212,7 @@
         eType="#//Procedure"/>
     <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
         eType="#//RegionOfInterest"/>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration"/>
     <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply"/>
@@ -3444,6 +3461,7 @@
       <eParameters name="newSupply" ordered="false" lowerBound="1" eType="#//Supply"/>
     </eOperations>
     <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
+    <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
     <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter"/>
     <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
@@ -3456,6 +3474,7 @@
         eType="#//Procedure"/>
     <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
         eType="#//RegionOfInterest"/>
+    <eOperations name="getSection" ordered="false" lowerBound="1" eType="#//Section"/>
     <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration"/>
     <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply"/>

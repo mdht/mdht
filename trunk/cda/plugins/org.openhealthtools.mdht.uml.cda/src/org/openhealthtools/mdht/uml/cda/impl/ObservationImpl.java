@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
+import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Informant12;
@@ -45,6 +46,7 @@ import org.openhealthtools.mdht.uml.cda.Procedure;
 import org.openhealthtools.mdht.uml.cda.Reference;
 import org.openhealthtools.mdht.uml.cda.ReferenceRange;
 import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
+import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.Specimen;
 import org.openhealthtools.mdht.uml.cda.Subject;
 
@@ -1370,6 +1372,15 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ClinicalDocument getClinicalDocument() {
+		return ObservationOperations.getClinicalDocument(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Encounter> getEncounter() {
 		return ObservationOperations.getEncounter(this);
 	}
@@ -1417,6 +1428,15 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 */
 	public EList<RegionOfInterest> getRegionOfInterest() {
 		return ObservationOperations.getRegionOfInterest(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Section getSection() {
+		return ObservationOperations.getSection(this);
 	}
 
 	/**

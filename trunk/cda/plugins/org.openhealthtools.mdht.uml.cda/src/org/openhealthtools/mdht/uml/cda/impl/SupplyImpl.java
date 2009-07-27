@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
+import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Informant12;
@@ -45,6 +46,7 @@ import org.openhealthtools.mdht.uml.cda.Procedure;
 import org.openhealthtools.mdht.uml.cda.Product;
 import org.openhealthtools.mdht.uml.cda.Reference;
 import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
+import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.Specimen;
 import org.openhealthtools.mdht.uml.cda.Subject;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
@@ -1260,6 +1262,15 @@ public class SupplyImpl extends EObjectImpl implements Supply {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ClinicalDocument getClinicalDocument() {
+		return SupplyOperations.getClinicalDocument(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Encounter> getEncounter() {
 		return SupplyOperations.getEncounter(this);
 	}
@@ -1307,6 +1318,15 @@ public class SupplyImpl extends EObjectImpl implements Supply {
 	 */
 	public EList<RegionOfInterest> getRegionOfInterest() {
 		return SupplyOperations.getRegionOfInterest(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Section getSection() {
+		return SupplyOperations.getSection(this);
 	}
 
 	/**
