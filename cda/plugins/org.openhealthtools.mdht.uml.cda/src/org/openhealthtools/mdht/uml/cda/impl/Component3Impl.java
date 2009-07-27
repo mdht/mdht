@@ -120,6 +120,15 @@ public class Component3Impl extends EObjectImpl implements Component3 {
 	protected NullFlavor nullFlavor = NULL_FLAVOR_EDEFAULT;
 
 	/**
+	 * This is true if the Null Flavor attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean nullFlavorESet;
+
+	/**
 	 * The default value of the '{@link #getTypeCode() <em>Type Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,6 +147,15 @@ public class Component3Impl extends EObjectImpl implements Component3 {
 	 * @ordered
 	 */
 	protected ActRelationshipHasComponent typeCode = TYPE_CODE_EDEFAULT;
+
+	/**
+	 * This is true if the Type Code attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean typeCodeESet;
 
 	/**
 	 * The default value of the '{@link #getContextConductionInd() <em>Context Conduction Ind</em>}' attribute.
@@ -305,8 +323,33 @@ public class Component3Impl extends EObjectImpl implements Component3 {
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
 		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		boolean oldNullFlavorESet = nullFlavorESet;
+		nullFlavorESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT3__NULL_FLAVOR, oldNullFlavor, nullFlavor));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT3__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetNullFlavor() {
+		NullFlavor oldNullFlavor = nullFlavor;
+		boolean oldNullFlavorESet = nullFlavorESet;
+		nullFlavor = NULL_FLAVOR_EDEFAULT;
+		nullFlavorESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.COMPONENT3__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetNullFlavor() {
+		return nullFlavorESet;
 	}
 
 	/**
@@ -326,8 +369,33 @@ public class Component3Impl extends EObjectImpl implements Component3 {
 	public void setTypeCode(ActRelationshipHasComponent newTypeCode) {
 		ActRelationshipHasComponent oldTypeCode = typeCode;
 		typeCode = newTypeCode == null ? TYPE_CODE_EDEFAULT : newTypeCode;
+		boolean oldTypeCodeESet = typeCodeESet;
+		typeCodeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT3__TYPE_CODE, oldTypeCode, typeCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT3__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetTypeCode() {
+		ActRelationshipHasComponent oldTypeCode = typeCode;
+		boolean oldTypeCodeESet = typeCodeESet;
+		typeCode = TYPE_CODE_EDEFAULT;
+		typeCodeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.COMPONENT3__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetTypeCode() {
+		return typeCodeESet;
 	}
 
 	/**
@@ -454,10 +522,10 @@ public class Component3Impl extends EObjectImpl implements Component3 {
 				setSection((Section)null);
 				return;
 			case CDAPackage.COMPONENT3__NULL_FLAVOR:
-				setNullFlavor(NULL_FLAVOR_EDEFAULT);
+				unsetNullFlavor();
 				return;
 			case CDAPackage.COMPONENT3__TYPE_CODE:
-				setTypeCode(TYPE_CODE_EDEFAULT);
+				unsetTypeCode();
 				return;
 			case CDAPackage.COMPONENT3__CONTEXT_CONDUCTION_IND:
 				setContextConductionInd(CONTEXT_CONDUCTION_IND_EDEFAULT);
@@ -483,9 +551,9 @@ public class Component3Impl extends EObjectImpl implements Component3 {
 			case CDAPackage.COMPONENT3__SECTION:
 				return section != null;
 			case CDAPackage.COMPONENT3__NULL_FLAVOR:
-				return nullFlavor != NULL_FLAVOR_EDEFAULT;
+				return isSetNullFlavor();
 			case CDAPackage.COMPONENT3__TYPE_CODE:
-				return typeCode != TYPE_CODE_EDEFAULT;
+				return isSetTypeCode();
 			case CDAPackage.COMPONENT3__CONTEXT_CONDUCTION_IND:
 				return CONTEXT_CONDUCTION_IND_EDEFAULT == null ? contextConductionInd != null : !CONTEXT_CONDUCTION_IND_EDEFAULT.equals(contextConductionInd);
 		}
@@ -503,9 +571,9 @@ public class Component3Impl extends EObjectImpl implements Component3 {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		result.append(nullFlavor);
+		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
 		result.append(", typeCode: ");
-		result.append(typeCode);
+		if (typeCodeESet) result.append(typeCode); else result.append("<unset>");
 		result.append(", contextConductionInd: ");
 		result.append(contextConductionInd);
 		result.append(')');

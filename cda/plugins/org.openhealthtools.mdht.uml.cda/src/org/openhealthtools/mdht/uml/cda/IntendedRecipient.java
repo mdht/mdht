@@ -219,9 +219,11 @@ public interface IntendedRecipient extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getIntendedRecipient_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -232,10 +234,35 @@ public interface IntendedRecipient extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Class Code</b></em>' attribute.
@@ -249,9 +276,11 @@ public interface IntendedRecipient extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.x_InformationRecipientRole
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #setClassCode(x_InformationRecipientRole)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getIntendedRecipient_ClassCode()
-	 * @model default="ASSIGNED" ordered="false"
+	 * @model default="ASSIGNED" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	x_InformationRecipientRole getClassCode();
@@ -262,9 +291,34 @@ public interface IntendedRecipient extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.x_InformationRecipientRole
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #getClassCode()
 	 * @generated
 	 */
 	void setClassCode(x_InformationRecipientRole value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getClassCode <em>Class Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(x_InformationRecipientRole)
+	 * @generated
+	 */
+	void unsetClassCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getClassCode <em>Class Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Class Code</em>' attribute is set.
+	 * @see #unsetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(x_InformationRecipientRole)
+	 * @generated
+	 */
+	boolean isSetClassCode();
 
 } // IntendedRecipient

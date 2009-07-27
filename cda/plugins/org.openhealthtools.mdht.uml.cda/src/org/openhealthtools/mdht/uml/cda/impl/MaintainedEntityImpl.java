@@ -131,6 +131,15 @@ public class MaintainedEntityImpl extends EObjectImpl implements MaintainedEntit
 	protected NullFlavor nullFlavor = NULL_FLAVOR_EDEFAULT;
 
 	/**
+	 * This is true if the Null Flavor attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean nullFlavorESet;
+
+	/**
 	 * The default value of the '{@link #getClassCode() <em>Class Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -149,6 +158,15 @@ public class MaintainedEntityImpl extends EObjectImpl implements MaintainedEntit
 	 * @ordered
 	 */
 	protected RoleClass classCode = CLASS_CODE_EDEFAULT;
+
+	/**
+	 * This is true if the Class Code attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean classCodeESet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -339,8 +357,33 @@ public class MaintainedEntityImpl extends EObjectImpl implements MaintainedEntit
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
 		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		boolean oldNullFlavorESet = nullFlavorESet;
+		nullFlavorESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MAINTAINED_ENTITY__NULL_FLAVOR, oldNullFlavor, nullFlavor));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MAINTAINED_ENTITY__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetNullFlavor() {
+		NullFlavor oldNullFlavor = nullFlavor;
+		boolean oldNullFlavorESet = nullFlavorESet;
+		nullFlavor = NULL_FLAVOR_EDEFAULT;
+		nullFlavorESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.MAINTAINED_ENTITY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetNullFlavor() {
+		return nullFlavorESet;
 	}
 
 	/**
@@ -360,8 +403,33 @@ public class MaintainedEntityImpl extends EObjectImpl implements MaintainedEntit
 	public void setClassCode(RoleClass newClassCode) {
 		RoleClass oldClassCode = classCode;
 		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		boolean oldClassCodeESet = classCodeESet;
+		classCodeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MAINTAINED_ENTITY__CLASS_CODE, oldClassCode, classCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MAINTAINED_ENTITY__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetClassCode() {
+		RoleClass oldClassCode = classCode;
+		boolean oldClassCodeESet = classCodeESet;
+		classCode = CLASS_CODE_EDEFAULT;
+		classCodeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.MAINTAINED_ENTITY__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetClassCode() {
+		return classCodeESet;
 	}
 
 	/**
@@ -472,10 +540,10 @@ public class MaintainedEntityImpl extends EObjectImpl implements MaintainedEntit
 				setMaintainingPerson((Person)null);
 				return;
 			case CDAPackage.MAINTAINED_ENTITY__NULL_FLAVOR:
-				setNullFlavor(NULL_FLAVOR_EDEFAULT);
+				unsetNullFlavor();
 				return;
 			case CDAPackage.MAINTAINED_ENTITY__CLASS_CODE:
-				setClassCode(CLASS_CODE_EDEFAULT);
+				unsetClassCode();
 				return;
 		}
 		super.eUnset(featureID);
@@ -500,9 +568,9 @@ public class MaintainedEntityImpl extends EObjectImpl implements MaintainedEntit
 			case CDAPackage.MAINTAINED_ENTITY__MAINTAINING_PERSON:
 				return maintainingPerson != null;
 			case CDAPackage.MAINTAINED_ENTITY__NULL_FLAVOR:
-				return nullFlavor != NULL_FLAVOR_EDEFAULT;
+				return isSetNullFlavor();
 			case CDAPackage.MAINTAINED_ENTITY__CLASS_CODE:
-				return classCode != CLASS_CODE_EDEFAULT;
+				return isSetClassCode();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -518,9 +586,9 @@ public class MaintainedEntityImpl extends EObjectImpl implements MaintainedEntit
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		result.append(nullFlavor);
+		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
 		result.append(", classCode: ");
-		result.append(classCode);
+		if (classCodeESet) result.append(classCode); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

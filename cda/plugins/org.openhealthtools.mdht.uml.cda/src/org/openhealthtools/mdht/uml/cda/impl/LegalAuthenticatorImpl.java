@@ -144,6 +144,15 @@ public class LegalAuthenticatorImpl extends EObjectImpl implements LegalAuthenti
 	protected NullFlavor nullFlavor = NULL_FLAVOR_EDEFAULT;
 
 	/**
+	 * This is true if the Null Flavor attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean nullFlavorESet;
+
+	/**
 	 * The default value of the '{@link #getTypeCode() <em>Type Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,6 +173,15 @@ public class LegalAuthenticatorImpl extends EObjectImpl implements LegalAuthenti
 	protected ParticipationType typeCode = TYPE_CODE_EDEFAULT;
 
 	/**
+	 * This is true if the Type Code attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean typeCodeESet;
+
+	/**
 	 * The default value of the '{@link #getContextControlCode() <em>Context Control Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,6 +200,15 @@ public class LegalAuthenticatorImpl extends EObjectImpl implements LegalAuthenti
 	 * @ordered
 	 */
 	protected ContextControl contextControlCode = CONTEXT_CONTROL_CODE_EDEFAULT;
+
+	/**
+	 * This is true if the Context Control Code attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean contextControlCodeESet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -415,8 +442,33 @@ public class LegalAuthenticatorImpl extends EObjectImpl implements LegalAuthenti
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
 		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		boolean oldNullFlavorESet = nullFlavorESet;
+		nullFlavorESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__NULL_FLAVOR, oldNullFlavor, nullFlavor));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetNullFlavor() {
+		NullFlavor oldNullFlavor = nullFlavor;
+		boolean oldNullFlavorESet = nullFlavorESet;
+		nullFlavor = NULL_FLAVOR_EDEFAULT;
+		nullFlavorESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.LEGAL_AUTHENTICATOR__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetNullFlavor() {
+		return nullFlavorESet;
 	}
 
 	/**
@@ -436,8 +488,33 @@ public class LegalAuthenticatorImpl extends EObjectImpl implements LegalAuthenti
 	public void setTypeCode(ParticipationType newTypeCode) {
 		ParticipationType oldTypeCode = typeCode;
 		typeCode = newTypeCode == null ? TYPE_CODE_EDEFAULT : newTypeCode;
+		boolean oldTypeCodeESet = typeCodeESet;
+		typeCodeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__TYPE_CODE, oldTypeCode, typeCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetTypeCode() {
+		ParticipationType oldTypeCode = typeCode;
+		boolean oldTypeCodeESet = typeCodeESet;
+		typeCode = TYPE_CODE_EDEFAULT;
+		typeCodeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.LEGAL_AUTHENTICATOR__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetTypeCode() {
+		return typeCodeESet;
 	}
 
 	/**
@@ -457,8 +534,33 @@ public class LegalAuthenticatorImpl extends EObjectImpl implements LegalAuthenti
 	public void setContextControlCode(ContextControl newContextControlCode) {
 		ContextControl oldContextControlCode = contextControlCode;
 		contextControlCode = newContextControlCode == null ? CONTEXT_CONTROL_CODE_EDEFAULT : newContextControlCode;
+		boolean oldContextControlCodeESet = contextControlCodeESet;
+		contextControlCodeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE, oldContextControlCode, contextControlCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE, oldContextControlCode, contextControlCode, !oldContextControlCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetContextControlCode() {
+		ContextControl oldContextControlCode = contextControlCode;
+		boolean oldContextControlCodeESet = contextControlCodeESet;
+		contextControlCode = CONTEXT_CONTROL_CODE_EDEFAULT;
+		contextControlCodeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE, oldContextControlCode, CONTEXT_CONTROL_CODE_EDEFAULT, oldContextControlCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetContextControlCode() {
+		return contextControlCodeESet;
 	}
 
 	/**
@@ -584,13 +686,13 @@ public class LegalAuthenticatorImpl extends EObjectImpl implements LegalAuthenti
 				setAssignedEntity((AssignedEntity)null);
 				return;
 			case CDAPackage.LEGAL_AUTHENTICATOR__NULL_FLAVOR:
-				setNullFlavor(NULL_FLAVOR_EDEFAULT);
+				unsetNullFlavor();
 				return;
 			case CDAPackage.LEGAL_AUTHENTICATOR__TYPE_CODE:
-				setTypeCode(TYPE_CODE_EDEFAULT);
+				unsetTypeCode();
 				return;
 			case CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE:
-				setContextControlCode(CONTEXT_CONTROL_CODE_EDEFAULT);
+				unsetContextControlCode();
 				return;
 		}
 		super.eUnset(featureID);
@@ -617,11 +719,11 @@ public class LegalAuthenticatorImpl extends EObjectImpl implements LegalAuthenti
 			case CDAPackage.LEGAL_AUTHENTICATOR__ASSIGNED_ENTITY:
 				return assignedEntity != null;
 			case CDAPackage.LEGAL_AUTHENTICATOR__NULL_FLAVOR:
-				return nullFlavor != NULL_FLAVOR_EDEFAULT;
+				return isSetNullFlavor();
 			case CDAPackage.LEGAL_AUTHENTICATOR__TYPE_CODE:
-				return typeCode != TYPE_CODE_EDEFAULT;
+				return isSetTypeCode();
 			case CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE:
-				return contextControlCode != CONTEXT_CONTROL_CODE_EDEFAULT;
+				return isSetContextControlCode();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -637,11 +739,11 @@ public class LegalAuthenticatorImpl extends EObjectImpl implements LegalAuthenti
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		result.append(nullFlavor);
+		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
 		result.append(", typeCode: ");
-		result.append(typeCode);
+		if (typeCodeESet) result.append(typeCode); else result.append("<unset>");
 		result.append(", contextControlCode: ");
-		result.append(contextControlCode);
+		if (contextControlCodeESet) result.append(contextControlCode); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

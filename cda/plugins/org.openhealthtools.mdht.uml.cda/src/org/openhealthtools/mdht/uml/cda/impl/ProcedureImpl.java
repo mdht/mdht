@@ -341,6 +341,15 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	protected NullFlavor nullFlavor = NULL_FLAVOR_EDEFAULT;
 
 	/**
+	 * This is true if the Null Flavor attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean nullFlavorESet;
+
+	/**
 	 * The default value of the '{@link #getClassCode() <em>Class Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -361,6 +370,15 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	protected ActClass classCode = CLASS_CODE_EDEFAULT;
 
 	/**
+	 * This is true if the Class Code attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean classCodeESet;
+
+	/**
 	 * The default value of the '{@link #getMoodCode() <em>Mood Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -379,6 +397,15 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * @ordered
 	 */
 	protected x_DocumentProcedureMood moodCode = MOOD_CODE_EDEFAULT;
+
+	/**
+	 * This is true if the Mood Code attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean moodCodeESet;
 
 	/**
 	 * The default value of the '{@link #getNegationInd() <em>Negation Ind</em>}' attribute.
@@ -948,8 +975,33 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
 		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		boolean oldNullFlavorESet = nullFlavorESet;
+		nullFlavorESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__NULL_FLAVOR, oldNullFlavor, nullFlavor));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetNullFlavor() {
+		NullFlavor oldNullFlavor = nullFlavor;
+		boolean oldNullFlavorESet = nullFlavorESet;
+		nullFlavor = NULL_FLAVOR_EDEFAULT;
+		nullFlavorESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PROCEDURE__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetNullFlavor() {
+		return nullFlavorESet;
 	}
 
 	/**
@@ -969,8 +1021,33 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	public void setClassCode(ActClass newClassCode) {
 		ActClass oldClassCode = classCode;
 		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		boolean oldClassCodeESet = classCodeESet;
+		classCodeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__CLASS_CODE, oldClassCode, classCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetClassCode() {
+		ActClass oldClassCode = classCode;
+		boolean oldClassCodeESet = classCodeESet;
+		classCode = CLASS_CODE_EDEFAULT;
+		classCodeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PROCEDURE__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetClassCode() {
+		return classCodeESet;
 	}
 
 	/**
@@ -990,8 +1067,33 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	public void setMoodCode(x_DocumentProcedureMood newMoodCode) {
 		x_DocumentProcedureMood oldMoodCode = moodCode;
 		moodCode = newMoodCode == null ? MOOD_CODE_EDEFAULT : newMoodCode;
+		boolean oldMoodCodeESet = moodCodeESet;
+		moodCodeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__MOOD_CODE, oldMoodCode, moodCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetMoodCode() {
+		x_DocumentProcedureMood oldMoodCode = moodCode;
+		boolean oldMoodCodeESet = moodCodeESet;
+		moodCode = MOOD_CODE_EDEFAULT;
+		moodCodeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PROCEDURE__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetMoodCode() {
+		return moodCodeESet;
 	}
 
 	/**
@@ -1576,13 +1678,13 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 				getPrecondition().clear();
 				return;
 			case CDAPackage.PROCEDURE__NULL_FLAVOR:
-				setNullFlavor(NULL_FLAVOR_EDEFAULT);
+				unsetNullFlavor();
 				return;
 			case CDAPackage.PROCEDURE__CLASS_CODE:
-				setClassCode(CLASS_CODE_EDEFAULT);
+				unsetClassCode();
 				return;
 			case CDAPackage.PROCEDURE__MOOD_CODE:
-				setMoodCode(MOOD_CODE_EDEFAULT);
+				unsetMoodCode();
 				return;
 			case CDAPackage.PROCEDURE__NEGATION_IND:
 				setNegationInd(NEGATION_IND_EDEFAULT);
@@ -1644,11 +1746,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 			case CDAPackage.PROCEDURE__PRECONDITION:
 				return precondition != null && !precondition.isEmpty();
 			case CDAPackage.PROCEDURE__NULL_FLAVOR:
-				return nullFlavor != NULL_FLAVOR_EDEFAULT;
+				return isSetNullFlavor();
 			case CDAPackage.PROCEDURE__CLASS_CODE:
-				return classCode != CLASS_CODE_EDEFAULT;
+				return isSetClassCode();
 			case CDAPackage.PROCEDURE__MOOD_CODE:
-				return moodCode != MOOD_CODE_EDEFAULT;
+				return isSetMoodCode();
 			case CDAPackage.PROCEDURE__NEGATION_IND:
 				return NEGATION_IND_EDEFAULT == null ? negationInd != null : !NEGATION_IND_EDEFAULT.equals(negationInd);
 		}
@@ -1666,11 +1768,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		result.append(nullFlavor);
+		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
 		result.append(", classCode: ");
-		result.append(classCode);
+		if (classCodeESet) result.append(classCode); else result.append("<unset>");
 		result.append(", moodCode: ");
-		result.append(moodCode);
+		if (moodCodeESet) result.append(moodCode); else result.append("<unset>");
 		result.append(", negationInd: ");
 		result.append(negationInd);
 		result.append(')');

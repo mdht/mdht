@@ -170,9 +170,11 @@ public interface Place extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlace_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -183,10 +185,35 @@ public interface Place extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Place#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Place#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Class Code</b></em>' attribute.
@@ -200,9 +227,11 @@ public interface Place extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityClassPlace
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #setClassCode(EntityClassPlace)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlace_ClassCode()
-	 * @model default="PLC" ordered="false"
+	 * @model default="PLC" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	EntityClassPlace getClassCode();
@@ -213,10 +242,35 @@ public interface Place extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityClassPlace
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #getClassCode()
 	 * @generated
 	 */
 	void setClassCode(EntityClassPlace value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Place#getClassCode <em>Class Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(EntityClassPlace)
+	 * @generated
+	 */
+	void unsetClassCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Place#getClassCode <em>Class Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Class Code</em>' attribute is set.
+	 * @see #unsetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(EntityClassPlace)
+	 * @generated
+	 */
+	boolean isSetClassCode();
 
 	/**
 	 * Returns the value of the '<em><b>Determiner Code</b></em>' attribute.
@@ -230,9 +284,11 @@ public interface Place extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Determiner Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer
+	 * @see #isSetDeterminerCode()
+	 * @see #unsetDeterminerCode()
 	 * @see #setDeterminerCode(EntityDeterminer)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPlace_DeterminerCode()
-	 * @model default="INSTANCE" ordered="false"
+	 * @model default="INSTANCE" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	EntityDeterminer getDeterminerCode();
@@ -243,9 +299,34 @@ public interface Place extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Determiner Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer
+	 * @see #isSetDeterminerCode()
+	 * @see #unsetDeterminerCode()
 	 * @see #getDeterminerCode()
 	 * @generated
 	 */
 	void setDeterminerCode(EntityDeterminer value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Place#getDeterminerCode <em>Determiner Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetDeterminerCode()
+	 * @see #getDeterminerCode()
+	 * @see #setDeterminerCode(EntityDeterminer)
+	 * @generated
+	 */
+	void unsetDeterminerCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Place#getDeterminerCode <em>Determiner Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Determiner Code</em>' attribute is set.
+	 * @see #unsetDeterminerCode()
+	 * @see #getDeterminerCode()
+	 * @see #setDeterminerCode(EntityDeterminer)
+	 * @generated
+	 */
+	boolean isSetDeterminerCode();
 
 } // Place

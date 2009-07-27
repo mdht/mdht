@@ -552,9 +552,11 @@ public interface Supply extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -565,10 +567,35 @@ public interface Supply extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Supply#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Supply#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Class Code</b></em>' attribute.
@@ -582,9 +609,11 @@ public interface Supply extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClassSupply
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #setClassCode(ActClassSupply)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_ClassCode()
-	 * @model default="SPLY" required="true" ordered="false"
+	 * @model default="SPLY" unsettable="true" required="true" ordered="false"
 	 * @generated
 	 */
 	ActClassSupply getClassCode();
@@ -595,10 +624,35 @@ public interface Supply extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClassSupply
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #getClassCode()
 	 * @generated
 	 */
 	void setClassCode(ActClassSupply value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Supply#getClassCode <em>Class Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(ActClassSupply)
+	 * @generated
+	 */
+	void unsetClassCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Supply#getClassCode <em>Class Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Class Code</em>' attribute is set.
+	 * @see #unsetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(ActClassSupply)
+	 * @generated
+	 */
+	boolean isSetClassCode();
 
 	/**
 	 * Returns the value of the '<em><b>Mood Code</b></em>' attribute.
@@ -611,9 +665,11 @@ public interface Supply extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mood Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood
+	 * @see #isSetMoodCode()
+	 * @see #unsetMoodCode()
 	 * @see #setMoodCode(x_DocumentSubstanceMood)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_MoodCode()
-	 * @model required="true" ordered="false"
+	 * @model unsettable="true" required="true" ordered="false"
 	 * @generated
 	 */
 	x_DocumentSubstanceMood getMoodCode();
@@ -624,10 +680,35 @@ public interface Supply extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Mood Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood
+	 * @see #isSetMoodCode()
+	 * @see #unsetMoodCode()
 	 * @see #getMoodCode()
 	 * @generated
 	 */
 	void setMoodCode(x_DocumentSubstanceMood value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Supply#getMoodCode <em>Mood Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetMoodCode()
+	 * @see #getMoodCode()
+	 * @see #setMoodCode(x_DocumentSubstanceMood)
+	 * @generated
+	 */
+	void unsetMoodCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Supply#getMoodCode <em>Mood Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Mood Code</em>' attribute is set.
+	 * @see #unsetMoodCode()
+	 * @see #getMoodCode()
+	 * @see #setMoodCode(x_DocumentSubstanceMood)
+	 * @generated
+	 */
+	boolean isSetMoodCode();
 
 	/**
 	 * <!-- begin-user-doc -->

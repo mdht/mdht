@@ -198,9 +198,11 @@ public interface Material extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getMaterial_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -211,10 +213,35 @@ public interface Material extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Material#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Material#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Class Code</b></em>' attribute.
@@ -228,9 +255,11 @@ public interface Material extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityClassManufacturedMaterial
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #setClassCode(EntityClassManufacturedMaterial)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getMaterial_ClassCode()
-	 * @model default="MMAT" ordered="false"
+	 * @model default="MMAT" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	EntityClassManufacturedMaterial getClassCode();
@@ -241,10 +270,35 @@ public interface Material extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityClassManufacturedMaterial
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #getClassCode()
 	 * @generated
 	 */
 	void setClassCode(EntityClassManufacturedMaterial value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Material#getClassCode <em>Class Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(EntityClassManufacturedMaterial)
+	 * @generated
+	 */
+	void unsetClassCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Material#getClassCode <em>Class Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Class Code</em>' attribute is set.
+	 * @see #unsetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(EntityClassManufacturedMaterial)
+	 * @generated
+	 */
+	boolean isSetClassCode();
 
 	/**
 	 * Returns the value of the '<em><b>Determiner Code</b></em>' attribute.
@@ -258,9 +312,11 @@ public interface Material extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Determiner Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminerDetermined
+	 * @see #isSetDeterminerCode()
+	 * @see #unsetDeterminerCode()
 	 * @see #setDeterminerCode(EntityDeterminerDetermined)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getMaterial_DeterminerCode()
-	 * @model default="KIND" ordered="false"
+	 * @model default="KIND" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	EntityDeterminerDetermined getDeterminerCode();
@@ -271,9 +327,34 @@ public interface Material extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Determiner Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminerDetermined
+	 * @see #isSetDeterminerCode()
+	 * @see #unsetDeterminerCode()
 	 * @see #getDeterminerCode()
 	 * @generated
 	 */
 	void setDeterminerCode(EntityDeterminerDetermined value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Material#getDeterminerCode <em>Determiner Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetDeterminerCode()
+	 * @see #getDeterminerCode()
+	 * @see #setDeterminerCode(EntityDeterminerDetermined)
+	 * @generated
+	 */
+	void unsetDeterminerCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Material#getDeterminerCode <em>Determiner Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Determiner Code</em>' attribute is set.
+	 * @see #unsetDeterminerCode()
+	 * @see #getDeterminerCode()
+	 * @see #setDeterminerCode(EntityDeterminerDetermined)
+	 * @generated
+	 */
+	boolean isSetDeterminerCode();
 
 } // Material

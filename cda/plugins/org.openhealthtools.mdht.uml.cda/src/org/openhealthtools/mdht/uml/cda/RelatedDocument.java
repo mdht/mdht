@@ -139,9 +139,11 @@ public interface RelatedDocument extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRelatedDocument_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -152,10 +154,35 @@ public interface RelatedDocument extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.RelatedDocument#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.RelatedDocument#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Type Code</b></em>' attribute.
@@ -168,9 +195,11 @@ public interface RelatedDocument extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipDocument
+	 * @see #isSetTypeCode()
+	 * @see #unsetTypeCode()
 	 * @see #setTypeCode(x_ActRelationshipDocument)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRelatedDocument_TypeCode()
-	 * @model required="true" ordered="false"
+	 * @model unsettable="true" required="true" ordered="false"
 	 * @generated
 	 */
 	x_ActRelationshipDocument getTypeCode();
@@ -181,9 +210,34 @@ public interface RelatedDocument extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipDocument
+	 * @see #isSetTypeCode()
+	 * @see #unsetTypeCode()
 	 * @see #getTypeCode()
 	 * @generated
 	 */
 	void setTypeCode(x_ActRelationshipDocument value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.RelatedDocument#getTypeCode <em>Type Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetTypeCode()
+	 * @see #getTypeCode()
+	 * @see #setTypeCode(x_ActRelationshipDocument)
+	 * @generated
+	 */
+	void unsetTypeCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.RelatedDocument#getTypeCode <em>Type Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Type Code</em>' attribute is set.
+	 * @see #unsetTypeCode()
+	 * @see #getTypeCode()
+	 * @see #setTypeCode(x_ActRelationshipDocument)
+	 * @generated
+	 */
+	boolean isSetTypeCode();
 
 } // RelatedDocument

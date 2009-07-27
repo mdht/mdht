@@ -167,9 +167,11 @@ public interface MaintainedEntity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getMaintainedEntity_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -180,10 +182,35 @@ public interface MaintainedEntity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.MaintainedEntity#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.MaintainedEntity#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Class Code</b></em>' attribute.
@@ -197,9 +224,11 @@ public interface MaintainedEntity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.RoleClass
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #setClassCode(RoleClass)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getMaintainedEntity_ClassCode()
-	 * @model default="MNT" ordered="false"
+	 * @model default="MNT" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	RoleClass getClassCode();
@@ -210,9 +239,34 @@ public interface MaintainedEntity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.RoleClass
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #getClassCode()
 	 * @generated
 	 */
 	void setClassCode(RoleClass value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.MaintainedEntity#getClassCode <em>Class Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(RoleClass)
+	 * @generated
+	 */
+	void unsetClassCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.MaintainedEntity#getClassCode <em>Class Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Class Code</em>' attribute is set.
+	 * @see #unsetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(RoleClass)
+	 * @generated
+	 */
+	boolean isSetClassCode();
 
 } // MaintainedEntity
