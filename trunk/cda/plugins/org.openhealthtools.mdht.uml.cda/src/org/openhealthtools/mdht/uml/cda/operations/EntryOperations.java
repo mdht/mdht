@@ -17,16 +17,11 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Entry;
-
-import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
 
 /**
@@ -38,7 +33,6 @@ import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Entry#clinicalStatement(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Clinical Statement</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Entry#clinicalStatement() <em>Clinical Statement</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,7 +65,7 @@ public class EntryOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.clinicalStatement()";
+	protected static final String CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "Bag{self.act.oclIsUndefined(), self.encounter.oclIsUndefined(), self.observation.oclIsUndefined(), self.observationMedia.oclIsUndefined(), self.organizer.oclIsUndefined(), self.procedure.oclIsUndefined(), self.regionOfInterest.oclIsUndefined(), self.substanceAdministration.oclIsUndefined(), self.supply.oclIsUndefined()}->one(x | x = false)";
 
 	/**
 	 * The cached OCL invariant for the '{@link #clinicalStatement(Entry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Clinical Statement</em>}' invariant operation.
@@ -87,7 +81,7 @@ public class EntryOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.clinicalStatement()
+	 * Bag{self.act.oclIsUndefined(), self.encounter.oclIsUndefined(), self.observation.oclIsUndefined(), self.observationMedia.oclIsUndefined(), self.organizer.oclIsUndefined(), self.procedure.oclIsUndefined(), self.regionOfInterest.oclIsUndefined(), self.substanceAdministration.oclIsUndefined(), self.supply.oclIsUndefined()}->one(x | x = false)
 	 * @param entry The receiving '<em><b>Entry</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -118,15 +112,6 @@ public class EntryOperations {
 			return false;
 		}
 		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public static  boolean clinicalStatement(Entry entry) {
-		return CDAUtil.validateClinicalStatementChoiceGroup(entry);
 	}
 
 } // EntryOperations

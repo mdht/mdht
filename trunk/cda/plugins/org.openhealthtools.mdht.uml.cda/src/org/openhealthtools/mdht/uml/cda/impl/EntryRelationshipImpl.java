@@ -1063,15 +1063,6 @@ public class EntryRelationshipImpl extends EObjectImpl implements EntryRelations
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean clinicalStatement() {
-		return EntryRelationshipOperations.clinicalStatement(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {

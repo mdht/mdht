@@ -1114,7 +1114,6 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Entry/clinicalStatement/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Entry/clinicalStatement/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Entry/clinicalStatement.1"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Act">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1411,7 +1410,6 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//EntryRelationship/clinicalStatement/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//EntryRelationship/clinicalStatement/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//EntryRelationship/clinicalStatement.1"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Encounter">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1550,7 +1548,6 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Reference/externalActChoice/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Reference/externalActChoice/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Reference/externalActChoice.1"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//ExternalAct">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -2065,7 +2062,6 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component4/clinicalStatement/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Component4/clinicalStatement/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Component4/clinicalStatement.1"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Procedure">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

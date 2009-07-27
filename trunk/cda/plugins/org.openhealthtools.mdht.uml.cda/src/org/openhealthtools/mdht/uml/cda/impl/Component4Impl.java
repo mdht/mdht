@@ -979,15 +979,6 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean clinicalStatement() {
-		return Component4Operations.clinicalStatement(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {

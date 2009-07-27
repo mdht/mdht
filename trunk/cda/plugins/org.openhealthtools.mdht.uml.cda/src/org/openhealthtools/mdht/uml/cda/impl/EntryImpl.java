@@ -869,15 +869,6 @@ public class EntryImpl extends EObjectImpl implements Entry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean clinicalStatement() {
-		return EntryOperations.clinicalStatement(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
