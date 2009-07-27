@@ -23,7 +23,7 @@
     <details key="DUPLICATE_OPERATION_INHERITANCE" value="PROCESS"/>
     <details key="DERIVED_FEATURES" value="IGNORE"/>
   </genAnnotations>
-  <foreignModel>ccd.uml</foreignModel>
+  <foreignModel>ccd_Ecore.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="CCD" basePackage="org.openhealthtools.mdht.uml.cda"
       disposableProviderFactory="true" ecorePackage="ccd.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.cda.ccd.operations">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ContinuityOfCareDocument">
