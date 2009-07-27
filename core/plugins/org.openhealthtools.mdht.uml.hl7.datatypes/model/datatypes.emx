@@ -1145,8 +1145,8 @@
   <Ecore:EClass xmi:id="_A8dmwD58Ed6cla2oXsPtlA" base_Class="_DHg4ID5zEd6cla2oXsPtlA" xmlContentKind="Mixed"/>
   <Ecore:EClass xmi:id="_A8nXwD58Ed6cla2oXsPtlA" base_Class="_D7EcAD5zEd6cla2oXsPtlA" xmlContentKind="Mixed"/>
   <Ecore:EAttribute xmi:id="_cpec8D8XEd6uA6ElmbQH3Q" xmlName="" xmlFeatureKind="ElementWildcard" base_Property="_7yi4QDxaEd6JwqSGecoePg"/>
-  <Ecore:EAttribute xmi:id="_BZ36cD9LEd6uA6ElmbQH3Q" isTransient="true" base_Property="_RMSacD5zEd6cla2oXsPtlA"/>
-  <Ecore:EAttribute xmi:id="_HdmXcD9LEd6uA6ElmbQH3Q" isTransient="true" base_Property="_Scv8wD5zEd6cla2oXsPtlA"/>
+  <Ecore:EAttribute xmi:id="_BZ36cD9LEd6uA6ElmbQH3Q" isTransient="true" isUnsettable="true" base_Property="_RMSacD5zEd6cla2oXsPtlA"/>
+  <Ecore:EAttribute xmi:id="_HdmXcD9LEd6uA6ElmbQH3Q" isTransient="true" isUnsettable="true" base_Property="_Scv8wD5zEd6cla2oXsPtlA"/>
   <Ecore:EClass xmi:id="_IQ-gcETCEd66ToKxWS_1fg" base_Class="_wfRKoD5yEd6cla2oXsPtlA" xmlContentKind="Mixed"/>
   <Ecore:EClass xmi:id="_nV4UMETIEd6BGP829oM3-A" base_Class="_CowXkDxaEd6JwqSGecoePg" xmlContentKind="Mixed"/>
   <Ecore:EClass xmi:id="_QnJmwET6Ed6Z5Jncnptcog" base_Class="_v0zRUD5yEd6cla2oXsPtlA" xmlContentKind="Mixed"/>
@@ -1254,4 +1254,16 @@
   <Ecore:EClass xmi:id="_siaCMUVyEd6QuJiOJFSRPQ" base_Class="_3VD9wD5yEd6cla2oXsPtlA" xmlContentKind="Mixed"/>
   <Ecore:EClass xmi:id="_siaCMkVyEd6QuJiOJFSRPQ" base_Class="_6WoRUD5yEd6cla2oXsPtlA" xmlContentKind="Mixed"/>
   <Ecore:EClass xmi:id="_ZCGo8EogEd6c3qsAxlFHaQ" base_Class="_TwTVsD57Ed6cla2oXsPtlA" xmlContentKind="Mixed"/>
+  <Ecore:EAttribute xmi:id="_X9dxYHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_qe2q4D5zEd6cla2oXsPtlA"/>
+  <Ecore:EAttribute xmi:id="_fOhkMHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_AJn3IDxkEd6JwqSGecoePg"/>
+  <Ecore:EAttribute xmi:id="_iYlscHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_vrzYMD80Ed6uA6ElmbQH3Q"/>
+  <Ecore:EAttribute xmi:id="_sDu8EHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_Zc_TED54Ed6cla2oXsPtlA"/>
+  <Ecore:EAttribute xmi:id="_umAEgHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_tLtgcD54Ed6cla2oXsPtlA"/>
+  <Ecore:EAttribute xmi:id="_1W4icHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_ruuXUD5zEd6cla2oXsPtlA"/>
+  <Ecore:EAttribute xmi:id="_4hrqgHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_tXoO0D5zEd6cla2oXsPtlA"/>
+  <Ecore:EAttribute xmi:id="_Cfc7MHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_NWcZME-pEd6lBqYlbulQZA"/>
+  <Ecore:EAttribute xmi:id="_Pkv9gHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_Bo19UEo9Ed6c3qsAxlFHaQ"/>
+  <Ecore:EAttribute xmi:id="_RD-UkHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_nEao4ErrEd6FXKclYGEDCw"/>
+  <Ecore:EAttribute xmi:id="_SX3lYHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_2C6tgD5_Ed6cla2oXsPtlA"/>
+  <Ecore:EAttribute xmi:id="_WFr68HrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_5iTUkD52Ed6cla2oXsPtlA"/>
 </xmi:XMI>
