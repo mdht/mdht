@@ -167,9 +167,27 @@ public class ADImpl extends ANYImpl implements AD {
 	 */
 	public EList<PostalAddressUse> getUse() {
 		if (use == null) {
-			use = new EDataTypeUniqueEList<PostalAddressUse>(PostalAddressUse.class, this, DatatypesPackage.AD__USE);
+			use = new EDataTypeUniqueEList.Unsettable<PostalAddressUse>(PostalAddressUse.class, this, DatatypesPackage.AD__USE);
 		}
 		return use;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetUse() {
+		if (use != null) ((InternalEList.Unsettable<?>)use).unset();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetUse() {
+		return use != null && ((InternalEList.Unsettable<?>)use).isSet();
 	}
 
 	/**
@@ -1205,7 +1223,7 @@ public class ADImpl extends ANYImpl implements AD {
 				getUseablePeriod().clear();
 				return;
 			case DatatypesPackage.AD__USE:
-				getUse().clear();
+				unsetUse();
 				return;
 			case DatatypesPackage.AD__IS_NOT_ORDERED:
 				setIsNotOrdered(IS_NOT_ORDERED_EDEFAULT);
@@ -1312,7 +1330,7 @@ public class ADImpl extends ANYImpl implements AD {
 			case DatatypesPackage.AD__USEABLE_PERIOD:
 				return useablePeriod != null && !useablePeriod.isEmpty();
 			case DatatypesPackage.AD__USE:
-				return use != null && !use.isEmpty();
+				return isSetUse();
 			case DatatypesPackage.AD__IS_NOT_ORDERED:
 				return IS_NOT_ORDERED_EDEFAULT == null ? isNotOrdered != null : !IS_NOT_ORDERED_EDEFAULT.equals(isNotOrdered);
 			case DatatypesPackage.AD__DELIMITER:

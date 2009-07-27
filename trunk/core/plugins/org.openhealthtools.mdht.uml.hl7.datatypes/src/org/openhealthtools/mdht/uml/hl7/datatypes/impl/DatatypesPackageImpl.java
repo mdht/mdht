@@ -2146,20 +2146,20 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(anyEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ANY.class, "ANY", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getANY_NullFlavor(), theVocabPackage.getNullFlavor(), "nullFlavor", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ANY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getANY_NullFlavor(), theVocabPackage.getNullFlavor(), "nullFlavor", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ANY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(binEClass, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, "BIN", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBIN_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBIN_Representation(), this.getBinaryDataEncoding(), "representation", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getBIN_Representation(), this.getBinaryDataEncoding(), "representation", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(edEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, "ED", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getED_Reference(), this.getTEL(), null, "reference", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getED_Thumbnail(), this.getED(), null, "thumbnail", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getED_MediaType(), ecorePackage.getEString(), "mediaType", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getED_Language(), ecorePackage.getEString(), "language", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getED_Compression(), theVocabPackage.getCompressionAlgorithm(), "compression", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getED_Compression(), theVocabPackage.getCompressionAlgorithm(), "compression", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getED_IntegrityCheck(), ecorePackage.getEByteArray(), "integrityCheck", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getED_IntegrityCheckAlgorithm(), theVocabPackage.getIntegrityCheckAlgorithm(), "integrityCheckAlgorithm", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getED_IntegrityCheckAlgorithm(), theVocabPackage.getIntegrityCheckAlgorithm(), "integrityCheckAlgorithm", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = addEOperation(edEClass, this.getED(), "addText", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "text", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -2168,13 +2168,13 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		initEClass(telEClass, org.openhealthtools.mdht.uml.hl7.datatypes.TEL.class, "TEL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTEL_UseablePeriod(), this.getSXCM_TS(), null, "useablePeriod", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.TEL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getTEL_Use(), theVocabPackage.getTelecommunicationAddressUse(), "use", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.TEL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getTEL_Use(), theVocabPackage.getTelecommunicationAddressUse(), "use", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.TEL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(urlEClass, org.openhealthtools.mdht.uml.hl7.datatypes.URL.class, "URL", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getURL_Value(), ecorePackage.getEString(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.URL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(sxcM_TSEClass, org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS.class, "SXCM_TS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSXCM_TS_Operator(), theVocabPackage.getSetOperator(), "operator", "I", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSXCM_TS_Operator(), theVocabPackage.getSetOperator(), "operator", "I", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(tsEClass, org.openhealthtools.mdht.uml.hl7.datatypes.TS.class, "TS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTS_Value(), ecorePackage.getEString(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2224,7 +2224,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		initEClass(adEClass, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, "AD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAD_UseablePeriod(), this.getSXCM_TS(), null, "useablePeriod", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getAD_Use(), theVocabPackage.getPostalAddressUse(), "use", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAD_Use(), theVocabPackage.getPostalAddressUse(), "use", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAD_IsNotOrdered(), ecorePackage.getEBooleanObject(), "isNotOrdered", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAD_Delimiter(), this.getADXP(), null, "delimiter", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAD_Country(), this.getADXP(), null, "country", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -2586,10 +2586,10 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		addEOperation(adEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(adxpEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ADXP.class, "ADXP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getADXP_PartType(), theVocabPackage.getAddressPartType(), "partType", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ADXP.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getADXP_PartType(), theVocabPackage.getAddressPartType(), "partType", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ADXP.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(enEClass, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, "EN", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEN_Use(), theVocabPackage.getEntityNameUse(), "use", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getEN_Use(), theVocabPackage.getEntityNameUse(), "use", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEN_ValidTime(), this.getIVL_TS(), null, "validTime", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEN_Delimiter(), this.getENXP(), null, "delimiter", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getEN_Family(), this.getENXP(), null, "family", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -2682,8 +2682,8 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEAttribute(getPQR_Value(), ecorePackage.getEDoubleObject(), "value", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PQR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(enxpEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, "ENXP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getENXP_PartType(), theVocabPackage.getEntityNamePartType(), "partType", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getENXP_Qualifier(), theVocabPackage.getEntityNamePartQualifier(), "qualifier", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getENXP_PartType(), theVocabPackage.getEntityNamePartType(), "partType", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getENXP_Qualifier(), theVocabPackage.getEntityNamePartQualifier(), "qualifier", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(onEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ON.class, "ON", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2746,7 +2746,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEClass(rtoEClass, org.openhealthtools.mdht.uml.hl7.datatypes.RTO.class, "RTO", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(sxcM_INTEClass, org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_INT.class, "SXCM_INT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSXCM_INT_Operator(), theVocabPackage.getSetOperator(), "operator", "I", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_INT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSXCM_INT_Operator(), theVocabPackage.getSetOperator(), "operator", "I", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_INT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(ivxB_INTEClass, org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_INT.class, "IVXB_INT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIVXB_INT_Inclusive(), ecorePackage.getEBooleanObject(), "inclusive", "true", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_INT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2761,7 +2761,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEAttribute(getIVXB_PQ_Inclusive(), ecorePackage.getEBooleanObject(), "inclusive", "true", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_PQ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(sxcM_PQEClass, org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_PQ.class, "SXCM_PQ", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSXCM_PQ_Operator(), theVocabPackage.getSetOperator(), "operator", "I", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_PQ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSXCM_PQ_Operator(), theVocabPackage.getSetOperator(), "operator", "I", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_PQ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(ivL_PQEClass, org.openhealthtools.mdht.uml.hl7.datatypes.IVL_PQ.class, "IVL_PQ", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIVL_PQ_Low(), this.getIVXB_PQ(), null, "low", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.IVL_PQ.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2776,7 +2776,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEClass(pivL_TSEClass, org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS.class, "PIVL_TS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPIVL_TS_Phase(), this.getIVL_TS(), null, "phase", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getPIVL_TS_Period(), this.getPQ(), null, "period", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getPIVL_TS_Alignment(), theVocabPackage.getCalendarCycle(), "alignment", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getPIVL_TS_Alignment(), theVocabPackage.getCalendarCycle(), "alignment", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPIVL_TS_InstitutionSpecified(), ecorePackage.getEBooleanObject(), "institutionSpecified", "false", 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals

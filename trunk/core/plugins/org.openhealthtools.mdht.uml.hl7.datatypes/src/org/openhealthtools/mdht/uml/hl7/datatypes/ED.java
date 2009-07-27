@@ -153,9 +153,11 @@ public interface ED extends BIN {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Compression</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.CompressionAlgorithm
+	 * @see #isSetCompression()
+	 * @see #unsetCompression()
 	 * @see #setCompression(CompressionAlgorithm)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getED_Compression()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	CompressionAlgorithm getCompression();
@@ -166,10 +168,35 @@ public interface ED extends BIN {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Compression</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.CompressionAlgorithm
+	 * @see #isSetCompression()
+	 * @see #unsetCompression()
 	 * @see #getCompression()
 	 * @generated
 	 */
 	void setCompression(CompressionAlgorithm value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getCompression <em>Compression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetCompression()
+	 * @see #getCompression()
+	 * @see #setCompression(CompressionAlgorithm)
+	 * @generated
+	 */
+	void unsetCompression();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getCompression <em>Compression</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Compression</em>' attribute is set.
+	 * @see #unsetCompression()
+	 * @see #getCompression()
+	 * @see #setCompression(CompressionAlgorithm)
+	 * @generated
+	 */
+	boolean isSetCompression();
 
 	/**
 	 * Returns the value of the '<em><b>Integrity Check</b></em>' attribute.
@@ -208,9 +235,11 @@ public interface ED extends BIN {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Integrity Check Algorithm</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.IntegrityCheckAlgorithm
+	 * @see #isSetIntegrityCheckAlgorithm()
+	 * @see #unsetIntegrityCheckAlgorithm()
 	 * @see #setIntegrityCheckAlgorithm(IntegrityCheckAlgorithm)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getED_IntegrityCheckAlgorithm()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	IntegrityCheckAlgorithm getIntegrityCheckAlgorithm();
@@ -221,10 +250,35 @@ public interface ED extends BIN {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Integrity Check Algorithm</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.IntegrityCheckAlgorithm
+	 * @see #isSetIntegrityCheckAlgorithm()
+	 * @see #unsetIntegrityCheckAlgorithm()
 	 * @see #getIntegrityCheckAlgorithm()
 	 * @generated
 	 */
 	void setIntegrityCheckAlgorithm(IntegrityCheckAlgorithm value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getIntegrityCheckAlgorithm <em>Integrity Check Algorithm</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetIntegrityCheckAlgorithm()
+	 * @see #getIntegrityCheckAlgorithm()
+	 * @see #setIntegrityCheckAlgorithm(IntegrityCheckAlgorithm)
+	 * @generated
+	 */
+	void unsetIntegrityCheckAlgorithm();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getIntegrityCheckAlgorithm <em>Integrity Check Algorithm</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Integrity Check Algorithm</em>' attribute is set.
+	 * @see #unsetIntegrityCheckAlgorithm()
+	 * @see #getIntegrityCheckAlgorithm()
+	 * @see #setIntegrityCheckAlgorithm(IntegrityCheckAlgorithm)
+	 * @generated
+	 */
+	boolean isSetIntegrityCheckAlgorithm();
 
 	/**
 	 * <!-- begin-user-doc -->

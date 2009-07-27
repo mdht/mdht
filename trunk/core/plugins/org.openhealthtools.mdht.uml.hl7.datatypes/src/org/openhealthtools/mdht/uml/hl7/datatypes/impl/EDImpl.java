@@ -129,6 +129,15 @@ public class EDImpl extends BINImpl implements ED {
 	protected CompressionAlgorithm compression = COMPRESSION_EDEFAULT;
 
 	/**
+	 * This is true if the Compression attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean compressionESet;
+
+	/**
 	 * The default value of the '{@link #getIntegrityCheck() <em>Integrity Check</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -167,6 +176,15 @@ public class EDImpl extends BINImpl implements ED {
 	 * @ordered
 	 */
 	protected IntegrityCheckAlgorithm integrityCheckAlgorithm = INTEGRITY_CHECK_ALGORITHM_EDEFAULT;
+
+	/**
+	 * This is true if the Integrity Check Algorithm attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean integrityCheckAlgorithmESet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -332,8 +350,33 @@ public class EDImpl extends BINImpl implements ED {
 	public void setCompression(CompressionAlgorithm newCompression) {
 		CompressionAlgorithm oldCompression = compression;
 		compression = newCompression == null ? COMPRESSION_EDEFAULT : newCompression;
+		boolean oldCompressionESet = compressionESet;
+		compressionESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__COMPRESSION, oldCompression, compression));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__COMPRESSION, oldCompression, compression, !oldCompressionESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetCompression() {
+		CompressionAlgorithm oldCompression = compression;
+		boolean oldCompressionESet = compressionESet;
+		compression = COMPRESSION_EDEFAULT;
+		compressionESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ED__COMPRESSION, oldCompression, COMPRESSION_EDEFAULT, oldCompressionESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetCompression() {
+		return compressionESet;
 	}
 
 	/**
@@ -374,8 +417,33 @@ public class EDImpl extends BINImpl implements ED {
 	public void setIntegrityCheckAlgorithm(IntegrityCheckAlgorithm newIntegrityCheckAlgorithm) {
 		IntegrityCheckAlgorithm oldIntegrityCheckAlgorithm = integrityCheckAlgorithm;
 		integrityCheckAlgorithm = newIntegrityCheckAlgorithm == null ? INTEGRITY_CHECK_ALGORITHM_EDEFAULT : newIntegrityCheckAlgorithm;
+		boolean oldIntegrityCheckAlgorithmESet = integrityCheckAlgorithmESet;
+		integrityCheckAlgorithmESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM, oldIntegrityCheckAlgorithm, integrityCheckAlgorithm));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM, oldIntegrityCheckAlgorithm, integrityCheckAlgorithm, !oldIntegrityCheckAlgorithmESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetIntegrityCheckAlgorithm() {
+		IntegrityCheckAlgorithm oldIntegrityCheckAlgorithm = integrityCheckAlgorithm;
+		boolean oldIntegrityCheckAlgorithmESet = integrityCheckAlgorithmESet;
+		integrityCheckAlgorithm = INTEGRITY_CHECK_ALGORITHM_EDEFAULT;
+		integrityCheckAlgorithmESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM, oldIntegrityCheckAlgorithm, INTEGRITY_CHECK_ALGORITHM_EDEFAULT, oldIntegrityCheckAlgorithmESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetIntegrityCheckAlgorithm() {
+		return integrityCheckAlgorithmESet;
 	}
 
 	/**
@@ -492,13 +560,13 @@ public class EDImpl extends BINImpl implements ED {
 				setLanguage(LANGUAGE_EDEFAULT);
 				return;
 			case DatatypesPackage.ED__COMPRESSION:
-				setCompression(COMPRESSION_EDEFAULT);
+				unsetCompression();
 				return;
 			case DatatypesPackage.ED__INTEGRITY_CHECK:
 				setIntegrityCheck(INTEGRITY_CHECK_EDEFAULT);
 				return;
 			case DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM:
-				setIntegrityCheckAlgorithm(INTEGRITY_CHECK_ALGORITHM_EDEFAULT);
+				unsetIntegrityCheckAlgorithm();
 				return;
 		}
 		super.eUnset(featureID);
@@ -521,11 +589,11 @@ public class EDImpl extends BINImpl implements ED {
 			case DatatypesPackage.ED__LANGUAGE:
 				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
 			case DatatypesPackage.ED__COMPRESSION:
-				return compression != COMPRESSION_EDEFAULT;
+				return isSetCompression();
 			case DatatypesPackage.ED__INTEGRITY_CHECK:
 				return INTEGRITY_CHECK_EDEFAULT == null ? integrityCheck != null : !INTEGRITY_CHECK_EDEFAULT.equals(integrityCheck);
 			case DatatypesPackage.ED__INTEGRITY_CHECK_ALGORITHM:
-				return integrityCheckAlgorithm != INTEGRITY_CHECK_ALGORITHM_EDEFAULT;
+				return isSetIntegrityCheckAlgorithm();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -545,11 +613,11 @@ public class EDImpl extends BINImpl implements ED {
 		result.append(", language: ");
 		result.append(language);
 		result.append(", compression: ");
-		result.append(compression);
+		if (compressionESet) result.append(compression); else result.append("<unset>");
 		result.append(", integrityCheck: ");
 		result.append(integrityCheck);
 		result.append(", integrityCheckAlgorithm: ");
-		result.append(integrityCheckAlgorithm);
+		if (integrityCheckAlgorithmESet) result.append(integrityCheckAlgorithm); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

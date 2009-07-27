@@ -58,6 +58,15 @@ public class SXCM_INTImpl extends INTImpl implements SXCM_INT {
 	protected SetOperator operator = OPERATOR_EDEFAULT;
 
 	/**
+	 * This is true if the Operator attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean operatorESet;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -93,8 +102,33 @@ public class SXCM_INTImpl extends INTImpl implements SXCM_INT {
 	public void setOperator(SetOperator newOperator) {
 		SetOperator oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
+		boolean oldOperatorESet = operatorESet;
+		operatorESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SXCM_INT__OPERATOR, oldOperator, operator));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.SXCM_INT__OPERATOR, oldOperator, operator, !oldOperatorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetOperator() {
+		SetOperator oldOperator = operator;
+		boolean oldOperatorESet = operatorESet;
+		operator = OPERATOR_EDEFAULT;
+		operatorESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, DatatypesPackage.SXCM_INT__OPERATOR, oldOperator, OPERATOR_EDEFAULT, oldOperatorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetOperator() {
+		return operatorESet;
 	}
 
 	/**
@@ -135,7 +169,7 @@ public class SXCM_INTImpl extends INTImpl implements SXCM_INT {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.SXCM_INT__OPERATOR:
-				setOperator(OPERATOR_EDEFAULT);
+				unsetOperator();
 				return;
 		}
 		super.eUnset(featureID);
@@ -150,7 +184,7 @@ public class SXCM_INTImpl extends INTImpl implements SXCM_INT {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.SXCM_INT__OPERATOR:
-				return operator != OPERATOR_EDEFAULT;
+				return isSetOperator();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -166,7 +200,7 @@ public class SXCM_INTImpl extends INTImpl implements SXCM_INT {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (operator: ");
-		result.append(operator);
+		if (operatorESet) result.append(operator); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

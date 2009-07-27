@@ -43,9 +43,11 @@ public interface SXCM_TS extends TS {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.SetOperator
+	 * @see #isSetOperator()
+	 * @see #unsetOperator()
 	 * @see #setOperator(SetOperator)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getSXCM_TS_Operator()
-	 * @model default="I" ordered="false"
+	 * @model default="I" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	SetOperator getOperator();
@@ -56,9 +58,34 @@ public interface SXCM_TS extends TS {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Operator</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.SetOperator
+	 * @see #isSetOperator()
+	 * @see #unsetOperator()
 	 * @see #getOperator()
 	 * @generated
 	 */
 	void setOperator(SetOperator value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS#getOperator <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetOperator()
+	 * @see #getOperator()
+	 * @see #setOperator(SetOperator)
+	 * @generated
+	 */
+	void unsetOperator();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS#getOperator <em>Operator</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Operator</em>' attribute is set.
+	 * @see #unsetOperator()
+	 * @see #getOperator()
+	 * @see #setOperator(SetOperator)
+	 * @generated
+	 */
+	boolean isSetOperator();
 
 } // SXCM_TS

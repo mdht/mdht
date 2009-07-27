@@ -58,11 +58,34 @@ public interface EN extends ANY {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Use</em>' attribute list.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityNameUse
+	 * @see #isSetUse()
+	 * @see #unsetUse()
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getEN_Use()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	EList<EntityNameUse> getUse();
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getUse <em>Use</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetUse()
+	 * @see #getUse()
+	 * @generated
+	 */
+	void unsetUse();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getUse <em>Use</em>}' attribute list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Use</em>' attribute list is set.
+	 * @see #unsetUse()
+	 * @see #getUse()
+	 * @generated
+	 */
+	boolean isSetUse();
 
 	/**
 	 * Returns the value of the '<em><b>Valid Time</b></em>' containment reference.
