@@ -32,6 +32,15 @@ public interface CCDFactory extends EFactory {
 	CCDFactory eINSTANCE = org.openhealthtools.mdht.uml.cda.ccd.impl.CCDFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Medication Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Section</em>'.
+	 * @generated
+	 */
+	MedicationSection createMedicationSection();
+
+	/**
 	 * Returns a new object of class '<em>Continuity Of Care Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,6 +201,24 @@ public interface CCDFactory extends EFactory {
 	 * @generated
 	 */
 	EncountersActivity createEncountersActivity();
+
+	/**
+	 * Returns a new object of class '<em>Medication Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Activity</em>'.
+	 * @generated
+	 */
+	MedicationActivity createMedicationActivity();
+
+	/**
+	 * Returns a new object of class '<em>Supply Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Supply Activity</em>'.
+	 * @generated
+	 */
+	SupplyActivity createSupplyActivity();
 
 	/**
 	 * Returns the package supported by this factory.

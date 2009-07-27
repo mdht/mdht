@@ -25,6 +25,8 @@ import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Organizer;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.ccd.*;
 
 /**
@@ -101,6 +103,13 @@ public class CCDSwitch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case CCDPackage.MEDICATION_SECTION: {
+				MedicationSection medicationSection = (MedicationSection)theEObject;
+				T result = caseMedicationSection(medicationSection);
+				if (result == null) result = caseSection(medicationSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CCDPackage.CONTINUITY_OF_CARE_DOCUMENT: {
 				ContinuityOfCareDocument continuityOfCareDocument = (ContinuityOfCareDocument)theEObject;
 				T result = caseContinuityOfCareDocument(continuityOfCareDocument);
@@ -227,8 +236,37 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CCDPackage.MEDICATION_ACTIVITY: {
+				MedicationActivity medicationActivity = (MedicationActivity)theEObject;
+				T result = caseMedicationActivity(medicationActivity);
+				if (result == null) result = caseSubstanceAdministration(medicationActivity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.SUPPLY_ACTIVITY: {
+				SupplyActivity supplyActivity = (SupplyActivity)theEObject;
+				T result = caseSupplyActivity(supplyActivity);
+				if (result == null) result = caseSupply(supplyActivity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medication Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medication Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicationSection(MedicationSection object) {
+		return null;
 	}
 
 	/**
@@ -502,6 +540,36 @@ public class CCDSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medication Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medication Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicationActivity(MedicationActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Supply Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Supply Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupplyActivity(SupplyActivity object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Clinical Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -603,6 +671,36 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseEncounter(Encounter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Substance Administration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Substance Administration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSubstanceAdministration(SubstanceAdministration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Supply</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Supply</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupply(Supply object) {
 		return null;
 	}
 

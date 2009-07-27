@@ -13,30 +13,30 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
-import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
 
-import org.openhealthtools.mdht.uml.cda.ccd.operations.EncountersActivityOperations;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationSectionOperations;
 
-import org.openhealthtools.mdht.uml.cda.impl.EncounterImpl;
+import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
 
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Encounters Activity</b></em>'.
+ * An implementation of the model object '<em><b>Medication Section</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class EncountersActivityImpl extends EncounterImpl implements EncountersActivity {
+public class MedicationSectionImpl extends SectionImpl implements MedicationSection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EncountersActivityImpl() {
+	protected MedicationSectionImpl() {
 		super();
 	}
 
@@ -47,7 +47,7 @@ public class EncountersActivityImpl extends EncounterImpl implements EncountersA
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CCDPackage.Literals.ENCOUNTERS_ACTIVITY;
+		return CCDPackage.Literals.MEDICATION_SECTION;
 	}
 
 	/**
@@ -55,8 +55,8 @@ public class EncountersActivityImpl extends EncounterImpl implements EncountersA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EncountersActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncountersActivityOperations.EncountersActivity_templateId(this, diagnostics, context);
+	public boolean MedicationSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSectionOperations.MedicationSection_templateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +64,8 @@ public class EncountersActivityImpl extends EncounterImpl implements EncountersA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EncountersActivity init() {
+	public MedicationSection init() {
     		CDAUtil.init(this);
     		return this;
 	}
-} //EncountersActivityImpl
+} //MedicationSectionImpl
