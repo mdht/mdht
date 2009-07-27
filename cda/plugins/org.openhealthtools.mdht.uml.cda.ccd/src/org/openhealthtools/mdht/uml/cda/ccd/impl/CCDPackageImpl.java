@@ -19,6 +19,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
@@ -37,10 +40,13 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
+import org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
 
@@ -197,6 +203,48 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * @generated
 	 */
 	private EClass supplyActivityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass alertsSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass alertObservationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reactionObservationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass severityObservationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass alertStatusObservationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass statusObservationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -472,6 +520,60 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAlertsSection() {
+		return alertsSectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAlertObservation() {
+		return alertObservationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReactionObservation() {
+		return reactionObservationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSeverityObservation() {
+		return severityObservationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAlertStatusObservation() {
+		return alertStatusObservationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStatusObservation() {
+		return statusObservationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CCDFactory getCCDFactory() {
 		return (CCDFactory)getEFactoryInstance();
 	}
@@ -536,6 +638,18 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		medicationActivityEClass = createEClass(MEDICATION_ACTIVITY);
 
 		supplyActivityEClass = createEClass(SUPPLY_ACTIVITY);
+
+		alertsSectionEClass = createEClass(ALERTS_SECTION);
+
+		alertObservationEClass = createEClass(ALERT_OBSERVATION);
+
+		reactionObservationEClass = createEClass(REACTION_OBSERVATION);
+
+		severityObservationEClass = createEClass(SEVERITY_OBSERVATION);
+
+		alertStatusObservationEClass = createEClass(ALERT_STATUS_OBSERVATION);
+
+		statusObservationEClass = createEClass(STATUS_OBSERVATION);
 	}
 
 	/**
@@ -590,6 +704,12 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		encountersActivityEClass.getESuperTypes().add(theCDAPackage.getEncounter());
 		medicationActivityEClass.getESuperTypes().add(theCDAPackage.getSubstanceAdministration());
 		supplyActivityEClass.getESuperTypes().add(theCDAPackage.getSupply());
+		alertsSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
+		alertObservationEClass.getESuperTypes().add(theCDAPackage.getObservation());
+		reactionObservationEClass.getESuperTypes().add(theCDAPackage.getObservation());
+		severityObservationEClass.getESuperTypes().add(theCDAPackage.getObservation());
+		alertStatusObservationEClass.getESuperTypes().add(this.getStatusObservation());
+		statusObservationEClass.getESuperTypes().add(theCDAPackage.getObservation());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(medicationSectionEClass, MedicationSection.class, "MedicationSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -877,6 +997,72 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(alertsSectionEClass, AlertsSection.class, "AlertsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(alertsSectionEClass, ecorePackage.getEBoolean(), "AlertsSection_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(alertObservationEClass, AlertObservation.class, "AlertObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(alertObservationEClass, ecorePackage.getEBoolean(), "AlertObservation_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(reactionObservationEClass, ReactionObservation.class, "ReactionObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(reactionObservationEClass, ecorePackage.getEBoolean(), "ReactionObservation_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(severityObservationEClass, SeverityObservation.class, "SeverityObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(severityObservationEClass, ecorePackage.getEBoolean(), "SeverityObservation_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(alertStatusObservationEClass, AlertStatusObservation.class, "AlertStatusObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(alertStatusObservationEClass, ecorePackage.getEBoolean(), "AlertStatusObservation_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(statusObservationEClass, StatusObservation.class, "StatusObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(statusObservationEClass, ecorePackage.getEBoolean(), "StatusObservation_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -900,7 +1086,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																							
+		   });																																																																																																																																																					
 	}
 
 	/**
@@ -1040,6 +1226,42 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.34"
+		   });						
+		addAnnotation
+		  (alertsSectionEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "2.16.840.1.113883.10.20.1.2"
+		   });						
+		addAnnotation
+		  (alertObservationEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "2.16.840.1.113883.10.20.1.18"
+		   });						
+		addAnnotation
+		  (reactionObservationEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "2.16.840.1.113883.10.20.1.54"
+		   });						
+		addAnnotation
+		  (severityObservationEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "2.16.840.1.113883.10.20.1.55"
+		   });						
+		addAnnotation
+		  (alertStatusObservationEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "2.16.840.1.113883.10.20.1.39"
+		   });						
+		addAnnotation
+		  (statusObservationEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "2.16.840.1.113883.10.20.1.57"
 		   });				
 	}
 

@@ -35,5 +35,11 @@
       <entry eClass="MedicationActivity" id="2.16.840.1.113883.10.20.1.24" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="SupplyActivity" id="2.16.840.1.113883.10.20.1.34" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="EncountersActivity" id="2.16.840.1.113883.10.20.1.21" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="AlertsSection" id="2.16.840.1.113883.10.20.1.2" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="AlertObservation" id="2.16.840.1.113883.10.20.1.18" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="ReactionObservation" id="2.16.840.1.113883.10.20.1.54" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="SeverityObservation" id="2.16.840.1.113883.10.20.1.55" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="AlertStatusObservation" id="2.16.840.1.113883.10.20.1.39" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="StatusObservation" id="2.16.840.1.113883.10.20.1.57" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
    </extension>
 </plugin>

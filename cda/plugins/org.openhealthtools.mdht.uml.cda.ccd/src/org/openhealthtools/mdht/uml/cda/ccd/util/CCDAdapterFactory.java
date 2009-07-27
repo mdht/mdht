@@ -172,6 +172,30 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 				return createSupplyActivityAdapter();
 			}
 			@Override
+			public Adapter caseAlertsSection(AlertsSection object) {
+				return createAlertsSectionAdapter();
+			}
+			@Override
+			public Adapter caseAlertObservation(AlertObservation object) {
+				return createAlertObservationAdapter();
+			}
+			@Override
+			public Adapter caseReactionObservation(ReactionObservation object) {
+				return createReactionObservationAdapter();
+			}
+			@Override
+			public Adapter caseSeverityObservation(SeverityObservation object) {
+				return createSeverityObservationAdapter();
+			}
+			@Override
+			public Adapter caseAlertStatusObservation(AlertStatusObservation object) {
+				return createAlertStatusObservationAdapter();
+			}
+			@Override
+			public Adapter caseStatusObservation(StatusObservation object) {
+				return createStatusObservationAdapter();
+			}
+			@Override
 			public Adapter caseSection(Section object) {
 				return createSectionAdapter();
 			}
@@ -518,6 +542,90 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSupplyActivityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection <em>Alerts Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.AlertsSection
+	 * @generated
+	 */
+	public Adapter createAlertsSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation <em>Alert Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.AlertObservation
+	 * @generated
+	 */
+	public Adapter createAlertObservationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation <em>Reaction Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation
+	 * @generated
+	 */
+	public Adapter createReactionObservationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation <em>Severity Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation
+	 * @generated
+	 */
+	public Adapter createSeverityObservationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation <em>Alert Status Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation
+	 * @generated
+	 */
+	public Adapter createAlertStatusObservationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation <em>Status Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.StatusObservation
+	 * @generated
+	 */
+	public Adapter createStatusObservationAdapter() {
 		return null;
 	}
 

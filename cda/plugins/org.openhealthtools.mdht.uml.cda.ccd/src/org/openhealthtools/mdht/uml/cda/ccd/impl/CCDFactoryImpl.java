@@ -87,6 +87,12 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.ENCOUNTERS_ACTIVITY: return createEncountersActivity();
 			case CCDPackage.MEDICATION_ACTIVITY: return createMedicationActivity();
 			case CCDPackage.SUPPLY_ACTIVITY: return createSupplyActivity();
+			case CCDPackage.ALERTS_SECTION: return createAlertsSection();
+			case CCDPackage.ALERT_OBSERVATION: return createAlertObservation();
+			case CCDPackage.REACTION_OBSERVATION: return createReactionObservation();
+			case CCDPackage.SEVERITY_OBSERVATION: return createSeverityObservation();
+			case CCDPackage.ALERT_STATUS_OBSERVATION: return createAlertStatusObservation();
+			case CCDPackage.STATUS_OBSERVATION: return createStatusObservation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -300,6 +306,66 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public SupplyActivity createSupplyActivity() {
 		SupplyActivityImpl supplyActivity = new SupplyActivityImpl();
 		return supplyActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AlertsSection createAlertsSection() {
+		AlertsSectionImpl alertsSection = new AlertsSectionImpl();
+		return alertsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AlertObservation createAlertObservation() {
+		AlertObservationImpl alertObservation = new AlertObservationImpl();
+		return alertObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReactionObservation createReactionObservation() {
+		ReactionObservationImpl reactionObservation = new ReactionObservationImpl();
+		return reactionObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SeverityObservation createSeverityObservation() {
+		SeverityObservationImpl severityObservation = new SeverityObservationImpl();
+		return severityObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AlertStatusObservation createAlertStatusObservation() {
+		AlertStatusObservationImpl alertStatusObservation = new AlertStatusObservationImpl();
+		return alertStatusObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusObservation createStatusObservation() {
+		StatusObservationImpl statusObservation = new StatusObservationImpl();
+		return statusObservation;
 	}
 
 	/**

@@ -266,12 +266,60 @@ public class CCDValidator extends EObjectValidator {
 	public static final int SUPPLY_ACTIVITY__SUPPLY_ACTIVITY_TEMPLATE_ID = 27;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Alerts Section template Id' of 'Alerts Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ALERTS_SECTION__ALERTS_SECTION_TEMPLATE_ID = 28;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Alert Observation template Id' of 'Alert Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ALERT_OBSERVATION__ALERT_OBSERVATION_TEMPLATE_ID = 29;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Reaction Observation template Id' of 'Reaction Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int REACTION_OBSERVATION__REACTION_OBSERVATION_TEMPLATE_ID = 30;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Severity Observation template Id' of 'Severity Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SEVERITY_OBSERVATION__SEVERITY_OBSERVATION_TEMPLATE_ID = 31;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Alert Status Observation template Id' of 'Alert Status Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ALERT_STATUS_OBSERVATION__ALERT_STATUS_OBSERVATION_TEMPLATE_ID = 32;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Status Observation template Id' of 'Status Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID = 33;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 27;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 33;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -353,6 +401,18 @@ public class CCDValidator extends EObjectValidator {
 				return validateMedicationActivity((MedicationActivity)value, diagnostics, context);
 			case CCDPackage.SUPPLY_ACTIVITY:
 				return validateSupplyActivity((SupplyActivity)value, diagnostics, context);
+			case CCDPackage.ALERTS_SECTION:
+				return validateAlertsSection((AlertsSection)value, diagnostics, context);
+			case CCDPackage.ALERT_OBSERVATION:
+				return validateAlertObservation((AlertObservation)value, diagnostics, context);
+			case CCDPackage.REACTION_OBSERVATION:
+				return validateReactionObservation((ReactionObservation)value, diagnostics, context);
+			case CCDPackage.SEVERITY_OBSERVATION:
+				return validateSeverityObservation((SeverityObservation)value, diagnostics, context);
+			case CCDPackage.ALERT_STATUS_OBSERVATION:
+				return validateAlertStatusObservation((AlertStatusObservation)value, diagnostics, context);
+			case CCDPackage.STATUS_OBSERVATION:
+				return validateStatusObservation((StatusObservation)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -989,6 +1049,169 @@ public class CCDValidator extends EObjectValidator {
 	 */
 	public boolean validateSupplyActivity_SupplyActivity_templateId(SupplyActivity supplyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return supplyActivity.SupplyActivity_templateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAlertsSection(AlertsSection alertsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(alertsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(alertsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(alertsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(alertsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(alertsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(alertsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(alertsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAlertsSection_AlertsSection_templateId(alertsSection, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the AlertsSection_templateId constraint of '<em>Alerts Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAlertsSection_AlertsSection_templateId(AlertsSection alertsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return alertsSection.AlertsSection_templateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAlertObservation(AlertObservation alertObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(alertObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(alertObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(alertObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(alertObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(alertObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(alertObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(alertObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAlertObservation_AlertObservation_templateId(alertObservation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the AlertObservation_templateId constraint of '<em>Alert Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAlertObservation_AlertObservation_templateId(AlertObservation alertObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return alertObservation.AlertObservation_templateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReactionObservation(ReactionObservation reactionObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(reactionObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reactionObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reactionObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(reactionObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(reactionObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reactionObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reactionObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateReactionObservation_ReactionObservation_templateId(reactionObservation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the ReactionObservation_templateId constraint of '<em>Reaction Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReactionObservation_ReactionObservation_templateId(ReactionObservation reactionObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return reactionObservation.ReactionObservation_templateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSeverityObservation(SeverityObservation severityObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(severityObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(severityObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(severityObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(severityObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(severityObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(severityObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(severityObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSeverityObservation_SeverityObservation_templateId(severityObservation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the SeverityObservation_templateId constraint of '<em>Severity Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSeverityObservation_SeverityObservation_templateId(SeverityObservation severityObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return severityObservation.SeverityObservation_templateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAlertStatusObservation(AlertStatusObservation alertStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(alertStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(alertStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(alertStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(alertStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(alertStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(alertStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(alertStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_StatusObservation_templateId(alertStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAlertStatusObservation_AlertStatusObservation_templateId(alertStatusObservation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the AlertStatusObservation_templateId constraint of '<em>Alert Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAlertStatusObservation_AlertStatusObservation_templateId(AlertStatusObservation alertStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return alertStatusObservation.AlertStatusObservation_templateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStatusObservation(StatusObservation statusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(statusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(statusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(statusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(statusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(statusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(statusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(statusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_StatusObservation_templateId(statusObservation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the StatusObservation_templateId constraint of '<em>Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStatusObservation_StatusObservation_templateId(StatusObservation statusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return statusObservation.StatusObservation_templateId(diagnostics, context);
 	}
 
 	/**
