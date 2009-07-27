@@ -643,6 +643,14 @@ public interface Section extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" xmlStringRequired="true" xmlStringOrdered="false"
+	 * @generated
+	 */
+	StrucDocText createStrucDocText(String xmlString);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
