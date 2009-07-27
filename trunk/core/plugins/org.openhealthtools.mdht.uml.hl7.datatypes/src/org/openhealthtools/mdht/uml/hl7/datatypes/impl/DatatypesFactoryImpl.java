@@ -404,9 +404,9 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	}
 	
 	public IVL_TS createIVL_TS(String value) {
-		IVL_TS ivL_TS = createIVL_TS();
-		ivL_TS.setValue(value);
-		return ivL_TS;
+		IVL_TS ivl_ts = createIVL_TS();
+		ivl_ts.setValue(value);
+		return ivl_ts;
 	}
 
 	/**
