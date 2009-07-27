@@ -221,6 +221,60 @@ public interface CCDFactory extends EFactory {
 	SupplyActivity createSupplyActivity();
 
 	/**
+	 * Returns a new object of class '<em>Alerts Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Alerts Section</em>'.
+	 * @generated
+	 */
+	AlertsSection createAlertsSection();
+
+	/**
+	 * Returns a new object of class '<em>Alert Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Alert Observation</em>'.
+	 * @generated
+	 */
+	AlertObservation createAlertObservation();
+
+	/**
+	 * Returns a new object of class '<em>Reaction Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Reaction Observation</em>'.
+	 * @generated
+	 */
+	ReactionObservation createReactionObservation();
+
+	/**
+	 * Returns a new object of class '<em>Severity Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Severity Observation</em>'.
+	 * @generated
+	 */
+	SeverityObservation createSeverityObservation();
+
+	/**
+	 * Returns a new object of class '<em>Alert Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Alert Status Observation</em>'.
+	 * @generated
+	 */
+	AlertStatusObservation createAlertStatusObservation();
+
+	/**
+	 * Returns a new object of class '<em>Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Status Observation</em>'.
+	 * @generated
+	 */
+	StatusObservation createStatusObservation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

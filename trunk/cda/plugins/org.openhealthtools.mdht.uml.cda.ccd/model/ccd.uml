@@ -145,6 +145,34 @@
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_3gL0sEbuEd6besF9iFIJkQ?cda/Supply?"/>
       </generalization>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PgsSAHrREd68l9lQ-TLEBQ" name="AlertsSection">
+      <generalization xmi:id="_YiaKIHrREd68l9lQ-TLEBQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_qV72IHrREd68l9lQ-TLEBQ" name="AlertObservation">
+      <generalization xmi:id="_9yumAHrREd68l9lQ-TLEBQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="__XC4cHrREd68l9lQ-TLEBQ" name="ReactionObservation">
+      <generalization xmi:id="_PipkYHrSEd68l9lQ-TLEBQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ILkpIHrSEd68l9lQ-TLEBQ" name="SeverityObservation">
+      <generalization xmi:id="_QQ4jYHrSEd68l9lQ-TLEBQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_e8n_EHrSEd68l9lQ-TLEBQ" name="AlertStatusObservation">
+      <generalization xmi:id="_b0MZEHrTEd68l9lQ-TLEBQ" general="_V3Jy4HrTEd68l9lQ-TLEBQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_V3Jy4HrTEd68l9lQ-TLEBQ" name="StatusObservation">
+      <generalization xmi:id="_s4YvUHrSEd68l9lQ-TLEBQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
+      </generalization>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -195,4 +223,10 @@
   <HDF:HL7Template xmi:id="_n00D0Ho6Ed6UPbrR4QTFoQ" base_Class="_Ht_RsHDAEd6eItyqb1FoWg" id="2.16.840.1.113883.10.20.1.32"/>
   <HDF:HL7Template xmi:id="_ueyBcHo6Ed6UPbrR4QTFoQ" base_Class="_Wa2uwHDAEd6eItyqb1FoWg" id="2.16.840.1.113883.10.20.1.33"/>
   <HDF:HL7Template xmi:id="_zFaOUHo6Ed6UPbrR4QTFoQ" base_Class="_UOVM0HDAEd6eItyqb1FoWg" id="2.16.840.1.113883.10.20.1.15"/>
+  <HDF:HL7Template xmi:id="_RJAToHrREd68l9lQ-TLEBQ" base_Class="_PgsSAHrREd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.2"/>
+  <HDF:HL7Template xmi:id="_sPJagHrREd68l9lQ-TLEBQ" base_Class="_qV72IHrREd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.18"/>
+  <HDF:HL7Template xmi:id="_BUtfAHrSEd68l9lQ-TLEBQ" base_Class="__XC4cHrREd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.54"/>
+  <HDF:HL7Template xmi:id="_J6uSkHrSEd68l9lQ-TLEBQ" base_Class="_ILkpIHrSEd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.55"/>
+  <HDF:HL7Template xmi:id="_g5EdoHrSEd68l9lQ-TLEBQ" base_Class="_e8n_EHrSEd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.39"/>
+  <HDF:HL7Template xmi:id="_Xv1y0HrTEd68l9lQ-TLEBQ" base_Class="_V3Jy4HrTEd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.57"/>
 </xmi:XMI>

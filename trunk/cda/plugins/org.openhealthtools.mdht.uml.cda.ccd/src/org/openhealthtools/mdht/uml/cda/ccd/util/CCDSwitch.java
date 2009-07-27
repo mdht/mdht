@@ -250,6 +250,49 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CCDPackage.ALERTS_SECTION: {
+				AlertsSection alertsSection = (AlertsSection)theEObject;
+				T result = caseAlertsSection(alertsSection);
+				if (result == null) result = caseSection(alertsSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.ALERT_OBSERVATION: {
+				AlertObservation alertObservation = (AlertObservation)theEObject;
+				T result = caseAlertObservation(alertObservation);
+				if (result == null) result = caseObservation(alertObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.REACTION_OBSERVATION: {
+				ReactionObservation reactionObservation = (ReactionObservation)theEObject;
+				T result = caseReactionObservation(reactionObservation);
+				if (result == null) result = caseObservation(reactionObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.SEVERITY_OBSERVATION: {
+				SeverityObservation severityObservation = (SeverityObservation)theEObject;
+				T result = caseSeverityObservation(severityObservation);
+				if (result == null) result = caseObservation(severityObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.ALERT_STATUS_OBSERVATION: {
+				AlertStatusObservation alertStatusObservation = (AlertStatusObservation)theEObject;
+				T result = caseAlertStatusObservation(alertStatusObservation);
+				if (result == null) result = caseStatusObservation(alertStatusObservation);
+				if (result == null) result = caseObservation(alertStatusObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.STATUS_OBSERVATION: {
+				StatusObservation statusObservation = (StatusObservation)theEObject;
+				T result = caseStatusObservation(statusObservation);
+				if (result == null) result = caseObservation(statusObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -566,6 +609,96 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseSupplyActivity(SupplyActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Alerts Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Alerts Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAlertsSection(AlertsSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Alert Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Alert Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAlertObservation(AlertObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Reaction Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Reaction Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReactionObservation(ReactionObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Severity Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Severity Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSeverityObservation(SeverityObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Alert Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Alert Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAlertStatusObservation(AlertStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStatusObservation(StatusObservation object) {
 		return null;
 	}
 
