@@ -139,9 +139,11 @@ public interface InFulfillmentOf extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getInFulfillmentOf_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -152,10 +154,35 @@ public interface InFulfillmentOf extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.InFulfillmentOf#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.InFulfillmentOf#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Type Code</b></em>' attribute.
@@ -169,9 +196,11 @@ public interface InFulfillmentOf extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipFulfills
+	 * @see #isSetTypeCode()
+	 * @see #unsetTypeCode()
 	 * @see #setTypeCode(ActRelationshipFulfills)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getInFulfillmentOf_TypeCode()
-	 * @model default="FLFS" ordered="false"
+	 * @model default="FLFS" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	ActRelationshipFulfills getTypeCode();
@@ -182,9 +211,34 @@ public interface InFulfillmentOf extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipFulfills
+	 * @see #isSetTypeCode()
+	 * @see #unsetTypeCode()
 	 * @see #getTypeCode()
 	 * @generated
 	 */
 	void setTypeCode(ActRelationshipFulfills value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.InFulfillmentOf#getTypeCode <em>Type Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetTypeCode()
+	 * @see #getTypeCode()
+	 * @see #setTypeCode(ActRelationshipFulfills)
+	 * @generated
+	 */
+	void unsetTypeCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.InFulfillmentOf#getTypeCode <em>Type Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Type Code</em>' attribute is set.
+	 * @see #unsetTypeCode()
+	 * @see #getTypeCode()
+	 * @see #setTypeCode(ActRelationshipFulfills)
+	 * @generated
+	 */
+	boolean isSetTypeCode();
 
 } // InFulfillmentOf

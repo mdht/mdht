@@ -138,13 +138,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" ordered="false"
         lowerBound="1" eType="#//Component2" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassClinicalDocument"
-        defaultValueLiteral="DOCCLIN"/>
+        defaultValueLiteral="DOCCLIN" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InfrastructureRootTypeId" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//II">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="redefinedRoot" ordered="false"
@@ -185,13 +186,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="patientRole" ordered="false"
         lowerBound="1" eType="#//PatientRole" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
-        defaultValueLiteral="RCT"/>
+        defaultValueLiteral="RCT" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextControlCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ContextControl"
-        defaultValueLiteral="OP"/>
+        defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PatientRole">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -216,10 +218,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="providerOrganization" ordered="false"
         eType="#//Organization" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClass"
-        defaultValueLiteral="PAT"/>
+        defaultValueLiteral="PAT" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Patient">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -260,13 +263,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="languageCommunication"
         ordered="false" upperBound="-1" eType="#//LanguageCommunication" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityClass"
-        defaultValueLiteral="PSN"/>
+        defaultValueLiteral="PSN" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="determinerCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityDeterminer"
-        defaultValueLiteral="INSTANCE"/>
+        defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Guardian">
     <eOperations name="guardianChoice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -315,10 +319,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="guardianOrganization" ordered="false"
         eType="#//Organization" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClass"
-        defaultValueLiteral="GUAR"/>
+        defaultValueLiteral="GUAR" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Person">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -333,13 +338,14 @@
         eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//PN"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityClass"
-        defaultValueLiteral="PSN"/>
+        defaultValueLiteral="PSN" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="determinerCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityDeterminer"
-        defaultValueLiteral="INSTANCE"/>
+        defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Organization">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -368,13 +374,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="asOrganizationPartOf" ordered="false"
         eType="#//OrganizationPartOf" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityClassOrganization"
-        defaultValueLiteral="ORG"/>
+        defaultValueLiteral="ORG" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="determinerCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityDeterminer"
-        defaultValueLiteral="INSTANCE"/>
+        defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OrganizationPartOf">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -399,10 +406,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="wholeOrganization" ordered="false"
         eType="#//Organization" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClass"
-        defaultValueLiteral="PART"/>
+        defaultValueLiteral="PART" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Birthplace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -416,10 +424,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="place" ordered="false"
         lowerBound="1" eType="#//Place" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClass"
-        defaultValueLiteral="BIRTHPL"/>
+        defaultValueLiteral="BIRTHPL" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Place">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -435,13 +444,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="addr" ordered="false" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//AD"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityClassPlace"
-        defaultValueLiteral="PLC"/>
+        defaultValueLiteral="PLC" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="determinerCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityDeterminer"
-        defaultValueLiteral="INSTANCE"/>
+        defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LanguageCommunication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -465,7 +475,8 @@
         eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//BL"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Author">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -485,13 +496,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignedAuthor" ordered="false"
         lowerBound="1" eType="#//AssignedAuthor" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
-        defaultValueLiteral="AUT"/>
+        defaultValueLiteral="AUT" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextControlCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ContextControl"
-        defaultValueLiteral="OP"/>
+        defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssignedAuthor">
     <eOperations name="assignedAuthorChoice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -542,10 +554,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="representedOrganization"
         ordered="false" eType="#//Organization" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClassAssignedEntity"
-        defaultValueLiteral="ASSIGNED"/>
+        defaultValueLiteral="ASSIGNED" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AuthoringDevice">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -567,13 +580,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="asMaintainedEntity" ordered="false"
         upperBound="-1" eType="#//MaintainedEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityClassDevice"
-        defaultValueLiteral="DEV"/>
+        defaultValueLiteral="DEV" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="determinerCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityDeterminer"
-        defaultValueLiteral="INSTANCE"/>
+        defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MaintainedEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -590,10 +604,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="maintainingPerson" ordered="false"
         lowerBound="1" eType="#//Person" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClass"
-        defaultValueLiteral="MNT"/>
+        defaultValueLiteral="MNT" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataEnterer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -609,13 +624,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignedEntity" ordered="false"
         lowerBound="1" eType="#//AssignedEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
-        defaultValueLiteral="ENT"/>
+        defaultValueLiteral="ENT" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextControlCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ContextControl"
-        defaultValueLiteral="OP"/>
+        defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssignedEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -642,10 +658,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="representedOrganization"
         ordered="false" upperBound="-1" eType="#//Organization" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClassAssignedEntity"
-        defaultValueLiteral="ASSIGNED"/>
+        defaultValueLiteral="ASSIGNED" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Informant12">
     <eOperations name="informantChoice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -683,13 +700,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="relatedEntity" ordered="false"
         eType="#//RelatedEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
-        defaultValueLiteral="INF"/>
+        defaultValueLiteral="INF" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextControlCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ContextControl"
-        defaultValueLiteral="OP"/>
+        defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RelatedEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -714,9 +732,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="relatedPerson" ordered="false"
         eType="#//Person" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClassMutualRelationship"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClassMutualRelationship"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Custodian">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -730,10 +750,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignedCustodian" ordered="false"
         lowerBound="1" eType="#//AssignedCustodian" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
-        defaultValueLiteral="CST"/>
+        defaultValueLiteral="CST" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssignedCustodian">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -747,10 +768,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="representedCustodianOrganization"
         ordered="false" lowerBound="1" eType="#//CustodianOrganization" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClassAssignedEntity"
-        defaultValueLiteral="ASSIGNED"/>
+        defaultValueLiteral="ASSIGNED" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CustodianOrganization">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -772,13 +794,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="addr" ordered="false" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//AD"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityClassOrganization"
-        defaultValueLiteral="ORG"/>
+        defaultValueLiteral="ORG" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="determinerCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityDeterminer"
-        defaultValueLiteral="INSTANCE"/>
+        defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InformationRecipient">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -792,10 +815,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="intendedRecipient" ordered="false"
         lowerBound="1" eType="#//IntendedRecipient" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_InformationRecipient"
-        defaultValueLiteral="PRCP"/>
+        defaultValueLiteral="PRCP" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntendedRecipient">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -820,10 +844,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="receivedOrganization" ordered="false"
         eType="#//Organization" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_InformationRecipientRole"
-        defaultValueLiteral="ASSIGNED"/>
+        defaultValueLiteral="ASSIGNED" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LegalAuthenticator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -843,13 +868,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignedEntity" ordered="false"
         lowerBound="1" eType="#//AssignedEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
-        defaultValueLiteral="LA"/>
+        defaultValueLiteral="LA" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextControlCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ContextControl"
-        defaultValueLiteral="OP"/>
+        defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Authenticator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -869,10 +895,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignedEntity" ordered="false"
         upperBound="-1" eType="#//AssignedEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
-        defaultValueLiteral="AUTHEN"/>
+        defaultValueLiteral="AUTHEN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Participant1">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -891,12 +918,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="associatedEntity" ordered="false"
         lowerBound="1" eType="#//AssociatedEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextControlCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ContextControl"
-        defaultValueLiteral="OP"/>
+        defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssociatedEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -923,9 +952,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="scopingOrganization" ordered="false"
         eType="#//Organization" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClassAssociative"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClassAssociative"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InFulfillmentOf">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -939,10 +970,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="order" ordered="false"
         lowerBound="1" eType="#//Order" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActRelationshipFulfills"
-        defaultValueLiteral="FLFS"/>
+        defaultValueLiteral="FLFS" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Order">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -962,13 +994,14 @@
         eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//CE"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassRoot"
-        defaultValueLiteral="ACT"/>
+        defaultValueLiteral="ACT" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="RQO"/>
+        defaultValueLiteral="RQO" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentationOf">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -982,10 +1015,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceEvent" ordered="false"
         lowerBound="1" eType="#//ServiceEvent" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActRelationshipType"
-        defaultValueLiteral="DOC"/>
+        defaultValueLiteral="DOC" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceEvent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1007,13 +1041,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="performer" ordered="false"
         upperBound="-1" eType="#//Performer1" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassRoot"
-        defaultValueLiteral="ACT"/>
+        defaultValueLiteral="ACT" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Performer1">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1032,9 +1067,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignedEntity" ordered="false"
         lowerBound="1" eType="#//AssignedEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ServiceEventPerformer"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ServiceEventPerformer"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RelatedDocument">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1048,9 +1085,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentDocument" ordered="false"
         lowerBound="1" eType="#//ParentDocument" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActRelationshipDocument"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActRelationshipDocument"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParentDocument">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1075,13 +1114,14 @@
         eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//INT"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassClinicalDocument"
-        defaultValueLiteral="DOCCLIN"/>
+        defaultValueLiteral="DOCCLIN" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Authorization">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1095,10 +1135,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="consent" ordered="false"
         lowerBound="1" eType="#//Consent" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActRelationshipType"
-        defaultValueLiteral="AUTH"/>
+        defaultValueLiteral="AUTH" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Consent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1118,13 +1159,14 @@
         lowerBound="1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//CS"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClass"
-        defaultValueLiteral="CONS"/>
+        defaultValueLiteral="CONS" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component1">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1138,10 +1180,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="encompassingEncounter"
         ordered="false" lowerBound="1" eType="#//EncompassingEncounter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActRelationshipHasComponent"
-        defaultValueLiteral="COMP"/>
+        defaultValueLiteral="COMP" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EncompassingEncounter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1170,13 +1213,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="location" ordered="false"
         eType="#//Location" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClass"
-        defaultValueLiteral="ENC"/>
+        defaultValueLiteral="ENC" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResponsibleParty">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1190,10 +1234,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignedEntity" ordered="false"
         lowerBound="1" eType="#//AssignedEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
-        defaultValueLiteral="RESP"/>
+        defaultValueLiteral="RESP" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EncounterParticipant">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1209,9 +1254,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignedEntity" ordered="false"
         lowerBound="1" eType="#//AssignedEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_EncounterParticipant"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_EncounterParticipant"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Location">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1225,10 +1272,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="healthCareFacility" ordered="false"
         lowerBound="1" eType="#//HealthCareFacility" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationTargetLocation"
-        defaultValueLiteral="LOC"/>
+        defaultValueLiteral="LOC" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HealthCareFacility">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1249,10 +1297,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceProviderOrganization"
         ordered="false" eType="#//Organization" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClassServiceDeliveryLocation"
-        defaultValueLiteral="SDLOC"/>
+        defaultValueLiteral="SDLOC" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component2">
     <eOperations name="bodyChoice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1290,10 +1339,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="structuredBody" ordered="false"
         eType="#//StructuredBody" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActRelationshipHasComponent"
-        defaultValueLiteral="COMP"/>
+        defaultValueLiteral="COMP" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextConductionInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="true"/>
@@ -1317,13 +1367,14 @@
         eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//CS"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClass"
-        defaultValueLiteral="DOCBODY"/>
+        defaultValueLiteral="DOCBODY" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StructuredBody">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1343,13 +1394,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" ordered="false"
         lowerBound="1" upperBound="-1" eType="#//Component3" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClass"
-        defaultValueLiteral="DOCBODY"/>
+        defaultValueLiteral="DOCBODY" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component3">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1363,10 +1415,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="section" ordered="false"
         lowerBound="1" eType="#//Section" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActRelationshipHasComponent"
-        defaultValueLiteral="COMP"/>
+        defaultValueLiteral="COMP" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextConductionInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="true"/>
@@ -1644,13 +1697,14 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClass"
-        defaultValueLiteral="DOCSECT"/>
+        defaultValueLiteral="DOCSECT" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StrucDocText">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -1691,13 +1745,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="relatedSubject" ordered="false"
         lowerBound="1" eType="#//RelatedSubject" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationTargetSubject"
-        defaultValueLiteral="SBJ"/>
+        defaultValueLiteral="SBJ" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextControlCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ContextControl"
-        defaultValueLiteral="OP"/>
+        defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RelatedSubject">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1719,10 +1774,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="subjectPerson" ordered="false"
         eType="#//SubjectPerson" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentSubject"
-        defaultValueLiteral="PRS"/>
+        defaultValueLiteral="PRS" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SubjectPerson">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -1743,13 +1799,14 @@
         eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//TS"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityClass"
-        defaultValueLiteral="PSN"/>
+        defaultValueLiteral="PSN" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="determinerCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityDeterminer"
-        defaultValueLiteral="INSTANCE"/>
+        defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entry">
     <eOperations name="clinicalStatement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1802,10 +1859,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="supply" ordered="false"
         eType="#//Supply" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActRelationshipEntry"
-        defaultValueLiteral="COMP"/>
+        defaultValueLiteral="COMP" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextConductionInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="true"/>
@@ -2068,11 +2126,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" ordered="false"
         upperBound="-1" eType="#//Precondition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActClassDocumentEntryAct"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActClassDocumentEntryAct"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentActMood"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentActMood"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="negationInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
   </eClassifiers>
@@ -2088,10 +2149,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="specimenRole" ordered="false"
         lowerBound="1" eType="#//SpecimenRole" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
-        defaultValueLiteral="SPC"/>
+        defaultValueLiteral="SPC" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpecimenRole">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2108,10 +2170,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="specimenPlayingEntity"
         ordered="false" eType="#//PlayingEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClassSpecimen"
-        defaultValueLiteral="SPEC"/>
+        defaultValueLiteral="SPEC" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PlayingEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2133,13 +2196,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="desc" ordered="false" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//ED"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityClassRoot"
-        defaultValueLiteral="ENT"/>
+        defaultValueLiteral="ENT" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="determinerCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityDeterminer"
-        defaultValueLiteral="INSTANCE"/>
+        defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Performer2">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2158,10 +2222,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignedEntity" ordered="false"
         lowerBound="1" eType="#//AssignedEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationPhysicalPerformer"
-        defaultValueLiteral="PRF"/>
+        defaultValueLiteral="PRF" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Participant2">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2180,12 +2245,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="participantRole" ordered="false"
         lowerBound="1" eType="#//ParticipantRole" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextControlCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ContextControl"
-        defaultValueLiteral="OP"/>
+        defaultValueLiteral="OP" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParticipantRole">
     <eOperations name="playingEntityChoice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -2236,10 +2303,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="scopingEntity" ordered="false"
         eType="#//Entity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClassRoot"
-        defaultValueLiteral="ROL"/>
+        defaultValueLiteral="ROL" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Device">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2259,13 +2327,14 @@
         eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//SC"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityClassDevice"
-        defaultValueLiteral="DEV"/>
+        defaultValueLiteral="DEV" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="determinerCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityDeterminer"
-        defaultValueLiteral="INSTANCE"/>
+        defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2284,13 +2353,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="desc" ordered="false" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//ED"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityClassRoot"
-        defaultValueLiteral="ENT"/>
+        defaultValueLiteral="ENT" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="determinerCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityDeterminer"
-        defaultValueLiteral="INSTANCE"/>
+        defaultValueLiteral="INSTANCE" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntryRelationship">
     <eOperations name="clinicalStatement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -2349,9 +2419,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="supply" ordered="false"
         eType="#//Supply" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActRelationshipEntryRelationship"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActRelationshipEntryRelationship"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inversionInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextConductionInd" ordered="false"
@@ -2613,11 +2685,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" ordered="false"
         upperBound="-1" eType="#//Precondition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClass"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClass"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentEncounterMood"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentEncounterMood"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Reference">
     <eOperations name="externalActChoice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -2663,9 +2738,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="externalDocument" ordered="false"
         eType="#//ExternalDocument" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActRelationshipExternalReference"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActRelationshipExternalReference"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalAct">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2684,13 +2761,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" ordered="false" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//ED"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassRoot"
-        defaultValueLiteral="ACT"/>
+        defaultValueLiteral="ACT" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalObservation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2709,13 +2787,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" ordered="false" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//ED"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassObservation"
-        defaultValueLiteral="OBS"/>
+        defaultValueLiteral="OBS" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalProcedure">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2734,13 +2813,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" ordered="false" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//ED"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClass"
-        defaultValueLiteral="PROC"/>
+        defaultValueLiteral="PROC" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalDocument">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2765,13 +2845,14 @@
         eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//INT"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassDocument"
-        defaultValueLiteral="DOC"/>
+        defaultValueLiteral="DOC" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Precondition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2785,10 +2866,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="criterion" ordered="false"
         lowerBound="1" eType="#//Criterion" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActRelationshipType"
-        defaultValueLiteral="PRCN"/>
+        defaultValueLiteral="PRCN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Criterion">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2807,13 +2889,14 @@
         eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//ANY"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassObservation"
-        defaultValueLiteral="OBS"/>
+        defaultValueLiteral="OBS" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN.CRT"/>
+        defaultValueLiteral="EVN.CRT" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Observation">
     <eOperations name="addAct" ordered="false" lowerBound="1">
@@ -3093,11 +3176,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="referenceRange" ordered="false"
         upperBound="-1" eType="#//ReferenceRange" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassObservation"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassObservation"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActMoodDocumentObservation"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActMoodDocumentObservation"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="negationInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
   </eClassifiers>
@@ -3113,10 +3199,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="observationRange" ordered="false"
         lowerBound="1" eType="#//ObservationRange" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActRelationshipType"
-        defaultValueLiteral="REFV"/>
+        defaultValueLiteral="REFV" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObservationRange">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -3138,13 +3225,14 @@
         eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//CE"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassObservation"
-        defaultValueLiteral="OBS"/>
+        defaultValueLiteral="OBS" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN.CRT"/>
+        defaultValueLiteral="EVN.CRT" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObservationMedia">
     <eOperations name="addAct" ordered="false" lowerBound="1">
@@ -3389,11 +3477,14 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassObservation"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassObservation"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Organizer">
     <eOperations name="addAct" ordered="false" lowerBound="1">
@@ -3644,11 +3735,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" ordered="false"
         upperBound="-1" eType="#//Component4" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActClassDocumentEntryOrganizer"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActClassDocumentEntryOrganizer"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component4">
     <eOperations name="clinicalStatement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -3707,10 +3801,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="supply" ordered="false"
         eType="#//Supply" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActRelationshipHasComponent"
-        defaultValueLiteral="COMP"/>
+        defaultValueLiteral="COMP" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextConductionInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="true"/>
@@ -3981,11 +4076,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" ordered="false"
         upperBound="-1" eType="#//Precondition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClass"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClass"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentProcedureMood"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentProcedureMood"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="negationInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
   </eClassifiers>
@@ -4242,13 +4340,14 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClass"
-        defaultValueLiteral="ROIOVL"/>
+        defaultValueLiteral="ROIOVL" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
         lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActMood"
-        defaultValueLiteral="EVN"/>
+        defaultValueLiteral="EVN" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RegionOfInterestValue" eSuperTypes="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//INT">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unsorted" ordered="false"
@@ -4533,12 +4632,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" ordered="false"
         upperBound="-1" eType="#//Precondition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClass"
-        defaultValueLiteral="SBADM"/>
+        defaultValueLiteral="SBADM" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentSubstanceMood"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentSubstanceMood"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="negationInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
   </eClassifiers>
@@ -4554,10 +4655,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="manufacturedProduct" ordered="false"
         lowerBound="1" eType="#//ManufacturedProduct" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
-        defaultValueLiteral="CSM"/>
+        defaultValueLiteral="CSM" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ManufacturedProduct">
     <eOperations name="manufacturedDrugOrOtherMaterial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -4600,10 +4702,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="manufacturerOrganization"
         ordered="false" eType="#//Organization" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//RoleClassManufacturedProduct"
-        defaultValueLiteral="MANU"/>
+        defaultValueLiteral="MANU" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LabeledDrug">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -4619,13 +4722,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" ordered="false" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//EN"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityClassManufacturedMaterial"
-        defaultValueLiteral="MMAT"/>
+        defaultValueLiteral="MMAT" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="determinerCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityDeterminerDetermined"
-        defaultValueLiteral="KIND"/>
+        defaultValueLiteral="KIND" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Material">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -4644,13 +4748,14 @@
         eType="ecore:EClass ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.ecore#//ST"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityClassManufacturedMaterial"
-        defaultValueLiteral="MMAT"/>
+        defaultValueLiteral="MMAT" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="determinerCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityDeterminerDetermined"
-        defaultValueLiteral="KIND"/>
+        defaultValueLiteral="KIND" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Supply">
     <eOperations name="addAct" ordered="false" lowerBound="1">
@@ -4920,12 +5025,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" ordered="false"
         upperBound="-1" eType="#//Precondition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classCode" ordered="false"
         lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActClassSupply"
-        defaultValueLiteral="SPLY"/>
+        defaultValueLiteral="SPLY" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moodCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentSubstanceMood"/>
+        lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentSubstanceMood"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Product">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -4939,10 +5046,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="manufacturedProduct" ordered="false"
         lowerBound="1" eType="#//ManufacturedProduct" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ParticipationType"
-        defaultValueLiteral="PRD"/>
+        defaultValueLiteral="PRD" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component5">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -4956,10 +5064,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="section" ordered="false"
         lowerBound="1" eType="#//Section" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
-        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"/>
+        eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//NullFlavor"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//ActRelationshipHasComponent"
-        defaultValueLiteral="COMP"/>
+        defaultValueLiteral="COMP" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextConductionInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="true"/>

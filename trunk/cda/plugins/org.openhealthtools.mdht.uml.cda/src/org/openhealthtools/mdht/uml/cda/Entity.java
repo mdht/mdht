@@ -187,9 +187,11 @@ public interface Entity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntity_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -200,10 +202,35 @@ public interface Entity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Entity#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Entity#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Class Code</b></em>' attribute.
@@ -217,9 +244,11 @@ public interface Entity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #setClassCode(EntityClassRoot)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntity_ClassCode()
-	 * @model default="ENT" ordered="false"
+	 * @model default="ENT" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	EntityClassRoot getClassCode();
@@ -230,10 +259,35 @@ public interface Entity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #getClassCode()
 	 * @generated
 	 */
 	void setClassCode(EntityClassRoot value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Entity#getClassCode <em>Class Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(EntityClassRoot)
+	 * @generated
+	 */
+	void unsetClassCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Entity#getClassCode <em>Class Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Class Code</em>' attribute is set.
+	 * @see #unsetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(EntityClassRoot)
+	 * @generated
+	 */
+	boolean isSetClassCode();
 
 	/**
 	 * Returns the value of the '<em><b>Determiner Code</b></em>' attribute.
@@ -247,9 +301,11 @@ public interface Entity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Determiner Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer
+	 * @see #isSetDeterminerCode()
+	 * @see #unsetDeterminerCode()
 	 * @see #setDeterminerCode(EntityDeterminer)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntity_DeterminerCode()
-	 * @model default="INSTANCE" ordered="false"
+	 * @model default="INSTANCE" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	EntityDeterminer getDeterminerCode();
@@ -260,9 +316,34 @@ public interface Entity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Determiner Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer
+	 * @see #isSetDeterminerCode()
+	 * @see #unsetDeterminerCode()
 	 * @see #getDeterminerCode()
 	 * @generated
 	 */
 	void setDeterminerCode(EntityDeterminer value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Entity#getDeterminerCode <em>Determiner Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetDeterminerCode()
+	 * @see #getDeterminerCode()
+	 * @see #setDeterminerCode(EntityDeterminer)
+	 * @generated
+	 */
+	void unsetDeterminerCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Entity#getDeterminerCode <em>Determiner Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Determiner Code</em>' attribute is set.
+	 * @see #unsetDeterminerCode()
+	 * @see #getDeterminerCode()
+	 * @see #setDeterminerCode(EntityDeterminer)
+	 * @generated
+	 */
+	boolean isSetDeterminerCode();
 
 } // Entity

@@ -141,9 +141,11 @@ public interface RecordTarget extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRecordTarget_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -154,10 +156,35 @@ public interface RecordTarget extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.RecordTarget#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.RecordTarget#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Type Code</b></em>' attribute.
@@ -171,9 +198,11 @@ public interface RecordTarget extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType
+	 * @see #isSetTypeCode()
+	 * @see #unsetTypeCode()
 	 * @see #setTypeCode(ParticipationType)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRecordTarget_TypeCode()
-	 * @model default="RCT" ordered="false"
+	 * @model default="RCT" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	ParticipationType getTypeCode();
@@ -184,10 +213,35 @@ public interface RecordTarget extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType
+	 * @see #isSetTypeCode()
+	 * @see #unsetTypeCode()
 	 * @see #getTypeCode()
 	 * @generated
 	 */
 	void setTypeCode(ParticipationType value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.RecordTarget#getTypeCode <em>Type Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetTypeCode()
+	 * @see #getTypeCode()
+	 * @see #setTypeCode(ParticipationType)
+	 * @generated
+	 */
+	void unsetTypeCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.RecordTarget#getTypeCode <em>Type Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Type Code</em>' attribute is set.
+	 * @see #unsetTypeCode()
+	 * @see #getTypeCode()
+	 * @see #setTypeCode(ParticipationType)
+	 * @generated
+	 */
+	boolean isSetTypeCode();
 
 	/**
 	 * Returns the value of the '<em><b>Context Control Code</b></em>' attribute.
@@ -201,9 +255,11 @@ public interface RecordTarget extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Context Control Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ContextControl
+	 * @see #isSetContextControlCode()
+	 * @see #unsetContextControlCode()
 	 * @see #setContextControlCode(ContextControl)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRecordTarget_ContextControlCode()
-	 * @model default="OP" ordered="false"
+	 * @model default="OP" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	ContextControl getContextControlCode();
@@ -214,9 +270,34 @@ public interface RecordTarget extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Context Control Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ContextControl
+	 * @see #isSetContextControlCode()
+	 * @see #unsetContextControlCode()
 	 * @see #getContextControlCode()
 	 * @generated
 	 */
 	void setContextControlCode(ContextControl value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.RecordTarget#getContextControlCode <em>Context Control Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetContextControlCode()
+	 * @see #getContextControlCode()
+	 * @see #setContextControlCode(ContextControl)
+	 * @generated
+	 */
+	void unsetContextControlCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.RecordTarget#getContextControlCode <em>Context Control Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Context Control Code</em>' attribute is set.
+	 * @see #unsetContextControlCode()
+	 * @see #getContextControlCode()
+	 * @see #setContextControlCode(ContextControl)
+	 * @generated
+	 */
+	boolean isSetContextControlCode();
 
 } // RecordTarget

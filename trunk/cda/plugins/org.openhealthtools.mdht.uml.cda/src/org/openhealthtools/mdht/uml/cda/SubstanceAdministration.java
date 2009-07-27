@@ -633,9 +633,11 @@ public interface SubstanceAdministration extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -646,10 +648,35 @@ public interface SubstanceAdministration extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Class Code</b></em>' attribute.
@@ -663,9 +690,11 @@ public interface SubstanceAdministration extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClass
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #setClassCode(ActClass)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_ClassCode()
-	 * @model default="SBADM" required="true" ordered="false"
+	 * @model default="SBADM" unsettable="true" required="true" ordered="false"
 	 * @generated
 	 */
 	ActClass getClassCode();
@@ -676,10 +705,35 @@ public interface SubstanceAdministration extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClass
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #getClassCode()
 	 * @generated
 	 */
 	void setClassCode(ActClass value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getClassCode <em>Class Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(ActClass)
+	 * @generated
+	 */
+	void unsetClassCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getClassCode <em>Class Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Class Code</em>' attribute is set.
+	 * @see #unsetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(ActClass)
+	 * @generated
+	 */
+	boolean isSetClassCode();
 
 	/**
 	 * Returns the value of the '<em><b>Mood Code</b></em>' attribute.
@@ -692,9 +746,11 @@ public interface SubstanceAdministration extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mood Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood
+	 * @see #isSetMoodCode()
+	 * @see #unsetMoodCode()
 	 * @see #setMoodCode(x_DocumentSubstanceMood)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_MoodCode()
-	 * @model required="true" ordered="false"
+	 * @model unsettable="true" required="true" ordered="false"
 	 * @generated
 	 */
 	x_DocumentSubstanceMood getMoodCode();
@@ -705,10 +761,35 @@ public interface SubstanceAdministration extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Mood Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood
+	 * @see #isSetMoodCode()
+	 * @see #unsetMoodCode()
 	 * @see #getMoodCode()
 	 * @generated
 	 */
 	void setMoodCode(x_DocumentSubstanceMood value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getMoodCode <em>Mood Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetMoodCode()
+	 * @see #getMoodCode()
+	 * @see #setMoodCode(x_DocumentSubstanceMood)
+	 * @generated
+	 */
+	void unsetMoodCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getMoodCode <em>Mood Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Mood Code</em>' attribute is set.
+	 * @see #unsetMoodCode()
+	 * @see #getMoodCode()
+	 * @see #setMoodCode(x_DocumentSubstanceMood)
+	 * @generated
+	 */
+	boolean isSetMoodCode();
 
 	/**
 	 * Returns the value of the '<em><b>Negation Ind</b></em>' attribute.

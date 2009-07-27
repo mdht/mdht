@@ -139,9 +139,11 @@ public interface Location extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLocation_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -152,10 +154,35 @@ public interface Location extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Location#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Location#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Type Code</b></em>' attribute.
@@ -169,9 +196,11 @@ public interface Location extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ParticipationTargetLocation
+	 * @see #isSetTypeCode()
+	 * @see #unsetTypeCode()
 	 * @see #setTypeCode(ParticipationTargetLocation)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLocation_TypeCode()
-	 * @model default="LOC" ordered="false"
+	 * @model default="LOC" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	ParticipationTargetLocation getTypeCode();
@@ -182,9 +211,34 @@ public interface Location extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ParticipationTargetLocation
+	 * @see #isSetTypeCode()
+	 * @see #unsetTypeCode()
 	 * @see #getTypeCode()
 	 * @generated
 	 */
 	void setTypeCode(ParticipationTargetLocation value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Location#getTypeCode <em>Type Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetTypeCode()
+	 * @see #getTypeCode()
+	 * @see #setTypeCode(ParticipationTargetLocation)
+	 * @generated
+	 */
+	void unsetTypeCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Location#getTypeCode <em>Type Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Type Code</em>' attribute is set.
+	 * @see #unsetTypeCode()
+	 * @see #getTypeCode()
+	 * @see #setTypeCode(ParticipationTargetLocation)
+	 * @generated
+	 */
+	boolean isSetTypeCode();
 
 } // Location

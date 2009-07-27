@@ -359,9 +359,11 @@ public interface Entry extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -372,10 +374,35 @@ public interface Entry extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Entry#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Entry#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Type Code</b></em>' attribute.
@@ -389,9 +416,11 @@ public interface Entry extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry
+	 * @see #isSetTypeCode()
+	 * @see #unsetTypeCode()
 	 * @see #setTypeCode(x_ActRelationshipEntry)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_TypeCode()
-	 * @model default="COMP" ordered="false"
+	 * @model default="COMP" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	x_ActRelationshipEntry getTypeCode();
@@ -402,10 +431,35 @@ public interface Entry extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry
+	 * @see #isSetTypeCode()
+	 * @see #unsetTypeCode()
 	 * @see #getTypeCode()
 	 * @generated
 	 */
 	void setTypeCode(x_ActRelationshipEntry value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Entry#getTypeCode <em>Type Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetTypeCode()
+	 * @see #getTypeCode()
+	 * @see #setTypeCode(x_ActRelationshipEntry)
+	 * @generated
+	 */
+	void unsetTypeCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Entry#getTypeCode <em>Type Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Type Code</em>' attribute is set.
+	 * @see #unsetTypeCode()
+	 * @see #getTypeCode()
+	 * @see #setTypeCode(x_ActRelationshipEntry)
+	 * @generated
+	 */
+	boolean isSetTypeCode();
 
 	/**
 	 * Returns the value of the '<em><b>Context Conduction Ind</b></em>' attribute.

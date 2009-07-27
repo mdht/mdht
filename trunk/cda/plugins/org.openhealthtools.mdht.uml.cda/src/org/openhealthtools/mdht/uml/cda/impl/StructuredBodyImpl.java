@@ -144,6 +144,15 @@ public class StructuredBodyImpl extends EObjectImpl implements StructuredBody {
 	protected NullFlavor nullFlavor = NULL_FLAVOR_EDEFAULT;
 
 	/**
+	 * This is true if the Null Flavor attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean nullFlavorESet;
+
+	/**
 	 * The default value of the '{@link #getClassCode() <em>Class Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,6 +173,15 @@ public class StructuredBodyImpl extends EObjectImpl implements StructuredBody {
 	protected ActClass classCode = CLASS_CODE_EDEFAULT;
 
 	/**
+	 * This is true if the Class Code attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean classCodeESet;
+
+	/**
 	 * The default value of the '{@link #getMoodCode() <em>Mood Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,6 +200,15 @@ public class StructuredBodyImpl extends EObjectImpl implements StructuredBody {
 	 * @ordered
 	 */
 	protected ActMood moodCode = MOOD_CODE_EDEFAULT;
+
+	/**
+	 * This is true if the Mood Code attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean moodCodeESet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -384,8 +411,33 @@ public class StructuredBodyImpl extends EObjectImpl implements StructuredBody {
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
 		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		boolean oldNullFlavorESet = nullFlavorESet;
+		nullFlavorESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.STRUCTURED_BODY__NULL_FLAVOR, oldNullFlavor, nullFlavor));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.STRUCTURED_BODY__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetNullFlavor() {
+		NullFlavor oldNullFlavor = nullFlavor;
+		boolean oldNullFlavorESet = nullFlavorESet;
+		nullFlavor = NULL_FLAVOR_EDEFAULT;
+		nullFlavorESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.STRUCTURED_BODY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetNullFlavor() {
+		return nullFlavorESet;
 	}
 
 	/**
@@ -405,8 +457,33 @@ public class StructuredBodyImpl extends EObjectImpl implements StructuredBody {
 	public void setClassCode(ActClass newClassCode) {
 		ActClass oldClassCode = classCode;
 		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		boolean oldClassCodeESet = classCodeESet;
+		classCodeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.STRUCTURED_BODY__CLASS_CODE, oldClassCode, classCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.STRUCTURED_BODY__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetClassCode() {
+		ActClass oldClassCode = classCode;
+		boolean oldClassCodeESet = classCodeESet;
+		classCode = CLASS_CODE_EDEFAULT;
+		classCodeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.STRUCTURED_BODY__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetClassCode() {
+		return classCodeESet;
 	}
 
 	/**
@@ -426,8 +503,33 @@ public class StructuredBodyImpl extends EObjectImpl implements StructuredBody {
 	public void setMoodCode(ActMood newMoodCode) {
 		ActMood oldMoodCode = moodCode;
 		moodCode = newMoodCode == null ? MOOD_CODE_EDEFAULT : newMoodCode;
+		boolean oldMoodCodeESet = moodCodeESet;
+		moodCodeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.STRUCTURED_BODY__MOOD_CODE, oldMoodCode, moodCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.STRUCTURED_BODY__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetMoodCode() {
+		ActMood oldMoodCode = moodCode;
+		boolean oldMoodCodeESet = moodCodeESet;
+		moodCode = MOOD_CODE_EDEFAULT;
+		moodCodeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.STRUCTURED_BODY__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetMoodCode() {
+		return moodCodeESet;
 	}
 
 	/**
@@ -554,13 +656,13 @@ public class StructuredBodyImpl extends EObjectImpl implements StructuredBody {
 				getComponent().clear();
 				return;
 			case CDAPackage.STRUCTURED_BODY__NULL_FLAVOR:
-				setNullFlavor(NULL_FLAVOR_EDEFAULT);
+				unsetNullFlavor();
 				return;
 			case CDAPackage.STRUCTURED_BODY__CLASS_CODE:
-				setClassCode(CLASS_CODE_EDEFAULT);
+				unsetClassCode();
 				return;
 			case CDAPackage.STRUCTURED_BODY__MOOD_CODE:
-				setMoodCode(MOOD_CODE_EDEFAULT);
+				unsetMoodCode();
 				return;
 		}
 		super.eUnset(featureID);
@@ -587,11 +689,11 @@ public class StructuredBodyImpl extends EObjectImpl implements StructuredBody {
 			case CDAPackage.STRUCTURED_BODY__COMPONENT:
 				return component != null && !component.isEmpty();
 			case CDAPackage.STRUCTURED_BODY__NULL_FLAVOR:
-				return nullFlavor != NULL_FLAVOR_EDEFAULT;
+				return isSetNullFlavor();
 			case CDAPackage.STRUCTURED_BODY__CLASS_CODE:
-				return classCode != CLASS_CODE_EDEFAULT;
+				return isSetClassCode();
 			case CDAPackage.STRUCTURED_BODY__MOOD_CODE:
-				return moodCode != MOOD_CODE_EDEFAULT;
+				return isSetMoodCode();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -607,11 +709,11 @@ public class StructuredBodyImpl extends EObjectImpl implements StructuredBody {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		result.append(nullFlavor);
+		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
 		result.append(", classCode: ");
-		result.append(classCode);
+		if (classCodeESet) result.append(classCode); else result.append("<unset>");
 		result.append(", moodCode: ");
-		result.append(moodCode);
+		if (moodCodeESet) result.append(moodCode); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

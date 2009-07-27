@@ -157,6 +157,15 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	protected NullFlavor nullFlavor = NULL_FLAVOR_EDEFAULT;
 
 	/**
+	 * This is true if the Null Flavor attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean nullFlavorESet;
+
+	/**
 	 * The default value of the '{@link #getClassCode() <em>Class Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -177,6 +186,15 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	protected EntityClassRoot classCode = CLASS_CODE_EDEFAULT;
 
 	/**
+	 * This is true if the Class Code attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean classCodeESet;
+
+	/**
 	 * The default value of the '{@link #getDeterminerCode() <em>Determiner Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -195,6 +213,15 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	 * @ordered
 	 */
 	protected EntityDeterminer determinerCode = DETERMINER_CODE_EDEFAULT;
+
+	/**
+	 * This is true if the Determiner Code attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean determinerCodeESet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -409,8 +436,33 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	public void setNullFlavor(NullFlavor newNullFlavor) {
 		NullFlavor oldNullFlavor = nullFlavor;
 		nullFlavor = newNullFlavor == null ? NULL_FLAVOR_EDEFAULT : newNullFlavor;
+		boolean oldNullFlavorESet = nullFlavorESet;
+		nullFlavorESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__NULL_FLAVOR, oldNullFlavor, nullFlavor));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__NULL_FLAVOR, oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetNullFlavor() {
+		NullFlavor oldNullFlavor = nullFlavor;
+		boolean oldNullFlavorESet = nullFlavorESet;
+		nullFlavor = NULL_FLAVOR_EDEFAULT;
+		nullFlavorESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PLAYING_ENTITY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetNullFlavor() {
+		return nullFlavorESet;
 	}
 
 	/**
@@ -430,8 +482,33 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	public void setClassCode(EntityClassRoot newClassCode) {
 		EntityClassRoot oldClassCode = classCode;
 		classCode = newClassCode == null ? CLASS_CODE_EDEFAULT : newClassCode;
+		boolean oldClassCodeESet = classCodeESet;
+		classCodeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__CLASS_CODE, oldClassCode, classCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetClassCode() {
+		EntityClassRoot oldClassCode = classCode;
+		boolean oldClassCodeESet = classCodeESet;
+		classCode = CLASS_CODE_EDEFAULT;
+		classCodeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PLAYING_ENTITY__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetClassCode() {
+		return classCodeESet;
 	}
 
 	/**
@@ -451,8 +528,33 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	public void setDeterminerCode(EntityDeterminer newDeterminerCode) {
 		EntityDeterminer oldDeterminerCode = determinerCode;
 		determinerCode = newDeterminerCode == null ? DETERMINER_CODE_EDEFAULT : newDeterminerCode;
+		boolean oldDeterminerCodeESet = determinerCodeESet;
+		determinerCodeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__DETERMINER_CODE, oldDeterminerCode, determinerCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__DETERMINER_CODE, oldDeterminerCode, determinerCode, !oldDeterminerCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetDeterminerCode() {
+		EntityDeterminer oldDeterminerCode = determinerCode;
+		boolean oldDeterminerCodeESet = determinerCodeESet;
+		determinerCode = DETERMINER_CODE_EDEFAULT;
+		determinerCodeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PLAYING_ENTITY__DETERMINER_CODE, oldDeterminerCode, DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetDeterminerCode() {
+		return determinerCodeESet;
 	}
 
 	/**
@@ -590,13 +692,13 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 				setDesc((ED)null);
 				return;
 			case CDAPackage.PLAYING_ENTITY__NULL_FLAVOR:
-				setNullFlavor(NULL_FLAVOR_EDEFAULT);
+				unsetNullFlavor();
 				return;
 			case CDAPackage.PLAYING_ENTITY__CLASS_CODE:
-				setClassCode(CLASS_CODE_EDEFAULT);
+				unsetClassCode();
 				return;
 			case CDAPackage.PLAYING_ENTITY__DETERMINER_CODE:
-				setDeterminerCode(DETERMINER_CODE_EDEFAULT);
+				unsetDeterminerCode();
 				return;
 		}
 		super.eUnset(featureID);
@@ -625,11 +727,11 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 			case CDAPackage.PLAYING_ENTITY__DESC:
 				return desc != null;
 			case CDAPackage.PLAYING_ENTITY__NULL_FLAVOR:
-				return nullFlavor != NULL_FLAVOR_EDEFAULT;
+				return isSetNullFlavor();
 			case CDAPackage.PLAYING_ENTITY__CLASS_CODE:
-				return classCode != CLASS_CODE_EDEFAULT;
+				return isSetClassCode();
 			case CDAPackage.PLAYING_ENTITY__DETERMINER_CODE:
-				return determinerCode != DETERMINER_CODE_EDEFAULT;
+				return isSetDeterminerCode();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -645,11 +747,11 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullFlavor: ");
-		result.append(nullFlavor);
+		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
 		result.append(", classCode: ");
-		result.append(classCode);
+		if (classCodeESet) result.append(classCode); else result.append("<unset>");
 		result.append(", determinerCode: ");
-		result.append(determinerCode);
+		if (determinerCodeESet) result.append(determinerCode); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

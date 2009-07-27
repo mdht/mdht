@@ -187,9 +187,11 @@ public interface ExternalObservation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getExternalObservation_NullFlavor()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -200,10 +202,35 @@ public interface ExternalObservation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Null Flavor</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor
+	 * @see #isSetNullFlavor()
+	 * @see #unsetNullFlavor()
 	 * @see #getNullFlavor()
 	 * @generated
 	 */
 	void setNullFlavor(NullFlavor value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.ExternalObservation#getNullFlavor <em>Null Flavor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	void unsetNullFlavor();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.ExternalObservation#getNullFlavor <em>Null Flavor</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Null Flavor</em>' attribute is set.
+	 * @see #unsetNullFlavor()
+	 * @see #getNullFlavor()
+	 * @see #setNullFlavor(NullFlavor)
+	 * @generated
+	 */
+	boolean isSetNullFlavor();
 
 	/**
 	 * Returns the value of the '<em><b>Class Code</b></em>' attribute.
@@ -217,9 +244,11 @@ public interface ExternalObservation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #setClassCode(ActClassObservation)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getExternalObservation_ClassCode()
-	 * @model default="OBS" ordered="false"
+	 * @model default="OBS" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	ActClassObservation getClassCode();
@@ -230,10 +259,35 @@ public interface ExternalObservation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Class Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation
+	 * @see #isSetClassCode()
+	 * @see #unsetClassCode()
 	 * @see #getClassCode()
 	 * @generated
 	 */
 	void setClassCode(ActClassObservation value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.ExternalObservation#getClassCode <em>Class Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(ActClassObservation)
+	 * @generated
+	 */
+	void unsetClassCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.ExternalObservation#getClassCode <em>Class Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Class Code</em>' attribute is set.
+	 * @see #unsetClassCode()
+	 * @see #getClassCode()
+	 * @see #setClassCode(ActClassObservation)
+	 * @generated
+	 */
+	boolean isSetClassCode();
 
 	/**
 	 * Returns the value of the '<em><b>Mood Code</b></em>' attribute.
@@ -247,9 +301,11 @@ public interface ExternalObservation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mood Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActMood
+	 * @see #isSetMoodCode()
+	 * @see #unsetMoodCode()
 	 * @see #setMoodCode(ActMood)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getExternalObservation_MoodCode()
-	 * @model default="EVN" ordered="false"
+	 * @model default="EVN" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	ActMood getMoodCode();
@@ -260,9 +316,34 @@ public interface ExternalObservation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Mood Code</em>' attribute.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.ActMood
+	 * @see #isSetMoodCode()
+	 * @see #unsetMoodCode()
 	 * @see #getMoodCode()
 	 * @generated
 	 */
 	void setMoodCode(ActMood value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.ExternalObservation#getMoodCode <em>Mood Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetMoodCode()
+	 * @see #getMoodCode()
+	 * @see #setMoodCode(ActMood)
+	 * @generated
+	 */
+	void unsetMoodCode();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.ExternalObservation#getMoodCode <em>Mood Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Mood Code</em>' attribute is set.
+	 * @see #unsetMoodCode()
+	 * @see #getMoodCode()
+	 * @see #setMoodCode(ActMood)
+	 * @generated
+	 */
+	boolean isSetMoodCode();
 
 } // ExternalObservation
