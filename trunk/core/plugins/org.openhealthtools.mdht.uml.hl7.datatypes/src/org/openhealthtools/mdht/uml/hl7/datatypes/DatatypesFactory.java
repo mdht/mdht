@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.hl7.datatypes;
 import org.eclipse.emf.ecore.EFactory;
 import org.openhealthtools.mdht.uml.hl7.vocab.AddressPartType;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartType;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,7 +91,8 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	CD createCD();
-
+	CD createCD(String code, String codeSystem, String codeSystemName, String displayName);
+	
 	/**
 	 * Returns a new object of class '<em>CR</em>'.
 	 * <!-- begin-user-doc -->
@@ -130,6 +132,7 @@ public interface DatatypesFactory extends EFactory {
 	II createII();
 	II createII(String root);
 	II createII(String root, String extension);
+	II createII(NullFlavor nullFlavor);
 	
 	/**
 	 * Returns a new object of class '<em>BL</em>'.
@@ -187,7 +190,9 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	IVL_TS createIVL_TS();
-
+	IVL_TS createIVL_TS(String low, String high);
+	IVL_TS createIVL_TS(String value);
+	
 	/**
 	 * Returns a new object of class '<em>IVXB TS</em>'.
 	 * <!-- begin-user-doc -->
@@ -205,6 +210,7 @@ public interface DatatypesFactory extends EFactory {
 	 * @generated
 	 */
 	PQ createPQ();
+	PQ createPQ(double value, String unit);
 
 	/**
 	 * Returns a new object of class '<em>PQR</em>'.

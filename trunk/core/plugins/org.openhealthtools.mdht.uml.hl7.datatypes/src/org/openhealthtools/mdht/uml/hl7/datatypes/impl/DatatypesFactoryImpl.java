@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.openhealthtools.mdht.uml.hl7.datatypes.*;
 import org.openhealthtools.mdht.uml.hl7.vocab.AddressPartType;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartType;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 /**
  * <!-- begin-user-doc -->
@@ -227,6 +228,15 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		return cd;
 	}
 
+	public CD createCD(String code, String codeSystem, String codeSystemName, String displayName) {
+		CD cd = createCD();
+		cd.setCode(code);
+		cd.setCodeSystem(codeSystem);
+		cd.setCodeSystemName(codeSystemName);
+		cd.setDisplayName(displayName);
+		return cd;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -290,6 +300,12 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	public II createII(String root, String extension) {
 		II ii = createII(root);
 		ii.setExtension(extension);
+		return ii;
+	}
+	
+	public II createII(NullFlavor nullFlavor) {
+		II ii = createII();
+		ii.setNullFlavor(nullFlavor);
 		return ii;
 	}
 	
@@ -368,7 +384,28 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public IVL_TS createIVL_TS() {
-		IVL_TSImpl ivL_TS = new IVL_TSImpl();
+		IVL_TSImpl ivl_ts = new IVL_TSImpl();
+		return ivl_ts;
+	}
+	
+	public IVL_TS createIVL_TS(String high, String low) {
+		IVL_TS ivl_ts = createIVL_TS();
+		if (low != null) {
+			IVXB_TS lower = createIVXB_TS();
+			lower.setValue(low);
+			ivl_ts.setLow(lower);
+		}
+		if (high != null) {
+			IVXB_TS higher = createIVXB_TS();
+			higher.setValue(high);
+			ivl_ts.setHigh(higher);
+		}
+		return ivl_ts;
+	}
+	
+	public IVL_TS createIVL_TS(String value) {
+		IVL_TS ivL_TS = createIVL_TS();
+		ivL_TS.setValue(value);
 		return ivL_TS;
 	}
 
@@ -389,6 +426,13 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 */
 	public PQ createPQ() {
 		PQImpl pq = new PQImpl();
+		return pq;
+	}
+	
+	public PQ createPQ(double value, String unit) {
+		PQ pq = createPQ();
+		pq.setValue(value);
+		pq.setUnit(unit);
 		return pq;
 	}
 
