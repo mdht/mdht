@@ -384,29 +384,29 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public IVL_TS createIVL_TS() {
-		IVL_TSImpl ivl_ts = new IVL_TSImpl();
-		return ivl_ts;
+		IVL_TSImpl ivL_TS = new IVL_TSImpl();
+		return ivL_TS;
 	}
 	
-	public IVL_TS createIVL_TS(String high, String low) {
-		IVL_TS ivl_ts = createIVL_TS();
+	public IVL_TS createIVL_TS(String low, String high) {
+		IVL_TS ivL_TS = createIVL_TS();
 		if (low != null) {
 			IVXB_TS lower = createIVXB_TS();
 			lower.setValue(low);
-			ivl_ts.setLow(lower);
+			ivL_TS.setLow(lower);
 		}
 		if (high != null) {
 			IVXB_TS higher = createIVXB_TS();
 			higher.setValue(high);
-			ivl_ts.setHigh(higher);
+			ivL_TS.setHigh(higher);
 		}
-		return ivl_ts;
+		return ivL_TS;
 	}
 	
 	public IVL_TS createIVL_TS(String value) {
-		IVL_TS ivl_ts = createIVL_TS();
-		ivl_ts.setValue(value);
-		return ivl_ts;
+		IVL_TS ivL_TS = createIVL_TS();
+		ivL_TS.setValue(value);
+		return ivL_TS;
 	}
 
 	/**
