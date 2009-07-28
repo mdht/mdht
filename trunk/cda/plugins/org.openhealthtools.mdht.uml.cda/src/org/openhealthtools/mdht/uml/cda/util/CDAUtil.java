@@ -159,12 +159,12 @@ public class CDAUtil {
 	// iterative breadth-first traversal of diagnostic tree using queue
 	private static void processDiagnostic(Diagnostic diagnostic, ValidationHandler handler) {
 		Queue<Diagnostic> queue = new LinkedList<Diagnostic>();
-		queue.offer(diagnostic);	// root
+		queue.add(diagnostic);	// root
 		while (!queue.isEmpty()) {
 			Diagnostic d = queue.remove();
 			handleDiagnostic(d, handler);	// visit
 			for (Diagnostic childDiagnostic : d.getChildren()) {	// process successors
-				queue.offer(childDiagnostic);
+				queue.add(childDiagnostic);
 			}
 		}
 	}
