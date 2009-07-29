@@ -130,20 +130,20 @@ public class TransformVocabConstraint extends TransformAbstract {
 			body.append(codeSystem);
 			body.append("'");
 		}
-		if (codeSystemName != null && codeSystemName.length() > 0) {
-			body.append(" and ");
-			body.append(selfName);
-			body.append("codeSystemName = '");
-			body.append(codeSystemName);
-			body.append("'");
-		}
-		if (codeSystemVersion != null && codeSystemVersion.length() > 0) {
-			body.append(" and ");
-			body.append(selfName);
-			body.append("codeSystemVersion = '");
-			body.append(codeSystemVersion);
-			body.append("'");
-		}
+//		if (codeSystemName != null && codeSystemName.length() > 0) {
+//			body.append(" and ");
+//			body.append(selfName);
+//			body.append("codeSystemName = '");
+//			body.append(codeSystemName);
+//			body.append("'");
+//		}
+//		if (codeSystemVersion != null && codeSystemVersion.length() > 0) {
+//			body.append(" and ");
+//			body.append(selfName);
+//			body.append("codeSystemVersion = '");
+//			body.append(codeSystemVersion);
+//			body.append("'");
+//		}
 
 		if (body.length() > 0) {
 			OpaqueExpression expression = (OpaqueExpression)constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
