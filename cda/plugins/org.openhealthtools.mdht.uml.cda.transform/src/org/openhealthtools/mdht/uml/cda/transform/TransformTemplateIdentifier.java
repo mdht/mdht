@@ -21,19 +21,17 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 
-public class TransformTemplateIdentifier extends UMLSwitch {
-
-	protected EcoreTransformerOptions transformerOptions;
+public class TransformTemplateIdentifier extends TransformAbstract {
 
 	public TransformTemplateIdentifier(EcoreTransformerOptions options) {
-		transformerOptions = options;
+		super(options);
 	}
 	
 	public Object caseClass(Class umlClass) {
@@ -43,15 +41,14 @@ public class TransformTemplateIdentifier extends UMLSwitch {
 			addConstraint(umlClass, hl7Template);
 			addAnnotation(umlClass, hl7Template);
 			addExtensionPoint(umlClass, hl7Template);
-			addMessage(umlClass, hl7Template);
 		}
 
 		return umlClass;
 	}
 	
 	private void addConstraint(Class umlClass, Stereotype hl7Template) {
-		String name = umlClass.getName() + "_templateId";
-		Constraint constraint = umlClass.createOwnedRule(name, UMLPackage.eINSTANCE.getConstraint());
+		String constraintName = umlClass.getName() + "_templateId";
+		Constraint constraint = umlClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
 		constraint.getConstrainedElements().add(umlClass);
 
 		String templateId = (String) umlClass.getValue(hl7Template, IHDFProfileConstants.HL7_TEMPLATE_ID);
@@ -59,22 +56,21 @@ public class TransformTemplateIdentifier extends UMLSwitch {
 		expression.getLanguages().add("OCL");
 		String body = "self.hasTemplateId('" + templateId + "')";
 		expression.getBodies().add(body);
-		
-		//TODO add error message to plugin.properties
+
+		addValidationError(umlClass, constraintName, null);
 	}
 
 	private void addAnnotation(Class umlClass, Stereotype hl7Template) {
 		String templateId = (String) umlClass.getValue(hl7Template, IHDFProfileConstants.HL7_TEMPLATE_ID);
 		
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(umlClass);
-		annotationsUtil.setAnnotation(umlClass, "templateId.root", templateId);
+		annotationsUtil.setAnnotation("templateId.root", templateId);
 		annotationsUtil.saveAnnotations();
 	}
 	
 	private void addExtensionPoint(Class umlClass, Stereotype hl7Template) {
 		String templateId = (String) umlClass.getValue(hl7Template, IHDFProfileConstants.HL7_TEMPLATE_ID);
 		String nsURI = null;
-		IFile pluginXML = null;
 
 		// get nsURI from the ePackage stereotype
 		org.eclipse.uml2.uml.Package umlPackage = umlClass.getNearestPackage();
@@ -89,9 +85,21 @@ public class TransformTemplateIdentifier extends UMLSwitch {
 			nsURI = "http://www.openhealthtools/" + umlPackage.eResource().getURI().lastSegment();
 			umlPackage.setValue(ePackage, "nsURI", nsURI);
 		}
+
+		IFile pluginXML = findPluginXML(umlClass);
+		
+		if (pluginXML != null && templateId != null) {
+			//insert extension point into plugin.xml
+			PluginXMLUtil pluginUtil = new PluginXMLUtil(pluginXML);
+			pluginUtil.addTemplateExtension(umlClass.getName(), templateId, nsURI);
+		}
+	}
+	
+	private IFile findPluginXML(Element element) {
+		IFile pluginXML = null;
 		
 		// get project file path
-		String modelFilePath = umlClass.eResource().getURI().toFileString();
+		String modelFilePath = element.eResource().getURI().toFileString();
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IPath modelLocation = Path.fromOSString(modelFilePath);
 		IFile[] files = workspace.getRoot().findFilesForLocation(modelLocation);
@@ -107,16 +115,6 @@ public class TransformTemplateIdentifier extends UMLSwitch {
 			}
 		}
 		
-		if (pluginXML != null && templateId != null) {
-			//insert extension point into plugin.xml
-			PluginXMLUtil pluginUtil = new PluginXMLUtil(pluginXML);
-			pluginUtil.addTemplateExtension(umlClass.getName(), templateId, nsURI);
-		}
-	}
-	
-	private void addMessage(Class umlClass, Stereotype hl7Template) {
-		//TODO insert message key=value into plugin.properties
-		
-		// move this to a shared util class
+		return pluginXML;
 	}
 }

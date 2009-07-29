@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.util.UMLSwitch;
+import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 
 public class EcoreTransformer {
 	
@@ -33,11 +34,15 @@ public class EcoreTransformer {
 	}
 	
 	public void transformElement(Element element) {
+		PluginPropertiesUtil propertiesUtil = new PluginPropertiesUtil(element.eResource());
+		transformerOptions.setPluginPropertiesUtil(propertiesUtil);
 
 		UMLSwitch transformTemplateIdentifier = 
 			new TransformTemplateIdentifier(transformerOptions);
 		UMLSwitch transformVocabConstraint = 
 			new TransformVocabConstraint(transformerOptions);
+		UMLSwitch transformPropertyConstraint = 
+			new TransformPropertyConstraint(transformerOptions);
 
 		try {
 			TreeIterator iterator = EcoreUtil.getAllContents(
@@ -47,11 +52,18 @@ public class EcoreTransformer {
 
 				transformTemplateIdentifier.doSwitch(child);
 				transformVocabConstraint.doSwitch(child);
+				transformPropertyConstraint.doSwitch(child);
 			}
 		}
 		catch (IndexOutOfBoundsException e) {
-			//TODO use logger
-			e.printStackTrace();
+			Logger.logException(e);
+		}
+		
+		// save the updated plugin.properties file
+		propertiesUtil.save();
+		
+		for (Element deleted : transformerOptions.getDeletedElementList()) {
+			deleted.destroy();
 		}
 
 	}
