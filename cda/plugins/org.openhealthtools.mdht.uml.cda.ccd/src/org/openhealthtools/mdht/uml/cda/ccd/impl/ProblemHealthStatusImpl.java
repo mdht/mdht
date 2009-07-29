@@ -9,15 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemHealthStatusOperations;
-
-import org.openhealthtools.mdht.uml.cda.impl.ObservationImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -29,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class ProblemHealthStatusImpl extends ObservationImpl implements ProblemHealthStatus {
+public class ProblemHealthStatusImpl extends StatusObservationImpl implements ProblemHealthStatus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,6 +51,24 @@ public class ProblemHealthStatusImpl extends ObservationImpl implements ProblemH
 	 */
 	public boolean ProblemHealthStatus_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ProblemHealthStatusOperations.ProblemHealthStatus_templateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ProblemHealthStatus_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemHealthStatusOperations.ProblemHealthStatus_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ProblemHealthStatus_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemHealthStatusOperations.ProblemHealthStatus_value(this, diagnostics, context);
 	}
 
 	/**
