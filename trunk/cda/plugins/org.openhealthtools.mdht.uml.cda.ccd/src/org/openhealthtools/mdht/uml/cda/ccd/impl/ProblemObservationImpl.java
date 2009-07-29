@@ -65,6 +65,15 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ProblemObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.ProblemObservation_statusCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ProblemObservation init() {
     		CDAUtil.init(this);
     		return this;

@@ -16,18 +16,43 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.Observation;
-
 import org.openhealthtools.mdht.uml.cda.Organizer;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
-import org.openhealthtools.mdht.uml.cda.ccd.*;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
+import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.EncountersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryOrganizer;
+import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
+import org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
 
 /**
  * <!-- begin-user-doc -->
@@ -148,7 +173,15 @@ public class CCDSwitch<T> {
 			case CCDPackage.PROBLEM_HEALTH_STATUS: {
 				ProblemHealthStatus problemHealthStatus = (ProblemHealthStatus)theEObject;
 				T result = caseProblemHealthStatus(problemHealthStatus);
+				if (result == null) result = caseStatusObservation(problemHealthStatus);
 				if (result == null) result = caseObservation(problemHealthStatus);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.STATUS_OBSERVATION: {
+				StatusObservation statusObservation = (StatusObservation)theEObject;
+				T result = caseStatusObservation(statusObservation);
+				if (result == null) result = caseObservation(statusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -283,13 +316,6 @@ public class CCDSwitch<T> {
 				T result = caseAlertStatusObservation(alertStatusObservation);
 				if (result == null) result = caseStatusObservation(alertStatusObservation);
 				if (result == null) result = caseObservation(alertStatusObservation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.STATUS_OBSERVATION: {
-				StatusObservation statusObservation = (StatusObservation)theEObject;
-				T result = caseStatusObservation(statusObservation);
-				if (result == null) result = caseObservation(statusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

@@ -11,15 +11,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
-
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
 
 /**
@@ -104,7 +101,7 @@ public class PatientAwarenessOperations {
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PATIENT_AWARENESS__PATIENT_AWARENESS_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "PatientAwareness_templateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(patientAwareness, context) }),
+						 CCDPlugin.INSTANCE.getString("PatientAwareness_templateId"),
 						 new Object [] { patientAwareness }));
 			}
 			return false;

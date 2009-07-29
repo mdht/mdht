@@ -11,17 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
-
+import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-
 import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
 
 /**
@@ -97,7 +93,7 @@ public class AlertObservationOperations extends ObservationOperations {
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.ALERT_OBSERVATION__ALERT_OBSERVATION_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AlertObservation_templateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(alertObservation, context) }),
+						 CCDPlugin.INSTANCE.getString("AlertObservation_templateId"),
 						 new Object [] { alertObservation }));
 			}
 			return false;

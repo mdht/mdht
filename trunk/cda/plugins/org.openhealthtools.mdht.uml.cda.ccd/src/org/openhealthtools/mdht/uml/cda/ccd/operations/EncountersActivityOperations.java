@@ -11,17 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
-
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-
 import org.openhealthtools.mdht.uml.cda.operations.EncounterOperations;
 
 /**
@@ -97,7 +93,7 @@ public class EncountersActivityOperations extends EncounterOperations {
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.ENCOUNTERS_ACTIVITY__ENCOUNTERS_ACTIVITY_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "EncountersActivity_templateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(encountersActivity, context) }),
+						 CCDPlugin.INSTANCE.getString("EncountersActivity_templateId"),
 						 new Object [] { encountersActivity }));
 			}
 			return false;

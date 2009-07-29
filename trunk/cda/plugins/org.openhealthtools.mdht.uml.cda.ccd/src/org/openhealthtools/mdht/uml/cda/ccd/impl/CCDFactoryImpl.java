@@ -15,12 +15,37 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.openhealthtools.mdht.uml.cda.ccd.*;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
+import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.EncountersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryOrganizer;
+import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
+import org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,6 +98,7 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.PROBLEM_SECTION: return createProblemSection();
 			case CCDPackage.PROBLEM_STATUS: return createProblemStatus();
 			case CCDPackage.PROBLEM_HEALTH_STATUS: return createProblemHealthStatus();
+			case CCDPackage.STATUS_OBSERVATION: return createStatusObservation();
 			case CCDPackage.EPISODE_OBSERVATION: return createEpisodeObservation();
 			case CCDPackage.PATIENT_AWARENESS: return createPatientAwareness();
 			case CCDPackage.FAMILY_HISTORY_SECTION: return createFamilyHistorySection();
@@ -92,7 +118,6 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.REACTION_OBSERVATION: return createReactionObservation();
 			case CCDPackage.SEVERITY_OBSERVATION: return createSeverityObservation();
 			case CCDPackage.ALERT_STATUS_OBSERVATION: return createAlertStatusObservation();
-			case CCDPackage.STATUS_OBSERVATION: return createStatusObservation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

@@ -10,8 +10,6 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 
-import org.openhealthtools.mdht.uml.cda.Observation;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Problem Health Status</b></em>'.
@@ -19,10 +17,10 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemHealthStatus()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.51'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation value.codeSystemName='ProblemHealthStatusCode' code.codeSystemName='LOINC' value.codeSystem='2.16.840.1.113883.1.11.20.12' templateId.root='2.16.840.1.113883.10.20.1.51' constraints.validation.error='ProblemHealthStatus_templateId; ProblemHealthStatus_code; ProblemHealthStatus_value' code.displayName='Health status' code.codeSystem='2.16.840.1.113883.6.1' code.code='11323-3' value.codeSystemVersion='20061017'"
  * @generated
  */
-public interface ProblemHealthStatus extends Observation {
+public interface ProblemHealthStatus extends StatusObservation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -35,6 +33,32 @@ public interface ProblemHealthStatus extends Observation {
 	 * @generated
 	 */
 	boolean ProblemHealthStatus_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.code.oclIsUndefined() and self.code.code = '11323-3' and self.code.codeSystem = '2.16.840.1.113883.6.1' and self.code.codeSystemName = 'LOINC'
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.code = \'11323-3\' and self.code.codeSystem = \'2.16.840.1.113883.6.1\' and self.code.codeSystemName = \'LOINC\''"
+	 * @generated
+	 */
+	boolean ProblemHealthStatus_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.value.oclIsUndefined() and self.value.codeSystem = '2.16.840.1.113883.1.11.20.12' and self.value.codeSystemName = 'ProblemHealthStatusCode' and self.value.codeSystemVersion = '20061017'
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.value.oclIsUndefined() and self.value.codeSystem = \'2.16.840.1.113883.1.11.20.12\' and self.value.codeSystemName = \'ProblemHealthStatusCode\' and self.value.codeSystemVersion = \'20061017\''"
+	 * @generated
+	 */
+	boolean ProblemHealthStatus_value(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

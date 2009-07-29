@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.EncountersActivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.EncounterImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**

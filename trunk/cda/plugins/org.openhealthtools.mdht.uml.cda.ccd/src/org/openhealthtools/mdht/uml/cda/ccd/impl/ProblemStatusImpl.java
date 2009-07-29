@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemStatusOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.ObservationImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -56,6 +52,15 @@ public class ProblemStatusImpl extends ObservationImpl implements ProblemStatus 
 	 */
 	public boolean ProblemStatus_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ProblemStatusOperations.ProblemStatus_templateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ProblemStatus_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemStatusOperations.ProblemStatus_value(this, diagnostics, context);
 	}
 
 	/**

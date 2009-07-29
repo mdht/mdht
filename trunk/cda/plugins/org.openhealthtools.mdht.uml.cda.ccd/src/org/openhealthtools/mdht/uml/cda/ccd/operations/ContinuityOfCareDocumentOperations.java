@@ -11,17 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
-
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-
 import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperations;
 
 /**
@@ -99,7 +95,7 @@ public class ContinuityOfCareDocumentOperations extends ClinicalDocumentOperatio
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.CONTINUITY_OF_CARE_DOCUMENT__CONTINUITY_OF_CARE_DOCUMENT_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ContinuityOfCareDocument_templateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(continuityOfCareDocument, context) }),
+						 CCDPlugin.INSTANCE.getString("ContinuityOfCareDocument_templateId"),
 						 new Object [] { continuityOfCareDocument }));
 			}
 			return false;
