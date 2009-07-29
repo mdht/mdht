@@ -20,6 +20,9 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.DataType;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
@@ -27,22 +30,25 @@ public class AnnotationsUtil {
 
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 
-	private Class umlClass;
+	private Element element;
 	private Map<String,List<String>> cdaAnnotations = null;
 	
 	public AnnotationsUtil(Class umlClass) {
-		this.umlClass = umlClass;
+		this.element = umlClass;
+	}
+
+	public AnnotationsUtil(Property property) {
+		this.element = property;
 	}
 
 	/**
 	 * Set an annotation value for the given key, or replace the value if this key
 	 * already exists in annotations.
 	 * 
-	 * @param umlClass
 	 * @param key
 	 * @param value
 	 */
-	public void setAnnotation(Class umlClass, String key, String value) {
+	public void setAnnotation(String key, String value) {
 		getCDAAnnotations().put(key, Collections.singletonList(value));
 	}
 
@@ -50,28 +56,42 @@ public class AnnotationsUtil {
 	 * Set an annotation values for the given key, or replace the values if this key
 	 * already exists in annotations.
 	 * 
-	 * @param umlClass
 	 * @param key
 	 * @param values
 	 */
-	public void setAnnotation(Class umlClass, String key, List<String> values) {
+	public void setAnnotation(String key, List<String> values) {
 		getCDAAnnotations().put(key, values);
 	}
 
 	/**
 	 * Append to list of existing values for the given key.
 	 * 
-	 * @param umlClass
 	 * @param key
 	 * @param value
 	 */
-	public void addAnnotation(Class umlClass, String key, String value) {
+	public void addAnnotation(String key, String value) {
 		List<String> values = getCDAAnnotations().get(key);
 		if (values == null) {
 			values = new ArrayList<String>();
 			getCDAAnnotations().put(key, values);
 		}
 		values.add(value);
+	}
+	
+	private Stereotype getStereotypeKind() {
+		Stereotype stereotype = null;
+		if (element instanceof Class) {
+			stereotype = EcoreTransformUtil.getEcoreStereotype(element, UMLUtil.STEREOTYPE__E_CLASS);
+		}
+		else if (element instanceof Property) {
+			Property property = (Property) element;
+			if (property.getType() instanceof DataType)
+				stereotype = EcoreTransformUtil.getEcoreStereotype(element, UMLUtil.STEREOTYPE__E_ATTRIBUTE);
+			else
+				stereotype = EcoreTransformUtil.getEcoreStereotype(element, UMLUtil.STEREOTYPE__E_REFERENCE);
+		}
+		
+		return stereotype;
 	}
 
 	/**
@@ -82,9 +102,10 @@ public class AnnotationsUtil {
 		if (cdaAnnotations == null) {
 			cdaAnnotations = new HashMap<String,List<String>>();
 
-			Stereotype eClassStereotype = EcoreTransformUtil.getEcoreStereotype(umlClass, UMLUtil.STEREOTYPE__E_CLASS);
-			if (umlClass.isStereotypeApplied(eClassStereotype)) {
-				List<String> annotations = (List<String>) umlClass.getValue(eClassStereotype, "annotations");
+			Stereotype stereotype = getStereotypeKind();
+			
+			if (stereotype != null && element.isStereotypeApplied(stereotype)) {
+				List<String> annotations = (List<String>) element.getValue(stereotype, "annotations");
 				// find the CDA annotation source(s)
 				for (String annotation : annotations) {
 					if (annotation.startsWith(CDA_ANNOTATION_SOURCE)) {
@@ -137,12 +158,14 @@ public class AnnotationsUtil {
 		}
 
 		// assure that the EClass stereotype is applied
-		Stereotype eClassStereotype = EcoreTransformUtil.getEcoreStereotype(umlClass, UMLUtil.STEREOTYPE__E_CLASS);
-		UMLUtil.safeApplyStereotype(umlClass, eClassStereotype);
-		
-		//TODO this will not retain non-CDA annotations
-		umlClass.setValue(eClassStereotype, "annotations", 
-				Collections.singletonList(annotations.toString()));
+		Stereotype stereotype = getStereotypeKind();
+		if (stereotype != null) {
+			UMLUtil.safeApplyStereotype(element, stereotype);
+			
+			//TODO this will not retain non-CDA annotations
+			element.setValue(stereotype, "annotations", 
+					Collections.singletonList(annotations.toString()));
+		}
 	}
 	
 }

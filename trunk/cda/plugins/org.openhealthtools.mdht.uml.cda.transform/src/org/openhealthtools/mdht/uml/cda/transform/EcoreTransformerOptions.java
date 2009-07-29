@@ -12,7 +12,11 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import java.util.List;
+import java.util.Vector;
+
 import org.eclipse.core.runtime.Preferences;
+import org.eclipse.uml2.uml.Element;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Activator;
 
 /**
@@ -23,6 +27,11 @@ public class EcoreTransformerOptions {
 	public static final String INCLUDE_VOCABULARY_CONSTRAINTS = "includeVocabularyConstraints";
 	
 	private boolean includeVocabularyConstraints;
+	
+	// use Vector for a thread-safe synchronized List
+	private List<Element> deletedElementList = new Vector<Element>();
+	
+	private PluginPropertiesUtil pluginPropertiesUtil = null;
 	
 	public EcoreTransformerOptions() {
 		initializePreferences();
@@ -41,6 +50,18 @@ public class EcoreTransformerOptions {
 
 	public void setIncludeVocabularyConstraints(boolean includeVocabularyConstraints) {
 		this.includeVocabularyConstraints = includeVocabularyConstraints;
+	}
+
+	protected List<Element> getDeletedElementList() {
+		return deletedElementList;
+	}
+	
+	protected PluginPropertiesUtil getPluginPropertiesUtil() {
+		return pluginPropertiesUtil;
+	}
+
+	protected void setPluginPropertiesUtil(PluginPropertiesUtil util) {
+		pluginPropertiesUtil = util;
 	}
 
 }
