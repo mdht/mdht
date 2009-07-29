@@ -25,6 +25,9 @@ import org.openhealthtools.mdht.uml.cda.CustodianOrganization;
 import org.openhealthtools.mdht.uml.cda.Organization;
 import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.HitspFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
@@ -130,6 +133,11 @@ public class Main {
 		problemList.addAct(condition);
 		II id = DatatypesFactory.eINSTANCE.createII("ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7");
 		condition.getId().add(id);
+		
+		ProblemObservation obs1 = CCDFactory.eINSTANCE.createProblemObservation().init();
+		condition.addObservation(obs1);
+		ProblemHealthStatus healthStatus = CCDFactory.eINSTANCE.createProblemHealthStatus().init();
+		obs1.addObservation(healthStatus);
 	}
 
 	public Section createAllergiesSection() {

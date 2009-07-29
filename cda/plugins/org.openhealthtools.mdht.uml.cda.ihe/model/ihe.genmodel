@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.cda.ihe/src"
+    xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.cda.ihe/src"
     editDirectory="/org.openhealthtools.mdht.uml.cda.ihe.edit/src" editorDirectory="/org.openhealthtools.mdht.uml.cda.ihe.editor/src"
     modelPluginID="org.openhealthtools.mdht.uml.cda.ihe" templateDirectory="/org.openhealthtools.mdht.uml.cda/templates"
     dynamicTemplates="true" forceOverwrite="true" modelName="IHE" editPluginClass="org.openhealthtools.mdht.uml.cda.ihe.provider.IHEEditPlugin"
@@ -50,6 +50,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ActiveProblemsSection/ActiveProblemsSection_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ActiveProblemsSection/ActiveProblemsSection_templateId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ActiveProblemsSection/ActiveProblemsSection_code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ActiveProblemsSection/ActiveProblemsSection_code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ActiveProblemsSection/ActiveProblemsSection_code/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ProblemConcernEntry">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProblemConcernEntry/ProblemConcernEntry_templateId">
@@ -70,11 +74,13 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//MedicationsSection">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference ihe.ecore#//MedicationsSection/code1"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//MedicationsSection/MedicationsSection_templateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicationsSection/MedicationsSection_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicationsSection/MedicationsSection_templateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//MedicationsSection/MedicationsSection_code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicationsSection/MedicationsSection_code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicationsSection/MedicationsSection_code/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//AllergyIntoleranceConcern">

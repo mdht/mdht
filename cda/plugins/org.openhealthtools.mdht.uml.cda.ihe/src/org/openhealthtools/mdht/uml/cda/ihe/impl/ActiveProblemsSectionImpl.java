@@ -74,6 +74,15 @@ public class ActiveProblemsSectionImpl extends ProblemSectionImpl implements Act
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ActiveProblemsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ActiveProblemsSectionOperations.ActiveProblemsSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ActiveProblemsSection init() {
     		CDAUtil.init(this);
     		return this;
