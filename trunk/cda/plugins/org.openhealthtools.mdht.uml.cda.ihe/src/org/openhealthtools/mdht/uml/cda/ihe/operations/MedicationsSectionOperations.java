@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection#MedicationsSection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medications Section template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection#MedicationsSection_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medications Section code</em>}</li>
  * </ul>
  * </p>
  *
@@ -99,6 +100,63 @@ public class MedicationsSectionOperations extends MedicationSectionOperations {
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.MEDICATIONS_SECTION__MEDICATIONS_SECTION_TEMPLATE_ID,
 						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "MedicationsSection_templateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(medicationsSection, context) }),
+						 new Object [] { medicationsSection }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #MedicationsSection_code(MedicationsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medications Section code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MedicationsSection_code(MedicationsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MEDICATIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.code = '10160-0' and self.code.codeSystem = '2.16.840.1.113883.6.1' and self.code.codeSystemName = 'LOINC'";
+
+	/**
+	 * The cached OCL invariant for the '{@link #MedicationsSection_code(MedicationsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medications Section code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MedicationsSection_code(MedicationsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint MEDICATIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.code.oclIsUndefined() and self.code.code = '10160-0' and self.code.codeSystem = '2.16.840.1.113883.6.1' and self.code.codeSystemName = 'LOINC'
+	 * @param medicationsSection The receiving '<em><b>Medications Section</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean MedicationsSection_code(MedicationsSection medicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (MEDICATIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(IHEPackage.Literals.MEDICATIONS_SECTION);
+			try {
+				MEDICATIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MEDICATIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(MEDICATIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicationsSection)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 IHEValidator.DIAGNOSTIC_SOURCE,
+						 IHEValidator.MEDICATIONS_SECTION__MEDICATIONS_SECTION_CODE,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "MedicationsSection_code", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(medicationsSection, context) }),
 						 new Object [] { medicationsSection }));
 			}
 			return false;

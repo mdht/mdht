@@ -35,6 +35,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#ActiveProblemsSection_entry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#ActiveProblemsSection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#ActiveProblemsSection_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section code</em>}</li>
  * </ul>
  * </p>
  *
@@ -157,6 +158,63 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.ACTIVE_PROBLEMS_SECTION__ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID,
 						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ActiveProblemsSection_templateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(activeProblemsSection, context) }),
+						 new Object [] { activeProblemsSection }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #ActiveProblemsSection_code(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ActiveProblemsSection_code(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ACTIVE_PROBLEMS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.code = '11450-4' and self.code.codeSystem = '2.16.840.1.113883.6.1' and self.code.codeSystemName = 'LOINC'";
+
+	/**
+	 * The cached OCL invariant for the '{@link #ActiveProblemsSection_code(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ActiveProblemsSection_code(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint ACTIVE_PROBLEMS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.code.oclIsUndefined() and self.code.code = '11450-4' and self.code.codeSystem = '2.16.840.1.113883.6.1' and self.code.codeSystemName = 'LOINC'
+	 * @param activeProblemsSection The receiving '<em><b>Active Problems Section</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean ActiveProblemsSection_code(ActiveProblemsSection activeProblemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (ACTIVE_PROBLEMS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(IHEPackage.Literals.ACTIVE_PROBLEMS_SECTION);
+			try {
+				ACTIVE_PROBLEMS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ACTIVE_PROBLEMS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(ACTIVE_PROBLEMS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(activeProblemsSection)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 IHEValidator.DIAGNOSTIC_SOURCE,
+						 IHEValidator.ACTIVE_PROBLEMS_SECTION__ACTIVE_PROBLEMS_SECTION_CODE,
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ActiveProblemsSection_code", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(activeProblemsSection, context) }),
 						 new Object [] { activeProblemsSection }));
 			}
 			return false;

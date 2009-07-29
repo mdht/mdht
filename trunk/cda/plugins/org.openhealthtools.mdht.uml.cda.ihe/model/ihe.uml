@@ -33,6 +33,9 @@
       <generalization xmi:id="_ESh9QGGzEd6bFO5yxRh3Nw">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_vjPMEGaGEd6Hk_bPOfEjYA?ccd/ProblemSection?"/>
       </generalization>
+      <ownedAttribute xmi:id="_5cjzMHsiEd6jfbAJq2V82w" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wSnPAGaQEd6Hk_bPOfEjYA" name="ProblemConcernEntry">
       <eAnnotations xmi:id="_8kuacXrUEd68l9lQ-TLEBQ" source="uml2.alias">
@@ -65,9 +68,8 @@ prescription list. It shall include entries for medications as described in the 
       <generalization xmi:id="_KxUI4Hq9Ed68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_OvmR4HfUEd6ZeOKq_2_a9g?ccd/MedicationSection?"/>
       </generalization>
-      <ownedAttribute xmi:id="_9MnCcHonEd6WAZ28-5wkSg" name="code1" visibility="private">
+      <ownedAttribute xmi:id="_9MnCcHonEd6WAZ28-5wkSg" name="code" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
-        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_9lgCcErmEd6FXKclYGEDCw?cda/Section/code?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_pOtQsHrDEd68l9lQ-TLEBQ" name="AllergyIntoleranceConcern">
@@ -148,5 +150,5 @@ Entry&lt;/font&gt;&lt;/u&gt;&lt;/a&gt;&lt;/span&gt;, wherein the subject of the 
   </HDF:HDFClass>
   <Default:Documentation xmi:id="_ByKvsHrVEd68l9lQ-TLEBQ" base_Comment="_ByGeQHrVEd68l9lQ-TLEBQ"/>
   <Default:Documentation xmi:id="_PYbKAHrVEd68l9lQ-TLEBQ" base_Comment="_PYW4kHrVEd68l9lQ-TLEBQ"/>
-  <Ecore:EReference xmi:id="_AJedIHrhEd6h57jS5F_Kmw" xmlName="code" visibility="None" base_Property="_9MnCcHonEd6WAZ28-5wkSg"/>
+  <HDF:CodeSystemConstraint xmi:id="_-QJeAHsiEd6jfbAJq2V82w" base_Property="_5cjzMHsiEd6jfbAJq2V82w" id="2.16.840.1.113883.6.1" name="LOINC" code="11450-4" codePrintName="PROBLEM LIST"/>
 </xmi:XMI>

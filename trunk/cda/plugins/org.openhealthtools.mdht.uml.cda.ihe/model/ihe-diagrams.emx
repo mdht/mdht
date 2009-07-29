@@ -93,9 +93,9 @@
         <children xmi:id="_xEAhpmGsEd6bFO5yxRh3Nw" visible="false" type="StructureCompartment">
           <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_xEAhp2GsEd6bFO5yxRh3Nw"/>
         </children>
-        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_xD-scWGsEd6bFO5yxRh3Nw" fontName="Segoe UI" showListSignature="true" showStereotype="Label"/>
+        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_xD-scWGsEd6bFO5yxRh3Nw" fontName="Segoe UI" showListVisibility="None" showListSignature="true" showStereotype="Label"/>
         <element xmi:type="uml:Class" href="ihe.emx#_vz5koGGsEd6bFO5yxRh3Nw?ihe/ActiveProblemsSection?"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xD-scmGsEd6bFO5yxRh3Nw" x="317" y="6023"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xD-scmGsEd6bFO5yxRh3Nw" y="7925"/>
       </children>
       <children xmi:id="__D-0wGGyEd6bFO5yxRh3Nw">
         <children xmi:id="__D_b0GGyEd6bFO5yxRh3Nw" type="ImageCompartment">
@@ -325,7 +325,7 @@
         </children>
         <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_TYY08XrUEd68l9lQ-TLEBQ" fontName="Segoe UI" showStereotype="Label"/>
         <element xmi:type="uml:Class" href="ihe.emx#_O7-UAHrUEd68l9lQ-TLEBQ?ihe/AllergiesReactionsSection?"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TYY08nrUEd68l9lQ-TLEBQ" x="5072" y="6023"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TYY08nrUEd68l9lQ-TLEBQ" x="5072" y="5706"/>
       </children>
       <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_APYr4VbGEd6ShYMM6mMCTg"/>
       <element xsi:nil="true"/>

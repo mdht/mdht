@@ -14,7 +14,6 @@ package org.openhealthtools.mdht.uml.cda.ihe;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 
@@ -1741,22 +1740,13 @@ public interface IHEPackage extends EPackage {
 	int MEDICATIONS_SECTION__MOOD_CODE = CCDPackage.MEDICATION_SECTION__MOOD_CODE;
 
 	/**
-	 * The feature id for the '<em><b>Code1</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDICATIONS_SECTION__CODE1 = CCDPackage.MEDICATION_SECTION_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Medications Section</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICATIONS_SECTION_FEATURE_COUNT = CCDPackage.MEDICATION_SECTION_FEATURE_COUNT + 1;
+	int MEDICATIONS_SECTION_FEATURE_COUNT = CCDPackage.MEDICATION_SECTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.AllergyIntoleranceConcernImpl <em>Allergy Intolerance Concern</em>}' class.
@@ -2526,17 +2516,6 @@ public interface IHEPackage extends EPackage {
 	EClass getMedicationsSection();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection <em>Code1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Code1</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection
-	 * @see #getMedicationsSection()
-	 * @generated
-	 */
-	EReference getMedicationsSection_Code1();
-
-	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern <em>Allergy Intolerance Concern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2657,14 +2636,6 @@ public interface IHEPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MEDICATIONS_SECTION = eINSTANCE.getMedicationsSection();
-
-		/**
-		 * The meta object literal for the '<em><b>Code1</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MEDICATIONS_SECTION__CODE1 = eINSTANCE.getMedicationsSection_Code1();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.AllergyIntoleranceConcernImpl <em>Allergy Intolerance Concern</em>}' class.

@@ -27,17 +27,9 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
  * prescription list. It shall include entries for medications as described in the Entry Content Module.
  * <!-- end-model-doc -->
  *
- * <p>
- * The following features are supported:
- * <ul>
- * </ul>
- * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getMedicationsSection()
- * @model features="code1" 
- *        code1Type="org.openhealthtools.mdht.uml.hl7.datatypes.CE" code1Required="true" code1Ordered="false" code1SuppressedGetVisibility="true" code1SuppressedSetVisibility="true"
- *        code1ExtendedMetaData="name='code'"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.19'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.19' code.displayName='HISTORY OF MEDICATION USE' code.codeSystem='2.16.840.1.113883.6.1' code.code='10160-0'"
  * @generated
  */
 public interface MedicationsSection extends MedicationSection {
@@ -53,6 +45,19 @@ public interface MedicationsSection extends MedicationSection {
 	 * @generated
 	 */
 	boolean MedicationsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.code.oclIsUndefined() and self.code.code = '10160-0' and self.code.codeSystem = '2.16.840.1.113883.6.1' and self.code.codeSystemName = 'LOINC'
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.code = \'10160-0\' and self.code.codeSystem = \'2.16.840.1.113883.6.1\' and self.code.codeSystemName = \'LOINC\''"
+	 * @generated
+	 */
+	boolean MedicationsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

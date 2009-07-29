@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getActiveProblemsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.6'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.6' code.displayName='PROBLEM LIST' code.codeSystem='2.16.840.1.113883.6.1' code.code='11450-4'"
  *        annotation="uml2.alias Active\040Problems\040Section='null'"
  * @generated
  */
@@ -54,6 +54,19 @@ public interface ActiveProblemsSection extends ProblemSection {
 	 * @generated
 	 */
 	boolean ActiveProblemsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.code.oclIsUndefined() and self.code.code = '11450-4' and self.code.codeSystem = '2.16.840.1.113883.6.1' and self.code.codeSystemName = 'LOINC'
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.code = \'11450-4\' and self.code.codeSystem = \'2.16.840.1.113883.6.1\' and self.code.codeSystemName = \'LOINC\''"
+	 * @generated
+	 */
+	boolean ActiveProblemsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

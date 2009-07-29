@@ -27,7 +27,6 @@ import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.MedicalDocumentOperations;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
@@ -120,10 +119,7 @@ public class PatientSummaryOperations extends MedicalDocumentOperations {
 	public static  ActiveProblemsSection createProblemListSection(PatientSummary patientSummary) {
 		ActiveProblemsSection section = IHEFactory.eINSTANCE.createActiveProblemsSection().init();
 		patientSummary.addSection(section);
-		
-		CE code = DatatypesFactory.eINSTANCE.createCE("11450-4", "2.16.840.1.113883.6.1",
-				"LOINC", "PROBLEM LIST");
-		section.setCode(code);
+
 		section.setTitle(DatatypesFactory.eINSTANCE.createST("Problems"));
 		
 		return section;
@@ -137,10 +133,6 @@ public class PatientSummaryOperations extends MedicalDocumentOperations {
 	public static  MedicationsSection createMedicationsSection(PatientSummary patientSummary) {
 		MedicationsSection section = IHEFactory.eINSTANCE.createMedicationsSection().init();
 		patientSummary.addSection(section);
-		
-		CE code = DatatypesFactory.eINSTANCE.createCE("10160-0", "2.16.840.1.113883.6.1",
-				"LOINC", "HISTORY OF MEDICATION USE");
-		section.setCode(code);
 		
 		return section;
 	}

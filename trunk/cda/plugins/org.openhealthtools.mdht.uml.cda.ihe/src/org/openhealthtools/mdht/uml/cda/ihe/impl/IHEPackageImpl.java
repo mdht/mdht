@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -34,7 +33,6 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -261,15 +259,6 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMedicationsSection_Code1() {
-		return (EReference)medicationsSectionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAllergyIntoleranceConcern() {
 		return allergyIntoleranceConcernEClass;
 	}
@@ -333,7 +322,6 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		medicationEClass = createEClass(MEDICATION);
 
 		medicationsSectionEClass = createEClass(MEDICATIONS_SECTION);
-		createEReference(medicationsSectionEClass, MEDICATIONS_SECTION__CODE1);
 
 		allergyIntoleranceConcernEClass = createEClass(ALLERGY_INTOLERANCE_CONCERN);
 
@@ -368,7 +356,6 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		// Obtain other dependent packages
 		CCDPackage theCCDPackage = (CCDPackage)EPackage.Registry.INSTANCE.getEPackage(CCDPackage.eNS_URI);
 		CDAPackage theCDAPackage = (CDAPackage)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI);
-		DatatypesPackage theDatatypesPackage = (DatatypesPackage)EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -429,6 +416,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(activeProblemsSectionEClass, ecorePackage.getEBoolean(), "ActiveProblemsSection_code", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(problemConcernEntryEClass, ProblemConcernEntry.class, "ProblemConcernEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(problemConcernEntryEClass, ecorePackage.getEBoolean(), "ProblemConcernEntry_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -463,9 +459,17 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(medicationsSectionEClass, MedicationsSection.class, "MedicationsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMedicationsSection_Code1(), theDatatypesPackage.getCE(), null, "code1", null, 1, 1, MedicationsSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = addEOperation(medicationsSectionEClass, ecorePackage.getEBoolean(), "MedicationsSection_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(medicationsSectionEClass, ecorePackage.getEBoolean(), "MedicationsSection_code", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -517,8 +521,6 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		createExtendedMetaDataAnnotations();
 		// uml2.alias
 		createUml2Annotations();
-		// redefines
-		createRedefinesAnnotations();
 	}
 
 	/**
@@ -545,8 +547,12 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (activeProblemsSectionEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.6"
-		   });												
+			 "code.codeSystemName", "LOINC",
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.6",
+			 "code.displayName", "PROBLEM LIST",
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "code.code", "11450-4"
+		   });																
 		addAnnotation
 		  (problemConcernEntryEClass, 
 		   source, 
@@ -569,8 +575,12 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (medicationsSectionEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.19"
-		   });										
+			 "code.codeSystemName", "LOINC",
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.19",
+			 "code.displayName", "HISTORY OF MEDICATION USE",
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "code.code", "10160-0"
+		   });											
 		addAnnotation
 		  (allergyIntoleranceConcernEClass, 
 		   source, 
@@ -604,13 +614,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																									
-		addAnnotation
-		  (getMedicationsSection_Code1(), 
-		   source, 
-		   new String[] {
-			 "name", "code"
-		   });																					
+		   });																																																																		
 	}
 
 	/**
@@ -626,13 +630,13 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Active Problems Section", null
-		   });												
+		   });																
 		addAnnotation
 		  (problemConcernEntryEClass, 
 		   source, 
 		   new String[] {
 			 "Problem Concern Entry", null
-		   });																												
+		   });																													
 		addAnnotation
 		  (allergyIntoleranceConcernEClass, 
 		   source, 
@@ -651,21 +655,6 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   new String[] {
 			 "Allergies and Other Adverse Reactions Section", null
 		   });				
-	}
-
-	/**
-	 * Initializes the annotations for <b>redefines</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createRedefinesAnnotations() {
-		String source = "redefines";																																																	
-		addAnnotation
-		  (getMedicationsSection_Code1(), 
-		   source, 
-		   new String[] {
-		   });																			
 	}
 
 } //IHEPackageImpl
