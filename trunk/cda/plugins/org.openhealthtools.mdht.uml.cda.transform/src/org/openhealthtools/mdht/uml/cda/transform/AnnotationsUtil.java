@@ -12,12 +12,12 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.DataType;
@@ -31,7 +31,8 @@ public class AnnotationsUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 
 	private Element element;
-	private Map<String,List<String>> cdaAnnotations = null;
+	private Map<String,String> cdaAnnotations = null;
+	private Integer cdaAnnotationIndex = null;
 	
 	public AnnotationsUtil(Class umlClass) {
 		this.element = umlClass;
@@ -49,33 +50,30 @@ public class AnnotationsUtil {
 	 * @param value
 	 */
 	public void setAnnotation(String key, String value) {
-		getCDAAnnotations().put(key, Collections.singletonList(value));
-	}
-
-	/**
-	 * Set an annotation values for the given key, or replace the values if this key
-	 * already exists in annotations.
-	 * 
-	 * @param key
-	 * @param values
-	 */
-	public void setAnnotation(String key, List<String> values) {
-		getCDAAnnotations().put(key, values);
+		getCDAAnnotations().put(key, value);
 	}
 
 	/**
 	 * Append to list of existing values for the given key.
+	 * Verify that given value is not already in list of values for this key.
 	 * 
 	 * @param key
 	 * @param value
 	 */
-	public void addAnnotation(String key, String value) {
-		List<String> values = getCDAAnnotations().get(key);
-		if (values == null) {
-			values = new ArrayList<String>();
+	public void addAnnotation(String key, String newValue) {
+		List<String> valueList = null;
+		String values = getCDAAnnotations().get(key);
+		if (values != null) {
+			valueList = Arrays.asList(values.split("\\s+"));
+		}
+		
+		if (valueList == null || !valueList.contains(newValue)) {
+			if (values != null && values.length() > 0) {
+				values += " ";
+			}
+			values += newValue;
 			getCDAAnnotations().put(key, values);
 		}
-		values.add(value);
 	}
 	
 	private Stereotype getStereotypeKind() {
@@ -95,12 +93,11 @@ public class AnnotationsUtil {
 	}
 
 	/**
-	 * Return a map of key/value pairs, where value is a list of 1..* strings.
-	 * Aggregates all values from the same key in separate annotation entries.
+	 * Return a map of key/value pairs.
 	 */
-	private Map<String,List<String>> getCDAAnnotations() {
+	private Map<String,String> getCDAAnnotations() {
 		if (cdaAnnotations == null) {
-			cdaAnnotations = new HashMap<String,List<String>>();
+			cdaAnnotations = new HashMap<String,String>();
 
 			Stereotype stereotype = getStereotypeKind();
 			
@@ -108,29 +105,24 @@ public class AnnotationsUtil {
 				List<String> annotations = (List<String>) element.getValue(stereotype, "annotations");
 				// find the CDA annotation source(s)
 				for (String annotation : annotations) {
-					if (annotation.startsWith(CDA_ANNOTATION_SOURCE)) {
-						String valueString = annotation.substring(CDA_ANNOTATION_SOURCE.length());
-						
-						//TODO this will not handle spaces between = and '
-						// must be: key='value'
-						StringTokenizer tokenizer = new StringTokenizer(valueString, "='");
-						while (tokenizer.hasMoreTokens()) {
-							String key = tokenizer.nextToken().trim();
-							List<String> valueList = cdaAnnotations.get(key);
-							if (valueList == null) {
-								valueList = new ArrayList<String>();
-								cdaAnnotations.put(key, valueList);
-							}
-							
-							String values = (tokenizer.hasMoreTokens()) ? tokenizer.nextToken().trim() : "";
+					// regex pattern adapted from UMLUtil annotations parser
+					Pattern ANNOTATION_PATTERN = Pattern.compile("\\G\\s*((?>\\\\.|\\S)+)((?:\\s+(?>\\\\.|\\S)+\\s*+=\\s*(['\"])((?>\\\\.|.)*?)\\3)*)");
+					Pattern ANNOTATION_DETAIL_PATTERN = Pattern.compile("\\s+((?>\\\\.|\\S)+)\\s*+=\\s*((['\"])((?>\\\\.|.)*?)\\3)");
+					Matcher matcher = ANNOTATION_PATTERN.matcher(annotation);
+					if (matcher.find()) {
+						String sourceURI = matcher.group(1);
+						if (sourceURI == null || ! sourceURI.trim().equals(CDA_ANNOTATION_SOURCE)) {
+							continue;
+						}
 
-							StringTokenizer valueTokens = new StringTokenizer(values, ";");
-							while (valueTokens.hasMoreTokens()) {
-								String value = valueTokens.nextToken().trim();
-								if (value.length() == 0) {
-									continue;
-								}
-								valueList.add(value);
+						cdaAnnotationIndex = annotations.indexOf(annotation);
+						for (Matcher detailMatcher = ANNOTATION_DETAIL_PATTERN
+								.matcher(matcher.group(2)); detailMatcher.find();) {
+							String name = detailMatcher.group(1);
+							String value = detailMatcher.group(4);
+							
+							if (name != null && value != null) {
+								setAnnotation(name, value.trim());
 							}
 						}
 					}
@@ -142,19 +134,16 @@ public class AnnotationsUtil {
 	}
 	
 	public void saveAnnotations() {
-		StringBuffer annotations = new StringBuffer();
-		annotations.append(CDA_ANNOTATION_SOURCE);
+		if (cdaAnnotations == null) {
+			return;
+		}
+		StringBuffer cdaAnnotation = new StringBuffer();
+		cdaAnnotation.append(CDA_ANNOTATION_SOURCE);
 		
 		for (String key : cdaAnnotations.keySet()) {
-			StringBuffer values = new StringBuffer();
-			for (String value : cdaAnnotations.get(key)) {
-				if (values.length() > 0) {
-					values.append("; ");
-				}
-				values.append(value);
-			}
-			String annotation = " " + key + "='" + values.toString() + "'";
-			annotations.append(annotation);
+			String value = cdaAnnotations.get(key);
+			String annotation = " " + key + "='" + value + "'";
+			cdaAnnotation.append(annotation);
 		}
 
 		// assure that the EClass stereotype is applied
@@ -162,9 +151,17 @@ public class AnnotationsUtil {
 		if (stereotype != null) {
 			UMLUtil.safeApplyStereotype(element, stereotype);
 			
-			//TODO this will not retain non-CDA annotations
-			element.setValue(stereotype, "annotations", 
-					Collections.singletonList(annotations.toString()));
+			if (cdaAnnotationIndex != null) {
+				// replace previous CDA annotation
+				element.setValue(stereotype, "annotations[" + cdaAnnotationIndex + "]", 
+						cdaAnnotation.toString());
+			}
+			else {
+				// append to annotations list
+				List<String> annotationList = (List<String>) element.getValue(stereotype, "annotations");
+				annotationList.add(cdaAnnotation.toString());
+				element.setValue(stereotype, "annotations", annotationList);
+			}
 		}
 	}
 	
