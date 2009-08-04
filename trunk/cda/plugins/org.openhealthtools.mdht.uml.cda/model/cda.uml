@@ -5754,6 +5754,8 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_12vUIEovEd6c3qsAxlFHaQ" name="typeCode" visibility="private">
         <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7BekDcEd6xYZuu1VKCVw?vocab/ParticipationType?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9aFm8YE8Ed6H8o-hO3-B4Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9aFm8IE8Ed6H8o-hO3-B4Q"/>
         <defaultValue xmi:type="uml:InstanceValue" xmi:id="_5GAsgEovEd6c3qsAxlFHaQ" name="CST">
           <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7BekDcEd6xYZuu1VKCVw?vocab/ParticipationType?"/>
           <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7BfEDcEd6xYZuu1VKCVw?vocab/ParticipationType/CST?"/>
