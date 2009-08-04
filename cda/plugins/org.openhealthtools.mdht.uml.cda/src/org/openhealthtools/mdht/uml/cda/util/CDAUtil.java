@@ -17,6 +17,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
@@ -31,8 +32,10 @@ import javax.xml.transform.stream.StreamResult;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -149,6 +152,7 @@ public class CDAUtil {
 	}
 	
 	public static boolean validate(EObject object, ValidationHandler handler) {
+		traverse(object);
 		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(object);
 		if (handler != null) {
 			processDiagnostic(diagnostic, handler);
@@ -156,6 +160,37 @@ public class CDAUtil {
 		return diagnostic.getSeverity() != Diagnostic.ERROR;
 	}
 
+	// iterative breadth-first traversal using queue
+	@SuppressWarnings("unchecked")
+	private static void traverse(EObject root) {
+		Queue<EObject> queue = new LinkedList<EObject>();
+		queue.add(root); // root
+		while (!queue.isEmpty()) {
+			EObject eObject = queue.remove();
+			EClass eClass = eObject.eClass();
+			for (EAttribute attribute : eClass.getEAllAttributes()) { // visit
+				if (!eObject.eIsSet(attribute) && attribute.getLowerBound() > 0 && attribute.getDefaultValueLiteral() != null) {
+					if (attribute.isMany()) {
+						List<Object> list = (List<Object>) eObject.eGet(attribute);
+						list.add(attribute.getDefaultValue());
+					} else {
+						eObject.eSet(attribute, attribute.getDefaultValue());
+					}
+				}
+			}
+			for (EReference reference : eClass.getEAllReferences()) { // process successors
+				Object value = eObject.eGet(reference);
+				if (value != null) {
+					if (reference.isMany()) {
+						queue.addAll((List<EObject>) value);
+					} else {
+						queue.add((EObject) value);
+					}
+				}
+			}
+		}
+	}
+	
 	// iterative breadth-first traversal of diagnostic tree using queue
 	private static void processDiagnostic(Diagnostic diagnostic, ValidationHandler handler) {
 		Queue<Diagnostic> queue = new LinkedList<Diagnostic>();
