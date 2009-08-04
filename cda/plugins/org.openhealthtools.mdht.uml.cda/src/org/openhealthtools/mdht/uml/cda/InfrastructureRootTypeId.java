@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  *
  * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getInfrastructureRootTypeId()
  * @model features="redefinedRoot redefinedExtension" 
- *        redefinedRootDefault="2.16.840.1.113883.1.3" redefinedRootDataType="org.eclipse.emf.ecore.EString" redefinedRootRequired="true" redefinedRootOrdered="false" redefinedRootSuppressedGetVisibility="true" redefinedRootSuppressedSetVisibility="true"
+ *        redefinedRootDefault="2.16.840.1.113883.1.3" redefinedRootUnsettable="true" redefinedRootDataType="org.eclipse.emf.ecore.EString" redefinedRootRequired="true" redefinedRootOrdered="false" redefinedRootSuppressedGetVisibility="true" redefinedRootSuppressedSetVisibility="true" redefinedRootSuppressedIsSetVisibility="true" redefinedRootSuppressedUnsetVisibility="true"
  *        redefinedRootExtendedMetaData="name='root' kind='attribute'"
  *        redefinedExtensionDataType="org.eclipse.emf.ecore.EString" redefinedExtensionRequired="true" redefinedExtensionOrdered="false" redefinedExtensionSuppressedGetVisibility="true" redefinedExtensionSuppressedSetVisibility="true"
  *        redefinedExtensionExtendedMetaData="name='extension' kind='attribute'"
