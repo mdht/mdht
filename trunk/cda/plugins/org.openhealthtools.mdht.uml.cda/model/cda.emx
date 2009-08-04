@@ -9365,7 +9365,7 @@
     </profileApplication>
   </uml:Package>
   <Ecore:EAttribute xmi:id="_vxjFUEb_Ed6besF9iFIJkQ" xmlName="extension" xmlFeatureKind="Attribute" visibility="None" base_Property="_5SDdIEb9Ed6besF9iFIJkQ"/>
-  <Ecore:EAttribute xmi:id="_27duUEb_Ed6besF9iFIJkQ" xmlName="root" xmlFeatureKind="Attribute" visibility="None" base_Property="_1Uur8Eb9Ed6besF9iFIJkQ"/>
+  <Ecore:EAttribute xmi:id="_27duUEb_Ed6besF9iFIJkQ" xmlName="root" isUnsettable="true" xmlFeatureKind="Attribute" visibility="None" base_Property="_1Uur8Eb9Ed6besF9iFIJkQ"/>
   <Ecore:EAttribute xmi:id="_mSrvIErZEd6FXKclYGEDCw" xmlName="ID" xmlFeatureKind="Attribute" base_Property="_hypScErZEd6FXKclYGEDCw"/>
   <Ecore:EAttribute xmi:id="_LACm4ErlEd6FXKclYGEDCw" xmlName="ID" xmlFeatureKind="Attribute" base_Property="_FQu6sErlEd6FXKclYGEDCw"/>
   <Ecore:EAttribute xmi:id="_ZaMRYErnEd6FXKclYGEDCw" xmlName="ID" xmlFeatureKind="Attribute" base_Property="_WtezgErnEd6FXKclYGEDCw"/>

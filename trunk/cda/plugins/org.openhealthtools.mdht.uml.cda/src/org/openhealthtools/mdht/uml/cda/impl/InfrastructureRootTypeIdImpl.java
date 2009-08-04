@@ -59,6 +59,15 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	protected String redefinedRoot = REDEFINED_ROOT_EDEFAULT;
 
 	/**
+	 * This is true if the Redefined Root attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean redefinedRootESet;
+
+	/**
 	 * The default value of the '{@link #getRedefinedExtension() <em>Redefined Extension</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,8 +123,24 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	public void setRedefinedRoot(String newRedefinedRoot) {
 		String oldRedefinedRoot = redefinedRoot;
 		redefinedRoot = newRedefinedRoot;
+		boolean oldRedefinedRootESet = redefinedRootESet;
+		redefinedRootESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT, oldRedefinedRoot, redefinedRoot));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT, oldRedefinedRoot, redefinedRoot, !oldRedefinedRootESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetRedefinedRoot() {
+		String oldRedefinedRoot = redefinedRoot;
+		boolean oldRedefinedRootESet = redefinedRootESet;
+		redefinedRoot = REDEFINED_ROOT_EDEFAULT;
+		redefinedRootESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT, oldRedefinedRoot, REDEFINED_ROOT_EDEFAULT, oldRedefinedRootESet));
 	}
 
 	/**
@@ -124,7 +149,7 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	 * @generated
 	 */
 	public boolean isSetRedefinedRoot() {
-		return REDEFINED_ROOT_EDEFAULT == null ? redefinedRoot != null : !REDEFINED_ROOT_EDEFAULT.equals(redefinedRoot);
+		return redefinedRootESet;
 	}
 
 	/**
@@ -200,7 +225,7 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT:
-				setRedefinedRoot(REDEFINED_ROOT_EDEFAULT);
+				unsetRedefinedRoot();
 				return;
 			case CDAPackage.INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_EXTENSION:
 				setRedefinedExtension(REDEFINED_EXTENSION_EDEFAULT);
@@ -236,7 +261,7 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (redefinedRoot: ");
-		result.append(redefinedRoot);
+		if (redefinedRootESet) result.append(redefinedRoot); else result.append("<unset>");
 		result.append(", redefinedExtension: ");
 		result.append(redefinedExtension);
 		result.append(')');

@@ -111,7 +111,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="InfrastructureRootTypeId" eSuperTypes="http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//II">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="redefinedRoot" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="2.16.840.1.113883.1.3">
+        defaultValueLiteral="2.16.840.1.113883.1.3" unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="name" value="root"/>
         <details key="kind" value="attribute"/>
