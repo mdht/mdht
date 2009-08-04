@@ -200,7 +200,7 @@ public interface Custodian extends EObject {
 	 * @see #unsetTypeCode()
 	 * @see #setTypeCode(ParticipationType)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getCustodian_TypeCode()
-	 * @model default="CST" unsettable="true" required="true" ordered="false"
+	 * @model default="CST" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	ParticipationType getTypeCode();

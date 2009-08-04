@@ -667,7 +667,7 @@
         eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//NullFlavor"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
-        lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ParticipationType"
+        eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//ParticipationType"
         defaultValueLiteral="CST" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssignedCustodian">
