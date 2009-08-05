@@ -95,7 +95,7 @@ public class EpisodeObservationOperations extends ObservationOperations {
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.EPISODE_OBSERVATION__EPISODE_OBSERVATION_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "EpisodeObservation_templateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(episodeObservation, context) }),
+						 CCDPlugin.INSTANCE.getString("EpisodeObservation_templateId"),
 						 new Object [] { episodeObservation }));
 			}
 			return false;
@@ -111,7 +111,9 @@ public class EpisodeObservationOperations extends ObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String EPISODE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.code = 'completed' and self.statusCode.codeSystem = '2.16.840.1.113883.5.14' and self.statusCode.codeSystemName = 'ActStatus'";
+	protected static final String EPISODE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and "+
+"let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in ("+
+"value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #EpisodeObservation_statusCode(EpisodeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Episode Observation status Code</em>}' invariant operation.
@@ -127,7 +129,9 @@ public class EpisodeObservationOperations extends ObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.statusCode.oclIsUndefined() and self.statusCode.code = 'completed' and self.statusCode.codeSystem = '2.16.840.1.113883.5.14' and self.statusCode.codeSystemName = 'ActStatus'
+	 * not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and 
+	 * let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (
+	 * value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')
 	 * @param episodeObservation The receiving '<em><b>Episode Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -152,7 +156,7 @@ public class EpisodeObservationOperations extends ObservationOperations {
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.EPISODE_OBSERVATION__EPISODE_OBSERVATION_STATUS_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "EpisodeObservation_statusCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(episodeObservation, context) }),
+						 CCDPlugin.INSTANCE.getString("EpisodeObservation_statusCode"),
 						 new Object [] { episodeObservation }));
 			}
 			return false;
@@ -168,7 +172,9 @@ public class EpisodeObservationOperations extends ObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String EPISODE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.code = 'ASSERTION' and self.code.codeSystem = '2.16.840.1.113883.5.4' and self.code.codeSystemName = 'ActCode'";
+	protected static final String EPISODE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and "+
+"let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in ("+
+"value.code = 'ASSERTION' and value.codeSystem = '2.16.840.1.113883.5.4' and value.codeSystemName = 'ActCode')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #EpisodeObservation_code(EpisodeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Episode Observation code</em>}' invariant operation.
@@ -184,7 +190,9 @@ public class EpisodeObservationOperations extends ObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.code.oclIsUndefined() and self.code.code = 'ASSERTION' and self.code.codeSystem = '2.16.840.1.113883.5.4' and self.code.codeSystemName = 'ActCode'
+	 * not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and 
+	 * let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (
+	 * value.code = 'ASSERTION' and value.codeSystem = '2.16.840.1.113883.5.4' and value.codeSystemName = 'ActCode')
 	 * @param episodeObservation The receiving '<em><b>Episode Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

@@ -59,6 +59,15 @@ public class AlertObservationImpl extends ObservationImpl implements AlertObserv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean AlertObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertObservationOperations.AlertObservation_statusCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AlertObservation init() {
     		CDAUtil.init(this);
     		return this;

@@ -22,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.CauseOfDeathObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersSection;
@@ -118,6 +119,7 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.REACTION_OBSERVATION: return createReactionObservation();
 			case CCDPackage.SEVERITY_OBSERVATION: return createSeverityObservation();
 			case CCDPackage.ALERT_STATUS_OBSERVATION: return createAlertStatusObservation();
+			case CCDPackage.CAUSE_OF_DEATH_OBSERVATION: return createCauseOfDeathObservation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -381,6 +383,16 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public AlertStatusObservation createAlertStatusObservation() {
 		AlertStatusObservationImpl alertStatusObservation = new AlertStatusObservationImpl();
 		return alertStatusObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CauseOfDeathObservation createCauseOfDeathObservation() {
+		CauseOfDeathObservationImpl causeOfDeathObservation = new CauseOfDeathObservationImpl();
+		return causeOfDeathObservation;
 	}
 
 	/**

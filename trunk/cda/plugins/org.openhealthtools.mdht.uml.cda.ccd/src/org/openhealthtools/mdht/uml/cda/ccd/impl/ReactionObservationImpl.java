@@ -59,6 +59,15 @@ public class ReactionObservationImpl extends ObservationImpl implements Reaction
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ReactionObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReactionObservationOperations.ReactionObservation_statusCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ReactionObservation init() {
     		CDAUtil.init(this);
     		return this;

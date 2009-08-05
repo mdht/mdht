@@ -266,6 +266,15 @@ public interface CCDFactory extends EFactory {
 	AlertStatusObservation createAlertStatusObservation();
 
 	/**
+	 * Returns a new object of class '<em>Cause Of Death Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cause Of Death Observation</em>'.
+	 * @generated
+	 */
+	CauseOfDeathObservation createCauseOfDeathObservation();
+
+	/**
 	 * Returns a new object of class '<em>Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
