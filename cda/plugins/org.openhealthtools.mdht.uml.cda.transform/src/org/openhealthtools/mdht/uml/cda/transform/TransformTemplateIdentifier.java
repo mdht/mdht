@@ -57,6 +57,7 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		String body = "self.hasTemplateId('" + templateId + "')";
 		expression.getBodies().add(body);
 
+		//TODO get severity level and message from stereotype
 		addValidationError(umlClass, constraintName, null);
 	}
 

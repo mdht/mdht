@@ -13,13 +13,20 @@
 package org.openhealthtools.mdht.uml.cda.transform;
 
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 
 /**
  * Abstract base class for model transformations.
  */
 public abstract class TransformAbstract extends UMLSwitch {
+	
+	public static final String LF = System.getProperty("line.separator");
 	
 	public static final String VALIDATION_ERROR = "constraints.validation.error";
 	public static final String VALIDATION_WARNING = "constraints.validation.warning";
@@ -75,5 +82,45 @@ public abstract class TransformAbstract extends UMLSwitch {
 			properties.addProperty(constraintName, message);
 		}
 	}
+
+	protected Property getCDAProperty(Property templateProperty) {
+		for (Classifier parent : templateProperty.getClass_().allParents()) {
+			for (Property inherited : parent.getAttributes()) {
+				if (inherited.getName().equals(templateProperty.getName())
+						&& "cda".equals(inherited.getNearestPackage().getName())) {
+					return inherited;
+				}
+			}
+		}
+		
+		return null;
+	}
 	
+	/**
+	 * Returns the nearest inherited property with the same name, or null if not found.
+	 */
+	protected Property getInheritedProperty(Property templateProperty) {
+		for (Classifier parent : templateProperty.getClass_().allParents()) {
+			for (Property inherited : parent.getAttributes()) {
+				if (inherited.getName().equals(templateProperty.getName())) {
+					return inherited;
+				}
+			}
+		}
+		
+		return null;
+	}
+	
+	protected void addOCLConstraint(Property property, StringBuffer body) {
+		String constraintName = property.getClass_().getName() + "_" + property.getName();
+		Constraint constraint = property.getClass_().createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
+		constraint.getConstrainedElements().add(property.getClass_());
+
+		OpaqueExpression expression = (OpaqueExpression)constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+		expression.getLanguages().add("OCL");
+		expression.getBodies().add(body.toString());
+
+		//TODO get severity level and message from stereotype
+		addValidationError(property.getClass_(), constraintName, null);
+	}
 }

@@ -12,12 +12,15 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
-import org.eclipse.uml2.uml.Constraint;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Enumeration;
-import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 
 public class TransformVocabConstraint extends TransformAbstract {
@@ -103,56 +106,131 @@ public class TransformVocabConstraint extends TransformAbstract {
 
 	private void addConstraint(Property property, String codeSystem, String codeSystemName,
 			String code, String displayName, String codeSystemVersion) {
-		String constraintName = property.getClass_().getName() + "_" + property.getName();
-		Constraint constraint = property.getClass_().createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
-		constraint.getConstrainedElements().add(property.getClass_());
-
-		String selfName = "self." + property.getName() + ".";
-		StringBuffer body = new StringBuffer();
 		
-		// not self.statusCode.oclIsUndefined()
-		body.append("not ");
-		body.append(selfName);
-		body.append("oclIsUndefined()");
+		StringBuffer body = getValueExpression(property);
+		if (body == null) {
+			return;
+		}
 		
-		// and self.statusCode.code = 'xyz'
+		boolean needsAnd = false;
 		if (code != null && code.length() > 0) {
-			body.append(" and ");
-			body.append(selfName);
-			body.append("code = '");
+			body.append("value.code = '");
 			body.append(code);
 			body.append("'");
+			needsAnd = true;
 		}
 		if (codeSystem != null && codeSystem.length() > 0) {
-			body.append(" and ");
-			body.append(selfName);
-			body.append("codeSystem = '");
+			if (needsAnd) {
+				body.append(" and ");
+			}
+			body.append("value.codeSystem = '");
 			body.append(codeSystem);
 			body.append("'");
+			needsAnd = true;
 		}
-//		if (codeSystemName != null && codeSystemName.length() > 0) {
-//			body.append(" and ");
-//			body.append(selfName);
-//			body.append("codeSystemName = '");
-//			body.append(codeSystemName);
-//			body.append("'");
-//		}
-//		if (codeSystemVersion != null && codeSystemVersion.length() > 0) {
-//			body.append(" and ");
-//			body.append(selfName);
-//			body.append("codeSystemVersion = '");
-//			body.append(codeSystemVersion);
-//			body.append("'");
-//		}
+		if (codeSystemName != null && codeSystemName.length() > 0) {
+			if (needsAnd) {
+				body.append(" and ");
+			}
+			body.append("value.codeSystemName = '");
+			body.append(codeSystemName);
+			body.append("'");
+			needsAnd = true;
+		}
+		if (codeSystemVersion != null && codeSystemVersion.length() > 0) {
+			if (needsAnd) {
+				body.append(" and ");
+			}
+			body.append("value.codeSystemVersion = '");
+			body.append(codeSystemVersion);
+			body.append("'");
+		}
 
 		if (body.length() > 0) {
-			OpaqueExpression expression = (OpaqueExpression)constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
-			expression.getLanguages().add("OCL");
-			expression.getBodies().add(body.toString());
+			body.append(")");
+			addOCLConstraint(property, body);
 		}
 		
-		//TODO get severity level from stereotype
-		addValidationError(property.getClass_(), constraintName, null);
 	}
 
+	private StringBuffer getValueExpression(Property property) {
+		Property cdaProperty = getCDAProperty(property);
+		if (cdaProperty == null) {
+			String message = "Cannot find CDA property for: " + property.getQualifiedName();
+			Logger.log(Logger.ERROR, message);
+			System.err.println(message);
+			return null;
+		}
+		
+		// check property type, including if redefined with restricted type
+		if (!isCDType(property)) {
+			String message = "Property is not CD type: " + property.getQualifiedName();
+			Logger.log(Logger.ERROR, message);
+			System.err.println(message);
+			return null;
+		}
+
+		StringBuffer body = new StringBuffer();
+		String selfName = "self." + cdaProperty.getName();
+//		String cdaTypeQName = cdaProperty.getType().getQualifiedName();
+		String templateTypeQName = property.getType().getQualifiedName();
+		
+		if (property.getUpper() == 0) {
+			// element is prohibited in redefinition
+			// place-holder for when this is supported in UML 2.2
+		}
+		else if (cdaProperty.getUpper() == 1) {
+			// single-valued CDA property
+			if (property.getLower() == 1) {
+				body.append("not ");
+				body.append(selfName);
+				body.append(".oclIsUndefined() and ");
+			}
+			body.append(selfName + ".oclIsTypeOf(" + templateTypeQName + ") and ");
+			body.append(LF);
+			body.append("let value : " + templateTypeQName + " = ");
+			// add final opening paren because there is always a closing paren
+			body.append(selfName + ".oclAsType(" + templateTypeQName + ") in (");
+			body.append(LF);
+		}
+		else if (cdaProperty.getUpper() > 0 
+				|| cdaProperty.getUpper() == LiteralUnlimitedNatural.UNLIMITED) {
+			// multi-valued property
+			
+			if (property.getLower() == 1 && property.getUpper() == 1) {
+				body.append(selfName);
+				body.append("->size() = 1 and ");
+			}
+			else if (property.getLower() >= 1) {
+				body.append("not ");
+				body.append(selfName);
+				body.append("->isEmpty() and ");
+			}
+
+			body.append(selfName);
+			body.append("->forAll(element | element.oclIsTypeOf(" + templateTypeQName + ") and ");
+			body.append(LF);
+			
+			body.append("let value : " + templateTypeQName);
+			body.append(" = element.oclAsType(" + templateTypeQName + ") in ");
+			body.append(LF);
+		}
+		
+		return body;
+	}
+
+	private boolean isCDType(Property property) {
+		Classifier type = (Classifier) property.getType();
+		List<Classifier> allTypes = new ArrayList<Classifier>(type.allParents());
+		allTypes.add(0, type);
+		
+		for (Classifier classifier : allTypes) {
+			if ("datatypes::CD".equals(classifier.getQualifiedName())) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 }
