@@ -66,9 +66,12 @@ public class AnnotationsUtil {
 		if (values != null) {
 			valueList = Arrays.asList(values.split("\\s+"));
 		}
+		else {
+			values = "";
+		}
 		
 		if (valueList == null || !valueList.contains(newValue)) {
-			if (values != null && values.length() > 0) {
+			if (values.length() > 0) {
 				values += " ";
 			}
 			values += newValue;
