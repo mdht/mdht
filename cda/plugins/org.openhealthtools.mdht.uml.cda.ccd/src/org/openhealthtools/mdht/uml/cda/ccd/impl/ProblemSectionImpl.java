@@ -68,6 +68,15 @@ public class ProblemSectionImpl extends SectionImpl implements ProblemSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ProblemSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemSectionOperations.ProblemSection_title(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ProblemSection init() {
     		CDAUtil.init(this);
     		return this;

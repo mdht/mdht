@@ -59,6 +59,24 @@ public class AlertsSectionImpl extends SectionImpl implements AlertsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean AlertsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertsSectionOperations.AlertsSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean AlertsSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertsSectionOperations.AlertsSection_title(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AlertsSection init() {
     		CDAUtil.init(this);
     		return this;

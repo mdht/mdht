@@ -94,7 +94,7 @@ public class ProblemStatusOperations extends ObservationOperations {
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_STATUS__PROBLEM_STATUS_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ProblemStatus_templateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(problemStatus, context) }),
+						 CCDPlugin.INSTANCE.getString("ProblemStatus_templateId"),
 						 new Object [] { problemStatus }));
 			}
 			return false;
@@ -110,7 +110,9 @@ public class ProblemStatusOperations extends ObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_STATUS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.value.oclIsUndefined() and self.value.codeSystem = '2.16.840.1.113883.1.11.20.13' and self.value.codeSystemName = 'ProblemStatusCode' and self.value.codeSystemVersion = '20061017'";
+	protected static final String PROBLEM_STATUS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE) and "+
+"let value : datatypes::CE = element.oclAsType(datatypes::CE) in "+
+"value.codeSystem = '2.16.840.1.113883.1.11.20.13' and value.codeSystemName = 'ProblemStatusCode' and value.codeSystemVersion = '20061017')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #ProblemStatus_value(ProblemStatus, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Status value</em>}' invariant operation.
@@ -126,7 +128,9 @@ public class ProblemStatusOperations extends ObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.value.oclIsUndefined() and self.value.codeSystem = '2.16.840.1.113883.1.11.20.13' and self.value.codeSystemName = 'ProblemStatusCode' and self.value.codeSystemVersion = '20061017'
+	 * self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE) and 
+	 * let value : datatypes::CE = element.oclAsType(datatypes::CE) in 
+	 * value.codeSystem = '2.16.840.1.113883.1.11.20.13' and value.codeSystemName = 'ProblemStatusCode' and value.codeSystemVersion = '20061017')
 	 * @param problemStatus The receiving '<em><b>Problem Status</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

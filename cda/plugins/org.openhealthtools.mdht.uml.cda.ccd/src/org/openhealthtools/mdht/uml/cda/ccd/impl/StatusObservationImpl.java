@@ -77,6 +77,15 @@ public class StatusObservationImpl extends ObservationImpl implements StatusObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean StatusObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return StatusObservationOperations.StatusObservation_value(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public StatusObservation init() {
     		CDAUtil.init(this);
     		return this;

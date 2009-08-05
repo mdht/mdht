@@ -59,6 +59,33 @@ public class SeverityObservationImpl extends ObservationImpl implements Severity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean SeverityObservation_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SeverityObservationOperations.SeverityObservation_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean SeverityObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SeverityObservationOperations.SeverityObservation_statusCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean SeverityObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SeverityObservationOperations.SeverityObservation_value(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SeverityObservation init() {
     		CDAUtil.init(this);
     		return this;

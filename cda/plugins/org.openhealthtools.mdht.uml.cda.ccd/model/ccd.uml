@@ -11,6 +11,12 @@
       <generalization xmi:id="_rdDU0HfUEd6ZeOKq_2_a9g">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
+      <ownedAttribute xmi:id="_QxLJcIHXEd6Ncrr6L3Ublw" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_QxKiYIHXEd6Ncrr6L3Ublw" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ze7UsGESEd69D7zx7EkLMA" name="ContinuityOfCareDocument">
       <ownedRule xmi:id="_CUNkQGwYEd6q29qQGU-SBA" name="ContinuityOfCareDocument_code" constrainedElement="_Ze7UsGESEd69D7zx7EkLMA">
@@ -39,6 +45,11 @@
       <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg?cda/Act?"/>
       </generalization>
+      <ownedAttribute xmi:id="_lCM-MIHNEd6Ncrr6L3Ublw" name="id" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_poaUUIHNEd6Ncrr6L3Ublw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_poZtQIHNEd6Ncrr6L3Ublw" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_IjIO0DxbEd6JwqSGecoePg" name="ProblemObservation">
       <generalization xmi:id="_KLIucDxbEd6JwqSGecoePg">
@@ -54,6 +65,9 @@
       </generalization>
       <ownedAttribute xmi:id="_mLxRAHu8Ed6jfbAJq2V82w" name="code" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_S9W4sIHNEd6Ncrr6L3Ublw" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_TrwngGaJEd6Hk_bPOfEjYA" name="ProblemStatus">
@@ -90,37 +104,36 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5ET7oGwWEd6q29qQGU-SBA" name="FamilyHistorySection">
-      <ownedRule xmi:id="_bmmD8GwXEd6q29qQGU-SBA" name="FamilyHistorySection_code" constrainedElement="_5ET7oGwWEd6q29qQGU-SBA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_bmmD8WwXEd6q29qQGU-SBA">
-          <language>OCL</language>
-          <body/>
-        </specification>
-      </ownedRule>
-      <ownedRule xmi:id="_PtercGwYEd6q29qQGU-SBA" name="FamilyHistorySection_title" constrainedElement="_5ET7oGwWEd6q29qQGU-SBA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_PtercWwYEd6q29qQGU-SBA">
-          <language>OCL</language>
-          <body/>
-        </specification>
-      </ownedRule>
-      <ownedRule xmi:id="_RsbrcGwYEd6q29qQGU-SBA" name="FamilyHistorySection_text" constrainedElement="_5ET7oGwWEd6q29qQGU-SBA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_RsbrcWwYEd6q29qQGU-SBA">
-          <language>OCL</language>
-          <body/>
-        </specification>
-      </ownedRule>
       <generalization xmi:id="_h1M7QGwXEd6q29qQGU-SBA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
+      <ownedAttribute xmi:id="_rZxRUIHaEd6Ncrr6L3Ublw" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rZx4YIHaEd6Ncrr6L3Ublw" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_7tlrAGwWEd6q29qQGU-SBA" name="FamilyHistoryObservation">
       <generalization xmi:id="_plaIMGwXEd6q29qQGU-SBA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
+      <ownedAttribute xmi:id="_KztvsYHbEd6Ncrr6L3Ublw" name="id" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KztvsoHbEd6Ncrr6L3Ublw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Kztvs4HbEd6Ncrr6L3Ublw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_KztvsIHbEd6Ncrr6L3Ublw" name="statusCode" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_9QFYgGwWEd6q29qQGU-SBA" name="FamilyHistoryOrganizer">
       <generalization xmi:id="_lBDMMGwXEd6q29qQGU-SBA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_B6aX4EbvEd6besF9iFIJkQ?cda/Organizer?"/>
       </generalization>
+      <ownedAttribute xmi:id="_fDnXgIHbEd6Ncrr6L3Ublw" name="statusCode" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ht_RsHDAEd6eItyqb1FoWg" name="ResultOrganizer">
       <generalization xmi:id="_hZltMHDAEd6eItyqb1FoWg">
@@ -161,34 +174,74 @@
       <generalization xmi:id="_sAvQsHfUEd6ZeOKq_2_a9g">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_nazskEbuEd6besF9iFIJkQ?cda/SubstanceAdministration?"/>
       </generalization>
+      <ownedAttribute xmi:id="_Rp0MMIHYEd6Ncrr6L3Ublw" name="id" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rp0MMYHYEd6Ncrr6L3Ublw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rp0MMoHYEd6Ncrr6L3Ublw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_f9zPMIHYEd6Ncrr6L3Ublw" name="statusCode" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_dAAnAHfVEd6ZeOKq_2_a9g" name="SupplyActivity">
       <generalization xmi:id="_pWBhcHfVEd6ZeOKq_2_a9g">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_3gL0sEbuEd6besF9iFIJkQ?cda/Supply?"/>
       </generalization>
+      <ownedAttribute xmi:id="_WJQzAIHYEd6Ncrr6L3Ublw" name="id" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WJQzAYHYEd6Ncrr6L3Ublw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WJQzAoHYEd6Ncrr6L3Ublw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_z-cTAIHYEd6Ncrr6L3Ublw" name="statusCode" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_PgsSAHrREd68l9lQ-TLEBQ" name="AlertsSection">
       <generalization xmi:id="_YiaKIHrREd68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
+      <ownedAttribute xmi:id="_tinqoIHOEd6Ncrr6L3Ublw" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_tirVAIHOEd6Ncrr6L3Ublw" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_qV72IHrREd68l9lQ-TLEBQ" name="AlertObservation">
       <generalization xmi:id="_9yumAHrREd68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
+      <ownedAttribute xmi:id="_bv82EIHVEd6Ncrr6L3Ublw" name="statusCode" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="__XC4cHrREd68l9lQ-TLEBQ" name="ReactionObservation">
       <generalization xmi:id="_PipkYHrSEd68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
+      <ownedAttribute xmi:id="_Hcg8oIHWEd6Ncrr6L3Ublw" name="statusCode" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ILkpIHrSEd68l9lQ-TLEBQ" name="SeverityObservation">
       <generalization xmi:id="_QQ4jYHrSEd68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
+      <ownedAttribute xmi:id="_tGVdoIHWEd6Ncrr6L3Ublw" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_X4FXMIHWEd6Ncrr6L3Ublw" name="statusCode" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_tGU2kIHWEd6Ncrr6L3Ublw" name="value" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#__I8BwDxZEd6JwqSGecoePg?datatypes/ANY?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_e8n_EHrSEd68l9lQ-TLEBQ" name="AlertStatusObservation">
       <generalization xmi:id="_b0MZEHrTEd68l9lQ-TLEBQ" general="_V3Jy4HrTEd68l9lQ-TLEBQ"/>
+      <ownedAttribute xmi:id="_1iCUEIHVEd6Ncrr6L3Ublw" name="value" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_V3Jy4HrTEd68l9lQ-TLEBQ" name="StatusObservation">
       <generalization xmi:id="_s4YvUHrSEd68l9lQ-TLEBQ">
@@ -203,6 +256,9 @@
       <ownedAttribute xmi:id="_2XdYUHvDEd6jfbAJq2V82w" name="value" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
       </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_joG2YIHbEd6Ncrr6L3Ublw" name="CauseOfDeathObservation">
+      <generalization xmi:id="_my2UEIHbEd6Ncrr6L3Ublw" general="_7tlrAGwWEd6q29qQGU-SBA"/>
     </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -257,7 +313,7 @@
   <HDF:HL7Template xmi:id="_J6uSkHrSEd68l9lQ-TLEBQ" base_Class="_ILkpIHrSEd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.55"/>
   <HDF:HL7Template xmi:id="_g5EdoHrSEd68l9lQ-TLEBQ" base_Class="_e8n_EHrSEd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.39"/>
   <HDF:HL7Template xmi:id="_Xv1y0HrTEd68l9lQ-TLEBQ" base_Class="_V3Jy4HrTEd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.57"/>
-  <HDF:CodeSystemConstraint xmi:id="_te45UHu8Ed6jfbAJq2V82w" base_Property="_mLxRAHu8Ed6jfbAJq2V82w" id="2.16.840.1.113883.6.1" name="LOINC" code="11450-4"/>
+  <HDF:CodeSystemConstraint xmi:id="_te45UHu8Ed6jfbAJq2V82w" base_Property="_mLxRAHu8Ed6jfbAJq2V82w" id="2.16.840.1.113883.6.1" name="LOINC" code="11450-4" codePrintName="Problem list"/>
   <HDF:CodeSystemConstraint xmi:id="_LuJQwHu-Ed6jfbAJq2V82w" base_Property="_9uv9sHu9Ed6jfbAJq2V82w" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
   <HDF:ValueSetConstraint xmi:id="_li82IHu_Ed6jfbAJq2V82w" base_Property="_ehj3AHu_Ed6jfbAJq2V82w" id="2.16.840.1.113883.1.11.20.13" name="ProblemStatusCode" versionDate="20061017"/>
   <HDF:CodeSystemConstraint xmi:id="_q30hsHvCEd6jfbAJq2V82w" base_Property="_jUhIUHvCEd6jfbAJq2V82w" id="2.16.840.1.113883.6.1" name="LOINC" code="11323-3" codePrintName="Health status"/>
@@ -266,4 +322,15 @@
   <HDF:CodeSystemConstraint xmi:id="_oxc1oHvDEd6jfbAJq2V82w" base_Property="_oxcOkHvDEd6jfbAJq2V82w" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
   <HDF:CodeSystemConstraint xmi:id="_R2vK8XxTEd6jfbAJq2V82w" base_Property="_R2vK8HxTEd6jfbAJq2V82w" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
   <HDF:CodeSystemConstraint xmi:id="_dRVmAXxTEd6jfbAJq2V82w" base_Property="_dRVmAHxTEd6jfbAJq2V82w" id="2.16.840.1.113883.5.4" name="ActCode" code="ASSERTION"/>
+  <HDF:CodeSystemConstraint xmi:id="_titKMIHOEd6Ncrr6L3Ublw" base_Property="_tinqoIHOEd6Ncrr6L3Ublw" id="2.16.840.1.113883.6.1" name="LOINC" code="48765-2" codePrintName="Allergies, adverse reactions, alerts"/>
+  <HDF:CodeSystemConstraint xmi:id="_bv-EMIHVEd6Ncrr6L3Ublw" base_Property="_bv82EIHVEd6Ncrr6L3Ublw" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
+  <HDF:ValueSetConstraint xmi:id="_1iDiMIHVEd6Ncrr6L3Ublw" base_Property="_1iCUEIHVEd6Ncrr6L3Ublw" id="2.16.840.1.113883.1.11.20.3" name="AlertStatusCode" versionDate="20061017"/>
+  <HDF:CodeSystemConstraint xmi:id="_Hcg8oYHWEd6Ncrr6L3Ublw" base_Property="_Hcg8oIHWEd6Ncrr6L3Ublw" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
+  <HDF:CodeSystemConstraint xmi:id="_X4F-QIHWEd6Ncrr6L3Ublw" base_Property="_X4FXMIHWEd6Ncrr6L3Ublw" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
+  <HDF:CodeSystemConstraint xmi:id="_tGVdoYHWEd6Ncrr6L3Ublw" base_Property="_tGVdoIHWEd6Ncrr6L3Ublw" id="2.16.840.1.113883.5.4" name="ActCode" code="SEV" codePrintName="Severity observation"/>
+  <HDF:CodeSystemConstraint xmi:id="_QxLJcYHXEd6Ncrr6L3Ublw" base_Property="_QxLJcIHXEd6Ncrr6L3Ublw" id="2.16.840.1.113883.6.1" name="LOINC" code="10160-0" codePrintName="History of medication use"/>
+  <HDF:CodeSystemConstraint xmi:id="_rZx4YYHaEd6Ncrr6L3Ublw" base_Property="_rZxRUIHaEd6Ncrr6L3Ublw" id="2.16.840.1.113883.6.1" name="LOINC" code="10157-6" codePrintName="History of family member diseases"/>
+  <HDF:CodeSystemConstraint xmi:id="_OXyTYIHbEd6Ncrr6L3Ublw" base_Property="_KztvsIHbEd6Ncrr6L3Ublw" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
+  <HDF:CodeSystemConstraint xmi:id="_fDnXgYHbEd6Ncrr6L3Ublw" base_Property="_fDnXgIHbEd6Ncrr6L3Ublw" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
+  <HDF:HL7Template xmi:id="_ohNTUIHbEd6Ncrr6L3Ublw" base_Class="_joG2YIHbEd6Ncrr6L3Ublw" id="2.16.840.1.113883.10.20.1.42"/>
 </xmi:XMI>

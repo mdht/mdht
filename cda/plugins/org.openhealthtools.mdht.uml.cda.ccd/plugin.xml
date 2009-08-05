@@ -42,5 +42,6 @@
       <entry eClass="SeverityObservation" id="2.16.840.1.113883.10.20.1.55" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="AlertStatusObservation" id="2.16.840.1.113883.10.20.1.39" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="StatusObservation" id="2.16.840.1.113883.10.20.1.57" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="CauseOfDeathObservation" id="2.16.840.1.113883.10.20.1.42" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
    </extension>
 </plugin>

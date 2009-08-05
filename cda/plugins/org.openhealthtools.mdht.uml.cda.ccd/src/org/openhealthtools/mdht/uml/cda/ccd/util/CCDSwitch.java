@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.CauseOfDeathObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersSection;
@@ -316,6 +317,14 @@ public class CCDSwitch<T> {
 				T result = caseAlertStatusObservation(alertStatusObservation);
 				if (result == null) result = caseStatusObservation(alertStatusObservation);
 				if (result == null) result = caseObservation(alertStatusObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.CAUSE_OF_DEATH_OBSERVATION: {
+				CauseOfDeathObservation causeOfDeathObservation = (CauseOfDeathObservation)theEObject;
+				T result = caseCauseOfDeathObservation(causeOfDeathObservation);
+				if (result == null) result = caseFamilyHistoryObservation(causeOfDeathObservation);
+				if (result == null) result = caseObservation(causeOfDeathObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -710,6 +719,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseAlertStatusObservation(AlertStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cause Of Death Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cause Of Death Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCauseOfDeathObservation(CauseOfDeathObservation object) {
 		return null;
 	}
 
