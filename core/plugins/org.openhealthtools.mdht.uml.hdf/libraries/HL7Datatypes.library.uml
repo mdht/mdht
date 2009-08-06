@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:XSDGeneration="http:///schemas/XSDGeneration/_CnKIMOZNEduBes0qZMEdMA/3" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:xsd="http:///schemas/XMLSchema/_eC-IEA-uEd2ng-v1tnpITw/3" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w http:///schemas/XSDGeneration/_CnKIMOZNEduBes0qZMEdMA/3 pathmap://XMLmodeling_PROFILES/XSDGeneration.profile.uml#_CnQO0OZNEduBes0qZMEdMA http:///schemas/XMLSchema/_eC-IEA-uEd2ng-v1tnpITw/3 pathmap://XMLmodeling_PROFILES/XMLSchema.profile.uml#_eDH5EA-uEd2ng-v1tnpITw">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XSDGeneration="http:///schemas/XSDGeneration/_CnKIMOZNEduBes0qZMEdMA/3" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:xsd="http:///schemas/XMLSchema/_eC-IEA-uEd2ng-v1tnpITw/3" xsi:schemaLocation="http:///schemas/XSDGeneration/_CnKIMOZNEduBes0qZMEdMA/3 pathmap://XMLmodeling_PROFILES/XSDGeneration.profile.uml#_CnQO0OZNEduBes0qZMEdMA http:///schemas/XMLSchema/_eC-IEA-uEd2ng-v1tnpITw/3 pathmap://XMLmodeling_PROFILES/XMLSchema.profile.uml#_eDH5EA-uEd2ng-v1tnpITw">
   <uml:Model xmi:id="_th55IGOcEduc9MGooOzwqw" name="HL7 Core Datatypes">
     <packageImport xmi:id="_vGobQmOcEduc9MGooOzwqw">
       <importedPackage xmi:type="uml:Model" href="pathmap://XMLmodeling_LIBRARIES/XSDDataTypes.library.uml#_3RzIoEtXEdqhPYJq3sEkGA"/>
@@ -6069,7 +6069,6 @@
   <xsd:Attribute xmi:id="_1d1qcmC_Edy4n9RuOEhxHw" base_Property="_xAh8JGOcEduc9MGooOzwqw"/>
   <xsd:Attribute xmi:id="_1d1qc2C_Edy4n9RuOEhxHw" base_Property="_xArGEGOcEduc9MGooOzwqw"/>
   <xsd:Attribute xmi:id="_1d_bcGC_Edy4n9RuOEhxHw" base_Property="_xArGFGOcEduc9MGooOzwqw"/>
-  <Standard:ModelLibrary xmi:id="_jrDhwIS3EduSLcB4i93Xlg" base_Package="_th55IGOcEduc9MGooOzwqw"/>
   <xsd:Schema xmi:id="_08dbsWC_Edy4n9RuOEhxHw" base_Package="_th55IGOcEduc9MGooOzwqw" schemaLocation="../coreschemas/"/>
   <xsd:Element xmi:id="_Z-fp8KBREd2EPd8vrHsPdQ" base_Property="_vXBntmOcEduc9MGooOzwqw" prohibited="true"/>
   <xsd:Element xmi:id="_l7qmkKBREd2EPd8vrHsPdQ" base_Property="_wgWAMGOcEduc9MGooOzwqw" prohibited="true"/>
