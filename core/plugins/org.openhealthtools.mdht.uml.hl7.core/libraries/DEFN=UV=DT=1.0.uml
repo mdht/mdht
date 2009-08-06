@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HDF="http:///schemas/HDF/_DSjFECDHEd6sKM9UDPqlTg/7" xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/HDF/_DSjFECDHEd6sKM9UDPqlTg/7 pathmap://HL7_PROFILES/HDF.profile.uml#_DSlhUCDHEd6sKM9UDPqlTg http://www.eclipse.org/uml2/schemas/Standard/1 pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HDF="http:///schemas/HDF/_DSjFECDHEd6sKM9UDPqlTg/7" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/HDF/_DSjFECDHEd6sKM9UDPqlTg/7 pathmap://HL7_PROFILES/HDF.profile.uml#_DSlhUCDHEd6sKM9UDPqlTg">
   <uml:Package xmi:id="_0" name="DEFN=UV=DT=1.0">
     <packagedElement xmi:type="uml:Interface" xmi:id="ANY" name="ANY" isAbstract="true">
       <ownedComment xmi:id="_O5izcSo1Ed65BMwZ7dmx2w">
@@ -10497,5 +10497,4 @@ type ParametricProbabilityDistribution&lt;PointInTime> alias PPD&lt;TS> speciali
   <HDF:Definition xmi:id="_PCZNcCo1Ed65BMwZ7dmx2w" base_Comment="_PCXYQSo1Ed65BMwZ7dmx2w"/>
   <HDF:DesignComments xmi:id="_PCc30Co1Ed65BMwZ7dmx2w" base_Comment="_PCbCoCo1Ed65BMwZ7dmx2w"/>
   <HDF:OtherAnnotation xmi:id="_PCetACo1Ed65BMwZ7dmx2w" base_Comment="_PCc30So1Ed65BMwZ7dmx2w"/>
-  <Standard:ModelLibrary xmi:id="_1CzxoCrGEd6fcNpyhmQLTQ" base_Package="_0"/>
 </xmi:XMI>
