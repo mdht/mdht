@@ -72,7 +72,7 @@ public class CDAResourceFactoryImpl extends ResourceFactoryImpl implements CDARe
 			}
 		);
 			
-		result.getDefaultSaveOptions().put(XMLResource.OPTION_KEEP_DEFAULT_CONTENT, Boolean.TRUE);
+//		result.getDefaultSaveOptions().put(XMLResource.OPTION_KEEP_DEFAULT_CONTENT, Boolean.TRUE);
 
 //		result.getDefaultLoadOptions().put(XMLResource.OPTION_LAX_FEATURE_PROCESSING, Boolean.TRUE);
 
