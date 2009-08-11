@@ -56,6 +56,10 @@ plugin@org.openhealthtools.mdht.uml.hdf.tooling.rsm=SVN,trunk,https://oht-modeli
 
 plugin@org.openhealthtools.mdht.uml.hdf.ui.rsm=SVN,trunk,https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling/,,plugins/org.openhealthtools.mdht.uml.hdf.ui.rsm
 
+!***************  OHT MDHT PAPYRUS FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml.papyrus=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/features/org.openhealthtools.mdht.uml.papyrus-feature
+
+plugin@org.openhealthtools.mdht.uml.hdf.ui.papyrus=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hdf.ui.papyrus
 
 !***************  OHT MDHT TEST FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/features/org.openhealthtools.mdht.test-feature
