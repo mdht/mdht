@@ -103,6 +103,13 @@ public class CDAUtil {
 	}
 	
 	public static void save(ClinicalDocument clinicalDocument, OutputStream out) throws Exception {
+		save(clinicalDocument, out, true);
+	}
+	
+	public static void save(ClinicalDocument clinicalDocument, OutputStream out, boolean defaults) throws Exception {
+		if (defaults) {
+			traverse(clinicalDocument);
+		}
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.getContents().add(clinicalDocument);
 		Document document = newDocument();
@@ -152,7 +159,13 @@ public class CDAUtil {
 	}
 	
 	public static boolean validate(EObject object, ValidationHandler handler) {
-		traverse(object);
+		return validate(object, handler, true);
+	}
+	
+	public static boolean validate(EObject object, ValidationHandler handler, boolean defaults) {
+		if (defaults) {
+			traverse(object);
+		}
 		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(object);
 		if (handler != null) {
 			processDiagnostic(diagnostic, handler);
