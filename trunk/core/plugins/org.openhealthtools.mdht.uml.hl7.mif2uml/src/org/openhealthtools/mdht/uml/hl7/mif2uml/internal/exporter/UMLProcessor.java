@@ -1049,9 +1049,8 @@ public class UMLProcessor extends UMLSwitch<Object> {
 			//  Some classes are not getting properly tagged during the import - use the model annotation instead
 			// TODO Debug issue and remove code
 			ifcAnnotation = type.getModel().getEAnnotation(IFC_ANNOTATION_SOURCE);
-			if (ifcAnnotation.getDetails().containsKey(type.getQualifiedName()))
-			{
-				
+			if (ifcAnnotation != null && ifcAnnotation.getDetails().containsKey(type.getQualifiedName()))
+			{				
 				result = ifcAnnotation.getDetails().get(type.getQualifiedName());
 						
 			}	
@@ -1118,7 +1117,14 @@ public class UMLProcessor extends UMLSwitch<Object> {
 
 	public void transformElement(EObject umlElement) {
 
+		try{
 		doSwitch(umlElement);
+		}
+		catch(RuntimeException re)
+		{
+		
+			re.printStackTrace();
+		}
 	}
 	
 	public void transformGeneralizations(EObject umlElement)
