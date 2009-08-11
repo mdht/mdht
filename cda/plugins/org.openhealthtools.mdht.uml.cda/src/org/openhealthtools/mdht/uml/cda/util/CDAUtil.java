@@ -15,11 +15,14 @@ package org.openhealthtools.mdht.uml.cda.util;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -30,10 +33,11 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -41,21 +45,20 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResource;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 	public static final String CDA_SCHEMA_LOCATION = CDAPackage.eNS_URI + " infrastructure/cda/CDA.xsd";
+	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
 	
 	public static ClinicalDocument load(InputStream in) throws Exception {
 		return load(in, null);
@@ -268,85 +271,183 @@ public class CDAUtil {
 		return (Section) object;
 	}
 	
-	// TODO: Create a generic mechanism for populating an instance from annotations.
-	public static void init(EObject object) {
-		addTemplateIds(object);
-		setCode(object);
-	}
-
-	private static II getTemplateId(EClass eClass) {
-		II templateId = null;
-		String root = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "templateId.root");
-		String extension = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "templateId.extension");
-		if (root != null) {
-			templateId = DatatypesFactory.eINSTANCE.createII();
-			templateId.setRoot(root);
-			if (extension != null) {
-				templateId.setExtension(extension);
+	// BEGIN: Path Expression Support
+	public static void init(EObject eObject) {
+		List<EClass> classes = new ArrayList<EClass>(eObject.eClass().getEAllSuperTypes());
+		classes.add(eObject.eClass());
+		for (EClass eClass : classes) {
+			EAnnotation annotation = eClass.getEAnnotation(CDA_ANNOTATION_SOURCE);
+			if (annotation != null) {
+				init(eObject, annotation.getDetails().map());
 			}
 		}
-		return templateId;
 	}
 	
-	private static EObject getCode(EClass eClass) {
-		EObject codeObject = null;
-		String code = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "code.code");
-		String codeSystem = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "code.codeSystem");
-		String codeSystemName = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "code.codeSystemName");
-		String displayName = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "code.displayName");
-		String nullFlavor = EcoreUtil.getAnnotation(eClass, CDA_ANNOTATION_SOURCE, "code.nullFlavor");
-		
-		if (code != null || nullFlavor != null) {
-			EStructuralFeature feature = eClass.getEStructuralFeature("code");
-			if (feature != null) {
-				codeObject = DatatypesFactory.eINSTANCE.create((EClass) feature.getEType());
-				if (code != null) {
-					codeObject.eSet(codeObject.eClass().getEStructuralFeature("code"), code);
+	public static void init(EObject eObject, Map<String, String> details) {
+		List<String> created = new ArrayList<String>();
+		for (String key : details.keySet()) {
+			try {
+				String path = key.replace(".", "/");
+				if (path.contains("/")) {
+					String s = path.substring(0, path.lastIndexOf("/"));
+					if (!created.contains(s)) {
+						create(eObject, s);
+						created.add(s);
+					}
 				}
-				if (codeSystem != null) {
-					codeObject.eSet(codeObject.eClass().getEStructuralFeature("codeSystem"), codeSystem);
-				}
-				if (codeSystemName != null) {
-					codeObject.eSet(codeObject.eClass().getEStructuralFeature("codeSystemName"), codeSystemName);
-				}
-				if (displayName != null) {
-					codeObject.eSet(codeObject.eClass().getEStructuralFeature("displayName"), displayName);
-				}
-				if (nullFlavor != null) {
-					codeObject.eSet(codeObject.eClass().getEStructuralFeature("nullFlavor"), NullFlavor.get(nullFlavor));
-				}
-			}
+				set(eObject, path, details.get(key));
+			} catch (Exception e) {}
 		}
-		return codeObject;
+	}
+	
+	public static <T> T create(EObject root, String path) {
+		return create(root, path, null);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static <T> T create(EObject root, String path, EClass eClass) {
+		EObject current = root;
+		String[] components = path.split("/");
+		int currentIndex = 0;
+		for (String component : components) {
+			EStructuralFeature feature = current.eClass().getEStructuralFeature(component);
+			if (feature instanceof EReference) {
+				EObject eObject = null;
+				Object value = current.eGet(feature);
+				if (value == null || feature.isMany()) {
+					EClass type = (EClass) feature.getEType();
+					if (currentIndex == components.length - 1 && eClass != null && type.isSuperTypeOf(eClass)) {
+						eObject = EcoreUtil.create(eClass);
+					} else {
+						eObject = EcoreUtil.create(type);
+					}
+					if (feature.isMany()) {
+						List<EObject> list = (List<EObject>) value;
+						list.add(eObject);
+					} else {
+						current.eSet(feature, eObject);
+					}
+				} else {
+					eObject = (EObject) value;
+				}
+				current = eObject;
+			}
+			currentIndex++;
+		}
+		return (T) current;
 	}
 
 	@SuppressWarnings("unchecked")
-	private static void addTemplateIds(EObject object) {
-		EList<II> list = (EList<II>) object.eGet(object.eClass().getEStructuralFeature("templateId"));
-		II templateId = null;
-		for (EClass eClass : object.eClass().getEAllSuperTypes()) {
-			templateId = CDAUtil.getTemplateId(eClass);
-			if (templateId != null) {
-				list.add(templateId);
-			}
-		}
-		templateId = CDAUtil.getTemplateId(object.eClass());
-		if (templateId != null) {
-			list.add(templateId);
-		}
+	public static void set(EObject root, String path, Object value) {
+		String last = path.substring(path.lastIndexOf("/") + 1);
+	    EObject target = path.equals(last) ? root : (EObject) get(root, path.substring(0, path.lastIndexOf("/")));
+        if (target != null) {
+        	String name = null;
+        	Integer index = null;
+        	Matcher matcher = COMPONENT_PATTERN.matcher(last);
+        	if (matcher.matches()) {
+        		name = matcher.group(1);
+        		if (matcher.group(3) != null) {
+        			index = Integer.valueOf(matcher.group(3)) - 1;
+        		}
+	            EStructuralFeature feature = target.eClass().getEStructuralFeature(name);
+	            if (feature != null && value != null) {
+	                if (FeatureMapUtil.isFeatureMap(feature) && value instanceof String) {
+	                    FeatureMap featureMap = (FeatureMap) target.eGet(feature);
+	                    FeatureMapUtil.addText(featureMap, (String) value);
+	                } else {
+	    	            if (feature instanceof EAttribute) {
+	    	                EDataType type = (EDataType) feature.getEType();
+	    	                if (value instanceof String && !type.isInstance(value)) {
+	    	                    value = EcoreUtil.createFromString(type, (String) value);
+	    	                }
+	    	            }
+	                	if (feature.isMany()) {
+		                    List<Object> list = (List<Object>) target.eGet(feature);
+		                    if (index != null) {
+		                    	if (index >= 0 && index < list.size()) {
+		                    		list.set(index, value);
+		                    	}
+		                    } else {
+		                    	list.add(value);
+		                    }
+		                } else {
+		                    target.eSet(feature, value);
+		                }
+	                }
+	            }
+        	}
+        }
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static <T> T get(EObject root, String path) {
+	    Object result = null;
+	    EObject current = root;
+	    String[] components = path.split("/");
+	    for (String component : components) {
+	        if (current != null) {
+	        	String name = null;
+	        	Integer index = null;
+	        	Matcher matcher = COMPONENT_PATTERN.matcher(component);
+	        	if (matcher.matches()) {
+	        		name = matcher.group(1);
+	        		if (matcher.group(3) != null) {
+	        			index = Integer.valueOf(matcher.group(3)) - 1;
+	        		}
+		            EStructuralFeature feature = current.eClass().getEStructuralFeature(name);
+		            if (feature != null) {
+		            	if (feature.isMany()) {
+		            		List<Object> list = (List<Object>) current.eGet(feature);
+		            		if (index == null) {
+		            			index = list.size() - 1;
+		            		}
+		            		result = (index >= 0 && index < list.size()) ? list.get(index) : null;
+		            	} else {
+		            		result = current.eGet(feature);
+		            	}
+		            	if (feature instanceof EReference) {
+		            		current = (EObject) result;
+		            	}
+		            } else {
+		            	result = current = null;
+		            }
+	        	}
+	        }
+	    }
+	    return (T) result;
 	}
 
-	private static void setCode(EObject object) {
-		EObject code = null;
-		for (EClass eClass : object.eClass().getEAllSuperTypes()) {
-			code = CDAUtil.getCode(eClass);
-			if (code != null) {
-				object.eSet(object.eClass().getEStructuralFeature("code"), code);
-			}
-		}
-		code = CDAUtil.getCode(object.eClass());
-		if (code != null) {
-			object.eSet(object.eClass().getEStructuralFeature("code"), code);
-		}
+	public static boolean isSet(EObject root, String path) {
+	    return get(root, path) != null;
 	}
+
+	@SuppressWarnings("unchecked")
+	public static void unset(EObject root, String path) {
+	    String last = path.substring(path.lastIndexOf("/") + 1);
+	    EObject target = path.equals(last) ? root : (EObject) get(root, path.substring(0, path.lastIndexOf("/")));
+	    if (target != null) {
+    		String name = null;
+    		Integer index = null;
+	    	Matcher matcher = COMPONENT_PATTERN.matcher(last);
+	    	if (matcher.matches()) {
+	    		name = matcher.group(1);
+	    		if (matcher.group(3) != null) {
+	    			index = Integer.valueOf(matcher.group(3)) - 1;
+	    		}
+		        EStructuralFeature feature = target.eClass().getEStructuralFeature(name);
+		        if (feature != null) {
+		        	if (feature.isMany() && index != null) {
+		        		List<Object> list = (List<Object>) target.eGet(feature);
+		        		if (index >= 0 && index < list.size()) {
+		        			list.remove(index);
+		        		}
+		        	} else {
+		        		target.eUnset(feature);
+		        	}
+		        }
+	    	}
+	    }
+	}
+	// END: Path Expression Support
 }
