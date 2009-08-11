@@ -12,6 +12,8 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.util;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.ClassifierTemplateParameter;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
@@ -412,6 +415,171 @@ public static List<String> getAllParentNames(Classifier classifier) {
 		return template;
 	}
 
+	
+	public static void setConstrainingClassifier(ClassifierTemplateParameter classifierTemplateParameter,Classifier constraint)
+	{
+
+		boolean methodFound = false;
+
+		try {
+			Method setConstrainingClassifier = ClassifierTemplateParameter.class.getMethod("setConstrainingClassifier", new java.lang.Class<?>[] {Classifier.class});
+			try {
+				setConstrainingClassifier.invoke(classifierTemplateParameter, new Object[] {constraint}) ;
+				
+
+			} catch (IllegalArgumentException e) {
+				// Nothing to do here
+			} catch (IllegalAccessException e) {
+				// Nothing to do here
+			} catch (InvocationTargetException e) {
+				// Nothing to do here
+			}
+
+		} catch (SecurityException e) {
+			// Nothing to do here
+		} catch (NoSuchMethodException e) {
+			// Nothing to do here - expected exception
+		}
+
+		if (!methodFound) {
+
+			try {
+			
+				try {
+					
+					Method getConstrainingClassifiers = ClassifierTemplateParameter.class.getMethod("getConstrainingClassifiers", (java.lang.Class<?>[]) null);
+					
+					EList<Classifier> classifiers = (EList<Classifier>) getConstrainingClassifiers.invoke(classifierTemplateParameter,(Object[])null);
+					
+					classifiers.add(constraint);
+					
+				} catch (IllegalArgumentException e) {
+					// Nothing to do here
+				} catch (IllegalAccessException e) {
+					// Nothing to do here
+				} catch (InvocationTargetException e) {
+					// Nothing to do here
+				}
+
+			} catch (SecurityException e) {
+				// Nothing to do here
+			} catch (NoSuchMethodException e) {
+				// Nothing to do here - expected exception
+			}
+
+		}
+
+		return;
+		
+	}
+	
+	public static void setParameterableElement(TemplateParameterSubstitution substitution,ParameterableElement parameterableElement)
+	{
+		boolean methodFound = false;
+
+		try {
+			Method getAcuals = TemplateParameterSubstitution.class.getMethod("getActuals",(java.lang.Class<?>[]) null);
+			try {
+				
+				EList<ParameterableElement> actuals = (EList<ParameterableElement>) getAcuals.invoke(substitution,(Object[])null);
+
+				methodFound = true;
+				
+				actuals.add(parameterableElement);
+
+			} catch (IllegalArgumentException e) {
+				// Nothing to do here
+			} catch (IllegalAccessException e) {
+				// Nothing to do here
+			} catch (InvocationTargetException e) {
+				// Nothing to do here
+			}
+
+		} catch (SecurityException e) {
+			// Nothing to do here
+		} catch (NoSuchMethodException e) {
+			// Nothing to do here - expected exception
+		}
+
+		if (!methodFound) {
+
+			try {
+				Method setAcual = TemplateParameterSubstitution.class.getMethod("setActual",new java.lang.Class<?>[] {ParameterableElement.class});
+				try {
+					setAcual.invoke(substitution, new Object[] { parameterableElement });
+				} catch (IllegalArgumentException e) {
+					// Nothing to do here
+				} catch (IllegalAccessException e) {
+					// Nothing to do here
+				} catch (InvocationTargetException e) {
+					// Nothing to do here
+				}
+
+			} catch (SecurityException e) {
+				// Nothing to do here
+			} catch (NoSuchMethodException e) {
+				// Nothing to do here - expected exception
+			}
+
+		}
+
+		return;
+	}
+	
+	private static ParameterableElement getParameterableElement(TemplateParameterSubstitution substitution) {
+
+		ParameterableElement parameterableElement = null;
+
+		boolean methodFound = false;
+
+		try {
+			Method getAcuals = TemplateParameterSubstitution.class.getMethod("getActuals", null);
+			try {
+				EList<ParameterableElement> actuals = (EList<ParameterableElement>) getAcuals.invoke(substitution, null);
+
+				methodFound = true;
+
+				if (actuals.size() > 0) {
+					parameterableElement = actuals.get(0);
+				}
+			} catch (IllegalArgumentException e) {
+				// Nothing to do here
+			} catch (IllegalAccessException e) {
+				// Nothing to do here
+			} catch (InvocationTargetException e) {
+				// Nothing to do here
+			}
+
+		} catch (SecurityException e) {
+			// Nothing to do here
+		} catch (NoSuchMethodException e) {
+			// Nothing to do here - expected exception
+		}
+
+		if (!methodFound) {
+
+			try {
+				Method getAcual = TemplateParameterSubstitution.class.getMethod("getActual", null);
+				try {
+					parameterableElement = (ParameterableElement) getAcual.invoke(substitution, null);
+				} catch (IllegalArgumentException e) {
+					// Nothing to do here
+				} catch (IllegalAccessException e) {
+					// Nothing to do here
+				} catch (InvocationTargetException e) {
+					// Nothing to do here
+				}
+
+			} catch (SecurityException e) {
+				// Nothing to do here
+			} catch (NoSuchMethodException e) {
+				// Nothing to do here - expected exception
+			}
+
+		}
+
+		return parameterableElement;
+	}
 	/**
 	 * If classifier is a template binding and template is a Classifier,
 	 * return a list of template parameter substitutions.  Only include
@@ -424,10 +592,10 @@ public static List<String> getAllParentNames(Classifier classifier) {
 		List<Classifier> params = new ArrayList<Classifier>();
 		for (TemplateBinding binding : classifier.getTemplateBindings()) {
 			if (binding.getSignature().getTemplate() instanceof Classifier) {
-				for (TemplateParameterSubstitution substitution : binding.getParameterSubstitutions()) {
-					for (ParameterableElement element : substitution.getActuals()) {
-						if (element instanceof Classifier)
-						params.add((Classifier)element);
+				for (TemplateParameterSubstitution substitution : binding.getParameterSubstitutions()) {					
+					ParameterableElement element = getParameterableElement(substitution);
+					if (element instanceof Classifier) {
+						params.add((Classifier) element);
 					}
 				}
 			}
