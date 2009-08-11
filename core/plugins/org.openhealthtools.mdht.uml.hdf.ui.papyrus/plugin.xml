@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+	<extension point="org.eclipse.papyrus.extensionpoints.uml2.UMLLibrary">
+		<library description="HL7 Abstract Data Types v1" iconpath="icons/uml.gif"
+			name="HL7AbstractDataTypes_v1" path="pathmap://HL7_DT_UV/DEFN=UV=DT=1.0.uml"
+			provider="Openhealth Tools MDHT">
+		</library>
+	</extension>
+
+	<extension point="org.eclipse.papyrus.extensionpoints.uml2.UMLLibrary">
+		<library description="HL7 XSD Data Types Library" iconpath="icons/uml.gif"
+			name="HL7XSDDataTypeLibrary" path="pathmap://HL7_LIBRARIES/HL7Datatypes.library.uml"
+			provider="Openhealth Tools MDHT">
+		</library>
+	</extension>
+
+	<extension point="org.eclipse.papyrus.extensionpoints.uml2.UMLProfile">
+		<profile description="HDF Profile" iconpath="icons/uml.gif"
+			name="HDFProfile" path="pathmap://HL7_PROFILES/HDF.profile.uml"
+			provider="Openhealth Tools MDHT">
+		</profile>
+	</extension>
+
+	<extension point="org.eclipse.papyrus.extensionpoints.uml2.UMLProfile">
+		<profile description="RIM Profile" iconpath="icons/uml.gif"
+			name="RIMProfile" path="pathmap://HL7_PROFILES/RIM.profile.uml"
+			provider="Openhealth Tools MDHT">
+		</profile>
+	</extension>
+
+</plugin>
