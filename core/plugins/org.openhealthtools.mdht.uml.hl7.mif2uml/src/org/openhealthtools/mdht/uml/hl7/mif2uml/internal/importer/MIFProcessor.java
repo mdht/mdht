@@ -602,7 +602,9 @@ public class MIFProcessor extends Mif2Switch {
 				
 				Classifier constraining = resolveDatatypeReference(mifParam.getType());
 				if (constraining != null)
-					parameter.setConstrainingClassifier(constraining);
+				{
+					UMLUtil.setConstrainingClassifier(parameter, constraining);
+				}
 				
 				Classifier defaultType = resolveDatatypeReference(mifParam.getDefaultValue());
 				if (defaultType != null)
@@ -624,7 +626,9 @@ public class MIFProcessor extends Mif2Switch {
 					if (umlArg != null) {
 						TemplateParameterSubstitution substitution = binding.createParameterSubstitution();
 						substitution.setFormal(signature.getOwnedParameters().get(paramIndex++));
-						substitution.getActuals().add(umlArg);
+						
+						UMLUtil.setParameterableElement(substitution,umlArg);
+
 					}
 					else {
 						diagnostics.error("Cannot find datatype binding argument '" 
@@ -2286,7 +2290,8 @@ public class MIFProcessor extends Mif2Switch {
 						
 						Classifier umlArg = resolveDatatypeReference(mifArg);
 						if (umlArg != null) {
-							substitution.getActuals().add(umlArg);
+							UMLUtil.setParameterableElement(substitution,umlArg);
+//							substitution.getActuals().add(umlArg);
 						}
 						else {
 							diagnostics.error("Cannot find datatype binding argument '" 
