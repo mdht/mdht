@@ -283,7 +283,7 @@ public class CDAUtil {
 		}
 	}
 	
-	public static void init(EObject eObject, Map<String, String> details) {
+	private static void init(EObject eObject, Map<String, String> details) {
 		List<String> created = new ArrayList<String>();
 		for (String key : details.keySet()) {
 			try {
