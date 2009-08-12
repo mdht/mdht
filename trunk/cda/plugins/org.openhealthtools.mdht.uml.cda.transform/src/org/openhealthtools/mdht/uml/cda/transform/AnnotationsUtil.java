@@ -137,6 +137,7 @@ public class AnnotationsUtil {
 		return cdaAnnotations;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void saveAnnotations() {
 		if (cdaAnnotations == null) {
 			return;
