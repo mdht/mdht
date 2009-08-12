@@ -59,7 +59,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 
 	public void addValidationWarning(Class constrainedClass, String constraintName, String message) {
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(constrainedClass);
-		annotationsUtil.addAnnotation(VALIDATION_ERROR, constraintName);
+		annotationsUtil.addAnnotation(VALIDATION_WARNING, constraintName);
 		annotationsUtil.saveAnnotations();
 		
 		addValidationMessage(constrainedClass, constraintName, message);
@@ -67,7 +67,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 
 	public void addValidationInfo(Class constrainedClass, String constraintName, String message) {
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(constrainedClass);
-		annotationsUtil.addAnnotation(VALIDATION_ERROR, constraintName);
+		annotationsUtil.addAnnotation(VALIDATION_INFO, constraintName);
 		annotationsUtil.saveAnnotations();
 		
 		addValidationMessage(constrainedClass, constraintName, message);
@@ -85,6 +85,10 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	}
 
 	protected Property getCDAProperty(Property templateProperty) {
+		if (templateProperty.getClass_() == null) {
+			return null;
+		}
+		
 		for (Classifier parent : templateProperty.getClass_().allParents()) {
 			for (Property inherited : parent.getAttributes()) {
 				if (inherited.getName().equals(templateProperty.getName())
@@ -101,6 +105,10 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	 * Returns the nearest inherited property with the same name, or null if not found.
 	 */
 	protected Property getInheritedProperty(Property templateProperty) {
+		if (templateProperty.getClass_() == null) {
+			return null;
+		}
+		
 		for (Classifier parent : templateProperty.getClass_().allParents()) {
 			for (Property inherited : parent.getAttributes()) {
 				if (inherited.getName().equals(templateProperty.getName())) {
@@ -123,5 +131,16 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 
 		//TODO get severity level and message from stereotype
 		addValidationError(property.getClass_(), constraintName, null);
+	}
+	
+	protected org.eclipse.uml2.uml.Class getCDAClass(org.eclipse.uml2.uml.Class templateClass) {
+		for (Classifier parent : templateClass.allParents()) {
+			if ("cda".equals(parent.getNearestPackage().getName()) 
+					&& parent instanceof org.eclipse.uml2.uml.Class) {
+				return (org.eclipse.uml2.uml.Class) parent;
+			}
+		}
+		
+		return null;
 	}
 }
