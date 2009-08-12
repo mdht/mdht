@@ -23,6 +23,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.openhealthtools.mdht.uml.cda.resources.util.CDAResource;
 import org.openhealthtools.mdht.uml.hdf.util.HL7Resource;
 
 
@@ -84,6 +85,36 @@ public abstract class EcoreTransformUtil {
 			}
 		}
 
+		return null;
+	}
+
+	public static Stereotype getAppliedCDAStereotype(Element element, String name) {
+		return element.getAppliedStereotype("CDA" //$NON-NLS-1$
+			+ NamedElement.SEPARATOR + name);
+	}
+	
+	public static Stereotype getCDAStereotype(EObject eObject, String name) {
+		Profile cdaProfile = getCDAProfile(eObject);
+
+		return cdaProfile != null
+			? cdaProfile.getOwnedStereotype(name)
+			: null;
+	}
+	
+	public static Profile getCDAProfile(EObject eObject) {
+		Resource eResource = eObject.eResource();
+		
+		if (eResource != null) {
+			ResourceSet resourceSet = eResource.getResourceSet();
+			
+			if (resourceSet != null) {
+				return (Profile) UMLUtil.load(resourceSet, URI
+						.createURI(CDAResource.CDA_PROFILE_URI), 
+						UMLPackage.Literals.PROFILE);
+			}
+
+		}
+		
 		return null;
 	}
 
