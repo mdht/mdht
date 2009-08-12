@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.openhealthtools.mdht.uml.papyrus_feature"
+      id="org.openhealthtools.mdht.uml.papyrus"
      label="%featureName"
       version="0.5.0.qualifier"
       provider-name="%featureProvider">
@@ -23,7 +23,10 @@
    
      <requires>
       <import feature="org.openhealthtools.mdht.uml" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.extensionpoints.uml2" />
    </requires>
+   
+   
    
    
    <plugin
