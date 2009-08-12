@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     John T.E. Timm (IBM Corporation) - added support for TransformAssociation
  *     
  * $Id$
  *******************************************************************************/
@@ -37,22 +38,25 @@ public class EcoreTransformer {
 		PluginPropertiesUtil propertiesUtil = new PluginPropertiesUtil(element.eResource());
 		transformerOptions.setPluginPropertiesUtil(propertiesUtil);
 
-		UMLSwitch transformTemplateIdentifier = 
+		UMLSwitch<Object> transformTemplateIdentifier = 
 			new TransformTemplateIdentifier(transformerOptions);
-		UMLSwitch transformVocabConstraint = 
+		UMLSwitch<Object> transformVocabConstraint = 
 			new TransformVocabConstraint(transformerOptions);
-		UMLSwitch transformPropertyConstraint = 
+		UMLSwitch<Object> transformPropertyConstraint = 
 			new TransformPropertyConstraint(transformerOptions);
+		UMLSwitch<Object> transformAssociation = 
+			new TransformAssociation(transformerOptions);
 
 		try {
-			TreeIterator iterator = EcoreUtil.getAllContents(
+			TreeIterator<EObject> iterator = EcoreUtil.getAllContents(
 					Collections.singletonList(element));
 			while (iterator != null && iterator.hasNext()) {
-				EObject child = (EObject) iterator.next();
+				EObject child = iterator.next();
 
 				transformTemplateIdentifier.doSwitch(child);
 				transformVocabConstraint.doSwitch(child);
 				transformPropertyConstraint.doSwitch(child);
+				transformAssociation.doSwitch(child);
 			}
 		}
 		catch (IndexOutOfBoundsException e) {
