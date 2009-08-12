@@ -98,6 +98,7 @@ public class AnnotationsUtil {
 	/**
 	 * Return a map of key/value pairs.
 	 */
+	@SuppressWarnings("unchecked")
 	private Map<String,String> getCDAAnnotations() {
 		if (cdaAnnotations == null) {
 			cdaAnnotations = new HashMap<String,String>();
