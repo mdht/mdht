@@ -13,6 +13,12 @@
 package org.openhealthtools.mdht.uml.cda.transform;
 
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.UMLPackage;
 
 public class TransformAssociation extends TransformAbstract {
 
@@ -25,6 +31,67 @@ public class TransformAssociation extends TransformAbstract {
 			return null;
 		}
 		
+		org.eclipse.uml2.uml.Class sourceClass = null;
+		org.eclipse.uml2.uml.Class targetClass = null;
+		
+		Property targetProperty = null;
+		
+		for (Property property : association.getMemberEnds()) {
+			if (property.isNavigable()) {
+				sourceClass = property.getClass_();
+				targetClass = (org.eclipse.uml2.uml.Class) property.getType();
+				targetProperty = property;
+				break;
+			}
+		}
+		
+		if (sourceClass == null || targetClass == null || targetProperty == null) {
+			return null;
+		}
+
+		org.eclipse.uml2.uml.Class cdaTargetClass = getCDAClass(targetClass);
+		
+		if (cdaTargetClass == null) {
+			return null;
+		}
+		
+		String name = cdaTargetClass.getName();
+		String lowerName = name.substring(0, 1).toLowerCase() + name.substring(1);
+		String qualifiedName = cdaTargetClass.getQualifiedName();
+		String targetQName = targetClass.getQualifiedName();
+		
+		StringBuffer body = new StringBuffer();
+		body.append("self.get" + name + "()->");
+		body.append((targetProperty.getUpper() == 1) ? "one(" : "exists(");
+		body.append(lowerName);
+		body.append(" : " + qualifiedName + " | ");
+		body.append(lowerName);
+		body.append(".oclIsTypeOf(" + targetQName + "))");
+		
+		String constraintName = sourceClass.getName() + "_" + targetClass.getName().substring(0, 1).toLowerCase() + targetClass.getName().substring(1);
+		Constraint constraint = sourceClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
+		constraint.getConstrainedElements().add(sourceClass);
+		
+		OpaqueExpression expression = (OpaqueExpression) constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+		expression.getLanguages().add("OCL");
+		expression.getBodies().add(body.toString());
+		
+		Stereotype validationSupport = EcoreTransformUtil.getAppliedCDAStereotype(association, "ValidationSupport");
+		if (validationSupport != null) {
+			String message = (String) association.getValue(validationSupport, "message");
+			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(validationSupport, "severity");
+			String severity = literal.getName();
+			
+			if ("INFO".equals(severity)) {
+				addValidationInfo(sourceClass, constraintName, message);
+			} else if ("WARNING".equals(severity)) {
+				addValidationWarning(sourceClass, constraintName, message);
+			} else {
+				addValidationError(sourceClass, constraintName, message);
+			}
+		}
+		
+		removeModelElement(targetProperty);
 		removeModelElement(association);
 		
 		return association;
