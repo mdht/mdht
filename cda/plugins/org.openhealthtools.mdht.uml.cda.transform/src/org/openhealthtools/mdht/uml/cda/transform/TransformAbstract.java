@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     John T.E. Timm (IBM Corporation) - added template parameter
  *     
  * $Id$
  *******************************************************************************/
@@ -24,7 +25,7 @@ import org.eclipse.uml2.uml.util.UMLSwitch;
 /**
  * Abstract base class for model transformations.
  */
-public abstract class TransformAbstract extends UMLSwitch {
+public abstract class TransformAbstract extends UMLSwitch<Object> {
 	
 	public static final String LF = System.getProperty("line.separator");
 	
