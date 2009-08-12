@@ -31,4 +31,14 @@
             target="profiles/">
       </mapping>
    </extension>
+   <extension point="com.ibm.xtools.uml.msl.UMLProfiles"
+         name="CDA Profile">
+      <UMLProfile
+            name="CDA Profile"
+            path="pathmap://CDA_PROFILES/CDA.profile.uml"
+            visible="true"
+            required="false"
+            id="CDAProfile">
+      </UMLProfile>
+   </extension>
 </plugin>
