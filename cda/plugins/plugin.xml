@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="CDAProfiles"
+         name="CDA Profiles"
+         point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+      <pathmap
+            name="CDA_PROFILES"
+            path="profiles"
+            plugin="org.openhealthtools.mdht.uml.cda.resources"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://CDA_PROFILES/"
+            target="profiles/">
+      </mapping>
+   </extension>
+</plugin>
