@@ -56,6 +56,9 @@ public class TransformAssociation extends TransformAbstract {
 			return null;
 		}
 		
+		// TODO: Add support to validate target and source classes to allow only valid relationships:
+		//       Document -> Section, Section -> Section, Section -> { Act, Entry, ... }, { Act, Entry, ... } -> { Act, Entry, ... }
+		
 		String name = cdaTargetClass.getName();
 		String lowerName = name.substring(0, 1).toLowerCase() + name.substring(1);
 		String qualifiedName = cdaTargetClass.getQualifiedName();
