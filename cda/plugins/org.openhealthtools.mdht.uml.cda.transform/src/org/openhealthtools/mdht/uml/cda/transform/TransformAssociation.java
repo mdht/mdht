@@ -57,22 +57,25 @@ public class TransformAssociation extends TransformAbstract {
 		}
 		
 		// TODO: Add support to validate target and source classes to allow only valid relationships:
-		//       Document -> Section, Section -> Section, Section -> { Act, Entry, ... }, { Act, Entry, ... } -> { Act, Entry, ... }
+		//       Document -> Section, Section -> Section, Section -> { Act, Encounter, ... }, { Act, Encounter, ... } -> { Act, Encounter, ... }
 		
-		String name = cdaTargetClass.getName();
-		String lowerName = name.substring(0, 1).toLowerCase() + name.substring(1);
-		String qualifiedName = cdaTargetClass.getQualifiedName();
+		String cdaTargetName = cdaTargetClass.getName();
+		String cdaTargetLowerName = cdaTargetName.substring(0, 1).toLowerCase() + cdaTargetName.substring(1);
+		String cdaTargetQName = cdaTargetClass.getQualifiedName();
+		
+		String targetName = targetClass.getName();
+		String targetLowerName = targetName.substring(0, 1).toLowerCase() + targetName.substring(1);
 		String targetQName = targetClass.getQualifiedName();
 		
 		StringBuffer body = new StringBuffer();
-		body.append("self.get" + name + "()->");
+		body.append("self.get" + cdaTargetName + "()->");
 		body.append((targetProperty.getUpper() == 1) ? "one(" : "exists(");
-		body.append(lowerName);
-		body.append(" : " + qualifiedName + " | ");
-		body.append(lowerName);
+		body.append(cdaTargetLowerName);
+		body.append(" : " + cdaTargetQName + " | ");
+		body.append(cdaTargetLowerName);
 		body.append(".oclIsTypeOf(" + targetQName + "))");
 		
-		String constraintName = sourceClass.getName() + "_" + targetClass.getName().substring(0, 1).toLowerCase() + targetClass.getName().substring(1);
+		String constraintName = sourceClass.getName() + "_" + targetLowerName;
 		Constraint constraint = sourceClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
 		constraint.getConstrainedElements().add(sourceClass);
 		
