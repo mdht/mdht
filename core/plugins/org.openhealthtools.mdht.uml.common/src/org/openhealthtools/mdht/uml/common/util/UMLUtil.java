@@ -415,171 +415,350 @@ public static List<String> getAllParentNames(Classifier classifier) {
 		return template;
 	}
 
-	
-	public static void setConstrainingClassifier(ClassifierTemplateParameter classifierTemplateParameter,Classifier constraint)
-	{
+	private static final String UML2REFLECTIONERROR = "UML2 Reflection Error";
 
-		boolean methodFound = false;
+	/**
+	 * getConstrainingClassifier is a static utility method used to encapsulate
+	 * UML 2.3 Migration in the code base. The goal is to use the same code and
+	 * avoid multiple builds, features, sites to support both UML 2.2 and 2.3
+	 * api with the same code base.
+	 * 
+	 * The difference in this case is that ConstrainingClassifier is scalar in
+	 * 2.2 (0..1) and list (0..*) in 2.3
+	 * 
+	 * Implementation/Exception Handling Note - The reflection API currently does not have an
+	 * "hasMethod" so the approach is to call getMethod on the target class
+	 * starting with UML 2.2 method. If the method is not found or some
+	 * exception has been encountered attempt to get the 2.3 method. If both
+	 * attempts fail, throw a RuntimeException. The reasoning behind this
+	 * approach is not to introduce a series of exception handling for
+	 * reflection errors into the base code because the project will eventually
+	 * migrate completely to 2.3 so the current logic captures and ignores all exceptions.
+	 * 
+	 * http://www.eclipse.org/modeling/mdt/uml2/docs/guides/UML2_3.0
+	 * _Migration_Guide/guide.html
+	 * 
+	 * @param classifierTemplateParameter
+	 * @return
+	 * @throws NoSuchMethodException
+	 * 
+	 * 
+	 */
+	public static Classifier getConstrainingClassifier(ClassifierTemplateParameter classifierTemplateParameter) {
+
+		Classifier classifier = null;
+
+		boolean reflectionCompleted = false;
 
 		try {
-			Method setConstrainingClassifier = ClassifierTemplateParameter.class.getMethod("setConstrainingClassifier", new java.lang.Class<?>[] {Classifier.class});
-			try {
-				setConstrainingClassifier.invoke(classifierTemplateParameter, new Object[] {constraint}) ;
-				
 
-			} catch (IllegalArgumentException e) {
-				// Nothing to do here
-			} catch (IllegalAccessException e) {
-				// Nothing to do here
-			} catch (InvocationTargetException e) {
-				// Nothing to do here
-			}
+			// Attempt UML 2.2 API 
+			Method getConstrainingClassifier = ClassifierTemplateParameter.class.getMethod("getConstrainingClassifier", (java.lang.Class<?>[]) null);
 
+			classifier = (Classifier) getConstrainingClassifier.invoke(classifierTemplateParameter, (Object[]) null);
+
+			reflectionCompleted = true;
+
+		} catch (IllegalArgumentException e) {
+			// Consume Exception
+		} catch (IllegalAccessException e) {
+			// Consume Exception
+		} catch (InvocationTargetException e) {
+			// Consume Exception
 		} catch (SecurityException e) {
-			// Nothing to do here
+			// Consume Exception
 		} catch (NoSuchMethodException e) {
-			// Nothing to do here - expected exception
+			// Consume Exception
 		}
 
-		if (!methodFound) {
+		if (!reflectionCompleted) {
 
 			try {
+
+				// Attempt UML 2.3 API
+				Method getConstrainingClassifiers = ClassifierTemplateParameter.class.getMethod("getConstrainingClassifiers", (java.lang.Class<?>[]) null);
+
+				EList<Classifier> classifiers = (EList<Classifier>) getConstrainingClassifiers.invoke(classifierTemplateParameter, (Object[]) null);
+
+				if (classifiers.size() > 0) {
+					classifier = classifiers.get(0);
+				}
+
+				reflectionCompleted = true;
+			} catch (IllegalArgumentException e) {
+				// Consume Exception
+			} catch (IllegalAccessException e) {
+				// Consume Exception
+			} catch (InvocationTargetException e) {
+				// Consume Exception
+			} catch (SecurityException e) {
+				// Consume Exception
+			} catch (NoSuchMethodException e) {
+				// Consume Exception 
+			}
+
+		}
+
+		// If neither 2.2/2.3 or some other execution error a general purpose UML 2 Reflection Error 
+		if (!reflectionCompleted) {
+			throw new RuntimeException(UML2REFLECTIONERROR);
+
+		}
+	
+		return classifier;
+	}
+
+	/**
+	 * setConstrainingClassifier is a static utility method used to encapsulate
+	 * UML 2.3 Migration in the code base. The goal is to use the same code and
+	 * avoid multiple builds, features, sites to support both UML 2.2 and 2.3
+	 * api with the same code base.
+	 * 
+	 * The difference in this case is that ConstrainingClassifier is scalar in
+	 * 2.2 (0..1) and list (0..*) in 2.3
+	 * 
+	 * Implementation/Exception Handling Note - The reflection API currently does not have an
+	 * "hasMethod" so the approach is to call getMethod on the target class
+	 * starting with UML 2.2 method. If the method is not found or some
+	 * exception has been encountered attempt to get the 2.3 method. If both
+	 * attempts fail, throw a RuntimeException. The reasoning behind this
+	 * approach is not to introduce a series of exception handling for
+	 * reflection errors into the base code because the project will eventually
+	 * migrate completely to 2.3 so the current logic captures and ignores all exceptions.
+	 * 
+	 * http://www.eclipse.org/modeling/mdt/uml2/docs/guides/UML2_3.0_Migration_Guide/guide.html
+	 * @param classifierTemplateParameter
+	 * @param constraint
+	 */
+	public static void setConstrainingClassifier(ClassifierTemplateParameter classifierTemplateParameter, Classifier constraint) {
+
+		boolean reflectionCompleted = false;
+
+		try {
 			
-				try {
-					
-					Method getConstrainingClassifiers = ClassifierTemplateParameter.class.getMethod("getConstrainingClassifiers", (java.lang.Class<?>[]) null);
-					
-					EList<Classifier> classifiers = (EList<Classifier>) getConstrainingClassifiers.invoke(classifierTemplateParameter,(Object[])null);
-					
-					classifiers.add(constraint);
-					
-				} catch (IllegalArgumentException e) {
-					// Nothing to do here
-				} catch (IllegalAccessException e) {
-					// Nothing to do here
-				} catch (InvocationTargetException e) {
-					// Nothing to do here
-				}
+			// Attempt UML 2.2 API 
+			
+			Method setConstrainingClassifier = ClassifierTemplateParameter.class.getMethod("setConstrainingClassifier", new java.lang.Class<?>[] { Classifier.class });
 
-			} catch (SecurityException e) {
-				// Nothing to do here
-			} catch (NoSuchMethodException e) {
-				// Nothing to do here - expected exception
-			}
+			setConstrainingClassifier.invoke(classifierTemplateParameter, new Object[] { constraint });
 
+			reflectionCompleted = true;
+
+		} catch (IllegalArgumentException e) {
+			// Consume Exception
+		} catch (IllegalAccessException e) {
+			// Consume Exception
+		} catch (InvocationTargetException e) {
+			// Consume Exception
+		} catch (SecurityException e) {
+			// Consume Exception
+		} catch (NoSuchMethodException e) {
+			// Consume Exception 
 		}
 
-		return;
-		
-	}
-	
-	public static void setParameterableElement(TemplateParameterSubstitution substitution,ParameterableElement parameterableElement)
-	{
-		boolean methodFound = false;
+		if (!reflectionCompleted) {
 
-		try {
-			Method getAcuals = TemplateParameterSubstitution.class.getMethod("getActuals",(java.lang.Class<?>[]) null);
 			try {
 				
-				EList<ParameterableElement> actuals = (EList<ParameterableElement>) getAcuals.invoke(substitution,(Object[])null);
-
-				methodFound = true;
+				// Attempt UML 2.3 API
 				
-				actuals.add(parameterableElement);
+				Method getConstrainingClassifiers = ClassifierTemplateParameter.class.getMethod("getConstrainingClassifiers", (java.lang.Class<?>[]) null);
+
+				EList<Classifier> classifiers = (EList<Classifier>) getConstrainingClassifiers.invoke(classifierTemplateParameter, (Object[]) null);
+
+				classifiers.add(constraint);
+
+				reflectionCompleted = true;
 
 			} catch (IllegalArgumentException e) {
-				// Nothing to do here
+				// Consume Exception
 			} catch (IllegalAccessException e) {
-				// Nothing to do here
+				// Consume Exception
 			} catch (InvocationTargetException e) {
-				// Nothing to do here
-			}
-
-		} catch (SecurityException e) {
-			// Nothing to do here
-		} catch (NoSuchMethodException e) {
-			// Nothing to do here - expected exception
-		}
-
-		if (!methodFound) {
-
-			try {
-				Method setAcual = TemplateParameterSubstitution.class.getMethod("setActual",new java.lang.Class<?>[] {ParameterableElement.class});
-				try {
-					setAcual.invoke(substitution, new Object[] { parameterableElement });
-				} catch (IllegalArgumentException e) {
-					// Nothing to do here
-				} catch (IllegalAccessException e) {
-					// Nothing to do here
-				} catch (InvocationTargetException e) {
-					// Nothing to do here
-				}
-
+				// Consume Exception
 			} catch (SecurityException e) {
-				// Nothing to do here
+				// Consume Exception
 			} catch (NoSuchMethodException e) {
-				// Nothing to do here - expected exception
+				// Consume Exception 
 			}
+
+		}
+		
+		// If neither 2.2/2.3 or some other execution error a general purpose UML 2 Reflection Error 
+		if (!reflectionCompleted) {
+			throw new RuntimeException(UML2REFLECTIONERROR);
 
 		}
 
 		return;
+
 	}
-	
-	private static ParameterableElement getParameterableElement(TemplateParameterSubstitution substitution) {
+
+	/**
+	 * setParameterableElement is a static utility method used to encapsulate
+	 * UML 2.3 Migration in the code base. The goal is to use the same code and
+	 * avoid multiple builds, features, sites to support both UML 2.2 and 2.3
+	 * api with the same code base.
+	 * 
+	 * The difference in this case is that TemplateParameterSubstitution Actual Parameters a list (0..*) in 2.2
+	 * and scalar (0..1) in 2.3
+	 * 
+	 * Implementation/Exception Handling Note - The reflection API currently does not have an
+	 * "hasMethod" so the approach is to call getMethod on the target class
+	 * starting with UML 2.2 method. If the method is not found or some
+	 * exception has been encountered attempt to get the 2.3 method. If both
+	 * attempts fail, throw a RuntimeException. The reasoning behind this
+	 * approach is not to introduce a series of exception handling for
+	 * reflection errors into the base code because the project will eventually
+	 * migrate completely to 2.3 so the current logic captures and ignores all exceptions.
+	 * 
+	 * http://www.eclipse.org/modeling/mdt/uml2/docs/guides/UML2_3.0_Migration_Guide/guide.html
+	 * @param substitution
+	 * @param parameterableElement
+	 */
+	public static void setParameterableElement(TemplateParameterSubstitution substitution, ParameterableElement parameterableElement) {
+		boolean reflectionCompleted = false;
+
+		try {
+			// Attempt UML 2.2 API 
+			Method getAcuals = TemplateParameterSubstitution.class.getMethod("getActuals", (java.lang.Class<?>[]) null);
+
+			EList<ParameterableElement> actuals = (EList<ParameterableElement>) getAcuals.invoke(substitution, (Object[]) null);
+
+			reflectionCompleted = true;
+
+			actuals.add(parameterableElement);
+
+		} catch (IllegalArgumentException e) {
+			// Consume Exception
+		} catch (IllegalAccessException e) {
+			// Consume Exception
+		} catch (InvocationTargetException e) {
+			// Consume Exception
+		} catch (SecurityException e) {
+			// Consume Exception
+		} catch (NoSuchMethodException e) {
+			// Consume Exception 
+		}
+
+		if (!reflectionCompleted) {
+
+			try {
+				// Attempt UML 2.3 API
+				Method setAcual = TemplateParameterSubstitution.class.getMethod("setActual", new java.lang.Class<?>[] { ParameterableElement.class });
+
+				setAcual.invoke(substitution, new Object[] { parameterableElement });
+				
+				reflectionCompleted = true;
+				
+			} catch (IllegalArgumentException e) {
+				// Consume Exception
+			} catch (IllegalAccessException e) {
+				// Consume Exception
+			} catch (InvocationTargetException e) {
+				// Consume Exception
+			} catch (SecurityException e) {
+				// Consume Exception
+			} catch (NoSuchMethodException e) {
+				// Consume Exception 
+			}
+
+		}
+
+		// If neither 2.2/2.3 or some other execution error a general purpose UML 2 Reflection Error 
+		if (!reflectionCompleted) {
+			throw new RuntimeException(UML2REFLECTIONERROR);
+
+		}
+		
+		return;
+	}
+
+	/**
+	 * setParameterableElement is a static utility method used to encapsulate
+	 * UML 2.3 Migration in the code base. The goal is to use the same code and
+	 * avoid multiple builds, features, sites to support both UML 2.2 and 2.3
+	 * api with the same code base.
+	 * 
+	 * The difference in this case is that TemplateParameterSubstitution Actual Parameters a list (0..*) in 2.2
+	 * and scalar (0..1) in 2.3
+	 * 
+	 * Implementation/Exception Handling Note - The reflection API currently does not have an
+	 * "hasMethod" so the approach is to call getMethod on the target class
+	 * starting with UML 2.2 method. If the method is not found or some
+	 * exception has been encountered attempt to get the 2.3 method. If both
+	 * attempts fail, throw a RuntimeException. The reasoning behind this
+	 * approach is not to introduce a series of exception handling for
+	 * reflection errors into the base code because the project will eventually
+	 * migrate completely to 2.3 so the current logic captures and ignores all exceptions.
+	 * 
+	 * http://www.eclipse.org/modeling/mdt/uml2/docs/guides/UML2_3.0_Migration_Guide/guide.html
+	 * @param substitution
+	 * @return
+	 */
+	public static ParameterableElement getParameterableElement(TemplateParameterSubstitution substitution) {
 
 		ParameterableElement parameterableElement = null;
 
-		boolean methodFound = false;
+		boolean reflectionCompleted = false;
 
 		try {
+			// Attempt UML 2.2 API 
 			Method getAcuals = TemplateParameterSubstitution.class.getMethod("getActuals", null);
-			try {
-				EList<ParameterableElement> actuals = (EList<ParameterableElement>) getAcuals.invoke(substitution, null);
 
-				methodFound = true;
+			EList<ParameterableElement> actuals = (EList<ParameterableElement>) getAcuals.invoke(substitution, null);
 
-				if (actuals.size() > 0) {
-					parameterableElement = actuals.get(0);
-				}
-			} catch (IllegalArgumentException e) {
-				// Nothing to do here
-			} catch (IllegalAccessException e) {
-				// Nothing to do here
-			} catch (InvocationTargetException e) {
-				// Nothing to do here
+			reflectionCompleted = true;
+
+			if (actuals.size() > 0) {
+				parameterableElement = actuals.get(0);
 			}
 
+		} catch (IllegalArgumentException e) {
+			// Consume Exception
+		} catch (IllegalAccessException e) {
+			// Consume Exception
+		} catch (InvocationTargetException e) {
+			// Consume Exception
 		} catch (SecurityException e) {
-			// Nothing to do here
+			// Consume Exception
 		} catch (NoSuchMethodException e) {
-			// Nothing to do here - expected exception
+			// Consume Exception 
 		}
 
-		if (!methodFound) {
+		if (!reflectionCompleted) {
 
 			try {
+				// Attempt UML 2.3 API
 				Method getAcual = TemplateParameterSubstitution.class.getMethod("getActual", null);
-				try {
-					parameterableElement = (ParameterableElement) getAcual.invoke(substitution, null);
-				} catch (IllegalArgumentException e) {
-					// Nothing to do here
-				} catch (IllegalAccessException e) {
-					// Nothing to do here
-				} catch (InvocationTargetException e) {
-					// Nothing to do here
-				}
 
+				parameterableElement = (ParameterableElement) getAcual.invoke(substitution, null);
+				reflectionCompleted = true;
+			} catch (IllegalArgumentException e) {
+				// Consume Exception
+			} catch (IllegalAccessException e) {
+				// Consume Exception
+			} catch (InvocationTargetException e) {
+				// Consume Exception
 			} catch (SecurityException e) {
-				// Nothing to do here
+				// Consume Exception
 			} catch (NoSuchMethodException e) {
-				// Nothing to do here - expected exception
+				// Consume Exception 
 			}
+
+		}
+
+		// If neither 2.2/2.3 or some other execution error a general purpose UML 2 Reflection Error 
+		if (!reflectionCompleted) {
+			throw new RuntimeException(UML2REFLECTIONERROR);
 
 		}
 
 		return parameterableElement;
 	}
+	
+	
+
 	/**
 	 * If classifier is a template binding and template is a Classifier,
 	 * return a list of template parameter substitutions.  Only include
