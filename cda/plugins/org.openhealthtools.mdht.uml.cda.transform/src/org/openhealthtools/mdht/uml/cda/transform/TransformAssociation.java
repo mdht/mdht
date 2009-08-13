@@ -19,6 +19,7 @@ import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 
 public class TransformAssociation extends TransformAbstract {
 
@@ -76,11 +77,11 @@ public class TransformAssociation extends TransformAbstract {
 		expression.getLanguages().add("OCL");
 		expression.getBodies().add(body.toString());
 		
-		Stereotype validationSupport = EcoreTransformUtil.getAppliedCDAStereotype(association, "ValidationSupport");
+		Stereotype validationSupport = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.VALIDATION_SUPPORT);
 		if (validationSupport != null) {
-			String message = (String) association.getValue(validationSupport, "message");
-			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(validationSupport, "severity");
-			String severity = literal.getName();
+			String message = (String) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE);
+			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_SEVERITY);
+			String severity = (literal != null) ? literal.getName() : "ERROR";
 			
 			if ("INFO".equals(severity)) {
 				addValidationInfo(sourceClass, constraintName, message);
