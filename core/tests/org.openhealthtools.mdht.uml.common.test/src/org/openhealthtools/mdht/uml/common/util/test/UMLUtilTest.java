@@ -8,9 +8,12 @@ import junit.framework.TestCase;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.ClassifierTemplateParameter;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.ParameterableElement;
+import org.eclipse.uml2.uml.TemplateParameterSubstitution;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
@@ -270,11 +273,35 @@ public class UMLUtilTest extends TestCase {
 		EAnnotation eAnnotation = testPackage.getEAnnotation(UML2ALIAS);
 		
 		assertTrue(eAnnotation.getDetails().containsKey(ALIASTTEST));
-		
-		
+				
+	}
 	
+	public final void testSetConstrainingClassifier() {
+		
+		ClassifierTemplateParameter classifierTemplateParameter = UMLFactory.eINSTANCE.createClassifierTemplateParameter();
+		
+		Classifier constraint = UMLFactory.eINSTANCE.createClass();
+		
+		UMLUtil.setConstrainingClassifier(classifierTemplateParameter, constraint);
+		
+		Classifier result = UMLUtil.getConstrainingClassifier(classifierTemplateParameter);
+
+		assertTrue(constraint.equals(result));
+
 	}
 
+	public final void testSetParameterableElement() {
+		TemplateParameterSubstitution substitution = UMLFactory.eINSTANCE.createTemplateParameterSubstitution();
+
+		ParameterableElement parameterableElement = UMLFactory.eINSTANCE.createParameter();
+
+		UMLUtil.setParameterableElement(substitution, parameterableElement);
+
+		ParameterableElement result = UMLUtil.getParameterableElement(substitution);
+
+		assertTrue(parameterableElement.equals(result));
+
+	}
 	public final void testSetEObjectIDElement() {
 		fail("Not yet implemented"); // TODO
 	}
