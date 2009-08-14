@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.openhealthtools.mdht.uml.cda.ccd.*;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
@@ -120,6 +121,11 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.SEVERITY_OBSERVATION: return createSeverityObservation();
 			case CCDPackage.ALERT_STATUS_OBSERVATION: return createAlertStatusObservation();
 			case CCDPackage.CAUSE_OF_DEATH_OBSERVATION: return createCauseOfDeathObservation();
+			case CCDPackage.RESULTS_SECTION: return createResultsSection();
+			case CCDPackage.MEDICATION_SERIES_NUMBER_OBSERVATION: return createMedicationSeriesNumberObservation();
+			case CCDPackage.MEDICATION_STATUS_OBSERVATION: return createMedicationStatusObservation();
+			case CCDPackage.LOCATION_PARTICIPATION: return createLocationParticipation();
+			case CCDPackage.PRODUCT: return createProduct();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -393,6 +399,56 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public CauseOfDeathObservation createCauseOfDeathObservation() {
 		CauseOfDeathObservationImpl causeOfDeathObservation = new CauseOfDeathObservationImpl();
 		return causeOfDeathObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResultsSection createResultsSection() {
+		ResultsSectionImpl resultsSection = new ResultsSectionImpl();
+		return resultsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationSeriesNumberObservation createMedicationSeriesNumberObservation() {
+		MedicationSeriesNumberObservationImpl medicationSeriesNumberObservation = new MedicationSeriesNumberObservationImpl();
+		return medicationSeriesNumberObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationStatusObservation createMedicationStatusObservation() {
+		MedicationStatusObservationImpl medicationStatusObservation = new MedicationStatusObservationImpl();
+		return medicationStatusObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LocationParticipation createLocationParticipation() {
+		LocationParticipationImpl locationParticipation = new LocationParticipationImpl();
+		return locationParticipation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product createProduct() {
+		ProductImpl product = new ProductImpl();
+		return product;
 	}
 
 	/**

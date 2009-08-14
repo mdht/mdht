@@ -43,5 +43,10 @@
       <entry eClass="AlertStatusObservation" id="2.16.840.1.113883.10.20.1.39" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="StatusObservation" id="2.16.840.1.113883.10.20.1.57" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="CauseOfDeathObservation" id="2.16.840.1.113883.10.20.1.42" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="ResultsSection" id="2.16.840.1.113883.10.20.1.14" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="MedicationSeriesNumberObservation" id="2.16.840.1.113883.10.20.1.46" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="MedicationStatusObservation" id="2.16.840.1.113883.10.20.1.47" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="LocationParticipation" id="2.16.840.1.113883.10.20.1.45" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="Product" id="2.16.840.1.113883.10.20.1.53" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
    </extension>
 </plugin>
