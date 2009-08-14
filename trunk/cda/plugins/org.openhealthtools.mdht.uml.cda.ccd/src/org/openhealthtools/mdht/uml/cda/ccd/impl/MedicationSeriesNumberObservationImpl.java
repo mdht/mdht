@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationSeriesNumberObservationOperations;
-
+import org.openhealthtools.mdht.uml.cda.impl.ObservationImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -30,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class MedicationSeriesNumberObservationImpl extends EObjectImpl implements MedicationSeriesNumberObservation {
+public class MedicationSeriesNumberObservationImpl extends ObservationImpl implements MedicationSeriesNumberObservation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -57,6 +52,51 @@ public class MedicationSeriesNumberObservationImpl extends EObjectImpl implement
 	 */
 	public boolean MedicationSeriesNumberObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_templateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean MedicationSeriesNumberObservation_classCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_classCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean MedicationSeriesNumberObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_moodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean MedicationSeriesNumberObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_statusCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean MedicationSeriesNumberObservation_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean MedicationSeriesNumberObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_value(this, diagnostics, context);
 	}
 
 	/**

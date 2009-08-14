@@ -77,6 +77,15 @@ public class SupplyActivityImpl extends SupplyImpl implements SupplyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean SupplyActivity_medicationStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.SupplyActivity_medicationStatusObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SupplyActivity init() {
     		CDAUtil.init(this);
     		return this;

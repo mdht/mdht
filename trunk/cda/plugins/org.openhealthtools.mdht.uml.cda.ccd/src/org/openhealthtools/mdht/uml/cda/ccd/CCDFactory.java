@@ -302,13 +302,13 @@ public interface CCDFactory extends EFactory {
 	MedicationStatusObservation createMedicationStatusObservation();
 
 	/**
-	 * Returns a new object of class '<em>Location Participation</em>'.
+	 * Returns a new object of class '<em>Encounter Location</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Location Participation</em>'.
+	 * @return a new object of class '<em>Encounter Location</em>'.
 	 * @generated
 	 */
-	LocationParticipation createLocationParticipation();
+	EncounterLocation createEncounterLocation();
 
 	/**
 	 * Returns a new object of class '<em>Product</em>'.
@@ -318,6 +318,15 @@ public interface CCDFactory extends EFactory {
 	 * @generated
 	 */
 	Product createProduct();
+
+	/**
+	 * Returns a new object of class '<em>Procedures Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Procedures Section</em>'.
+	 * @generated
+	 */
+	ProceduresSection createProceduresSection();
 
 	/**
 	 * Returns a new object of class '<em>Status Observation</em>'.

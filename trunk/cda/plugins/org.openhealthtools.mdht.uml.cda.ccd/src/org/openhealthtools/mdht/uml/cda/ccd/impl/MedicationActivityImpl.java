@@ -77,6 +77,24 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean MedicationActivity_medicationSeriesNumberObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.MedicationActivity_medicationSeriesNumberObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean MedicationActivity_medicationStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.MedicationActivity_medicationStatusObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MedicationActivity init() {
     		CDAUtil.init(this);
     		return this;

@@ -59,6 +59,24 @@ public class EncountersSectionImpl extends SectionImpl implements EncountersSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean EncountersSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersSectionOperations.EncountersSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean EncountersSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersSectionOperations.EncountersSection_title(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EncountersSection init() {
     		CDAUtil.init(this);
     		return this;

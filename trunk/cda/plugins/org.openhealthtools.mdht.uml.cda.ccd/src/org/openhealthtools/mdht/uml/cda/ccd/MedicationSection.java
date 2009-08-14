@@ -16,6 +16,16 @@ import org.openhealthtools.mdht.uml.cda.Section;
  * A representation of the model object '<em><b>Medication Section</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * <p>
+ *     <font size="2"><font size="2">The Medications section defines a patient’s current medications and pertinent medication
+ *     history. At a minimum, the currently active medications should be listed, with an entire medication history as an
+ *     option, particularly when the summary document is used for comprehensive data export. The section may also include a
+ *     patient’s prescription history, and enables the determination of the source of a medication list (e.g. from a pharmacy
+ *     system vs. from the patient).</font></font>
+ * </p>
+ * <!-- end-model-doc -->
+ *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getMedicationSection()
  * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='MedicationSection_templateId MedicationSection_code MedicationSection_title' templateId.root='2.16.840.1.113883.10.20.1.8' code.displayName='History of medication use' code.codeSystem='2.16.840.1.113883.6.1' code.code='10160-0'"

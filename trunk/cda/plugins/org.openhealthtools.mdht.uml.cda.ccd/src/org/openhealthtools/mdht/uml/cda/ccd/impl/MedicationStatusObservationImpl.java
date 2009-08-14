@@ -9,16 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationStatusObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -30,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class MedicationStatusObservationImpl extends EObjectImpl implements MedicationStatusObservation {
+public class MedicationStatusObservationImpl extends StatusObservationImpl implements MedicationStatusObservation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -57,6 +51,15 @@ public class MedicationStatusObservationImpl extends EObjectImpl implements Medi
 	 */
 	public boolean MedicationStatusObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MedicationStatusObservationOperations.MedicationStatusObservation_templateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean MedicationStatusObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationStatusObservationOperations.MedicationStatusObservation_value(this, diagnostics, context);
 	}
 
 	/**

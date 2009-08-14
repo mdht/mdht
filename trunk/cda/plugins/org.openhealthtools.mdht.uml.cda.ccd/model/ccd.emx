@@ -2,7 +2,7 @@
 <!--xtools2_universal_type_manager-->
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.model" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_uMmlYIEWEd6H8o-hO3-B4Q/0" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:HDF="http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/CDA/_uMmlYIEWEd6H8o-hO3-B4Q/0 pathmap://CDA_PROFILES/CDA.profile.uml#_uMwWYYEWEd6H8o-hO3-B4Q http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12 pathmap://HL7_PROFILES/HDF.profile.uml#_D_tkoFwxEd63D_E2UJKpvQ">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_uMmlYIEWEd6H8o-hO3-B4Q/0" xmlns:Default="http:///schemas/Default/1" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:HDF="http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/CDA/_uMmlYIEWEd6H8o-hO3-B4Q/0 pathmap://CDA_PROFILES/CDA.profile.uml#_uMwWYYEWEd6H8o-hO3-B4Q http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default? http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12 pathmap://HL7_PROFILES/HDF.profile.uml#_D_tkoFwxEd63D_E2UJKpvQ">
   <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="ccd">
     <eAnnotations xmi:id="_qQyD8zxVEd6JwqSGecoePg" source="uml2.diagrams"/>
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
@@ -15,6 +15,15 @@
       <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVbeUDcEd6xYZuu1VKCVw?vocab?"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_OvmR4HfUEd6ZeOKq_2_a9g" name="MedicationSection">
+      <ownedComment xmi:id="_CfWEYIjvEd66cKocspyVOg" annotatedElement="_OvmR4HfUEd6ZeOKq_2_a9g">
+        <body>&lt;p>&#xD;
+    &lt;font size=&quot;2&quot;>&lt;font size=&quot;2&quot;>The Medications section defines a patient’s current medications and pertinent medication&#xD;
+    history. At a minimum, the currently active medications should be listed, with an entire medication history as an&#xD;
+    option, particularly when the summary document is used for comprehensive data export. The section may also include a&#xD;
+    patient’s prescription history, and enables the determination of the source of a medication list (e.g. from a pharmacy&#xD;
+    system vs. from the patient).&lt;/font>&lt;/font>&#xD;
+&lt;/p></body>
+      </ownedComment>
       <generalization xmi:id="_rdDU0HfUEd6ZeOKq_2_a9g">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
@@ -192,9 +201,26 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_rJDcIHDAEd6eItyqb1FoWg" name="EncountersSection">
+      <ownedComment xmi:id="_1XZEwIjwEd66cKocspyVOg" annotatedElement="_rJDcIHDAEd6eItyqb1FoWg">
+        <body>&lt;p>&#xD;
+    &lt;font size=&quot;2&quot;>This section is used to list and describe any healthcare encounters pertinent to the patient’s current&#xD;
+    health status or historical health history. An Encounter is an interaction, regardless of the setting, between a&#xD;
+    patient and a practitioner who is vested with primary responsibility for diagnosing, evaluating, or treating the&#xD;
+    patient’s condition. It may include visits, appointments, as well as non face-to-face interactions. It is also a&#xD;
+    contact between a patient and a practitioner who has primary responsibility for assessing and treating the patient at a&#xD;
+    given contact, exercising independent judgment. This section may contain all encounters for the time period being&#xD;
+    summarized, but should include notable encounters.&lt;/font>&#xD;
+&lt;/p></body>
+      </ownedComment>
       <generalization xmi:id="_wbv8cHDOEd6eItyqb1FoWg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
+      <ownedAttribute xmi:id="_qAT3wIjwEd66cKocspyVOg" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_qATQsIjwEd66cKocspyVOg" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_CinbMHDPEd6eItyqb1FoWg" name="ImmunizationsSection">
       <generalization xmi:id="_H448UHDPEd6eItyqb1FoWg">
@@ -205,8 +231,41 @@
       <generalization xmi:id="_vuapUHJjEd6cacuAk5qrhg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_AAXtEEbvEd6besF9iFIJkQ?cda/Encounter?"/>
       </generalization>
+      <ownedAttribute xmi:id="_lpnc8ojzEd66cKocspyVOg" name="classCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_sYDq4IjzEd66cKocspyVOg" name="ENC">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdeEDcEd6xYZuu1VKCVw?vocab/ActClass/ENC?"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lpnc8IjzEd66cKocspyVOg" name="moodCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_lpnc8YjzEd66cKocspyVOg" name="EVN">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW30DcEd6xYZuu1VKCVw?vocab/ActMood/EVN?"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lpoEAIjzEd66cKocspyVOg" name="id" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lpoEAYjzEd66cKocspyVOg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lpoEAojzEd66cKocspyVOg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_D4--kIj0Ed66cKocspyVOg" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_D4_loIj0Ed66cKocspyVOg" name="effectiveTime" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_QYeW4D5-Ed6cla2oXsPtlA?datatypes/IVL_TS?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_D4_loYj0Ed66cKocspyVOg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_D4_looj0Ed66cKocspyVOg"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_W6aMoHfTEd6ZeOKq_2_a9g" name="MedicationActivity">
+      <ownedComment xmi:id="_0hxWQIjuEd66cKocspyVOg" annotatedElement="_W6aMoHfTEd6ZeOKq_2_a9g">
+        <body>&lt;p>&#xD;
+    &lt;font size=&quot;2&quot;>A medication activity is used to describe what is administered whereas a supply activity is used to&#xD;
+    describe what has been dispensed.&lt;/font>&#xD;
+&lt;/p></body>
+      </ownedComment>
       <generalization xmi:id="_sAvQsHfUEd6ZeOKq_2_a9g">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_nazskEbuEd6besF9iFIJkQ?cda/SubstanceAdministration?"/>
       </generalization>
@@ -217,6 +276,14 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_f9zPMIHYEd6Ncrr6L3Ublw" name="statusCode" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_zfqV0IjqEd66cKocspyVOg" name="medicationSeriesNumberObservation" visibility="private" type="_VL2w0IiBEd66cKocspyVOg" association="_zfn5kIjqEd66cKocspyVOg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zfsyEYjqEd66cKocspyVOg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zfsyEIjqEd66cKocspyVOg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_CIgjoIjtEd66cKocspyVOg" name="medicationStatusObservation" visibility="private" type="_lgLT4IiBEd66cKocspyVOg" association="_CIfVgIjtEd66cKocspyVOg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CIiY0IjtEd66cKocspyVOg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CIhxwIjtEd66cKocspyVOg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_dAAnAHfVEd6ZeOKq_2_a9g" name="SupplyActivity">
@@ -230,6 +297,10 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_z-cTAIHYEd6Ncrr6L3Ublw" name="statusCode" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_C_1NMIjtEd66cKocspyVOg" name="medicationStatusObservation" visibility="private" type="_lgLT4IiBEd66cKocspyVOg" association="_C_zYAIjtEd66cKocspyVOg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_C_2bUYjtEd66cKocspyVOg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_C_2bUIjtEd66cKocspyVOg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_PgsSAHrREd68l9lQ-TLEBQ" name="AlertsSection">
@@ -296,11 +367,134 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_joG2YIHbEd6Ncrr6L3Ublw" name="CauseOfDeathObservation">
       <generalization xmi:id="_my2UEIHbEd6Ncrr6L3Ublw" general="_7tlrAGwWEd6q29qQGU-SBA"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_7TVToIiAEd66cKocspyVOg" name="ResultsSection"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_VL2w0IiBEd66cKocspyVOg" name="MedicationSeriesNumberObservation"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_lgLT4IiBEd66cKocspyVOg" name="MedicationStatusObservation"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_2QJRIIiBEd66cKocspyVOg" name="LocationParticipation"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_8Xj7UIiBEd66cKocspyVOg" name="Product"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_7TVToIiAEd66cKocspyVOg" name="ResultsSection">
+      <ownedComment xmi:id="_yswHoIjpEd66cKocspyVOg" annotatedElement="_7TVToIiAEd66cKocspyVOg">
+        <body>&lt;p align=&quot;left&quot;>&#xD;
+    &lt;font size=&quot;2&quot;>This section contains the results of observations generated by laboratories, imaging procedures, and&#xD;
+    other procedures. The scope includes hematology, chemistry, serology, virology, toxicology, microbiology, plain x-ray,&#xD;
+    ultrasound, CT, MRI, angiography, cardiac echo, nuclear medicine, pathology, and procedure observations. The section&#xD;
+    may contain all results for the period of time being summarized, but should include notable results such as abnormal&#xD;
+    values or relevant trends.&lt;/font>&#xD;
+&lt;/p>&#xD;
+&lt;p align=&quot;left&quot;>&#xD;
+    &lt;font size=&quot;2&quot;>Lab results are typically generated by laboratories providing analytic services in areas such as&#xD;
+    chemistry, hematology, serology, histology, cytology, anatomic pathology, microbiology, and/or virology. These&#xD;
+    observations are based on analysis of specimens obtained from the patient, submitted to the lab.&lt;/font>&#xD;
+&lt;/p>&#xD;
+&lt;p align=&quot;left&quot;>&#xD;
+    &lt;font size=&quot;2&quot;>Imaging results are typically generated by a clinician reviewing the output of an imaging procedure,&#xD;
+    such as where a cardiologist reports the left ventricular ejection fraction based on the review of a cardiac&#xD;
+    echo.&lt;/font>&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;font size=&quot;2&quot;>Procedure results are typically generated by a clinician wanting to provide more granular information&#xD;
+    about component observations made during the performance of a procedure, such as where a gastroenterologist reports the&#xD;
+    size of a polyp observed during a colonoscopy.&lt;/font>&#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_-vG7sIjoEd66cKocspyVOg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_GMWwYIjpEd66cKocspyVOg" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_GMTtEIjpEd66cKocspyVOg" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_VL2w0IiBEd66cKocspyVOg" name="MedicationSeriesNumberObservation">
+      <ownedComment xmi:id="_NUpzUIjqEd66cKocspyVOg" annotatedElement="_VL2w0IiBEd66cKocspyVOg">
+        <body>&lt;p>&#xD;
+    &lt;font size=&quot;2&quot;>The medication series number observation can be used to indicate which in a series of administrations a&#xD;
+    particular administration represents (e.g. &quot;hepatitis B vaccine number 2 was administered on Feb 07, 2004).&lt;/font>&#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_ciR0EIjqEd66cKocspyVOg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_Ql33AIjrEd66cKocspyVOg" name="classCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_ZIeKMIjrEd66cKocspyVOg" name="OBS">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdkkDcEd6xYZuu1VKCVw?vocab/ActClass/OBS?"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Ql3P8IjrEd66cKocspyVOg" name="moodCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Ql3P8YjrEd66cKocspyVOg" name="EVN">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW30DcEd6xYZuu1VKCVw?vocab/ActMood/EVN?"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_xFs_YIjrEd66cKocspyVOg" name="statusCode" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ANYJIIjsEd66cKocspyVOg" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ANYwMIjsEd66cKocspyVOg" name="value" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_co8uMD53Ed6cla2oXsPtlA?datatypes/INT?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lgLT4IiBEd66cKocspyVOg" name="MedicationStatusObservation">
+      <generalization xmi:id="_dKuUIIjqEd66cKocspyVOg" general="_V3Jy4HrTEd68l9lQ-TLEBQ"/>
+      <ownedAttribute xmi:id="_t5nocIjsEd66cKocspyVOg" name="value" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_2QJRIIiBEd66cKocspyVOg" name="EncounterLocation">
+      <generalization xmi:id="_lD-rMIjxEd66cKocspyVOg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_51DLwEcZEd6besF9iFIJkQ?cda/Participant2?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_IdRekIjzEd66cKocspyVOg" name="typeCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__y7BekDcEd6xYZuu1VKCVw?vocab/ParticipationType?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_TOQ78IjzEd66cKocspyVOg" name="LOC">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__y7BekDcEd6xYZuu1VKCVw?vocab/ParticipationType?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__y7BqkDcEd6xYZuu1VKCVw?vocab/ParticipationType/LOC?"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8Xj7UIiBEd66cKocspyVOg" name="Product">
+      <generalization xmi:id="_zWedQIjtEd66cKocspyVOg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_p6Zs8EcZEd6besF9iFIJkQ?cda/ManufacturedProduct?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_zfn5kIjqEd66cKocspyVOg" memberEnd="_zfqV0IjqEd66cKocspyVOg _zfunQIjqEd66cKocspyVOg">
+      <ownedEnd xmi:id="_zfunQIjqEd66cKocspyVOg" name="" visibility="private" type="_W6aMoHfTEd6ZeOKq_2_a9g" association="_zfn5kIjqEd66cKocspyVOg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zfxDgYjqEd66cKocspyVOg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zfxDgIjqEd66cKocspyVOg"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_CIfVgIjtEd66cKocspyVOg" memberEnd="_CIgjoIjtEd66cKocspyVOg _CIkOAIjtEd66cKocspyVOg">
+      <ownedEnd xmi:id="_CIkOAIjtEd66cKocspyVOg" name="" visibility="private" type="_W6aMoHfTEd6ZeOKq_2_a9g" association="_CIfVgIjtEd66cKocspyVOg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CImDMYjtEd66cKocspyVOg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CImDMIjtEd66cKocspyVOg"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_C_zYAIjtEd66cKocspyVOg" memberEnd="_C_1NMIjtEd66cKocspyVOg _C_4QgIjtEd66cKocspyVOg">
+      <ownedEnd xmi:id="_C_4QgIjtEd66cKocspyVOg" name="" visibility="private" type="_dAAnAHfVEd6ZeOKq_2_a9g" association="_C_zYAIjtEd66cKocspyVOg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_C_43kYjtEd66cKocspyVOg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_C_43kIjtEd66cKocspyVOg"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_p_LEwIjvEd66cKocspyVOg" name="ProceduresSection">
+      <ownedComment xmi:id="_p_LEwYjvEd66cKocspyVOg" annotatedElement="_p_LEwIjvEd66cKocspyVOg">
+        <body>&lt;p>&#xD;
+    &lt;font size=&quot;2&quot;>This section defines all interventional, surgical, diagnostic, or therapeutic procedures or treatments&#xD;
+    pertinent to the patient historically at the time the document is generated. The section may contain all procedures for&#xD;
+    the period of time being summarized, but should include notable procedures.&lt;/font>&#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_p_LEwojvEd66cKocspyVOg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_p_LEw4jvEd66cKocspyVOg" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_p_LExIjvEd66cKocspyVOg" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
+      </ownedAttribute>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -400,4 +594,22 @@
   <HDF:HL7Template xmi:id="_ovERwIiBEd66cKocspyVOg" base_Class="_lgLT4IiBEd66cKocspyVOg" id="2.16.840.1.113883.10.20.1.47"/>
   <HDF:HL7Template xmi:id="_4sxEkIiBEd66cKocspyVOg" base_Class="_2QJRIIiBEd66cKocspyVOg" id="2.16.840.1.113883.10.20.1.45"/>
   <HDF:HL7Template xmi:id="_P0aVkIiCEd66cKocspyVOg" base_Class="_8Xj7UIiBEd66cKocspyVOg" id="2.16.840.1.113883.10.20.1.53"/>
+  <HDF:CodeSystemConstraint xmi:id="_GMX-gIjpEd66cKocspyVOg" base_Property="_GMWwYIjpEd66cKocspyVOg" id="2.16.840.1.113883.6.1" name="LOINC" code="30954-2" codePrintName="Relevant diagnostic tests and/or laboratory data"/>
+  <Default:Documentation xmi:id="_ys1AIIjpEd66cKocspyVOg" base_Comment="_yswHoIjpEd66cKocspyVOg"/>
+  <Default:Documentation xmi:id="_NUuEwIjqEd66cKocspyVOg" base_Comment="_NUpzUIjqEd66cKocspyVOg"/>
+  <CDA:ValidationSupport xmi:id="_57r-EIjqEd66cKocspyVOg" severity="INFO" message="A medication activity MAY contain exactly one medication series number observations." base_Association="_zfn5kIjqEd66cKocspyVOg"/>
+  <HDF:CodeSystemConstraint xmi:id="_ANZXQIjsEd66cKocspyVOg" base_Property="_ANYJIIjsEd66cKocspyVOg" id="2.16.840.1.113883.6.1" name="LOINC" code="30973-2" codePrintName="Dose number"/>
+  <HDF:ValueSetConstraint xmi:id="_t5nocYjsEd66cKocspyVOg" base_Property="_t5nocIjsEd66cKocspyVOg" id="2.16.840.1.113883.1.11.20.7" name="MedicationStatusCode" versionDate="20061017"/>
+  <CDA:ValidationSupport xmi:id="_TeKn4IjtEd66cKocspyVOg" severity="INFO" message="A medication activity MAY contain exactly one medication status observation." base_Association="_CIfVgIjtEd66cKocspyVOg"/>
+  <CDA:ValidationSupport xmi:id="_cFCXEIjtEd66cKocspyVOg" severity="INFO" message="A supply activity MAY contain exactly one medication status observation." base_Association="_C_zYAIjtEd66cKocspyVOg"/>
+  <Default:Documentation xmi:id="_0h1nsIjuEd66cKocspyVOg" base_Comment="_0hxWQIjuEd66cKocspyVOg"/>
+  <Default:Documentation xmi:id="_CfaV0IjvEd66cKocspyVOg" base_Comment="_CfWEYIjvEd66cKocspyVOg"/>
+  <HDF:HL7Template xmi:id="_p_Lr0IjvEd66cKocspyVOg" base_Class="_p_LEwIjvEd66cKocspyVOg" id="2.16.840.1.113883.10.20.1.14"/>
+  <Default:Documentation xmi:id="_p_Lr0YjvEd66cKocspyVOg" base_Comment="_p_LEwYjvEd66cKocspyVOg"/>
+  <HDF:CodeSystemConstraint xmi:id="_p_Lr0ojvEd66cKocspyVOg" base_Property="_p_LEw4jvEd66cKocspyVOg" id="2.16.840.1.113883.6.1" name="LOINC" code="47519-4" codePrintName="History of procedures"/>
+  <HDF:CodeSystemConstraint xmi:id="_qAT3wYjwEd66cKocspyVOg" base_Property="_qAT3wIjwEd66cKocspyVOg" id="2.16.840.1.113883.6.1" name="LOINC" code="46240-8" codePrintName="History of encounters"/>
+  <Default:Documentation xmi:id="_1XdWMIjwEd66cKocspyVOg" base_Comment="_1XZEwIjwEd66cKocspyVOg"/>
+  <HDF:ValueSetConstraint xmi:id="_D4_lo4j0Ed66cKocspyVOg" base_Property="_D4--kIj0Ed66cKocspyVOg" id="2.16.840.1.113883.1.11.13955" name="EncounterCode"/>
+  <CDA:ValidationSupport xmi:id="_D4_lpIj0Ed66cKocspyVOg" severity="WARNING" message="An encounter activity SHOULD contain exactly one Encounter / code. The value for 'Encounter / code' in an encounter activity SHOULD be selected from ValueSet 2.16.840.1.113883.1.11.13955 EncounterCode 2.16.840.1.113883.5.4 ActCode DYNAMIC." base_Property="_D4--kIj0Ed66cKocspyVOg"/>
+  <CDA:ValidationSupport xmi:id="_D4_lpYj0Ed66cKocspyVOg" severity="INFO" message="An encounter activity MAY contain exactly one Encounter / effectiveTime, to indicate date, time, and/or duration of an encounter." base_Property="_D4_loIj0Ed66cKocspyVOg"/>
 </xmi:XMI>

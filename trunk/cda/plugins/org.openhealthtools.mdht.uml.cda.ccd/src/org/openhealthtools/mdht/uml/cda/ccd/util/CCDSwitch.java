@@ -19,19 +19,20 @@ import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Encounter;
+import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Organizer;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
-import org.openhealthtools.mdht.uml.cda.ccd.*;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CauseOfDeathObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
+import org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
@@ -41,15 +42,20 @@ import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
+import org.openhealthtools.mdht.uml.cda.ccd.Product;
 import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
@@ -332,30 +338,43 @@ public class CCDSwitch<T> {
 			case CCDPackage.RESULTS_SECTION: {
 				ResultsSection resultsSection = (ResultsSection)theEObject;
 				T result = caseResultsSection(resultsSection);
+				if (result == null) result = caseSection(resultsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CCDPackage.MEDICATION_SERIES_NUMBER_OBSERVATION: {
 				MedicationSeriesNumberObservation medicationSeriesNumberObservation = (MedicationSeriesNumberObservation)theEObject;
 				T result = caseMedicationSeriesNumberObservation(medicationSeriesNumberObservation);
+				if (result == null) result = caseObservation(medicationSeriesNumberObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CCDPackage.MEDICATION_STATUS_OBSERVATION: {
 				MedicationStatusObservation medicationStatusObservation = (MedicationStatusObservation)theEObject;
 				T result = caseMedicationStatusObservation(medicationStatusObservation);
+				if (result == null) result = caseStatusObservation(medicationStatusObservation);
+				if (result == null) result = caseObservation(medicationStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.LOCATION_PARTICIPATION: {
-				LocationParticipation locationParticipation = (LocationParticipation)theEObject;
-				T result = caseLocationParticipation(locationParticipation);
+			case CCDPackage.ENCOUNTER_LOCATION: {
+				EncounterLocation encounterLocation = (EncounterLocation)theEObject;
+				T result = caseEncounterLocation(encounterLocation);
+				if (result == null) result = caseParticipant2(encounterLocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CCDPackage.PRODUCT: {
 				Product product = (Product)theEObject;
 				T result = caseProduct(product);
+				if (result == null) result = caseManufacturedProduct(product);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PROCEDURES_SECTION: {
+				ProceduresSection proceduresSection = (ProceduresSection)theEObject;
+				T result = caseProceduresSection(proceduresSection);
+				if (result == null) result = caseSection(proceduresSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -814,17 +833,17 @@ public class CCDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Location Participation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Encounter Location</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Location Participation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Encounter Location</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLocationParticipation(LocationParticipation object) {
+	public T caseEncounterLocation(EncounterLocation object) {
 		return null;
 	}
 
@@ -840,6 +859,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseProduct(Product object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Procedures Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Procedures Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProceduresSection(ProceduresSection object) {
 		return null;
 	}
 
@@ -990,6 +1024,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseSupply(Supply object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Manufactured Product</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Manufactured Product</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseManufacturedProduct(ManufacturedProduct object) {
 		return null;
 	}
 

@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemAct()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.nullFlavor='NA' constraints.validation.error='ProblemAct_code ProblemAct_templateId ProblemAct_classCode ProblemAct_moodCode ProblemAct_id' templateId.root='2.16.840.1.113883.10.20.1.27'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' code.nullFlavor='NA' constraints.validation.error='ProblemAct_code ProblemAct_templateId ProblemAct_classCode ProblemAct_moodCode ProblemAct_id' templateId.root='2.16.840.1.113883.10.20.1.27'"
  * @generated
  */
 public interface ProblemAct extends Act {
@@ -45,11 +45,11 @@ public interface ProblemAct extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.classCode.oclIsTypeOf(vocab::ActClass)
+	 * self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode='ACT'
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode.oclIsTypeOf(vocab::ActClass)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode=\'ACT\''"
 	 * @generated
 	 */
 	boolean ProblemAct_classCode(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -58,11 +58,11 @@ public interface ProblemAct extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.moodCode.oclIsTypeOf(vocab::ActMood)
+	 * self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode='EVN'
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode.oclIsTypeOf(vocab::ActMood)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode=\'EVN\''"
 	 * @generated
 	 */
 	boolean ProblemAct_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);

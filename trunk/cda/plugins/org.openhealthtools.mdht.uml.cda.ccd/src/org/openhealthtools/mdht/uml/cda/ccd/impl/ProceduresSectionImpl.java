@@ -11,27 +11,27 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
-import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
-import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultsSectionOperations;
+import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.ProceduresSectionOperations;
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Results Section</b></em>'.
+ * An implementation of the model object '<em><b>Procedures Section</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ResultsSectionImpl extends SectionImpl implements ResultsSection {
+public class ProceduresSectionImpl extends SectionImpl implements ProceduresSection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResultsSectionImpl() {
+	protected ProceduresSectionImpl() {
 		super();
 	}
 
@@ -42,7 +42,7 @@ public class ResultsSectionImpl extends SectionImpl implements ResultsSection {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CCDPackage.Literals.RESULTS_SECTION;
+		return CCDPackage.Literals.PROCEDURES_SECTION;
 	}
 
 	/**
@@ -50,8 +50,8 @@ public class ResultsSectionImpl extends SectionImpl implements ResultsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultsSectionOperations.ResultsSection_templateId(this, diagnostics, context);
+	public boolean ProceduresSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProceduresSectionOperations.ProceduresSection_templateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class ResultsSectionImpl extends SectionImpl implements ResultsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultsSectionOperations.ResultsSection_code(this, diagnostics, context);
+	public boolean ProceduresSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProceduresSectionOperations.ProceduresSection_code(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class ResultsSectionImpl extends SectionImpl implements ResultsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultsSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultsSectionOperations.ResultsSection_title(this, diagnostics, context);
+	public boolean ProceduresSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProceduresSectionOperations.ProceduresSection_title(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class ResultsSectionImpl extends SectionImpl implements ResultsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResultsSection init() {
+	public ProceduresSection init() {
     		CDAUtil.init(this);
     		return this;
 	}
-} //ResultsSectionImpl
+} //ProceduresSectionImpl
