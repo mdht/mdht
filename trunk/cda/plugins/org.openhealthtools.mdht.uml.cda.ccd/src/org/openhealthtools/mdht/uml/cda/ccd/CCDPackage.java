@@ -6834,6 +6834,101 @@ public interface CCDPackage extends EPackage {
 	int CAUSE_OF_DEATH_OBSERVATION_FEATURE_COUNT = FAMILY_HISTORY_OBSERVATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ResultsSectionImpl <em>Results Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ResultsSectionImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getResultsSection()
+	 * @generated
+	 */
+	int RESULTS_SECTION = 28;
+
+	/**
+	 * The number of structural features of the '<em>Results Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULTS_SECTION_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.MedicationSeriesNumberObservationImpl <em>Medication Series Number Observation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.MedicationSeriesNumberObservationImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getMedicationSeriesNumberObservation()
+	 * @generated
+	 */
+	int MEDICATION_SERIES_NUMBER_OBSERVATION = 29;
+
+	/**
+	 * The number of structural features of the '<em>Medication Series Number Observation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICATION_SERIES_NUMBER_OBSERVATION_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.MedicationStatusObservationImpl <em>Medication Status Observation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.MedicationStatusObservationImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getMedicationStatusObservation()
+	 * @generated
+	 */
+	int MEDICATION_STATUS_OBSERVATION = 30;
+
+	/**
+	 * The number of structural features of the '<em>Medication Status Observation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICATION_STATUS_OBSERVATION_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.LocationParticipationImpl <em>Location Participation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.LocationParticipationImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getLocationParticipation()
+	 * @generated
+	 */
+	int LOCATION_PARTICIPATION = 31;
+
+	/**
+	 * The number of structural features of the '<em>Location Participation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_PARTICIPATION_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProductImpl <em>Product</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProductImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProduct()
+	 * @generated
+	 */
+	int PRODUCT = 32;
+
+	/**
+	 * The number of structural features of the '<em>Product</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSection <em>Medication Section</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7102,6 +7197,56 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCauseOfDeathObservation();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.ResultsSection <em>Results Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Results Section</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ResultsSection
+	 * @generated
+	 */
+	EClass getResultsSection();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation <em>Medication Series Number Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Medication Series Number Observation</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation
+	 * @generated
+	 */
+	EClass getMedicationSeriesNumberObservation();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation <em>Medication Status Observation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Medication Status Observation</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation
+	 * @generated
+	 */
+	EClass getMedicationStatusObservation();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.LocationParticipation <em>Location Participation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Location Participation</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.LocationParticipation
+	 * @generated
+	 */
+	EClass getLocationParticipation();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.Product <em>Product</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Product</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.Product
+	 * @generated
+	 */
+	EClass getProduct();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation <em>Status Observation</em>}'.
@@ -7404,6 +7549,56 @@ public interface CCDPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CAUSE_OF_DEATH_OBSERVATION = eINSTANCE.getCauseOfDeathObservation();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ResultsSectionImpl <em>Results Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ResultsSectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getResultsSection()
+		 * @generated
+		 */
+		EClass RESULTS_SECTION = eINSTANCE.getResultsSection();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.MedicationSeriesNumberObservationImpl <em>Medication Series Number Observation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.MedicationSeriesNumberObservationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getMedicationSeriesNumberObservation()
+		 * @generated
+		 */
+		EClass MEDICATION_SERIES_NUMBER_OBSERVATION = eINSTANCE.getMedicationSeriesNumberObservation();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.MedicationStatusObservationImpl <em>Medication Status Observation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.MedicationStatusObservationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getMedicationStatusObservation()
+		 * @generated
+		 */
+		EClass MEDICATION_STATUS_OBSERVATION = eINSTANCE.getMedicationStatusObservation();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.LocationParticipationImpl <em>Location Participation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.LocationParticipationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getLocationParticipation()
+		 * @generated
+		 */
+		EClass LOCATION_PARTICIPATION = eINSTANCE.getLocationParticipation();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProductImpl <em>Product</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProductImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProduct()
+		 * @generated
+		 */
+		EClass PRODUCT = eINSTANCE.getProduct();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.StatusObservationImpl <em>Status Observation</em>}' class.

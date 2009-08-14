@@ -275,6 +275,51 @@ public interface CCDFactory extends EFactory {
 	CauseOfDeathObservation createCauseOfDeathObservation();
 
 	/**
+	 * Returns a new object of class '<em>Results Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Results Section</em>'.
+	 * @generated
+	 */
+	ResultsSection createResultsSection();
+
+	/**
+	 * Returns a new object of class '<em>Medication Series Number Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Series Number Observation</em>'.
+	 * @generated
+	 */
+	MedicationSeriesNumberObservation createMedicationSeriesNumberObservation();
+
+	/**
+	 * Returns a new object of class '<em>Medication Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Status Observation</em>'.
+	 * @generated
+	 */
+	MedicationStatusObservation createMedicationStatusObservation();
+
+	/**
+	 * Returns a new object of class '<em>Location Participation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Location Participation</em>'.
+	 * @generated
+	 */
+	LocationParticipation createLocationParticipation();
+
+	/**
+	 * Returns a new object of class '<em>Product</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Product</em>'.
+	 * @generated
+	 */
+	Product createProduct();
+
+	/**
 	 * Returns a new object of class '<em>Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
