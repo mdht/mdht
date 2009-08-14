@@ -12,6 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
@@ -27,6 +28,16 @@ public class TransformPropertyConstraint extends TransformAbstract {
 	
 	public Object caseProperty(Property property) {
 		if (isRemoved(property)) {
+			return null;
+		}
+		
+		// only process properties that are owned by a Class
+		if (property.getClass_() == null) {
+			return null;
+		}
+
+		// don't process properties that are part of an Association
+		if (property.getAssociation() != null) {
 			return null;
 		}
 		
@@ -94,7 +105,30 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			}
 		}
 		
+		/*
+		 * Test for enumeration type with default value.
+		 */
+		if (property.getType() instanceof Enumeration
+				&& property.getDefault() != null) {
+			
+			AnnotationsUtil annotationsUtil = new AnnotationsUtil(property.getClass_());
+			annotationsUtil.setAnnotation(property.getName(), property.getDefault());
+			annotationsUtil.saveAnnotations();
+
+			if (body.length() > 0) {
+				body.append(" and ");
+			}
+			body.append(selfName + "='" + property.getDefault() + "'");
+			
+		}
+		
 		if (body.length() > 0) {
+			addOCLConstraint(property, body);
+		}
+		else if (hasValidationSupport(property)) {
+			// Constraints that have no multiplicity or type restriction
+			//TODO is this adequate to catch MAY or SHOULD constraints?
+			body.append("not " + selfName + ".oclIsUndefined()");
 			addOCLConstraint(property, body);
 		}
 		

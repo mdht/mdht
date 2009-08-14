@@ -17,10 +17,13 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
+import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 
 /**
  * Abstract base class for model transformations.
@@ -47,6 +50,32 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	
 	public boolean isRemoved(Element element) {
 		return transformerOptions.getDeletedElementList().contains(element);
+	}
+	
+	public boolean hasValidationSupport(Element element) {
+		Stereotype validationSupport = EcoreTransformUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION_SUPPORT);
+		return validationSupport != null;
+	}
+
+	public void addValidationSupport(Property property, String constraintName) {
+		String severity = "ERROR";
+		String message = null;
+		
+		Stereotype validationSupport = EcoreTransformUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.VALIDATION_SUPPORT);
+		if (validationSupport != null) {
+			message = (String) property.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE);
+			EnumerationLiteral literal = (EnumerationLiteral) property.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_SEVERITY);
+			severity = (literal != null) ? literal.getName() : "ERROR";
+		}
+
+		Class constrainedClass = property.getClass_();
+		if ("INFO".equals(severity)) {
+			addValidationInfo(constrainedClass, constraintName, message);
+		} else if ("WARNING".equals(severity)) {
+			addValidationWarning(constrainedClass, constraintName, message);
+		} else {
+			addValidationError(constrainedClass, constraintName, message);
+		}
 	}
 	
 	public void addValidationError(Class constrainedClass, String constraintName, String message) {
@@ -129,8 +158,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		expression.getLanguages().add("OCL");
 		expression.getBodies().add(body.toString());
 
-		//TODO get severity level and message from stereotype
-		addValidationError(property.getClass_(), constraintName, null);
+		addValidationSupport(property, constraintName);
 	}
 	
 	protected org.eclipse.uml2.uml.Class getCDAClass(org.eclipse.uml2.uml.Class templateClass) {

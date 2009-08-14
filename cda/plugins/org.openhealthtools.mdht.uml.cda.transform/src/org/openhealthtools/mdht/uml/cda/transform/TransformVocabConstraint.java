@@ -34,6 +34,11 @@ public class TransformVocabConstraint extends TransformAbstract {
 			return null;
 		}
 		
+		// only process properties that are owned by a Class
+		if (property.getClass_() == null) {
+			return null;
+		}
+		
 		Stereotype enumConstraint = EcoreTransformUtil.getAppliedHDFStereotype(
 				property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
 		Stereotype valueSet = EcoreTransformUtil.getAppliedHDFStereotype(
