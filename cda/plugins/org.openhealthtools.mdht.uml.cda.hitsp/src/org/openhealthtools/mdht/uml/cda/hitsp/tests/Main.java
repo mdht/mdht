@@ -138,6 +138,10 @@ public class Main {
 		condition.addObservation(obs1);
 		ProblemHealthStatus healthStatus = CCDFactory.eINSTANCE.createProblemHealthStatus().init();
 		obs1.addObservation(healthStatus);
+		CE healthStatusValue = DatatypesFactory.eINSTANCE.createCE("xyz", "2.16.840.1.113883.1.11.20.12",
+				"ProblemHealthStatusCode", null);
+		healthStatusValue.setCodeSystemVersion("20061017");
+		healthStatus.getValue().add(healthStatusValue);
 	}
 
 	public Section createAllergiesSection() {
@@ -167,6 +171,14 @@ public class Main {
 			@Override
 			public void handleError(Diagnostic diagnostic) {
 				System.out.println("ERROR: " + diagnostic.getMessage());
+			}
+			@Override
+			public void handleWarning(Diagnostic diagnostic) {
+				System.out.println("WARNING: " + diagnostic.getMessage());
+			}
+			@Override
+			public void handleInfo(Diagnostic diagnostic) {
+				System.out.println("INFO: " + diagnostic.getMessage());
 			}
 		});
 		
