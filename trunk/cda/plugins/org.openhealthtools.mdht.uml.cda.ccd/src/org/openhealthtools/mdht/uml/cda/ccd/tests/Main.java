@@ -13,14 +13,13 @@
 package org.openhealthtools.mdht.uml.cda.ccd.tests;
 
 import org.eclipse.emf.common.util.Diagnostic;
-import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -33,7 +32,7 @@ public class Main {
 		ProblemHealthStatus problemHealthStatus = CCDFactory.eINSTANCE.createProblemHealthStatus().init();
 		EpisodeObservation episodeObservation = CCDFactory.eINSTANCE.createEpisodeObservation().init();
 		
-		Section sect = CDAFactory.eINSTANCE.createSection();
+		ProblemSection sect = CCDFactory.eINSTANCE.createProblemSection();
 		sect.addAct(problemAct);
 		sect.addObservation(problemObservation);
 		sect.addObservation(problemStatus);
@@ -49,6 +48,14 @@ public class Main {
 			@Override
 			public void handleError(Diagnostic diagnostic) {
 				System.out.println("ERROR: " + diagnostic.getMessage());
+			}
+			@Override
+			public void handleWarning(Diagnostic diagnostic) {
+				System.out.println("WARNING: " + diagnostic.getMessage());
+			}
+			@Override
+			public void handleInfo(Diagnostic diagnostic) {
+				System.out.println("INFO: " + diagnostic.getMessage());
 			}
 		});
 	}
