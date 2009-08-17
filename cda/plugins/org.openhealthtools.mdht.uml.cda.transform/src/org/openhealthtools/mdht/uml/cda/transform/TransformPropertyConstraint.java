@@ -115,10 +115,13 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			annotationsUtil.setAnnotation(property.getName(), property.getDefault());
 			annotationsUtil.saveAnnotations();
 
-			if (body.length() > 0) {
-				body.append(" and ");
+			// read only (fixed) properties also generate an OCL constraint
+			if (property.isReadOnly()) {
+				if (body.length() > 0) {
+					body.append(" and ");
+				}
+				body.append(selfName + "='" + property.getDefault() + "'");
 			}
-			body.append(selfName + "='" + property.getDefault() + "'");
 			
 		}
 		
