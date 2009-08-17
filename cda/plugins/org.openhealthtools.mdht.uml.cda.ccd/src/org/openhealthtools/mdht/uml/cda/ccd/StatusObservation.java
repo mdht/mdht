@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getStatusObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.codeSystemName='ActStatus' code.codeSystemName='LOINC' statusCode.codeSystem='2.16.840.1.113883.5.14' constraints.validation.error='StatusObservation_templateId StatusObservation_code StatusObservation_statusCode StatusObservation_value' templateId.root='2.16.840.1.113883.10.20.1.57' statusCode.code='completed' code.displayName='Status' code.codeSystem='2.16.840.1.113883.6.1' code.code='33999-4'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' statusCode.codeSystemName='ActStatus' code.codeSystemName='LOINC' statusCode.codeSystem='2.16.840.1.113883.5.14' constraints.validation.error='StatusObservation_templateId StatusObservation_classCode StatusObservation_moodCode StatusObservation_code StatusObservation_statusCode StatusObservation_value' templateId.root='2.16.840.1.113883.10.20.1.57' statusCode.code='completed' code.displayName='Status' code.codeSystem='2.16.840.1.113883.6.1' code.code='33999-4'"
  * @generated
  */
 public interface StatusObservation extends Observation {
@@ -34,6 +34,32 @@ public interface StatusObservation extends Observation {
 	 * @generated
 	 */
 	boolean StatusObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode='OBS'
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode=\'OBS\''"
+	 * @generated
+	 */
+	boolean StatusObservation_classCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode='EVN'
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode=\'EVN\''"
+	 * @generated
+	 */
+	boolean StatusObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

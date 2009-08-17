@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='ProblemSection_templateId ProblemSection_code ProblemSection_title' templateId.root='2.16.840.1.113883.10.20.1.11' code.displayName='Problem list' code.codeSystem='2.16.840.1.113883.6.1' code.code='11450-4'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.11' constraints.validation.error='ProblemSection_templateId ProblemSection_code ProblemSection_title' code.displayName='Problem list' code.codeSystem='2.16.840.1.113883.6.1' code.code='11450-4' constraints.validation.warning='ProblemSection_problemAct'"
  * @generated
  */
 public interface ProblemSection extends Section {
@@ -62,6 +62,19 @@ public interface ProblemSection extends Section {
 	 * @generated
 	 */
 	boolean ProblemSection_title(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getAct()->exists(act : cda::Act | act.oclIsTypeOf(ccd::ProblemAct))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAct()->exists(act : cda::Act | act.oclIsTypeOf(ccd::ProblemAct))'"
+	 * @generated
+	 */
+	boolean ProblemSection_problemAct(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

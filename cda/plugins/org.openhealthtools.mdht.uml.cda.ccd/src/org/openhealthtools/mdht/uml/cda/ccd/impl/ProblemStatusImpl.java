@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemStatusOperations;
-import org.openhealthtools.mdht.uml.cda.impl.ObservationImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -25,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class ProblemStatusImpl extends ObservationImpl implements ProblemStatus {
+public class ProblemStatusImpl extends StatusObservationImpl implements ProblemStatus {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

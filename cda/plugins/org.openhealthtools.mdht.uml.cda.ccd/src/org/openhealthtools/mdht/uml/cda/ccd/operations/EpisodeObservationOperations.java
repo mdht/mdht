@@ -29,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#EpisodeObservation_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Episode Observation template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#EpisodeObservation_classCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Episode Observation class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#EpisodeObservation_moodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Episode Observation mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#EpisodeObservation_statusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Episode Observation status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#EpisodeObservation_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Episode Observation code</em>}</li>
  * </ul>
@@ -96,6 +98,120 @@ public class EpisodeObservationOperations extends ObservationOperations {
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.EPISODE_OBSERVATION__EPISODE_OBSERVATION_TEMPLATE_ID,
 						 CCDPlugin.INSTANCE.getString("EpisodeObservation_templateId"),
+						 new Object [] { episodeObservation }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #EpisodeObservation_classCode(EpisodeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Episode Observation class Code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #EpisodeObservation_classCode(EpisodeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EPISODE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode='OBS'";
+
+	/**
+	 * The cached OCL invariant for the '{@link #EpisodeObservation_classCode(EpisodeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Episode Observation class Code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #EpisodeObservation_classCode(EpisodeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint EPISODE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode='OBS'
+	 * @param episodeObservation The receiving '<em><b>Episode Observation</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean EpisodeObservation_classCode(EpisodeObservation episodeObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (EPISODE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.EPISODE_OBSERVATION);
+			try {
+				EPISODE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(EPISODE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(EPISODE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(episodeObservation)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.EPISODE_OBSERVATION__EPISODE_OBSERVATION_CLASS_CODE,
+						 CCDPlugin.INSTANCE.getString("EpisodeObservation_classCode"),
+						 new Object [] { episodeObservation }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #EpisodeObservation_moodCode(EpisodeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Episode Observation mood Code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #EpisodeObservation_moodCode(EpisodeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EPISODE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode='EVN'";
+
+	/**
+	 * The cached OCL invariant for the '{@link #EpisodeObservation_moodCode(EpisodeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Episode Observation mood Code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #EpisodeObservation_moodCode(EpisodeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint EPISODE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode='EVN'
+	 * @param episodeObservation The receiving '<em><b>Episode Observation</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean EpisodeObservation_moodCode(EpisodeObservation episodeObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (EPISODE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.EPISODE_OBSERVATION);
+			try {
+				EPISODE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(EPISODE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(EPISODE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(episodeObservation)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.EPISODE_OBSERVATION__EPISODE_OBSERVATION_MOOD_CODE,
+						 CCDPlugin.INSTANCE.getString("EpisodeObservation_moodCode"),
 						 new Object [] { episodeObservation }));
 			}
 			return false;
@@ -214,7 +330,7 @@ public class EpisodeObservationOperations extends ObservationOperations {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
-						(Diagnostic.ERROR,
+						(Diagnostic.WARNING,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.EPISODE_OBSERVATION__EPISODE_OBSERVATION_CODE,
 						 CCDPlugin.INSTANCE.getString("EpisodeObservation_code"),

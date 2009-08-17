@@ -143,12 +143,12 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 				return createProblemStatusAdapter();
 			}
 			@Override
-			public Adapter caseProblemHealthStatus(ProblemHealthStatus object) {
-				return createProblemHealthStatusAdapter();
-			}
-			@Override
 			public Adapter caseStatusObservation(StatusObservation object) {
 				return createStatusObservationAdapter();
+			}
+			@Override
+			public Adapter caseProblemHealthStatus(ProblemHealthStatus object) {
+				return createProblemHealthStatusAdapter();
 			}
 			@Override
 			public Adapter caseEpisodeObservation(EpisodeObservation object) {

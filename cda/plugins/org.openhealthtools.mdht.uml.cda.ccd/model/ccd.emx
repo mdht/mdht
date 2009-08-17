@@ -61,14 +61,14 @@
       <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_YiANsDxYEd6JwqSGecoePg?cda/Act?"/>
       </generalization>
-      <ownedAttribute xmi:id="_Wi0r8IhOEd6UrJD25cKDew" name="classCode" visibility="private">
+      <ownedAttribute xmi:id="_Wi0r8IhOEd6UrJD25cKDew" name="classCode" visibility="private" isReadOnly="true">
         <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
         <defaultValue xmi:type="uml:InstanceValue" xmi:id="_5FaWQIhOEd6UrJD25cKDew" name="ACT">
           <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
           <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYUDcEd6xYZuu1VKCVw?vocab/ActClass/ACT?"/>
         </defaultValue>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_YhrlUIhOEd6UrJD25cKDew" name="moodCode" visibility="private">
+      <ownedAttribute xmi:id="_YhrlUIhOEd6UrJD25cKDew" name="moodCode" visibility="private" isReadOnly="true">
         <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
         <defaultValue xmi:type="uml:InstanceValue" xmi:id="_80IDsIhOEd6UrJD25cKDew" name="EVN">
           <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
@@ -80,12 +80,23 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_poaUUIHNEd6Ncrr6L3Ublw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_poZtQIHNEd6Ncrr6L3Ublw" value="1"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_yqwygIt5Ed639sxyAgfSmw" name="problemObservation" visibility="private" type="_IjIO0DxbEd6JwqSGecoePg" association="_yqvkYIt5Ed639sxyAgfSmw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yqyAoYt5Ed639sxyAgfSmw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yqyAoIt5Ed639sxyAgfSmw" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_IjIO0DxbEd6JwqSGecoePg" name="ProblemObservation">
       <generalization xmi:id="_KLIucDxbEd6JwqSGecoePg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
-      <ownedAttribute xmi:id="_gh1ycIhREd6UrJD25cKDew" name="moodCode" visibility="private">
+      <ownedAttribute xmi:id="_p2T-gItyEd639sxyAgfSmw" name="classCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_T9teEItzEd639sxyAgfSmw" name="OBS">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdkkDcEd6xYZuu1VKCVw?vocab/ActClass/OBS?"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_gh1ycIhREd6UrJD25cKDew" name="moodCode" visibility="private" isReadOnly="true">
         <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
         <defaultValue xmi:type="uml:InstanceValue" xmi:id="_gh1ycYhREd6UrJD25cKDew" name="EVN">
           <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
@@ -114,11 +125,13 @@
       <ownedAttribute xmi:id="_S9W4sIHNEd6Ncrr6L3Ublw" name="title" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_tr8IEIt5Ed639sxyAgfSmw" name="problemAct" visibility="private" type="_GgvgUDxbEd6JwqSGecoePg" association="_tr5r0It5Ed639sxyAgfSmw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tr_LYYt5Ed639sxyAgfSmw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tr_LYIt5Ed639sxyAgfSmw" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_TrwngGaJEd6Hk_bPOfEjYA" name="ProblemStatus">
-      <generalization xmi:id="_Trwng2aJEd6Hk_bPOfEjYA">
-        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
-      </generalization>
+      <generalization xmi:id="_Trwng2aJEd6Hk_bPOfEjYA" general="_V3Jy4HrTEd68l9lQ-TLEBQ"/>
       <ownedAttribute xmi:id="_ehj3AHu_Ed6jfbAJq2V82w" name="value" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
       </ownedAttribute>
@@ -136,6 +149,20 @@
       <generalization xmi:id="_AwcXk2aKEd6Hk_bPOfEjYA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
+      <ownedAttribute xmi:id="_HKnJkIt0Ed639sxyAgfSmw" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_HKnJkYt0Ed639sxyAgfSmw" name="OBS">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdkkDcEd6xYZuu1VKCVw?vocab/ActClass/OBS?"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_HKmigIt0Ed639sxyAgfSmw" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_HKmigYt0Ed639sxyAgfSmw" name="EVN">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW30DcEd6xYZuu1VKCVw?vocab/ActMood/EVN?"/>
+        </defaultValue>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_R2vK8HxTEd6jfbAJq2V82w" name="statusCode" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
       </ownedAttribute>
@@ -147,6 +174,13 @@
       <generalization xmi:id="_3cYVw2aKEd6Hk_bPOfEjYA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_51DLwEcZEd6besF9iFIJkQ?cda/Participant2?"/>
       </generalization>
+      <ownedAttribute xmi:id="_qWtq8It0Ed639sxyAgfSmw" name="typeCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__y7BekDcEd6xYZuu1VKCVw?vocab/ParticipationType?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_0fbAUIt0Ed639sxyAgfSmw" name="SBJ">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__y7BekDcEd6xYZuu1VKCVw?vocab/ParticipationType?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__y7BqEDcEd6xYZuu1VKCVw?vocab/ParticipationType/SBJ?"/>
+        </defaultValue>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5ET7oGwWEd6q29qQGU-SBA" name="FamilyHistorySection">
       <generalization xmi:id="_h1M7QGwXEd6q29qQGU-SBA">
@@ -354,6 +388,20 @@
       <generalization xmi:id="_s4YvUHrSEd68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
+      <ownedAttribute xmi:id="_auAGIItzEd639sxyAgfSmw" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_hHVmwItzEd639sxyAgfSmw" name="OBS">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yVdkkDcEd6xYZuu1VKCVw?vocab/ActClass/OBS?"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_at-4AItzEd639sxyAgfSmw" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_at-4AYtzEd639sxyAgfSmw" name="EVN">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW30DcEd6xYZuu1VKCVw?vocab/ActMood/EVN?"/>
+        </defaultValue>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_XvctMHvDEd6jfbAJq2V82w" name="code" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
       </ownedAttribute>
@@ -495,6 +543,18 @@
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
       </ownedAttribute>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_tr5r0It5Ed639sxyAgfSmw" memberEnd="_tr8IEIt5Ed639sxyAgfSmw _tsCOsIt5Ed639sxyAgfSmw">
+      <ownedEnd xmi:id="_tsCOsIt5Ed639sxyAgfSmw" name="" visibility="private" type="_vjPMEGaGEd6Hk_bPOfEjYA" association="_tr5r0It5Ed639sxyAgfSmw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tsEq8Yt5Ed639sxyAgfSmw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tsEq8It5Ed639sxyAgfSmw"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_yqvkYIt5Ed639sxyAgfSmw" memberEnd="_yqwygIt5Ed639sxyAgfSmw _yqz10It5Ed639sxyAgfSmw">
+      <ownedEnd xmi:id="_yqz10It5Ed639sxyAgfSmw" name="" visibility="private" type="_GgvgUDxbEd6JwqSGecoePg" association="_yqvkYIt5Ed639sxyAgfSmw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yq0c4Yt5Ed639sxyAgfSmw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yq0c4It5Ed639sxyAgfSmw"/>
+      </ownedEnd>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -612,4 +672,7 @@
   <HDF:ValueSetConstraint xmi:id="_D4_lo4j0Ed66cKocspyVOg" base_Property="_D4--kIj0Ed66cKocspyVOg" id="2.16.840.1.113883.1.11.13955" name="EncounterCode"/>
   <CDA:ValidationSupport xmi:id="_D4_lpIj0Ed66cKocspyVOg" severity="WARNING" message="An encounter activity SHOULD contain exactly one Encounter / code. The value for 'Encounter / code' in an encounter activity SHOULD be selected from ValueSet 2.16.840.1.113883.1.11.13955 EncounterCode 2.16.840.1.113883.5.4 ActCode DYNAMIC." base_Property="_D4--kIj0Ed66cKocspyVOg"/>
   <CDA:ValidationSupport xmi:id="_D4_lpYj0Ed66cKocspyVOg" severity="INFO" message="An encounter activity MAY contain exactly one Encounter / effectiveTime, to indicate date, time, and/or duration of an encounter." base_Property="_D4_loIj0Ed66cKocspyVOg"/>
+  <CDA:ValidationSupport xmi:id="_a88roIt0Ed639sxyAgfSmw" severity="WARNING" message="The value for 'Observation / Code' in an episode observation SHOULD be 'ASSERTION' 2.16.840.1.113883.5.4 ActCode STATIC." base_Property="_dRVmAHxTEd6jfbAJq2V82w"/>
+  <CDA:ValidationSupport xmi:id="_ZanHcIt6Ed639sxyAgfSmw" severity="WARNING" message="Problem section SHOULD include one or more problem acts." base_Association="_tr5r0It5Ed639sxyAgfSmw"/>
+  <CDA:ValidationSupport xmi:id="_jEADkIt6Ed639sxyAgfSmw" severity="WARNING" message="A problem act SHOULD include one or more problem observations." base_Association="_yqvkYIt5Ed639sxyAgfSmw"/>
 </xmi:XMI>

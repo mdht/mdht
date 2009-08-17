@@ -59,6 +59,24 @@ public class StatusObservationImpl extends ObservationImpl implements StatusObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean StatusObservation_classCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return StatusObservationOperations.StatusObservation_classCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean StatusObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return StatusObservationOperations.StatusObservation_moodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean StatusObservation_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return StatusObservationOperations.StatusObservation_code(this, diagnostics, context);
 	}

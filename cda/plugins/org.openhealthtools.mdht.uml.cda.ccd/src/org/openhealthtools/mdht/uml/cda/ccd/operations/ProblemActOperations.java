@@ -33,6 +33,7 @@ import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#ProblemAct_classCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#ProblemAct_moodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#ProblemAct_id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#ProblemAct_problemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act problem Observation</em>}</li>
  * </ul>
  * </p>
  *
@@ -197,6 +198,43 @@ public class ProblemActOperations extends ActOperations {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservation()->exists(observation : cda::Observation | observation.oclIsTypeOf(ccd::ProblemObservation))
+	 * @param problemAct The receiving '<em><b>Problem Act</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean ProblemAct_problemObservation(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
+			try {
+				PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.WARNING,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROBLEM_ACT__PROBLEM_ACT_PROBLEM_OBSERVATION,
+						 CCDPlugin.INSTANCE.getString("ProblemAct_problemObservation"),
+						 new Object [] { problemAct }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
 	 * The cached OCL expression body for the '{@link #ProblemAct_code(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -295,6 +333,26 @@ public class ProblemActOperations extends ActOperations {
 	 * @ordered
 	 */
 	protected static Constraint PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * The cached OCL expression body for the '{@link #ProblemAct_problemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act problem Observation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ProblemAct_problemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getObservation()->exists(observation : cda::Observation | observation.oclIsTypeOf(ccd::ProblemObservation))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #ProblemAct_problemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act problem Observation</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ProblemAct_problemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -114,7 +114,7 @@ public class MedicationSeriesNumberObservationOperations extends ObservationOper
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MEDICATION_SERIES_NUMBER_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode='OBS'";
+	protected static final String MEDICATION_SERIES_NUMBER_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.classCode.oclIsTypeOf(vocab::ActClass)";
 
 	/**
 	 * The cached OCL invariant for the '{@link #MedicationSeriesNumberObservation_classCode(MedicationSeriesNumberObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Series Number Observation class Code</em>}' invariant operation.
@@ -130,7 +130,7 @@ public class MedicationSeriesNumberObservationOperations extends ObservationOper
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode='OBS'
+	 * self.classCode.oclIsTypeOf(vocab::ActClass)
 	 * @param medicationSeriesNumberObservation The receiving '<em><b>Medication Series Number Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -171,7 +171,7 @@ public class MedicationSeriesNumberObservationOperations extends ObservationOper
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MEDICATION_SERIES_NUMBER_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode='EVN'";
+	protected static final String MEDICATION_SERIES_NUMBER_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode.oclIsTypeOf(vocab::ActMood)";
 
 	/**
 	 * The cached OCL invariant for the '{@link #MedicationSeriesNumberObservation_moodCode(MedicationSeriesNumberObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Series Number Observation mood Code</em>}' invariant operation.
@@ -187,7 +187,7 @@ public class MedicationSeriesNumberObservationOperations extends ObservationOper
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode='EVN'
+	 * self.moodCode.oclIsTypeOf(vocab::ActMood)
 	 * @param medicationSeriesNumberObservation The receiving '<em><b>Medication Series Number Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
