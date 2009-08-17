@@ -18,7 +18,6 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +34,7 @@ import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
  *
  * @generated
  */
-public class ProblemStatusOperations extends ObservationOperations {
+public class ProblemStatusOperations extends StatusObservationOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

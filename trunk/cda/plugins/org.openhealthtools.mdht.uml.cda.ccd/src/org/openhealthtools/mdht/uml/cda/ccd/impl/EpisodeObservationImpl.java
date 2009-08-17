@@ -59,6 +59,24 @@ public class EpisodeObservationImpl extends ObservationImpl implements EpisodeOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean EpisodeObservation_classCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.EpisodeObservation_classCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean EpisodeObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.EpisodeObservation_moodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean EpisodeObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return EpisodeObservationOperations.EpisodeObservation_statusCode(this, diagnostics, context);
 	}

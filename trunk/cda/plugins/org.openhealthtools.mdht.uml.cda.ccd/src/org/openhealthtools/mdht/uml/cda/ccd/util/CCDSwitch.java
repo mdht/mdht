@@ -174,7 +174,15 @@ public class CCDSwitch<T> {
 			case CCDPackage.PROBLEM_STATUS: {
 				ProblemStatus problemStatus = (ProblemStatus)theEObject;
 				T result = caseProblemStatus(problemStatus);
+				if (result == null) result = caseStatusObservation(problemStatus);
 				if (result == null) result = caseObservation(problemStatus);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.STATUS_OBSERVATION: {
+				StatusObservation statusObservation = (StatusObservation)theEObject;
+				T result = caseStatusObservation(statusObservation);
+				if (result == null) result = caseObservation(statusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -183,13 +191,6 @@ public class CCDSwitch<T> {
 				T result = caseProblemHealthStatus(problemHealthStatus);
 				if (result == null) result = caseStatusObservation(problemHealthStatus);
 				if (result == null) result = caseObservation(problemHealthStatus);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CCDPackage.STATUS_OBSERVATION: {
-				StatusObservation statusObservation = (StatusObservation)theEObject;
-				T result = caseStatusObservation(statusObservation);
-				if (result == null) result = caseObservation(statusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

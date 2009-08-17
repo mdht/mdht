@@ -104,8 +104,8 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.PROBLEM_OBSERVATION: return createProblemObservation();
 			case CCDPackage.PROBLEM_SECTION: return createProblemSection();
 			case CCDPackage.PROBLEM_STATUS: return createProblemStatus();
-			case CCDPackage.PROBLEM_HEALTH_STATUS: return createProblemHealthStatus();
 			case CCDPackage.STATUS_OBSERVATION: return createStatusObservation();
+			case CCDPackage.PROBLEM_HEALTH_STATUS: return createProblemHealthStatus();
 			case CCDPackage.EPISODE_OBSERVATION: return createEpisodeObservation();
 			case CCDPackage.PATIENT_AWARENESS: return createPatientAwareness();
 			case CCDPackage.FAMILY_HISTORY_SECTION: return createFamilyHistorySection();
