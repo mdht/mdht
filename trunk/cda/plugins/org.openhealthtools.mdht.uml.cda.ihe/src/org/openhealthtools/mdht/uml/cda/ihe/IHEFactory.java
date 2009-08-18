@@ -122,6 +122,51 @@ public interface IHEFactory extends EFactory {
 	AllergiesReactionsSection createAllergiesReactionsSection();
 
 	/**
+	 * Returns a new object of class '<em>Normal Dosing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Normal Dosing</em>'.
+	 * @generated
+	 */
+	NormalDosing createNormalDosing();
+
+	/**
+	 * Returns a new object of class '<em>Tapered Dose</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Tapered Dose</em>'.
+	 * @generated
+	 */
+	TaperedDose createTaperedDose();
+
+	/**
+	 * Returns a new object of class '<em>Split Dosing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Split Dosing</em>'.
+	 * @generated
+	 */
+	SplitDosing createSplitDosing();
+
+	/**
+	 * Returns a new object of class '<em>Conditional Dosing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conditional Dosing</em>'.
+	 * @generated
+	 */
+	ConditionalDosing createConditionalDosing();
+
+	/**
+	 * Returns a new object of class '<em>Combination Medication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Combination Medication</em>'.
+	 * @generated
+	 */
+	CombinationMedication createCombinationMedication();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

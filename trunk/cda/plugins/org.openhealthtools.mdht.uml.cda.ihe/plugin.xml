@@ -24,5 +24,10 @@
       <entry eClass="AllergyIntoleranceConcern" id="1.3.6.1.4.1.19376.1.5.3.1.4.5.3" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
       <entry eClass="AllergyIntolerance" id="1.3.6.1.4.1.19376.1.5.3.1.4.6" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
       <entry eClass="AllergiesReactionsSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.13" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="NormalDosing" id="1.3.6.1.4.1.19376.1.5.3.1.4.7.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="TaperedDose" id="1.3.6.1.4.1.19376.1.5.3.1.4.8" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="SplitDosing" id="1.3.6.1.4.1.19376.1.5.3.1.4.9" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="ConditionalDosing" id="1.3.6.1.4.1.19376.1.5.3.1.4.10" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="CombinationMedication" id="1.3.6.1.4.1.19376.1.5.3.1.4.11" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
    </extension>
 </plugin>

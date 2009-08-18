@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
+import org.openhealthtools.mdht.uml.cda.ihe.*;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance;
@@ -134,6 +135,26 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAllergiesReactionsSection(AllergiesReactionsSection object) {
 				return createAllergiesReactionsSectionAdapter();
+			}
+			@Override
+			public Adapter caseNormalDosing(NormalDosing object) {
+				return createNormalDosingAdapter();
+			}
+			@Override
+			public Adapter caseTaperedDose(TaperedDose object) {
+				return createTaperedDoseAdapter();
+			}
+			@Override
+			public Adapter caseSplitDosing(SplitDosing object) {
+				return createSplitDosingAdapter();
+			}
+			@Override
+			public Adapter caseConditionalDosing(ConditionalDosing object) {
+				return createConditionalDosingAdapter();
+			}
+			@Override
+			public Adapter caseCombinationMedication(CombinationMedication object) {
+				return createCombinationMedicationAdapter();
 			}
 			@Override
 			public Adapter caseAct(Act object) {
@@ -336,6 +357,76 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAllergiesReactionsSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.NormalDosing <em>Normal Dosing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.NormalDosing
+	 * @generated
+	 */
+	public Adapter createNormalDosingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.TaperedDose <em>Tapered Dose</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.TaperedDose
+	 * @generated
+	 */
+	public Adapter createTaperedDoseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.SplitDosing <em>Split Dosing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.SplitDosing
+	 * @generated
+	 */
+	public Adapter createSplitDosingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing <em>Conditional Dosing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing
+	 * @generated
+	 */
+	public Adapter createConditionalDosingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication <em>Combination Medication</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication
+	 * @generated
+	 */
+	public Adapter createCombinationMedicationAdapter() {
 		return null;
 	}
 

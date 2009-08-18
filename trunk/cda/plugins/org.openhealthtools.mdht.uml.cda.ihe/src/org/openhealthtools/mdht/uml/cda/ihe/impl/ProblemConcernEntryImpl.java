@@ -64,6 +64,15 @@ public class ProblemConcernEntryImpl extends ConcernEntryImpl implements Problem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ProblemConcernEntry_problemEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemConcernEntryOperations.ProblemConcernEntry_problemEntry(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ProblemConcernEntry init() {
     		CDAUtil.init(this);
     		return this;

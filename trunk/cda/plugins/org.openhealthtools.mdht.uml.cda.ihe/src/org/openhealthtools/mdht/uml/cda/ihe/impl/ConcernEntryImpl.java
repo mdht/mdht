@@ -65,6 +65,15 @@ public class ConcernEntryImpl extends ProblemActImpl implements ConcernEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ConcernEntry_effectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConcernEntryOperations.ConcernEntry_effectiveTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ConcernEntry init() {
     		CDAUtil.init(this);
     		return this;
