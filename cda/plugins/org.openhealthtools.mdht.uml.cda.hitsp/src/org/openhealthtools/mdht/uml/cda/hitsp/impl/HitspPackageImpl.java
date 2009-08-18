@@ -285,6 +285,15 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(conditionEClass, ecorePackage.getEBoolean(), "Condition_text", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		addEOperation(conditionEClass, theIHEPackage.getProblemEntry(), "createProblemEntry", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(patientSummaryEClass, PatientSummary.class, "PatientSummary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -326,25 +335,29 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 		  (allergyDrugSensitivityEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "2.16.840.1.113883.3.88.11.83.6"
+			 "templateId.root", "2.16.840.1.113883.3.88.11.83.6",
+			 "constraints.validation.error", "AllergyDrugSensitivity_templateId"
 		   });							
 		addAnnotation
 		  (medicationEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "2.16.840.1.113883.3.88.11.83.8"
+			 "templateId.root", "2.16.840.1.113883.3.88.11.83.8",
+			 "constraints.validation.error", "Medication_templateId"
 		   });						
 		addAnnotation
 		  (conditionEClass, 
 		   source, 
 		   new String[] {
+			 "constraints.validation.error", "Condition_templateId Condition_text",
 			 "templateId.root", "2.16.840.1.113883.3.88.11.83.7"
-		   });							
+		   });											
 		addAnnotation
 		  (patientSummaryEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "2.16.840.1.113883.3.88.11.32.1"
+			 "templateId.root", "2.16.840.1.113883.3.88.11.32.1",
+			 "constraints.validation.error", "PatientSummary_templateId"
 		   });				
 	}
 
@@ -362,7 +375,7 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 		   new String[] {
 			 "Allergies and Drug Sensitivities", null,
 			 "Allergy and Drug Sensitivity", null
-		   });																				
+		   });																								
 	}
 
 	/**
@@ -372,7 +385,7 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																			
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																							
 		addAnnotation
 		  (patientSummaryEClass, 
 		   source, 

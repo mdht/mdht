@@ -46,6 +46,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/Condition_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/Condition_templateId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Condition/Condition_text">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/Condition_text/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/Condition_text/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Condition/createProblemEntry"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//PatientSummary">
