@@ -28,6 +28,7 @@ public class TransformAssociation extends TransformAbstract {
 		super(options);
 	}
 	
+	@Override
 	public Object caseAssociation(Association association) {
 		if (isRemoved(association)) {
 			return null;
@@ -36,18 +37,18 @@ public class TransformAssociation extends TransformAbstract {
 		Class sourceClass = null;
 		Class targetClass = null;
 		
-		Property targetProperty = null;
+		Property sourceProperty = null;
 		
 		for (Property property : association.getMemberEnds()) {
 			if (property.isNavigable()) {
 				sourceClass = property.getClass_();
 				targetClass = (Class) property.getType();
-				targetProperty = property;
+				sourceProperty = property;
 				break;
 			}
 		}
 		
-		if (sourceClass == null || targetClass == null || targetProperty == null) {
+		if (sourceClass == null || targetClass == null || sourceProperty == null) {
 			return null;
 		}
 
@@ -76,39 +77,35 @@ public class TransformAssociation extends TransformAbstract {
 		if ("ClinicalDocument".equals(cdaSourceName)) {
 			// Document
 			body.append("self.getSection()->");
-			body.append((targetProperty.getUpper() == 1) ? "one(" : "exists(");
+			body.append((sourceProperty.getUpper() == 1) ? "one(" : "exists(");
 			body.append("section : cda::Section | section.oclIsTypeOf(" + targetQName + "))");
 		} else {
-			// Section || Entry || clinicalStatement(Act, Encounter, Observation, ...)
+			// Section || Entry || { Act, Encounter, ... }
 			String associationEnd = "Section".equals(cdaSourceName) ? "entry" : "entryRelationship";
 			String variableDeclaration = "Section".equals(cdaSourceName) ? "entry : cda::Entry" : "entryRelationship : cda::EntryRelationship";
-			
+
 			body.append("self." + associationEnd + "->");
-			body.append((targetProperty.getUpper() == 1) ? "one(" : "exists(");
+			body.append((sourceProperty.getUpper() == 1) ? "one(" : "exists(");
 			body.append(variableDeclaration);
-			if ("Entry".equals(cdaTargetName)) {
-				body.append(" | entry");
-			} else {
-				body.append(" | " + associationEnd + "." + cdaTargetLowerName);
+			body.append(" | " + associationEnd);
+			if (!"Entry".equals(cdaTargetName)) {
+				body.append("." + cdaTargetLowerName);
 			}
 			body.append(".oclIsTypeOf(" + targetQName + ")");
 			
-			Stereotype entry = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY);
-			if (entry != null) {
-				EnumerationLiteral literal = (EnumerationLiteral) association.getValue(entry, ICDAProfileConstants.ENTRY_TYPE_CODE);
+			String stereotypeName = "Section".equals(cdaSourceName) ? ICDAProfileConstants.ENTRY : ICDAProfileConstants.ENTRY_RELATIONSHIP;
+			Stereotype stereotype = EcoreTransformUtil.getAppliedCDAStereotype(association, stereotypeName);
+			if (stereotype != null) {
+				EnumerationLiteral literal = (EnumerationLiteral) association.getValue(stereotype, "typeCode");
 				if (literal != null) {
-					body.append(" and " + associationEnd + ".typeCode = vocab::x_ActRelationshipEntry::" + literal.getName());
+					String enumerationQName = "Section".equals(cdaSourceName) ? "vocab::x_ActRelationshipEntry" : "vocab::x_ActRelationshipEntryRelationship";
+					body.append(" and " + associationEnd + ".typeCode = " + enumerationQName + "::" + literal.getName());
+					AnnotationsUtil annotationsUtil = new AnnotationsUtil(sourceClass);
+					annotationsUtil.setAnnotation("typeCode", literal.getName());
+					annotationsUtil.saveAnnotations();
 				}
 			}
-			
-			Stereotype entryRelationship = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
-			if (entryRelationship != null) {
-				EnumerationLiteral literal = (EnumerationLiteral) association.getValue(entryRelationship, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
-				if (literal != null) {
-					body.append(" and " + associationEnd + ".typeCode = vocab::x_ActRelationshipEntryRelationship::" + literal.getName());
-				}
-			}
-			
+
 			body.append(")");
 		}
 		
@@ -135,7 +132,7 @@ public class TransformAssociation extends TransformAbstract {
 			}
 		}
 		
-		removeModelElement(targetProperty);
+		removeModelElement(sourceProperty);
 		removeModelElement(association);
 		
 		return association;
