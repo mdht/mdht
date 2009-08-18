@@ -65,35 +65,44 @@ public class TransformAssociation extends TransformAbstract {
 		
 		String cdaTargetName = cdaTargetClass.getName();
 		String cdaTargetLowerName = cdaTargetName.substring(0, 1).toLowerCase() + cdaTargetName.substring(1);
-		String cdaTargetQName = cdaTargetClass.getQualifiedName();
+//		String cdaTargetQName = cdaTargetClass.getQualifiedName();
+		
+		String associationEnd = "Section".equals(cdaSourceName) ? "entry" : "entryRelationship";
+		String variableDeclaration = "Section".equals(cdaSourceName) ? "entry : cda::Entry" : "entryRelationship : cda::EntryRelationship";
 		
 		String targetName = targetClass.getName();
 		String targetLowerName = targetName.substring(0, 1).toLowerCase() + targetName.substring(1);
 		String targetQName = targetClass.getQualifiedName();
 		
 		StringBuffer body = new StringBuffer();
-		body.append("self.get" + cdaTargetName + "()->");
+//		body.append("self.get" + cdaTargetName + "()->");
+		body.append("self." + associationEnd + "->");
 		body.append((targetProperty.getUpper() == 1) ? "one(" : "exists(");
-		body.append(cdaTargetLowerName);
-		body.append(" : " + cdaTargetQName + " | ");
-		body.append(cdaTargetLowerName);
-		body.append(".oclIsTypeOf(" + targetQName + "))");
+//		body.append(cdaTargetLowerName);
+		body.append(variableDeclaration);
+//		body.append(" : " + cdaTargetQName + " | ");
+		body.append(" | " + associationEnd + "." + cdaTargetLowerName);
+//		body.append(cdaTargetLowerName);
+//		body.append(".oclIsTypeOf(" + targetQName + "))");
+		body.append(".oclIsTypeOf(" + targetQName + ")");
 		
-		Stereotype hasClinicalStatementTemplate = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.HAS_CLINICAL_STATEMENT_TEMPLATE);
-		if (hasClinicalStatementTemplate != null) {
-			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(hasClinicalStatementTemplate, ICDAProfileConstants.HAS_CLINICAL_STATEMENT_TEMPLATE_TYPE_CODE);
-			
-			// TODO: Validate that the EnumerationLiteral comes from an Enumeration that is compatible with the Type of typeCode
-			
+		Stereotype entry = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY);
+		if (entry != null) {
+			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(entry, ICDAProfileConstants.ENTRY_TYPE_CODE);
 			if (literal != null) {
-				if ("Section".equals(cdaSourceName)) {
-					body.append(" and self.entry.typeCode = ");
-				} else {
-					body.append(" and self.entryRelationship.typeCode = ");
-				}
-				body.append(literal.getQualifiedName());
+				body.append(" and " + associationEnd + ".typeCode = vocab::x_ActRelationshipEntry::" + literal.getName());
 			}
 		}
+		
+		Stereotype entryRelationship = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
+		if (entryRelationship != null) {
+			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(entryRelationship, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
+			if (literal != null) {
+				body.append(" and " + associationEnd + ".typeCode = vocab::x_ActRelationshipEntryRelationship::" + literal.getName());
+			}
+		}
+		
+		body.append(")");
 		
 		String constraintName = sourceClass.getName() + "_" + targetLowerName;
 		Constraint constraint = sourceClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
