@@ -67,42 +67,50 @@ public class TransformAssociation extends TransformAbstract {
 		String cdaTargetLowerName = cdaTargetName.substring(0, 1).toLowerCase() + cdaTargetName.substring(1);
 //		String cdaTargetQName = cdaTargetClass.getQualifiedName();
 		
-		String associationEnd = "Section".equals(cdaSourceName) ? "entry" : "entryRelationship";
-		String variableDeclaration = "Section".equals(cdaSourceName) ? "entry : cda::Entry" : "entryRelationship : cda::EntryRelationship";
-		
 		String targetName = targetClass.getName();
 		String targetLowerName = targetName.substring(0, 1).toLowerCase() + targetName.substring(1);
 		String targetQName = targetClass.getQualifiedName();
 		
 		StringBuffer body = new StringBuffer();
-//		body.append("self.get" + cdaTargetName + "()->");
-		body.append("self." + associationEnd + "->");
-		body.append((targetProperty.getUpper() == 1) ? "one(" : "exists(");
-//		body.append(cdaTargetLowerName);
-		body.append(variableDeclaration);
-//		body.append(" : " + cdaTargetQName + " | ");
-		body.append(" | " + associationEnd + "." + cdaTargetLowerName);
-//		body.append(cdaTargetLowerName);
-//		body.append(".oclIsTypeOf(" + targetQName + "))");
-		body.append(".oclIsTypeOf(" + targetQName + ")");
 		
-		Stereotype entry = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY);
-		if (entry != null) {
-			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(entry, ICDAProfileConstants.ENTRY_TYPE_CODE);
-			if (literal != null) {
-				body.append(" and " + associationEnd + ".typeCode = vocab::x_ActRelationshipEntry::" + literal.getName());
+		if ("ClinicalDocument".equals(cdaTargetName)) {
+			// Document
+			body.append("self.getSection()->");
+			body.append((targetProperty.getUpper() == 1) ? "one(" : "exists(");
+			body.append("section : cda::Section | section.oclIsTypeOf(" + targetQName + "))");
+		} else {
+			// Section || Entry || clinicalStatement(Act, Encounter, Observation, ...)
+			String associationEnd = "Section".equals(cdaSourceName) ? "entry" : "entryRelationship";
+			String variableDeclaration = "Section".equals(cdaSourceName) ? "entry : cda::Entry" : "entryRelationship : cda::EntryRelationship";
+			
+			body.append("self." + associationEnd + "->");
+			body.append((targetProperty.getUpper() == 1) ? "one(" : "exists(");
+			body.append(variableDeclaration);
+			if ("Entry".equals(cdaTargetName)) {
+				body.append(" | entry");
+			} else {
+				body.append(" | " + associationEnd + "." + cdaTargetLowerName);
 			}
-		}
-		
-		Stereotype entryRelationship = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
-		if (entryRelationship != null) {
-			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(entryRelationship, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
-			if (literal != null) {
-				body.append(" and " + associationEnd + ".typeCode = vocab::x_ActRelationshipEntryRelationship::" + literal.getName());
+			body.append(".oclIsTypeOf(" + targetQName + ")");
+			
+			Stereotype entry = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY);
+			if (entry != null) {
+				EnumerationLiteral literal = (EnumerationLiteral) association.getValue(entry, ICDAProfileConstants.ENTRY_TYPE_CODE);
+				if (literal != null) {
+					body.append(" and " + associationEnd + ".typeCode = vocab::x_ActRelationshipEntry::" + literal.getName());
+				}
 			}
+			
+			Stereotype entryRelationship = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
+			if (entryRelationship != null) {
+				EnumerationLiteral literal = (EnumerationLiteral) association.getValue(entryRelationship, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
+				if (literal != null) {
+					body.append(" and " + associationEnd + ".typeCode = vocab::x_ActRelationshipEntryRelationship::" + literal.getName());
+				}
+			}
+			
+			body.append(")");
 		}
-		
-		body.append(")");
 		
 		String constraintName = sourceClass.getName() + "_" + targetLowerName;
 		Constraint constraint = sourceClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
