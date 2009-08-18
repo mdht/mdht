@@ -78,12 +78,20 @@ public class HitspValidator extends EObjectValidator {
 	public static final int CONDITION__CONDITION_TEMPLATE_ID = 3;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Condition text' of 'Condition'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONDITION__CONDITION_TEXT = 4;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Patient Summary template Id' of 'Patient Summary'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_TEMPLATE_ID = 4;
+	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_TEMPLATE_ID = 5;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -91,7 +99,7 @@ public class HitspValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 4;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 5;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -177,7 +185,12 @@ public class HitspValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_templateId(allergyDrugSensitivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_classCode(allergyDrugSensitivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_moodCode(allergyDrugSensitivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_id(allergyDrugSensitivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_problemObservation(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_ConcernEntry_templateId(allergyDrugSensitivity, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_ConcernEntry_effectiveTime(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateAllergyIntoleranceConcern_AllergyIntoleranceConcern_templateId(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAllergyDrugSensitivity_AllergyDrugSensitivity_templateId(allergyDrugSensitivity, diagnostics, context);
 		return result;
@@ -207,6 +220,10 @@ public class HitspValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationSeriesNumberObservation(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationStatusObservation(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedication_Medication_templateId(medication, diagnostics, context);
 		return result;
 	}
@@ -255,9 +272,16 @@ public class HitspValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_templateId(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_classCode(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_moodCode(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_id(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_problemObservation(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_ConcernEntry_templateId(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_ConcernEntry_effectiveTime(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateProblemConcernEntry_ProblemConcernEntry_templateId(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateProblemConcernEntry_ProblemConcernEntry_problemEntry(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCondition_Condition_templateId(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCondition_Condition_text(condition, diagnostics, context);
 		return result;
 	}
 
@@ -269,6 +293,16 @@ public class HitspValidator extends EObjectValidator {
 	 */
 	public boolean validateCondition_Condition_templateId(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return condition.Condition_templateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the Condition_text constraint of '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCondition_Condition_text(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return condition.Condition_text(diagnostics, context);
 	}
 
 	/**

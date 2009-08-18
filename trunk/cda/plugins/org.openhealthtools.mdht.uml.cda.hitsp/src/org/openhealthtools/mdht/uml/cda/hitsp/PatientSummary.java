@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage#getPatientSummary()
  * @model extendedMetaData="name='ClinicalDocument'"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.32.1'"
+ *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.32.1' constraints.validation.error='PatientSummary_templateId'"
  * @generated
  */
 public interface PatientSummary extends MedicalDocument {

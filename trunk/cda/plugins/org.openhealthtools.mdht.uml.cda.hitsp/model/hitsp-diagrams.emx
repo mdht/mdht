@@ -24,9 +24,9 @@
         <children xmi:id="_IReTFFbGEd6ShYMM6mMCTg" visible="false" type="StructureCompartment">
           <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_IReTFVbGEd6ShYMM6mMCTg"/>
         </children>
-        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IReTFlbGEd6ShYMM6mMCTg" showListSignature="true" showStereotype="Label"/>
+        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IReTFlbGEd6ShYMM6mMCTg" showListVisibility="None" showListSignature="true" showStereotype="Label"/>
         <element xmi:type="uml:Class" href="hitsp.emx#_GgvgUDxbEd6JwqSGecoePg?hitsp/Condition?"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IReTF1bGEd6ShYMM6mMCTg" x="1585" y="9827"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IReTF1bGEd6ShYMM6mMCTg" x="1585" y="9510"/>
       </children>
       <children xmi:id="_A6Q4oGD9Ed6bFO5yxRh3Nw">
         <children xmi:id="_A6SGwGD9Ed6bFO5yxRh3Nw" type="ImageCompartment">

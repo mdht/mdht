@@ -66,6 +66,15 @@ public class ConditionImpl extends ProblemConcernEntryImpl implements Condition 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean Condition_text(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionOperations.Condition_text(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ProblemEntry createProblemEntry() {
 		return ConditionOperations.createProblemEntry(this);
 	}
