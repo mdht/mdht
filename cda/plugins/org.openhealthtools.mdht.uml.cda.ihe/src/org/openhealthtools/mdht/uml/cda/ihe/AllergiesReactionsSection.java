@@ -22,9 +22,14 @@ import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
  * A representation of the model object '<em><b>Allergies Reactions Section</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The adverse and other adverse reactions section shall contain a narrative description of the substance intolerances and the
+ * associated adverse reactions suffered by the patient.
+ * <!-- end-model-doc -->
+ *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getAllergiesReactionsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.13'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.13' constraints.validation.error='AllergiesReactionsSection_templateId AllergiesReactionsSection_code' code.displayName='Allergies, adverse reactions, alerts' code.codeSystem='2.16.840.1.113883.6.1' code.code='48765-2'"
  *        annotation="uml2.alias Allergies\040and\040Other\040Adverse\040Reactions\040Section='null'"
  * @generated
  */
@@ -41,6 +46,21 @@ public interface AllergiesReactionsSection extends AlertsSection {
 	 * @generated
 	 */
 	boolean AllergiesReactionsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and 
+	 * let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (
+	 * value.code = '48765-2' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and \r\nlet value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (\r\nvalue.code = \'48765-2\' and value.codeSystem = \'2.16.840.1.113883.6.1\' and value.codeSystemName = \'LOINC\')'"
+	 * @generated
+	 */
+	boolean AllergiesReactionsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

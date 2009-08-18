@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationActivityOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.Medication;
@@ -98,7 +99,7 @@ public class MedicationOperations extends MedicationActivityOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.MEDICATION__MEDICATION_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Medication_templateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(medication, context) }),
+						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Medication_templateId", MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(medication, context) }),
 						 new Object [] { medication }));
 			}
 			return false;

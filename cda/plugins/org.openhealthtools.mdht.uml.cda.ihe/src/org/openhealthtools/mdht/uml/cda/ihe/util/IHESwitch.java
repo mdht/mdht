@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
+import org.openhealthtools.mdht.uml.cda.ihe.*;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance;
@@ -195,6 +196,51 @@ public class IHESwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case IHEPackage.NORMAL_DOSING: {
+				NormalDosing normalDosing = (NormalDosing)theEObject;
+				T result = caseNormalDosing(normalDosing);
+				if (result == null) result = caseMedication(normalDosing);
+				if (result == null) result = caseMedicationActivity(normalDosing);
+				if (result == null) result = caseSubstanceAdministration(normalDosing);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.TAPERED_DOSE: {
+				TaperedDose taperedDose = (TaperedDose)theEObject;
+				T result = caseTaperedDose(taperedDose);
+				if (result == null) result = caseMedication(taperedDose);
+				if (result == null) result = caseMedicationActivity(taperedDose);
+				if (result == null) result = caseSubstanceAdministration(taperedDose);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.SPLIT_DOSING: {
+				SplitDosing splitDosing = (SplitDosing)theEObject;
+				T result = caseSplitDosing(splitDosing);
+				if (result == null) result = caseMedication(splitDosing);
+				if (result == null) result = caseMedicationActivity(splitDosing);
+				if (result == null) result = caseSubstanceAdministration(splitDosing);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.CONDITIONAL_DOSING: {
+				ConditionalDosing conditionalDosing = (ConditionalDosing)theEObject;
+				T result = caseConditionalDosing(conditionalDosing);
+				if (result == null) result = caseMedication(conditionalDosing);
+				if (result == null) result = caseMedicationActivity(conditionalDosing);
+				if (result == null) result = caseSubstanceAdministration(conditionalDosing);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.COMBINATION_MEDICATION: {
+				CombinationMedication combinationMedication = (CombinationMedication)theEObject;
+				T result = caseCombinationMedication(combinationMedication);
+				if (result == null) result = caseMedication(combinationMedication);
+				if (result == null) result = caseMedicationActivity(combinationMedication);
+				if (result == null) result = caseSubstanceAdministration(combinationMedication);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -346,6 +392,81 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseAllergiesReactionsSection(AllergiesReactionsSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Normal Dosing</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Normal Dosing</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNormalDosing(NormalDosing object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Tapered Dose</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Tapered Dose</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTaperedDose(TaperedDose object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Split Dosing</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Split Dosing</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSplitDosing(SplitDosing object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Conditional Dosing</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Conditional Dosing</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConditionalDosing(ConditionalDosing object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Combination Medication</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Combination Medication</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCombinationMedication(CombinationMedication object) {
 		return null;
 	}
 

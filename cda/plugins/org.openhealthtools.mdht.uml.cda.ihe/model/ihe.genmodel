@@ -34,6 +34,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ConcernEntry/ConcernEntry_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ConcernEntry/ConcernEntry_templateId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ConcernEntry/ConcernEntry_effectiveTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ConcernEntry/ConcernEntry_effectiveTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ConcernEntry/ConcernEntry_effectiveTime/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//MedicalDocument">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//MedicalDocument/MedicalDocument_templateId">
@@ -54,17 +58,33 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ActiveProblemsSection/ActiveProblemsSection_code/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ActiveProblemsSection/ActiveProblemsSection_code/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ActiveProblemsSection/ActiveProblemsSection_problemConcernEntry">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ActiveProblemsSection/ActiveProblemsSection_problemConcernEntry/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ActiveProblemsSection/ActiveProblemsSection_problemConcernEntry/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ProblemConcernEntry">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProblemConcernEntry/ProblemConcernEntry_templateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProblemConcernEntry/ProblemConcernEntry_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProblemConcernEntry/ProblemConcernEntry_templateId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProblemConcernEntry/ProblemConcernEntry_problemEntry">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProblemConcernEntry/ProblemConcernEntry_problemEntry/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProblemConcernEntry/ProblemConcernEntry_problemEntry/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ProblemEntry">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProblemEntry/ProblemEntry_templateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProblemEntry/ProblemEntry_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProblemEntry/ProblemEntry_templateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProblemEntry/ProblemEntry_text">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProblemEntry/ProblemEntry_text/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProblemEntry/ProblemEntry_text/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ProblemEntry/ProblemEntry_value">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProblemEntry/ProblemEntry_value/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ProblemEntry/ProblemEntry_value/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//Medication">
@@ -99,6 +119,40 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//AllergiesReactionsSection/AllergiesReactionsSection_templateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//AllergiesReactionsSection/AllergiesReactionsSection_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//AllergiesReactionsSection/AllergiesReactionsSection_templateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//AllergiesReactionsSection/AllergiesReactionsSection_code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//AllergiesReactionsSection/AllergiesReactionsSection_code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//AllergiesReactionsSection/AllergiesReactionsSection_code/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//NormalDosing">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//NormalDosing/NormalDosing_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//NormalDosing/NormalDosing_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//NormalDosing/NormalDosing_templateId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//TaperedDose">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//TaperedDose/TaperedDose_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//TaperedDose/TaperedDose_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//TaperedDose/TaperedDose_templateId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//SplitDosing">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//SplitDosing/SplitDosing_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//SplitDosing/SplitDosing_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//SplitDosing/SplitDosing_templateId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ConditionalDosing">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ConditionalDosing/ConditionalDosing_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ConditionalDosing/ConditionalDosing_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ConditionalDosing/ConditionalDosing_templateId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//CombinationMedication">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//CombinationMedication/CombinationMedication_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//CombinationMedication/CombinationMedication_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//CombinationMedication/CombinationMedication_templateId/context"/>
       </genOperations>
     </genClasses>
   </genPackages>

@@ -24,14 +24,19 @@ import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern;
+import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.Medication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.NormalDosing;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.SplitDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
 /**
@@ -110,6 +115,41 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	private EClass allergiesReactionsSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass normalDosingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass taperedDoseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass splitDosingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass conditionalDosingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass combinationMedicationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -286,6 +326,51 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getNormalDosing() {
+		return normalDosingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTaperedDose() {
+		return taperedDoseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSplitDosing() {
+		return splitDosingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConditionalDosing() {
+		return conditionalDosingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCombinationMedication() {
+		return combinationMedicationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public IHEFactory getIHEFactory() {
 		return (IHEFactory)getEFactoryInstance();
 	}
@@ -328,6 +413,16 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		allergyIntoleranceEClass = createEClass(ALLERGY_INTOLERANCE);
 
 		allergiesReactionsSectionEClass = createEClass(ALLERGIES_REACTIONS_SECTION);
+
+		normalDosingEClass = createEClass(NORMAL_DOSING);
+
+		taperedDoseEClass = createEClass(TAPERED_DOSE);
+
+		splitDosingEClass = createEClass(SPLIT_DOSING);
+
+		conditionalDosingEClass = createEClass(CONDITIONAL_DOSING);
+
+		combinationMedicationEClass = createEClass(COMBINATION_MEDICATION);
 	}
 
 	/**
@@ -372,6 +467,11 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		allergyIntoleranceConcernEClass.getESuperTypes().add(this.getConcernEntry());
 		allergyIntoleranceEClass.getESuperTypes().add(this.getProblemEntry());
 		allergiesReactionsSectionEClass.getESuperTypes().add(theCCDPackage.getAlertsSection());
+		normalDosingEClass.getESuperTypes().add(this.getMedication());
+		taperedDoseEClass.getESuperTypes().add(this.getMedication());
+		splitDosingEClass.getESuperTypes().add(this.getMedication());
+		conditionalDosingEClass.getESuperTypes().add(this.getMedication());
+		combinationMedicationEClass.getESuperTypes().add(this.getMedication());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(concernEntryEClass, ConcernEntry.class, "ConcernEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -380,6 +480,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(concernEntryEClass, ecorePackage.getEBoolean(), "ConcernEntry_effectiveTime", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
@@ -425,6 +534,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(activeProblemsSectionEClass, ecorePackage.getEBoolean(), "ActiveProblemsSection_problemConcernEntry", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(problemConcernEntryEClass, ProblemConcernEntry.class, "ProblemConcernEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(problemConcernEntryEClass, ecorePackage.getEBoolean(), "ProblemConcernEntry_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -436,9 +554,36 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(problemConcernEntryEClass, ecorePackage.getEBoolean(), "ProblemConcernEntry_problemEntry", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(problemEntryEClass, ProblemEntry.class, "ProblemEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(problemEntryEClass, ecorePackage.getEBoolean(), "ProblemEntry_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(problemEntryEClass, ecorePackage.getEBoolean(), "ProblemEntry_text", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(problemEntryEClass, ecorePackage.getEBoolean(), "ProblemEntry_value", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -511,6 +656,70 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(allergiesReactionsSectionEClass, ecorePackage.getEBoolean(), "AllergiesReactionsSection_code", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(normalDosingEClass, NormalDosing.class, "NormalDosing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(normalDosingEClass, ecorePackage.getEBoolean(), "NormalDosing_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(taperedDoseEClass, TaperedDose.class, "TaperedDose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(taperedDoseEClass, ecorePackage.getEBoolean(), "TaperedDose_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(splitDosingEClass, SplitDosing.class, "SplitDosing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(splitDosingEClass, ecorePackage.getEBoolean(), "SplitDosing_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(conditionalDosingEClass, ConditionalDosing.class, "ConditionalDosing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(conditionalDosingEClass, ecorePackage.getEBoolean(), "ConditionalDosing_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(combinationMedicationEClass, CombinationMedication.class, "CombinationMedication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(combinationMedicationEClass, ecorePackage.getEBoolean(), "CombinationMedication_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -535,41 +744,47 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (concernEntryEClass, 
 		   source, 
 		   new String[] {
+			 "constraints.validation.error", "ConcernEntry_templateId ConcernEntry_effectiveTime",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.5.1"
-		   });							
+		   });											
 		addAnnotation
 		  (medicalDocumentEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.1.1"
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.1.1",
+			 "constraints.validation.error", "MedicalDocument_templateId"
 		   });						
 		addAnnotation
 		  (activeProblemsSectionEClass, 
 		   source, 
 		   new String[] {
 			 "code.codeSystemName", "LOINC",
+			 "constraints.validation.error", "ActiveProblemsSection_templateId ActiveProblemsSection_code ActiveProblemsSection_problemConcernEntry",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.6",
 			 "code.displayName", "PROBLEM LIST",
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "11450-4"
-		   });																
+		   });																				
 		addAnnotation
 		  (problemConcernEntryEClass, 
 		   source, 
 		   new String[] {
+			 "constraints.validation.error", "ProblemConcernEntry_templateId ProblemConcernEntry_problemEntry",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.5.2"
-		   });							
+		   });											
 		addAnnotation
 		  (problemEntryEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.5"
-		   });							
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.5",
+			 "constraints.validation.error", "ProblemEntry_templateId ProblemEntry_text ProblemEntry_value"
+		   });															
 		addAnnotation
 		  (medicationEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.7"
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.7",
+			 "constraints.validation.error", "Medication_templateId"
 		   });							
 		addAnnotation
 		  (medicationsSectionEClass, 
@@ -577,6 +792,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   new String[] {
 			 "code.codeSystemName", "LOINC",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.19",
+			 "constraints.validation.error", "MedicationsSection_templateId MedicationsSection_code",
 			 "code.displayName", "HISTORY OF MEDICATION USE",
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "10160-0"
@@ -585,20 +801,62 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (allergyIntoleranceConcernEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.5.3"
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.5.3",
+			 "constraints.validation.error", "AllergyIntoleranceConcern_templateId"
 		   });							
 		addAnnotation
 		  (allergyIntoleranceEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.6"
-		   });							
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.6",
+			 "constraints.validation.error", "AllergyIntolerance_templateId"
+		   });								
 		addAnnotation
 		  (allergiesReactionsSectionEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.13"
-		   });					
+			 "code.codeSystemName", "LOINC",
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.13",
+			 "constraints.validation.error", "AllergiesReactionsSection_templateId AllergiesReactionsSection_code",
+			 "code.displayName", "Allergies, adverse reactions, alerts",
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "code.code", "48765-2"
+		   });												
+		addAnnotation
+		  (normalDosingEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.7.1",
+			 "constraints.validation.error", "NormalDosing_templateId"
+		   });							
+		addAnnotation
+		  (taperedDoseEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.8",
+			 "constraints.validation.error", "TaperedDose_templateId"
+		   });						
+		addAnnotation
+		  (splitDosingEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.9",
+			 "constraints.validation.error", "SplitDosing_templateId"
+		   });						
+		addAnnotation
+		  (conditionalDosingEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.10",
+			 "constraints.validation.error", "ConditionalDosing_templateId"
+		   });						
+		addAnnotation
+		  (combinationMedicationEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.11",
+			 "constraints.validation.error", "CombinationMedication_templateId"
+		   });				
 	}
 
 	/**
@@ -608,13 +866,13 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";							
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";											
 		addAnnotation
 		  (medicalDocumentEClass, 
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																		
+		   });																																																																																																																		
 	}
 
 	/**
@@ -624,19 +882,19 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	protected void createUml2Annotations() {
-		String source = "uml2.alias";														
+		String source = "uml2.alias";																		
 		addAnnotation
 		  (activeProblemsSectionEClass, 
 		   source, 
 		   new String[] {
 			 "Active Problems Section", null
-		   });																
+		   });																				
 		addAnnotation
 		  (problemConcernEntryEClass, 
 		   source, 
 		   new String[] {
 			 "Problem Concern Entry", null
-		   });																													
+		   });																																									
 		addAnnotation
 		  (allergyIntoleranceConcernEClass, 
 		   source, 
@@ -648,13 +906,13 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Allergies and Intolerances", null
-		   });							
+		   });								
 		addAnnotation
 		  (allergiesReactionsSectionEClass, 
 		   source, 
 		   new String[] {
 			 "Allergies and Other Adverse Reactions Section", null
-		   });				
+		   });																																			
 	}
 
 } //IHEPackageImpl

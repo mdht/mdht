@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemObservationOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
@@ -34,6 +35,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry#ProblemEntry_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Entry template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry#ProblemEntry_text(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Entry text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry#ProblemEntry_value(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Entry value</em>}</li>
  * </ul>
  * </p>
  *
@@ -98,7 +101,121 @@ public class ProblemEntryOperations extends ProblemObservationOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.PROBLEM_ENTRY__PROBLEM_ENTRY_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ProblemEntry_templateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(problemEntry, context) }),
+						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ProblemEntry_templateId", PROBLEM_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(problemEntry, context) }),
+						 new Object [] { problemEntry }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #ProblemEntry_text(ProblemEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Entry text</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ProblemEntry_text(ProblemEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PROBLEM_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.text.oclIsUndefined()";
+
+	/**
+	 * The cached OCL invariant for the '{@link #ProblemEntry_text(ProblemEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Entry text</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ProblemEntry_text(ProblemEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint PROBLEM_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.text.oclIsUndefined()
+	 * @param problemEntry The receiving '<em><b>Problem Entry</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean ProblemEntry_text(ProblemEntry problemEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (PROBLEM_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(IHEPackage.Literals.PROBLEM_ENTRY);
+			try {
+				PROBLEM_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(PROBLEM_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemEntry)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 IHEValidator.DIAGNOSTIC_SOURCE,
+						 IHEValidator.PROBLEM_ENTRY__PROBLEM_ENTRY_TEXT,
+						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ProblemEntry_text", PROBLEM_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(problemEntry, context) }),
+						 new Object [] { problemEntry }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #ProblemEntry_value(ProblemEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Entry value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ProblemEntry_value(ProblemEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PROBLEM_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CD))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #ProblemEntry_value(ProblemEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Entry value</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ProblemEntry_value(ProblemEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint PROBLEM_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CD))
+	 * @param problemEntry The receiving '<em><b>Problem Entry</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean ProblemEntry_value(ProblemEntry problemEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (PROBLEM_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(IHEPackage.Literals.PROBLEM_ENTRY);
+			try {
+				PROBLEM_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(PROBLEM_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemEntry)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 IHEValidator.DIAGNOSTIC_SOURCE,
+						 IHEValidator.PROBLEM_ENTRY__PROBLEM_ENTRY_VALUE,
+						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ProblemEntry_value", PROBLEM_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(problemEntry, context) }),
 						 new Object [] { problemEntry }));
 			}
 			return false;

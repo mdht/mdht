@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getMedicalDocument()
  * @model extendedMetaData="name='ClinicalDocument'"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.1'"
+ *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.1' constraints.validation.error='MedicalDocument_templateId'"
  * @generated
  */
 public interface MedicalDocument extends ClinicalDocument {

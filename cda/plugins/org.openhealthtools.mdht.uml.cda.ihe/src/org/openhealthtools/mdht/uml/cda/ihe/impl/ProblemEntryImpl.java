@@ -65,6 +65,24 @@ public class ProblemEntryImpl extends ProblemObservationImpl implements ProblemE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ProblemEntry_text(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemEntryOperations.ProblemEntry_text(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ProblemEntry_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemEntryOperations.ProblemEntry_value(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ProblemEntry init() {
     		CDAUtil.init(this);
     		return this;

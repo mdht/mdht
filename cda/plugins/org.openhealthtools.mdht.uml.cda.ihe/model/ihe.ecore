@@ -5,6 +5,7 @@
     nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe" nsPrefix="ihe">
   <eClassifiers xsi:type="ecore:EClass" name="ConcernEntry" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//ProblemAct">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="constraints.validation.error" value="ConcernEntry_templateId ConcernEntry_effectiveTime"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
     </eAnnotations>
     <eOperations name="ConcernEntry_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -29,6 +30,28 @@
         </eGenericType>
       </eParameters>
     </eOperations>
+    <eOperations name="ConcernEntry_effectiveTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="not self.effectiveTime.oclIsUndefined()"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="not self.effectiveTime.oclIsUndefined()"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MedicalDocument" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//ClinicalDocument">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -36,6 +59,7 @@
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+      <details key="constraints.validation.error" value="MedicalDocument_templateId"/>
     </eAnnotations>
     <eOperations name="MedicalDocument_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -63,6 +87,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ActiveProblemsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//ProblemSection">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
+      <details key="constraints.validation.error" value="ActiveProblemsSection_templateId ActiveProblemsSection_code ActiveProblemsSection_problemConcernEntry"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
       <details key="code.displayName" value="PROBLEM LIST"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
@@ -117,10 +142,32 @@
     </eOperations>
     <eOperations name="ActiveProblemsSection_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.code = '11450-4' and self.code.codeSystem = '2.16.840.1.113883.6.1' and self.code.codeSystemName = 'LOINC'"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.code = '11450-4' and self.code.codeSystem = '2.16.840.1.113883.6.1' and self.code.codeSystemName = 'LOINC'"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="ActiveProblemsSection_problemConcernEntry" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.getAct()->exists(act : cda::Act | act.oclIsTypeOf(ihe::ProblemConcernEntry))"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.getAct()->exists(act : cda::Act | act.oclIsTypeOf(ihe::ProblemConcernEntry))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -143,6 +190,7 @@
       <details key="documentation" value="This entry is a specialization of the Concern Entry, wherein the subject of the concern is focused on a problem."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="constraints.validation.error" value="ProblemConcernEntry_templateId ProblemConcernEntry_problemEntry"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
     </eAnnotations>
     <eAnnotations source="uml2.alias">
@@ -170,10 +218,33 @@
         </eGenericType>
       </eParameters>
     </eOperations>
+    <eOperations name="ProblemConcernEntry_problemEntry" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.getObservation()->exists(observation : cda::Observation | observation.oclIsTypeOf(ihe::ProblemEntry))"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.getObservation()->exists(observation : cda::Observation | observation.oclIsTypeOf(ihe::ProblemEntry))"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProblemEntry" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//ProblemObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+      <details key="constraints.validation.error" value="ProblemEntry_templateId ProblemEntry_text ProblemEntry_value"/>
     </eAnnotations>
     <eOperations name="ProblemEntry_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -197,6 +268,50 @@
         </eGenericType>
       </eParameters>
     </eOperations>
+    <eOperations name="ProblemEntry_text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="not self.text.oclIsUndefined()"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="not self.text.oclIsUndefined()"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="ProblemEntry_value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CD))"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CD))"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Medication" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//MedicationActivity">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -204,6 +319,7 @@
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+      <details key="constraints.validation.error" value="Medication_templateId"/>
     </eAnnotations>
     <eOperations name="Medication_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -235,6 +351,7 @@
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+      <details key="constraints.validation.error" value="MedicationsSection_templateId MedicationsSection_code"/>
       <details key="code.displayName" value="HISTORY OF MEDICATION USE"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="code.code" value="10160-0"/>
@@ -263,10 +380,10 @@
     </eOperations>
     <eOperations name="MedicationsSection_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.code = '10160-0' and self.code.codeSystem = '2.16.840.1.113883.6.1' and self.code.codeSystemName = 'LOINC'"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10160-0' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.code = '10160-0' and self.code.codeSystem = '2.16.840.1.113883.6.1' and self.code.codeSystemName = 'LOINC'"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10160-0' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -290,6 +407,7 @@
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+      <details key="constraints.validation.error" value="AllergyIntoleranceConcern_templateId"/>
     </eAnnotations>
     <eAnnotations source="uml2.alias">
       <details key="Allergy and Intolerance Concern"/>
@@ -320,6 +438,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AllergyIntolerance" eSuperTypes="#//ProblemEntry">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+      <details key="constraints.validation.error" value="AllergyIntolerance_templateId"/>
     </eAnnotations>
     <eAnnotations source="uml2.alias">
       <details key="Allergies and Intolerances"/>
@@ -348,8 +467,16 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AllergiesReactionsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//AlertsSection">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The adverse and other adverse reactions section shall contain a narrative description of the substance intolerances and the&#xD;&#xA;associated adverse reactions suffered by the patient."/>
+    </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+      <details key="constraints.validation.error" value="AllergiesReactionsSection_templateId AllergiesReactionsSection_code"/>
+      <details key="code.displayName" value="Allergies, adverse reactions, alerts"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
+      <details key="code.code" value="48765-2"/>
     </eAnnotations>
     <eAnnotations source="uml2.alias">
       <details key="Allergies and Other Adverse Reactions Section"/>
@@ -360,6 +487,174 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.13')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="AllergiesReactionsSection_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '48765-2' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '48765-2' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NormalDosing" eSuperTypes="#//Medication">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This&amp;nbsp;template&amp;nbsp;identifier&amp;nbsp;is&amp;nbsp;used&amp;nbsp;to&amp;nbsp;identify&amp;nbsp;medication&amp;nbsp;administration&amp;nbsp;events&amp;nbsp;that&amp;nbsp;do&amp;nbsp;not&amp;nbsp;require&amp;nbsp;any&amp;nbsp;special&amp;nbsp;processing.&#xD;&#xA;The parent template is &lt;span>&lt;a title=&quot;1.3.6.1.4.1.19376.1.5.3.1.4.7&quot;&#xD;&#xA;href=&quot;http://wiki.ihe.net/index.php?title=1.3.6.1.4.1.19376.1.5.3.1.4.7#1.3.6.1.4.1.19376.1.5.3.1.4.7&quot;>&lt;u>&lt;font&#xD;&#xA;color=&quot;#0066CC&quot;>1.3.6.1.4.1.19376.1.5.3.1.4.7&lt;/font>&lt;/u>&lt;/a>&lt;/span>. Medications that use this template identifier shall&#xD;&#xA;not use subordinate &amp;lt;substanceAdministation&amp;gt; acts."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+      <details key="constraints.validation.error" value="NormalDosing_templateId"/>
+    </eAnnotations>
+    <eOperations name="NormalDosing_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.7.1')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.7.1')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaperedDose" eSuperTypes="#//Medication">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    This template identifier is used to identify medication administration events that require special processing to handle&#xD;&#xA;    tapered dosing. The parent template is 1.3.6.1.4.1.19376.1.5.3.1.4.7. A tapered dose is often used for certain&#xD;&#xA;    medications where abrupt termination of the medication can have negative consequences. Tapered dosages may be done by&#xD;&#xA;    adjusting the dose frequency, the dose amount, or both.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    When merely the dose frequency is adjusted, (e.g., Prednisone 5mg b.i.d. for three days, then 5mg. daily for three&#xD;&#xA;    days, and then 5mg every other day), then only one medication entry is needed, multiple frequency specifications&#xD;&#xA;    recorded in &amp;lt;effectiveTime&amp;gt; elements. When the dose varies (eg. Prednisone 15mg daily for three days, then 10 mg&#xD;&#xA;    daily for three days, the 5 mg daily for three days), subordinate medication entries should be created for each&#xD;&#xA;    distinct dosage.&#xD;&#xA;&lt;/p>"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.8"/>
+      <details key="constraints.validation.error" value="TaperedDose_templateId"/>
+    </eAnnotations>
+    <eOperations name="TaperedDose_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.8')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.8')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SplitDosing" eSuperTypes="#//Medication">
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.9"/>
+      <details key="constraints.validation.error" value="SplitDosing_templateId"/>
+    </eAnnotations>
+    <eOperations name="SplitDosing_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.9')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.9')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalDosing" eSuperTypes="#//Medication">
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.10"/>
+      <details key="constraints.validation.error" value="ConditionalDosing_templateId"/>
+    </eAnnotations>
+    <eOperations name="ConditionalDosing_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.10')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.10')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CombinationMedication" eSuperTypes="#//Medication">
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.11"/>
+      <details key="constraints.validation.error" value="CombinationMedication_templateId"/>
+    </eAnnotations>
+    <eOperations name="CombinationMedication_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.11')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.11')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
