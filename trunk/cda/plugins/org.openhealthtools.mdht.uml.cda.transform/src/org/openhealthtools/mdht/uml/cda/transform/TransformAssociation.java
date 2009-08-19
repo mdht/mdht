@@ -100,9 +100,9 @@ public class TransformAssociation extends TransformAbstract {
 				if (literal != null) {
 					String enumerationQName = "Section".equals(cdaSourceName) ? "vocab::x_ActRelationshipEntry" : "vocab::x_ActRelationshipEntryRelationship";
 					body.append(" and " + associationEnd + ".typeCode = " + enumerationQName + "::" + literal.getName());
-					AnnotationsUtil annotationsUtil = new AnnotationsUtil(sourceClass);
-					annotationsUtil.setAnnotation("typeCode", literal.getName());
-					annotationsUtil.saveAnnotations();
+//					AnnotationsUtil annotationsUtil = new AnnotationsUtil(sourceClass);
+//					annotationsUtil.setAnnotation("typeCode", literal.getName());
+//					annotationsUtil.saveAnnotations();
 				}
 			}
 
