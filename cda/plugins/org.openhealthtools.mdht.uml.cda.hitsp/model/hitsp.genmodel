@@ -4,7 +4,8 @@
     xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.cda.hitsp/src"
     editDirectory="/org.openhealthtools.mdht.uml.cda.hitsp.edit/src" editorDirectory="/org.openhealthtools.mdht.uml.cda.hitsp.editor/src"
     modelPluginID="org.openhealthtools.mdht.uml.cda.hitsp" templateDirectory="/org.openhealthtools.mdht.uml.cda/templates"
-    dynamicTemplates="true" forceOverwrite="true" modelName="Hitsp" editPluginClass="org.openhealthtools.mdht.uml.cda.hitsp.provider.HitspEditPlugin"
+    dynamicTemplates="true" forceOverwrite="true" modelName="Hitsp" modelPluginClass="HitspPlugin"
+    editPluginClass="org.openhealthtools.mdht.uml.cda.hitsp.provider.HitspEditPlugin"
     editorPluginClass="org.openhealthtools.mdht.uml.cda.hitsp.presentation.HitspEditorPlugin"
     testSuiteClass="org.openhealthtools.mdht.uml.cda.hitsp.tests.HitspAllTests" importerID="org.eclipse.uml2.uml.ecore.importer"
     complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.genmodel#//ihe ../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.genmodel#//ccd ../../org.openhealthtools.mdht.uml.cda/model/cda.genmodel#//cda ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab">

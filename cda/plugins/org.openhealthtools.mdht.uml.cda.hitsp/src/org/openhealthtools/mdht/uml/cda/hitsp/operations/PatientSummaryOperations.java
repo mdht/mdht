@@ -22,6 +22,7 @@ import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HitspPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.hitsp.util.HitspValidator;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
@@ -104,7 +105,7 @@ public class PatientSummaryOperations extends MedicalDocumentOperations {
 						(Diagnostic.ERROR,
 						 HitspValidator.DIAGNOSTIC_SOURCE,
 						 HitspValidator.PATIENT_SUMMARY__PATIENT_SUMMARY_TEMPLATE_ID,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "PatientSummary_templateId", PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(patientSummary, context) }),
+						 HitspPlugin.INSTANCE.getString("PatientSummary_templateId"),
 						 new Object [] { patientSummary }));
 			}
 			return false;
