@@ -46,20 +46,38 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		if (cdaProperty == null) {
 			String message = "Cannot find CDA property for: " + property.getQualifiedName();
 			Logger.log(Logger.ERROR, message);
-			System.err.println(message);
+			removeModelElement(property);
 			return null;
 		}
 		if (inheritedProperty == null) {
 			String message = "Cannot find inherited property for: " + property.getQualifiedName();
 			Logger.log(Logger.ERROR, message);
-			System.err.println(message);
+			removeModelElement(property);
 			return null;
+		}
+		if (property.getType() == null) {
+			String message = "Property has no type: " + property.getQualifiedName();
+			Logger.log(Logger.WARNING, message);
+			// if property type is null, use type from redefined property
 		}
 
 		StringBuffer body = new StringBuffer();
 		String selfName = "self." + cdaProperty.getName();
-		String templateTypeQName = property.getType().getQualifiedName();
 		String inheritedTypeQName = inheritedProperty.getType().getQualifiedName();
+		String templateTypeQName = property.getType() == null ? 
+				inheritedTypeQName : property.getType().getQualifiedName();
+		
+		if (property.getType() != null
+				&& !property.getType().conformsTo(inheritedProperty.getType())) {
+			// don't log error for structural attributes with enumeration type
+			if (!(property.getType() instanceof Enumeration)) {
+				String message = "Property type does not conform to redefined property type: " + property.getQualifiedName();
+				Logger.log(Logger.ERROR, message);
+			}
+			
+			// use the inherited property type
+			templateTypeQName = inheritedTypeQName;
+		}
 
 		/* 
 		 * Test for multiplicity restriction
@@ -120,7 +138,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				if (body.length() > 0) {
 					body.append(" and ");
 				}
-				body.append(selfName + "='" + property.getDefault() + "'");
+				body.append(selfName + "=" + templateTypeQName + "::" + property.getDefault());
 			}
 			
 		}
