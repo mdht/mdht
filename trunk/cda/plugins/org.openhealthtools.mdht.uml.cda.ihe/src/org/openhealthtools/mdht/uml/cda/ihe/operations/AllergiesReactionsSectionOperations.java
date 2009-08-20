@@ -20,7 +20,6 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AlertsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
