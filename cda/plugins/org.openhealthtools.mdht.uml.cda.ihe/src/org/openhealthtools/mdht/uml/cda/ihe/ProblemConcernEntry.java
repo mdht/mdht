@@ -50,11 +50,11 @@ public interface ProblemConcernEntry extends ConcernEntry {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getObservation()->exists(observation : cda::Observation | observation.oclIsTypeOf(ihe::ProblemEntry))
+	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ihe::ProblemEntry))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservation()->exists(observation : cda::Observation | observation.oclIsTypeOf(ihe::ProblemEntry))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ihe::ProblemEntry))'"
 	 * @generated
 	 */
 	boolean ProblemConcernEntry_problemEntry(DiagnosticChain diagnostics, Map<Object, Object> context);
