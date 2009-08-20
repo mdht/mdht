@@ -212,7 +212,7 @@ public class OrganizerOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ACT__EOCL_EXP = "self.component.act";
+	protected static final String GET_ACT__EOCL_EXP = "self.component.act->select(act : cda::Act | not act.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getAct(Organizer) <em>Get Act</em>}' query operation.
@@ -228,7 +228,7 @@ public class OrganizerOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.act
+	 * self.component.act->select(act : cda::Act | not act.oclIsUndefined())
 	 * @param organizer The receiving '<em><b>Organizer</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -267,7 +267,7 @@ public class OrganizerOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ENCOUNTER__EOCL_EXP = "self.component.encounter";
+	protected static final String GET_ENCOUNTER__EOCL_EXP = "self.component.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getEncounter(Organizer) <em>Get Encounter</em>}' query operation.
@@ -283,7 +283,7 @@ public class OrganizerOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.encounter
+	 * self.component.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())
 	 * @param organizer The receiving '<em><b>Organizer</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -313,7 +313,7 @@ public class OrganizerOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_OBSERVATION__EOCL_EXP = "self.component.observation";
+	protected static final String GET_OBSERVATION__EOCL_EXP = "self.component.observation->select(obs : cda::Observation | not obs.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getObservation(Organizer) <em>Get Observation</em>}' query operation.
@@ -329,7 +329,7 @@ public class OrganizerOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.observation
+	 * self.component.observation->select(obs : cda::Observation | not obs.oclIsUndefined())
 	 * @param organizer The receiving '<em><b>Organizer</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -359,7 +359,7 @@ public class OrganizerOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_OBSERVATION_MEDIA__EOCL_EXP = "self.component.observationMedia";
+	protected static final String GET_OBSERVATION_MEDIA__EOCL_EXP = "self.component.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getObservationMedia(Organizer) <em>Get Observation Media</em>}' query operation.
@@ -375,7 +375,7 @@ public class OrganizerOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.observationMedia
+	 * self.component.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())
 	 * @param organizer The receiving '<em><b>Organizer</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -405,7 +405,7 @@ public class OrganizerOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ORGANIZER__EOCL_EXP = "self.component.organizer";
+	protected static final String GET_ORGANIZER__EOCL_EXP = "self.component.organizer->select(org : cda::Organizer | not org.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getOrganizer(Organizer) <em>Get Organizer</em>}' query operation.
@@ -421,7 +421,7 @@ public class OrganizerOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.organizer
+	 * self.component.organizer->select(org : cda::Organizer | not org.oclIsUndefined())
 	 * @param organizer The receiving '<em><b>Organizer</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -451,7 +451,7 @@ public class OrganizerOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_PROCEDURE__EOCL_EXP = "self.component.procedure";
+	protected static final String GET_PROCEDURE__EOCL_EXP = "self.component.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getProcedure(Organizer) <em>Get Procedure</em>}' query operation.
@@ -467,7 +467,7 @@ public class OrganizerOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.procedure
+	 * self.component.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())
 	 * @param organizer The receiving '<em><b>Organizer</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -497,7 +497,7 @@ public class OrganizerOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_REGION_OF_INTEREST__EOCL_EXP = "self.component.regionOfInterest";
+	protected static final String GET_REGION_OF_INTEREST__EOCL_EXP = "self.component.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getRegionOfInterest(Organizer) <em>Get Region Of Interest</em>}' query operation.
@@ -513,7 +513,7 @@ public class OrganizerOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.regionOfInterest
+	 * self.component.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())
 	 * @param organizer The receiving '<em><b>Organizer</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -552,7 +552,7 @@ public class OrganizerOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_SUBSTANCE_ADMINISTRATION__EOCL_EXP = "self.component.substanceAdministration";
+	protected static final String GET_SUBSTANCE_ADMINISTRATION__EOCL_EXP = "self.component.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getSubstanceAdministration(Organizer) <em>Get Substance Administration</em>}' query operation.
@@ -568,7 +568,7 @@ public class OrganizerOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.substanceAdministration
+	 * self.component.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())
 	 * @param organizer The receiving '<em><b>Organizer</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -598,7 +598,7 @@ public class OrganizerOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_SUPPLY__EOCL_EXP = "self.component.supply";
+	protected static final String GET_SUPPLY__EOCL_EXP = "self.component.supply->select(sup : cda::Supply | not sup.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getSupply(Organizer) <em>Get Supply</em>}' query operation.
@@ -614,7 +614,7 @@ public class OrganizerOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.supply
+	 * self.component.supply->select(sup : cda::Supply | not sup.oclIsUndefined())
 	 * @param organizer The receiving '<em><b>Organizer</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated

@@ -254,7 +254,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ACT__EOCL_EXP = "self.entry.act";
+	protected static final String GET_ACT__EOCL_EXP = "self.entry.act->select(act : cda::Act | not act.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getAct(Section) <em>Get Act</em>}' query operation.
@@ -270,7 +270,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry.act
+	 * self.entry.act->select(act : cda::Act | not act.oclIsUndefined())
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -309,7 +309,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ENCOUNTER__EOCL_EXP = "self.entry.encounter";
+	protected static final String GET_ENCOUNTER__EOCL_EXP = "self.entry.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getEncounter(Section) <em>Get Encounter</em>}' query operation.
@@ -325,7 +325,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry.encounter
+	 * self.entry.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -355,7 +355,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_OBSERVATION__EOCL_EXP = "self.entry.observation";
+	protected static final String GET_OBSERVATION__EOCL_EXP = "self.entry.observation->select(obs : cda::Observation | not obs.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getObservation(Section) <em>Get Observation</em>}' query operation.
@@ -371,7 +371,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry.observation
+	 * self.entry.observation->select(obs : cda::Observation | not obs.oclIsUndefined())
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -401,7 +401,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_OBSERVATION_MEDIA__EOCL_EXP = "self.entry.observationMedia";
+	protected static final String GET_OBSERVATION_MEDIA__EOCL_EXP = "self.entry.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getObservationMedia(Section) <em>Get Observation Media</em>}' query operation.
@@ -417,7 +417,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry.observationMedia
+	 * self.entry.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -447,7 +447,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ORGANIZER__EOCL_EXP = "self.entry.organizer";
+	protected static final String GET_ORGANIZER__EOCL_EXP = "self.entry.organizer->select(org : cda::Organizer | not org.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getOrganizer(Section) <em>Get Organizer</em>}' query operation.
@@ -463,7 +463,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry.organizer
+	 * self.entry.organizer->select(org : cda::Organizer | not org.oclIsUndefined())
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -493,7 +493,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_PROCEDURE__EOCL_EXP = "self.entry.procedure";
+	protected static final String GET_PROCEDURE__EOCL_EXP = "self.entry.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getProcedure(Section) <em>Get Procedure</em>}' query operation.
@@ -509,7 +509,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry.procedure
+	 * self.entry.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -539,7 +539,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_REGION_OF_INTEREST__EOCL_EXP = "self.entry.regionOfInterest";
+	protected static final String GET_REGION_OF_INTEREST__EOCL_EXP = "self.entry.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getRegionOfInterest(Section) <em>Get Region Of Interest</em>}' query operation.
@@ -555,7 +555,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry.regionOfInterest
+	 * self.entry.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -631,7 +631,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_SUBSTANCE_ADMINISTRATION__EOCL_EXP = "self.entry.substanceAdministration";
+	protected static final String GET_SUBSTANCE_ADMINISTRATION__EOCL_EXP = "self.entry.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getSubstanceAdministration(Section) <em>Get Substance Administration</em>}' query operation.
@@ -647,7 +647,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry.substanceAdministration
+	 * self.entry.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -677,7 +677,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_SUPPLY__EOCL_EXP = "self.entry.supply";
+	protected static final String GET_SUPPLY__EOCL_EXP = "self.entry.supply->select(sup : cda::Supply | not sup.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getSupply(Section) <em>Get Supply</em>}' query operation.
@@ -693,7 +693,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry.supply
+	 * self.entry.supply->select(sup : cda::Supply | not sup.oclIsUndefined())
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
