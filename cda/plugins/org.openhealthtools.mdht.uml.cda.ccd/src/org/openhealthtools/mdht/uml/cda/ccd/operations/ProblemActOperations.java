@@ -201,7 +201,7 @@ public class ProblemActOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ccd::ProblemObservation))
+	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemObservation))
 	 * @param problemAct The receiving '<em><b>Problem Act</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -342,7 +342,7 @@ public class ProblemActOperations extends ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ccd::ProblemObservation))";
+	protected static final String PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemObservation))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #ProblemAct_problemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act problem Observation</em>}' invariant operation.
