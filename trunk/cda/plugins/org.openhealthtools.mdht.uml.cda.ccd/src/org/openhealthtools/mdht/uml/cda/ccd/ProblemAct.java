@@ -45,11 +45,11 @@ public interface ProblemAct extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode='ACT'
+	 * self.classCode=vocab::x_ActClassDocumentEntryAct::ACT
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode=\'ACT\''"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode=vocab::x_ActClassDocumentEntryAct::ACT'"
 	 * @generated
 	 */
 	boolean ProblemAct_classCode(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -58,11 +58,11 @@ public interface ProblemAct extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode='EVN'
+	 * self.moodCode=vocab::x_DocumentActMood::EVN
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode=\'EVN\''"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_DocumentActMood::EVN'"
 	 * @generated
 	 */
 	boolean ProblemAct_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -84,11 +84,11 @@ public interface ProblemAct extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getObservation()->exists(observation : cda::Observation | observation.oclIsTypeOf(ccd::ProblemObservation))
+	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ccd::ProblemObservation))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservation()->exists(observation : cda::Observation | observation.oclIsTypeOf(ccd::ProblemObservation))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ccd::ProblemObservation))'"
 	 * @generated
 	 */
 	boolean ProblemAct_problemObservation(DiagnosticChain diagnostics, Map<Object, Object> context);

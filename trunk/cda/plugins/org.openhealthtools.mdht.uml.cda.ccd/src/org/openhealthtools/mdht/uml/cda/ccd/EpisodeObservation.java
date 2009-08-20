@@ -39,11 +39,11 @@ public interface EpisodeObservation extends Observation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode='OBS'
+	 * self.classCode=vocab::ActClassObservation::OBS
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode=\'OBS\''"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode=vocab::ActClassObservation::OBS'"
 	 * @generated
 	 */
 	boolean EpisodeObservation_classCode(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -52,11 +52,11 @@ public interface EpisodeObservation extends Observation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode='EVN'
+	 * self.moodCode=vocab::x_ActMoodDocumentObservation::EVN
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode=\'EVN\''"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_ActMoodDocumentObservation::EVN'"
 	 * @generated
 	 */
 	boolean EpisodeObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);

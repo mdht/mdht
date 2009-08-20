@@ -114,7 +114,7 @@ public class StatusObservationOperations extends ObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode='OBS'";
+	protected static final String STATUS_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.classCode=vocab::ActClassObservation::OBS";
 
 	/**
 	 * The cached OCL invariant for the '{@link #StatusObservation_classCode(StatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Status Observation class Code</em>}' invariant operation.
@@ -130,7 +130,7 @@ public class StatusObservationOperations extends ObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.classCode.oclIsTypeOf(vocab::ActClass) and self.classCode='OBS'
+	 * self.classCode=vocab::ActClassObservation::OBS
 	 * @param statusObservation The receiving '<em><b>Status Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -171,7 +171,7 @@ public class StatusObservationOperations extends ObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode='EVN'";
+	protected static final String STATUS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode=vocab::x_ActMoodDocumentObservation::EVN";
 
 	/**
 	 * The cached OCL invariant for the '{@link #StatusObservation_moodCode(StatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Status Observation mood Code</em>}' invariant operation.
@@ -187,7 +187,7 @@ public class StatusObservationOperations extends ObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.moodCode.oclIsTypeOf(vocab::ActMood) and self.moodCode='EVN'
+	 * self.moodCode=vocab::x_ActMoodDocumentObservation::EVN
 	 * @param statusObservation The receiving '<em><b>Status Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

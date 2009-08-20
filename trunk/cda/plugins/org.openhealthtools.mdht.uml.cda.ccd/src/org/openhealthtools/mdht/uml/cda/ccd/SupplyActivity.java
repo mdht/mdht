@@ -65,11 +65,11 @@ public interface SupplyActivity extends Supply {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getObservation()->one(observation : cda::Observation | observation.oclIsTypeOf(ccd::MedicationStatusObservation))
+	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ccd::MedicationStatusObservation))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservation()->one(observation : cda::Observation | observation.oclIsTypeOf(ccd::MedicationStatusObservation))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ccd::MedicationStatusObservation))'"
 	 * @generated
 	 */
 	boolean SupplyActivity_medicationStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context);

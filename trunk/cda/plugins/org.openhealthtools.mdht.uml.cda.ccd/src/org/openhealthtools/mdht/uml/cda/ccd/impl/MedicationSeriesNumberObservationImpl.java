@@ -59,24 +59,6 @@ public class MedicationSeriesNumberObservationImpl extends ObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationSeriesNumberObservation_classCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_classCode(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean MedicationSeriesNumberObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_moodCode(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean MedicationSeriesNumberObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_statusCode(this, diagnostics, context);
 	}

@@ -118,7 +118,7 @@ public class PatientAwarenessOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PATIENT_AWARENESS_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.typeCode='SBJ'";
+	protected static final String PATIENT_AWARENESS_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.typeCode=vocab::ParticipationType::SBJ";
 
 	/**
 	 * The cached OCL invariant for the '{@link #PatientAwareness_typeCode(PatientAwareness, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Patient Awareness type Code</em>}' invariant operation.
@@ -134,7 +134,7 @@ public class PatientAwarenessOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.typeCode='SBJ'
+	 * self.typeCode=vocab::ParticipationType::SBJ
 	 * @param patientAwareness The receiving '<em><b>Patient Awareness</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

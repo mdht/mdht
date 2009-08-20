@@ -59,15 +59,6 @@ public class EncountersActivityImpl extends EncounterImpl implements EncountersA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EncountersActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncountersActivityOperations.EncountersActivity_moodCode(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean EncountersActivity_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return EncountersActivityOperations.EncountersActivity_id(this, diagnostics, context);
 	}

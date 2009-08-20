@@ -29,7 +29,6 @@ import org.openhealthtools.mdht.uml.cda.operations.EncounterOperations;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#EncountersActivity_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Encounters Activity template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#EncountersActivity_moodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Encounters Activity mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#EncountersActivity_id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Encounters Activity id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#EncountersActivity_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Encounters Activity code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#EncountersActivity_effectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Encounters Activity effective Time</em>}</li>
@@ -98,63 +97,6 @@ public class EncountersActivityOperations extends EncounterOperations {
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.ENCOUNTERS_ACTIVITY__ENCOUNTERS_ACTIVITY_TEMPLATE_ID,
 						 CCDPlugin.INSTANCE.getString("EncountersActivity_templateId"),
-						 new Object [] { encountersActivity }));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * The cached OCL expression body for the '{@link #EncountersActivity_moodCode(EncountersActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Encounters Activity mood Code</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EncountersActivity_moodCode(EncountersActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ENCOUNTERS_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode.oclIsTypeOf(vocab::ActMood)";
-
-	/**
-	 * The cached OCL invariant for the '{@link #EncountersActivity_moodCode(EncountersActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Encounters Activity mood Code</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EncountersActivity_moodCode(EncountersActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint ENCOUNTERS_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.moodCode.oclIsTypeOf(vocab::ActMood)
-	 * @param encountersActivity The receiving '<em><b>Encounters Activity</b></em>' model object.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
-	public static  boolean EncountersActivity_moodCode(EncountersActivity encountersActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (ENCOUNTERS_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CCDPackage.Literals.ENCOUNTERS_ACTIVITY);
-			try {
-				ENCOUNTERS_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ENCOUNTERS_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		if (!EOCL_ENV.createQuery(ENCOUNTERS_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(encountersActivity)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CCDValidator.DIAGNOSTIC_SOURCE,
-						 CCDValidator.ENCOUNTERS_ACTIVITY__ENCOUNTERS_ACTIVITY_MOOD_CODE,
-						 CCDPlugin.INSTANCE.getString("EncountersActivity_moodCode"),
 						 new Object [] { encountersActivity }));
 			}
 			return false;

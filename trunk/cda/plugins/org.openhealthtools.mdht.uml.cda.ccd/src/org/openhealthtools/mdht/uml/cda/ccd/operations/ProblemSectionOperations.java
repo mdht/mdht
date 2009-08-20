@@ -230,7 +230,7 @@ public class ProblemSectionOperations extends SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_SECTION_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getAct()->exists(act : cda::Act | act.oclIsTypeOf(ccd::ProblemAct))";
+	protected static final String PROBLEM_SECTION_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.act.oclIsTypeOf(ccd::ProblemAct))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #ProblemSection_problemAct(ProblemSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Section problem Act</em>}' invariant operation.
@@ -246,7 +246,7 @@ public class ProblemSectionOperations extends SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getAct()->exists(act : cda::Act | act.oclIsTypeOf(ccd::ProblemAct))
+	 * self.entry->exists(entry : cda::Entry | entry.act.oclIsTypeOf(ccd::ProblemAct))
 	 * @param problemSection The receiving '<em><b>Problem Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

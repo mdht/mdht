@@ -227,7 +227,7 @@ public class MedicationActivityOperations extends SubstanceAdministrationOperati
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MEDICATION_ACTIVITY_MEDICATION_SERIES_NUMBER_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getObservation()->one(observation : cda::Observation | observation.oclIsTypeOf(ccd::MedicationSeriesNumberObservation))";
+	protected static final String MEDICATION_ACTIVITY_MEDICATION_SERIES_NUMBER_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ccd::MedicationSeriesNumberObservation))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #MedicationActivity_medicationSeriesNumberObservation(MedicationActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Activity medication Series Number Observation</em>}' invariant operation.
@@ -243,7 +243,7 @@ public class MedicationActivityOperations extends SubstanceAdministrationOperati
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getObservation()->one(observation : cda::Observation | observation.oclIsTypeOf(ccd::MedicationSeriesNumberObservation))
+	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ccd::MedicationSeriesNumberObservation))
 	 * @param medicationActivity The receiving '<em><b>Medication Activity</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -284,7 +284,7 @@ public class MedicationActivityOperations extends SubstanceAdministrationOperati
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MEDICATION_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getObservation()->one(observation : cda::Observation | observation.oclIsTypeOf(ccd::MedicationStatusObservation))";
+	protected static final String MEDICATION_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ccd::MedicationStatusObservation))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #MedicationActivity_medicationStatusObservation(MedicationActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Activity medication Status Observation</em>}' invariant operation.
@@ -300,7 +300,7 @@ public class MedicationActivityOperations extends SubstanceAdministrationOperati
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getObservation()->one(observation : cda::Observation | observation.oclIsTypeOf(ccd::MedicationStatusObservation))
+	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ccd::MedicationStatusObservation))
 	 * @param medicationActivity The receiving '<em><b>Medication Activity</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
