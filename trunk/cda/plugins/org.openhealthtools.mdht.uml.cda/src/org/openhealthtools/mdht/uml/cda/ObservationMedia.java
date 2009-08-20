@@ -610,10 +610,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.act
+	 * self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.act'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<Act> getAct();
@@ -630,10 +630,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.encounter
+	 * self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.encounter'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<Encounter> getEncounter();
@@ -642,10 +642,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.observation
+	 * self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.observation'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<Observation> getObservation();
@@ -654,10 +654,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.observationMedia
+	 * self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.observationMedia'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<ObservationMedia> getObservationMedia();
@@ -666,10 +666,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.organizer
+	 * self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.organizer'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<Organizer> getOrganizer();
@@ -678,10 +678,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.procedure
+	 * self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.procedure'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<Procedure> getProcedure();
@@ -690,10 +690,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.regionOfInterest
+	 * self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.regionOfInterest'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<RegionOfInterest> getRegionOfInterest();
@@ -710,10 +710,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.substanceAdministration
+	 * self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.substanceAdministration'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<SubstanceAdministration> getSubstanceAdministration();
@@ -722,10 +722,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.supply
+	 * self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.supply'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<Supply> getSupply();

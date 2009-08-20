@@ -610,10 +610,10 @@ public interface Organizer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.act
+	 * self.component.act->select(act : cda::Act | not act.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.act'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.act->select(act : cda::Act | not act.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<Act> getAct();
@@ -630,10 +630,10 @@ public interface Organizer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.encounter
+	 * self.component.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.encounter'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<Encounter> getEncounter();
@@ -642,10 +642,10 @@ public interface Organizer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.observation
+	 * self.component.observation->select(obs : cda::Observation | not obs.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.observation'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.observation->select(obs : cda::Observation | not obs.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<Observation> getObservation();
@@ -654,10 +654,10 @@ public interface Organizer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.observationMedia
+	 * self.component.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.observationMedia'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<ObservationMedia> getObservationMedia();
@@ -666,10 +666,10 @@ public interface Organizer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.organizer
+	 * self.component.organizer->select(org : cda::Organizer | not org.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.organizer'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.organizer->select(org : cda::Organizer | not org.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<Organizer> getOrganizer();
@@ -678,10 +678,10 @@ public interface Organizer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.procedure
+	 * self.component.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.procedure'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<Procedure> getProcedure();
@@ -690,10 +690,10 @@ public interface Organizer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.regionOfInterest
+	 * self.component.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.regionOfInterest'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<RegionOfInterest> getRegionOfInterest();
@@ -710,10 +710,10 @@ public interface Organizer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.substanceAdministration
+	 * self.component.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.substanceAdministration'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<SubstanceAdministration> getSubstanceAdministration();
@@ -722,10 +722,10 @@ public interface Organizer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.supply
+	 * self.component.supply->select(sup : cda::Supply | not sup.oclIsUndefined())
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.supply'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.supply->select(sup : cda::Supply | not sup.oclIsUndefined())'"
 	 * @generated
 	 */
 	EList<Supply> getSupply();

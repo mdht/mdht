@@ -581,7 +581,7 @@
         <ownedRule xmi:id="_HnA9UFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_mP-gIFxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_HnA9UVxDEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entry.act</body>
+            <body>self.entry.act->select(act : cda::Act | not act.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_n6EqcFxCEd6ZEsfifJz_3w" name="Parameter1" type="_YiANsDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -596,7 +596,7 @@
         <ownedRule xmi:id="_PozpgFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_p0aQMFxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_PozpgVxDEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entry.encounter</body>
+            <body>self.entry.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_regagFxCEd6ZEsfifJz_3w" name="Parameter1" type="_AAXtEEbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -608,7 +608,7 @@
         <ownedRule xmi:id="_Tjc6IFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_s4g6YFxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_Tjc6IVxDEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entry.observation</body>
+            <body>self.entry.observation->select(obs : cda::Observation | not obs.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_vYjOMFxCEd6ZEsfifJz_3w" name="Parameter1" type="_bJyIQDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -620,7 +620,7 @@
         <ownedRule xmi:id="_Xij0AFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_vtHI8FxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_Xis98FxDEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entry.observationMedia</body>
+            <body>self.entry.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_yQlLQFxCEd6ZEsfifJz_3w" name="Parameter1" type="_OnY2QEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -632,7 +632,7 @@
         <ownedRule xmi:id="_aoS14FxDEd6ZEsfifJz_3w" name="body" constrainedElement="_1pY6IFxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_aoS14VxDEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entry.organizer</body>
+            <body>self.entry.organizer->select(org : cda::Organizer | not org.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_37uJIFxCEd6ZEsfifJz_3w" name="Parameter1" type="_B6aX4EbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -644,7 +644,7 @@
         <ownedRule xmi:id="_et9DsFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_48sd8FxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_et9DsVxDEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entry.procedure</body>
+            <body>self.entry.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_6k2ukFxCEd6ZEsfifJz_3w" name="Parameter1" type="_-jiisEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -656,7 +656,7 @@
         <ownedRule xmi:id="_tJrtcFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_67zO8FxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_tJrtcVxDEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entry.regionOfInterest</body>
+            <body>self.entry.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_9TCzIFxCEd6ZEsfifJz_3w" name="Parameter1" type="_zegkcEbtEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -680,7 +680,7 @@
         <ownedRule xmi:id="_1F9ngFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_-AfvAFxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_1F9ngVxDEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entry.substanceAdministration</body>
+            <body>self.entry.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="__ryMIFxCEd6ZEsfifJz_3w" name="Parameter1" type="_nazskEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -692,7 +692,7 @@
         <ownedRule xmi:id="_4omn0FxDEd6ZEsfifJz_3w" name="body" constrainedElement="_CCIYcFxDEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_4omn0VxDEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entry.supply</body>
+            <body>self.entry.supply->select(sup : cda::Supply | not sup.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_DUsMgFxDEd6ZEsfifJz_3w" name="Parameter1" type="_3gL0sEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1110,7 +1110,7 @@
         <ownedRule xmi:id="_YHUNTVxLEd6ZEsfifJz_3w" name="body" constrainedElement="_YHUNTFxLEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_YHUNTlxLEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.act</body>
+            <body>self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_YHUNT1xLEd6ZEsfifJz_3w" name="Parameter1" type="_YiANsDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -1125,7 +1125,7 @@
         <ownedRule xmi:id="_YHUNU1xLEd6ZEsfifJz_3w" name="body" constrainedElement="_YHUNUlxLEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_YHUNVFxLEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.encounter</body>
+            <body>self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_YHUNVVxLEd6ZEsfifJz_3w" name="Parameter1" type="_AAXtEEbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1137,7 +1137,7 @@
         <ownedRule xmi:id="_YHdXMVxLEd6ZEsfifJz_3w" name="body" constrainedElement="_YHdXMFxLEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_YHdXMlxLEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observation</body>
+            <body>self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_YHdXM1xLEd6ZEsfifJz_3w" name="Parameter1" type="_bJyIQDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -1149,7 +1149,7 @@
         <ownedRule xmi:id="_YHUNQVxLEd6ZEsfifJz_3w" name="body" constrainedElement="_YHUNQFxLEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_YHUNQlxLEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observationMedia</body>
+            <body>self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_YHUNQ1xLEd6ZEsfifJz_3w" name="Parameter1" type="_OnY2QEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1161,7 +1161,7 @@
         <ownedRule xmi:id="_YHdXQ1xLEd6ZEsfifJz_3w" name="body" constrainedElement="_YHdXQlxLEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_YHdXRFxLEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.organizer</body>
+            <body>self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_YHdXRVxLEd6ZEsfifJz_3w" name="Parameter1" type="_B6aX4EbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1173,7 +1173,7 @@
         <ownedRule xmi:id="_YHdXN1xLEd6ZEsfifJz_3w" name="body" constrainedElement="_YHdXNlxLEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_YHdXOFxLEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.procedure</body>
+            <body>self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_YHdXOVxLEd6ZEsfifJz_3w" name="Parameter1" type="_-jiisEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1185,7 +1185,7 @@
         <ownedRule xmi:id="_YHUNWVxLEd6ZEsfifJz_3w" name="body" constrainedElement="_YHUNWFxLEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_YHUNWlxLEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.regionOfInterest</body>
+            <body>self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_YHUNW1xLEd6ZEsfifJz_3w" name="Parameter1" type="_zegkcEbtEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1200,7 +1200,7 @@
         <ownedRule xmi:id="_YHdXPVxLEd6ZEsfifJz_3w" name="body" constrainedElement="_YHdXPFxLEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_YHdXPlxLEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.substanceAdministration</body>
+            <body>self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_YHdXP1xLEd6ZEsfifJz_3w" name="Parameter1" type="_nazskEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1212,7 +1212,7 @@
         <ownedRule xmi:id="_YHUNR1xLEd6ZEsfifJz_3w" name="body" constrainedElement="_YHUNRlxLEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_YHUNSFxLEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.supply</body>
+            <body>self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_YHUNSVxLEd6ZEsfifJz_3w" name="Parameter1" type="_3gL0sEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1546,7 +1546,7 @@
         <ownedRule xmi:id="_IoaZ3VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_IoaZ3FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_IoaZ3lxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.act</body>
+            <body>self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_IoaZ31xMEd6ZEsfifJz_3w" name="Parameter1" type="_YiANsDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -1561,7 +1561,7 @@
         <ownedRule xmi:id="_IoaZ41xMEd6ZEsfifJz_3w" name="body" constrainedElement="_IoaZ4lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_IoaZ5FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.encounter</body>
+            <body>self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_IoaZ5VxMEd6ZEsfifJz_3w" name="Parameter1" type="_AAXtEEbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1573,7 +1573,7 @@
         <ownedRule xmi:id="_IoaZ9VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_IoaZ9FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_IoaZ9lxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observation</body>
+            <body>self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_IoaZ91xMEd6ZEsfifJz_3w" name="Parameter1" type="_bJyIQDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -1585,7 +1585,7 @@
         <ownedRule xmi:id="_IoaZ-1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_IoaZ-lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_IoaZ_FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observationMedia</body>
+            <body>self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_IoaZ_VxMEd6ZEsfifJz_3w" name="Parameter1" type="_OnY2QEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1597,7 +1597,7 @@
         <ownedRule xmi:id="_IoaZ0VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_IoaZ0FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_IoaZ0lxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.organizer</body>
+            <body>self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_IoaZ01xMEd6ZEsfifJz_3w" name="Parameter1" type="_B6aX4EbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1609,7 +1609,7 @@
         <ownedRule xmi:id="_IoaZ11xMEd6ZEsfifJz_3w" name="body" constrainedElement="_IoaZ1lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_IoaZ2FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.procedure</body>
+            <body>self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_IoaZ2VxMEd6ZEsfifJz_3w" name="Parameter1" type="_-jiisEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1621,7 +1621,7 @@
         <ownedRule xmi:id="_IoaaAVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_IoaaAFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_IoaaAlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.regionOfInterest</body>
+            <body>self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_IoaaA1xMEd6ZEsfifJz_3w" name="Parameter1" type="_zegkcEbtEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1636,7 +1636,7 @@
         <ownedRule xmi:id="_IoaZ6VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_IoaZ6FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_IoaZ6lxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.substanceAdministration</body>
+            <body>self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_IoaZ61xMEd6ZEsfifJz_3w" name="Parameter1" type="_nazskEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -1648,7 +1648,7 @@
         <ownedRule xmi:id="_IoaZ71xMEd6ZEsfifJz_3w" name="body" constrainedElement="_IoaZ7lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_IoaZ8FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.supply</body>
+            <body>self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_IoaZ8VxMEd6ZEsfifJz_3w" name="Parameter1" type="_3gL0sEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2263,7 +2263,7 @@
         <ownedRule xmi:id="_huBMXVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_huBMXFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_huBMXlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.act</body>
+            <body>self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_huBMX1xMEd6ZEsfifJz_3w" name="Parameter1" type="_YiANsDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -2278,7 +2278,7 @@
         <ownedRule xmi:id="_huBMY1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_huBMYlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_huBMZFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.encounter</body>
+            <body>self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_huBMZVxMEd6ZEsfifJz_3w" name="Parameter1" type="_AAXtEEbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2290,7 +2290,7 @@
         <ownedRule xmi:id="_huBMdVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_huBMdFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_huBMdlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observation</body>
+            <body>self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_huBMd1xMEd6ZEsfifJz_3w" name="Parameter1" type="_bJyIQDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -2302,7 +2302,7 @@
         <ownedRule xmi:id="_huBMe1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_huBMelxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_huBMfFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observationMedia</body>
+            <body>self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_huBMfVxMEd6ZEsfifJz_3w" name="Parameter1" type="_OnY2QEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2314,7 +2314,7 @@
         <ownedRule xmi:id="_huBMUVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_huBMUFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_huBMUlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.organizer</body>
+            <body>self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_huBMU1xMEd6ZEsfifJz_3w" name="Parameter1" type="_B6aX4EbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2326,7 +2326,7 @@
         <ownedRule xmi:id="_huBMV1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_huBMVlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_huBMWFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.procedure</body>
+            <body>self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_huBMWVxMEd6ZEsfifJz_3w" name="Parameter1" type="_-jiisEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2338,7 +2338,7 @@
         <ownedRule xmi:id="_huBMgVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_huBMgFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_huBMglxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.regionOfInterest</body>
+            <body>self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_huBMg1xMEd6ZEsfifJz_3w" name="Parameter1" type="_zegkcEbtEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2353,7 +2353,7 @@
         <ownedRule xmi:id="_huBMaVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_huBMaFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_huBMalxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.substanceAdministration</body>
+            <body>self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_huBMa1xMEd6ZEsfifJz_3w" name="Parameter1" type="_nazskEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2365,7 +2365,7 @@
         <ownedRule xmi:id="_huBMb1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_huBMblxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_huBMcFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.supply</body>
+            <body>self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_huBMcVxMEd6ZEsfifJz_3w" name="Parameter1" type="_3gL0sEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2651,7 +2651,7 @@
         <ownedRule xmi:id="_RUFJfVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_RUFJfFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_RUFJflxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.act</body>
+            <body>self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_RUFJf1xMEd6ZEsfifJz_3w" name="Parameter1" type="_YiANsDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -2666,7 +2666,7 @@
         <ownedRule xmi:id="_RUFJg1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_RUFJglxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_RUFJhFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.encounter</body>
+            <body>self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_RUFJhVxMEd6ZEsfifJz_3w" name="Parameter1" type="_AAXtEEbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2678,7 +2678,7 @@
         <ownedRule xmi:id="_RUO6d1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_RUO6dlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_RUO6eFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observation</body>
+            <body>self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_RUO6eVxMEd6ZEsfifJz_3w" name="Parameter1" type="_bJyIQDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -2690,7 +2690,7 @@
         <ownedRule xmi:id="_RUO6fVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_RUO6fFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_RUO6flxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observationMedia</body>
+            <body>self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_RUO6f1xMEd6ZEsfifJz_3w" name="Parameter1" type="_OnY2QEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2702,7 +2702,7 @@
         <ownedRule xmi:id="_RUFJcVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_RUFJcFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_RUFJclxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.organizer</body>
+            <body>self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_RUFJc1xMEd6ZEsfifJz_3w" name="Parameter1" type="_B6aX4EbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2714,7 +2714,7 @@
         <ownedRule xmi:id="_RUFJd1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_RUFJdlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_RUFJeFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.procedure</body>
+            <body>self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_RUFJeVxMEd6ZEsfifJz_3w" name="Parameter1" type="_-jiisEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2726,7 +2726,7 @@
         <ownedRule xmi:id="_RUO6g1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_RUO6glxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_RUO6hFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.regionOfInterest</body>
+            <body>self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_RUO6hVxMEd6ZEsfifJz_3w" name="Parameter1" type="_zegkcEbtEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2741,7 +2741,7 @@
         <ownedRule xmi:id="_RUFJiVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_RUFJiFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_RUFJilxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.substanceAdministration</body>
+            <body>self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_RUFJi1xMEd6ZEsfifJz_3w" name="Parameter1" type="_nazskEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -2753,7 +2753,7 @@
         <ownedRule xmi:id="_RUO6cVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_RUO6cFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_RUO6clxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.supply</body>
+            <body>self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_RUO6c1xMEd6ZEsfifJz_3w" name="Parameter1" type="_3gL0sEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3079,7 +3079,7 @@
         <ownedRule xmi:id="_kpxLzVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_kpxLzFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_kpxLzlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.act</body>
+            <body>self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_kpxLz1xMEd6ZEsfifJz_3w" name="Parameter1" type="_YiANsDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -3094,7 +3094,7 @@
         <ownedRule xmi:id="_kpxL01xMEd6ZEsfifJz_3w" name="body" constrainedElement="_kpxL0lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_kpxL1FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.encounter</body>
+            <body>self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_kpxL1VxMEd6ZEsfifJz_3w" name="Parameter1" type="_AAXtEEbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3106,7 +3106,7 @@
         <ownedRule xmi:id="_kpxL5VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_kpxL5FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_kpxL5lxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observation</body>
+            <body>self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_kpxL51xMEd6ZEsfifJz_3w" name="Parameter1" type="_bJyIQDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -3118,7 +3118,7 @@
         <ownedRule xmi:id="_kpxL61xMEd6ZEsfifJz_3w" name="body" constrainedElement="_kpxL6lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_kpxL7FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observationMedia</body>
+            <body>self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_kpxL7VxMEd6ZEsfifJz_3w" name="Parameter1" type="_OnY2QEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3130,7 +3130,7 @@
         <ownedRule xmi:id="_kpxLwVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_kpxLwFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_kpxLwlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.organizer</body>
+            <body>self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_kpxLw1xMEd6ZEsfifJz_3w" name="Parameter1" type="_B6aX4EbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3142,7 +3142,7 @@
         <ownedRule xmi:id="_kpxLx1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_kpxLxlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_kpxLyFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.procedure</body>
+            <body>self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_kpxLyVxMEd6ZEsfifJz_3w" name="Parameter1" type="_-jiisEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3154,7 +3154,7 @@
         <ownedRule xmi:id="_kp68wFxMEd6ZEsfifJz_3w" name="body" constrainedElement="_kpxL8FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_kp68wVxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.regionOfInterest</body>
+            <body>self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_kp68wlxMEd6ZEsfifJz_3w" name="Parameter1" type="_zegkcEbtEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3169,7 +3169,7 @@
         <ownedRule xmi:id="_kpxL2VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_kpxL2FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_kpxL2lxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.substanceAdministration</body>
+            <body>self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_kpxL21xMEd6ZEsfifJz_3w" name="Parameter1" type="_nazskEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3181,7 +3181,7 @@
         <ownedRule xmi:id="_kpxL31xMEd6ZEsfifJz_3w" name="body" constrainedElement="_kpxL3lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_kpxL4FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.supply</body>
+            <body>self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_kpxL4VxMEd6ZEsfifJz_3w" name="Parameter1" type="_3gL0sEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3507,7 +3507,7 @@
         <ownedRule xmi:id="_lo8w3VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_lo8w3FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_lo8w3lxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.act</body>
+            <body>self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_lo8w31xMEd6ZEsfifJz_3w" name="Parameter1" type="_YiANsDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -3522,7 +3522,7 @@
         <ownedRule xmi:id="_lo8w41xMEd6ZEsfifJz_3w" name="body" constrainedElement="_lo8w4lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_lo8w5FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.encounter</body>
+            <body>self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_lo8w5VxMEd6ZEsfifJz_3w" name="Parameter1" type="_AAXtEEbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3534,7 +3534,7 @@
         <ownedRule xmi:id="_lo8w9VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_lo8w9FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_lo8w9lxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observation</body>
+            <body>self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_lo8w91xMEd6ZEsfifJz_3w" name="Parameter1" type="_bJyIQDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -3546,7 +3546,7 @@
         <ownedRule xmi:id="_lo8w-1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_lo8w-lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_lo8w_FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observationMedia</body>
+            <body>self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_lo8w_VxMEd6ZEsfifJz_3w" name="Parameter1" type="_OnY2QEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3558,7 +3558,7 @@
         <ownedRule xmi:id="_lo8w0VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_lo8w0FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_lo8w0lxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.organizer</body>
+            <body>self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_lo8w01xMEd6ZEsfifJz_3w" name="Parameter1" type="_B6aX4EbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3570,7 +3570,7 @@
         <ownedRule xmi:id="_lo8w11xMEd6ZEsfifJz_3w" name="body" constrainedElement="_lo8w1lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_lo8w2FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.procedure</body>
+            <body>self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_lo8w2VxMEd6ZEsfifJz_3w" name="Parameter1" type="_-jiisEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3582,7 +3582,7 @@
         <ownedRule xmi:id="_lo8xAVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_lo8xAFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_lo8xAlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.regionOfInterest</body>
+            <body>self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_lpGh0FxMEd6ZEsfifJz_3w" name="Parameter1" type="_zegkcEbtEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3597,7 +3597,7 @@
         <ownedRule xmi:id="_lo8w6VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_lo8w6FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_lo8w6lxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.substanceAdministration</body>
+            <body>self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_lo8w61xMEd6ZEsfifJz_3w" name="Parameter1" type="_nazskEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3609,7 +3609,7 @@
         <ownedRule xmi:id="_lo8w71xMEd6ZEsfifJz_3w" name="body" constrainedElement="_lo8w7lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_lo8w8FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.supply</body>
+            <body>self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_lo8w8VxMEd6ZEsfifJz_3w" name="Parameter1" type="_3gL0sEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3932,7 +3932,7 @@
         <ownedRule xmi:id="_gid_PVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_gid_PFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_gid_PlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.act</body>
+            <body>self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_gid_P1xMEd6ZEsfifJz_3w" name="Parameter1" type="_YiANsDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -3947,7 +3947,7 @@
         <ownedRule xmi:id="_ginwMVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_ginwMFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_ginwMlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.encounter</body>
+            <body>self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_ginwM1xMEd6ZEsfifJz_3w" name="Parameter1" type="_AAXtEEbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3959,7 +3959,7 @@
         <ownedRule xmi:id="_ginwQ1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_ginwQlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_ginwRFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observation</body>
+            <body>self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_ginwRVxMEd6ZEsfifJz_3w" name="Parameter1" type="_bJyIQDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -3971,7 +3971,7 @@
         <ownedRule xmi:id="_ginwSVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_ginwSFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_ginwSlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observationMedia</body>
+            <body>self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_ginwS1xMEd6ZEsfifJz_3w" name="Parameter1" type="_OnY2QEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3983,7 +3983,7 @@
         <ownedRule xmi:id="_gid_MVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_gid_MFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_gid_MlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.organizer</body>
+            <body>self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_gid_M1xMEd6ZEsfifJz_3w" name="Parameter1" type="_B6aX4EbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -3995,7 +3995,7 @@
         <ownedRule xmi:id="_gid_N1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_gid_NlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_gid_OFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.procedure</body>
+            <body>self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_gid_OVxMEd6ZEsfifJz_3w" name="Parameter1" type="_-jiisEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4007,7 +4007,7 @@
         <ownedRule xmi:id="_ginwT1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_ginwTlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_ginwUFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.regionOfInterest</body>
+            <body>self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_ginwUVxMEd6ZEsfifJz_3w" name="Parameter1" type="_zegkcEbtEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4022,7 +4022,7 @@
         <ownedRule xmi:id="_ginwN1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_ginwNlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_ginwOFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.substanceAdministration</body>
+            <body>self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_ginwOVxMEd6ZEsfifJz_3w" name="Parameter1" type="_nazskEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4034,7 +4034,7 @@
         <ownedRule xmi:id="_ginwPVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_ginwPFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_ginwPlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.supply</body>
+            <body>self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_ginwP1xMEd6ZEsfifJz_3w" name="Parameter1" type="_3gL0sEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4328,7 +4328,7 @@
         <ownedRule xmi:id="_GKBEx1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_GKBExlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_GKBEyFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.act</body>
+            <body>self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_GKBEyVxMEd6ZEsfifJz_3w" name="Parameter1" type="_YiANsDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -4343,7 +4343,7 @@
         <ownedRule xmi:id="_GKBEzVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_GKBEzFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_GKBEzlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.encounter</body>
+            <body>self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_GKBEz1xMEd6ZEsfifJz_3w" name="Parameter1" type="_AAXtEEbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4355,7 +4355,7 @@
         <ownedRule xmi:id="_GKBE31xMEd6ZEsfifJz_3w" name="body" constrainedElement="_GKBE3lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_GKBE4FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observation</body>
+            <body>self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_GKBE4VxMEd6ZEsfifJz_3w" name="Parameter1" type="_bJyIQDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -4367,7 +4367,7 @@
         <ownedRule xmi:id="_GKBE5VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_GKBE5FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_GKBE5lxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.observationMedia</body>
+            <body>self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_GKBE51xMEd6ZEsfifJz_3w" name="Parameter1" type="_OnY2QEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4379,7 +4379,7 @@
         <ownedRule xmi:id="_GJ3TwVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_GJ3TwFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_GJ3TwlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.organizer</body>
+            <body>self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_GJ3Tw1xMEd6ZEsfifJz_3w" name="Parameter1" type="_B6aX4EbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4391,7 +4391,7 @@
         <ownedRule xmi:id="_GKBEwVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_GKBEwFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_GKBEwlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.procedure</body>
+            <body>self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_GKBEw1xMEd6ZEsfifJz_3w" name="Parameter1" type="_-jiisEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4403,7 +4403,7 @@
         <ownedRule xmi:id="_GKBE61xMEd6ZEsfifJz_3w" name="body" constrainedElement="_GKBE6lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_GKBE7FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.regionOfInterest</body>
+            <body>self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_GKBE7VxMEd6ZEsfifJz_3w" name="Parameter1" type="_zegkcEbtEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4418,7 +4418,7 @@
         <ownedRule xmi:id="_GKBE01xMEd6ZEsfifJz_3w" name="body" constrainedElement="_GKBE0lxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_GKBE1FxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.substanceAdministration</body>
+            <body>self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_GKBE1VxMEd6ZEsfifJz_3w" name="Parameter1" type="_nazskEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4430,7 +4430,7 @@
         <ownedRule xmi:id="_GKBE2VxMEd6ZEsfifJz_3w" name="body" constrainedElement="_GKBE2FxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_GKBE2lxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.entryRelationship.supply</body>
+            <body>self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_GKBE21xMEd6ZEsfifJz_3w" name="Parameter1" type="_3gL0sEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4712,7 +4712,7 @@
         <ownedRule xmi:id="_WZOeXVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_WZOeXFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_WZOeXlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.component.act</body>
+            <body>self.component.act->select(act : cda::Act | not act.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_WZOeX1xMEd6ZEsfifJz_3w" name="Parameter1" type="_YiANsDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -4727,7 +4727,7 @@
         <ownedRule xmi:id="_WZOeY1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_WZOeYlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_WZOeZFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.component.encounter</body>
+            <body>self.component.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_WZOeZVxMEd6ZEsfifJz_3w" name="Parameter1" type="_AAXtEEbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4739,7 +4739,7 @@
         <ownedRule xmi:id="_WZXoR1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_WZXoRlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_WZXoSFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.component.observation</body>
+            <body>self.component.observation->select(obs : cda::Observation | not obs.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_WZXoSVxMEd6ZEsfifJz_3w" name="Parameter1" type="_bJyIQDxYEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -4751,7 +4751,7 @@
         <ownedRule xmi:id="_WZXoTVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_WZXoTFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_WZXoTlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.component.observationMedia</body>
+            <body>self.component.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_WZXoT1xMEd6ZEsfifJz_3w" name="Parameter1" type="_OnY2QEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4763,7 +4763,7 @@
         <ownedRule xmi:id="_WZOeUVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_WZOeUFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_WZOeUlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.component.organizer</body>
+            <body>self.component.organizer->select(org : cda::Organizer | not org.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_WZOeU1xMEd6ZEsfifJz_3w" name="Parameter1" type="_B6aX4EbvEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4775,7 +4775,7 @@
         <ownedRule xmi:id="_WZOeV1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_WZOeVlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_WZOeWFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.component.procedure</body>
+            <body>self.component.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_WZOeWVxMEd6ZEsfifJz_3w" name="Parameter1" type="_-jiisEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4787,7 +4787,7 @@
         <ownedRule xmi:id="_WZXoU1xMEd6ZEsfifJz_3w" name="body" constrainedElement="_WZXoUlxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_WZXoVFxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.component.regionOfInterest</body>
+            <body>self.component.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_WZXoVVxMEd6ZEsfifJz_3w" name="Parameter1" type="_zegkcEbtEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4802,7 +4802,7 @@
         <ownedRule xmi:id="_WZOeaVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_WZOeaFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_WZOealxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.component.substanceAdministration</body>
+            <body>self.component.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_WZOea1xMEd6ZEsfifJz_3w" name="Parameter1" type="_nazskEbuEd6besF9iFIJkQ" isUnique="false" direction="return">
@@ -4814,7 +4814,7 @@
         <ownedRule xmi:id="_WZXoQVxMEd6ZEsfifJz_3w" name="body" constrainedElement="_WZXoQFxMEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_WZXoQlxMEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.component.supply</body>
+            <body>self.component.supply->select(sup : cda::Supply | not sup.oclIsUndefined())</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_WZXoQ1xMEd6ZEsfifJz_3w" name="Parameter1" type="_3gL0sEbuEd6besF9iFIJkQ" isUnique="false" direction="return">

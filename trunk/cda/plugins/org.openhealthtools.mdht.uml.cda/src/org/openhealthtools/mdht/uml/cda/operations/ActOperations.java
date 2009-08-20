@@ -212,7 +212,7 @@ public class ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ACT__EOCL_EXP = "self.entryRelationship.act";
+	protected static final String GET_ACT__EOCL_EXP = "self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getAct(Act) <em>Get Act</em>}' query operation.
@@ -228,7 +228,7 @@ public class ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.act
+	 * self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())
 	 * @param act The receiving '<em><b>Act</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -267,7 +267,7 @@ public class ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ENCOUNTER__EOCL_EXP = "self.entryRelationship.encounter";
+	protected static final String GET_ENCOUNTER__EOCL_EXP = "self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getEncounter(Act) <em>Get Encounter</em>}' query operation.
@@ -283,7 +283,7 @@ public class ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.encounter
+	 * self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())
 	 * @param act The receiving '<em><b>Act</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -313,7 +313,7 @@ public class ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_OBSERVATION__EOCL_EXP = "self.entryRelationship.observation";
+	protected static final String GET_OBSERVATION__EOCL_EXP = "self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getObservation(Act) <em>Get Observation</em>}' query operation.
@@ -329,7 +329,7 @@ public class ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.observation
+	 * self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())
 	 * @param act The receiving '<em><b>Act</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -359,7 +359,7 @@ public class ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_OBSERVATION_MEDIA__EOCL_EXP = "self.entryRelationship.observationMedia";
+	protected static final String GET_OBSERVATION_MEDIA__EOCL_EXP = "self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getObservationMedia(Act) <em>Get Observation Media</em>}' query operation.
@@ -375,7 +375,7 @@ public class ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.observationMedia
+	 * self.entryRelationship.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())
 	 * @param act The receiving '<em><b>Act</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -405,7 +405,7 @@ public class ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ORGANIZER__EOCL_EXP = "self.entryRelationship.organizer";
+	protected static final String GET_ORGANIZER__EOCL_EXP = "self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getOrganizer(Act) <em>Get Organizer</em>}' query operation.
@@ -421,7 +421,7 @@ public class ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.organizer
+	 * self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())
 	 * @param act The receiving '<em><b>Act</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -451,7 +451,7 @@ public class ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_PROCEDURE__EOCL_EXP = "self.entryRelationship.procedure";
+	protected static final String GET_PROCEDURE__EOCL_EXP = "self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getProcedure(Act) <em>Get Procedure</em>}' query operation.
@@ -467,7 +467,7 @@ public class ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.procedure
+	 * self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())
 	 * @param act The receiving '<em><b>Act</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -497,7 +497,7 @@ public class ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_REGION_OF_INTEREST__EOCL_EXP = "self.entryRelationship.regionOfInterest";
+	protected static final String GET_REGION_OF_INTEREST__EOCL_EXP = "self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getRegionOfInterest(Act) <em>Get Region Of Interest</em>}' query operation.
@@ -513,7 +513,7 @@ public class ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.regionOfInterest
+	 * self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())
 	 * @param act The receiving '<em><b>Act</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -552,7 +552,7 @@ public class ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_SUBSTANCE_ADMINISTRATION__EOCL_EXP = "self.entryRelationship.substanceAdministration";
+	protected static final String GET_SUBSTANCE_ADMINISTRATION__EOCL_EXP = "self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getSubstanceAdministration(Act) <em>Get Substance Administration</em>}' query operation.
@@ -568,7 +568,7 @@ public class ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.substanceAdministration
+	 * self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())
 	 * @param act The receiving '<em><b>Act</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -598,7 +598,7 @@ public class ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_SUPPLY__EOCL_EXP = "self.entryRelationship.supply";
+	protected static final String GET_SUPPLY__EOCL_EXP = "self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())";
 
 	/**
 	 * The cached OCL query for the '{@link #getSupply(Act) <em>Get Supply</em>}' query operation.
@@ -614,7 +614,7 @@ public class ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship.supply
+	 * self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())
 	 * @param act The receiving '<em><b>Act</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
