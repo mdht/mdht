@@ -91,7 +91,7 @@ public class TransformAssociation extends TransformAbstract {
 			if (!"Entry".equals(cdaTargetName)) {
 				body.append("." + cdaTargetLowerName);
 			}
-			body.append(".oclIsTypeOf(" + targetQName + ")");
+			body.append(".oclIsKindOf(" + targetQName + ")");
 			
 			String stereotypeName = "Section".equals(cdaSourceName) ? ICDAProfileConstants.ENTRY : ICDAProfileConstants.ENTRY_RELATIONSHIP;
 			Stereotype stereotype = EcoreTransformUtil.getAppliedCDAStereotype(association, stereotypeName);
