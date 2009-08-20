@@ -179,7 +179,7 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.act.oclIsTypeOf(ihe::ProblemConcernEntry))";
+	protected static final String ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ihe::ProblemConcernEntry))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #ActiveProblemsSection_problemConcernEntry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section problem Concern Entry</em>}' invariant operation.
@@ -195,7 +195,7 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->exists(entry : cda::Entry | entry.act.oclIsTypeOf(ihe::ProblemConcernEntry))
+	 * self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ihe::ProblemConcernEntry))
 	 * @param activeProblemsSection The receiving '<em><b>Active Problems Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
