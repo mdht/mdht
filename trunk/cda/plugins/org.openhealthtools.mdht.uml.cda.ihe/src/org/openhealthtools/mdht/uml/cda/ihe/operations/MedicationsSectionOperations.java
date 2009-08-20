@@ -23,6 +23,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationSectionOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
@@ -100,7 +101,7 @@ public class MedicationsSectionOperations extends MedicationSectionOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.MEDICATIONS_SECTION__MEDICATIONS_SECTION_TEMPLATE_ID,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "MedicationsSection_templateId", MEDICATIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(medicationsSection, context) }),
+						 IHEPlugin.INSTANCE.getString("MedicationsSection_templateId"),
 						 new Object [] { medicationsSection }));
 			}
 			return false;
@@ -161,7 +162,7 @@ public class MedicationsSectionOperations extends MedicationSectionOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.MEDICATIONS_SECTION__MEDICATIONS_SECTION_CODE,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "MedicationsSection_code", MEDICATIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(medicationsSection, context) }),
+						 IHEPlugin.INSTANCE.getString("MedicationsSection_code"),
 						 new Object [] { medicationsSection }));
 			}
 			return false;

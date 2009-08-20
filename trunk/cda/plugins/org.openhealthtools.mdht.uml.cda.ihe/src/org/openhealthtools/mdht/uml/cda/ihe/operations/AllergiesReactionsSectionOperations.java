@@ -24,6 +24,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AlertsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
 /**
@@ -100,7 +101,7 @@ public class AllergiesReactionsSectionOperations extends AlertsSectionOperations
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.ALLERGIES_REACTIONS_SECTION__ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AllergiesReactionsSection_templateId", ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(allergiesReactionsSection, context) }),
+						 IHEPlugin.INSTANCE.getString("AllergiesReactionsSection_templateId"),
 						 new Object [] { allergiesReactionsSection }));
 			}
 			return false;
@@ -161,7 +162,7 @@ public class AllergiesReactionsSectionOperations extends AlertsSectionOperations
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.ALLERGIES_REACTIONS_SECTION__ALLERGIES_REACTIONS_SECTION_CODE,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AllergiesReactionsSection_code", ALLERGIES_REACTIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(allergiesReactionsSection, context) }),
+						 IHEPlugin.INSTANCE.getString("AllergiesReactionsSection_code"),
 						 new Object [] { allergiesReactionsSection }));
 			}
 			return false;

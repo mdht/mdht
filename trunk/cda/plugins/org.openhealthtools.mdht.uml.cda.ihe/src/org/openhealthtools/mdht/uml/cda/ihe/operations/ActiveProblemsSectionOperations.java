@@ -24,6 +24,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemSectionOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
 /**
@@ -101,7 +102,7 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.ACTIVE_PROBLEMS_SECTION__ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ActiveProblemsSection_templateId", ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(activeProblemsSection, context) }),
+						 IHEPlugin.INSTANCE.getString("ActiveProblemsSection_templateId"),
 						 new Object [] { activeProblemsSection }));
 			}
 			return false;
@@ -162,7 +163,7 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.ACTIVE_PROBLEMS_SECTION__ACTIVE_PROBLEMS_SECTION_CODE,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ActiveProblemsSection_code", ACTIVE_PROBLEMS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(activeProblemsSection, context) }),
+						 IHEPlugin.INSTANCE.getString("ActiveProblemsSection_code"),
 						 new Object [] { activeProblemsSection }));
 			}
 			return false;
@@ -219,7 +220,7 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.ACTIVE_PROBLEMS_SECTION__ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ActiveProblemsSection_problemConcernEntry", ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(activeProblemsSection, context) }),
+						 IHEPlugin.INSTANCE.getString("ActiveProblemsSection_problemConcernEntry"),
 						 new Object [] { activeProblemsSection }));
 			}
 			return false;

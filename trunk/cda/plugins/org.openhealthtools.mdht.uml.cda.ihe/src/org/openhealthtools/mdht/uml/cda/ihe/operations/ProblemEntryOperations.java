@@ -23,6 +23,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemObservationOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
@@ -101,7 +102,7 @@ public class ProblemEntryOperations extends ProblemObservationOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.PROBLEM_ENTRY__PROBLEM_ENTRY_TEMPLATE_ID,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ProblemEntry_templateId", PROBLEM_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(problemEntry, context) }),
+						 IHEPlugin.INSTANCE.getString("ProblemEntry_templateId"),
 						 new Object [] { problemEntry }));
 			}
 			return false;
@@ -158,7 +159,7 @@ public class ProblemEntryOperations extends ProblemObservationOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.PROBLEM_ENTRY__PROBLEM_ENTRY_TEXT,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ProblemEntry_text", PROBLEM_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(problemEntry, context) }),
+						 IHEPlugin.INSTANCE.getString("ProblemEntry_text"),
 						 new Object [] { problemEntry }));
 			}
 			return false;
@@ -215,7 +216,7 @@ public class ProblemEntryOperations extends ProblemObservationOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.PROBLEM_ENTRY__PROBLEM_ENTRY_VALUE,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ProblemEntry_value", PROBLEM_ENTRY_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(problemEntry, context) }),
+						 IHEPlugin.INSTANCE.getString("ProblemEntry_value"),
 						 new Object [] { problemEntry }));
 			}
 			return false;
