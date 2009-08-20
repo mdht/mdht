@@ -20,6 +20,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
 
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
@@ -97,7 +98,7 @@ public class TaperedDoseOperations extends MedicationOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.TAPERED_DOSE__TAPERED_DOSE_TEMPLATE_ID,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "TaperedDose_templateId", TAPERED_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(taperedDose, context) }),
+						 IHEPlugin.INSTANCE.getString("TaperedDose_templateId"),
 						 new Object [] { taperedDose }));
 			}
 			return false;

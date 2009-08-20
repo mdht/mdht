@@ -22,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 
+import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
 /**
@@ -97,7 +98,7 @@ public class ConditionalDosingOperations extends MedicationOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.CONDITIONAL_DOSING__CONDITIONAL_DOSING_TEMPLATE_ID,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ConditionalDosing_templateId", CONDITIONAL_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(conditionalDosing, context) }),
+						 IHEPlugin.INSTANCE.getString("ConditionalDosing_templateId"),
 						 new Object [] { conditionalDosing }));
 			}
 			return false;

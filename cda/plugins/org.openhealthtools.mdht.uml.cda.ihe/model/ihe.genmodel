@@ -4,7 +4,8 @@
     xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.cda.ihe/src"
     editDirectory="/org.openhealthtools.mdht.uml.cda.ihe.edit/src" editorDirectory="/org.openhealthtools.mdht.uml.cda.ihe.editor/src"
     modelPluginID="org.openhealthtools.mdht.uml.cda.ihe" templateDirectory="/org.openhealthtools.mdht.uml.cda/templates"
-    dynamicTemplates="true" forceOverwrite="true" modelName="IHE" editPluginClass="org.openhealthtools.mdht.uml.cda.ihe.provider.IHEEditPlugin"
+    dynamicTemplates="true" forceOverwrite="true" modelName="IHE" modelPluginClass="IHEPlugin"
+    editPluginClass="org.openhealthtools.mdht.uml.cda.ihe.provider.IHEEditPlugin"
     editorPluginClass="org.openhealthtools.mdht.uml.cda.ihe.presentation.IHEEditorPlugin"
     testSuiteClass="org.openhealthtools.mdht.uml.cda.ihe.tests.IHEAllTests" importerID="org.eclipse.uml2.uml.ecore.importer"
     complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.genmodel#//ccd ../../org.openhealthtools.mdht.uml.cda/model/cda.genmodel#//cda ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab">

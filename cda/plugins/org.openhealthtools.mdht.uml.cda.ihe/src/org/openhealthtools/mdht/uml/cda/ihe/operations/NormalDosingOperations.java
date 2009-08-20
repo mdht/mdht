@@ -20,6 +20,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDosing;
 
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
@@ -97,7 +98,7 @@ public class NormalDosingOperations extends MedicationOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.NORMAL_DOSING__NORMAL_DOSING_TEMPLATE_ID,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "NormalDosing_templateId", NORMAL_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(normalDosing, context) }),
+						 IHEPlugin.INSTANCE.getString("NormalDosing_templateId"),
 						 new Object [] { normalDosing }));
 			}
 			return false;

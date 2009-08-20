@@ -22,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 
+import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
 /**
@@ -97,7 +98,7 @@ public class CombinationMedicationOperations extends MedicationOperations {
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.COMBINATION_MEDICATION__COMBINATION_MEDICATION_TEMPLATE_ID,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "CombinationMedication_templateId", COMBINATION_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(combinationMedication, context) }),
+						 IHEPlugin.INSTANCE.getString("CombinationMedication_templateId"),
 						 new Object [] { combinationMedication }));
 			}
 			return false;
