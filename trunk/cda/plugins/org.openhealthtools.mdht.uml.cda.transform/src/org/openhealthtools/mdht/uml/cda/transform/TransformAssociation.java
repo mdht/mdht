@@ -78,7 +78,7 @@ public class TransformAssociation extends TransformAbstract {
 			// Document
 			body.append("self.getSection()->");
 			body.append((sourceProperty.getUpper() == 1) ? "one(" : "exists(");
-			body.append("section : cda::Section | section.oclIsTypeOf(" + targetQName + "))");
+			body.append("section : cda::Section | section.oclIsKindOf(" + targetQName + "))");
 		} else {
 			// Section || Entry || { Act, Encounter, ... }
 			String associationEnd = "Section".equals(cdaSourceName) ? "entry" : "entryRelationship";
@@ -100,9 +100,6 @@ public class TransformAssociation extends TransformAbstract {
 				if (literal != null) {
 					String enumerationQName = "Section".equals(cdaSourceName) ? "vocab::x_ActRelationshipEntry" : "vocab::x_ActRelationshipEntryRelationship";
 					body.append(" and " + associationEnd + ".typeCode = " + enumerationQName + "::" + literal.getName());
-//					AnnotationsUtil annotationsUtil = new AnnotationsUtil(sourceClass);
-//					annotationsUtil.setAnnotation("typeCode", literal.getName());
-//					annotationsUtil.saveAnnotations();
 				}
 			}
 
