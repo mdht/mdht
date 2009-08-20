@@ -77,8 +77,19 @@ public class Logger {
 		message = (message != null) ? message : "null"; //$NON-NLS-1$
 		Status statusObj = new Status(severity, PLUGIN_ID, severity, message, exception);
 		Bundle bundle = Platform.getBundle(PLUGIN_ID);
-		if (bundle != null) 
+		if (bundle != null) {
 			Platform.getLog(bundle).log(statusObj);
+		}
+		
+		// temporary until we integrate OSGI logging service
+		if (INFO == level) {
+			System.out.println(message);
+		}
+		else {
+			System.err.println(message);
+			if (exception != null)
+				exception.printStackTrace();
+		}
 	}
 
 	/**
