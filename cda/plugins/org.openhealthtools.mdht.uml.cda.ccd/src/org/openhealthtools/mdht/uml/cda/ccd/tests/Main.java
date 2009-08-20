@@ -32,9 +32,10 @@ public class Main {
 		ProblemHealthStatus problemHealthStatus = CCDFactory.eINSTANCE.createProblemHealthStatus().init();
 		EpisodeObservation episodeObservation = CCDFactory.eINSTANCE.createEpisodeObservation().init();
 		
-		ProblemSection sect = CCDFactory.eINSTANCE.createProblemSection();
+		ProblemSection sect = CCDFactory.eINSTANCE.createProblemSection().init();
 		sect.addAct(problemAct);
-		sect.addObservation(problemObservation);
+		problemAct.addObservation(problemObservation);
+		
 		sect.addObservation(problemStatus);
 		sect.addObservation(problemHealthStatus);
 		sect.addObservation(episodeObservation);
