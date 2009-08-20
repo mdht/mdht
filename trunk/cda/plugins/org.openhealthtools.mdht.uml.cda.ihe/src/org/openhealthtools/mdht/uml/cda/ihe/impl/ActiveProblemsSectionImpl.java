@@ -56,15 +56,6 @@ public class ActiveProblemsSectionImpl extends ProblemSectionImpl implements Act
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ActiveProblemsSection_entry(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ActiveProblemsSectionOperations.ActiveProblemsSection_entry(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean ActiveProblemsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ActiveProblemsSectionOperations.ActiveProblemsSection_templateId(this, diagnostics, context);
 	}

@@ -115,7 +115,7 @@ public class ProblemConcernEntryOperations extends ConcernEntryOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_CONCERN_ENTRY_PROBLEM_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getObservation()->exists(observation : cda::Observation | observation.oclIsTypeOf(ihe::ProblemEntry))";
+	protected static final String PROBLEM_CONCERN_ENTRY_PROBLEM_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ihe::ProblemEntry))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #ProblemConcernEntry_problemEntry(ProblemConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Concern Entry problem Entry</em>}' invariant operation.
@@ -131,7 +131,7 @@ public class ProblemConcernEntryOperations extends ConcernEntryOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getObservation()->exists(observation : cda::Observation | observation.oclIsTypeOf(ihe::ProblemEntry))
+	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsTypeOf(ihe::ProblemEntry))
 	 * @param problemConcernEntry The receiving '<em><b>Problem Concern Entry</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

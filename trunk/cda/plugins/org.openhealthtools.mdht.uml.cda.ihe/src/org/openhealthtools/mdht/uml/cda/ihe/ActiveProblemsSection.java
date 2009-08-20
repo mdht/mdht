@@ -33,19 +33,6 @@ public interface ActiveProblemsSection extends ProblemSection {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->exists(en : cda::Entry | not en.act.oclIsUndefined() and en.act.oclIsTypeOf(ihe::ProblemConcernEntry))
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(en : cda::Entry | not en.act.oclIsUndefined() and en.act.oclIsTypeOf(ihe::ProblemConcernEntry))'"
-	 * @generated
-	 */
-	boolean ActiveProblemsSection_entry(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
 	 * self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.6')
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -74,11 +61,11 @@ public interface ActiveProblemsSection extends ProblemSection {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getAct()->exists(act : cda::Act | act.oclIsTypeOf(ihe::ProblemConcernEntry))
+	 * self.entry->exists(entry : cda::Entry | entry.act.oclIsTypeOf(ihe::ProblemConcernEntry))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAct()->exists(act : cda::Act | act.oclIsTypeOf(ihe::ProblemConcernEntry))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | entry.act.oclIsTypeOf(ihe::ProblemConcernEntry))'"
 	 * @generated
 	 */
 	boolean ActiveProblemsSection_problemConcernEntry(DiagnosticChain diagnostics, Map<Object, Object> context);

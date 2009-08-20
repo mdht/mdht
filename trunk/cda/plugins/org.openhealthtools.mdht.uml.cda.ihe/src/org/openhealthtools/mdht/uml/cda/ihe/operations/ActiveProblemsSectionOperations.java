@@ -34,7 +34,6 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#ActiveProblemsSection_entry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#ActiveProblemsSection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#ActiveProblemsSection_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#ActiveProblemsSection_problemConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section problem Concern Entry</em>}</li>
@@ -51,63 +50,6 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 	 */
 	protected ActiveProblemsSectionOperations() {
 		super();
-	}
-
-	/**
-	 * The cached OCL expression body for the '{@link #ActiveProblemsSection_entry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section entry</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ActiveProblemsSection_entry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACTIVE_PROBLEMS_SECTION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(en : cda::Entry | not en.act.oclIsUndefined() and en.act.oclIsTypeOf(ihe::ProblemConcernEntry))";
-
-	/**
-	 * The cached OCL invariant for the '{@link #ActiveProblemsSection_entry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section entry</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ActiveProblemsSection_entry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint ACTIVE_PROBLEMS_SECTION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entry->exists(en : cda::Entry | not en.act.oclIsUndefined() and en.act.oclIsTypeOf(ihe::ProblemConcernEntry))
-	 * @param activeProblemsSection The receiving '<em><b>Active Problems Section</b></em>' model object.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
-	public static  boolean ActiveProblemsSection_entry(ActiveProblemsSection activeProblemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (ACTIVE_PROBLEMS_SECTION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(IHEPackage.Literals.ACTIVE_PROBLEMS_SECTION);
-			try {
-				ACTIVE_PROBLEMS_SECTION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ACTIVE_PROBLEMS_SECTION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		if (!EOCL_ENV.createQuery(ACTIVE_PROBLEMS_SECTION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(activeProblemsSection)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 IHEValidator.DIAGNOSTIC_SOURCE,
-						 IHEValidator.ACTIVE_PROBLEMS_SECTION__ACTIVE_PROBLEMS_SECTION_ENTRY,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "ActiveProblemsSection_entry", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(activeProblemsSection, context) }),
-						 new Object [] { activeProblemsSection }));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -236,7 +178,7 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getAct()->exists(act : cda::Act | act.oclIsTypeOf(ihe::ProblemConcernEntry))";
+	protected static final String ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.act.oclIsTypeOf(ihe::ProblemConcernEntry))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #ActiveProblemsSection_problemConcernEntry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section problem Concern Entry</em>}' invariant operation.
@@ -252,7 +194,7 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getAct()->exists(act : cda::Act | act.oclIsTypeOf(ihe::ProblemConcernEntry))
+	 * self.entry->exists(entry : cda::Entry | entry.act.oclIsTypeOf(ihe::ProblemConcernEntry))
 	 * @param activeProblemsSection The receiving '<em><b>Active Problems Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

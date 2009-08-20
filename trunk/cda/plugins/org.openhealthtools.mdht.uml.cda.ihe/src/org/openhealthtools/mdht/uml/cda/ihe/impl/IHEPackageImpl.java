@@ -507,15 +507,6 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 
 		initEClass(activeProblemsSectionEClass, ActiveProblemsSection.class, "ActiveProblemsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(activeProblemsSectionEClass, ecorePackage.getEBoolean(), "ActiveProblemsSection_entry", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(activeProblemsSectionEClass, ecorePackage.getEBoolean(), "ActiveProblemsSection_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -764,7 +755,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 			 "code.displayName", "PROBLEM LIST",
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "11450-4"
-		   });																				
+		   });																
 		addAnnotation
 		  (problemConcernEntryEClass, 
 		   source, 
@@ -872,7 +863,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																		
+		   });																																																																																																														
 	}
 
 	/**
@@ -888,7 +879,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Active Problems Section", null
-		   });																				
+		   });																
 		addAnnotation
 		  (problemConcernEntryEClass, 
 		   source, 
