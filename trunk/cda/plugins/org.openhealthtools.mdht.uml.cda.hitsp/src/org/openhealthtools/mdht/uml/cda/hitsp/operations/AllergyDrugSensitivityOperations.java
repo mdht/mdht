@@ -23,6 +23,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HitspPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.util.HitspValidator;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.AllergyIntoleranceConcernOperations;
 
@@ -99,7 +100,7 @@ public class AllergyDrugSensitivityOperations extends AllergyIntoleranceConcernO
 						(Diagnostic.ERROR,
 						 HitspValidator.DIAGNOSTIC_SOURCE,
 						 HitspValidator.ALLERGY_DRUG_SENSITIVITY__ALLERGY_DRUG_SENSITIVITY_TEMPLATE_ID,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AllergyDrugSensitivity_templateId", ALLERGY_DRUG_SENSITIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(allergyDrugSensitivity, context) }),
+						 HitspPlugin.INSTANCE.getString("AllergyDrugSensitivity_templateId"),
 						 new Object [] { allergyDrugSensitivity }));
 			}
 			return false;

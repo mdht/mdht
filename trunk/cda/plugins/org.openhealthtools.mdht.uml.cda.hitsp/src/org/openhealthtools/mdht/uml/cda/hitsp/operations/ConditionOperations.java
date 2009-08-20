@@ -23,6 +23,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HitspPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.util.HitspValidator;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ProblemConcernEntryOperations;
@@ -102,7 +103,7 @@ public class ConditionOperations extends ProblemConcernEntryOperations {
 						(Diagnostic.ERROR,
 						 HitspValidator.DIAGNOSTIC_SOURCE,
 						 HitspValidator.CONDITION__CONDITION_TEMPLATE_ID,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Condition_templateId", CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(condition, context) }),
+						 HitspPlugin.INSTANCE.getString("Condition_templateId"),
 						 new Object [] { condition }));
 			}
 			return false;
@@ -159,7 +160,7 @@ public class ConditionOperations extends ProblemConcernEntryOperations {
 						(Diagnostic.ERROR,
 						 HitspValidator.DIAGNOSTIC_SOURCE,
 						 HitspValidator.CONDITION__CONDITION_TEXT,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Condition_text", CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(condition, context) }),
+						 HitspPlugin.INSTANCE.getString("Condition_text"),
 						 new Object [] { condition }));
 			}
 			return false;

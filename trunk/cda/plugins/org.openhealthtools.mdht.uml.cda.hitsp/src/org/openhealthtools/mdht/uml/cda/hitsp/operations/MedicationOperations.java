@@ -22,6 +22,7 @@ import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HitspPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.util.HitspValidator;
 
@@ -98,7 +99,7 @@ public class MedicationOperations extends org.openhealthtools.mdht.uml.cda.ihe.o
 						(Diagnostic.ERROR,
 						 HitspValidator.DIAGNOSTIC_SOURCE,
 						 HitspValidator.MEDICATION__MEDICATION_TEMPLATE_ID,
-						 CDAPlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Medication_templateId", MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(medication, context) }),
+						 HitspPlugin.INSTANCE.getString("Medication_templateId"),
 						 new Object [] { medication }));
 			}
 			return false;
