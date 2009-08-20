@@ -163,22 +163,28 @@ public class TransformVocabConstraint extends TransformAbstract {
 		if (cdaProperty == null) {
 			String message = "Cannot find CDA property for: " + property.getQualifiedName();
 			Logger.log(Logger.ERROR, message);
-			System.err.println(message);
+			removeModelElement(property);
 			return null;
+		}
+		if (property.getType() == null) {
+			String message = "Property has no type: " + property.getQualifiedName();
+			Logger.log(Logger.WARNING, message);
+			// if property type is null, use type from redefined property
 		}
 		
 		// check property type, including if redefined with restricted type
 		if (!isCDType(property)) {
 			String message = "Property is not CD type: " + property.getQualifiedName();
 			Logger.log(Logger.ERROR, message);
-			System.err.println(message);
+			removeModelElement(property);
 			return null;
 		}
 
 		StringBuffer body = new StringBuffer();
 		String selfName = "self." + cdaProperty.getName();
-//		String cdaTypeQName = cdaProperty.getType().getQualifiedName();
-		String templateTypeQName = property.getType().getQualifiedName();
+		String cdaTypeQName = cdaProperty.getType().getQualifiedName();
+		String templateTypeQName = property.getType() == null ? 
+				cdaTypeQName : property.getType().getQualifiedName();
 		
 		if (property.getUpper() == 0) {
 			// element is prohibited in redefinition
@@ -226,6 +232,14 @@ public class TransformVocabConstraint extends TransformAbstract {
 
 	private boolean isCDType(Property property) {
 		Classifier type = (Classifier) property.getType();
+		if (type == null) {
+			Property cdaProperty = getCDAProperty(property);
+			if (cdaProperty != null)
+				type = (Classifier) cdaProperty.getType();
+			else
+				return false;
+		}
+		
 		List<Classifier> allTypes = new ArrayList<Classifier>(type.allParents());
 		allTypes.add(0, type);
 		
