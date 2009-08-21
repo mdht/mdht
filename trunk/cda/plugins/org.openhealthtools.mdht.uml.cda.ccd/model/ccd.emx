@@ -300,9 +300,22 @@
     describe what has been dispensed.&lt;/font>&#xD;
 &lt;/p></body>
       </ownedComment>
+      <ownedRule xmi:id="_yqHDEI5qEd6x-qh9FleSiA" name="MedicationActivity_moodCode" constrainedElement="_W6aMoHfTEd6ZeOKq_2_a9g">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yqHDEY5qEd6x-qh9FleSiA">
+          <language>OCL</language>
+          <body>self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT </body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_sAvQsHfUEd6ZeOKq_2_a9g">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_nazskEbuEd6besF9iFIJkQ?cda/SubstanceAdministration?"/>
       </generalization>
+      <ownedAttribute xmi:id="_PZz-MI5qEd6x-qh9FleSiA" name="moodCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_PZz-MY5qEd6x-qh9FleSiA" name="EVN">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.emx#__yeW30DcEd6xYZuu1VKCVw?vocab/ActMood/EVN?"/>
+        </defaultValue>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_Rp0MMIHYEd6Ncrr6L3Ublw" name="id" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rp0MMYHYEd6Ncrr6L3Ublw" value="*"/>
@@ -310,6 +323,8 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_f9zPMIHYEd6Ncrr6L3Ublw" name="statusCode" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4pnAAI5tEd6x-qh9FleSiA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4pg5YI5tEd6x-qh9FleSiA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_zfqV0IjqEd66cKocspyVOg" name="medicationSeriesNumberObservation" visibility="private" type="_VL2w0IiBEd66cKocspyVOg" association="_zfn5kIjqEd66cKocspyVOg">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zfsyEYjqEd66cKocspyVOg" value="1"/>
@@ -675,4 +690,7 @@
   <CDA:ValidationSupport xmi:id="_a88roIt0Ed639sxyAgfSmw" severity="WARNING" message="The value for 'Observation / Code' in an episode observation SHOULD be 'ASSERTION' 2.16.840.1.113883.5.4 ActCode STATIC." base_Property="_dRVmAHxTEd6jfbAJq2V82w"/>
   <CDA:ValidationSupport xmi:id="_ZanHcIt6Ed639sxyAgfSmw" severity="WARNING" message="Problem section SHOULD include one or more problem acts." base_Association="_tr5r0It5Ed639sxyAgfSmw"/>
   <CDA:ValidationSupport xmi:id="_jEADkIt6Ed639sxyAgfSmw" severity="WARNING" message="A problem act SHOULD include one or more problem observations." base_Association="_yqvkYIt5Ed639sxyAgfSmw"/>
+  <CDA:ValidationSupport xmi:id="_PZ5dwI5qEd6x-qh9FleSiA" message="The value for 'SubstanceAdministration / @moodCode' in a medication activity SHALL be 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC." base_Property="_PZz-MI5qEd6x-qh9FleSiA"/>
+  <CDA:ValidationSupport xmi:id="_v4Op8I5tEd6x-qh9FleSiA" severity="WARNING" message="A medication activity SHOULD contain exactly one SubstanceAdministration / statusCode." base_Property="_f9zPMIHYEd6Ncrr6L3Ublw"/>
+  <CDA:ValidationSupport xmi:id="_iL6ZAI5vEd6x-qh9FleSiA" message="A medication activity SHALL contain at least one SubstanceAdministration / id." base_Property="_Rp0MMIHYEd6Ncrr6L3Ublw"/>
 </xmi:XMI>

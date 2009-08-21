@@ -25,10 +25,23 @@ import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getMedicationActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.24' constraints.validation.error='MedicationActivity_templateId MedicationActivity_id MedicationActivity_statusCode' constraints.validation.info='MedicationActivity_medicationSeriesNumberObservation MedicationActivity_medicationStatusObservation'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' templateId.root='2.16.840.1.113883.10.20.1.24' constraints.validation.error='MedicationActivity_templateId MedicationActivity_moodCode MedicationActivity_id' constraints.validation.info='MedicationActivity_medicationSeriesNumberObservation MedicationActivity_medicationStatusObservation' constraints.validation.warning='MedicationActivity_statusCode'"
  * @generated
  */
 public interface MedicationActivity extends SubstanceAdministration {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT 
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT '"
+	 * @generated
+	 */
+	boolean MedicationActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

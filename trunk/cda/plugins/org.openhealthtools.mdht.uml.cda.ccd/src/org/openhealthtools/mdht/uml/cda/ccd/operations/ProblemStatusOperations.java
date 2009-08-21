@@ -109,9 +109,9 @@ public class ProblemStatusOperations extends StatusObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_STATUS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE) and "+
+	protected static final String PROBLEM_STATUS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and "+
 "let value : datatypes::CE = element.oclAsType(datatypes::CE) in "+
-"value.codeSystem = '2.16.840.1.113883.1.11.20.13' and value.codeSystemName = 'ProblemStatusCode' and value.codeSystemVersion = '20061017')";
+"value.codeSystem = '2.16.840.1.113883.1.11.20.13')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #ProblemStatus_value(ProblemStatus, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Status value</em>}' invariant operation.
@@ -127,9 +127,9 @@ public class ProblemStatusOperations extends StatusObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE) and 
+	 * self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and 
 	 * let value : datatypes::CE = element.oclAsType(datatypes::CE) in 
-	 * value.codeSystem = '2.16.840.1.113883.1.11.20.13' and value.codeSystemName = 'ProblemStatusCode' and value.codeSystemVersion = '20061017')
+	 * value.codeSystem = '2.16.840.1.113883.1.11.20.13')
 	 * @param problemStatus The receiving '<em><b>Problem Status</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

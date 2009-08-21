@@ -303,6 +303,10 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//MedicationActivity">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/MedicationActivity_moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivity_moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivity_moodCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationActivity/MedicationActivity_templateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivity_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicationActivity/MedicationActivity_templateId/context"/>

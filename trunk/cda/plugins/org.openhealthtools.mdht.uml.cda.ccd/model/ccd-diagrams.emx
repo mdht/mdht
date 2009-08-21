@@ -892,7 +892,7 @@
         </children>
         <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_DdTeQXfUEd6ZeOKq_2_a9g" fontName="Segoe UI" showListVisibility="None" showStereotype="Label"/>
         <element xmi:type="uml:Class" href="ccd.emx#_W6aMoHfTEd6ZeOKq_2_a9g?ccd/MedicationActivity?"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DdTeQnfUEd6ZeOKq_2_a9g" x="7291" y="3804"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DdTeQnfUEd6ZeOKq_2_a9g" x="6657" y="3804"/>
       </children>
       <children xmi:id="_OvoHEHfUEd6ZeOKq_2_a9g">
         <children xmi:id="_OvouIHfUEd6ZeOKq_2_a9g" type="ImageCompartment">
@@ -915,7 +915,7 @@
         </children>
         <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_OvoHEXfUEd6ZeOKq_2_a9g" fontName="Segoe UI" showListVisibility="None" showStereotype="Label"/>
         <element xmi:type="uml:Class" href="ccd.emx#_OvmR4HfUEd6ZeOKq_2_a9g?ccd/MedicationSection?"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OvoHEnfUEd6ZeOKq_2_a9g" x="317" y="3804"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OvoHEnfUEd6ZeOKq_2_a9g" x="-634" y="3804"/>
       </children>
       <children xmi:id="_ltJLsHfUEd6ZeOKq_2_a9g">
         <children xmi:id="_ltJywHfUEd6ZeOKq_2_a9g" type="ImageCompartment">
@@ -938,7 +938,7 @@
         </children>
         <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_ltJLsXfUEd6ZeOKq_2_a9g" fontName="Segoe UI" showParent="Name" showStereotype="Label"/>
         <element xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ltJLsnfUEd6ZeOKq_2_a9g" x="1585" y="1268"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ltJLsnfUEd6ZeOKq_2_a9g" x="634" y="1268"/>
       </children>
       <children xmi:id="_nWtKgHfUEd6ZeOKq_2_a9g">
         <children xmi:id="_nWtxkHfUEd6ZeOKq_2_a9g" type="ImageCompartment">
@@ -1264,7 +1264,7 @@
           <element xmi:type="uml:Property" href="ccd.emx#_zfqV0IjqEd66cKocspyVOg?ccd/MedicationActivity/medicationSeriesNumberObservation?"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_zgA7J4jqEd66cKocspyVOg" y="1058"/>
         </children>
-        <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zf930YjqEd66cKocspyVOg" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+        <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zf930YjqEd66cKocspyVOg" fontName="Segoe UI" lineWidth="1" showStereotype="None"/>
         <element xmi:type="uml:Association" href="ccd.emx#_zfn5kIjqEd66cKocspyVOg?ccd/%3CAssociation%3E?"/>
         <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zf930ojqEd66cKocspyVOg" points="[-16, 39, -32, -179]$[-95, 188, -111, -30]"/>
         <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_z9L_UIjqEd66cKocspyVOg" id="(0.13881062,0.088288285)"/>
@@ -1278,7 +1278,7 @@
         <children xmi:id="_CIq7tIjtEd66cKocspyVOg" type="ToMultiplicityLabel">
           <children xmi:id="_CIriwIjtEd66cKocspyVOg" type="ToMultiplicity"/>
           <element xmi:type="uml:Property" href="ccd.emx#_CIkOAIjtEd66cKocspyVOg?ccd/%3CAssociation%3E/%3CProperty%3E?"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_CIq7tYjtEd66cKocspyVOg" y="396"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_CIq7tYjtEd66cKocspyVOg" x="67" y="-125"/>
         </children>
         <children xmi:id="_CIriwYjtEd66cKocspyVOg" type="ToRoleLabel">
           <children xmi:id="_CIriw4jtEd66cKocspyVOg" type="ToRole"/>
@@ -1288,12 +1288,12 @@
         <children xmi:id="_CIrixIjtEd66cKocspyVOg" type="FromMultiplicityLabel">
           <children xmi:id="_CIsJ0IjtEd66cKocspyVOg" type="FromMultiplicity"/>
           <element xmi:type="uml:Property" href="ccd.emx#_CIgjoIjtEd66cKocspyVOg?ccd/MedicationActivity/medicationStatusObservation?"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_CIrixYjtEd66cKocspyVOg" x="-99" y="324"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_CIrixYjtEd66cKocspyVOg" x="-417" y="440"/>
         </children>
         <children xmi:id="_CIsJ0YjtEd66cKocspyVOg" type="FromRoleLabel">
           <children xmi:id="_CIsJ04jtEd66cKocspyVOg" type="FromRole"/>
           <element xmi:type="uml:Property" href="ccd.emx#_CIgjoIjtEd66cKocspyVOg?ccd/MedicationActivity/medicationStatusObservation?"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_CIsJ0ojtEd66cKocspyVOg" x="-2042" y="1029"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_CIsJ0ojtEd66cKocspyVOg" x="-196" y="-448"/>
         </children>
         <children xmi:id="_CIsw4IjtEd66cKocspyVOg" type="ToQualifierLabel">
           <children xmi:id="_CIsw4ojtEd66cKocspyVOg" type="QualifierCompartment">
@@ -1323,7 +1323,7 @@
           <element xmi:type="uml:Property" href="ccd.emx#_CIgjoIjtEd66cKocspyVOg?ccd/MedicationActivity/medicationStatusObservation?"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_CItX84jtEd66cKocspyVOg" y="1058"/>
         </children>
-        <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_CIqUoYjtEd66cKocspyVOg" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+        <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_CIqUoYjtEd66cKocspyVOg" fontName="Segoe UI" lineWidth="1" showStereotype="None"/>
         <element xmi:type="uml:Association" href="ccd.emx#_CIfVgIjtEd66cKocspyVOg?ccd/%3CAssociation%3E?"/>
         <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CIqUoojtEd66cKocspyVOg" points="[61, 39, -233, -109]$[176, 116, -118, -32]"/>
         <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ETTnQIjtEd66cKocspyVOg" id="(0.16828652,0.111173816)"/>
@@ -1337,7 +1337,7 @@
         <children xmi:id="_C__lQojtEd66cKocspyVOg" type="ToMultiplicityLabel">
           <children xmi:id="_C__lRIjtEd66cKocspyVOg" type="ToMultiplicity"/>
           <element xmi:type="uml:Property" href="ccd.emx#_C_4QgIjtEd66cKocspyVOg?ccd/%3CAssociation%3E/%3CProperty%3E?"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_C__lQ4jtEd66cKocspyVOg" y="396"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_C__lQ4jtEd66cKocspyVOg" x="-305" y="236"/>
         </children>
         <children xmi:id="_C__lRYjtEd66cKocspyVOg" type="ToRoleLabel">
           <children xmi:id="_DAAMUIjtEd66cKocspyVOg" type="ToRole"/>
@@ -1352,7 +1352,7 @@
         <children xmi:id="_DAAMVIjtEd66cKocspyVOg" type="FromRoleLabel">
           <children xmi:id="_DAAMVojtEd66cKocspyVOg" type="FromRole"/>
           <element xmi:type="uml:Property" href="ccd.emx#_C_1NMIjtEd66cKocspyVOg?ccd/SupplyActivity/medicationStatusObservation?"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_DAAMVYjtEd66cKocspyVOg" x="490" y="-2214"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_DAAMVYjtEd66cKocspyVOg" x="1100" y="-1726"/>
         </children>
         <children xmi:id="_DAAzYIjtEd66cKocspyVOg" type="ToQualifierLabel">
           <children xmi:id="_DAAzYojtEd66cKocspyVOg" type="QualifierCompartment">
@@ -1382,7 +1382,7 @@
           <element xmi:type="uml:Property" href="ccd.emx#_C_1NMIjtEd66cKocspyVOg?ccd/SupplyActivity/medicationStatusObservation?"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_DABadYjtEd66cKocspyVOg" y="1058"/>
         </children>
-        <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_C_--MYjtEd66cKocspyVOg" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+        <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_C_--MYjtEd66cKocspyVOg" fontName="Segoe UI" lineWidth="1" showStereotype="None"/>
         <element xmi:type="uml:Association" href="ccd.emx#_C_zYAIjtEd66cKocspyVOg?ccd/%3CAssociation%3E?"/>
         <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_C_--MojtEd66cKocspyVOg" points="[40, 39, -15, -109]$[139, 116, 84, -32]"/>
         <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DovnUIjtEd66cKocspyVOg" id="(0.8482226,0.23081264)"/>

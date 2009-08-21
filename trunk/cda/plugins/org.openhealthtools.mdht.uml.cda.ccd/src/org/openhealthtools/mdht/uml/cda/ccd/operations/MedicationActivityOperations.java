@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.operations.SubstanceAdministrationOperat
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#MedicationActivity_moodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Activity mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#MedicationActivity_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Activity template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#MedicationActivity_id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Activity id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#MedicationActivity_statusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Activity status Code</em>}</li>
@@ -46,6 +47,63 @@ public class MedicationActivityOperations extends SubstanceAdministrationOperati
 	 */
 	protected MedicationActivityOperations() {
 		super();
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #MedicationActivity_moodCode(MedicationActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Activity mood Code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MedicationActivity_moodCode(MedicationActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MEDICATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT ";
+
+	/**
+	 * The cached OCL invariant for the '{@link #MedicationActivity_moodCode(MedicationActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Activity mood Code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MedicationActivity_moodCode(MedicationActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint MEDICATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT 
+	 * @param medicationActivity The receiving '<em><b>Medication Activity</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean MedicationActivity_moodCode(MedicationActivity medicationActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (MEDICATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.MEDICATION_ACTIVITY);
+			try {
+				MEDICATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MEDICATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(MEDICATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicationActivity)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.MEDICATION_ACTIVITY__MEDICATION_ACTIVITY_MOOD_CODE,
+						 CCDPlugin.INSTANCE.getString("MedicationActivity_moodCode"),
+						 new Object [] { medicationActivity }));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -208,7 +266,7 @@ public class MedicationActivityOperations extends SubstanceAdministrationOperati
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
-						(Diagnostic.ERROR,
+						(Diagnostic.WARNING,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.MEDICATION_ACTIVITY__MEDICATION_ACTIVITY_STATUS_CODE,
 						 CCDPlugin.INSTANCE.getString("MedicationActivity_statusCode"),

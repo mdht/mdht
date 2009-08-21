@@ -39,10 +39,10 @@
     </eOperations>
     <eOperations name="MedicationSection_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10160-0' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10160-0' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10160-0' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10160-0' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -298,14 +298,11 @@
       <details key="moodCode" value="EVN"/>
       <details key="classCode" value="OBS"/>
       <details key="statusCode.codeSystemName" value="ActStatus"/>
-      <details key="code.codeSystemName" value="ProblemTypeCode"/>
       <details key="constraints.validation.info" value="ProblemObservation_code"/>
-      <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
-      <details key="templateId.root" value="2.16.840.1.113883.10.20.1.28"/>
       <details key="constraints.validation.error" value="ProblemObservation_templateId ProblemObservation_moodCode ProblemObservation_statusCode"/>
-      <details key="code.codeSystemVersion" value="20061017"/>
+      <details key="templateId.root" value="2.16.840.1.113883.10.20.1.28"/>
+      <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
       <details key="statusCode.code" value="completed"/>
-      <details key="code.codeSystem" value="2.16.840.1.113883.1.11.20.14"/>
       <details key="constraints.validation.warning" value="ProblemObservation_effectiveTime"/>
     </eAnnotations>
     <eOperations name="ProblemObservation_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -354,10 +351,10 @@
     </eOperations>
     <eOperations name="ProblemObservation_statusCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -398,10 +395,10 @@
     </eOperations>
     <eOperations name="ProblemObservation_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.14' and value.codeSystemName = 'ProblemTypeCode' and value.codeSystemVersion = '20061017')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;not value.code.oclIsUndefined() and not value.codeSystem.oclIsUndefined())"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.14' and value.codeSystemName = 'ProblemTypeCode' and value.codeSystemVersion = '20061017')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;not value.code.oclIsUndefined() and not value.codeSystem.oclIsUndefined())"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -453,10 +450,10 @@
     </eOperations>
     <eOperations name="ProblemSection_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -550,10 +547,10 @@
     </eOperations>
     <eOperations name="ProblemStatus_value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.13' and value.codeSystemName = 'ProblemStatusCode' and value.codeSystemVersion = '20061017')"/>
+        <details key="body" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.13')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.13' and value.codeSystemName = 'ProblemStatusCode' and value.codeSystemVersion = '20061017')"/>
+        <details key="documentation" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.13')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -653,10 +650,10 @@
     </eOperations>
     <eOperations name="StatusObservation_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '33999-4' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '33999-4' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '33999-4' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '33999-4' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -675,10 +672,10 @@
     </eOperations>
     <eOperations name="StatusObservation_statusCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -754,10 +751,10 @@
     </eOperations>
     <eOperations name="ProblemHealthStatus_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '11323-3' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '11323-3' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '11323-3' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '11323-3' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -776,10 +773,10 @@
     </eOperations>
     <eOperations name="ProblemHealthStatus_value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.12' and value.codeSystemName = 'ProblemHealthStatusCode' and value.codeSystemVersion = '20061017')"/>
+        <details key="body" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.12')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.12' and value.codeSystemName = 'ProblemHealthStatusCode' and value.codeSystemVersion = '20061017')"/>
+        <details key="documentation" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.12')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -879,10 +876,10 @@
     </eOperations>
     <eOperations name="EpisodeObservation_statusCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -901,10 +898,10 @@
     </eOperations>
     <eOperations name="EpisodeObservation_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = 'ASSERTION' and value.codeSystem = '2.16.840.1.113883.5.4' and value.codeSystemName = 'ActCode')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = 'ASSERTION' and value.codeSystem = '2.16.840.1.113883.5.4')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = 'ASSERTION' and value.codeSystem = '2.16.840.1.113883.5.4' and value.codeSystemName = 'ActCode')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = 'ASSERTION' and value.codeSystem = '2.16.840.1.113883.5.4')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1006,10 +1003,10 @@
     </eOperations>
     <eOperations name="FamilyHistorySection_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10157-6' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10157-6' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10157-6' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10157-6' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1103,10 +1100,10 @@
     </eOperations>
     <eOperations name="FamilyHistoryObservation_statusCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1156,10 +1153,10 @@
     </eOperations>
     <eOperations name="FamilyHistoryOrganizer_statusCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1325,10 +1322,10 @@
     </eOperations>
     <eOperations name="EncountersSection_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '46240-8' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '46240-8' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '46240-8' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '46240-8' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1453,10 +1450,10 @@
     </eOperations>
     <eOperations name="EncountersActivity_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.13955' and value.codeSystemName = 'EncounterCode')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.13955')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.13955' and value.codeSystemName = 'EncounterCode')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.13955')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1501,10 +1498,34 @@
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>A medication activity is used to describe what is administered whereas a supply activity is used to&#xD;&#xA;    describe what has been dispensed.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="moodCode" value="EVN"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.24"/>
-      <details key="constraints.validation.error" value="MedicationActivity_templateId MedicationActivity_id MedicationActivity_statusCode"/>
+      <details key="constraints.validation.error" value="MedicationActivity_templateId MedicationActivity_moodCode MedicationActivity_id"/>
       <details key="constraints.validation.info" value="MedicationActivity_medicationSeriesNumberObservation MedicationActivity_medicationStatusObservation"/>
+      <details key="constraints.validation.warning" value="MedicationActivity_statusCode"/>
     </eAnnotations>
+    <eOperations name="MedicationActivity_moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT "/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT "/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eOperations name="MedicationActivity_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.hasTemplateId('2.16.840.1.113883.10.20.1.24')"/>
@@ -1744,10 +1765,10 @@
     </eOperations>
     <eOperations name="AlertsSection_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '48765-2' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '48765-2' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '48765-2' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '48765-2' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1819,10 +1840,10 @@
     </eOperations>
     <eOperations name="AlertObservation_statusCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1872,10 +1893,10 @@
     </eOperations>
     <eOperations name="ReactionObservation_statusCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1929,10 +1950,10 @@
     </eOperations>
     <eOperations name="SeverityObservation_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = 'SEV' and value.codeSystem = '2.16.840.1.113883.5.4' and value.codeSystemName = 'ActCode')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = 'SEV' and value.codeSystem = '2.16.840.1.113883.5.4')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = 'SEV' and value.codeSystem = '2.16.840.1.113883.5.4' and value.codeSystemName = 'ActCode')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = 'SEV' and value.codeSystem = '2.16.840.1.113883.5.4')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1951,10 +1972,10 @@
     </eOperations>
     <eOperations name="SeverityObservation_statusCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')"/>
+        <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2026,10 +2047,10 @@
     </eOperations>
     <eOperations name="AlertStatusObservation_value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.3' and value.codeSystemName = 'AlertStatusCode' and value.codeSystemVersion = '20061017')"/>
+        <details key="body" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.3')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.3' and value.codeSystemName = 'AlertStatusCode' and value.codeSystemVersion = '20061017')"/>
+        <details key="documentation" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.3')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2111,10 +2132,10 @@
     </eOperations>
     <eOperations name="ResultsSection_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '30954-2' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '30954-2' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '30954-2' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '30954-2' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2214,10 +2235,10 @@
     </eOperations>
     <eOperations name="MedicationSeriesNumberObservation_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '30973-2' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '30973-2' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '30973-2' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '30973-2' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2289,10 +2310,10 @@
     </eOperations>
     <eOperations name="MedicationStatusObservation_value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.7' and value.codeSystemName = 'MedicationStatusCode' and value.codeSystemVersion = '20061017')"/>
+        <details key="body" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.7')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.7' and value.codeSystemName = 'MedicationStatusCode' and value.codeSystemVersion = '20061017')"/>
+        <details key="documentation" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = element.oclAsType(datatypes::CE) in &#xD;&#xA;value.codeSystem = '2.16.840.1.113883.1.11.20.7')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2403,10 +2424,10 @@
     </eOperations>
     <eOperations name="ProceduresSection_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '47519-4' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '47519-4' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '47519-4' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')"/>
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '47519-4' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -170,9 +170,9 @@ public class ProblemObservationOperations extends ObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and "+
+	protected static final String PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and "+
 "let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in ("+
-"value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')";
+"value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #ProblemObservation_statusCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation status Code</em>}' invariant operation.
@@ -188,9 +188,9 @@ public class ProblemObservationOperations extends ObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.statusCode.oclIsUndefined() and self.statusCode.oclIsTypeOf(datatypes::CS) and 
+	 * not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and 
 	 * let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (
-	 * value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14' and value.codeSystemName = 'ActStatus')
+	 * value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')
 	 * @param problemObservation The receiving '<em><b>Problem Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -288,9 +288,9 @@ public class ProblemObservationOperations extends ObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and "+
+	protected static final String PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and "+
 "let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in ("+
-"value.codeSystem = '2.16.840.1.113883.1.11.20.14' and value.codeSystemName = 'ProblemTypeCode' and value.codeSystemVersion = '20061017')";
+"not value.code.oclIsUndefined() and not value.codeSystem.oclIsUndefined())";
 
 	/**
 	 * The cached OCL invariant for the '{@link #ProblemObservation_code(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation code</em>}' invariant operation.
@@ -306,9 +306,9 @@ public class ProblemObservationOperations extends ObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CD) and 
+	 * not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and 
 	 * let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (
-	 * value.codeSystem = '2.16.840.1.113883.1.11.20.14' and value.codeSystemName = 'ProblemTypeCode' and value.codeSystemVersion = '20061017')
+	 * not value.code.oclIsUndefined() and not value.codeSystem.oclIsUndefined())
 	 * @param problemObservation The receiving '<em><b>Problem Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
