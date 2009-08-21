@@ -24,6 +24,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 
 /**
  * Abstract base class for model transformations.
@@ -35,6 +36,12 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	public static final String VALIDATION_ERROR = "constraints.validation.error";
 	public static final String VALIDATION_WARNING = "constraints.validation.warning";
 	public static final String VALIDATION_INFO = "constraints.validation.info";
+
+	public static final String SEVERITY_ERROR = "ERROR";
+	public static final String SEVERITY_WARNING = "WARNING";
+	public static final String SEVERITY_INFO = "INFO";
+
+	public static final String CDA_PACKAGE_NAME = "cda";
 
 	protected EcoreTransformerOptions transformerOptions;
 
@@ -57,21 +64,31 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return validationSupport != null;
 	}
 
+	public String getValidationSeverity(Element element) {
+		Stereotype validationSupport = EcoreTransformUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION_SUPPORT);
+		if (validationSupport != null) {
+			EnumerationLiteral literal = (EnumerationLiteral) element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_SEVERITY);
+			return (literal != null) ? literal.getName() : SEVERITY_ERROR;
+		}
+		
+		return null;
+	}
+
 	public void addValidationSupport(Property property, String constraintName) {
-		String severity = "ERROR";
+		String severity = SEVERITY_ERROR;
 		String message = null;
 		
 		Stereotype validationSupport = EcoreTransformUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.VALIDATION_SUPPORT);
 		if (validationSupport != null) {
 			message = (String) property.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE);
 			EnumerationLiteral literal = (EnumerationLiteral) property.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_SEVERITY);
-			severity = (literal != null) ? literal.getName() : "ERROR";
+			severity = (literal != null) ? literal.getName() : SEVERITY_ERROR;
 		}
 
 		Class constrainedClass = property.getClass_();
-		if ("INFO".equals(severity)) {
+		if (SEVERITY_INFO.equals(severity)) {
 			addValidationInfo(constrainedClass, constraintName, message);
-		} else if ("WARNING".equals(severity)) {
+		} else if (SEVERITY_WARNING.equals(severity)) {
 			addValidationWarning(constrainedClass, constraintName, message);
 		} else {
 			addValidationError(constrainedClass, constraintName, message);
@@ -113,6 +130,17 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		}
 	}
 
+	protected Class getCDAClass(Class templateClass) {
+		for (Classifier parent : templateClass.allParents()) {
+			if (CDA_PACKAGE_NAME.equals(parent.getNearestPackage().getName()) 
+					&& parent instanceof Class) {
+				return (Class) parent;
+			}
+		}
+		
+		return null;
+	}
+	
 	protected Property getCDAProperty(Property templateProperty) {
 		if (templateProperty.getClass_() == null) {
 			return null;
@@ -121,7 +149,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		for (Classifier parent : templateProperty.getClass_().allParents()) {
 			for (Property inherited : parent.getAttributes()) {
 				if (inherited.getName().equals(templateProperty.getName())
-						&& "cda".equals(inherited.getNearestPackage().getName())) {
+						&& CDA_PACKAGE_NAME.equals(inherited.getNearestPackage().getName())) {
 					return inherited;
 				}
 			}
@@ -151,6 +179,17 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	
 	protected void addOCLConstraint(Property property, StringBuffer body) {
 		String constraintName = property.getClass_().getName() + "_" + property.getName();
+		if (property.getClass_().getOwnedRule(constraintName) != null) {
+			String message = "Constraint name already defined: '" + constraintName 
+					+ "' in " + property.getClass_().getQualifiedName();
+			Logger.log(Logger.WARNING, message);
+			
+			// add validation message, if included in the model
+			addValidationSupport(property, constraintName);
+			
+			return;
+		}
+		
 		Constraint constraint = property.getClass_().createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
 		constraint.getConstrainedElements().add(property.getClass_());
 
@@ -161,14 +200,4 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		addValidationSupport(property, constraintName);
 	}
 	
-	protected org.eclipse.uml2.uml.Class getCDAClass(org.eclipse.uml2.uml.Class templateClass) {
-		for (Classifier parent : templateClass.allParents()) {
-			if ("cda".equals(parent.getNearestPackage().getName()) 
-					&& parent instanceof org.eclipse.uml2.uml.Class) {
-				return (org.eclipse.uml2.uml.Class) parent;
-			}
-		}
-		
-		return null;
-	}
 }
