@@ -57,8 +57,8 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		String body = "self.hasTemplateId('" + templateId + "')";
 		expression.getBodies().add(body);
 
-		//TODO get severity level and message from stereotype
-		addValidationError(umlClass, constraintName, null);
+		String message = "The template identifier for " + umlClass.getName() + " must be " + templateId + ".";
+		addValidationError(umlClass, constraintName, message);
 	}
 
 	private void addAnnotation(Class umlClass, Stereotype hl7Template) {
