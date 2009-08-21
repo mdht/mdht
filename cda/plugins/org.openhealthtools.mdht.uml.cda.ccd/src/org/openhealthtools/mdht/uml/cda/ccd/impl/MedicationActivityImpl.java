@@ -50,6 +50,15 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean MedicationActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.MedicationActivity_moodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean MedicationActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MedicationActivityOperations.MedicationActivity_templateId(this, diagnostics, context);
 	}

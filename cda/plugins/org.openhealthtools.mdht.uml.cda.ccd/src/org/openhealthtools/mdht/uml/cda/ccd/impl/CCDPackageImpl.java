@@ -1425,6 +1425,15 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 
 		initEClass(medicationActivityEClass, MedicationActivity.class, "MedicationActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		op = addEOperation(medicationActivityEClass, ecorePackage.getEBoolean(), "MedicationActivity_moodCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(medicationActivityEClass, ecorePackage.getEBoolean(), "MedicationActivity_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -1807,7 +1816,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																								
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																												
 	}
 
 	/**
@@ -1854,14 +1863,11 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "moodCode", "EVN",
 			 "classCode", "OBS",
 			 "statusCode.codeSystemName", "ActStatus",
-			 "code.codeSystemName", "ProblemTypeCode",
 			 "constraints.validation.info", "ProblemObservation_code",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "templateId.root", "2.16.840.1.113883.10.20.1.28",
 			 "constraints.validation.error", "ProblemObservation_templateId ProblemObservation_moodCode ProblemObservation_statusCode",
-			 "code.codeSystemVersion", "20061017",
+			 "templateId.root", "2.16.840.1.113883.10.20.1.28",
+			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "statusCode.code", "completed",
-			 "code.codeSystem", "2.16.840.1.113883.1.11.20.14",
 			 "constraints.validation.warning", "ProblemObservation_effectiveTime"
 		   });																						
 		addAnnotation
@@ -2034,10 +2040,12 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		  (medicationActivityEClass, 
 		   source, 
 		   new String[] {
+			 "moodCode", "EVN",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.24",
-			 "constraints.validation.error", "MedicationActivity_templateId MedicationActivity_id MedicationActivity_statusCode",
-			 "constraints.validation.info", "MedicationActivity_medicationSeriesNumberObservation MedicationActivity_medicationStatusObservation"
-		   });																						
+			 "constraints.validation.error", "MedicationActivity_templateId MedicationActivity_moodCode MedicationActivity_id",
+			 "constraints.validation.info", "MedicationActivity_medicationSeriesNumberObservation MedicationActivity_medicationStatusObservation",
+			 "constraints.validation.warning", "MedicationActivity_statusCode"
+		   });																										
 		addAnnotation
 		  (supplyActivityEClass, 
 		   source, 
