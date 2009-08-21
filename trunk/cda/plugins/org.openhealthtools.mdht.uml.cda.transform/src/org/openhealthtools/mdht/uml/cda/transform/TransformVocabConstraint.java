@@ -88,6 +88,11 @@ public class TransformVocabConstraint extends TransformAbstract {
 
 	private void addAnnotation(Property property, String codeSystem, String codeSystemName,
 			String code, String displayName, String codeSystemVersion) {
+		
+		if (SEVERITY_INFO.equals(getValidationSeverity(property))) {
+			// omit annotation
+			return;
+		}
 
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(property.getClass_());
 		if (codeSystem != null) {
