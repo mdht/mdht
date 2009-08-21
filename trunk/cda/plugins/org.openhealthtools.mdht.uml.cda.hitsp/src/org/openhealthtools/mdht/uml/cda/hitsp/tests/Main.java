@@ -27,23 +27,34 @@ import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.HitspFactory;
-import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.NormalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 public class Main {
+	public static final IVXB_TS TS_UNK = DatatypesFactory.eINSTANCE.createIVXB_TS();
+	
+	{
+		TS_UNK.setNullFlavor(NullFlavor.UNK);
+	}
+	
 	public static void main(String[] args) throws Exception {
 		Main main = new Main();
 		
@@ -131,13 +142,25 @@ public class Main {
 	public void fillProblemList(ActiveProblemsSection problemList) {
 		Condition condition = HitspFactory.eINSTANCE.createCondition().init();
 		problemList.addAct(condition);
-		II id = DatatypesFactory.eINSTANCE.createII("ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7");
-		condition.getId().add(id);
+		condition.getId().add(DatatypesFactory.eINSTANCE.createII("ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"));
 		
-		ProblemObservation obs1 = CCDFactory.eINSTANCE.createProblemObservation().init();
-		condition.addObservation(obs1);
+		IVL_TS effectiveTime = DatatypesFactory.eINSTANCE.createIVL_TS();
+		effectiveTime.setLow(TS_UNK);
+		condition.setEffectiveTime(effectiveTime);
+		
+		ProblemEntry problemEntry = IHEFactory.eINSTANCE.createProblemEntry().init();
+		condition.addObservation(problemEntry);
+		problemEntry.getId().add(DatatypesFactory.eINSTANCE.createII("ab1791b0-5c71-11db-b0de-0800200c9a66"));
+		problemEntry.setCode(DatatypesFactory.eINSTANCE.createCD(
+				"64572001", "2.16.840.1.113883.6.96", "SNOMED-CT", "Condition"));
+		problemEntry.getValue().add(DatatypesFactory.eINSTANCE.createCD(
+				"233604007", "2.16.840.1.113883.6.96", "SNOMED-CT", "Pneumonia"));
+		effectiveTime = DatatypesFactory.eINSTANCE.createIVL_TS("199701", null);
+		effectiveTime.setHigh(TS_UNK);
+		problemEntry.setEffectiveTime(effectiveTime);
+		
 		ProblemHealthStatus healthStatus = CCDFactory.eINSTANCE.createProblemHealthStatus().init();
-		obs1.addObservation(healthStatus);
+		problemEntry.addObservation(healthStatus);
 		CE healthStatusValue = DatatypesFactory.eINSTANCE.createCE("xyz", "2.16.840.1.113883.1.11.20.12",
 				"ProblemHealthStatusCode", null);
 		healthStatusValue.setCodeSystemVersion("20061017");
@@ -150,14 +173,14 @@ public class Main {
 		return section;
 	}
 
-	public Section createMedicationsSection() {
-		Section section = CDAFactory.eINSTANCE.createSection();
-		CE code = DatatypesFactory.eINSTANCE.createCE("10160-0", "2.16.840.1.113883.6.1");
-		section.setCode(code);
+	public MedicationsSection createMedicationsSection() {
+		MedicationsSection section = IHEFactory.eINSTANCE.createMedicationsSection().init();
 		section.setTitle(DatatypesFactory.eINSTANCE.createST("Medications"));
 
-		Medication meds = HitspFactory.eINSTANCE.createMedication().init();	
+		NormalDosing meds = IHEFactory.eINSTANCE.createNormalDosing().init();	
 		section.addSubstanceAdministration(meds);
+		II id = DatatypesFactory.eINSTANCE.createII("cdbd33f0-6cde-11db-9fe1-0800200c9a66");
+		meds.getId().add(id);
 		
 		return section;
 	}
