@@ -90,7 +90,7 @@ public class TransformVocabConstraint extends TransformAbstract {
 			String code, String displayName, String codeSystemVersion) {
 		
 		if (SEVERITY_INFO.equals(getValidationSeverity(property))) {
-			// omit annotation
+			// omit annotation for MAY constraints
 			return;
 		}
 
@@ -116,44 +116,50 @@ public class TransformVocabConstraint extends TransformAbstract {
 
 	private void addConstraint(Property property, String codeSystem, String codeSystemName,
 			String code, String displayName, String codeSystemVersion) {
-		
+
 		StringBuffer body = getValueExpression(property);
 		if (body == null) {
 			return;
 		}
-		
-		boolean needsAnd = false;
-		if (code != null && code.length() > 0) {
-			body.append("value.code = '");
-			body.append(code);
-			body.append("'");
-			needsAnd = true;
+
+		if (SEVERITY_INFO.equals(getValidationSeverity(property))) {
+			// constraint only applies if value is undefined
+			body.append("not value.code.oclIsUndefined() and not value.codeSystem.oclIsUndefined()");
 		}
-		if (codeSystem != null && codeSystem.length() > 0) {
-			if (needsAnd) {
-				body.append(" and ");
+		else {
+			boolean needsAnd = false;
+			if (code != null && code.length() > 0) {
+				body.append("value.code = '");
+				body.append(code);
+				body.append("'");
+				needsAnd = true;
 			}
-			body.append("value.codeSystem = '");
-			body.append(codeSystem);
-			body.append("'");
-			needsAnd = true;
-		}
-		if (codeSystemName != null && codeSystemName.length() > 0) {
-			if (needsAnd) {
-				body.append(" and ");
+			if (codeSystem != null && codeSystem.length() > 0) {
+				if (needsAnd) {
+					body.append(" and ");
+				}
+				body.append("value.codeSystem = '");
+				body.append(codeSystem);
+				body.append("'");
+				needsAnd = true;
 			}
-			body.append("value.codeSystemName = '");
-			body.append(codeSystemName);
-			body.append("'");
-			needsAnd = true;
-		}
-		if (codeSystemVersion != null && codeSystemVersion.length() > 0) {
-			if (needsAnd) {
-				body.append(" and ");
-			}
-			body.append("value.codeSystemVersion = '");
-			body.append(codeSystemVersion);
-			body.append("'");
+//			if (codeSystemName != null && codeSystemName.length() > 0) {
+//				if (needsAnd) {
+//					body.append(" and ");
+//				}
+//				body.append("value.codeSystemName = '");
+//				body.append(codeSystemName);
+//				body.append("'");
+//				needsAnd = true;
+//			}
+//			if (codeSystemVersion != null && codeSystemVersion.length() > 0) {
+//				if (needsAnd) {
+//					body.append(" and ");
+//				}
+//				body.append("value.codeSystemVersion = '");
+//				body.append(codeSystemVersion);
+//				body.append("'");
+//			}
 		}
 
 		if (body.length() > 0) {
@@ -168,7 +174,6 @@ public class TransformVocabConstraint extends TransformAbstract {
 		if (cdaProperty == null) {
 			String message = "Cannot find CDA property for: " + property.getQualifiedName();
 			Logger.log(Logger.ERROR, message);
-			removeModelElement(property);
 			return null;
 		}
 		if (property.getType() == null) {
@@ -181,7 +186,6 @@ public class TransformVocabConstraint extends TransformAbstract {
 		if (!isCDType(property)) {
 			String message = "Property is not CD type: " + property.getQualifiedName();
 			Logger.log(Logger.ERROR, message);
-			removeModelElement(property);
 			return null;
 		}
 
@@ -202,7 +206,7 @@ public class TransformVocabConstraint extends TransformAbstract {
 				body.append(selfName);
 				body.append(".oclIsUndefined() and ");
 			}
-			body.append(selfName + ".oclIsTypeOf(" + templateTypeQName + ") and ");
+			body.append(selfName + ".oclIsKindOf(" + templateTypeQName + ") and ");
 			body.append(LF);
 			body.append("let value : " + templateTypeQName + " = ");
 			// add final opening paren because there is always a closing paren
@@ -224,7 +228,7 @@ public class TransformVocabConstraint extends TransformAbstract {
 			}
 
 			body.append(selfName);
-			body.append("->forAll(element | element.oclIsTypeOf(" + templateTypeQName + ") and ");
+			body.append("->forAll(element | element.oclIsKindOf(" + templateTypeQName + ") and ");
 			body.append(LF);
 			
 			body.append("let value : " + templateTypeQName);
