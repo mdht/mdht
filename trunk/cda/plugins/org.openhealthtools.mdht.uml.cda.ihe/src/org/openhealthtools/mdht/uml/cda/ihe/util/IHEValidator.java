@@ -569,6 +569,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_moodCode(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(medication, diagnostics, context);
@@ -753,6 +754,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(normalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(normalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(normalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_moodCode(normalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(normalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(normalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(normalDosing, diagnostics, context);
@@ -786,6 +788,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(taperedDose, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(taperedDose, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_moodCode(taperedDose, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(taperedDose, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(taperedDose, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(taperedDose, diagnostics, context);
@@ -819,6 +822,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(splitDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(splitDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(splitDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_moodCode(splitDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(splitDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(splitDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(splitDosing, diagnostics, context);
@@ -852,6 +856,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(conditionalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(conditionalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(conditionalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_moodCode(conditionalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(conditionalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(conditionalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(conditionalDosing, diagnostics, context);
@@ -885,6 +890,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(combinationMedication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(combinationMedication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_moodCode(combinationMedication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(combinationMedication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(combinationMedication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(combinationMedication, diagnostics, context);
