@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/1" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:HDF="http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default? http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12 pathmap://HL7_PROFILES/HDF.profile.uml#_D_tkoFwxEd63D_E2UJKpvQ">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/1" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:HDF="http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12 pathmap://HL7_PROFILES/HDF.profile.uml#_D_tkoFwxEd63D_E2UJKpvQ">
   <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="ihe">
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
       <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg?cda?"/>
@@ -11,14 +11,14 @@
       <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg?datatypes?"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="ConcernEntry">
-      <ownedRule xmi:id="_yQ2pFI27Ed6BUommmCUt6w" name="ConcernEntry_templateId" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yRKLEI27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zI_u8I6gEd6nHcTyV6m3Pg" name="ConcernEntry_templateId" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zJNxYI6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.5.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_yYm24I27Ed6BUommmCUt6w" name="ConcernEntry_effectiveTime" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yYm24Y27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zPFv4I6gEd6nHcTyV6m3Pg" name="ConcernEntry_effectiveTime" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zPFv4Y6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>not self.effectiveTime.oclIsUndefined()</body>
         </specification>
@@ -28,8 +28,8 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="MedicalDocument">
-      <ownedRule xmi:id="_yYm24o27Ed6BUommmCUt6w" name="MedicalDocument_templateId" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yYm24427Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zPGW8I6gEd6nHcTyV6m3Pg" name="MedicalDocument_templateId" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zPGW8Y6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.1.1')</body>
         </specification>
@@ -42,20 +42,20 @@
       <eAnnotations xmi:id="_mlSHonrUEd68l9lQ-TLEBQ" source="uml2.alias">
         <details xmi:id="_mlSHo3rUEd68l9lQ-TLEBQ" key="Active Problems Section"/>
       </eAnnotations>
-      <ownedRule xmi:id="_yZDi0I27Ed6BUommmCUt6w" name="ActiveProblemsSection_templateId" constrainedElement="_vz5koGGsEd6bFO5yxRh3Nw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yZDi0Y27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zPcVMI6gEd6nHcTyV6m3Pg" name="ActiveProblemsSection_templateId" constrainedElement="_vz5koGGsEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zPcVMY6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.6')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_yZgOwI27Ed6BUommmCUt6w" name="ActiveProblemsSection_code" constrainedElement="_vz5koGGsEd6bFO5yxRh3Nw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yZgOwY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zPzhkI6gEd6nHcTyV6m3Pg" name="ActiveProblemsSection_code" constrainedElement="_vz5koGGsEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zPzhkY6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
-          <body>not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')</body>
+          <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_yd0uEI27Ed6BUommmCUt6w" name="ActiveProblemsSection_problemConcernEntry" constrainedElement="_vz5koGGsEd6bFO5yxRh3Nw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yd0uEY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zVAxsI6gEd6nHcTyV6m3Pg" name="ActiveProblemsSection_problemConcernEntry" constrainedElement="_vz5koGGsEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zVAxsY6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ihe::ProblemConcernEntry))</body>
         </specification>
@@ -71,14 +71,14 @@
       <ownedComment xmi:id="_ByGeQHrVEd68l9lQ-TLEBQ" annotatedElement="_wSnPAGaQEd6Hk_bPOfEjYA">
         <body>This entry is a specialization of the Concern Entry, wherein the subject of the concern is focused on a problem.</body>
       </ownedComment>
-      <ownedRule xmi:id="_yZgOwo27Ed6BUommmCUt6w" name="ProblemConcernEntry_templateId" constrainedElement="_wSnPAGaQEd6Hk_bPOfEjYA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yZgOw427Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zP0IoI6gEd6nHcTyV6m3Pg" name="ProblemConcernEntry_templateId" constrainedElement="_wSnPAGaQEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zP0IoY6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.5.2')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_yd0uEo27Ed6BUommmCUt6w" name="ProblemConcernEntry_problemEntry" constrainedElement="_wSnPAGaQEd6Hk_bPOfEjYA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yd0uE427Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zVBYwI6gEd6nHcTyV6m3Pg" name="ProblemConcernEntry_problemEntry" constrainedElement="_wSnPAGaQEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zVBYwY6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ihe::ProblemEntry))</body>
         </specification>
@@ -86,20 +86,20 @@
       <generalization xmi:id="_wSnPBWaQEd6Hk_bPOfEjYA" general="_GgvgUDxbEd6JwqSGecoePg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_3ZiEwGdIEd6Hk_bPOfEjYA" name="ProblemEntry">
-      <ownedRule xmi:id="_yZzJsI27Ed6BUommmCUt6w" name="ProblemEntry_templateId" constrainedElement="_3ZiEwGdIEd6Hk_bPOfEjYA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yZzJsY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zQKG4I6gEd6nHcTyV6m3Pg" name="ProblemEntry_templateId" constrainedElement="_3ZiEwGdIEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zQKG4Y6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.5')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_yaGEoI27Ed6BUommmCUt6w" name="ProblemEntry_text" constrainedElement="_3ZiEwGdIEd6Hk_bPOfEjYA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yaGEoY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zQgsMI6gEd6nHcTyV6m3Pg" name="ProblemEntry_text" constrainedElement="_3ZiEwGdIEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zQgsMY6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>not self.text.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_yaGEoo27Ed6BUommmCUt6w" name="ProblemEntry_value" constrainedElement="_3ZiEwGdIEd6Hk_bPOfEjYA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yaGEo427Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zQhTQI6gEd6nHcTyV6m3Pg" name="ProblemEntry_value" constrainedElement="_3ZiEwGdIEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zQhTQY6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::CD))</body>
         </specification>
@@ -113,8 +113,8 @@
         <body>This content module describes the general structure for a medication. All medication administration acts will be derived&#xD;
 from this content module.</body>
       </ownedComment>
-      <ownedRule xmi:id="_yaP1oI27Ed6BUommmCUt6w" name="Medication_templateId" constrainedElement="_sFGZUHGfEd6bf47ZOcft4w">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yaP1oY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zQhTQo6gEd6nHcTyV6m3Pg" name="Medication_templateId" constrainedElement="_sFGZUHGfEd6bf47ZOcft4w">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zQhTQ46gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.7')</body>
         </specification>
@@ -128,16 +128,16 @@ from this content module.</body>
         <body>The medications section shall contain a description of the relevant medications for the patient, e.g. an ambulatory&#xD;
 prescription list. It shall include entries for medications as described in the Entry Content Module.</body>
       </ownedComment>
-      <ownedRule xmi:id="_yaiwkI27Ed6BUommmCUt6w" name="MedicationsSection_templateId" constrainedElement="_8YbB4HomEd6WAZ28-5wkSg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yaiwkY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zRC3sI6gEd6nHcTyV6m3Pg" name="MedicationsSection_templateId" constrainedElement="_8YbB4HomEd6WAZ28-5wkSg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zRC3sY6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.19')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_ya_cgI27Ed6BUommmCUt6w" name="MedicationsSection_code" constrainedElement="_8YbB4HomEd6WAZ28-5wkSg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ya_cgY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zReVgI6gEd6nHcTyV6m3Pg" name="MedicationsSection_code" constrainedElement="_8YbB4HomEd6WAZ28-5wkSg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zReVgY6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
-          <body>not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10160-0' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')</body>
+          <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '10160-0' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_KxUI4Hq9Ed68l9lQ-TLEBQ">
@@ -153,8 +153,8 @@ prescription list. It shall include entries for medications as described in the 
 href=&quot;http://wiki.ihe.net/index.php?title=1.3.6.1.4.1.19376.1.5.3.1.4.5.1&quot;>&lt;u>&lt;font color=&quot;#0066CC&quot;>Concern&#xD;
 Entry&lt;/font>&lt;/u>&lt;/a>&lt;/span>, wherein the subject of the concern is focused on an allergy or intolerance.</body>
       </ownedComment>
-      <ownedRule xmi:id="_ya_cgo27Ed6BUommmCUt6w" name="AllergyIntoleranceConcern_templateId" constrainedElement="_pOtQsHrDEd68l9lQ-TLEBQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ya_cg427Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zReVgo6gEd6nHcTyV6m3Pg" name="AllergyIntoleranceConcern_templateId" constrainedElement="_pOtQsHrDEd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zReVg46gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.5.3')</body>
         </specification>
@@ -165,8 +165,8 @@ Entry&lt;/font>&lt;/u>&lt;/a>&lt;/span>, wherein the subject of the concern is f
       <eAnnotations xmi:id="_4OTz0HrUEd68l9lQ-TLEBQ" source="uml2.alias">
         <details xmi:id="_4OTz0XrUEd68l9lQ-TLEBQ" key="Allergies and Intolerances"/>
       </eAnnotations>
-      <ownedRule xmi:id="_ybSXcI27Ed6BUommmCUt6w" name="AllergyIntolerance_templateId" constrainedElement="_gkbLsHrEEd68l9lQ-TLEBQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ybSXcY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zR3XEI6gEd6nHcTyV6m3Pg" name="AllergyIntolerance_templateId" constrainedElement="_gkbLsHrEEd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zR3XEY6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.6')</body>
         </specification>
@@ -181,16 +181,16 @@ Entry&lt;/font>&lt;/u>&lt;/a>&lt;/span>, wherein the subject of the concern is f
         <body>The adverse and other adverse reactions section shall contain a narrative description of the substance intolerances and the&#xD;
 associated adverse reactions suffered by the patient.</body>
       </ownedComment>
-      <ownedRule xmi:id="_yblSYI27Ed6BUommmCUt6w" name="AllergiesReactionsSection_templateId" constrainedElement="_O7-UAHrUEd68l9lQ-TLEBQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_yblSYY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zSOjcI6gEd6nHcTyV6m3Pg" name="AllergiesReactionsSection_templateId" constrainedElement="_O7-UAHrUEd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zSOjcY6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.13')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_ycB-UI27Ed6BUommmCUt6w" name="AllergiesReactionsSection_code" constrainedElement="_O7-UAHrUEd68l9lQ-TLEBQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ycB-UY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zSpaMI6gEd6nHcTyV6m3Pg" name="AllergiesReactionsSection_code" constrainedElement="_O7-UAHrUEd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zSqBQI6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
-          <body>not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '48765-2' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')</body>
+          <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '48765-2' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_W-wesHrUEd68l9lQ-TLEBQ">
@@ -205,8 +205,8 @@ href=&quot;http://wiki.ihe.net/index.php?title=1.3.6.1.4.1.19376.1.5.3.1.4.7#1.3
 color=&quot;#0066CC&quot;>1.3.6.1.4.1.19376.1.5.3.1.4.7&lt;/font>&lt;/u>&lt;/a>&lt;/span>. Medications that use this template identifier shall&#xD;
 not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
       </ownedComment>
-      <ownedRule xmi:id="_ycB-Uo27Ed6BUommmCUt6w" name="NormalDosing_templateId" constrainedElement="__HPx4HySEd6FS-4xbA1fBQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ycB-U427Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zSqBQY6gEd6nHcTyV6m3Pg" name="NormalDosing_templateId" constrainedElement="__HPx4HySEd6FS-4xbA1fBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zSqBQo6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.7.1')</body>
         </specification>
@@ -229,8 +229,8 @@ not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
     distinct dosage.&#xD;
 &lt;/p></body>
       </ownedComment>
-      <ownedRule xmi:id="_ycVgUI27Ed6BUommmCUt6w" name="TaperedDose_templateId" constrainedElement="_OCqBQHyTEd6FS-4xbA1fBQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ycVgUY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zTKXkI6gEd6nHcTyV6m3Pg" name="TaperedDose_templateId" constrainedElement="_OCqBQHyTEd6FS-4xbA1fBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zTKXkY6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.8')</body>
         </specification>
@@ -238,8 +238,8 @@ not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
       <generalization xmi:id="_OCqBQXyTEd6FS-4xbA1fBQ" general="_sFGZUHGfEd6bf47ZOcft4w"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_OY9BYHyTEd6FS-4xbA1fBQ" name="SplitDosing">
-      <ownedRule xmi:id="_ycxlMI27Ed6BUommmCUt6w" name="SplitDosing_templateId" constrainedElement="_OY9BYHyTEd6FS-4xbA1fBQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ycxlMY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zToRoI6gEd6nHcTyV6m3Pg" name="SplitDosing_templateId" constrainedElement="_OY9BYHyTEd6FS-4xbA1fBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zTo4sI6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.9')</body>
         </specification>
@@ -247,8 +247,8 @@ not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
       <generalization xmi:id="_OY9BYXyTEd6FS-4xbA1fBQ" general="_sFGZUHGfEd6bf47ZOcft4w"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_OeXF0HyTEd6FS-4xbA1fBQ" name="ConditionalDosing">
-      <ownedRule xmi:id="_ydFHMI27Ed6BUommmCUt6w" name="ConditionalDosing_templateId" constrainedElement="_OeXF0HyTEd6FS-4xbA1fBQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ydFHMY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zUGywI6gEd6nHcTyV6m3Pg" name="ConditionalDosing_templateId" constrainedElement="_OeXF0HyTEd6FS-4xbA1fBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zUHZ0I6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.10')</body>
         </specification>
@@ -256,8 +256,8 @@ not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
       <generalization xmi:id="_OeXF0XyTEd6FS-4xbA1fBQ" general="_sFGZUHGfEd6bf47ZOcft4w"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_QDIEMHyTEd6FS-4xbA1fBQ" name="CombinationMedication">
-      <ownedRule xmi:id="_ydhzII27Ed6BUommmCUt6w" name="CombinationMedication_templateId" constrainedElement="_QDIEMHyTEd6FS-4xbA1fBQ">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ydhzIY27Ed6BUommmCUt6w">
+      <ownedRule xmi:id="_zUlT4I6gEd6nHcTyV6m3Pg" name="CombinationMedication_templateId" constrainedElement="_QDIEMHyTEd6FS-4xbA1fBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_zUlT4Y6gEd6nHcTyV6m3Pg">
           <language>OCL</language>
           <body>self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.11')</body>
         </specification>
@@ -330,46 +330,46 @@ not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
   <HDF:HL7Template xmi:id="_QDIrQHyTEd6FS-4xbA1fBQ" base_Class="_QDIEMHyTEd6FS-4xbA1fBQ" id="1.3.6.1.4.1.19376.1.5.3.1.4.11"/>
   <Default:Documentation xmi:id="_otlLwHyTEd6FS-4xbA1fBQ" base_Comment="_otgTQHyTEd6FS-4xbA1fBQ"/>
   <Default:Documentation xmi:id="_uqBVAHyTEd6FS-4xbA1fBQ" base_Comment="_up71cHyTEd6FS-4xbA1fBQ"/>
-  <Ecore:EClass xmi:id="_yUbhgI27Ed6BUommmCUt6w" base_Class="_GgvgUDxbEd6JwqSGecoePg">
+  <Ecore:EClass xmi:id="_zMH7cI6gEd6nHcTyV6m3Pg" base_Class="_GgvgUDxbEd6JwqSGecoePg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='ConcernEntry_templateId ConcernEntry_effectiveTime' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.5.1'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_yZDi0o27Ed6BUommmCUt6w" base_Class="_vz5koGGsEd6bFO5yxRh3Nw">
+  <Ecore:EClass xmi:id="_zPc8QI6gEd6nHcTyV6m3Pg" base_Class="_vz5koGGsEd6bFO5yxRh3Nw">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='ActiveProblemsSection_templateId ActiveProblemsSection_code ActiveProblemsSection_problemConcernEntry' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.6' code.displayName='PROBLEM LIST' code.codeSystem='2.16.840.1.113883.6.1' code.code='11450-4'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_yZgOxI27Ed6BUommmCUt6w" base_Class="_wSnPAGaQEd6Hk_bPOfEjYA">
+  <Ecore:EClass xmi:id="_zP0Ioo6gEd6nHcTyV6m3Pg" base_Class="_wSnPAGaQEd6Hk_bPOfEjYA">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='ProblemConcernEntry_templateId ProblemConcernEntry_problemEntry' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.5.2'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_yZzJso27Ed6BUommmCUt6w" base_Class="_3ZiEwGdIEd6Hk_bPOfEjYA">
+  <Ecore:EClass xmi:id="_zQKt8I6gEd6nHcTyV6m3Pg" base_Class="_3ZiEwGdIEd6Hk_bPOfEjYA">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.5' constraints.validation.error='ProblemEntry_templateId ProblemEntry_text ProblemEntry_value'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_yaP1oo27Ed6BUommmCUt6w" base_Class="_sFGZUHGfEd6bf47ZOcft4w">
+  <Ecore:EClass xmi:id="_zQh6UI6gEd6nHcTyV6m3Pg" base_Class="_sFGZUHGfEd6bf47ZOcft4w">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.7' constraints.validation.error='Medication_templateId'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_yaiwko27Ed6BUommmCUt6w" base_Class="_8YbB4HomEd6WAZ28-5wkSg">
+  <Ecore:EClass xmi:id="_zRDewI6gEd6nHcTyV6m3Pg" base_Class="_8YbB4HomEd6WAZ28-5wkSg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.19' constraints.validation.error='MedicationsSection_templateId MedicationsSection_code' code.displayName='HISTORY OF MEDICATION USE' code.codeSystem='2.16.840.1.113883.6.1' code.code='10160-0'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_ya_chI27Ed6BUommmCUt6w" base_Class="_pOtQsHrDEd68l9lQ-TLEBQ">
+  <Ecore:EClass xmi:id="_zRe8kI6gEd6nHcTyV6m3Pg" base_Class="_pOtQsHrDEd68l9lQ-TLEBQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.5.3' constraints.validation.error='AllergyIntoleranceConcern_templateId'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_ybSXco27Ed6BUommmCUt6w" base_Class="_gkbLsHrEEd68l9lQ-TLEBQ">
+  <Ecore:EClass xmi:id="_zR3-II6gEd6nHcTyV6m3Pg" base_Class="_gkbLsHrEEd68l9lQ-TLEBQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.6' constraints.validation.error='AllergyIntolerance_templateId'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_yblSYo27Ed6BUommmCUt6w" base_Class="_O7-UAHrUEd68l9lQ-TLEBQ">
+  <Ecore:EClass xmi:id="_zSOjco6gEd6nHcTyV6m3Pg" base_Class="_O7-UAHrUEd68l9lQ-TLEBQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.13' constraints.validation.error='AllergiesReactionsSection_templateId AllergiesReactionsSection_code' code.displayName='Allergies, adverse reactions, alerts' code.codeSystem='2.16.840.1.113883.6.1' code.code='48765-2'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_ycB-VI27Ed6BUommmCUt6w" base_Class="__HPx4HySEd6FS-4xbA1fBQ">
+  <Ecore:EClass xmi:id="_zSqoUI6gEd6nHcTyV6m3Pg" base_Class="__HPx4HySEd6FS-4xbA1fBQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.7.1' constraints.validation.error='NormalDosing_templateId'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_ycVgUo27Ed6BUommmCUt6w" base_Class="_OCqBQHyTEd6FS-4xbA1fBQ">
+  <Ecore:EClass xmi:id="_zTK-oI6gEd6nHcTyV6m3Pg" base_Class="_OCqBQHyTEd6FS-4xbA1fBQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.8' constraints.validation.error='TaperedDose_templateId'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_ycxlMo27Ed6BUommmCUt6w" base_Class="_OY9BYHyTEd6FS-4xbA1fBQ">
+  <Ecore:EClass xmi:id="_zTo4sY6gEd6nHcTyV6m3Pg" base_Class="_OY9BYHyTEd6FS-4xbA1fBQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.9' constraints.validation.error='SplitDosing_templateId'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_ydFHMo27Ed6BUommmCUt6w" base_Class="_OeXF0HyTEd6FS-4xbA1fBQ">
+  <Ecore:EClass xmi:id="_zUHZ0Y6gEd6nHcTyV6m3Pg" base_Class="_OeXF0HyTEd6FS-4xbA1fBQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.10' constraints.validation.error='ConditionalDosing_templateId'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_ydhzIo27Ed6BUommmCUt6w" base_Class="_QDIEMHyTEd6FS-4xbA1fBQ">
+  <Ecore:EClass xmi:id="_zUl68I6gEd6nHcTyV6m3Pg" base_Class="_QDIEMHyTEd6FS-4xbA1fBQ">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.11' constraints.validation.error='CombinationMedication_templateId'</annotation>
   </Ecore:EClass>
 </xmi:XMI>

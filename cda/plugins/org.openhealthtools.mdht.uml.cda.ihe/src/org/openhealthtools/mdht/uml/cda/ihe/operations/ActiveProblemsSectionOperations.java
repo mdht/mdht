@@ -117,9 +117,9 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ACTIVE_PROBLEMS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and "+
+	protected static final String ACTIVE_PROBLEMS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and "+
 "let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in ("+
-"value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')";
+"value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #ActiveProblemsSection_code(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section code</em>}' invariant operation.
@@ -135,9 +135,9 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.code.oclIsUndefined() and self.code.oclIsTypeOf(datatypes::CE) and 
+	 * not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and 
 	 * let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (
-	 * value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1' and value.codeSystemName = 'LOINC')
+	 * value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1')
 	 * @param activeProblemsSection The receiving '<em><b>Active Problems Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
