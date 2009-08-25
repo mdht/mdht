@@ -74,8 +74,8 @@ public class TransformAssociation extends TransformAbstract {
 		
 		StringBuffer body = new StringBuffer();
 		
-		if ("ClinicalDocument".equals(cdaSourceName)) {
-			// Document
+		if (("ClinicalDocument".equals(cdaSourceName) || "Section".equals(cdaSourceName)) && "Section".equals(cdaTargetName)) {
+			// Document -> Section || Section -> Section
 			body.append("self.getSection()->");
 			body.append((sourceProperty.getUpper() == 1) ? "one(" : "exists(");
 			body.append("section : cda::Section | section.oclIsKindOf(" + targetQName + "))");
