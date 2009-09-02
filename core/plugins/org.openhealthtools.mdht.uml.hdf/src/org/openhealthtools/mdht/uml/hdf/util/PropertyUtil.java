@@ -255,9 +255,11 @@ public class PropertyUtil {
 		}
 
 		// fixedValue
-//		if (property.isReadOnly()) {
-//			buffer.append(" readOnly");
-//		}
+		if (property.isReadOnly()) {
+			if (buffer.length() > 0)
+				buffer.append(" ");
+			buffer.append("fixed");
+		}
 		
 		// enumeration
 		// allowedRange
