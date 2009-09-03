@@ -10,8 +10,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui,
  org.eclipse.uml2.uml,
  org.openhealthtools.mdht.uml.hdf.ui,
- org.eclipse.papyrus.tabbedproperties.core,
- org.eclipse.papyrus.tabbedproperties.uml,
  org.eclipse.papyrus.extensionpoints.uml2;bundle-version="0.7.0";resolution:=optional;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
