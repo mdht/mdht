@@ -29,5 +29,80 @@
 			provider="Openhealth Tools MDHT">
 		</profile>
 	</extension>
+	
+	
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="TreeOutlinePage">
+         	<propertyTab id="property.tab.HL7PropertySection" label="%HealthcarePropertyTab.label" category="org.eclipse.papyrus" afterTab="advanced"/>
+      </propertyTabs>
+   </extension>
+   
+ 
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">      
+	  <propertySections contributorId="TreeOutlinePage">
+
+
+	<propertySection
+               class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7DefinitionSection"
+               filter="org.eclipse.papyrus.tabbedproperties.uml.properties.CommentsSection"
+               id="property.section.hl7.HL7DefinitionSection"
+               tab="property.tab.HL7PropertySection">
+        </propertySection>
+
+	      
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.hl7.HL7DefinitionSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7TemplateSection" 
+	 	     id="property.section.HL7TemplateSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.HL7TemplateFilter">
+	      </propertySection>
+	      
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.hl7.HL7DefinitionSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7PropertySection" 
+	 	     id="property.section.HL7PropertySection">
+	            <input type="org.eclipse.uml2.uml.Property"/>
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.HL7PropertySection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7AttributeSection" 
+	 	     id="property.section.HL7AttributeSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.HL7AttributeFilter">
+	      </propertySection>
+	      
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.HL7AttributeSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.VocabularyConstraintsSection" 
+	 	     id="property.section.VocabularyConstraintsSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.CodedAttributeFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.VocabularyConstraintsSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.ConceptDomainConstraintSection" 
+	 	     id="property.section.ConceptDomainConstraintSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.ConceptDomainFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.ConceptDomainConstraintSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.CodeSystemConstraintSection" 
+	 	     id="property.section.CodeSystemConstraintSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.CodeSystemFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.CodeSystemConstraintSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.ValueSetConstraintSection" 
+	 	     id="property.section.ValueSetConstraintSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.ValueSetFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.HL7PropertySection" 
+             afterSection="property.section.ValueSetConstraintSection"
+	 	     class="org.openhealthtools.mdht.uml.hdf.ui.properties.EnumerationConstraintSection" 
+	 	     id="property.section.EnumerationConstraintSection"
+             filter="org.openhealthtools.mdht.uml.hdf.ui.filters.EnumerationConstraintFilter">
+	      </propertySection>
+	  
+	          
+</propertySections>
+</extension>
 
 </plugin>
