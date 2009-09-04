@@ -116,6 +116,10 @@ public class TransformVocabConstraint extends TransformAbstract {
 
 	private void addConstraint(Property property, String codeSystem, String codeSystemName,
 			String code, String displayName, String codeSystemVersion) {
+		
+		if (codeSystem == null && codeSystemName == null && code == null) {
+			return;
+		}
 
 		StringBuffer body = getValueExpression(property);
 		if (body == null) {
@@ -123,8 +127,8 @@ public class TransformVocabConstraint extends TransformAbstract {
 		}
 
 		if (SEVERITY_INFO.equals(getValidationSeverity(property))) {
-			// constraint only applies if value is undefined
-			body.append("not value.code.oclIsUndefined() and not value.codeSystem.oclIsUndefined()");
+			// constraint only applies if code system is undefined
+			body.append("not value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined()");
 		}
 		else {
 			boolean needsAnd = false;
@@ -143,15 +147,21 @@ public class TransformVocabConstraint extends TransformAbstract {
 				body.append("'");
 				needsAnd = true;
 			}
-//			if (codeSystemName != null && codeSystemName.length() > 0) {
-//				if (needsAnd) {
-//					body.append(" and ");
-//				}
-//				body.append("value.codeSystemName = '");
-//				body.append(codeSystemName);
-//				body.append("'");
-//				needsAnd = true;
-//			}
+			
+			/*
+			 * Only add this constraint if codeSystem is not specified.
+			 */
+			if ((codeSystem == null || codeSystem.length() == 0)
+					&& codeSystemName != null && codeSystemName.length() > 0) {
+				if (needsAnd) {
+					body.append(" and ");
+				}
+				body.append("value.codeSystemName = '");
+				body.append(codeSystemName);
+				body.append("'");
+				needsAnd = true;
+			}
+			
 //			if (codeSystemVersion != null && codeSystemVersion.length() > 0) {
 //				if (needsAnd) {
 //					body.append(" and ");
