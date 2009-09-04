@@ -12,10 +12,15 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.io.StringBufferInputStream;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -88,6 +93,15 @@ public class PluginPropertiesUtil {
 			else {
 				// create new plugin.properties
 				pluginProperties = project.getFile("plugin.properties");
+			}
+			
+			if (!pluginProperties.exists()) {
+				ByteArrayInputStream is = new ByteArrayInputStream(new byte[0]);
+				try {
+					pluginProperties.create(is, true, null);
+				} catch (CoreException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		
