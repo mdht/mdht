@@ -12,11 +12,14 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import java.io.ByteArrayInputStream;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.uml2.uml.Class;
@@ -113,6 +116,15 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 			else {
 				// create new plugin.xml
 				pluginXML = project.getFile("plugin.xml");
+			}
+			
+			if (!pluginXML.exists()) {
+				ByteArrayInputStream is = new ByteArrayInputStream(new byte[0]);
+				try {
+					pluginXML.create(is, true, null);
+				} catch (CoreException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		
