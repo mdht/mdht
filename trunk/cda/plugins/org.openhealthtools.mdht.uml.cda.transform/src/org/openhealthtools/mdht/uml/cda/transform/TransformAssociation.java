@@ -73,6 +73,7 @@ public class TransformAssociation extends TransformAbstract {
 		String targetQName = targetClass.getQualifiedName();
 		
 		StringBuffer body = new StringBuffer();
+		Stereotype stereotype = null;
 		
 		if (("ClinicalDocument".equals(cdaSourceName) || "Section".equals(cdaSourceName)) && "Section".equals(cdaTargetName)) {
 			// Document -> Section || Section -> Section
@@ -94,7 +95,8 @@ public class TransformAssociation extends TransformAbstract {
 			body.append(".oclIsKindOf(" + targetQName + ")");
 			
 			String stereotypeName = "Section".equals(cdaSourceName) ? ICDAProfileConstants.ENTRY : ICDAProfileConstants.ENTRY_RELATIONSHIP;
-			Stereotype stereotype = EcoreTransformUtil.getAppliedCDAStereotype(association, stereotypeName);
+//			Stereotype stereotype = EcoreTransformUtil.getAppliedCDAStereotype(association, stereotypeName);
+			stereotype = EcoreTransformUtil.getAppliedCDAStereotype(association, stereotypeName);
 			if (stereotype != null) {
 				EnumerationLiteral literal = (EnumerationLiteral) association.getValue(stereotype, "typeCode");
 				if (literal != null) {
@@ -114,10 +116,13 @@ public class TransformAssociation extends TransformAbstract {
 		expression.getLanguages().add("OCL");
 		expression.getBodies().add(body.toString());
 
-		Stereotype validationSupport = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.VALIDATION_SUPPORT);
+//		Stereotype validationSupport = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.VALIDATION_SUPPORT);
+		Stereotype validationSupport = stereotype != null ? stereotype : EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ASSOCIATION_VALIDATION);
 		if (validationSupport != null) {
-			String message = (String) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE);
-			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_SEVERITY);
+//			String message = (String) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE);
+			String message = (String) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE);
+//			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_SEVERITY);
+			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
 			String severity = (literal != null) ? literal.getName() : "ERROR";
 			
 			if ("INFO".equals(severity)) {
