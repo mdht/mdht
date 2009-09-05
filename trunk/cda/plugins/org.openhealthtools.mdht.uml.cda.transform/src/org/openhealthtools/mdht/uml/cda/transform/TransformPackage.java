@@ -15,8 +15,8 @@ public class TransformPackage extends TransformAbstract {
 	public Object casePackage(Package umlPackage) {
 		Stereotype codegenSupport = EcoreTransformUtil.getAppliedCDAStereotype(umlPackage, ICDAProfileConstants.CODEGEN_SUPPORT);
 		if (codegenSupport != null) {
-			Stereotype ePackage = EcoreTransformUtil.getAppliedEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
-			if (ePackage == null) {
+			Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
+			if (!umlPackage.isStereotypeApplied(ePackage)) {
 				UMLUtil.safeApplyStereotype(umlPackage, ePackage);
 			}
 			
