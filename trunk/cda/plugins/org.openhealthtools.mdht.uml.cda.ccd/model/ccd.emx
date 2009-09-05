@@ -2,7 +2,7 @@
 <!--xtools2_universal_type_manager-->
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.model" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_cjWgIIwhEd6Y4K3S_JksBA/1" xmlns:Default="http:///schemas/Default/1" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:HDF="http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/CDA/_cjWgIIwhEd6Y4K3S_JksBA/1 pathmap://CDA_PROFILES/CDA.profile.uml#_cjWgIYwhEd6Y4K3S_JksBA http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default? http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12 pathmap://HL7_PROFILES/HDF.profile.uml#_D_tkoFwxEd63D_E2UJKpvQ">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_an7-AJmjEd6OiP9GTesZug/2" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/CDA/_an7-AJmjEd6OiP9GTesZug/2 pathmap://CDA_PROFILES/CDA.profile.uml#_an7-AZmjEd6OiP9GTesZug http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
   <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="ccd">
     <eAnnotations xmi:id="_qQyD8zxVEd6JwqSGecoePg" source="uml2.diagrams"/>
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
@@ -83,6 +83,9 @@
       <ownedAttribute xmi:id="_yqwygIt5Ed639sxyAgfSmw" name="problemObservation" visibility="private" type="_IjIO0DxbEd6JwqSGecoePg" association="_yqvkYIt5Ed639sxyAgfSmw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yqyAoYt5Ed639sxyAgfSmw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yqyAoIt5Ed639sxyAgfSmw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Mjxx0JnGEd6BO7rW3XxHIA" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_IjIO0DxbEd6JwqSGecoePg" name="ProblemObservation">
@@ -588,109 +591,90 @@
       </eAnnotations>
       <appliedProfile href="pathmap://UML2_MSL_PROFILES/Deployment.epx#_vjbuwOvHEdiDX5bji0iVSA?Deployment?"/>
     </profileApplication>
-    <profileApplication xmi:id="_sPcJADxVEd6JwqSGecoePg">
-      <eAnnotations xmi:id="_sPcJATxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
-      </eAnnotations>
-      <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
-    </profileApplication>
-    <profileApplication xmi:id="_h_cnYHfTEd6ZeOKq_2_a9g">
-      <eAnnotations xmi:id="_h_cnYXfTEd6ZeOKq_2_a9g" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://HL7_PROFILES/HDF.profile.uml#_D_tkoFwxEd63D_E2UJKpvQ"/>
-      </eAnnotations>
-      <appliedProfile href="pathmap://HL7_PROFILES/HDF.profile.uml#_XQSZwERPEdyoutEhWTC49A"/>
-    </profileApplication>
     <profileApplication xmi:id="_Ah-uIIhSEd6UrJD25cKDew">
       <eAnnotations xmi:id="_AiAjUIhSEd6UrJD25cKDew" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://CDA_PROFILES/CDA.profile.uml#_cjWgIYwhEd6Y4K3S_JksBA"/>
+        <references xmi:type="ecore:EPackage" href="pathmap://CDA_PROFILES/CDA.profile.uml#_an7-AZmjEd6OiP9GTesZug"/>
       </eAnnotations>
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
   </uml:Package>
-  <Ecore:EPackage xmi:id="_sGrZIDxWEd6JwqSGecoePg" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="ccd" nsPrefix="ccd" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd" basePackage="org.openhealthtools.mdht.uml.cda" prefix="CCD"/>
-  <Ecore:EClass xmi:id="_OjEDIEV-Ed6QuJiOJFSRPQ" base_Class="_GgvgUDxbEd6JwqSGecoePg">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.nullFlavor='NA' constraints.validation.error='ProblemAct_code ProblemAct_templateId'</annotation>
-  </Ecore:EClass>
-  <Ecore:EClass xmi:id="_fIRjkGGmEd6fgsyFIHi17Q" xmlName="ClinicalDocument" base_Class="_Ze7UsGESEd69D7zx7EkLMA"/>
-  <HDF:HL7Template xmi:id="_jGUI0HfTEd6ZeOKq_2_a9g" base_Class="_W6aMoHfTEd6ZeOKq_2_a9g" id="2.16.840.1.113883.10.20.1.24"/>
-  <HDF:HL7Template xmi:id="_YC5CMHfUEd6ZeOKq_2_a9g" base_Class="_OvmR4HfUEd6ZeOKq_2_a9g" id="2.16.840.1.113883.10.20.1.8"/>
-  <HDF:HL7Template xmi:id="_q_v4UHfVEd6ZeOKq_2_a9g" base_Class="_dAAnAHfVEd6ZeOKq_2_a9g" id="2.16.840.1.113883.10.20.1.34"/>
-  <HDF:HL7Template xmi:id="_VImT8HfXEd6ZeOKq_2_a9g" base_Class="_Ze7UsGESEd69D7zx7EkLMA" id="2.16.840.1.113883.10.20.1"/>
-  <HDF:HL7Template xmi:id="_ug3cYHfaEd6ZeOKq_2_a9g" base_Class="_rJDcIHDAEd6eItyqb1FoWg" id="2.16.840.1.113883.10.20.1.3"/>
-  <HDF:HL7Template xmi:id="_dumwMHo3Ed6UPbrR4QTFoQ" base_Class="_mO8KEHJWEd6cacuAk5qrhg" id="2.16.840.1.113883.10.20.1.21"/>
-  <HDF:HL7Template xmi:id="_wOJNoHo3Ed6UPbrR4QTFoQ" base_Class="_AwcXkGaKEd6Hk_bPOfEjYA" id="2.16.840.1.113883.10.20.1.41"/>
-  <HDF:HL7Template xmi:id="_7FE68Ho3Ed6UPbrR4QTFoQ" base_Class="_7tlrAGwWEd6q29qQGU-SBA" id="2.16.840.1.113883.10.20.1.22"/>
-  <HDF:HL7Template xmi:id="_LCCG4Ho4Ed6UPbrR4QTFoQ" base_Class="_5ET7oGwWEd6q29qQGU-SBA" id="2.16.840.1.113883.10.20.1.4"/>
-  <HDF:HL7Template xmi:id="_W0JDAHo4Ed6UPbrR4QTFoQ" base_Class="_9QFYgGwWEd6q29qQGU-SBA" id="2.16.840.1.113883.10.20.1.23"/>
-  <HDF:HL7Template xmi:id="_dqEZAHo4Ed6UPbrR4QTFoQ" base_Class="_CinbMHDPEd6eItyqb1FoWg" id="2.16.840.1.113883.10.20.1.6"/>
-  <HDF:HL7Template xmi:id="_4ua6sHo5Ed6UPbrR4QTFoQ" base_Class="_3cYVwGaKEd6Hk_bPOfEjYA" id="2.16.840.1.113883.10.20.1.48"/>
-  <HDF:HL7Template xmi:id="_ECBV4Ho6Ed6UPbrR4QTFoQ" base_Class="_GgvgUDxbEd6JwqSGecoePg" id="2.16.840.1.113883.10.20.1.27"/>
-  <HDF:HL7Template xmi:id="_JHA5wHo6Ed6UPbrR4QTFoQ" base_Class="_T6kfkGaJEd6Hk_bPOfEjYA" id="2.16.840.1.113883.10.20.1.51"/>
-  <HDF:HL7Template xmi:id="_N2xNcHo6Ed6UPbrR4QTFoQ" base_Class="_IjIO0DxbEd6JwqSGecoePg" id="2.16.840.1.113883.10.20.1.28"/>
-  <HDF:HL7Template xmi:id="_S9yxoHo6Ed6UPbrR4QTFoQ" base_Class="_vjPMEGaGEd6Hk_bPOfEjYA" id="2.16.840.1.113883.10.20.1.11"/>
-  <HDF:HL7Template xmi:id="_dbSEMHo6Ed6UPbrR4QTFoQ" base_Class="_TrwngGaJEd6Hk_bPOfEjYA" id="2.16.840.1.113883.10.20.1.50"/>
-  <HDF:HL7Template xmi:id="_ioUJwHo6Ed6UPbrR4QTFoQ" base_Class="_MQHZEHDAEd6eItyqb1FoWg" id="2.16.840.1.113883.10.20.1.31"/>
-  <HDF:HL7Template xmi:id="_n00D0Ho6Ed6UPbrR4QTFoQ" base_Class="_Ht_RsHDAEd6eItyqb1FoWg" id="2.16.840.1.113883.10.20.1.32"/>
-  <HDF:HL7Template xmi:id="_ueyBcHo6Ed6UPbrR4QTFoQ" base_Class="_Wa2uwHDAEd6eItyqb1FoWg" id="2.16.840.1.113883.10.20.1.33"/>
-  <HDF:HL7Template xmi:id="_zFaOUHo6Ed6UPbrR4QTFoQ" base_Class="_UOVM0HDAEd6eItyqb1FoWg" id="2.16.840.1.113883.10.20.1.15"/>
-  <HDF:HL7Template xmi:id="_RJAToHrREd68l9lQ-TLEBQ" base_Class="_PgsSAHrREd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.2"/>
-  <HDF:HL7Template xmi:id="_sPJagHrREd68l9lQ-TLEBQ" base_Class="_qV72IHrREd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.18"/>
-  <HDF:HL7Template xmi:id="_BUtfAHrSEd68l9lQ-TLEBQ" base_Class="__XC4cHrREd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.54"/>
-  <HDF:HL7Template xmi:id="_J6uSkHrSEd68l9lQ-TLEBQ" base_Class="_ILkpIHrSEd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.55"/>
-  <HDF:HL7Template xmi:id="_g5EdoHrSEd68l9lQ-TLEBQ" base_Class="_e8n_EHrSEd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.39"/>
-  <HDF:HL7Template xmi:id="_Xv1y0HrTEd68l9lQ-TLEBQ" base_Class="_V3Jy4HrTEd68l9lQ-TLEBQ" id="2.16.840.1.113883.10.20.1.57"/>
-  <HDF:CodeSystemConstraint xmi:id="_te45UHu8Ed6jfbAJq2V82w" base_Property="_mLxRAHu8Ed6jfbAJq2V82w" id="2.16.840.1.113883.6.1" name="LOINC" code="11450-4" codePrintName="Problem list"/>
-  <HDF:CodeSystemConstraint xmi:id="_LuJQwHu-Ed6jfbAJq2V82w" base_Property="_9uv9sHu9Ed6jfbAJq2V82w" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
-  <HDF:ValueSetConstraint xmi:id="_li82IHu_Ed6jfbAJq2V82w" base_Property="_ehj3AHu_Ed6jfbAJq2V82w" id="2.16.840.1.113883.1.11.20.13" name="ProblemStatusCode" versionDate="20061017"/>
-  <HDF:CodeSystemConstraint xmi:id="_q30hsHvCEd6jfbAJq2V82w" base_Property="_jUhIUHvCEd6jfbAJq2V82w" id="2.16.840.1.113883.6.1" name="LOINC" code="11323-3" codePrintName="Health status"/>
-  <HDF:ValueSetConstraint xmi:id="_BicfgHvDEd6jfbAJq2V82w" base_Property="_BiaqUHvDEd6jfbAJq2V82w" id="2.16.840.1.113883.1.11.20.12" name="ProblemHealthStatusCode" versionDate="20061017"/>
-  <HDF:CodeSystemConstraint xmi:id="_XvdUQHvDEd6jfbAJq2V82w" base_Property="_XvctMHvDEd6jfbAJq2V82w" id="2.16.840.1.113883.6.1" name="LOINC" code="33999-4" codePrintName="Status"/>
-  <HDF:CodeSystemConstraint xmi:id="_oxc1oHvDEd6jfbAJq2V82w" base_Property="_oxcOkHvDEd6jfbAJq2V82w" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
-  <HDF:CodeSystemConstraint xmi:id="_R2vK8XxTEd6jfbAJq2V82w" base_Property="_R2vK8HxTEd6jfbAJq2V82w" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
-  <HDF:CodeSystemConstraint xmi:id="_dRVmAXxTEd6jfbAJq2V82w" base_Property="_dRVmAHxTEd6jfbAJq2V82w" id="2.16.840.1.113883.5.4" name="ActCode" code="ASSERTION"/>
-  <HDF:CodeSystemConstraint xmi:id="_titKMIHOEd6Ncrr6L3Ublw" base_Property="_tinqoIHOEd6Ncrr6L3Ublw" id="2.16.840.1.113883.6.1" name="LOINC" code="48765-2" codePrintName="Allergies, adverse reactions, alerts"/>
-  <HDF:CodeSystemConstraint xmi:id="_bv-EMIHVEd6Ncrr6L3Ublw" base_Property="_bv82EIHVEd6Ncrr6L3Ublw" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
-  <HDF:ValueSetConstraint xmi:id="_1iDiMIHVEd6Ncrr6L3Ublw" base_Property="_1iCUEIHVEd6Ncrr6L3Ublw" id="2.16.840.1.113883.1.11.20.3" name="AlertStatusCode" versionDate="20061017"/>
-  <HDF:CodeSystemConstraint xmi:id="_Hcg8oYHWEd6Ncrr6L3Ublw" base_Property="_Hcg8oIHWEd6Ncrr6L3Ublw" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
-  <HDF:CodeSystemConstraint xmi:id="_X4F-QIHWEd6Ncrr6L3Ublw" base_Property="_X4FXMIHWEd6Ncrr6L3Ublw" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
-  <HDF:CodeSystemConstraint xmi:id="_tGVdoYHWEd6Ncrr6L3Ublw" base_Property="_tGVdoIHWEd6Ncrr6L3Ublw" id="2.16.840.1.113883.5.4" name="ActCode" code="SEV" codePrintName="Severity observation"/>
-  <HDF:CodeSystemConstraint xmi:id="_QxLJcYHXEd6Ncrr6L3Ublw" base_Property="_QxLJcIHXEd6Ncrr6L3Ublw" id="2.16.840.1.113883.6.1" name="LOINC" code="10160-0" codePrintName="History of medication use"/>
-  <HDF:CodeSystemConstraint xmi:id="_rZx4YYHaEd6Ncrr6L3Ublw" base_Property="_rZxRUIHaEd6Ncrr6L3Ublw" id="2.16.840.1.113883.6.1" name="LOINC" code="10157-6" codePrintName="History of family member diseases"/>
-  <HDF:CodeSystemConstraint xmi:id="_OXyTYIHbEd6Ncrr6L3Ublw" base_Property="_KztvsIHbEd6Ncrr6L3Ublw" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
-  <HDF:CodeSystemConstraint xmi:id="_fDnXgYHbEd6Ncrr6L3Ublw" base_Property="_fDnXgIHbEd6Ncrr6L3Ublw" id="2.16.840.1.113883.5.14" name="ActStatus" code="completed"/>
-  <HDF:HL7Template xmi:id="_ohNTUIHbEd6Ncrr6L3Ublw" base_Class="_joG2YIHbEd6Ncrr6L3Ublw" id="2.16.840.1.113883.10.20.1.42"/>
-  <CDA:ValidationSupport xmi:id="_DwgfoIhSEd6UrJD25cKDew" severity="WARNING" message="A problem observation SHOULD contain exactly one Observation / effectiveTime, to indicate the biological timing of condition (e.g. the time the condition started, the onset of the illness or symptom, the duration of a condition)." base_Property="_t3kdcIhREd6UrJD25cKDew"/>
-  <CDA:ValidationSupport xmi:id="_LwGzcIhSEd6UrJD25cKDew" message="The value for 'Observation / @moodCode' in a problem observation SHALL be 'EVN' 2.16.840.1.113883.5.1001 ActMood STATIC." base_Property="_gh1ycIhREd6UrJD25cKDew"/>
-  <CDA:ValidationSupport xmi:id="_r-b8IIhSEd6UrJD25cKDew" message="A problem observation SHALL include exactly one Observation / statusCode. The value for 'Observation / statusCode' in a problem observation SHALL be 'completed' 2.16.840.1.113883.5.14 ActStatus STATIC." base_Property="_9uv9sHu9Ed6jfbAJq2V82w"/>
-  <HDF:ValueSetConstraint xmi:id="_qgBA4IhTEd6UrJD25cKDew" base_Property="_f1n6wIhTEd6UrJD25cKDew" id="2.16.840.1.113883.1.11.20.14" name="ProblemTypeCode" versionDate="20061017"/>
-  <CDA:ValidationSupport xmi:id="_1q7aIIhTEd6UrJD25cKDew" severity="INFO" message="The value for 'Observation / code' in a problem observation MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.14 ProblemTypeCode STATIC 20061017." base_Property="_f1n6wIhTEd6UrJD25cKDew"/>
-  <HDF:HL7Template xmi:id="_940IIIiAEd66cKocspyVOg" base_Class="_7TVToIiAEd66cKocspyVOg" id="2.16.840.1.113883.10.20.1.14"/>
-  <HDF:HL7Template xmi:id="_azcEYIiBEd66cKocspyVOg" base_Class="_VL2w0IiBEd66cKocspyVOg" id="2.16.840.1.113883.10.20.1.46"/>
-  <HDF:HL7Template xmi:id="_ovERwIiBEd66cKocspyVOg" base_Class="_lgLT4IiBEd66cKocspyVOg" id="2.16.840.1.113883.10.20.1.47"/>
-  <HDF:HL7Template xmi:id="_4sxEkIiBEd66cKocspyVOg" base_Class="_2QJRIIiBEd66cKocspyVOg" id="2.16.840.1.113883.10.20.1.45"/>
-  <HDF:HL7Template xmi:id="_P0aVkIiCEd66cKocspyVOg" base_Class="_8Xj7UIiBEd66cKocspyVOg" id="2.16.840.1.113883.10.20.1.53"/>
-  <HDF:CodeSystemConstraint xmi:id="_GMX-gIjpEd66cKocspyVOg" base_Property="_GMWwYIjpEd66cKocspyVOg" id="2.16.840.1.113883.6.1" name="LOINC" code="30954-2" codePrintName="Relevant diagnostic tests and/or laboratory data"/>
+  <CDA:CDATemplate xmi:id="_jGUI0HfTEd6ZeOKq_2_a9g" base_Class="_W6aMoHfTEd6ZeOKq_2_a9g" templateId="2.16.840.1.113883.10.20.1.24"/>
+  <CDA:CDATemplate xmi:id="_YC5CMHfUEd6ZeOKq_2_a9g" base_Class="_OvmR4HfUEd6ZeOKq_2_a9g" templateId="2.16.840.1.113883.10.20.1.8"/>
+  <CDA:CDATemplate xmi:id="_q_v4UHfVEd6ZeOKq_2_a9g" base_Class="_dAAnAHfVEd6ZeOKq_2_a9g" templateId="2.16.840.1.113883.10.20.1.34"/>
+  <CDA:CDATemplate xmi:id="_VImT8HfXEd6ZeOKq_2_a9g" base_Class="_Ze7UsGESEd69D7zx7EkLMA" templateId="2.16.840.1.113883.10.20.1"/>
+  <CDA:CDATemplate xmi:id="_ug3cYHfaEd6ZeOKq_2_a9g" base_Class="_rJDcIHDAEd6eItyqb1FoWg" templateId="2.16.840.1.113883.10.20.1.3"/>
+  <CDA:CDATemplate xmi:id="_dumwMHo3Ed6UPbrR4QTFoQ" base_Class="_mO8KEHJWEd6cacuAk5qrhg" templateId="2.16.840.1.113883.10.20.1.21"/>
+  <CDA:CDATemplate xmi:id="_wOJNoHo3Ed6UPbrR4QTFoQ" base_Class="_AwcXkGaKEd6Hk_bPOfEjYA" templateId="2.16.840.1.113883.10.20.1.41"/>
+  <CDA:CDATemplate xmi:id="_7FE68Ho3Ed6UPbrR4QTFoQ" base_Class="_7tlrAGwWEd6q29qQGU-SBA" templateId="2.16.840.1.113883.10.20.1.22"/>
+  <CDA:CDATemplate xmi:id="_LCCG4Ho4Ed6UPbrR4QTFoQ" base_Class="_5ET7oGwWEd6q29qQGU-SBA" templateId="2.16.840.1.113883.10.20.1.4"/>
+  <CDA:CDATemplate xmi:id="_W0JDAHo4Ed6UPbrR4QTFoQ" base_Class="_9QFYgGwWEd6q29qQGU-SBA" templateId="2.16.840.1.113883.10.20.1.23"/>
+  <CDA:CDATemplate xmi:id="_dqEZAHo4Ed6UPbrR4QTFoQ" base_Class="_CinbMHDPEd6eItyqb1FoWg" templateId="2.16.840.1.113883.10.20.1.6"/>
+  <CDA:CDATemplate xmi:id="_4ua6sHo5Ed6UPbrR4QTFoQ" base_Class="_3cYVwGaKEd6Hk_bPOfEjYA" templateId="2.16.840.1.113883.10.20.1.48"/>
+  <CDA:CDATemplate xmi:id="_ECBV4Ho6Ed6UPbrR4QTFoQ" base_Class="_GgvgUDxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.10.20.1.27"/>
+  <CDA:CDATemplate xmi:id="_JHA5wHo6Ed6UPbrR4QTFoQ" base_Class="_T6kfkGaJEd6Hk_bPOfEjYA" templateId="2.16.840.1.113883.10.20.1.51"/>
+  <CDA:CDATemplate xmi:id="_N2xNcHo6Ed6UPbrR4QTFoQ" base_Class="_IjIO0DxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.10.20.1.28"/>
+  <CDA:CDATemplate xmi:id="_S9yxoHo6Ed6UPbrR4QTFoQ" base_Class="_vjPMEGaGEd6Hk_bPOfEjYA" templateId="2.16.840.1.113883.10.20.1.11"/>
+  <CDA:CDATemplate xmi:id="_dbSEMHo6Ed6UPbrR4QTFoQ" base_Class="_TrwngGaJEd6Hk_bPOfEjYA" templateId="2.16.840.1.113883.10.20.1.50"/>
+  <CDA:CDATemplate xmi:id="_ioUJwHo6Ed6UPbrR4QTFoQ" base_Class="_MQHZEHDAEd6eItyqb1FoWg" templateId="2.16.840.1.113883.10.20.1.31"/>
+  <CDA:CDATemplate xmi:id="_n00D0Ho6Ed6UPbrR4QTFoQ" base_Class="_Ht_RsHDAEd6eItyqb1FoWg" templateId="2.16.840.1.113883.10.20.1.32"/>
+  <CDA:CDATemplate xmi:id="_ueyBcHo6Ed6UPbrR4QTFoQ" base_Class="_Wa2uwHDAEd6eItyqb1FoWg" templateId="2.16.840.1.113883.10.20.1.33"/>
+  <CDA:CDATemplate xmi:id="_zFaOUHo6Ed6UPbrR4QTFoQ" base_Class="_UOVM0HDAEd6eItyqb1FoWg" templateId="2.16.840.1.113883.10.20.1.15"/>
+  <CDA:CDATemplate xmi:id="_RJAToHrREd68l9lQ-TLEBQ" base_Class="_PgsSAHrREd68l9lQ-TLEBQ" templateId="2.16.840.1.113883.10.20.1.2"/>
+  <CDA:CDATemplate xmi:id="_sPJagHrREd68l9lQ-TLEBQ" base_Class="_qV72IHrREd68l9lQ-TLEBQ" templateId="2.16.840.1.113883.10.20.1.18"/>
+  <CDA:CDATemplate xmi:id="_BUtfAHrSEd68l9lQ-TLEBQ" base_Class="__XC4cHrREd68l9lQ-TLEBQ" templateId="2.16.840.1.113883.10.20.1.54"/>
+  <CDA:CDATemplate xmi:id="_J6uSkHrSEd68l9lQ-TLEBQ" base_Class="_ILkpIHrSEd68l9lQ-TLEBQ" templateId="2.16.840.1.113883.10.20.1.55"/>
+  <CDA:CDATemplate xmi:id="_g5EdoHrSEd68l9lQ-TLEBQ" base_Class="_e8n_EHrSEd68l9lQ-TLEBQ" templateId="2.16.840.1.113883.10.20.1.39"/>
+  <CDA:CDATemplate xmi:id="_Xv1y0HrTEd68l9lQ-TLEBQ" base_Class="_V3Jy4HrTEd68l9lQ-TLEBQ" templateId="2.16.840.1.113883.10.20.1.57"/>
+  <CDA:VocabSpecification xmi:id="_te45UHu8Ed6jfbAJq2V82w" base_Property="_mLxRAHu8Ed6jfbAJq2V82w" code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem list"/>
+  <CDA:VocabSpecification xmi:id="_LuJQwHu-Ed6jfbAJq2V82w" message="A problem observation SHALL include exactly one Observation / statusCode. The value for 'Observation / statusCode' in a problem observation SHALL be 'completed' 2.16.840.1.113883.5.14 ActStatus STATIC." base_Property="_9uv9sHu9Ed6jfbAJq2V82w" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
+  <CDA:VocabSpecification xmi:id="_li82IHu_Ed6jfbAJq2V82w" base_Property="_ehj3AHu_Ed6jfbAJq2V82w" codeSystem="2.16.840.1.113883.1.11.20.13" codeSystemName="ProblemStatusCode" codeSystemVersion="20061017"/>
+  <CDA:VocabSpecification xmi:id="_q30hsHvCEd6jfbAJq2V82w" base_Property="_jUhIUHvCEd6jfbAJq2V82w" code="11323-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Health status"/>
+  <CDA:VocabSpecification xmi:id="_BicfgHvDEd6jfbAJq2V82w" base_Property="_BiaqUHvDEd6jfbAJq2V82w" codeSystem="2.16.840.1.113883.1.11.20.12" codeSystemName="ProblemHealthStatusCode" codeSystemVersion="20061017"/>
+  <CDA:VocabSpecification xmi:id="_XvdUQHvDEd6jfbAJq2V82w" base_Property="_XvctMHvDEd6jfbAJq2V82w" code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
+  <CDA:VocabSpecification xmi:id="_oxc1oHvDEd6jfbAJq2V82w" base_Property="_oxcOkHvDEd6jfbAJq2V82w" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
+  <CDA:VocabSpecification xmi:id="_R2vK8XxTEd6jfbAJq2V82w" base_Property="_R2vK8HxTEd6jfbAJq2V82w" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
+  <CDA:VocabSpecification xmi:id="_dRVmAXxTEd6jfbAJq2V82w" message="The value for 'Observation / Code' in an episode observation SHOULD be 'ASSERTION' 2.16.840.1.113883.5.4 ActCode STATIC." severity="WARNING" base_Property="_dRVmAHxTEd6jfbAJq2V82w" code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+  <CDA:VocabSpecification xmi:id="_titKMIHOEd6Ncrr6L3Ublw" base_Property="_tinqoIHOEd6Ncrr6L3Ublw" code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+  <CDA:VocabSpecification xmi:id="_bv-EMIHVEd6Ncrr6L3Ublw" base_Property="_bv82EIHVEd6Ncrr6L3Ublw" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
+  <CDA:VocabSpecification xmi:id="_1iDiMIHVEd6Ncrr6L3Ublw" base_Property="_1iCUEIHVEd6Ncrr6L3Ublw" codeSystem="2.16.840.1.113883.1.11.20.3" codeSystemName="AlertStatusCode" codeSystemVersion="20061017"/>
+  <CDA:VocabSpecification xmi:id="_Hcg8oYHWEd6Ncrr6L3Ublw" base_Property="_Hcg8oIHWEd6Ncrr6L3Ublw" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
+  <CDA:VocabSpecification xmi:id="_X4F-QIHWEd6Ncrr6L3Ublw" base_Property="_X4FXMIHWEd6Ncrr6L3Ublw" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
+  <CDA:VocabSpecification xmi:id="_tGVdoYHWEd6Ncrr6L3Ublw" base_Property="_tGVdoIHWEd6Ncrr6L3Ublw" code="SEV" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Severity observation"/>
+  <CDA:VocabSpecification xmi:id="_QxLJcYHXEd6Ncrr6L3Ublw" base_Property="_QxLJcIHXEd6Ncrr6L3Ublw" code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medication use"/>
+  <CDA:VocabSpecification xmi:id="_rZx4YYHaEd6Ncrr6L3Ublw" base_Property="_rZxRUIHaEd6Ncrr6L3Ublw" code="10157-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of family member diseases"/>
+  <CDA:VocabSpecification xmi:id="_OXyTYIHbEd6Ncrr6L3Ublw" base_Property="_KztvsIHbEd6Ncrr6L3Ublw" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
+  <CDA:VocabSpecification xmi:id="_fDnXgYHbEd6Ncrr6L3Ublw" base_Property="_fDnXgIHbEd6Ncrr6L3Ublw" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
+  <CDA:CDATemplate xmi:id="_ohNTUIHbEd6Ncrr6L3Ublw" base_Class="_joG2YIHbEd6Ncrr6L3Ublw" templateId="2.16.840.1.113883.10.20.1.42"/>
+  <CDA:VocabSpecification xmi:id="_qgBA4IhTEd6UrJD25cKDew" message="The value for 'Observation / code' in a problem observation MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.14 ProblemTypeCode STATIC 20061017." severity="INFO" base_Property="_f1n6wIhTEd6UrJD25cKDew" codeSystem="2.16.840.1.113883.1.11.20.14" codeSystemName="ProblemTypeCode" codeSystemVersion="20061017"/>
+  <CDA:CDATemplate xmi:id="_940IIIiAEd66cKocspyVOg" base_Class="_7TVToIiAEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.14"/>
+  <CDA:CDATemplate xmi:id="_azcEYIiBEd66cKocspyVOg" base_Class="_VL2w0IiBEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.46"/>
+  <CDA:CDATemplate xmi:id="_ovERwIiBEd66cKocspyVOg" base_Class="_lgLT4IiBEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.47"/>
+  <CDA:CDATemplate xmi:id="_4sxEkIiBEd66cKocspyVOg" base_Class="_2QJRIIiBEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.45"/>
+  <CDA:CDATemplate xmi:id="_P0aVkIiCEd66cKocspyVOg" base_Class="_8Xj7UIiBEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.53"/>
+  <CDA:VocabSpecification xmi:id="_GMX-gIjpEd66cKocspyVOg" base_Property="_GMWwYIjpEd66cKocspyVOg" code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests and/or laboratory data"/>
   <Default:Documentation xmi:id="_ys1AIIjpEd66cKocspyVOg" base_Comment="_yswHoIjpEd66cKocspyVOg"/>
   <Default:Documentation xmi:id="_NUuEwIjqEd66cKocspyVOg" base_Comment="_NUpzUIjqEd66cKocspyVOg"/>
-  <CDA:ValidationSupport xmi:id="_57r-EIjqEd66cKocspyVOg" severity="INFO" message="A medication activity MAY contain exactly one medication series number observations." base_Association="_zfn5kIjqEd66cKocspyVOg"/>
-  <HDF:CodeSystemConstraint xmi:id="_ANZXQIjsEd66cKocspyVOg" base_Property="_ANYJIIjsEd66cKocspyVOg" id="2.16.840.1.113883.6.1" name="LOINC" code="30973-2" codePrintName="Dose number"/>
-  <HDF:ValueSetConstraint xmi:id="_t5nocYjsEd66cKocspyVOg" base_Property="_t5nocIjsEd66cKocspyVOg" id="2.16.840.1.113883.1.11.20.7" name="MedicationStatusCode" versionDate="20061017"/>
-  <CDA:ValidationSupport xmi:id="_TeKn4IjtEd66cKocspyVOg" severity="INFO" message="A medication activity MAY contain exactly one medication status observation." base_Association="_CIfVgIjtEd66cKocspyVOg"/>
-  <CDA:ValidationSupport xmi:id="_cFCXEIjtEd66cKocspyVOg" severity="INFO" message="A supply activity MAY contain exactly one medication status observation." base_Association="_C_zYAIjtEd66cKocspyVOg"/>
+  <CDA:VocabSpecification xmi:id="_ANZXQIjsEd66cKocspyVOg" base_Property="_ANYJIIjsEd66cKocspyVOg" code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose number"/>
+  <CDA:VocabSpecification xmi:id="_t5nocYjsEd66cKocspyVOg" base_Property="_t5nocIjsEd66cKocspyVOg" codeSystem="2.16.840.1.113883.1.11.20.7" codeSystemName="MedicationStatusCode" codeSystemVersion="20061017"/>
   <Default:Documentation xmi:id="_0h1nsIjuEd66cKocspyVOg" base_Comment="_0hxWQIjuEd66cKocspyVOg"/>
   <Default:Documentation xmi:id="_CfaV0IjvEd66cKocspyVOg" base_Comment="_CfWEYIjvEd66cKocspyVOg"/>
-  <HDF:HL7Template xmi:id="_p_Lr0IjvEd66cKocspyVOg" base_Class="_p_LEwIjvEd66cKocspyVOg" id="2.16.840.1.113883.10.20.1.14"/>
+  <CDA:CDATemplate xmi:id="_p_Lr0IjvEd66cKocspyVOg" base_Class="_p_LEwIjvEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.14"/>
   <Default:Documentation xmi:id="_p_Lr0YjvEd66cKocspyVOg" base_Comment="_p_LEwYjvEd66cKocspyVOg"/>
-  <HDF:CodeSystemConstraint xmi:id="_p_Lr0ojvEd66cKocspyVOg" base_Property="_p_LEw4jvEd66cKocspyVOg" id="2.16.840.1.113883.6.1" name="LOINC" code="47519-4" codePrintName="History of procedures"/>
-  <HDF:CodeSystemConstraint xmi:id="_qAT3wYjwEd66cKocspyVOg" base_Property="_qAT3wIjwEd66cKocspyVOg" id="2.16.840.1.113883.6.1" name="LOINC" code="46240-8" codePrintName="History of encounters"/>
+  <CDA:VocabSpecification xmi:id="_p_Lr0ojvEd66cKocspyVOg" base_Property="_p_LEw4jvEd66cKocspyVOg" code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of procedures"/>
+  <CDA:VocabSpecification xmi:id="_qAT3wYjwEd66cKocspyVOg" base_Property="_qAT3wIjwEd66cKocspyVOg" code="46240-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of encounters"/>
   <Default:Documentation xmi:id="_1XdWMIjwEd66cKocspyVOg" base_Comment="_1XZEwIjwEd66cKocspyVOg"/>
-  <HDF:ValueSetConstraint xmi:id="_D4_lo4j0Ed66cKocspyVOg" base_Property="_D4--kIj0Ed66cKocspyVOg" id="2.16.840.1.113883.1.11.13955" name="EncounterCode"/>
-  <CDA:ValidationSupport xmi:id="_D4_lpIj0Ed66cKocspyVOg" severity="WARNING" message="An encounter activity SHOULD contain exactly one Encounter / code. The value for 'Encounter / code' in an encounter activity SHOULD be selected from ValueSet 2.16.840.1.113883.1.11.13955 EncounterCode 2.16.840.1.113883.5.4 ActCode DYNAMIC." base_Property="_D4--kIj0Ed66cKocspyVOg"/>
-  <CDA:ValidationSupport xmi:id="_D4_lpYj0Ed66cKocspyVOg" severity="INFO" message="An encounter activity MAY contain exactly one Encounter / effectiveTime, to indicate date, time, and/or duration of an encounter." base_Property="_D4_loIj0Ed66cKocspyVOg"/>
-  <CDA:ValidationSupport xmi:id="_a88roIt0Ed639sxyAgfSmw" severity="WARNING" message="The value for 'Observation / Code' in an episode observation SHOULD be 'ASSERTION' 2.16.840.1.113883.5.4 ActCode STATIC." base_Property="_dRVmAHxTEd6jfbAJq2V82w"/>
-  <CDA:ValidationSupport xmi:id="_ZanHcIt6Ed639sxyAgfSmw" severity="WARNING" message="Problem section SHOULD include one or more problem acts." base_Association="_tr5r0It5Ed639sxyAgfSmw"/>
-  <CDA:ValidationSupport xmi:id="_jEADkIt6Ed639sxyAgfSmw" severity="WARNING" message="A problem act SHOULD include one or more problem observations." base_Association="_yqvkYIt5Ed639sxyAgfSmw"/>
-  <CDA:ValidationSupport xmi:id="_PZ5dwI5qEd6x-qh9FleSiA" message="The value for 'SubstanceAdministration / @moodCode' in a medication activity SHALL be 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC." base_Property="_PZz-MI5qEd6x-qh9FleSiA"/>
-  <CDA:ValidationSupport xmi:id="_v4Op8I5tEd6x-qh9FleSiA" severity="WARNING" message="A medication activity SHOULD contain exactly one SubstanceAdministration / statusCode." base_Property="_f9zPMIHYEd6Ncrr6L3Ublw"/>
-  <CDA:ValidationSupport xmi:id="_iL6ZAI5vEd6x-qh9FleSiA" message="A medication activity SHALL contain at least one SubstanceAdministration / id." base_Property="_Rp0MMIHYEd6Ncrr6L3Ublw"/>
+  <CDA:VocabSpecification xmi:id="_D4_lo4j0Ed66cKocspyVOg" message="An encounter activity SHOULD contain exactly one Encounter / code. The value for 'Encounter / code' in an encounter activity SHOULD be selected from ValueSet 2.16.840.1.113883.1.11.13955 EncounterCode 2.16.840.1.113883.5.4 ActCode DYNAMIC." severity="WARNING" base_Property="_D4--kIj0Ed66cKocspyVOg" codeSystem="2.16.840.1.113883.1.11.13955" codeSystemName="EncounterCode"/>
+  <CDA:CodegenSupport xmi:id="_HzmFgJm0Ed6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ccd" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd" packageName="ccd" prefix="CCD" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
+  <CDA:AssociationValidation xmi:id="_ft0_IJm2Ed6BO7rW3XxHIA" message="A medication activity MAY contain exactly one medication series number observations." severity="INFO" base_Association="_zfn5kIjqEd66cKocspyVOg"/>
+  <CDA:AssociationValidation xmi:id="_FB2PQJm3Ed6BO7rW3XxHIA" message="A medication activity MAY contain exactly one medication status observation." severity="INFO" base_Association="_CIfVgIjtEd66cKocspyVOg"/>
+  <CDA:AssociationValidation xmi:id="_F5VQ4Jm3Ed6BO7rW3XxHIA" message="A supply activity MAY contain exactly one medication status observation." severity="INFO" base_Association="_C_zYAIjtEd66cKocspyVOg"/>
+  <CDA:AssociationValidation xmi:id="_GqXsQJm3Ed6BO7rW3XxHIA" message="Problem section SHOULD include one or more problem acts." severity="WARNING" base_Association="_tr5r0It5Ed639sxyAgfSmw"/>
+  <CDA:AssociationValidation xmi:id="_HeoawJm3Ed6BO7rW3XxHIA" message="A problem act SHOULD include one or more problem observations." severity="WARNING" base_Association="_yqvkYIt5Ed639sxyAgfSmw"/>
+  <CDA:PropertyValidation xmi:id="_j7IQkJm3Ed6BO7rW3XxHIA" message="An encounter activity MAY contain exactly one Encounter / effectiveTime, to indicate date, time, and/or duration of an encounter." severity="INFO" base_Property="_D4_loIj0Ed66cKocspyVOg"/>
+  <CDA:PropertyValidation xmi:id="_a1KpQJnFEd6BO7rW3XxHIA" message="A medication activity SHALL contain at least one SubstanceAdministration / id." base_Property="_Rp0MMIHYEd6Ncrr6L3Ublw"/>
+  <CDA:PropertyValidation xmi:id="_fPnbUJnFEd6BO7rW3XxHIA" message="The value for 'SubstanceAdministration / @moodCode' in a medication activity SHALL be 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC." base_Property="_PZz-MI5qEd6x-qh9FleSiA"/>
+  <CDA:PropertyValidation xmi:id="_jXcMUJnFEd6BO7rW3XxHIA" message="A medication activity SHOULD contain exactly one SubstanceAdministration / statusCode." severity="WARNING" base_Property="_f9zPMIHYEd6Ncrr6L3Ublw"/>
+  <CDA:PropertyValidation xmi:id="_1CsGEJnFEd6BO7rW3XxHIA" message="A problem observation SHOULD contain exactly one Observation / effectiveTime, to indicate the biological timing of condition (e.g. the time the condition started, the onset of the illness or symptom, the duration of a condition)." severity="WARNING" base_Property="_t3kdcIhREd6UrJD25cKDew"/>
+  <CDA:PropertyValidation xmi:id="_536voJnFEd6BO7rW3XxHIA" message="The value for 'Observation / @moodCode' in a problem observation SHALL be 'EVN' 2.16.840.1.113883.5.1001 ActMood STATIC." base_Property="_gh1ycIhREd6UrJD25cKDew"/>
+  <CDA:NullFlavor xmi:id="_UA7f4JnGEd6BO7rW3XxHIA" message="The value for 'code / @nullFlavor' in a problem act SHALL be 'NA' 'Not applicable' 2.16.840.1.113883.5.1008 NullFlavor STATIC." base_Property="_Mjxx0JnGEd6BO7rW3XxHIA" nullFlavor="NA"/>
 </xmi:XMI>
