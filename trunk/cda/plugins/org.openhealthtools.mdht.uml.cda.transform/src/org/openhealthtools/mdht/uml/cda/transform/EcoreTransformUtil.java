@@ -24,6 +24,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAResource;
+import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.hdf.util.HL7Resource;
 
 
@@ -91,6 +92,14 @@ public abstract class EcoreTransformUtil {
 	public static Stereotype getAppliedCDAStereotype(Element element, String name) {
 		return element.getAppliedStereotype("CDA" //$NON-NLS-1$
 			+ NamedElement.SEPARATOR + name);
+	}
+	
+	public static void unapplyCDAStereotype(Element element, String stereotypeName) {
+		String qname = ICDAProfileConstants.CDA_PROFILE_NAME + NamedElement.SEPARATOR + stereotypeName;
+		Stereotype stereotype = element.getApplicableStereotype(qname);
+		if (stereotype != null && element.isStereotypeApplied(stereotype)) {
+			element.unapplyStereotype(stereotype);
+		}
 	}
 	
 	public static Stereotype getCDAStereotype(EObject eObject, String name) {
