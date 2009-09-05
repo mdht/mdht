@@ -73,4 +73,14 @@ public interface ICDAProfileConstants {
 	public static final String CDA_TEMPLATE = "CDATemplate";
 	public static final String CDA_TEMPLATE_TEMPLATE_ID = "templateId";
 	public static final String CDA_TEMPLATE_ASSIGNING_AUTHORITY_NAME = "assigningAuthorityName";
+	
+	/*
+	 * Codegen Support Stereotype and Properties
+	 */
+	public static final String CODEGEN_SUPPORT = "CodegenSupport";
+	public static final String CODEGEN_SUPPORT_BASE_PACKAGE = "basePackage";
+	public static final String CODEGEN_SUPPORT_NS_PREFIX = "nsPrefix";
+	public static final String CODEGEN_SUPPORT_NS_URI = "nsURI";
+	public static final String CODEGEN_SUPPORT_PACKAGE_NAME = "packageName";
+	public static final String CODEGEN_SUPPORT_PREFIX = "prefix";
 }
