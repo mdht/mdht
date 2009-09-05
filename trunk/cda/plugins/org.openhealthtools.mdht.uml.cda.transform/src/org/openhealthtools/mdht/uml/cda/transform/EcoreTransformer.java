@@ -38,6 +38,8 @@ public class EcoreTransformer {
 		PluginPropertiesUtil propertiesUtil = new PluginPropertiesUtil(element.eResource());
 		transformerOptions.setPluginPropertiesUtil(propertiesUtil);
 
+		UMLSwitch<Object> transformPackage = 
+			new TransformPackage(transformerOptions);
 		UMLSwitch<Object> transformClinicalDocument = 
 			new TransformClinicalDocument(transformerOptions);
 		UMLSwitch<Object> transformTemplateIdentifier = 
@@ -55,6 +57,7 @@ public class EcoreTransformer {
 			while (iterator != null && iterator.hasNext()) {
 				EObject child = iterator.next();
 
+				transformPackage.doSwitch(child);
 				transformClinicalDocument.doSwitch(child);
 				transformTemplateIdentifier.doSwitch(child);
 				transformVocabConstraint.doSwitch(child);
