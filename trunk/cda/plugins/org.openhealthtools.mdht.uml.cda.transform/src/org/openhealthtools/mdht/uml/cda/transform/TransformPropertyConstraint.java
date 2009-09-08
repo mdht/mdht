@@ -150,8 +150,6 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			}
 			
 		}
-
-		
 		
 		/*
 		 * Test for <<nullFlavor>>
