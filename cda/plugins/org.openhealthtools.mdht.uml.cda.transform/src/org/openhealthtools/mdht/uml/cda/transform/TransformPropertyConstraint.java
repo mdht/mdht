@@ -12,9 +12,17 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 
 /**
@@ -142,9 +150,58 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			}
 			
 		}
+
+		
+		
+		/*
+		 * Test for <<nullFlavor>>
+		 */
+		String constraintName = null;
+		Stereotype nullFlavor = EcoreTransformUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.NULL_FLAVOR);
+		if (nullFlavor != null) {
+			EnumerationLiteral literal = 
+				(EnumerationLiteral) property.getValue(nullFlavor, ICDAProfileConstants.NULL_FLAVOR_NULL_FLAVOR);
+			if (literal != null) {
+				Class class_ = property.getClass_();
+				if (class_ != null) {
+					if (body.length() > 0) {
+						body.append(" and ");
+					}
+					body.append("self." + property.getName() + ".nullFlavor = vocab::" + literal.getName());
+					
+					AnnotationsUtil annotationUtil = new AnnotationsUtil(class_);
+					annotationUtil.setAnnotation(property.getName() + ".nullFlavor", literal.getName());
+					annotationUtil.saveAnnotations();
+					
+					constraintName = class_.getName() + "_" + property.getName() + "_nullFlavor";
+				}
+			}
+		}
+
+		/*
+		 * Test for <<textValue>>
+		 */
+		Stereotype textValue = EcoreTransformUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.TEXT_VALUE);
+		if (textValue != null && isEDType(property)) {
+			String value = (String) property.getValue(textValue, ICDAProfileConstants.TEXT_VALUE_VALUE);
+			if (value != null) {
+				Class class_ = property.getClass_();
+				if (class_ != null) {
+					if (body.length() > 0) {
+						body.append(" and ");
+					}
+					body.append("self." + property.getName() + ".getText() = " + "'" + value + "'");
+
+					AnnotationsUtil annotationUtil = new AnnotationsUtil(class_);
+					annotationUtil.setAnnotation(property.getName() + ".mixed", value);
+					annotationUtil.saveAnnotations();
+				}
+			}
+		}
 		
 		if (body.length() > 0) {
-			addOCLConstraint(property, body);
+//			addOCLConstraint(property, body);
+			addOCLConstraint(property, body, constraintName);
 		}
 		else if (hasValidationSupport(property)) {
 			// Constraints that have no multiplicity or type restriction
@@ -159,5 +216,26 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		
 		return property;
 	}
-
+	
+	private boolean isEDType(Property property) {
+		Classifier type = (Classifier) property.getType();
+		if (type == null) {
+			Property cdaProperty = getCDAProperty(property);
+			if (cdaProperty != null)
+				type = (Classifier) cdaProperty.getType();
+			else
+				return false;
+		}
+		
+		List<Classifier> allTypes = new ArrayList<Classifier>(type.allParents());
+		allTypes.add(0, type);
+		
+		for (Classifier classifier : allTypes) {
+			if ("datatypes::ED".equals(classifier.getQualifiedName())) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
