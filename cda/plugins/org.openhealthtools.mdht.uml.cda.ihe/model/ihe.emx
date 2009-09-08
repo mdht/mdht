@@ -203,26 +203,26 @@ not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
   <CDA:CDATemplate xmi:id="_UINAQHcOEd6ZeOKq_2_a9g" base_Class="_3ZiEwGdIEd6Hk_bPOfEjYA" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
   <CDA:CDATemplate xmi:id="__nZfUHomEd6WAZ28-5wkSg" base_Class="_8YbB4HomEd6WAZ28-5wkSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
   <Default:Documentation xmi:id="_cN3JcHonEd6WAZ28-5wkSg" base_Comment="_cNkOgHonEd6WAZ28-5wkSg"/>
-  <CDA:VocabSpecification xmi:id="_BHPsAHooEd6WAZ28-5wkSg" base_Property="_9MnCcHonEd6WAZ28-5wkSg" code="10160-0" codeSystem="2.16.840.1.113883.6.1" displayName="HISTORY OF MEDICATION USE"/>
+  <CDA:VocabSpecification xmi:id="_BHPsAHooEd6WAZ28-5wkSg" base_Property="_9MnCcHonEd6WAZ28-5wkSg" code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF MEDICATION USE"/>
   <Default:Documentation xmi:id="_97KfoHopEd6WAZ28-5wkSg" base_Comment="_97AuoHopEd6WAZ28-5wkSg"/>
   <CDA:CDATemplate xmi:id="_JL93gHrEEd68l9lQ-TLEBQ" base_Class="_pOtQsHrDEd68l9lQ-TLEBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
   <CDA:CDATemplate xmi:id="_ipVpwHrEEd68l9lQ-TLEBQ" base_Class="_gkbLsHrEEd68l9lQ-TLEBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
   <CDA:CDATemplate xmi:id="_RMCSIHrUEd68l9lQ-TLEBQ" base_Class="_O7-UAHrUEd68l9lQ-TLEBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
   <Default:Documentation xmi:id="_ByKvsHrVEd68l9lQ-TLEBQ" base_Comment="_ByGeQHrVEd68l9lQ-TLEBQ"/>
   <Default:Documentation xmi:id="_PYbKAHrVEd68l9lQ-TLEBQ" base_Comment="_PYW4kHrVEd68l9lQ-TLEBQ"/>
-  <CDA:VocabSpecification xmi:id="_-QJeAHsiEd6jfbAJq2V82w" base_Property="_5cjzMHsiEd6jfbAJq2V82w" code="11450-4" codeSystem="2.16.840.1.113883.6.1" displayName="PROBLEM LIST"/>
+  <CDA:VocabSpecification xmi:id="_-QJeAHsiEd6jfbAJq2V82w" base_Property="_5cjzMHsiEd6jfbAJq2V82w" code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROBLEM LIST"/>
   <Default:Documentation xmi:id="_nModwHyQEd6FS-4xbA1fBQ" base_Comment="_nMf64HyQEd6FS-4xbA1fBQ"/>
-  <CDA:VocabSpecification xmi:id="_X7_v0HyREd6FS-4xbA1fBQ" base_Property="_X71XwHyREd6FS-4xbA1fBQ" code="48765-2" codeSystem="2.16.840.1.113883.6.1" displayName="Allergies, adverse reactions, alerts"/>
+  <CDA:VocabSpecification xmi:id="_X7_v0HyREd6FS-4xbA1fBQ" base_Property="_X71XwHyREd6FS-4xbA1fBQ" code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
   <CDA:CDATemplate xmi:id="_EJ4lUHyTEd6FS-4xbA1fBQ" base_Class="__HPx4HySEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+  <CDA:CDATemplate xmi:id="_OCrPYHyTEd6FS-4xbA1fBQ" base_Class="_OCqBQHyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.8"/>
   <CDA:CDATemplate xmi:id="_OY9ocHyTEd6FS-4xbA1fBQ" base_Class="_OY9BYHyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.9"/>
   <CDA:CDATemplate xmi:id="_OeXs4HyTEd6FS-4xbA1fBQ" base_Class="_OeXF0HyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.10"/>
   <CDA:CDATemplate xmi:id="_QDIrQHyTEd6FS-4xbA1fBQ" base_Class="_QDIEMHyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.11"/>
   <Default:Documentation xmi:id="_otlLwHyTEd6FS-4xbA1fBQ" base_Comment="_otgTQHyTEd6FS-4xbA1fBQ"/>
   <Default:Documentation xmi:id="_uqBVAHyTEd6FS-4xbA1fBQ" base_Comment="_up71cHyTEd6FS-4xbA1fBQ"/>
-  <CDA:ValidationSupport xmi:id="_A9kgoIwFEd6B6JSUB00H7g" message="The Active Problems Section must contain a(n) Problem Concern Entry Entry." base_Association="_w1oMsIwEEd6B6JSUB00H7g"/>
-  <CDA:ValidationSupport xmi:id="_f8nywIwFEd6B6JSUB00H7g" message="Problem Concern Entry shall contain one or more problem entries that conform to the Problem Entry template." base_Association="_XVchkIwFEd6B6JSUB00H7g"/>
-  <CDA:ValidationSupport xmi:id="_IC358IwGEd6B6JSUB00H7g" message="The Concern Entry effectiveTime element records the starting and ending times during which the concern was active. The 'low' element shall be present. The 'high' element shall be present for concerns in the completed or aborted state, and shall not be present otherwise." base_Property="_IC2EwIwGEd6B6JSUB00H7g"/>
-  <CDA:ValidationSupport xmi:id="_35HWMIwHEd6B6JSUB00H7g" message="The Problem Entry &lt;text> element is required and points to the text describing the problem being recorded; including any dates, comments, et cetera. The &lt;reference> contains a URI in value attribute. This URI points to the free text description of the problem in the document that is being described. " base_Property="_sKxfwIwHEd6B6JSUB00H7g"/>
-  <CDA:CDATemplate xmi:id="_b2kbQJyLEd6BO7rW3XxHIA" base_Class="_OCqBQHyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.8"/>
-  <CDA:CodegenSupport xmi:id="_AST4MJyPEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ihe" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe" packageName="ihe" prefix="IHE" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
+  <CDA:CodegenSupport xmi:id="_saK-MJyQEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ihe" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe" packageName="ihe" prefix="IHE" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
+  <CDA:AssociationValidation xmi:id="_xT_XYJyREd6BO7rW3XxHIA" message="The Active Problems Section must contain a(n) Problem Concern Entry Entry." base_Association="_w1oMsIwEEd6B6JSUB00H7g"/>
+  <CDA:AssociationValidation xmi:id="_z6eRcJyREd6BO7rW3XxHIA" message="Problem Concern Entry shall contain one or more problem entries that conform to the Problem Entry template." base_Association="_XVchkIwFEd6B6JSUB00H7g"/>
+  <CDA:PropertyValidation xmi:id="_4ltRgJyREd6BO7rW3XxHIA" message="The Concern Entry effectiveTime element records the starting and ending times during which the concern was active. The 'low' element shall be present. The 'high' element shall be present for concerns in the completed or aborted state, and shall not be present otherwise." base_Property="_IC2EwIwGEd6B6JSUB00H7g"/>
+  <CDA:PropertyValidation xmi:id="_9nko4JyREd6BO7rW3XxHIA" message="The Problem Entry &lt;text> element is required and points to the text describing the problem being recorded; including any dates, comments, et cetera. The &lt;reference> contains a URI in value attribute. This URI points to the free text description of the problem in the document that is being described. " base_Property="_sKxfwIwHEd6B6JSUB00H7g"/>
 </xmi:XMI>
