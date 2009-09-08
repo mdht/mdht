@@ -12,12 +12,13 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.resources.util;
 
+import java.util.List;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -43,11 +44,27 @@ public class CDAProfileUtil {
 	}
 
 	/**
-	 * Returns null if stereotype is not applied to element.
+	 * Returns stereotype if applied, or first sub-stereotype applied that is a
+	 * specialization of the given stereotype.
+	 * 
+	 * @return stereotype, or null if not applied
 	 */
-	public static Stereotype getAppliedCDAStereotype(Element element, String stereotypeName) {		
-		String qname = ICDAProfileConstants.CDA_PROFILE_NAME + NamedElement.SEPARATOR + stereotypeName;
-		return element.getAppliedStereotype(qname);
+	public static Stereotype getAppliedCDAStereotype(Element element, String stereotypeName) {	
+		Stereotype stereotype = null;
+		Profile profile = getCDAProfile(element.eResource().getResourceSet());
+		if (profile != null) {
+			stereotype = profile.getOwnedStereotype(stereotypeName);
+			if (stereotype != null) {
+				if (!element.isStereotypeApplied(stereotype)) {
+					List<Stereotype> stereotypes = element.getAppliedSubstereotypes(stereotype);
+					if (!stereotypes.isEmpty()) {
+						stereotype = stereotypes.get(0);
+					}
+				}
+			}
+		}	
+		
+		return stereotype;
 	}
 
 	/**
