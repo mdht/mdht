@@ -30,6 +30,9 @@ public class AnnotationsUtil {
 
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 
+	private static final Pattern ANNOTATION_PATTERN = Pattern.compile("\\G\\s*((?>\\\\.|\\S)+)((?:\\s+(?>\\\\.|\\S)+\\s*+=\\s*(['\"])((?>\\\\.|.)*?)\\3)*)");
+	private static final Pattern ANNOTATION_DETAIL_PATTERN = Pattern.compile("\\s+((?>\\\\.|\\S)+)\\s*+=\\s*((['\"])((?>\\\\.|.)*?)\\3)");
+
 	private Element element;
 	private Map<String,String> cdaAnnotations = null;
 	private Integer cdaAnnotationIndex = null;
@@ -110,15 +113,13 @@ public class AnnotationsUtil {
 				// find the CDA annotation source(s)
 				for (String annotation : annotations) {
 					// regex pattern adapted from UMLUtil annotations parser
-					Pattern ANNOTATION_PATTERN = Pattern.compile("\\G\\s*((?>\\\\.|\\S)+)((?:\\s+(?>\\\\.|\\S)+\\s*+=\\s*(['\"])((?>\\\\.|.)*?)\\3)*)");
-					Pattern ANNOTATION_DETAIL_PATTERN = Pattern.compile("\\s+((?>\\\\.|\\S)+)\\s*+=\\s*((['\"])((?>\\\\.|.)*?)\\3)");
 					Matcher matcher = ANNOTATION_PATTERN.matcher(annotation);
 					if (matcher.find()) {
 						String sourceURI = matcher.group(1);
 						if (sourceURI == null || ! sourceURI.trim().equals(CDA_ANNOTATION_SOURCE)) {
 							continue;
 						}
-
+						
 						cdaAnnotationIndex = annotations.indexOf(annotation);
 						for (Matcher detailMatcher = ANNOTATION_DETAIL_PATTERN
 								.matcher(matcher.group(2)); detailMatcher.find();) {
