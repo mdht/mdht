@@ -64,7 +64,7 @@ public class CDAProfileUtil {
 			}
 		}	
 		
-		return stereotype;
+		return element.isStereotypeApplied(stereotype) ? stereotype : null;
 	}
 
 	/**
