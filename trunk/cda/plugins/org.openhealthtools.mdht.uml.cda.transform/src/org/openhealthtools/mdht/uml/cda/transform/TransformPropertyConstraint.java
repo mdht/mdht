@@ -152,7 +152,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		}
 		
 		/*
-		 * Test for <<nullFlavor>>
+		 * Test for <<nullFlavor>> stereotype
 		 */
 		String constraintName = null;
 		Stereotype nullFlavor = EcoreTransformUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.NULL_FLAVOR);
@@ -177,7 +177,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		}
 
 		/*
-		 * Test for <<textValue>>
+		 * Test for <<textValue>> stereotype
 		 */
 		Stereotype textValue = EcoreTransformUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.TEXT_VALUE);
 		if (textValue != null && isEDType(property)) {
