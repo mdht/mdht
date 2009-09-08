@@ -83,4 +83,13 @@ public interface ICDAProfileConstants {
 	public static final String CODEGEN_SUPPORT_NS_URI = "nsURI";
 	public static final String CODEGEN_SUPPORT_PACKAGE_NAME = "packageName";
 	public static final String CODEGEN_SUPPORT_PREFIX = "prefix";
+	
+	/*
+	 * CDA Enumerations
+	 */
+	public static final String SEVERITY_KIND = "SeverityKind";
+	public static final String NULL_FLAVOR_KIND = "NullFlavorKind";
+	public static final String ENTRY_KIND = "EntryKind";
+	public static final String ENTRY_RELATIONSHIP_KIND = "EntryRelationshipKind";
+	
 }
