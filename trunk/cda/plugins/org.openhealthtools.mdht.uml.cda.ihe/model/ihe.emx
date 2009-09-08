@@ -195,29 +195,29 @@ not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
   </uml:Package>
-  <CDA:CDATemplate xmi:id="_wsBhIHGfEd6bf47ZOcft4w" base_Class="_sFGZUHGfEd6bf47ZOcft4w" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
-  <CDA:CDATemplate xmi:id="_QW-KUHcOEd6ZeOKq_2_a9g" base_Class="_vz5koGGsEd6bFO5yxRh3Nw" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
-  <CDA:CDATemplate xmi:id="_RxBtgHcOEd6ZeOKq_2_a9g" base_Class="_GgvgUDxbEd6JwqSGecoePg" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
-  <CDA:CDATemplate xmi:id="_Sd-6IHcOEd6ZeOKq_2_a9g" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
-  <CDA:CDATemplate xmi:id="_TTbUYHcOEd6ZeOKq_2_a9g" base_Class="_wSnPAGaQEd6Hk_bPOfEjYA" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
-  <CDA:CDATemplate xmi:id="_UINAQHcOEd6ZeOKq_2_a9g" base_Class="_3ZiEwGdIEd6Hk_bPOfEjYA" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-  <CDA:CDATemplate xmi:id="__nZfUHomEd6WAZ28-5wkSg" base_Class="_8YbB4HomEd6WAZ28-5wkSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+  <CDA:CDATemplate xmi:id="_wsBhIHGfEd6bf47ZOcft4w" base_Class="_sFGZUHGfEd6bf47ZOcft4w" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+  <CDA:CDATemplate xmi:id="_QW-KUHcOEd6ZeOKq_2_a9g" base_Class="_vz5koGGsEd6bFO5yxRh3Nw" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+  <CDA:CDATemplate xmi:id="_RxBtgHcOEd6ZeOKq_2_a9g" base_Class="_GgvgUDxbEd6JwqSGecoePg" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+  <CDA:CDATemplate xmi:id="_Sd-6IHcOEd6ZeOKq_2_a9g" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+  <CDA:CDATemplate xmi:id="_TTbUYHcOEd6ZeOKq_2_a9g" base_Class="_wSnPAGaQEd6Hk_bPOfEjYA" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+  <CDA:CDATemplate xmi:id="_UINAQHcOEd6ZeOKq_2_a9g" base_Class="_3ZiEwGdIEd6Hk_bPOfEjYA" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+  <CDA:CDATemplate xmi:id="__nZfUHomEd6WAZ28-5wkSg" base_Class="_8YbB4HomEd6WAZ28-5wkSg" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
   <Default:Documentation xmi:id="_cN3JcHonEd6WAZ28-5wkSg" base_Comment="_cNkOgHonEd6WAZ28-5wkSg"/>
   <CDA:VocabSpecification xmi:id="_BHPsAHooEd6WAZ28-5wkSg" base_Property="_9MnCcHonEd6WAZ28-5wkSg" code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF MEDICATION USE"/>
   <Default:Documentation xmi:id="_97KfoHopEd6WAZ28-5wkSg" base_Comment="_97AuoHopEd6WAZ28-5wkSg"/>
-  <CDA:CDATemplate xmi:id="_JL93gHrEEd68l9lQ-TLEBQ" base_Class="_pOtQsHrDEd68l9lQ-TLEBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
-  <CDA:CDATemplate xmi:id="_ipVpwHrEEd68l9lQ-TLEBQ" base_Class="_gkbLsHrEEd68l9lQ-TLEBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
-  <CDA:CDATemplate xmi:id="_RMCSIHrUEd68l9lQ-TLEBQ" base_Class="_O7-UAHrUEd68l9lQ-TLEBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+  <CDA:CDATemplate xmi:id="_JL93gHrEEd68l9lQ-TLEBQ" base_Class="_pOtQsHrDEd68l9lQ-TLEBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+  <CDA:CDATemplate xmi:id="_ipVpwHrEEd68l9lQ-TLEBQ" base_Class="_gkbLsHrEEd68l9lQ-TLEBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+  <CDA:CDATemplate xmi:id="_RMCSIHrUEd68l9lQ-TLEBQ" base_Class="_O7-UAHrUEd68l9lQ-TLEBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
   <Default:Documentation xmi:id="_ByKvsHrVEd68l9lQ-TLEBQ" base_Comment="_ByGeQHrVEd68l9lQ-TLEBQ"/>
   <Default:Documentation xmi:id="_PYbKAHrVEd68l9lQ-TLEBQ" base_Comment="_PYW4kHrVEd68l9lQ-TLEBQ"/>
   <CDA:VocabSpecification xmi:id="_-QJeAHsiEd6jfbAJq2V82w" base_Property="_5cjzMHsiEd6jfbAJq2V82w" code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROBLEM LIST"/>
   <Default:Documentation xmi:id="_nModwHyQEd6FS-4xbA1fBQ" base_Comment="_nMf64HyQEd6FS-4xbA1fBQ"/>
   <CDA:VocabSpecification xmi:id="_X7_v0HyREd6FS-4xbA1fBQ" base_Property="_X71XwHyREd6FS-4xbA1fBQ" code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
-  <CDA:CDATemplate xmi:id="_EJ4lUHyTEd6FS-4xbA1fBQ" base_Class="__HPx4HySEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
-  <CDA:CDATemplate xmi:id="_OCrPYHyTEd6FS-4xbA1fBQ" base_Class="_OCqBQHyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.8"/>
-  <CDA:CDATemplate xmi:id="_OY9ocHyTEd6FS-4xbA1fBQ" base_Class="_OY9BYHyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.9"/>
-  <CDA:CDATemplate xmi:id="_OeXs4HyTEd6FS-4xbA1fBQ" base_Class="_OeXF0HyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.10"/>
-  <CDA:CDATemplate xmi:id="_QDIrQHyTEd6FS-4xbA1fBQ" base_Class="_QDIEMHyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.11"/>
+  <CDA:CDATemplate xmi:id="_EJ4lUHyTEd6FS-4xbA1fBQ" base_Class="__HPx4HySEd6FS-4xbA1fBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+  <CDA:CDATemplate xmi:id="_OCrPYHyTEd6FS-4xbA1fBQ" base_Class="_OCqBQHyTEd6FS-4xbA1fBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.8"/>
+  <CDA:CDATemplate xmi:id="_OY9ocHyTEd6FS-4xbA1fBQ" base_Class="_OY9BYHyTEd6FS-4xbA1fBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.9"/>
+  <CDA:CDATemplate xmi:id="_OeXs4HyTEd6FS-4xbA1fBQ" base_Class="_OeXF0HyTEd6FS-4xbA1fBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.10"/>
+  <CDA:CDATemplate xmi:id="_QDIrQHyTEd6FS-4xbA1fBQ" base_Class="_QDIEMHyTEd6FS-4xbA1fBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.11"/>
   <Default:Documentation xmi:id="_otlLwHyTEd6FS-4xbA1fBQ" base_Comment="_otgTQHyTEd6FS-4xbA1fBQ"/>
   <Default:Documentation xmi:id="_uqBVAHyTEd6FS-4xbA1fBQ" base_Comment="_up71cHyTEd6FS-4xbA1fBQ"/>
   <CDA:CodegenSupport xmi:id="_saK-MJyQEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ihe" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe" packageName="ihe" prefix="IHE" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
