@@ -122,7 +122,6 @@ public class CDAUtil {
 		save(document, out);
 	}
 	
-	/*
 	private static void adjustNamespace(Document document) {
 		Element root = document.getDocumentElement();
 		if (root.getPrefix() == null) {
@@ -133,8 +132,8 @@ public class CDAUtil {
 		root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns:" + CDAPackage.eNS_PREFIX, CDAPackage.eNS_URI);
 		root.setPrefix(CDAPackage.eNS_PREFIX);
 	}
-	*/
 	
+	/*
 	private static void adjustNamespace(Document document) {
 		Element root = document.getDocumentElement();
 		if (root.getPrefix() == null) {
@@ -147,6 +146,7 @@ public class CDAUtil {
 			root.setPrefix(null);
 		}
 	}
+	*/
 	
 	private static void setSchemaLocation(Document document) {
 		Element root = document.getDocumentElement();
