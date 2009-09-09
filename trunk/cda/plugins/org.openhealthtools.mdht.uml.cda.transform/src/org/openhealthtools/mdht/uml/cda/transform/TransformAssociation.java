@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 
 public class TransformAssociation extends TransformAbstract {
@@ -96,7 +97,7 @@ public class TransformAssociation extends TransformAbstract {
 			
 			String stereotypeName = "Section".equals(cdaSourceName) ? ICDAProfileConstants.ENTRY : ICDAProfileConstants.ENTRY_RELATIONSHIP;
 //			Stereotype stereotype = EcoreTransformUtil.getAppliedCDAStereotype(association, stereotypeName);
-			stereotype = EcoreTransformUtil.getAppliedCDAStereotype(association, stereotypeName);
+			stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, stereotypeName);
 			if (stereotype != null) {
 				EnumerationLiteral literal = (EnumerationLiteral) association.getValue(stereotype, "typeCode");
 				if (literal != null) {
@@ -117,7 +118,7 @@ public class TransformAssociation extends TransformAbstract {
 		expression.getBodies().add(body.toString());
 
 //		Stereotype validationSupport = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.VALIDATION_SUPPORT);
-		Stereotype validationSupport = stereotype != null ? stereotype : EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ASSOCIATION_VALIDATION);
+		Stereotype validationSupport = stereotype != null ? stereotype : CDAProfileUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ASSOCIATION_VALIDATION);
 		if (validationSupport != null) {
 //			String message = (String) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE);
 			String message = (String) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE);

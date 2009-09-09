@@ -29,7 +29,8 @@ import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
-import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
+import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 
 public class TransformTemplateIdentifier extends TransformAbstract {
 
@@ -38,8 +39,8 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 	}
 	
 	public Object caseClass(Class umlClass) {
-		Stereotype hl7Template = EcoreTransformUtil.getAppliedHDFStereotype(
-				umlClass, IHDFProfileConstants.HL7_TEMPLATE);
+		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(
+				umlClass, ICDAProfileConstants.CDA_TEMPLATE);
 		if (hl7Template != null) {
 			addConstraint(umlClass, hl7Template);
 			addAnnotation(umlClass, hl7Template);
@@ -54,7 +55,7 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		Constraint constraint = umlClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
 		constraint.getConstrainedElements().add(umlClass);
 
-		String templateId = (String) umlClass.getValue(hl7Template, IHDFProfileConstants.HL7_TEMPLATE_ID);
+		String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
 		OpaqueExpression expression = (OpaqueExpression)constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
 		expression.getLanguages().add("OCL");
 		String body = "self.hasTemplateId('" + templateId + "')";
@@ -65,7 +66,7 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 	}
 
 	private void addAnnotation(Class umlClass, Stereotype hl7Template) {
-		String templateId = (String) umlClass.getValue(hl7Template, IHDFProfileConstants.HL7_TEMPLATE_ID);
+		String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
 		
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(umlClass);
 		annotationsUtil.setAnnotation("templateId.root", templateId);
@@ -73,7 +74,7 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 	}
 	
 	private void addExtensionPoint(Class umlClass, Stereotype hl7Template) {
-		String templateId = (String) umlClass.getValue(hl7Template, IHDFProfileConstants.HL7_TEMPLATE_ID);
+		String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
 		String nsURI = null;
 
 		// get nsURI from the ePackage stereotype
@@ -86,7 +87,7 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 			UMLUtil.safeApplyStereotype(umlPackage, ePackage);
 		}
 		if (nsURI == null) {
-			nsURI = "http://www.openhealthtools/" + umlPackage.eResource().getURI().lastSegment();
+			nsURI = "http://www.openhealthtools.org/" + umlPackage.eResource().getURI().lastSegment();
 			umlPackage.setValue(ePackage, "nsURI", nsURI);
 		}
 

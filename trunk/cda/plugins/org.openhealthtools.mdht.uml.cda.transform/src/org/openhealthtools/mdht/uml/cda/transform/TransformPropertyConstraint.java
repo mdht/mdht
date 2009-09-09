@@ -22,6 +22,7 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 
@@ -155,7 +156,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		 * Test for <<nullFlavor>> stereotype
 		 */
 		String constraintName = null;
-		Stereotype nullFlavor = EcoreTransformUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.NULL_FLAVOR);
+		Stereotype nullFlavor = CDAProfileUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.NULL_FLAVOR);
 		if (nullFlavor != null) {
 			EnumerationLiteral literal = 
 				(EnumerationLiteral) property.getValue(nullFlavor, ICDAProfileConstants.NULL_FLAVOR_NULL_FLAVOR);
@@ -179,7 +180,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		/*
 		 * Test for <<textValue>> stereotype
 		 */
-		Stereotype textValue = EcoreTransformUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.TEXT_VALUE);
+		Stereotype textValue = CDAProfileUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.TEXT_VALUE);
 		if (textValue != null && isEDType(property)) {
 			String value = (String) property.getValue(textValue, ICDAProfileConstants.TEXT_VALUE_VALUE);
 			if (value != null) {
