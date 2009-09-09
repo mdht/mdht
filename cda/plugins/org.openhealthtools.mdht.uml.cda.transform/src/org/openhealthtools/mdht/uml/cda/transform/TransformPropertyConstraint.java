@@ -165,7 +165,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 					if (body.length() > 0) {
 						body.append(" and ");
 					}
-					body.append("self." + property.getName() + ".nullFlavor = vocab::" + literal.getName());
+					body.append("self." + property.getName() + ".nullFlavor = vocab::NullFlavor::" + literal.getName());
 					
 					AnnotationsUtil annotationUtil = new AnnotationsUtil(class_);
 					annotationUtil.setAnnotation(property.getName() + ".nullFlavor", literal.getName());
