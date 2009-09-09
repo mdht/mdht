@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hdf.ui.filters;
 
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
@@ -25,9 +24,7 @@ import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
 public class RIMActFilter implements IFilter {
 
 	public boolean select(Object object) {
-		Element element = null;
-		if (object instanceof IAdaptable)
-			element = (Element) ((IAdaptable)object).getAdapter(Element.class);
+		Element element = HDFFilterUtil.getElement(object);
 		
 		return element instanceof Class
 				&& RIMProfileUtil.isRIMType(element, IRIMProfileConstants.ACT);
