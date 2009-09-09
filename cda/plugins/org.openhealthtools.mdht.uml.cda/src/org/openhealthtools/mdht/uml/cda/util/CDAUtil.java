@@ -156,13 +156,13 @@ public class CDAUtil {
 	private static void save(Document document, OutputStream out) throws Exception {
 		TransformerFactory factory = TransformerFactory.newInstance();
 		try {
-			factory.setAttribute("indent-number", new Integer(2));
+			factory.setAttribute("indent-number", 2);
 		} catch (Exception e) {}
 		Transformer transformer = factory.newTransformer();
-		try {
-			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-			transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-		} catch (Exception e) {}
+		transformer.setParameter("indent-number", 2);
+		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+		transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
 		transformer.transform(new DOMSource(document), new StreamResult(new OutputStreamWriter(out, "UTF-8")));
 	}
 	
