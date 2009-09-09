@@ -35,29 +35,11 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ze7UsGESEd69D7zx7EkLMA" name="ContinuityOfCareDocument">
-      <ownedRule xmi:id="_CUNkQGwYEd6q29qQGU-SBA" name="ContinuityOfCareDocument_code" constrainedElement="_Ze7UsGESEd69D7zx7EkLMA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_CUNkQWwYEd6q29qQGU-SBA">
-          <language>OCL</language>
-          <body></body>
-        </specification>
-      </ownedRule>
-      <ownedRule xmi:id="_EUXeIGwYEd6q29qQGU-SBA" name="ContinuityOfCareDocument_title" constrainedElement="_Ze7UsGESEd69D7zx7EkLMA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_EUXeIWwYEd6q29qQGU-SBA">
-          <language>OCL</language>
-          <body></body>
-        </specification>
-      </ownedRule>
       <generalization xmi:id="_tf1eQGESEd69D7zx7EkLMA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_S9OzADxXEd6JwqSGecoePg?cda/ClinicalDocument?"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="ProblemAct">
-      <ownedRule xmi:id="_7l0sIGBPEd6N94MqzCgt-g" name="ProblemAct_code" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_7l0sIWBPEd6N94MqzCgt-g">
-          <language>OCL</language>
-          <body>self.code.nullFlavor = vocab::NullFlavor::NA</body>
-        </specification>
-      </ownedRule>
       <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_YiANsDxYEd6JwqSGecoePg?cda/Act?"/>
       </generalization>
@@ -598,33 +580,33 @@
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
   </uml:Package>
-  <CDA:CDATemplate xmi:id="_jGUI0HfTEd6ZeOKq_2_a9g" base_Class="_W6aMoHfTEd6ZeOKq_2_a9g" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.24"/>
-  <CDA:CDATemplate xmi:id="_YC5CMHfUEd6ZeOKq_2_a9g" base_Class="_OvmR4HfUEd6ZeOKq_2_a9g" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.8"/>
-  <CDA:CDATemplate xmi:id="_q_v4UHfVEd6ZeOKq_2_a9g" base_Class="_dAAnAHfVEd6ZeOKq_2_a9g" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.34"/>
-  <CDA:CDATemplate xmi:id="_VImT8HfXEd6ZeOKq_2_a9g" base_Class="_Ze7UsGESEd69D7zx7EkLMA" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1"/>
-  <CDA:CDATemplate xmi:id="_ug3cYHfaEd6ZeOKq_2_a9g" base_Class="_rJDcIHDAEd6eItyqb1FoWg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.3"/>
-  <CDA:CDATemplate xmi:id="_dumwMHo3Ed6UPbrR4QTFoQ" base_Class="_mO8KEHJWEd6cacuAk5qrhg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.21"/>
-  <CDA:CDATemplate xmi:id="_wOJNoHo3Ed6UPbrR4QTFoQ" base_Class="_AwcXkGaKEd6Hk_bPOfEjYA" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.41"/>
-  <CDA:CDATemplate xmi:id="_7FE68Ho3Ed6UPbrR4QTFoQ" base_Class="_7tlrAGwWEd6q29qQGU-SBA" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.22"/>
-  <CDA:CDATemplate xmi:id="_LCCG4Ho4Ed6UPbrR4QTFoQ" base_Class="_5ET7oGwWEd6q29qQGU-SBA" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.4"/>
-  <CDA:CDATemplate xmi:id="_W0JDAHo4Ed6UPbrR4QTFoQ" base_Class="_9QFYgGwWEd6q29qQGU-SBA" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.23"/>
-  <CDA:CDATemplate xmi:id="_dqEZAHo4Ed6UPbrR4QTFoQ" base_Class="_CinbMHDPEd6eItyqb1FoWg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.6"/>
-  <CDA:CDATemplate xmi:id="_4ua6sHo5Ed6UPbrR4QTFoQ" base_Class="_3cYVwGaKEd6Hk_bPOfEjYA" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.48"/>
-  <CDA:CDATemplate xmi:id="_ECBV4Ho6Ed6UPbrR4QTFoQ" base_Class="_GgvgUDxbEd6JwqSGecoePg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.27"/>
-  <CDA:CDATemplate xmi:id="_JHA5wHo6Ed6UPbrR4QTFoQ" base_Class="_T6kfkGaJEd6Hk_bPOfEjYA" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.51"/>
-  <CDA:CDATemplate xmi:id="_N2xNcHo6Ed6UPbrR4QTFoQ" base_Class="_IjIO0DxbEd6JwqSGecoePg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.28"/>
-  <CDA:CDATemplate xmi:id="_S9yxoHo6Ed6UPbrR4QTFoQ" base_Class="_vjPMEGaGEd6Hk_bPOfEjYA" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.11"/>
-  <CDA:CDATemplate xmi:id="_dbSEMHo6Ed6UPbrR4QTFoQ" base_Class="_TrwngGaJEd6Hk_bPOfEjYA" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.50"/>
-  <CDA:CDATemplate xmi:id="_ioUJwHo6Ed6UPbrR4QTFoQ" base_Class="_MQHZEHDAEd6eItyqb1FoWg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.31"/>
-  <CDA:CDATemplate xmi:id="_n00D0Ho6Ed6UPbrR4QTFoQ" base_Class="_Ht_RsHDAEd6eItyqb1FoWg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.32"/>
-  <CDA:CDATemplate xmi:id="_ueyBcHo6Ed6UPbrR4QTFoQ" base_Class="_Wa2uwHDAEd6eItyqb1FoWg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.33"/>
-  <CDA:CDATemplate xmi:id="_zFaOUHo6Ed6UPbrR4QTFoQ" base_Class="_UOVM0HDAEd6eItyqb1FoWg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.15"/>
-  <CDA:CDATemplate xmi:id="_RJAToHrREd68l9lQ-TLEBQ" base_Class="_PgsSAHrREd68l9lQ-TLEBQ" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.2"/>
-  <CDA:CDATemplate xmi:id="_sPJagHrREd68l9lQ-TLEBQ" base_Class="_qV72IHrREd68l9lQ-TLEBQ" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.18"/>
-  <CDA:CDATemplate xmi:id="_BUtfAHrSEd68l9lQ-TLEBQ" base_Class="__XC4cHrREd68l9lQ-TLEBQ" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.54"/>
-  <CDA:CDATemplate xmi:id="_J6uSkHrSEd68l9lQ-TLEBQ" base_Class="_ILkpIHrSEd68l9lQ-TLEBQ" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.55"/>
-  <CDA:CDATemplate xmi:id="_g5EdoHrSEd68l9lQ-TLEBQ" base_Class="_e8n_EHrSEd68l9lQ-TLEBQ" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.39"/>
-  <CDA:CDATemplate xmi:id="_Xv1y0HrTEd68l9lQ-TLEBQ" base_Class="_V3Jy4HrTEd68l9lQ-TLEBQ" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.57"/>
+  <CDA:CDATemplate xmi:id="_jGUI0HfTEd6ZeOKq_2_a9g" base_Class="_W6aMoHfTEd6ZeOKq_2_a9g" templateId="2.16.840.1.113883.10.20.1.24" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_YC5CMHfUEd6ZeOKq_2_a9g" base_Class="_OvmR4HfUEd6ZeOKq_2_a9g" templateId="2.16.840.1.113883.10.20.1.8" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_q_v4UHfVEd6ZeOKq_2_a9g" base_Class="_dAAnAHfVEd6ZeOKq_2_a9g" templateId="2.16.840.1.113883.10.20.1.34" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_VImT8HfXEd6ZeOKq_2_a9g" base_Class="_Ze7UsGESEd69D7zx7EkLMA" templateId="2.16.840.1.113883.10.20.1" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_ug3cYHfaEd6ZeOKq_2_a9g" base_Class="_rJDcIHDAEd6eItyqb1FoWg" templateId="2.16.840.1.113883.10.20.1.3" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_dumwMHo3Ed6UPbrR4QTFoQ" base_Class="_mO8KEHJWEd6cacuAk5qrhg" templateId="2.16.840.1.113883.10.20.1.21" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_wOJNoHo3Ed6UPbrR4QTFoQ" base_Class="_AwcXkGaKEd6Hk_bPOfEjYA" templateId="2.16.840.1.113883.10.20.1.41" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_7FE68Ho3Ed6UPbrR4QTFoQ" base_Class="_7tlrAGwWEd6q29qQGU-SBA" templateId="2.16.840.1.113883.10.20.1.22" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_LCCG4Ho4Ed6UPbrR4QTFoQ" base_Class="_5ET7oGwWEd6q29qQGU-SBA" templateId="2.16.840.1.113883.10.20.1.4" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_W0JDAHo4Ed6UPbrR4QTFoQ" base_Class="_9QFYgGwWEd6q29qQGU-SBA" templateId="2.16.840.1.113883.10.20.1.23" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_dqEZAHo4Ed6UPbrR4QTFoQ" base_Class="_CinbMHDPEd6eItyqb1FoWg" templateId="2.16.840.1.113883.10.20.1.6" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_4ua6sHo5Ed6UPbrR4QTFoQ" base_Class="_3cYVwGaKEd6Hk_bPOfEjYA" templateId="2.16.840.1.113883.10.20.1.48" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_ECBV4Ho6Ed6UPbrR4QTFoQ" base_Class="_GgvgUDxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.10.20.1.27" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_JHA5wHo6Ed6UPbrR4QTFoQ" base_Class="_T6kfkGaJEd6Hk_bPOfEjYA" templateId="2.16.840.1.113883.10.20.1.51" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_N2xNcHo6Ed6UPbrR4QTFoQ" base_Class="_IjIO0DxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.10.20.1.28" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_S9yxoHo6Ed6UPbrR4QTFoQ" base_Class="_vjPMEGaGEd6Hk_bPOfEjYA" templateId="2.16.840.1.113883.10.20.1.11" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_dbSEMHo6Ed6UPbrR4QTFoQ" base_Class="_TrwngGaJEd6Hk_bPOfEjYA" templateId="2.16.840.1.113883.10.20.1.50" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_ioUJwHo6Ed6UPbrR4QTFoQ" base_Class="_MQHZEHDAEd6eItyqb1FoWg" templateId="2.16.840.1.113883.10.20.1.31" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_n00D0Ho6Ed6UPbrR4QTFoQ" base_Class="_Ht_RsHDAEd6eItyqb1FoWg" templateId="2.16.840.1.113883.10.20.1.32" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_ueyBcHo6Ed6UPbrR4QTFoQ" base_Class="_Wa2uwHDAEd6eItyqb1FoWg" templateId="2.16.840.1.113883.10.20.1.33" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_zFaOUHo6Ed6UPbrR4QTFoQ" base_Class="_UOVM0HDAEd6eItyqb1FoWg" templateId="2.16.840.1.113883.10.20.1.15" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_RJAToHrREd68l9lQ-TLEBQ" base_Class="_PgsSAHrREd68l9lQ-TLEBQ" templateId="2.16.840.1.113883.10.20.1.2" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_sPJagHrREd68l9lQ-TLEBQ" base_Class="_qV72IHrREd68l9lQ-TLEBQ" templateId="2.16.840.1.113883.10.20.1.18" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_BUtfAHrSEd68l9lQ-TLEBQ" base_Class="__XC4cHrREd68l9lQ-TLEBQ" templateId="2.16.840.1.113883.10.20.1.54" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_J6uSkHrSEd68l9lQ-TLEBQ" base_Class="_ILkpIHrSEd68l9lQ-TLEBQ" templateId="2.16.840.1.113883.10.20.1.55" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_g5EdoHrSEd68l9lQ-TLEBQ" base_Class="_e8n_EHrSEd68l9lQ-TLEBQ" templateId="2.16.840.1.113883.10.20.1.39" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_Xv1y0HrTEd68l9lQ-TLEBQ" base_Class="_V3Jy4HrTEd68l9lQ-TLEBQ" templateId="2.16.840.1.113883.10.20.1.57" assigningAuthorityName="CCD"/>
   <CDA:VocabSpecification xmi:id="_te45UHu8Ed6jfbAJq2V82w" base_Property="_mLxRAHu8Ed6jfbAJq2V82w" code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem list"/>
   <CDA:VocabSpecification xmi:id="_LuJQwHu-Ed6jfbAJq2V82w" message="A problem observation SHALL include exactly one Observation / statusCode. The value for 'Observation / statusCode' in a problem observation SHALL be 'completed' 2.16.840.1.113883.5.14 ActStatus STATIC." base_Property="_9uv9sHu9Ed6jfbAJq2V82w" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
   <CDA:VocabSpecification xmi:id="_li82IHu_Ed6jfbAJq2V82w" base_Property="_ehj3AHu_Ed6jfbAJq2V82w" codeSystem="2.16.840.1.113883.1.11.20.13" codeSystemName="ProblemStatusCode" codeSystemVersion="20061017"/>
@@ -644,13 +626,13 @@
   <CDA:VocabSpecification xmi:id="_rZx4YYHaEd6Ncrr6L3Ublw" base_Property="_rZxRUIHaEd6Ncrr6L3Ublw" code="10157-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of family member diseases"/>
   <CDA:VocabSpecification xmi:id="_OXyTYIHbEd6Ncrr6L3Ublw" base_Property="_KztvsIHbEd6Ncrr6L3Ublw" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
   <CDA:VocabSpecification xmi:id="_fDnXgYHbEd6Ncrr6L3Ublw" base_Property="_fDnXgIHbEd6Ncrr6L3Ublw" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
-  <CDA:CDATemplate xmi:id="_ohNTUIHbEd6Ncrr6L3Ublw" base_Class="_joG2YIHbEd6Ncrr6L3Ublw" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.42"/>
+  <CDA:CDATemplate xmi:id="_ohNTUIHbEd6Ncrr6L3Ublw" base_Class="_joG2YIHbEd6Ncrr6L3Ublw" templateId="2.16.840.1.113883.10.20.1.42" assigningAuthorityName="CCD"/>
   <CDA:VocabSpecification xmi:id="_qgBA4IhTEd6UrJD25cKDew" message="The value for 'Observation / code' in a problem observation MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.14 ProblemTypeCode STATIC 20061017." severity="INFO" base_Property="_f1n6wIhTEd6UrJD25cKDew" codeSystem="2.16.840.1.113883.1.11.20.14" codeSystemName="ProblemTypeCode" codeSystemVersion="20061017"/>
-  <CDA:CDATemplate xmi:id="_940IIIiAEd66cKocspyVOg" base_Class="_7TVToIiAEd66cKocspyVOg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.14"/>
-  <CDA:CDATemplate xmi:id="_azcEYIiBEd66cKocspyVOg" base_Class="_VL2w0IiBEd66cKocspyVOg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.46"/>
-  <CDA:CDATemplate xmi:id="_ovERwIiBEd66cKocspyVOg" base_Class="_lgLT4IiBEd66cKocspyVOg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.47"/>
-  <CDA:CDATemplate xmi:id="_4sxEkIiBEd66cKocspyVOg" base_Class="_2QJRIIiBEd66cKocspyVOg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.45"/>
-  <CDA:CDATemplate xmi:id="_P0aVkIiCEd66cKocspyVOg" base_Class="_8Xj7UIiBEd66cKocspyVOg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.53"/>
+  <CDA:CDATemplate xmi:id="_940IIIiAEd66cKocspyVOg" base_Class="_7TVToIiAEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.14" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_azcEYIiBEd66cKocspyVOg" base_Class="_VL2w0IiBEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.46" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_ovERwIiBEd66cKocspyVOg" base_Class="_lgLT4IiBEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.47" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_4sxEkIiBEd66cKocspyVOg" base_Class="_2QJRIIiBEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.45" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_P0aVkIiCEd66cKocspyVOg" base_Class="_8Xj7UIiBEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.53" assigningAuthorityName="CCD"/>
   <CDA:VocabSpecification xmi:id="_GMX-gIjpEd66cKocspyVOg" base_Property="_GMWwYIjpEd66cKocspyVOg" code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests and/or laboratory data"/>
   <Default:Documentation xmi:id="_ys1AIIjpEd66cKocspyVOg" base_Comment="_yswHoIjpEd66cKocspyVOg"/>
   <Default:Documentation xmi:id="_NUuEwIjqEd66cKocspyVOg" base_Comment="_NUpzUIjqEd66cKocspyVOg"/>
@@ -658,7 +640,7 @@
   <CDA:VocabSpecification xmi:id="_t5nocYjsEd66cKocspyVOg" base_Property="_t5nocIjsEd66cKocspyVOg" codeSystem="2.16.840.1.113883.1.11.20.7" codeSystemName="MedicationStatusCode" codeSystemVersion="20061017"/>
   <Default:Documentation xmi:id="_0h1nsIjuEd66cKocspyVOg" base_Comment="_0hxWQIjuEd66cKocspyVOg"/>
   <Default:Documentation xmi:id="_CfaV0IjvEd66cKocspyVOg" base_Comment="_CfWEYIjvEd66cKocspyVOg"/>
-  <CDA:CDATemplate xmi:id="_p_Lr0IjvEd66cKocspyVOg" base_Class="_p_LEwIjvEd66cKocspyVOg" assigningAuthorityName="CCD" templateId="2.16.840.1.113883.10.20.1.14"/>
+  <CDA:CDATemplate xmi:id="_p_Lr0IjvEd66cKocspyVOg" base_Class="_p_LEwIjvEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.14" assigningAuthorityName="CCD"/>
   <Default:Documentation xmi:id="_p_Lr0YjvEd66cKocspyVOg" base_Comment="_p_LEwYjvEd66cKocspyVOg"/>
   <CDA:VocabSpecification xmi:id="_p_Lr0ojvEd66cKocspyVOg" base_Property="_p_LEw4jvEd66cKocspyVOg" code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of procedures"/>
   <CDA:VocabSpecification xmi:id="_qAT3wYjwEd66cKocspyVOg" base_Property="_qAT3wIjwEd66cKocspyVOg" code="46240-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of encounters"/>

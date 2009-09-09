@@ -92,8 +92,8 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemAct_problemObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemActOperations.ProblemAct_problemObservation(this, diagnostics, context);
+	public boolean ProblemAct_code_nullFlavor(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.ProblemAct_code_nullFlavor(this, diagnostics, context);
 	}
 
 	/**
@@ -101,8 +101,8 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemAct_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemActOperations.ProblemAct_code(this, diagnostics, context);
+	public boolean ProblemAct_problemObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.ProblemAct_problemObservation(this, diagnostics, context);
 	}
 
 	/**
