@@ -12,7 +12,6 @@
  */
 package org.openhealthtools.mdht.uml.cda.util;
 
-import java.io.BufferedWriter;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -164,7 +163,7 @@ public class CDAUtil {
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 			transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 		} catch (Exception e) {}
-		transformer.transform(new DOMSource(document), new StreamResult(new BufferedWriter(new OutputStreamWriter(out, "UTF-8"))));
+		transformer.transform(new DOMSource(document), new StreamResult(new OutputStreamWriter(out, "UTF-8")));
 	}
 	
 	private static DocumentBuilder newDocumentBuilder() throws Exception {
