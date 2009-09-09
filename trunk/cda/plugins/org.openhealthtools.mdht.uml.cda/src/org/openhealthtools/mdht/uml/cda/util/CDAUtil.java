@@ -12,6 +12,7 @@
  */
 package org.openhealthtools.mdht.uml.cda.util;
 
+import java.io.BufferedWriter;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -155,11 +156,15 @@ public class CDAUtil {
 	
 	private static void save(Document document, OutputStream out) throws Exception {
 		TransformerFactory factory = TransformerFactory.newInstance();
-		factory.setAttribute("indent-number", new Integer(2));
+		try {
+			factory.setAttribute("indent-number", new Integer(2));
+		} catch (Exception e) {}
 		Transformer transformer = factory.newTransformer();
-		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-		transformer.transform(new DOMSource(document), new StreamResult(new OutputStreamWriter(out, "utf-8")));
+		try {
+			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+			transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+		} catch (Exception e) {}
+		transformer.transform(new DOMSource(document), new StreamResult(new BufferedWriter(new OutputStreamWriter(out, "UTF-8"))));
 	}
 	
 	private static DocumentBuilder newDocumentBuilder() throws Exception {
