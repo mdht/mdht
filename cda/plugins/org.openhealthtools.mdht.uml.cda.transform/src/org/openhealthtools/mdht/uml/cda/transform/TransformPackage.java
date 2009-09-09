@@ -3,6 +3,7 @@ package org.openhealthtools.mdht.uml.cda.transform;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 
 public class TransformPackage extends TransformAbstract {
@@ -13,7 +14,7 @@ public class TransformPackage extends TransformAbstract {
 	
 	@Override
 	public Object casePackage(Package umlPackage) {
-		Stereotype codegenSupport = EcoreTransformUtil.getAppliedCDAStereotype(umlPackage, ICDAProfileConstants.CODEGEN_SUPPORT);
+		Stereotype codegenSupport = CDAProfileUtil.getAppliedCDAStereotype(umlPackage, ICDAProfileConstants.CODEGEN_SUPPORT);
 		if (codegenSupport != null) {
 			Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
 			if (!umlPackage.isStereotypeApplied(ePackage)) {
@@ -46,7 +47,7 @@ public class TransformPackage extends TransformAbstract {
 				umlPackage.setValue(ePackage, ICDAProfileConstants.CODEGEN_SUPPORT_PREFIX, prefix);
 			}
 			
-			EcoreTransformUtil.unapplyCDAStereotype(umlPackage, ICDAProfileConstants.CODEGEN_SUPPORT);
+			CDAProfileUtil.unapplyCDAStereotype(umlPackage, ICDAProfileConstants.CODEGEN_SUPPORT);
 		}
 		return umlPackage;
 	}

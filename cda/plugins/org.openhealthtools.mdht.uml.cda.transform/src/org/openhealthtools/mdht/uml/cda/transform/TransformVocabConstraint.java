@@ -16,12 +16,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
-import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 
 public class TransformVocabConstraint extends TransformAbstract {
 
@@ -39,46 +39,18 @@ public class TransformVocabConstraint extends TransformAbstract {
 			return null;
 		}
 		
-		Stereotype enumConstraint = EcoreTransformUtil.getAppliedHDFStereotype(
-				property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
-		Stereotype valueSet = EcoreTransformUtil.getAppliedHDFStereotype(
-				property, IHDFProfileConstants.VALUE_SET_CONSTRAINT);
-		Stereotype codeSystem = EcoreTransformUtil.getAppliedHDFStereotype(
-				property, IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
+		Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
+				property, ICDAProfileConstants.VOCAB_SPECIFICATION);
 		
-		if (enumConstraint != null) {
-			Enumeration enumeration = (Enumeration) property.getValue(enumConstraint, IHDFProfileConstants.ENUMERATION_VALUE);
-			//TODO check for stereotype on Enumeration
+		if (vocabSpecification != null) {
+			String codeSystem = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
+			String codeSystemName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
+			String codeSystemVersion = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
+			String code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
+			String displayName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
 			
-			if (enumeration != null) {
-				addAnnotation(property, null, enumeration.getName(), null, null, null);
-				addConstraint(property, null, enumeration.getName(), null, null, null);
-			}
-
-			//TODO May need to retain property if there are other constraints, e.g. multiplicity
-			//   maybe check if there is a property redefinition relationship?
-			removeModelElement(property);
-		}
-		else if (valueSet != null) {
-			String valueSetOID = (String) property.getValue(valueSet, IHDFProfileConstants.VALUE_SET_OID);
-			String valueSetName = (String) property.getValue(valueSet, IHDFProfileConstants.VALUE_SET_NAME);
-			String valueSetVersion = (String) property.getValue(valueSet, IHDFProfileConstants.VALUE_SET_VERSION_DATE);
-			String rootCode = (String) property.getValue(valueSet, IHDFProfileConstants.VALUE_SET_ROOT_CODE);
-
-			addAnnotation(property, valueSetOID, valueSetName, rootCode, null, valueSetVersion);
-			addConstraint(property, valueSetOID, valueSetName, rootCode, null, valueSetVersion);
-
-			removeModelElement(property);
-		}
-		else if (codeSystem != null) {
-			String codeSystemOID = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE_SYSTEM_OID);
-			String codeSystemName = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE_SYSTEM_NAME);
-			String codeSystemVersion = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE_SYSTEM_VERSION);
-			String code = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE);
-			String codePrintName = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE_PRINT_NAME);
-			
-			addAnnotation(property, codeSystemOID, codeSystemName, code, codePrintName, codeSystemVersion);
-			addConstraint(property, codeSystemOID, codeSystemName, code, codePrintName, codeSystemVersion);
+			addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
+			addConstraint(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
 
 			removeModelElement(property);
 		}
