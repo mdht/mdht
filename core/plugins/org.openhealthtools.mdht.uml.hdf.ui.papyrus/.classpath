@@ -3,5 +3,39 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.codegen_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.core.adaptor.emf_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.core.adaptor.gmf_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.core_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.di.edit_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.di.editor_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.di_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.diagram.activity_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.diagram.clazz_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.diagram.common_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.diagram.emftree_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.diagram.sequence_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.diagram.usecase_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.editor_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.example.sashwindows.fulleditor_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.example.sashwindows.simpleeditor_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.extensionpoints.editors_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.extensionpoints.uml2_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.gmfgenextension_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.java.reverse_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.navigator_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.outline.emftree_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.outline_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.parsers_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.preferences_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.profile_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.sasheditor.di_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.sasheditor_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.tabbedproperties.appearance_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.tabbedproperties.core_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.tabbedproperties.uml_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.ui.toolbox_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.umlutils_0.7.0.200908101640.jar"/>
+	<classpathentry kind="lib" path="/home/papyrus/papyruspath/org.eclipse.papyrus.wizards_0.7.0.200908101640.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
