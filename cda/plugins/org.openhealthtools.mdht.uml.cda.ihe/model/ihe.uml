@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_cjWgIIwhEd6Y4K3S_JksBA/1" xmlns:Default="http:///schemas/Default/1" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:HDF="http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:version="2.0" xsi:schemaLocation="http:///schemas/CDA/_cjWgIIwhEd6Y4K3S_JksBA/1 pathmap://CDA_PROFILES/CDA.profile.uml#_cjWgIYwhEd6Y4K3S_JksBA http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default? http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12 pathmap://HL7_PROFILES/HDF.profile.uml#_D_tkoFwxEd63D_E2UJKpvQ">
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_an7-AJmjEd6OiP9GTesZug/2" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:version="2.0" xsi:schemaLocation="http:///schemas/CDA/_an7-AJmjEd6OiP9GTesZug/2 pathmap://CDA_PROFILES/CDA.profile.uml#_an7-AZmjEd6OiP9GTesZug http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
   <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="ihe">
     
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
@@ -174,69 +174,41 @@ not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
     </profileApplication>
     
     
-    <profileApplication xmi:id="_sPcJADxVEd6JwqSGecoePg">
-      <eAnnotations xmi:id="_sPcJATxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
-      </eAnnotations>
-      <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
-    </profileApplication>
-    <profileApplication xmi:id="_uFKMkHGfEd6bf47ZOcft4w">
-      <eAnnotations xmi:id="_uFPFEHGfEd6bf47ZOcft4w" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://HL7_PROFILES/HDF.profile.uml#_D_tkoFwxEd63D_E2UJKpvQ"/>
-      </eAnnotations>
-      <appliedProfile href="pathmap://HL7_PROFILES/HDF.profile.uml#_XQSZwERPEdyoutEhWTC49A"/>
-    </profileApplication>
     <profileApplication xmi:id="__XON4IwEEd6B6JSUB00H7g">
       <eAnnotations xmi:id="__XPcAIwEEd6B6JSUB00H7g" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://CDA_PROFILES/CDA.profile.uml#_cjWgIYwhEd6Y4K3S_JksBA"/>
+        <references xmi:type="ecore:EPackage" href="pathmap://CDA_PROFILES/CDA.profile.uml#_an7-AZmjEd6OiP9GTesZug"/>
       </eAnnotations>
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
   </uml:Package>
-  <Ecore:EPackage xmi:id="_sGrZIDxWEd6JwqSGecoePg" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="ihe" nsPrefix="ihe" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe" basePackage="org.openhealthtools.mdht.uml.cda" prefix="IHE"/>
-  <Ecore:EClass xmi:id="_VXJykGEIEd6bFO5yxRh3Nw" xmlName="ClinicalDocument" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw"/>
-  <HDF:HL7Template xmi:id="_wsBhIHGfEd6bf47ZOcft4w" base_Class="_sFGZUHGfEd6bf47ZOcft4w" id="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
-  <HDF:HL7Template xmi:id="_QW-KUHcOEd6ZeOKq_2_a9g" base_Class="_vz5koGGsEd6bFO5yxRh3Nw" id="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
-  <HDF:HL7Template xmi:id="_RxBtgHcOEd6ZeOKq_2_a9g" base_Class="_GgvgUDxbEd6JwqSGecoePg" id="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
-  <HDF:HL7Template xmi:id="_Sd-6IHcOEd6ZeOKq_2_a9g" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" id="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
-  <HDF:HL7Template xmi:id="_TTbUYHcOEd6ZeOKq_2_a9g" base_Class="_wSnPAGaQEd6Hk_bPOfEjYA" id="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
-  <HDF:HL7Template xmi:id="_UINAQHcOEd6ZeOKq_2_a9g" base_Class="_3ZiEwGdIEd6Hk_bPOfEjYA" id="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-  <HDF:HL7Template xmi:id="__nZfUHomEd6WAZ28-5wkSg" base_Class="_8YbB4HomEd6WAZ28-5wkSg" id="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+  <CDA:CDATemplate xmi:id="_wsBhIHGfEd6bf47ZOcft4w" base_Class="_sFGZUHGfEd6bf47ZOcft4w" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+  <CDA:CDATemplate xmi:id="_QW-KUHcOEd6ZeOKq_2_a9g" base_Class="_vz5koGGsEd6bFO5yxRh3Nw" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+  <CDA:CDATemplate xmi:id="_RxBtgHcOEd6ZeOKq_2_a9g" base_Class="_GgvgUDxbEd6JwqSGecoePg" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+  <CDA:CDATemplate xmi:id="_Sd-6IHcOEd6ZeOKq_2_a9g" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+  <CDA:CDATemplate xmi:id="_TTbUYHcOEd6ZeOKq_2_a9g" base_Class="_wSnPAGaQEd6Hk_bPOfEjYA" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+  <CDA:CDATemplate xmi:id="_UINAQHcOEd6ZeOKq_2_a9g" base_Class="_3ZiEwGdIEd6Hk_bPOfEjYA" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+  <CDA:CDATemplate xmi:id="__nZfUHomEd6WAZ28-5wkSg" base_Class="_8YbB4HomEd6WAZ28-5wkSg" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
   <Default:Documentation xmi:id="_cN3JcHonEd6WAZ28-5wkSg" base_Comment="_cNkOgHonEd6WAZ28-5wkSg"/>
-  <HDF:CodeSystemConstraint xmi:id="_BHPsAHooEd6WAZ28-5wkSg" base_Property="_9MnCcHonEd6WAZ28-5wkSg" id="2.16.840.1.113883.6.1" name="LOINC" code="10160-0" codePrintName="HISTORY OF MEDICATION USE"/>
+  <CDA:VocabSpecification xmi:id="_BHPsAHooEd6WAZ28-5wkSg" base_Property="_9MnCcHonEd6WAZ28-5wkSg" code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF MEDICATION USE"/>
   <Default:Documentation xmi:id="_97KfoHopEd6WAZ28-5wkSg" base_Comment="_97AuoHopEd6WAZ28-5wkSg"/>
-  <HDF:HL7Template xmi:id="_JL93gHrEEd68l9lQ-TLEBQ" base_Class="_pOtQsHrDEd68l9lQ-TLEBQ" id="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
-  <HDF:HL7Template xmi:id="_ipVpwHrEEd68l9lQ-TLEBQ" base_Class="_gkbLsHrEEd68l9lQ-TLEBQ" id="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
-  <HDF:HL7Template xmi:id="_RMCSIHrUEd68l9lQ-TLEBQ" base_Class="_O7-UAHrUEd68l9lQ-TLEBQ" id="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
-  <HDF:HDFClass xmi:id="_gbT4sHrUEd68l9lQ-TLEBQ" base_Class="_O7-UAHrUEd68l9lQ-TLEBQ">
-    <businessNames xmi:id="_gbVG0HrUEd68l9lQ-TLEBQ" name="Allergies and Other Adverse Reactions Section" language="en"/>
-  </HDF:HDFClass>
-  <HDF:HDFClass xmi:id="_mlSHoHrUEd68l9lQ-TLEBQ" base_Class="_vz5koGGsEd6bFO5yxRh3Nw">
-    <businessNames xmi:id="_mlSHoXrUEd68l9lQ-TLEBQ" name="Active Problems Section" language="en"/>
-  </HDF:HDFClass>
-  <HDF:HDFClass xmi:id="_wqbysHrUEd68l9lQ-TLEBQ" base_Class="_pOtQsHrDEd68l9lQ-TLEBQ">
-    <businessNames xmi:id="_wqbysXrUEd68l9lQ-TLEBQ" name="Allergy and Intolerance Concern" language="en"/>
-  </HDF:HDFClass>
-  <HDF:HDFClass xmi:id="_4OTMwHrUEd68l9lQ-TLEBQ" base_Class="_gkbLsHrEEd68l9lQ-TLEBQ">
-    <businessNames xmi:id="_4OTMwXrUEd68l9lQ-TLEBQ" name="Allergies and Intolerances" language="en"/>
-  </HDF:HDFClass>
-  <HDF:HDFClass xmi:id="_8ktzYHrUEd68l9lQ-TLEBQ" base_Class="_wSnPAGaQEd6Hk_bPOfEjYA">
-    <businessNames xmi:id="_8kuacHrUEd68l9lQ-TLEBQ" name="Problem Concern Entry" language="en"/>
-  </HDF:HDFClass>
+  <CDA:CDATemplate xmi:id="_JL93gHrEEd68l9lQ-TLEBQ" base_Class="_pOtQsHrDEd68l9lQ-TLEBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+  <CDA:CDATemplate xmi:id="_ipVpwHrEEd68l9lQ-TLEBQ" base_Class="_gkbLsHrEEd68l9lQ-TLEBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+  <CDA:CDATemplate xmi:id="_RMCSIHrUEd68l9lQ-TLEBQ" base_Class="_O7-UAHrUEd68l9lQ-TLEBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
   <Default:Documentation xmi:id="_ByKvsHrVEd68l9lQ-TLEBQ" base_Comment="_ByGeQHrVEd68l9lQ-TLEBQ"/>
   <Default:Documentation xmi:id="_PYbKAHrVEd68l9lQ-TLEBQ" base_Comment="_PYW4kHrVEd68l9lQ-TLEBQ"/>
-  <HDF:CodeSystemConstraint xmi:id="_-QJeAHsiEd6jfbAJq2V82w" base_Property="_5cjzMHsiEd6jfbAJq2V82w" id="2.16.840.1.113883.6.1" name="LOINC" code="11450-4" codePrintName="PROBLEM LIST"/>
+  <CDA:VocabSpecification xmi:id="_-QJeAHsiEd6jfbAJq2V82w" base_Property="_5cjzMHsiEd6jfbAJq2V82w" code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROBLEM LIST"/>
   <Default:Documentation xmi:id="_nModwHyQEd6FS-4xbA1fBQ" base_Comment="_nMf64HyQEd6FS-4xbA1fBQ"/>
-  <HDF:CodeSystemConstraint xmi:id="_X7_v0HyREd6FS-4xbA1fBQ" base_Property="_X71XwHyREd6FS-4xbA1fBQ" id="2.16.840.1.113883.6.1" name="LOINC" code="48765-2" codePrintName="Allergies, adverse reactions, alerts"/>
-  <HDF:HL7Template xmi:id="_EJ4lUHyTEd6FS-4xbA1fBQ" base_Class="__HPx4HySEd6FS-4xbA1fBQ" id="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
-  <HDF:HL7Template xmi:id="_OCrPYHyTEd6FS-4xbA1fBQ" base_Class="_OCqBQHyTEd6FS-4xbA1fBQ" id="1.3.6.1.4.1.19376.1.5.3.1.4.8"/>
-  <HDF:HL7Template xmi:id="_OY9ocHyTEd6FS-4xbA1fBQ" base_Class="_OY9BYHyTEd6FS-4xbA1fBQ" id="1.3.6.1.4.1.19376.1.5.3.1.4.9"/>
-  <HDF:HL7Template xmi:id="_OeXs4HyTEd6FS-4xbA1fBQ" base_Class="_OeXF0HyTEd6FS-4xbA1fBQ" id="1.3.6.1.4.1.19376.1.5.3.1.4.10"/>
-  <HDF:HL7Template xmi:id="_QDIrQHyTEd6FS-4xbA1fBQ" base_Class="_QDIEMHyTEd6FS-4xbA1fBQ" id="1.3.6.1.4.1.19376.1.5.3.1.4.11"/>
+  <CDA:VocabSpecification xmi:id="_X7_v0HyREd6FS-4xbA1fBQ" base_Property="_X71XwHyREd6FS-4xbA1fBQ" code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+  <CDA:CDATemplate xmi:id="_EJ4lUHyTEd6FS-4xbA1fBQ" base_Class="__HPx4HySEd6FS-4xbA1fBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+  <CDA:CDATemplate xmi:id="_OCrPYHyTEd6FS-4xbA1fBQ" base_Class="_OCqBQHyTEd6FS-4xbA1fBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.8"/>
+  <CDA:CDATemplate xmi:id="_OY9ocHyTEd6FS-4xbA1fBQ" base_Class="_OY9BYHyTEd6FS-4xbA1fBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.9"/>
+  <CDA:CDATemplate xmi:id="_OeXs4HyTEd6FS-4xbA1fBQ" base_Class="_OeXF0HyTEd6FS-4xbA1fBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.10"/>
+  <CDA:CDATemplate xmi:id="_QDIrQHyTEd6FS-4xbA1fBQ" base_Class="_QDIEMHyTEd6FS-4xbA1fBQ" assigningAuthorityName="IHE PCC" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.11"/>
   <Default:Documentation xmi:id="_otlLwHyTEd6FS-4xbA1fBQ" base_Comment="_otgTQHyTEd6FS-4xbA1fBQ"/>
   <Default:Documentation xmi:id="_uqBVAHyTEd6FS-4xbA1fBQ" base_Comment="_up71cHyTEd6FS-4xbA1fBQ"/>
-  <CDA:ValidationSupport xmi:id="_A9kgoIwFEd6B6JSUB00H7g" message="The Active Problems Section must contain a(n) Problem Concern Entry Entry." base_Association="_w1oMsIwEEd6B6JSUB00H7g"/>
-  <CDA:ValidationSupport xmi:id="_f8nywIwFEd6B6JSUB00H7g" message="Problem Concern Entry shall contain one or more problem entries that conform to the Problem Entry template." base_Association="_XVchkIwFEd6B6JSUB00H7g"/>
-  <CDA:ValidationSupport xmi:id="_IC358IwGEd6B6JSUB00H7g" message="The Concern Entry effectiveTime element records the starting and ending times during which the concern was active. The 'low' element shall be present. The 'high' element shall be present for concerns in the completed or aborted state, and shall not be present otherwise." base_Property="_IC2EwIwGEd6B6JSUB00H7g"/>
-  <CDA:ValidationSupport xmi:id="_35HWMIwHEd6B6JSUB00H7g" message="The Problem Entry &lt;text&gt; element is required and points to the text describing the problem being recorded; including any dates, comments, et cetera. The &lt;reference&gt; contains a URI in value attribute. This URI points to the free text description of the problem in the document that is being described. " base_Property="_sKxfwIwHEd6B6JSUB00H7g"/>
+  <CDA:CodegenSupport xmi:id="_saK-MJyQEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ihe" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe" packageName="ihe" prefix="IHE" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
+  <CDA:AssociationValidation xmi:id="_xT_XYJyREd6BO7rW3XxHIA" message="The Active Problems Section must contain a(n) Problem Concern Entry Entry." base_Association="_w1oMsIwEEd6B6JSUB00H7g"/>
+  <CDA:AssociationValidation xmi:id="_z6eRcJyREd6BO7rW3XxHIA" message="Problem Concern Entry shall contain one or more problem entries that conform to the Problem Entry template." base_Association="_XVchkIwFEd6B6JSUB00H7g"/>
+  <CDA:PropertyValidation xmi:id="_4ltRgJyREd6BO7rW3XxHIA" message="The Concern Entry effectiveTime element records the starting and ending times during which the concern was active. The 'low' element shall be present. The 'high' element shall be present for concerns in the completed or aborted state, and shall not be present otherwise." base_Property="_IC2EwIwGEd6B6JSUB00H7g"/>
+  <CDA:PropertyValidation xmi:id="_9nko4JyREd6BO7rW3XxHIA" message="The Problem Entry &lt;text&gt; element is required and points to the text describing the problem being recorded; including any dates, comments, et cetera. The &lt;reference&gt; contains a URI in value attribute. This URI points to the free text description of the problem in the document that is being described. " base_Property="_sKxfwIwHEd6B6JSUB00H7g"/>
 </xmi:XMI>

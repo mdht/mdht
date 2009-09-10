@@ -345,11 +345,11 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(concernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_templateId(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_classCode(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_moodCode(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_id(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code_nullFlavor(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_problemObservation(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_ConcernEntry_templateId(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_ConcernEntry_effectiveTime(concernEntry, diagnostics, context);
@@ -469,11 +469,11 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemConcernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_templateId(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_classCode(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_moodCode(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_id(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code_nullFlavor(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_problemObservation(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_ConcernEntry_templateId(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_ConcernEntry_effectiveTime(problemConcernEntry, diagnostics, context);
@@ -643,11 +643,11 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(allergyIntoleranceConcern, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_templateId(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_classCode(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_moodCode(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_id(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code_nullFlavor(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_problemObservation(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_ConcernEntry_templateId(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_ConcernEntry_effectiveTime(allergyIntoleranceConcern, diagnostics, context);
