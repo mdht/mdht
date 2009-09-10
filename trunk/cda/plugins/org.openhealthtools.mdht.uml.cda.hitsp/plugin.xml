@@ -11,7 +11,7 @@
   $Id$
 --><plugin>
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <package class="org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage" genModel="model/hitsp.genmodel" uri="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <package class="org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage" genModel="model/hitsp.genmodel" uri="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
    </extension>
    <extension point="org.openhealthtools.mdht.uml.cda.extension">
       <entry eClass="PatientSummary" id="2.16.840.1.113883.3.88.11.32.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>

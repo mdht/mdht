@@ -1,15 +1,9 @@
-/*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+/**
+ * <copyright>
+ * </copyright>
+ *
  * $Id$
- *******************************************************************************/
+ */
 package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -19,8 +13,8 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspFactory;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 
@@ -30,24 +24,24 @@ import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
  * <!-- end-user-doc -->
  * @generated
  */
-public class HitspFactoryImpl extends EFactoryImpl implements HitspFactory {
+public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static HitspFactory init() {
+	public static HITSPFactory init() {
 		try {
-			HitspFactory theHitspFactory = (HitspFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/cda/hitsp"); 
-			if (theHitspFactory != null) {
-				return theHitspFactory;
+			HITSPFactory theHITSPFactory = (HITSPFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/cda/hitsp"); 
+			if (theHITSPFactory != null) {
+				return theHITSPFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new HitspFactoryImpl();
+		return new HITSPFactoryImpl();
 	}
 
 	/**
@@ -56,7 +50,7 @@ public class HitspFactoryImpl extends EFactoryImpl implements HitspFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HitspFactoryImpl() {
+	public HITSPFactoryImpl() {
 		super();
 	}
 
@@ -68,10 +62,10 @@ public class HitspFactoryImpl extends EFactoryImpl implements HitspFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case HitspPackage.ALLERGY_DRUG_SENSITIVITY: return createAllergyDrugSensitivity();
-			case HitspPackage.MEDICATION: return createMedication();
-			case HitspPackage.CONDITION: return createCondition();
-			case HitspPackage.PATIENT_SUMMARY: return createPatientSummary();
+			case HITSPPackage.ALLERGY_DRUG_SENSITIVITY: return createAllergyDrugSensitivity();
+			case HITSPPackage.MEDICATION: return createMedication();
+			case HITSPPackage.CONDITION: return createCondition();
+			case HITSPPackage.PATIENT_SUMMARY: return createPatientSummary();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -122,8 +116,8 @@ public class HitspFactoryImpl extends EFactoryImpl implements HitspFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HitspPackage getHitspPackage() {
-		return (HitspPackage)getEPackage();
+	public HITSPPackage getHITSPPackage() {
+		return (HITSPPackage)getEPackage();
 	}
 
 	/**
@@ -133,8 +127,8 @@ public class HitspFactoryImpl extends EFactoryImpl implements HitspFactory {
 	 * @generated
 	 */
 	@Deprecated
-	public static HitspPackage getPackage() {
-		return HitspPackage.eINSTANCE;
+	public static HITSPPackage getPackage() {
+		return HITSPPackage.eINSTANCE;
 	}
 
-} //HitspFactoryImpl
+} //HITSPFactoryImpl

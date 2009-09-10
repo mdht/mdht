@@ -1,15 +1,9 @@
-/*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+/**
+ * <copyright>
+ * </copyright>
+ *
  * $Id$
- *******************************************************************************/
+ */
 package org.openhealthtools.mdht.uml.cda.hitsp.util;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -23,7 +17,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern;
@@ -36,17 +30,17 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage
+ * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage
  * @generated
  */
-public class HitspAdapterFactory extends AdapterFactoryImpl {
+public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static HitspPackage modelPackage;
+	protected static HITSPPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -54,9 +48,9 @@ public class HitspAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HitspAdapterFactory() {
+	public HITSPAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = HitspPackage.eINSTANCE;
+			modelPackage = HITSPPackage.eINSTANCE;
 		}
 	}
 
@@ -85,8 +79,8 @@ public class HitspAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HitspSwitch<Adapter> modelSwitch =
-		new HitspSwitch<Adapter>() {
+	protected HITSPSwitch<Adapter> modelSwitch =
+		new HITSPSwitch<Adapter>() {
 			@Override
 			public Adapter caseAllergyDrugSensitivity(AllergyDrugSensitivity object) {
 				return createAllergyDrugSensitivityAdapter();
@@ -371,4 +365,4 @@ public class HitspAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //HitspAdapterFactory
+} //HITSPAdapterFactory

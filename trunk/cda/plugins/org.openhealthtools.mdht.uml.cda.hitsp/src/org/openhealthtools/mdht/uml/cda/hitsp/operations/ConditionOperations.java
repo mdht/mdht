@@ -21,9 +21,9 @@ import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPlugin;
-import org.openhealthtools.mdht.uml.cda.hitsp.util.HitspValidator;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPlugin;
+import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ProblemConcernEntryOperations;
 
@@ -87,7 +87,7 @@ public class ConditionOperations extends ProblemConcernEntryOperations {
 	public static  boolean Condition_templateId(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(HitspPackage.Literals.CONDITION);
+			helper.setContext(HITSPPackage.Literals.CONDITION);
 			try {
 				CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
@@ -100,9 +100,9 @@ public class ConditionOperations extends ProblemConcernEntryOperations {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 HitspValidator.DIAGNOSTIC_SOURCE,
-						 HitspValidator.CONDITION__CONDITION_TEMPLATE_ID,
-						 HitspPlugin.INSTANCE.getString("Condition_templateId"),
+						 HITSPValidator.DIAGNOSTIC_SOURCE,
+						 HITSPValidator.CONDITION__CONDITION_TEMPLATE_ID,
+						 HITSPPlugin.INSTANCE.getString("Condition_templateId"),
 						 new Object [] { condition }));
 			}
 			return false;
@@ -144,7 +144,7 @@ public class ConditionOperations extends ProblemConcernEntryOperations {
 	public static  boolean Condition_text(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(HitspPackage.Literals.CONDITION);
+			helper.setContext(HITSPPackage.Literals.CONDITION);
 			try {
 				CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
@@ -157,9 +157,9 @@ public class ConditionOperations extends ProblemConcernEntryOperations {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 HitspValidator.DIAGNOSTIC_SOURCE,
-						 HitspValidator.CONDITION__CONDITION_TEXT,
-						 HitspPlugin.INSTANCE.getString("Condition_text"),
+						 HITSPValidator.DIAGNOSTIC_SOURCE,
+						 HITSPValidator.CONDITION__CONDITION_TEXT,
+						 HITSPPlugin.INSTANCE.getString("Condition_text"),
 						 new Object [] { condition }));
 			}
 			return false;

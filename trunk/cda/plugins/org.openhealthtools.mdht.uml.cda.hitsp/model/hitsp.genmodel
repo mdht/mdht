@@ -4,10 +4,10 @@
     xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.cda.hitsp/src"
     editDirectory="/org.openhealthtools.mdht.uml.cda.hitsp.edit/src" editorDirectory="/org.openhealthtools.mdht.uml.cda.hitsp.editor/src"
     modelPluginID="org.openhealthtools.mdht.uml.cda.hitsp" templateDirectory="/org.openhealthtools.mdht.uml.cda/templates"
-    dynamicTemplates="true" forceOverwrite="true" modelName="Hitsp" modelPluginClass="HitspPlugin"
-    editPluginClass="org.openhealthtools.mdht.uml.cda.hitsp.provider.HitspEditPlugin"
-    editorPluginClass="org.openhealthtools.mdht.uml.cda.hitsp.presentation.HitspEditorPlugin"
-    testSuiteClass="org.openhealthtools.mdht.uml.cda.hitsp.tests.HitspAllTests" importerID="org.eclipse.uml2.uml.ecore.importer"
+    dynamicTemplates="true" forceOverwrite="true" modelName="HITSP" modelPluginClass="HITSPPlugin"
+    editPluginClass="org.openhealthtools.mdht.uml.cda.hitsp.provider.HITSPEditPlugin"
+    editorPluginClass="org.openhealthtools.mdht.uml.cda.hitsp.presentation.HITSPEditorPlugin"
+    testSuiteClass="org.openhealthtools.mdht.uml.cda.hitsp.tests.HITSPAllTests" importerID="org.eclipse.uml2.uml.ecore.importer"
     complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.genmodel#//ihe ../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.genmodel#//ccd ../../org.openhealthtools.mdht.uml.cda/model/cda.genmodel#//cda ../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
@@ -28,7 +28,7 @@
     <details key="DERIVED_FEATURES" value="IGNORE"/>
   </genAnnotations>
   <foreignModel>hitsp_Ecore.uml</foreignModel>
-  <genPackages xsi:type="genmodel:GenPackage" prefix="Hitsp" basePackage="org.openhealthtools.mdht.uml.cda"
+  <genPackages xsi:type="genmodel:GenPackage" prefix="HITSP" basePackage="org.openhealthtools.mdht.uml.cda"
       disposableProviderFactory="true" ecorePackage="hitsp.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.cda.hitsp.operations">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//AllergyDrugSensitivity">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//AllergyDrugSensitivity/AllergyDrugSensitivity_templateId">
@@ -36,12 +36,7 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//AllergyDrugSensitivity/AllergyDrugSensitivity_templateId/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//Medication">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Medication/Medication_templateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Medication/Medication_templateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Medication/Medication_templateId/context"/>
-      </genOperations>
-    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//Medication"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//Condition">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Condition/Condition_templateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Condition/Condition_templateId/diagnostics"/>

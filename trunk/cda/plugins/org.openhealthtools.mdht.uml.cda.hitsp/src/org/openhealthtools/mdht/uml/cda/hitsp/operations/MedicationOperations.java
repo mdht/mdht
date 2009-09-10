@@ -20,10 +20,10 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPlugin;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
-import org.openhealthtools.mdht.uml.cda.hitsp.util.HitspValidator;
+import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,7 +83,7 @@ public class MedicationOperations extends org.openhealthtools.mdht.uml.cda.ihe.o
 	public static  boolean Medication_templateId(Medication medication, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(HitspPackage.Literals.MEDICATION);
+			helper.setContext(HITSPPackage.Literals.MEDICATION);
 			try {
 				MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
@@ -96,9 +96,9 @@ public class MedicationOperations extends org.openhealthtools.mdht.uml.cda.ihe.o
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 HitspValidator.DIAGNOSTIC_SOURCE,
-						 HitspValidator.MEDICATION__MEDICATION_TEMPLATE_ID,
-						 HitspPlugin.INSTANCE.getString("Medication_templateId"),
+						 HITSPValidator.DIAGNOSTIC_SOURCE,
+						 HITSPValidator.MEDICATION__MEDICATION_TEMPLATE_ID,
+						 HITSPPlugin.INSTANCE.getString("Medication_templateId"),
 						 new Object [] { medication }));
 			}
 			return false;

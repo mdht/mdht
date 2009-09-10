@@ -16,7 +16,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.MedicationOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -47,7 +47,7 @@ public class MedicationImpl extends org.openhealthtools.mdht.uml.cda.ihe.impl.Me
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return HitspPackage.Literals.MEDICATION;
+		return HITSPPackage.Literals.MEDICATION;
 	}
 
 	/**
@@ -55,6 +55,7 @@ public class MedicationImpl extends org.openhealthtools.mdht.uml.cda.ihe.impl.Me
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean Medication_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MedicationOperations.Medication_templateId(this, diagnostics, context);
 	}

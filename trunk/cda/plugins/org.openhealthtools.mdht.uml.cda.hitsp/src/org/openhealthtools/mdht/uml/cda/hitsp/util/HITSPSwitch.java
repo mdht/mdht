@@ -1,15 +1,9 @@
-/*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+/**
+ * <copyright>
+ * </copyright>
+ *
  * $Id$
- *******************************************************************************/
+ */
 package org.openhealthtools.mdht.uml.cda.hitsp.util;
 
 import java.util.List;
@@ -23,7 +17,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern;
@@ -41,17 +35,17 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage
+ * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage
  * @generated
  */
-public class HitspSwitch<T> {
+public class HITSPSwitch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static HitspPackage modelPackage;
+	protected static HITSPPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -59,9 +53,9 @@ public class HitspSwitch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HitspSwitch() {
+	public HITSPSwitch() {
 		if (modelPackage == null) {
-			modelPackage = HitspPackage.eINSTANCE;
+			modelPackage = HITSPPackage.eINSTANCE;
 		}
 	}
 
@@ -105,7 +99,7 @@ public class HitspSwitch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case HitspPackage.ALLERGY_DRUG_SENSITIVITY: {
+			case HITSPPackage.ALLERGY_DRUG_SENSITIVITY: {
 				AllergyDrugSensitivity allergyDrugSensitivity = (AllergyDrugSensitivity)theEObject;
 				T result = caseAllergyDrugSensitivity(allergyDrugSensitivity);
 				if (result == null) result = caseAllergyIntoleranceConcern(allergyDrugSensitivity);
@@ -115,7 +109,7 @@ public class HitspSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HitspPackage.MEDICATION: {
+			case HITSPPackage.MEDICATION: {
 				Medication medication = (Medication)theEObject;
 				T result = caseMedication(medication);
 				if (result == null) result = caseMedication_1(medication);
@@ -124,7 +118,7 @@ public class HitspSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HitspPackage.CONDITION: {
+			case HITSPPackage.CONDITION: {
 				Condition condition = (Condition)theEObject;
 				T result = caseCondition(condition);
 				if (result == null) result = caseProblemConcernEntry(condition);
@@ -134,7 +128,7 @@ public class HitspSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HitspPackage.PATIENT_SUMMARY: {
+			case HITSPPackage.PATIENT_SUMMARY: {
 				PatientSummary patientSummary = (PatientSummary)theEObject;
 				T result = casePatientSummary(patientSummary);
 				if (result == null) result = caseMedicalDocument(patientSummary);
@@ -371,4 +365,4 @@ public class HitspSwitch<T> {
 		return null;
 	}
 
-} //HitspSwitch
+} //HITSPSwitch

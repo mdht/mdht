@@ -10,19 +10,19 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
- * This is the central singleton for the Hitsp model plugin.
+ * This is the central singleton for the HITSP model plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public final class HitspPlugin extends EMFPlugin {
+public final class HITSPPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final HitspPlugin INSTANCE = new HitspPlugin();
+	public static final HITSPPlugin INSTANCE = new HITSPPlugin();
 
 	/**
 	 * Keep track of the singleton.
@@ -38,7 +38,7 @@ public final class HitspPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HitspPlugin() {
+	public HITSPPlugin() {
 		super(new ResourceLocator [] {});
 	}
 

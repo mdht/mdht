@@ -17,7 +17,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ConditionOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.impl.ProblemConcernEntryImpl;
@@ -49,7 +49,7 @@ public class ConditionImpl extends ProblemConcernEntryImpl implements Condition 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return HitspPackage.Literals.CONDITION;
+		return HITSPPackage.Literals.CONDITION;
 	}
 
 	/**
