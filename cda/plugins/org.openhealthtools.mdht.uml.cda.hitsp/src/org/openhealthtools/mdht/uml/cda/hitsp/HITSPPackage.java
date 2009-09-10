@@ -1,15 +1,9 @@
-/*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+/**
+ * <copyright>
+ * </copyright>
+ *
  * $Id$
- *******************************************************************************/
+ */
 package org.openhealthtools.mdht.uml.cda.hitsp;
 
 import org.eclipse.emf.ecore.EClass;
@@ -27,11 +21,11 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see org.openhealthtools.mdht.uml.cda.hitsp.HitspFactory
+ * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory
  * @model kind="package"
  * @generated
  */
-public interface HitspPackage extends EPackage {
+public interface HITSPPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -62,14 +56,14 @@ public interface HitspPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	HitspPackage eINSTANCE = org.openhealthtools.mdht.uml.cda.hitsp.impl.HitspPackageImpl.init();
+	HITSPPackage eINSTANCE = org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.AllergyDrugSensitivityImpl <em>Allergy Drug Sensitivity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.AllergyDrugSensitivityImpl
-	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HitspPackageImpl#getAllergyDrugSensitivity()
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getAllergyDrugSensitivity()
 	 * @generated
 	 */
 	int ALLERGY_DRUG_SENSITIVITY = 0;
@@ -295,7 +289,7 @@ public interface HitspPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.MedicationImpl
-	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HitspPackageImpl#getMedication()
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getMedication()
 	 * @generated
 	 */
 	int MEDICATION = 1;
@@ -584,7 +578,7 @@ public interface HitspPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.ConditionImpl
-	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HitspPackageImpl#getCondition()
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getCondition()
 	 * @generated
 	 */
 	int CONDITION = 2;
@@ -810,7 +804,7 @@ public interface HitspPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.PatientSummaryImpl
-	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HitspPackageImpl#getPatientSummary()
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getPatientSummary()
 	 * @generated
 	 */
 	int PATIENT_SUMMARY = 3;
@@ -1094,6 +1088,7 @@ public interface HitspPackage extends EPackage {
 	 */
 	int PATIENT_SUMMARY_FEATURE_COUNT = IHEPackage.MEDICAL_DOCUMENT_FEATURE_COUNT + 0;
 
+
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity <em>Allergy Drug Sensitivity</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1141,7 +1136,7 @@ public interface HitspPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	HitspFactory getHitspFactory();
+	HITSPFactory getHITSPFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1161,7 +1156,7 @@ public interface HitspPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.AllergyDrugSensitivityImpl
-		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HitspPackageImpl#getAllergyDrugSensitivity()
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getAllergyDrugSensitivity()
 		 * @generated
 		 */
 		EClass ALLERGY_DRUG_SENSITIVITY = eINSTANCE.getAllergyDrugSensitivity();
@@ -1171,7 +1166,7 @@ public interface HitspPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.MedicationImpl
-		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HitspPackageImpl#getMedication()
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getMedication()
 		 * @generated
 		 */
 		EClass MEDICATION = eINSTANCE.getMedication();
@@ -1181,7 +1176,7 @@ public interface HitspPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.ConditionImpl
-		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HitspPackageImpl#getCondition()
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getCondition()
 		 * @generated
 		 */
 		EClass CONDITION = eINSTANCE.getCondition();
@@ -1191,11 +1186,11 @@ public interface HitspPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.PatientSummaryImpl
-		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HitspPackageImpl#getPatientSummary()
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getPatientSummary()
 		 * @generated
 		 */
 		EClass PATIENT_SUMMARY = eINSTANCE.getPatientSummary();
 
 	}
 
-} //HitspPackage
+} //HITSPPackage

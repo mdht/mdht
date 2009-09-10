@@ -1,15 +1,9 @@
-/*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+/**
+ * <copyright>
+ * </copyright>
+ *
  * $Id$
- *******************************************************************************/
+ */
 package org.openhealthtools.mdht.uml.cda.hitsp.util;
 
 import java.util.Map;
@@ -22,8 +16,8 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPlugin;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
@@ -32,17 +26,17 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <!-- begin-user-doc -->
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
- * @see org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage
+ * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage
  * @generated
  */
-public class HitspValidator extends EObjectValidator {
+public class HITSPValidator extends EObjectValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final HitspValidator INSTANCE = new HitspValidator();
+	public static final HITSPValidator INSTANCE = new HITSPValidator();
 
 	/**
 	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
@@ -132,7 +126,7 @@ public class HitspValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HitspValidator() {
+	public HITSPValidator() {
 		super();
 		ccdValidator = CCDValidator.INSTANCE;
 		iheValidator = IHEValidator.INSTANCE;
@@ -146,7 +140,7 @@ public class HitspValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return HitspPackage.eINSTANCE;
+	  return HITSPPackage.eINSTANCE;
 	}
 
 	/**
@@ -158,13 +152,13 @@ public class HitspValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case HitspPackage.ALLERGY_DRUG_SENSITIVITY:
+			case HITSPPackage.ALLERGY_DRUG_SENSITIVITY:
 				return validateAllergyDrugSensitivity((AllergyDrugSensitivity)value, diagnostics, context);
-			case HitspPackage.MEDICATION:
+			case HITSPPackage.MEDICATION:
 				return validateMedication((Medication)value, diagnostics, context);
-			case HitspPackage.CONDITION:
+			case HITSPPackage.CONDITION:
 				return validateCondition((Condition)value, diagnostics, context);
-			case HitspPackage.PATIENT_SUMMARY:
+			case HITSPPackage.PATIENT_SUMMARY:
 				return validatePatientSummary((PatientSummary)value, diagnostics, context);
 			default:
 				return true;
@@ -184,11 +178,11 @@ public class HitspValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(allergyDrugSensitivity, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_templateId(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_classCode(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_moodCode(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_id(allergyDrugSensitivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code_nullFlavor(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_problemObservation(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_ConcernEntry_templateId(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_ConcernEntry_effectiveTime(allergyDrugSensitivity, diagnostics, context);
@@ -272,11 +266,11 @@ public class HitspValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(condition, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_templateId(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_classCode(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_moodCode(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_id(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code_nullFlavor(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_problemObservation(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_ConcernEntry_templateId(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_ConcernEntry_effectiveTime(condition, diagnostics, context);
@@ -343,7 +337,7 @@ public class HitspValidator extends EObjectValidator {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return HitspPlugin.INSTANCE;
+		return HITSPPlugin.INSTANCE;
 	}
 
-} //HitspValidator
+} //HITSPValidator

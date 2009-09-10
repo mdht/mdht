@@ -20,10 +20,10 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPlugin;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
-import org.openhealthtools.mdht.uml.cda.hitsp.util.HitspValidator;
+import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
@@ -89,7 +89,7 @@ public class PatientSummaryOperations extends MedicalDocumentOperations {
 	public static  boolean PatientSummary_templateId(PatientSummary patientSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(HitspPackage.Literals.PATIENT_SUMMARY);
+			helper.setContext(HITSPPackage.Literals.PATIENT_SUMMARY);
 			try {
 				PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
@@ -102,9 +102,9 @@ public class PatientSummaryOperations extends MedicalDocumentOperations {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 HitspValidator.DIAGNOSTIC_SOURCE,
-						 HitspValidator.PATIENT_SUMMARY__PATIENT_SUMMARY_TEMPLATE_ID,
-						 HitspPlugin.INSTANCE.getString("PatientSummary_templateId"),
+						 HITSPValidator.DIAGNOSTIC_SOURCE,
+						 HITSPValidator.PATIENT_SUMMARY__PATIENT_SUMMARY_TEMPLATE_ID,
+						 HITSPPlugin.INSTANCE.getString("PatientSummary_templateId"),
 						 new Object [] { patientSummary }));
 			}
 			return false;

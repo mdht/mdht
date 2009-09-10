@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspFactory;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
@@ -71,7 +71,7 @@ public class Main {
 	}
 	
 	public PatientSummary createPatientSummary() {
-		PatientSummary doc = HitspFactory.eINSTANCE.createPatientSummary().init();
+		PatientSummary doc = HITSPFactory.eINSTANCE.createPatientSummary().init();
 
 		II id = DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.72", 
 				"CCD_HITSP_C32v2.4_16SectionsWithEntries_Rev6_Notes");
@@ -140,7 +140,7 @@ public class Main {
 	}
 	
 	public void fillProblemList(ActiveProblemsSection problemList) {
-		Condition condition = HitspFactory.eINSTANCE.createCondition().init();
+		Condition condition = HITSPFactory.eINSTANCE.createCondition().init();
 		problemList.addAct(condition);
 		condition.getId().add(DatatypesFactory.eINSTANCE.createII("ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"));
 		

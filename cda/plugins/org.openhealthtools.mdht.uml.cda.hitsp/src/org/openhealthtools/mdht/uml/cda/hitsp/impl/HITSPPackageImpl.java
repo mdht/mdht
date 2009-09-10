@@ -1,15 +1,9 @@
-/*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+/**
+ * <copyright>
+ * </copyright>
+ *
  * $Id$
- *******************************************************************************/
+ */
 package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -20,11 +14,11 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspFactory;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
-import org.openhealthtools.mdht.uml.cda.hitsp.util.HitspValidator;
+import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 
 /**
@@ -33,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
+public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,12 +67,12 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage#eNS_URI
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private HitspPackageImpl() {
-		super(eNS_URI, HitspFactory.eINSTANCE);
+	private HITSPPackageImpl() {
+		super(eNS_URI, HITSPFactory.eINSTANCE);
 	}
 
 	/**
@@ -110,11 +104,11 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static HitspPackage init() {
-		if (isInited) return (HitspPackage)EPackage.Registry.INSTANCE.getEPackage(HitspPackage.eNS_URI);
+	public static HITSPPackage init() {
+		if (isInited) return (HITSPPackage)EPackage.Registry.INSTANCE.getEPackage(HITSPPackage.eNS_URI);
 
 		// Obtain or create and register package
-		HitspPackageImpl theHitspPackage = (HitspPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(eNS_URI) instanceof HitspPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(eNS_URI) : new HitspPackageImpl());
+		HITSPPackageImpl theHITSPPackage = (HITSPPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(eNS_URI) instanceof HITSPPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(eNS_URI) : new HITSPPackageImpl());
 
 		isInited = true;
 
@@ -122,24 +116,24 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 		IHEPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
-		theHitspPackage.createPackageContents();
+		theHITSPPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theHitspPackage.initializePackageContents();
+		theHITSPPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
-			(theHitspPackage, 
+			(theHITSPPackage, 
 			 new EValidator.Descriptor() {
 				 public EValidator getEValidator() {
-					 return HitspValidator.INSTANCE;
+					 return HITSPValidator.INSTANCE;
 				 }
 			 });
 
 		// Mark meta-data to indicate it can't be changed
-		theHitspPackage.freeze();
+		theHITSPPackage.freeze();
 
-		return theHitspPackage;
+		return theHITSPPackage;
 	}
 
 	/**
@@ -183,8 +177,8 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HitspFactory getHitspFactory() {
-		return (HitspFactory)getEFactoryInstance();
+	public HITSPFactory getHITSPFactory() {
+		return (HITSPFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -265,15 +259,6 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 
 		initEClass(medicationEClass, Medication.class, "Medication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(medicationEClass, ecorePackage.getEBoolean(), "Medication_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(conditionEClass, ecorePackage.getEBoolean(), "Condition_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -319,6 +304,8 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 		createAnnotationAnnotations();
 		// uml2.alias
 		createUml2Annotations();
+		// duplicates
+		createDuplicatesAnnotations();
 		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
 		createExtendedMetaDataAnnotations();
 	}
@@ -344,7 +331,7 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.3.88.11.83.8",
 			 "constraints.validation.error", "Medication_templateId"
-		   });						
+		   });			
 		addAnnotation
 		  (conditionEClass, 
 		   source, 
@@ -375,7 +362,22 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 		   new String[] {
 			 "Allergies and Drug Sensitivities", null,
 			 "Allergy and Drug Sensitivity", null
-		   });																								
+		   });																					
+	}
+
+	/**
+	 * Initializes the annotations for <b>duplicates</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createDuplicatesAnnotations() {
+		String source = "duplicates";										
+		addAnnotation
+		  (medicationEClass, 
+		   source, 
+		   new String[] {
+		   });															
 	}
 
 	/**
@@ -385,7 +387,7 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																							
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																				
 		addAnnotation
 		  (patientSummaryEClass, 
 		   source, 
@@ -394,4 +396,4 @@ public class HitspPackageImpl extends EPackageImpl implements HitspPackage {
 		   });					
 	}
 
-} //HitspPackageImpl
+} //HITSPPackageImpl

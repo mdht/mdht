@@ -21,9 +21,9 @@ import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPlugin;
-import org.openhealthtools.mdht.uml.cda.hitsp.util.HitspValidator;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPlugin;
+import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.AllergyIntoleranceConcernOperations;
 
 /**
@@ -84,7 +84,7 @@ public class AllergyDrugSensitivityOperations extends AllergyIntoleranceConcernO
 	public static  boolean AllergyDrugSensitivity_templateId(AllergyDrugSensitivity allergyDrugSensitivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (ALLERGY_DRUG_SENSITIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(HitspPackage.Literals.ALLERGY_DRUG_SENSITIVITY);
+			helper.setContext(HITSPPackage.Literals.ALLERGY_DRUG_SENSITIVITY);
 			try {
 				ALLERGY_DRUG_SENSITIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ALLERGY_DRUG_SENSITIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
@@ -97,9 +97,9 @@ public class AllergyDrugSensitivityOperations extends AllergyIntoleranceConcernO
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
-						 HitspValidator.DIAGNOSTIC_SOURCE,
-						 HitspValidator.ALLERGY_DRUG_SENSITIVITY__ALLERGY_DRUG_SENSITIVITY_TEMPLATE_ID,
-						 HitspPlugin.INSTANCE.getString("AllergyDrugSensitivity_templateId"),
+						 HITSPValidator.DIAGNOSTIC_SOURCE,
+						 HITSPValidator.ALLERGY_DRUG_SENSITIVITY__ALLERGY_DRUG_SENSITIVITY_TEMPLATE_ID,
+						 HITSPPlugin.INSTANCE.getString("AllergyDrugSensitivity_templateId"),
 						 new Object [] { allergyDrugSensitivity }));
 			}
 			return false;

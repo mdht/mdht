@@ -17,7 +17,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.AllergyDrugSensitivityOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.impl.AllergyIntoleranceConcernImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -48,7 +48,7 @@ public class AllergyDrugSensitivityImpl extends AllergyIntoleranceConcernImpl im
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return HitspPackage.Literals.ALLERGY_DRUG_SENSITIVITY;
+		return HITSPPackage.Literals.ALLERGY_DRUG_SENSITIVITY;
 	}
 
 	/**

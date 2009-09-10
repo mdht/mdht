@@ -16,7 +16,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.cda.hitsp.HitspPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PatientSummaryOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
@@ -50,7 +50,7 @@ public class PatientSummaryImpl extends MedicalDocumentImpl implements PatientSu
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return HitspPackage.Literals.PATIENT_SUMMARY;
+		return HITSPPackage.Literals.PATIENT_SUMMARY;
 	}
 
 	/**
