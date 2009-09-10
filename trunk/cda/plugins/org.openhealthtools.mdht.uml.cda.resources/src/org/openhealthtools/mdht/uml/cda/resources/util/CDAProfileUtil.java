@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -83,4 +84,12 @@ public class CDAProfileUtil {
 		return stereotype;
 	}
 
+	public static void unapplyCDAStereotype(Element element, String stereotypeName) {
+		String qname = ICDAProfileConstants.CDA_PROFILE_NAME + NamedElement.SEPARATOR + stereotypeName;
+		Stereotype stereotype = element.getApplicableStereotype(qname);
+		if (stereotype != null && element.isStereotypeApplied(stereotype)) {
+			element.unapplyStereotype(stereotype);
+		}
+	}
+	
 }
