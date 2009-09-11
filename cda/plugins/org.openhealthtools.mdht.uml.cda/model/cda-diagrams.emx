@@ -26,10 +26,92 @@
         </children>
         <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_vLtcIVwuEd6ZEsfifJz_3w" showListSignature="true" showStereotype="Label"/>
         <element xmi:type="uml:Class" href="cda.emx#_S9OzADxXEd6JwqSGecoePg?cda/ClinicalDocument?"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vLtcIlwuEd6ZEsfifJz_3w" x="9510" y="3170"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vLtcIlwuEd6ZEsfifJz_3w" x="15216" y="3170"/>
+      </children>
+      <children xmi:id="_jKztoJ7rEd6BCKDGgDgllw">
+        <children xmi:id="_jK9eop7rEd6BCKDGgDgllw" type="ImageCompartment">
+          <layoutConstraint xmi:type="notation:Size" xmi:id="_jK9eo57rEd6BCKDGgDgllw" width="1320" height="1320"/>
+        </children>
+        <children xmi:id="_jK9epJ7rEd6BCKDGgDgllw" type="Stereotype"/>
+        <children xmi:id="_jK9epZ7rEd6BCKDGgDgllw" type="Name"/>
+        <children xmi:id="_jK9epp7rEd6BCKDGgDgllw" type="Parent"/>
+        <children xmi:id="_jLGokJ7rEd6BCKDGgDgllw" type="AttributeCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_jLGokZ7rEd6BCKDGgDgllw"/>
+        </children>
+        <children xmi:id="_jLGokp7rEd6BCKDGgDgllw" type="OperationCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_jLGok57rEd6BCKDGgDgllw"/>
+        </children>
+        <children xmi:id="_jLGolJ7rEd6BCKDGgDgllw" visible="false" type="SignalCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_jLGolZ7rEd6BCKDGgDgllw"/>
+        </children>
+        <children xmi:id="_jLGolp7rEd6BCKDGgDgllw" visible="false" type="StructureCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_jLGol57rEd6BCKDGgDgllw"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_jK9eoJ7rEd6BCKDGgDgllw" showListSignature="true" showStereotype="Label"/>
+        <element xmi:type="uml:Class" href="cda.emx#_KsXeQJ7qEd6BCKDGgDgllw?cda/DocumentRoot?"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jK9eoZ7rEd6BCKDGgDgllw" x="951" y="7608"/>
       </children>
       <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_qxesgVwuEd6ZEsfifJz_3w"/>
       <element xsi:nil="true"/>
+      <edges xmi:id="_vlMKsJ7rEd6BCKDGgDgllw" source="_jKztoJ7rEd6BCKDGgDgllw" target="_vLtcIFwuEd6ZEsfifJz_3w">
+        <children xmi:id="_vlMKs57rEd6BCKDGgDgllw" type="NameLabel">
+          <children xmi:id="_vlMKtZ7rEd6BCKDGgDgllw" type="Stereotype"/>
+          <children xmi:id="_vlMKtp7rEd6BCKDGgDgllw" type="Name"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vlMKtJ7rEd6BCKDGgDgllw" y="-186"/>
+        </children>
+        <children xmi:id="_vlMKt57rEd6BCKDGgDgllw" type="ToMultiplicityLabel">
+          <children xmi:id="_vlVUoJ7rEd6BCKDGgDgllw" type="ToMultiplicity"/>
+          <element xmi:type="uml:Property" href="cda.emx#_vkltwJ7rEd6BCKDGgDgllw?cda/%3CAssociation%3E/%3CProperty%3E?"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_vlMKuJ7rEd6BCKDGgDgllw" y="396"/>
+        </children>
+        <children xmi:id="_vlVUoZ7rEd6BCKDGgDgllw" type="ToRoleLabel">
+          <children xmi:id="_vlVUo57rEd6BCKDGgDgllw" type="ToRole"/>
+          <element xmi:type="uml:Property" href="cda.emx#_vkltwJ7rEd6BCKDGgDgllw?cda/%3CAssociation%3E/%3CProperty%3E?"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_vlVUop7rEd6BCKDGgDgllw" y="-397"/>
+        </children>
+        <children xmi:id="_vlVUpJ7rEd6BCKDGgDgllw" type="FromMultiplicityLabel">
+          <children xmi:id="_vlVUpp7rEd6BCKDGgDgllw" type="FromMultiplicity"/>
+          <element xmi:type="uml:Property" href="cda.emx#_vkSy0J7rEd6BCKDGgDgllw?cda/DocumentRoot/clinicalDocument?"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_vlVUpZ7rEd6BCKDGgDgllw" y="396"/>
+        </children>
+        <children xmi:id="_vlVUp57rEd6BCKDGgDgllw" type="FromRoleLabel">
+          <children xmi:id="_vlVUqZ7rEd6BCKDGgDgllw" type="FromRole"/>
+          <element xmi:type="uml:Property" href="cda.emx#_vkSy0J7rEd6BCKDGgDgllw?cda/DocumentRoot/clinicalDocument?"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_vlVUqJ7rEd6BCKDGgDgllw" x="-721" y="-501"/>
+        </children>
+        <children xmi:id="_vlVUqp7rEd6BCKDGgDgllw" type="ToQualifierLabel">
+          <children xmi:id="_vlVUrJ7rEd6BCKDGgDgllw" type="QualifierCompartment">
+            <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_vlVUrZ7rEd6BCKDGgDgllw"/>
+          </children>
+          <element xmi:type="uml:Property" href="cda.emx#_vkltwJ7rEd6BCKDGgDgllw?cda/%3CAssociation%3E/%3CProperty%3E?"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_vlVUq57rEd6BCKDGgDgllw" y="-186"/>
+        </children>
+        <children xmi:id="_vlVUrp7rEd6BCKDGgDgllw" type="FromQualifierLabel">
+          <children xmi:id="_vlVUsJ7rEd6BCKDGgDgllw" type="QualifierCompartment">
+            <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_vlVUsZ7rEd6BCKDGgDgllw"/>
+          </children>
+          <element xmi:type="uml:Property" href="cda.emx#_vkSy0J7rEd6BCKDGgDgllw?cda/DocumentRoot/clinicalDocument?"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_vlVUr57rEd6BCKDGgDgllw" y="-186"/>
+        </children>
+        <children xmi:id="_vlVUsp7rEd6BCKDGgDgllw" type="ToConstraintLabel">
+          <children xmi:id="_vlVUtJ7rEd6BCKDGgDgllw" type="ToConstraintCompartment">
+            <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_vlVUtZ7rEd6BCKDGgDgllw"/>
+          </children>
+          <element xmi:type="uml:Property" href="cda.emx#_vkltwJ7rEd6BCKDGgDgllw?cda/%3CAssociation%3E/%3CProperty%3E?"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_vlVUs57rEd6BCKDGgDgllw" y="1058"/>
+        </children>
+        <children xmi:id="_vlVUtp7rEd6BCKDGgDgllw" type="FromConstraintLabel">
+          <children xmi:id="_vlVUuJ7rEd6BCKDGgDgllw" type="FromConstraintCompartment">
+            <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_vlVUuZ7rEd6BCKDGgDgllw"/>
+          </children>
+          <element xmi:type="uml:Property" href="cda.emx#_vkSy0J7rEd6BCKDGgDgllw?cda/DocumentRoot/clinicalDocument?"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_vlVUt57rEd6BCKDGgDgllw" y="1058"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_vlMKsZ7rEd6BCKDGgDgllw" lineWidth="1" showStereotype="Text"/>
+        <element xmi:type="uml:Association" href="cda.emx#_vkJB0J7rEd6BCKDGgDgllw?cda/%3CAssociation%3E?"/>
+        <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vlMKsp7rEd6BCKDGgDgllw" points="[125, -1, -501, -13]$[379, -8, -247, -20]"/>
+        <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_PA15QJ7sEd6BCKDGgDgllw" id="(0.003636639,0.54056454)"/>
+      </edges>
     </contents>
     <contents xmi:type="notation:Diagram" xmi:id="_sv_noFwuEd6ZEsfifJz_3w" type="Class" name="Section">
       <children xmi:id="_yxLuAFwuEd6ZEsfifJz_3w">
