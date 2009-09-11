@@ -14,24 +14,18 @@ package org.openhealthtools.mdht.uml.cda.util;
 
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
-import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
@@ -44,22 +38,20 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xml.type.AnyType;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.DocumentRoot;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResource;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
 
 public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
-	public static final String CDA_SCHEMA_LOCATION = CDAPackage.eNS_URI + " infrastructure/cda/CDA.xsd";
 	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
 	
 	public static ClinicalDocument load(InputStream in) throws Exception {
@@ -70,13 +62,19 @@ public class CDAUtil {
 		CDAPackage.eINSTANCE.eClass();
 		DocumentBuilder builder = newDocumentBuilder();
 		Document doc = builder.parse(in);
-//		adjustNamespace(doc);
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.load(doc, null);
 		if (handler != null) {
 			processResource(resource, handler);
 		}
-		return (ClinicalDocument) resource.getContents().get(0);
+		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
+		return root.getClinicalDocument();
+	}
+	
+	private static DocumentBuilder newDocumentBuilder() throws Exception {
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setNamespaceAware(true);
+		return factory.newDocumentBuilder();
 	}
 	
 	private static void processResource(XMLResource resource, LoadHandler handler) {
@@ -112,112 +110,36 @@ public class CDAUtil {
 	}
 	
 	public static void save(ClinicalDocument clinicalDocument, OutputStream out, boolean defaults) throws Exception {
-		if (defaults) {
-			traverse(clinicalDocument);
-		}
-		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
-		resource.getContents().add(clinicalDocument);
-		Document document = newDocument();
-		resource.save(document, null, null);
-		adjustNamespace(document);
-		setSchemaLocation(document);
-		save(document, out);
+		CDAResource resource = prepare(clinicalDocument, defaults);
+		resource.save(out, null);
 	}
 	
-	/*
-	private static void adjustNamespace(Document document) {
-		Element root = document.getDocumentElement();
-		if (root.getPrefix() == null) {
-			root.removeAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns");
-		} else {
-			root.removeAttributeNS(ExtendedMetaData.XMLNS_URI, root.getPrefix());
-		}
-		root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns:" + CDAPackage.eNS_PREFIX, CDAPackage.eNS_URI);
-		root.setPrefix(CDAPackage.eNS_PREFIX);
-	}
-	*/
-	
-	private static void adjustNamespace(Document document) {
-		Element root = document.getDocumentElement();
-		
-		// put the root element into the default namespace
-		String prefix = root.getPrefix();
-		document.renameNode(root, CDAPackage.eNS_URI, root.getLocalName());
-		root.removeAttributeNS(ExtendedMetaData.XMLNS_URI, prefix);
-		
-		// adjust the rest of the document
-		adjustNamespace(root);
+	public static void save(ClinicalDocument clinicalDocument, Writer writer) throws Exception {
+		save(clinicalDocument, writer, true);
 	}
 	
-	private static void adjustNamespace(Element root) {
-		Document document = root.getOwnerDocument();
-		Stack<Element> stack = new Stack<Element>();
-		stack.push(root);
-		while (!stack.isEmpty()) {
-			Element element = stack.pop();
-			if (element.getPrefix() == null && element.getNamespaceURI() == null) {
-				// put unqualified local element into default namespace
-				document.renameNode(element, CDAPackage.eNS_URI, element.getLocalName());
-			}
-			NodeList childNodes = element.getChildNodes();
-			for (int i = 0; i < childNodes.getLength(); i++) {
-				if (childNodes.item(i) instanceof Element) {
-					stack.push((Element) childNodes.item(i));
-				}
-			}
-		}
-	}
-	
-	private static void setSchemaLocation(Document document) {
-		Element root = document.getDocumentElement();
-		root.setAttributeNS(ExtendedMetaData.XSI_URI, "xsi:schemaLocation", CDA_SCHEMA_LOCATION);
-	}
-	
-	private static void save(Document document, OutputStream out) throws Exception {
-		TransformerFactory factory = TransformerFactory.newInstance();
-		try {
-			factory.setAttribute("indent-number", 2);
-		} catch (Exception e) {}
-		Transformer transformer = factory.newTransformer();
-		transformer.setParameter("indent-number", 2);
-		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-		transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
-		transformer.transform(new DOMSource(document), new StreamResult(new OutputStreamWriter(out, "UTF-8")));
-	}
-	
-	private static DocumentBuilder newDocumentBuilder() throws Exception {
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		factory.setNamespaceAware(true);
-		return factory.newDocumentBuilder();
-	}
-	
-	private static Document newDocument() throws Exception {
-		return newDocumentBuilder().newDocument();
-	}
-	
-	public static boolean validate(EObject object) {
-		return validate(object, null);
-	}
-	
-	public static boolean validate(EObject object, ValidationHandler handler) {
-		return validate(object, handler, true);
-	}
-	
-	public static boolean validate(EObject object, ValidationHandler handler, boolean defaults) {
-		if (defaults) {
-			traverse(object);
-		}
-		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(object);
-		if (handler != null) {
-			processDiagnostic(diagnostic, handler);
-		}
-		return diagnostic.getSeverity() != Diagnostic.ERROR;
+	public static void save(ClinicalDocument clinicalDocument, Writer writer, boolean defaults) throws Exception {
+		CDAResource resource = prepare(clinicalDocument, defaults);
+		resource.save(writer, null);
 	}
 
+	private static CDAResource prepare(ClinicalDocument clinicalDocument, boolean defaults) {
+		if (defaults) {
+			handleDefaults(clinicalDocument);
+		}
+		
+		DocumentRoot root = CDAFactory.eINSTANCE.createDocumentRoot();
+		root.setClinicalDocument(clinicalDocument);
+		root.getXMLNSPrefixMap().put("", CDAPackage.eNS_URI);
+		
+		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
+		resource.getContents().add(root);
+		return resource;
+	}
+	
 	// iterative breadth-first traversal using queue
 	@SuppressWarnings("unchecked")
-	private static void traverse(EObject root) {
+	private static void handleDefaults(EObject root) {
 		Queue<EObject> queue = new LinkedList<EObject>();
 		queue.add(root); // root
 		while (!queue.isEmpty()) {
@@ -246,6 +168,25 @@ public class CDAUtil {
 		}
 	}
 	
+	public static boolean validate(ClinicalDocument clinicalDocument) {
+		return validate(clinicalDocument, null);
+	}
+	
+	public static boolean validate(ClinicalDocument clinicalDocument, ValidationHandler handler) {
+		return validate(clinicalDocument, handler, true);
+	}
+	
+	public static boolean validate(ClinicalDocument clinicalDocument, ValidationHandler handler, boolean defaults) {
+		if (defaults) {
+			handleDefaults(clinicalDocument);
+		}
+		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(clinicalDocument);
+		if (handler != null) {
+			processDiagnostic(diagnostic, handler);
+		}
+		return diagnostic.getSeverity() != Diagnostic.ERROR;
+	}
+	
 	// iterative breadth-first traversal of diagnostic tree using queue
 	private static void processDiagnostic(Diagnostic diagnostic, ValidationHandler handler) {
 		Queue<Diagnostic> queue = new LinkedList<Diagnostic>();
@@ -258,21 +199,6 @@ public class CDAUtil {
 			}
 		}
 	}
-	
-	/*
-	// iterative depth-first traversal of diagnostic tree using stack
-	private static void processDiagnostic(Diagnostic diagnostic, DiagnosticHandler handler) {
-		Stack<Diagnostic> stack = new Stack<Diagnostic>();
-		stack.push(diagnostic);		// root
-		while (!stack.isEmpty()) {
-			Diagnostic d = stack.pop();
-			handleDiagnostic(d, handler);	// visit
-			for (Diagnostic childDiagnostic : d.getChildren()) {	// process successors
-				stack.push(childDiagnostic);
-			}
-		}
-	}
-	*/
 	
 	private static void handleDiagnostic(Diagnostic diagnostic, ValidationHandler handler) {
 		switch (diagnostic.getSeverity()) {
@@ -310,7 +236,7 @@ public class CDAUtil {
 		return (Section) object;
 	}
 	
-	// BEGIN: Path Expression Support
+	// annotation processing to populate runtime instance
 	public static void init(EObject eObject) {
 		List<EClass> classes = new ArrayList<EClass>(eObject.eClass().getEAllSuperTypes());
 		classes.add(eObject.eClass());
@@ -339,6 +265,7 @@ public class CDAUtil {
 		}
 	}
 	
+	// BEGIN: Path Expression Support
 	public static <T> T create(EObject root, String path) {
 		return create(root, path, null);
 	}
