@@ -353,6 +353,8 @@ public class CDAValidator extends EObjectValidator {
 				return validateProduct((Product)value, diagnostics, context);
 			case CDAPackage.COMPONENT5:
 				return validateComponent5((Component5)value, diagnostics, context);
+			case CDAPackage.DOCUMENT_ROOT:
+				return validateDocumentRoot((DocumentRoot)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -1337,6 +1339,15 @@ public class CDAValidator extends EObjectValidator {
 	 */
 	public boolean validateComponent5(Component5 component5, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(component5, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDocumentRoot(DocumentRoot documentRoot, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(documentRoot, diagnostics, context);
 	}
 
 	/**
