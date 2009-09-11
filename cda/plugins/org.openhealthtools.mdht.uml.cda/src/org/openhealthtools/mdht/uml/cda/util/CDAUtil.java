@@ -21,6 +21,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -54,6 +55,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResource;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
@@ -68,7 +70,7 @@ public class CDAUtil {
 		CDAPackage.eINSTANCE.eClass();
 		DocumentBuilder builder = newDocumentBuilder();
 		Document doc = builder.parse(in);
-		adjustNamespace(doc);
+//		adjustNamespace(doc);
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.load(doc, null);
 		if (handler != null) {
@@ -122,6 +124,7 @@ public class CDAUtil {
 		save(document, out);
 	}
 	
+	/*
 	private static void adjustNamespace(Document document) {
 		Element root = document.getDocumentElement();
 		if (root.getPrefix() == null) {
@@ -132,21 +135,38 @@ public class CDAUtil {
 		root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns:" + CDAPackage.eNS_PREFIX, CDAPackage.eNS_URI);
 		root.setPrefix(CDAPackage.eNS_PREFIX);
 	}
+	*/
 	
-	/*
 	private static void adjustNamespace(Document document) {
 		Element root = document.getDocumentElement();
-		if (root.getPrefix() == null) {
-			root.removeAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns");
-			root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns:" + CDAPackage.eNS_PREFIX, CDAPackage.eNS_URI);
-			root.setPrefix(CDAPackage.eNS_PREFIX);
-		} else {
-			root.removeAttributeNS(ExtendedMetaData.XMLNS_URI, root.getPrefix());
-			root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns", CDAPackage.eNS_URI);
-			root.setPrefix(null);
+		
+		// put the root element into the default namespace
+		String prefix = root.getPrefix();
+		document.renameNode(root, CDAPackage.eNS_URI, root.getLocalName());
+		root.removeAttributeNS(ExtendedMetaData.XMLNS_URI, prefix);
+		
+		// adjust the rest of the document
+		adjustNamespace(root);
+	}
+	
+	private static void adjustNamespace(Element root) {
+		Document document = root.getOwnerDocument();
+		Stack<Element> stack = new Stack<Element>();
+		stack.push(root);
+		while (!stack.isEmpty()) {
+			Element element = stack.pop();
+			if (element.getPrefix() == null && element.getNamespaceURI() == null) {
+				// put unqualified local element into default namespace
+				document.renameNode(element, CDAPackage.eNS_URI, element.getLocalName());
+			}
+			NodeList childNodes = element.getChildNodes();
+			for (int i = 0; i < childNodes.getLength(); i++) {
+				if (childNodes.item(i) instanceof Element) {
+					stack.push((Element) childNodes.item(i));
+				}
+			}
 		}
 	}
-	*/
 	
 	private static void setSchemaLocation(Document document) {
 		Element root = document.getDocumentElement();
