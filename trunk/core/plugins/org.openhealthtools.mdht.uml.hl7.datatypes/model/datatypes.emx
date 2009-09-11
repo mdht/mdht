@@ -23,11 +23,6 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Av5_kDxaEd6JwqSGecoePg" name="BIN" isAbstract="true">
       <generalization xmi:id="_F-I_ADxaEd6JwqSGecoePg" general="__I8BwDxZEd6JwqSGecoePg"/>
-      <ownedAttribute xmi:id="_7yi4QDxaEd6JwqSGecoePg" name="mixed" visibility="private" isOrdered="true" isUnique="false">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFeatureMapEntry"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0Wz0kTxcEd6JwqSGecoePg" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0Wz0kDxcEd6JwqSGecoePg"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_vrzYMD80Ed6uA6ElmbQH3Q" name="representation" visibility="private" type="_I4QZoD5xEd6cla2oXsPtlA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yBjuoT80Ed6uA6ElmbQH3Q" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yBjuoD80Ed6uA6ElmbQH3Q"/>
@@ -35,11 +30,16 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_CowXkDxaEd6JwqSGecoePg" name="ED">
       <generalization xmi:id="_Gm0voDxaEd6JwqSGecoePg" general="_Av5_kDxaEd6JwqSGecoePg"/>
-      <ownedAttribute xmi:id="_PIRiAD54Ed6cla2oXsPtlA" name="reference" visibility="private" type="_22o_kD52Ed6cla2oXsPtlA" aggregation="composite">
+      <ownedAttribute xmi:id="_7yi4QDxaEd6JwqSGecoePg" name="mixed" visibility="private" isOrdered="true" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFeatureMapEntry"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0Wz0kTxcEd6JwqSGecoePg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0Wz0kDxcEd6JwqSGecoePg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_PIRiAD54Ed6cla2oXsPtlA" name="reference" visibility="private" type="_22o_kD52Ed6cla2oXsPtlA" isOrdered="true" isDerived="true" aggregation="composite">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ySf0ET54Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ySf0ED54Ed6cla2oXsPtlA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_Px2DcD54Ed6cla2oXsPtlA" name="thumbnail" visibility="private" type="_CowXkDxaEd6JwqSGecoePg" aggregation="composite">
+      <ownedAttribute xmi:id="_Px2DcD54Ed6cla2oXsPtlA" name="thumbnail" visibility="private" type="_CowXkDxaEd6JwqSGecoePg" isOrdered="true" isDerived="true" aggregation="composite">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6IECIT54Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6IECID54Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -1140,112 +1140,112 @@
     </profileApplication>
   </uml:Package>
   <Ecore:EPackage xmi:id="_SDF7cDxWEd6JwqSGecoePg" base_Package="_XgMSwzxVEd6JwqSGecoePg" packageName="datatypes" nsPrefix="datatypes" nsURI="http://www.openhealthtools.org/mdht/uml/hl7/datatypes" basePackage="org.openhealthtools.mdht.uml.hl7" prefix="Datatypes"/>
-  <Ecore:EClass xmi:id="_LdN20DxaEd6JwqSGecoePg" base_Class="_Av5_kDxaEd6JwqSGecoePg" xmlContentKind="Mixed"/>
+  <Ecore:EClass xmi:id="_LdN20DxaEd6JwqSGecoePg" base_Class="_Av5_kDxaEd6JwqSGecoePg" xmlContentKind="Empty"/>
   <Ecore:EClass xmi:id="_LdN20jxaEd6JwqSGecoePg" base_Class="_EaTNsDxaEd6JwqSGecoePg" xmlContentKind="Mixed"/>
   <Ecore:EClass xmi:id="_A8dmwD58Ed6cla2oXsPtlA" base_Class="_DHg4ID5zEd6cla2oXsPtlA" xmlContentKind="Mixed"/>
   <Ecore:EClass xmi:id="_A8nXwD58Ed6cla2oXsPtlA" base_Class="_D7EcAD5zEd6cla2oXsPtlA" xmlContentKind="Mixed"/>
-  <Ecore:EAttribute xmi:id="_cpec8D8XEd6uA6ElmbQH3Q" xmlName="" xmlFeatureKind="ElementWildcard" base_Property="_7yi4QDxaEd6JwqSGecoePg"/>
+  <Ecore:EAttribute xmi:id="_cpec8D8XEd6uA6ElmbQH3Q" xmlName="mixed" xmlFeatureKind="ElementWildcard" base_Property="_7yi4QDxaEd6JwqSGecoePg"/>
   <Ecore:EAttribute xmi:id="_BZ36cD9LEd6uA6ElmbQH3Q" isTransient="true" isUnsettable="true" base_Property="_RMSacD5zEd6cla2oXsPtlA"/>
   <Ecore:EAttribute xmi:id="_HdmXcD9LEd6uA6ElmbQH3Q" isTransient="true" isUnsettable="true" base_Property="_Scv8wD5zEd6cla2oXsPtlA"/>
   <Ecore:EClass xmi:id="_IQ-gcETCEd66ToKxWS_1fg" base_Class="_wfRKoD5yEd6cla2oXsPtlA" xmlContentKind="Mixed"/>
   <Ecore:EClass xmi:id="_nV4UMETIEd6BGP829oM3-A" base_Class="_CowXkDxaEd6JwqSGecoePg" xmlContentKind="Mixed"/>
   <Ecore:EClass xmi:id="_QnJmwET6Ed6Z5Jncnptcog" base_Class="_v0zRUD5yEd6cla2oXsPtlA" xmlContentKind="Mixed"/>
-  <Ecore:EReference xmi:id="_75rTsEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_NozugD_lEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_75rTsEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_NozugD_lEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_75rTsUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_Q-8j4D_lEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_75rTsUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_Q-8j4D_lEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_751EsEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_UGUkgD_lEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_751EsEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_UGUkgD_lEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_751EsUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_qvTjkD_lEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_751EsUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_qvTjkD_lEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_751EskVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_XlrLED9HEd6uA6ElmbQH3Q" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_751EskVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_XlrLED9HEd6uA6ElmbQH3Q" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_751Es0VdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_wQKkED_lEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_751Es0VdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_wQKkED_lEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_751EtEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_00o1ED9GEd6uA6ElmbQH3Q" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_751EtEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_00o1ED9GEd6uA6ElmbQH3Q" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_751EtUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_66pJwD_lEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_751EtUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_66pJwD_lEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_751EtkVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_7r95AD_lEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_751EtkVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_7r95AD_lEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_75-OoEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_9Yvj4D_lEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_75-OoEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_9Yvj4D_lEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_75-OoUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_-NCuoD_lEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_75-OoUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_-NCuoD_lEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_75-OokVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_ARhH0D_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_75-OokVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_ARhH0D_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_75-Oo0VdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_Bw4o0D_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_75-Oo0VdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_Bw4o0D_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_75-OpEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_ImiSAD_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_75-OpEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_ImiSAD_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_75-OpUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_JhPmwD_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_75-OpUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_JhPmwD_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_76H_oEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_LCZQcD_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_76H_oEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_LCZQcD_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_76H_oUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_MRYMED_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_76H_oUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_MRYMED_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_76H_okVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_NPXeUD_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_76H_okVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_NPXeUD_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_76H_o0VdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_OrmLwD_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_76H_o0VdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_OrmLwD_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_76H_pEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_QwhQ4D_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_76H_pEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_QwhQ4D_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_76H_pUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_cPvtQD_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_76H_pUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_cPvtQD_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_76H_pkVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_ewrY8D_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_76H_pkVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_ewrY8D_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_76RwoEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_hT_qQD_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_76RwoEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_hT_qQD_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_76RwoUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_i7Zs8D_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_76RwoUVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_i7Zs8D_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_76RwokVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_kaxN8D_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_76RwokVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_kaxN8D_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_76Rwo0VdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_mUER4D_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_76Rwo0VdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_mUER4D_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_76RwpEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_okdnMD_mEd6wZe6nFLrjsw" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_76RwpEVdEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_okdnMD_mEd6wZe6nFLrjsw" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
   <Ecore:EAttribute xmi:id="_Grc0MEVeEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Group" base_Property="_sn33cES2Ed66ToKxWS_1fg"/>
   <Ecore:EAttribute xmi:id="_Grc0MUVeEd6QuJiOJFSRPQ" xmlFeatureKind="ElementWildcard" base_Property="_VZnuQEVdEd6QuJiOJFSRPQ"/>
-  <Ecore:EReference xmi:id="_S7QY8EVeEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_yxqP4D92Ed6NdqfHy-LGHg" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_S7QY8EVeEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_yxqP4D92Ed6NdqfHy-LGHg" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_S7QY8UVeEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_9IA_sD92Ed6NdqfHy-LGHg" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_S7QY8UVeEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_9IA_sD92Ed6NdqfHy-LGHg" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_S7Zi4EVeEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_AYLv8D93Ed6NdqfHy-LGHg" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_S7Zi4EVeEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_AYLv8D93Ed6NdqfHy-LGHg" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_S7Zi4UVeEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_Db1uMD93Ed6NdqfHy-LGHg" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_S7Zi4UVeEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_Db1uMD93Ed6NdqfHy-LGHg" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
-  <Ecore:EReference xmi:id="_S7Zi4kVeEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Element" base_Property="_EtgKYD93Ed6NdqfHy-LGHg" isResolveProxies="false">
+  <Ecore:EReference xmi:id="_S7Zi4kVeEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_EtgKYD93Ed6NdqfHy-LGHg" isResolveProxies="false">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData group='#part'</annotation>
   </Ecore:EReference>
   <Ecore:EAttribute xmi:id="_W5UJ8EVeEd6QuJiOJFSRPQ" isTransient="true" isVolatile="true" xmlFeatureKind="Group" base_Property="_Oxh_QEQFEd6ddYmQzbFZWw"/>
@@ -1266,4 +1266,31 @@
   <Ecore:EAttribute xmi:id="_RD-UkHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_nEao4ErrEd6FXKclYGEDCw"/>
   <Ecore:EAttribute xmi:id="_SX3lYHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_2C6tgD5_Ed6cla2oXsPtlA"/>
   <Ecore:EAttribute xmi:id="_WFr68HrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_5iTUkD52Ed6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_K2E2EJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_g4yxwD6CEd6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_RZ1eAJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_TgJEsD55Ed6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_RZ1eAZ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="__CseMD56Ed6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_RZ1eAp75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_DtKpQD57Ed6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_Y_dyoJ75Ed6BCKDGgDgllw" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_PIRiAD54Ed6cla2oXsPtlA" isResolveProxies="false"/>
+  <Ecore:EReference xmi:id="_Y_dyoZ75Ed6BCKDGgDgllw" isTransient="true" isVolatile="true" xmlNamespace="urn:hl7-org:v3" xmlFeatureKind="Element" base_Property="_Px2DcD54Ed6cla2oXsPtlA" isResolveProxies="false"/>
+  <Ecore:EReference xmi:id="_dzoFMJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_4EDXcD6CEd6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_jYp0AJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_ywsA0Eo9Ed6c3qsAxlFHaQ"/>
+  <Ecore:EReference xmi:id="_jYp0AZ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_0JgN4Eo9Ed6c3qsAxlFHaQ"/>
+  <Ecore:EReference xmi:id="_jYp0Ap75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_xTaKgEo9Ed6c3qsAxlFHaQ"/>
+  <Ecore:EReference xmi:id="_jYzlAJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_1cgG0Eo9Ed6c3qsAxlFHaQ"/>
+  <Ecore:EReference xmi:id="_lWkSMJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_4FPsoErrEd6FXKclYGEDCw"/>
+  <Ecore:EReference xmi:id="_lWkSMZ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_5Pmm8ErrEd6FXKclYGEDCw"/>
+  <Ecore:EReference xmi:id="_lWkSMp75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_2xDg4ErrEd6FXKclYGEDCw"/>
+  <Ecore:EReference xmi:id="_lWuDMJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_6i5a0ErrEd6FXKclYGEDCw"/>
+  <Ecore:EReference xmi:id="_orzvsJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_imjmAD6AEd6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_orzvsZ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_jfCGID6AEd6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_orzvsp75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_fmxbID6AEd6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_or85oJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_kXgmQD6AEd6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_tRNNgJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_JKFGcE-pEd6lBqYlbulQZA"/>
+  <Ecore:EReference xmi:id="_tRNNgZ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_FEtzkE-pEd6lBqYlbulQZA"/>
+  <Ecore:EReference xmi:id="_wD4JcJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_PC88ID6DEd6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_0NaKoJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_NAjo8ErsEd6FXKclYGEDCw"/>
+  <Ecore:EReference xmi:id="_0Nj7oJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_LeqYYErsEd6FXKclYGEDCw"/>
+  <Ecore:EReference xmi:id="_1rvJ0J75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_vZmsoD5-Ed6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_1r460J75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_uY750D5-Ed6cla2oXsPtlA"/>
+  <Ecore:EReference xmi:id="_4puk8J75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_S9G6AD6CEd6cla2oXsPtlA"/>
 </xmi:XMI>

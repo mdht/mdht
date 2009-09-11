@@ -10,15 +10,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BIN" abstract="true" eSuperTypes="#//ANY">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="kind" value="mixed"/>
+      <details key="kind" value="empty"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="name" value=""/>
-        <details key="kind" value="elementWildcard"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="representation" ordered="false"
         eType="#//BinaryDataEncoding" unsettable="true"/>
   </eClassifiers>
@@ -34,10 +27,27 @@
       <eParameters name="text" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="getText" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" ordered="false"
-        eType="#//TEL" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="thumbnail" ordered="false"
-        eType="#//ED" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="mixed"/>
+        <details key="kind" value="elementWildcard"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//TEL"
+        volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="thumbnail" eType="#//ED"
+        volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediaType" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
@@ -53,7 +63,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TEL" eSuperTypes="#//URL">
     <eStructuralFeatures xsi:type="ecore:EReference" name="useablePeriod" ordered="false"
-        upperBound="-1" eType="#//SXCM_TS" containment="true"/>
+        upperBound="-1" eType="#//SXCM_TS" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="use" ordered="false" upperBound="-1"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//TelecommunicationAddressUse"
         unsettable="true"/>
@@ -79,11 +93,23 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CD" eSuperTypes="#//ANY">
     <eStructuralFeatures xsi:type="ecore:EReference" name="originalText" ordered="false"
-        eType="#//ED" containment="true"/>
+        eType="#//ED" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="qualifier" ordered="false"
-        upperBound="-1" eType="#//CR" containment="true"/>
+        upperBound="-1" eType="#//CR" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="translation" ordered="false"
-        upperBound="-1" eType="#//CD" containment="true"/>
+        upperBound="-1" eType="#//CD" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="codeSystem" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -831,7 +857,11 @@
     </eOperations>
     <eOperations name="getText" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="useablePeriod" ordered="false"
-        upperBound="-1" eType="#//SXCM_TS" containment="true"/>
+        upperBound="-1" eType="#//SXCM_TS" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="use" ordered="false" upperBound="-1"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//PostalAddressUse"
         unsettable="true"/>
@@ -841,6 +871,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -849,6 +880,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -857,6 +889,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -865,6 +898,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -872,6 +906,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="city" upperBound="-1" eType="#//ADXP"
         volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -880,6 +915,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -888,6 +924,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -896,6 +933,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -904,6 +942,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -912,6 +951,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -920,6 +960,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -928,6 +969,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -936,6 +978,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -944,6 +987,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -952,6 +996,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -960,6 +1005,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -968,6 +1014,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -976,6 +1023,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -984,6 +1032,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -992,6 +1041,7 @@
         upperBound="-1" eType="#//ADXP" volatile="true" transient="true" derived="true"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1000,6 +1050,7 @@
         upperBound="-1" eType="#//ADXP" volatile="true" transient="true" derived="true"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1008,6 +1059,7 @@
         upperBound="-1" eType="#//ADXP" volatile="true" transient="true" derived="true"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1016,6 +1068,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1024,6 +1077,7 @@
         upperBound="-1" eType="#//ADXP" volatile="true" transient="true" derived="true"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1032,6 +1086,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1040,6 +1095,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1048,6 +1104,7 @@
         eType="#//ADXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1211,11 +1268,16 @@
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//EntityNameUse"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="validTime" ordered="false"
-        eType="#//IVL_TS" containment="true"/>
+        eType="#//IVL_TS" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delimiter" upperBound="-1"
         eType="#//ENXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1224,6 +1286,7 @@
         eType="#//ENXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1232,6 +1295,7 @@
         eType="#//ENXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1240,6 +1304,7 @@
         eType="#//ENXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1248,6 +1313,7 @@
         eType="#//ENXP" volatile="true" transient="true" derived="true" containment="true"
         resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
         <details key="kind" value="element"/>
         <details key="group" value="#part"/>
       </eAnnotations>
@@ -1268,13 +1334,29 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IVL_TS" eSuperTypes="#//SXCM_TS">
     <eStructuralFeatures xsi:type="ecore:EReference" name="low" ordered="false" eType="#//IVXB_TS"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="center" ordered="false"
-        eType="#//IVXB_TS" containment="true"/>
+        eType="#//IVXB_TS" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="high" ordered="false" eType="#//IVXB_TS"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="width" ordered="false"
-        eType="#//PQ" containment="true"/>
+        eType="#//PQ" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IVXB_TS" eSuperTypes="#//TS">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inclusive" ordered="false"
@@ -1286,7 +1368,11 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="translation" ordered="false"
-        upperBound="-1" eType="#//PQR" containment="true"/>
+        upperBound="-1" eType="#//PQR" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PQR" eSuperTypes="#//CV">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
@@ -1410,9 +1496,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RTO_QTY_QTY" eSuperTypes="#//QTY">
     <eStructuralFeatures xsi:type="ecore:EReference" name="numerator" ordered="false"
-        eType="#//QTY" containment="true"/>
+        eType="#//QTY" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="denominator" ordered="false"
-        eType="#//QTY" containment="true"/>
+        eType="#//QTY" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MO" eSuperTypes="#//QTY">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
@@ -1433,13 +1527,29 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IVL_INT" eSuperTypes="#//SXCM_INT">
     <eStructuralFeatures xsi:type="ecore:EReference" name="low" ordered="false" eType="#//IVXB_INT"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="center" ordered="false"
-        eType="#//IVXB_INT" containment="true"/>
+        eType="#//IVXB_INT" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="high" ordered="false" eType="#//IVXB_INT"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="width" ordered="false"
-        eType="#//INT" containment="true"/>
+        eType="#//INT" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IVXB_PQ" eSuperTypes="#//PQ">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inclusive" ordered="false"
@@ -1453,25 +1563,57 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IVL_PQ" eSuperTypes="#//SXCM_PQ">
     <eStructuralFeatures xsi:type="ecore:EReference" name="low" ordered="false" eType="#//IVXB_PQ"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="center" ordered="false"
-        eType="#//IVXB_PQ" containment="true"/>
+        eType="#//IVXB_PQ" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="high" ordered="false" eType="#//IVXB_PQ"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="width" ordered="false"
-        eType="#//PQ" containment="true"/>
+        eType="#//PQ" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RTO_PQ_PQ" eSuperTypes="#//QTY">
     <eStructuralFeatures xsi:type="ecore:EReference" name="numerator" ordered="false"
-        eType="#//PQ" containment="true"/>
+        eType="#//PQ" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="denominator" ordered="false"
-        eType="#//PQ" containment="true"/>
+        eType="#//PQ" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PIVL_TS" eSuperTypes="#//SXCM_TS">
     <eStructuralFeatures xsi:type="ecore:EReference" name="phase" ordered="false"
-        eType="#//IVL_TS" containment="true"/>
+        eType="#//IVL_TS" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="period" ordered="false"
-        eType="#//PQ" containment="true"/>
+        eType="#//PQ" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="urn:hl7-org:v3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignment" ordered="false"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//CalendarCycle"
         unsettable="true"/>

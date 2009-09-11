@@ -13,17 +13,8 @@
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.BasicFeatureMap;
-import org.eclipse.emf.ecore.util.FeatureMap;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.BIN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.BinaryDataEncoding;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
@@ -35,7 +26,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.BINImpl#getMixed <em>Mixed</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.BINImpl#getRepresentation <em>Representation</em>}</li>
  * </ul>
  * </p>
@@ -43,16 +33,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
  * @generated
  */
 public abstract class BINImpl extends ANYImpl implements BIN {
-	/**
-	 * The cached value of the '{@link #getMixed() <em>Mixed</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMixed()
-	 * @generated
-	 * @ordered
-	 */
-	protected FeatureMap mixed;
-
 	/**
 	 * The default value of the '{@link #getRepresentation() <em>Representation</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -99,18 +79,6 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 	@Override
 	protected EClass eStaticClass() {
 		return DatatypesPackage.Literals.BIN;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FeatureMap getMixed() {
-		if (mixed == null) {
-			mixed = new BasicFeatureMap(this, DatatypesPackage.BIN__MIXED);
-		}
-		return mixed;
 	}
 
 	/**
@@ -165,25 +133,8 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case DatatypesPackage.BIN__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DatatypesPackage.BIN__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
 			case DatatypesPackage.BIN__REPRESENTATION:
 				return getRepresentation();
 		}
@@ -198,9 +149,6 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DatatypesPackage.BIN__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
-				return;
 			case DatatypesPackage.BIN__REPRESENTATION:
 				setRepresentation((BinaryDataEncoding)newValue);
 				return;
@@ -216,9 +164,6 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DatatypesPackage.BIN__MIXED:
-				getMixed().clear();
-				return;
 			case DatatypesPackage.BIN__REPRESENTATION:
 				unsetRepresentation();
 				return;
@@ -234,8 +179,6 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DatatypesPackage.BIN__MIXED:
-				return mixed != null && !mixed.isEmpty();
 			case DatatypesPackage.BIN__REPRESENTATION:
 				return isSetRepresentation();
 		}
@@ -252,9 +195,7 @@ public abstract class BINImpl extends ANYImpl implements BIN {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (mixed: ");
-		result.append(mixed);
-		result.append(", representation: ");
+		result.append(" (representation: ");
 		if (representationESet) result.append(representation); else result.append("<unset>");
 		result.append(')');
 		return result.toString();

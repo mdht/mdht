@@ -20,6 +20,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.BasicFeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
@@ -35,6 +38,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.IntegrityCheckAlgorithm;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.EDImpl#getMixed <em>Mixed</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.EDImpl#getReference <em>Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.EDImpl#getThumbnail <em>Thumbnail</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.EDImpl#getMediaType <em>Media Type</em>}</li>
@@ -49,24 +53,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.IntegrityCheckAlgorithm;
  */
 public class EDImpl extends BINImpl implements ED {
 	/**
-	 * The cached value of the '{@link #getReference() <em>Reference</em>}' containment reference.
+	 * The cached value of the '{@link #getMixed() <em>Mixed</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReference()
+	 * @see #getMixed()
 	 * @generated
 	 * @ordered
 	 */
-	protected TEL reference;
-
-	/**
-	 * The cached value of the '{@link #getThumbnail() <em>Thumbnail</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThumbnail()
-	 * @generated
-	 * @ordered
-	 */
-	protected ED thumbnail;
+	protected FeatureMap mixed;
 
 	/**
 	 * The default value of the '{@link #getMediaType() <em>Media Type</em>}' attribute.
@@ -210,8 +204,20 @@ public class EDImpl extends BINImpl implements ED {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public FeatureMap getMixed() {
+		if (mixed == null) {
+			mixed = new BasicFeatureMap(this, DatatypesPackage.ED__MIXED);
+		}
+		return mixed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TEL getReference() {
-		return reference;
+		return (TEL)getMixed().get(DatatypesPackage.Literals.ED__REFERENCE, true);
 	}
 
 	/**
@@ -220,13 +226,7 @@ public class EDImpl extends BINImpl implements ED {
 	 * @generated
 	 */
 	public NotificationChain basicSetReference(TEL newReference, NotificationChain msgs) {
-		TEL oldReference = reference;
-		reference = newReference;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__REFERENCE, oldReference, newReference);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+		return ((FeatureMap.Internal)getMixed()).basicAdd(DatatypesPackage.Literals.ED__REFERENCE, newReference, msgs);
 	}
 
 	/**
@@ -235,17 +235,7 @@ public class EDImpl extends BINImpl implements ED {
 	 * @generated
 	 */
 	public void setReference(TEL newReference) {
-		if (newReference != reference) {
-			NotificationChain msgs = null;
-			if (reference != null)
-				msgs = ((InternalEObject)reference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.ED__REFERENCE, null, msgs);
-			if (newReference != null)
-				msgs = ((InternalEObject)newReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.ED__REFERENCE, null, msgs);
-			msgs = basicSetReference(newReference, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__REFERENCE, newReference, newReference));
+		((FeatureMap.Internal)getMixed()).set(DatatypesPackage.Literals.ED__REFERENCE, newReference);
 	}
 
 	/**
@@ -254,7 +244,7 @@ public class EDImpl extends BINImpl implements ED {
 	 * @generated
 	 */
 	public ED getThumbnail() {
-		return thumbnail;
+		return (ED)getMixed().get(DatatypesPackage.Literals.ED__THUMBNAIL, true);
 	}
 
 	/**
@@ -263,13 +253,7 @@ public class EDImpl extends BINImpl implements ED {
 	 * @generated
 	 */
 	public NotificationChain basicSetThumbnail(ED newThumbnail, NotificationChain msgs) {
-		ED oldThumbnail = thumbnail;
-		thumbnail = newThumbnail;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__THUMBNAIL, oldThumbnail, newThumbnail);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+		return ((FeatureMap.Internal)getMixed()).basicAdd(DatatypesPackage.Literals.ED__THUMBNAIL, newThumbnail, msgs);
 	}
 
 	/**
@@ -278,17 +262,7 @@ public class EDImpl extends BINImpl implements ED {
 	 * @generated
 	 */
 	public void setThumbnail(ED newThumbnail) {
-		if (newThumbnail != thumbnail) {
-			NotificationChain msgs = null;
-			if (thumbnail != null)
-				msgs = ((InternalEObject)thumbnail).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.ED__THUMBNAIL, null, msgs);
-			if (newThumbnail != null)
-				msgs = ((InternalEObject)newThumbnail).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DatatypesPackage.ED__THUMBNAIL, null, msgs);
-			msgs = basicSetThumbnail(newThumbnail, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatatypesPackage.ED__THUMBNAIL, newThumbnail, newThumbnail));
+		((FeatureMap.Internal)getMixed()).set(DatatypesPackage.Literals.ED__THUMBNAIL, newThumbnail);
 	}
 
 	/**
@@ -472,10 +446,8 @@ public class EDImpl extends BINImpl implements ED {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DatatypesPackage.ED__REFERENCE:
-				return basicSetReference(null, msgs);
-			case DatatypesPackage.ED__THUMBNAIL:
-				return basicSetThumbnail(null, msgs);
+			case DatatypesPackage.ED__MIXED:
+				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -488,6 +460,9 @@ public class EDImpl extends BINImpl implements ED {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case DatatypesPackage.ED__MIXED:
+				if (coreType) return getMixed();
+				return ((FeatureMap.Internal)getMixed()).getWrapper();
 			case DatatypesPackage.ED__REFERENCE:
 				return getReference();
 			case DatatypesPackage.ED__THUMBNAIL:
@@ -514,6 +489,9 @@ public class EDImpl extends BINImpl implements ED {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case DatatypesPackage.ED__MIXED:
+				((FeatureMap.Internal)getMixed()).set(newValue);
+				return;
 			case DatatypesPackage.ED__REFERENCE:
 				setReference((TEL)newValue);
 				return;
@@ -547,6 +525,9 @@ public class EDImpl extends BINImpl implements ED {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case DatatypesPackage.ED__MIXED:
+				getMixed().clear();
+				return;
 			case DatatypesPackage.ED__REFERENCE:
 				setReference((TEL)null);
 				return;
@@ -580,10 +561,12 @@ public class EDImpl extends BINImpl implements ED {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case DatatypesPackage.ED__MIXED:
+				return mixed != null && !mixed.isEmpty();
 			case DatatypesPackage.ED__REFERENCE:
-				return reference != null;
+				return getReference() != null;
 			case DatatypesPackage.ED__THUMBNAIL:
-				return thumbnail != null;
+				return getThumbnail() != null;
 			case DatatypesPackage.ED__MEDIA_TYPE:
 				return MEDIA_TYPE_EDEFAULT == null ? mediaType != null : !MEDIA_TYPE_EDEFAULT.equals(mediaType);
 			case DatatypesPackage.ED__LANGUAGE:
@@ -608,7 +591,9 @@ public class EDImpl extends BINImpl implements ED {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (mediaType: ");
+		result.append(" (mixed: ");
+		result.append(mixed);
+		result.append(", mediaType: ");
 		result.append(mediaType);
 		result.append(", language: ");
 		result.append(language);

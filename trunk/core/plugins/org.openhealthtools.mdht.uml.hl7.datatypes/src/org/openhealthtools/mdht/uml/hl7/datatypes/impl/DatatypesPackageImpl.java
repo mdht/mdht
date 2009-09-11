@@ -458,17 +458,8 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBIN_Mixed() {
-		return (EAttribute)binEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getBIN_Representation() {
-		return (EAttribute)binEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)binEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -485,8 +476,8 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getED_Reference() {
-		return (EReference)edEClass.getEStructuralFeatures().get(0);
+	public EAttribute getED_Mixed() {
+		return (EAttribute)edEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -494,7 +485,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getED_Thumbnail() {
+	public EReference getED_Reference() {
 		return (EReference)edEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -503,8 +494,8 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getED_MediaType() {
-		return (EAttribute)edEClass.getEStructuralFeatures().get(2);
+	public EReference getED_Thumbnail() {
+		return (EReference)edEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -512,7 +503,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getED_Language() {
+	public EAttribute getED_MediaType() {
 		return (EAttribute)edEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -521,7 +512,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getED_Compression() {
+	public EAttribute getED_Language() {
 		return (EAttribute)edEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -530,7 +521,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getED_IntegrityCheck() {
+	public EAttribute getED_Compression() {
 		return (EAttribute)edEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -539,8 +530,17 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getED_IntegrityCheckAlgorithm() {
+	public EAttribute getED_IntegrityCheck() {
 		return (EAttribute)edEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getED_IntegrityCheckAlgorithm() {
+		return (EAttribute)edEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1871,10 +1871,10 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		createEAttribute(anyEClass, ANY__NULL_FLAVOR);
 
 		binEClass = createEClass(BIN);
-		createEAttribute(binEClass, BIN__MIXED);
 		createEAttribute(binEClass, BIN__REPRESENTATION);
 
 		edEClass = createEClass(ED);
+		createEAttribute(edEClass, ED__MIXED);
 		createEReference(edEClass, ED__REFERENCE);
 		createEReference(edEClass, ED__THUMBNAIL);
 		createEAttribute(edEClass, ED__MEDIA_TYPE);
@@ -2149,12 +2149,12 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEAttribute(getANY_NullFlavor(), theVocabPackage.getNullFlavor(), "nullFlavor", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ANY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(binEClass, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, "BIN", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBIN_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBIN_Representation(), this.getBinaryDataEncoding(), "representation", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(edEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, "ED", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getED_Reference(), this.getTEL(), null, "reference", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getED_Thumbnail(), this.getED(), null, "thumbnail", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getED_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getED_Reference(), this.getTEL(), null, "reference", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getED_Thumbnail(), this.getED(), null, "thumbnail", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getED_MediaType(), ecorePackage.getEString(), "mediaType", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getED_Language(), ecorePackage.getEString(), "language", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getED_Compression(), theVocabPackage.getCompressionAlgorithm(), "compression", null, 0, 1, org.openhealthtools.mdht.uml.hl7.datatypes.ED.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2804,14 +2804,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (binEClass, 
 		   source, 
 		   new String[] {
-			 "kind", "mixed"
-		   });		
-		addAnnotation
-		  (getBIN_Mixed(), 
-		   source, 
-		   new String[] {
-			 "name", "",
-			 "kind", "elementWildcard"
+			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (edEClass, 
@@ -2820,10 +2813,55 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 			 "kind", "mixed"
 		   });		
 		addAnnotation
+		  (getED_Mixed(), 
+		   source, 
+		   new String[] {
+			 "name", "mixed",
+			 "kind", "elementWildcard"
+		   });		
+		addAnnotation
+		  (getED_Reference(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
+			 "kind", "element"
+		   });		
+		addAnnotation
+		  (getED_Thumbnail(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
+			 "kind", "element"
+		   });		
+		addAnnotation
+		  (getTEL_UseablePeriod(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
 		  (stEClass, 
 		   source, 
 		   new String[] {
 			 "kind", "mixed"
+		   });		
+		addAnnotation
+		  (getCD_OriginalText(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getCD_Qualifier(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getCD_Translation(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
 		   });						
 		addAnnotation
 		  (adEClass, 
@@ -2832,9 +2870,16 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 			 "kind", "mixed"
 		   });																																																																																																														
 		addAnnotation
+		  (getAD_UseablePeriod(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
 		  (getAD_Delimiter(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2842,6 +2887,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_Country(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2849,6 +2895,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_State(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2856,6 +2903,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_County(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2863,6 +2911,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_City(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2870,6 +2919,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_PostalCode(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2877,6 +2927,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_StreetAddressLine(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2884,6 +2935,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_HouseNumber(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2891,6 +2943,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_HouseNumberNumeric(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2898,6 +2951,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_Direction(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2905,6 +2959,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_StreetName(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2912,6 +2967,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_StreetNameBase(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2919,6 +2975,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_StreetNameType(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2926,6 +2983,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_AdditionalLocator(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2933,6 +2991,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_UnitID(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2940,6 +2999,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_UnitType(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2947,6 +3007,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_CareOf(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2954,6 +3015,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_CensusTract(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2961,6 +3023,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_DeliveryAddressLine(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2968,6 +3031,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_DeliveryInstallationType(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2975,6 +3039,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_DeliveryInstallationArea(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2982,6 +3047,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_DeliveryInstallationQualifier(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2989,6 +3055,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_DeliveryMode(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -2996,6 +3063,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_DeliveryModeIdentifier(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -3003,6 +3071,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_BuildingNumberSuffix(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -3010,6 +3079,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_PostBox(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -3017,6 +3087,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getAD_Precinct(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -3045,9 +3116,16 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 			 "kind", "mixed"
 		   });																						
 		addAnnotation
+		  (getEN_ValidTime(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
 		  (getEN_Delimiter(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -3055,6 +3133,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getEN_Family(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -3062,6 +3141,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getEN_Given(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -3069,6 +3149,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getEN_Prefix(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -3076,6 +3157,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		  (getEN_Suffix(), 
 		   source, 
 		   new String[] {
+			 "namespace", "urn:hl7-org:v3",
 			 "kind", "element",
 			 "group", "#part"
 		   });		
@@ -3090,6 +3172,36 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		   source, 
 		   new String[] {
 			 "kind", "elementWildcard"
+		   });		
+		addAnnotation
+		  (getIVL_TS_Low(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getIVL_TS_Center(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getIVL_TS_High(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getIVL_TS_Width(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getPQ_Translation(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
 		   });		
 		addAnnotation
 		  (enxpEClass, 
@@ -3120,6 +3232,90 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		   source, 
 		   new String[] {
 			 "kind", "mixed"
+		   });		
+		addAnnotation
+		  (getRTO_QTY_QTY_Numerator(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getRTO_QTY_QTY_Denominator(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getIVL_INT_Low(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getIVL_INT_Center(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getIVL_INT_High(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getIVL_INT_Width(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getIVL_PQ_Low(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getIVL_PQ_Center(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getIVL_PQ_High(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getIVL_PQ_Width(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getRTO_PQ_PQ_Numerator(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getRTO_PQ_PQ_Denominator(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getPIVL_TS_Phase(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
+		   });		
+		addAnnotation
+		  (getPIVL_TS_Period(), 
+		   source, 
+		   new String[] {
+			 "namespace", "urn:hl7-org:v3"
 		   });
 	}
 

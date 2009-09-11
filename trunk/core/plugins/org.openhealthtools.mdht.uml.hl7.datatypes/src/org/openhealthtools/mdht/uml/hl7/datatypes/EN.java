@@ -99,6 +99,7 @@ public interface EN extends ANY {
 	 * @see #setValidTime(IVL_TS)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getEN_ValidTime()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	IVL_TS getValidTime();
@@ -125,7 +126,7 @@ public interface EN extends ANY {
 	 * @return the value of the '<em>Delimiter</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getEN_Delimiter()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ENXP> getDelimiter();
@@ -142,7 +143,7 @@ public interface EN extends ANY {
 	 * @return the value of the '<em>Family</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getEN_Family()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ENXP> getFamily();
@@ -159,7 +160,7 @@ public interface EN extends ANY {
 	 * @return the value of the '<em>Given</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getEN_Given()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ENXP> getGiven();
@@ -176,7 +177,7 @@ public interface EN extends ANY {
 	 * @return the value of the '<em>Prefix</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getEN_Prefix()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ENXP> getPrefix();
@@ -193,7 +194,7 @@ public interface EN extends ANY {
 	 * @return the value of the '<em>Suffix</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getEN_Suffix()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ENXP> getSuffix();

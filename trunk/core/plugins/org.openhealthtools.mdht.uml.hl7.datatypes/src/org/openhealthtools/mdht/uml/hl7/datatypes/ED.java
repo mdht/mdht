@@ -12,6 +12,7 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.openhealthtools.mdht.uml.hl7.vocab.CompressionAlgorithm;
 import org.openhealthtools.mdht.uml.hl7.vocab.IntegrityCheckAlgorithm;
 
@@ -23,6 +24,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.IntegrityCheckAlgorithm;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getMixed <em>Mixed</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getReference <em>Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getThumbnail <em>Thumbnail</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getMediaType <em>Media Type</em>}</li>
@@ -39,6 +41,23 @@ import org.openhealthtools.mdht.uml.hl7.vocab.IntegrityCheckAlgorithm;
  */
 public interface ED extends BIN {
 	/**
+	 * Returns the value of the '<em><b>Mixed</b></em>' attribute list.
+	 * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mixed</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mixed</em>' attribute list.
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getED_Mixed()
+	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
+	 *        extendedMetaData="name='mixed' kind='elementWildcard'"
+	 * @generated
+	 */
+	FeatureMap getMixed();
+
+	/**
 	 * Returns the value of the '<em><b>Reference</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -49,7 +68,8 @@ public interface ED extends BIN {
 	 * @return the value of the '<em>Reference</em>' containment reference.
 	 * @see #setReference(TEL)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getED_Reference()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element'"
 	 * @generated
 	 */
 	TEL getReference();
@@ -75,7 +95,8 @@ public interface ED extends BIN {
 	 * @return the value of the '<em>Thumbnail</em>' containment reference.
 	 * @see #setThumbnail(ED)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getED_Thumbnail()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element'"
 	 * @generated
 	 */
 	ED getThumbnail();

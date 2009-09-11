@@ -46,6 +46,7 @@ public interface PIVL_TS extends SXCM_TS {
 	 * @see #setPhase(IVL_TS)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getPIVL_TS_Phase()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	IVL_TS getPhase();
@@ -72,6 +73,7 @@ public interface PIVL_TS extends SXCM_TS {
 	 * @see #setPeriod(PQ)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getPIVL_TS_Period()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	PQ getPeriod();
