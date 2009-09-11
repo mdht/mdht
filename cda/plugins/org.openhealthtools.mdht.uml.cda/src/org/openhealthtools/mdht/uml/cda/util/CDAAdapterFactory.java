@@ -439,6 +439,10 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 				return createComponent5Adapter();
 			}
 			@Override
+			public Adapter caseDocumentRoot(DocumentRoot object) {
+				return createDocumentRootAdapter();
+			}
+			@Override
 			public Adapter caseANY(ANY object) {
 				return createANYAdapter();
 			}
@@ -1717,6 +1721,20 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponent5Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.DocumentRoot <em>Document Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.DocumentRoot
+	 * @generated
+	 */
+	public Adapter createDocumentRootAdapter() {
 		return null;
 	}
 
