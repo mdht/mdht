@@ -10229,6 +10229,62 @@ public interface CDAPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.DocumentRootImpl <em>Document Root</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.impl.DocumentRootImpl
+	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getDocumentRoot()
+	 * @generated
+	 */
+	int DOCUMENT_ROOT = 89;
+
+	/**
+	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__MIXED = 0;
+
+	/**
+	 * The feature id for the '<em><b>XMLNS Prefix Map</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__XMLNS_PREFIX_MAP = 1;
+
+	/**
+	 * The feature id for the '<em><b>XSI Schema Location</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Clinical Document</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__CLINICAL_DOCUMENT = 3;
+
+	/**
+	 * The number of structural features of the '<em>Document Root</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT_FEATURE_COUNT = 4;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument <em>Clinical Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -21391,6 +21447,60 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComponent5_ContextConductionInd();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.DocumentRoot <em>Document Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Document Root</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.DocumentRoot
+	 * @generated
+	 */
+	EClass getDocumentRoot();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.cda.DocumentRoot#getMixed <em>Mixed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Mixed</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.DocumentRoot#getMixed()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EAttribute getDocumentRoot_Mixed();
+
+	/**
+	 * Returns the meta object for the map '{@link org.openhealthtools.mdht.uml.cda.DocumentRoot#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>XMLNS Prefix Map</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.DocumentRoot#getXMLNSPrefixMap()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_XMLNSPrefixMap();
+
+	/**
+	 * Returns the meta object for the map '{@link org.openhealthtools.mdht.uml.cda.DocumentRoot#getXSISchemaLocation <em>XSI Schema Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>XSI Schema Location</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.DocumentRoot#getXSISchemaLocation()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_XSISchemaLocation();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.DocumentRoot#getClinicalDocument <em>Clinical Document</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Clinical Document</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.DocumentRoot#getClinicalDocument()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_ClinicalDocument();
 
 	/**
 	 * Returns the factory that creates the instances of the model.

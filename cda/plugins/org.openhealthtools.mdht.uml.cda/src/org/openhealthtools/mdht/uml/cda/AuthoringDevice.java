@@ -63,6 +63,7 @@ public interface AuthoringDevice extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthoringDevice_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -79,6 +80,7 @@ public interface AuthoringDevice extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthoringDevice_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -105,6 +107,7 @@ public interface AuthoringDevice extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthoringDevice_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -121,6 +124,7 @@ public interface AuthoringDevice extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthoringDevice_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getCode();
@@ -147,6 +151,7 @@ public interface AuthoringDevice extends EObject {
 	 * @see #setManufacturerModelName(SC)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthoringDevice_ManufacturerModelName()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	SC getManufacturerModelName();
@@ -173,6 +178,7 @@ public interface AuthoringDevice extends EObject {
 	 * @see #setSoftwareName(SC)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthoringDevice_SoftwareName()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	SC getSoftwareName();
@@ -199,6 +205,7 @@ public interface AuthoringDevice extends EObject {
 	 * @return the value of the '<em>As Maintained Entity</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthoringDevice_AsMaintainedEntity()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<MaintainedEntity> getAsMaintainedEntity();

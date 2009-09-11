@@ -72,6 +72,7 @@ public interface Organizer extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -88,6 +89,7 @@ public interface Organizer extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -114,6 +116,7 @@ public interface Organizer extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -130,6 +133,7 @@ public interface Organizer extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_Id()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -146,6 +150,7 @@ public interface Organizer extends EObject {
 	 * @see #setCode(CD)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CD getCode();
@@ -172,6 +177,7 @@ public interface Organizer extends EObject {
 	 * @see #setStatusCode(CS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_StatusCode()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CS getStatusCode();
@@ -198,6 +204,7 @@ public interface Organizer extends EObject {
 	 * @see #setEffectiveTime(IVL_TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_EffectiveTime()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	IVL_TS getEffectiveTime();
@@ -224,6 +231,7 @@ public interface Organizer extends EObject {
 	 * @see #setSubject(Subject)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_Subject()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Subject getSubject();
@@ -250,6 +258,7 @@ public interface Organizer extends EObject {
 	 * @return the value of the '<em>Specimen</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_Specimen()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Specimen> getSpecimen();
@@ -266,6 +275,7 @@ public interface Organizer extends EObject {
 	 * @return the value of the '<em>Performer</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_Performer()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Performer2> getPerformer();
@@ -282,6 +292,7 @@ public interface Organizer extends EObject {
 	 * @return the value of the '<em>Author</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_Author()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Author> getAuthor();
@@ -298,6 +309,7 @@ public interface Organizer extends EObject {
 	 * @return the value of the '<em>Informant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_Informant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Informant12> getInformant();
@@ -314,6 +326,7 @@ public interface Organizer extends EObject {
 	 * @return the value of the '<em>Participant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_Participant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Participant2> getParticipant();
@@ -330,6 +343,7 @@ public interface Organizer extends EObject {
 	 * @return the value of the '<em>Reference</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_Reference()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Reference> getReference();
@@ -346,6 +360,7 @@ public interface Organizer extends EObject {
 	 * @return the value of the '<em>Precondition</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_Precondition()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Precondition> getPrecondition();
@@ -362,6 +377,7 @@ public interface Organizer extends EObject {
 	 * @return the value of the '<em>Component</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getOrganizer_Component()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Component4> getComponent();

@@ -68,6 +68,7 @@ public interface AssignedAuthor extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedAuthor_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -84,6 +85,7 @@ public interface AssignedAuthor extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedAuthor_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -110,6 +112,7 @@ public interface AssignedAuthor extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedAuthor_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -126,6 +129,7 @@ public interface AssignedAuthor extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedAuthor_Id()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -142,6 +146,7 @@ public interface AssignedAuthor extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedAuthor_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getCode();
@@ -168,6 +173,7 @@ public interface AssignedAuthor extends EObject {
 	 * @return the value of the '<em>Addr</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedAuthor_Addr()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<AD> getAddr();
@@ -184,6 +190,7 @@ public interface AssignedAuthor extends EObject {
 	 * @return the value of the '<em>Telecom</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedAuthor_Telecom()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<TEL> getTelecom();
@@ -200,6 +207,7 @@ public interface AssignedAuthor extends EObject {
 	 * @see #setAssignedPerson(Person)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedAuthor_AssignedPerson()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Person getAssignedPerson();
@@ -226,6 +234,7 @@ public interface AssignedAuthor extends EObject {
 	 * @see #setAssignedAuthoringDevice(AuthoringDevice)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedAuthor_AssignedAuthoringDevice()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	AuthoringDevice getAssignedAuthoringDevice();
@@ -252,6 +261,7 @@ public interface AssignedAuthor extends EObject {
 	 * @see #setRepresentedOrganization(Organization)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedAuthor_RepresentedOrganization()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Organization getRepresentedOrganization();

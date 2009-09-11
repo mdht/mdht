@@ -59,6 +59,7 @@ public interface LanguageCommunication extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLanguageCommunication_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -75,6 +76,7 @@ public interface LanguageCommunication extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLanguageCommunication_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -101,6 +103,7 @@ public interface LanguageCommunication extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLanguageCommunication_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -117,6 +120,7 @@ public interface LanguageCommunication extends EObject {
 	 * @see #setLanguageCode(CS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLanguageCommunication_LanguageCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CS getLanguageCode();
@@ -143,6 +147,7 @@ public interface LanguageCommunication extends EObject {
 	 * @see #setModeCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLanguageCommunication_ModeCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getModeCode();
@@ -169,6 +174,7 @@ public interface LanguageCommunication extends EObject {
 	 * @see #setProficiencyLevelCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLanguageCommunication_ProficiencyLevelCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getProficiencyLevelCode();
@@ -195,6 +201,7 @@ public interface LanguageCommunication extends EObject {
 	 * @see #setPreferenceInd(BL)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLanguageCommunication_PreferenceInd()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	BL getPreferenceInd();

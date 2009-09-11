@@ -62,6 +62,7 @@ public interface Author extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthor_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -78,6 +79,7 @@ public interface Author extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthor_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -104,6 +106,7 @@ public interface Author extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthor_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -120,6 +123,7 @@ public interface Author extends EObject {
 	 * @see #setFunctionCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthor_FunctionCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getFunctionCode();
@@ -146,6 +150,7 @@ public interface Author extends EObject {
 	 * @see #setTime(TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthor_Time()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	TS getTime();
@@ -172,6 +177,7 @@ public interface Author extends EObject {
 	 * @see #setAssignedAuthor(AssignedAuthor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthor_AssignedAuthor()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	AssignedAuthor getAssignedAuthor();

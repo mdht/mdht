@@ -59,6 +59,7 @@ public interface Authenticator extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthenticator_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -75,6 +76,7 @@ public interface Authenticator extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthenticator_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -101,6 +103,7 @@ public interface Authenticator extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthenticator_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -117,6 +120,7 @@ public interface Authenticator extends EObject {
 	 * @see #setTime(TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthenticator_Time()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	TS getTime();
@@ -143,6 +147,7 @@ public interface Authenticator extends EObject {
 	 * @see #setSignatureCode(CS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthenticator_SignatureCode()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CS getSignatureCode();
@@ -169,6 +174,7 @@ public interface Authenticator extends EObject {
 	 * @return the value of the '<em>Assigned Entity</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAuthenticator_AssignedEntity()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<AssignedEntity> getAssignedEntity();

@@ -833,6 +833,15 @@ public interface CDAFactory extends EFactory {
 	Component5 createComponent5();
 
 	/**
+	 * Returns a new object of class '<em>Document Root</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Document Root</em>'.
+	 * @generated
+	 */
+	DocumentRoot createDocumentRoot();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

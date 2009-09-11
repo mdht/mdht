@@ -70,6 +70,7 @@ public interface RegionOfInterest extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -86,6 +87,7 @@ public interface RegionOfInterest extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -112,6 +114,7 @@ public interface RegionOfInterest extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -128,6 +131,7 @@ public interface RegionOfInterest extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_Id()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -144,6 +148,7 @@ public interface RegionOfInterest extends EObject {
 	 * @see #setCode(CS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_Code()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CS getCode();
@@ -170,6 +175,7 @@ public interface RegionOfInterest extends EObject {
 	 * @return the value of the '<em>Value</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_Value()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<RegionOfInterestValue> getValue();
@@ -186,6 +192,7 @@ public interface RegionOfInterest extends EObject {
 	 * @see #setSubject(Subject)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_Subject()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Subject getSubject();
@@ -212,6 +219,7 @@ public interface RegionOfInterest extends EObject {
 	 * @return the value of the '<em>Specimen</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_Specimen()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Specimen> getSpecimen();
@@ -228,6 +236,7 @@ public interface RegionOfInterest extends EObject {
 	 * @return the value of the '<em>Performer</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_Performer()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Performer2> getPerformer();
@@ -244,6 +253,7 @@ public interface RegionOfInterest extends EObject {
 	 * @return the value of the '<em>Author</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_Author()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Author> getAuthor();
@@ -260,6 +270,7 @@ public interface RegionOfInterest extends EObject {
 	 * @return the value of the '<em>Informant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_Informant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Informant12> getInformant();
@@ -276,6 +287,7 @@ public interface RegionOfInterest extends EObject {
 	 * @return the value of the '<em>Participant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_Participant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Participant2> getParticipant();
@@ -292,6 +304,7 @@ public interface RegionOfInterest extends EObject {
 	 * @return the value of the '<em>Entry Relationship</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_EntryRelationship()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<EntryRelationship> getEntryRelationship();
@@ -308,6 +321,7 @@ public interface RegionOfInterest extends EObject {
 	 * @return the value of the '<em>Reference</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_Reference()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Reference> getReference();
@@ -324,6 +338,7 @@ public interface RegionOfInterest extends EObject {
 	 * @return the value of the '<em>Precondition</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRegionOfInterest_Precondition()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Precondition> getPrecondition();

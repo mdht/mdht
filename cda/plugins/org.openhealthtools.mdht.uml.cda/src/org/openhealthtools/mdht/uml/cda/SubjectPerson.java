@@ -63,6 +63,7 @@ public interface SubjectPerson extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubjectPerson_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -79,6 +80,7 @@ public interface SubjectPerson extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubjectPerson_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -105,6 +107,7 @@ public interface SubjectPerson extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubjectPerson_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -121,6 +124,7 @@ public interface SubjectPerson extends EObject {
 	 * @return the value of the '<em>Name</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubjectPerson_Name()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<PN> getName();
@@ -137,6 +141,7 @@ public interface SubjectPerson extends EObject {
 	 * @see #setAdministrativeGenderCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubjectPerson_AdministrativeGenderCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getAdministrativeGenderCode();
@@ -163,6 +168,7 @@ public interface SubjectPerson extends EObject {
 	 * @see #setBirthTime(TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubjectPerson_BirthTime()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	TS getBirthTime();

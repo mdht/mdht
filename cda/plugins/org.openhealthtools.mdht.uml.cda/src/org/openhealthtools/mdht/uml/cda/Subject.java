@@ -60,6 +60,7 @@ public interface Subject extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubject_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -76,6 +77,7 @@ public interface Subject extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubject_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -102,6 +104,7 @@ public interface Subject extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubject_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -118,6 +121,7 @@ public interface Subject extends EObject {
 	 * @see #setAwarenessCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubject_AwarenessCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getAwarenessCode();
@@ -144,6 +148,7 @@ public interface Subject extends EObject {
 	 * @see #setRelatedSubject(RelatedSubject)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubject_RelatedSubject()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	RelatedSubject getRelatedSubject();

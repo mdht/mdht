@@ -88,6 +88,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -104,6 +105,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -130,6 +132,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -146,6 +149,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_Id()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -162,6 +166,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setCode(CD)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CD getCode();
@@ -188,6 +193,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setText(ED)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_Text()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ED getText();
@@ -214,6 +220,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setStatusCode(CS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_StatusCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CS getStatusCode();
@@ -240,6 +247,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Effective Time</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_EffectiveTime()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<SXCM_TS> getEffectiveTime();
@@ -256,6 +264,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setPriorityCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_PriorityCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getPriorityCode();
@@ -282,6 +291,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setRepeatNumber(IVL_INT)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_RepeatNumber()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	IVL_INT getRepeatNumber();
@@ -308,6 +318,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setRouteCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_RouteCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getRouteCode();
@@ -334,6 +345,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Approach Site Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_ApproachSiteCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CD> getApproachSiteCode();
@@ -350,6 +362,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setDoseQuantity(IVL_PQ)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_DoseQuantity()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	IVL_PQ getDoseQuantity();
@@ -376,6 +389,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setRateQuantity(IVL_PQ)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_RateQuantity()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	IVL_PQ getRateQuantity();
@@ -402,6 +416,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setMaxDoseQuantity(RTO_PQ_PQ)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_MaxDoseQuantity()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	RTO_PQ_PQ getMaxDoseQuantity();
@@ -428,6 +443,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setAdministrativeUnitCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_AdministrativeUnitCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getAdministrativeUnitCode();
@@ -454,6 +470,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setSubject(Subject)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_Subject()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Subject getSubject();
@@ -480,6 +497,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Specimen</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_Specimen()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Specimen> getSpecimen();
@@ -496,6 +514,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @see #setConsumable(Consumable)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_Consumable()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Consumable getConsumable();
@@ -522,6 +541,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Performer</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_Performer()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Performer2> getPerformer();
@@ -538,6 +558,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Author</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_Author()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Author> getAuthor();
@@ -554,6 +575,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Informant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_Informant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Informant12> getInformant();
@@ -570,6 +592,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Reference</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_Reference()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Reference> getReference();
@@ -586,6 +609,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Participant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_Participant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Participant2> getParticipant();
@@ -602,6 +626,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Entry Relationship</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_EntryRelationship()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<EntryRelationship> getEntryRelationship();
@@ -618,6 +643,7 @@ public interface SubstanceAdministration extends EObject {
 	 * @return the value of the '<em>Precondition</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_Precondition()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Precondition> getPrecondition();

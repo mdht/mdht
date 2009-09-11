@@ -66,6 +66,7 @@ public interface EncompassingEncounter extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEncompassingEncounter_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -82,6 +83,7 @@ public interface EncompassingEncounter extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEncompassingEncounter_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -108,6 +110,7 @@ public interface EncompassingEncounter extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEncompassingEncounter_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -124,6 +127,7 @@ public interface EncompassingEncounter extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEncompassingEncounter_Id()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -140,6 +144,7 @@ public interface EncompassingEncounter extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEncompassingEncounter_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getCode();
@@ -166,6 +171,7 @@ public interface EncompassingEncounter extends EObject {
 	 * @see #setEffectiveTime(IVL_TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEncompassingEncounter_EffectiveTime()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	IVL_TS getEffectiveTime();
@@ -192,6 +198,7 @@ public interface EncompassingEncounter extends EObject {
 	 * @see #setDischargeDispositionCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEncompassingEncounter_DischargeDispositionCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getDischargeDispositionCode();
@@ -218,6 +225,7 @@ public interface EncompassingEncounter extends EObject {
 	 * @see #setResponsibleParty(ResponsibleParty)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEncompassingEncounter_ResponsibleParty()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ResponsibleParty getResponsibleParty();
@@ -244,6 +252,7 @@ public interface EncompassingEncounter extends EObject {
 	 * @return the value of the '<em>Encounter Participant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEncompassingEncounter_EncounterParticipant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<EncounterParticipant> getEncounterParticipant();
@@ -260,6 +269,7 @@ public interface EncompassingEncounter extends EObject {
 	 * @see #setLocation(Location)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEncompassingEncounter_Location()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Location getLocation();

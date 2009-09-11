@@ -60,6 +60,7 @@ public interface HealthCareFacility extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getHealthCareFacility_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -76,6 +77,7 @@ public interface HealthCareFacility extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getHealthCareFacility_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -102,6 +104,7 @@ public interface HealthCareFacility extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getHealthCareFacility_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -118,6 +121,7 @@ public interface HealthCareFacility extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getHealthCareFacility_Id()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -134,6 +138,7 @@ public interface HealthCareFacility extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getHealthCareFacility_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getCode();
@@ -160,6 +165,7 @@ public interface HealthCareFacility extends EObject {
 	 * @see #setLocation(Place)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getHealthCareFacility_Location()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Place getLocation();
@@ -186,6 +192,7 @@ public interface HealthCareFacility extends EObject {
 	 * @see #setServiceProviderOrganization(Organization)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getHealthCareFacility_ServiceProviderOrganization()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Organization getServiceProviderOrganization();
