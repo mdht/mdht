@@ -34,11 +34,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//ANY/nullFlavor"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//BIN">
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EAttribute datatypes.ecore#//BIN/mixed"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//BIN/representation"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//ED">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EAttribute datatypes.ecore#//ED/mixed"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//ED/reference"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

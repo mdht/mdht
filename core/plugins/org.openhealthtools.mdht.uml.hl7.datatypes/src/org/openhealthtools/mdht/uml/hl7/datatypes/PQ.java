@@ -97,6 +97,7 @@ public interface PQ extends QTY {
 	 * @return the value of the '<em>Translation</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getPQ_Translation()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	EList<PQR> getTranslation();

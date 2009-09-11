@@ -46,6 +46,7 @@ public interface TEL extends URL {
 	 * @return the value of the '<em>Useable Period</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getTEL_UseablePeriod()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	EList<SXCM_TS> getUseablePeriod();

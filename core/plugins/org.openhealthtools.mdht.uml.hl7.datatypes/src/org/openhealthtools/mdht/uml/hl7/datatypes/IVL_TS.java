@@ -45,6 +45,7 @@ public interface IVL_TS extends SXCM_TS {
 	 * @see #setLow(IVXB_TS)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getIVL_TS_Low()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	IVXB_TS getLow();
@@ -71,6 +72,7 @@ public interface IVL_TS extends SXCM_TS {
 	 * @see #setCenter(IVXB_TS)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getIVL_TS_Center()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	IVXB_TS getCenter();
@@ -97,6 +99,7 @@ public interface IVL_TS extends SXCM_TS {
 	 * @see #setHigh(IVXB_TS)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getIVL_TS_High()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	IVXB_TS getHigh();
@@ -123,6 +126,7 @@ public interface IVL_TS extends SXCM_TS {
 	 * @see #setWidth(PQ)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getIVL_TS_Width()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	PQ getWidth();

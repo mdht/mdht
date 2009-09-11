@@ -45,6 +45,7 @@ public interface IVL_INT extends SXCM_INT {
 	 * @see #setLow(IVXB_INT)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getIVL_INT_Low()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	IVXB_INT getLow();
@@ -71,6 +72,7 @@ public interface IVL_INT extends SXCM_INT {
 	 * @see #setCenter(IVXB_INT)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getIVL_INT_Center()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	IVXB_INT getCenter();
@@ -97,6 +99,7 @@ public interface IVL_INT extends SXCM_INT {
 	 * @see #setHigh(IVXB_INT)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getIVL_INT_High()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	IVXB_INT getHigh();
@@ -123,6 +126,7 @@ public interface IVL_INT extends SXCM_INT {
 	 * @see #setWidth(INT)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getIVL_INT_Width()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	INT getWidth();

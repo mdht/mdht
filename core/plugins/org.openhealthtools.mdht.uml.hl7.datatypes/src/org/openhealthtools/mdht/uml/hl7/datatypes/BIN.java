@@ -12,7 +12,6 @@
  */
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
-import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,34 +21,16 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.BIN#getMixed <em>Mixed</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.BIN#getRepresentation <em>Representation</em>}</li>
  * </ul>
  * </p>
  *
  * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getBIN()
  * @model abstract="true"
- *        extendedMetaData="kind='mixed'"
+ *        extendedMetaData="kind='empty'"
  * @generated
  */
 public interface BIN extends ANY {
-	/**
-	 * Returns the value of the '<em><b>Mixed</b></em>' attribute list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Mixed</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mixed</em>' attribute list.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getBIN_Mixed()
-	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
-	 *        extendedMetaData="name='' kind='elementWildcard'"
-	 * @generated
-	 */
-	FeatureMap getMixed();
-
 	/**
 	 * Returns the value of the '<em><b>Representation</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.openhealthtools.mdht.uml.hl7.datatypes.BinaryDataEncoding}.

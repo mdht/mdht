@@ -114,22 +114,13 @@ public interface DatatypesPackage extends EPackage {
 	int BIN__NULL_FLAVOR = ANY__NULL_FLAVOR;
 
 	/**
-	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIN__MIXED = ANY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Representation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BIN__REPRESENTATION = ANY_FEATURE_COUNT + 1;
+	int BIN__REPRESENTATION = ANY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>BIN</em>' class.
@@ -138,7 +129,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIN_FEATURE_COUNT = ANY_FEATURE_COUNT + 2;
+	int BIN_FEATURE_COUNT = ANY_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.EDImpl <em>ED</em>}' class.
@@ -160,15 +151,6 @@ public interface DatatypesPackage extends EPackage {
 	int ED__NULL_FLAVOR = BIN__NULL_FLAVOR;
 
 	/**
-	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ED__MIXED = BIN__MIXED;
-
-	/**
 	 * The feature id for the '<em><b>Representation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -178,13 +160,22 @@ public interface DatatypesPackage extends EPackage {
 	int ED__REPRESENTATION = BIN__REPRESENTATION;
 
 	/**
+	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ED__MIXED = BIN_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ED__REFERENCE = BIN_FEATURE_COUNT + 0;
+	int ED__REFERENCE = BIN_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thumbnail</b></em>' containment reference.
@@ -193,7 +184,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ED__THUMBNAIL = BIN_FEATURE_COUNT + 1;
+	int ED__THUMBNAIL = BIN_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Media Type</b></em>' attribute.
@@ -202,7 +193,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ED__MEDIA_TYPE = BIN_FEATURE_COUNT + 2;
+	int ED__MEDIA_TYPE = BIN_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
@@ -211,7 +202,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ED__LANGUAGE = BIN_FEATURE_COUNT + 3;
+	int ED__LANGUAGE = BIN_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Compression</b></em>' attribute.
@@ -220,7 +211,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ED__COMPRESSION = BIN_FEATURE_COUNT + 4;
+	int ED__COMPRESSION = BIN_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Integrity Check</b></em>' attribute.
@@ -229,7 +220,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ED__INTEGRITY_CHECK = BIN_FEATURE_COUNT + 5;
+	int ED__INTEGRITY_CHECK = BIN_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Integrity Check Algorithm</b></em>' attribute.
@@ -238,7 +229,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ED__INTEGRITY_CHECK_ALGORITHM = BIN_FEATURE_COUNT + 6;
+	int ED__INTEGRITY_CHECK_ALGORITHM = BIN_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>ED</em>' class.
@@ -247,7 +238,7 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ED_FEATURE_COUNT = BIN_FEATURE_COUNT + 7;
+	int ED_FEATURE_COUNT = BIN_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.URLImpl <em>URL</em>}' class.
@@ -472,15 +463,6 @@ public interface DatatypesPackage extends EPackage {
 	int ST__NULL_FLAVOR = ED__NULL_FLAVOR;
 
 	/**
-	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ST__MIXED = ED__MIXED;
-
-	/**
 	 * The feature id for the '<em><b>Representation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -488,6 +470,15 @@ public interface DatatypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ST__REPRESENTATION = ED__REPRESENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ST__MIXED = ED__MIXED;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -1390,15 +1381,6 @@ public interface DatatypesPackage extends EPackage {
 	int ADXP__NULL_FLAVOR = ST__NULL_FLAVOR;
 
 	/**
-	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADXP__MIXED = ST__MIXED;
-
-	/**
 	 * The feature id for the '<em><b>Representation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1406,6 +1388,15 @@ public interface DatatypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADXP__REPRESENTATION = ST__REPRESENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADXP__MIXED = ST__MIXED;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -1909,15 +1900,6 @@ public interface DatatypesPackage extends EPackage {
 	int ENXP__NULL_FLAVOR = ST__NULL_FLAVOR;
 
 	/**
-	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENXP__MIXED = ST__MIXED;
-
-	/**
 	 * The feature id for the '<em><b>Representation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1925,6 +1907,15 @@ public interface DatatypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENXP__REPRESENTATION = ST__REPRESENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENXP__MIXED = ST__MIXED;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -2637,15 +2628,6 @@ public interface DatatypesPackage extends EPackage {
 	int SC__NULL_FLAVOR = ST__NULL_FLAVOR;
 
 	/**
-	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SC__MIXED = ST__MIXED;
-
-	/**
 	 * The feature id for the '<em><b>Representation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2653,6 +2635,15 @@ public interface DatatypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int SC__REPRESENTATION = ST__REPRESENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SC__MIXED = ST__MIXED;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -3482,17 +3473,6 @@ public interface DatatypesPackage extends EPackage {
 	EClass getBIN();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.BIN#getMixed <em>Mixed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Mixed</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.BIN#getMixed()
-	 * @see #getBIN()
-	 * @generated
-	 */
-	EAttribute getBIN_Mixed();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.hl7.datatypes.BIN#getRepresentation <em>Representation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3512,6 +3492,17 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getED();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getMixed <em>Mixed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Mixed</em>'.
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.ED#getMixed()
+	 * @see #getED()
+	 * @generated
+	 */
+	EAttribute getED_Mixed();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getReference <em>Reference</em>}'.
@@ -5184,14 +5175,6 @@ public interface DatatypesPackage extends EPackage {
 		EClass BIN = eINSTANCE.getBIN();
 
 		/**
-		 * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BIN__MIXED = eINSTANCE.getBIN_Mixed();
-
-		/**
 		 * The meta object literal for the '<em><b>Representation</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5208,6 +5191,14 @@ public interface DatatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ED = eINSTANCE.getED();
+
+		/**
+		 * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ED__MIXED = eINSTANCE.getED_Mixed();
 
 		/**
 		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference feature.

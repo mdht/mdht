@@ -43,6 +43,7 @@ public interface RTO_QTY_QTY extends QTY {
 	 * @see #setNumerator(QTY)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getRTO_QTY_QTY_Numerator()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	QTY getNumerator();
@@ -69,6 +70,7 @@ public interface RTO_QTY_QTY extends QTY {
 	 * @see #setDenominator(QTY)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getRTO_QTY_QTY_Denominator()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	QTY getDenominator();

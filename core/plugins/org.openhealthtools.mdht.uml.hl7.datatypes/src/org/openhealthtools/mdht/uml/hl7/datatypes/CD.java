@@ -50,6 +50,7 @@ public interface CD extends ANY {
 	 * @see #setOriginalText(ED)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCD_OriginalText()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	ED getOriginalText();
@@ -76,6 +77,7 @@ public interface CD extends ANY {
 	 * @return the value of the '<em>Qualifier</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCD_Qualifier()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	EList<CR> getQualifier();
@@ -92,6 +94,7 @@ public interface CD extends ANY {
 	 * @return the value of the '<em>Translation</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getCD_Translation()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	EList<CD> getTranslation();

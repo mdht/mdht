@@ -81,6 +81,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Useable Period</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_UseablePeriod()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
 	EList<SXCM_TS> getUseablePeriod();
@@ -164,7 +165,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Delimiter</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_Delimiter()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getDelimiter();
@@ -181,7 +182,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Country</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_Country()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getCountry();
@@ -198,7 +199,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>State</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_State()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getState();
@@ -215,7 +216,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>County</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_County()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getCounty();
@@ -232,7 +233,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>City</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_City()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getCity();
@@ -249,7 +250,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Postal Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_PostalCode()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getPostalCode();
@@ -266,7 +267,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Street Address Line</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_StreetAddressLine()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getStreetAddressLine();
@@ -283,7 +284,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>House Number</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_HouseNumber()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getHouseNumber();
@@ -300,7 +301,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>House Number Numeric</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_HouseNumberNumeric()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getHouseNumberNumeric();
@@ -317,7 +318,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Direction</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_Direction()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getDirection();
@@ -334,7 +335,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Street Name</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_StreetName()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getStreetName();
@@ -351,7 +352,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Street Name Base</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_StreetNameBase()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getStreetNameBase();
@@ -368,7 +369,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Street Name Type</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_StreetNameType()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getStreetNameType();
@@ -385,7 +386,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Additional Locator</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_AdditionalLocator()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getAdditionalLocator();
@@ -402,7 +403,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Unit ID</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_UnitID()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getUnitID();
@@ -419,7 +420,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Unit Type</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_UnitType()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getUnitType();
@@ -436,7 +437,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Care Of</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_CareOf()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getCareOf();
@@ -453,7 +454,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Census Tract</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_CensusTract()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getCensusTract();
@@ -470,7 +471,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Delivery Address Line</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_DeliveryAddressLine()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getDeliveryAddressLine();
@@ -487,7 +488,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Delivery Installation Type</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_DeliveryInstallationType()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getDeliveryInstallationType();
@@ -504,7 +505,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Delivery Installation Area</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_DeliveryInstallationArea()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getDeliveryInstallationArea();
@@ -521,7 +522,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Delivery Installation Qualifier</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_DeliveryInstallationQualifier()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getDeliveryInstallationQualifier();
@@ -538,7 +539,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Delivery Mode</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_DeliveryMode()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getDeliveryMode();
@@ -555,7 +556,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Delivery Mode Identifier</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_DeliveryModeIdentifier()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getDeliveryModeIdentifier();
@@ -572,7 +573,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Building Number Suffix</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_BuildingNumberSuffix()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getBuildingNumberSuffix();
@@ -589,7 +590,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Post Box</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_PostBox()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getPostBox();
@@ -606,7 +607,7 @@ public interface AD extends ANY {
 	 * @return the value of the '<em>Precinct</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_Precinct()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' group='#part'"
+	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
 	EList<ADXP> getPrecinct();
