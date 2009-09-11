@@ -62,6 +62,7 @@ public interface Entity extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntity_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -78,6 +79,7 @@ public interface Entity extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntity_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -104,6 +106,7 @@ public interface Entity extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntity_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -120,6 +123,7 @@ public interface Entity extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntity_Id()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -136,6 +140,7 @@ public interface Entity extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntity_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getCode();
@@ -162,6 +167,7 @@ public interface Entity extends EObject {
 	 * @see #setDesc(ED)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntity_Desc()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ED getDesc();

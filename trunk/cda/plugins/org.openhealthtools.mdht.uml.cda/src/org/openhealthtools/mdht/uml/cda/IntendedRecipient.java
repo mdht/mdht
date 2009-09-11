@@ -62,6 +62,7 @@ public interface IntendedRecipient extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getIntendedRecipient_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -78,6 +79,7 @@ public interface IntendedRecipient extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getIntendedRecipient_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -104,6 +106,7 @@ public interface IntendedRecipient extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getIntendedRecipient_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -120,6 +123,7 @@ public interface IntendedRecipient extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getIntendedRecipient_Id()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -136,6 +140,7 @@ public interface IntendedRecipient extends EObject {
 	 * @return the value of the '<em>Addr</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getIntendedRecipient_Addr()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<AD> getAddr();
@@ -152,6 +157,7 @@ public interface IntendedRecipient extends EObject {
 	 * @return the value of the '<em>Telecom</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getIntendedRecipient_Telecom()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<TEL> getTelecom();
@@ -168,6 +174,7 @@ public interface IntendedRecipient extends EObject {
 	 * @see #setInformationRecipient(Person)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getIntendedRecipient_InformationRecipient()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Person getInformationRecipient();
@@ -194,6 +201,7 @@ public interface IntendedRecipient extends EObject {
 	 * @see #setReceivedOrganization(Organization)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getIntendedRecipient_ReceivedOrganization()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Organization getReceivedOrganization();

@@ -62,6 +62,7 @@ public interface Device extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getDevice_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -78,6 +79,7 @@ public interface Device extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getDevice_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -104,6 +106,7 @@ public interface Device extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getDevice_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -120,6 +123,7 @@ public interface Device extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getDevice_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getCode();
@@ -146,6 +150,7 @@ public interface Device extends EObject {
 	 * @see #setManufacturerModelName(SC)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getDevice_ManufacturerModelName()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	SC getManufacturerModelName();
@@ -172,6 +177,7 @@ public interface Device extends EObject {
 	 * @see #setSoftwareName(SC)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getDevice_SoftwareName()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	SC getSoftwareName();

@@ -64,6 +64,7 @@ public interface Reference extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getReference_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -80,6 +81,7 @@ public interface Reference extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getReference_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -106,6 +108,7 @@ public interface Reference extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getReference_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -122,6 +125,7 @@ public interface Reference extends EObject {
 	 * @see #setSeperatableInd(BL)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getReference_SeperatableInd()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	BL getSeperatableInd();
@@ -148,6 +152,7 @@ public interface Reference extends EObject {
 	 * @see #setExternalAct(ExternalAct)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getReference_ExternalAct()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ExternalAct getExternalAct();
@@ -174,6 +179,7 @@ public interface Reference extends EObject {
 	 * @see #setExternalObservation(ExternalObservation)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getReference_ExternalObservation()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ExternalObservation getExternalObservation();
@@ -200,6 +206,7 @@ public interface Reference extends EObject {
 	 * @see #setExternalProcedure(ExternalProcedure)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getReference_ExternalProcedure()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ExternalProcedure getExternalProcedure();
@@ -226,6 +233,7 @@ public interface Reference extends EObject {
 	 * @see #setExternalDocument(ExternalDocument)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getReference_ExternalDocument()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ExternalDocument getExternalDocument();

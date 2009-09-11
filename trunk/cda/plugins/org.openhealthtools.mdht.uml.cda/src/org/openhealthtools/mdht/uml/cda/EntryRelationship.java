@@ -74,6 +74,7 @@ public interface EntryRelationship extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -90,6 +91,7 @@ public interface EntryRelationship extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -116,6 +118,7 @@ public interface EntryRelationship extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -132,6 +135,7 @@ public interface EntryRelationship extends EObject {
 	 * @see #setSequenceNumber(INT)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_SequenceNumber()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	INT getSequenceNumber();
@@ -158,6 +162,7 @@ public interface EntryRelationship extends EObject {
 	 * @see #setSeperatableInd(BL)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_SeperatableInd()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	BL getSeperatableInd();
@@ -184,6 +189,7 @@ public interface EntryRelationship extends EObject {
 	 * @see #setAct(Act)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_Act()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Act getAct();
@@ -210,6 +216,7 @@ public interface EntryRelationship extends EObject {
 	 * @see #setEncounter(Encounter)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_Encounter()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Encounter getEncounter();
@@ -236,6 +243,7 @@ public interface EntryRelationship extends EObject {
 	 * @see #setObservation(Observation)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_Observation()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Observation getObservation();
@@ -262,6 +270,7 @@ public interface EntryRelationship extends EObject {
 	 * @see #setObservationMedia(ObservationMedia)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_ObservationMedia()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ObservationMedia getObservationMedia();
@@ -288,6 +297,7 @@ public interface EntryRelationship extends EObject {
 	 * @see #setOrganizer(Organizer)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_Organizer()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Organizer getOrganizer();
@@ -314,6 +324,7 @@ public interface EntryRelationship extends EObject {
 	 * @see #setProcedure(Procedure)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_Procedure()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Procedure getProcedure();
@@ -340,6 +351,7 @@ public interface EntryRelationship extends EObject {
 	 * @see #setRegionOfInterest(RegionOfInterest)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_RegionOfInterest()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	RegionOfInterest getRegionOfInterest();
@@ -366,6 +378,7 @@ public interface EntryRelationship extends EObject {
 	 * @see #setSubstanceAdministration(SubstanceAdministration)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_SubstanceAdministration()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	SubstanceAdministration getSubstanceAdministration();
@@ -392,6 +405,7 @@ public interface EntryRelationship extends EObject {
 	 * @see #setSupply(Supply)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_Supply()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Supply getSupply();

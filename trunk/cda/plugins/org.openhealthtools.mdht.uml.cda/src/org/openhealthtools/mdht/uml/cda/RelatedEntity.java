@@ -64,6 +64,7 @@ public interface RelatedEntity extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRelatedEntity_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -80,6 +81,7 @@ public interface RelatedEntity extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRelatedEntity_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -106,6 +108,7 @@ public interface RelatedEntity extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRelatedEntity_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -122,6 +125,7 @@ public interface RelatedEntity extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRelatedEntity_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getCode();
@@ -148,6 +152,7 @@ public interface RelatedEntity extends EObject {
 	 * @return the value of the '<em>Addr</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRelatedEntity_Addr()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<AD> getAddr();
@@ -164,6 +169,7 @@ public interface RelatedEntity extends EObject {
 	 * @return the value of the '<em>Telecom</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRelatedEntity_Telecom()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<TEL> getTelecom();
@@ -180,6 +186,7 @@ public interface RelatedEntity extends EObject {
 	 * @see #setEffectiveTime(IVL_TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRelatedEntity_EffectiveTime()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	IVL_TS getEffectiveTime();
@@ -206,6 +213,7 @@ public interface RelatedEntity extends EObject {
 	 * @see #setRelatedPerson(Person)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRelatedEntity_RelatedPerson()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Person getRelatedPerson();

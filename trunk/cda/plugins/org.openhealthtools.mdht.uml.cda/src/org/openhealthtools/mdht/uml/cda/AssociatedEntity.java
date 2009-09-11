@@ -64,6 +64,7 @@ public interface AssociatedEntity extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssociatedEntity_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -80,6 +81,7 @@ public interface AssociatedEntity extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssociatedEntity_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -106,6 +108,7 @@ public interface AssociatedEntity extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssociatedEntity_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -122,6 +125,7 @@ public interface AssociatedEntity extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssociatedEntity_Id()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -138,6 +142,7 @@ public interface AssociatedEntity extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssociatedEntity_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getCode();
@@ -164,6 +169,7 @@ public interface AssociatedEntity extends EObject {
 	 * @return the value of the '<em>Addr</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssociatedEntity_Addr()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<AD> getAddr();
@@ -180,6 +186,7 @@ public interface AssociatedEntity extends EObject {
 	 * @return the value of the '<em>Telecom</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssociatedEntity_Telecom()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<TEL> getTelecom();
@@ -196,6 +203,7 @@ public interface AssociatedEntity extends EObject {
 	 * @see #setAssociatedPerson(Person)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssociatedEntity_AssociatedPerson()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Person getAssociatedPerson();
@@ -222,6 +230,7 @@ public interface AssociatedEntity extends EObject {
 	 * @see #setScopingOrganization(Organization)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssociatedEntity_ScopingOrganization()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Organization getScopingOrganization();

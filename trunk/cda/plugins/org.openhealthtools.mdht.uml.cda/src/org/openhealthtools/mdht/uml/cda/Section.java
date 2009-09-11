@@ -71,6 +71,7 @@ public interface Section extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -87,6 +88,7 @@ public interface Section extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -113,6 +115,7 @@ public interface Section extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -129,6 +132,7 @@ public interface Section extends EObject {
 	 * @see #setId(II)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_Id()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	II getId();
@@ -155,6 +159,7 @@ public interface Section extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getCode();
@@ -181,6 +186,7 @@ public interface Section extends EObject {
 	 * @see #setTitle(ST)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_Title()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ST getTitle();
@@ -207,6 +213,7 @@ public interface Section extends EObject {
 	 * @see #setText(StrucDocText)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_Text()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	StrucDocText getText();
@@ -233,6 +240,7 @@ public interface Section extends EObject {
 	 * @see #setConfidentialityCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_ConfidentialityCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getConfidentialityCode();
@@ -259,6 +267,7 @@ public interface Section extends EObject {
 	 * @see #setLanguageCode(CS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_LanguageCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CS getLanguageCode();
@@ -285,6 +294,7 @@ public interface Section extends EObject {
 	 * @see #setSubject(Subject)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_Subject()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Subject getSubject();
@@ -311,6 +321,7 @@ public interface Section extends EObject {
 	 * @return the value of the '<em>Author</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_Author()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Author> getAuthor();
@@ -327,6 +338,7 @@ public interface Section extends EObject {
 	 * @return the value of the '<em>Informant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_Informant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Informant12> getInformant();
@@ -343,6 +355,7 @@ public interface Section extends EObject {
 	 * @return the value of the '<em>Entry</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_Entry()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Entry> getEntry();
@@ -359,6 +372,7 @@ public interface Section extends EObject {
 	 * @return the value of the '<em>Component</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_Component()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Component5> getComponent();

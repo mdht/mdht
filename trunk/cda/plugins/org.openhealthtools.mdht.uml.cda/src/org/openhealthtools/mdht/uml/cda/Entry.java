@@ -68,6 +68,7 @@ public interface Entry extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -84,6 +85,7 @@ public interface Entry extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -110,6 +112,7 @@ public interface Entry extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -126,6 +129,7 @@ public interface Entry extends EObject {
 	 * @see #setAct(Act)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_Act()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Act getAct();
@@ -152,6 +156,7 @@ public interface Entry extends EObject {
 	 * @see #setEncounter(Encounter)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_Encounter()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Encounter getEncounter();
@@ -178,6 +183,7 @@ public interface Entry extends EObject {
 	 * @see #setObservation(Observation)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_Observation()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Observation getObservation();
@@ -204,6 +210,7 @@ public interface Entry extends EObject {
 	 * @see #setObservationMedia(ObservationMedia)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_ObservationMedia()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ObservationMedia getObservationMedia();
@@ -230,6 +237,7 @@ public interface Entry extends EObject {
 	 * @see #setOrganizer(Organizer)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_Organizer()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Organizer getOrganizer();
@@ -256,6 +264,7 @@ public interface Entry extends EObject {
 	 * @see #setProcedure(Procedure)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_Procedure()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Procedure getProcedure();
@@ -282,6 +291,7 @@ public interface Entry extends EObject {
 	 * @see #setRegionOfInterest(RegionOfInterest)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_RegionOfInterest()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	RegionOfInterest getRegionOfInterest();
@@ -308,6 +318,7 @@ public interface Entry extends EObject {
 	 * @see #setSubstanceAdministration(SubstanceAdministration)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_SubstanceAdministration()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	SubstanceAdministration getSubstanceAdministration();
@@ -334,6 +345,7 @@ public interface Entry extends EObject {
 	 * @see #setSupply(Supply)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_Supply()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Supply getSupply();

@@ -85,6 +85,7 @@ public interface ClinicalDocument extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -101,6 +102,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -127,6 +129,7 @@ public interface ClinicalDocument extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -143,6 +146,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setId(II)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_Id()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	II getId();
@@ -169,6 +173,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_Code()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getCode();
@@ -195,6 +200,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setTitle(ST)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_Title()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ST getTitle();
@@ -221,6 +227,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setEffectiveTime(TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_EffectiveTime()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	TS getEffectiveTime();
@@ -247,6 +254,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setConfidentialityCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_ConfidentialityCode()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getConfidentialityCode();
@@ -273,6 +281,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setLanguageCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_LanguageCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getLanguageCode();
@@ -299,6 +308,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setSetId(II)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_SetId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	II getSetId();
@@ -325,6 +335,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setVersionNumber(INT)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_VersionNumber()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	INT getVersionNumber();
@@ -351,6 +362,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setCopyTime(TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_CopyTime()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	TS getCopyTime();
@@ -377,6 +389,7 @@ public interface ClinicalDocument extends EObject {
 	 * @return the value of the '<em>Record Target</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_RecordTarget()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<RecordTarget> getRecordTarget();
@@ -393,6 +406,7 @@ public interface ClinicalDocument extends EObject {
 	 * @return the value of the '<em>Author</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_Author()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Author> getAuthor();
@@ -409,6 +423,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setDataEnterer(DataEnterer)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_DataEnterer()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	DataEnterer getDataEnterer();
@@ -435,6 +450,7 @@ public interface ClinicalDocument extends EObject {
 	 * @return the value of the '<em>Informant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_Informant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Informant12> getInformant();
@@ -451,6 +467,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setCustodian(Custodian)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_Custodian()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Custodian getCustodian();
@@ -477,6 +494,7 @@ public interface ClinicalDocument extends EObject {
 	 * @return the value of the '<em>Information Recipient</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_InformationRecipient()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<InformationRecipient> getInformationRecipient();
@@ -493,6 +511,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setLegalAuthenticator(LegalAuthenticator)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_LegalAuthenticator()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	LegalAuthenticator getLegalAuthenticator();
@@ -519,6 +538,7 @@ public interface ClinicalDocument extends EObject {
 	 * @return the value of the '<em>Authenticator</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_Authenticator()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Authenticator> getAuthenticator();
@@ -535,6 +555,7 @@ public interface ClinicalDocument extends EObject {
 	 * @return the value of the '<em>Participant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_Participant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Participant1> getParticipant();
@@ -551,6 +572,7 @@ public interface ClinicalDocument extends EObject {
 	 * @return the value of the '<em>In Fulfillment Of</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_InFulfillmentOf()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<InFulfillmentOf> getInFulfillmentOf();
@@ -567,6 +589,7 @@ public interface ClinicalDocument extends EObject {
 	 * @return the value of the '<em>Documentation Of</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_DocumentationOf()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<DocumentationOf> getDocumentationOf();
@@ -583,6 +606,7 @@ public interface ClinicalDocument extends EObject {
 	 * @return the value of the '<em>Related Document</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_RelatedDocument()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<RelatedDocument> getRelatedDocument();
@@ -599,6 +623,7 @@ public interface ClinicalDocument extends EObject {
 	 * @return the value of the '<em>Authorization</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_Authorization()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Authorization> getAuthorization();
@@ -615,6 +640,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setComponentOf(Component1)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_ComponentOf()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Component1 getComponentOf();
@@ -641,6 +667,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #setComponent(Component2)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_Component()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Component2 getComponent();

@@ -155,6 +155,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 			case CDAPackage.SUPPLY: return createSupply();
 			case CDAPackage.PRODUCT: return createProduct();
 			case CDAPackage.COMPONENT5: return createComponent5();
+			case CDAPackage.DOCUMENT_ROOT: return createDocumentRoot();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -1048,6 +1049,16 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	public Component5 createComponent5() {
 		Component5Impl component5 = new Component5Impl();
 		return component5;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DocumentRoot createDocumentRoot() {
+		DocumentRootImpl documentRoot = new DocumentRootImpl();
+		return documentRoot;
 	}
 
 	/**

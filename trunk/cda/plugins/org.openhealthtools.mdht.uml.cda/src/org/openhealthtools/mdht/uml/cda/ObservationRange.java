@@ -65,6 +65,7 @@ public interface ObservationRange extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getObservationRange_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -81,6 +82,7 @@ public interface ObservationRange extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getObservationRange_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -107,6 +109,7 @@ public interface ObservationRange extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getObservationRange_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -123,6 +126,7 @@ public interface ObservationRange extends EObject {
 	 * @see #setCode(CD)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getObservationRange_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CD getCode();
@@ -149,6 +153,7 @@ public interface ObservationRange extends EObject {
 	 * @see #setText(ED)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getObservationRange_Text()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ED getText();
@@ -175,6 +180,7 @@ public interface ObservationRange extends EObject {
 	 * @see #setValue(ANY)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getObservationRange_Value()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ANY getValue();
@@ -201,6 +207,7 @@ public interface ObservationRange extends EObject {
 	 * @see #setInterpretationCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getObservationRange_InterpretationCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getInterpretationCode();

@@ -62,6 +62,7 @@ public interface ManufacturedProduct extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getManufacturedProduct_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -78,6 +79,7 @@ public interface ManufacturedProduct extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getManufacturedProduct_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -104,6 +106,7 @@ public interface ManufacturedProduct extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getManufacturedProduct_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -120,6 +123,7 @@ public interface ManufacturedProduct extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getManufacturedProduct_Id()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -136,6 +140,7 @@ public interface ManufacturedProduct extends EObject {
 	 * @see #setManufacturedLabeledDrug(LabeledDrug)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getManufacturedProduct_ManufacturedLabeledDrug()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	LabeledDrug getManufacturedLabeledDrug();
@@ -162,6 +167,7 @@ public interface ManufacturedProduct extends EObject {
 	 * @see #setManufacturedMaterial(Material)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getManufacturedProduct_ManufacturedMaterial()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Material getManufacturedMaterial();
@@ -188,6 +194,7 @@ public interface ManufacturedProduct extends EObject {
 	 * @see #setManufacturerOrganization(Organization)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getManufacturedProduct_ManufacturerOrganization()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Organization getManufacturerOrganization();

@@ -81,6 +81,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -97,6 +98,7 @@ public interface Procedure extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -123,6 +125,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -139,6 +142,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_Id()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -155,6 +159,7 @@ public interface Procedure extends EObject {
 	 * @see #setCode(CD)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CD getCode();
@@ -181,6 +186,7 @@ public interface Procedure extends EObject {
 	 * @see #setText(ED)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_Text()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ED getText();
@@ -207,6 +213,7 @@ public interface Procedure extends EObject {
 	 * @see #setStatusCode(CS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_StatusCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CS getStatusCode();
@@ -233,6 +240,7 @@ public interface Procedure extends EObject {
 	 * @see #setEffectiveTime(IVL_TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_EffectiveTime()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	IVL_TS getEffectiveTime();
@@ -259,6 +267,7 @@ public interface Procedure extends EObject {
 	 * @see #setPriorityCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_PriorityCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getPriorityCode();
@@ -285,6 +294,7 @@ public interface Procedure extends EObject {
 	 * @see #setLanguageCode(CS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_LanguageCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CS getLanguageCode();
@@ -311,6 +321,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Method Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_MethodCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CE> getMethodCode();
@@ -327,6 +338,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Approach Site Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_ApproachSiteCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CD> getApproachSiteCode();
@@ -343,6 +355,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Target Site Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_TargetSiteCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CD> getTargetSiteCode();
@@ -359,6 +372,7 @@ public interface Procedure extends EObject {
 	 * @see #setSubject(Subject)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_Subject()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Subject getSubject();
@@ -385,6 +399,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Specimen</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_Specimen()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Specimen> getSpecimen();
@@ -401,6 +416,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Performer</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_Performer()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Performer2> getPerformer();
@@ -417,6 +433,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Author</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_Author()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Author> getAuthor();
@@ -433,6 +450,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Informant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_Informant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Informant12> getInformant();
@@ -449,6 +467,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Participant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_Participant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Participant2> getParticipant();
@@ -465,6 +484,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Entry Relationship</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_EntryRelationship()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<EntryRelationship> getEntryRelationship();
@@ -481,6 +501,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Reference</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_Reference()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Reference> getReference();
@@ -497,6 +518,7 @@ public interface Procedure extends EObject {
 	 * @return the value of the '<em>Precondition</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getProcedure_Precondition()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Precondition> getPrecondition();

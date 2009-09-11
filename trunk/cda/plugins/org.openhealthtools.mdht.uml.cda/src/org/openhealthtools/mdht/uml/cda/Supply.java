@@ -85,6 +85,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -101,6 +102,7 @@ public interface Supply extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -127,6 +129,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -143,6 +146,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Id()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -159,6 +163,7 @@ public interface Supply extends EObject {
 	 * @see #setCode(CD)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CD getCode();
@@ -185,6 +190,7 @@ public interface Supply extends EObject {
 	 * @see #setText(ED)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Text()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	ED getText();
@@ -211,6 +217,7 @@ public interface Supply extends EObject {
 	 * @see #setStatusCode(CS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_StatusCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CS getStatusCode();
@@ -237,6 +244,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Effective Time</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_EffectiveTime()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<SXCM_TS> getEffectiveTime();
@@ -253,6 +261,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Priority Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_PriorityCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CE> getPriorityCode();
@@ -269,6 +278,7 @@ public interface Supply extends EObject {
 	 * @see #setRepeatNumber(IVL_INT)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_RepeatNumber()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	IVL_INT getRepeatNumber();
@@ -295,6 +305,7 @@ public interface Supply extends EObject {
 	 * @see #setIndependentInd(BL)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_IndependentInd()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	BL getIndependentInd();
@@ -321,6 +332,7 @@ public interface Supply extends EObject {
 	 * @see #setQuantity(PQ)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Quantity()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	PQ getQuantity();
@@ -347,6 +359,7 @@ public interface Supply extends EObject {
 	 * @see #setExpectedUseTime(IVL_TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_ExpectedUseTime()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	IVL_TS getExpectedUseTime();
@@ -373,6 +386,7 @@ public interface Supply extends EObject {
 	 * @see #setSubject(Subject)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Subject()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Subject getSubject();
@@ -399,6 +413,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Specimen</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Specimen()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Specimen> getSpecimen();
@@ -415,6 +430,7 @@ public interface Supply extends EObject {
 	 * @see #setProduct(Product)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Product()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Product getProduct();
@@ -441,6 +457,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Performer</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Performer()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Performer2> getPerformer();
@@ -457,6 +474,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Author</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Author()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Author> getAuthor();
@@ -473,6 +491,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Informant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Informant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Informant12> getInformant();
@@ -489,6 +508,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Participant</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Participant()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Participant2> getParticipant();
@@ -505,6 +525,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Entry Relationship</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_EntryRelationship()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<EntryRelationship> getEntryRelationship();
@@ -521,6 +542,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Reference</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Reference()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Reference> getReference();
@@ -537,6 +559,7 @@ public interface Supply extends EObject {
 	 * @return the value of the '<em>Precondition</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSupply_Precondition()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Precondition> getPrecondition();

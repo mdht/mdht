@@ -61,6 +61,7 @@ public interface LegalAuthenticator extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLegalAuthenticator_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -77,6 +78,7 @@ public interface LegalAuthenticator extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLegalAuthenticator_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -103,6 +105,7 @@ public interface LegalAuthenticator extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLegalAuthenticator_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -119,6 +122,7 @@ public interface LegalAuthenticator extends EObject {
 	 * @see #setTime(TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLegalAuthenticator_Time()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	TS getTime();
@@ -145,6 +149,7 @@ public interface LegalAuthenticator extends EObject {
 	 * @see #setSignatureCode(CS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLegalAuthenticator_SignatureCode()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CS getSignatureCode();
@@ -171,6 +176,7 @@ public interface LegalAuthenticator extends EObject {
 	 * @see #setAssignedEntity(AssignedEntity)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getLegalAuthenticator_AssignedEntity()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	AssignedEntity getAssignedEntity();

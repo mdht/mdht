@@ -61,6 +61,7 @@ public interface StructuredBody extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getStructuredBody_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -77,6 +78,7 @@ public interface StructuredBody extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getStructuredBody_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -103,6 +105,7 @@ public interface StructuredBody extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getStructuredBody_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -119,6 +122,7 @@ public interface StructuredBody extends EObject {
 	 * @see #setConfidentialityCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getStructuredBody_ConfidentialityCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getConfidentialityCode();
@@ -145,6 +149,7 @@ public interface StructuredBody extends EObject {
 	 * @see #setLanguageCode(CS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getStructuredBody_LanguageCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CS getLanguageCode();
@@ -171,6 +176,7 @@ public interface StructuredBody extends EObject {
 	 * @return the value of the '<em>Component</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getStructuredBody_Component()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<Component3> getComponent();

@@ -60,6 +60,7 @@ public interface Performer1 extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerformer1_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -76,6 +77,7 @@ public interface Performer1 extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerformer1_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -102,6 +104,7 @@ public interface Performer1 extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerformer1_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -118,6 +121,7 @@ public interface Performer1 extends EObject {
 	 * @see #setFunctionCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerformer1_FunctionCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getFunctionCode();
@@ -144,6 +148,7 @@ public interface Performer1 extends EObject {
 	 * @see #setTime(IVL_TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerformer1_Time()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	IVL_TS getTime();
@@ -170,6 +175,7 @@ public interface Performer1 extends EObject {
 	 * @see #setAssignedEntity(AssignedEntity)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerformer1_AssignedEntity()
 	 * @model containment="true" required="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	AssignedEntity getAssignedEntity();

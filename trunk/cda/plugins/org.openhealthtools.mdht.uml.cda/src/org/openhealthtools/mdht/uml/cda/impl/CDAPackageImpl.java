@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -677,6 +678,13 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	private EClass component5EClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass documentRootEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -732,6 +740,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		// Initialize simple dependencies
 		DatatypesPackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
 
 		// Load packages
 		theCDAPackage.loadPackage();
@@ -10226,6 +10235,54 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EAttribute getComponent5_ContextConductionInd() {
         return (EAttribute)getComponent5().getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDocumentRoot() {
+		if (documentRootEClass == null) {
+			documentRootEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(89);
+		}
+		return documentRootEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDocumentRoot_Mixed() {
+        return (EAttribute)getDocumentRoot().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_XMLNSPrefixMap() {
+        return (EReference)getDocumentRoot().getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_XSISchemaLocation() {
+        return (EReference)getDocumentRoot().getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDocumentRoot_ClinicalDocument() {
+        return (EReference)getDocumentRoot().getEStructuralFeatures().get(3);
 	}
 
 	/**

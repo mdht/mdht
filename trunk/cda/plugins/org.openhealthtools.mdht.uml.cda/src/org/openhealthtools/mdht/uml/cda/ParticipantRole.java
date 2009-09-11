@@ -68,6 +68,7 @@ public interface ParticipantRole extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getParticipantRole_RealmCode()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<CS> getRealmCode();
@@ -84,6 +85,7 @@ public interface ParticipantRole extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getParticipantRole_TypeId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -110,6 +112,7 @@ public interface ParticipantRole extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getParticipantRole_TemplateId()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getTemplateId();
@@ -126,6 +129,7 @@ public interface ParticipantRole extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getParticipantRole_Id()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<II> getId();
@@ -142,6 +146,7 @@ public interface ParticipantRole extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getParticipantRole_Code()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getCode();
@@ -168,6 +173,7 @@ public interface ParticipantRole extends EObject {
 	 * @return the value of the '<em>Addr</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getParticipantRole_Addr()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<AD> getAddr();
@@ -184,6 +190,7 @@ public interface ParticipantRole extends EObject {
 	 * @return the value of the '<em>Telecom</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getParticipantRole_Telecom()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<TEL> getTelecom();
@@ -200,6 +207,7 @@ public interface ParticipantRole extends EObject {
 	 * @see #setPlayingDevice(Device)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getParticipantRole_PlayingDevice()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Device getPlayingDevice();
@@ -226,6 +234,7 @@ public interface ParticipantRole extends EObject {
 	 * @see #setPlayingEntity(PlayingEntity)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getParticipantRole_PlayingEntity()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	PlayingEntity getPlayingEntity();
@@ -252,6 +261,7 @@ public interface ParticipantRole extends EObject {
 	 * @see #setScopingEntity(Entity)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getParticipantRole_ScopingEntity()
 	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Entity getScopingEntity();
