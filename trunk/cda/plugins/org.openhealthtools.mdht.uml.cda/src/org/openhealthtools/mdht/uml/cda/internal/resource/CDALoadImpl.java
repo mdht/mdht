@@ -112,7 +112,7 @@ public class CDALoadImpl extends XMLLoadImpl {
 	}
 	
 	private void handlePartType(Element element) {
-		String partType = partTypes.get(element.getTagName());
+		String partType = partTypes.get(element.getLocalName());
 		if (partType != null) {
 			element.setAttribute("partType", partType);
 		}
@@ -120,14 +120,14 @@ public class CDALoadImpl extends XMLLoadImpl {
 	
 	private void handleDataType(Element element, Element root) {
 		if (element.hasAttributeNS(XMLResource.XSI_URI, "type")) {
-			String value = element.getAttributeNS(XMLResource.XSI_URI, "type");
-			if (value != null && !value.contains(":")) {
+			String type = element.getAttributeNS(XMLResource.XSI_URI, "type");
+			if (type != null && !type.contains(":")) {
 				String nsPrefix = getNsPrefix(DatatypesPackage.eNS_URI);
 				if (helper.getPrefix(DatatypesPackage.eNS_URI) == null) {
 					helper.addPrefix(nsPrefix, DatatypesPackage.eNS_URI);
 					root.setAttributeNS(ExtendedMetaData.XMLNS_URI, "xmlns:" + nsPrefix, DatatypesPackage.eNS_URI);
 				}
-				element.setAttributeNS(XMLResource.XSI_URI, "xsi:type", nsPrefix + ":" + value);
+				element.setAttributeNS(XMLResource.XSI_URI, "xsi:type", nsPrefix + ":" + type);
 			}
 		}
 	}
