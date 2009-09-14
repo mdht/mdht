@@ -140,8 +140,8 @@ public class CDALoadImpl extends XMLLoadImpl {
 		for (int i = 0; i < nodeList.getLength(); i++) {
 			if (nodeList.item(i) instanceof Element) {
 				Element e = (Element) nodeList.item(i);
-				if (e.getLocalName().equals("templateId")) {
-					EClass eClass = CDARegistry.INSTANCE.getEClass(e.getAttribute("root"));
+				if ("templateId".equals(e.getLocalName())) {
+					EClass eClass = CDARegistry.INSTANCE.getEClass(e.getAttributeNS(null, "root"));
 					if (eClass != null && eClass.getEAllSuperTypes().size() > last) {
 						result = eClass;
 						last = eClass.getEAllSuperTypes().size();
