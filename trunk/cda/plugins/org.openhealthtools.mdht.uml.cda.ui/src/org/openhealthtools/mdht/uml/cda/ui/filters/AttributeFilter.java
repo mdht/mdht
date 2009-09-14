@@ -24,7 +24,9 @@ public class AttributeFilter implements IFilter {
 
 	public boolean select(Object object) {
 		Element element = null;
-		if (object instanceof IAdaptable)
+		if (object instanceof Element)
+			element = (Element) object;
+		else if (object instanceof IAdaptable)
 			element = (Element) ((IAdaptable)object).getAdapter(Element.class);
 
 		if (element instanceof Property) {
