@@ -44,6 +44,11 @@ public interface ICDAProfileConstants {
 	 * Class Validation Stereotype and Properties
 	 */
 	public static final String CLASS_VALIDATION = "ClassValidation";
+
+	/*
+	 * Constraint Validation Stereotype and Properties
+	 */
+	public static final String CONSTRAINT_VALIDATION = "ConstraintValidation";
 	
 	/*
 	 * Vocab Specification Stereotype and Properties
