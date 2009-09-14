@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -35,11 +36,17 @@ import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.emf.hl7.mif2.ArtifactDependency;
 import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystem;
+import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystemBase;
+import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystemSupplement;
 import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystemVersion;
+import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystemVersionSupplement;
 import org.openhealthtools.mdht.emf.hl7.mif2.Concept;
+import org.openhealthtools.mdht.emf.hl7.mif2.ConceptBase;
 import org.openhealthtools.mdht.emf.hl7.mif2.ConceptDomain;
 import org.openhealthtools.mdht.emf.hl7.mif2.ConceptDomainRef;
+import org.openhealthtools.mdht.emf.hl7.mif2.ConceptSupplement;
 import org.openhealthtools.mdht.emf.hl7.mif2.ContentDefinition;
 import org.openhealthtools.mdht.emf.hl7.mif2.ContextBinding;
 import org.openhealthtools.mdht.emf.hl7.mif2.PackageBase;
@@ -78,7 +85,7 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 	 * relationships. TODO For performance reasons, might have to make this
 	 * static.
 	 */
-	private VocabularyModel vocabularyModel;
+//	private VocabularyModel vocabularyModel;
 
 	/**
 	 * Cached map of ValueSets and CodeSystems used to prevent looping.
@@ -87,7 +94,7 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 
 	private Map<String, ValueSet> valueSetMapByName = new HashMap<String, ValueSet>();
 
-	private Map<String, CodeSystem> codeSystemMap = new HashMap<String, CodeSystem>();
+	private Map<String, CodeSystemBase> codeSystemMap = new HashMap<String, CodeSystemBase>();
 
 	private Map<String, ConceptDomain> conceptDomainMap = new HashMap<String, ConceptDomain>();
 
@@ -105,10 +112,38 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 	 */
 	private Object[] children = null;
 	
-	private static PackageBase mifModel = null;
+//	private static PackageBase mifModel = null;
 	
-	public PackageBase getMIFModel() { return mifModel; }
+	private static Map<URI,PackageBase> mifVocabularyModels = new HashMap<URI,PackageBase>();
 	
+	public PackageBase getMIFModel() 
+	{ 
+		return loadPackageBase(ResourcesPlugin.getWorkspace().getPathVariableManager().getValue(HL7_MIF2_VOCABULARY_PATH)); 
+	}
+	
+	private VocabularyModel getVocabularyModel()
+	{
+		return (VocabularyModel)getMIFModel();
+	}
+	
+	
+	private void loadDependentVocabularyModel(ArtifactDependency artifactDependency )
+	{
+		
+		IPath ipath = ResourcesPlugin.getWorkspace().getPathVariableManager().getValue(HL7_MIF2_VOCABULARY_PATH);
+
+		ipath = ipath.removeLastSegments(1);
+
+		ipath = ipath.append(String.format("%s=%s=%s=%s.coremif", artifactDependency.getRoot().getName(), artifactDependency.getRealmNamespace(), artifactDependency.getArtifact()
+				.getName(), artifactDependency.getVersion()));
+
+		PackageBase packageBase = loadPackageBase(ipath);
+
+		VocabularyModel dependentModel = (VocabularyModel) packageBase;
+
+		this.populateSets(dependentModel);
+		
+	}
 	
 	// Move to util if not there already
 	protected PackageBase loadMIFFile(final ResourceSet resourceSet,final URI modelURI) {
@@ -137,28 +172,41 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 	
 	final public static String HL7_MIF2_VOCABULARY_PATH = "HL7_MIF2_VOCABULARY";
 	
-	
+	private PackageBase loadPackageBase(IPath iPath)
+	{
+		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new ResourceSetImpl();
+
+		resourceSet.getLoadOptions().put(XMIResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+
+		File file = iPath.toFile();
+		URI uri;
+
+		PackageBase packageBase = null;
+		
+		try {
+			uri = URI.createURI(file.toURI().toURL().toString());			
+			if (mifVocabularyModels.containsKey(uri)) {
+				packageBase = mifVocabularyModels.get(uri);
+			} else {
+				packageBase = loadMIFFile(resourceSet, uri);
+				mifVocabularyModels.put(uri, packageBase );
+			}
+			
+		} catch (MalformedURLException e) {
+			// Consume exception - mifModel status checked later+
+		}
+		
+		return packageBase;
+		
+	}
 	public void loadMIF2Vocabulary()
 	{
 		
 		/* Cache instance of vocabulary model to ensure quicker response time
 		* might be a resource hog and need to be managed differently - in memory indexes and not the whole model
 		* Have not refactored complete implementation to take advantage, yet */
-		 if (mifModel == null && ResourcesPlugin.getWorkspace().getPathVariableManager().isDefined(HL7_MIF2_VOCABULARY_PATH)) {
-			org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new ResourceSetImpl();
-
-			resourceSet.getLoadOptions().put(XMIResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
-
-			File file = ResourcesPlugin.getWorkspace().getPathVariableManager().getValue(HL7_MIF2_VOCABULARY_PATH).toFile();
-			URI uri;
-
-			try {
-				uri = URI.createURI(file.toURI().toURL().toString());
-				mifModel = loadMIFFile(resourceSet, uri);
-			} catch (MalformedURLException e) {
-				// Consume exception - mifModel status checked later+
-			}
-
+		 if (mifVocabularyModels.isEmpty() && ResourcesPlugin.getWorkspace().getPathVariableManager().isDefined(HL7_MIF2_VOCABULARY_PATH)) {
+				loadPackageBase(ResourcesPlugin.getWorkspace().getPathVariableManager().getValue(HL7_MIF2_VOCABULARY_PATH)); //loadMIFFile(resourceSet, uri);
 		}
 
 		
@@ -205,10 +253,24 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 		}
 	}
 	
-	public class CodeSystemComparator implements Comparator<CodeSystem> {
+	public class CodeSystemComparator implements Comparator<CodeSystemBase> {
 
-		public int compare(CodeSystem codeSystem1, CodeSystem codeSystem2) {
+		public int compare(CodeSystemBase codeSystem1, CodeSystemBase codeSystem2) {
 			return codeSystem1.getName().compareTo(codeSystem2.getName());
+		}
+	}
+	
+	
+	
+	public class ContextBindingComparator implements Comparator<ContextBinding> {
+
+		public int compare(ContextBinding contextBinding1, ContextBinding contextBinding2) {
+			int result = 0;
+			
+			if (contextBinding1.getConceptDomain() != null){
+				result = contextBinding1.getConceptDomain().compareTo(contextBinding2.getConceptDomain());
+			}
+			return result;
 		}
 	}
 
@@ -223,6 +285,18 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 			return result;
 		}
 	}
+	
+	public class ConceptSupplementComparator implements Comparator<ConceptSupplement> {
+
+		public int compare(ConceptSupplement concept1, ConceptSupplement concept2) {
+			int result = 0;
+
+			if (concept1.getCode() != null) {
+				result = concept1.getCode().compareTo(concept2.getCode());
+			}
+			return result;
+		}
+	}
 
 	
 	public class ValueSetComparator implements Comparator<ValueSet> {
@@ -231,6 +305,26 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 			return o1.getName().compareTo(o2.getName());
 		}
 	}	
+
+	public Object caseCodeSystemSupplement(CodeSystemSupplement codeSystemSupplement) {
+
+		ArrayList<ConceptSupplement> concepts = new ArrayList<ConceptSupplement>();
+
+		if (!codeSystemSupplement.getCodeSystemVersionSupplement().isEmpty()) {
+			CodeSystemVersionSupplement csv = codeSystemSupplement.getCodeSystemVersionSupplement().get(0);
+
+			for (ConceptSupplement concept : csv.getConceptSupplement()) {
+					concepts.add(concept);
+			}
+//			Collections.sort(concepts, new ConceptComparator());
+		}
+
+		Collections.sort(concepts, new ConceptSupplementComparator());
+		
+		children = concepts.toArray();
+
+		return codeSystemSupplement;
+	}
 
 	
 	public Object caseCodeSystem(CodeSystem codeSystem) {
@@ -284,51 +378,80 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 	
 	boolean intialized = false;
 	
+	private void populateSets(VocabularyModel vmodel)
+	{
+		ArrayList<ValueSet> valueSets = new ArrayList<ValueSet>();
+
+		valueSets.addAll(vmodel.getValueSet());
+
+		Collections.sort(valueSets, new ValueSetComparator());
+
+		// Initialize maps valueSet and codeSystem maps
+		for (ValueSet valueSet : valueSets) {
+			if (valueSet.getId() != null) {
+				valueSetMap.put(valueSet.getId(), valueSet);
+			}
+		}
+
+		for (ValueSet valueSet : valueSets) {
+			if (valueSet.getName() != null) {		
+				valueSetMapByName.put(valueSet.getName().toUpperCase(), valueSet);
+			}
+		}
+		
+//		CodeSystemSupplement codeSystemSupplement = vmodel.getCodeSystemSupplement().get(0);
+		
+		
+
+		for (CodeSystem codeSystem : vmodel.getCodeSystem()) {
+			if (codeSystem.getCodeSystemId() != null) {
+//				&& codeSystem.getReleasedVersion().get(0).isHl7MaintainedIndicator()
+				if (!codeSystem.getReleasedVersion().isEmpty() ) {
+					codeSystemMap.put(codeSystem.getCodeSystemId(), codeSystem);
+				}
+
+			}
+		}
+		
+		
+		for (CodeSystemSupplement codeSystemSupplement  : vmodel.getCodeSystemSupplement()) {
+			if (codeSystemSupplement.getCodeSystemId() != null) {
+				
+				if (!codeSystemSupplement.getCodeSystemVersionSupplement().isEmpty()) {
+					codeSystemMap.put(codeSystemSupplement.getCodeSystemId(), codeSystemSupplement);
+				}
+
+			}
+		}
+
+		for (ConceptDomain conceptDomain : vmodel.getConceptDomain()) {
+			if (conceptDomain.getName() != null) {
+				conceptDomainMap.put(conceptDomain.getName(), conceptDomain);
+			}
+		}
+
+		for (ContextBinding contextBinding : vmodel.getContextBinding()) {
+			if (contextBinding.getConceptDomain() != null) {
+				contextBindingMap.put(contextBinding.getConceptDomain(), contextBinding);
+			}
+		}
+
+	}
+	
 	private void initializeSets()
 	{
 
 		if (!intialized) {
 
+			if (!getVocabularyModel().getDependsOnVocabModel().isEmpty())
+			{
+				loadDependentVocabularyModel(getVocabularyModel().getDependsOnVocabModel().get(0));				
+			}
+
 			intialized = true;
-			ArrayList<ValueSet> valueSets = new ArrayList<ValueSet>();
-
-			valueSets.addAll(vocabularyModel.getValueSet());
-
-			Collections.sort(valueSets, new ValueSetComparator());
-
-			// Initialize maps valueSet and codeSystem maps
-			for (ValueSet valueSet : valueSets) {
-				if (valueSet.getId() != null) {
-					valueSetMap.put(valueSet.getId(), valueSet);
-				}
-			}
-
-			for (ValueSet valueSet : valueSets) {
-				if (valueSet.getName() != null) {
-					valueSetMapByName.put(valueSet.getName().toUpperCase(), valueSet);
-				}
-			}
-
-			for (CodeSystem codeSystem : vocabularyModel.getCodeSystem()) {
-				if (codeSystem.getCodeSystemId() != null) {
-					if (!codeSystem.getReleasedVersion().isEmpty() && codeSystem.getReleasedVersion().get(0).isHl7MaintainedIndicator()) {
-						codeSystemMap.put(codeSystem.getCodeSystemId(), codeSystem);
-					}
-
-				}
-			}
-
-			for (ConceptDomain conceptDomain : vocabularyModel.getConceptDomain()) {
-				if (conceptDomain.getName() != null) {
-					conceptDomainMap.put(conceptDomain.getName(), conceptDomain);
-				}
-			}
-
-			for (ContextBinding contextBinding : vocabularyModel.getContextBinding()) {
-				if (contextBinding.getConceptDomain() != null) {
-					contextBindingMap.put(contextBinding.getConceptDomain(), contextBinding);
-				}
-			}
+			
+			populateSets(getVocabularyModel());
+			
 		}
 	}
 
@@ -343,8 +466,8 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 	public Object caseVocabularyModel(VocabularyModel vocabularyModel) {
 
 		// Cache the model
-		this.vocabularyModel = vocabularyModel;
-
+//		this.vocabularyModel = vocabularyModel;
+//
 		initializeSets();
 		
 		
@@ -368,7 +491,10 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 	}
 	
 	/**
-	 * filterValueSets returns the complete set of currently defined value sets within the mif vocabulary if no concept domain has been selected or returns a filtered set of context bindings based on concept domain
+	 * filterValueSets returns the complete set of currently defined value sets
+	 * within the mif vocabulary if no concept domain has been selected or
+	 * returns a filtered set of context bindings based on concept domain
+	 * 
 	 * @param conceptDomain
 	 */
 	private void filterValueSets(Property property)
@@ -408,7 +534,7 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 		
 		} else {
 			for (ContextBinding contextBinding : contextBindingMap.values()) {
-				if (realm != null && realm.equals(contextBinding.getBindingRealmName())) {
+				if (realm != null && (realm.equals(contextBinding.getBindingRealmName()) || realm.equalsIgnoreCase("UV"))) {
 					ValueSet valueSet = valueSetMap.get(contextBinding.getValueSet());
 					if (valueSet != null) {
 						valueSets.add(valueSet);
@@ -419,6 +545,9 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 
 		}
 
+		
+		Collections.sort(valueSets,new ValueSetComparator());
+		
 		children = valueSets.toArray();
 		
 		if (children.length == 0)
@@ -442,7 +571,9 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 		if (false && conceptDomainFilter != null && conceptDomainFilter.length() > 0 && conceptDomainMap.containsKey(conceptDomainFilter)) {
 			conceptDomains.add(conceptDomainMap.get(conceptDomainFilter));
 		} else {
-			for (ConceptDomain conceptDomain : vocabularyModel.getConceptDomain()) {
+			
+			//vocabularyModel.getConceptDomain()
+			for (ConceptDomain conceptDomain : conceptDomainMap.values() ) {
 
 				if (conceptDomain.getSpecializedByDomain().size() == 0 && conceptDomain.getSpecializesDomain().size() == 0) {
 					conceptDomains.add(conceptDomain);
@@ -451,6 +582,8 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 			}
 		}
 		
+		Collections.sort(conceptDomains, new ConceptDomainComparator());
+		
 		children = conceptDomains.toArray();
 	}
 	
@@ -458,7 +591,7 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 	
 	private void filterCodeSystems(Property property)
 	{
-		ArrayList<CodeSystem> codeSystems = new ArrayList<CodeSystem>();
+		ArrayList<CodeSystemBase> codeSystems = new ArrayList<CodeSystemBase>();
 
 		codeSystems.addAll(codeSystemMap.values());
 
@@ -484,7 +617,7 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 
 		if (valueSet.getVersion().size() > 0) {
 			ValueSetVersion valueSetVersion = valueSet.getVersion().get(0);
-			if (valueSetVersion.getContent() != null) {
+			if (valueSetVersion.getContent() != null) {							
 				if (valueSetVersion.getContent().getCombinedContent() != null) {
 					for (ContentDefinition cd : valueSetVersion.getContent().getCombinedContent().getUnionWithContent()) {
 						if (cd.getValueSetRef() != null) {
@@ -498,6 +631,8 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 						}
 					}
 				}
+				
+				
 
 			}
 
@@ -659,12 +794,14 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 		
 		Object[] codeSystemSelection = null;
 
-		if (mifModel != null) {
-			this.vocabularyModel = (VocabularyModel) mifModel;
-			initializeSets();
-		}
+		
+	loadMIF2Vocabulary();
+		initializeSets();
+		
 
 		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
+		
+		ConceptBase selectedConcept = null;
 
 		if (stereotype != null) {
 			
@@ -673,31 +810,56 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 			String code = (String) property.getValue(stereotype, IHDFProfileConstants.CODE);
 
 			if (codeSystemMap.containsKey(codeSystemOid)) {
-
-				CodeSystem selectedCodeSystem = codeSystemMap.get(codeSystemOid);
-				Concept selectedConcept = null;
-
-				if (!selectedCodeSystem.getReleasedVersion().isEmpty()) {
-
-					// TODO Add version logic to vocabulary
-					CodeSystemVersion csv = selectedCodeSystem.getReleasedVersion().get(0);
-
-					for (Concept concept : csv.getConcept()) {
+				
+				if (codeSystemMap.get(codeSystemOid) instanceof CodeSystem) {
 					
-						if (concept.isIsSelectable() && !concept.getCode().isEmpty() && concept.getCode().get(0).getCode().equals(code)) {
-		
-							selectedConcept = concept;
-							break;
+					CodeSystem selectedCodeSystem = (CodeSystem) codeSystemMap.get(codeSystemOid);
+
+					if (!selectedCodeSystem.getReleasedVersion().isEmpty()) {
+
+						// TODO Add version logic to vocabulary
+						CodeSystemVersion csv = selectedCodeSystem.getReleasedVersion().get(0);
+
+						for (Concept concept : csv.getConcept()) {
+
+							if (concept.isIsSelectable() && !concept.getCode().isEmpty() && concept.getCode().get(0).getCode().equals(code)) {
+
+								selectedConcept = concept;
+								break;
+							}
+
 						}
-						
 					}
+
 				}
+				
+				if (codeSystemMap.get(codeSystemOid) instanceof CodeSystemSupplement) {
+					
+					CodeSystemSupplement selectedCodeSystem = (CodeSystemSupplement) codeSystemMap.get(codeSystemOid);
+
+					if (!selectedCodeSystem.getCodeSystemVersionSupplement().isEmpty()) {
+
+						// TODO Add version logic to vocabulary
+						CodeSystemVersionSupplement csv = selectedCodeSystem.getCodeSystemVersionSupplement().get(0);
+
+						for (ConceptSupplement concept : csv.getConceptSupplement()) {
+							
+							if (concept.getCode() != null && concept.getCode().equals(code)) {
+								selectedConcept = concept;
+								break;
+							}
+
+						}
+					}
+
+				}
+				
 
 				// If we found a match to the code - return code system and concept else return the codesystem
 				if (selectedConcept != null) {
-					codeSystemSelection = new Object[] { selectedCodeSystem, selectedConcept };
+					codeSystemSelection = new Object[] { codeSystemMap.get(codeSystemOid), selectedConcept };
 				} else {
-					codeSystemSelection = new Object[] { selectedCodeSystem };
+					codeSystemSelection = new Object[] { codeSystemMap.get(codeSystemOid) };
 
 				}
 			}
@@ -722,12 +884,8 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 	public Object[] getConceptDomainSelection()
 	{
 		
-		if (mifModel != null)
-		{
-			this.vocabularyModel = (VocabularyModel)mifModel;
-			
-			initializeSets();
-		}
+		loadMIF2Vocabulary();
+		initializeSets();
 		
 		Object[] conceptSelectionPath = null;
 		String conceptDomainFilter = null;
@@ -789,11 +947,10 @@ public class Mif2VocabularyContentProvider extends Mif2Switch<Object> implements
 		
 		Object[] valueSetSelection = null;
 
-		if (mifModel != null) {
-			this.vocabularyModel = (VocabularyModel) mifModel;
-			initializeSets();
-		}
-
+		loadMIF2Vocabulary();
+		
+		initializeSets();
+		
 		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.VALUE_SET_CONSTRAINT);
 
 		if (stereotype != null) {
