@@ -34,9 +34,11 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.emf.hl7.mif2.CascadableAnnotation;
 import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystem;
+import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystemSupplement;
 import org.openhealthtools.mdht.emf.hl7.mif2.ComplexMarkupWithLanguage;
 import org.openhealthtools.mdht.emf.hl7.mif2.Concept;
 import org.openhealthtools.mdht.emf.hl7.mif2.ConceptDomain;
+import org.openhealthtools.mdht.emf.hl7.mif2.ConceptSupplement;
 import org.openhealthtools.mdht.emf.hl7.mif2.ContextBinding;
 import org.openhealthtools.mdht.emf.hl7.mif2.DesignComment;
 import org.openhealthtools.mdht.emf.hl7.mif2.FormalConstraint;
@@ -637,6 +639,33 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 		String systemOid;
 		String systemVersion;
 
+		
+		public CodeSystemConstraint(CodeSystemSupplement codeSystem, ConceptSupplement concept) {
+			
+			this.systemName = codeSystem.getName();
+
+			this.systemOid = codeSystem.getCodeSystemId();
+
+			// If there is a released version and there is a date associated with it
+			// Get the xml format of the date which appears to be  yyyy-mm-dd
+			if (!codeSystem.getCodeSystemVersionSupplement().isEmpty() && 
+				 codeSystem.getCodeSystemVersionSupplement().get(0).getReleaseDate() != null) {
+				this.systemVersion = codeSystem.getCodeSystemVersionSupplement().get(0).getReleaseDate().toXMLFormat();
+
+			}
+			
+			if (concept != null) {
+				this.code = concept.getCode();
+				if (!concept.getPrintName().isEmpty()) {
+					this.codePrintName = concept.getPrintName().get(0).getText();					
+				}
+
+			}
+
+		}
+
+		
+		
 		public CodeSystemConstraint(CodeSystem codeSystem, Concept concept) {
 			
 			this.systemName = codeSystem.getName();
@@ -801,12 +830,18 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 						}
 					} else if (constraint.equals(Constraint.CODESYSTEMS)) {
 						
+						
+						// TODO - ugly refactor SWM
 						if (results[0] instanceof CodeSystem) {
-							constraintResult = new CodeSystemConstraint((CodeSystem) results[0],null);
-						} else if (results[0] instanceof Concept)
-						{
-							constraintResult = new CodeSystemConstraint((CodeSystem) results[1],(Concept)results[0]);
-						}
+							constraintResult = new CodeSystemConstraint((CodeSystem) results[0], null);
+						} else if (results[0] instanceof Concept) {
+							constraintResult = new CodeSystemConstraint((CodeSystem) results[1], (Concept) results[0]);
+						} else if (results[0] instanceof CodeSystemSupplement) {
+							constraintResult = new CodeSystemConstraint((CodeSystemSupplement) results[0], null);
+						} else if (results[0] instanceof ConceptSupplement) {
+							constraintResult = new CodeSystemConstraint((CodeSystemSupplement) results[1], (ConceptSupplement) results[0]);
+						} 
+						
 						
 					} else if (constraint.equals(Constraint.VALUESSETS)) {
 						if (results[0] instanceof ValueSet) {

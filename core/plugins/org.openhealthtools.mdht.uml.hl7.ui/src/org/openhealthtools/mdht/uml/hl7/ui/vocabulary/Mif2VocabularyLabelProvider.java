@@ -24,8 +24,10 @@ import org.openhealthtools.mdht.emf.hl7.mif2.BindingRealm;
 import org.openhealthtools.mdht.emf.hl7.mif2.Code;
 import org.openhealthtools.mdht.emf.hl7.mif2.CodeStatusKind;
 import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystem;
+import org.openhealthtools.mdht.emf.hl7.mif2.CodeSystemSupplement;
 import org.openhealthtools.mdht.emf.hl7.mif2.Concept;
 import org.openhealthtools.mdht.emf.hl7.mif2.ConceptDomain;
+import org.openhealthtools.mdht.emf.hl7.mif2.ConceptSupplement;
 import org.openhealthtools.mdht.emf.hl7.mif2.ContextBinding;
 import org.openhealthtools.mdht.emf.hl7.mif2.ValueSet;
 import org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2Switch;
@@ -105,16 +107,36 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 			return object;
 		}
 
+		public Object caseCodeSystemSupplement(CodeSystemSupplement codeSystemSupplement) {
+
+			if (!codeSystemSupplement.getCodeSystemVersionSupplement().isEmpty()  )
+			{
+				if (codeSystemSupplement.getCodeSystemVersionSupplement().get(0).isHl7ApprovedIndicator())
+				{
+					foregroundColor = display.getSystemColor(SWT.COLOR_BLUE);	
+				} else
+				{
+					foregroundColor = display.getSystemColor(SWT.COLOR_RED);	
+				}
+			}
+			
+			return codeSystemSupplement;
+		}
+
 		
 		
 		public Object caseCodeSystem(CodeSystem codeSystem) {
 
 			if (codeSystem.getReleasedVersion().size() > 0)
 			{
-				if (!codeSystem.getReleasedVersion().get(0).isHl7ApprovedIndicator())
+				if (codeSystem.getReleasedVersion().get(0).isHl7ApprovedIndicator())
+				{
+					foregroundColor = display.getSystemColor(SWT.COLOR_BLUE);	
+				} else
 				{
 					foregroundColor = display.getSystemColor(SWT.COLOR_RED);	
 				}
+		
 			}
 			
 			return codeSystem;
@@ -159,8 +181,15 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 		}
 
 
-		public Object caseCodeSystem(CodeSystem codeSystem) {
+		public Object caseCodeSystemSupplement(CodeSystemSupplement codeSystemSupplement) {
 					
+			label = codeSystemSupplement.getName() + " : " + codeSystemSupplement.getCodeSystemId() + " *"; 
+
+			return codeSystemSupplement;
+		}
+		
+		public Object caseCodeSystem(CodeSystem codeSystem) {
+			
 			label = codeSystem.getName() + " : " + codeSystem.getCodeSystemId(); 
 
 			return codeSystem;
@@ -188,14 +217,18 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 			return object;
 		}
 		
+
+		 public Object caseConceptSupplement(ConceptSupplement conceptSupplement)
+		 {
+			 label = conceptSupplement.getCode();
+			 return conceptSupplement;
+		 }
+
+	
+		
 		 public Object caseConceptDomain(ConceptDomain conceptDomain)
 		 {
 			 label = conceptDomain.getName();
-			 
-			 
-//				CommentSwitch commentSwitch = new CommentSwitch(transformerOptions);
-				
-				
 			 return conceptDomain;
 		 }
 
