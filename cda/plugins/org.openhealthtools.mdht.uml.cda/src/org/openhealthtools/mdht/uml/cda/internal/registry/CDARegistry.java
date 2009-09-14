@@ -27,6 +27,11 @@ public class CDARegistry {
 	public static final CDARegistry INSTANCE = new CDARegistry();
 	private Map<String, EClass> classes = null;
 	
+	private static final String CDA_EXTENSION = "org.openhealthtools.mdht.uml.cda.extension";
+	private static final String ATT_NSURI = "nsURI";
+	private static final String ATT_ECLASS = "eClass";
+	private static final String ATT_ID = "id";
+	
 	private CDARegistry() {
 		classes = new HashMap<String, EClass>();
 	}
@@ -35,17 +40,27 @@ public class CDARegistry {
 		classes.clear();
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		if (registry != null) {
-			IExtensionPoint point = registry.getExtensionPoint("org.openhealthtools.mdht.uml.cda.extension");
+			IExtensionPoint point = registry.getExtensionPoint(CDA_EXTENSION);
 			if (point != null) {
 				for (IExtension extension : point.getExtensions()) {
 					for (IConfigurationElement element : extension.getConfigurationElements()) {
-						EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(element.getAttribute("nsURI"));
-						EClass eClass = (EClass) ePackage.getEClassifier(element.getAttribute("eClass"));				
-						classes.put(element.getAttribute("id"), eClass);
+						if (validate(element)) {
+							EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(element.getAttribute(ATT_NSURI));
+							if (ePackage != null) {
+								EClass eClass = (EClass) ePackage.getEClassifier(element.getAttribute(ATT_ECLASS));
+								if (eClass != null) {
+									classes.put(element.getAttribute(ATT_ID), eClass);
+								}
+							}
+						}
 					}
 				}
 			}
 		}
+	}
+	
+	private boolean validate(IConfigurationElement element) {
+		return (element.getAttribute(ATT_NSURI) != null && element.getAttribute(ATT_ECLASS) != null && element.getAttribute(ATT_ID) != null);
 	}
 	
 	public EClass getEClass(String id) {
