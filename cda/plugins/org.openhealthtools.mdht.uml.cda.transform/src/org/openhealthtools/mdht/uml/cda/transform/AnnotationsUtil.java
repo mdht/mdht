@@ -12,6 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -54,6 +55,15 @@ public class AnnotationsUtil {
 	 */
 	public void setAnnotation(String key, String value) {
 		getCDAAnnotations().put(key, value);
+	}
+
+	/**
+	 * Remove an annotation key.
+	 * 
+	 * @param key
+	 */
+	public void removeAnnotation(String key) {
+		getCDAAnnotations().remove(key);
 	}
 
 	/**
@@ -156,16 +166,22 @@ public class AnnotationsUtil {
 		Stereotype stereotype = getStereotypeKind();
 		if (stereotype != null) {
 			UMLUtil.safeApplyStereotype(element, stereotype);
+			String annotation = cdaAnnotations.keySet().isEmpty() ? null : cdaAnnotation.toString();
 			
 			if (cdaAnnotationIndex != null) {
-				// replace previous CDA annotation
-				element.setValue(stereotype, "annotations[" + cdaAnnotationIndex + "]", 
-						cdaAnnotation.toString());
+				List<String> allAnnotations = (List<String>) element.getValue(stereotype, "annotations");
+				if (annotation == null && allAnnotations.size() == 1) {
+					element.setValue(stereotype, "annotations", new ArrayList());
+				}
+				else {
+					// replace previous CDA annotation
+					element.setValue(stereotype, "annotations[" + cdaAnnotationIndex + "]", annotation);
+				}
 			}
-			else {
+			else if (annotation != null) {
 				// append to annotations list
 				List<String> annotationList = (List<String>) element.getValue(stereotype, "annotations");
-				annotationList.add(cdaAnnotation.toString());
+				annotationList.add(annotation);
 				element.setValue(stereotype, "annotations", annotationList);
 			}
 		}
