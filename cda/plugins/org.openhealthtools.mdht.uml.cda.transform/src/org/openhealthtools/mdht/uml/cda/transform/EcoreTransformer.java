@@ -40,6 +40,8 @@ public class EcoreTransformer {
 
 		UMLSwitch<Object> transformPackage = 
 			new TransformPackage(transformerOptions);
+		UMLSwitch<Object> transformConstraint = 
+			new TransformConstraint(transformerOptions);
 		UMLSwitch<Object> transformClinicalDocument = 
 			new TransformClinicalDocument(transformerOptions);
 		UMLSwitch<Object> transformTemplateIdentifier = 
@@ -58,6 +60,7 @@ public class EcoreTransformer {
 				EObject child = iterator.next();
 
 				transformPackage.doSwitch(child);
+				transformConstraint.doSwitch(child);
 				transformClinicalDocument.doSwitch(child);
 				transformTemplateIdentifier.doSwitch(child);
 				transformVocabConstraint.doSwitch(child);
