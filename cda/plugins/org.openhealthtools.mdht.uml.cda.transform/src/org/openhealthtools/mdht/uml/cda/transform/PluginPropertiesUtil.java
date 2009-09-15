@@ -76,12 +76,22 @@ public class PluginPropertiesUtil {
 		IFile pluginProperties = null;
 		
 		// get project file path
-		String modelFilePath = resource.getURI().toFileString();
+		IProject project = null;
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IPath modelLocation = Path.fromOSString(modelFilePath);
-		IFile[] files = workspace.getRoot().findFilesForLocation(modelLocation);
-		if (files.length > 0) {
-			IProject project = files[0].getProject();
+		if (resource.getURI().isFile()) {
+			IPath modelLocation = Path.fromOSString(resource.getURI().toFileString());
+			IFile[] files = workspace.getRoot().findFilesForLocation(modelLocation);
+			if (files.length > 0) {
+				project = files[0].getProject();
+			}
+		}
+		else if (resource.getURI().isPlatformResource()) {
+			IResource iResource = workspace.getRoot().findMember(new Path(resource.getURI().path()).removeFirstSegments(1));
+			if (iResource != null)
+				project = iResource.getProject();
+		}
+		
+		if (project != null) {
 			IResource file = project.findMember("plugin.properties");
 			if (file instanceof IFile) {
 				pluginProperties = (IFile)file;
