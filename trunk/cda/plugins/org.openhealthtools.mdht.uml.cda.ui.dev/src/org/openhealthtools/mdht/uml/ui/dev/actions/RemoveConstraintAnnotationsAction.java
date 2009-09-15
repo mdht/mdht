@@ -36,16 +36,24 @@ import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.AnnotationsUtil;
 import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformUtil;
+import org.openhealthtools.mdht.uml.cda.transform.PluginPropertiesUtil;
 
 public class RemoveConstraintAnnotationsAction implements IObjectActionDelegate {
 	public static final String VALIDATION_ERROR = "constraints.validation.error";
 	public static final String VALIDATION_WARNING = "constraints.validation.warning";
 	public static final String VALIDATION_INFO = "constraints.validation.info";
+
+	public static final String SEVERITY_ERROR = "ERROR";
+	public static final String SEVERITY_WARNING = "WARNING";
+	public static final String SEVERITY_INFO = "INFO";
 
 	private NamedElement namedElement;
 	
@@ -69,18 +77,38 @@ public class RemoveConstraintAnnotationsAction implements IObjectActionDelegate 
 					while (iterator != null && iterator.hasNext()) {
 						Object child = iterator.next();
 						if (child instanceof Class) {
-							Class childElement = (Class) child;
-							AnnotationsUtil annotationsUtil = new AnnotationsUtil(childElement);
+							Class childClass = (Class) child;
+							AnnotationsUtil annotationsUtil = new AnnotationsUtil(childClass);
+							String warnings = annotationsUtil.getAnnotation(VALIDATION_WARNING);
+							String infos = annotationsUtil.getAnnotation(VALIDATION_INFO);
+
+							PluginPropertiesUtil propertiesUtil = new PluginPropertiesUtil(childClass.eResource());
+							
+							for (Constraint constraint : childClass.getOwnedRules()) {
+								String severity = SEVERITY_ERROR;
+								if (warnings != null && warnings.indexOf(constraint.getName()) != -1)
+									severity = SEVERITY_WARNING;
+								else if(infos != null && infos.indexOf(constraint.getName()) != -1)
+									severity = SEVERITY_INFO;
+								
+								String message = propertiesUtil.getProperty(constraint.getName().trim());
+								
+								Stereotype validation = CDAProfileUtil.applyCDAStereotype(
+										constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+								constraint.setValue(validation, ICDAProfileConstants.VALIDATION_SEVERITY, severity);
+								constraint.setValue(validation, ICDAProfileConstants.VALIDATION_MESSAGE, message);
+							}
+							
 							annotationsUtil.removeAnnotation(VALIDATION_ERROR);
 							annotationsUtil.removeAnnotation(VALIDATION_WARNING);
 							annotationsUtil.removeAnnotation(VALIDATION_INFO);
 							annotationsUtil.saveAnnotations();
 
-							Stereotype eClass = EcoreTransformUtil.getEcoreStereotype(childElement, UMLUtil.STEREOTYPE__E_CLASS);
+							Stereotype eClass = EcoreTransformUtil.getEcoreStereotype(childClass, UMLUtil.STEREOTYPE__E_CLASS);
 							if (eClass != null) {
-								List<String> annotations = (List<String>) childElement.getValue(eClass, "annotations");
+								List<String> annotations = (List<String>) childClass.getValue(eClass, "annotations");
 								if (annotations.isEmpty()) {
-									childElement.unapplyStereotype(eClass);
+									childClass.unapplyStereotype(eClass);
 								}
 							}
 						}
