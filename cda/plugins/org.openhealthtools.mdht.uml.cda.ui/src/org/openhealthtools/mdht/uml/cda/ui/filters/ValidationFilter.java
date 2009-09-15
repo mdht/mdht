@@ -14,8 +14,10 @@ package org.openhealthtools.mdht.uml.cda.ui.filters;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.IFilter;
+import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 
@@ -41,6 +43,13 @@ public class ValidationFilter implements IFilter {
 		}
 		else if (element instanceof Property) {
 			templateClass = ((Property)element).getClass_();
+		}
+		else if (element instanceof Association) {
+			templateClass = ((Association)element).getMemberEnds().get(0).getClass_();
+		}
+		else if (element instanceof Constraint
+				&& ((Constraint)element).getContext() instanceof Class) {
+			templateClass = (Class) ((Constraint)element).getContext();
 		}
 		
 		if (templateClass != null && getCDAClass(templateClass) != null) {
