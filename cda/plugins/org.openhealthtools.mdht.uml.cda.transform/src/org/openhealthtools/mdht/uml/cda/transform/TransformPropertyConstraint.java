@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
+import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
@@ -133,9 +134,10 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		}
 		
 		/*
-		 * Test for enumeration type with default value.
+		 * Test for enumeration or primitive type with default value.
 		 */
-		if (property.getType() instanceof Enumeration
+		if ((property.getType() instanceof Enumeration
+					|| property.getType() instanceof PrimitiveType)
 				&& property.getDefault() != null) {
 			
 			AnnotationsUtil annotationsUtil = new AnnotationsUtil(property.getClass_());
@@ -147,7 +149,10 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				if (body.length() > 0) {
 					body.append(" and ");
 				}
-				body.append(selfName + "=" + templateTypeQName + "::" + property.getDefault());
+				if (property.getType() instanceof Enumeration)
+					body.append(selfName + "=" + templateTypeQName + "::" + property.getDefault());
+				else
+					body.append(selfName + "='" + property.getDefault() + "'");
 			}
 			
 		}
