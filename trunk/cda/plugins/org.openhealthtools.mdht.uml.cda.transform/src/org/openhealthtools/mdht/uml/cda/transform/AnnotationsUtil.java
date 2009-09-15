@@ -47,6 +47,15 @@ public class AnnotationsUtil {
 	}
 
 	/**
+	 * Get an annotation value for the given key.
+	 * 
+	 * @param key
+	 */
+	public String getAnnotation(String key) {
+		return getCDAAnnotations().get(key);
+	}
+
+	/**
 	 * Set an annotation value for the given key, or replace the value if this key
 	 * already exists in annotations.
 	 * 
