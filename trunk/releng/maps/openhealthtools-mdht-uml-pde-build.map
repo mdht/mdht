@@ -30,7 +30,7 @@ plugin@org.openhealthtools.mdht.uml.cda.ui.rsm=SVN,trunk,https://mdht.projects.o
 !***************  OHT PAPYRUS CDA FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda.papyrus=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.papyrus-feature
 
-plugin@org.openhealthtools.mdht.uml.cda.ui.papyrus=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.cda.ui.papyrus
+plugin@org.openhealthtools.mdht.uml.cda.ui.papyrus=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ui.papyrus
 
 
 
