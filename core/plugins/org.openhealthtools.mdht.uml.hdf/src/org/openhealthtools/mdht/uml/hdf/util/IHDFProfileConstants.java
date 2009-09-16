@@ -96,7 +96,15 @@ public interface IHDFProfileConstants {
 	public static final String VALUE_SET_ROOT_CODE = "rootCode";
 
 	public static final String ENUMERATION_VALUE = "value";
+	public static final String ENUMERATION_CODE = "code";
 
+	/*
+	 * Null Flavor Constraint stereotypes and properties
+	 */
+	public static final String NULL_FLAVOR_CONSTRAINT = "NullFlavorConstraint";
+
+	public static final String NULL_FLAVOR_VALUE = "nullFlavor";
+	
 	/*
 	 * Package Stereotype properties
 	 */
