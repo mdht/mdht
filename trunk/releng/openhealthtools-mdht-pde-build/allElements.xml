@@ -5,6 +5,11 @@
 	</path>
 
 
+	<path id="equinox.launcher.class.path">
+		<pathelement path="/home/seanmuir/build/org.eclipse.releng.basebuilder/plugins/org.eclipse.equinox.launcher.jar" />
+	</path>
+
+
 	<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpathref="antclasspath" />
 
 	<!-- ===================================================================== -->
@@ -16,6 +21,92 @@
 	<!-- Add on <ant> task for each top level element being built.             -->
 	<!-- ===================================================================== -->
 	<target name="allElementsDelegator">
+
+	
+   	<property name="test.classes.list" value="org.openhealthtools.mdht.uml.common.util.test"/>
+  
+
+<!-- dir="${junittestdirectory}"
+
+   <arg line="-application org.eclipse.pde.junit.runtime.uitestapplication -data ${buildDirectory}/${buildLabel}/testlogs -testpluginname AllTests -classnames ${test.classes.list}"/>
+
+
+/opt/IBM/SDP/jdk/bin/java  -cp ../org.eclipse.releng.basebuilder/plugins/org.eclipse.equinox.launcher.jar org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -DbuildType=N  -buildfile build.xml -target main  -Dcomponent=openhealthtools-mdht-pde-build  
+-data ${buildDirectory}/${buildLabel}/testlogs -testpluginname AllTests -classnames ${test.classes.list}
+classpathref="equinox.launcher.class.path"
+
+
+/opt/IBM/SDPShared/plugins/org.eclipse.test_3.2.0
+
+ -->
+
+<property name="library-file" value="/opt/IBM/SDPShared/plugins/org.eclipse.test_3.2.0/library.xml"/> 
+
+<property name="eclipse-home" value="/opt/IBM/SDP"/>
+
+<property name="junit-report-output" value="/home/seanmuir/build/releng"/>
+
+<property name="test-output" value="/home/seanmuir/build/releng/results.txt" />
+<property name="useEclipseExe" value="true" />
+
+<echo message="junittestdirectory is ${p2.repo.dir}/plugins" />
+<!-- <property name="plugin-path" value="${toString:lib.path.ref}" /> 
+
+ <path id="lib.path.ref">
+    <fileset dir="lib" includes="*.jar"/>
+  </path>
+
+
+	<loadproperties srcFile="${buildDirectory}/finalPluginsVersions.properties" />
+
+
+			<path id="plugin-path.ref">
+
+				<fileset dir="${p2.repo.dir}/plugins" includes="**/*${org.openhealthtools.mdht.uml.common.test}.jar" />
+
+			</path>
+
+
+<echo message="plugin-path is ${toString:plugin-path.ref}" />
+
+<property name="plugin-path" value="/home/seanmuir/build/releng/mdht/repositories/nightly/repo/plugins/org.openhealthtools.mdht.uml.common.test_0.5.0.200907081131.jar" /> 
+
+
+<echo message="plugin-path is ${plugin-path}" />
+
+<ant target="ui-test" antfile="${library-file}" dir="${eclipse-home}">
+  <property name="data-dir" value="/home/seanmuir/build/releng/data-folder"/>
+  <property name="plugin-name" value="org.openhealthtools.mdht.uml.common.test"/>
+  <property name="classname" value="org.openhealthtools.mdht.uml.common.test.AllTests"/>
+  <property name="vmargs" value="-verbose"/> 
+
+
+</ant>
+-->
+
+
+
+<!-- <echo message="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx" />
+<echo message="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx" />
+<echo message="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx" />
+<echo message="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx" />
+
+       <java  classname="org.eclipse.core.launcher.Main" jvm="/opt/IBM/SDP/jdk/bin/java" fork="yes" >
+     		<classpath>
+           		<pathelement location="/opt/IBM/SDP/plugins/org.eclipse.equinox.launcher_1.0.101.R34x_v20081125.jar "/>
+         	</classpath>
+		<arg line=" -consolelog -application org.eclipse.pde.junit.runtime.uitestapplication"/>
+       </java>
+
+
+<echo message="YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY" />
+<echo message="YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY" />
+<echo message="YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY" />
+<echo message="YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY" />
+<echo message="YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY" />
+<echo message="YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY" />
+
+-->
 
 		<ant antfile="${genericTargets}" target="${target}">
 			<property name="type" value="feature" />
@@ -34,13 +125,18 @@
 			<property name="id" value="org.openhealthtools.mdht.uml.rsm" />
 		</ant>
 
-		<!--
-Not including CDA in candidate release
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.papyrus" />
+		</ant>
+
+
  		<ant antfile="${genericTargets}" target="${target}">
 	 		<property name="type" value="feature" />
 	 		<property name="id" value="org.openhealthtools.mdht.uml.cda" />
  		</ant>
-		-->
+
 
 
 		<ant antfile="${genericTargets}" target="${target}">
@@ -70,8 +166,11 @@ Not including CDA in candidate release
 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
 	</target>
 
-
 	<target name="assemble.org.openhealthtools.mdht.uml">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.papyrus">
 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
 	</target>
 
@@ -79,12 +178,9 @@ Not including CDA in candidate release
 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
 	</target>
 
-	<!--
-
 	<target name="assemble.org.openhealthtools.mdht.uml.cda">
  		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
  	</target>
--->
 
 	<target name="assemble.org.openhealthtools.mdht.test">
 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />

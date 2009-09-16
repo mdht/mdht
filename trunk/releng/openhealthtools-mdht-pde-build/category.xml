@@ -14,12 +14,17 @@
       <category name="org.openhealthtools.mdht.uml.rsm.cat"/>
    </feature>
 
+<feature url="features/org.openhealthtools.mdht.uml.papyrus_0.5.0.qualifier.jar" id="org.openhealthtools.mdht.uml.papyrus" version="0.5.0.qualifier">
+      <category name="org.openhealthtools.mdht.uml.papyrus.cat"/>
+   </feature>
 
  <feature url="features/org.openhealthtools.mdht.uml.cda_0.1.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda" version="0.1.0.qualifier">
       <category name="org.openhealthtools.mdht.uml.cda.cat"/>
    </feature>
 
    <category-def name="org.openhealthtools.mdht.uml.cat" label="MDHT for Health Informatics"/>l
+
+   <category-def name="org.openhealthtools.mdht.uml.papyrus.cat" label="MDHT for Papyrus"/>
 
    <category-def name="org.openhealthtools.mdht.uml.rsm.cat" label="MDHT for IBM Rational Software Modeler (RSM)"/>
  

@@ -1,8 +1,8 @@
 <project name="Build specific targets and properties" default="noDefault">
 
-	<property name="emma.enabled" value="true" />
+	<property name="emma.enabled" value="false" />
 
-	<property name="tests.enabled" value="true" />
+	<property name="tests.enabled" value="false" />
 
 	<!-- ===================================================================== -->
 	<!-- Run a given ${target} on all elements being built -->
@@ -89,6 +89,22 @@
 			</fileset>
 		</unzip>
 	</target>
+
+<target name="fireplugintest">
+
+<!-- 
+<test name="org.openhealthtools.mdht.uml.common.util.test.AllTests" todir="${buildDirectory}/${buildLabel}/testlogs" haltonfailure="no" />
+-->
+
+       <property name="test.classes.list" value="org.openhealthtools.mdht.uml.common.util.test"/>
+  
+
+       <java dir="${junittestdirectory}" classname="org.eclipse.equinox.launcher.Main" fork="yes" classpathref="equinox.launcher.class.path">
+           <arg line="-application org.eclipse.pde.junit.runtime.uitestapplication -data ${buildDirectory}/${buildLabel}/testlogs -testpluginname AllTests -classnames ${test.classes.list}"/>
+       </java>
+
+
+</target>
 
 
 	<target name="runTests">
