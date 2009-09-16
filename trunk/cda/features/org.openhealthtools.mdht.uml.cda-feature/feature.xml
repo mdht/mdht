@@ -18,8 +18,12 @@
    </license>
 
    <url>
-      <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/updates/site.xml"/>
+      <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/updates"/>
    </url>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime" version="3.4.0" match="greaterOrEqual"/>
+   </requires>
 
    <plugin
          id="org.openhealthtools.mdht.uml.cda.ant"
@@ -44,6 +48,20 @@
 
    <plugin
          id="org.openhealthtools.mdht.uml.cda.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.common.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
