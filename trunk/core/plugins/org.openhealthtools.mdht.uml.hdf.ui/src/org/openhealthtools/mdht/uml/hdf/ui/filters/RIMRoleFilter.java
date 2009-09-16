@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.hdf.ui.filters;
 import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
+import org.openhealthtools.mdht.uml.common.ui.filters.HDFFilterUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IRIMProfileConstants;
 import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
 
