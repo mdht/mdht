@@ -22,28 +22,28 @@
    </url>
 
    <plugin
-         id="org.openhealthtools.mdht.uml.hl7.vocab"
+         id="org.openhealthtools.mdht.uml.cda.ant"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.openhealthtools.mdht.uml.hl7.datatypes"
+         id="org.openhealthtools.mdht.uml.cda.resources"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.openhealthtools.mdht.uml.cda.ccd"
+         id="org.openhealthtools.mdht.uml.cda.transform"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.openhealthtools.mdht.uml.cda"
+         id="org.openhealthtools.mdht.uml.cda.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
