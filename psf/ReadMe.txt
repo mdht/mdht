@@ -8,3 +8,5 @@ use the wizard to select the .psf file.
 
 File > Import...
 Team > Team Project Set
+
+We have 
