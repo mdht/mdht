@@ -12,19 +12,19 @@ plugin@net.sourceforge.xmlmodeling.uml.xsd.profile=SVN,trunk,https://xmlmodeling
 !***************  OHT CDA FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda-feature
 
-plugin@org.openhealthtools.mdht.uml.cda.ant=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.cda.ant
+plugin@org.openhealthtools.mdht.uml.cda.ant=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ant
 
-plugin@org.openhealthtools.mdht.uml.cda.resources=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.cda.resources
+plugin@org.openhealthtools.mdht.uml.cda.resources=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.resources
 
-plugin@org.openhealthtools.mdht.uml.cda.transform=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.cda.transform
+plugin@org.openhealthtools.mdht.uml.cda.transform=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.transform
 
-plugin@org.openhealthtools.mdht.uml.cda.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.cda.ui
+plugin@org.openhealthtools.mdht.uml.cda.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ui
 
 
 !***************  OHT RSM CDA FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda.rsm=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.rsm-feature
 
-plugin@org.openhealthtools.mdht.uml.cda.ui.rsm=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.cda.ui.rsm
+plugin@org.openhealthtools.mdht.uml.cda.ui.rsm=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ui.rsm
 
 
 !***************  OHT PAPYRUS CDA FEATURE  ********************************************** 
