@@ -12,42 +12,24 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.filters;
 
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
+import org.openhealthtools.mdht.uml.common.ui.filters.HDFFilterUtil;
 
 /**
- * Selects an object if it is a UML Class or Package with 
- * HL7Template stereotype applied.
+ * Selects an object if it is a UML Class or Package with HL7Template stereotype
+ * applied.
  */
-public class TemplateFilter implements IFilter {
+public class TemplateFilter extends CDAFilter {
 
-	public static final String CDA_PACKAGE_NAME = "cda";
-	
 	public boolean select(Object object) {
-		Element element = null;
-		if (object instanceof Element)
-			element = (Element) object;
-		else if (object instanceof IAdaptable)
-			element = (Element) ((IAdaptable)object).getAdapter(Element.class);
-		
-		if (element instanceof Class && getCDAClass((Class)element) != null) {
+
+		Element element = getElement(object);
+
+		if (element instanceof Class && getCDAClass((Class) element) != null) {
 			return true;
 		}
 		return false;
 	}
 
-	private Class getCDAClass(Class templateClass) {
-		for (Classifier parent : templateClass.allParents()) {
-			if (CDA_PACKAGE_NAME.equals(parent.getNearestPackage().getName()) 
-					&& parent instanceof Class) {
-				return (Class) parent;
-			}
-		}
-		
-		return null;
-	}
-	
 }
