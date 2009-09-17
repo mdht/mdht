@@ -14,24 +14,20 @@ package org.openhealthtools.mdht.uml.cda.ui.filters;
 
 import java.util.List;
 
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
+import org.openhealthtools.mdht.uml.common.ui.filters.HDFFilterUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 /**
  * Selects an object if it is a UML Property where type is specialization of HL7 CD.
  */
-public class CodedAttributeFilter implements IFilter {
+public class CodedAttributeFilter extends CDAFilter  {
 
 	public boolean select(Object object) {
-		Element element = null;
-		if (object instanceof Element)
-			element = (Element) object;
-		else if (object instanceof IAdaptable)
-			element = (Element) ((IAdaptable)object).getAdapter(Element.class);
+		
+		Element element = getElement(object);
 		
 		if (element instanceof Property
 				&& ((Property)element).getType() instanceof Classifier) {
