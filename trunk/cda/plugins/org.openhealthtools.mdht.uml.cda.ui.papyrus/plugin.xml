@@ -15,7 +15,7 @@
 
 	<extension point="org.eclipse.papyrus.extensionpoints.uml2.UMLProfile">
 		<profile description="CDA Profile" iconpath="icons/uml.gif"
-			name="CDA Profile" path="pathmap://CDA_PROFILES/HDF.profile.uml"
+			name="CDA Profile" path="pathmap://CDA_PROFILES/CDA.profile.uml"
 			provider="Openhealth Tools MDHT">
 		</profile>
 	</extension>
