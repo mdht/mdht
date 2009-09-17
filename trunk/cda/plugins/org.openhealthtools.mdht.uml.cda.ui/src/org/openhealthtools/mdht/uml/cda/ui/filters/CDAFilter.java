@@ -23,6 +23,7 @@ public abstract class CDAFilter extends HDFFilterUtil implements IFilter {
 			if (parent.getNearestPackage() != null) {
 				if (CDA_PACKAGE_NAME.equals(parent.getNearestPackage().getName()) && parent instanceof Class) {
 					cdaClass = (Class) parent;
+					break;
 				}
 			}
 
