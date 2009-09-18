@@ -50,6 +50,7 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
@@ -188,6 +189,9 @@ public class ValidationSection extends AbstractModelerPropertySection {
 			}
 			else if (element instanceof Class) {
 				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.CLASS_VALIDATION);
+			}
+			else if (element instanceof Constraint) {
+				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.CONSTRAINT_VALIDATION);
 			}
 			else if (element instanceof Property) {
 				if (new CodedAttributeFilter().select(element))
