@@ -1,5 +1,6 @@
 <project name="CDA Model Transformation"  basedir="." default="all">
-	
+
+	<property name="cdaPluginPath" location="${basedir}/../org.openhealthtools.mdht.uml.cda"/>
 	<property name="modelName" value="hitsp"/>
 	
 	<macrodef name="convertEcorePaths">
@@ -11,5 +12,5 @@
 		</sequential>
 	</macrodef>
 	
-	<import file="build-common.xml"/>
+	<import file="${cdaPluginPath}/build-common.xml"/>
 </project>
