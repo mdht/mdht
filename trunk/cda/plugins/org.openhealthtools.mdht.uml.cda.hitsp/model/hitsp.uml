@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_an7-AJmjEd6OiP9GTesZug/2" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:version="2.0" xsi:schemaLocation="http:///schemas/CDA/_an7-AJmjEd6OiP9GTesZug/2 pathmap://CDA_PROFILES/CDA.profile.uml#_an7-AZmjEd6OiP9GTesZug http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:version="2.0" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
   <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="hitsp">
     
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
@@ -49,8 +49,8 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="PatientSummary">
-      <generalization xmi:id="_HGkB0GEIEd6bFO5yxRh3Nw">
-        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_wDMM0GEHEd6bFO5yxRh3Nw?ihe/MedicalDocument?"/>
+      <generalization xmi:id="_0EOJQKRmEd6t_4WfM070fA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_Ze7UsGESEd69D7zx7EkLMA?ccd/ContinuityOfCareDocument?"/>
       </generalization>
       <ownedOperation xmi:id="_C1Qp0GG6Ed6bFO5yxRh3Nw" name="createProblemListSection">
         <ownedParameter xmi:id="_vMia4GdYEd6Hk_bPOfEjYA" name="Parameter1" direction="return">
@@ -73,7 +73,7 @@
     
     <profileApplication xmi:id="_aMu68IwJEd6B6JSUB00H7g">
       <eAnnotations xmi:id="_aMviAIwJEd6B6JSUB00H7g" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://CDA_PROFILES/CDA.profile.uml#_an7-AZmjEd6OiP9GTesZug"/>
+        <references xmi:type="ecore:EPackage" href="pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw"/>
       </eAnnotations>
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
