@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
@@ -234,6 +235,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 
 		// Obtain other dependent packages
 		IHEPackage theIHEPackage = (IHEPackage)EPackage.Registry.INSTANCE.getEPackage(IHEPackage.eNS_URI);
+		CCDPackage theCCDPackage = (CCDPackage)EPackage.Registry.INSTANCE.getEPackage(CCDPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -243,7 +245,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		allergyDrugSensitivityEClass.getESuperTypes().add(theIHEPackage.getAllergyIntoleranceConcern());
 		medicationEClass.getESuperTypes().add(theIHEPackage.getMedication());
 		conditionEClass.getESuperTypes().add(theIHEPackage.getProblemConcernEntry());
-		patientSummaryEClass.getESuperTypes().add(theIHEPackage.getMedicalDocument());
+		patientSummaryEClass.getESuperTypes().add(theCCDPackage.getContinuityOfCareDocument());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(allergyDrugSensitivityEClass, AllergyDrugSensitivity.class, "AllergyDrugSensitivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -322,8 +324,8 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		  (allergyDrugSensitivityEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "2.16.840.1.113883.3.88.11.83.6",
-			 "constraints.validation.error", "AllergyDrugSensitivity_templateId"
+			 "constraints.validation.error", "AllergyDrugSensitivity_templateId",
+			 "templateId.root", "2.16.840.1.113883.3.88.11.83.6"
 		   });							
 		addAnnotation
 		  (medicationEClass, 

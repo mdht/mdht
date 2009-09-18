@@ -8,6 +8,7 @@ package org.openhealthtools.mdht.uml.cda.hitsp;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 
 /**
@@ -816,7 +817,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__REALM_CODE = IHEPackage.MEDICAL_DOCUMENT__REALM_CODE;
+	int PATIENT_SUMMARY__REALM_CODE = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -825,7 +826,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__TYPE_ID = IHEPackage.MEDICAL_DOCUMENT__TYPE_ID;
+	int PATIENT_SUMMARY__TYPE_ID = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -834,7 +835,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__TEMPLATE_ID = IHEPackage.MEDICAL_DOCUMENT__TEMPLATE_ID;
+	int PATIENT_SUMMARY__TEMPLATE_ID = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -843,7 +844,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__ID = IHEPackage.MEDICAL_DOCUMENT__ID;
+	int PATIENT_SUMMARY__ID = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -852,7 +853,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__CODE = IHEPackage.MEDICAL_DOCUMENT__CODE;
+	int PATIENT_SUMMARY__CODE = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' containment reference.
@@ -861,7 +862,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__TITLE = IHEPackage.MEDICAL_DOCUMENT__TITLE;
+	int PATIENT_SUMMARY__TITLE = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -870,7 +871,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__EFFECTIVE_TIME = IHEPackage.MEDICAL_DOCUMENT__EFFECTIVE_TIME;
+	int PATIENT_SUMMARY__EFFECTIVE_TIME = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
@@ -879,7 +880,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__CONFIDENTIALITY_CODE = IHEPackage.MEDICAL_DOCUMENT__CONFIDENTIALITY_CODE;
+	int PATIENT_SUMMARY__CONFIDENTIALITY_CODE = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__CONFIDENTIALITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -888,7 +889,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__LANGUAGE_CODE = IHEPackage.MEDICAL_DOCUMENT__LANGUAGE_CODE;
+	int PATIENT_SUMMARY__LANGUAGE_CODE = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Set Id</b></em>' containment reference.
@@ -897,7 +898,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__SET_ID = IHEPackage.MEDICAL_DOCUMENT__SET_ID;
+	int PATIENT_SUMMARY__SET_ID = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__SET_ID;
 
 	/**
 	 * The feature id for the '<em><b>Version Number</b></em>' containment reference.
@@ -906,7 +907,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__VERSION_NUMBER = IHEPackage.MEDICAL_DOCUMENT__VERSION_NUMBER;
+	int PATIENT_SUMMARY__VERSION_NUMBER = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__VERSION_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Copy Time</b></em>' containment reference.
@@ -915,7 +916,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__COPY_TIME = IHEPackage.MEDICAL_DOCUMENT__COPY_TIME;
+	int PATIENT_SUMMARY__COPY_TIME = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__COPY_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Record Target</b></em>' containment reference list.
@@ -924,7 +925,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__RECORD_TARGET = IHEPackage.MEDICAL_DOCUMENT__RECORD_TARGET;
+	int PATIENT_SUMMARY__RECORD_TARGET = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__RECORD_TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -933,7 +934,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__AUTHOR = IHEPackage.MEDICAL_DOCUMENT__AUTHOR;
+	int PATIENT_SUMMARY__AUTHOR = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Data Enterer</b></em>' containment reference.
@@ -942,7 +943,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__DATA_ENTERER = IHEPackage.MEDICAL_DOCUMENT__DATA_ENTERER;
+	int PATIENT_SUMMARY__DATA_ENTERER = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__DATA_ENTERER;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -951,7 +952,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__INFORMANT = IHEPackage.MEDICAL_DOCUMENT__INFORMANT;
+	int PATIENT_SUMMARY__INFORMANT = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Custodian</b></em>' containment reference.
@@ -960,7 +961,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__CUSTODIAN = IHEPackage.MEDICAL_DOCUMENT__CUSTODIAN;
+	int PATIENT_SUMMARY__CUSTODIAN = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__CUSTODIAN;
 
 	/**
 	 * The feature id for the '<em><b>Information Recipient</b></em>' containment reference list.
@@ -969,7 +970,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__INFORMATION_RECIPIENT = IHEPackage.MEDICAL_DOCUMENT__INFORMATION_RECIPIENT;
+	int PATIENT_SUMMARY__INFORMATION_RECIPIENT = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__INFORMATION_RECIPIENT;
 
 	/**
 	 * The feature id for the '<em><b>Legal Authenticator</b></em>' containment reference.
@@ -978,7 +979,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__LEGAL_AUTHENTICATOR = IHEPackage.MEDICAL_DOCUMENT__LEGAL_AUTHENTICATOR;
+	int PATIENT_SUMMARY__LEGAL_AUTHENTICATOR = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__LEGAL_AUTHENTICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Authenticator</b></em>' containment reference list.
@@ -987,7 +988,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__AUTHENTICATOR = IHEPackage.MEDICAL_DOCUMENT__AUTHENTICATOR;
+	int PATIENT_SUMMARY__AUTHENTICATOR = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__AUTHENTICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -996,7 +997,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__PARTICIPANT = IHEPackage.MEDICAL_DOCUMENT__PARTICIPANT;
+	int PATIENT_SUMMARY__PARTICIPANT = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>In Fulfillment Of</b></em>' containment reference list.
@@ -1005,7 +1006,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__IN_FULFILLMENT_OF = IHEPackage.MEDICAL_DOCUMENT__IN_FULFILLMENT_OF;
+	int PATIENT_SUMMARY__IN_FULFILLMENT_OF = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__IN_FULFILLMENT_OF;
 
 	/**
 	 * The feature id for the '<em><b>Documentation Of</b></em>' containment reference list.
@@ -1014,7 +1015,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__DOCUMENTATION_OF = IHEPackage.MEDICAL_DOCUMENT__DOCUMENTATION_OF;
+	int PATIENT_SUMMARY__DOCUMENTATION_OF = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__DOCUMENTATION_OF;
 
 	/**
 	 * The feature id for the '<em><b>Related Document</b></em>' containment reference list.
@@ -1023,7 +1024,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__RELATED_DOCUMENT = IHEPackage.MEDICAL_DOCUMENT__RELATED_DOCUMENT;
+	int PATIENT_SUMMARY__RELATED_DOCUMENT = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__RELATED_DOCUMENT;
 
 	/**
 	 * The feature id for the '<em><b>Authorization</b></em>' containment reference list.
@@ -1032,7 +1033,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__AUTHORIZATION = IHEPackage.MEDICAL_DOCUMENT__AUTHORIZATION;
+	int PATIENT_SUMMARY__AUTHORIZATION = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__AUTHORIZATION;
 
 	/**
 	 * The feature id for the '<em><b>Component Of</b></em>' containment reference.
@@ -1041,7 +1042,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__COMPONENT_OF = IHEPackage.MEDICAL_DOCUMENT__COMPONENT_OF;
+	int PATIENT_SUMMARY__COMPONENT_OF = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__COMPONENT_OF;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference.
@@ -1050,7 +1051,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__COMPONENT = IHEPackage.MEDICAL_DOCUMENT__COMPONENT;
+	int PATIENT_SUMMARY__COMPONENT = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1059,7 +1060,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__NULL_FLAVOR = IHEPackage.MEDICAL_DOCUMENT__NULL_FLAVOR;
+	int PATIENT_SUMMARY__NULL_FLAVOR = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1068,7 +1069,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__CLASS_CODE = IHEPackage.MEDICAL_DOCUMENT__CLASS_CODE;
+	int PATIENT_SUMMARY__CLASS_CODE = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -1077,7 +1078,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY__MOOD_CODE = IHEPackage.MEDICAL_DOCUMENT__MOOD_CODE;
+	int PATIENT_SUMMARY__MOOD_CODE = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT__MOOD_CODE;
 
 	/**
 	 * The number of structural features of the '<em>Patient Summary</em>' class.
@@ -1086,7 +1087,7 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_SUMMARY_FEATURE_COUNT = IHEPackage.MEDICAL_DOCUMENT_FEATURE_COUNT + 0;
+	int PATIENT_SUMMARY_FEATURE_COUNT = CCDPackage.CONTINUITY_OF_CARE_DOCUMENT_FEATURE_COUNT + 0;
 
 
 	/**

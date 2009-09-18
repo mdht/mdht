@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.ContinuityOfCareDocumentOperations;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
@@ -27,7 +28,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
-import org.openhealthtools.mdht.uml.cda.ihe.operations.MedicalDocumentOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
@@ -46,7 +46,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *
  * @generated
  */
-public class PatientSummaryOperations extends MedicalDocumentOperations {
+public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
