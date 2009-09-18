@@ -44,11 +44,13 @@ public class TransformConstraint extends TransformAbstract {
 			severity = (literal != null) ? literal.getName() : SEVERITY_ERROR;
 		}
 
-		AnnotationsUtil annotationsUtil = new AnnotationsUtil(constrainedClass);
-		annotationsUtil.addAnnotation(severity, constraint.getName());
-		annotationsUtil.saveAnnotations();
-		
-		addValidationMessage(constrainedClass, constraint.getName(), message);
+		if (SEVERITY_INFO.equals(severity)) {
+			addValidationInfo(constrainedClass, constraint.getName(), message);
+		} else if (SEVERITY_WARNING.equals(severity)) {
+			addValidationWarning(constrainedClass, constraint.getName(), message);
+		} else {
+			addValidationError(constrainedClass, constraint.getName(), message);
+		}
 
 		return constraint;
 	}
