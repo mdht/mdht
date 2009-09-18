@@ -314,7 +314,24 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= iheValidator.validateMedicalDocument_MedicalDocument_templateId(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_templateId(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_code(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_problemSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_familyHistorySection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_socialHistorySection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_alertsSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_medicationSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_resultsSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_proceduresSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_encountersSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_planOfCareSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_immunizationsSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_vitalSignsSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_medicalEquipmentSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_functionalStatusSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_advanceDirectivesSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_payersSection(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_purposeSection(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePatientSummary_PatientSummary_templateId(patientSummary, diagnostics, context);
 		return result;
 	}

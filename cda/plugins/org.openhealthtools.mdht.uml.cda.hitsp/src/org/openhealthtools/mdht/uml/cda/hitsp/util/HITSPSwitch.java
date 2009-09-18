@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
@@ -22,7 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
-import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 
 /**
@@ -131,7 +131,7 @@ public class HITSPSwitch<T> {
 			case HITSPPackage.PATIENT_SUMMARY: {
 				PatientSummary patientSummary = (PatientSummary)theEObject;
 				T result = casePatientSummary(patientSummary);
-				if (result == null) result = caseMedicalDocument(patientSummary);
+				if (result == null) result = caseContinuityOfCareDocument(patientSummary);
 				if (result == null) result = caseClinicalDocument(patientSummary);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -336,17 +336,17 @@ public class HITSPSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medical Document</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Continuity Of Care Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medical Document</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Continuity Of Care Document</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMedicalDocument(MedicalDocument object) {
+	public T caseContinuityOfCareDocument(ContinuityOfCareDocument object) {
 		return null;
 	}
 
