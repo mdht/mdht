@@ -8,8 +8,8 @@
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>This module contains the allergy or intolerance conditions and the associated adverse reactions suffered&#xD;&#xA;    by the patient. See the HL7 Continuity of Care Document Section 3.8 for constraints applicable to this module.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.6"/>
       <details key="constraints.validation.error" value="AllergyDrugSensitivity_templateId"/>
+      <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.6"/>
     </eAnnotations>
     <eAnnotations source="uml2.alias">
       <details key="Allergies and Drug Sensitivities"/>
@@ -120,7 +120,7 @@
     </eOperations>
     <eOperations name="createProblemEntry" ordered="false" lowerBound="1" eType="ecore:EClass ../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//ProblemEntry"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PatientSummary" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//MedicalDocument">
+  <eClassifiers xsi:type="ecore:EClass" name="PatientSummary" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//ContinuityOfCareDocument">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ClinicalDocument"/>
     </eAnnotations>

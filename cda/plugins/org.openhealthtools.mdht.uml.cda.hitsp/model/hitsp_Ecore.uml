@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_an7-AJmjEd6OiP9GTesZug/2" xmlns:Default="http:///schemas/Default/1" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/CDA/_an7-AJmjEd6OiP9GTesZug/2 pathmap://CDA_PROFILES/CDA.profile.uml#_an7-AZmjEd6OiP9GTesZug http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
   <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="hitsp">
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
       <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg?cda?"/>
@@ -26,8 +26,8 @@
     by the patient. See the HL7 Continuity of Care Document Section 3.8 for constraints applicable to this module.&lt;/font>&#xD;
 &lt;/p></body>
       </ownedComment>
-      <ownedRule xmi:id="_itro0J5TEd6f0JoGi3N7Jg" name="AllergyDrugSensitivity_templateId" constrainedElement="_vB4EUGEIEd6bFO5yxRh3Nw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_itro0Z5TEd6f0JoGi3N7Jg">
+      <ownedRule xmi:id="_gskh0KSXEd6GV_nuWxgyJA" name="AllergyDrugSensitivity_templateId" constrainedElement="_vB4EUGEIEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_gskh0aSXEd6GV_nuWxgyJA">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.3.88.11.83.6')</body>
         </specification>
@@ -37,8 +37,8 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_IjIO0DxbEd6JwqSGecoePg" name="Medication">
-      <ownedRule xmi:id="_iuSs0J5TEd6f0JoGi3N7Jg" name="Medication_templateId" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iuTT4J5TEd6f0JoGi3N7Jg">
+      <ownedRule xmi:id="_gs7uMKSXEd6GV_nuWxgyJA" name="Medication_templateId" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_gs7uMaSXEd6GV_nuWxgyJA">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.3.88.11.83.8')</body>
         </specification>
@@ -48,14 +48,14 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="Condition">
-      <ownedRule xmi:id="_iux1AJ5TEd6f0JoGi3N7Jg" name="Condition_templateId" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iux1AZ5TEd6f0JoGi3N7Jg">
+      <ownedRule xmi:id="_gtRscKSXEd6GV_nuWxgyJA" name="Condition_templateId" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_gtRscaSXEd6GV_nuWxgyJA">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.3.88.11.83.7')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_iviC8J5TEd6f0JoGi3N7Jg" name="Condition_text" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_iviqAJ5TEd6f0JoGi3N7Jg">
+      <ownedRule xmi:id="_gt7MsKSXEd6GV_nuWxgyJA" name="Condition_text" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_gt7MsaSXEd6GV_nuWxgyJA">
           <language>OCL</language>
           <body>not self.text.oclIsUndefined()</body>
         </specification>
@@ -70,14 +70,14 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="PatientSummary">
-      <ownedRule xmi:id="_ivjREZ5TEd6f0JoGi3N7Jg" name="PatientSummary_templateId" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ivjREp5TEd6f0JoGi3N7Jg">
+      <ownedRule xmi:id="_gt7zwaSXEd6GV_nuWxgyJA" name="PatientSummary_templateId" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_gt7zwqSXEd6GV_nuWxgyJA">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.3.88.11.32.1')</body>
         </specification>
       </ownedRule>
-      <generalization xmi:id="_HGkB0GEIEd6bFO5yxRh3Nw">
-        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe_Ecore.uml#_wDMM0GEHEd6bFO5yxRh3Nw"/>
+      <generalization xmi:id="_0EOJQKRmEd6t_4WfM070fA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd_Ecore.uml#_Ze7UsGESEd69D7zx7EkLMA"/>
       </generalization>
       <ownedOperation xmi:id="_C1Qp0GG6Ed6bFO5yxRh3Nw" name="createProblemListSection">
         <ownedParameter xmi:id="_vMia4GdYEd6Hk_bPOfEjYA" name="Parameter1" direction="return">
@@ -98,12 +98,12 @@
     </profileApplication>
     <profileApplication xmi:id="_aMu68IwJEd6B6JSUB00H7g">
       <eAnnotations xmi:id="_aMviAIwJEd6B6JSUB00H7g" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://CDA_PROFILES/CDA.profile.uml#_an7-AZmjEd6OiP9GTesZug"/>
+        <references xmi:type="ecore:EPackage" href="pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw"/>
       </eAnnotations>
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
-    <profileApplication xmi:id="_ioC64J5TEd6f0JoGi3N7Jg">
-      <eAnnotations xmi:id="_ioC64Z5TEd6f0JoGi3N7Jg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <profileApplication xmi:id="_gnKdYKSXEd6GV_nuWxgyJA">
+      <eAnnotations xmi:id="_gnKdYaSXEd6GV_nuWxgyJA" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
       </eAnnotations>
       <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
@@ -114,17 +114,17 @@
   <CDA:CDATemplate xmi:id="_vuEXwHcIEd6ZeOKq_2_a9g" base_Class="_IjIO0DxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.8" assigningAuthorityName="HITSP C83"/>
   <CDA:CDATemplate xmi:id="_wcI-sHcIEd6ZeOKq_2_a9g" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.32.1" assigningAuthorityName="HITSP C32"/>
   <Default:Documentation xmi:id="_aq9jUHrXEd68l9lQ-TLEBQ" base_Comment="_aq5R4HrXEd68l9lQ-TLEBQ"/>
-  <Ecore:EPackage xmi:id="_irDyoJ5TEd6f0JoGi3N7Jg" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="hitsp" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" basePackage="org.openhealthtools.mdht.uml.cda" prefix="HITSP"/>
-  <Ecore:EClass xmi:id="_itro0p5TEd6f0JoGi3N7Jg" base_Class="_vB4EUGEIEd6bFO5yxRh3Nw">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.6' constraints.validation.error='AllergyDrugSensitivity_templateId'</annotation>
+  <Ecore:EPackage xmi:id="_gp8roKSXEd6GV_nuWxgyJA" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="hitsp" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" basePackage="org.openhealthtools.mdht.uml.cda" prefix="HITSP"/>
+  <Ecore:EClass xmi:id="_gslI4KSXEd6GV_nuWxgyJA" base_Class="_vB4EUGEIEd6bFO5yxRh3Nw">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='AllergyDrugSensitivity_templateId' templateId.root='2.16.840.1.113883.3.88.11.83.6'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_iuTT4Z5TEd6f0JoGi3N7Jg" base_Class="_IjIO0DxbEd6JwqSGecoePg">
+  <Ecore:EClass xmi:id="_gs7uMqSXEd6GV_nuWxgyJA" base_Class="_IjIO0DxbEd6JwqSGecoePg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.8' constraints.validation.error='Medication_templateId'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_iuycEJ5TEd6f0JoGi3N7Jg" base_Class="_GgvgUDxbEd6JwqSGecoePg">
+  <Ecore:EClass xmi:id="_gtSTgKSXEd6GV_nuWxgyJA" base_Class="_GgvgUDxbEd6JwqSGecoePg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='Condition_templateId Condition_text' templateId.root='2.16.840.1.113883.3.88.11.83.7'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_ivjREJ5TEd6f0JoGi3N7Jg" xmlName="ClinicalDocument" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw">
+  <Ecore:EClass xmi:id="_gt7zwKSXEd6GV_nuWxgyJA" xmlName="ClinicalDocument" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.32.1' constraints.validation.error='PatientSummary_templateId'</annotation>
   </Ecore:EClass>
 </xmi:XMI>

@@ -53,8 +53,8 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="PatientSummary">
-      <generalization xmi:id="_HGkB0GEIEd6bFO5yxRh3Nw">
-        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.emx#_wDMM0GEHEd6bFO5yxRh3Nw?ihe/MedicalDocument?"/>
+      <generalization xmi:id="_0EOJQKRmEd6t_4WfM070fA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.emx#_Ze7UsGESEd69D7zx7EkLMA?ccd/ContinuityOfCareDocument?"/>
       </generalization>
       <ownedOperation xmi:id="_C1Qp0GG6Ed6bFO5yxRh3Nw" name="createProblemListSection">
         <ownedParameter xmi:id="_vMia4GdYEd6Hk_bPOfEjYA" name="Parameter1" direction="return">
