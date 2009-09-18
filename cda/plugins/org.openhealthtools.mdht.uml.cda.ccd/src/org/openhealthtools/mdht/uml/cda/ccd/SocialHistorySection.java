@@ -16,9 +16,18 @@ import org.openhealthtools.mdht.uml.cda.Section;
  * A representation of the model object '<em><b>Social History Section</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * <p>
+ *     <font size="2">This section contains data defining the patient’s occupational, personal (e.g. lifestyle), social, and
+ *     environmental history and health risk factors, as well as administrative data such as marital status, race, ethnicity
+ *     and religious affiliation. Social history can have significant influence on a patient’s physical, psychological and
+ *     emotional health and wellbeing so should be considered in the development of a complete record.</font>
+ * </p>
+ * <!-- end-model-doc -->
+ *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getSocialHistorySection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.15' constraints.validation.error='SocialHistorySection_templateId'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='SocialHistorySection_templateId' templateId.root='2.16.840.1.113883.10.20.1.15'"
  * @generated
  */
 public interface SocialHistorySection extends Section {

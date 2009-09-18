@@ -16,9 +16,16 @@ import org.openhealthtools.mdht.uml.cda.Section;
  * A representation of the model object '<em><b>Family History Section</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * <p>
+ *     <font size="2">This section contains data defining the patient’s genetic relatives in terms of possible or relevant
+ *     health risk factors that have a potential impact on the patient’s healthcare risk profile.</font>
+ * </p>
+ * <!-- end-model-doc -->
+ *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getFamilyHistorySection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='FamilyHistorySection_templateId FamilyHistorySection_code FamilyHistorySection_title' templateId.root='2.16.840.1.113883.10.20.1.4' code.displayName='History of family member diseases' code.codeSystem='2.16.840.1.113883.6.1' code.code='10157-6'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.4' constraints.validation.error='FamilyHistorySection_templateId FamilyHistorySection_code FamilyHistorySection_title' code.displayName='History of family member diseases' code.codeSystem='2.16.840.1.113883.6.1' code.code='10157-6'"
  * @generated
  */
 public interface FamilyHistorySection extends Section {
