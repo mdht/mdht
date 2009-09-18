@@ -210,7 +210,12 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		else if (hasValidationSupport(property)) {
 			// Constraints that have no multiplicity or type restriction
 			//TODO is this adequate to catch MAY or SHOULD constraints?
-			body.append("not " + selfName + ".oclIsUndefined()");
+			if (cdaProperty.getUpper() == 1) {
+				body.append("not " + selfName + ".oclIsUndefined()");
+			}
+			else {
+				body.append(selfName + "->exists(value : datatypes::ANY | not value.oclIsUndefined())");
+			}
 			addOCLConstraint(property, body);
 		}
 		
