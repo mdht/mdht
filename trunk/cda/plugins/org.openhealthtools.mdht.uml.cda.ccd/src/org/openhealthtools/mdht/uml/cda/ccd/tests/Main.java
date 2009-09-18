@@ -13,6 +13,8 @@
 package org.openhealthtools.mdht.uml.cda.ccd.tests;
 
 import org.eclipse.emf.common.util.Diagnostic;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
@@ -21,11 +23,27 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.PurposeActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.PurposeSection;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 public class Main {
 	public static void main(String[] args) throws Exception {	
+		ContinuityOfCareDocument doc = CCDFactory.eINSTANCE.createContinuityOfCareDocument().init();
+		
+		PurposeSection purposeSection = CCDFactory.eINSTANCE.createPurposeSection().init();
+		doc.addSection(purposeSection);
+		PurposeActivity purposeActivity = CCDFactory.eINSTANCE.createPurposeActivity().init();
+		purposeSection.addAct(purposeActivity);
+		SubstanceAdministration purposeReason = CDAFactory.eINSTANCE.createSubstanceAdministration();
+		purposeActivity.addSubstanceAdministration(purposeReason);
+		// should produce validation error for incorrect reason type
+//		Organizer purposeReason = CDAFactory.eINSTANCE.createOrganizer();
+//		purposeActivity.addOrganizer(purposeReason);
+		purposeActivity.getEntryRelationship().get(0).setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+		
 		ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct().init();
 		ProblemObservation problemObservation = CCDFactory.eINSTANCE.createProblemObservation().init();	
 		ProblemStatus problemStatus = CCDFactory.eINSTANCE.createProblemStatus().init();
@@ -40,7 +58,6 @@ public class Main {
 		sect.addObservation(problemHealthStatus);
 		sect.addObservation(episodeObservation);
 		
-		ContinuityOfCareDocument doc = CCDFactory.eINSTANCE.createContinuityOfCareDocument().init();
 		doc.addSection(sect);
 
 		CDAUtil.save(doc, System.out);

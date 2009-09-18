@@ -43,7 +43,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getResultsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='ResultsSection_templateId ResultsSection_code ResultsSection_title' templateId.root='2.16.840.1.113883.10.20.1.14' code.displayName='Relevant diagnostic tests and/or laboratory data' code.codeSystem='2.16.840.1.113883.6.1' code.code='30954-2'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.14' constraints.validation.error='ResultsSection_templateId ResultsSection_code ResultsSection_title' code.displayName='Relevant diagnostic tests and/or laboratory data' code.codeSystem='2.16.840.1.113883.6.1' code.code='30954-2'"
  * @generated
  */
 public interface ResultsSection extends Section {

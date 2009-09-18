@@ -329,6 +329,78 @@ public interface CCDFactory extends EFactory {
 	ProceduresSection createProceduresSection();
 
 	/**
+	 * Returns a new object of class '<em>Plan Of Care Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Plan Of Care Section</em>'.
+	 * @generated
+	 */
+	PlanOfCareSection createPlanOfCareSection();
+
+	/**
+	 * Returns a new object of class '<em>Vital Signs Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vital Signs Section</em>'.
+	 * @generated
+	 */
+	VitalSignsSection createVitalSignsSection();
+
+	/**
+	 * Returns a new object of class '<em>Medical Equipment Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medical Equipment Section</em>'.
+	 * @generated
+	 */
+	MedicalEquipmentSection createMedicalEquipmentSection();
+
+	/**
+	 * Returns a new object of class '<em>Functional Status Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Functional Status Section</em>'.
+	 * @generated
+	 */
+	FunctionalStatusSection createFunctionalStatusSection();
+
+	/**
+	 * Returns a new object of class '<em>Advance Directives Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Advance Directives Section</em>'.
+	 * @generated
+	 */
+	AdvanceDirectivesSection createAdvanceDirectivesSection();
+
+	/**
+	 * Returns a new object of class '<em>Payers Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Payers Section</em>'.
+	 * @generated
+	 */
+	PayersSection createPayersSection();
+
+	/**
+	 * Returns a new object of class '<em>Purpose Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Purpose Section</em>'.
+	 * @generated
+	 */
+	PurposeSection createPurposeSection();
+
+	/**
+	 * Returns a new object of class '<em>Purpose Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Purpose Activity</em>'.
+	 * @generated
+	 */
+	PurposeActivity createPurposeActivity();
+
+	/**
 	 * Returns a new object of class '<em>Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

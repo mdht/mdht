@@ -59,6 +59,159 @@ public class ContinuityOfCareDocumentImpl extends ClinicalDocumentImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ContinuityOfCareDocument_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_problemSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_problemSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_familyHistorySection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_familyHistorySection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_socialHistorySection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_socialHistorySection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_alertsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_alertsSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_medicationSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_medicationSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_resultsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_resultsSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_proceduresSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_proceduresSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_encountersSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_encountersSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_planOfCareSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_planOfCareSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_immunizationsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_immunizationsSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_vitalSignsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_vitalSignsSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_medicalEquipmentSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_medicalEquipmentSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_functionalStatusSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_functionalStatusSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_advanceDirectivesSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_advanceDirectivesSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_payersSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_payersSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ContinuityOfCareDocument_purposeSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ContinuityOfCareDocumentOperations.ContinuityOfCareDocument_purposeSection(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ContinuityOfCareDocument init() {
     		CDAUtil.init(this);
     		return this;

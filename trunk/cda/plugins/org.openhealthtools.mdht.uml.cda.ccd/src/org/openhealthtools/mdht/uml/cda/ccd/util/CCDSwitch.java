@@ -26,6 +26,7 @@ import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
+import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
@@ -39,12 +40,16 @@ import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
+import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
@@ -52,6 +57,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
+import org.openhealthtools.mdht.uml.cda.ccd.PurposeActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.PurposeSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
@@ -61,6 +68,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -376,6 +384,62 @@ public class CCDSwitch<T> {
 				ProceduresSection proceduresSection = (ProceduresSection)theEObject;
 				T result = caseProceduresSection(proceduresSection);
 				if (result == null) result = caseSection(proceduresSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PLAN_OF_CARE_SECTION: {
+				PlanOfCareSection planOfCareSection = (PlanOfCareSection)theEObject;
+				T result = casePlanOfCareSection(planOfCareSection);
+				if (result == null) result = caseSection(planOfCareSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.VITAL_SIGNS_SECTION: {
+				VitalSignsSection vitalSignsSection = (VitalSignsSection)theEObject;
+				T result = caseVitalSignsSection(vitalSignsSection);
+				if (result == null) result = caseSection(vitalSignsSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.MEDICAL_EQUIPMENT_SECTION: {
+				MedicalEquipmentSection medicalEquipmentSection = (MedicalEquipmentSection)theEObject;
+				T result = caseMedicalEquipmentSection(medicalEquipmentSection);
+				if (result == null) result = caseSection(medicalEquipmentSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.FUNCTIONAL_STATUS_SECTION: {
+				FunctionalStatusSection functionalStatusSection = (FunctionalStatusSection)theEObject;
+				T result = caseFunctionalStatusSection(functionalStatusSection);
+				if (result == null) result = caseSection(functionalStatusSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.ADVANCE_DIRECTIVES_SECTION: {
+				AdvanceDirectivesSection advanceDirectivesSection = (AdvanceDirectivesSection)theEObject;
+				T result = caseAdvanceDirectivesSection(advanceDirectivesSection);
+				if (result == null) result = caseSection(advanceDirectivesSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PAYERS_SECTION: {
+				PayersSection payersSection = (PayersSection)theEObject;
+				T result = casePayersSection(payersSection);
+				if (result == null) result = caseSection(payersSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PURPOSE_SECTION: {
+				PurposeSection purposeSection = (PurposeSection)theEObject;
+				T result = casePurposeSection(purposeSection);
+				if (result == null) result = caseSection(purposeSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PURPOSE_ACTIVITY: {
+				PurposeActivity purposeActivity = (PurposeActivity)theEObject;
+				T result = casePurposeActivity(purposeActivity);
+				if (result == null) result = caseAct(purposeActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -875,6 +939,126 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseProceduresSection(ProceduresSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePlanOfCareSection(PlanOfCareSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vital Signs Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vital Signs Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVitalSignsSection(VitalSignsSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medical Equipment Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medical Equipment Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicalEquipmentSection(MedicalEquipmentSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Functional Status Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Functional Status Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunctionalStatusSection(FunctionalStatusSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Advance Directives Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Advance Directives Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdvanceDirectivesSection(AdvanceDirectivesSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Payers Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Payers Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePayersSection(PayersSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Purpose Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Purpose Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePurposeSection(PurposeSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Purpose Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Purpose Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePurposeActivity(PurposeActivity object) {
 		return null;
 	}
 

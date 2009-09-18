@@ -26,6 +26,7 @@ import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
+import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
@@ -39,12 +40,16 @@ import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
+import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
@@ -52,6 +57,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
+import org.openhealthtools.mdht.uml.cda.ccd.PurposeActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.PurposeSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
@@ -61,6 +68,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -253,6 +261,38 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseProceduresSection(ProceduresSection object) {
 				return createProceduresSectionAdapter();
+			}
+			@Override
+			public Adapter casePlanOfCareSection(PlanOfCareSection object) {
+				return createPlanOfCareSectionAdapter();
+			}
+			@Override
+			public Adapter caseVitalSignsSection(VitalSignsSection object) {
+				return createVitalSignsSectionAdapter();
+			}
+			@Override
+			public Adapter caseMedicalEquipmentSection(MedicalEquipmentSection object) {
+				return createMedicalEquipmentSectionAdapter();
+			}
+			@Override
+			public Adapter caseFunctionalStatusSection(FunctionalStatusSection object) {
+				return createFunctionalStatusSectionAdapter();
+			}
+			@Override
+			public Adapter caseAdvanceDirectivesSection(AdvanceDirectivesSection object) {
+				return createAdvanceDirectivesSectionAdapter();
+			}
+			@Override
+			public Adapter casePayersSection(PayersSection object) {
+				return createPayersSectionAdapter();
+			}
+			@Override
+			public Adapter casePurposeSection(PurposeSection object) {
+				return createPurposeSectionAdapter();
+			}
+			@Override
+			public Adapter casePurposeActivity(PurposeActivity object) {
+				return createPurposeActivityAdapter();
 			}
 			@Override
 			public Adapter caseSection(Section object) {
@@ -773,6 +813,118 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProceduresSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection <em>Plan Of Care Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection
+	 * @generated
+	 */
+	public Adapter createPlanOfCareSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection <em>Vital Signs Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection
+	 * @generated
+	 */
+	public Adapter createVitalSignsSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection <em>Medical Equipment Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection
+	 * @generated
+	 */
+	public Adapter createMedicalEquipmentSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection <em>Functional Status Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection
+	 * @generated
+	 */
+	public Adapter createFunctionalStatusSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection <em>Advance Directives Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection
+	 * @generated
+	 */
+	public Adapter createAdvanceDirectivesSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PayersSection <em>Payers Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PayersSection
+	 * @generated
+	 */
+	public Adapter createPayersSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection <em>Purpose Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PurposeSection
+	 * @generated
+	 */
+	public Adapter createPurposeSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeActivity <em>Purpose Activity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PurposeActivity
+	 * @generated
+	 */
+	public Adapter createPurposeActivityAdapter() {
 		return null;
 	}
 

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
@@ -31,12 +32,16 @@ import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
+import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
@@ -44,6 +49,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
+import org.openhealthtools.mdht.uml.cda.ccd.PurposeActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.PurposeSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
@@ -53,6 +60,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -132,6 +140,14 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.ENCOUNTER_LOCATION: return createEncounterLocation();
 			case CCDPackage.PRODUCT: return createProduct();
 			case CCDPackage.PROCEDURES_SECTION: return createProceduresSection();
+			case CCDPackage.PLAN_OF_CARE_SECTION: return createPlanOfCareSection();
+			case CCDPackage.VITAL_SIGNS_SECTION: return createVitalSignsSection();
+			case CCDPackage.MEDICAL_EQUIPMENT_SECTION: return createMedicalEquipmentSection();
+			case CCDPackage.FUNCTIONAL_STATUS_SECTION: return createFunctionalStatusSection();
+			case CCDPackage.ADVANCE_DIRECTIVES_SECTION: return createAdvanceDirectivesSection();
+			case CCDPackage.PAYERS_SECTION: return createPayersSection();
+			case CCDPackage.PURPOSE_SECTION: return createPurposeSection();
+			case CCDPackage.PURPOSE_ACTIVITY: return createPurposeActivity();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -465,6 +481,86 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public ProceduresSection createProceduresSection() {
 		ProceduresSectionImpl proceduresSection = new ProceduresSectionImpl();
 		return proceduresSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlanOfCareSection createPlanOfCareSection() {
+		PlanOfCareSectionImpl planOfCareSection = new PlanOfCareSectionImpl();
+		return planOfCareSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VitalSignsSection createVitalSignsSection() {
+		VitalSignsSectionImpl vitalSignsSection = new VitalSignsSectionImpl();
+		return vitalSignsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicalEquipmentSection createMedicalEquipmentSection() {
+		MedicalEquipmentSectionImpl medicalEquipmentSection = new MedicalEquipmentSectionImpl();
+		return medicalEquipmentSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FunctionalStatusSection createFunctionalStatusSection() {
+		FunctionalStatusSectionImpl functionalStatusSection = new FunctionalStatusSectionImpl();
+		return functionalStatusSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdvanceDirectivesSection createAdvanceDirectivesSection() {
+		AdvanceDirectivesSectionImpl advanceDirectivesSection = new AdvanceDirectivesSectionImpl();
+		return advanceDirectivesSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PayersSection createPayersSection() {
+		PayersSectionImpl payersSection = new PayersSectionImpl();
+		return payersSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PurposeSection createPurposeSection() {
+		PurposeSectionImpl purposeSection = new PurposeSectionImpl();
+		return purposeSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PurposeActivity createPurposeActivity() {
+		PurposeActivityImpl purposeActivity = new PurposeActivityImpl();
+		return purposeActivity;
 	}
 
 	/**
