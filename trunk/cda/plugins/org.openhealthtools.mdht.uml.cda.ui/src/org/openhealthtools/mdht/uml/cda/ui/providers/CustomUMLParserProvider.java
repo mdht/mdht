@@ -79,11 +79,15 @@ implements IParserProvider {
 		return new PropertyParser();
 	}
 
-	protected IParser getParser(String visualID) {
-		if ("".equals(visualID)) {
-			return getCustomPropertyParser();
-		}
-
-		return null;
+	/**
+	 * getCustomPropertyParser
+	 * 
+	 * getCustomPropertyParser currently returns parser regardless of the visualid being passed in.  
+	 * TODO Need to Determine proper visual id support for both rsm and papyrus 
+	 * @param visualID
+	 * @return
+	 */
+	protected IParser getParser(String visualID) {		
+		return getCustomPropertyParser();
 	}
 }
