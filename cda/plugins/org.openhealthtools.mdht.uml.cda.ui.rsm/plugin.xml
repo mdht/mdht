@@ -15,7 +15,7 @@
 
 <plugin>
 
- <extension point="com.ibm.xtools.uml.msl.UMLProfiles"
+   <extension point="com.ibm.xtools.uml.msl.UMLProfiles"
          name="CDA Profile">
       <UMLProfile
             name="CDA Profile"
@@ -61,6 +61,14 @@
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.TextValueSection" 
 	 	     id="property.section.cda.TextValueSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.EntrySection" 
+	 	     id="property.section.cda.EntrySection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.EntryFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.EntryRelationshipSection" 
+	 	     id="property.section.cda.EntryRelationshipSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.EntryRelationshipFilter"/>
       </propertySections>
    </extension> 
  
