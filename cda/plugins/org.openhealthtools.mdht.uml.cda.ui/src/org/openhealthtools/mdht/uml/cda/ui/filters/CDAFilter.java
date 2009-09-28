@@ -28,12 +28,22 @@ public abstract class CDAFilter implements IFilter {
 	
 	public abstract boolean select(Object object);
 
+	/**
+	 * Defines utility method to get the testable element from the object to filter
+	 * on. In RSM the object is IAdaptable - in Papyrus the object is of type
+	 * element;
+	 * 
+	 * The order of the check might be of significant if the IAdapable is also an
+	 * element so we are checking for IAdaptable first.
+	 */
 	protected Element getElement(Object object) {
 		Element element = null;
-		if (object instanceof Element)
+		if (object instanceof IAdaptable) {
+			element = (Element) ((IAdaptable) object).getAdapter(Element.class);
+		} 
+		else if (object instanceof Element) {
 			element = (Element) object;
-		else if (object instanceof IAdaptable)
-			element = (Element) ((IAdaptable)object).getAdapter(Element.class);
+		}
 		
 		return element;
 	}
