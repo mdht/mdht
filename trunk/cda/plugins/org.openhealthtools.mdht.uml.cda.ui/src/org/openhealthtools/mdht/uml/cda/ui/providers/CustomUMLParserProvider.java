@@ -58,7 +58,7 @@ implements IParserProvider {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
 			if (hint instanceof ParserHintAdapter) {
-				// only allow Property elements in models with HDF profile applied
+				// only allow Property elements in models with CDA profile applied
 				//TODO check user preference setting
 				EObject eObject = (EObject)hint.getAdapter(EObject.class);
 				if (eObject instanceof Property) {
@@ -79,15 +79,11 @@ implements IParserProvider {
 		return new PropertyParser();
 	}
 
-	/**
-	 * getCustomPropertyParser
-	 * 
-	 * getCustomPropertyParser currently returns parser regardless of the visualid being passed in.  
-	 * TODO Need to Determine proper visual id support for both rsm and papyrus 
-	 * @param visualID
-	 * @return
-	 */
-	protected IParser getParser(String visualID) {		
-		return getCustomPropertyParser();
+	protected IParser getParser(String visualID) {
+		if ("".equals(visualID)) {
+			return getCustomPropertyParser();
+		}
+
+		return null;
 	}
 }
