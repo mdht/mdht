@@ -12,9 +12,11 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.filters;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Type;
 
 /**
@@ -25,6 +27,16 @@ public abstract class CDAFilter implements IFilter {
 	public static final String CDA_PACKAGE_NAME = "cda";
 	
 	public abstract boolean select(Object object);
+
+	protected Element getElement(Object object) {
+		Element element = null;
+		if (object instanceof Element)
+			element = (Element) object;
+		else if (object instanceof IAdaptable)
+			element = (Element) ((IAdaptable)object).getAdapter(Element.class);
+		
+		return element;
+	}
 
 	protected Class getCDAClass(Class templateClass) {
 		Class cdaClass = null;
