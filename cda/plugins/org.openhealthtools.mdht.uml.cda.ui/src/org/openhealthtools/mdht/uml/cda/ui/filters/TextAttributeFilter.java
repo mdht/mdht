@@ -17,7 +17,6 @@ import java.util.List;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.common.ui.filters.HDFFilterUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 /**

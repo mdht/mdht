@@ -14,7 +14,6 @@ package org.openhealthtools.mdht.uml.cda.ui.filters;
 
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.common.ui.filters.HDFFilterUtil;
 
 /**
  * Selects an object if it is a UML Property that is an HL7 Attribute.
