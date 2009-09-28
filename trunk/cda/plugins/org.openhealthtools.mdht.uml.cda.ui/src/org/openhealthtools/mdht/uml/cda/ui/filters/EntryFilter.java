@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.filters;
 
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
@@ -24,11 +23,7 @@ import org.eclipse.uml2.uml.Type;
 public class EntryFilter extends CDAFilter {
 	
 	public boolean select(Object object) {
-		Element element = null;
-		if (object instanceof Element)
-			element = (Element) object;
-		else if (object instanceof IAdaptable)
-			element = (Element) ((IAdaptable)object).getAdapter(Element.class);
+		Element element = getElement(object);
 		
 		if (element instanceof Association && isEntry((Association) element)) {
 			return true;
