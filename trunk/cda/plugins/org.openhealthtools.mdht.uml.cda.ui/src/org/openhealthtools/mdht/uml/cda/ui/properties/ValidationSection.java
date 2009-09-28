@@ -61,8 +61,6 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.filters.CodedAttributeFilter;
-import org.openhealthtools.mdht.uml.cda.ui.filters.EntryFilter;
-import org.openhealthtools.mdht.uml.cda.ui.filters.EntryRelationshipFilter;
 import org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 
@@ -187,12 +185,7 @@ public class ValidationSection extends AbstractModelerPropertySection {
 		
 		if (stereotype == null && cdaProfile != null) {
 			if (element instanceof Association) {
-				if (new EntryFilter().select(element))
-					stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.ENTRY);
-				else if (new EntryRelationshipFilter().select(element))
-					stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.ENTRY_RELATIONSHIP);
-				else
-					stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.ASSOCIATION_VALIDATION);
+				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.ASSOCIATION_VALIDATION);
 			}
 			else if (element instanceof Class) {
 				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.CLASS_VALIDATION);
