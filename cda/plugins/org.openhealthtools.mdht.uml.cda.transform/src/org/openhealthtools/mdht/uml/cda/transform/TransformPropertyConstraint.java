@@ -76,8 +76,14 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		String inheritedTypeQName = inheritedProperty.getType().getQualifiedName();
 		String templateTypeQName = property.getType() == null ? 
 				inheritedTypeQName : property.getType().getQualifiedName();
-		
-		if (property.getType() != null
+
+		// inherited property may also have non-conformant type
+		if (!inheritedProperty.getType().conformsTo(cdaProperty.getType())) {
+			// use the CDA property type
+			inheritedTypeQName = cdaProperty.getType().getQualifiedName();
+			templateTypeQName = inheritedTypeQName;
+		}
+		else if (property.getType() != null
 				&& !property.getType().conformsTo(inheritedProperty.getType())) {
 			// don't log error for structural attributes with enumeration type
 			if (!(property.getType() instanceof Enumeration)) {
