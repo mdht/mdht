@@ -26,18 +26,6 @@
     and it may represent an order, an event, etc.&lt;/font>&#xD;
 &lt;/p></body>
       </ownedComment>
-      <ownedRule xmi:id="_Ucv9YqX0Ed6JRdOhEffuGA" name="PurposeActivity_hasReason" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ucv9Y6X0Ed6JRdOhEffuGA">
-          <language>OCL</language>
-          <body>self.entryRelationship->one(entryRelationship : cda::EntryRelationship | &#xD;&#xA;  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)&#xD;&#xA;</body>
-        </specification>
-      </ownedRule>
-      <ownedRule xmi:id="_Ucv9ZKX0Ed6JRdOhEffuGA" name="PurposeActivity_reasonType" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ucv9ZaX0Ed6JRdOhEffuGA">
-          <language>OCL</language>
-          <body>self.entryRelationship->forAll(entryRelationship : cda::EntryRelationship |&#xD;&#xA;  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON implies( &#xD;&#xA;  not (entryRelationship.act.oclIsUndefined() and entryRelationship.encounter.oclIsUndefined()&#xD;&#xA;       and entryRelationship.observation.oclIsUndefined() and entryRelationship.procedure.oclIsUndefined()&#xD;&#xA;       and entryRelationship.substanceAdministration.oclIsUndefined() and entryRelationship.supply.oclIsUndefined())))</body>
-        </specification>
-      </ownedRule>
       <generalization xmi:id="_Pl-JwKX2Ed6JRdOhEffuGA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.emx#_GgvgUDxbEd6JwqSGecoePg?ccd/ProblemAct?"/>
       </generalization>
@@ -128,8 +116,6 @@
   <CDA:CodegenSupport xmi:id="_THvvwJmzEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="example" nsURI="http://www.openhealthtools.org/mdht/uml/cda/example" packageName="example" prefix="Example" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
   <CDA:CDATemplate xmi:id="_Uc5uYKX0Ed6JRdOhEffuGA" base_Class="_Ucv9YKX0Ed6JRdOhEffuGA" templateId="1.2.3.4.2" assigningAuthorityName="Example"/>
   <Default:Documentation xmi:id="_Uc5uYaX0Ed6JRdOhEffuGA" base_Comment="_Ucv9YaX0Ed6JRdOhEffuGA"/>
-  <CDA:ConstraintValidation xmi:id="_Uc5uYqX0Ed6JRdOhEffuGA" message="A purpose activity SHALL contain exactly one Act / entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD." base_Constraint="_Ucv9YqX0Ed6JRdOhEffuGA"/>
-  <CDA:ConstraintValidation xmi:id="_Uc5uY6X0Ed6JRdOhEffuGA" message="The target of PurposeActivity entryRelationship with typeCode RSON SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply." base_Constraint="_Ucv9ZKX0Ed6JRdOhEffuGA"/>
   <CDA:PropertyValidation xmi:id="_Uc5uZKX0Ed6JRdOhEffuGA" message="My activity @classCode SHALL be 'ACT' 2.16.840.1.113883.5.6 ActClass STATIC." base_Property="_Ucv9Z6X0Ed6JRdOhEffuGA"/>
   <CDA:PropertyValidation xmi:id="_Uc5uZaX0Ed6JRdOhEffuGA" message="My Activity @moodCode SHALL be 'EVN' 2.16.840.1.113883.5.1001 ActMood STATIC." base_Property="_Ucv9aaX0Ed6JRdOhEffuGA"/>
   <CDA:VocabSpecification xmi:id="_Uc5uZqX0Ed6JRdOhEffuGA" message="My Activity SHALL contain exactly one Act / code, with a value of '23745001' 'Documentation procedure' 2.16.840.1.113883.6.96 SNOMED CT STATIC." base_Property="_Ucv9a6X0Ed6JRdOhEffuGA" code="23745001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Documentation procedure"/>
@@ -139,5 +125,5 @@
   <CDA:VocabSpecification xmi:id="_Uc5ua6X0Ed6JRdOhEffuGA" message="The value for My Activity code SHALL be 48764-5' 'Summary purpose' 2.16.840.1.113883.6.1 LOINC STATIC." base_Property="_Ucv9cKX0Ed6JRdOhEffuGA" code="48764-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summary purpose"/>
   <CDA:AssociationValidation xmi:id="_vvhgIKX2Ed6JRdOhEffuGA" message="My Document SHALL contain one, and not more than one, My Section." base_Association="_v0rX0KX0Ed6JRdOhEffuGA"/>
   <CDA:Entry xmi:id="_auV_cK0UEd6_kOk8Ilc2Dw" message="My Section SHOULD contain one or more My Activity." severity="WARNING" base_Association="_Ucv9daX0Ed6JRdOhEffuGA"/>
-  <CDA:TextValue xmi:id="_xJaggK0jEd6_kOk8Ilc2Dw" message="My Activity SHALL contain exactly one title." base_Property="_Ucv9caX0Ed6JRdOhEffuGA"/>
+  <CDA:TextValue xmi:id="_xJaggK0jEd6_kOk8Ilc2Dw" message="My Section SHALL contain a title." base_Property="_Ucv9caX0Ed6JRdOhEffuGA"/>
 </xmi:XMI>
