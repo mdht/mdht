@@ -18,7 +18,7 @@
    </license>
 
    <url>
-      <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/updates"/>
+      <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/cda/updates"/>
    </url>
 
    <requires>
