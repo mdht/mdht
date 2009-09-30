@@ -30,63 +30,55 @@
   </genAnnotations>
   <foreignModel>example_Ecore.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="Example" basePackage="org.openhealthtools.mdht.uml.cda"
-      resource="XML" disposableProviderFactory="true" ecorePackage="example.ecore#/">
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="example.ecore#//PatientSummary">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//PatientSummary/PatientSummary_templateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//PatientSummary/PatientSummary_templateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//PatientSummary/PatientSummary_templateId/context"/>
+      disposableProviderFactory="true" ecorePackage="example.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.cda.example.operations">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="example.ecore#//MyDocument">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyDocument/MyDocument_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyDocument/MyDocument_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyDocument/MyDocument_templateId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//PatientSummary/PatientSummary_problemList">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//PatientSummary/PatientSummary_problemList/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//PatientSummary/PatientSummary_problemList/context"/>
-      </genOperations>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="example.ecore#//MyProblemAct">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyProblemAct/PurposeActivity_hasReason">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/PurposeActivity_hasReason/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/PurposeActivity_hasReason/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyProblemAct/PurposeActivity_reasonType">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/PurposeActivity_reasonType/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/PurposeActivity_reasonType/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyProblemAct/MyProblemAct_templateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/MyProblemAct_templateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/MyProblemAct_templateId/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyProblemAct/MyProblemAct_classCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/MyProblemAct_classCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/MyProblemAct_classCode/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyProblemAct/MyProblemAct_moodCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/MyProblemAct_moodCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/MyProblemAct_moodCode/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyProblemAct/MyProblemAct_code">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/MyProblemAct_code/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/MyProblemAct_code/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyProblemAct/MyProblemAct_statusCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/MyProblemAct_statusCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyProblemAct/MyProblemAct_statusCode/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyDocument/MyDocument_mySection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyDocument/MyDocument_mySection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyDocument/MyDocument_mySection/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="example.ecore#//ProblemList">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//ProblemList/ProblemList_templateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//ProblemList/ProblemList_templateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//ProblemList/ProblemList_templateId/context"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="example.ecore#//MyActivity">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyActivity/MyActivity_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivity_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivity_templateId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//ProblemList/ProblemList_code">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//ProblemList/ProblemList_code/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//ProblemList/ProblemList_code/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyActivity/MyActivity_classCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivity_classCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivity_classCode/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//ProblemList/ProblemList_title">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//ProblemList/ProblemList_title/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//ProblemList/ProblemList_title/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyActivity/MyActivity_moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivity_moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivity_moodCode/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//ProblemList/ProblemList_myProblemAct">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//ProblemList/ProblemList_myProblemAct/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//ProblemList/ProblemList_myProblemAct/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyActivity/MyActivity_code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivity_code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivity_code/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyActivity/MyActivity_statusCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivity_statusCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyActivity/MyActivity_statusCode/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="example.ecore#//MySection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MySection/MySection_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySection_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySection_templateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MySection/MySection_code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySection_code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySection_code/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MySection/MySection_title">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySection_title/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySection_title/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MySection/MySection_myActivity">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySection_myActivity/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MySection/MySection_myActivity/context"/>
       </genOperations>
     </genClasses>
   </genPackages>
