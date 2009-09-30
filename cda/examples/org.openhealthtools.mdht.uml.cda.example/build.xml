@@ -20,10 +20,17 @@
 		<replace file="model/example-diagrams.emx" token="example" value="${modelName}"/>
 		<replace file="model/example-diagrams.emx" token="Example" value="${modelPackagePrefix}"/>
 		<move file="model/example-diagrams.emx" tofile="model/${modelName}-diagrams.emx"/>
+
+		<replace file="model/example.ecore" token="example" value="${modelName}"/>
+		<replace file="model/example.ecore" token="Example" value="${modelPackagePrefix}"/>
+		<move file="model/example.ecore" tofile="model/${modelName}.ecore"/>
 		
 		<replace file="model/example.genmodel" token="example" value="${modelName}"/>
 		<replace file="model/example.genmodel" token="Example" value="${modelPackagePrefix}"/>
 		<move file="model/example.genmodel" tofile="model/${modelName}.genmodel"/>
+		
+		<replace file="META-INF/manifest.mf" token="example" value="${modelName}"/>
+		<replace file="META-INF/manifest.mf" token="Example" value="${modelPackagePrefix}"/>
 		
 		<replace file="plugin.xml" token="example" value="${modelName}"/>
 		<replace file="plugin.xml" token="Example" value="${modelPackagePrefix}"/>
