@@ -10,42 +10,36 @@
  *     
  * $Id$
  *******************************************************************************/
+/*
 package org.openhealthtools.mdht.uml.cda.example.tests;
-
-import java.io.FileInputStream;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.example.ExampleFactory;
+import org.openhealthtools.mdht.uml.cda.example.MyActivity;
+import org.openhealthtools.mdht.uml.cda.example.MyDocument;
+import org.openhealthtools.mdht.uml.cda.example.MySection;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 public class Main {
-	
 	public static void main(String[] args) throws Exception {
-		Main main = new Main();
-
-		ClinicalDocument clinicalDocument = null;
+		MyDocument clinicalDocument = ExampleFactory.eINSTANCE.createMyDocument().init();
+		MySection section = ExampleFactory.eINSTANCE.createMySection().init();
+		MyActivity act = ExampleFactory.eINSTANCE.createMyActivity().init();
 		
-		/*
-		 * After generating your model code, a Java test driver would like something like this.
-		 */
-//		MyDocument clinicalDocument = ExampleFactory.eINSTANCE.createMyDocument().init();
-//		MySection section = ExampleFactory.eINSTANCE.createMySection().init();
-//		MyActivity act = ExampleFactory.eINSTANCE.createMyActivity().init();
-//		
-//		clinicalDocument.addSection(section);
-//		section.addAct(act);
+		clinicalDocument.addSection(section);
+		section.addAct(act);
 		
-		
-		main.save(clinicalDocument);
-		main.validate(clinicalDocument);
+		save(clinicalDocument);
+		validate(clinicalDocument);
 	}
 	
-	public void save(ClinicalDocument clinicalDocument) throws Exception {
+	private static void save(ClinicalDocument clinicalDocument) throws Exception {
 		CDAUtil.save(clinicalDocument, System.out);
 	}
 	
-	public void validate(ClinicalDocument clinicalDocument) throws Exception {
+	private static void validate(ClinicalDocument clinicalDocument) throws Exception {
 		boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 			@Override
 			public void handleError(Diagnostic diagnostic) {
@@ -67,12 +61,5 @@ public class Main {
 			System.out.println("Document is invalid");
 		}
 	}
-
-	public void validateSample() throws Exception {
-		ClinicalDocument sampleDoc = CDAUtil.load(new FileInputStream("resources/SampleDocument.xml"));
-		System.out.println(sampleDoc);
-		
-		validate(sampleDoc);
-	}
-	
 }
+*/
