@@ -30,7 +30,8 @@
   </genAnnotations>
   <foreignModel>example_Ecore.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="Example" basePackage="org.openhealthtools.mdht.uml.cda"
-      disposableProviderFactory="true" ecorePackage="example.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.cda.example.operations">
+      resource="XML" disposableProviderFactory="true" ecorePackage="example.ecore#/"
+      operationsPackage="org.openhealthtools.mdht.uml.cda.example.operations">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="example.ecore#//MyDocument">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="example.ecore#//MyDocument/MyDocument_templateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="example.ecore#//MyDocument/MyDocument_templateId/diagnostics"/>
