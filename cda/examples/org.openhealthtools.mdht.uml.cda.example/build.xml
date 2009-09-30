@@ -7,15 +7,36 @@
 -->
 <project name="CDA Model Transformation"  basedir="." default="all">
 
-	<!-- Change the value of 'modelName' when you rename the example.emx model -->
+	<!-- Change the value of 'modelName' and 'modelPackagePrefix' when you rename the example.emx model -->
 	<property name="modelName" value="example"/>
+	<property name="modelPackagePrefix" value="Example"/>
 	<property name="cdaPluginPath" location="${basedir}/../org.openhealthtools.mdht.uml.cda"/>
+
+	<target name="rename">
+		<replace file="model/example.emx" token="example" value="${modelName}"/>
+		<replace file="model/example.emx" token="Example" value="${modelPackagePrefix}"/>
+		<move file="model/example.emx" tofile="model/${modelName}.emx"/>
+		
+		<replace file="model/example.genmodel" token="example" value="${modelName}"/>
+		<replace file="model/example.genmodel" token="Example" value="${modelPackagePrefix}"/>
+		<move file="model/example.genmodel" tofile="model/${modelName}.genmodel"/>
+		
+		<replace file="plugin.xml" token="example" value="${modelName}"/>
+		<replace file="plugin.xml" token="Example" value="${modelPackagePrefix}"/>
+		
+		<replace file="src/org/openhealthtools/mdht/uml/cda/example/tests/Main.java" token="example" value="${modelName}"/>
+		<replace file="src/org/openhealthtools/mdht/uml/cda/example/tests/Main.java" token="Example" value="${modelPackagePrefix}"/>
+		<move file="src/org/openhealthtools/mdht/uml/cda/example/tests" tofile="src/org/openhealthtools/mdht/uml/cda/${modelName}/tests"/>
+		<delete file="src/org/openhealthtools/mdht/uml/cda/example/tests"/>
+		
+		<eclipse.refreshLocal resource="org.openhealthtools.mdht.uml.cda.${modelName}" depth="infinite" />
+	</target>
 	
 	<macrodef name="convertEcorePaths">
 		<attribute name="filePath"/>
 		
 		<sequential>
-			<!-- must include a relace statement for each imported template model. -->
+			<!-- must include a replace statement for each imported template model. -->
 			<replace file="@{filePath}" token="/ccd.uml" value="/ccd_Ecore.uml"/>
 		</sequential>
 	</macrodef>
