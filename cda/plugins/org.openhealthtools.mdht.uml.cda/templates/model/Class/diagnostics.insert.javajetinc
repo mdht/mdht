@@ -27,7 +27,7 @@ if (severity != null) {%>
 						(<%=genModel.getImportedName("org.eclipse.emf.common.util.Diagnostic")%>.<%=severity%>,
 						 <%=opClass.getGenPackage().getImportedValidatorClassName()%>.DIAGNOSTIC_SOURCE,
 						 <%=opClass.getGenPackage().getImportedValidatorClassName()%>.<%=opClass.getOperationID(genOperation)%>,
-						 <%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.CDAPlugin")%>.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "<%=genOperation.getName()%>", <%=oclExp%>, <%=genModel.getImportedName("org.eclipse.emf.ecore.util.EObjectValidator")%>.getObjectLabel(this, <%=context%>) }),<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%>
+						 <%if (genModel.hasModelPluginClass()) {%><%=genModel.getImportedName(genModel.getQualifiedModelPluginClassName())%>.INSTANCE.getString("<%=name%>"),<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%><%} else {%><%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.CDAPlugin")%>.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "<%=genOperation.getName()%>", <%=oclExp%>, <%=genModel.getImportedName("org.eclipse.emf.ecore.util.EObjectValidator")%>.getObjectLabel(this, <%=context%>) }),<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%><%}%>
 						 new Object [] { this }));
 <%} else {%>
 				<%=diagnostics%>.add
