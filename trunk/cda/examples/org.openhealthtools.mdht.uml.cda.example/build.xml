@@ -16,6 +16,10 @@
 		<replace file="model/example.emx" token="example" value="${modelName}"/>
 		<replace file="model/example.emx" token="Example" value="${modelPackagePrefix}"/>
 		<move file="model/example.emx" tofile="model/${modelName}.emx"/>
+
+		<replace file="model/example-diagrams.emx" token="example" value="${modelName}"/>
+		<replace file="model/example-diagrams.emx" token="Example" value="${modelPackagePrefix}"/>
+		<move file="model/example-diagrams.emx" tofile="model/${modelName}-diagrams.emx"/>
 		
 		<replace file="model/example.genmodel" token="example" value="${modelName}"/>
 		<replace file="model/example.genmodel" token="Example" value="${modelPackagePrefix}"/>
