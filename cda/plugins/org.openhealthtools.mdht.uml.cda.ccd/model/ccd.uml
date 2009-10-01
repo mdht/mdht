@@ -274,14 +274,80 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ht_RsHDAEd6eItyqb1FoWg" name="ResultOrganizer">
+      <ownedComment xmi:id="_HwtKgK31Ed6_ioDelDcPPg" annotatedElement="_Ht_RsHDAEd6eItyqb1FoWg">
+        <body>&lt;p&gt;&#13;
+    &lt;font size="2"&gt;&lt;font size="2"&gt;The result organizer identifies an observation set, contained with the result organizer&#13;
+    as a set of result observations. It contains information applicable to all of the contained result&#13;
+    observations.&lt;/font&gt;&lt;/font&gt;&#13;
+&lt;/p&gt;&#13;
+&lt;p&gt;&#13;
+    &lt;font size="2"&gt;Results in ASTM CCR and CCD are structured similarly to the HL7 Version 2 ORU Observation message, where&#13;
+    there is an outer result organizer (templateId 2.16.840.1.113883.10.20.1.32), analogous to the HL7 Version 2 OBR&#13;
+    Observation Result Segment, which contains one or more result observations (templateId 2.16.840.1.113883.10.20.1.31),&#13;
+    analogous to the HL7 Version 2 OBX Observation/Result Segment.&lt;/font&gt;&#13;
+&lt;/p&gt;</body>
+      </ownedComment>
       <generalization xmi:id="_hZltMHDAEd6eItyqb1FoWg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_B6aX4EbvEd6besF9iFIJkQ?cda/Organizer?"/>
       </generalization>
+      <ownedAttribute xmi:id="_UbhswK30Ed6_ioDelDcPPg" name="resultObservation" visibility="private" type="_MQHZEHDAEd6eItyqb1FoWg" association="_Ubf3kK30Ed6_ioDelDcPPg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ubjh8a30Ed6_ioDelDcPPg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ubjh8K30Ed6_ioDelDcPPg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_EGepkK33Ed6_ioDelDcPPg" name="specimen" visibility="private" association="_EGc0YK33Ed6_ioDelDcPPg">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_mdwKcEcaEd6besF9iFIJkQ?cda/Specimen?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EGfQoa33Ed6_ioDelDcPPg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EGfQoK33Ed6_ioDelDcPPg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_AAXGgK6sEd6_ioDelDcPPg" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_AAXGga6sEd6_ioDelDcPPg" name="EVN">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW30DcEd6xYZuu1VKCVw?vocab/ActMood/EVN?"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_pnt0EK6sEd6_ioDelDcPPg" name="id" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pnt0Ea6sEd6_ioDelDcPPg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pnt0Eq6sEd6_ioDelDcPPg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_UbVD8K6uEd6_ioDelDcPPg" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_fw3OQK6tEd6_ioDelDcPPg" name="statusCode" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_MQHZEHDAEd6eItyqb1FoWg" name="ResultObservation">
       <generalization xmi:id="_eOylIHDAEd6eItyqb1FoWg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
+      <ownedAttribute xmi:id="_G2B90K6sEd6_ioDelDcPPg" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_G2B90a6sEd6_ioDelDcPPg" name="EVN">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW30DcEd6xYZuu1VKCVw?vocab/ActMood/EVN?"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_pKklEK6sEd6_ioDelDcPPg" name="id" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pKklEa6sEd6_ioDelDcPPg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pKklEq6sEd6_ioDelDcPPg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_5TTmYK6wEd6_ioDelDcPPg" name="effectiveTime" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA?datatypes/IVL_TS?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5TTmYa6wEd6_ioDelDcPPg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5TTmYq6wEd6_ioDelDcPPg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_MCHywK6tEd6_ioDelDcPPg" name="statusCode" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_H1HqAK6xEd6_ioDelDcPPg" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_gX1x4K6xEd6_ioDelDcPPg" name="value" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#__I8BwDxZEd6JwqSGecoePg?datatypes/ANY?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_UOVM0HDAEd6eItyqb1FoWg" name="SocialHistorySection">
       <ownedComment xmi:id="_rk6PUKPREd6t_4WfM070fA" annotatedElement="_UOVM0HDAEd6eItyqb1FoWg">
@@ -376,13 +442,6 @@
       <generalization xmi:id="_sAvQsHfUEd6ZeOKq_2_a9g">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_nazskEbuEd6besF9iFIJkQ?cda/SubstanceAdministration?"/>
       </generalization>
-      <ownedAttribute xmi:id="_PZz-MI5qEd6x-qh9FleSiA" name="moodCode" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
-        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_PZz-MY5qEd6x-qh9FleSiA" name="EVN">
-          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
-          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW30DcEd6xYZuu1VKCVw?vocab/ActMood/EVN?"/>
-        </defaultValue>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_Rp0MMIHYEd6Ncrr6L3Ublw" name="id" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rp0MMYHYEd6Ncrr6L3Ublw" value="*"/>
@@ -537,6 +596,10 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_GMTtEIjpEd66cKocspyVOg" name="title" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_hl7cEK31Ed6_ioDelDcPPg" name="resultOrganizer" visibility="private" type="_Ht_RsHDAEd6eItyqb1FoWg" association="_hl5m4K31Ed6_ioDelDcPPg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hl8qMa31Ed6_ioDelDcPPg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hl8qMK31Ed6_ioDelDcPPg" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_VL2w0IiBEd66cKocspyVOg" name="MedicationSeriesNumberObservation">
@@ -744,6 +807,16 @@
       <generalization xmi:id="_aEDRkKPaEd6t_4WfM070fA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
+      <ownedAttribute xmi:id="_K6ZmsK3yEd6_ioDelDcPPg" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_K6UHIK3yEd6_ioDelDcPPg" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="__30YIK3zEd6_ioDelDcPPg" name="vitalSignsOrganizer" visibility="private" type="_wN4O0K3zEd6_ioDelDcPPg" association="__3xU0K3zEd6_ioDelDcPPg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__33bcK3zEd6_ioDelDcPPg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__320YK3zEd6_ioDelDcPPg" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_kxx_kKPaEd6t_4WfM070fA" memberEnd="_kxz0wKPaEd6t_4WfM070fA _kx2RAKPaEd6t_4WfM070fA">
       <ownedEnd xmi:id="_kx2RAKPaEd6t_4WfM070fA" name="" visibility="private" type="_Ze7UsGESEd69D7zx7EkLMA" association="_kxx_kKPaEd6t_4WfM070fA">
@@ -970,6 +1043,33 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IuoXQKRxEd6t_4WfM070fA"/>
       </ownedEnd>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wN4O0K3zEd6_ioDelDcPPg" name="VitalSignsOrganizer">
+      <generalization xmi:id="_1CKdMK3zEd6_ioDelDcPPg" general="_Ht_RsHDAEd6eItyqb1FoWg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="__3xU0K3zEd6_ioDelDcPPg" memberEnd="__30YIK3zEd6_ioDelDcPPg __35QoK3zEd6_ioDelDcPPg">
+      <ownedEnd xmi:id="__35QoK3zEd6_ioDelDcPPg" name="" visibility="private" type="_GKpeMKPaEd6t_4WfM070fA" association="__3xU0K3zEd6_ioDelDcPPg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__387Aa3zEd6_ioDelDcPPg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__387AK3zEd6_ioDelDcPPg"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Ubf3kK30Ed6_ioDelDcPPg" memberEnd="_UbhswK30Ed6_ioDelDcPPg _Ubl-MK30Ed6_ioDelDcPPg">
+      <ownedEnd xmi:id="_Ubl-MK30Ed6_ioDelDcPPg" name="" visibility="private" type="_Ht_RsHDAEd6eItyqb1FoWg" association="_Ubf3kK30Ed6_ioDelDcPPg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Uboaca30Ed6_ioDelDcPPg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UboacK30Ed6_ioDelDcPPg"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_hl5m4K31Ed6_ioDelDcPPg" memberEnd="_hl7cEK31Ed6_ioDelDcPPg _hl-fYK31Ed6_ioDelDcPPg">
+      <ownedEnd xmi:id="_hl-fYK31Ed6_ioDelDcPPg" name="" visibility="private" type="_7TVToIiAEd66cKocspyVOg" association="_hl5m4K31Ed6_ioDelDcPPg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hl_tgK31Ed6_ioDelDcPPg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hl_GcK31Ed6_ioDelDcPPg"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_EGc0YK33Ed6_ioDelDcPPg" memberEnd="_EGepkK33Ed6_ioDelDcPPg _EGhF0K33Ed6_ioDelDcPPg">
+      <ownedEnd xmi:id="_EGhF0K33Ed6_ioDelDcPPg" name="" visibility="private" type="_Ht_RsHDAEd6eItyqb1FoWg" association="_EGc0YK33Ed6_ioDelDcPPg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EGhs4a33Ed6_ioDelDcPPg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EGhs4K33Ed6_ioDelDcPPg"/>
+      </ownedEnd>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -1038,7 +1138,7 @@
   <CDA:CDATemplate xmi:id="_ovERwIiBEd66cKocspyVOg" base_Class="_lgLT4IiBEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.47" assigningAuthorityName="CCD"/>
   <CDA:CDATemplate xmi:id="_4sxEkIiBEd66cKocspyVOg" base_Class="_2QJRIIiBEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.45" assigningAuthorityName="CCD"/>
   <CDA:CDATemplate xmi:id="_P0aVkIiCEd66cKocspyVOg" base_Class="_8Xj7UIiBEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.53" assigningAuthorityName="CCD"/>
-  <CDA:VocabSpecification xmi:id="_GMX-gIjpEd66cKocspyVOg" base_Property="_GMWwYIjpEd66cKocspyVOg" code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests and/or laboratory data"/>
+  <CDA:VocabSpecification xmi:id="_GMX-gIjpEd66cKocspyVOg" message="Results Section code SHALL be '30954-2' 'Relevant diagnostic tests and/or laboratory data' 2.16.840.1.113883.6.1 LOINC STATIC." base_Property="_GMWwYIjpEd66cKocspyVOg" code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests and/or laboratory data"/>
   <Default:Documentation xmi:id="_ys1AIIjpEd66cKocspyVOg" base_Comment="_yswHoIjpEd66cKocspyVOg"/>
   <Default:Documentation xmi:id="_NUuEwIjqEd66cKocspyVOg" base_Comment="_NUpzUIjqEd66cKocspyVOg"/>
   <CDA:VocabSpecification xmi:id="_ANZXQIjsEd66cKocspyVOg" base_Property="_ANYJIIjsEd66cKocspyVOg" code="30973-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dose number"/>
@@ -1059,7 +1159,6 @@
   <CDA:AssociationValidation xmi:id="_HeoawJm3Ed6BO7rW3XxHIA" message="A problem act SHOULD include one or more problem observations." severity="WARNING" base_Association="_yqvkYIt5Ed639sxyAgfSmw"/>
   <CDA:PropertyValidation xmi:id="_j7IQkJm3Ed6BO7rW3XxHIA" message="An encounter activity MAY contain exactly one Encounter / effectiveTime, to indicate date, time, and/or duration of an encounter." severity="INFO" base_Property="_D4_loIj0Ed66cKocspyVOg"/>
   <CDA:PropertyValidation xmi:id="_a1KpQJnFEd6BO7rW3XxHIA" message="A medication activity SHALL contain at least one SubstanceAdministration / id." base_Property="_Rp0MMIHYEd6Ncrr6L3Ublw"/>
-  <CDA:PropertyValidation xmi:id="_fPnbUJnFEd6BO7rW3XxHIA" message="The value for 'SubstanceAdministration / @moodCode' in a medication activity SHALL be 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC." base_Property="_PZz-MI5qEd6x-qh9FleSiA"/>
   <CDA:PropertyValidation xmi:id="_jXcMUJnFEd6BO7rW3XxHIA" message="A medication activity SHOULD contain exactly one SubstanceAdministration / statusCode." severity="WARNING" base_Property="_f9zPMIHYEd6Ncrr6L3Ublw"/>
   <CDA:PropertyValidation xmi:id="_1CsGEJnFEd6BO7rW3XxHIA" message="A problem observation SHOULD contain exactly one Observation / effectiveTime, to indicate the biological timing of condition (e.g. the time the condition started, the onset of the illness or symptom, the duration of a condition)." severity="WARNING" base_Property="_t3kdcIhREd6UrJD25cKDew"/>
   <CDA:PropertyValidation xmi:id="_536voJnFEd6BO7rW3XxHIA" message="The value for 'Observation / @moodCode' in a problem observation SHALL be 'EVN' 2.16.840.1.113883.5.1001 ActMood STATIC." base_Property="_gh1ycIhREd6UrJD25cKDew"/>
@@ -1108,4 +1207,24 @@
   <CDA:AssociationValidation xmi:id="_qmHZoKRyEd6t_4WfM070fA" message="Purpose Section SHOULD contain one or more Purpose Activity." severity="WARNING" base_Association="_Iui3sKRxEd6t_4WfM070fA"/>
   <CDA:ConstraintValidation xmi:id="_RKMcEKR2Ed6t_4WfM070fA" message="A purpose activity SHALL contain exactly one Act / entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD." base_Constraint="_a-lZMKR0Ed6t_4WfM070fA"/>
   <CDA:ConstraintValidation xmi:id="_2qHaMKR2Ed6t_4WfM070fA" message="The target of PurposeActivity entryRelationship with typeCode RSON SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply." base_Constraint="_zYt64KR2Ed6t_4WfM070fA"/>
+  <CDA:VocabSpecification xmi:id="_K6lz8K3yEd6_ioDelDcPPg" message="Vital Signs Section code SHALL be '8716-3' 'Vital signs' 2.16.840.1.113883.6.1 LOINC STATIC." base_Property="_K6ZmsK3yEd6_ioDelDcPPg" code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vital signs"/>
+  <CDA:TextValue xmi:id="_dcoLwK3yEd6_ioDelDcPPg" message="Vital Signs Section title SHOULD be valued with a case-insensitive language-insensitive text string containing 'vital signs'." severity="WARNING" base_Property="_K6UHIK3yEd6_ioDelDcPPg"/>
+  <CDA:TextValue xmi:id="_vwXo4K3yEd6_ioDelDcPPg" message="Results Section title SHOULD be valued with a case-insensitive language-insensitive text string containing 'results'." severity="WARNING" base_Property="_GMTtEIjpEd66cKocspyVOg"/>
+  <CDA:CDATemplate xmi:id="_3x-SYK3zEd6_ioDelDcPPg" base_Class="_wN4O0K3zEd6_ioDelDcPPg" templateId="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD"/>
+  <CDA:AssociationValidation xmi:id="_DyVs8K30Ed6_ioDelDcPPg" message="Vital Signs Section SHOULD contain one or more Vital Signs Organizer entries." severity="WARNING" base_Association="__3xU0K3zEd6_ioDelDcPPg"/>
+  <CDA:AssociationValidation xmi:id="_tNsl4K30Ed6_ioDelDcPPg" message="A Result Organizer SHALL contain one or more Result Observations." base_Association="_Ubf3kK30Ed6_ioDelDcPPg"/>
+  <Default:Documentation xmi:id="_HwwN0K31Ed6_ioDelDcPPg" base_Comment="_HwtKgK31Ed6_ioDelDcPPg"/>
+  <CDA:AssociationValidation xmi:id="_nFWSIK31Ed6_ioDelDcPPg" message="Results Section SHOULD contain one or more Result Organizer entries." severity="WARNING" base_Association="_hl5m4K31Ed6_ioDelDcPPg"/>
+  <CDA:AssociationValidation xmi:id="_LpyC8K33Ed6_ioDelDcPPg" message="A Result Rrganizer SHOULD include one or more Organizer / specimen if the specimen isn't inherent in Organizer / code." severity="WARNING" base_Association="_EGc0YK33Ed6_ioDelDcPPg"/>
+  <CDA:ConstraintValidation xmi:id="_ALcL0K4BEd6_ioDelDcPPg" message="The value for 'SubstanceAdministration / @moodCode' in a medication activity SHALL be 'EVN' or 'INT' 2.16.840.1.113883.5.1001 ActMood STATIC." base_Constraint="_yqHDEI5qEd6x-qh9FleSiA"/>
+  <CDA:PropertyValidation xmi:id="_PhrfUK6sEd6_ioDelDcPPg" message="The Result Organizer moodCode SHALL be 'EVN' 2.16.840.1.113883.5.1001 ActMood STATIC." base_Property="_AAXGgK6sEd6_ioDelDcPPg"/>
+  <CDA:PropertyValidation xmi:id="_gYlLAK6sEd6_ioDelDcPPg" message="The Result Observation moodCode SHALL be 'EVN' 2.16.840.1.113883.5.1001 ActMood STATIC." base_Property="_G2B90K6sEd6_ioDelDcPPg"/>
+  <CDA:PropertyValidation xmi:id="_7WLZ4K6sEd6_ioDelDcPPg" message="A Result Organizer SHALL contain at least one id." base_Property="_pnt0EK6sEd6_ioDelDcPPg"/>
+  <CDA:PropertyValidation xmi:id="_CbfPsK6tEd6_ioDelDcPPg" message="A Result Observation SHALL contain at least one id." base_Property="_pKklEK6sEd6_ioDelDcPPg"/>
+  <CDA:VocabSpecification xmi:id="_QLW5AK6tEd6_ioDelDcPPg" message="A Result Observation SHALL contain exactly one statusCode." base_Property="_MCHywK6tEd6_ioDelDcPPg"/>
+  <CDA:VocabSpecification xmi:id="_fw31UK6tEd6_ioDelDcPPg" message="A Result Organizer SHALL contain exactly one statusCode." base_Property="_fw3OQK6tEd6_ioDelDcPPg"/>
+  <CDA:VocabSpecification xmi:id="_WewUQK6uEd6_ioDelDcPPg" message="A Result Organizer SHALL contain exactly one code." base_Property="_UbVD8K6uEd6_ioDelDcPPg"/>
+  <CDA:PropertyValidation xmi:id="_5TUNcK6wEd6_ioDelDcPPg" message="A Result Observation SHOULD contain exactly one effectiveTime, which represents the biologically relevant time (e.g. time the specimen was obtained from the patient)." severity="WARNING" base_Property="_5TTmYK6wEd6_ioDelDcPPg"/>
+  <CDA:VocabSpecification xmi:id="_H1IREK6xEd6_ioDelDcPPg" message="A Result Observation SHALL contain exactly one code." base_Property="_H1HqAK6xEd6_ioDelDcPPg"/>
+  <CDA:PropertyValidation xmi:id="_k0dHIK6xEd6_ioDelDcPPg" message="A Result Observation SHALL contain exactly one value." base_Property="_gX1x4K6xEd6_ioDelDcPPg"/>
 </xmi:XMI>

@@ -58,5 +58,6 @@
       <entry eClass="PayersSection" id="2.16.840.1.113883.10.20.1.9" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="PurposeSection" id="2.16.840.1.113883.10.20.1.13" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="PurposeActivity" id="2.16.840.1.113883.10.20.1.30" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="VitalSignsOrganizer" id="2.16.840.1.113883.10.20.1.35" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
    </extension>
 </plugin>

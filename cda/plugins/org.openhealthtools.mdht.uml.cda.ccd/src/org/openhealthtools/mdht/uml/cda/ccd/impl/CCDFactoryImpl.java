@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.openhealthtools.mdht.uml.cda.ccd.*;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
@@ -148,6 +149,7 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.PAYERS_SECTION: return createPayersSection();
 			case CCDPackage.PURPOSE_SECTION: return createPurposeSection();
 			case CCDPackage.PURPOSE_ACTIVITY: return createPurposeActivity();
+			case CCDPackage.VITAL_SIGNS_ORGANIZER: return createVitalSignsOrganizer();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -561,6 +563,16 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public PurposeActivity createPurposeActivity() {
 		PurposeActivityImpl purposeActivity = new PurposeActivityImpl();
 		return purposeActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VitalSignsOrganizer createVitalSignsOrganizer() {
+		VitalSignsOrganizerImpl vitalSignsOrganizer = new VitalSignsOrganizerImpl();
+		return vitalSignsOrganizer;
 	}
 
 	/**

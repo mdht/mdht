@@ -26,6 +26,7 @@ import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
+import org.openhealthtools.mdht.uml.cda.ccd.*;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
@@ -293,6 +294,10 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePurposeActivity(PurposeActivity object) {
 				return createPurposeActivityAdapter();
+			}
+			@Override
+			public Adapter caseVitalSignsOrganizer(VitalSignsOrganizer object) {
+				return createVitalSignsOrganizerAdapter();
 			}
 			@Override
 			public Adapter caseSection(Section object) {
@@ -925,6 +930,20 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPurposeActivityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer <em>Vital Signs Organizer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer
+	 * @generated
+	 */
+	public Adapter createVitalSignsOrganizerAdapter() {
 		return null;
 	}
 

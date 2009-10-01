@@ -305,11 +305,39 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultOrganizer/ResultOrganizer_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultOrganizer/ResultOrganizer_templateId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ResultOrganizer/ResultOrganizer_moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultOrganizer/ResultOrganizer_moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultOrganizer/ResultOrganizer_moodCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ResultOrganizer/ResultOrganizer_id">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultOrganizer/ResultOrganizer_id/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultOrganizer/ResultOrganizer_id/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ResultOrganizer/ResultOrganizer_resultObservation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultOrganizer/ResultOrganizer_resultObservation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultOrganizer/ResultOrganizer_resultObservation/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ResultObservation">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ResultObservation/ResultObservation_templateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultObservation/ResultObservation_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultObservation/ResultObservation_templateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ResultObservation/ResultObservation_moodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultObservation/ResultObservation_moodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultObservation/ResultObservation_moodCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ResultObservation/ResultObservation_id">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultObservation/ResultObservation_id/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultObservation/ResultObservation_id/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ResultObservation/ResultObservation_effectiveTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultObservation/ResultObservation_effectiveTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultObservation/ResultObservation_effectiveTime/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ResultObservation/ResultObservation_value">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultObservation/ResultObservation_value/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultObservation/ResultObservation_value/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//SocialHistorySection">
@@ -487,6 +515,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultsSection/ResultsSection_title/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultsSection/ResultsSection_title/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ResultsSection/ResultsSection_resultOrganizer">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultsSection/ResultsSection_resultOrganizer/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ResultsSection/ResultsSection_resultOrganizer/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//MedicationSeriesNumberObservation">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicationSeriesNumberObservation/MedicationSeriesNumberObservation_templateId">
@@ -552,6 +584,18 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//VitalSignsSection/VitalSignsSection_templateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//VitalSignsSection/VitalSignsSection_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//VitalSignsSection/VitalSignsSection_templateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//VitalSignsSection/VitalSignsSection_code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//VitalSignsSection/VitalSignsSection_code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//VitalSignsSection/VitalSignsSection_code/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//VitalSignsSection/VitalSignsSection_title">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//VitalSignsSection/VitalSignsSection_title/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//VitalSignsSection/VitalSignsSection_title/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//VitalSignsSection/VitalSignsSection_vitalSignsOrganizer">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//VitalSignsSection/VitalSignsSection_vitalSignsOrganizer/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//VitalSignsSection/VitalSignsSection_vitalSignsOrganizer/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//MedicalEquipmentSection">
@@ -624,6 +668,12 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PurposeActivity/PurposeActivity_statusCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PurposeActivity/PurposeActivity_statusCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PurposeActivity/PurposeActivity_statusCode/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//VitalSignsOrganizer">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//VitalSignsOrganizer/VitalSignsOrganizer_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//VitalSignsOrganizer/VitalSignsOrganizer_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//VitalSignsOrganizer/VitalSignsOrganizer_templateId/context"/>
       </genOperations>
     </genClasses>
   </genPackages>

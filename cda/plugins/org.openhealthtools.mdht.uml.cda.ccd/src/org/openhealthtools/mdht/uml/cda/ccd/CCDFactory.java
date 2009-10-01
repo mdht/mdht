@@ -401,6 +401,15 @@ public interface CCDFactory extends EFactory {
 	PurposeActivity createPurposeActivity();
 
 	/**
+	 * Returns a new object of class '<em>Vital Signs Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vital Signs Organizer</em>'.
+	 * @generated
+	 */
+	VitalSignsOrganizer createVitalSignsOrganizer();
+
+	/**
 	 * Returns a new object of class '<em>Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
