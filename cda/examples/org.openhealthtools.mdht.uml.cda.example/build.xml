@@ -11,7 +11,8 @@
 	<property name="modelPackagePrefix" value="Example"/>
 	<property name="cdaPluginPath" location="${basedir}/../org.openhealthtools.mdht.uml.cda"/>
 
-	<target name="rename">
+	<target name="refactor">
+		<!-- Refactor UML models -->
 		<replace file="model/example.emx" token="example" value="${modelName}"/>
 		<replace file="model/example.emx" token="Example" value="${modelPackagePrefix}"/>
 		<move file="model/example.emx" tofile="model/${modelName}.emx"/>
@@ -24,6 +25,7 @@
 		<replace file="model/example.uml" token="Example" value="${modelPackagePrefix}"/>
 		<move file="model/example.uml" tofile="model/${modelName}.uml"/>
 		
+		<!-- Refactor EMF models -->
 		<replace file="model/example_Ecore.uml" token="example" value="${modelName}"/>
 		<replace file="model/example_Ecore.uml" token="Example" value="${modelPackagePrefix}"/>
 		<move file="model/example_Ecore.uml" tofile="model/${modelName}_Ecore.uml"/>
@@ -36,12 +38,14 @@
 		<replace file="model/example.genmodel" token="Example" value="${modelPackagePrefix}"/>
 		<move file="model/example.genmodel" tofile="model/${modelName}.genmodel"/>
 		
+		<!-- Refactor plugin manifest files -->
 		<replace file="META-INF/manifest.mf" token="example" value="${modelName}"/>
 		<replace file="META-INF/manifest.mf" token="Example" value="${modelPackagePrefix}"/>
 		
 		<replace file="plugin.xml" token="example" value="${modelName}"/>
 		<replace file="plugin.xml" token="Example" value="${modelPackagePrefix}"/>
 		
+		<!-- Refactor Java source code -->
 		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/impl" includes="*.java" token="example" value="${modelName}"/>
 		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/impl" includes="*.java" token="Example" value="${modelPackagePrefix}"/>
 		<move file="src/org/openhealthtools/mdht/uml/cda/example/impl" tofile="src/org/openhealthtools/mdht/uml/cda/example/impl">
@@ -59,12 +63,19 @@
 
 		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/util" includes="*.java" token="example" value="${modelName}"/>
 		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/util" includes="*.java" token="Example" value="${modelPackagePrefix}"/>
+		<move file="src/org/openhealthtools/mdht/uml/cda/example/util" tofile="src/org/openhealthtools/mdht/uml/cda/example/util">
+			<mapper type="glob" from="Example*.java" to="${modelPackagePrefix}*.java"/>
+		</move>
 		<move file="src/org/openhealthtools/mdht/uml/cda/example/util" tofile="src/org/openhealthtools/mdht/uml/cda/${modelName}/util"/>
 
 		<replace dir="src/org/openhealthtools/mdht/uml/cda/example" includes="*.java" token="example" value="${modelName}"/>
 		<replace dir="src/org/openhealthtools/mdht/uml/cda/example" includes="*.java" token="Example" value="${modelPackagePrefix}"/>
+		<move file="src/org/openhealthtools/mdht/uml/cda/example" tofile="src/org/openhealthtools/mdht/uml/cda/example">
+			<mapper type="glob" from="Example*.java" to="${modelPackagePrefix}*.java"/>
+		</move>
 		<move file="src/org/openhealthtools/mdht/uml/cda/example" tofile="src/org/openhealthtools/mdht/uml/cda/${modelName}"/>
 		
+		<!-- Refresh local workspace -->
 		<eclipse.refreshLocal resource="org.openhealthtools.mdht.uml.cda.${modelName}" depth="infinite" />
 	</target>
 	
