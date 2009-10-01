@@ -10,7 +10,6 @@
  *     
  * $Id$
  *******************************************************************************/
-/*
 package org.openhealthtools.mdht.uml.cda.example.tests;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -62,4 +61,3 @@ public class Main {
 		}
 	}
 }
-*/
