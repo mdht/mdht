@@ -63,6 +63,26 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_L9yGgK7HEd6_ioDelDcPPg" name="VitalSignsSection">
+      <ownedRule xmi:id="_hrcTgK7MEd6_ioDelDcPPg" name="HITSPVitalSignsSection_vitalSigns" constrainedElement="_L9yGgK7HEd6_ioDelDcPPg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_hrc6kK7MEd6_ioDelDcPPg">
+          <language>OCL</language>
+          <body>self.entry-&gt;exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::IHEVitalSignsOrganizer) and&#13;
+entry.organizer.component.observation-&gt;exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_VeaIMK7HEd6_ioDelDcPPg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_5k1R8K4FEd6_ioDelDcPPg?ihe/CodedVitalSignsSection?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dobt4K7IEd6_ioDelDcPPg" name="VitalSign">
+      <generalization xmi:id="_g9_UcK7IEd6_ioDelDcPPg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_LriUcK4NEd6_ioDelDcPPg?ihe/VitalSignObservation?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_K4Lk0K7REd6_ioDelDcPPg" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -85,4 +105,7 @@
   <Default:Documentation xmi:id="_aq9jUHrXEd68l9lQ-TLEBQ" base_Comment="_aq5R4HrXEd68l9lQ-TLEBQ"/>
   <CDA:CodegenSupport xmi:id="_lVjhYJyPEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" packageName="hitsp" prefix="HITSP" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
   <CDA:PropertyValidation xmi:id="_JvJwoJyQEd6BO7rW3XxHIA" message="The Condition problem name shall be recorded in the text entry by recording a &lt;reference&gt; where the value attribute points to the narrative text containing the name of the problem." base_Property="_Kp7UYIwJEd6B6JSUB00H7g"/>
+  <CDA:CDATemplate xmi:id="_jNa14K7HEd6_ioDelDcPPg" base_Class="_L9yGgK7HEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.119" assigningAuthorityName="HITSP"/>
+  <CDA:CDATemplate xmi:id="_j4cTYK7IEd6_ioDelDcPPg" base_Class="_dobt4K7IEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.14" assigningAuthorityName="HITSP"/>
+  <CDA:ConstraintValidation xmi:id="_AKv5IK7OEd6_ioDelDcPPg" message="HITSP vital signs information elements SHALL be contained in a conforming IHE Vital Signs Organizer element within a HITSP Vital Signs Section." base_Constraint="_hrcTgK7MEd6_ioDelDcPPg"/>
 </xmi:XMI>

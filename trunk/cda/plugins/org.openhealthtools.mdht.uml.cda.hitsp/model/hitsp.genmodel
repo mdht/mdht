@@ -56,5 +56,17 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//PatientSummary/createProblemListSection"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//PatientSummary/createMedicationsSection"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//VitalSignsSection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//VitalSignsSection/HITSPVitalSignsSection_vitalSigns">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//VitalSignsSection/HITSPVitalSignsSection_vitalSigns/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//VitalSignsSection/HITSPVitalSignsSection_vitalSigns/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//VitalSign">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//VitalSign/VitalSign_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//VitalSign/VitalSign_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//VitalSign/VitalSign_templateId/context"/>
+      </genOperations>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
