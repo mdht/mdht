@@ -167,6 +167,42 @@ public interface IHEFactory extends EFactory {
 	CombinationMedication createCombinationMedication();
 
 	/**
+	 * Returns a new object of class '<em>Vital Signs Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vital Signs Section</em>'.
+	 * @generated
+	 */
+	VitalSignsSection createVitalSignsSection();
+
+	/**
+	 * Returns a new object of class '<em>Coded Vital Signs Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Coded Vital Signs Section</em>'.
+	 * @generated
+	 */
+	CodedVitalSignsSection createCodedVitalSignsSection();
+
+	/**
+	 * Returns a new object of class '<em>Vital Sign Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vital Sign Observation</em>'.
+	 * @generated
+	 */
+	VitalSignObservation createVitalSignObservation();
+
+	/**
+	 * Returns a new object of class '<em>Vital Signs Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vital Signs Organizer</em>'.
+	 * @generated
+	 */
+	VitalSignsOrganizer createVitalSignsOrganizer();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -90,6 +90,10 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.SPLIT_DOSING: return createSplitDosing();
 			case IHEPackage.CONDITIONAL_DOSING: return createConditionalDosing();
 			case IHEPackage.COMBINATION_MEDICATION: return createCombinationMedication();
+			case IHEPackage.VITAL_SIGNS_SECTION: return createVitalSignsSection();
+			case IHEPackage.CODED_VITAL_SIGNS_SECTION: return createCodedVitalSignsSection();
+			case IHEPackage.VITAL_SIGN_OBSERVATION: return createVitalSignObservation();
+			case IHEPackage.VITAL_SIGNS_ORGANIZER: return createVitalSignsOrganizer();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -243,6 +247,46 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public CombinationMedication createCombinationMedication() {
 		CombinationMedicationImpl combinationMedication = new CombinationMedicationImpl();
 		return combinationMedication;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VitalSignsSection createVitalSignsSection() {
+		VitalSignsSectionImpl vitalSignsSection = new VitalSignsSectionImpl();
+		return vitalSignsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CodedVitalSignsSection createCodedVitalSignsSection() {
+		CodedVitalSignsSectionImpl codedVitalSignsSection = new CodedVitalSignsSectionImpl();
+		return codedVitalSignsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VitalSignObservation createVitalSignObservation() {
+		VitalSignObservationImpl vitalSignObservation = new VitalSignObservationImpl();
+		return vitalSignObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VitalSignsOrganizer createVitalSignsOrganizer() {
+		VitalSignsOrganizerImpl vitalSignsOrganizer = new VitalSignsOrganizerImpl();
+		return vitalSignsOrganizer;
 	}
 
 	/**

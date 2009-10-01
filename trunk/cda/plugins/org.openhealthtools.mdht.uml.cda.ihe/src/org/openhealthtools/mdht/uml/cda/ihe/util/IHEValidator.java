@@ -14,6 +14,7 @@ package org.openhealthtools.mdht.uml.cda.ihe.util;
 
 import java.util.Map;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
@@ -243,12 +244,124 @@ public class IHEValidator extends EObjectValidator {
 	public static final int COMBINATION_MEDICATION__COMBINATION_MEDICATION_TEMPLATE_ID = 23;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Signs Section template Id' of 'Vital Signs Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEMPLATE_ID = 24;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Coded Vital Signs Section template Id' of 'Coded Vital Signs Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CODED_VITAL_SIGNS_SECTION__CODED_VITAL_SIGNS_SECTION_TEMPLATE_ID = 25;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Coded Vital Signs Section vital Signs Organizer' of 'Coded Vital Signs Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CODED_VITAL_SIGNS_SECTION__CODED_VITAL_SIGNS_SECTION_VITAL_SIGNS_ORGANIZER = 26;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Sign Observation template Id' of 'Vital Sign Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_TEMPLATE_ID = 27;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Sign Observation code' of 'Vital Sign Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_CODE = 28;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Sign Observation value' of 'Vital Sign Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_VALUE = 29;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Simple Observation template Id' of 'Simple Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_TEMPLATE_ID = 30;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Simple Observation id' of 'Simple Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_ID = 31;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Simple Observation status Code' of 'Simple Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_STATUS_CODE = 32;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Signs Organizer code' of 'Vital Signs Organizer'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_CODE = 33;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Signs Organizer status Code' of 'Vital Signs Organizer'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_STATUS_CODE = 34;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Signs Organizer effective Time' of 'Vital Signs Organizer'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_EFFECTIVE_TIME = 35;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Signs Organizer vital Sign Observation' of 'Vital Signs Organizer'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_VITAL_SIGN_OBSERVATION = 36;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Signs Organizer template Id' of 'Vital Signs Organizer'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_TEMPLATE_ID = 37;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 23;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 37;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -327,6 +440,16 @@ public class IHEValidator extends EObjectValidator {
 				return validateConditionalDosing((ConditionalDosing)value, diagnostics, context);
 			case IHEPackage.COMBINATION_MEDICATION:
 				return validateCombinationMedication((CombinationMedication)value, diagnostics, context);
+			case IHEPackage.VITAL_SIGNS_SECTION:
+				return validateVitalSignsSection((VitalSignsSection)value, diagnostics, context);
+			case IHEPackage.CODED_VITAL_SIGNS_SECTION:
+				return validateCodedVitalSignsSection((CodedVitalSignsSection)value, diagnostics, context);
+			case IHEPackage.VITAL_SIGN_OBSERVATION:
+				return validateVitalSignObservation((VitalSignObservation)value, diagnostics, context);
+			case IHEPackage.SIMPLE_OBSERVATION:
+				return validateSimpleObservation((SimpleObservation)value, diagnostics, context);
+			case IHEPackage.VITAL_SIGNS_ORGANIZER:
+				return validateVitalSignsOrganizer((VitalSignsOrganizer)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -909,6 +1032,294 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateCombinationMedication_CombinationMedication_templateId(CombinationMedication combinationMedication, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return combinationMedication.CombinationMedication_templateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignsSection(VitalSignsSection vitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsSection_VitalSignsSection_templateId(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_VitalSignsSection_code(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_VitalSignsSection_title(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_VitalSignsSection_vitalSignsOrganizer(vitalSignsSection, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the VitalSignsSection_templateId constraint of '<em>Vital Signs Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignsSection_VitalSignsSection_templateId(VitalSignsSection vitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "VitalSignsSection_templateId", getObjectLabel(vitalSignsSection, context) },
+						 new Object[] { vitalSignsSection },
+						 context));
+			}
+			return false;
+		}
+		return ccdValidator.validateVitalSignsSection_VitalSignsSection_templateId(vitalSignsSection, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCodedVitalSignsSection(CodedVitalSignsSection codedVitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsSection_VitalSignsSection_templateId(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_VitalSignsSection_code(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_VitalSignsSection_title(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_VitalSignsSection_vitalSignsOrganizer(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCodedVitalSignsSection_CodedVitalSignsSection_templateId(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCodedVitalSignsSection_CodedVitalSignsSection_vitalSignsOrganizer(codedVitalSignsSection, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the CodedVitalSignsSection_templateId constraint of '<em>Coded Vital Signs Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCodedVitalSignsSection_CodedVitalSignsSection_templateId(CodedVitalSignsSection codedVitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return codedVitalSignsSection.CodedVitalSignsSection_templateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the CodedVitalSignsSection_vitalSignsOrganizer constraint of '<em>Coded Vital Signs Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCodedVitalSignsSection_CodedVitalSignsSection_vitalSignsOrganizer(CodedVitalSignsSection codedVitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return codedVitalSignsSection.CodedVitalSignsSection_vitalSignsOrganizer(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignObservation(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_ResultObservation_templateId(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_ResultObservation_moodCode(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_ResultObservation_id(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_ResultObservation_effectiveTime(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_ResultObservation_value(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignObservation_VitalSignObservation_templateId(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignObservation_VitalSignObservation_code(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignObservation_VitalSignObservation_value(vitalSignObservation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the VitalSignObservation_templateId constraint of '<em>Vital Sign Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignObservation_VitalSignObservation_templateId(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignObservation.VitalSignObservation_templateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the VitalSignObservation_code constraint of '<em>Vital Sign Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignObservation_VitalSignObservation_code(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignObservation.VitalSignObservation_code(diagnostics, context);
+	}
+
+	/**
+	 * Validates the VitalSignObservation_value constraint of '<em>Vital Sign Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignObservation_VitalSignObservation_value(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignObservation.VitalSignObservation_value(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSimpleObservation(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(simpleObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(simpleObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(simpleObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(simpleObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(simpleObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(simpleObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(simpleObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSimpleObservation_SimpleObservation_templateId(simpleObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSimpleObservation_SimpleObservation_id(simpleObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSimpleObservation_SimpleObservation_statusCode(simpleObservation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the SimpleObservation_templateId constraint of '<em>Simple Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSimpleObservation_SimpleObservation_templateId(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return simpleObservation.SimpleObservation_templateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the SimpleObservation_id constraint of '<em>Simple Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSimpleObservation_SimpleObservation_id(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return simpleObservation.SimpleObservation_id(diagnostics, context);
+	}
+
+	/**
+	 * Validates the SimpleObservation_statusCode constraint of '<em>Simple Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSimpleObservation_SimpleObservation_statusCode(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return simpleObservation.SimpleObservation_statusCode(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignsOrganizer(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_ResultOrganizer_templateId(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_ResultOrganizer_moodCode(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_ResultOrganizer_id(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_ResultOrganizer_resultObservation(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_VitalSignsOrganizer_templateId(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_VitalSignsOrganizer_code(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_VitalSignsOrganizer_statusCode(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_VitalSignsOrganizer_effectiveTime(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_VitalSignsOrganizer_vitalSignObservation(vitalSignsOrganizer, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the VitalSignsOrganizer_code constraint of '<em>Vital Signs Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignsOrganizer_VitalSignsOrganizer_code(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.VitalSignsOrganizer_code(diagnostics, context);
+	}
+
+	/**
+	 * Validates the VitalSignsOrganizer_statusCode constraint of '<em>Vital Signs Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignsOrganizer_VitalSignsOrganizer_statusCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.VitalSignsOrganizer_statusCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the VitalSignsOrganizer_effectiveTime constraint of '<em>Vital Signs Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignsOrganizer_VitalSignsOrganizer_effectiveTime(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.VitalSignsOrganizer_effectiveTime(diagnostics, context);
+	}
+
+	/**
+	 * Validates the VitalSignsOrganizer_vitalSignObservation constraint of '<em>Vital Signs Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignsOrganizer_VitalSignsOrganizer_vitalSignObservation(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.VitalSignsOrganizer_vitalSignObservation(diagnostics, context);
+	}
+
+	/**
+	 * Validates the VitalSignsOrganizer_templateId constraint of '<em>Vital Signs Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignsOrganizer_VitalSignsOrganizer_templateId(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "VitalSignsOrganizer_templateId", getObjectLabel(vitalSignsOrganizer, context) },
+						 new Object[] { vitalSignsOrganizer },
+						 context));
+			}
+			return false;
+		}
+		return ccdValidator.validateVitalSignsOrganizer_VitalSignsOrganizer_templateId(vitalSignsOrganizer, diagnostics, context);
 	}
 
 	/**
