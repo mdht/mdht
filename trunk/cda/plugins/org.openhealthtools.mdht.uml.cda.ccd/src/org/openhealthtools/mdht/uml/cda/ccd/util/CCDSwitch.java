@@ -26,6 +26,7 @@ import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
+import org.openhealthtools.mdht.uml.cda.ccd.*;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
@@ -440,6 +441,14 @@ public class CCDSwitch<T> {
 				PurposeActivity purposeActivity = (PurposeActivity)theEObject;
 				T result = casePurposeActivity(purposeActivity);
 				if (result == null) result = caseAct(purposeActivity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.VITAL_SIGNS_ORGANIZER: {
+				VitalSignsOrganizer vitalSignsOrganizer = (VitalSignsOrganizer)theEObject;
+				T result = caseVitalSignsOrganizer(vitalSignsOrganizer);
+				if (result == null) result = caseResultOrganizer(vitalSignsOrganizer);
+				if (result == null) result = caseOrganizer(vitalSignsOrganizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1059,6 +1068,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T casePurposeActivity(PurposeActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vital Signs Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vital Signs Organizer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVitalSignsOrganizer(VitalSignsOrganizer object) {
 		return null;
 	}
 

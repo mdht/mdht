@@ -77,6 +77,15 @@ public class ResultsSectionImpl extends SectionImpl implements ResultsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ResultsSection_resultOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultsSectionOperations.ResultsSection_resultOrganizer(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ResultsSection init() {
     		CDAUtil.init(this);
     		return this;

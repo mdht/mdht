@@ -59,6 +59,33 @@ public class VitalSignsSectionImpl extends SectionImpl implements VitalSignsSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean VitalSignsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsSectionOperations.VitalSignsSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean VitalSignsSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsSectionOperations.VitalSignsSection_title(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean VitalSignsSection_vitalSignsOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsSectionOperations.VitalSignsSection_vitalSignsOrganizer(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public VitalSignsSection init() {
     		CDAUtil.init(this);
     		return this;

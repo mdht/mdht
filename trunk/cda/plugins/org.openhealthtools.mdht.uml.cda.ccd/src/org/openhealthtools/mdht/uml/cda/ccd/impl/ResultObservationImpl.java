@@ -59,6 +59,42 @@ public class ResultObservationImpl extends ObservationImpl implements ResultObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ResultObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultObservationOperations.ResultObservation_moodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ResultObservation_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultObservationOperations.ResultObservation_id(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ResultObservation_effectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultObservationOperations.ResultObservation_effectiveTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ResultObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultObservationOperations.ResultObservation_value(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ResultObservation init() {
     		CDAUtil.init(this);
     		return this;

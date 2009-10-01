@@ -31,6 +31,7 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultsSection#ResultsSection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Results Section template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultsSection#ResultsSection_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Results Section code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultsSection#ResultsSection_title(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Results Section title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultsSection#ResultsSection_resultOrganizer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Results Section result Organizer</em>}</li>
  * </ul>
  * </p>
  *
@@ -210,10 +211,67 @@ public class ResultsSectionOperations extends SectionOperations {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
-						(Diagnostic.ERROR,
+						(Diagnostic.WARNING,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.RESULTS_SECTION__RESULTS_SECTION_TITLE,
 						 CCDPlugin.INSTANCE.getString("ResultsSection_title"),
+						 new Object [] { resultsSection }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #ResultsSection_resultOrganizer(ResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Results Section result Organizer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ResultsSection_resultOrganizer(ResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ccd::ResultOrganizer))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #ResultsSection_resultOrganizer(ResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Results Section result Organizer</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ResultsSection_resultOrganizer(ResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ccd::ResultOrganizer))
+	 * @param resultsSection The receiving '<em><b>Results Section</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean ResultsSection_resultOrganizer(ResultsSection resultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.RESULTS_SECTION);
+			try {
+				RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(RESULTS_SECTION_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(resultsSection)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.WARNING,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.RESULTS_SECTION__RESULTS_SECTION_RESULT_ORGANIZER,
+						 CCDPlugin.INSTANCE.getString("ResultsSection_resultOrganizer"),
 						 new Object [] { resultsSection }));
 			}
 			return false;
