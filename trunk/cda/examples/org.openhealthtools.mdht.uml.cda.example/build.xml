@@ -75,8 +75,9 @@
 		</move>
 		<move file="src/org/openhealthtools/mdht/uml/cda/example" tofile="src/org/openhealthtools/mdht/uml/cda/${modelName}"/>
 		
-		<!-- Refresh local workspace -->
-		<eclipse.refreshLocal resource="org.openhealthtools.mdht.uml.cda.${modelName}" depth="infinite" />
+		<!-- Refresh local workspace and rebuild -->
+		<eclipse.refreshLocal resource="org.openhealthtools.mdht.uml.cda.${modelName}" depth="infinite"/>
+		<eclipse.incrementalBuild project="org.openhealthtools.mdht.uml.cda.${modelName}" kind="clean"/>
 	</target>
 	
 	<macrodef name="convertEcorePaths">
