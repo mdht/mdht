@@ -20,6 +20,14 @@
 		<replace file="model/example-diagrams.emx" token="Example" value="${modelPackagePrefix}"/>
 		<move file="model/example-diagrams.emx" tofile="model/${modelName}-diagrams.emx"/>
 
+		<replace file="model/example.uml" token="example" value="${modelName}"/>
+		<replace file="model/example.uml" token="Example" value="${modelPackagePrefix}"/>
+		<move file="model/example.uml" tofile="model/${modelName}.uml"/>
+		
+		<replace file="model/example_Ecore.uml" token="example" value="${modelName}"/>
+		<replace file="model/example_Ecore.uml" token="Example" value="${modelPackagePrefix}"/>
+		<move file="model/example_Ecore.uml" tofile="model/${modelName}_Ecore.uml"/>
+		
 		<replace file="model/example.ecore" token="example" value="${modelName}"/>
 		<replace file="model/example.ecore" token="Example" value="${modelPackagePrefix}"/>
 		<move file="model/example.ecore" tofile="model/${modelName}.ecore"/>
@@ -34,10 +42,26 @@
 		<replace file="plugin.xml" token="example" value="${modelName}"/>
 		<replace file="plugin.xml" token="Example" value="${modelPackagePrefix}"/>
 		
-		<replace file="src/org/openhealthtools/mdht/uml/cda/example/tests/Main.java" token="example" value="${modelName}"/>
-		<replace file="src/org/openhealthtools/mdht/uml/cda/example/tests/Main.java" token="Example" value="${modelPackagePrefix}"/>
+		<replace dir="src/org/openhealthtools/mdht/uml/cda/example" includes="*.java" token="example" value="${modelName}"/>
+		<replace dir="src/org/openhealthtools/mdht/uml/cda/example" includes="*.java" token="Example" value="${modelPackagePrefix}"/>
+		<move file="src/org/openhealthtools/mdht/uml/cda/example" tofile="src/org/openhealthtools/mdht/uml/cda/${modelName}"/>
+		
+		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/impl" includes="*.java" token="example" value="${modelName}"/>
+		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/impl" includes="*.java" token="Example" value="${modelPackagePrefix}"/>
+		<move file="src/org/openhealthtools/mdht/uml/cda/example/impl" tofile="src/org/openhealthtools/mdht/uml/cda/${modelName}/impl"/>
+		
+		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/operations" includes="*.java" token="example" value="${modelName}"/>
+		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/operations" includes="*.java" token="Example" value="${modelPackagePrefix}"/>
+		<move file="src/org/openhealthtools/mdht/uml/cda/example/operations" tofile="src/org/openhealthtools/mdht/uml/cda/${modelName}/operations"/>
+		
+		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/tests" includes="*.java" token="example" value="${modelName}"/>
+		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/tests" includes="*.java" token="Example" value="${modelPackagePrefix}"/>
 		<move file="src/org/openhealthtools/mdht/uml/cda/example/tests" tofile="src/org/openhealthtools/mdht/uml/cda/${modelName}/tests"/>
-		<delete dir="src/org/openhealthtools/mdht/uml/cda/example/tests"/>
+
+		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/util" includes="*.java" token="example" value="${modelName}"/>
+		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/util" includes="*.java" token="Example" value="${modelPackagePrefix}"/>
+		<move file="src/org/openhealthtools/mdht/uml/cda/example/util" tofile="src/org/openhealthtools/mdht/uml/cda/${modelName}/util"/>
+		
 		<delete dir="src/org/openhealthtools/mdht/uml/cda/example"/>
 		
 		<eclipse.refreshLocal resource="org.openhealthtools.mdht.uml.cda.${modelName}" depth="infinite" />
