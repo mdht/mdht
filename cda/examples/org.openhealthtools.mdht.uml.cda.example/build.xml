@@ -69,8 +69,8 @@
 		<move file="src/org/openhealthtools/mdht/uml/cda/example" tofile="src/org/openhealthtools/mdht/uml/cda/${modelName}"/>
 		
 		<!-- Refactor plugin manifest files -->
-		<replace file="META-INF/manifest.mf" token="example" value="${modelName}"/>
-		<replace file="META-INF/manifest.mf" token="Example" value="${modelPackagePrefix}"/>
+		<replace file="META-INF/MANIFEST.MF" token="example" value="${modelName}"/>
+		<replace file="META-INF/MANIFEST.MF" token="Example" value="${modelPackagePrefix}"/>
 		
 		<replace file="plugin.xml" token="example" value="${modelName}"/>
 		<replace file="plugin.xml" token="Example" value="${modelPackagePrefix}"/>
