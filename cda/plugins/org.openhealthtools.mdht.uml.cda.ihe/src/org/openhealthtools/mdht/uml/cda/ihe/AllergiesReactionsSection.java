@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getAllergiesReactionsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.13' constraints.validation.error='AllergiesReactionsSection_templateId AllergiesReactionsSection_code' code.displayName='Allergies, adverse reactions, alerts' code.codeSystem='2.16.840.1.113883.6.1' code.code='48765-2'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='AllergiesReactionsSection_templateId AllergiesReactionsSection_code' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.13' code.displayName='Allergies, adverse reactions, alerts' code.codeSystem='2.16.840.1.113883.6.1' code.code='48765-2'"
  *        annotation="uml2.alias Allergies\040and\040Other\040Adverse\040Reactions\040Section='null'"
  * @generated
  */
