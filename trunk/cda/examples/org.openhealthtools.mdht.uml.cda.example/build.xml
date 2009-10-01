@@ -77,7 +77,7 @@
 		
 		<!-- Refresh local workspace and rebuild -->
 		<eclipse.refreshLocal resource="org.openhealthtools.mdht.uml.cda.${modelName}" depth="infinite"/>
-		<eclipse.incrementalBuild project="org.openhealthtools.mdht.uml.cda.${modelName}" kind="clean"/>
+		<eclipse.incrementalBuild project="org.openhealthtools.mdht.uml.cda.${modelName}" kind="full"/>
 	</target>
 	
 	<macrodef name="convertEcorePaths">
