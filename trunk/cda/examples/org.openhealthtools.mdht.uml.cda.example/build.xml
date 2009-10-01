@@ -75,7 +75,7 @@
 		<replace file="plugin.xml" token="example" value="${modelName}"/>
 		<replace file="plugin.xml" token="Example" value="${modelPackagePrefix}"/>
 		
-		<!-- Refresh local workspace and rebuild-->
+		<!-- Refresh local workspace and rebuild -->
 		<eclipse.refreshLocal resource="org.openhealthtools.mdht.uml.cda.${modelName}" depth="infinite"/>
 		<eclipse.incrementalBuild project="org.openhealthtools.mdht.uml.cda.${modelName}" kind="full"/>
 	</target>
