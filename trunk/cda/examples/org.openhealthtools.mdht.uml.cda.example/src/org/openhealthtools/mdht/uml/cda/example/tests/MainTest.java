@@ -10,7 +10,6 @@
  *     
  * $Id$
  *******************************************************************************/
-/*
 package org.openhealthtools.mdht.uml.cda.example.tests;
 
 import org.junit.Test;
@@ -21,4 +20,3 @@ public class MainTest {
 		Main.main(null);
 	}
 }
-*/
