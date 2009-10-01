@@ -25,11 +25,11 @@
 		<replace file="model/example.uml" token="Example" value="${modelPackagePrefix}"/>
 		<move file="model/example.uml" tofile="model/${modelName}.uml"/>
 		
-		<!-- Refactor EMF models -->
 		<replace file="model/example_Ecore.uml" token="example" value="${modelName}"/>
 		<replace file="model/example_Ecore.uml" token="Example" value="${modelPackagePrefix}"/>
 		<move file="model/example_Ecore.uml" tofile="model/${modelName}_Ecore.uml"/>
 		
+		<!-- Refactor EMF models -->
 		<replace file="model/example.ecore" token="example" value="${modelName}"/>
 		<replace file="model/example.ecore" token="Example" value="${modelPackagePrefix}"/>
 		<move file="model/example.ecore" tofile="model/${modelName}.ecore"/>
@@ -75,13 +75,13 @@
 		<replace file="plugin.xml" token="example" value="${modelName}"/>
 		<replace file="plugin.xml" token="Example" value="${modelPackagePrefix}"/>
 		
-		<!-- Refresh local workspace -->
+		<!-- Refresh local workspace and rebuild-->
 		<eclipse.refreshLocal resource="org.openhealthtools.mdht.uml.cda.${modelName}" depth="infinite"/>
+		<eclipse.incrementalBuild project="org.openhealthtools.mdht.uml.cda.${modelName}" kind="full"/>
 	</target>
 	
 	<macrodef name="convertEcorePaths">
 		<attribute name="filePath"/>
-		
 		<sequential>
 			<!-- must include a replace statement for each imported template model. -->
 			<replace file="@{filePath}" token="/ccd.uml" value="/ccd_Ecore.uml"/>
