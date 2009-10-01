@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.openhealthtools.mdht.uml.cda.hitsp.*;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
@@ -66,6 +67,8 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.MEDICATION: return createMedication();
 			case HITSPPackage.CONDITION: return createCondition();
 			case HITSPPackage.PATIENT_SUMMARY: return createPatientSummary();
+			case HITSPPackage.VITAL_SIGNS_SECTION: return createVitalSignsSection();
+			case HITSPPackage.VITAL_SIGN: return createVitalSign();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -109,6 +112,26 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 	public PatientSummary createPatientSummary() {
 		PatientSummaryImpl patientSummary = new PatientSummaryImpl();
 		return patientSummary;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VitalSignsSection createVitalSignsSection() {
+		VitalSignsSectionImpl vitalSignsSection = new VitalSignsSectionImpl();
+		return vitalSignsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VitalSign createVitalSign() {
+		VitalSignImpl vitalSign = new VitalSignImpl();
+		return vitalSign;
 	}
 
 	/**

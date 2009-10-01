@@ -62,6 +62,24 @@ public interface HITSPFactory extends EFactory {
 	PatientSummary createPatientSummary();
 
 	/**
+	 * Returns a new object of class '<em>Vital Signs Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vital Signs Section</em>'.
+	 * @generated
+	 */
+	VitalSignsSection createVitalSignsSection();
+
+	/**
+	 * Returns a new object of class '<em>Vital Sign</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vital Sign</em>'.
+	 * @generated
+	 */
+	VitalSign createVitalSign();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

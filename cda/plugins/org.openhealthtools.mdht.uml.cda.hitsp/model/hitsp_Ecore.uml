@@ -26,8 +26,8 @@
     by the patient. See the HL7 Continuity of Care Document Section 3.8 for constraints applicable to this module.&lt;/font>&#xD;
 &lt;/p></body>
       </ownedComment>
-      <ownedRule xmi:id="_gskh0KSXEd6GV_nuWxgyJA" name="AllergyDrugSensitivity_templateId" constrainedElement="_vB4EUGEIEd6bFO5yxRh3Nw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_gskh0aSXEd6GV_nuWxgyJA">
+      <ownedRule xmi:id="_1VxSoK7YEd6_ioDelDcPPg" name="AllergyDrugSensitivity_templateId" constrainedElement="_vB4EUGEIEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_1VxSoa7YEd6_ioDelDcPPg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.3.88.11.83.6')</body>
         </specification>
@@ -37,8 +37,8 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_IjIO0DxbEd6JwqSGecoePg" name="Medication">
-      <ownedRule xmi:id="_gs7uMKSXEd6GV_nuWxgyJA" name="Medication_templateId" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_gs7uMaSXEd6GV_nuWxgyJA">
+      <ownedRule xmi:id="_1WH38K7YEd6_ioDelDcPPg" name="Medication_templateId" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_1WH38a7YEd6_ioDelDcPPg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.3.88.11.83.8')</body>
         </specification>
@@ -48,14 +48,14 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="Condition">
-      <ownedRule xmi:id="_gtRscKSXEd6GV_nuWxgyJA" name="Condition_templateId" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_gtRscaSXEd6GV_nuWxgyJA">
+      <ownedRule xmi:id="_1Wd2MK7YEd6_ioDelDcPPg" name="Condition_templateId" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_1Wd2Ma7YEd6_ioDelDcPPg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.3.88.11.83.7')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_gt7MsKSXEd6GV_nuWxgyJA" name="Condition_text" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_gt7MsaSXEd6GV_nuWxgyJA">
+      <ownedRule xmi:id="_1XHWcK7YEd6_ioDelDcPPg" name="Condition_text" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_1XHWca7YEd6_ioDelDcPPg">
           <language>OCL</language>
           <body>not self.text.oclIsUndefined()</body>
         </specification>
@@ -70,8 +70,8 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="PatientSummary">
-      <ownedRule xmi:id="_gt7zwaSXEd6GV_nuWxgyJA" name="PatientSummary_templateId" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_gt7zwqSXEd6GV_nuWxgyJA">
+      <ownedRule xmi:id="_1XH9ga7YEd6_ioDelDcPPg" name="PatientSummary_templateId" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_1XIkkK7YEd6_ioDelDcPPg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.3.88.11.32.1')</body>
         </specification>
@@ -90,6 +90,34 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_L9yGgK7HEd6_ioDelDcPPg" name="VitalSignsSection">
+      <ownedRule xmi:id="_hrcTgK7MEd6_ioDelDcPPg" name="HITSPVitalSignsSection_vitalSigns" constrainedElement="_L9yGgK7HEd6_ioDelDcPPg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_hrc6kK7MEd6_ioDelDcPPg">
+          <language>OCL</language>
+          <body>self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::IHEVitalSignsOrganizer) and&#xD;&#xA;entry.organizer.component.observation->exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_1Xd7wK7YEd6_ioDelDcPPg" name="VitalSignsSection_templateId" constrainedElement="_L9yGgK7HEd6_ioDelDcPPg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_1Xd7wa7YEd6_ioDelDcPPg">
+          <language>OCL</language>
+          <body>self.hasTemplateId('2.16.840.1.113883.3.88.11.83.119')</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_VeaIMK7HEd6_ioDelDcPPg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe_Ecore.uml#_5k1R8K4FEd6_ioDelDcPPg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dobt4K7IEd6_ioDelDcPPg" name="VitalSign">
+      <ownedRule xmi:id="_1X1vMK7YEd6_ioDelDcPPg" name="VitalSign_templateId" constrainedElement="_dobt4K7IEd6_ioDelDcPPg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_1X2WQK7YEd6_ioDelDcPPg">
+          <language>OCL</language>
+          <body>self.hasTemplateId('2.16.840.1.113883.3.88.11.83.14')</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_g9_UcK7IEd6_ioDelDcPPg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe_Ecore.uml#_LriUcK4NEd6_ioDelDcPPg"/>
+      </generalization>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -102,8 +130,8 @@
       </eAnnotations>
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
-    <profileApplication xmi:id="_gnKdYKSXEd6GV_nuWxgyJA">
-      <eAnnotations xmi:id="_gnKdYaSXEd6GV_nuWxgyJA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <profileApplication xmi:id="_1NdEIK7YEd6_ioDelDcPPg">
+      <eAnnotations xmi:id="_1NdEIa7YEd6_ioDelDcPPg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
       </eAnnotations>
       <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
@@ -114,17 +142,26 @@
   <CDA:CDATemplate xmi:id="_vuEXwHcIEd6ZeOKq_2_a9g" base_Class="_IjIO0DxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.8" assigningAuthorityName="HITSP C83"/>
   <CDA:CDATemplate xmi:id="_wcI-sHcIEd6ZeOKq_2_a9g" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.32.1" assigningAuthorityName="HITSP C32"/>
   <Default:Documentation xmi:id="_aq9jUHrXEd68l9lQ-TLEBQ" base_Comment="_aq5R4HrXEd68l9lQ-TLEBQ"/>
-  <Ecore:EPackage xmi:id="_gp8roKSXEd6GV_nuWxgyJA" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="hitsp" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" basePackage="org.openhealthtools.mdht.uml.cda" prefix="HITSP"/>
-  <Ecore:EClass xmi:id="_gslI4KSXEd6GV_nuWxgyJA" base_Class="_vB4EUGEIEd6bFO5yxRh3Nw">
+  <CDA:CDATemplate xmi:id="_jNa14K7HEd6_ioDelDcPPg" base_Class="_L9yGgK7HEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.119" assigningAuthorityName="HITSP"/>
+  <CDA:CDATemplate xmi:id="_j4cTYK7IEd6_ioDelDcPPg" base_Class="_dobt4K7IEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.14" assigningAuthorityName="HITSP"/>
+  <CDA:ConstraintValidation xmi:id="_AKv5IK7OEd6_ioDelDcPPg" message="HITSP vital signs information elements SHALL be contained in a conforming IHE Vital Signs Organizer element within a HITSP Vital Signs Section." base_Constraint="_hrcTgK7MEd6_ioDelDcPPg"/>
+  <Ecore:EPackage xmi:id="_1QWAEK7YEd6_ioDelDcPPg" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="hitsp" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" basePackage="org.openhealthtools.mdht.uml.cda" prefix="HITSP"/>
+  <Ecore:EClass xmi:id="_1VxSoq7YEd6_ioDelDcPPg" base_Class="_vB4EUGEIEd6bFO5yxRh3Nw">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='AllergyDrugSensitivity_templateId' templateId.root='2.16.840.1.113883.3.88.11.83.6'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_gs7uMqSXEd6GV_nuWxgyJA" base_Class="_IjIO0DxbEd6JwqSGecoePg">
+  <Ecore:EClass xmi:id="_1WH38q7YEd6_ioDelDcPPg" base_Class="_IjIO0DxbEd6JwqSGecoePg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.8' constraints.validation.error='Medication_templateId'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_gtSTgKSXEd6GV_nuWxgyJA" base_Class="_GgvgUDxbEd6JwqSGecoePg">
+  <Ecore:EClass xmi:id="_1WedQK7YEd6_ioDelDcPPg" base_Class="_GgvgUDxbEd6JwqSGecoePg">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='Condition_templateId Condition_text' templateId.root='2.16.840.1.113883.3.88.11.83.7'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_gt7zwKSXEd6GV_nuWxgyJA" xmlName="ClinicalDocument" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw">
+  <Ecore:EClass xmi:id="_1XH9gK7YEd6_ioDelDcPPg" xmlName="ClinicalDocument" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.32.1' constraints.validation.error='PatientSummary_templateId'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_1Xd7wq7YEd6_ioDelDcPPg" base_Class="_L9yGgK7HEd6_ioDelDcPPg">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='VitalSignsSection_templateId HITSPVitalSignsSection_vitalSigns' templateId.root='2.16.840.1.113883.3.88.11.83.119'</annotation>
+  </Ecore:EClass>
+  <Ecore:EClass xmi:id="_1X2WQa7YEd6_ioDelDcPPg" base_Class="_dobt4K7IEd6_ioDelDcPPg">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.14' constraints.validation.error='VitalSign_templateId'</annotation>
   </Ecore:EClass>
 </xmi:XMI>

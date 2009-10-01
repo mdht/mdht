@@ -19,6 +19,8 @@ import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
+import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
+import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 
@@ -56,6 +58,20 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * @generated
 	 */
 	private EClass patientSummaryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass vitalSignsSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass vitalSignEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -178,6 +194,24 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getVitalSignsSection() {
+		return vitalSignsSectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getVitalSign() {
+		return vitalSignEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public HITSPFactory getHITSPFactory() {
 		return (HITSPFactory)getEFactoryInstance();
 	}
@@ -208,6 +242,10 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		conditionEClass = createEClass(CONDITION);
 
 		patientSummaryEClass = createEClass(PATIENT_SUMMARY);
+
+		vitalSignsSectionEClass = createEClass(VITAL_SIGNS_SECTION);
+
+		vitalSignEClass = createEClass(VITAL_SIGN);
 	}
 
 	/**
@@ -246,6 +284,8 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		medicationEClass.getESuperTypes().add(theIHEPackage.getMedication());
 		conditionEClass.getESuperTypes().add(theIHEPackage.getProblemConcernEntry());
 		patientSummaryEClass.getESuperTypes().add(theCCDPackage.getContinuityOfCareDocument());
+		vitalSignsSectionEClass.getESuperTypes().add(theIHEPackage.getCodedVitalSignsSection());
+		vitalSignEClass.getESuperTypes().add(theIHEPackage.getVitalSignObservation());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(allergyDrugSensitivityEClass, AllergyDrugSensitivity.class, "AllergyDrugSensitivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -298,6 +338,28 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 
 		addEOperation(patientSummaryEClass, theIHEPackage.getMedicationsSection(), "createMedicationsSection", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		initEClass(vitalSignsSectionEClass, VitalSignsSection.class, "VitalSignsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "HITSPVitalSignsSection_vitalSigns", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(vitalSignEClass, VitalSign.class, "VitalSign", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(vitalSignEClass, ecorePackage.getEBoolean(), "VitalSign_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -347,6 +409,20 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.3.88.11.32.1",
 			 "constraints.validation.error", "PatientSummary_templateId"
+		   });						
+		addAnnotation
+		  (vitalSignsSectionEClass, 
+		   source, 
+		   new String[] {
+			 "constraints.validation.error", "VitalSignsSection_templateId HITSPVitalSignsSection_vitalSigns",
+			 "templateId.root", "2.16.840.1.113883.3.88.11.83.119"
+		   });							
+		addAnnotation
+		  (vitalSignEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "2.16.840.1.113883.3.88.11.83.14",
+			 "constraints.validation.error", "VitalSign_templateId"
 		   });				
 	}
 
@@ -364,7 +440,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   new String[] {
 			 "Allergies and Drug Sensitivities", null,
 			 "Allergy and Drug Sensitivity", null
-		   });																					
+		   });																																
 	}
 
 	/**
@@ -379,7 +455,12 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		  (medicationEClass, 
 		   source, 
 		   new String[] {
-		   });															
+		   });																		
+		addAnnotation
+		  (vitalSignsSectionEClass, 
+		   source, 
+		   new String[] {
+		   });									
 	}
 
 	/**
@@ -395,7 +476,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });					
+		   });																
 	}
 
 } //HITSPPackageImpl
