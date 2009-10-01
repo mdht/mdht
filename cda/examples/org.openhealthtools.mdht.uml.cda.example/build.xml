@@ -39,6 +39,7 @@
 		<replace file="src/org/openhealthtools/mdht/uml/cda/example/tests/Main.java" token="Example" value="${modelPackagePrefix}"/>
 		<move file="src/org/openhealthtools/mdht/uml/cda/example/tests" tofile="src/org/openhealthtools/mdht/uml/cda/${modelName}/tests"/>
 		<delete dir="src/org/openhealthtools/mdht/uml/cda/example/tests"/>
+		<delete dir="src/org/openhealthtools/mdht/uml/cda/example"/>
 		
 		<eclipse.refreshLocal resource="org.openhealthtools.mdht.uml.cda.${modelName}" depth="infinite" />
 	</target>
