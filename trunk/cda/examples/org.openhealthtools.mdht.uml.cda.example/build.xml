@@ -44,6 +44,9 @@
 		
 		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/impl" includes="*.java" token="example" value="${modelName}"/>
 		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/impl" includes="*.java" token="Example" value="${modelPackagePrefix}"/>
+		<move file="src/org/openhealthtools/mdht/uml/cda/example/impl" tofile="src/org/openhealthtools/mdht/uml/cda/example/impl">
+			<mapper type="glob" from="Example*.java" to="${modelPackagePrefix}*.java"/>
+		</move>
 		<move file="src/org/openhealthtools/mdht/uml/cda/example/impl" tofile="src/org/openhealthtools/mdht/uml/cda/${modelName}/impl"/>
 		
 		<replace dir="src/org/openhealthtools/mdht/uml/cda/example/operations" includes="*.java" token="example" value="${modelName}"/>
