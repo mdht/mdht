@@ -6,7 +6,6 @@
  http://www.eclipse.org/legal/epl-v10.html
 -->
 <project name="CDA Model Transformation"  basedir="." default="all">
-
 	<!-- Change the value of 'modelName' and 'modelPackagePrefix' when you rename the example.emx model -->
 	<property name="modelName" value="example"/>
 	<property name="modelPackagePrefix" value="Example"/>
