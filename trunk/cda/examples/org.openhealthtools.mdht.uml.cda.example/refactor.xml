@@ -79,8 +79,10 @@
 			<fileset dir="src/org/openhealthtools" excludes="**/*" />
 			<fileset dir="src/org" excludes="**/*" />
 		</delete>
-		
+
+		<!--
 		<delete file="refactor.xml" />
+		-->
 
 		<eclipse.refreshLocal resource="${package}" depth="infinite" />
 		<eclipse.incrementalBuild project="${package}" kind="full" />
