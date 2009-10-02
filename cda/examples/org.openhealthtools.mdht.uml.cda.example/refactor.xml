@@ -6,10 +6,35 @@
  http://www.eclipse.org/legal/epl-v10.html
 -->
 <project name="Refactor Example CDA project" basedir="." default="refactor">
+	<property name="basePackage" value="org.openhealthtools.mdht.uml.cda" />
+	<property name="nsURI" value="http://www.openhealthtools.org/mdht/uml/cda/example" />
 	<property name="packageName" value="example" />
 	<property name="prefix" value="Example" />
 
 	<target name="refactor">
+		<script language="javascript">
+			<![CDATA[
+			var package = project.getProperty("basePackage") + "." + project.getProperty("packageName");
+			project.setProperty("package", package);
+			var srcPath = "src/" + package.replace(".", "/");
+			project.setProperty("srcPath", srcPath);
+			]]>
+		</script>
+
+		<replace dir="${basedir}" token="org.openhealthtools.mdht.uml.cda.example" value="${package}">
+			<include name="model/*.*" />
+			<include name="src/**/*.java" />
+			<include name="META-INF/MANIFEST.MF" />
+			<include name="plugin.xml" />
+		</replace>
+
+		<replace dir="${basedir}" token="http://www.openhealthtools.org/mdht/uml/cda/example" value="${nsURI}">
+			<include name="model/*.*" />
+			<include name="src/**/*.java" />
+			<include name="META-INF/MANIFEST.MF" />
+			<include name="plugin.xml" />
+		</replace>
+
 		<replace dir="${basedir}" token="example" value="${packageName}">
 			<include name="model/*.*" />
 			<include name="src/**/*.java" />
@@ -22,7 +47,6 @@
 			<include name="src/**/*.java" />
 			<include name="META-INF/MANIFEST.MF" />
 			<include name="plugin.xml" />
-			<include name="plugin.properties" />
 		</replace>
 
 		<move file="model" tofile="model">
@@ -49,9 +73,9 @@
 			<mapper type="glob" from="Example*.java" to="${prefix}*.java" />
 		</move>
 
-		<move file="src/org/openhealthtools/mdht/uml/cda/example" tofile="src/org/openhealthtools/mdht/uml/cda/${packageName}" />
+		<move file="src/org/openhealthtools/mdht/uml/cda/example" tofile="${srcPath}" />
 
-		<eclipse.refreshLocal resource="org.openhealthtools.mdht.uml.cda.${packageName}" depth="infinite" />
-		<eclipse.incrementalBuild project="org.openhealthtools.mdht.uml.cda.${packageName}" kind="full" />
+		<eclipse.refreshLocal resource="${package}" depth="infinite" />
+		<eclipse.incrementalBuild project="${package}" kind="full" />
 	</target>
 </project>
