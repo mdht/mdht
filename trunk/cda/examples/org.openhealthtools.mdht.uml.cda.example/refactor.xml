@@ -10,11 +10,11 @@
 	<property name="nsURI" value="http://www.openhealthtools.org/mdht/uml/cda/example" />
 	<property name="packageName" value="example" />
 	<property name="prefix" value="Example" />
+	<property name="package" value="${basePackage}.${packageName}" />
 
 	<target name="refactor">
 		<script language="javascript">
 			<![CDATA[
-			project.setProperty("package", project.getProperty("basePackage") + "." + project.getProperty("packageName"));
 			project.setProperty("srcPath", "src/" + project.getProperty("package").replace(".", "/"));
 			]]>
 		</script>
