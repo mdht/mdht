@@ -14,10 +14,8 @@
 	<target name="refactor">
 		<script language="javascript">
 			<![CDATA[
-			var package = project.getProperty("basePackage") + "." + project.getProperty("packageName");
-			project.setProperty("package", package);
-			var srcPath = "src/" + package.replace(".", "/");
-			project.setProperty("srcPath", srcPath);
+			project.setProperty("package", project.getProperty("basePackage") + "." + project.getProperty("packageName"));
+			project.setProperty("srcPath", "src/" + project.getProperty("package").replace(".", "/"));
 			]]>
 		</script>
 
@@ -74,6 +72,7 @@
 		</move>
 
 		<move file="src/org/openhealthtools/mdht/uml/cda/example" tofile="${srcPath}" />
+		<delete dir="src/org/openhealthtools/mdht/uml/cda" />
 
 		<eclipse.refreshLocal resource="${package}" depth="infinite" />
 		<eclipse.incrementalBuild project="${package}" kind="full" />
