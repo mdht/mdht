@@ -14,8 +14,10 @@
 	<target name="refactor">
 		<script language="javascript">
 			<![CDATA[
-			project.setProperty("package", project.getProperty("basePackage") + "." + project.getProperty("packageName"));
-			project.setProperty("srcPath", "src/" + project.getProperty("package").replace(".", "/"));
+			var package_ = project.getProperty("basePackage") + "." + project.getProperty("packageName");
+			var srcPath = "src/" + package_.replace(".", "/");
+			project.setProperty("package", package_);
+			project.setProperty("srcPath", srcPath);
 			]]>
 		</script>
 
