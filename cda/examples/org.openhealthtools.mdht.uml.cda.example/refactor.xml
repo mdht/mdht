@@ -72,7 +72,14 @@
 		</move>
 
 		<move file="src/org/openhealthtools/mdht/uml/cda/example" tofile="${srcPath}" />
-
+		<delete includeemptydirs="true">
+			<fileset dir="src/org/openhealthtools/mdht/uml/cda" excludes="**/*" />
+			<fileset dir="src/org/openhealthtools/mdht/uml" excludes="**/*" />
+			<fileset dir="src/org/openhealthtools/mdht" excludes="**/*" />
+			<fileset dir="src/org/openhealthtools" excludes="**/*" />
+			<fileset dir="src/org" excludes="**/*" />
+		</delete>
+		
 		<eclipse.refreshLocal resource="${package}" depth="infinite" />
 		<eclipse.incrementalBuild project="${package}" kind="full" />
 	</target>
