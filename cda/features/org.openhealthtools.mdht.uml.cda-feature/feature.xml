@@ -21,6 +21,10 @@
       <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/cda/updates"/>
    </url>
 
+   <includes
+         id="org.openhealthtools.mdht.uml"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="org.eclipse.core.runtime" version="3.4.0" match="greaterOrEqual"/>
    </requires>
@@ -48,20 +52,6 @@
 
    <plugin
          id="org.openhealthtools.mdht.uml.cda.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.openhealthtools.mdht.uml.common"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.openhealthtools.mdht.uml.common.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

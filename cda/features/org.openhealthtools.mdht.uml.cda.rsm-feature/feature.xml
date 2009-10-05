@@ -21,6 +21,10 @@
       <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/cda/updates"/>
    </url>
 
+   <includes
+         id="org.openhealthtools.mdht.uml.cda"
+         version="0.0.0"/>
+
    <requires>
       <import feature="org.openhealthtools.mdht.uml.cda" version="0.1.0" match="greaterOrEqual"/>
    </requires>
