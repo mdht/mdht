@@ -50,7 +50,7 @@
 <!-- MDHT HDF Categories -->
    <category-def name="org.openhealthtools.mdht.uml.hdf.papyrus.cat" label="UML Modeling Platform for HL7 Development Framework (HDF); Papyrus Edition"/>
 
-   <category-def name="org.openhealthtools.mdht.uml.hdf.rsm.cat" label="UML Modeling Platform for HL7 Development Framework (HDF); Rational Software Modeler Edition"/>
+   <category-def name="org.openhealthtools.mdht.uml.hdf.rsm.cat" label="UML Modeling Platform for HL7 Development Framework (HDF); RSM Edition"/>
 
 
 <!-- MDHT CDA Categories -->
