@@ -41,6 +41,7 @@ import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.ParameterableElement;
+import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.TemplateBinding;
@@ -784,5 +785,41 @@ public static List<String> getAllParentNames(Classifier classifier) {
 		}
 		return params;
 	}
+	
+	public static Profile getAppliedProfile(String uri, Element element) {
+		if (element == null)
+			return null;
+
+		try {
+			ResourceSet resourceSet = element.eResource().getResourceSet();
+			Resource hdfProfileResource = resourceSet.getResource(URI.createURI(uri), true);
+
+			if (hdfProfileResource != null) {
+				// is profile loaded into this resource set?
+				Profile hdfProfile = (Profile) EcoreUtil.getObjectByType(hdfProfileResource.getContents(), UMLPackage.eINSTANCE.getProfile());
+
+				if (hdfProfile == null) {
+					return null;
+				}
+				try {
+					Package pkg = element.getNearestPackage();
+					while (pkg != null) {
+						if (pkg.isProfileApplied(hdfProfile))
+							return hdfProfile;
+						else
+							pkg = pkg.getNestingPackage();
+					}
+				} catch (IllegalArgumentException e) {
+					 Logger.logException(e);
+				}
+			}
+
+		} catch (WrappedException we) {
+			 Logger.logException(we);
+		}
+
+		return null;
+	}
+	
 
 }
