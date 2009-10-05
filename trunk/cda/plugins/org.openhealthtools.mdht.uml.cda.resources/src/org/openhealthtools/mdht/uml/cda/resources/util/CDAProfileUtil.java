@@ -92,4 +92,12 @@ public class CDAProfileUtil {
 		}
 	}
 	
+	
+	/**
+	 * Check all containing packages for applied profile.
+	 */
+	public static Profile getAppliedCDAProfile(Element element) {		
+		return org.openhealthtools.mdht.uml.common.util.UMLUtil.getAppliedProfile(CDAResource.CDA_PROFILE_URI,element);
+				
+	}
 }

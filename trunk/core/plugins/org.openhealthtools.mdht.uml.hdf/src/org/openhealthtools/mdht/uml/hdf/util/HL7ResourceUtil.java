@@ -87,43 +87,15 @@ public class HL7ResourceUtil {
 	/**
 	 * Check all containing packages for applied profile.
 	 */
+	
+	/**
+	 * Check all containing packages for applied profile.
+	 */
 	public static Profile getAppliedHDFProfile(Element element) {
-		if (element == null)
-			return null;
-		
-		try {
-			ResourceSet resourceSet = element.eResource().getResourceSet();
-			Resource hdfProfileResource = resourceSet.getResource(URI
-					.createURI(HL7Resource.HDF_PROFILE_URI), true);
-			
-			if (hdfProfileResource != null) {
-				// is profile loaded into this resource set?
-				Profile hdfProfile = (Profile) EcoreUtil.getObjectByType(
-						hdfProfileResource.getContents(), 
-						UMLPackage.eINSTANCE.getProfile());
-
-				if (hdfProfile == null) {
-					return null;
-				}
-				try {
-					Package pkg = element.getNearestPackage();
-					while (pkg != null) {
-						if (pkg.isProfileApplied(hdfProfile))
-							return hdfProfile;
-						else
-							pkg = pkg.getNestingPackage();
-					}
-				} catch (IllegalArgumentException e) {
-					Logger.logException(e);
-				}
-			}
-
-		} catch (WrappedException we) {
-			Logger.logException(we);
-		}
-		
-		return null;
+		return UMLUtil.getAppliedProfile(HL7Resource.HDF_PROFILE_URI, element);
 	}
+	
+	
 	
 	public static Profile applyHDFProfile(Package pkg) {
 		Profile hdfProfile = null;
@@ -173,46 +145,15 @@ public class HL7ResourceUtil {
 		return stereotype;
 	}
 
+
+	
 	/**
 	 * Check all containing packages for applied profile.
 	 */
 	public static Profile getAppliedRIMProfile(Element element) {
-		if (element == null)
-			return null;
-		
-		try {
-			ResourceSet resourceSet = element.eResource().getResourceSet();
-			Resource rimProfileResource = resourceSet.getResource(URI
-					.createURI(HL7Resource.RIM_PROFILE_URI), true);
-			
-			if (rimProfileResource != null) {
-				// is profile loaded into this resource set?
-				Profile rimProfile = (Profile) EcoreUtil.getObjectByType(
-						rimProfileResource.getContents(), 
-						UMLPackage.eINSTANCE.getProfile());
-
-				if (rimProfile == null) {
-					return null;
-				}
-				try {
-					Package pkg = element.getNearestPackage();
-					while (pkg != null) {
-						if (pkg.isProfileApplied(rimProfile))
-							return rimProfile;
-						else
-							pkg = pkg.getNestingPackage();
-					}
-				} catch (IllegalArgumentException e) {
-					Logger.logException(e);
-				}
-			}
-
-		} catch (WrappedException we) {
-			Logger.logException(we);
-		}
-		
-		return null;
+		return UMLUtil.getAppliedProfile(HL7Resource.RIM_PROFILE_URI, element);
 	}
+	
 	
 	public static Profile applyRIMProfile(Package pkg) {
 		Profile rimProfile = null;

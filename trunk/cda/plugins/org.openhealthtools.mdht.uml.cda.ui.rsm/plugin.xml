@@ -72,4 +72,11 @@
       </propertySections>
    </extension> 
  
+ 
+ <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="org.openhealthtools.mdht.uml.cda.ui.rsm.providers.RSMCustomUMLParserProvider">
+         <Priority name="High"/>
+      </ParserProvider>
+   </extension>
+   
 </plugin>

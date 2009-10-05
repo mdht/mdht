@@ -12,8 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.providers;
 
-import java.util.List;
-
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
@@ -27,13 +25,12 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.ui.parsers.PropertyParser;
-
 /**
  * This class provides custom edit parsers for HL7 class diagrams.
  * It applies only to models with the HDF profile applied.
  */
-public class CustomUMLParserProvider extends AbstractProvider 
-implements IParserProvider {
+public abstract class  CustomUMLParserProvider extends AbstractProvider implements IParserProvider 
+{
 
 	public CustomUMLParserProvider() {
 		super();
@@ -62,13 +59,11 @@ implements IParserProvider {
 				//TODO check user preference setting
 				EObject eObject = (EObject)hint.getAdapter(EObject.class);
 				if (eObject instanceof Property) {
-					Profile cdaProfile = CDAProfileUtil.getCDAProfile(eObject.eResource().getResourceSet());
-					if (cdaProfile != null) {
-						List<Profile> appliedProfiles = ((Property)eObject).getNearestPackage().getAllAppliedProfiles();
-						if (appliedProfiles.contains(cdaProfile)) {
-							return getParser(hint) != null;
-						}
+					Profile profile = CDAProfileUtil.getAppliedCDAProfile((Property)eObject);
+					if (profile != null) {
+						return getParser(hint) != null;
 					}
+					
 				}
 			}
 		}
@@ -79,11 +74,8 @@ implements IParserProvider {
 		return new PropertyParser();
 	}
 
-	protected IParser getParser(String visualID) {
-		if ("".equals(visualID)) {
-			return getCustomPropertyParser();
-		}
 
-		return null;
-	}
+	
+	abstract protected IParser getParser(String visualID) ;
+	
 }
