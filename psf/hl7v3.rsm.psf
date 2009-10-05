@@ -2,7 +2,7 @@
 <psf version="2.0">
 <provider id="org.eclipse.team.svn.core.svnnature">
 <project reference="1.0.1,https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling/trunk/plugins/org.openhealthtools.mdht.uml.hdf.tooling.rsm,org.openhealthtools.mdht.uml.hdf.tooling.rsm,50ed13f645a1001e14da99e0bacdad0e;https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling;https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling;branches;tags;trunk;true;d741674c-8e10-494e-886e-40d66df07069;https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling;;false;;;22"/>
-<project reference="1.0.1,https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling/trunk/plugins/org.openhealthtools.mdht.uml.hdf.ui.rsm,org.openhealthtools.mdht.uml.hdf.ui.rsm,50ed13f645a1001e14da99e0bacdad0e;https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling;https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling;branches;tags;trunk;true;d741674c-8e10-494e-886e-40d66df07069;https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling;;false;;;22"/>
+<project reference="1.0.1,https://mdht.projects.openhealthtools.org/svn/mdht/trunk/core/plugins/org.openhealthtools.mdht.uml.hdf.ui.rsm,org.openhealthtools.mdht.uml.hdf.ui.rsm,d050ce98b956001e122ba6e09691b0ac;https://mdht.projects.openhealthtools.org/svn/mdht;https://mdht.projects.openhealthtools.org/svn/mdht;branches;tags;trunk;true;d2ad734f-166c-0410-b8fe-fe8d3035ea49;https://mdht.projects.openhealthtools.org/svn/mdht;;false;;;22"/>
 </provider>
 <workingSets editPageId="org.eclipse.ui.resourceWorkingSetPage" label="HL7.UML.RSM" name="HL7.UML.RSM">
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.openhealthtools.mdht.uml.hdf.tooling.rsm" type="4"/>
