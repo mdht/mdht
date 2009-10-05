@@ -14,7 +14,7 @@
       </generalization>
       <ownedAttribute xmi:id="_v0rX0aX0Ed6JRdOhEffuGA" name="mySection" visibility="private" type="_Ucv9baX0Ed6JRdOhEffuGA" association="_v0rX0KX0Ed6JRdOhEffuGA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v0rX06X0Ed6JRdOhEffuGA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v0rX0qX0Ed6JRdOhEffuGA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v0rX0qX0Ed6JRdOhEffuGA" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ucv9YKX0Ed6JRdOhEffuGA" name="MyActivity">
