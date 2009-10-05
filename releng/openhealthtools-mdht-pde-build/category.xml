@@ -3,8 +3,6 @@
 
 <!-- XML Modeling Feature -->
    <feature url="features/net.sourceforge.xmlmodeling.uml.xsd_3.0.0.qualifier.jar" id="net.sourceforge.xmlmodeling.uml.xsd" version="3.0.0.qualifier">
-     <category name="org.openhealthtools.mdht.uml.cda.papyrus.cat"/>
-     <category name="org.openhealthtools.mdht.uml.cda.rsm.cat"/>
      <category name="org.openhealthtools.mdht.uml.hdf.papyrus.cat"/>
      <category name="org.openhealthtools.mdht.uml.hdf.rsm.cat"/>
    </feature>
