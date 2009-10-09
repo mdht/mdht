@@ -39,11 +39,11 @@
 
 		<!--- Temporary Feature Target for XML Modeling Feature -->
 
-		<ant antfile="${genericTargets}" target="${target}">
+<!--		<ant antfile="${genericTargets}" target="${target}">
 			<property name="type" value="feature" />
 			<property name="id" value="net.sourceforge.xmlmodeling.uml.xsd" />
 		</ant>
-
+-->
 
 		<!-- MDHT UML Features -->
 
@@ -54,7 +54,7 @@
 
 
 		<!-- MDHT HDF Features -->
-
+<!--
 		<ant antfile="${genericTargets}" target="${target}">
 			<property name="type" value="feature" />
 			<property name="id" value="org.openhealthtools.mdht.uml.hdf" />
@@ -72,6 +72,7 @@
 			<property name="id" value="org.openhealthtools.mdht.uml.papyrus" />
 		</ant>
 
+-->
 
 		<!-- MDHT CDA Features -->
  		<ant antfile="${genericTargets}" target="${target}">
