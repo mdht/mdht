@@ -1,0 +1,162 @@
+<project name="allElements Delegator">
+
+	<path id="antclasspath">
+		<pathelement path="/opt/IBM/SDPShared/plugins/org.junit_3.8.2.v20080602-1318/junit.jar" />
+	</path>
+
+
+	<path id="equinox.launcher.class.path">
+		<pathelement path="/home/seanmuir/build/org.eclipse.releng.basebuilder/plugins/org.eclipse.equinox.launcher.jar" />
+	</path>
+
+
+	<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpathref="antclasspath" />
+
+	<!-- ===================================================================== -->
+	<!-- Run a given ${target} on all elements being built                     -->
+	<!-- Replace element.id with the id of the top level element being built.    -->
+	<!-- If element.id does not exist in ${buildDirectory}/features/element.id   -->
+	<!-- or ${baseLocation}/features/element.id, then you must provide the       -->
+	<!-- location by setting the property "pluginPath"                           -->
+	<!-- Add on <ant> task for each top level element being built.             -->
+	<!-- ===================================================================== -->
+	<target name="allElementsDelegator">
+
+	
+   	<property name="test.classes.list" value="org.openhealthtools.mdht.uml.common.util.test"/>
+  
+
+<property name="library-file" value="/opt/IBM/SDPShared/plugins/org.eclipse.test_3.2.0/library.xml"/> 
+
+<property name="eclipse-home" value="/opt/IBM/SDP"/>
+
+<property name="junit-report-output" value="/home/seanmuir/build/releng"/>
+
+<property name="test-output" value="/home/seanmuir/build/releng/results.txt" />
+<property name="useEclipseExe" value="true" />
+
+
+
+		<!--- Temporary Feature Target for XML Modeling Feature -->
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="net.sourceforge.xmlmodeling.uml.xsd" />
+		</ant>
+
+
+		<!-- MDHT UML Features -->
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml" />
+		</ant>
+
+
+		<!-- MDHT HDF Features -->
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.hdf" />
+		</ant>
+
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.rsm" />
+		</ant>
+
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.papyrus" />
+		</ant>
+
+
+		<!-- MDHT CDA Features -->
+ 		<ant antfile="${genericTargets}" target="${target}">
+	 		<property name="type" value="feature" />
+	 		<property name="id" value="org.openhealthtools.mdht.uml.cda" />
+ 		</ant>
+
+		<ant antfile="${genericTargets}" target="${target}">
+	 		<property name="type" value="feature" />
+	 		<property name="id" value="org.openhealthtools.mdht.uml.cda.rsm" />
+ 		</ant>
+
+
+		<ant antfile="${genericTargets}" target="${target}">
+	 		<property name="type" value="feature" />
+	 		<property name="id" value="org.openhealthtools.mdht.uml.cda.papyrus" />
+ 		</ant>
+
+
+		<!-- MDHT Test Features -->
+<!--		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.test" />
+		</ant>
+-->
+
+	</target>
+
+
+	<target name="postBuild">
+
+	</target>
+
+
+
+
+	<!-- ===================================================================== -->
+	<!-- Targets to assemble the built elements for particular configurations  -->
+	<!-- These generally call the generated assemble scripts (named in         -->
+	<!-- ${assembleScriptName}) but may also add pre and post processing       -->
+	<!-- Add one target for each root element and each configuration           -->
+	<!-- Replace element.id with the id of the top level element being built   -->
+	<!-- ===================================================================== -->
+	<target name="assemble.net.sourceforge.xmlmodeling.uml.xsd">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.hdf">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.papyrus">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.rsm">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda">
+ 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+ 	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda.rsm">
+ 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+ 	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda.papyrus">
+ 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+ 	</target>
+
+
+<!--	<target name="assemble.org.openhealthtools.mdht.test">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+-->
+
+
+
+
+
+
+</project>
+
