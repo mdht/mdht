@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:version="2.0" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
+  <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="hitsp">
+    
+    <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
+      <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg?cda?"/>
+    </packageImport>
+    <packageImport xmi:id="_8zZJ4GD8Ed6bFO5yxRh3Nw">
+      <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_qQyD8jxVEd6JwqSGecoePg?ccd?"/>
+    </packageImport>
+    <packageImport xmi:id="_OBBEkGXAEd6Hk_bPOfEjYA">
+      <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_qQyD8jxVEd6JwqSGecoePg?ihe?"/>
+    </packageImport>
+    <packageImport xmi:id="_S49LUIwJEd6B6JSUB00H7g">
+      <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg?datatypes?"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vB4EUGEIEd6bFO5yxRh3Nw" name="AllergyDrugSensitivity">
+      <eAnnotations xmi:id="_Uy2V4HrWEd68l9lQ-TLEBQ" source="uml2.alias">
+        <details xmi:id="_Uy2V4XrWEd68l9lQ-TLEBQ" key="Allergies and Drug Sensitivities"/>
+      </eAnnotations>
+      <eAnnotations xmi:id="_Xmce4HrWEd68l9lQ-TLEBQ" source="uml2.alias">
+        <details xmi:id="_Xmce4XrWEd68l9lQ-TLEBQ" key="Allergy and Drug Sensitivity"/>
+      </eAnnotations>
+      <ownedComment xmi:id="_aq5R4HrXEd68l9lQ-TLEBQ" annotatedElement="_vB4EUGEIEd6bFO5yxRh3Nw">
+        <body>&lt;p&gt;&#13;
+    &lt;font size="2"&gt;This module contains the allergy or intolerance conditions and the associated adverse reactions suffered&#13;
+    by the patient. See the HL7 Continuity of Care Document Section 3.8 for constraints applicable to this module.&lt;/font&gt;&#13;
+&lt;/p&gt;</body>
+      </ownedComment>
+      <generalization xmi:id="_hsBnwHrWEd68l9lQ-TLEBQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_pOtQsHrDEd68l9lQ-TLEBQ?ihe/AllergyIntoleranceConcern?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_IjIO0DxbEd6JwqSGecoePg" name="Medication">
+      <generalization xmi:id="_w0bkkHrGEd68l9lQ-TLEBQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_sFGZUHGfEd6bf47ZOcft4w?ihe/Medication?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="Condition">
+      <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_wSnPAGaQEd6Hk_bPOfEjYA?ihe/ProblemConcernEntry?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_Kp7UYIwJEd6B6JSUB00H7g" name="text" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg?datatypes/ED?"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_wzkWAGdLEd6Hk_bPOfEjYA" name="createProblemEntry">
+        <ownedParameter xmi:id="_zxKvkGdLEd6Hk_bPOfEjYA" name="Parameter1" direction="return">
+          <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_3ZiEwGdIEd6Hk_bPOfEjYA?ihe/ProblemEntry?"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="PatientSummary">
+      <generalization xmi:id="_0EOJQKRmEd6t_4WfM070fA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_Ze7UsGESEd69D7zx7EkLMA?ccd/ContinuityOfCareDocument?"/>
+      </generalization>
+      <ownedOperation xmi:id="_C1Qp0GG6Ed6bFO5yxRh3Nw" name="createProblemListSection">
+        <ownedParameter xmi:id="_vMia4GdYEd6Hk_bPOfEjYA" name="Parameter1" direction="return">
+          <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_vz5koGGsEd6bFO5yxRh3Nw?ihe/ActiveProblemsSection?"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FdooAHopEd6WAZ28-5wkSg" name="createMedicationsSection">
+        <ownedParameter xmi:id="_H3ai0HopEd6WAZ28-5wkSg" name="Parameter1" direction="return">
+          <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_8YbB4HomEd6WAZ28-5wkSg?ihe/MedicationsSection?"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_L9yGgK7HEd6_ioDelDcPPg" name="VitalSignsSection">
+      <ownedRule xmi:id="_hrcTgK7MEd6_ioDelDcPPg" name="HITSPVitalSignsSection_vitalSigns" constrainedElement="_L9yGgK7HEd6_ioDelDcPPg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_hrc6kK7MEd6_ioDelDcPPg">
+          <language>OCL</language>
+          <body>self.entry-&gt;exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::IHEVitalSignsOrganizer) and&#13;
+entry.organizer.component.observation-&gt;exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_VeaIMK7HEd6_ioDelDcPPg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_5k1R8K4FEd6_ioDelDcPPg?ihe/CodedVitalSignsSection?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dobt4K7IEd6_ioDelDcPPg" name="VitalSign">
+      <generalization xmi:id="_g9_UcK7IEd6_ioDelDcPPg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_LriUcK4NEd6_ioDelDcPPg?ihe/VitalSignObservation?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_K4Lk0K7REd6_ioDelDcPPg" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
+      <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    
+    
+    <profileApplication xmi:id="_aMu68IwJEd6B6JSUB00H7g">
+      <eAnnotations xmi:id="_aMviAIwJEd6B6JSUB00H7g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+  </uml:Package>
+  <CDA:CDATemplate xmi:id="_t9ej4HcIEd6ZeOKq_2_a9g" base_Class="_vB4EUGEIEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.83.6" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_uxtdMHcIEd6ZeOKq_2_a9g" base_Class="_GgvgUDxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.7" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_vuEXwHcIEd6ZeOKq_2_a9g" base_Class="_IjIO0DxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.8" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_wcI-sHcIEd6ZeOKq_2_a9g" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.32.1" assigningAuthorityName="HITSP C32"/>
+  <Default:Documentation xmi:id="_aq9jUHrXEd68l9lQ-TLEBQ" base_Comment="_aq5R4HrXEd68l9lQ-TLEBQ"/>
+  <CDA:CodegenSupport xmi:id="_lVjhYJyPEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" packageName="hitsp" prefix="HITSP" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
+  <CDA:PropertyValidation xmi:id="_JvJwoJyQEd6BO7rW3XxHIA" message="The Condition problem name shall be recorded in the text entry by recording a &lt;reference&gt; where the value attribute points to the narrative text containing the name of the problem." base_Property="_Kp7UYIwJEd6B6JSUB00H7g"/>
+  <CDA:CDATemplate xmi:id="_jNa14K7HEd6_ioDelDcPPg" base_Class="_L9yGgK7HEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.119" assigningAuthorityName="HITSP"/>
+  <CDA:CDATemplate xmi:id="_j4cTYK7IEd6_ioDelDcPPg" base_Class="_dobt4K7IEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.14" assigningAuthorityName="HITSP"/>
+  <CDA:ConstraintValidation xmi:id="_AKv5IK7OEd6_ioDelDcPPg" message="HITSP vital signs information elements SHALL be contained in a conforming IHE Vital Signs Organizer element within a HITSP Vital Signs Section." base_Constraint="_hrcTgK7MEd6_ioDelDcPPg"/>
+</xmi:XMI>
