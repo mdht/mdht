@@ -79,11 +79,11 @@ public interface ResultOrganizer extends Organizer {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ResultObservation))
+	 * self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ccd::ResultObservation))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ResultObservation))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ccd::ResultObservation))'"
 	 * @generated
 	 */
 	boolean ResultOrganizer_resultObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
