@@ -83,8 +83,20 @@ public class TransformAssociation extends TransformAbstract {
 			body.append("section : cda::Section | section.oclIsKindOf(" + targetQName + "))");
 		} else {
 			// Section || Entry || { Act, Encounter, ... }
-			String associationEnd = "Section".equals(cdaSourceName) ? "entry" : "entryRelationship";
-			String variableDeclaration = "Section".equals(cdaSourceName) ? "entry : cda::Entry" : "entryRelationship : cda::EntryRelationship";
+//			String associationEnd = "Section".equals(cdaSourceName) ? "entry" : "entryRelationship";
+//			String variableDeclaration = "Section".equals(cdaSourceName) ? "entry : cda::Entry" : "entryRelationship : cda::EntryRelationship";
+			String associationEnd = null;
+			String variableDeclaration = null;
+			if ("Section".equals(cdaSourceName)) {
+				associationEnd = "entry";
+				variableDeclaration = "entry : cda::Entry";
+			} else if ("Organizer".equals(cdaSourceName)) {
+				associationEnd = "component";
+				variableDeclaration = "component : cda::Component4";
+			} else {
+				associationEnd = "entryRelationship";
+				variableDeclaration = "entryRelationship : cda::EntryRelationship";
+			}
 
 			body.append("self." + associationEnd + "->");
 			body.append((sourceProperty.getUpper() == 1) ? "one(" : "exists(");
