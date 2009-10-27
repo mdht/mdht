@@ -150,6 +150,18 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.PURPOSE_SECTION: return createPurposeSection();
 			case CCDPackage.PURPOSE_ACTIVITY: return createPurposeActivity();
 			case CCDPackage.VITAL_SIGNS_ORGANIZER: return createVitalSignsOrganizer();
+			case CCDPackage.ADVANCE_DIRECTIVE_OBSERVATION: return createAdvanceDirectiveObservation();
+			case CCDPackage.ADVANCE_DIRECTIVE_STATUS_OBSERVATION: return createAdvanceDirectiveStatusObservation();
+			case CCDPackage.ADVANCE_DIRECTIVE_VERIFICATION: return createAdvanceDirectiveVerification();
+			case CCDPackage.COVERAGE_ACTIVITY: return createCoverageActivity();
+			case CCDPackage.POLICY_ACTIVITY: return createPolicyActivity();
+			case CCDPackage.AUTHORIZATION_ACTIVITY: return createAuthorizationActivity();
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY: return createPlanOfCareActivity();
+			case CCDPackage.PROCEDURE_ACTIVITY: return createProcedureActivity();
+			case CCDPackage.PATIENT_INSTRUCTION: return createPatientInstruction();
+			case CCDPackage.FULFILLMENT_INSTRUCTION: return createFulfillmentInstruction();
+			case CCDPackage.FUNCTIONAL_STATUS_OBSERVATION: return createFunctionalStatusObservation();
+			case CCDPackage.PRODUCT_INSTANCE: return createProductInstance();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -573,6 +585,126 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public VitalSignsOrganizer createVitalSignsOrganizer() {
 		VitalSignsOrganizerImpl vitalSignsOrganizer = new VitalSignsOrganizerImpl();
 		return vitalSignsOrganizer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdvanceDirectiveObservation createAdvanceDirectiveObservation() {
+		AdvanceDirectiveObservationImpl advanceDirectiveObservation = new AdvanceDirectiveObservationImpl();
+		return advanceDirectiveObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdvanceDirectiveStatusObservation createAdvanceDirectiveStatusObservation() {
+		AdvanceDirectiveStatusObservationImpl advanceDirectiveStatusObservation = new AdvanceDirectiveStatusObservationImpl();
+		return advanceDirectiveStatusObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdvanceDirectiveVerification createAdvanceDirectiveVerification() {
+		AdvanceDirectiveVerificationImpl advanceDirectiveVerification = new AdvanceDirectiveVerificationImpl();
+		return advanceDirectiveVerification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CoverageActivity createCoverageActivity() {
+		CoverageActivityImpl coverageActivity = new CoverageActivityImpl();
+		return coverageActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PolicyActivity createPolicyActivity() {
+		PolicyActivityImpl policyActivity = new PolicyActivityImpl();
+		return policyActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AuthorizationActivity createAuthorizationActivity() {
+		AuthorizationActivityImpl authorizationActivity = new AuthorizationActivityImpl();
+		return authorizationActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlanOfCareActivity createPlanOfCareActivity() {
+		PlanOfCareActivityImpl planOfCareActivity = new PlanOfCareActivityImpl();
+		return planOfCareActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProcedureActivity createProcedureActivity() {
+		ProcedureActivityImpl procedureActivity = new ProcedureActivityImpl();
+		return procedureActivity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PatientInstruction createPatientInstruction() {
+		PatientInstructionImpl patientInstruction = new PatientInstructionImpl();
+		return patientInstruction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FulfillmentInstruction createFulfillmentInstruction() {
+		FulfillmentInstructionImpl fulfillmentInstruction = new FulfillmentInstructionImpl();
+		return fulfillmentInstruction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FunctionalStatusObservation createFunctionalStatusObservation() {
+		FunctionalStatusObservationImpl functionalStatusObservation = new FunctionalStatusObservationImpl();
+		return functionalStatusObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductInstance createProductInstance() {
+		ProductInstanceImpl productInstance = new ProductInstanceImpl();
+		return productInstance;
 	}
 
 	/**

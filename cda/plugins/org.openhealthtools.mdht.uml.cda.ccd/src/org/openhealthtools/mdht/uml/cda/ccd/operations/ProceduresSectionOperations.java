@@ -31,6 +31,7 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#ProceduresSection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Procedures Section template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#ProceduresSection_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Procedures Section code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#ProceduresSection_title(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Procedures Section title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#ProceduresSection_procedureActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Procedures Section procedure Activity</em>}</li>
  * </ul>
  * </p>
  *
@@ -214,6 +215,63 @@ public class ProceduresSectionOperations extends SectionOperations {
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROCEDURES_SECTION__PROCEDURES_SECTION_TITLE,
 						 CCDPlugin.INSTANCE.getString("ProceduresSection_title"),
+						 new Object [] { proceduresSection }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #ProceduresSection_procedureActivity(ProceduresSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Procedures Section procedure Activity</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ProceduresSection_procedureActivity(ProceduresSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PROCEDURES_SECTION_PROCEDURE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProcedureActivity))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #ProceduresSection_procedureActivity(ProceduresSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Procedures Section procedure Activity</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ProceduresSection_procedureActivity(ProceduresSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint PROCEDURES_SECTION_PROCEDURE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProcedureActivity))
+	 * @param proceduresSection The receiving '<em><b>Procedures Section</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean ProceduresSection_procedureActivity(ProceduresSection proceduresSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (PROCEDURES_SECTION_PROCEDURE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROCEDURES_SECTION);
+			try {
+				PROCEDURES_SECTION_PROCEDURE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROCEDURES_SECTION_PROCEDURE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(PROCEDURES_SECTION_PROCEDURE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(proceduresSection)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.WARNING,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROCEDURES_SECTION__PROCEDURES_SECTION_PROCEDURE_ACTIVITY,
+						 CCDPlugin.INSTANCE.getString("ProceduresSection_procedureActivity"),
 						 new Object [] { proceduresSection }));
 			}
 			return false;

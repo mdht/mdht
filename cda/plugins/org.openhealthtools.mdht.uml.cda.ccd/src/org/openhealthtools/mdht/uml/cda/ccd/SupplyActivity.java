@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Supply;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getSupplyActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.info='SupplyActivity_medicationStatusObservation' constraints.validation.error='SupplyActivity_templateId SupplyActivity_id SupplyActivity_statusCode' templateId.root='2.16.840.1.113883.10.20.1.34'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.34' constraints.validation.error='SupplyActivity_templateId SupplyActivity_id SupplyActivity_statusCode' constraints.validation.info='SupplyActivity_medicationStatusObservation SupplyActivity_fulfillmentInstruction'"
  * @generated
  */
 public interface SupplyActivity extends Supply {
@@ -73,6 +73,19 @@ public interface SupplyActivity extends Supply {
 	 * @generated
 	 */
 	boolean SupplyActivity_medicationStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)'"
+	 * @generated
+	 */
+	boolean SupplyActivity_fulfillmentInstruction(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

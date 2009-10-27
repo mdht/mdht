@@ -10,7 +10,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
- * This is the central singleton for the Ccd model plugin.
+ * This is the central singleton for the CCD model plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

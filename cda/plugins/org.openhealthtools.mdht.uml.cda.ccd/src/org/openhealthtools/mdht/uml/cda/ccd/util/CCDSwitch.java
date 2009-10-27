@@ -23,6 +23,7 @@ import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Organizer;
 import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
@@ -449,6 +450,92 @@ public class CCDSwitch<T> {
 				T result = caseVitalSignsOrganizer(vitalSignsOrganizer);
 				if (result == null) result = caseResultOrganizer(vitalSignsOrganizer);
 				if (result == null) result = caseOrganizer(vitalSignsOrganizer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.ADVANCE_DIRECTIVE_OBSERVATION: {
+				AdvanceDirectiveObservation advanceDirectiveObservation = (AdvanceDirectiveObservation)theEObject;
+				T result = caseAdvanceDirectiveObservation(advanceDirectiveObservation);
+				if (result == null) result = caseObservation(advanceDirectiveObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.ADVANCE_DIRECTIVE_STATUS_OBSERVATION: {
+				AdvanceDirectiveStatusObservation advanceDirectiveStatusObservation = (AdvanceDirectiveStatusObservation)theEObject;
+				T result = caseAdvanceDirectiveStatusObservation(advanceDirectiveStatusObservation);
+				if (result == null) result = caseStatusObservation(advanceDirectiveStatusObservation);
+				if (result == null) result = caseObservation(advanceDirectiveStatusObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.ADVANCE_DIRECTIVE_VERIFICATION: {
+				AdvanceDirectiveVerification advanceDirectiveVerification = (AdvanceDirectiveVerification)theEObject;
+				T result = caseAdvanceDirectiveVerification(advanceDirectiveVerification);
+				if (result == null) result = caseParticipant2(advanceDirectiveVerification);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.COVERAGE_ACTIVITY: {
+				CoverageActivity coverageActivity = (CoverageActivity)theEObject;
+				T result = caseCoverageActivity(coverageActivity);
+				if (result == null) result = caseAct(coverageActivity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.POLICY_ACTIVITY: {
+				PolicyActivity policyActivity = (PolicyActivity)theEObject;
+				T result = casePolicyActivity(policyActivity);
+				if (result == null) result = caseAct(policyActivity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.AUTHORIZATION_ACTIVITY: {
+				AuthorizationActivity authorizationActivity = (AuthorizationActivity)theEObject;
+				T result = caseAuthorizationActivity(authorizationActivity);
+				if (result == null) result = caseAct(authorizationActivity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY: {
+				PlanOfCareActivity planOfCareActivity = (PlanOfCareActivity)theEObject;
+				T result = casePlanOfCareActivity(planOfCareActivity);
+				if (result == null) result = caseAct(planOfCareActivity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PROCEDURE_ACTIVITY: {
+				ProcedureActivity procedureActivity = (ProcedureActivity)theEObject;
+				T result = caseProcedureActivity(procedureActivity);
+				if (result == null) result = caseAct(procedureActivity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PATIENT_INSTRUCTION: {
+				PatientInstruction patientInstruction = (PatientInstruction)theEObject;
+				T result = casePatientInstruction(patientInstruction);
+				if (result == null) result = caseAct(patientInstruction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.FULFILLMENT_INSTRUCTION: {
+				FulfillmentInstruction fulfillmentInstruction = (FulfillmentInstruction)theEObject;
+				T result = caseFulfillmentInstruction(fulfillmentInstruction);
+				if (result == null) result = caseAct(fulfillmentInstruction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.FUNCTIONAL_STATUS_OBSERVATION: {
+				FunctionalStatusObservation functionalStatusObservation = (FunctionalStatusObservation)theEObject;
+				T result = caseFunctionalStatusObservation(functionalStatusObservation);
+				if (result == null) result = caseStatusObservation(functionalStatusObservation);
+				if (result == null) result = caseObservation(functionalStatusObservation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PRODUCT_INSTANCE: {
+				ProductInstance productInstance = (ProductInstance)theEObject;
+				T result = caseProductInstance(productInstance);
+				if (result == null) result = caseParticipantRole(productInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1087,6 +1174,186 @@ public class CCDSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Advance Directive Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Advance Directive Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdvanceDirectiveObservation(AdvanceDirectiveObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Advance Directive Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Advance Directive Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdvanceDirectiveStatusObservation(AdvanceDirectiveStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Advance Directive Verification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Advance Directive Verification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdvanceDirectiveVerification(AdvanceDirectiveVerification object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Coverage Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Coverage Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCoverageActivity(CoverageActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Policy Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Policy Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePolicyActivity(PolicyActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Authorization Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Authorization Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAuthorizationActivity(AuthorizationActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePlanOfCareActivity(PlanOfCareActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Procedure Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Procedure Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProcedureActivity(ProcedureActivity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Patient Instruction</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Patient Instruction</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePatientInstruction(PatientInstruction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fulfillment Instruction</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fulfillment Instruction</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFulfillmentInstruction(FulfillmentInstruction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Functional Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Functional Status Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunctionalStatusObservation(FunctionalStatusObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Product Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Product Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProductInstance(ProductInstance object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1248,6 +1515,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseManufacturedProduct(ManufacturedProduct object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Participant Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Participant Role</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParticipantRole(ParticipantRole object) {
 		return null;
 	}
 
