@@ -59,6 +59,24 @@ public class PayersSectionImpl extends SectionImpl implements PayersSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean PayersSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PayersSectionOperations.PayersSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean PayersSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PayersSectionOperations.PayersSection_title(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PayersSection init() {
     		CDAUtil.init(this);
     		return this;

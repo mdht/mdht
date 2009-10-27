@@ -59,5 +59,17 @@
       <entry eClass="PurposeSection" id="2.16.840.1.113883.10.20.1.13" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="PurposeActivity" id="2.16.840.1.113883.10.20.1.30" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="VitalSignsOrganizer" id="2.16.840.1.113883.10.20.1.35" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="AdvanceDirectiveObservation" id="2.16.840.1.113883.10.20.1.17" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="AdvanceDirectiveStatusObservation" id="2.16.840.1.113883.10.20.1.37" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="AdvanceDirectiveVerification" id="2.16.840.1.113883.10.20.1.58" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="CoverageActivity" id="2.16.840.1.113883.10.20.1.20" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="PolicyActivity" id="2.16.840.1.113883.10.20.1.26" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="AuthorizationActivity" id="2.16.840.1.113883.10.20.1.19" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="PlanOfCareActivity" id="2.16.840.1.113883.10.20.1.25" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="ProcedureActivity" id="2.16.840.1.113883.10.20.1.29" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="PatientInstruction" id="2.16.840.1.113883.10.20.1.49" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="FulfillmentInstruction" id="2.16.840.1.113883.10.20.1.43" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="FunctionalStatusObservation" id="2.16.840.1.113883.10.20.1.44" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="ProductInstance" id="2.16.840.1.113883.10.20.1.52" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
    </extension>
 </plugin>

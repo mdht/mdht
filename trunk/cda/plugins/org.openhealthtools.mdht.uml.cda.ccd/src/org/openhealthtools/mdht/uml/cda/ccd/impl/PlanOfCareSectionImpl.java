@@ -59,6 +59,33 @@ public class PlanOfCareSectionImpl extends SectionImpl implements PlanOfCareSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean PlanOfCareSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PlanOfCareSectionOperations.PlanOfCareSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean PlanOfCareSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PlanOfCareSectionOperations.PlanOfCareSection_title(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean PlanOfCareSection_planOfCareActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PlanOfCareSectionOperations.PlanOfCareSection_planOfCareActivity(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PlanOfCareSection init() {
     		CDAUtil.init(this);
     		return this;

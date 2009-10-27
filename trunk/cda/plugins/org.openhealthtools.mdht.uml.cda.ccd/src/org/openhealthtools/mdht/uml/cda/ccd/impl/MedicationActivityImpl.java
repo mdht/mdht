@@ -104,6 +104,15 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean MedicationActivity_patientInstruction(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.MedicationActivity_patientInstruction(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MedicationActivity init() {
     		CDAUtil.init(this);
     		return this;

@@ -410,6 +410,114 @@ public interface CCDFactory extends EFactory {
 	VitalSignsOrganizer createVitalSignsOrganizer();
 
 	/**
+	 * Returns a new object of class '<em>Advance Directive Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Advance Directive Observation</em>'.
+	 * @generated
+	 */
+	AdvanceDirectiveObservation createAdvanceDirectiveObservation();
+
+	/**
+	 * Returns a new object of class '<em>Advance Directive Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Advance Directive Status Observation</em>'.
+	 * @generated
+	 */
+	AdvanceDirectiveStatusObservation createAdvanceDirectiveStatusObservation();
+
+	/**
+	 * Returns a new object of class '<em>Advance Directive Verification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Advance Directive Verification</em>'.
+	 * @generated
+	 */
+	AdvanceDirectiveVerification createAdvanceDirectiveVerification();
+
+	/**
+	 * Returns a new object of class '<em>Coverage Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Coverage Activity</em>'.
+	 * @generated
+	 */
+	CoverageActivity createCoverageActivity();
+
+	/**
+	 * Returns a new object of class '<em>Policy Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Policy Activity</em>'.
+	 * @generated
+	 */
+	PolicyActivity createPolicyActivity();
+
+	/**
+	 * Returns a new object of class '<em>Authorization Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Authorization Activity</em>'.
+	 * @generated
+	 */
+	AuthorizationActivity createAuthorizationActivity();
+
+	/**
+	 * Returns a new object of class '<em>Plan Of Care Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Plan Of Care Activity</em>'.
+	 * @generated
+	 */
+	PlanOfCareActivity createPlanOfCareActivity();
+
+	/**
+	 * Returns a new object of class '<em>Procedure Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Procedure Activity</em>'.
+	 * @generated
+	 */
+	ProcedureActivity createProcedureActivity();
+
+	/**
+	 * Returns a new object of class '<em>Patient Instruction</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Patient Instruction</em>'.
+	 * @generated
+	 */
+	PatientInstruction createPatientInstruction();
+
+	/**
+	 * Returns a new object of class '<em>Fulfillment Instruction</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fulfillment Instruction</em>'.
+	 * @generated
+	 */
+	FulfillmentInstruction createFulfillmentInstruction();
+
+	/**
+	 * Returns a new object of class '<em>Functional Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Functional Status Observation</em>'.
+	 * @generated
+	 */
+	FunctionalStatusObservation createFunctionalStatusObservation();
+
+	/**
+	 * Returns a new object of class '<em>Product Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Product Instance</em>'.
+	 * @generated
+	 */
+	ProductInstance createProductInstance();
+
+	/**
 	 * Returns a new object of class '<em>Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

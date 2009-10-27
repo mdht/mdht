@@ -32,6 +32,7 @@ import org.openhealthtools.mdht.uml.cda.operations.SupplyOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#SupplyActivity_id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#SupplyActivity_statusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#SupplyActivity_medicationStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity medication Status Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#SupplyActivity_fulfillmentInstruction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity fulfillment Instruction</em>}</li>
  * </ul>
  * </p>
  *
@@ -268,6 +269,63 @@ public class SupplyActivityOperations extends SupplyOperations {
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.SUPPLY_ACTIVITY__SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION,
 						 CCDPlugin.INSTANCE.getString("SupplyActivity_medicationStatusObservation"),
+						 new Object [] { supplyActivity }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #SupplyActivity_fulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity fulfillment Instruction</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SupplyActivity_fulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)";
+
+	/**
+	 * The cached OCL invariant for the '{@link #SupplyActivity_fulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity fulfillment Instruction</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SupplyActivity_fulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)
+	 * @param supplyActivity The receiving '<em><b>Supply Activity</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean SupplyActivity_fulfillmentInstruction(SupplyActivity supplyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.SUPPLY_ACTIVITY);
+			try {
+				SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(supplyActivity)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.INFO,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.SUPPLY_ACTIVITY__SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION,
+						 CCDPlugin.INSTANCE.getString("SupplyActivity_fulfillmentInstruction"),
 						 new Object [] { supplyActivity }));
 			}
 			return false;
