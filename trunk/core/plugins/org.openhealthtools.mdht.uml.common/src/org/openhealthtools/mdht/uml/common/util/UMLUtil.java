@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.uml2.uml.Artifact;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -36,6 +37,7 @@ import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Package;
@@ -43,9 +45,12 @@ import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.ParameterableElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Signal;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.TemplateBinding;
 import org.eclipse.uml2.uml.TemplateParameterSubstitution;
+import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.common.internal.Logger;
@@ -786,26 +791,34 @@ public static List<String> getAllParentNames(Classifier classifier) {
 		return params;
 	}
 	
-	public static Profile getAppliedProfile(String uri, Element element) {
+	/**
+	 * Find applied profile to a Package container of element, or return null
+	 * if profile is not applied.
+	 * 
+	 * @param profileURI
+	 * @param element
+	 * @return
+	 */
+	public static Profile getAppliedProfile(String profileURI, Element element) {
 		if (element == null)
 			return null;
 
 		try {
 			ResourceSet resourceSet = element.eResource().getResourceSet();
-			Resource hdfProfileResource = resourceSet.getResource(URI.createURI(uri), true);
+			Resource profileResource = resourceSet.getResource(URI.createURI(profileURI), true);
 
-			if (hdfProfileResource != null) {
+			if (profileResource != null) {
 				// is profile loaded into this resource set?
-				Profile hdfProfile = (Profile) EcoreUtil.getObjectByType(hdfProfileResource.getContents(), UMLPackage.eINSTANCE.getProfile());
+				Profile profile = (Profile) EcoreUtil.getObjectByType(profileResource.getContents(), UMLPackage.eINSTANCE.getProfile());
 
-				if (hdfProfile == null) {
+				if (profile == null) {
 					return null;
 				}
 				try {
 					Package pkg = element.getNearestPackage();
 					while (pkg != null) {
-						if (pkg.isProfileApplied(hdfProfile))
-							return hdfProfile;
+						if (pkg.isProfileApplied(profile))
+							return profile;
 						else
 							pkg = pkg.getNestingPackage();
 					}
@@ -821,5 +834,44 @@ public static List<String> getAllParentNames(Classifier classifier) {
 		return null;
 	}
 	
+
+	/**
+	 * Delegates to the subclass specific getOwnedAttributes() method for type.
+	 * 
+	 * @param type
+	 * @return list of Property
+	 */
+	public static List<Property> getOwnedAttributes(Type type) {
+
+		return (List) new UMLSwitch() {
+
+			public Object caseArtifact(Artifact artifact) {
+				return artifact.getOwnedAttributes();
+			}
+
+			public Object caseDataType(DataType dataType) {
+				return dataType.getOwnedAttributes();
+			}
+
+			public Object caseInterface(Interface interface_) {
+				return interface_.getOwnedAttributes();
+			}
+
+			public Object caseSignal(Signal signal) {
+				return signal.getOwnedAttributes();
+			}
+
+			public Object caseStructuredClassifier(
+					StructuredClassifier structuredClassifier) {
+				return structuredClassifier.getOwnedAttributes();
+			}
+
+			public Object doSwitch(EObject eObject) {
+				return null == eObject
+					? null
+					: super.doSwitch(eObject);
+			}
+		}.doSwitch(type);
+	}
 
 }
