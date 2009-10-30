@@ -23,6 +23,8 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.common.util.MultiplicityElementUtil;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 
 /**
  * Utility class for <code>org.eclipse.uml2.uml.Property</code><BR>
