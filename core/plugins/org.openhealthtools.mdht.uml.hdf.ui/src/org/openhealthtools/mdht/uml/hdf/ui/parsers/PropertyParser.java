@@ -22,7 +22,7 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.hdf.ui.internal.Activator;
 import org.openhealthtools.mdht.uml.hdf.ui.util.IHL7Appearance;
-import org.openhealthtools.mdht.uml.hdf.ui.util.PropertyUtil;
+import org.openhealthtools.mdht.uml.hdf.ui.util.HDFPropertyUtil;
 
 /**
  * Parser for editing and displaying properties.
@@ -37,7 +37,7 @@ public class PropertyParser implements IParser {
 		if (element instanceof EObjectAdapter) {
 			final Property property = ((Property) ((EObjectAdapter) element)
 					.getRealObject());
-			return PropertyUtil.getCustomLabel(property,
+			return HDFPropertyUtil.getCustomLabel(property,
 					IHL7Appearance.DEFAULT_UML_PROPERTY);
 		}
 		return "";
@@ -52,7 +52,7 @@ public class PropertyParser implements IParser {
 		if (element instanceof EObjectAdapter) {
 			Property property = ((Property) ((EObjectAdapter) element)
 					.getRealObject());
-			return PropertyUtil.getCustomLabel(property,
+			return HDFPropertyUtil.getCustomLabel(property,
 					IHL7Appearance.DEFAULT_HL7_PROPERTY);
 		}
 		return null;
