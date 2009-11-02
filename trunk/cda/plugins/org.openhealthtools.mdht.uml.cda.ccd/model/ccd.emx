@@ -6704,7 +6704,7 @@
   <CDA:VocabSpecification xmi:id="_t5nocYjsEd66cKocspyVOg" base_Property="_t5nocIjsEd66cKocspyVOg" codeSystem="2.16.840.1.113883.1.11.20.7" codeSystemName="MedicationStatusCode" codeSystemVersion="20061017"/>
   <Default:Documentation xmi:id="_0h1nsIjuEd66cKocspyVOg" base_Comment="_0hxWQIjuEd66cKocspyVOg"/>
   <Default:Documentation xmi:id="_CfaV0IjvEd66cKocspyVOg" base_Comment="_CfWEYIjvEd66cKocspyVOg"/>
-  <CDA:CDATemplate xmi:id="_p_Lr0IjvEd66cKocspyVOg" base_Class="_p_LEwIjvEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.14" assigningAuthorityName="CCD"/>
+  <CDA:CDATemplate xmi:id="_p_Lr0IjvEd66cKocspyVOg" base_Class="_p_LEwIjvEd66cKocspyVOg" templateId="2.16.840.1.113883.10.20.1.12" assigningAuthorityName="CCD"/>
   <Default:Documentation xmi:id="_p_Lr0YjvEd66cKocspyVOg" base_Comment="_p_LEwYjvEd66cKocspyVOg"/>
   <CDA:VocabSpecification xmi:id="_p_Lr0ojvEd66cKocspyVOg" base_Property="_p_LEw4jvEd66cKocspyVOg" code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of procedures"/>
   <CDA:VocabSpecification xmi:id="_qAT3wYjwEd66cKocspyVOg" base_Property="_qAT3wIjwEd66cKocspyVOg" code="46240-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of encounters"/>
