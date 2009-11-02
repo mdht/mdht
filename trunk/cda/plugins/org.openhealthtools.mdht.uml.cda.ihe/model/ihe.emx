@@ -1616,6 +1616,15 @@
     <packageImport xmi:id="_ETmFQHrCEd68l9lQ-TLEBQ">
       <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_XgMSwzxVEd6JwqSGecoePg?datatypes?"/>
     </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZEjk4Mf0Ed6VjLXh4DcWSg" name="ImmunizationsSection">
+      <ownedComment xmi:id="_pH00MMf0Ed6VjLXh4DcWSg" annotatedElement="_ZEjk4Mf0Ed6VjLXh4DcWSg">
+        <body>The immunizations section shall contain a narrative description of the immunizations administered to the patient in the&#xD;
+past. It shall include entries for medication administration as described in the Entry Content Modules.</body>
+      </ownedComment>
+      <generalization xmi:id="_cBTp4Mf0Ed6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.emx#_CinbMHDPEd6eItyqb1FoWg?ccd/ImmunizationsSection?"/>
+      </generalization>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_quPDQMfyEd6VjLXh4DcWSg" name="MedicationsAdministeredSection">
       <ownedComment xmi:id="_FLRiwMfzEd6VjLXh4DcWSg" annotatedElement="_quPDQMfyEd6VjLXh4DcWSg">
         <body>The medications administered section shall contain a narrative description of the relevant medications administered to a&#xD;
@@ -2156,4 +2165,6 @@ expectations and requests for care along with the locations of the documents.</b
   <Default:Documentation xmi:id="_t8qmwMf1Ed6VjLXh4DcWSg" base_Comment="_t8oKgMf1Ed6VjLXh4DcWSg"/>
   <Default:Documentation xmi:id="_y4m8UMf1Ed6VjLXh4DcWSg" base_Comment="_y4jR8Mf1Ed6VjLXh4DcWSg"/>
   <Default:Documentation xmi:id="_JyA9AMf2Ed6VjLXh4DcWSg" base_Comment="_Jx9SoMf2Ed6VjLXh4DcWSg"/>
+  <Default:Documentation xmi:id="_pH5FoMf0Ed6VjLXh4DcWSg" base_Comment="_pH00MMf0Ed6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_cn5v0Mf0Ed6VjLXh4DcWSg" base_Class="_ZEjk4Mf0Ed6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.23" assigningAuthorityName="IHE PCC"/>
 </xmi:XMI>
