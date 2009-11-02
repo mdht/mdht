@@ -30,6 +30,7 @@
   <foreignModel>ihe_Ecore.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="IHE" basePackage="org.openhealthtools.mdht.uml.cda"
       disposableProviderFactory="true" ecorePackage="ihe.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.cda.ihe.operations">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ImmunizationsSection"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//MedicationsAdministeredSection">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//MedicationsAdministeredSection/MedicationsAdministeredSection_templateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//MedicationsAdministeredSection/MedicationsAdministeredSection_templateId/diagnostics"/>

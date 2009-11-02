@@ -75,6 +75,7 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case IHEPackage.IMMUNIZATIONS_SECTION: return createImmunizationsSection();
 			case IHEPackage.MEDICATIONS_ADMINISTERED_SECTION: return createMedicationsAdministeredSection();
 			case IHEPackage.CONCERN_ENTRY: return createConcernEntry();
 			case IHEPackage.MEDICAL_DOCUMENT: return createMedicalDocument();
@@ -113,6 +114,16 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImmunizationsSection createImmunizationsSection() {
+		ImmunizationsSectionImpl immunizationsSection = new ImmunizationsSectionImpl();
+		return immunizationsSection;
 	}
 
 	/**

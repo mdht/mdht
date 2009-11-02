@@ -40,6 +40,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.HospitalAdmissionDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
+import org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.Medication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
@@ -67,6 +68,13 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * @generated
  */
 public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass immunizationsSectionEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,6 +405,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		theIHEPackage.freeze();
 
 		return theIHEPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getImmunizationsSection() {
+		return immunizationsSectionEClass;
 	}
 
 	/**
@@ -751,6 +768,8 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		isCreated = true;
 
 		// Create classes and their features
+		immunizationsSectionEClass = createEClass(IMMUNIZATIONS_SECTION);
+
 		medicationsAdministeredSectionEClass = createEClass(MEDICATIONS_ADMINISTERED_SECTION);
 
 		concernEntryEClass = createEClass(CONCERN_ENTRY);
@@ -848,14 +867,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CDAPackage theCDAPackage = (CDAPackage)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI);
 		CCDPackage theCCDPackage = (CCDPackage)EPackage.Registry.INSTANCE.getEPackage(CCDPackage.eNS_URI);
+		CDAPackage theCDAPackage = (CDAPackage)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		immunizationsSectionEClass.getESuperTypes().add(theCCDPackage.getImmunizationsSection());
 		medicationsAdministeredSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		concernEntryEClass.getESuperTypes().add(theCCDPackage.getProblemAct());
 		medicalDocumentEClass.getESuperTypes().add(theCDAPackage.getClinicalDocument());
@@ -894,6 +914,8 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		physicalExamSectionEClass.getESuperTypes().add(this.getPhysicalExamNarrativeSection());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(immunizationsSectionEClass, ImmunizationsSection.class, "ImmunizationsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(medicationsAdministeredSectionEClass, MedicationsAdministeredSection.class, "MedicationsAdministeredSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		EOperation op = addEOperation(medicationsAdministeredSectionEClass, ecorePackage.getEBoolean(), "MedicationsAdministeredSection_templateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1413,12 +1435,12 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		// Create annotations
 		// http://www.openhealthtools.org/mdht/uml/cda/annotation
 		createAnnotationAnnotations();
+		// duplicates
+		createDuplicatesAnnotations();
 		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
 		createExtendedMetaDataAnnotations();
 		// uml2.alias
 		createUml2Annotations();
-		// duplicates
-		createDuplicatesAnnotations();
 	}
 
 	/**
@@ -1429,6 +1451,13 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 */
 	protected void createAnnotationAnnotations() {
 		String source = "http://www.openhealthtools.org/mdht/uml/cda/annotation";			
+		addAnnotation
+		  (immunizationsSectionEClass, 
+		   source, 
+		   new String[] {
+			 "constraints.validation.error", "ImmunizationsSection_templateId",
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.23"
+		   });				
 		addAnnotation
 		  (medicationsAdministeredSectionEClass, 
 		   source, 
@@ -1714,7 +1743,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																	
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																				
 		addAnnotation
 		  (medicalDocumentEClass, 
 		   source, 
@@ -1730,7 +1759,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	protected void createUml2Annotations() {
-		String source = "uml2.alias";																								
+		String source = "uml2.alias";																											
 		addAnnotation
 		  (activeProblemsSectionEClass, 
 		   source, 
@@ -1770,7 +1799,12 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																																																																																																																		
+		String source = "duplicates";				
+		addAnnotation
+		  (immunizationsSectionEClass, 
+		   source, 
+		   new String[] {
+		   });																																																																																																																																		
 		addAnnotation
 		  (vitalSignsSectionEClass, 
 		   source, 
