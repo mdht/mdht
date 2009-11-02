@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:version="2.0" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:version="2.0" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
   <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="ihe">
     
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
@@ -10,6 +10,16 @@
     <packageImport xmi:id="_ETmFQHrCEd68l9lQ-TLEBQ">
       <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg?datatypes?"/>
     </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_quPDQMfyEd6VjLXh4DcWSg" name="MedicationsAdministeredSection">
+      <ownedComment xmi:id="_FLRiwMfzEd6VjLXh4DcWSg" annotatedElement="_quPDQMfyEd6VjLXh4DcWSg">
+        <body>The medications administered section shall contain a narrative description of the relevant medications administered to a&#13;
+patient during the course of an encounter. It shall include entries for medication administration as described in the Entry&#13;
+Content Module.</body>
+      </ownedComment>
+      <generalization xmi:id="_sg7v8MfyEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="ConcernEntry">
       <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_GgvgUDxbEd6JwqSGecoePg?ccd/ProblemAct?"/>
@@ -168,6 +178,16 @@ not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_iFB1EK4EEd6_ioDelDcPPg" name="VitalSignsSection">
       <ownedComment xmi:id="_1MSkYK4FEd6_ioDelDcPPg" annotatedElement="_iFB1EK4EEd6_ioDelDcPPg">
+        <body>&lt;p&gt;&#13;
+    The vital signs section shall contain a narrative description of the measurement results of a patient’s vital signs.&#13;
+&lt;/p&gt;</body>
+      </ownedComment>
+      <generalization xmi:id="_lkJAQK4EEd6_ioDelDcPPg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_GKpeMKPaEd6t_4WfM070fA?ccd/VitalSignsSection?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5k1R8K4FEd6_ioDelDcPPg" name="CodedVitalSignsSection">
+      <ownedComment xmi:id="_Jx9SoMf2Ed6VjLXh4DcWSg" annotatedElement="_5k1R8K4FEd6_ioDelDcPPg">
         <body>&lt;table&gt;&#13;
     &lt;tr&gt;&#13;
         &lt;th&#13;
@@ -176,17 +196,11 @@ not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
         &lt;td&#13;
         style="BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 70%; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid"&#13;
          colspan="2"&gt;&#13;
-            The vital signs section shall contain a narrative description of the measurement results of a patient’s vital&#13;
-            signs.&#13;
+            The vital signs section contains coded measurement results of a patient’s vital signs.&#13;
         &lt;/td&gt;&#13;
     &lt;/tr&gt;&#13;
 &lt;/table&gt;</body>
       </ownedComment>
-      <generalization xmi:id="_lkJAQK4EEd6_ioDelDcPPg">
-        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_GKpeMKPaEd6t_4WfM070fA?ccd/VitalSignsSection?"/>
-      </generalization>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_5k1R8K4FEd6_ioDelDcPPg" name="CodedVitalSignsSection">
       <generalization xmi:id="_8EJ0EK4FEd6_ioDelDcPPg" general="_iFB1EK4EEd6_ioDelDcPPg"/>
       <ownedAttribute xmi:id="_wHDyIK4UEd6_ioDelDcPPg" name="iheVitalSignsOrganizer" visibility="private" type="_hVMdIK4QEd6_ioDelDcPPg" association="_wHB88K4UEd6_ioDelDcPPg">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wHEZMa4UEd6_ioDelDcPPg" value="*"/>
@@ -282,6 +296,153 @@ ASTM/HL7 Continuity of Care Document).</body>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wHG1cK4UEd6_ioDelDcPPg"/>
       </ownedEnd>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ynU6sMfXEd6VjLXh4DcWSg" name="PayersSection">
+      <ownedComment xmi:id="_gIRwAMfYEd6VjLXh4DcWSg" annotatedElement="_ynU6sMfXEd6VjLXh4DcWSg">
+        <body>The Payers section contains data on the patient’s payers, whether a ‘third party’ insurance, self-pay, other payer or&#13;
+guarantor, or some combination.</body>
+      </ownedComment>
+      <generalization xmi:id="_1MYRYMfXEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_T79VIKPeEd6t_4WfM070fA?ccd/PayersSection?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QD0tkMfbEd6VjLXh4DcWSg" name="HistoryOfPastIllnessSection">
+      <ownedComment xmi:id="_fABAEMfbEd6VjLXh4DcWSg" annotatedElement="_QD0tkMfbEd6VjLXh4DcWSg">
+        <body>The History of Past Illness section shall contain a narrative description of the conditions the patient suffered in the&#13;
+past. It shall include entries for problems as described in the Entry Content Modules.</body>
+      </ownedComment>
+      <generalization xmi:id="_W5e90MfbEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_iVB-oMfcEd6VjLXh4DcWSg" name="ChiefComplaintSection">
+      <ownedComment xmi:id="_69I80MfcEd6VjLXh4DcWSg" annotatedElement="_iVB-oMfcEd6VjLXh4DcWSg">
+        <body>This contains a narrative description of the patient's chief complaint.</body>
+      </ownedComment>
+      <generalization xmi:id="_rPXcYMfcEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XicJUMfdEd6VjLXh4DcWSg" name="ReasonForReferralSection">
+      <ownedComment xmi:id="_tI8XsMfdEd6VjLXh4DcWSg" annotatedElement="_XicJUMfdEd6VjLXh4DcWSg">
+        <body>&lt;table&gt;&#13;
+    &lt;tr&gt;&#13;
+        &lt;th&#13;
+        style="BORDER-BOTTOM: black 1px solid; TEXT-ALIGN: right; BORDER-LEFT: black 1px solid; WIDTH: 30%; BACKGROUND: lightgrey; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous"&gt;&#13;
+        &lt;/th&gt;&#13;
+        &lt;td&#13;
+        style="BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 70%; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid"&#13;
+         colspan="2"&gt;&#13;
+            The reason for referral section shall contain a narrative description of the reason that the patient is being&#13;
+            referred.&#13;
+        &lt;/td&gt;&#13;
+    &lt;/tr&gt;&#13;
+&lt;/table&gt;</body>
+      </ownedComment>
+      <generalization xmi:id="_f1I_UMfdEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_jWj60MfhEd6VjLXh4DcWSg" name="HistoryOfPresentIllness">
+      <ownedComment xmi:id="_wSbUUMfhEd6VjLXh4DcWSg" annotatedElement="_jWj60MfhEd6VjLXh4DcWSg">
+        <body>The history of present illness section shall contain a narrative description of the sequence of events preceding the&#13;
+patient’s current complaints.</body>
+      </ownedComment>
+      <generalization xmi:id="_nDBlgMfhEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_jgutAMftEd6VjLXh4DcWSg" name="SurgeriesSection">
+      <ownedComment xmi:id="_0aVHYMftEd6VjLXh4DcWSg" annotatedElement="_jgutAMftEd6VjLXh4DcWSg">
+        <body>The list of surgeries section shall contain a narrative description of the diagnostic and therapeutic operative procedures&#13;
+and associated anesthetic techniques the patient received in the past.</body>
+      </ownedComment>
+      <generalization xmi:id="_tTPI4MftEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_p_LEwIjvEd66cKocspyVOg?ccd/ProceduresSection?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_9fsJYMftEd6VjLXh4DcWSg" name="CodedSurgeriesSection">
+      <ownedComment xmi:id="_JeA8kMfuEd6VjLXh4DcWSg" annotatedElement="_9fsJYMftEd6VjLXh4DcWSg">
+        <body>The list of surgeries section shall include entries for procedures and references to procedure reports when known as&#13;
+described in the Entry Content Modules.</body>
+      </ownedComment>
+      <generalization xmi:id="_CZnswMfuEd6VjLXh4DcWSg" general="_jgutAMftEd6VjLXh4DcWSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_MvxLwMfvEd6VjLXh4DcWSg" name="HospitalAdmissionDiagnosisSection">
+      <ownedComment xmi:id="_cJSTcMfvEd6VjLXh4DcWSg" annotatedElement="_MvxLwMfvEd6VjLXh4DcWSg">
+        <body>The hospital admitting diagnosis section shall contain a narrative description of the primary reason for admission to a&#13;
+hospital facility. It shall include entries for observations as described in the Entry Content Modules.</body>
+      </ownedComment>
+      <generalization xmi:id="_U6294MfvEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_3ov5QMfvEd6VjLXh4DcWSg" name="DischargeDiagnosisSection">
+      <ownedComment xmi:id="_Bgh2sMfwEd6VjLXh4DcWSg" annotatedElement="_3ov5QMfvEd6VjLXh4DcWSg">
+        <body>The discharge diagnosis section shall contain a narrative description of the conditions that need to be monitored after&#13;
+discharge from the hospital and those that were resolved during the hospital course. It shall include entries for patient&#13;
+conditions as described in the Entry Content Module.</body>
+      </ownedComment>
+      <generalization xmi:id="_7mCOMMfvEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_3Se44MfwEd6VjLXh4DcWSg" name="AdmissionMedicationHistorySection">
+      <ownedComment xmi:id="__793MMfwEd6VjLXh4DcWSg" annotatedElement="_3Se44MfwEd6VjLXh4DcWSg">
+        <body>The admission medication history section shall contain a narrative description of the relevant medications administered to&#13;
+a patient prior to admission to a facility. It shall include entries for medication administration as described in the&#13;
+Entry Content Module.</body>
+      </ownedComment>
+      <generalization xmi:id="_7iCCgMfwEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JAhygMfyEd6VjLXh4DcWSg" name="HospitalDischargeMedicationsSection">
+      <ownedComment xmi:id="_akYq0MfyEd6VjLXh4DcWSg" annotatedElement="_JAhygMfyEd6VjLXh4DcWSg">
+        <body>&lt;table&gt;&#13;
+    &lt;tr&gt;&#13;
+        &lt;th&#13;
+        style="BORDER-BOTTOM: black 1px solid; TEXT-ALIGN: right; BORDER-LEFT: black 1px solid; WIDTH: 30%; BACKGROUND: lightgrey; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous"&gt;&#13;
+        &lt;/th&gt;&#13;
+        &lt;td&#13;
+        style="BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 70%; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid"&#13;
+         colspan="2"&gt;&#13;
+            The hospital discharge medications section shall contain a narrative description of the medications requested&#13;
+            (ordered) to be administered to the patient after discharge from the hospital. It shall include entries for&#13;
+            medication requests as described in the Entry Content Module.&#13;
+        &lt;/td&gt;&#13;
+    &lt;/tr&gt;&#13;
+&lt;/table&gt;</body>
+      </ownedComment>
+      <generalization xmi:id="_S1iv0MfyEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bSHeEMfzEd6VjLXh4DcWSg" name="CodedAdvanceDirectivesSection">
+      <generalization xmi:id="_pXLUQMfzEd6VjLXh4DcWSg" general="_fc6DgMfzEd6VjLXh4DcWSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_fc6DgMfzEd6VjLXh4DcWSg" name="AdvanceDirectivesSection">
+      <ownedComment xmi:id="_AwXoQMf0Ed6VjLXh4DcWSg" annotatedElement="_fc6DgMfzEd6VjLXh4DcWSg">
+        <body>The advance directive section shall contain a narrative description of the list of documents that define the patient’s&#13;
+expectations and requests for care along with the locations of the documents.</body>
+      </ownedComment>
+      <generalization xmi:id="_ovC9QMfzEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_NvRwcKPeEd6t_4WfM070fA?ccd/AdvanceDirectivesSection?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_IAGv8Mf1Ed6VjLXh4DcWSg" name="PhysicalExamNarrativeSection">
+      <ownedComment xmi:id="_y4jR8Mf1Ed6VjLXh4DcWSg" annotatedElement="_IAGv8Mf1Ed6VjLXh4DcWSg">
+        <body>The physical exam section shall contain a narrative description of the patient’s physical findings.</body>
+      </ownedComment>
+      <generalization xmi:id="_QAS5oMf1Ed6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LGf5IMf1Ed6VjLXh4DcWSg" name="PhysicalExamSection">
+      <ownedComment xmi:id="_t8oKgMf1Ed6VjLXh4DcWSg" annotatedElement="_LGf5IMf1Ed6VjLXh4DcWSg">
+        <body>The physical exam section shall contain only the required and optional subsections performed.</body>
+      </ownedComment>
+      <generalization xmi:id="_Qnv7MMf1Ed6VjLXh4DcWSg" general="_IAGv8Mf1Ed6VjLXh4DcWSg"/>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -347,4 +508,36 @@ ASTM/HL7 Continuity of Care Document).</body>
   <CDA:VocabSpecification xmi:id="_nUCAkK60Ed6_ioDelDcPPg" message="Vital Sign Observation interpretationCode MAY be present to provide an interpretation of the vital signs measure (e.g., High, Normal, Low, et cetera)." severity="INFO" base_Property="_Lb-7oK60Ed6_ioDelDcPPg"/>
   <CDA:VocabSpecification xmi:id="_Dn6F4K61Ed6_ioDelDcPPg" message="Vital Sign Observation methodCode MAY be present to indicate the method used to obtain the measure. Note that method used is distinct from, but possibly related to the target site." severity="INFO" base_Property="_Pwh6AK60Ed6_ioDelDcPPg"/>
   <CDA:VocabSpecification xmi:id="_MKDtIK61Ed6_ioDelDcPPg" message="Vital Sign Observation targetSiteCode MAY be used to identify the target site of the measure (e.g., Left arm [blood pressure], oral [temperature], et cetera)." severity="INFO" base_Property="_RF7msK60Ed6_ioDelDcPPg"/>
+  <CDA:CDATemplate xmi:id="_47pYcMfXEd6VjLXh4DcWSg" base_Class="_ynU6sMfXEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="_gIVaYMfYEd6VjLXh4DcWSg" base_Comment="_gIRwAMfYEd6VjLXh4DcWSg"/>
+  <Default:Documentation xmi:id="_fAEDYMfbEd6VjLXh4DcWSg" base_Comment="_fABAEMfbEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_ha_0wMfbEd6VjLXh4DcWSg" base_Class="_QD0tkMfbEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.8" assigningAuthorityName="IHE PCC"/>
+  <CDA:CDATemplate xmi:id="_3p31QMfcEd6VjLXh4DcWSg" base_Class="_iVB-oMfcEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="_69NOQMfcEd6VjLXh4DcWSg" base_Comment="_69I80MfcEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_pVNnYMfdEd6VjLXh4DcWSg" base_Class="_XicJUMfdEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.1" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="_tI-z8MfdEd6VjLXh4DcWSg" base_Comment="_tI8XsMfdEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_okqXYMfhEd6VjLXh4DcWSg" base_Class="_jWj60MfhEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.4" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="_wSe-sMfhEd6VjLXh4DcWSg" base_Comment="_wSbUUMfhEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_xBuz4MftEd6VjLXh4DcWSg" base_Class="_jgutAMftEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.11" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="_0aYKsMftEd6VjLXh4DcWSg" base_Comment="_0aVHYMftEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_FcNUAMfuEd6VjLXh4DcWSg" base_Class="_9fsJYMftEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.12" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="_JeEm8MfuEd6VjLXh4DcWSg" base_Comment="_JeA8kMfuEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_Yo-1cMfvEd6VjLXh4DcWSg" base_Class="_MvxLwMfvEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.3" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="_cJUvsMfvEd6VjLXh4DcWSg" base_Comment="_cJSTcMfvEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_8dy8oMfvEd6VjLXh4DcWSg" base_Class="_3ov5QMfvEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.7" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="_BglhEMfwEd6VjLXh4DcWSg" base_Comment="_Bgh2sMfwEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_8wKCgMfwEd6VjLXh4DcWSg" base_Class="_3Se44MfwEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.20" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="__8ATcMfwEd6VjLXh4DcWSg" base_Comment="__793MMfwEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_Wwx2UMfyEd6VjLXh4DcWSg" base_Class="_JAhygMfyEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.22" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="_akbuIMfyEd6VjLXh4DcWSg" base_Comment="_akYq0MfyEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_tQI_UMfyEd6VjLXh4DcWSg" base_Class="_quPDQMfyEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.21" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="_FLT_AMfzEd6VjLXh4DcWSg" base_Comment="_FLRiwMfzEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_qXzq0MfzEd6VjLXh4DcWSg" base_Class="_bSHeEMfzEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.35" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="_AwbSoMf0Ed6VjLXh4DcWSg" base_Comment="_AwXoQMf0Ed6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_Feu00Mf0Ed6VjLXh4DcWSg" base_Class="_fc6DgMfzEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.34" assigningAuthorityName="IHE PCC"/>
+  <CDA:CDATemplate xmi:id="_RXTI0Mf1Ed6VjLXh4DcWSg" base_Class="_LGf5IMf1Ed6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.9.15" assigningAuthorityName="IHE PCC"/>
+  <CDA:CDATemplate xmi:id="_VRj-8Mf1Ed6VjLXh4DcWSg" base_Class="_IAGv8Mf1Ed6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.24" assigningAuthorityName="IHE PCC"/>
+  <Default:Documentation xmi:id="_t8qmwMf1Ed6VjLXh4DcWSg" base_Comment="_t8oKgMf1Ed6VjLXh4DcWSg"/>
+  <Default:Documentation xmi:id="_y4m8UMf1Ed6VjLXh4DcWSg" base_Comment="_y4jR8Mf1Ed6VjLXh4DcWSg"/>
+  <Default:Documentation xmi:id="_JyA9AMf2Ed6VjLXh4DcWSg" base_Comment="_Jx9SoMf2Ed6VjLXh4DcWSg"/>
 </xmi:XMI>
