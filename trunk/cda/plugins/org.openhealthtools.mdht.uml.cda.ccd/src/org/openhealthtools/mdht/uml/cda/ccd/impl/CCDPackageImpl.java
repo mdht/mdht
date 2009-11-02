@@ -3568,7 +3568,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   new String[] {
 			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "ProceduresSection_templateId ProceduresSection_code ProceduresSection_title",
-			 "templateId.root", "2.16.840.1.113883.10.20.1.14",
+			 "templateId.root", "2.16.840.1.113883.10.20.1.12",
 			 "code.displayName", "History of procedures",
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "47519-4",
