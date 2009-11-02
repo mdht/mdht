@@ -68,5 +68,28 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//VitalSign/VitalSign_templateId/context"/>
       </genOperations>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//PayersSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//AllergiesReactionsSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//ProblemListSection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//ProblemListSection/ProblemListSection_templateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ProblemListSection/ProblemListSection_templateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ProblemListSection/ProblemListSection_templateId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//HistoryOfPastIllnessSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//ChiefComplaintSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//ReasonForReferralSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//HistoryOfPresentIllness"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//SurgeriesSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//FunctionalStatusSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//HospitalAdmissionDiagnosisSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//DischargeDiagnosisSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//MedicationsSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//AdmissionMedicationHistorySection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//HospitalDischargeMedicationsSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//MedicationsAdministeredSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//AdvanceDirectivesSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//ImmunizationsSection"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//PhysicalExamSection"/>
   </genPackages>
 </genmodel:GenModel>
