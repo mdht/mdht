@@ -32,6 +32,15 @@ public interface IHEFactory extends EFactory {
 	IHEFactory eINSTANCE = org.openhealthtools.mdht.uml.cda.ihe.impl.IHEFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Medications Administered Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medications Administered Section</em>'.
+	 * @generated
+	 */
+	MedicationsAdministeredSection createMedicationsAdministeredSection();
+
+	/**
 	 * Returns a new object of class '<em>Concern Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -201,6 +210,141 @@ public interface IHEFactory extends EFactory {
 	 * @generated
 	 */
 	VitalSignsOrganizer createVitalSignsOrganizer();
+
+	/**
+	 * Returns a new object of class '<em>Payers Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Payers Section</em>'.
+	 * @generated
+	 */
+	PayersSection createPayersSection();
+
+	/**
+	 * Returns a new object of class '<em>History Of Past Illness Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>History Of Past Illness Section</em>'.
+	 * @generated
+	 */
+	HistoryOfPastIllnessSection createHistoryOfPastIllnessSection();
+
+	/**
+	 * Returns a new object of class '<em>Chief Complaint Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Chief Complaint Section</em>'.
+	 * @generated
+	 */
+	ChiefComplaintSection createChiefComplaintSection();
+
+	/**
+	 * Returns a new object of class '<em>Reason For Referral Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Reason For Referral Section</em>'.
+	 * @generated
+	 */
+	ReasonForReferralSection createReasonForReferralSection();
+
+	/**
+	 * Returns a new object of class '<em>History Of Present Illness</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>History Of Present Illness</em>'.
+	 * @generated
+	 */
+	HistoryOfPresentIllness createHistoryOfPresentIllness();
+
+	/**
+	 * Returns a new object of class '<em>Surgeries Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Surgeries Section</em>'.
+	 * @generated
+	 */
+	SurgeriesSection createSurgeriesSection();
+
+	/**
+	 * Returns a new object of class '<em>Coded Surgeries Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Coded Surgeries Section</em>'.
+	 * @generated
+	 */
+	CodedSurgeriesSection createCodedSurgeriesSection();
+
+	/**
+	 * Returns a new object of class '<em>Hospital Admission Diagnosis Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hospital Admission Diagnosis Section</em>'.
+	 * @generated
+	 */
+	HospitalAdmissionDiagnosisSection createHospitalAdmissionDiagnosisSection();
+
+	/**
+	 * Returns a new object of class '<em>Discharge Diagnosis Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Discharge Diagnosis Section</em>'.
+	 * @generated
+	 */
+	DischargeDiagnosisSection createDischargeDiagnosisSection();
+
+	/**
+	 * Returns a new object of class '<em>Admission Medication History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Admission Medication History Section</em>'.
+	 * @generated
+	 */
+	AdmissionMedicationHistorySection createAdmissionMedicationHistorySection();
+
+	/**
+	 * Returns a new object of class '<em>Hospital Discharge Medications Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hospital Discharge Medications Section</em>'.
+	 * @generated
+	 */
+	HospitalDischargeMedicationsSection createHospitalDischargeMedicationsSection();
+
+	/**
+	 * Returns a new object of class '<em>Coded Advance Directives Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Coded Advance Directives Section</em>'.
+	 * @generated
+	 */
+	CodedAdvanceDirectivesSection createCodedAdvanceDirectivesSection();
+
+	/**
+	 * Returns a new object of class '<em>Advance Directives Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Advance Directives Section</em>'.
+	 * @generated
+	 */
+	AdvanceDirectivesSection createAdvanceDirectivesSection();
+
+	/**
+	 * Returns a new object of class '<em>Physical Exam Narrative Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Physical Exam Narrative Section</em>'.
+	 * @generated
+	 */
+	PhysicalExamNarrativeSection createPhysicalExamNarrativeSection();
+
+	/**
+	 * Returns a new object of class '<em>Physical Exam Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Physical Exam Section</em>'.
+	 * @generated
+	 */
+	PhysicalExamSection createPhysicalExamSection();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -75,6 +75,7 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case IHEPackage.MEDICATIONS_ADMINISTERED_SECTION: return createMedicationsAdministeredSection();
 			case IHEPackage.CONCERN_ENTRY: return createConcernEntry();
 			case IHEPackage.MEDICAL_DOCUMENT: return createMedicalDocument();
 			case IHEPackage.ACTIVE_PROBLEMS_SECTION: return createActiveProblemsSection();
@@ -94,9 +95,34 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.CODED_VITAL_SIGNS_SECTION: return createCodedVitalSignsSection();
 			case IHEPackage.VITAL_SIGN_OBSERVATION: return createVitalSignObservation();
 			case IHEPackage.VITAL_SIGNS_ORGANIZER: return createVitalSignsOrganizer();
+			case IHEPackage.PAYERS_SECTION: return createPayersSection();
+			case IHEPackage.HISTORY_OF_PAST_ILLNESS_SECTION: return createHistoryOfPastIllnessSection();
+			case IHEPackage.CHIEF_COMPLAINT_SECTION: return createChiefComplaintSection();
+			case IHEPackage.REASON_FOR_REFERRAL_SECTION: return createReasonForReferralSection();
+			case IHEPackage.HISTORY_OF_PRESENT_ILLNESS: return createHistoryOfPresentIllness();
+			case IHEPackage.SURGERIES_SECTION: return createSurgeriesSection();
+			case IHEPackage.CODED_SURGERIES_SECTION: return createCodedSurgeriesSection();
+			case IHEPackage.HOSPITAL_ADMISSION_DIAGNOSIS_SECTION: return createHospitalAdmissionDiagnosisSection();
+			case IHEPackage.DISCHARGE_DIAGNOSIS_SECTION: return createDischargeDiagnosisSection();
+			case IHEPackage.ADMISSION_MEDICATION_HISTORY_SECTION: return createAdmissionMedicationHistorySection();
+			case IHEPackage.HOSPITAL_DISCHARGE_MEDICATIONS_SECTION: return createHospitalDischargeMedicationsSection();
+			case IHEPackage.CODED_ADVANCE_DIRECTIVES_SECTION: return createCodedAdvanceDirectivesSection();
+			case IHEPackage.ADVANCE_DIRECTIVES_SECTION: return createAdvanceDirectivesSection();
+			case IHEPackage.PHYSICAL_EXAM_NARRATIVE_SECTION: return createPhysicalExamNarrativeSection();
+			case IHEPackage.PHYSICAL_EXAM_SECTION: return createPhysicalExamSection();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationsAdministeredSection createMedicationsAdministeredSection() {
+		MedicationsAdministeredSectionImpl medicationsAdministeredSection = new MedicationsAdministeredSectionImpl();
+		return medicationsAdministeredSection;
 	}
 
 	/**
@@ -287,6 +313,156 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public VitalSignsOrganizer createVitalSignsOrganizer() {
 		VitalSignsOrganizerImpl vitalSignsOrganizer = new VitalSignsOrganizerImpl();
 		return vitalSignsOrganizer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PayersSection createPayersSection() {
+		PayersSectionImpl payersSection = new PayersSectionImpl();
+		return payersSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HistoryOfPastIllnessSection createHistoryOfPastIllnessSection() {
+		HistoryOfPastIllnessSectionImpl historyOfPastIllnessSection = new HistoryOfPastIllnessSectionImpl();
+		return historyOfPastIllnessSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChiefComplaintSection createChiefComplaintSection() {
+		ChiefComplaintSectionImpl chiefComplaintSection = new ChiefComplaintSectionImpl();
+		return chiefComplaintSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReasonForReferralSection createReasonForReferralSection() {
+		ReasonForReferralSectionImpl reasonForReferralSection = new ReasonForReferralSectionImpl();
+		return reasonForReferralSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HistoryOfPresentIllness createHistoryOfPresentIllness() {
+		HistoryOfPresentIllnessImpl historyOfPresentIllness = new HistoryOfPresentIllnessImpl();
+		return historyOfPresentIllness;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SurgeriesSection createSurgeriesSection() {
+		SurgeriesSectionImpl surgeriesSection = new SurgeriesSectionImpl();
+		return surgeriesSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CodedSurgeriesSection createCodedSurgeriesSection() {
+		CodedSurgeriesSectionImpl codedSurgeriesSection = new CodedSurgeriesSectionImpl();
+		return codedSurgeriesSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HospitalAdmissionDiagnosisSection createHospitalAdmissionDiagnosisSection() {
+		HospitalAdmissionDiagnosisSectionImpl hospitalAdmissionDiagnosisSection = new HospitalAdmissionDiagnosisSectionImpl();
+		return hospitalAdmissionDiagnosisSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DischargeDiagnosisSection createDischargeDiagnosisSection() {
+		DischargeDiagnosisSectionImpl dischargeDiagnosisSection = new DischargeDiagnosisSectionImpl();
+		return dischargeDiagnosisSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdmissionMedicationHistorySection createAdmissionMedicationHistorySection() {
+		AdmissionMedicationHistorySectionImpl admissionMedicationHistorySection = new AdmissionMedicationHistorySectionImpl();
+		return admissionMedicationHistorySection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HospitalDischargeMedicationsSection createHospitalDischargeMedicationsSection() {
+		HospitalDischargeMedicationsSectionImpl hospitalDischargeMedicationsSection = new HospitalDischargeMedicationsSectionImpl();
+		return hospitalDischargeMedicationsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CodedAdvanceDirectivesSection createCodedAdvanceDirectivesSection() {
+		CodedAdvanceDirectivesSectionImpl codedAdvanceDirectivesSection = new CodedAdvanceDirectivesSectionImpl();
+		return codedAdvanceDirectivesSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdvanceDirectivesSection createAdvanceDirectivesSection() {
+		AdvanceDirectivesSectionImpl advanceDirectivesSection = new AdvanceDirectivesSectionImpl();
+		return advanceDirectivesSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PhysicalExamNarrativeSection createPhysicalExamNarrativeSection() {
+		PhysicalExamNarrativeSectionImpl physicalExamNarrativeSection = new PhysicalExamNarrativeSectionImpl();
+		return physicalExamNarrativeSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PhysicalExamSection createPhysicalExamSection() {
+		PhysicalExamSectionImpl physicalExamSection = new PhysicalExamSectionImpl();
+		return physicalExamSection;
 	}
 
 	/**
