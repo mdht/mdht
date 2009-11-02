@@ -49,7 +49,7 @@
       <entry eClass="LocationParticipation" id="2.16.840.1.113883.10.20.1.45" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="Product" id="2.16.840.1.113883.10.20.1.53" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="EncounterLocation" id="2.16.840.1.113883.10.20.1.45" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
-      <entry eClass="ProceduresSection" id="2.16.840.1.113883.10.20.1.14" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
+      <entry eClass="ProceduresSection" id="2.16.840.1.113883.10.20.1.12" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="PlanOfCareSection" id="2.16.840.1.113883.10.20.1.10" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="VitalSignsSection" id="2.16.840.1.113883.10.20.1.16" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
       <entry eClass="MedicalEquipmentSection" id="2.16.840.1.113883.10.20.1.7" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd"/>
