@@ -69,6 +69,24 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.PATIENT_SUMMARY: return createPatientSummary();
 			case HITSPPackage.VITAL_SIGNS_SECTION: return createVitalSignsSection();
 			case HITSPPackage.VITAL_SIGN: return createVitalSign();
+			case HITSPPackage.PAYERS_SECTION: return createPayersSection();
+			case HITSPPackage.ALLERGIES_REACTIONS_SECTION: return createAllergiesReactionsSection();
+			case HITSPPackage.PROBLEM_LIST_SECTION: return createProblemListSection();
+			case HITSPPackage.HISTORY_OF_PAST_ILLNESS_SECTION: return createHistoryOfPastIllnessSection();
+			case HITSPPackage.CHIEF_COMPLAINT_SECTION: return createChiefComplaintSection();
+			case HITSPPackage.REASON_FOR_REFERRAL_SECTION: return createReasonForReferralSection();
+			case HITSPPackage.HISTORY_OF_PRESENT_ILLNESS: return createHistoryOfPresentIllness();
+			case HITSPPackage.SURGERIES_SECTION: return createSurgeriesSection();
+			case HITSPPackage.FUNCTIONAL_STATUS_SECTION: return createFunctionalStatusSection();
+			case HITSPPackage.HOSPITAL_ADMISSION_DIAGNOSIS_SECTION: return createHospitalAdmissionDiagnosisSection();
+			case HITSPPackage.DISCHARGE_DIAGNOSIS_SECTION: return createDischargeDiagnosisSection();
+			case HITSPPackage.MEDICATIONS_SECTION: return createMedicationsSection();
+			case HITSPPackage.ADMISSION_MEDICATION_HISTORY_SECTION: return createAdmissionMedicationHistorySection();
+			case HITSPPackage.HOSPITAL_DISCHARGE_MEDICATIONS_SECTION: return createHospitalDischargeMedicationsSection();
+			case HITSPPackage.MEDICATIONS_ADMINISTERED_SECTION: return createMedicationsAdministeredSection();
+			case HITSPPackage.ADVANCE_DIRECTIVES_SECTION: return createAdvanceDirectivesSection();
+			case HITSPPackage.IMMUNIZATIONS_SECTION: return createImmunizationsSection();
+			case HITSPPackage.PHYSICAL_EXAM_SECTION: return createPhysicalExamSection();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -132,6 +150,186 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 	public VitalSign createVitalSign() {
 		VitalSignImpl vitalSign = new VitalSignImpl();
 		return vitalSign;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PayersSection createPayersSection() {
+		PayersSectionImpl payersSection = new PayersSectionImpl();
+		return payersSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AllergiesReactionsSection createAllergiesReactionsSection() {
+		AllergiesReactionsSectionImpl allergiesReactionsSection = new AllergiesReactionsSectionImpl();
+		return allergiesReactionsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProblemListSection createProblemListSection() {
+		ProblemListSectionImpl problemListSection = new ProblemListSectionImpl();
+		return problemListSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HistoryOfPastIllnessSection createHistoryOfPastIllnessSection() {
+		HistoryOfPastIllnessSectionImpl historyOfPastIllnessSection = new HistoryOfPastIllnessSectionImpl();
+		return historyOfPastIllnessSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChiefComplaintSection createChiefComplaintSection() {
+		ChiefComplaintSectionImpl chiefComplaintSection = new ChiefComplaintSectionImpl();
+		return chiefComplaintSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReasonForReferralSection createReasonForReferralSection() {
+		ReasonForReferralSectionImpl reasonForReferralSection = new ReasonForReferralSectionImpl();
+		return reasonForReferralSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HistoryOfPresentIllness createHistoryOfPresentIllness() {
+		HistoryOfPresentIllnessImpl historyOfPresentIllness = new HistoryOfPresentIllnessImpl();
+		return historyOfPresentIllness;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SurgeriesSection createSurgeriesSection() {
+		SurgeriesSectionImpl surgeriesSection = new SurgeriesSectionImpl();
+		return surgeriesSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FunctionalStatusSection createFunctionalStatusSection() {
+		FunctionalStatusSectionImpl functionalStatusSection = new FunctionalStatusSectionImpl();
+		return functionalStatusSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HospitalAdmissionDiagnosisSection createHospitalAdmissionDiagnosisSection() {
+		HospitalAdmissionDiagnosisSectionImpl hospitalAdmissionDiagnosisSection = new HospitalAdmissionDiagnosisSectionImpl();
+		return hospitalAdmissionDiagnosisSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DischargeDiagnosisSection createDischargeDiagnosisSection() {
+		DischargeDiagnosisSectionImpl dischargeDiagnosisSection = new DischargeDiagnosisSectionImpl();
+		return dischargeDiagnosisSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationsSection createMedicationsSection() {
+		MedicationsSectionImpl medicationsSection = new MedicationsSectionImpl();
+		return medicationsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdmissionMedicationHistorySection createAdmissionMedicationHistorySection() {
+		AdmissionMedicationHistorySectionImpl admissionMedicationHistorySection = new AdmissionMedicationHistorySectionImpl();
+		return admissionMedicationHistorySection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HospitalDischargeMedicationsSection createHospitalDischargeMedicationsSection() {
+		HospitalDischargeMedicationsSectionImpl hospitalDischargeMedicationsSection = new HospitalDischargeMedicationsSectionImpl();
+		return hospitalDischargeMedicationsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationsAdministeredSection createMedicationsAdministeredSection() {
+		MedicationsAdministeredSectionImpl medicationsAdministeredSection = new MedicationsAdministeredSectionImpl();
+		return medicationsAdministeredSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdvanceDirectivesSection createAdvanceDirectivesSection() {
+		AdvanceDirectivesSectionImpl advanceDirectivesSection = new AdvanceDirectivesSectionImpl();
+		return advanceDirectivesSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImmunizationsSection createImmunizationsSection() {
+		ImmunizationsSectionImpl immunizationsSection = new ImmunizationsSectionImpl();
+		return immunizationsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PhysicalExamSection createPhysicalExamSection() {
+		PhysicalExamSectionImpl physicalExamSection = new PhysicalExamSectionImpl();
+		return physicalExamSection;
 	}
 
 	/**

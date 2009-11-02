@@ -80,6 +80,168 @@ public interface HITSPFactory extends EFactory {
 	VitalSign createVitalSign();
 
 	/**
+	 * Returns a new object of class '<em>Payers Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Payers Section</em>'.
+	 * @generated
+	 */
+	PayersSection createPayersSection();
+
+	/**
+	 * Returns a new object of class '<em>Allergies Reactions Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Allergies Reactions Section</em>'.
+	 * @generated
+	 */
+	AllergiesReactionsSection createAllergiesReactionsSection();
+
+	/**
+	 * Returns a new object of class '<em>Problem List Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Problem List Section</em>'.
+	 * @generated
+	 */
+	ProblemListSection createProblemListSection();
+
+	/**
+	 * Returns a new object of class '<em>History Of Past Illness Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>History Of Past Illness Section</em>'.
+	 * @generated
+	 */
+	HistoryOfPastIllnessSection createHistoryOfPastIllnessSection();
+
+	/**
+	 * Returns a new object of class '<em>Chief Complaint Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Chief Complaint Section</em>'.
+	 * @generated
+	 */
+	ChiefComplaintSection createChiefComplaintSection();
+
+	/**
+	 * Returns a new object of class '<em>Reason For Referral Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Reason For Referral Section</em>'.
+	 * @generated
+	 */
+	ReasonForReferralSection createReasonForReferralSection();
+
+	/**
+	 * Returns a new object of class '<em>History Of Present Illness</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>History Of Present Illness</em>'.
+	 * @generated
+	 */
+	HistoryOfPresentIllness createHistoryOfPresentIllness();
+
+	/**
+	 * Returns a new object of class '<em>Surgeries Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Surgeries Section</em>'.
+	 * @generated
+	 */
+	SurgeriesSection createSurgeriesSection();
+
+	/**
+	 * Returns a new object of class '<em>Functional Status Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Functional Status Section</em>'.
+	 * @generated
+	 */
+	FunctionalStatusSection createFunctionalStatusSection();
+
+	/**
+	 * Returns a new object of class '<em>Hospital Admission Diagnosis Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hospital Admission Diagnosis Section</em>'.
+	 * @generated
+	 */
+	HospitalAdmissionDiagnosisSection createHospitalAdmissionDiagnosisSection();
+
+	/**
+	 * Returns a new object of class '<em>Discharge Diagnosis Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Discharge Diagnosis Section</em>'.
+	 * @generated
+	 */
+	DischargeDiagnosisSection createDischargeDiagnosisSection();
+
+	/**
+	 * Returns a new object of class '<em>Medications Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medications Section</em>'.
+	 * @generated
+	 */
+	MedicationsSection createMedicationsSection();
+
+	/**
+	 * Returns a new object of class '<em>Admission Medication History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Admission Medication History Section</em>'.
+	 * @generated
+	 */
+	AdmissionMedicationHistorySection createAdmissionMedicationHistorySection();
+
+	/**
+	 * Returns a new object of class '<em>Hospital Discharge Medications Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hospital Discharge Medications Section</em>'.
+	 * @generated
+	 */
+	HospitalDischargeMedicationsSection createHospitalDischargeMedicationsSection();
+
+	/**
+	 * Returns a new object of class '<em>Medications Administered Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medications Administered Section</em>'.
+	 * @generated
+	 */
+	MedicationsAdministeredSection createMedicationsAdministeredSection();
+
+	/**
+	 * Returns a new object of class '<em>Advance Directives Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Advance Directives Section</em>'.
+	 * @generated
+	 */
+	AdvanceDirectivesSection createAdvanceDirectivesSection();
+
+	/**
+	 * Returns a new object of class '<em>Immunizations Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Immunizations Section</em>'.
+	 * @generated
+	 */
+	ImmunizationsSection createImmunizationsSection();
+
+	/**
+	 * Returns a new object of class '<em>Physical Exam Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Physical Exam Section</em>'.
+	 * @generated
+	 */
+	PhysicalExamSection createPhysicalExamSection();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
