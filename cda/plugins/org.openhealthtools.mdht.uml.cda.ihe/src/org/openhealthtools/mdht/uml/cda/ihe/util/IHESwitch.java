@@ -118,6 +118,14 @@ public class IHESwitch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case IHEPackage.IMMUNIZATIONS_SECTION: {
+				ImmunizationsSection immunizationsSection = (ImmunizationsSection)theEObject;
+				T result = caseImmunizationsSection(immunizationsSection);
+				if (result == null) result = caseImmunizationsSection_1(immunizationsSection);
+				if (result == null) result = caseSection(immunizationsSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case IHEPackage.MEDICATIONS_ADMINISTERED_SECTION: {
 				MedicationsAdministeredSection medicationsAdministeredSection = (MedicationsAdministeredSection)theEObject;
 				T result = caseMedicationsAdministeredSection(medicationsAdministeredSection);
@@ -408,6 +416,21 @@ public class IHESwitch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Immunizations Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Immunizations Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImmunizationsSection(ImmunizationsSection object) {
+		return null;
 	}
 
 	/**
@@ -1007,6 +1030,21 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseSection(Section object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Immunizations Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Immunizations Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImmunizationsSection_1(org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection object) {
 		return null;
 	}
 
