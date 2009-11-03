@@ -111,6 +111,15 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.ADVANCE_DIRECTIVES_SECTION: return createAdvanceDirectivesSection();
 			case IHEPackage.PHYSICAL_EXAM_NARRATIVE_SECTION: return createPhysicalExamNarrativeSection();
 			case IHEPackage.PHYSICAL_EXAM_SECTION: return createPhysicalExamSection();
+			case IHEPackage.REVIEW_OF_SYSTEMS_SECTION: return createReviewOfSystemsSection();
+			case IHEPackage.HOSPITAL_COURSE_SECTION: return createHospitalCourseSection();
+			case IHEPackage.CODED_RESULTS_SECTION: return createCodedResultsSection();
+			case IHEPackage.ASSESSMENT_AND_PLAN_SECTION: return createAssessmentAndPlanSection();
+			case IHEPackage.CARE_PLAN_SECTION: return createCarePlanSection();
+			case IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION: return createFamilyMedicalHistorySection();
+			case IHEPackage.SOCIAL_HISTORY_SECTION: return createSocialHistorySection();
+			case IHEPackage.ENCOUNTER_HISTORY_SECTION: return createEncounterHistorySection();
+			case IHEPackage.MEDICAL_DEVICES_SECTION: return createMedicalDevicesSection();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -474,6 +483,96 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public PhysicalExamSection createPhysicalExamSection() {
 		PhysicalExamSectionImpl physicalExamSection = new PhysicalExamSectionImpl();
 		return physicalExamSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReviewOfSystemsSection createReviewOfSystemsSection() {
+		ReviewOfSystemsSectionImpl reviewOfSystemsSection = new ReviewOfSystemsSectionImpl();
+		return reviewOfSystemsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HospitalCourseSection createHospitalCourseSection() {
+		HospitalCourseSectionImpl hospitalCourseSection = new HospitalCourseSectionImpl();
+		return hospitalCourseSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CodedResultsSection createCodedResultsSection() {
+		CodedResultsSectionImpl codedResultsSection = new CodedResultsSectionImpl();
+		return codedResultsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssessmentAndPlanSection createAssessmentAndPlanSection() {
+		AssessmentAndPlanSectionImpl assessmentAndPlanSection = new AssessmentAndPlanSectionImpl();
+		return assessmentAndPlanSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CarePlanSection createCarePlanSection() {
+		CarePlanSectionImpl carePlanSection = new CarePlanSectionImpl();
+		return carePlanSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FamilyMedicalHistorySection createFamilyMedicalHistorySection() {
+		FamilyMedicalHistorySectionImpl familyMedicalHistorySection = new FamilyMedicalHistorySectionImpl();
+		return familyMedicalHistorySection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SocialHistorySection createSocialHistorySection() {
+		SocialHistorySectionImpl socialHistorySection = new SocialHistorySectionImpl();
+		return socialHistorySection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EncounterHistorySection createEncounterHistorySection() {
+		EncounterHistorySectionImpl encounterHistorySection = new EncounterHistorySectionImpl();
+		return encounterHistorySection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicalDevicesSection createMedicalDevicesSection() {
+		MedicalDevicesSectionImpl medicalDevicesSection = new MedicalDevicesSectionImpl();
+		return medicalDevicesSection;
 	}
 
 	/**

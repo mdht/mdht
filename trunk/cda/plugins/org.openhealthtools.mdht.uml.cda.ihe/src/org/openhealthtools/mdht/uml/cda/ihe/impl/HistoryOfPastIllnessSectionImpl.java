@@ -64,6 +64,15 @@ public class HistoryOfPastIllnessSectionImpl extends SectionImpl implements Hist
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean HistoryOfPastIllnessSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryOfPastIllnessSectionOperations.HistoryOfPastIllnessSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public HistoryOfPastIllnessSection init() {
     		CDAUtil.init(this);
     		return this;

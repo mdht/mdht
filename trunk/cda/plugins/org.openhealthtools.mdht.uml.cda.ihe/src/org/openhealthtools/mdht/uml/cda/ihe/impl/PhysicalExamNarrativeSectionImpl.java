@@ -64,6 +64,15 @@ public class PhysicalExamNarrativeSectionImpl extends SectionImpl implements Phy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean PhysicalExamNarrativeSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PhysicalExamNarrativeSectionOperations.PhysicalExamNarrativeSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PhysicalExamNarrativeSection init() {
     		CDAUtil.init(this);
     		return this;

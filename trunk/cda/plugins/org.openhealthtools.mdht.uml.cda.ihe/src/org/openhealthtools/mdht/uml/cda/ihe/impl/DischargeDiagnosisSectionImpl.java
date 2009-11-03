@@ -64,6 +64,15 @@ public class DischargeDiagnosisSectionImpl extends SectionImpl implements Discha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean DischargeDiagnosisSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return DischargeDiagnosisSectionOperations.DischargeDiagnosisSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DischargeDiagnosisSection init() {
     		CDAUtil.init(this);
     		return this;

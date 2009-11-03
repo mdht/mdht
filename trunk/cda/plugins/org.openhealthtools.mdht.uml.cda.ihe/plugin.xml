@@ -51,5 +51,14 @@
       <entry eClass="AdvanceDirectivesSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.34" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
       <entry eClass="PhysicalExamNarrativeSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.24" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
       <entry eClass="PhysicalExamSection" id="1.3.6.1.4.1.19376.1.5.3.1.1.9.15" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="ReviewOfSystemsSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.18" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="HospitalCourseSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.5" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="CodedResultsSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.28" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="AssessmentAndPlanSection" id="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.5" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="CarePlanSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.31" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="FamilyMedicalHistorySection" id="1.3.6.1.4.1.19376.1.5.3.1.3.14" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="SocialHistorySection" id="1.3.6.1.4.1.19376.1.5.3.1.3.16" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="EncounterHistorySection" id="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="MedicalDevicesSection" id="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
    </extension>
 </plugin>

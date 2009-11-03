@@ -65,15 +65,6 @@ public class MedicationsSectionImpl extends MedicationSectionImpl implements Med
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationsSectionOperations.MedicationsSection_code(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public MedicationsSection init() {
     		CDAUtil.init(this);
     		return this;
