@@ -59,6 +59,24 @@ public class MedicalEquipmentSectionImpl extends SectionImpl implements MedicalE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean MedicalEquipmentSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicalEquipmentSectionOperations.MedicalEquipmentSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean MedicalEquipmentSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicalEquipmentSectionOperations.MedicalEquipmentSection_title(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MedicalEquipmentSection init() {
     		CDAUtil.init(this);
     		return this;
