@@ -59,6 +59,24 @@ public class SocialHistorySectionImpl extends SectionImpl implements SocialHisto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean SocialHistorySection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SocialHistorySectionOperations.SocialHistorySection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean SocialHistorySection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SocialHistorySectionOperations.SocialHistorySection_title(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SocialHistorySection init() {
     		CDAUtil.init(this);
     		return this;

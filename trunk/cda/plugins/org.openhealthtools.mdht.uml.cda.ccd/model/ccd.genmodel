@@ -345,6 +345,14 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SocialHistorySection/SocialHistorySection_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SocialHistorySection/SocialHistorySection_templateId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SocialHistorySection/SocialHistorySection_code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SocialHistorySection/SocialHistorySection_code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SocialHistorySection/SocialHistorySection_code/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SocialHistorySection/SocialHistorySection_title">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SocialHistorySection/SocialHistorySection_title/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//SocialHistorySection/SocialHistorySection_title/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//SocialHistoryObservation">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//SocialHistoryObservation/SocialHistoryObservation_templateId">
@@ -370,6 +378,14 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ImmunizationsSection/ImmunizationsSection_templateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSection_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSection_templateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ImmunizationsSection/ImmunizationsSection_code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSection_code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSection_code/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ImmunizationsSection/ImmunizationsSection_title">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSection_title/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSection_title/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//EncountersActivity">
@@ -626,6 +642,14 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicalEquipmentSection/MedicalEquipmentSection_templateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicalEquipmentSection/MedicalEquipmentSection_templateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicalEquipmentSection/MedicalEquipmentSection_templateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicalEquipmentSection/MedicalEquipmentSection_code">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicalEquipmentSection/MedicalEquipmentSection_code/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicalEquipmentSection/MedicalEquipmentSection_code/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//MedicalEquipmentSection/MedicalEquipmentSection_title">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicalEquipmentSection/MedicalEquipmentSection_title/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//MedicalEquipmentSection/MedicalEquipmentSection_title/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//FunctionalStatusSection">

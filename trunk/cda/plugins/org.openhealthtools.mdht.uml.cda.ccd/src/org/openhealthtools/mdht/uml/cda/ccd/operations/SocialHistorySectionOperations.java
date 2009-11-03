@@ -29,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection#SocialHistorySection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Social History Section template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection#SocialHistorySection_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Social History Section code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection#SocialHistorySection_title(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Social History Section title</em>}</li>
  * </ul>
  * </p>
  *
@@ -94,6 +96,124 @@ public class SocialHistorySectionOperations extends SectionOperations {
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.SOCIAL_HISTORY_SECTION__SOCIAL_HISTORY_SECTION_TEMPLATE_ID,
 						 CCDPlugin.INSTANCE.getString("SocialHistorySection_templateId"),
+						 new Object [] { socialHistorySection }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #SocialHistorySection_code(SocialHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Social History Section code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SocialHistorySection_code(SocialHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SOCIAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and "+
+"let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in ("+
+"value.code = '29762-2' and value.codeSystem = '2.16.840.1.113883.6.1')";
+
+	/**
+	 * The cached OCL invariant for the '{@link #SocialHistorySection_code(SocialHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Social History Section code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SocialHistorySection_code(SocialHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint SOCIAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and 
+	 * let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (
+	 * value.code = '29762-2' and value.codeSystem = '2.16.840.1.113883.6.1')
+	 * @param socialHistorySection The receiving '<em><b>Social History Section</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean SocialHistorySection_code(SocialHistorySection socialHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (SOCIAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.SOCIAL_HISTORY_SECTION);
+			try {
+				SOCIAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SOCIAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(SOCIAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(socialHistorySection)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.SOCIAL_HISTORY_SECTION__SOCIAL_HISTORY_SECTION_CODE,
+						 CCDPlugin.INSTANCE.getString("SocialHistorySection_code"),
+						 new Object [] { socialHistorySection }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #SocialHistorySection_title(SocialHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Social History Section title</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SocialHistorySection_title(SocialHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SOCIAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.title.oclIsUndefined()";
+
+	/**
+	 * The cached OCL invariant for the '{@link #SocialHistorySection_title(SocialHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Social History Section title</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SocialHistorySection_title(SocialHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint SOCIAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.title.oclIsUndefined()
+	 * @param socialHistorySection The receiving '<em><b>Social History Section</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean SocialHistorySection_title(SocialHistorySection socialHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (SOCIAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.SOCIAL_HISTORY_SECTION);
+			try {
+				SOCIAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SOCIAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(SOCIAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(socialHistorySection)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.WARNING,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.SOCIAL_HISTORY_SECTION__SOCIAL_HISTORY_SECTION_TITLE,
+						 CCDPlugin.INSTANCE.getString("SocialHistorySection_title"),
 						 new Object [] { socialHistorySection }));
 			}
 			return false;
