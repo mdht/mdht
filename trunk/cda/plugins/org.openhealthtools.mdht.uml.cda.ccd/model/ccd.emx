@@ -5584,6 +5584,12 @@
       <generalization xmi:id="_pTCVsHDAEd6eItyqb1FoWg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
+      <ownedAttribute xmi:id="_Qmz-cciiEd6mWrHPmrIIfQ" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Qmz-cMiiEd6mWrHPmrIIfQ" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Wa2uwHDAEd6eItyqb1FoWg" name="SocialHistoryObservation">
       <generalization xmi:id="_krQSQHDAEd6eItyqb1FoWg">
@@ -5616,6 +5622,12 @@
       <generalization xmi:id="_H448UHDPEd6eItyqb1FoWg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
+      <ownedAttribute xmi:id="_ZeXjEcikEd6mWrHPmrIIfQ" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZeXjEMikEd6mWrHPmrIIfQ" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_mO8KEHJWEd6cacuAk5qrhg" name="EncountersActivity">
       <generalization xmi:id="_vuapUHJjEd6cacuAk5qrhg">
@@ -6081,6 +6093,12 @@
       <generalization xmi:id="_-eFwQKPbEd6t_4WfM070fA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
+      <ownedAttribute xmi:id="_CZOMcMikEd6mWrHPmrIIfQ" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_CZOzgMikEd6mWrHPmrIIfQ" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_MnFrQKPcEd6t_4WfM070fA" memberEnd="_MnHgcKPcEd6t_4WfM070fA _MnJ8sKPcEd6t_4WfM070fA">
       <ownedEnd xmi:id="_MnJ8sKPcEd6t_4WfM070fA" name="" visibility="private" type="_Ze7UsGESEd69D7zx7EkLMA" association="_MnFrQKPcEd6t_4WfM070fA">
@@ -6845,4 +6863,8 @@
   <CDA:VocabSpecification xmi:id="_G1LDUcMSEd6-XpBv2uxYrQ" message="The FunctionalStatusObservation value SHALL be selected from ValueSet 2.16.840.1.113883.1.11.20.5 StatusOfFunctionalStatusCode STATIC 20061017." base_Property="_G1LDUMMSEd6-XpBv2uxYrQ" codeSystem="2.16.840.1.113883.1.11.20.5" codeSystemName="StatusOfFunctionalStatusCode" codeSystemVersion="20061017"/>
   <CDA:CDATemplate xmi:id="_O-gakMMVEd6-XpBv2uxYrQ" base_Class="_JpjIEMMVEd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.52" assigningAuthorityName="CCD"/>
   <CDA:PropertyValidation xmi:id="_ilPwosMVEd6-XpBv2uxYrQ" message="The ProductInstance classCode SHALL be 'MANU' 2.16.840.1.113883.5.110 RoleClass STATIC." base_Property="_ilPwoMMVEd6-XpBv2uxYrQ"/>
+  <CDA:TextValue xmi:id="_Qmz-csiiEd6mWrHPmrIIfQ" message="Results Section title SHOULD be valued with a case-insensitive language-insensitive text string containing 'results'." severity="WARNING" base_Property="_Qmz-cMiiEd6mWrHPmrIIfQ"/>
+  <CDA:VocabSpecification xmi:id="_Qmz-c8iiEd6mWrHPmrIIfQ" message="Social History Section code SHALL be '29762-2' 'Social history' 2.16.840.1.113883.6.1 LOINC STATIC." base_Property="_Qmz-cciiEd6mWrHPmrIIfQ" code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Social history"/>
+  <CDA:VocabSpecification xmi:id="_CZOzgcikEd6mWrHPmrIIfQ" base_Property="_CZOMcMikEd6mWrHPmrIIfQ" code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medical device use"/>
+  <CDA:VocabSpecification xmi:id="_ZeXjEsikEd6mWrHPmrIIfQ" base_Property="_ZeXjEcikEd6mWrHPmrIIfQ" code="11369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of immunizations"/>
 </xmi:XMI>
