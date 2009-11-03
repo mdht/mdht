@@ -64,6 +64,15 @@ public class HospitalDischargeMedicationsSectionImpl extends SectionImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean HospitalDischargeMedicationsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HospitalDischargeMedicationsSectionOperations.HospitalDischargeMedicationsSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public HospitalDischargeMedicationsSection init() {
     		CDAUtil.init(this);
     		return this;

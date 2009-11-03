@@ -64,6 +64,15 @@ public class ReasonForReferralSectionImpl extends SectionImpl implements ReasonF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ReasonForReferralSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReasonForReferralSectionOperations.ReasonForReferralSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ReasonForReferralSection init() {
     		CDAUtil.init(this);
     		return this;

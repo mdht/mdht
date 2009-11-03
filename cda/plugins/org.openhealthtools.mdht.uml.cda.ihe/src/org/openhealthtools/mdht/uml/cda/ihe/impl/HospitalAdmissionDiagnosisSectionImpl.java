@@ -64,6 +64,15 @@ public class HospitalAdmissionDiagnosisSectionImpl extends SectionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean HospitalAdmissionDiagnosisSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HospitalAdmissionDiagnosisSectionOperations.HospitalAdmissionDiagnosisSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public HospitalAdmissionDiagnosisSection init() {
     		CDAUtil.init(this);
     		return this;

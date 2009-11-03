@@ -64,6 +64,15 @@ public class ChiefComplaintSectionImpl extends SectionImpl implements ChiefCompl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ChiefComplaintSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ChiefComplaintSectionOperations.ChiefComplaintSection_code(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ChiefComplaintSection init() {
     		CDAUtil.init(this);
     		return this;

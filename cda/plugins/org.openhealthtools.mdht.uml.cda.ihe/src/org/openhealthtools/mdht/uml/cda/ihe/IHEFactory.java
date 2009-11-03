@@ -356,6 +356,87 @@ public interface IHEFactory extends EFactory {
 	PhysicalExamSection createPhysicalExamSection();
 
 	/**
+	 * Returns a new object of class '<em>Review Of Systems Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Review Of Systems Section</em>'.
+	 * @generated
+	 */
+	ReviewOfSystemsSection createReviewOfSystemsSection();
+
+	/**
+	 * Returns a new object of class '<em>Hospital Course Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hospital Course Section</em>'.
+	 * @generated
+	 */
+	HospitalCourseSection createHospitalCourseSection();
+
+	/**
+	 * Returns a new object of class '<em>Coded Results Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Coded Results Section</em>'.
+	 * @generated
+	 */
+	CodedResultsSection createCodedResultsSection();
+
+	/**
+	 * Returns a new object of class '<em>Assessment And Plan Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Assessment And Plan Section</em>'.
+	 * @generated
+	 */
+	AssessmentAndPlanSection createAssessmentAndPlanSection();
+
+	/**
+	 * Returns a new object of class '<em>Care Plan Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Care Plan Section</em>'.
+	 * @generated
+	 */
+	CarePlanSection createCarePlanSection();
+
+	/**
+	 * Returns a new object of class '<em>Family Medical History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Family Medical History Section</em>'.
+	 * @generated
+	 */
+	FamilyMedicalHistorySection createFamilyMedicalHistorySection();
+
+	/**
+	 * Returns a new object of class '<em>Social History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Social History Section</em>'.
+	 * @generated
+	 */
+	SocialHistorySection createSocialHistorySection();
+
+	/**
+	 * Returns a new object of class '<em>Encounter History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Encounter History Section</em>'.
+	 * @generated
+	 */
+	EncounterHistorySection createEncounterHistorySection();
+
+	/**
+	 * Returns a new object of class '<em>Medical Devices Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medical Devices Section</em>'.
+	 * @generated
+	 */
+	MedicalDevicesSection createMedicalDevicesSection();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
