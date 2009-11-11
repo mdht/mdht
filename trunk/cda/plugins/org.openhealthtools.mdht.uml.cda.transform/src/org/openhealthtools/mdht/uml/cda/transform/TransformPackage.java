@@ -28,23 +28,23 @@ public class TransformPackage extends TransformAbstract {
 			String prefix = (String) umlPackage.getValue(codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_PREFIX);
 			
 			if (basePackage != null) {
-				umlPackage.setValue(ePackage, ICDAProfileConstants.CODEGEN_SUPPORT_BASE_PACKAGE, basePackage);
+				umlPackage.setValue(ePackage, UMLUtil.TAG_DEFINITION__BASE_PACKAGE, basePackage);
 			}
 
 			if (nsPrefix != null) {
-				umlPackage.setValue(ePackage, ICDAProfileConstants.CODEGEN_SUPPORT_NS_PREFIX, nsPrefix);
+				umlPackage.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_PREFIX, nsPrefix);
 			}
 			
 			if (nsURI != null) {
-				umlPackage.setValue(ePackage, ICDAProfileConstants.CODEGEN_SUPPORT_NS_URI, nsURI);
+				umlPackage.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_URI, nsURI);
 			}
 			
 			if (packageName != null) {
-				umlPackage.setValue(ePackage, ICDAProfileConstants.CODEGEN_SUPPORT_PACKAGE_NAME, packageName);
+				umlPackage.setValue(ePackage, UMLUtil.TAG_DEFINITION__PACKAGE_NAME, packageName);
 			}
 			
 			if (prefix != null) {
-				umlPackage.setValue(ePackage, ICDAProfileConstants.CODEGEN_SUPPORT_PREFIX, prefix);
+				umlPackage.setValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX, prefix);
 			}
 			
 			CDAProfileUtil.unapplyCDAStereotype(umlPackage, ICDAProfileConstants.CODEGEN_SUPPORT);

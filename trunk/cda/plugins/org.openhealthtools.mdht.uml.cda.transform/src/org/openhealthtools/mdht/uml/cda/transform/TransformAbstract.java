@@ -19,10 +19,12 @@ import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
+import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
@@ -185,7 +187,8 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	protected void addOCLConstraint(Property property, StringBuffer body, String constraintName) {
 		if (constraintName == null) {
 //			String constraintName = property.getClass_().getName() + "_" + property.getName();
-			constraintName = property.getClass_().getName() + "_" + property.getName();
+//			constraintName = property.getClass_().getName() + "_" + property.getName();
+			constraintName = property.getClass_().getName() + property.getName().substring(0, 1).toUpperCase() + property.getName().substring(1);
 		}
 		
 		if (property.getClass_().getOwnedRule(constraintName) != null) {
@@ -209,4 +212,40 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		addValidationSupport(property, constraintName);
 	}
 	
+	protected String createConstraintName(Class umlClass, String suffix) {
+		String prefix = null;
+		
+		for (Classifier classifier : umlClass.allParents()) {
+			if (classifier instanceof Class) {
+				Class class_ = (Class) classifier;
+				if (umlClass.getName().equals(class_.getName())) {
+					Package umlPackage = umlClass.getPackage();
+					Stereotype ePackage = EcoreTransformUtil.getAppliedEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
+					if (ePackage != null) {
+						prefix = (String) umlPackage.getValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX);
+					}
+				}
+			}
+		}
+		
+		String constraintName = "";
+		if (prefix != null) {
+			constraintName += prefix;
+		}
+		constraintName += umlClass.getName();
+		if (suffix != null) {
+			constraintName += suffix;
+		}
+		
+		return constraintName;
+	}
+	
+	protected String normalizeConstraintName(String constraintName) {
+		String result = "";
+		String[] parts = constraintName.split("_");
+		for (String part : parts) {
+			result += part.substring(0, 1).toUpperCase() + part.substring(1);
+		}
+		return result;
+	}
 }

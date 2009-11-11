@@ -51,7 +51,8 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 	}
 	
 	private void addConstraint(Class umlClass, Stereotype hl7Template) {
-		String constraintName = umlClass.getName() + "_templateId";
+//		String constraintName = umlClass.getName() + "_templateId";
+		String constraintName = createConstraintName(umlClass, "TemplateId");
 		Constraint constraint = umlClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
 		constraint.getConstrainedElements().add(umlClass);
 
