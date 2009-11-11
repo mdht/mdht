@@ -33,7 +33,6 @@ import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 
 public class TransformTemplateIdentifier extends TransformAbstract {
-
 	public TransformTemplateIdentifier(EcoreTransformerOptions options) {
 		super(options);
 	}

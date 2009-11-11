@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 
 public class TransformVocabConstraint extends TransformAbstract {
-
 	public TransformVocabConstraint(EcoreTransformerOptions options) {
 		super(options);
 	}
@@ -148,7 +147,6 @@ public class TransformVocabConstraint extends TransformAbstract {
 			body.append(")");
 			addOCLConstraint(property, body);
 		}
-		
 	}
 
 	private StringBuffer getValueExpression(Property property) {
@@ -242,5 +240,4 @@ public class TransformVocabConstraint extends TransformAbstract {
 		
 		return false;
 	}
-	
 }

@@ -184,8 +184,10 @@ public class TransformPropertyConstraint extends TransformAbstract {
 					annotationUtil.saveAnnotations();
 					
 //					constraintName = class_.getName() + "_" + property.getName() + "_nullFlavor";
-					constraintName = class_.getName() + property.getName().substring(0, 1).toUpperCase() + 
-						property.getName().substring(1) + "NullFlavor";
+//					constraintName = class_.getName() + property.getName().substring(0, 1).toUpperCase() + 
+//							property.getName().substring(1) + "NullFlavor";
+					constraintName = createConstraintName(class_, property.getName().substring(0, 1).toUpperCase() + 
+							property.getName().substring(1) + "NullFlavor");
 				}
 			}
 		}
