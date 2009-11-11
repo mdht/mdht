@@ -34,16 +34,18 @@ public class TransformConstraint extends TransformAbstract {
 			return null;
 		}
 
+		constraint.setName(normalizeConstraintName(constraint.getName()));
+		
 		String severity = SEVERITY_ERROR;
 		String message = null;
-		Stereotype validation = CDAProfileUtil.getAppliedCDAStereotype(
-				constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+		Stereotype validation = CDAProfileUtil.getAppliedCDAStereotype(constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
 		if (validation != null) {
 			message = (String) constraint.getValue(validation, ICDAProfileConstants.VALIDATION_MESSAGE);
 			EnumerationLiteral literal = (EnumerationLiteral) constraint.getValue(validation, ICDAProfileConstants.VALIDATION_SEVERITY);
 			severity = (literal != null) ? literal.getName() : SEVERITY_ERROR;
+			CDAProfileUtil.unapplyCDAStereotype(constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
 		}
-
+		
 		if (SEVERITY_INFO.equals(severity)) {
 			addValidationInfo(constrainedClass, constraint.getName(), message);
 		} else if (SEVERITY_WARNING.equals(severity)) {
