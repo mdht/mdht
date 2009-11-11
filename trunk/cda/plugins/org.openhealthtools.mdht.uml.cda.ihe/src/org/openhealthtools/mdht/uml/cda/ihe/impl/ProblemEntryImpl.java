@@ -56,8 +56,8 @@ public class ProblemEntryImpl extends ProblemObservationImpl implements ProblemE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemEntry_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemEntryOperations.ProblemEntry_templateId(this, diagnostics, context);
+	public boolean validateProblemEntryTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemEntryOperations.validateProblemEntryTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -65,8 +65,8 @@ public class ProblemEntryImpl extends ProblemObservationImpl implements ProblemE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemEntry_text(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemEntryOperations.ProblemEntry_text(this, diagnostics, context);
+	public boolean validateProblemEntryText(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemEntryOperations.validateProblemEntryText(this, diagnostics, context);
 	}
 
 	/**
@@ -74,8 +74,8 @@ public class ProblemEntryImpl extends ProblemObservationImpl implements ProblemE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemEntry_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemEntryOperations.ProblemEntry_value(this, diagnostics, context);
+	public boolean validateProblemEntryValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemEntryOperations.validateProblemEntryValue(this, diagnostics, context);
 	}
 
 	/**

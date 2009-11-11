@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Reference#externalActChoice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>External Act Choice</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Reference#validateExternalActChoice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate External Act Choice</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,24 +58,24 @@ public class ReferenceOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #externalActChoice(Reference, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>External Act Choice</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateExternalActChoice(Reference, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate External Act Choice</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #externalActChoice(Reference, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateExternalActChoice(Reference, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "Bag{self.externalAct.oclIsUndefined(), self.externalDocument.oclIsUndefined(), self.externalObservation.oclIsUndefined(), self.externalProcedure.oclIsUndefined()}->one(x | x = false)";
+	protected static final String VALIDATE_EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "Bag{self.externalAct.oclIsUndefined(), self.externalDocument.oclIsUndefined(), self.externalObservation.oclIsUndefined(), self.externalProcedure.oclIsUndefined()}->one(x | x = false)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #externalActChoice(Reference, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>External Act Choice</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateExternalActChoice(Reference, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate External Act Choice</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #externalActChoice(Reference, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateExternalActChoice(Reference, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,25 +88,25 @@ public class ReferenceOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean externalActChoice(Reference reference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateExternalActChoice(Reference reference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.eINSTANCE.getReference());
 			try {
-				EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(reference)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(reference)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CDAValidator.DIAGNOSTIC_SOURCE,
 						 CDAValidator.REFERENCE__EXTERNAL_ACT_CHOICE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "externalActChoice", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(reference, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateExternalActChoice", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(reference, context) }),
 						 new Object [] { reference }));
 			}
 			return false;

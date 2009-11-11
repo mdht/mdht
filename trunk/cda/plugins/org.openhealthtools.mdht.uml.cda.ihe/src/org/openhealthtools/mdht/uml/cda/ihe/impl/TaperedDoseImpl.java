@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.TaperedDoseOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,8 +49,8 @@ public class TaperedDoseImpl extends MedicationImpl implements TaperedDose {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean TaperedDose_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return TaperedDoseOperations.TaperedDose_templateId(this, diagnostics, context);
+	public boolean validateTaperedDoseTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return TaperedDoseOperations.validateTaperedDoseTemplateId(this, diagnostics, context);
 	}
 
 	/**

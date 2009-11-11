@@ -13,22 +13,16 @@
 package org.openhealthtools.mdht.uml.hl7.vocab.internal.impl;
 
 import java.io.IOException;
-
 import java.net.URL;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
-
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.VocabFactory;
 import org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage;
 

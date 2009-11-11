@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ProblemListSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.ihe.impl.ActiveProblemsSectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class ProblemListSectionImpl extends ActiveProblemsSectionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemListSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemListSectionOperations.ProblemListSection_templateId(this, diagnostics, context);
+	public boolean validateProblemListSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemListSectionOperations.validateProblemListSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

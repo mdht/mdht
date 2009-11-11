@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.hitsp;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 
 /**
@@ -25,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getProblemListSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='ProblemListSection_templateId' templateId.root='2.16.840.1.113883.3.88.11.83.103'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='ProblemListSectionTemplateId' templateId.root='2.16.840.1.113883.3.88.11.83.103'"
  * @generated
  */
 public interface ProblemListSection extends ActiveProblemsSection {
@@ -40,7 +39,7 @@ public interface ProblemListSection extends ActiveProblemsSection {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.3.88.11.83.103\')'"
 	 * @generated
 	 */
-	boolean ProblemListSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemListSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

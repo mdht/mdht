@@ -27,8 +27,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation#AlertStatusObservation_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Alert Status Observation template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation#AlertStatusObservation_value(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Alert Status Observation value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation#validateAlertStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Status Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation#validateAlertStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Status Observation Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,24 +45,24 @@ public class AlertStatusObservationOperations extends StatusObservationOperation
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #AlertStatusObservation_templateId(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Alert Status Observation template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateAlertStatusObservationTemplateId(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Status Observation Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AlertStatusObservation_templateId(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAlertStatusObservationTemplateId(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ALERT_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.39')";
+	protected static final String VALIDATE_ALERT_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.39')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #AlertStatusObservation_templateId(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Alert Status Observation template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateAlertStatusObservationTemplateId(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Status Observation Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AlertStatusObservation_templateId(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAlertStatusObservationTemplateId(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint ALERT_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_ALERT_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,25 +75,25 @@ public class AlertStatusObservationOperations extends StatusObservationOperation
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean AlertStatusObservation_templateId(AlertStatusObservation alertStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (ALERT_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateAlertStatusObservationTemplateId(AlertStatusObservation alertStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ALERT_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.ALERT_STATUS_OBSERVATION);
 			try {
-				ALERT_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ALERT_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_ALERT_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ALERT_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(ALERT_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(alertStatusObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_ALERT_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(alertStatusObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.ALERT_STATUS_OBSERVATION__ALERT_STATUS_OBSERVATION_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("AlertStatusObservation_templateId"),
+						 CCDPlugin.INSTANCE.getString("AlertStatusObservationTemplateId"),
 						 new Object [] { alertStatusObservation }));
 			}
 			return false;
@@ -102,26 +102,26 @@ public class AlertStatusObservationOperations extends StatusObservationOperation
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #AlertStatusObservation_value(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Alert Status Observation value</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateAlertStatusObservationValue(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Status Observation Value</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AlertStatusObservation_value(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAlertStatusObservationValue(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ALERT_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and "+
+	protected static final String VALIDATE_ALERT_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and "+
 "let value : datatypes::CE = element.oclAsType(datatypes::CE) in "+
 "value.codeSystem = '2.16.840.1.113883.1.11.20.3')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #AlertStatusObservation_value(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Alert Status Observation value</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateAlertStatusObservationValue(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Status Observation Value</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AlertStatusObservation_value(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAlertStatusObservationValue(AlertStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint ALERT_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_ALERT_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,25 +136,25 @@ public class AlertStatusObservationOperations extends StatusObservationOperation
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean AlertStatusObservation_value(AlertStatusObservation alertStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (ALERT_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateAlertStatusObservationValue(AlertStatusObservation alertStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ALERT_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.ALERT_STATUS_OBSERVATION);
 			try {
-				ALERT_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ALERT_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_ALERT_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ALERT_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(ALERT_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(alertStatusObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_ALERT_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(alertStatusObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.ALERT_STATUS_OBSERVATION__ALERT_STATUS_OBSERVATION_VALUE,
-						 CCDPlugin.INSTANCE.getString("AlertStatusObservation_value"),
+						 CCDPlugin.INSTANCE.getString("AlertStatusObservationValue"),
 						 new Object [] { alertStatusObservation }));
 			}
 			return false;

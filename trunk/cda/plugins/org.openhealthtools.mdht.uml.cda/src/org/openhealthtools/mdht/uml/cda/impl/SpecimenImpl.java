@@ -16,26 +16,19 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Specimen;
 import org.openhealthtools.mdht.uml.cda.SpecimenRole;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 
@@ -46,9 +39,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SpecimenImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SpecimenImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SpecimenImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SpecimenImpl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SpecimenImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SpecimenImpl#getSpecimenRole <em>Specimen Role</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SpecimenImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SpecimenImpl#getTypeCode <em>Type Code</em>}</li>
@@ -59,14 +52,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  */
 public class SpecimenImpl extends EObjectImpl implements Specimen {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -79,14 +72,14 @@ public class SpecimenImpl extends EObjectImpl implements Specimen {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getSpecimenRole() <em>Specimen Role</em>}' containment reference.
@@ -180,11 +173,11 @@ public class SpecimenImpl extends EObjectImpl implements Specimen {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.SPECIMEN__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.SPECIMEN__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -235,11 +228,11 @@ public class SpecimenImpl extends EObjectImpl implements Specimen {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SPECIMEN__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SPECIMEN__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -386,11 +379,11 @@ public class SpecimenImpl extends EObjectImpl implements Specimen {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.SPECIMEN__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SPECIMEN__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.SPECIMEN__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SPECIMEN__SPECIMEN_ROLE:
 				return basicSetSpecimenRole(null, msgs);
 		}
@@ -406,11 +399,11 @@ public class SpecimenImpl extends EObjectImpl implements Specimen {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.SPECIMEN__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.SPECIMEN__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.SPECIMEN__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.SPECIMEN__SPECIMEN_ROLE:
 				return getSpecimenRole();
 			case CDAPackage.SPECIMEN__NULL_FLAVOR:
@@ -431,15 +424,15 @@ public class SpecimenImpl extends EObjectImpl implements Specimen {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.SPECIMEN__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.SPECIMEN__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.SPECIMEN__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.SPECIMEN__SPECIMEN_ROLE:
 				setSpecimenRole((SpecimenRole)newValue);
@@ -463,13 +456,13 @@ public class SpecimenImpl extends EObjectImpl implements Specimen {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.SPECIMEN__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.SPECIMEN__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.SPECIMEN__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.SPECIMEN__SPECIMEN_ROLE:
 				setSpecimenRole((SpecimenRole)null);
@@ -493,11 +486,11 @@ public class SpecimenImpl extends EObjectImpl implements Specimen {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.SPECIMEN__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.SPECIMEN__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.SPECIMEN__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.SPECIMEN__SPECIMEN_ROLE:
 				return specimenRole != null;
 			case CDAPackage.SPECIMEN__NULL_FLAVOR:

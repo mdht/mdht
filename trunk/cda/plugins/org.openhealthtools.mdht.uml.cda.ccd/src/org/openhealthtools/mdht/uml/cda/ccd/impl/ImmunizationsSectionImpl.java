@@ -50,8 +50,8 @@ public class ImmunizationsSectionImpl extends SectionImpl implements Immunizatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ImmunizationsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ImmunizationsSectionOperations.ImmunizationsSection_templateId(this, diagnostics, context);
+	public boolean validateImmunizationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ImmunizationsSectionOperations.validateImmunizationsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class ImmunizationsSectionImpl extends SectionImpl implements Immunizatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ImmunizationsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ImmunizationsSectionOperations.ImmunizationsSection_code(this, diagnostics, context);
+	public boolean validateImmunizationsSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ImmunizationsSectionOperations.validateImmunizationsSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class ImmunizationsSectionImpl extends SectionImpl implements Immunizatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ImmunizationsSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ImmunizationsSectionOperations.ImmunizationsSection_title(this, diagnostics, context);
+	public boolean validateImmunizationsSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ImmunizationsSectionOperations.validateImmunizationsSectionTitle(this, diagnostics, context);
 	}
 
 	/**

@@ -28,11 +28,11 @@ import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#ProblemObservation_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#ProblemObservation_moodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#ProblemObservation_statusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#ProblemObservation_effectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#ProblemObservation_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,24 +49,24 @@ public class ProblemObservationOperations extends ObservationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #ProblemObservation_templateId(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateProblemObservationTemplateId(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ProblemObservation_templateId(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemObservationTemplateId(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.28')";
+	protected static final String VALIDATE_PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.28')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #ProblemObservation_templateId(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateProblemObservationTemplateId(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ProblemObservation_templateId(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemObservationTemplateId(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,25 +79,25 @@ public class ProblemObservationOperations extends ObservationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ProblemObservation_templateId(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemObservationTemplateId(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PROBLEM_OBSERVATION);
 			try {
-				PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("ProblemObservation_templateId"),
+						 CCDPlugin.INSTANCE.getString("ProblemObservationTemplateId"),
 						 new Object [] { problemObservation }));
 			}
 			return false;
@@ -106,24 +106,24 @@ public class ProblemObservationOperations extends ObservationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #ProblemObservation_moodCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation mood Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateProblemObservationMoodCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Mood Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ProblemObservation_moodCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemObservationMoodCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode=vocab::x_ActMoodDocumentObservation::EVN";
+	protected static final String VALIDATE_PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode=vocab::x_ActMoodDocumentObservation::EVN";
 
 	/**
-	 * The cached OCL invariant for the '{@link #ProblemObservation_moodCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation mood Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateProblemObservationMoodCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Mood Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ProblemObservation_moodCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemObservationMoodCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,25 +136,25 @@ public class ProblemObservationOperations extends ObservationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ProblemObservation_moodCode(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemObservationMoodCode(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PROBLEM_OBSERVATION);
 			try {
-				PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_MOOD_CODE,
-						 CCDPlugin.INSTANCE.getString("ProblemObservation_moodCode"),
+						 CCDPlugin.INSTANCE.getString("ProblemObservationMoodCode"),
 						 new Object [] { problemObservation }));
 			}
 			return false;
@@ -163,26 +163,26 @@ public class ProblemObservationOperations extends ObservationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #ProblemObservation_statusCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation status Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateProblemObservationStatusCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Status Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ProblemObservation_statusCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemObservationStatusCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and "+
+	protected static final String VALIDATE_PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and "+
 "let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in ("+
 "value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #ProblemObservation_statusCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation status Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateProblemObservationStatusCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Status Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ProblemObservation_statusCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemObservationStatusCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,25 +197,25 @@ public class ProblemObservationOperations extends ObservationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ProblemObservation_statusCode(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemObservationStatusCode(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PROBLEM_OBSERVATION);
 			try {
-				PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_STATUS_CODE,
-						 CCDPlugin.INSTANCE.getString("ProblemObservation_statusCode"),
+						 CCDPlugin.INSTANCE.getString("ProblemObservationStatusCode"),
 						 new Object [] { problemObservation }));
 			}
 			return false;
@@ -224,24 +224,24 @@ public class ProblemObservationOperations extends ObservationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #ProblemObservation_effectiveTime(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation effective Time</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateProblemObservationEffectiveTime(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Effective Time</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ProblemObservation_effectiveTime(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemObservationEffectiveTime(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.effectiveTime.oclIsUndefined()";
+	protected static final String VALIDATE_PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.effectiveTime.oclIsUndefined()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #ProblemObservation_effectiveTime(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation effective Time</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateProblemObservationEffectiveTime(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Effective Time</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ProblemObservation_effectiveTime(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemObservationEffectiveTime(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,25 +254,25 @@ public class ProblemObservationOperations extends ObservationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ProblemObservation_effectiveTime(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemObservationEffectiveTime(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PROBLEM_OBSERVATION);
 			try {
-				PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.WARNING,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_EFFECTIVE_TIME,
-						 CCDPlugin.INSTANCE.getString("ProblemObservation_effectiveTime"),
+						 CCDPlugin.INSTANCE.getString("ProblemObservationEffectiveTime"),
 						 new Object [] { problemObservation }));
 			}
 			return false;
@@ -281,26 +281,26 @@ public class ProblemObservationOperations extends ObservationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #ProblemObservation_code(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateProblemObservationCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ProblemObservation_code(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemObservationCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and "+
+	protected static final String VALIDATE_PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and "+
 "let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in ("+
 "not value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined())";
 
 	/**
-	 * The cached OCL invariant for the '{@link #ProblemObservation_code(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Observation code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateProblemObservationCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ProblemObservation_code(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemObservationCode(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -315,25 +315,25 @@ public class ProblemObservationOperations extends ObservationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ProblemObservation_code(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemObservationCode(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PROBLEM_OBSERVATION);
 			try {
-				PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.INFO,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_CODE,
-						 CCDPlugin.INSTANCE.getString("ProblemObservation_code"),
+						 CCDPlugin.INSTANCE.getString("ProblemObservationCode"),
 						 new Object [] { problemObservation }));
 			}
 			return false;

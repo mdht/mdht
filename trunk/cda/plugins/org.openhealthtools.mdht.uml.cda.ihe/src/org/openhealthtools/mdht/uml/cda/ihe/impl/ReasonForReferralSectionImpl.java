@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ReasonForReferralSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class ReasonForReferralSectionImpl extends SectionImpl implements ReasonF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ReasonForReferralSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ReasonForReferralSectionOperations.ReasonForReferralSection_templateId(this, diagnostics, context);
+	public boolean validateReasonForReferralSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReasonForReferralSectionOperations.validateReasonForReferralSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class ReasonForReferralSectionImpl extends SectionImpl implements ReasonF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ReasonForReferralSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ReasonForReferralSectionOperations.ReasonForReferralSection_code(this, diagnostics, context);
+	public boolean validateReasonForReferralSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReasonForReferralSectionOperations.validateReasonForReferralSectionCode(this, diagnostics, context);
 	}
 
 	/**

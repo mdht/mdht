@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AuthorizationActivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.ActImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class AuthorizationActivityImpl extends ActImpl implements AuthorizationA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AuthorizationActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AuthorizationActivityOperations.AuthorizationActivity_templateId(this, diagnostics, context);
+	public boolean validateAuthorizationActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AuthorizationActivityOperations.validateAuthorizationActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class AuthorizationActivityImpl extends ActImpl implements AuthorizationA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AuthorizationActivity_classCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AuthorizationActivityOperations.AuthorizationActivity_classCode(this, diagnostics, context);
+	public boolean validateAuthorizationActivityClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AuthorizationActivityOperations.validateAuthorizationActivityClassCode(this, diagnostics, context);
 	}
 
 	/**
@@ -73,8 +68,8 @@ public class AuthorizationActivityImpl extends ActImpl implements AuthorizationA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AuthorizationActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AuthorizationActivityOperations.AuthorizationActivity_moodCode(this, diagnostics, context);
+	public boolean validateAuthorizationActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AuthorizationActivityOperations.validateAuthorizationActivityMoodCode(this, diagnostics, context);
 	}
 
 	/**
@@ -82,8 +77,8 @@ public class AuthorizationActivityImpl extends ActImpl implements AuthorizationA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AuthorizationActivity_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AuthorizationActivityOperations.AuthorizationActivity_id(this, diagnostics, context);
+	public boolean validateAuthorizationActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AuthorizationActivityOperations.validateAuthorizationActivityId(this, diagnostics, context);
 	}
 
 	/**

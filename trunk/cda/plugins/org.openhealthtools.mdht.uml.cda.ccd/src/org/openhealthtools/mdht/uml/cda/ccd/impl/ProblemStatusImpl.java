@@ -49,8 +49,8 @@ public class ProblemStatusImpl extends StatusObservationImpl implements ProblemS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemStatus_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemStatusOperations.ProblemStatus_templateId(this, diagnostics, context);
+	public boolean validateProblemStatusTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemStatusOperations.validateProblemStatusTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -58,8 +58,8 @@ public class ProblemStatusImpl extends StatusObservationImpl implements ProblemS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemStatus_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemStatusOperations.ProblemStatus_value(this, diagnostics, context);
+	public boolean validateProblemStatusValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemStatusOperations.validateProblemStatusValue(this, diagnostics, context);
 	}
 
 	/**

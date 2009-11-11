@@ -16,31 +16,24 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.Birthplace;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Guardian;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.LanguageCommunication;
 import org.openhealthtools.mdht.uml.cda.Patient;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -52,9 +45,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getAdministrativeGenderCode <em>Administrative Gender Code</em>}</li>
@@ -63,9 +56,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getReligiousAffiliationCode <em>Religious Affiliation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getRaceCode <em>Race Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getEthnicGroupCode <em>Ethnic Group Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getGuardian <em>Guardian</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getGuardians <em>Guardian</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getBirthplace <em>Birthplace</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getLanguageCommunication <em>Language Communication</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getLanguageCommunications <em>Language Communication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getDeterminerCode <em>Determiner Code</em>}</li>
@@ -76,14 +69,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class PatientImpl extends EObjectImpl implements Patient {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -96,14 +89,14 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference.
@@ -186,14 +179,14 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	protected CE ethnicGroupCode;
 
 	/**
-	 * The cached value of the '{@link #getGuardian() <em>Guardian</em>}' containment reference list.
+	 * The cached value of the '{@link #getGuardians() <em>Guardian</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGuardian()
+	 * @see #getGuardians()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Guardian> guardian;
+	protected EList<Guardian> guardians;
 
 	/**
 	 * The cached value of the '{@link #getBirthplace() <em>Birthplace</em>}' containment reference.
@@ -206,14 +199,14 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	protected Birthplace birthplace;
 
 	/**
-	 * The cached value of the '{@link #getLanguageCommunication() <em>Language Communication</em>}' containment reference list.
+	 * The cached value of the '{@link #getLanguageCommunications() <em>Language Communication</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLanguageCommunication()
+	 * @see #getLanguageCommunications()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<LanguageCommunication> languageCommunication;
+	protected EList<LanguageCommunication> languageCommunications;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -326,11 +319,11 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.PATIENT__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.PATIENT__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -381,11 +374,11 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PATIENT__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PATIENT__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -737,11 +730,11 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Guardian> getGuardian() {
-		if (guardian == null) {
-			guardian = new EObjectContainmentEList<Guardian>(Guardian.class, this, CDAPackage.PATIENT__GUARDIAN);
+	public EList<Guardian> getGuardians() {
+		if (guardians == null) {
+			guardians = new EObjectContainmentEList<Guardian>(Guardian.class, this, CDAPackage.PATIENT__GUARDIAN);
 		}
-		return guardian;
+		return guardians;
 	}
 
 	/**
@@ -792,11 +785,11 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<LanguageCommunication> getLanguageCommunication() {
-		if (languageCommunication == null) {
-			languageCommunication = new EObjectContainmentEList<LanguageCommunication>(LanguageCommunication.class, this, CDAPackage.PATIENT__LANGUAGE_COMMUNICATION);
+	public EList<LanguageCommunication> getLanguageCommunications() {
+		if (languageCommunications == null) {
+			languageCommunications = new EObjectContainmentEList<LanguageCommunication>(LanguageCommunication.class, this, CDAPackage.PATIENT__LANGUAGE_COMMUNICATION);
 		}
-		return languageCommunication;
+		return languageCommunications;
 	}
 
 	/**
@@ -946,11 +939,11 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.PATIENT__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PATIENT__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.PATIENT__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PATIENT__ID:
 				return basicSetId(null, msgs);
 			case CDAPackage.PATIENT__NAME:
@@ -968,11 +961,11 @@ public class PatientImpl extends EObjectImpl implements Patient {
 			case CDAPackage.PATIENT__ETHNIC_GROUP_CODE:
 				return basicSetEthnicGroupCode(null, msgs);
 			case CDAPackage.PATIENT__GUARDIAN:
-				return ((InternalEList<?>)getGuardian()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getGuardians()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PATIENT__BIRTHPLACE:
 				return basicSetBirthplace(null, msgs);
 			case CDAPackage.PATIENT__LANGUAGE_COMMUNICATION:
-				return ((InternalEList<?>)getLanguageCommunication()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getLanguageCommunications()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -986,11 +979,11 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.PATIENT__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.PATIENT__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.PATIENT__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.PATIENT__ID:
 				return getId();
 			case CDAPackage.PATIENT__NAME:
@@ -1008,11 +1001,11 @@ public class PatientImpl extends EObjectImpl implements Patient {
 			case CDAPackage.PATIENT__ETHNIC_GROUP_CODE:
 				return getEthnicGroupCode();
 			case CDAPackage.PATIENT__GUARDIAN:
-				return getGuardian();
+				return getGuardians();
 			case CDAPackage.PATIENT__BIRTHPLACE:
 				return getBirthplace();
 			case CDAPackage.PATIENT__LANGUAGE_COMMUNICATION:
-				return getLanguageCommunication();
+				return getLanguageCommunications();
 			case CDAPackage.PATIENT__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.PATIENT__CLASS_CODE:
@@ -1033,15 +1026,15 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.PATIENT__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.PATIENT__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.PATIENT__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.PATIENT__ID:
 				setId((II)newValue);
@@ -1068,15 +1061,15 @@ public class PatientImpl extends EObjectImpl implements Patient {
 				setEthnicGroupCode((CE)newValue);
 				return;
 			case CDAPackage.PATIENT__GUARDIAN:
-				getGuardian().clear();
-				getGuardian().addAll((Collection<? extends Guardian>)newValue);
+				getGuardians().clear();
+				getGuardians().addAll((Collection<? extends Guardian>)newValue);
 				return;
 			case CDAPackage.PATIENT__BIRTHPLACE:
 				setBirthplace((Birthplace)newValue);
 				return;
 			case CDAPackage.PATIENT__LANGUAGE_COMMUNICATION:
-				getLanguageCommunication().clear();
-				getLanguageCommunication().addAll((Collection<? extends LanguageCommunication>)newValue);
+				getLanguageCommunications().clear();
+				getLanguageCommunications().addAll((Collection<? extends LanguageCommunication>)newValue);
 				return;
 			case CDAPackage.PATIENT__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -1100,13 +1093,13 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.PATIENT__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.PATIENT__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.PATIENT__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.PATIENT__ID:
 				setId((II)null);
@@ -1133,13 +1126,13 @@ public class PatientImpl extends EObjectImpl implements Patient {
 				setEthnicGroupCode((CE)null);
 				return;
 			case CDAPackage.PATIENT__GUARDIAN:
-				getGuardian().clear();
+				getGuardians().clear();
 				return;
 			case CDAPackage.PATIENT__BIRTHPLACE:
 				setBirthplace((Birthplace)null);
 				return;
 			case CDAPackage.PATIENT__LANGUAGE_COMMUNICATION:
-				getLanguageCommunication().clear();
+				getLanguageCommunications().clear();
 				return;
 			case CDAPackage.PATIENT__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -1163,11 +1156,11 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.PATIENT__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.PATIENT__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.PATIENT__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.PATIENT__ID:
 				return id != null;
 			case CDAPackage.PATIENT__NAME:
@@ -1185,11 +1178,11 @@ public class PatientImpl extends EObjectImpl implements Patient {
 			case CDAPackage.PATIENT__ETHNIC_GROUP_CODE:
 				return ethnicGroupCode != null;
 			case CDAPackage.PATIENT__GUARDIAN:
-				return guardian != null && !guardian.isEmpty();
+				return guardians != null && !guardians.isEmpty();
 			case CDAPackage.PATIENT__BIRTHPLACE:
 				return birthplace != null;
 			case CDAPackage.PATIENT__LANGUAGE_COMMUNICATION:
-				return languageCommunication != null && !languageCommunication.isEmpty();
+				return languageCommunications != null && !languageCommunications.isEmpty();
 			case CDAPackage.PATIENT__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.PATIENT__CLASS_CODE:

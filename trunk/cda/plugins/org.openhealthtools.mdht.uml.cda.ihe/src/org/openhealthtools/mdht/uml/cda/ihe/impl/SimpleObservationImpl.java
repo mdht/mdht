@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.SimpleObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.ObservationImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public abstract class SimpleObservationImpl extends ObservationImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SimpleObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SimpleObservationOperations.SimpleObservation_templateId(this, diagnostics, context);
+	public boolean validateSimpleObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SimpleObservationOperations.validateSimpleObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public abstract class SimpleObservationImpl extends ObservationImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SimpleObservation_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SimpleObservationOperations.SimpleObservation_id(this, diagnostics, context);
+	public boolean validateSimpleObservationId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SimpleObservationOperations.validateSimpleObservationId(this, diagnostics, context);
 	}
 
 	/**
@@ -73,8 +68,8 @@ public abstract class SimpleObservationImpl extends ObservationImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SimpleObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SimpleObservationOperations.SimpleObservation_statusCode(this, diagnostics, context);
+	public boolean validateSimpleObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SimpleObservationOperations.validateSimpleObservationStatusCode(this, diagnostics, context);
 	}
 
 	/**

@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
@@ -20,8 +21,8 @@ import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.expressions.OCLExpression;
-import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Component2;
 import org.openhealthtools.mdht.uml.cda.Component3;
@@ -42,9 +43,9 @@ import org.openhealthtools.mdht.uml.cda.StructuredBody;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#addPatient(org.openhealthtools.mdht.uml.cda.Patient) <em>Add Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#addPatientRole(org.openhealthtools.mdht.uml.cda.PatientRole) <em>Add Patient Role</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#addSection(org.openhealthtools.mdht.uml.cda.Section) <em>Add Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getPatient() <em>Get Patient</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getPatientRole() <em>Get Patient Role</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getSection() <em>Get Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getPatients() <em>Get Patients</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getPatientRoles() <em>Get Patient Roles</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getSections() <em>Get Sections</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#hasCode(java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#hasSectionTemplate(java.lang.String) <em>Has Section Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#hasTemplateId(java.lang.String) <em>Has Template Id</em>}</li>
@@ -105,27 +106,27 @@ public class ClinicalDocumentOperations {
 		}
 		Component3 component3 = CDAFactory.eINSTANCE.createComponent3();
 		component3.setSection(section);
-		structuredBody.getComponent().add(component3);
+		structuredBody.getComponents().add(component3);
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getPatient(ClinicalDocument) <em>Get Patient</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getPatients(ClinicalDocument) <em>Get Patients</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPatient(ClinicalDocument)
+	 * @see #getPatients(ClinicalDocument)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_PATIENT__EOCL_EXP = "self.recordTarget.patientRole.patient";
+	protected static final String GET_PATIENTS__EOCL_EXP = "self.recordTarget.patientRole.patient";
 	/**
-	 * The cached OCL query for the '{@link #getPatient(ClinicalDocument) <em>Get Patient</em>}' query operation.
+	 * The cached OCL query for the '{@link #getPatients(ClinicalDocument) <em>Get Patients</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPatient(ClinicalDocument)
+	 * @see #getPatients(ClinicalDocument)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_PATIENT__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_PATIENTS__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,41 +137,41 @@ public class ClinicalDocumentOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EList<Patient> getPatient(ClinicalDocument clinicalDocument) {
-		if (GET_PATIENT__EOCL_QRY == null) {
+	public static  EList<Patient> getPatients(ClinicalDocument clinicalDocument) {
+		if (GET_PATIENTS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDAPackage.eINSTANCE.getClinicalDocument(), CDAPackage.eINSTANCE.getClinicalDocument().getEAllOperations().get(3));
 			try {
-				GET_PATIENT__EOCL_QRY = helper.createQuery(GET_PATIENT__EOCL_EXP);
+				GET_PATIENTS__EOCL_QRY = helper.createQuery(GET_PATIENTS__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_PATIENT__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_PATIENTS__EOCL_QRY);
 		@SuppressWarnings("unchecked")
 		Collection<Patient> result = (Collection<Patient>) query.evaluate(clinicalDocument);
 		return new BasicEList.UnmodifiableEList<Patient>(result.size(), result.toArray());
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getPatientRole(ClinicalDocument) <em>Get Patient Role</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getPatientRoles(ClinicalDocument) <em>Get Patient Roles</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPatientRole(ClinicalDocument)
+	 * @see #getPatientRoles(ClinicalDocument)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_PATIENT_ROLE__EOCL_EXP = "self.recordTarget.patientRole";
+	protected static final String GET_PATIENT_ROLES__EOCL_EXP = "self.recordTarget.patientRole";
 	/**
-	 * The cached OCL query for the '{@link #getPatientRole(ClinicalDocument) <em>Get Patient Role</em>}' query operation.
+	 * The cached OCL query for the '{@link #getPatientRoles(ClinicalDocument) <em>Get Patient Roles</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPatientRole(ClinicalDocument)
+	 * @see #getPatientRoles(ClinicalDocument)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_PATIENT_ROLE__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_PATIENT_ROLES__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,41 +182,41 @@ public class ClinicalDocumentOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EList<PatientRole> getPatientRole(ClinicalDocument clinicalDocument) {
-		if (GET_PATIENT_ROLE__EOCL_QRY == null) {
+	public static  EList<PatientRole> getPatientRoles(ClinicalDocument clinicalDocument) {
+		if (GET_PATIENT_ROLES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDAPackage.eINSTANCE.getClinicalDocument(), CDAPackage.eINSTANCE.getClinicalDocument().getEAllOperations().get(4));
 			try {
-				GET_PATIENT_ROLE__EOCL_QRY = helper.createQuery(GET_PATIENT_ROLE__EOCL_EXP);
+				GET_PATIENT_ROLES__EOCL_QRY = helper.createQuery(GET_PATIENT_ROLES__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_PATIENT_ROLE__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_PATIENT_ROLES__EOCL_QRY);
 		@SuppressWarnings("unchecked")
 		Collection<PatientRole> result = (Collection<PatientRole>) query.evaluate(clinicalDocument);
 		return new BasicEList.UnmodifiableEList<PatientRole>(result.size(), result.toArray());
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getSection(ClinicalDocument) <em>Get Section</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getSections(ClinicalDocument) <em>Get Sections</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSection(ClinicalDocument)
+	 * @see #getSections(ClinicalDocument)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_SECTION__EOCL_EXP = "self.component.structuredBody.component.section";
+	protected static final String GET_SECTIONS__EOCL_EXP = "self.component.structuredBody.component.section";
 	/**
-	 * The cached OCL query for the '{@link #getSection(ClinicalDocument) <em>Get Section</em>}' query operation.
+	 * The cached OCL query for the '{@link #getSections(ClinicalDocument) <em>Get Sections</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSection(ClinicalDocument)
+	 * @see #getSections(ClinicalDocument)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_SECTION__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_SECTIONS__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,18 +227,18 @@ public class ClinicalDocumentOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EList<Section> getSection(ClinicalDocument clinicalDocument) {
-		if (GET_SECTION__EOCL_QRY == null) {
+	public static  EList<Section> getSections(ClinicalDocument clinicalDocument) {
+		if (GET_SECTIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDAPackage.eINSTANCE.getClinicalDocument(), CDAPackage.eINSTANCE.getClinicalDocument().getEAllOperations().get(5));
 			try {
-				GET_SECTION__EOCL_QRY = helper.createQuery(GET_SECTION__EOCL_EXP);
+				GET_SECTIONS__EOCL_QRY = helper.createQuery(GET_SECTIONS__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_SECTION__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_SECTIONS__EOCL_QRY);
 		@SuppressWarnings("unchecked")
 		Collection<Section> result = (Collection<Section>) query.evaluate(clinicalDocument);
 		return new BasicEList.UnmodifiableEList<Section>(result.size(), result.toArray());
@@ -298,7 +299,7 @@ public class ClinicalDocumentOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_SECTION_TEMPLATE__STRING__EOCL_EXP = "self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))";
+	protected static final String HAS_SECTION_TEMPLATE__STRING__EOCL_EXP = "self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))";
 	/**
 	 * The cached OCL query for the '{@link #hasSectionTemplate(ClinicalDocument, java.lang.String) <em>Has Section Template</em>}' query operation.
 	 * <!-- begin-user-doc -->
@@ -313,7 +314,7 @@ public class ClinicalDocumentOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
+	 * self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
 	 * @param clinicalDocument The receiving '<em><b>Clinical Document</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -388,7 +389,7 @@ public class ClinicalDocumentOperations {
 	public static  void addPatientRole(ClinicalDocument clinicalDocument, PatientRole patientRole) {
 		RecordTarget recordTarget = CDAFactory.eINSTANCE.createRecordTarget();
 		recordTarget.setPatientRole(patientRole);
-		clinicalDocument.getRecordTarget().add(recordTarget);
+		clinicalDocument.getRecordTargets().add(recordTarget);
 	}
 
 	/**
@@ -401,7 +402,7 @@ public class ClinicalDocumentOperations {
 		PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
 		recordTarget.setPatientRole(patientRole);
 		patientRole.setPatient(patient);
-		clinicalDocument.getRecordTarget().add(recordTarget);
+		clinicalDocument.getRecordTargets().add(recordTarget);
 	}
 
 } // ClinicalDocumentOperations

@@ -54,8 +54,8 @@ public class BNImpl extends BLImpl implements BN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean nullFlavor(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return BNOperations.nullFlavor(this, diagnostics, context);
+	public boolean validateNullFlavor(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return BNOperations.validateNullFlavor(this, diagnostics, context);
 	}
 
 } //BNImpl

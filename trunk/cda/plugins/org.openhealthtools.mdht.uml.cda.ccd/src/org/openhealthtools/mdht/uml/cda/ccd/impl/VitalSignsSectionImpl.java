@@ -50,8 +50,8 @@ public class VitalSignsSectionImpl extends SectionImpl implements VitalSignsSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean VitalSignsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsSectionOperations.VitalSignsSection_templateId(this, diagnostics, context);
+	public boolean validateVitalSignsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsSectionOperations.validateVitalSignsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class VitalSignsSectionImpl extends SectionImpl implements VitalSignsSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean VitalSignsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsSectionOperations.VitalSignsSection_code(this, diagnostics, context);
+	public boolean validateVitalSignsSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsSectionOperations.validateVitalSignsSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class VitalSignsSectionImpl extends SectionImpl implements VitalSignsSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean VitalSignsSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsSectionOperations.VitalSignsSection_title(this, diagnostics, context);
+	public boolean validateVitalSignsSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsSectionOperations.validateVitalSignsSectionTitle(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class VitalSignsSectionImpl extends SectionImpl implements VitalSignsSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean VitalSignsSection_vitalSignsOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsSectionOperations.VitalSignsSection_vitalSignsOrganizer(this, diagnostics, context);
+	public boolean validateVitalSignsSectionVitalSignsOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsSectionOperations.validateVitalSignsSectionVitalSignsOrganizer(this, diagnostics, context);
 	}
 
 	/**

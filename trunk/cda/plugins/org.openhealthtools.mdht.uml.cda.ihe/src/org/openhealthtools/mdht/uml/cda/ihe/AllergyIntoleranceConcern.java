@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getAllergyIntoleranceConcern()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='AllergyIntoleranceConcern_templateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.5.3'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='AllergyIntoleranceConcernTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.5.3'"
  *        annotation="uml2.alias Allergy\040and\040Intolerance\040Concern='null'"
  * @generated
  */
@@ -45,7 +45,7 @@ public interface AllergyIntoleranceConcern extends ConcernEntry {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.4.5.3\')'"
 	 * @generated
 	 */
-	boolean AllergyIntoleranceConcern_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAllergyIntoleranceConcernTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

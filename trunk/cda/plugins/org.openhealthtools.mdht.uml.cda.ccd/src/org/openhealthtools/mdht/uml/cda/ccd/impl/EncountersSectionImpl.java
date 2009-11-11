@@ -50,8 +50,8 @@ public class EncountersSectionImpl extends SectionImpl implements EncountersSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EncountersSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncountersSectionOperations.EncountersSection_templateId(this, diagnostics, context);
+	public boolean validateEncountersSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersSectionOperations.validateEncountersSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class EncountersSectionImpl extends SectionImpl implements EncountersSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EncountersSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncountersSectionOperations.EncountersSection_code(this, diagnostics, context);
+	public boolean validateEncountersSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersSectionOperations.validateEncountersSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class EncountersSectionImpl extends SectionImpl implements EncountersSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EncountersSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncountersSectionOperations.EncountersSection_title(this, diagnostics, context);
+	public boolean validateEncountersSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersSectionOperations.validateEncountersSectionTitle(this, diagnostics, context);
 	}
 
 	/**

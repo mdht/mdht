@@ -23,8 +23,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getOriginalText <em>Original Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getQualifier <em>Qualifier</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getTranslation <em>Translation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getQualifiers <em>Qualifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getTranslations <em>Translation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getCodeSystem <em>Code System</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getCodeSystemName <em>Code System Name</em>}</li>
@@ -80,7 +80,7 @@ public interface CD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
-	EList<CR> getQualifier();
+	EList<CR> getQualifiers();
 
 	/**
 	 * Returns the value of the '<em><b>Translation</b></em>' containment reference list.
@@ -97,7 +97,7 @@ public interface CD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
-	EList<CD> getTranslation();
+	EList<CD> getTranslations();
 
 	/**
 	 * Returns the value of the '<em><b>Code</b></em>' attribute.

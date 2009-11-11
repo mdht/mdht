@@ -13,14 +13,11 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_InformationRecipientRole;
 
@@ -32,12 +29,12 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_InformationRecipientRole;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getId <em>Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getAddr <em>Addr</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTelecom <em>Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getIds <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getAddrs <em>Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTelecoms <em>Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getInformationRecipient <em>Information Recipient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getReceivedOrganization <em>Received Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getNullFlavor <em>Null Flavor</em>}</li>
@@ -65,7 +62,7 @@ public interface IntendedRecipient extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -109,7 +106,7 @@ public interface IntendedRecipient extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' containment reference list.
@@ -126,7 +123,7 @@ public interface IntendedRecipient extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getId();
+	EList<II> getIds();
 
 	/**
 	 * Returns the value of the '<em><b>Addr</b></em>' containment reference list.
@@ -143,7 +140,7 @@ public interface IntendedRecipient extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<AD> getAddr();
+	EList<AD> getAddrs();
 
 	/**
 	 * Returns the value of the '<em><b>Telecom</b></em>' containment reference list.
@@ -160,7 +157,7 @@ public interface IntendedRecipient extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<TEL> getTelecom();
+	EList<TEL> getTelecoms();
 
 	/**
 	 * Returns the value of the '<em><b>Information Recipient</b></em>' containment reference.

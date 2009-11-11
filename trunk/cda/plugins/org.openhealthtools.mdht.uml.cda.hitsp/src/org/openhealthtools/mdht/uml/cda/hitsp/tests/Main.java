@@ -97,28 +97,28 @@ public class Main {
 		doc.setConfidentialityCode(confCode);
 		
 		Author author = CDAFactory.eINSTANCE.createAuthor();
-		doc.getAuthor().add(author);
+		doc.getAuthors().add(author);
 		author.setTime(DatatypesFactory.eINSTANCE.createTS("20070916130000"));
 		//assignedAuthor
 		AssignedAuthor assignedAuthor = CDAFactory.eINSTANCE.createAssignedAuthor();
 		author.setAssignedAuthor(assignedAuthor);
-		assignedAuthor.getId().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.72.5.2", "LJG"));
+		assignedAuthor.getIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.72.5.2", "LJG"));
 		//assignedPerson
 		Person person = CDAFactory.eINSTANCE.createPerson();
 		assignedAuthor.setAssignedPerson(person);
 		PN pn = DatatypesFactory.eINSTANCE.createPN();
 		pn.addGiven("Len").addFamily("Gallagher");
-		person.getName().add(pn);
+		person.getNames().add(pn);
 		//representedOrganization
 		Organization organization = CDAFactory.eINSTANCE.createOrganization();
 		assignedAuthor.setRepresentedOrganization(organization);
 		II orgId = DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.72");
 		orgId.setAssigningAuthorityName("NIST Healthcare (NIST-H)");
-		organization.getId().add(orgId);
+		organization.getIds().add(orgId);
 		ON on = DatatypesFactory.eINSTANCE.createON();
 		on.addText("NIST HL7 Test Laboratory");
-		organization.getName().add(on);
-		organization.getTelecom().add(DatatypesFactory.eINSTANCE.createTEL("+1-301-975-3251"));
+		organization.getNames().add(on);
+		organization.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL("+1-301-975-3251"));
 		
 		Custodian custodian = CDAFactory.eINSTANCE.createCustodian();
 		doc.setCustodian(custodian);
@@ -129,7 +129,7 @@ public class Main {
 		assignedCustodian.setRepresentedCustodianOrganization(custodianOrganization);
 		II custodianId = DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.72.5");
 		custodianId.setAssigningAuthorityName("NIST Healthcare (NIST-H)");
-		custodianOrganization.getId().add(custodianId);
+		custodianOrganization.getIds().add(custodianId);
 		ON custodianName = DatatypesFactory.eINSTANCE.createON();
 		custodianName.addText("NIST HL7 Test Laboratory");
 		custodianOrganization.setName(custodianName);
@@ -142,7 +142,7 @@ public class Main {
 	public void fillProblemList(ActiveProblemsSection problemList) {
 		Condition condition = HITSPFactory.eINSTANCE.createCondition().init();
 		problemList.addAct(condition);
-		condition.getId().add(DatatypesFactory.eINSTANCE.createII("ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"));
+		condition.getIds().add(DatatypesFactory.eINSTANCE.createII("ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"));
 		
 		IVL_TS effectiveTime = DatatypesFactory.eINSTANCE.createIVL_TS();
 		effectiveTime.setLow(TS_UNK);
@@ -150,10 +150,10 @@ public class Main {
 		
 		ProblemEntry problemEntry = IHEFactory.eINSTANCE.createProblemEntry().init();
 		condition.addObservation(problemEntry);
-		problemEntry.getId().add(DatatypesFactory.eINSTANCE.createII("ab1791b0-5c71-11db-b0de-0800200c9a66"));
+		problemEntry.getIds().add(DatatypesFactory.eINSTANCE.createII("ab1791b0-5c71-11db-b0de-0800200c9a66"));
 		problemEntry.setCode(DatatypesFactory.eINSTANCE.createCD(
 				"64572001", "2.16.840.1.113883.6.96", "SNOMED-CT", "Condition"));
-		problemEntry.getValue().add(DatatypesFactory.eINSTANCE.createCD(
+		problemEntry.getValues().add(DatatypesFactory.eINSTANCE.createCD(
 				"233604007", "2.16.840.1.113883.6.96", "SNOMED-CT", "Pneumonia"));
 		effectiveTime = DatatypesFactory.eINSTANCE.createIVL_TS("199701", null);
 		effectiveTime.setHigh(TS_UNK);
@@ -164,7 +164,7 @@ public class Main {
 		CE healthStatusValue = DatatypesFactory.eINSTANCE.createCE("xyz", "2.16.840.1.113883.1.11.20.12",
 				"ProblemHealthStatusCode", null);
 		healthStatusValue.setCodeSystemVersion("20061017");
-		healthStatus.getValue().add(healthStatusValue);
+		healthStatus.getValues().add(healthStatusValue);
 	}
 
 	public Section createAllergiesSection() {
@@ -180,7 +180,7 @@ public class Main {
 		NormalDosing meds = IHEFactory.eINSTANCE.createNormalDosing().init();	
 		section.addSubstanceAdministration(meds);
 		II id = DatatypesFactory.eINSTANCE.createII("cdbd33f0-6cde-11db-9fe1-0800200c9a66");
-		meds.getId().add(id);
+		meds.getIds().add(id);
 		
 		return section;
 	}

@@ -50,8 +50,8 @@ public class EncountersActivityImpl extends EncounterImpl implements EncountersA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EncountersActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncountersActivityOperations.EncountersActivity_templateId(this, diagnostics, context);
+	public boolean validateEncountersActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersActivityOperations.validateEncountersActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class EncountersActivityImpl extends EncounterImpl implements EncountersA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EncountersActivity_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncountersActivityOperations.EncountersActivity_id(this, diagnostics, context);
+	public boolean validateEncountersActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersActivityOperations.validateEncountersActivityId(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class EncountersActivityImpl extends EncounterImpl implements EncountersA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EncountersActivity_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncountersActivityOperations.EncountersActivity_code(this, diagnostics, context);
+	public boolean validateEncountersActivityCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersActivityOperations.validateEncountersActivityCode(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class EncountersActivityImpl extends EncounterImpl implements EncountersA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EncountersActivity_effectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncountersActivityOperations.EncountersActivity_effectiveTime(this, diagnostics, context);
+	public boolean validateEncountersActivityEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersActivityOperations.validateEncountersActivityEffectiveTime(this, diagnostics, context);
 	}
 
 	/**

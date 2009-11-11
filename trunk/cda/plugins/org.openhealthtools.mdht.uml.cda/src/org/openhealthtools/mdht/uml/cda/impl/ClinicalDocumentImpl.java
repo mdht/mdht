@@ -16,18 +16,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.Authenticator;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.Authorization;
@@ -50,7 +45,6 @@ import org.openhealthtools.mdht.uml.cda.RecordTarget;
 import org.openhealthtools.mdht.uml.cda.RelatedDocument;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.StructuredBody;
-
 import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
@@ -58,7 +52,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -70,9 +63,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getTitle <em>Title</em>}</li>
@@ -82,19 +75,19 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getSetId <em>Set Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getVersionNumber <em>Version Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getCopyTime <em>Copy Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getRecordTarget <em>Record Target</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getAuthor <em>Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getRecordTargets <em>Record Target</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getAuthors <em>Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getDataEnterer <em>Data Enterer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getInformant <em>Informant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getInformants <em>Informant</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getCustodian <em>Custodian</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getInformationRecipient <em>Information Recipient</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getInformationRecipients <em>Information Recipient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getLegalAuthenticator <em>Legal Authenticator</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getAuthenticator <em>Authenticator</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getParticipant <em>Participant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getInFulfillmentOf <em>In Fulfillment Of</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getDocumentationOf <em>Documentation Of</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getRelatedDocument <em>Related Document</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getAuthorization <em>Authorization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getAuthenticators <em>Authenticator</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getParticipants <em>Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getInFulfillmentOfs <em>In Fulfillment Of</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getDocumentationOfs <em>Documentation Of</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getRelatedDocuments <em>Related Document</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getAuthorizations <em>Authorization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getComponentOf <em>Component Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl#getNullFlavor <em>Null Flavor</em>}</li>
@@ -107,14 +100,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocument {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -127,14 +120,14 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference.
@@ -227,24 +220,24 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	protected TS copyTime;
 
 	/**
-	 * The cached value of the '{@link #getRecordTarget() <em>Record Target</em>}' containment reference list.
+	 * The cached value of the '{@link #getRecordTargets() <em>Record Target</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRecordTarget()
+	 * @see #getRecordTargets()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RecordTarget> recordTarget;
+	protected EList<RecordTarget> recordTargets;
 
 	/**
-	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' containment reference list.
+	 * The cached value of the '{@link #getAuthors() <em>Author</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAuthor()
+	 * @see #getAuthors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Author> author;
+	protected EList<Author> authors;
 
 	/**
 	 * The cached value of the '{@link #getDataEnterer() <em>Data Enterer</em>}' containment reference.
@@ -257,14 +250,14 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	protected DataEnterer dataEnterer;
 
 	/**
-	 * The cached value of the '{@link #getInformant() <em>Informant</em>}' containment reference list.
+	 * The cached value of the '{@link #getInformants() <em>Informant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInformant()
+	 * @see #getInformants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Informant12> informant;
+	protected EList<Informant12> informants;
 
 	/**
 	 * The cached value of the '{@link #getCustodian() <em>Custodian</em>}' containment reference.
@@ -277,14 +270,14 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	protected Custodian custodian;
 
 	/**
-	 * The cached value of the '{@link #getInformationRecipient() <em>Information Recipient</em>}' containment reference list.
+	 * The cached value of the '{@link #getInformationRecipients() <em>Information Recipient</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInformationRecipient()
+	 * @see #getInformationRecipients()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<InformationRecipient> informationRecipient;
+	protected EList<InformationRecipient> informationRecipients;
 
 	/**
 	 * The cached value of the '{@link #getLegalAuthenticator() <em>Legal Authenticator</em>}' containment reference.
@@ -297,64 +290,64 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	protected LegalAuthenticator legalAuthenticator;
 
 	/**
-	 * The cached value of the '{@link #getAuthenticator() <em>Authenticator</em>}' containment reference list.
+	 * The cached value of the '{@link #getAuthenticators() <em>Authenticator</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAuthenticator()
+	 * @see #getAuthenticators()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Authenticator> authenticator;
+	protected EList<Authenticator> authenticators;
 
 	/**
-	 * The cached value of the '{@link #getParticipant() <em>Participant</em>}' containment reference list.
+	 * The cached value of the '{@link #getParticipants() <em>Participant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParticipant()
+	 * @see #getParticipants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Participant1> participant;
+	protected EList<Participant1> participants;
 
 	/**
-	 * The cached value of the '{@link #getInFulfillmentOf() <em>In Fulfillment Of</em>}' containment reference list.
+	 * The cached value of the '{@link #getInFulfillmentOfs() <em>In Fulfillment Of</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInFulfillmentOf()
+	 * @see #getInFulfillmentOfs()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<InFulfillmentOf> inFulfillmentOf;
+	protected EList<InFulfillmentOf> inFulfillmentOfs;
 
 	/**
-	 * The cached value of the '{@link #getDocumentationOf() <em>Documentation Of</em>}' containment reference list.
+	 * The cached value of the '{@link #getDocumentationOfs() <em>Documentation Of</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDocumentationOf()
+	 * @see #getDocumentationOfs()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DocumentationOf> documentationOf;
+	protected EList<DocumentationOf> documentationOfs;
 
 	/**
-	 * The cached value of the '{@link #getRelatedDocument() <em>Related Document</em>}' containment reference list.
+	 * The cached value of the '{@link #getRelatedDocuments() <em>Related Document</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRelatedDocument()
+	 * @see #getRelatedDocuments()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RelatedDocument> relatedDocument;
+	protected EList<RelatedDocument> relatedDocuments;
 
 	/**
-	 * The cached value of the '{@link #getAuthorization() <em>Authorization</em>}' containment reference list.
+	 * The cached value of the '{@link #getAuthorizations() <em>Authorization</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAuthorization()
+	 * @see #getAuthorizations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Authorization> authorization;
+	protected EList<Authorization> authorizations;
 
 	/**
 	 * The cached value of the '{@link #getComponentOf() <em>Component Of</em>}' containment reference.
@@ -487,11 +480,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.CLINICAL_DOCUMENT__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.CLINICAL_DOCUMENT__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -542,11 +535,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.CLINICAL_DOCUMENT__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.CLINICAL_DOCUMENT__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -941,11 +934,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RecordTarget> getRecordTarget() {
-		if (recordTarget == null) {
-			recordTarget = new EObjectContainmentEList<RecordTarget>(RecordTarget.class, this, CDAPackage.CLINICAL_DOCUMENT__RECORD_TARGET);
+	public EList<RecordTarget> getRecordTargets() {
+		if (recordTargets == null) {
+			recordTargets = new EObjectContainmentEList<RecordTarget>(RecordTarget.class, this, CDAPackage.CLINICAL_DOCUMENT__RECORD_TARGET);
 		}
-		return recordTarget;
+		return recordTargets;
 	}
 
 	/**
@@ -953,11 +946,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Author> getAuthor() {
-		if (author == null) {
-			author = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.CLINICAL_DOCUMENT__AUTHOR);
+	public EList<Author> getAuthors() {
+		if (authors == null) {
+			authors = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.CLINICAL_DOCUMENT__AUTHOR);
 		}
-		return author;
+		return authors;
 	}
 
 	/**
@@ -1008,11 +1001,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Informant12> getInformant() {
-		if (informant == null) {
-			informant = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.CLINICAL_DOCUMENT__INFORMANT);
+	public EList<Informant12> getInformants() {
+		if (informants == null) {
+			informants = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.CLINICAL_DOCUMENT__INFORMANT);
 		}
-		return informant;
+		return informants;
 	}
 
 	/**
@@ -1063,11 +1056,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<InformationRecipient> getInformationRecipient() {
-		if (informationRecipient == null) {
-			informationRecipient = new EObjectContainmentEList<InformationRecipient>(InformationRecipient.class, this, CDAPackage.CLINICAL_DOCUMENT__INFORMATION_RECIPIENT);
+	public EList<InformationRecipient> getInformationRecipients() {
+		if (informationRecipients == null) {
+			informationRecipients = new EObjectContainmentEList<InformationRecipient>(InformationRecipient.class, this, CDAPackage.CLINICAL_DOCUMENT__INFORMATION_RECIPIENT);
 		}
-		return informationRecipient;
+		return informationRecipients;
 	}
 
 	/**
@@ -1118,11 +1111,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Authenticator> getAuthenticator() {
-		if (authenticator == null) {
-			authenticator = new EObjectContainmentEList<Authenticator>(Authenticator.class, this, CDAPackage.CLINICAL_DOCUMENT__AUTHENTICATOR);
+	public EList<Authenticator> getAuthenticators() {
+		if (authenticators == null) {
+			authenticators = new EObjectContainmentEList<Authenticator>(Authenticator.class, this, CDAPackage.CLINICAL_DOCUMENT__AUTHENTICATOR);
 		}
-		return authenticator;
+		return authenticators;
 	}
 
 	/**
@@ -1130,11 +1123,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Participant1> getParticipant() {
-		if (participant == null) {
-			participant = new EObjectContainmentEList<Participant1>(Participant1.class, this, CDAPackage.CLINICAL_DOCUMENT__PARTICIPANT);
+	public EList<Participant1> getParticipants() {
+		if (participants == null) {
+			participants = new EObjectContainmentEList<Participant1>(Participant1.class, this, CDAPackage.CLINICAL_DOCUMENT__PARTICIPANT);
 		}
-		return participant;
+		return participants;
 	}
 
 	/**
@@ -1142,11 +1135,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<InFulfillmentOf> getInFulfillmentOf() {
-		if (inFulfillmentOf == null) {
-			inFulfillmentOf = new EObjectContainmentEList<InFulfillmentOf>(InFulfillmentOf.class, this, CDAPackage.CLINICAL_DOCUMENT__IN_FULFILLMENT_OF);
+	public EList<InFulfillmentOf> getInFulfillmentOfs() {
+		if (inFulfillmentOfs == null) {
+			inFulfillmentOfs = new EObjectContainmentEList<InFulfillmentOf>(InFulfillmentOf.class, this, CDAPackage.CLINICAL_DOCUMENT__IN_FULFILLMENT_OF);
 		}
-		return inFulfillmentOf;
+		return inFulfillmentOfs;
 	}
 
 	/**
@@ -1154,11 +1147,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DocumentationOf> getDocumentationOf() {
-		if (documentationOf == null) {
-			documentationOf = new EObjectContainmentEList<DocumentationOf>(DocumentationOf.class, this, CDAPackage.CLINICAL_DOCUMENT__DOCUMENTATION_OF);
+	public EList<DocumentationOf> getDocumentationOfs() {
+		if (documentationOfs == null) {
+			documentationOfs = new EObjectContainmentEList<DocumentationOf>(DocumentationOf.class, this, CDAPackage.CLINICAL_DOCUMENT__DOCUMENTATION_OF);
 		}
-		return documentationOf;
+		return documentationOfs;
 	}
 
 	/**
@@ -1166,11 +1159,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RelatedDocument> getRelatedDocument() {
-		if (relatedDocument == null) {
-			relatedDocument = new EObjectContainmentEList<RelatedDocument>(RelatedDocument.class, this, CDAPackage.CLINICAL_DOCUMENT__RELATED_DOCUMENT);
+	public EList<RelatedDocument> getRelatedDocuments() {
+		if (relatedDocuments == null) {
+			relatedDocuments = new EObjectContainmentEList<RelatedDocument>(RelatedDocument.class, this, CDAPackage.CLINICAL_DOCUMENT__RELATED_DOCUMENT);
 		}
-		return relatedDocument;
+		return relatedDocuments;
 	}
 
 	/**
@@ -1178,11 +1171,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Authorization> getAuthorization() {
-		if (authorization == null) {
-			authorization = new EObjectContainmentEList<Authorization>(Authorization.class, this, CDAPackage.CLINICAL_DOCUMENT__AUTHORIZATION);
+	public EList<Authorization> getAuthorizations() {
+		if (authorizations == null) {
+			authorizations = new EObjectContainmentEList<Authorization>(Authorization.class, this, CDAPackage.CLINICAL_DOCUMENT__AUTHORIZATION);
 		}
-		return authorization;
+		return authorizations;
 	}
 
 	/**
@@ -1432,8 +1425,8 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Patient> getPatient() {
-		return ClinicalDocumentOperations.getPatient(this);
+	public EList<Patient> getPatients() {
+		return ClinicalDocumentOperations.getPatients(this);
 	}
 
 	/**
@@ -1441,8 +1434,8 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PatientRole> getPatientRole() {
-		return ClinicalDocumentOperations.getPatientRole(this);
+	public EList<PatientRole> getPatientRoles() {
+		return ClinicalDocumentOperations.getPatientRoles(this);
 	}
 
 	/**
@@ -1450,8 +1443,8 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Section> getSection() {
-		return ClinicalDocumentOperations.getSection(this);
+	public EList<Section> getSections() {
+		return ClinicalDocumentOperations.getSections(this);
 	}
 
 	/**
@@ -1508,11 +1501,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.CLINICAL_DOCUMENT__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__ID:
 				return basicSetId(null, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__CODE:
@@ -1532,31 +1525,31 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 			case CDAPackage.CLINICAL_DOCUMENT__COPY_TIME:
 				return basicSetCopyTime(null, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__RECORD_TARGET:
-				return ((InternalEList<?>)getRecordTarget()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRecordTargets()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHOR:
-				return ((InternalEList<?>)getAuthor()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER:
 				return basicSetDataEnterer(null, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__INFORMANT:
-				return ((InternalEList<?>)getInformant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN:
 				return basicSetCustodian(null, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__INFORMATION_RECIPIENT:
-				return ((InternalEList<?>)getInformationRecipient()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInformationRecipients()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR:
 				return basicSetLegalAuthenticator(null, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHENTICATOR:
-				return ((InternalEList<?>)getAuthenticator()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAuthenticators()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__PARTICIPANT:
-				return ((InternalEList<?>)getParticipant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__IN_FULFILLMENT_OF:
-				return ((InternalEList<?>)getInFulfillmentOf()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInFulfillmentOfs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__DOCUMENTATION_OF:
-				return ((InternalEList<?>)getDocumentationOf()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getDocumentationOfs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__RELATED_DOCUMENT:
-				return ((InternalEList<?>)getRelatedDocument()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRelatedDocuments()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHORIZATION:
-				return ((InternalEList<?>)getAuthorization()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAuthorizations()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF:
 				return basicSetComponentOf(null, msgs);
 			case CDAPackage.CLINICAL_DOCUMENT__COMPONENT:
@@ -1574,11 +1567,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.CLINICAL_DOCUMENT__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.CLINICAL_DOCUMENT__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.CLINICAL_DOCUMENT__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.CLINICAL_DOCUMENT__ID:
 				return getId();
 			case CDAPackage.CLINICAL_DOCUMENT__CODE:
@@ -1598,31 +1591,31 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 			case CDAPackage.CLINICAL_DOCUMENT__COPY_TIME:
 				return getCopyTime();
 			case CDAPackage.CLINICAL_DOCUMENT__RECORD_TARGET:
-				return getRecordTarget();
+				return getRecordTargets();
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHOR:
-				return getAuthor();
+				return getAuthors();
 			case CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER:
 				return getDataEnterer();
 			case CDAPackage.CLINICAL_DOCUMENT__INFORMANT:
-				return getInformant();
+				return getInformants();
 			case CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN:
 				return getCustodian();
 			case CDAPackage.CLINICAL_DOCUMENT__INFORMATION_RECIPIENT:
-				return getInformationRecipient();
+				return getInformationRecipients();
 			case CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR:
 				return getLegalAuthenticator();
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHENTICATOR:
-				return getAuthenticator();
+				return getAuthenticators();
 			case CDAPackage.CLINICAL_DOCUMENT__PARTICIPANT:
-				return getParticipant();
+				return getParticipants();
 			case CDAPackage.CLINICAL_DOCUMENT__IN_FULFILLMENT_OF:
-				return getInFulfillmentOf();
+				return getInFulfillmentOfs();
 			case CDAPackage.CLINICAL_DOCUMENT__DOCUMENTATION_OF:
-				return getDocumentationOf();
+				return getDocumentationOfs();
 			case CDAPackage.CLINICAL_DOCUMENT__RELATED_DOCUMENT:
-				return getRelatedDocument();
+				return getRelatedDocuments();
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHORIZATION:
-				return getAuthorization();
+				return getAuthorizations();
 			case CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF:
 				return getComponentOf();
 			case CDAPackage.CLINICAL_DOCUMENT__COMPONENT:
@@ -1647,15 +1640,15 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.CLINICAL_DOCUMENT__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__ID:
 				setId((II)newValue);
@@ -1685,53 +1678,53 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 				setCopyTime((TS)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__RECORD_TARGET:
-				getRecordTarget().clear();
-				getRecordTarget().addAll((Collection<? extends RecordTarget>)newValue);
+				getRecordTargets().clear();
+				getRecordTargets().addAll((Collection<? extends RecordTarget>)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHOR:
-				getAuthor().clear();
-				getAuthor().addAll((Collection<? extends Author>)newValue);
+				getAuthors().clear();
+				getAuthors().addAll((Collection<? extends Author>)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER:
 				setDataEnterer((DataEnterer)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__INFORMANT:
-				getInformant().clear();
-				getInformant().addAll((Collection<? extends Informant12>)newValue);
+				getInformants().clear();
+				getInformants().addAll((Collection<? extends Informant12>)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN:
 				setCustodian((Custodian)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__INFORMATION_RECIPIENT:
-				getInformationRecipient().clear();
-				getInformationRecipient().addAll((Collection<? extends InformationRecipient>)newValue);
+				getInformationRecipients().clear();
+				getInformationRecipients().addAll((Collection<? extends InformationRecipient>)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR:
 				setLegalAuthenticator((LegalAuthenticator)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHENTICATOR:
-				getAuthenticator().clear();
-				getAuthenticator().addAll((Collection<? extends Authenticator>)newValue);
+				getAuthenticators().clear();
+				getAuthenticators().addAll((Collection<? extends Authenticator>)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__PARTICIPANT:
-				getParticipant().clear();
-				getParticipant().addAll((Collection<? extends Participant1>)newValue);
+				getParticipants().clear();
+				getParticipants().addAll((Collection<? extends Participant1>)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__IN_FULFILLMENT_OF:
-				getInFulfillmentOf().clear();
-				getInFulfillmentOf().addAll((Collection<? extends InFulfillmentOf>)newValue);
+				getInFulfillmentOfs().clear();
+				getInFulfillmentOfs().addAll((Collection<? extends InFulfillmentOf>)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__DOCUMENTATION_OF:
-				getDocumentationOf().clear();
-				getDocumentationOf().addAll((Collection<? extends DocumentationOf>)newValue);
+				getDocumentationOfs().clear();
+				getDocumentationOfs().addAll((Collection<? extends DocumentationOf>)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__RELATED_DOCUMENT:
-				getRelatedDocument().clear();
-				getRelatedDocument().addAll((Collection<? extends RelatedDocument>)newValue);
+				getRelatedDocuments().clear();
+				getRelatedDocuments().addAll((Collection<? extends RelatedDocument>)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHORIZATION:
-				getAuthorization().clear();
-				getAuthorization().addAll((Collection<? extends Authorization>)newValue);
+				getAuthorizations().clear();
+				getAuthorizations().addAll((Collection<? extends Authorization>)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF:
 				setComponentOf((Component1)newValue);
@@ -1761,13 +1754,13 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.CLINICAL_DOCUMENT__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__ID:
 				setId((II)null);
@@ -1797,43 +1790,43 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 				setCopyTime((TS)null);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__RECORD_TARGET:
-				getRecordTarget().clear();
+				getRecordTargets().clear();
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHOR:
-				getAuthor().clear();
+				getAuthors().clear();
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER:
 				setDataEnterer((DataEnterer)null);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__INFORMANT:
-				getInformant().clear();
+				getInformants().clear();
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN:
 				setCustodian((Custodian)null);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__INFORMATION_RECIPIENT:
-				getInformationRecipient().clear();
+				getInformationRecipients().clear();
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR:
 				setLegalAuthenticator((LegalAuthenticator)null);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHENTICATOR:
-				getAuthenticator().clear();
+				getAuthenticators().clear();
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__PARTICIPANT:
-				getParticipant().clear();
+				getParticipants().clear();
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__IN_FULFILLMENT_OF:
-				getInFulfillmentOf().clear();
+				getInFulfillmentOfs().clear();
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__DOCUMENTATION_OF:
-				getDocumentationOf().clear();
+				getDocumentationOfs().clear();
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__RELATED_DOCUMENT:
-				getRelatedDocument().clear();
+				getRelatedDocuments().clear();
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHORIZATION:
-				getAuthorization().clear();
+				getAuthorizations().clear();
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF:
 				setComponentOf((Component1)null);
@@ -1863,11 +1856,11 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.CLINICAL_DOCUMENT__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.CLINICAL_DOCUMENT__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.CLINICAL_DOCUMENT__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.CLINICAL_DOCUMENT__ID:
 				return id != null;
 			case CDAPackage.CLINICAL_DOCUMENT__CODE:
@@ -1887,31 +1880,31 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 			case CDAPackage.CLINICAL_DOCUMENT__COPY_TIME:
 				return copyTime != null;
 			case CDAPackage.CLINICAL_DOCUMENT__RECORD_TARGET:
-				return recordTarget != null && !recordTarget.isEmpty();
+				return recordTargets != null && !recordTargets.isEmpty();
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHOR:
-				return author != null && !author.isEmpty();
+				return authors != null && !authors.isEmpty();
 			case CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER:
 				return dataEnterer != null;
 			case CDAPackage.CLINICAL_DOCUMENT__INFORMANT:
-				return informant != null && !informant.isEmpty();
+				return informants != null && !informants.isEmpty();
 			case CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN:
 				return custodian != null;
 			case CDAPackage.CLINICAL_DOCUMENT__INFORMATION_RECIPIENT:
-				return informationRecipient != null && !informationRecipient.isEmpty();
+				return informationRecipients != null && !informationRecipients.isEmpty();
 			case CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR:
 				return legalAuthenticator != null;
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHENTICATOR:
-				return authenticator != null && !authenticator.isEmpty();
+				return authenticators != null && !authenticators.isEmpty();
 			case CDAPackage.CLINICAL_DOCUMENT__PARTICIPANT:
-				return participant != null && !participant.isEmpty();
+				return participants != null && !participants.isEmpty();
 			case CDAPackage.CLINICAL_DOCUMENT__IN_FULFILLMENT_OF:
-				return inFulfillmentOf != null && !inFulfillmentOf.isEmpty();
+				return inFulfillmentOfs != null && !inFulfillmentOfs.isEmpty();
 			case CDAPackage.CLINICAL_DOCUMENT__DOCUMENTATION_OF:
-				return documentationOf != null && !documentationOf.isEmpty();
+				return documentationOfs != null && !documentationOfs.isEmpty();
 			case CDAPackage.CLINICAL_DOCUMENT__RELATED_DOCUMENT:
-				return relatedDocument != null && !relatedDocument.isEmpty();
+				return relatedDocuments != null && !relatedDocuments.isEmpty();
 			case CDAPackage.CLINICAL_DOCUMENT__AUTHORIZATION:
-				return authorization != null && !authorization.isEmpty();
+				return authorizations != null && !authorizations.isEmpty();
 			case CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF:
 				return componentOf != null;
 			case CDAPackage.CLINICAL_DOCUMENT__COMPONENT:

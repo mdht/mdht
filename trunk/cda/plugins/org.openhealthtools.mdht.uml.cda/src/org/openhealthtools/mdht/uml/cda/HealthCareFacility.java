@@ -13,13 +13,10 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassServiceDeliveryLocation;
 
@@ -31,10 +28,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassServiceDeliveryLocation;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getLocation <em>Location</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getServiceProviderOrganization <em>Service Provider Organization</em>}</li>
@@ -63,7 +60,7 @@ public interface HealthCareFacility extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -107,7 +104,7 @@ public interface HealthCareFacility extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' containment reference list.
@@ -124,7 +121,7 @@ public interface HealthCareFacility extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getId();
+	EList<II> getIds();
 
 	/**
 	 * Returns the value of the '<em><b>Code</b></em>' containment reference.

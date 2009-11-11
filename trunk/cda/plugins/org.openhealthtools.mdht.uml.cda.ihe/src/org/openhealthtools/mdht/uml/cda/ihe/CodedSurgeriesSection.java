@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getCodedSurgeriesSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='CodedSurgeriesSection_templateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.12'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='CodedSurgeriesSectionTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.12'"
  * @generated
  */
 public interface CodedSurgeriesSection extends SurgeriesSection {
@@ -37,7 +37,7 @@ public interface CodedSurgeriesSection extends SurgeriesSection {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.3.12\')'"
 	 * @generated
 	 */
-	boolean CodedSurgeriesSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateCodedSurgeriesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

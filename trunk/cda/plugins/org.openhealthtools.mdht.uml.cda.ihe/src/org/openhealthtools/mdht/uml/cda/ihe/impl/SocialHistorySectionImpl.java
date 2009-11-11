@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.SocialHistorySectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,9 +49,8 @@ public class SocialHistorySectionImpl extends org.openhealthtools.mdht.uml.cda.c
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean SocialHistorySection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SocialHistorySectionOperations.SocialHistorySection_templateId(this, diagnostics, context);
+	public boolean validateIHESocialHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SocialHistorySectionOperations.validateIHESocialHistorySectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

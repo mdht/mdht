@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.HospitalDischargeMedicationsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class HospitalDischargeMedicationsSectionImpl extends SectionImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean HospitalDischargeMedicationsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HospitalDischargeMedicationsSectionOperations.HospitalDischargeMedicationsSection_templateId(this, diagnostics, context);
+	public boolean validateHospitalDischargeMedicationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HospitalDischargeMedicationsSectionOperations.validateHospitalDischargeMedicationsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class HospitalDischargeMedicationsSectionImpl extends SectionImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean HospitalDischargeMedicationsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HospitalDischargeMedicationsSectionOperations.HospitalDischargeMedicationsSection_code(this, diagnostics, context);
+	public boolean validateHospitalDischargeMedicationsSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HospitalDischargeMedicationsSectionOperations.validateHospitalDischargeMedicationsSectionCode(this, diagnostics, context);
 	}
 
 	/**

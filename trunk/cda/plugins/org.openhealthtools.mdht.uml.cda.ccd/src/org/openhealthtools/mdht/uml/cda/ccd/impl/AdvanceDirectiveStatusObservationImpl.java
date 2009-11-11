@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AdvanceDirectiveStatusObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,8 +49,8 @@ public class AdvanceDirectiveStatusObservationImpl extends StatusObservationImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AdvanceDirectiveStatusObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectiveStatusObservationOperations.AdvanceDirectiveStatusObservation_templateId(this, diagnostics, context);
+	public boolean validateAdvanceDirectiveStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdvanceDirectiveStatusObservationOperations.validateAdvanceDirectiveStatusObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -62,8 +58,8 @@ public class AdvanceDirectiveStatusObservationImpl extends StatusObservationImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AdvanceDirectiveStatusObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectiveStatusObservationOperations.AdvanceDirectiveStatusObservation_value(this, diagnostics, context);
+	public boolean validateAdvanceDirectiveStatusObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdvanceDirectiveStatusObservationOperations.validateAdvanceDirectiveStatusObservationValue(this, diagnostics, context);
 	}
 
 	/**

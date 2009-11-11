@@ -54,8 +54,8 @@ public class PNImpl extends ENImpl implements PN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean invariant(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PNOperations.invariant(this, diagnostics, context);
+	public boolean validateInvariant(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PNOperations.validateInvariant(this, diagnostics, context);
 	}
 
 } //PNImpl

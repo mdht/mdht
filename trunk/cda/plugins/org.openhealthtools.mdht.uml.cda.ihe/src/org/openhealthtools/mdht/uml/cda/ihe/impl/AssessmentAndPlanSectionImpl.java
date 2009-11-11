@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.AssessmentAndPlanSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class AssessmentAndPlanSectionImpl extends SectionImpl implements Assessm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AssessmentAndPlanSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AssessmentAndPlanSectionOperations.AssessmentAndPlanSection_templateId(this, diagnostics, context);
+	public boolean validateAssessmentAndPlanSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AssessmentAndPlanSectionOperations.validateAssessmentAndPlanSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class AssessmentAndPlanSectionImpl extends SectionImpl implements Assessm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AssessmentAndPlanSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AssessmentAndPlanSectionOperations.AssessmentAndPlanSection_code(this, diagnostics, context);
+	public boolean validateAssessmentAndPlanSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AssessmentAndPlanSectionOperations.validateAssessmentAndPlanSectionCode(this, diagnostics, context);
 	}
 
 	/**

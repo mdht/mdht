@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.ihe;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
 
 /**
@@ -24,7 +23,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getCarePlanSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='CarePlanSection_templateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.31'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='CarePlanSectionTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.31'"
  * @generated
  */
 public interface CarePlanSection extends PlanOfCareSection {
@@ -39,7 +38,7 @@ public interface CarePlanSection extends PlanOfCareSection {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.3.31\')'"
 	 * @generated
 	 */
-	boolean CarePlanSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateCarePlanSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

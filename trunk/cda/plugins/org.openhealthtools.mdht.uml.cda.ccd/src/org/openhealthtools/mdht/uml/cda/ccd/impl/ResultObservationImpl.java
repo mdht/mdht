@@ -50,8 +50,8 @@ public class ResultObservationImpl extends ObservationImpl implements ResultObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultObservationOperations.ResultObservation_templateId(this, diagnostics, context);
+	public boolean validateResultObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultObservationOperations.validateResultObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class ResultObservationImpl extends ObservationImpl implements ResultObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultObservationOperations.ResultObservation_moodCode(this, diagnostics, context);
+	public boolean validateResultObservationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultObservationOperations.validateResultObservationMoodCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class ResultObservationImpl extends ObservationImpl implements ResultObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultObservation_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultObservationOperations.ResultObservation_id(this, diagnostics, context);
+	public boolean validateResultObservationId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultObservationOperations.validateResultObservationId(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class ResultObservationImpl extends ObservationImpl implements ResultObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultObservation_effectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultObservationOperations.ResultObservation_effectiveTime(this, diagnostics, context);
+	public boolean validateResultObservationEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultObservationOperations.validateResultObservationEffectiveTime(this, diagnostics, context);
 	}
 
 	/**
@@ -86,8 +86,8 @@ public class ResultObservationImpl extends ObservationImpl implements ResultObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultObservationOperations.ResultObservation_value(this, diagnostics, context);
+	public boolean validateResultObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultObservationOperations.validateResultObservationValue(this, diagnostics, context);
 	}
 
 	/**

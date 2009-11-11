@@ -10,15 +10,15 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Section;
-
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
-
-import org.openhealthtools.mdht.uml.cda.example.*;
+import org.openhealthtools.mdht.uml.cda.example.ExamplePackage;
+import org.openhealthtools.mdht.uml.cda.example.MyActivity;
+import org.openhealthtools.mdht.uml.cda.example.MyDocument;
+import org.openhealthtools.mdht.uml.cda.example.MySection;
 
 /**
  * <!-- begin-user-doc -->

@@ -13,14 +13,11 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassManufacturedMaterial;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminerDetermined;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -33,9 +30,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.LabeledDrug#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.LabeledDrug#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.LabeledDrug#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.LabeledDrug#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.LabeledDrug#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.LabeledDrug#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.LabeledDrug#getName <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.LabeledDrug#getNullFlavor <em>Null Flavor</em>}</li>
@@ -64,7 +61,7 @@ public interface LabeledDrug extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -108,7 +105,7 @@ public interface LabeledDrug extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Code</b></em>' containment reference.

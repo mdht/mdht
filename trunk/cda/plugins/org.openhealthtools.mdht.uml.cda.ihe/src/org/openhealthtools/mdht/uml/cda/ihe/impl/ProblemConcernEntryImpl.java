@@ -55,8 +55,8 @@ public class ProblemConcernEntryImpl extends ConcernEntryImpl implements Problem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemConcernEntry_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemConcernEntryOperations.ProblemConcernEntry_templateId(this, diagnostics, context);
+	public boolean validateProblemConcernEntryTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemConcernEntryOperations.validateProblemConcernEntryTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +64,8 @@ public class ProblemConcernEntryImpl extends ConcernEntryImpl implements Problem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemConcernEntry_problemEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemConcernEntryOperations.ProblemConcernEntry_problemEntry(this, diagnostics, context);
+	public boolean validateProblemConcernEntryProblemEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemConcernEntryOperations.validateProblemConcernEntryProblemEntry(this, diagnostics, context);
 	}
 
 	/**

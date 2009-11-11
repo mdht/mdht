@@ -11,18 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.EncountersSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
-
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
 /**
@@ -33,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection#EncounterHistorySection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Encounter History Section template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection#validateEncounterHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter History Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,24 +45,24 @@ public class EncounterHistorySectionOperations extends EncountersSectionOperatio
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #EncounterHistorySection_templateId(EncounterHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Encounter History Section template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateEncounterHistorySectionTemplateId(EncounterHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter History Section Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #EncounterHistorySection_templateId(EncounterHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateEncounterHistorySectionTemplateId(EncounterHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3')";
+	protected static final String VALIDATE_ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #EncounterHistorySection_templateId(EncounterHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Encounter History Section template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateEncounterHistorySectionTemplateId(EncounterHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter History Section Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #EncounterHistorySection_templateId(EncounterHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateEncounterHistorySectionTemplateId(EncounterHistorySection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,25 +75,25 @@ public class EncounterHistorySectionOperations extends EncountersSectionOperatio
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean EncounterHistorySection_templateId(EncounterHistorySection encounterHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateEncounterHistorySectionTemplateId(EncounterHistorySection encounterHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.ENCOUNTER_HISTORY_SECTION);
 			try {
-				ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(encounterHistorySection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(encounterHistorySection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.ENCOUNTER_HISTORY_SECTION__ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("EncounterHistorySection_templateId"),
+						 IHEPlugin.INSTANCE.getString("EncounterHistorySectionTemplateId"),
 						 new Object [] { encounterHistorySection }));
 			}
 			return false;

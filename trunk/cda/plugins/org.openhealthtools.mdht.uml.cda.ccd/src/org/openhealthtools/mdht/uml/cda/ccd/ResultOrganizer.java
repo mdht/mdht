@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.Organizer;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getResultOrganizer()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' constraints.validation.error='ResultOrganizer_templateId ResultOrganizer_moodCode ResultOrganizer_id ResultOrganizer_resultObservation' templateId.root='2.16.840.1.113883.10.20.1.32'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' constraints.validation.error='ResultOrganizerTemplateId ResultOrganizerMoodCode ResultOrganizerId ResultOrganizerResultObservation' templateId.root='2.16.840.1.113883.10.20.1.32'"
  * @generated
  */
 public interface ResultOrganizer extends Organizer {
@@ -47,7 +47,7 @@ public interface ResultOrganizer extends Organizer {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.32\')'"
 	 * @generated
 	 */
-	boolean ResultOrganizer_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateResultOrganizerTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,7 +60,7 @@ public interface ResultOrganizer extends Organizer {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.moodCode.oclIsUndefined() and self.moodCode=vocab::ActMood::EVN'"
 	 * @generated
 	 */
-	boolean ResultOrganizer_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateResultOrganizerMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public interface ResultOrganizer extends Organizer {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.id->isEmpty()'"
 	 * @generated
 	 */
-	boolean ResultOrganizer_id(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateResultOrganizerId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,7 +86,7 @@ public interface ResultOrganizer extends Organizer {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ccd::ResultObservation))'"
 	 * @generated
 	 */
-	boolean ResultOrganizer_resultObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateResultOrganizerResultObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

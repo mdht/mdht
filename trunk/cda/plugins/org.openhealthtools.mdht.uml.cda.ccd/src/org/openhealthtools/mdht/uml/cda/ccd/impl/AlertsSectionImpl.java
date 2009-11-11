@@ -50,8 +50,8 @@ public class AlertsSectionImpl extends SectionImpl implements AlertsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AlertsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AlertsSectionOperations.AlertsSection_templateId(this, diagnostics, context);
+	public boolean validateAlertsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertsSectionOperations.validateAlertsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class AlertsSectionImpl extends SectionImpl implements AlertsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AlertsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AlertsSectionOperations.AlertsSection_code(this, diagnostics, context);
+	public boolean validateAlertsSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertsSectionOperations.validateAlertsSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class AlertsSectionImpl extends SectionImpl implements AlertsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AlertsSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AlertsSectionOperations.AlertsSection_title(this, diagnostics, context);
+	public boolean validateAlertsSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertsSectionOperations.validateAlertsSectionTitle(this, diagnostics, context);
 	}
 
 	/**

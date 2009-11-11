@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.CodedResultsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class CodedResultsSectionImpl extends SectionImpl implements CodedResults
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean CodedResultsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CodedResultsSectionOperations.CodedResultsSection_templateId(this, diagnostics, context);
+	public boolean validateCodedResultsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CodedResultsSectionOperations.validateCodedResultsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class CodedResultsSectionImpl extends SectionImpl implements CodedResults
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean CodedResultsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CodedResultsSectionOperations.CodedResultsSection_code(this, diagnostics, context);
+	public boolean validateCodedResultsSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CodedResultsSectionOperations.validateCodedResultsSectionCode(this, diagnostics, context);
 	}
 
 	/**

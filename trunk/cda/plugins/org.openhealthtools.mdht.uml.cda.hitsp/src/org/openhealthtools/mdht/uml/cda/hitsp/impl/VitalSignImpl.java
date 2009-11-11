@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.VitalSignOperations;
-
 import org.openhealthtools.mdht.uml.cda.ihe.impl.VitalSignObservationImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class VitalSignImpl extends VitalSignObservationImpl implements VitalSign
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean VitalSign_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignOperations.VitalSign_templateId(this, diagnostics, context);
+	public boolean validateVitalSignTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignOperations.validateVitalSignTemplateId(this, diagnostics, context);
 	}
 
 	/**

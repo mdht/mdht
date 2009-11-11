@@ -43,9 +43,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component2Impl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component2Impl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component2Impl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component2Impl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component2Impl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component2Impl#getNonXMLBody <em>Non XML Body</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component2Impl#getStructuredBody <em>Structured Body</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component2Impl#getNullFlavor <em>Null Flavor</em>}</li>
@@ -58,14 +58,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class Component2Impl extends EObjectImpl implements Component2 {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -78,14 +78,14 @@ public class Component2Impl extends EObjectImpl implements Component2 {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getNonXMLBody() <em>Non XML Body</em>}' containment reference.
@@ -209,11 +209,11 @@ public class Component2Impl extends EObjectImpl implements Component2 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.COMPONENT2__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.COMPONENT2__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -264,11 +264,11 @@ public class Component2Impl extends EObjectImpl implements Component2 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.COMPONENT2__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.COMPONENT2__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -475,8 +475,8 @@ public class Component2Impl extends EObjectImpl implements Component2 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean bodyChoice(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return Component2Operations.bodyChoice(this, diagnostics, context);
+	public boolean validateBodyChoice(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return Component2Operations.validateBodyChoice(this, diagnostics, context);
 	}
 
 	/**
@@ -488,11 +488,11 @@ public class Component2Impl extends EObjectImpl implements Component2 {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.COMPONENT2__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.COMPONENT2__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.COMPONENT2__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.COMPONENT2__NON_XML_BODY:
 				return basicSetNonXMLBody(null, msgs);
 			case CDAPackage.COMPONENT2__STRUCTURED_BODY:
@@ -510,11 +510,11 @@ public class Component2Impl extends EObjectImpl implements Component2 {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.COMPONENT2__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.COMPONENT2__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.COMPONENT2__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.COMPONENT2__NON_XML_BODY:
 				return getNonXMLBody();
 			case CDAPackage.COMPONENT2__STRUCTURED_BODY:
@@ -539,15 +539,15 @@ public class Component2Impl extends EObjectImpl implements Component2 {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.COMPONENT2__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.COMPONENT2__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.COMPONENT2__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.COMPONENT2__NON_XML_BODY:
 				setNonXMLBody((NonXMLBody)newValue);
@@ -577,13 +577,13 @@ public class Component2Impl extends EObjectImpl implements Component2 {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.COMPONENT2__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.COMPONENT2__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.COMPONENT2__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.COMPONENT2__NON_XML_BODY:
 				setNonXMLBody((NonXMLBody)null);
@@ -613,11 +613,11 @@ public class Component2Impl extends EObjectImpl implements Component2 {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.COMPONENT2__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.COMPONENT2__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.COMPONENT2__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.COMPONENT2__NON_XML_BODY:
 				return nonXMLBody != null;
 			case CDAPackage.COMPONENT2__STRUCTURED_BODY:

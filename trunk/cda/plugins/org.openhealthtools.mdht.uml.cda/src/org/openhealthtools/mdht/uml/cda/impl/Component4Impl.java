@@ -52,9 +52,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component4Impl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component4Impl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component4Impl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component4Impl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component4Impl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component4Impl#getSequenceNumber <em>Sequence Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component4Impl#getSeperatableInd <em>Seperatable Ind</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.Component4Impl#getAct <em>Act</em>}</li>
@@ -76,14 +76,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class Component4Impl extends EObjectImpl implements Component4 {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -96,14 +96,14 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getSequenceNumber() <em>Sequence Number</em>}' containment reference.
@@ -317,11 +317,11 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.COMPONENT4__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.COMPONENT4__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -372,11 +372,11 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.COMPONENT4__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.COMPONENT4__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -970,8 +970,8 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean clinicalStatement(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return Component4Operations.clinicalStatement(this, diagnostics, context);
+	public boolean validateClinicalStatement(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return Component4Operations.validateClinicalStatement(this, diagnostics, context);
 	}
 
 	/**
@@ -983,11 +983,11 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.COMPONENT4__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.COMPONENT4__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.COMPONENT4__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.COMPONENT4__SEQUENCE_NUMBER:
 				return basicSetSequenceNumber(null, msgs);
 			case CDAPackage.COMPONENT4__SEPERATABLE_IND:
@@ -1023,11 +1023,11 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.COMPONENT4__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.COMPONENT4__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.COMPONENT4__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.COMPONENT4__SEQUENCE_NUMBER:
 				return getSequenceNumber();
 			case CDAPackage.COMPONENT4__SEPERATABLE_IND:
@@ -1070,15 +1070,15 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.COMPONENT4__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.COMPONENT4__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.COMPONENT4__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.COMPONENT4__SEQUENCE_NUMBER:
 				setSequenceNumber((INT)newValue);
@@ -1135,13 +1135,13 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.COMPONENT4__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.COMPONENT4__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.COMPONENT4__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.COMPONENT4__SEQUENCE_NUMBER:
 				setSequenceNumber((INT)null);
@@ -1198,11 +1198,11 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.COMPONENT4__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.COMPONENT4__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.COMPONENT4__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.COMPONENT4__SEQUENCE_NUMBER:
 				return sequenceNumber != null;
 			case CDAPackage.COMPONENT4__SEPERATABLE_IND:

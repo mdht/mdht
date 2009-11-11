@@ -58,8 +58,8 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PatientSummary_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PatientSummaryOperations.PatientSummary_templateId(this, diagnostics, context);
+	public boolean validatePatientSummaryTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientSummaryOperations.validatePatientSummaryTemplateId(this, diagnostics, context);
 	}
 
 	/**

@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.SurgeriesSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.ihe.impl.CodedSurgeriesSectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,9 +50,8 @@ public class SurgeriesSectionImpl extends CodedSurgeriesSectionImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean SurgeriesSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SurgeriesSectionOperations.SurgeriesSection_templateId(this, diagnostics, context);
+	public boolean validateHITSPSurgeriesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SurgeriesSectionOperations.validateHITSPSurgeriesSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

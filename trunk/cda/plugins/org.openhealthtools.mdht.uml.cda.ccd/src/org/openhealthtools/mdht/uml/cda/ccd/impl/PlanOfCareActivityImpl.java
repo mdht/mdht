@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PlanOfCareActivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.ActImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class PlanOfCareActivityImpl extends ActImpl implements PlanOfCareActivit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PlanOfCareActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PlanOfCareActivityOperations.PlanOfCareActivity_templateId(this, diagnostics, context);
+	public boolean validatePlanOfCareActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PlanOfCareActivityOperations.validatePlanOfCareActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class PlanOfCareActivityImpl extends ActImpl implements PlanOfCareActivit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PlanOfCareActivity_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PlanOfCareActivityOperations.PlanOfCareActivity_id(this, diagnostics, context);
+	public boolean validatePlanOfCareActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PlanOfCareActivityOperations.validatePlanOfCareActivityId(this, diagnostics, context);
 	}
 
 	/**

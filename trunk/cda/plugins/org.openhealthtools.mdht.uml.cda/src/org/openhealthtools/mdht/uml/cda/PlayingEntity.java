@@ -13,16 +13,13 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -35,12 +32,12 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getCode <em>Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getName <em>Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getQuantities <em>Quantity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getNames <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getDesc <em>Desc</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getClassCode <em>Class Code</em>}</li>
@@ -68,7 +65,7 @@ public interface PlayingEntity extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -112,7 +109,7 @@ public interface PlayingEntity extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Code</b></em>' containment reference.
@@ -156,7 +153,7 @@ public interface PlayingEntity extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<PQ> getQuantity();
+	EList<PQ> getQuantities();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' containment reference list.
@@ -173,7 +170,7 @@ public interface PlayingEntity extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<PN> getName();
+	EList<PN> getNames();
 
 	/**
 	 * Returns the value of the '<em><b>Desc</b></em>' containment reference.

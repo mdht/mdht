@@ -16,16 +16,11 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClassifier;
-
 import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.OCL;
-
 import org.eclipse.ocl.expressions.OCLExpression;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -59,17 +54,17 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#addRegionOfInterest(org.openhealthtools.mdht.uml.cda.RegionOfInterest) <em>Add Region Of Interest</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#addSubstanceAdministration(org.openhealthtools.mdht.uml.cda.SubstanceAdministration) <em>Add Substance Administration</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#addSupply(org.openhealthtools.mdht.uml.cda.Supply) <em>Add Supply</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getAct() <em>Get Act</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getActs() <em>Get Acts</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getClinicalDocument() <em>Get Clinical Document</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getEncounter() <em>Get Encounter</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getObservation() <em>Get Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getEncounters() <em>Get Encounters</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getObservations() <em>Get Observations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getObservationMedia() <em>Get Observation Media</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getOrganizer() <em>Get Organizer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getProcedure() <em>Get Procedure</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getRegionOfInterest() <em>Get Region Of Interest</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getOrganizers() <em>Get Organizers</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getProcedures() <em>Get Procedures</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getRegionsOfInterest() <em>Get Regions Of Interest</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getSection() <em>Get Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getSubstanceAdministration() <em>Get Substance Administration</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getSupply() <em>Get Supply</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getSubstanceAdministrations() <em>Get Substance Administrations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#getSupplies() <em>Get Supplies</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#hasActTemplate(java.lang.String) <em>Has Act Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#hasCode(java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Supply#hasEncounterTemplate(java.lang.String) <em>Has Encounter Template</em>}</li>
@@ -113,7 +108,7 @@ public class SupplyOperations {
 	public static  void addAct(Supply supply, Act act) {
 		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
 		entryRelationship.setAct(act);
-		supply.getEntryRelationship().add(entryRelationship);
+		supply.getEntryRelationships().add(entryRelationship);
 	}
 
 	/**
@@ -124,7 +119,7 @@ public class SupplyOperations {
 	public static  void addEncounter(Supply supply, Encounter encounter) {
 		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
 		entryRelationship.setEncounter(encounter);
-		supply.getEntryRelationship().add(entryRelationship);
+		supply.getEntryRelationships().add(entryRelationship);
 	}
 
 	/**
@@ -135,7 +130,7 @@ public class SupplyOperations {
 	public static  void addObservation(Supply supply, Observation observation) {
 		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
 		entryRelationship.setObservation(observation);
-		supply.getEntryRelationship().add(entryRelationship);
+		supply.getEntryRelationships().add(entryRelationship);
 	}
 
 	/**
@@ -146,7 +141,7 @@ public class SupplyOperations {
 	public static  void addObservationMedia(Supply supply, ObservationMedia observationMedia) {
 		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
 		entryRelationship.setObservationMedia(observationMedia);
-		supply.getEntryRelationship().add(entryRelationship);
+		supply.getEntryRelationships().add(entryRelationship);
 	}
 
 	/**
@@ -157,7 +152,7 @@ public class SupplyOperations {
 	public static  void addOrganizer(Supply supply, Organizer organizer) {
 		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
 		entryRelationship.setOrganizer(organizer);
-		supply.getEntryRelationship().add(entryRelationship);
+		supply.getEntryRelationships().add(entryRelationship);
 	}
 
 	/**
@@ -168,7 +163,7 @@ public class SupplyOperations {
 	public static  void addProcedure(Supply supply, Procedure procedure) {
 		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
 		entryRelationship.setProcedure(procedure);
-		supply.getEntryRelationship().add(entryRelationship);
+		supply.getEntryRelationships().add(entryRelationship);
 	}
 
 	/**
@@ -179,7 +174,7 @@ public class SupplyOperations {
 	public static  void addRegionOfInterest(Supply supply, RegionOfInterest regionOfInterest) {
 		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
 		entryRelationship.setRegionOfInterest(regionOfInterest);
-		supply.getEntryRelationship().add(entryRelationship);
+		supply.getEntryRelationships().add(entryRelationship);
 	}
 
 	/**
@@ -190,7 +185,7 @@ public class SupplyOperations {
 	public static  void addSubstanceAdministration(Supply supply, SubstanceAdministration substanceAdministration) {
 		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
 		entryRelationship.setSubstanceAdministration(substanceAdministration);
-		supply.getEntryRelationship().add(entryRelationship);
+		supply.getEntryRelationships().add(entryRelationship);
 	}
 
 	/**
@@ -201,28 +196,28 @@ public class SupplyOperations {
 	public static  void addSupply(Supply supply, Supply newSupply) {
 		EntryRelationship entryRelationship = CDAFactory.eINSTANCE.createEntryRelationship();
 		entryRelationship.setSupply(newSupply);
-		supply.getEntryRelationship().add(entryRelationship);
+		supply.getEntryRelationships().add(entryRelationship);
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getAct(Supply) <em>Get Act</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getActs(Supply) <em>Get Acts</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAct(Supply)
+	 * @see #getActs(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ACT__EOCL_EXP = "self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())";
+	protected static final String GET_ACTS__EOCL_EXP = "self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())";
 
 	/**
-	 * The cached OCL query for the '{@link #getAct(Supply) <em>Get Act</em>}' query operation.
+	 * The cached OCL query for the '{@link #getActs(Supply) <em>Get Acts</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAct(Supply)
+	 * @see #getActs(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_ACT__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_ACTS__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,18 +228,18 @@ public class SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EList<Act> getAct(Supply supply) {
-		if (GET_ACT__EOCL_QRY == null) {
+	public static  EList<Act> getActs(Supply supply) {
+		if (GET_ACTS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDAPackage.eINSTANCE.getSupply(), CDAPackage.eINSTANCE.getSupply().getEAllOperations().get(9));
 			try {
-				GET_ACT__EOCL_QRY = helper.createQuery(GET_ACT__EOCL_EXP);
+				GET_ACTS__EOCL_QRY = helper.createQuery(GET_ACTS__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_ACT__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_ACTS__EOCL_QRY);
 		@SuppressWarnings("unchecked")
 		Collection<Act> result = (Collection<Act>) query.evaluate(supply);
 		return new BasicEList.UnmodifiableEList<Act>(result.size(), result.toArray());
@@ -260,24 +255,24 @@ public class SupplyOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getEncounter(Supply) <em>Get Encounter</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getEncounters(Supply) <em>Get Encounters</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEncounter(Supply)
+	 * @see #getEncounters(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ENCOUNTER__EOCL_EXP = "self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())";
+	protected static final String GET_ENCOUNTERS__EOCL_EXP = "self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())";
 
 	/**
-	 * The cached OCL query for the '{@link #getEncounter(Supply) <em>Get Encounter</em>}' query operation.
+	 * The cached OCL query for the '{@link #getEncounters(Supply) <em>Get Encounters</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEncounter(Supply)
+	 * @see #getEncounters(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_ENCOUNTER__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_ENCOUNTERS__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -288,42 +283,42 @@ public class SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EList<Encounter> getEncounter(Supply supply) {
-		if (GET_ENCOUNTER__EOCL_QRY == null) {
+	public static  EList<Encounter> getEncounters(Supply supply) {
+		if (GET_ENCOUNTERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDAPackage.eINSTANCE.getSupply(), CDAPackage.eINSTANCE.getSupply().getEAllOperations().get(11));
 			try {
-				GET_ENCOUNTER__EOCL_QRY = helper.createQuery(GET_ENCOUNTER__EOCL_EXP);
+				GET_ENCOUNTERS__EOCL_QRY = helper.createQuery(GET_ENCOUNTERS__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_ENCOUNTER__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_ENCOUNTERS__EOCL_QRY);
 		@SuppressWarnings("unchecked")
 		Collection<Encounter> result = (Collection<Encounter>) query.evaluate(supply);
 		return new BasicEList.UnmodifiableEList<Encounter>(result.size(), result.toArray());
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getObservation(Supply) <em>Get Observation</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getObservations(Supply) <em>Get Observations</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getObservation(Supply)
+	 * @see #getObservations(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_OBSERVATION__EOCL_EXP = "self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())";
+	protected static final String GET_OBSERVATIONS__EOCL_EXP = "self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())";
 
 	/**
-	 * The cached OCL query for the '{@link #getObservation(Supply) <em>Get Observation</em>}' query operation.
+	 * The cached OCL query for the '{@link #getObservations(Supply) <em>Get Observations</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getObservation(Supply)
+	 * @see #getObservations(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_OBSERVATION__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_OBSERVATIONS__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -334,18 +329,18 @@ public class SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EList<Observation> getObservation(Supply supply) {
-		if (GET_OBSERVATION__EOCL_QRY == null) {
+	public static  EList<Observation> getObservations(Supply supply) {
+		if (GET_OBSERVATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDAPackage.eINSTANCE.getSupply(), CDAPackage.eINSTANCE.getSupply().getEAllOperations().get(12));
 			try {
-				GET_OBSERVATION__EOCL_QRY = helper.createQuery(GET_OBSERVATION__EOCL_EXP);
+				GET_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_OBSERVATIONS__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_OBSERVATION__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_OBSERVATIONS__EOCL_QRY);
 		@SuppressWarnings("unchecked")
 		Collection<Observation> result = (Collection<Observation>) query.evaluate(supply);
 		return new BasicEList.UnmodifiableEList<Observation>(result.size(), result.toArray());
@@ -398,24 +393,24 @@ public class SupplyOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getOrganizer(Supply) <em>Get Organizer</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getOrganizers(Supply) <em>Get Organizers</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOrganizer(Supply)
+	 * @see #getOrganizers(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_ORGANIZER__EOCL_EXP = "self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())";
+	protected static final String GET_ORGANIZERS__EOCL_EXP = "self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())";
 
 	/**
-	 * The cached OCL query for the '{@link #getOrganizer(Supply) <em>Get Organizer</em>}' query operation.
+	 * The cached OCL query for the '{@link #getOrganizers(Supply) <em>Get Organizers</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOrganizer(Supply)
+	 * @see #getOrganizers(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_ORGANIZER__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_ORGANIZERS__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -426,42 +421,42 @@ public class SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EList<Organizer> getOrganizer(Supply supply) {
-		if (GET_ORGANIZER__EOCL_QRY == null) {
+	public static  EList<Organizer> getOrganizers(Supply supply) {
+		if (GET_ORGANIZERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDAPackage.eINSTANCE.getSupply(), CDAPackage.eINSTANCE.getSupply().getEAllOperations().get(14));
 			try {
-				GET_ORGANIZER__EOCL_QRY = helper.createQuery(GET_ORGANIZER__EOCL_EXP);
+				GET_ORGANIZERS__EOCL_QRY = helper.createQuery(GET_ORGANIZERS__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_ORGANIZER__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_ORGANIZERS__EOCL_QRY);
 		@SuppressWarnings("unchecked")
 		Collection<Organizer> result = (Collection<Organizer>) query.evaluate(supply);
 		return new BasicEList.UnmodifiableEList<Organizer>(result.size(), result.toArray());
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getProcedure(Supply) <em>Get Procedure</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getProcedures(Supply) <em>Get Procedures</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProcedure(Supply)
+	 * @see #getProcedures(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_PROCEDURE__EOCL_EXP = "self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())";
+	protected static final String GET_PROCEDURES__EOCL_EXP = "self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())";
 
 	/**
-	 * The cached OCL query for the '{@link #getProcedure(Supply) <em>Get Procedure</em>}' query operation.
+	 * The cached OCL query for the '{@link #getProcedures(Supply) <em>Get Procedures</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProcedure(Supply)
+	 * @see #getProcedures(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_PROCEDURE__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_PROCEDURES__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -472,42 +467,42 @@ public class SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EList<Procedure> getProcedure(Supply supply) {
-		if (GET_PROCEDURE__EOCL_QRY == null) {
+	public static  EList<Procedure> getProcedures(Supply supply) {
+		if (GET_PROCEDURES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDAPackage.eINSTANCE.getSupply(), CDAPackage.eINSTANCE.getSupply().getEAllOperations().get(15));
 			try {
-				GET_PROCEDURE__EOCL_QRY = helper.createQuery(GET_PROCEDURE__EOCL_EXP);
+				GET_PROCEDURES__EOCL_QRY = helper.createQuery(GET_PROCEDURES__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_PROCEDURE__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_PROCEDURES__EOCL_QRY);
 		@SuppressWarnings("unchecked")
 		Collection<Procedure> result = (Collection<Procedure>) query.evaluate(supply);
 		return new BasicEList.UnmodifiableEList<Procedure>(result.size(), result.toArray());
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getRegionOfInterest(Supply) <em>Get Region Of Interest</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getRegionsOfInterest(Supply) <em>Get Regions Of Interest</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRegionOfInterest(Supply)
+	 * @see #getRegionsOfInterest(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_REGION_OF_INTEREST__EOCL_EXP = "self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())";
+	protected static final String GET_REGIONS_OF_INTEREST__EOCL_EXP = "self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())";
 
 	/**
-	 * The cached OCL query for the '{@link #getRegionOfInterest(Supply) <em>Get Region Of Interest</em>}' query operation.
+	 * The cached OCL query for the '{@link #getRegionsOfInterest(Supply) <em>Get Regions Of Interest</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRegionOfInterest(Supply)
+	 * @see #getRegionsOfInterest(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_REGION_OF_INTEREST__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_REGIONS_OF_INTEREST__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -518,18 +513,18 @@ public class SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EList<RegionOfInterest> getRegionOfInterest(Supply supply) {
-		if (GET_REGION_OF_INTEREST__EOCL_QRY == null) {
+	public static  EList<RegionOfInterest> getRegionsOfInterest(Supply supply) {
+		if (GET_REGIONS_OF_INTEREST__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDAPackage.eINSTANCE.getSupply(), CDAPackage.eINSTANCE.getSupply().getEAllOperations().get(16));
 			try {
-				GET_REGION_OF_INTEREST__EOCL_QRY = helper.createQuery(GET_REGION_OF_INTEREST__EOCL_EXP);
+				GET_REGIONS_OF_INTEREST__EOCL_QRY = helper.createQuery(GET_REGIONS_OF_INTEREST__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_REGION_OF_INTEREST__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_REGIONS_OF_INTEREST__EOCL_QRY);
 		@SuppressWarnings("unchecked")
 		Collection<RegionOfInterest> result = (Collection<RegionOfInterest>) query.evaluate(supply);
 		return new BasicEList.UnmodifiableEList<RegionOfInterest>(result.size(), result.toArray());
@@ -545,24 +540,24 @@ public class SupplyOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getSubstanceAdministration(Supply) <em>Get Substance Administration</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getSubstanceAdministrations(Supply) <em>Get Substance Administrations</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSubstanceAdministration(Supply)
+	 * @see #getSubstanceAdministrations(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_SUBSTANCE_ADMINISTRATION__EOCL_EXP = "self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())";
+	protected static final String GET_SUBSTANCE_ADMINISTRATIONS__EOCL_EXP = "self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())";
 
 	/**
-	 * The cached OCL query for the '{@link #getSubstanceAdministration(Supply) <em>Get Substance Administration</em>}' query operation.
+	 * The cached OCL query for the '{@link #getSubstanceAdministrations(Supply) <em>Get Substance Administrations</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSubstanceAdministration(Supply)
+	 * @see #getSubstanceAdministrations(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_SUBSTANCE_ADMINISTRATION__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -573,42 +568,42 @@ public class SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EList<SubstanceAdministration> getSubstanceAdministration(Supply supply) {
-		if (GET_SUBSTANCE_ADMINISTRATION__EOCL_QRY == null) {
+	public static  EList<SubstanceAdministration> getSubstanceAdministrations(Supply supply) {
+		if (GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDAPackage.eINSTANCE.getSupply(), CDAPackage.eINSTANCE.getSupply().getEAllOperations().get(18));
 			try {
-				GET_SUBSTANCE_ADMINISTRATION__EOCL_QRY = helper.createQuery(GET_SUBSTANCE_ADMINISTRATION__EOCL_EXP);
+				GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY = helper.createQuery(GET_SUBSTANCE_ADMINISTRATIONS__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_SUBSTANCE_ADMINISTRATION__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY);
 		@SuppressWarnings("unchecked")
 		Collection<SubstanceAdministration> result = (Collection<SubstanceAdministration>) query.evaluate(supply);
 		return new BasicEList.UnmodifiableEList<SubstanceAdministration>(result.size(), result.toArray());
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #getSupply(Supply) <em>Get Supply</em>}' operation.
+	 * The cached OCL expression body for the '{@link #getSupplies(Supply) <em>Get Supplies</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSupply(Supply)
+	 * @see #getSupplies(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_SUPPLY__EOCL_EXP = "self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())";
+	protected static final String GET_SUPPLIES__EOCL_EXP = "self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())";
 
 	/**
-	 * The cached OCL query for the '{@link #getSupply(Supply) <em>Get Supply</em>}' query operation.
+	 * The cached OCL query for the '{@link #getSupplies(Supply) <em>Get Supplies</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSupply(Supply)
+	 * @see #getSupplies(Supply)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_SUPPLY__EOCL_QRY;
+	protected static OCLExpression<EClassifier> GET_SUPPLIES__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -619,18 +614,18 @@ public class SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  EList<Supply> getSupply(Supply supply) {
-		if (GET_SUPPLY__EOCL_QRY == null) {
+	public static  EList<Supply> getSupplies(Supply supply) {
+		if (GET_SUPPLIES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDAPackage.eINSTANCE.getSupply(), CDAPackage.eINSTANCE.getSupply().getEAllOperations().get(19));
 			try {
-				GET_SUPPLY__EOCL_QRY = helper.createQuery(GET_SUPPLY__EOCL_EXP);
+				GET_SUPPLIES__EOCL_QRY = helper.createQuery(GET_SUPPLIES__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_SUPPLY__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(GET_SUPPLIES__EOCL_QRY);
 		@SuppressWarnings("unchecked")
 		Collection<Supply> result = (Collection<Supply>) query.evaluate(supply);
 		return new BasicEList.UnmodifiableEList<Supply>(result.size(), result.toArray());
@@ -644,7 +639,7 @@ public class SupplyOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_ACT_TEMPLATE__STRING__EOCL_EXP = "self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))";
+	protected static final String HAS_ACT_TEMPLATE__STRING__EOCL_EXP = "self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasActTemplate(Supply, java.lang.String) <em>Has Act Template</em>}' query operation.
@@ -660,7 +655,7 @@ public class SupplyOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))
+	 * self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))
 	 * @param supply The receiving '<em><b>Supply</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -738,7 +733,7 @@ public class SupplyOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP = "self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))";
+	protected static final String HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP = "self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasEncounterTemplate(Supply, java.lang.String) <em>Has Encounter Template</em>}' query operation.
@@ -754,7 +749,7 @@ public class SupplyOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
+	 * self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
 	 * @param supply The receiving '<em><b>Supply</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -830,7 +825,7 @@ public class SupplyOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP = "self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))";
+	protected static final String HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP = "self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasObservationTemplate(Supply, java.lang.String) <em>Has Observation Template</em>}' query operation.
@@ -846,7 +841,7 @@ public class SupplyOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
+	 * self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
 	 * @param supply The receiving '<em><b>Supply</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -876,7 +871,7 @@ public class SupplyOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP = "self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))";
+	protected static final String HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP = "self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasOrganizerTemplate(Supply, java.lang.String) <em>Has Organizer Template</em>}' query operation.
@@ -892,7 +887,7 @@ public class SupplyOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
+	 * self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
 	 * @param supply The receiving '<em><b>Supply</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -922,7 +917,7 @@ public class SupplyOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP = "self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))";
+	protected static final String HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP = "self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasProcedureTemplate(Supply, java.lang.String) <em>Has Procedure Template</em>}' query operation.
@@ -938,7 +933,7 @@ public class SupplyOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
+	 * self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
 	 * @param supply The receiving '<em><b>Supply</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -968,7 +963,7 @@ public class SupplyOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP = "self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))";
+	protected static final String HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP = "self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasRegionOfInterestTemplate(Supply, java.lang.String) <em>Has Region Of Interest Template</em>}' query operation.
@@ -984,7 +979,7 @@ public class SupplyOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
+	 * self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
 	 * @param supply The receiving '<em><b>Supply</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -1014,7 +1009,7 @@ public class SupplyOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP = "self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))";
+	protected static final String HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP = "self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasSubstanceAdministrationTemplate(Supply, java.lang.String) <em>Has Substance Administration Template</em>}' query operation.
@@ -1030,7 +1025,7 @@ public class SupplyOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
+	 * self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
 	 * @param supply The receiving '<em><b>Supply</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -1060,7 +1055,7 @@ public class SupplyOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP = "self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))";
+	protected static final String HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP = "self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasSupplyTemplate(Supply, java.lang.String) <em>Has Supply Template</em>}' query operation.
@@ -1076,7 +1071,7 @@ public class SupplyOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
+	 * self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
 	 * @param supply The receiving '<em><b>Supply</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated

@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.PhysicalExamNarrativeSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class PhysicalExamNarrativeSectionImpl extends SectionImpl implements Phy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PhysicalExamNarrativeSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PhysicalExamNarrativeSectionOperations.PhysicalExamNarrativeSection_templateId(this, diagnostics, context);
+	public boolean validatePhysicalExamNarrativeSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PhysicalExamNarrativeSectionOperations.validatePhysicalExamNarrativeSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class PhysicalExamNarrativeSectionImpl extends SectionImpl implements Phy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PhysicalExamNarrativeSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PhysicalExamNarrativeSectionOperations.PhysicalExamNarrativeSection_code(this, diagnostics, context);
+	public boolean validatePhysicalExamNarrativeSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PhysicalExamNarrativeSectionOperations.validatePhysicalExamNarrativeSectionCode(this, diagnostics, context);
 	}
 
 	/**

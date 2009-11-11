@@ -10,14 +10,14 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
-
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-
-import org.openhealthtools.mdht.uml.cda.example.*;
+import org.openhealthtools.mdht.uml.cda.example.ExamplePackage;
+import org.openhealthtools.mdht.uml.cda.example.ExamplePlugin;
+import org.openhealthtools.mdht.uml.cda.example.MyActivity;
+import org.openhealthtools.mdht.uml.cda.example.MyDocument;
+import org.openhealthtools.mdht.uml.cda.example.MySection;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public class ExampleValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.openhealthtools.mdht.uml.cda.example";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'My Document template Id' of 'My Document'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Document Template Id' of 'My Document'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -54,7 +54,7 @@ public class ExampleValidator extends EObjectValidator {
 	public static final int MY_DOCUMENT__MY_DOCUMENT_TEMPLATE_ID = 1;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'My Document my Section' of 'My Document'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Document My Section' of 'My Document'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -62,7 +62,7 @@ public class ExampleValidator extends EObjectValidator {
 	public static final int MY_DOCUMENT__MY_DOCUMENT_MY_SECTION = 2;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'My Activity template Id' of 'My Activity'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Activity Template Id' of 'My Activity'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -70,7 +70,7 @@ public class ExampleValidator extends EObjectValidator {
 	public static final int MY_ACTIVITY__MY_ACTIVITY_TEMPLATE_ID = 3;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'My Activity class Code' of 'My Activity'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Activity Class Code' of 'My Activity'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -78,7 +78,7 @@ public class ExampleValidator extends EObjectValidator {
 	public static final int MY_ACTIVITY__MY_ACTIVITY_CLASS_CODE = 4;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'My Activity mood Code' of 'My Activity'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Activity Mood Code' of 'My Activity'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -86,7 +86,7 @@ public class ExampleValidator extends EObjectValidator {
 	public static final int MY_ACTIVITY__MY_ACTIVITY_MOOD_CODE = 5;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'My Activity code' of 'My Activity'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Activity Code' of 'My Activity'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -94,7 +94,7 @@ public class ExampleValidator extends EObjectValidator {
 	public static final int MY_ACTIVITY__MY_ACTIVITY_CODE = 6;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'My Activity status Code' of 'My Activity'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Activity Status Code' of 'My Activity'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -102,7 +102,7 @@ public class ExampleValidator extends EObjectValidator {
 	public static final int MY_ACTIVITY__MY_ACTIVITY_STATUS_CODE = 7;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'My Section template Id' of 'My Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Section Template Id' of 'My Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -110,7 +110,7 @@ public class ExampleValidator extends EObjectValidator {
 	public static final int MY_SECTION__MY_SECTION_TEMPLATE_ID = 8;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'My Section code' of 'My Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Section Code' of 'My Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -118,7 +118,7 @@ public class ExampleValidator extends EObjectValidator {
 	public static final int MY_SECTION__MY_SECTION_CODE = 9;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'My Section title' of 'My Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Section Title' of 'My Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -126,7 +126,7 @@ public class ExampleValidator extends EObjectValidator {
 	public static final int MY_SECTION__MY_SECTION_TITLE = 10;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'My Section my Activity' of 'My Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate My Section My Activity' of 'My Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -212,47 +212,47 @@ public class ExampleValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(myDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_templateId(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_code(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_problemSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_familyHistorySection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_socialHistorySection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_alertsSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_medicationSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_resultsSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_proceduresSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_encountersSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_planOfCareSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_immunizationsSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_vitalSignsSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_medicalEquipmentSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_functionalStatusSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_advanceDirectivesSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_payersSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_ContinuityOfCareDocument_purposeSection(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMyDocument_MyDocument_templateId(myDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMyDocument_MyDocument_mySection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentTemplateId(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentCode(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentProblemSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentFamilyHistorySection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentSocialHistorySection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentAlertsSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentMedicationSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentResultsSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentProceduresSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentEncountersSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentPlanOfCareSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentImmunizationsSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentVitalSignsSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentMedicalEquipmentSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentFunctionalStatusSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentAdvanceDirectivesSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentPayersSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentPurposeSection(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMyDocument_validateMyDocumentTemplateId(myDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMyDocument_validateMyDocumentMySection(myDocument, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the MyDocument_templateId constraint of '<em>My Document</em>'.
+	 * Validates the validateMyDocumentTemplateId constraint of '<em>My Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMyDocument_MyDocument_templateId(MyDocument myDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return myDocument.MyDocument_templateId(diagnostics, context);
+	public boolean validateMyDocument_validateMyDocumentTemplateId(MyDocument myDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return myDocument.validateMyDocumentTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the MyDocument_mySection constraint of '<em>My Document</em>'.
+	 * Validates the validateMyDocumentMySection constraint of '<em>My Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMyDocument_MyDocument_mySection(MyDocument myDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return myDocument.MyDocument_mySection(diagnostics, context);
+	public boolean validateMyDocument_validateMyDocumentMySection(MyDocument myDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return myDocument.validateMyDocumentMySection(diagnostics, context);
 	}
 
 	/**
@@ -268,68 +268,68 @@ public class ExampleValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(myActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(myActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(myActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_templateId(myActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_classCode(myActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_moodCode(myActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_id(myActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code_nullFlavor(myActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_problemObservation(myActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMyActivity_MyActivity_templateId(myActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMyActivity_MyActivity_classCode(myActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMyActivity_MyActivity_moodCode(myActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMyActivity_MyActivity_code(myActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMyActivity_MyActivity_statusCode(myActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActTemplateId(myActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActClassCode(myActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(myActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(myActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(myActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActProblemObservation(myActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMyActivity_validateMyActivityTemplateId(myActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMyActivity_validateMyActivityClassCode(myActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMyActivity_validateMyActivityMoodCode(myActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMyActivity_validateMyActivityCode(myActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMyActivity_validateMyActivityStatusCode(myActivity, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the MyActivity_templateId constraint of '<em>My Activity</em>'.
+	 * Validates the validateMyActivityTemplateId constraint of '<em>My Activity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMyActivity_MyActivity_templateId(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return myActivity.MyActivity_templateId(diagnostics, context);
+	public boolean validateMyActivity_validateMyActivityTemplateId(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return myActivity.validateMyActivityTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the MyActivity_classCode constraint of '<em>My Activity</em>'.
+	 * Validates the validateMyActivityClassCode constraint of '<em>My Activity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMyActivity_MyActivity_classCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return myActivity.MyActivity_classCode(diagnostics, context);
+	public boolean validateMyActivity_validateMyActivityClassCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return myActivity.validateMyActivityClassCode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the MyActivity_moodCode constraint of '<em>My Activity</em>'.
+	 * Validates the validateMyActivityMoodCode constraint of '<em>My Activity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMyActivity_MyActivity_moodCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return myActivity.MyActivity_moodCode(diagnostics, context);
+	public boolean validateMyActivity_validateMyActivityMoodCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return myActivity.validateMyActivityMoodCode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the MyActivity_code constraint of '<em>My Activity</em>'.
+	 * Validates the validateMyActivityCode constraint of '<em>My Activity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMyActivity_MyActivity_code(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return myActivity.MyActivity_code(diagnostics, context);
+	public boolean validateMyActivity_validateMyActivityCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return myActivity.validateMyActivityCode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the MyActivity_statusCode constraint of '<em>My Activity</em>'.
+	 * Validates the validateMyActivityStatusCode constraint of '<em>My Activity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMyActivity_MyActivity_statusCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return myActivity.MyActivity_statusCode(diagnostics, context);
+	public boolean validateMyActivity_validateMyActivityStatusCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return myActivity.validateMyActivityStatusCode(diagnostics, context);
 	}
 
 	/**
@@ -345,51 +345,51 @@ public class ExampleValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(mySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(mySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(mySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMySection_MySection_templateId(mySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMySection_MySection_code(mySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMySection_MySection_title(mySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMySection_MySection_myActivity(mySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMySection_validateMySectionTemplateId(mySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMySection_validateMySectionCode(mySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMySection_validateMySectionTitle(mySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMySection_validateMySectionMyActivity(mySection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the MySection_templateId constraint of '<em>My Section</em>'.
+	 * Validates the validateMySectionTemplateId constraint of '<em>My Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMySection_MySection_templateId(MySection mySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return mySection.MySection_templateId(diagnostics, context);
+	public boolean validateMySection_validateMySectionTemplateId(MySection mySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return mySection.validateMySectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the MySection_code constraint of '<em>My Section</em>'.
+	 * Validates the validateMySectionCode constraint of '<em>My Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMySection_MySection_code(MySection mySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return mySection.MySection_code(diagnostics, context);
+	public boolean validateMySection_validateMySectionCode(MySection mySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return mySection.validateMySectionCode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the MySection_title constraint of '<em>My Section</em>'.
+	 * Validates the validateMySectionTitle constraint of '<em>My Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMySection_MySection_title(MySection mySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return mySection.MySection_title(diagnostics, context);
+	public boolean validateMySection_validateMySectionTitle(MySection mySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return mySection.validateMySectionTitle(diagnostics, context);
 	}
 
 	/**
-	 * Validates the MySection_myActivity constraint of '<em>My Section</em>'.
+	 * Validates the validateMySectionMyActivity constraint of '<em>My Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMySection_MySection_myActivity(MySection mySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return mySection.MySection_myActivity(diagnostics, context);
+	public boolean validateMySection_validateMySectionMyActivity(MySection mySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return mySection.validateMySectionMyActivity(diagnostics, context);
 	}
 
 	/**

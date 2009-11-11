@@ -16,13 +16,10 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipExternalReference;
 
@@ -34,9 +31,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipExternalReference
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Reference#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Reference#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Reference#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Reference#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Reference#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Reference#getSeperatableInd <em>Seperatable Ind</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Reference#getExternalAct <em>External Act</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Reference#getExternalObservation <em>External Observation</em>}</li>
@@ -67,7 +64,7 @@ public interface Reference extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -111,7 +108,7 @@ public interface Reference extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Seperatable Ind</b></em>' containment reference.
@@ -371,6 +368,6 @@ public interface Reference extends EObject {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='Bag{self.externalAct.oclIsUndefined(), self.externalDocument.oclIsUndefined(), self.externalObservation.oclIsUndefined(), self.externalProcedure.oclIsUndefined()}->one(x | x = false)'"
 	 * @generated
 	 */
-	boolean externalActChoice(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateExternalActChoice(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Reference

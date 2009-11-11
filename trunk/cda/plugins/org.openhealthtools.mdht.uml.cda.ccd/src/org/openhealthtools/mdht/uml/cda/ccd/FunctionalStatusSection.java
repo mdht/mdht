@@ -76,7 +76,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getFunctionalStatusSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.5' constraints.validation.error='FunctionalStatusSection_templateId FunctionalStatusSection_code FunctionalStatusSection_title' code.displayName='Functional status assessment' code.codeSystem='2.16.840.1.113883.6.1' code.code='47420-5' constraints.validation.warning='FunctionalStatusSection_problemAct FunctionalStatusSection_resultOrganizer'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.5' constraints.validation.error='FunctionalStatusSectionTemplateId FunctionalStatusSectionCode FunctionalStatusSectionTitle' code.displayName='Functional status assessment' code.codeSystem='2.16.840.1.113883.6.1' code.code='47420-5' constraints.validation.warning='FunctionalStatusSectionProblemAct FunctionalStatusSectionResultOrganizer'"
  * @generated
  */
 public interface FunctionalStatusSection extends Section {
@@ -91,7 +91,7 @@ public interface FunctionalStatusSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.5\')'"
 	 * @generated
 	 */
-	boolean FunctionalStatusSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateFunctionalStatusSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,7 +106,7 @@ public interface FunctionalStatusSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and \r\nlet value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (\r\nvalue.code = \'47420-5\' and value.codeSystem = \'2.16.840.1.113883.6.1\')'"
 	 * @generated
 	 */
-	boolean FunctionalStatusSection_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateFunctionalStatusSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,7 +119,7 @@ public interface FunctionalStatusSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.title.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean FunctionalStatusSection_title(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateFunctionalStatusSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,7 +132,7 @@ public interface FunctionalStatusSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProblemAct))'"
 	 * @generated
 	 */
-	boolean FunctionalStatusSection_problemAct(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateFunctionalStatusSectionProblemAct(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,7 +145,7 @@ public interface FunctionalStatusSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ccd::ResultOrganizer))'"
 	 * @generated
 	 */
-	boolean FunctionalStatusSection_resultOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateFunctionalStatusSectionResultOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

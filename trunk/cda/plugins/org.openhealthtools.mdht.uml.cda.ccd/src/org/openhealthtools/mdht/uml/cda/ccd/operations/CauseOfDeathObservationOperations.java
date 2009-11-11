@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.CauseOfDeathObservation#CauseOfDeathObservation_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Cause Of Death Observation template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.CauseOfDeathObservation#validateCauseOfDeathObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cause Of Death Observation Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,24 +44,24 @@ public class CauseOfDeathObservationOperations extends FamilyHistoryObservationO
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #CauseOfDeathObservation_templateId(CauseOfDeathObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Cause Of Death Observation template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateCauseOfDeathObservationTemplateId(CauseOfDeathObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cause Of Death Observation Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CauseOfDeathObservation_templateId(CauseOfDeathObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCauseOfDeathObservationTemplateId(CauseOfDeathObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.42')";
+	protected static final String VALIDATE_CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.42')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #CauseOfDeathObservation_templateId(CauseOfDeathObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Cause Of Death Observation template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateCauseOfDeathObservationTemplateId(CauseOfDeathObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Cause Of Death Observation Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CauseOfDeathObservation_templateId(CauseOfDeathObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCauseOfDeathObservationTemplateId(CauseOfDeathObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,25 +74,25 @@ public class CauseOfDeathObservationOperations extends FamilyHistoryObservationO
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean CauseOfDeathObservation_templateId(CauseOfDeathObservation causeOfDeathObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateCauseOfDeathObservationTemplateId(CauseOfDeathObservation causeOfDeathObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.CAUSE_OF_DEATH_OBSERVATION);
 			try {
-				CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(causeOfDeathObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(causeOfDeathObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.CAUSE_OF_DEATH_OBSERVATION__CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("CauseOfDeathObservation_templateId"),
+						 CCDPlugin.INSTANCE.getString("CauseOfDeathObservationTemplateId"),
 						 new Object [] { causeOfDeathObservation }));
 			}
 			return false;

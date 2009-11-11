@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Participant2;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getEncounterLocation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation typeCode='LOC' constraints.validation.error='EncounterLocation_templateId' templateId.root='2.16.840.1.113883.10.20.1.45'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation typeCode='LOC' constraints.validation.error='EncounterLocationTemplateId' templateId.root='2.16.840.1.113883.10.20.1.45'"
  * @generated
  */
 public interface EncounterLocation extends Participant2 {
@@ -33,7 +33,7 @@ public interface EncounterLocation extends Participant2 {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.45\')'"
 	 * @generated
 	 */
-	boolean EncounterLocation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateEncounterLocationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

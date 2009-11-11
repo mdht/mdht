@@ -13,7 +13,6 @@
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 /**

@@ -4,7 +4,8 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.cda/src"
     modelPluginID="org.openhealthtools.mdht.uml.cda" modelName="Cda" modelPluginClass="CDAPlugin"
     importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="5.0" copyrightFields="false"
-    usedGenPackages="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab">
+    usedGenPackages="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.genmodel#//datatypes platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab"
+    pluralizedGetters="true" invariantPrefix="validate">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
     <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
@@ -94,9 +95,9 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/addSection">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalDocument/addSection/section"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/getPatient"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/getPatientRole"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/getSection"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/getPatients"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/getPatientRoles"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/getSections"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/hasCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalDocument/hasCode/code"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalDocument/hasCode/codeSystem"/>
@@ -1024,9 +1025,10 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//StrucDocText">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/mixed"/>
+          createChild="true" ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/mixed"
+          pluralizationException="true"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
-          ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/any"/>
+          ecoreFeature="ecore:EAttribute cda.ecore#//StrucDocText/any" pluralizationException="true"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//StrucDocText/addText">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//StrucDocText/addText/text"/>
       </genOperations>
@@ -1185,17 +1187,17 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/addSupply">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Act/addSupply/supply"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getActs"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getClinicalDocument"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getEncounter"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getObservation"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getEncounters"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getObservations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getObservationMedia"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getOrganizer"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getProcedure"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getRegionOfInterest"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getOrganizers"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getProcedures"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getRegionsOfInterest"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getSection"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getSubstanceAdministration"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getSupply"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getSubstanceAdministrations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/getSupplies"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Act/hasActTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Act/hasActTemplate/templateId"/>
       </genOperations>
@@ -1478,17 +1480,17 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/addSupply">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Encounter/addSupply/supply"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getActs"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getClinicalDocument"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getEncounter"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getObservation"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getEncounters"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getObservations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getObservationMedia"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getOrganizer"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getProcedure"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getRegionOfInterest"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getOrganizers"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getProcedures"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getRegionsOfInterest"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getSection"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getSubstanceAdministration"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getSupply"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getSubstanceAdministrations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/getSupplies"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Encounter/hasActTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Encounter/hasActTemplate/templateId"/>
       </genOperations>
@@ -1734,17 +1736,17 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/addSupply">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Observation/addSupply/supply"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getActs"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getClinicalDocument"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getEncounter"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getObservation"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getEncounters"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getObservations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getObservationMedia"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getOrganizer"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getProcedure"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getRegionOfInterest"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getOrganizers"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getProcedures"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getRegionsOfInterest"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getSection"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getSubstanceAdministration"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getSupply"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getSubstanceAdministrations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getSupplies"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/hasActTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Observation/hasActTemplate/templateId"/>
       </genOperations>
@@ -1874,17 +1876,17 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/addSupply">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ObservationMedia/addSupply/supply"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getActs"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getClinicalDocument"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getEncounter"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getObservation"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getEncounters"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getObservations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getObservationMedia"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getOrganizer"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getProcedure"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getRegionOfInterest"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getOrganizers"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getProcedures"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getRegionsOfInterest"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getSection"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getSubstanceAdministration"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getSupply"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getSubstanceAdministrations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/getSupplies"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ObservationMedia/hasActTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ObservationMedia/hasActTemplate/templateId"/>
       </genOperations>
@@ -1979,17 +1981,17 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/addSupply">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Organizer/addSupply/supply"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getActs"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getClinicalDocument"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getEncounter"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getObservation"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getEncounters"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getObservations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getObservationMedia"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getOrganizer"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getProcedure"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getRegionOfInterest"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getOrganizers"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getProcedures"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getRegionsOfInterest"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getSection"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getSubstanceAdministration"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getSupply"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getSubstanceAdministrations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/getSupplies"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Organizer/hasActTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Organizer/hasActTemplate/templateId"/>
       </genOperations>
@@ -2139,17 +2141,17 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/addSupply">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Procedure/addSupply/supply"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getActs"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getClinicalDocument"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getEncounter"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getObservation"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getEncounters"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getObservations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getObservationMedia"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getOrganizer"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getProcedure"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getRegionOfInterest"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getOrganizers"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getProcedures"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getRegionsOfInterest"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getSection"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getSubstanceAdministration"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getSupply"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getSubstanceAdministrations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/getSupplies"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Procedure/hasActTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Procedure/hasActTemplate/templateId"/>
       </genOperations>
@@ -2248,17 +2250,17 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/addSupply">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegionOfInterest/addSupply/supply"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getActs"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getClinicalDocument"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getEncounter"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getObservation"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getEncounters"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getObservations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getObservationMedia"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getOrganizer"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getProcedure"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getRegionOfInterest"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getOrganizers"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getProcedures"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getRegionsOfInterest"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getSection"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getSubstanceAdministration"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getSupply"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getSubstanceAdministrations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/getSupplies"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/hasActTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegionOfInterest/hasActTemplate/templateId"/>
       </genOperations>
@@ -2382,17 +2384,17 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/addSupply">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//SubstanceAdministration/addSupply/supply"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getActs"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getClinicalDocument"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getEncounter"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getObservation"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getEncounters"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getObservations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getObservationMedia"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getOrganizer"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getProcedure"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getRegionOfInterest"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getOrganizers"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getProcedures"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getRegionsOfInterest"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getSection"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getSubstanceAdministration"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getSupply"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getSubstanceAdministrations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/getSupplies"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//SubstanceAdministration/hasActTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//SubstanceAdministration/hasActTemplate/templateId"/>
       </genOperations>
@@ -2572,17 +2574,17 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/addSupply">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Supply/addSupply/newSupply"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getActs"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getClinicalDocument"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getEncounter"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getObservation"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getEncounters"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getObservations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getObservationMedia"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getOrganizer"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getProcedure"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getRegionOfInterest"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getOrganizers"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getProcedures"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getRegionsOfInterest"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getSection"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getSubstanceAdministration"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getSupply"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getSubstanceAdministrations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/getSupplies"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Supply/hasActTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Supply/hasActTemplate/templateId"/>
       </genOperations>
@@ -2646,11 +2648,14 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//DocumentRoot">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EAttribute cda.ecore#//DocumentRoot/mixed"/>
+          createChild="true" ecoreFeature="ecore:EAttribute cda.ecore#//DocumentRoot/mixed"
+          pluralizationException="true"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//DocumentRoot/xMLNSPrefixMap"
+          pluralizationException="true"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//DocumentRoot/xSISchemaLocation"/>
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//DocumentRoot/xSISchemaLocation"
+          pluralizationException="true"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EReference cda.ecore#//DocumentRoot/clinicalDocument"/>
     </genClasses>

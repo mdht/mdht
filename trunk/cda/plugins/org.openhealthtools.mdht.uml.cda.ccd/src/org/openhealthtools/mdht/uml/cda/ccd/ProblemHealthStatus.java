@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemHealthStatus()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation value.codeSystemName='ProblemHealthStatusCode' code.codeSystemName='LOINC' value.codeSystem='2.16.840.1.113883.1.11.20.12' templateId.root='2.16.840.1.113883.10.20.1.51' constraints.validation.error='ProblemHealthStatus_templateId ProblemHealthStatus_code ProblemHealthStatus_value' code.displayName='Health status' code.codeSystem='2.16.840.1.113883.6.1' code.code='11323-3' value.codeSystemVersion='20061017'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation value.codeSystemName='ProblemHealthStatusCode' code.codeSystemName='LOINC' value.codeSystem='2.16.840.1.113883.1.11.20.12' templateId.root='2.16.840.1.113883.10.20.1.51' constraints.validation.error='ProblemHealthStatusTemplateId ProblemHealthStatusCode ProblemHealthStatusValue' code.displayName='Health status' code.codeSystem='2.16.840.1.113883.6.1' code.code='11323-3' value.codeSystemVersion='20061017'"
  * @generated
  */
 public interface ProblemHealthStatus extends StatusObservation {
@@ -32,7 +32,7 @@ public interface ProblemHealthStatus extends StatusObservation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.51\')'"
 	 * @generated
 	 */
-	boolean ProblemHealthStatus_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemHealthStatusTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,7 +47,7 @@ public interface ProblemHealthStatus extends StatusObservation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and \r\nlet value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (\r\nvalue.code = \'11323-3\' and value.codeSystem = \'2.16.840.1.113883.6.1\')'"
 	 * @generated
 	 */
-	boolean ProblemHealthStatus_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemHealthStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +62,7 @@ public interface ProblemHealthStatus extends StatusObservation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and \r\nlet value : datatypes::CE = element.oclAsType(datatypes::CE) in \r\nvalue.codeSystem = \'2.16.840.1.113883.1.11.20.12\')'"
 	 * @generated
 	 */
-	boolean ProblemHealthStatus_value(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemHealthStatusValue(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

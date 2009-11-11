@@ -13,15 +13,12 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssignedEntity;
 
@@ -33,15 +30,15 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssignedEntity;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getCode <em>Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getAddr <em>Addr</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getTelecom <em>Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getAddrs <em>Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getTelecoms <em>Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getAssignedPerson <em>Assigned Person</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getRepresentedOrganization <em>Represented Organization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getRepresentedOrganizations <em>Represented Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getClassCode <em>Class Code</em>}</li>
  * </ul>
@@ -67,7 +64,7 @@ public interface AssignedEntity extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -111,7 +108,7 @@ public interface AssignedEntity extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' containment reference list.
@@ -128,7 +125,7 @@ public interface AssignedEntity extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getId();
+	EList<II> getIds();
 
 	/**
 	 * Returns the value of the '<em><b>Code</b></em>' containment reference.
@@ -172,7 +169,7 @@ public interface AssignedEntity extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<AD> getAddr();
+	EList<AD> getAddrs();
 
 	/**
 	 * Returns the value of the '<em><b>Telecom</b></em>' containment reference list.
@@ -189,7 +186,7 @@ public interface AssignedEntity extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<TEL> getTelecom();
+	EList<TEL> getTelecoms();
 
 	/**
 	 * Returns the value of the '<em><b>Assigned Person</b></em>' containment reference.
@@ -233,7 +230,7 @@ public interface AssignedEntity extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Organization> getRepresentedOrganization();
+	EList<Organization> getRepresentedOrganizations();
 
 	/**
 	 * Returns the value of the '<em><b>Null Flavor</b></em>' attribute.

@@ -13,13 +13,10 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -32,21 +29,21 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getLanguageCode <em>Language Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getValue <em>Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getSubject <em>Subject</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getSpecimen <em>Specimen</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getPerformer <em>Performer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getAuthor <em>Author</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getInformant <em>Informant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getParticipant <em>Participant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getEntryRelationship <em>Entry Relationship</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getReference <em>Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getSpecimens <em>Specimen</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getPerformers <em>Performer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getAuthors <em>Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getInformants <em>Informant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getParticipants <em>Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getEntryRelationships <em>Entry Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getReferences <em>Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getPreconditions <em>Precondition</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getObservationMediaId <em>Observation Media Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getClassCode <em>Class Code</em>}</li>
@@ -74,7 +71,7 @@ public interface ObservationMedia extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -118,7 +115,7 @@ public interface ObservationMedia extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' containment reference list.
@@ -135,7 +132,7 @@ public interface ObservationMedia extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getId();
+	EList<II> getIds();
 
 	/**
 	 * Returns the value of the '<em><b>Language Code</b></em>' containment reference.
@@ -233,7 +230,7 @@ public interface ObservationMedia extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Specimen> getSpecimen();
+	EList<Specimen> getSpecimens();
 
 	/**
 	 * Returns the value of the '<em><b>Performer</b></em>' containment reference list.
@@ -250,7 +247,7 @@ public interface ObservationMedia extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Performer2> getPerformer();
+	EList<Performer2> getPerformers();
 
 	/**
 	 * Returns the value of the '<em><b>Author</b></em>' containment reference list.
@@ -267,7 +264,7 @@ public interface ObservationMedia extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Author> getAuthor();
+	EList<Author> getAuthors();
 
 	/**
 	 * Returns the value of the '<em><b>Informant</b></em>' containment reference list.
@@ -284,7 +281,7 @@ public interface ObservationMedia extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Informant12> getInformant();
+	EList<Informant12> getInformants();
 
 	/**
 	 * Returns the value of the '<em><b>Participant</b></em>' containment reference list.
@@ -301,7 +298,7 @@ public interface ObservationMedia extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Participant2> getParticipant();
+	EList<Participant2> getParticipants();
 
 	/**
 	 * Returns the value of the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -318,7 +315,7 @@ public interface ObservationMedia extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<EntryRelationship> getEntryRelationship();
+	EList<EntryRelationship> getEntryRelationships();
 
 	/**
 	 * Returns the value of the '<em><b>Reference</b></em>' containment reference list.
@@ -335,7 +332,7 @@ public interface ObservationMedia extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Reference> getReference();
+	EList<Reference> getReferences();
 
 	/**
 	 * Returns the value of the '<em><b>Precondition</b></em>' containment reference list.
@@ -352,7 +349,7 @@ public interface ObservationMedia extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Precondition> getPrecondition();
+	EList<Precondition> getPreconditions();
 
 	/**
 	 * Returns the value of the '<em><b>Observation Media Id</b></em>' attribute.
@@ -631,7 +628,7 @@ public interface ObservationMedia extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.act->select(act : cda::Act | not act.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Act> getAct();
+	EList<Act> getActs();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -651,7 +648,7 @@ public interface ObservationMedia extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Encounter> getEncounter();
+	EList<Encounter> getEncounters();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -663,7 +660,7 @@ public interface ObservationMedia extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.observation->select(obs : cda::Observation | not obs.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Observation> getObservation();
+	EList<Observation> getObservations();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -687,7 +684,7 @@ public interface ObservationMedia extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.organizer->select(org : cda::Organizer | not org.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Organizer> getOrganizer();
+	EList<Organizer> getOrganizers();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -699,7 +696,7 @@ public interface ObservationMedia extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Procedure> getProcedure();
+	EList<Procedure> getProcedures();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -711,7 +708,7 @@ public interface ObservationMedia extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<RegionOfInterest> getRegionOfInterest();
+	EList<RegionOfInterest> getRegionsOfInterest();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -731,7 +728,7 @@ public interface ObservationMedia extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<SubstanceAdministration> getSubstanceAdministration();
+	EList<SubstanceAdministration> getSubstanceAdministrations();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -743,16 +740,16 @@ public interface ObservationMedia extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship.supply->select(sup : cda::Supply | not sup.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Supply> getSupply();
+	EList<Supply> getSupplies();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))
+	 * self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasActTemplate(String templateId);
@@ -761,10 +758,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
+	 * self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasEncounterTemplate(String templateId);
@@ -785,10 +782,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
+	 * self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasObservationTemplate(String templateId);
@@ -797,10 +794,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
+	 * self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasOrganizerTemplate(String templateId);
@@ -809,10 +806,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
+	 * self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasProcedureTemplate(String templateId);
@@ -821,10 +818,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
+	 * self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasRegionOfInterestTemplate(String templateId);
@@ -833,10 +830,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
+	 * self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasSubstanceAdministrationTemplate(String templateId);
@@ -845,10 +842,10 @@ public interface ObservationMedia extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
+	 * self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasSupplyTemplate(String templateId);

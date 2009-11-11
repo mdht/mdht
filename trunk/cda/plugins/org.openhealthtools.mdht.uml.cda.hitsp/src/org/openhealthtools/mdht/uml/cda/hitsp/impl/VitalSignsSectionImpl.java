@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.VitalSignsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.ihe.impl.CodedVitalSignsSectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class VitalSignsSectionImpl extends CodedVitalSignsSectionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean HITSPVitalSignsSection_vitalSigns(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsSectionOperations.HITSPVitalSignsSection_vitalSigns(this, diagnostics, context);
+	public boolean validateHITSPVitalSignsSectionVitalSigns(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsSectionOperations.validateHITSPVitalSignsSectionVitalSigns(this, diagnostics, context);
 	}
 
 	/**
@@ -64,9 +59,8 @@ public class VitalSignsSectionImpl extends CodedVitalSignsSectionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean VitalSignsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsSectionOperations.VitalSignsSection_templateId(this, diagnostics, context);
+	public boolean validateHITSPVitalSignsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsSectionOperations.validateHITSPVitalSignsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

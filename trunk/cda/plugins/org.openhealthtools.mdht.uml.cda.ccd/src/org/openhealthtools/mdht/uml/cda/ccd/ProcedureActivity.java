@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.ccd;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 
 /**
@@ -19,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProcedureActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' statusCode.codeSystemName='ProcedureStatusCode' statusCode.codeSystem='2.16.840.1.113883.1.11.20.15' templateId.root='2.16.840.1.113883.10.20.1.29' constraints.validation.error='ProcedureActivity_templateId ProcedureActivity_moodCode ProcedureActivity_id ProcedureActivity_statusCode' statusCode.code='completed' statusCode.codeSystemVersion='20061017' constraints.validation.warning='ProcedureActivity_effectiveTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' statusCode.codeSystemName='ProcedureStatusCode' statusCode.codeSystem='2.16.840.1.113883.1.11.20.15' templateId.root='2.16.840.1.113883.10.20.1.29' constraints.validation.error='ProcedureActivityTemplateId ProcedureActivityMoodCode ProcedureActivityId ProcedureActivityStatusCode' statusCode.code='completed' statusCode.codeSystemVersion='20061017' constraints.validation.warning='ProcedureActivityEffectiveTime'"
  * @generated
  */
 public interface ProcedureActivity extends Act {
@@ -34,7 +33,7 @@ public interface ProcedureActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.29\')'"
 	 * @generated
 	 */
-	boolean ProcedureActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProcedureActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,7 +46,7 @@ public interface ProcedureActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_DocumentActMood::EVN'"
 	 * @generated
 	 */
-	boolean ProcedureActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProcedureActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,7 +59,7 @@ public interface ProcedureActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.id->isEmpty()'"
 	 * @generated
 	 */
-	boolean ProcedureActivity_id(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProcedureActivityId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,7 +74,7 @@ public interface ProcedureActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\' and value.codeSystem = \'2.16.840.1.113883.1.11.20.15\')'"
 	 * @generated
 	 */
-	boolean ProcedureActivity_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProcedureActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,7 +87,7 @@ public interface ProcedureActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.effectiveTime.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean ProcedureActivity_effectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProcedureActivityEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

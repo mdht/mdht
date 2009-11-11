@@ -57,8 +57,8 @@ public class ConditionImpl extends ProblemConcernEntryImpl implements Condition 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean Condition_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ConditionOperations.Condition_templateId(this, diagnostics, context);
+	public boolean validateConditionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionOperations.validateConditionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -66,8 +66,8 @@ public class ConditionImpl extends ProblemConcernEntryImpl implements Condition 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean Condition_text(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ConditionOperations.Condition_text(this, diagnostics, context);
+	public boolean validateConditionText(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionOperations.validateConditionText(this, diagnostics, context);
 	}
 
 	/**

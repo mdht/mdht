@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusObservation;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.FunctionalStatusObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,8 +49,8 @@ public class FunctionalStatusObservationImpl extends StatusObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FunctionalStatusObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FunctionalStatusObservationOperations.FunctionalStatusObservation_templateId(this, diagnostics, context);
+	public boolean validateFunctionalStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FunctionalStatusObservationOperations.validateFunctionalStatusObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -62,8 +58,8 @@ public class FunctionalStatusObservationImpl extends StatusObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FunctionalStatusObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FunctionalStatusObservationOperations.FunctionalStatusObservation_value(this, diagnostics, context);
+	public boolean validateFunctionalStatusObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FunctionalStatusObservationOperations.validateFunctionalStatusObservationValue(this, diagnostics, context);
 	}
 
 	/**

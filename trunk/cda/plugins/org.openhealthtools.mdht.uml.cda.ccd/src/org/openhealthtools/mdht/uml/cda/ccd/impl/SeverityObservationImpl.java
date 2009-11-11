@@ -50,8 +50,8 @@ public class SeverityObservationImpl extends ObservationImpl implements Severity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SeverityObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SeverityObservationOperations.SeverityObservation_templateId(this, diagnostics, context);
+	public boolean validateSeverityObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SeverityObservationOperations.validateSeverityObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class SeverityObservationImpl extends ObservationImpl implements Severity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SeverityObservation_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SeverityObservationOperations.SeverityObservation_code(this, diagnostics, context);
+	public boolean validateSeverityObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SeverityObservationOperations.validateSeverityObservationCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class SeverityObservationImpl extends ObservationImpl implements Severity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SeverityObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SeverityObservationOperations.SeverityObservation_statusCode(this, diagnostics, context);
+	public boolean validateSeverityObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SeverityObservationOperations.validateSeverityObservationStatusCode(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class SeverityObservationImpl extends ObservationImpl implements Severity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SeverityObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SeverityObservationOperations.SeverityObservation_value(this, diagnostics, context);
+	public boolean validateSeverityObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SeverityObservationOperations.validateSeverityObservationValue(this, diagnostics, context);
 	}
 
 	/**

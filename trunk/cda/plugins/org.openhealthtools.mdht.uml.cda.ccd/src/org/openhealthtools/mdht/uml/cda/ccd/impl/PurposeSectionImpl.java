@@ -50,8 +50,8 @@ public class PurposeSectionImpl extends SectionImpl implements PurposeSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PurposeSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PurposeSectionOperations.PurposeSection_templateId(this, diagnostics, context);
+	public boolean validatePurposeSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PurposeSectionOperations.validatePurposeSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class PurposeSectionImpl extends SectionImpl implements PurposeSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PurposeSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PurposeSectionOperations.PurposeSection_code(this, diagnostics, context);
+	public boolean validatePurposeSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PurposeSectionOperations.validatePurposeSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class PurposeSectionImpl extends SectionImpl implements PurposeSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PurposeSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PurposeSectionOperations.PurposeSection_title(this, diagnostics, context);
+	public boolean validatePurposeSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PurposeSectionOperations.validatePurposeSectionTitle(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class PurposeSectionImpl extends SectionImpl implements PurposeSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PurposeSection_purposeActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PurposeSectionOperations.PurposeSection_purposeActivity(this, diagnostics, context);
+	public boolean validatePurposeSectionPurposeActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PurposeSectionOperations.validatePurposeSectionPurposeActivity(this, diagnostics, context);
 	}
 
 	/**

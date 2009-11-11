@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getNormalDosing()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='NormalDosing_templateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.7.1'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='NormalDosingTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.7.1'"
  * @generated
  */
 public interface NormalDosing extends Medication {
@@ -40,7 +40,7 @@ public interface NormalDosing extends Medication {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.4.7.1\')'"
 	 * @generated
 	 */
-	boolean NormalDosing_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateNormalDosingTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

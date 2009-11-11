@@ -38,7 +38,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#PatientSummary_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Patient Summary template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#validatePatientSummaryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Summary Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#createProblemListSection() <em>Create Problem List Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#createMedicationsSection() <em>Create Medications Section</em>}</li>
  * </ul>
@@ -57,23 +57,23 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PatientSummary_templateId(PatientSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Patient Summary template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePatientSummaryTemplateId(PatientSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Summary Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PatientSummary_templateId(PatientSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePatientSummaryTemplateId(PatientSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.32.1')";
+	protected static final String VALIDATE_PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.32.1')";
 	/**
-	 * The cached OCL invariant for the '{@link #PatientSummary_templateId(PatientSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Patient Summary template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePatientSummaryTemplateId(PatientSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Summary Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PatientSummary_templateId(PatientSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePatientSummaryTemplateId(PatientSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,25 +86,25 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PatientSummary_templateId(PatientSummary patientSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePatientSummaryTemplateId(PatientSummary patientSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(HITSPPackage.Literals.PATIENT_SUMMARY);
 			try {
-				PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(patientSummary)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(patientSummary)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HITSPValidator.DIAGNOSTIC_SOURCE,
 						 HITSPValidator.PATIENT_SUMMARY__PATIENT_SUMMARY_TEMPLATE_ID,
-						 HITSPPlugin.INSTANCE.getString("PatientSummary_templateId"),
+						 HITSPPlugin.INSTANCE.getString("PatientSummaryTemplateId"),
 						 new Object [] { patientSummary }));
 			}
 			return false;

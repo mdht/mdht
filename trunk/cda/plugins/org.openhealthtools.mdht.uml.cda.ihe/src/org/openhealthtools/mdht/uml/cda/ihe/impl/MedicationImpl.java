@@ -56,8 +56,8 @@ public class MedicationImpl extends MedicationActivityImpl implements Medication
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean Medication_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationOperations.Medication_templateId(this, diagnostics, context);
+	public boolean validateMedicationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationOperations.validateMedicationTemplateId(this, diagnostics, context);
 	}
 
 	/**

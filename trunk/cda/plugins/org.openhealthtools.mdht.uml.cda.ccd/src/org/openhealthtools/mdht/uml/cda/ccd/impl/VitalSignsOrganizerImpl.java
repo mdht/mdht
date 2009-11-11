@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,8 +49,8 @@ public class VitalSignsOrganizerImpl extends ResultOrganizerImpl implements Vita
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean VitalSignsOrganizer_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsOrganizerOperations.VitalSignsOrganizer_templateId(this, diagnostics, context);
+	public boolean validateVitalSignsOrganizerTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsOrganizerOperations.validateVitalSignsOrganizerTemplateId(this, diagnostics, context);
 	}
 
 	/**

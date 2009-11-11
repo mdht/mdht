@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getResultObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' constraints.validation.error='ResultObservation_templateId ResultObservation_moodCode ResultObservation_id ResultObservation_value' templateId.root='2.16.840.1.113883.10.20.1.31' constraints.validation.warning='ResultObservation_effectiveTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' constraints.validation.error='ResultObservationTemplateId ResultObservationMoodCode ResultObservationId ResultObservationValue' templateId.root='2.16.840.1.113883.10.20.1.31' constraints.validation.warning='ResultObservationEffectiveTime'"
  * @generated
  */
 public interface ResultObservation extends Observation {
@@ -33,7 +33,7 @@ public interface ResultObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.31\')'"
 	 * @generated
 	 */
-	boolean ResultObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateResultObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public interface ResultObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_ActMoodDocumentObservation::EVN'"
 	 * @generated
 	 */
-	boolean ResultObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateResultObservationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public interface ResultObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.id->isEmpty()'"
 	 * @generated
 	 */
-	boolean ResultObservation_id(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateResultObservationId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public interface ResultObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.effectiveTime.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean ResultObservation_effectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateResultObservationEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,7 +85,7 @@ public interface ResultObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.value->size() = 1'"
 	 * @generated
 	 */
-	boolean ResultObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateResultObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

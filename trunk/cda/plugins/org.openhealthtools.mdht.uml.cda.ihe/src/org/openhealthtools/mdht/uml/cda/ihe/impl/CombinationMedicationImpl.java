@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.CombinationMedicationOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,8 +49,8 @@ public class CombinationMedicationImpl extends MedicationImpl implements Combina
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean CombinationMedication_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CombinationMedicationOperations.CombinationMedication_templateId(this, diagnostics, context);
+	public boolean validateCombinationMedicationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CombinationMedicationOperations.validateCombinationMedicationTemplateId(this, diagnostics, context);
 	}
 
 	/**

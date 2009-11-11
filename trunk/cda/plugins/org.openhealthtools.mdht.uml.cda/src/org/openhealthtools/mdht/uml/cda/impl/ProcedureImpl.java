@@ -16,18 +16,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -48,7 +43,6 @@ import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.Specimen;
 import org.openhealthtools.mdht.uml.cda.Subject;
-
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.operations.ProcedureOperations;
@@ -58,7 +52,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
@@ -70,28 +63,28 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getStatusCode <em>Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getEffectiveTime <em>Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getPriorityCode <em>Priority Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getLanguageCode <em>Language Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getMethodCode <em>Method Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getApproachSiteCode <em>Approach Site Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getTargetSiteCode <em>Target Site Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getMethodCodes <em>Method Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getApproachSiteCodes <em>Approach Site Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getTargetSiteCodes <em>Target Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getSubject <em>Subject</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getSpecimen <em>Specimen</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getPerformer <em>Performer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getAuthor <em>Author</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getInformant <em>Informant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getParticipant <em>Participant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getEntryRelationship <em>Entry Relationship</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getSpecimens <em>Specimen</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getPerformers <em>Performer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getAuthors <em>Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getInformants <em>Informant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getParticipants <em>Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getEntryRelationships <em>Entry Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getReferences <em>Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getPreconditions <em>Precondition</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl#getMoodCode <em>Mood Code</em>}</li>
@@ -103,14 +96,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
  */
 public class ProcedureImpl extends EObjectImpl implements Procedure {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -123,24 +116,24 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getIds() <em>Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> id;
+	protected EList<II> ids;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
@@ -203,34 +196,34 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	protected CS languageCode;
 
 	/**
-	 * The cached value of the '{@link #getMethodCode() <em>Method Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getMethodCodes() <em>Method Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMethodCode()
+	 * @see #getMethodCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CE> methodCode;
+	protected EList<CE> methodCodes;
 
 	/**
-	 * The cached value of the '{@link #getApproachSiteCode() <em>Approach Site Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getApproachSiteCodes() <em>Approach Site Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getApproachSiteCode()
+	 * @see #getApproachSiteCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CD> approachSiteCode;
+	protected EList<CD> approachSiteCodes;
 
 	/**
-	 * The cached value of the '{@link #getTargetSiteCode() <em>Target Site Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getTargetSiteCodes() <em>Target Site Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargetSiteCode()
+	 * @see #getTargetSiteCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CD> targetSiteCode;
+	protected EList<CD> targetSiteCodes;
 
 	/**
 	 * The cached value of the '{@link #getSubject() <em>Subject</em>}' containment reference.
@@ -243,84 +236,84 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	protected Subject subject;
 
 	/**
-	 * The cached value of the '{@link #getSpecimen() <em>Specimen</em>}' containment reference list.
+	 * The cached value of the '{@link #getSpecimens() <em>Specimen</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpecimen()
+	 * @see #getSpecimens()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Specimen> specimen;
+	protected EList<Specimen> specimens;
 
 	/**
-	 * The cached value of the '{@link #getPerformer() <em>Performer</em>}' containment reference list.
+	 * The cached value of the '{@link #getPerformers() <em>Performer</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPerformer()
+	 * @see #getPerformers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Performer2> performer;
+	protected EList<Performer2> performers;
 
 	/**
-	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' containment reference list.
+	 * The cached value of the '{@link #getAuthors() <em>Author</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAuthor()
+	 * @see #getAuthors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Author> author;
+	protected EList<Author> authors;
 
 	/**
-	 * The cached value of the '{@link #getInformant() <em>Informant</em>}' containment reference list.
+	 * The cached value of the '{@link #getInformants() <em>Informant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInformant()
+	 * @see #getInformants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Informant12> informant;
+	protected EList<Informant12> informants;
 
 	/**
-	 * The cached value of the '{@link #getParticipant() <em>Participant</em>}' containment reference list.
+	 * The cached value of the '{@link #getParticipants() <em>Participant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParticipant()
+	 * @see #getParticipants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Participant2> participant;
+	protected EList<Participant2> participants;
 
 	/**
-	 * The cached value of the '{@link #getEntryRelationship() <em>Entry Relationship</em>}' containment reference list.
+	 * The cached value of the '{@link #getEntryRelationships() <em>Entry Relationship</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntryRelationship()
+	 * @see #getEntryRelationships()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntryRelationship> entryRelationship;
+	protected EList<EntryRelationship> entryRelationships;
 
 	/**
-	 * The cached value of the '{@link #getReference() <em>Reference</em>}' containment reference list.
+	 * The cached value of the '{@link #getReferences() <em>Reference</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReference()
+	 * @see #getReferences()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Reference> reference;
+	protected EList<Reference> references;
 
 	/**
-	 * The cached value of the '{@link #getPrecondition() <em>Precondition</em>}' containment reference list.
+	 * The cached value of the '{@link #getPreconditions() <em>Precondition</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrecondition()
+	 * @see #getPreconditions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Precondition> precondition;
+	protected EList<Precondition> preconditions;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -453,11 +446,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.PROCEDURE__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.PROCEDURE__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -508,11 +501,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PROCEDURE__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PROCEDURE__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -520,11 +513,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getId() {
-		if (id == null) {
-			id = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PROCEDURE__ID);
+	public EList<II> getIds() {
+		if (ids == null) {
+			ids = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PROCEDURE__ID);
 		}
-		return id;
+		return ids;
 	}
 
 	/**
@@ -790,11 +783,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CE> getMethodCode() {
-		if (methodCode == null) {
-			methodCode = new EObjectContainmentEList<CE>(CE.class, this, CDAPackage.PROCEDURE__METHOD_CODE);
+	public EList<CE> getMethodCodes() {
+		if (methodCodes == null) {
+			methodCodes = new EObjectContainmentEList<CE>(CE.class, this, CDAPackage.PROCEDURE__METHOD_CODE);
 		}
-		return methodCode;
+		return methodCodes;
 	}
 
 	/**
@@ -802,11 +795,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CD> getApproachSiteCode() {
-		if (approachSiteCode == null) {
-			approachSiteCode = new EObjectContainmentEList<CD>(CD.class, this, CDAPackage.PROCEDURE__APPROACH_SITE_CODE);
+	public EList<CD> getApproachSiteCodes() {
+		if (approachSiteCodes == null) {
+			approachSiteCodes = new EObjectContainmentEList<CD>(CD.class, this, CDAPackage.PROCEDURE__APPROACH_SITE_CODE);
 		}
-		return approachSiteCode;
+		return approachSiteCodes;
 	}
 
 	/**
@@ -814,11 +807,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CD> getTargetSiteCode() {
-		if (targetSiteCode == null) {
-			targetSiteCode = new EObjectContainmentEList<CD>(CD.class, this, CDAPackage.PROCEDURE__TARGET_SITE_CODE);
+	public EList<CD> getTargetSiteCodes() {
+		if (targetSiteCodes == null) {
+			targetSiteCodes = new EObjectContainmentEList<CD>(CD.class, this, CDAPackage.PROCEDURE__TARGET_SITE_CODE);
 		}
-		return targetSiteCode;
+		return targetSiteCodes;
 	}
 
 	/**
@@ -869,11 +862,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Specimen> getSpecimen() {
-		if (specimen == null) {
-			specimen = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.PROCEDURE__SPECIMEN);
+	public EList<Specimen> getSpecimens() {
+		if (specimens == null) {
+			specimens = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.PROCEDURE__SPECIMEN);
 		}
-		return specimen;
+		return specimens;
 	}
 
 	/**
@@ -881,11 +874,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Performer2> getPerformer() {
-		if (performer == null) {
-			performer = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.PROCEDURE__PERFORMER);
+	public EList<Performer2> getPerformers() {
+		if (performers == null) {
+			performers = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.PROCEDURE__PERFORMER);
 		}
-		return performer;
+		return performers;
 	}
 
 	/**
@@ -893,11 +886,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Author> getAuthor() {
-		if (author == null) {
-			author = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.PROCEDURE__AUTHOR);
+	public EList<Author> getAuthors() {
+		if (authors == null) {
+			authors = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.PROCEDURE__AUTHOR);
 		}
-		return author;
+		return authors;
 	}
 
 	/**
@@ -905,11 +898,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Informant12> getInformant() {
-		if (informant == null) {
-			informant = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.PROCEDURE__INFORMANT);
+	public EList<Informant12> getInformants() {
+		if (informants == null) {
+			informants = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.PROCEDURE__INFORMANT);
 		}
-		return informant;
+		return informants;
 	}
 
 	/**
@@ -917,11 +910,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Participant2> getParticipant() {
-		if (participant == null) {
-			participant = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.PROCEDURE__PARTICIPANT);
+	public EList<Participant2> getParticipants() {
+		if (participants == null) {
+			participants = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.PROCEDURE__PARTICIPANT);
 		}
-		return participant;
+		return participants;
 	}
 
 	/**
@@ -929,11 +922,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntryRelationship> getEntryRelationship() {
-		if (entryRelationship == null) {
-			entryRelationship = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP);
+	public EList<EntryRelationship> getEntryRelationships() {
+		if (entryRelationships == null) {
+			entryRelationships = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP);
 		}
-		return entryRelationship;
+		return entryRelationships;
 	}
 
 	/**
@@ -941,11 +934,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Reference> getReference() {
-		if (reference == null) {
-			reference = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.PROCEDURE__REFERENCE);
+	public EList<Reference> getReferences() {
+		if (references == null) {
+			references = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.PROCEDURE__REFERENCE);
 		}
-		return reference;
+		return references;
 	}
 
 	/**
@@ -953,11 +946,11 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Precondition> getPrecondition() {
-		if (precondition == null) {
-			precondition = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.PROCEDURE__PRECONDITION);
+	public EList<Precondition> getPreconditions() {
+		if (preconditions == null) {
+			preconditions = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.PROCEDURE__PRECONDITION);
 		}
-		return precondition;
+		return preconditions;
 	}
 
 	/**
@@ -1205,8 +1198,8 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Act> getAct() {
-		return ProcedureOperations.getAct(this);
+	public EList<Act> getActs() {
+		return ProcedureOperations.getActs(this);
 	}
 
 	/**
@@ -1223,8 +1216,8 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Encounter> getEncounter() {
-		return ProcedureOperations.getEncounter(this);
+	public EList<Encounter> getEncounters() {
+		return ProcedureOperations.getEncounters(this);
 	}
 
 	/**
@@ -1232,8 +1225,8 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Observation> getObservation() {
-		return ProcedureOperations.getObservation(this);
+	public EList<Observation> getObservations() {
+		return ProcedureOperations.getObservations(this);
 	}
 
 	/**
@@ -1250,8 +1243,8 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Organizer> getOrganizer() {
-		return ProcedureOperations.getOrganizer(this);
+	public EList<Organizer> getOrganizers() {
+		return ProcedureOperations.getOrganizers(this);
 	}
 
 	/**
@@ -1259,8 +1252,8 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Procedure> getProcedure() {
-		return ProcedureOperations.getProcedure(this);
+	public EList<Procedure> getProcedures() {
+		return ProcedureOperations.getProcedures(this);
 	}
 
 	/**
@@ -1268,8 +1261,8 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RegionOfInterest> getRegionOfInterest() {
-		return ProcedureOperations.getRegionOfInterest(this);
+	public EList<RegionOfInterest> getRegionsOfInterest() {
+		return ProcedureOperations.getRegionsOfInterest(this);
 	}
 
 	/**
@@ -1286,8 +1279,8 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SubstanceAdministration> getSubstanceAdministration() {
-		return ProcedureOperations.getSubstanceAdministration(this);
+	public EList<SubstanceAdministration> getSubstanceAdministrations() {
+		return ProcedureOperations.getSubstanceAdministrations(this);
 	}
 
 	/**
@@ -1295,8 +1288,8 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Supply> getSupply() {
-		return ProcedureOperations.getSupply(this);
+	public EList<Supply> getSupplies() {
+		return ProcedureOperations.getSupplies(this);
 	}
 
 	/**
@@ -1407,13 +1400,13 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.PROCEDURE__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.PROCEDURE__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__ID:
-				return ((InternalEList<?>)getId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.PROCEDURE__TEXT:
@@ -1427,29 +1420,29 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 			case CDAPackage.PROCEDURE__LANGUAGE_CODE:
 				return basicSetLanguageCode(null, msgs);
 			case CDAPackage.PROCEDURE__METHOD_CODE:
-				return ((InternalEList<?>)getMethodCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getMethodCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__APPROACH_SITE_CODE:
-				return ((InternalEList<?>)getApproachSiteCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getApproachSiteCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__TARGET_SITE_CODE:
-				return ((InternalEList<?>)getTargetSiteCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTargetSiteCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.PROCEDURE__SPECIMEN:
-				return ((InternalEList<?>)getSpecimen()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getSpecimens()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__PERFORMER:
-				return ((InternalEList<?>)getPerformer()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPerformers()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__AUTHOR:
-				return ((InternalEList<?>)getAuthor()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__INFORMANT:
-				return ((InternalEList<?>)getInformant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__PARTICIPANT:
-				return ((InternalEList<?>)getParticipant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP:
-				return ((InternalEList<?>)getEntryRelationship()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getEntryRelationships()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__REFERENCE:
-				return ((InternalEList<?>)getReference()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PROCEDURE__PRECONDITION:
-				return ((InternalEList<?>)getPrecondition()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPreconditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1463,13 +1456,13 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.PROCEDURE__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.PROCEDURE__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.PROCEDURE__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.PROCEDURE__ID:
-				return getId();
+				return getIds();
 			case CDAPackage.PROCEDURE__CODE:
 				return getCode();
 			case CDAPackage.PROCEDURE__TEXT:
@@ -1483,29 +1476,29 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 			case CDAPackage.PROCEDURE__LANGUAGE_CODE:
 				return getLanguageCode();
 			case CDAPackage.PROCEDURE__METHOD_CODE:
-				return getMethodCode();
+				return getMethodCodes();
 			case CDAPackage.PROCEDURE__APPROACH_SITE_CODE:
-				return getApproachSiteCode();
+				return getApproachSiteCodes();
 			case CDAPackage.PROCEDURE__TARGET_SITE_CODE:
-				return getTargetSiteCode();
+				return getTargetSiteCodes();
 			case CDAPackage.PROCEDURE__SUBJECT:
 				return getSubject();
 			case CDAPackage.PROCEDURE__SPECIMEN:
-				return getSpecimen();
+				return getSpecimens();
 			case CDAPackage.PROCEDURE__PERFORMER:
-				return getPerformer();
+				return getPerformers();
 			case CDAPackage.PROCEDURE__AUTHOR:
-				return getAuthor();
+				return getAuthors();
 			case CDAPackage.PROCEDURE__INFORMANT:
-				return getInformant();
+				return getInformants();
 			case CDAPackage.PROCEDURE__PARTICIPANT:
-				return getParticipant();
+				return getParticipants();
 			case CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP:
-				return getEntryRelationship();
+				return getEntryRelationships();
 			case CDAPackage.PROCEDURE__REFERENCE:
-				return getReference();
+				return getReferences();
 			case CDAPackage.PROCEDURE__PRECONDITION:
-				return getPrecondition();
+				return getPreconditions();
 			case CDAPackage.PROCEDURE__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.PROCEDURE__CLASS_CODE:
@@ -1528,19 +1521,19 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.PROCEDURE__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.PROCEDURE__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__ID:
-				getId().clear();
-				getId().addAll((Collection<? extends II>)newValue);
+				getIds().clear();
+				getIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__CODE:
 				setCode((CD)newValue);
@@ -1561,51 +1554,51 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 				setLanguageCode((CS)newValue);
 				return;
 			case CDAPackage.PROCEDURE__METHOD_CODE:
-				getMethodCode().clear();
-				getMethodCode().addAll((Collection<? extends CE>)newValue);
+				getMethodCodes().clear();
+				getMethodCodes().addAll((Collection<? extends CE>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__APPROACH_SITE_CODE:
-				getApproachSiteCode().clear();
-				getApproachSiteCode().addAll((Collection<? extends CD>)newValue);
+				getApproachSiteCodes().clear();
+				getApproachSiteCodes().addAll((Collection<? extends CD>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__TARGET_SITE_CODE:
-				getTargetSiteCode().clear();
-				getTargetSiteCode().addAll((Collection<? extends CD>)newValue);
+				getTargetSiteCodes().clear();
+				getTargetSiteCodes().addAll((Collection<? extends CD>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__SUBJECT:
 				setSubject((Subject)newValue);
 				return;
 			case CDAPackage.PROCEDURE__SPECIMEN:
-				getSpecimen().clear();
-				getSpecimen().addAll((Collection<? extends Specimen>)newValue);
+				getSpecimens().clear();
+				getSpecimens().addAll((Collection<? extends Specimen>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__PERFORMER:
-				getPerformer().clear();
-				getPerformer().addAll((Collection<? extends Performer2>)newValue);
+				getPerformers().clear();
+				getPerformers().addAll((Collection<? extends Performer2>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__AUTHOR:
-				getAuthor().clear();
-				getAuthor().addAll((Collection<? extends Author>)newValue);
+				getAuthors().clear();
+				getAuthors().addAll((Collection<? extends Author>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__INFORMANT:
-				getInformant().clear();
-				getInformant().addAll((Collection<? extends Informant12>)newValue);
+				getInformants().clear();
+				getInformants().addAll((Collection<? extends Informant12>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__PARTICIPANT:
-				getParticipant().clear();
-				getParticipant().addAll((Collection<? extends Participant2>)newValue);
+				getParticipants().clear();
+				getParticipants().addAll((Collection<? extends Participant2>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP:
-				getEntryRelationship().clear();
-				getEntryRelationship().addAll((Collection<? extends EntryRelationship>)newValue);
+				getEntryRelationships().clear();
+				getEntryRelationships().addAll((Collection<? extends EntryRelationship>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__REFERENCE:
-				getReference().clear();
-				getReference().addAll((Collection<? extends Reference>)newValue);
+				getReferences().clear();
+				getReferences().addAll((Collection<? extends Reference>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__PRECONDITION:
-				getPrecondition().clear();
-				getPrecondition().addAll((Collection<? extends Precondition>)newValue);
+				getPreconditions().clear();
+				getPreconditions().addAll((Collection<? extends Precondition>)newValue);
 				return;
 			case CDAPackage.PROCEDURE__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -1632,16 +1625,16 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.PROCEDURE__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.PROCEDURE__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.PROCEDURE__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.PROCEDURE__ID:
-				getId().clear();
+				getIds().clear();
 				return;
 			case CDAPackage.PROCEDURE__CODE:
 				setCode((CD)null);
@@ -1662,40 +1655,40 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 				setLanguageCode((CS)null);
 				return;
 			case CDAPackage.PROCEDURE__METHOD_CODE:
-				getMethodCode().clear();
+				getMethodCodes().clear();
 				return;
 			case CDAPackage.PROCEDURE__APPROACH_SITE_CODE:
-				getApproachSiteCode().clear();
+				getApproachSiteCodes().clear();
 				return;
 			case CDAPackage.PROCEDURE__TARGET_SITE_CODE:
-				getTargetSiteCode().clear();
+				getTargetSiteCodes().clear();
 				return;
 			case CDAPackage.PROCEDURE__SUBJECT:
 				setSubject((Subject)null);
 				return;
 			case CDAPackage.PROCEDURE__SPECIMEN:
-				getSpecimen().clear();
+				getSpecimens().clear();
 				return;
 			case CDAPackage.PROCEDURE__PERFORMER:
-				getPerformer().clear();
+				getPerformers().clear();
 				return;
 			case CDAPackage.PROCEDURE__AUTHOR:
-				getAuthor().clear();
+				getAuthors().clear();
 				return;
 			case CDAPackage.PROCEDURE__INFORMANT:
-				getInformant().clear();
+				getInformants().clear();
 				return;
 			case CDAPackage.PROCEDURE__PARTICIPANT:
-				getParticipant().clear();
+				getParticipants().clear();
 				return;
 			case CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP:
-				getEntryRelationship().clear();
+				getEntryRelationships().clear();
 				return;
 			case CDAPackage.PROCEDURE__REFERENCE:
-				getReference().clear();
+				getReferences().clear();
 				return;
 			case CDAPackage.PROCEDURE__PRECONDITION:
-				getPrecondition().clear();
+				getPreconditions().clear();
 				return;
 			case CDAPackage.PROCEDURE__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -1722,13 +1715,13 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.PROCEDURE__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.PROCEDURE__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.PROCEDURE__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.PROCEDURE__ID:
-				return id != null && !id.isEmpty();
+				return ids != null && !ids.isEmpty();
 			case CDAPackage.PROCEDURE__CODE:
 				return code != null;
 			case CDAPackage.PROCEDURE__TEXT:
@@ -1742,29 +1735,29 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 			case CDAPackage.PROCEDURE__LANGUAGE_CODE:
 				return languageCode != null;
 			case CDAPackage.PROCEDURE__METHOD_CODE:
-				return methodCode != null && !methodCode.isEmpty();
+				return methodCodes != null && !methodCodes.isEmpty();
 			case CDAPackage.PROCEDURE__APPROACH_SITE_CODE:
-				return approachSiteCode != null && !approachSiteCode.isEmpty();
+				return approachSiteCodes != null && !approachSiteCodes.isEmpty();
 			case CDAPackage.PROCEDURE__TARGET_SITE_CODE:
-				return targetSiteCode != null && !targetSiteCode.isEmpty();
+				return targetSiteCodes != null && !targetSiteCodes.isEmpty();
 			case CDAPackage.PROCEDURE__SUBJECT:
 				return subject != null;
 			case CDAPackage.PROCEDURE__SPECIMEN:
-				return specimen != null && !specimen.isEmpty();
+				return specimens != null && !specimens.isEmpty();
 			case CDAPackage.PROCEDURE__PERFORMER:
-				return performer != null && !performer.isEmpty();
+				return performers != null && !performers.isEmpty();
 			case CDAPackage.PROCEDURE__AUTHOR:
-				return author != null && !author.isEmpty();
+				return authors != null && !authors.isEmpty();
 			case CDAPackage.PROCEDURE__INFORMANT:
-				return informant != null && !informant.isEmpty();
+				return informants != null && !informants.isEmpty();
 			case CDAPackage.PROCEDURE__PARTICIPANT:
-				return participant != null && !participant.isEmpty();
+				return participants != null && !participants.isEmpty();
 			case CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP:
-				return entryRelationship != null && !entryRelationship.isEmpty();
+				return entryRelationships != null && !entryRelationships.isEmpty();
 			case CDAPackage.PROCEDURE__REFERENCE:
-				return reference != null && !reference.isEmpty();
+				return references != null && !references.isEmpty();
 			case CDAPackage.PROCEDURE__PRECONDITION:
-				return precondition != null && !precondition.isEmpty();
+				return preconditions != null && !preconditions.isEmpty();
 			case CDAPackage.PROCEDURE__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.PROCEDURE__CLASS_CODE:

@@ -14,12 +14,52 @@ package org.openhealthtools.mdht.uml.hl7.datatypes.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.openhealthtools.mdht.uml.hl7.datatypes.*;
+import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ADXP;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BIN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CO;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CR;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CV;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ENXP;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_INT;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.MO;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PQR;
+import org.openhealthtools.mdht.uml.hl7.datatypes.QTY;
+import org.openhealthtools.mdht.uml.hl7.datatypes.REAL;
+import org.openhealthtools.mdht.uml.hl7.datatypes.RTO;
+import org.openhealthtools.mdht.uml.hl7.datatypes.RTO_PQ_PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.RTO_QTY_QTY;
+import org.openhealthtools.mdht.uml.hl7.datatypes.SC;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
+import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_INT;
+import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.URL;
 
 /**
  * <!-- begin-user-doc -->

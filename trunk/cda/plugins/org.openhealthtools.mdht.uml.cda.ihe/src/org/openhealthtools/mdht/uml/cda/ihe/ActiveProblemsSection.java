@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getActiveProblemsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.6' constraints.validation.error='ActiveProblemsSection_templateId ActiveProblemsSection_problemConcernEntry'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.6' constraints.validation.error='ActiveProblemsSectionTemplateId ActiveProblemsSectionProblemConcernEntry'"
  *        annotation="uml2.alias Active\040Problems\040Section='null'"
  * @generated
  */
@@ -40,7 +40,7 @@ public interface ActiveProblemsSection extends ProblemSection {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.3.6\')'"
 	 * @generated
 	 */
-	boolean ActiveProblemsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateActiveProblemsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public interface ActiveProblemsSection extends ProblemSection {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ihe::ProblemConcernEntry))'"
 	 * @generated
 	 */
-	boolean ActiveProblemsSection_problemConcernEntry(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateActiveProblemsSectionProblemConcernEntry(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

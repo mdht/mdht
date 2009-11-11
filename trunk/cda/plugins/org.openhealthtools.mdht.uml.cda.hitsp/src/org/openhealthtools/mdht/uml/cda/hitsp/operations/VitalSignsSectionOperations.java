@@ -11,18 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.CodedVitalSignsSectionOperations;
 
 /**
@@ -33,8 +28,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.operations.CodedVitalSignsSectionOpe
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection#HITSPVitalSignsSection_vitalSigns(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>HITSP Vital Signs Section vital Signs</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection#VitalSignsSection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Vital Signs Section template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection#validateHITSPVitalSignsSectionVitalSigns(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Vital Signs Section Vital Signs</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection#validateHITSPVitalSignsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Vital Signs Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,25 +46,25 @@ public class VitalSignsSectionOperations extends CodedVitalSignsSectionOperation
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #HITSPVitalSignsSection_vitalSigns(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>HITSP Vital Signs Section vital Signs</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateHITSPVitalSignsSectionVitalSigns(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Vital Signs Section Vital Signs</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #HITSPVitalSignsSection_vitalSigns(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateHITSPVitalSignsSectionVitalSigns(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::IHEVitalSignsOrganizer) and"+
+	protected static final String VALIDATE_HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::IHEVitalSignsOrganizer) and"+
 "entry.organizer.component.observation->exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))";
 
 	/**
-	 * The cached OCL invariant for the '{@link #HITSPVitalSignsSection_vitalSigns(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>HITSP Vital Signs Section vital Signs</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateHITSPVitalSignsSectionVitalSigns(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Vital Signs Section Vital Signs</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #HITSPVitalSignsSection_vitalSigns(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateHITSPVitalSignsSectionVitalSigns(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,25 +78,25 @@ public class VitalSignsSectionOperations extends CodedVitalSignsSectionOperation
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean HITSPVitalSignsSection_vitalSigns(VitalSignsSection vitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateHITSPVitalSignsSectionVitalSigns(VitalSignsSection vitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(HITSPPackage.Literals.VITAL_SIGNS_SECTION);
 			try {
-				HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(vitalSignsSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(vitalSignsSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HITSPValidator.DIAGNOSTIC_SOURCE,
 						 HITSPValidator.VITAL_SIGNS_SECTION__HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS,
-						 HITSPPlugin.INSTANCE.getString("HITSPVitalSignsSection_vitalSigns"),
+						 HITSPPlugin.INSTANCE.getString("HITSPVitalSignsSectionVitalSigns"),
 						 new Object [] { vitalSignsSection }));
 			}
 			return false;
@@ -110,24 +105,24 @@ public class VitalSignsSectionOperations extends CodedVitalSignsSectionOperation
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #VitalSignsSection_templateId(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Vital Signs Section template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateHITSPVitalSignsSectionTemplateId(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Vital Signs Section Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #VitalSignsSection_templateId(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateHITSPVitalSignsSectionTemplateId(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.83.119')";
+	protected static final String VALIDATE_HITSP_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.83.119')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #VitalSignsSection_templateId(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Vital Signs Section template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateHITSPVitalSignsSectionTemplateId(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Vital Signs Section Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #VitalSignsSection_templateId(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateHITSPVitalSignsSectionTemplateId(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_HITSP_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,25 +135,25 @@ public class VitalSignsSectionOperations extends CodedVitalSignsSectionOperation
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean VitalSignsSection_templateId(VitalSignsSection vitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateHITSPVitalSignsSectionTemplateId(VitalSignsSection vitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_HITSP_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(HITSPPackage.Literals.VITAL_SIGNS_SECTION);
 			try {
-				VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_HITSP_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_HITSP_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(vitalSignsSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_HITSP_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(vitalSignsSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HITSPValidator.DIAGNOSTIC_SOURCE,
-						 HITSPValidator.VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEMPLATE_ID,
-						 HITSPPlugin.INSTANCE.getString("VitalSignsSection_templateId"),
+						 HITSPValidator.VITAL_SIGNS_SECTION__HITSP_VITAL_SIGNS_SECTION_TEMPLATE_ID,
+						 HITSPPlugin.INSTANCE.getString("HITSPVitalSignsSectionTemplateId"),
 						 new Object [] { vitalSignsSection }));
 			}
 			return false;

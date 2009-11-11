@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SplitDosing#SplitDosing_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Split Dosing template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SplitDosing#validateSplitDosingTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Split Dosing Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,24 +44,24 @@ public class SplitDosingOperations extends MedicationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #SplitDosing_templateId(SplitDosing, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Split Dosing template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateSplitDosingTemplateId(SplitDosing, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Split Dosing Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SplitDosing_templateId(SplitDosing, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSplitDosingTemplateId(SplitDosing, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SPLIT_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.9')";
+	protected static final String VALIDATE_SPLIT_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.9')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #SplitDosing_templateId(SplitDosing, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Split Dosing template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateSplitDosingTemplateId(SplitDosing, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Split Dosing Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SplitDosing_templateId(SplitDosing, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSplitDosingTemplateId(SplitDosing, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint SPLIT_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_SPLIT_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,25 +74,25 @@ public class SplitDosingOperations extends MedicationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean SplitDosing_templateId(SplitDosing splitDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (SPLIT_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateSplitDosingTemplateId(SplitDosing splitDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_SPLIT_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.SPLIT_DOSING);
 			try {
-				SPLIT_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SPLIT_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_SPLIT_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SPLIT_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(SPLIT_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(splitDosing)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_SPLIT_DOSING_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(splitDosing)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.SPLIT_DOSING__SPLIT_DOSING_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("SplitDosing_templateId"),
+						 IHEPlugin.INSTANCE.getString("SplitDosingTemplateId"),
 						 new Object [] { splitDosing }));
 			}
 			return false;

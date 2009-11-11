@@ -11,18 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
-
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
-
 import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
 
 /**
@@ -33,9 +28,9 @@ import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation#SimpleObservation_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Simple Observation template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation#SimpleObservation_id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Simple Observation id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation#SimpleObservation_statusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Simple Observation status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation#validateSimpleObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Simple Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation#validateSimpleObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Simple Observation Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation#validateSimpleObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Simple Observation Status Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,24 +47,24 @@ public class SimpleObservationOperations extends ObservationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #SimpleObservation_templateId(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Simple Observation template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateSimpleObservationTemplateId(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Simple Observation Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SimpleObservation_templateId(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSimpleObservationTemplateId(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.13')";
+	protected static final String VALIDATE_SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.13')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #SimpleObservation_templateId(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Simple Observation template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateSimpleObservationTemplateId(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Simple Observation Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SimpleObservation_templateId(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSimpleObservationTemplateId(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,25 +77,25 @@ public class SimpleObservationOperations extends ObservationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean SimpleObservation_templateId(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateSimpleObservationTemplateId(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.SIMPLE_OBSERVATION);
 			try {
-				SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(simpleObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(simpleObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("SimpleObservation_templateId"),
+						 IHEPlugin.INSTANCE.getString("SimpleObservationTemplateId"),
 						 new Object [] { simpleObservation }));
 			}
 			return false;
@@ -109,24 +104,24 @@ public class SimpleObservationOperations extends ObservationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #SimpleObservation_id(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Simple Observation id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateSimpleObservationId(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Simple Observation Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SimpleObservation_id(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSimpleObservationId(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.id->isEmpty()";
+	protected static final String VALIDATE_SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.id->isEmpty()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #SimpleObservation_id(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Simple Observation id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateSimpleObservationId(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Simple Observation Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SimpleObservation_id(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSimpleObservationId(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,25 +134,25 @@ public class SimpleObservationOperations extends ObservationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean SimpleObservation_id(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateSimpleObservationId(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.SIMPLE_OBSERVATION);
 			try {
-				SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(simpleObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(simpleObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_ID,
-						 IHEPlugin.INSTANCE.getString("SimpleObservation_id"),
+						 IHEPlugin.INSTANCE.getString("SimpleObservationId"),
 						 new Object [] { simpleObservation }));
 			}
 			return false;
@@ -166,26 +161,26 @@ public class SimpleObservationOperations extends ObservationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #SimpleObservation_statusCode(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Simple Observation status Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateSimpleObservationStatusCode(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Simple Observation Status Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SimpleObservation_statusCode(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSimpleObservationStatusCode(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and "+
+	protected static final String VALIDATE_SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and "+
 "let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in ("+
 "value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #SimpleObservation_statusCode(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Simple Observation status Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateSimpleObservationStatusCode(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Simple Observation Status Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SimpleObservation_statusCode(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSimpleObservationStatusCode(SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,25 +195,25 @@ public class SimpleObservationOperations extends ObservationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean SimpleObservation_statusCode(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateSimpleObservationStatusCode(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.SIMPLE_OBSERVATION);
 			try {
-				SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(simpleObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(simpleObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_STATUS_CODE,
-						 IHEPlugin.INSTANCE.getString("SimpleObservation_statusCode"),
+						 IHEPlugin.INSTANCE.getString("SimpleObservationStatusCode"),
 						 new Object [] { simpleObservation }));
 			}
 			return false;

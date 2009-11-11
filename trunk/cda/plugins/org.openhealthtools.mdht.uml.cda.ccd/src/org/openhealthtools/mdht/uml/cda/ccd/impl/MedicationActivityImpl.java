@@ -50,8 +50,8 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationActivityOperations.MedicationActivity_moodCode(this, diagnostics, context);
+	public boolean validateMedicationActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityMoodCode(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationActivityOperations.MedicationActivity_templateId(this, diagnostics, context);
+	public boolean validateMedicationActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationActivity_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationActivityOperations.MedicationActivity_id(this, diagnostics, context);
+	public boolean validateMedicationActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityId(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationActivity_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationActivityOperations.MedicationActivity_statusCode(this, diagnostics, context);
+	public boolean validateMedicationActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityStatusCode(this, diagnostics, context);
 	}
 
 	/**
@@ -86,8 +86,8 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationActivity_medicationSeriesNumberObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationActivityOperations.MedicationActivity_medicationSeriesNumberObservation(this, diagnostics, context);
+	public boolean validateMedicationActivityMedicationSeriesNumberObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityMedicationSeriesNumberObservation(this, diagnostics, context);
 	}
 
 	/**
@@ -95,8 +95,8 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationActivity_medicationStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationActivityOperations.MedicationActivity_medicationStatusObservation(this, diagnostics, context);
+	public boolean validateMedicationActivityMedicationStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityMedicationStatusObservation(this, diagnostics, context);
 	}
 
 	/**
@@ -104,8 +104,8 @@ public class MedicationActivityImpl extends SubstanceAdministrationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationActivity_patientInstruction(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationActivityOperations.MedicationActivity_patientInstruction(this, diagnostics, context);
+	public boolean validateMedicationActivityPatientInstruction(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationActivityOperations.validateMedicationActivityPatientInstruction(this, diagnostics, context);
 	}
 
 	/**

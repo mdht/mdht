@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:version="2.0" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:version="2.0" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
   <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="example">
     
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
@@ -10,7 +10,7 @@
       </generalization>
       <ownedAttribute xmi:id="_v0rX0aX0Ed6JRdOhEffuGA" name="mySection" visibility="private" type="_Ucv9baX0Ed6JRdOhEffuGA" association="_v0rX0KX0Ed6JRdOhEffuGA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v0rX06X0Ed6JRdOhEffuGA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v0rX0qX0Ed6JRdOhEffuGA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v0rX0qX0Ed6JRdOhEffuGA" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ucv9YKX0Ed6JRdOhEffuGA" name="MyActivity">

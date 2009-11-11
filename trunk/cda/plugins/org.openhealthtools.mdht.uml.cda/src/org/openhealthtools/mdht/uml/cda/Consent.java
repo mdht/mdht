@@ -13,13 +13,10 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -32,10 +29,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Consent#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Consent#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Consent#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Consent#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Consent#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Consent#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Consent#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Consent#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Consent#getStatusCode <em>Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Consent#getNullFlavor <em>Null Flavor</em>}</li>
@@ -64,7 +61,7 @@ public interface Consent extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -108,7 +105,7 @@ public interface Consent extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' containment reference list.
@@ -125,7 +122,7 @@ public interface Consent extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getId();
+	EList<II> getIds();
 
 	/**
 	 * Returns the value of the '<em><b>Code</b></em>' containment reference.

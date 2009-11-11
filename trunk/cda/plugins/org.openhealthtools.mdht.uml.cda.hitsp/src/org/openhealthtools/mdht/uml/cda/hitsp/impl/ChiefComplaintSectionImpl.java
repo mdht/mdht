@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ChiefComplaintSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,9 +49,8 @@ public class ChiefComplaintSectionImpl extends org.openhealthtools.mdht.uml.cda.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean ChiefComplaintSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ChiefComplaintSectionOperations.ChiefComplaintSection_templateId(this, diagnostics, context);
+	public boolean validateHITSPChiefComplaintSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ChiefComplaintSectionOperations.validateHITSPChiefComplaintSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

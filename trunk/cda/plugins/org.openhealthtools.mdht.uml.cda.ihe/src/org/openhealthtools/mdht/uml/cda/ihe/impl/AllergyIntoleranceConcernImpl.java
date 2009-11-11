@@ -55,8 +55,8 @@ public class AllergyIntoleranceConcernImpl extends ConcernEntryImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AllergyIntoleranceConcern_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AllergyIntoleranceConcernOperations.AllergyIntoleranceConcern_templateId(this, diagnostics, context);
+	public boolean validateAllergyIntoleranceConcernTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AllergyIntoleranceConcernOperations.validateAllergyIntoleranceConcernTemplateId(this, diagnostics, context);
 	}
 
 	/**

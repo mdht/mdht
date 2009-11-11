@@ -16,3 +16,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport
 Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPlugin$Implementation

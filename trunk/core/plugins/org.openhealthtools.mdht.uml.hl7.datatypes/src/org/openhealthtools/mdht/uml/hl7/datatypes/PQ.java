@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.PQ#getValue <em>Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.PQ#getUnit <em>Unit</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.PQ#getTranslation <em>Translation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.PQ#getTranslations <em>Translation</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,6 +100,6 @@ public interface PQ extends QTY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
-	EList<PQR> getTranslation();
+	EList<PQR> getTranslations();
 
 } // PQ

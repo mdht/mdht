@@ -16,17 +16,12 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQR;
@@ -40,7 +35,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.PQR;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.PQImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.PQImpl#getUnit <em>Unit</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.PQImpl#getTranslation <em>Translation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.PQImpl#getTranslations <em>Translation</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,14 +83,14 @@ public class PQImpl extends QTYImpl implements PQ {
 	protected String unit = UNIT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTranslation() <em>Translation</em>}' containment reference list.
+	 * The cached value of the '{@link #getTranslations() <em>Translation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTranslation()
+	 * @see #getTranslations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PQR> translation;
+	protected EList<PQR> translations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,11 +158,11 @@ public class PQImpl extends QTYImpl implements PQ {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PQR> getTranslation() {
-		if (translation == null) {
-			translation = new EObjectContainmentEList<PQR>(PQR.class, this, DatatypesPackage.PQ__TRANSLATION);
+	public EList<PQR> getTranslations() {
+		if (translations == null) {
+			translations = new EObjectContainmentEList<PQR>(PQR.class, this, DatatypesPackage.PQ__TRANSLATION);
 		}
-		return translation;
+		return translations;
 	}
 
 	/**
@@ -179,7 +174,7 @@ public class PQImpl extends QTYImpl implements PQ {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DatatypesPackage.PQ__TRANSLATION:
-				return ((InternalEList<?>)getTranslation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTranslations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -197,7 +192,7 @@ public class PQImpl extends QTYImpl implements PQ {
 			case DatatypesPackage.PQ__UNIT:
 				return getUnit();
 			case DatatypesPackage.PQ__TRANSLATION:
-				return getTranslation();
+				return getTranslations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,8 +213,8 @@ public class PQImpl extends QTYImpl implements PQ {
 				setUnit((String)newValue);
 				return;
 			case DatatypesPackage.PQ__TRANSLATION:
-				getTranslation().clear();
-				getTranslation().addAll((Collection<? extends PQR>)newValue);
+				getTranslations().clear();
+				getTranslations().addAll((Collection<? extends PQR>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -240,7 +235,7 @@ public class PQImpl extends QTYImpl implements PQ {
 				setUnit(UNIT_EDEFAULT);
 				return;
 			case DatatypesPackage.PQ__TRANSLATION:
-				getTranslation().clear();
+				getTranslations().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -259,7 +254,7 @@ public class PQImpl extends QTYImpl implements PQ {
 			case DatatypesPackage.PQ__UNIT:
 				return UNIT_EDEFAULT == null ? unit != null : !UNIT_EDEFAULT.equals(unit);
 			case DatatypesPackage.PQ__TRANSLATION:
-				return translation != null && !translation.isEmpty();
+				return translations != null && !translations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

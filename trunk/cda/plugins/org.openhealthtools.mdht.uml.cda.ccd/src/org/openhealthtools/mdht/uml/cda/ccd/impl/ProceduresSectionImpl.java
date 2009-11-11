@@ -50,8 +50,8 @@ public class ProceduresSectionImpl extends SectionImpl implements ProceduresSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProceduresSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProceduresSectionOperations.ProceduresSection_templateId(this, diagnostics, context);
+	public boolean validateProceduresSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProceduresSectionOperations.validateProceduresSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class ProceduresSectionImpl extends SectionImpl implements ProceduresSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProceduresSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProceduresSectionOperations.ProceduresSection_code(this, diagnostics, context);
+	public boolean validateProceduresSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProceduresSectionOperations.validateProceduresSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class ProceduresSectionImpl extends SectionImpl implements ProceduresSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProceduresSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProceduresSectionOperations.ProceduresSection_title(this, diagnostics, context);
+	public boolean validateProceduresSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProceduresSectionOperations.validateProceduresSectionTitle(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class ProceduresSectionImpl extends SectionImpl implements ProceduresSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProceduresSection_procedureActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProceduresSectionOperations.ProceduresSection_procedureActivity(this, diagnostics, context);
+	public boolean validateProceduresSectionProcedureActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProceduresSectionOperations.validateProceduresSectionProcedureActivity(this, diagnostics, context);
 	}
 
 	/**

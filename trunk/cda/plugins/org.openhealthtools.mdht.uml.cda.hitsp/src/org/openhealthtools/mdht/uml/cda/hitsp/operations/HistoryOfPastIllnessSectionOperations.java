@@ -11,16 +11,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPlugin;
 import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
 
 /**
@@ -31,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection#HistoryOfPastIllnessSection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>History Of Past Illness Section template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection#validateHITSPHistoryOfPastIllnessSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP History Of Past Illness Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,24 +44,24 @@ public class HistoryOfPastIllnessSectionOperations extends org.openhealthtools.m
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #HistoryOfPastIllnessSection_templateId(HistoryOfPastIllnessSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>History Of Past Illness Section template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateHITSPHistoryOfPastIllnessSectionTemplateId(HistoryOfPastIllnessSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP History Of Past Illness Section Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #HistoryOfPastIllnessSection_templateId(HistoryOfPastIllnessSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateHITSPHistoryOfPastIllnessSectionTemplateId(HistoryOfPastIllnessSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.83.104')";
+	protected static final String VALIDATE_HITSP_HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.83.104')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #HistoryOfPastIllnessSection_templateId(HistoryOfPastIllnessSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>History Of Past Illness Section template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateHITSPHistoryOfPastIllnessSectionTemplateId(HistoryOfPastIllnessSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP History Of Past Illness Section Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #HistoryOfPastIllnessSection_templateId(HistoryOfPastIllnessSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateHITSPHistoryOfPastIllnessSectionTemplateId(HistoryOfPastIllnessSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_HITSP_HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,25 +74,25 @@ public class HistoryOfPastIllnessSectionOperations extends org.openhealthtools.m
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean HistoryOfPastIllnessSection_templateId(HistoryOfPastIllnessSection historyOfPastIllnessSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateHITSPHistoryOfPastIllnessSectionTemplateId(HistoryOfPastIllnessSection historyOfPastIllnessSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_HITSP_HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(HITSPPackage.Literals.HISTORY_OF_PAST_ILLNESS_SECTION);
 			try {
-				HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_HITSP_HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_HITSP_HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(historyOfPastIllnessSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_HITSP_HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(historyOfPastIllnessSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HITSPValidator.DIAGNOSTIC_SOURCE,
-						 HITSPValidator.HISTORY_OF_PAST_ILLNESS_SECTION__HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID,
-						 HITSPPlugin.INSTANCE.getString("HistoryOfPastIllnessSection_templateId"),
+						 HITSPValidator.HISTORY_OF_PAST_ILLNESS_SECTION__HITSP_HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID,
+						 HITSPPlugin.INSTANCE.getString("HITSPHistoryOfPastIllnessSectionTemplateId"),
 						 new Object [] { historyOfPastIllnessSection }));
 			}
 			return false;

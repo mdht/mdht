@@ -55,9 +55,8 @@ public class MedicationImpl extends org.openhealthtools.mdht.uml.cda.ihe.impl.Me
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean Medication_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationOperations.Medication_templateId(this, diagnostics, context);
+	public boolean validateHITSPMedicationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationOperations.validateHITSPMedicationTemplateId(this, diagnostics, context);
 	}
 
 	/**

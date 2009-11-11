@@ -46,7 +46,7 @@ public class Main {
 		doc.setId(id);
 		
 		II templateId = DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.3.27.1776");
-		doc.getTemplateId().add(templateId);
+		doc.getTemplateIds().add(templateId);
 		
 		CE code = DatatypesFactory.eINSTANCE.createCE("11488-4", "2.16.840.1.113883.6.1", "LOINC", "Consultation note");
 		doc.setCode(code);
@@ -61,7 +61,7 @@ public class Main {
 		doc.setConfidentialityCode(confidentialityCode);
 		
 		RecordTarget recordTarget = CDAFactory.eINSTANCE.createRecordTarget();
-		doc.getRecordTarget().add(recordTarget);
+		doc.getRecordTargets().add(recordTarget);
 		
 		PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
 		recordTarget.setPatientRole(patientRole);
@@ -80,15 +80,15 @@ public class Main {
 		patient.setBirthTime(birthTime);
 		
 		Organization providerOrganization = CDAFactory.eINSTANCE.createOrganization();
-		providerOrganization.getId().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.19.5"));
+		providerOrganization.getIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.19.5"));
 		patientRole.setProviderOrganization(providerOrganization);
 		
 		Author author = CDAFactory.eINSTANCE.createAuthor();
 		author.setTime(DatatypesFactory.eINSTANCE.createTS("2000040714"));
-		doc.getAuthor().add(author);
+		doc.getAuthors().add(author);
 		
 		AssignedAuthor assignedAuthor = CDAFactory.eINSTANCE.createAssignedAuthor();
-		assignedAuthor.getId().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.19.5", "KP00017"));
+		assignedAuthor.getIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.19.5", "KP00017"));
 		author.setAssignedAuthor(assignedAuthor);
 		
 		Person assignedPerson = CDAFactory.eINSTANCE.createPerson();
@@ -96,7 +96,7 @@ public class Main {
 		
 		name = DatatypesFactory.eINSTANCE.createPN();
 		name.addGiven("Bob").addFamily("Dolin").addSuffix("MD");
-		assignedPerson.getName().add(name);
+		assignedPerson.getNames().add(name);
 		
 		CDAUtil.save(doc, System.out);
 		

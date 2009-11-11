@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AdvanceDirectiveVerificationOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.Participant2Impl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class AdvanceDirectiveVerificationImpl extends Participant2Impl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AdvanceDirectiveVerification_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectiveVerificationOperations.AdvanceDirectiveVerification_templateId(this, diagnostics, context);
+	public boolean validateAdvanceDirectiveVerificationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdvanceDirectiveVerificationOperations.validateAdvanceDirectiveVerificationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class AdvanceDirectiveVerificationImpl extends Participant2Impl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AdvanceDirectiveVerification_typeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectiveVerificationOperations.AdvanceDirectiveVerification_typeCode(this, diagnostics, context);
+	public boolean validateAdvanceDirectiveVerificationTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdvanceDirectiveVerificationOperations.validateAdvanceDirectiveVerificationTypeCode(this, diagnostics, context);
 	}
 
 	/**
@@ -73,8 +68,8 @@ public class AdvanceDirectiveVerificationImpl extends Participant2Impl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AdvanceDirectiveVerification_time(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectiveVerificationOperations.AdvanceDirectiveVerification_time(this, diagnostics, context);
+	public boolean validateAdvanceDirectiveVerificationTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdvanceDirectiveVerificationOperations.validateAdvanceDirectiveVerificationTime(this, diagnostics, context);
 	}
 
 	/**

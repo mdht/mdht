@@ -28,7 +28,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getProblemConcernEntry()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.5.2' constraints.validation.error='ProblemConcernEntry_templateId ProblemConcernEntry_problemEntry'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.5.2' constraints.validation.error='ProblemConcernEntryTemplateId ProblemConcernEntryProblemEntry'"
  *        annotation="uml2.alias Problem\040Concern\040Entry='null'"
  * @generated
  */
@@ -44,7 +44,7 @@ public interface ProblemConcernEntry extends ConcernEntry {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.4.5.2\')'"
 	 * @generated
 	 */
-	boolean ProblemConcernEntry_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemConcernEntryTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -57,7 +57,7 @@ public interface ProblemConcernEntry extends ConcernEntry {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ihe::ProblemEntry))'"
 	 * @generated
 	 */
-	boolean ProblemConcernEntry_problemEntry(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemConcernEntryProblemEntry(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

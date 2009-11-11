@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.ccd;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 
 /**
@@ -26,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPatientInstruction()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='INT' constraints.validation.error='PatientInstruction_templateId PatientInstruction_moodCode' templateId.root='2.16.840.1.113883.10.20.1.49'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='INT' constraints.validation.error='PatientInstructionTemplateId PatientInstructionMoodCode' templateId.root='2.16.840.1.113883.10.20.1.49'"
  * @generated
  */
 public interface PatientInstruction extends Act {
@@ -41,7 +40,7 @@ public interface PatientInstruction extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.49\')'"
 	 * @generated
 	 */
-	boolean PatientInstruction_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePatientInstructionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -54,7 +53,7 @@ public interface PatientInstruction extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_DocumentActMood::INT'"
 	 * @generated
 	 */
-	boolean PatientInstruction_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePatientInstructionMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

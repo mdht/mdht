@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.example;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.Section;
 
 /**
@@ -30,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.example.ExamplePackage#getMySection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='MySection_templateId MySection_code MySection_title' templateId.root='1.2.3.4.1' code.displayName='Summary purpose' code.codeSystem='2.16.840.1.113883.6.1' code.code='48764-5' constraints.validation.warning='MySection_myActivity'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='MySectionTemplateId MySectionCode MySectionTitle' templateId.root='1.2.3.4.1' code.displayName='Summary purpose' code.codeSystem='2.16.840.1.113883.6.1' code.code='48764-5' constraints.validation.warning='MySectionMyActivity'"
  * @generated
  */
 public interface MySection extends Section {
@@ -45,7 +44,7 @@ public interface MySection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.2.3.4.1\')'"
 	 * @generated
 	 */
-	boolean MySection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,7 +59,7 @@ public interface MySection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and \r\nlet value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (\r\nvalue.code = \'48764-5\' and value.codeSystem = \'2.16.840.1.113883.6.1\')'"
 	 * @generated
 	 */
-	boolean MySection_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMySectionCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +72,7 @@ public interface MySection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.title.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean MySection_title(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMySectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,7 +85,7 @@ public interface MySection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(example::MyActivity) and entry.typeCode = vocab::x_ActRelationshipEntry::COMP)'"
 	 * @generated
 	 */
-	boolean MySection_myActivity(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMySectionMyActivity(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

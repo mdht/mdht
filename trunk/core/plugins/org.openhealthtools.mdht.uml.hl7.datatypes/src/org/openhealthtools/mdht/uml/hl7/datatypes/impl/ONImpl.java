@@ -54,8 +54,8 @@ public class ONImpl extends ENImpl implements ON {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean invariant(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ONOperations.invariant(this, diagnostics, context);
+	public boolean validateInvariant(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ONOperations.validateInvariant(this, diagnostics, context);
 	}
 
 } //ONImpl

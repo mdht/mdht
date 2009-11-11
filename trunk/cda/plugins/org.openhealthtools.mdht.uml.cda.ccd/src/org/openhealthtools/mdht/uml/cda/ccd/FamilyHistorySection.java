@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getFamilyHistorySection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.4' constraints.validation.error='FamilyHistorySection_templateId FamilyHistorySection_code FamilyHistorySection_title' code.displayName='History of family member diseases' code.codeSystem='2.16.840.1.113883.6.1' code.code='10157-6'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.4' constraints.validation.error='FamilyHistorySectionTemplateId FamilyHistorySectionCode FamilyHistorySectionTitle' code.displayName='History of family member diseases' code.codeSystem='2.16.840.1.113883.6.1' code.code='10157-6'"
  * @generated
  */
 public interface FamilyHistorySection extends Section {
@@ -40,7 +40,7 @@ public interface FamilyHistorySection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.4\')'"
 	 * @generated
 	 */
-	boolean FamilyHistorySection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateFamilyHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -55,7 +55,7 @@ public interface FamilyHistorySection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and \r\nlet value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (\r\nvalue.code = \'10157-6\' and value.codeSystem = \'2.16.840.1.113883.6.1\')'"
 	 * @generated
 	 */
-	boolean FamilyHistorySection_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateFamilyHistorySectionCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,7 +68,7 @@ public interface FamilyHistorySection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.title.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean FamilyHistorySection_title(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateFamilyHistorySectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

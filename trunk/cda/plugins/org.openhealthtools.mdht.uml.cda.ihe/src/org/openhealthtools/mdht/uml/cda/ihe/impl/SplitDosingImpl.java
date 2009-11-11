@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.SplitDosing;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.SplitDosingOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,8 +49,8 @@ public class SplitDosingImpl extends MedicationImpl implements SplitDosing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SplitDosing_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SplitDosingOperations.SplitDosing_templateId(this, diagnostics, context);
+	public boolean validateSplitDosingTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SplitDosingOperations.validateSplitDosingTemplateId(this, diagnostics, context);
 	}
 
 	/**

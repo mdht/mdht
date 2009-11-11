@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PhysicalExamSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,9 +49,8 @@ public class PhysicalExamSectionImpl extends org.openhealthtools.mdht.uml.cda.ih
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean PhysicalExamSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PhysicalExamSectionOperations.PhysicalExamSection_templateId(this, diagnostics, context);
+	public boolean validateHITSPPhysicalExamSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PhysicalExamSectionOperations.validateHITSPPhysicalExamSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

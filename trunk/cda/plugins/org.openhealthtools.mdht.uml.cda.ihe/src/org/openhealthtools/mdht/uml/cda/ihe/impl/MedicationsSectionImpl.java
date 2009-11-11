@@ -56,8 +56,8 @@ public class MedicationsSectionImpl extends MedicationSectionImpl implements Med
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationsSectionOperations.MedicationsSection_templateId(this, diagnostics, context);
+	public boolean validateMedicationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationsSectionOperations.validateMedicationsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

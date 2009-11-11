@@ -16,12 +16,9 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipHasComponent;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
@@ -33,9 +30,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Component2#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Component2#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Component2#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Component2#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Component2#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Component2#getNonXMLBody <em>Non XML Body</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Component2#getStructuredBody <em>Structured Body</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Component2#getNullFlavor <em>Null Flavor</em>}</li>
@@ -64,7 +61,7 @@ public interface Component2 extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -108,7 +105,7 @@ public interface Component2 extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Non XML Body</b></em>' containment reference.
@@ -315,6 +312,6 @@ public interface Component2 extends EObject {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.structuredBody.oclIsUndefined() xor self.nonXMLBody.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean bodyChoice(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateBodyChoice(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Component2

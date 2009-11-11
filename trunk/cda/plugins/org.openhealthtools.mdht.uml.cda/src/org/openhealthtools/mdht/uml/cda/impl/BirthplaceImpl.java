@@ -16,26 +16,19 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.Birthplace;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Place;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClass;
 
@@ -46,9 +39,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClass;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.BirthplaceImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.BirthplaceImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.BirthplaceImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.BirthplaceImpl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.BirthplaceImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.BirthplaceImpl#getPlace <em>Place</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.BirthplaceImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.BirthplaceImpl#getClassCode <em>Class Code</em>}</li>
@@ -59,14 +52,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClass;
  */
 public class BirthplaceImpl extends EObjectImpl implements Birthplace {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -79,14 +72,14 @@ public class BirthplaceImpl extends EObjectImpl implements Birthplace {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getPlace() <em>Place</em>}' containment reference.
@@ -180,11 +173,11 @@ public class BirthplaceImpl extends EObjectImpl implements Birthplace {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.BIRTHPLACE__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.BIRTHPLACE__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -235,11 +228,11 @@ public class BirthplaceImpl extends EObjectImpl implements Birthplace {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.BIRTHPLACE__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.BIRTHPLACE__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -386,11 +379,11 @@ public class BirthplaceImpl extends EObjectImpl implements Birthplace {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.BIRTHPLACE__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.BIRTHPLACE__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.BIRTHPLACE__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.BIRTHPLACE__PLACE:
 				return basicSetPlace(null, msgs);
 		}
@@ -406,11 +399,11 @@ public class BirthplaceImpl extends EObjectImpl implements Birthplace {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.BIRTHPLACE__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.BIRTHPLACE__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.BIRTHPLACE__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.BIRTHPLACE__PLACE:
 				return getPlace();
 			case CDAPackage.BIRTHPLACE__NULL_FLAVOR:
@@ -431,15 +424,15 @@ public class BirthplaceImpl extends EObjectImpl implements Birthplace {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.BIRTHPLACE__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.BIRTHPLACE__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.BIRTHPLACE__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.BIRTHPLACE__PLACE:
 				setPlace((Place)newValue);
@@ -463,13 +456,13 @@ public class BirthplaceImpl extends EObjectImpl implements Birthplace {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.BIRTHPLACE__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.BIRTHPLACE__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.BIRTHPLACE__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.BIRTHPLACE__PLACE:
 				setPlace((Place)null);
@@ -493,11 +486,11 @@ public class BirthplaceImpl extends EObjectImpl implements Birthplace {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.BIRTHPLACE__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.BIRTHPLACE__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.BIRTHPLACE__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.BIRTHPLACE__PLACE:
 				return place != null;
 			case CDAPackage.BIRTHPLACE__NULL_FLAVOR:

@@ -16,15 +16,12 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssignedEntity;
 
@@ -36,13 +33,13 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssignedEntity;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getCode <em>Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getAddr <em>Addr</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTelecom <em>Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getAddrs <em>Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTelecoms <em>Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getAssignedPerson <em>Assigned Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getAssignedAuthoringDevice <em>Assigned Authoring Device</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getRepresentedOrganization <em>Represented Organization</em>}</li>
@@ -71,7 +68,7 @@ public interface AssignedAuthor extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -115,7 +112,7 @@ public interface AssignedAuthor extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' containment reference list.
@@ -132,7 +129,7 @@ public interface AssignedAuthor extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getId();
+	EList<II> getIds();
 
 	/**
 	 * Returns the value of the '<em><b>Code</b></em>' containment reference.
@@ -176,7 +173,7 @@ public interface AssignedAuthor extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<AD> getAddr();
+	EList<AD> getAddrs();
 
 	/**
 	 * Returns the value of the '<em><b>Telecom</b></em>' containment reference list.
@@ -193,7 +190,7 @@ public interface AssignedAuthor extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<TEL> getTelecom();
+	EList<TEL> getTelecoms();
 
 	/**
 	 * Returns the value of the '<em><b>Assigned Person</b></em>' containment reference.
@@ -400,6 +397,6 @@ public interface AssignedAuthor extends EObject {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.assignedPerson.oclIsUndefined() or self.assignedAuthoringDevice.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean assignedAuthorChoice(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAssignedAuthorChoice(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // AssignedAuthor

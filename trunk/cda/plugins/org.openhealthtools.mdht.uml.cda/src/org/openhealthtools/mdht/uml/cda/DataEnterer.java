@@ -13,13 +13,10 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ContextControl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
@@ -32,9 +29,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.DataEnterer#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.DataEnterer#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.DataEnterer#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.DataEnterer#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.DataEnterer#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.DataEnterer#getTime <em>Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.DataEnterer#getAssignedEntity <em>Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.DataEnterer#getNullFlavor <em>Null Flavor</em>}</li>
@@ -63,7 +60,7 @@ public interface DataEnterer extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -107,7 +104,7 @@ public interface DataEnterer extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Time</b></em>' containment reference.

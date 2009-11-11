@@ -3592,22 +3592,22 @@ public interface DatatypesPackage extends EPackage {
 	EClass getTEL();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUseablePeriod <em>Useable Period</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUseablePeriods <em>Useable Period</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Useable Period</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUseablePeriod()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUseablePeriods()
 	 * @see #getTEL()
 	 * @generated
 	 */
 	EReference getTEL_UseablePeriod();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUse <em>Use</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUses <em>Use</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Use</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUse()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUses()
 	 * @see #getTEL()
 	 * @generated
 	 */
@@ -3718,22 +3718,22 @@ public interface DatatypesPackage extends EPackage {
 	EReference getCD_OriginalText();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getQualifier <em>Qualifier</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getQualifiers <em>Qualifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Qualifier</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.CD#getQualifier()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.CD#getQualifiers()
 	 * @see #getCD()
 	 * @generated
 	 */
 	EReference getCD_Qualifier();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getTranslation <em>Translation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.CD#getTranslations <em>Translation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Translation</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.CD#getTranslation()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.CD#getTranslations()
 	 * @see #getCD()
 	 * @generated
 	 */
@@ -3953,22 +3953,22 @@ public interface DatatypesPackage extends EPackage {
 	EClass getAD();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUseablePeriod <em>Useable Period</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUseablePeriods <em>Useable Period</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Useable Period</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUseablePeriod()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUseablePeriods()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_UseablePeriod();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUse <em>Use</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUses <em>Use</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Use</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUse()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUses()
 	 * @see #getAD()
 	 * @generated
 	 */
@@ -3986,308 +3986,308 @@ public interface DatatypesPackage extends EPackage {
 	EAttribute getAD_IsNotOrdered();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDelimiter <em>Delimiter</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDelimiters <em>Delimiter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Delimiter</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDelimiter()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDelimiters()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_Delimiter();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCountry <em>Country</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCountries <em>Country</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Country</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCountry()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCountries()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_Country();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getState <em>State</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStates <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>State</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getState()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStates()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_State();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCounty <em>County</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCounties <em>County</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>County</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCounty()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCounties()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_County();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCity <em>City</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCities <em>City</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>City</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCity()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCities()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_City();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostalCode <em>Postal Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostalCodes <em>Postal Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Postal Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostalCode()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostalCodes()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_PostalCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetAddressLine <em>Street Address Line</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetAddressLines <em>Street Address Line</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Street Address Line</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetAddressLine()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetAddressLines()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_StreetAddressLine();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getHouseNumber <em>House Number</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getHouseNumbers <em>House Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>House Number</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getHouseNumber()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getHouseNumbers()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_HouseNumber();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getHouseNumberNumeric <em>House Number Numeric</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getHouseNumberNumerics <em>House Number Numeric</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>House Number Numeric</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getHouseNumberNumeric()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getHouseNumberNumerics()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_HouseNumberNumeric();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDirection <em>Direction</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDirections <em>Direction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Direction</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDirection()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDirections()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_Direction();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetName <em>Street Name</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNames <em>Street Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Street Name</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetName()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNames()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_StreetName();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNameBase <em>Street Name Base</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNameBases <em>Street Name Base</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Street Name Base</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNameBase()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNameBases()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_StreetNameBase();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNameType <em>Street Name Type</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNameTypes <em>Street Name Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Street Name Type</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNameType()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNameTypes()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_StreetNameType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getAdditionalLocator <em>Additional Locator</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getAdditionalLocators <em>Additional Locator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Additional Locator</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getAdditionalLocator()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getAdditionalLocators()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_AdditionalLocator();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUnitID <em>Unit ID</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUnitIDs <em>Unit ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Unit ID</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUnitID()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUnitIDs()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_UnitID();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUnitType <em>Unit Type</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUnitTypes <em>Unit Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Unit Type</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUnitType()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUnitTypes()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_UnitType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCareOf <em>Care Of</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCareOfs <em>Care Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Care Of</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCareOf()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCareOfs()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_CareOf();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCensusTract <em>Census Tract</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCensusTracts <em>Census Tract</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Census Tract</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCensusTract()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCensusTracts()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_CensusTract();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryAddressLine <em>Delivery Address Line</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryAddressLines <em>Delivery Address Line</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Delivery Address Line</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryAddressLine()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryAddressLines()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_DeliveryAddressLine();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationType <em>Delivery Installation Type</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationTypes <em>Delivery Installation Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Delivery Installation Type</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationType()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationTypes()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_DeliveryInstallationType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationArea <em>Delivery Installation Area</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationAreas <em>Delivery Installation Area</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Delivery Installation Area</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationArea()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationAreas()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_DeliveryInstallationArea();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationQualifier <em>Delivery Installation Qualifier</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationQualifiers <em>Delivery Installation Qualifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Delivery Installation Qualifier</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationQualifier()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationQualifiers()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_DeliveryInstallationQualifier();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryMode <em>Delivery Mode</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryModes <em>Delivery Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Delivery Mode</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryMode()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryModes()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_DeliveryMode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryModeIdentifier <em>Delivery Mode Identifier</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryModeIdentifiers <em>Delivery Mode Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Delivery Mode Identifier</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryModeIdentifier()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryModeIdentifiers()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_DeliveryModeIdentifier();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getBuildingNumberSuffix <em>Building Number Suffix</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getBuildingNumberSuffixes <em>Building Number Suffix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Building Number Suffix</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getBuildingNumberSuffix()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getBuildingNumberSuffixes()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_BuildingNumberSuffix();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostBox <em>Post Box</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostBoxes <em>Post Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Post Box</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostBox()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostBoxes()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_PostBox();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPrecinct <em>Precinct</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPrecincts <em>Precinct</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Precinct</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPrecinct()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPrecincts()
 	 * @see #getAD()
 	 * @generated
 	 */
 	EReference getAD_Precinct();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPart <em>Part</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getParts <em>Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Part</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPart()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.AD#getParts()
 	 * @see #getAD()
 	 * @generated
 	 */
@@ -4336,11 +4336,11 @@ public interface DatatypesPackage extends EPackage {
 	EClass getEN();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getUse <em>Use</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getUses <em>Use</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Use</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getUse()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getUses()
 	 * @see #getEN()
 	 * @generated
 	 */
@@ -4358,66 +4358,66 @@ public interface DatatypesPackage extends EPackage {
 	EReference getEN_ValidTime();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getDelimiter <em>Delimiter</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getDelimiters <em>Delimiter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Delimiter</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getDelimiter()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getDelimiters()
 	 * @see #getEN()
 	 * @generated
 	 */
 	EReference getEN_Delimiter();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getFamily <em>Family</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getFamilies <em>Family</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Family</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getFamily()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getFamilies()
 	 * @see #getEN()
 	 * @generated
 	 */
 	EReference getEN_Family();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getGiven <em>Given</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getGivens <em>Given</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Given</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getGiven()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getGivens()
 	 * @see #getEN()
 	 * @generated
 	 */
 	EReference getEN_Given();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getPrefix <em>Prefix</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getPrefixes <em>Prefix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Prefix</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getPrefix()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getPrefixes()
 	 * @see #getEN()
 	 * @generated
 	 */
 	EReference getEN_Prefix();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getSuffix <em>Suffix</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getSuffixes <em>Suffix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Suffix</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getSuffix()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getSuffixes()
 	 * @see #getEN()
 	 * @generated
 	 */
 	EReference getEN_Suffix();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getPart <em>Part</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getParts <em>Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Part</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getPart()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.EN#getParts()
 	 * @see #getEN()
 	 * @generated
 	 */
@@ -4542,11 +4542,11 @@ public interface DatatypesPackage extends EPackage {
 	EAttribute getPQ_Unit();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.PQ#getTranslation <em>Translation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.PQ#getTranslations <em>Translation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Translation</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.PQ#getTranslation()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.PQ#getTranslations()
 	 * @see #getPQ()
 	 * @generated
 	 */
@@ -4595,11 +4595,11 @@ public interface DatatypesPackage extends EPackage {
 	EAttribute getENXP_PartType();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ENXP#getQualifier <em>Qualifier</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ENXP#getQualifiers <em>Qualifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Qualifier</em>'.
-	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.ENXP#getQualifier()
+	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.ENXP#getQualifiers()
 	 * @see #getENXP()
 	 * @generated
 	 */

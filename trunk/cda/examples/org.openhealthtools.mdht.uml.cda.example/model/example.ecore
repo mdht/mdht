@@ -8,10 +8,10 @@
       <details key="name" value="ClinicalDocument"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="MyDocument_templateId MyDocument_mySection"/>
+      <details key="constraints.validation.error" value="MyDocumentTemplateId MyDocumentMySection"/>
       <details key="templateId.root" value="1.2.3.4"/>
     </eAnnotations>
-    <eOperations name="MyDocument_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="MyDocumentTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.hasTemplateId('1.2.3.4')"/>
       </eAnnotations>
@@ -33,12 +33,12 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="MyDocument_mySection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="MyDocumentMySection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSection()->one(section : cda::Section | section.oclIsKindOf(example::MySection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(example::MySection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSection()->one(section : cda::Section | section.oclIsKindOf(example::MySection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(example::MySection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -65,7 +65,7 @@
       <details key="classCode" value="ACT"/>
       <details key="statusCode.codeSystemName" value="ActStatus"/>
       <details key="code.codeSystemName" value="SNOMED CT"/>
-      <details key="constraints.validation.error" value="MyActivity_templateId MyActivity_classCode MyActivity_moodCode MyActivity_code MyActivity_statusCode"/>
+      <details key="constraints.validation.error" value="MyActivityTemplateId MyActivityClassCode MyActivityMoodCode MyActivityCode MyActivityStatusCode"/>
       <details key="templateId.root" value="1.2.3.4.2"/>
       <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
       <details key="code.displayName" value="Documentation procedure"/>
@@ -73,7 +73,7 @@
       <details key="code.codeSystem" value="2.16.840.1.113883.6.96"/>
       <details key="code.code" value="23745001"/>
     </eAnnotations>
-    <eOperations name="MyActivity_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="MyActivityTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.hasTemplateId('1.2.3.4.2')"/>
       </eAnnotations>
@@ -95,7 +95,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="MyActivity_classCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="MyActivityClassCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.classCode=vocab::x_ActClassDocumentEntryAct::ACT"/>
       </eAnnotations>
@@ -117,7 +117,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="MyActivity_moodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="MyActivityMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.moodCode=vocab::x_DocumentActMood::EVN"/>
       </eAnnotations>
@@ -139,7 +139,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="MyActivity_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="MyActivityCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '23745001' and value.codeSystem = '2.16.840.1.113883.6.96')"/>
       </eAnnotations>
@@ -161,7 +161,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="MyActivity_statusCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="MyActivityStatusCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
@@ -190,14 +190,14 @@
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
-      <details key="constraints.validation.error" value="MySection_templateId MySection_code MySection_title"/>
+      <details key="constraints.validation.error" value="MySectionTemplateId MySectionCode MySectionTitle"/>
       <details key="templateId.root" value="1.2.3.4.1"/>
       <details key="code.displayName" value="Summary purpose"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="code.code" value="48764-5"/>
-      <details key="constraints.validation.warning" value="MySection_myActivity"/>
+      <details key="constraints.validation.warning" value="MySectionMyActivity"/>
     </eAnnotations>
-    <eOperations name="MySection_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="MySectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.hasTemplateId('1.2.3.4.1')"/>
       </eAnnotations>
@@ -219,7 +219,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="MySection_code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="MySectionCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '48764-5' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
@@ -241,7 +241,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="MySection_title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="MySectionTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.title.oclIsUndefined()"/>
       </eAnnotations>
@@ -263,7 +263,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="MySection_myActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="MySectionMyActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(example::MyActivity) and entry.typeCode = vocab::x_ActRelationshipEntry::COMP)"/>
       </eAnnotations>

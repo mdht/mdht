@@ -40,14 +40,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.EntityNameUse;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getUse <em>Use</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getUses <em>Use</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getValidTime <em>Valid Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getDelimiter <em>Delimiter</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getFamily <em>Family</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getGiven <em>Given</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getSuffix <em>Suffix</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getPart <em>Part</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getDelimiters <em>Delimiter</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getFamilies <em>Family</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getGivens <em>Given</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getPrefixes <em>Prefix</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getSuffixes <em>Suffix</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getParts <em>Part</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENImpl#getMixed <em>Mixed</em>}</li>
  * </ul>
  * </p>
@@ -56,14 +56,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.EntityNameUse;
  */
 public class ENImpl extends ANYImpl implements EN {
 	/**
-	 * The cached value of the '{@link #getUse() <em>Use</em>}' attribute list.
+	 * The cached value of the '{@link #getUses() <em>Use</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUse()
+	 * @see #getUses()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntityNameUse> use;
+	protected EList<EntityNameUse> uses;
 
 	/**
 	 * The cached value of the '{@link #getValidTime() <em>Valid Time</em>}' containment reference.
@@ -109,11 +109,11 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntityNameUse> getUse() {
-		if (use == null) {
-			use = new EDataTypeUniqueEList.Unsettable<EntityNameUse>(EntityNameUse.class, this, DatatypesPackage.EN__USE);
+	public EList<EntityNameUse> getUses() {
+		if (uses == null) {
+			uses = new EDataTypeUniqueEList.Unsettable<EntityNameUse>(EntityNameUse.class, this, DatatypesPackage.EN__USE);
 		}
-		return use;
+		return uses;
 	}
 
 	/**
@@ -121,8 +121,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void unsetUse() {
-		if (use != null) ((InternalEList.Unsettable<?>)use).unset();
+	public void unsetUses() {
+		if (uses != null) ((InternalEList.Unsettable<?>)uses).unset();
 	}
 
 	/**
@@ -130,8 +130,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetUse() {
-		return use != null && ((InternalEList.Unsettable<?>)use).isSet();
+	public boolean isSetUses() {
+		return uses != null && ((InternalEList.Unsettable<?>)uses).isSet();
 	}
 
 	/**
@@ -182,8 +182,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ENXP> getDelimiter() {
-		return getPart().list(DatatypesPackage.Literals.EN__DELIMITER);
+	public EList<ENXP> getDelimiters() {
+		return getParts().list(DatatypesPackage.Literals.EN__DELIMITER);
 	}
 
 	/**
@@ -191,8 +191,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ENXP> getFamily() {
-		return getPart().list(DatatypesPackage.Literals.EN__FAMILY);
+	public EList<ENXP> getFamilies() {
+		return getParts().list(DatatypesPackage.Literals.EN__FAMILY);
 	}
 
 	/**
@@ -200,8 +200,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ENXP> getGiven() {
-		return getPart().list(DatatypesPackage.Literals.EN__GIVEN);
+	public EList<ENXP> getGivens() {
+		return getParts().list(DatatypesPackage.Literals.EN__GIVEN);
 	}
 
 	/**
@@ -209,8 +209,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ENXP> getPrefix() {
-		return getPart().list(DatatypesPackage.Literals.EN__PREFIX);
+	public EList<ENXP> getPrefixes() {
+		return getParts().list(DatatypesPackage.Literals.EN__PREFIX);
 	}
 
 	/**
@@ -218,8 +218,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ENXP> getSuffix() {
-		return getPart().list(DatatypesPackage.Literals.EN__SUFFIX);
+	public EList<ENXP> getSuffixes() {
+		return getParts().list(DatatypesPackage.Literals.EN__SUFFIX);
 	}
 
 	/**
@@ -227,7 +227,7 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureMap getPart() {
+	public FeatureMap getParts() {
 		return (FeatureMap)getMixed().<FeatureMap.Entry>list(DatatypesPackage.Literals.EN__PART);
 	}
 
@@ -248,8 +248,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean delimiter(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ENOperations.delimiter(this, diagnostics, context);
+	public boolean validateDelimiter(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ENOperations.validateDelimiter(this, diagnostics, context);
 	}
 
 	/**
@@ -257,8 +257,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean family(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ENOperations.family(this, diagnostics, context);
+	public boolean validateFamily(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ENOperations.validateFamily(this, diagnostics, context);
 	}
 
 	/**
@@ -266,8 +266,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean given(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ENOperations.given(this, diagnostics, context);
+	public boolean validateGiven(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ENOperations.validateGiven(this, diagnostics, context);
 	}
 
 	/**
@@ -275,8 +275,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean prefix(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ENOperations.prefix(this, diagnostics, context);
+	public boolean validatePrefix(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ENOperations.validatePrefix(this, diagnostics, context);
 	}
 
 	/**
@@ -284,8 +284,8 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean suffix(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ENOperations.suffix(this, diagnostics, context);
+	public boolean validateSuffix(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ENOperations.validateSuffix(this, diagnostics, context);
 	}
 
 	/**
@@ -376,22 +376,22 @@ public class ENImpl extends ANYImpl implements EN {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DatatypesPackage.EN__USE:
-				return getUse();
+				return getUses();
 			case DatatypesPackage.EN__VALID_TIME:
 				return getValidTime();
 			case DatatypesPackage.EN__DELIMITER:
-				return getDelimiter();
+				return getDelimiters();
 			case DatatypesPackage.EN__FAMILY:
-				return getFamily();
+				return getFamilies();
 			case DatatypesPackage.EN__GIVEN:
-				return getGiven();
+				return getGivens();
 			case DatatypesPackage.EN__PREFIX:
-				return getPrefix();
+				return getPrefixes();
 			case DatatypesPackage.EN__SUFFIX:
-				return getSuffix();
+				return getSuffixes();
 			case DatatypesPackage.EN__PART:
-				if (coreType) return getPart();
-				return ((FeatureMap.Internal)getPart()).getWrapper();
+				if (coreType) return getParts();
+				return ((FeatureMap.Internal)getParts()).getWrapper();
 			case DatatypesPackage.EN__MIXED:
 				if (coreType) return getMixed();
 				return ((FeatureMap.Internal)getMixed()).getWrapper();
@@ -409,34 +409,34 @@ public class ENImpl extends ANYImpl implements EN {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.EN__USE:
-				getUse().clear();
-				getUse().addAll((Collection<? extends EntityNameUse>)newValue);
+				getUses().clear();
+				getUses().addAll((Collection<? extends EntityNameUse>)newValue);
 				return;
 			case DatatypesPackage.EN__VALID_TIME:
 				setValidTime((IVL_TS)newValue);
 				return;
 			case DatatypesPackage.EN__DELIMITER:
-				getDelimiter().clear();
-				getDelimiter().addAll((Collection<? extends ENXP>)newValue);
+				getDelimiters().clear();
+				getDelimiters().addAll((Collection<? extends ENXP>)newValue);
 				return;
 			case DatatypesPackage.EN__FAMILY:
-				getFamily().clear();
-				getFamily().addAll((Collection<? extends ENXP>)newValue);
+				getFamilies().clear();
+				getFamilies().addAll((Collection<? extends ENXP>)newValue);
 				return;
 			case DatatypesPackage.EN__GIVEN:
-				getGiven().clear();
-				getGiven().addAll((Collection<? extends ENXP>)newValue);
+				getGivens().clear();
+				getGivens().addAll((Collection<? extends ENXP>)newValue);
 				return;
 			case DatatypesPackage.EN__PREFIX:
-				getPrefix().clear();
-				getPrefix().addAll((Collection<? extends ENXP>)newValue);
+				getPrefixes().clear();
+				getPrefixes().addAll((Collection<? extends ENXP>)newValue);
 				return;
 			case DatatypesPackage.EN__SUFFIX:
-				getSuffix().clear();
-				getSuffix().addAll((Collection<? extends ENXP>)newValue);
+				getSuffixes().clear();
+				getSuffixes().addAll((Collection<? extends ENXP>)newValue);
 				return;
 			case DatatypesPackage.EN__PART:
-				((FeatureMap.Internal)getPart()).set(newValue);
+				((FeatureMap.Internal)getParts()).set(newValue);
 				return;
 			case DatatypesPackage.EN__MIXED:
 				((FeatureMap.Internal)getMixed()).set(newValue);
@@ -454,28 +454,28 @@ public class ENImpl extends ANYImpl implements EN {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.EN__USE:
-				unsetUse();
+				unsetUses();
 				return;
 			case DatatypesPackage.EN__VALID_TIME:
 				setValidTime((IVL_TS)null);
 				return;
 			case DatatypesPackage.EN__DELIMITER:
-				getDelimiter().clear();
+				getDelimiters().clear();
 				return;
 			case DatatypesPackage.EN__FAMILY:
-				getFamily().clear();
+				getFamilies().clear();
 				return;
 			case DatatypesPackage.EN__GIVEN:
-				getGiven().clear();
+				getGivens().clear();
 				return;
 			case DatatypesPackage.EN__PREFIX:
-				getPrefix().clear();
+				getPrefixes().clear();
 				return;
 			case DatatypesPackage.EN__SUFFIX:
-				getSuffix().clear();
+				getSuffixes().clear();
 				return;
 			case DatatypesPackage.EN__PART:
-				getPart().clear();
+				getParts().clear();
 				return;
 			case DatatypesPackage.EN__MIXED:
 				getMixed().clear();
@@ -493,21 +493,21 @@ public class ENImpl extends ANYImpl implements EN {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.EN__USE:
-				return isSetUse();
+				return isSetUses();
 			case DatatypesPackage.EN__VALID_TIME:
 				return validTime != null;
 			case DatatypesPackage.EN__DELIMITER:
-				return !getDelimiter().isEmpty();
+				return !getDelimiters().isEmpty();
 			case DatatypesPackage.EN__FAMILY:
-				return !getFamily().isEmpty();
+				return !getFamilies().isEmpty();
 			case DatatypesPackage.EN__GIVEN:
-				return !getGiven().isEmpty();
+				return !getGivens().isEmpty();
 			case DatatypesPackage.EN__PREFIX:
-				return !getPrefix().isEmpty();
+				return !getPrefixes().isEmpty();
 			case DatatypesPackage.EN__SUFFIX:
-				return !getSuffix().isEmpty();
+				return !getSuffixes().isEmpty();
 			case DatatypesPackage.EN__PART:
-				return !getPart().isEmpty();
+				return !getParts().isEmpty();
 			case DatatypesPackage.EN__MIXED:
 				return mixed != null && !mixed.isEmpty();
 		}
@@ -525,7 +525,7 @@ public class ENImpl extends ANYImpl implements EN {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (use: ");
-		result.append(use);
+		result.append(uses);
 		result.append(", mixed: ");
 		result.append(mixed);
 		result.append(')');

@@ -11,16 +11,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
-
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
 
 /**
@@ -31,9 +27,9 @@ import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification#AdvanceDirectiveVerification_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Advance Directive Verification template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification#AdvanceDirectiveVerification_typeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Advance Directive Verification type Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification#AdvanceDirectiveVerification_time(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Advance Directive Verification time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification#validateAdvanceDirectiveVerificationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Verification Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification#validateAdvanceDirectiveVerificationTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Verification Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification#validateAdvanceDirectiveVerificationTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Verification Time</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,24 +55,24 @@ public class AdvanceDirectiveVerificationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #AdvanceDirectiveVerification_templateId(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Advance Directive Verification template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateAdvanceDirectiveVerificationTemplateId(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Verification Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AdvanceDirectiveVerification_templateId(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAdvanceDirectiveVerificationTemplateId(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.58')";
+	protected static final String VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.58')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #AdvanceDirectiveVerification_templateId(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Advance Directive Verification template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateAdvanceDirectiveVerificationTemplateId(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Verification Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AdvanceDirectiveVerification_templateId(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAdvanceDirectiveVerificationTemplateId(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,25 +85,25 @@ public class AdvanceDirectiveVerificationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean AdvanceDirectiveVerification_templateId(AdvanceDirectiveVerification advanceDirectiveVerification, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateAdvanceDirectiveVerificationTemplateId(AdvanceDirectiveVerification advanceDirectiveVerification, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.ADVANCE_DIRECTIVE_VERIFICATION);
 			try {
-				ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(advanceDirectiveVerification)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(advanceDirectiveVerification)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.ADVANCE_DIRECTIVE_VERIFICATION__ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("AdvanceDirectiveVerification_templateId"),
+						 CCDPlugin.INSTANCE.getString("AdvanceDirectiveVerificationTemplateId"),
 						 new Object [] { advanceDirectiveVerification }));
 			}
 			return false;
@@ -116,24 +112,24 @@ public class AdvanceDirectiveVerificationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #AdvanceDirectiveVerification_typeCode(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Advance Directive Verification type Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateAdvanceDirectiveVerificationTypeCode(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Verification Type Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AdvanceDirectiveVerification_typeCode(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAdvanceDirectiveVerificationTypeCode(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.typeCode=vocab::ParticipationType::VRF";
+	protected static final String VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.typeCode=vocab::ParticipationType::VRF";
 
 	/**
-	 * The cached OCL invariant for the '{@link #AdvanceDirectiveVerification_typeCode(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Advance Directive Verification type Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateAdvanceDirectiveVerificationTypeCode(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Verification Type Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AdvanceDirectiveVerification_typeCode(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAdvanceDirectiveVerificationTypeCode(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -146,25 +142,25 @@ public class AdvanceDirectiveVerificationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean AdvanceDirectiveVerification_typeCode(AdvanceDirectiveVerification advanceDirectiveVerification, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateAdvanceDirectiveVerificationTypeCode(AdvanceDirectiveVerification advanceDirectiveVerification, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.ADVANCE_DIRECTIVE_VERIFICATION);
 			try {
-				ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(advanceDirectiveVerification)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(advanceDirectiveVerification)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.ADVANCE_DIRECTIVE_VERIFICATION__ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE,
-						 CCDPlugin.INSTANCE.getString("AdvanceDirectiveVerification_typeCode"),
+						 CCDPlugin.INSTANCE.getString("AdvanceDirectiveVerificationTypeCode"),
 						 new Object [] { advanceDirectiveVerification }));
 			}
 			return false;
@@ -173,24 +169,24 @@ public class AdvanceDirectiveVerificationOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #AdvanceDirectiveVerification_time(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Advance Directive Verification time</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateAdvanceDirectiveVerificationTime(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Verification Time</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AdvanceDirectiveVerification_time(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAdvanceDirectiveVerificationTime(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.time.oclIsUndefined()";
+	protected static final String VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.time.oclIsUndefined()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #AdvanceDirectiveVerification_time(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Advance Directive Verification time</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateAdvanceDirectiveVerificationTime(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Verification Time</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AdvanceDirectiveVerification_time(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAdvanceDirectiveVerificationTime(AdvanceDirectiveVerification, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,25 +199,25 @@ public class AdvanceDirectiveVerificationOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean AdvanceDirectiveVerification_time(AdvanceDirectiveVerification advanceDirectiveVerification, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateAdvanceDirectiveVerificationTime(AdvanceDirectiveVerification advanceDirectiveVerification, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.ADVANCE_DIRECTIVE_VERIFICATION);
 			try {
-				ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(advanceDirectiveVerification)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(advanceDirectiveVerification)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.WARNING,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.ADVANCE_DIRECTIVE_VERIFICATION__ADVANCE_DIRECTIVE_VERIFICATION_TIME,
-						 CCDPlugin.INSTANCE.getString("AdvanceDirectiveVerification_time"),
+						 CCDPlugin.INSTANCE.getString("AdvanceDirectiveVerificationTime"),
 						 new Object [] { advanceDirectiveVerification }));
 			}
 			return false;

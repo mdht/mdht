@@ -50,8 +50,8 @@ public class FamilyHistoryObservationImpl extends ObservationImpl implements Fam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FamilyHistoryObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FamilyHistoryObservationOperations.FamilyHistoryObservation_templateId(this, diagnostics, context);
+	public boolean validateFamilyHistoryObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FamilyHistoryObservationOperations.validateFamilyHistoryObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class FamilyHistoryObservationImpl extends ObservationImpl implements Fam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FamilyHistoryObservation_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FamilyHistoryObservationOperations.FamilyHistoryObservation_id(this, diagnostics, context);
+	public boolean validateFamilyHistoryObservationId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FamilyHistoryObservationOperations.validateFamilyHistoryObservationId(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class FamilyHistoryObservationImpl extends ObservationImpl implements Fam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FamilyHistoryObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FamilyHistoryObservationOperations.FamilyHistoryObservation_statusCode(this, diagnostics, context);
+	public boolean validateFamilyHistoryObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FamilyHistoryObservationOperations.validateFamilyHistoryObservationStatusCode(this, diagnostics, context);
 	}
 
 	/**

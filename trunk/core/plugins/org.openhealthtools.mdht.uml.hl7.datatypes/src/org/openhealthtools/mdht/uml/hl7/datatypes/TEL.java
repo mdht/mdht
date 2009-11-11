@@ -13,7 +13,6 @@
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.TelecommunicationAddressUse;
 
 /**
@@ -24,8 +23,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.TelecommunicationAddressUse;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUseablePeriod <em>Useable Period</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUse <em>Use</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUseablePeriods <em>Useable Period</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUses <em>Use</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,7 +48,7 @@ public interface TEL extends URL {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
-	EList<SXCM_TS> getUseablePeriod();
+	EList<SXCM_TS> getUseablePeriods();
 
 	/**
 	 * Returns the value of the '<em><b>Use</b></em>' attribute list.
@@ -63,33 +62,33 @@ public interface TEL extends URL {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Use</em>' attribute list.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.TelecommunicationAddressUse
-	 * @see #isSetUse()
-	 * @see #unsetUse()
+	 * @see #isSetUses()
+	 * @see #unsetUses()
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getTEL_Use()
 	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
-	EList<TelecommunicationAddressUse> getUse();
+	EList<TelecommunicationAddressUse> getUses();
 
 	/**
-	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUse <em>Use</em>}' attribute list.
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUses <em>Use</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSetUse()
-	 * @see #getUse()
+	 * @see #isSetUses()
+	 * @see #getUses()
 	 * @generated
 	 */
-	void unsetUse();
+	void unsetUses();
 
 	/**
-	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUse <em>Use</em>}' attribute list is set.
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.TEL#getUses <em>Use</em>}' attribute list is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Use</em>' attribute list is set.
-	 * @see #unsetUse()
-	 * @see #getUse()
+	 * @see #unsetUses()
+	 * @see #getUses()
 	 * @generated
 	 */
-	boolean isSetUse();
+	boolean isSetUses();
 
 } // TEL

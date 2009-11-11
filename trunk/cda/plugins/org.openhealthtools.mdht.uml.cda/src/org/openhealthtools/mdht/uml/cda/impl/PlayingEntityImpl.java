@@ -16,29 +16,22 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.PlayingEntity;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -50,12 +43,12 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getCode <em>Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getQuantities <em>Quantity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getNames <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl#getClassCode <em>Class Code</em>}</li>
@@ -67,14 +60,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -87,14 +80,14 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
@@ -107,24 +100,24 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	protected CE code;
 
 	/**
-	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' containment reference list.
+	 * The cached value of the '{@link #getQuantities() <em>Quantity</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getQuantity()
+	 * @see #getQuantities()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PQ> quantity;
+	protected EList<PQ> quantities;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' containment reference list.
+	 * The cached value of the '{@link #getNames() <em>Name</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getNames()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PN> name;
+	protected EList<PN> names;
 
 	/**
 	 * The cached value of the '{@link #getDesc() <em>Desc</em>}' containment reference.
@@ -247,11 +240,11 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.PLAYING_ENTITY__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.PLAYING_ENTITY__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -302,11 +295,11 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PLAYING_ENTITY__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PLAYING_ENTITY__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -357,11 +350,11 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PQ> getQuantity() {
-		if (quantity == null) {
-			quantity = new EObjectContainmentEList<PQ>(PQ.class, this, CDAPackage.PLAYING_ENTITY__QUANTITY);
+	public EList<PQ> getQuantities() {
+		if (quantities == null) {
+			quantities = new EObjectContainmentEList<PQ>(PQ.class, this, CDAPackage.PLAYING_ENTITY__QUANTITY);
 		}
-		return quantity;
+		return quantities;
 	}
 
 	/**
@@ -369,11 +362,11 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PN> getName() {
-		if (name == null) {
-			name = new EObjectContainmentEList<PN>(PN.class, this, CDAPackage.PLAYING_ENTITY__NAME);
+	public EList<PN> getNames() {
+		if (names == null) {
+			names = new EObjectContainmentEList<PN>(PN.class, this, CDAPackage.PLAYING_ENTITY__NAME);
 		}
-		return name;
+		return names;
 	}
 
 	/**
@@ -566,17 +559,17 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.PLAYING_ENTITY__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PLAYING_ENTITY__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.PLAYING_ENTITY__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PLAYING_ENTITY__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.PLAYING_ENTITY__QUANTITY:
-				return ((InternalEList<?>)getQuantity()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getQuantities()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PLAYING_ENTITY__NAME:
-				return ((InternalEList<?>)getName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getNames()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PLAYING_ENTITY__DESC:
 				return basicSetDesc(null, msgs);
 		}
@@ -592,17 +585,17 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.PLAYING_ENTITY__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.PLAYING_ENTITY__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.PLAYING_ENTITY__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.PLAYING_ENTITY__CODE:
 				return getCode();
 			case CDAPackage.PLAYING_ENTITY__QUANTITY:
-				return getQuantity();
+				return getQuantities();
 			case CDAPackage.PLAYING_ENTITY__NAME:
-				return getName();
+				return getNames();
 			case CDAPackage.PLAYING_ENTITY__DESC:
 				return getDesc();
 			case CDAPackage.PLAYING_ENTITY__NULL_FLAVOR:
@@ -625,26 +618,26 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.PLAYING_ENTITY__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.PLAYING_ENTITY__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.PLAYING_ENTITY__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.PLAYING_ENTITY__CODE:
 				setCode((CE)newValue);
 				return;
 			case CDAPackage.PLAYING_ENTITY__QUANTITY:
-				getQuantity().clear();
-				getQuantity().addAll((Collection<? extends PQ>)newValue);
+				getQuantities().clear();
+				getQuantities().addAll((Collection<? extends PQ>)newValue);
 				return;
 			case CDAPackage.PLAYING_ENTITY__NAME:
-				getName().clear();
-				getName().addAll((Collection<? extends PN>)newValue);
+				getNames().clear();
+				getNames().addAll((Collection<? extends PN>)newValue);
 				return;
 			case CDAPackage.PLAYING_ENTITY__DESC:
 				setDesc((ED)newValue);
@@ -671,22 +664,22 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.PLAYING_ENTITY__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.PLAYING_ENTITY__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.PLAYING_ENTITY__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.PLAYING_ENTITY__CODE:
 				setCode((CE)null);
 				return;
 			case CDAPackage.PLAYING_ENTITY__QUANTITY:
-				getQuantity().clear();
+				getQuantities().clear();
 				return;
 			case CDAPackage.PLAYING_ENTITY__NAME:
-				getName().clear();
+				getNames().clear();
 				return;
 			case CDAPackage.PLAYING_ENTITY__DESC:
 				setDesc((ED)null);
@@ -713,17 +706,17 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.PLAYING_ENTITY__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.PLAYING_ENTITY__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.PLAYING_ENTITY__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.PLAYING_ENTITY__CODE:
 				return code != null;
 			case CDAPackage.PLAYING_ENTITY__QUANTITY:
-				return quantity != null && !quantity.isEmpty();
+				return quantities != null && !quantities.isEmpty();
 			case CDAPackage.PLAYING_ENTITY__NAME:
-				return name != null && !name.isEmpty();
+				return names != null && !names.isEmpty();
 			case CDAPackage.PLAYING_ENTITY__DESC:
 				return desc != null;
 			case CDAPackage.PLAYING_ENTITY__NULL_FLAVOR:

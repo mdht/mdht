@@ -30,7 +30,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getEncountersSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.3' constraints.validation.error='EncountersSection_templateId EncountersSection_code EncountersSection_title' code.displayName='History of encounters' code.codeSystem='2.16.840.1.113883.6.1' code.code='46240-8'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.3' constraints.validation.error='EncountersSectionTemplateId EncountersSectionCode EncountersSectionTitle' code.displayName='History of encounters' code.codeSystem='2.16.840.1.113883.6.1' code.code='46240-8'"
  * @generated
  */
 public interface EncountersSection extends Section {
@@ -45,7 +45,7 @@ public interface EncountersSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.3\')'"
 	 * @generated
 	 */
-	boolean EncountersSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateEncountersSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,7 +60,7 @@ public interface EncountersSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and \r\nlet value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (\r\nvalue.code = \'46240-8\' and value.codeSystem = \'2.16.840.1.113883.6.1\')'"
 	 * @generated
 	 */
-	boolean EncountersSection_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateEncountersSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public interface EncountersSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.title.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean EncountersSection_title(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateEncountersSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

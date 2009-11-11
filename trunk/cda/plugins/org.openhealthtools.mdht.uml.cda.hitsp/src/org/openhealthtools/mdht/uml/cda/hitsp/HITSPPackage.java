@@ -4821,6 +4821,1636 @@ public interface HITSPPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.ReviewOfSystemsSectionImpl <em>Review Of Systems Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.ReviewOfSystemsSectionImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getReviewOfSystemsSection()
+	 * @generated
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION = 24;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__REALM_CODE = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__TYPE_ID = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__TEMPLATE_ID = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__ID = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__CODE = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__TITLE = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__TEXT = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__CONFIDENTIALITY_CODE = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__CONFIDENTIALITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__LANGUAGE_CODE = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__SUBJECT = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__AUTHOR = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__INFORMANT = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__ENTRY = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__ENTRY;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__COMPONENT = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__SECTION_ID = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__SECTION_ID;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__NULL_FLAVOR = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__CLASS_CODE = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION__MOOD_CODE = IHEPackage.REVIEW_OF_SYSTEMS_SECTION__MOOD_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Review Of Systems Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW_OF_SYSTEMS_SECTION_FEATURE_COUNT = IHEPackage.REVIEW_OF_SYSTEMS_SECTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.HospitalCourseSectionImpl <em>Hospital Course Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HospitalCourseSectionImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getHospitalCourseSection()
+	 * @generated
+	 */
+	int HOSPITAL_COURSE_SECTION = 25;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__REALM_CODE = IHEPackage.HOSPITAL_COURSE_SECTION__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__TYPE_ID = IHEPackage.HOSPITAL_COURSE_SECTION__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__TEMPLATE_ID = IHEPackage.HOSPITAL_COURSE_SECTION__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__ID = IHEPackage.HOSPITAL_COURSE_SECTION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__CODE = IHEPackage.HOSPITAL_COURSE_SECTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__TITLE = IHEPackage.HOSPITAL_COURSE_SECTION__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__TEXT = IHEPackage.HOSPITAL_COURSE_SECTION__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__CONFIDENTIALITY_CODE = IHEPackage.HOSPITAL_COURSE_SECTION__CONFIDENTIALITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__LANGUAGE_CODE = IHEPackage.HOSPITAL_COURSE_SECTION__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__SUBJECT = IHEPackage.HOSPITAL_COURSE_SECTION__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__AUTHOR = IHEPackage.HOSPITAL_COURSE_SECTION__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__INFORMANT = IHEPackage.HOSPITAL_COURSE_SECTION__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__ENTRY = IHEPackage.HOSPITAL_COURSE_SECTION__ENTRY;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__COMPONENT = IHEPackage.HOSPITAL_COURSE_SECTION__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__SECTION_ID = IHEPackage.HOSPITAL_COURSE_SECTION__SECTION_ID;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__NULL_FLAVOR = IHEPackage.HOSPITAL_COURSE_SECTION__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__CLASS_CODE = IHEPackage.HOSPITAL_COURSE_SECTION__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION__MOOD_CODE = IHEPackage.HOSPITAL_COURSE_SECTION__MOOD_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Hospital Course Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSPITAL_COURSE_SECTION_FEATURE_COUNT = IHEPackage.HOSPITAL_COURSE_SECTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.DiagnosticResultsSectionImpl <em>Diagnostic Results Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.DiagnosticResultsSectionImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getDiagnosticResultsSection()
+	 * @generated
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION = 26;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__REALM_CODE = IHEPackage.CODED_RESULTS_SECTION__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__TYPE_ID = IHEPackage.CODED_RESULTS_SECTION__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__TEMPLATE_ID = IHEPackage.CODED_RESULTS_SECTION__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__ID = IHEPackage.CODED_RESULTS_SECTION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__CODE = IHEPackage.CODED_RESULTS_SECTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__TITLE = IHEPackage.CODED_RESULTS_SECTION__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__TEXT = IHEPackage.CODED_RESULTS_SECTION__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__CONFIDENTIALITY_CODE = IHEPackage.CODED_RESULTS_SECTION__CONFIDENTIALITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__LANGUAGE_CODE = IHEPackage.CODED_RESULTS_SECTION__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__SUBJECT = IHEPackage.CODED_RESULTS_SECTION__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__AUTHOR = IHEPackage.CODED_RESULTS_SECTION__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__INFORMANT = IHEPackage.CODED_RESULTS_SECTION__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__ENTRY = IHEPackage.CODED_RESULTS_SECTION__ENTRY;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__COMPONENT = IHEPackage.CODED_RESULTS_SECTION__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__SECTION_ID = IHEPackage.CODED_RESULTS_SECTION__SECTION_ID;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__NULL_FLAVOR = IHEPackage.CODED_RESULTS_SECTION__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__CLASS_CODE = IHEPackage.CODED_RESULTS_SECTION__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION__MOOD_CODE = IHEPackage.CODED_RESULTS_SECTION__MOOD_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Diagnostic Results Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC_RESULTS_SECTION_FEATURE_COUNT = IHEPackage.CODED_RESULTS_SECTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.AssessmentAndPlanSectionImpl <em>Assessment And Plan Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.AssessmentAndPlanSectionImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getAssessmentAndPlanSection()
+	 * @generated
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION = 27;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__REALM_CODE = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__TYPE_ID = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__TEMPLATE_ID = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__ID = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__CODE = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__TITLE = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__TEXT = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__CONFIDENTIALITY_CODE = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__CONFIDENTIALITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__LANGUAGE_CODE = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__SUBJECT = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__AUTHOR = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__INFORMANT = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__ENTRY = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__ENTRY;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__COMPONENT = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__SECTION_ID = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__SECTION_ID;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__NULL_FLAVOR = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__CLASS_CODE = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION__MOOD_CODE = IHEPackage.ASSESSMENT_AND_PLAN_SECTION__MOOD_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Assessment And Plan Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSESSMENT_AND_PLAN_SECTION_FEATURE_COUNT = IHEPackage.ASSESSMENT_AND_PLAN_SECTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.PlanOfCareSectionImpl <em>Plan Of Care Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.PlanOfCareSectionImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getPlanOfCareSection()
+	 * @generated
+	 */
+	int PLAN_OF_CARE_SECTION = 28;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__REALM_CODE = IHEPackage.CARE_PLAN_SECTION__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__TYPE_ID = IHEPackage.CARE_PLAN_SECTION__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__TEMPLATE_ID = IHEPackage.CARE_PLAN_SECTION__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__ID = IHEPackage.CARE_PLAN_SECTION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__CODE = IHEPackage.CARE_PLAN_SECTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__TITLE = IHEPackage.CARE_PLAN_SECTION__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__TEXT = IHEPackage.CARE_PLAN_SECTION__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__CONFIDENTIALITY_CODE = IHEPackage.CARE_PLAN_SECTION__CONFIDENTIALITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__LANGUAGE_CODE = IHEPackage.CARE_PLAN_SECTION__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__SUBJECT = IHEPackage.CARE_PLAN_SECTION__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__AUTHOR = IHEPackage.CARE_PLAN_SECTION__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__INFORMANT = IHEPackage.CARE_PLAN_SECTION__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__ENTRY = IHEPackage.CARE_PLAN_SECTION__ENTRY;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__COMPONENT = IHEPackage.CARE_PLAN_SECTION__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__SECTION_ID = IHEPackage.CARE_PLAN_SECTION__SECTION_ID;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__NULL_FLAVOR = IHEPackage.CARE_PLAN_SECTION__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__CLASS_CODE = IHEPackage.CARE_PLAN_SECTION__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__MOOD_CODE = IHEPackage.CARE_PLAN_SECTION__MOOD_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Plan Of Care Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION_FEATURE_COUNT = IHEPackage.CARE_PLAN_SECTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.FamilyHistorySectionImpl <em>Family History Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.FamilyHistorySectionImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getFamilyHistorySection()
+	 * @generated
+	 */
+	int FAMILY_HISTORY_SECTION = 29;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__REALM_CODE = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__TYPE_ID = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__TEMPLATE_ID = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__ID = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__CODE = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__TITLE = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__TEXT = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__CONFIDENTIALITY_CODE = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__CONFIDENTIALITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__LANGUAGE_CODE = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__SUBJECT = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__AUTHOR = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__INFORMANT = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__ENTRY = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__ENTRY;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__COMPONENT = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__SECTION_ID = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__SECTION_ID;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__NULL_FLAVOR = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__CLASS_CODE = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION__MOOD_CODE = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION__MOOD_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Family History Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAMILY_HISTORY_SECTION_FEATURE_COUNT = IHEPackage.FAMILY_MEDICAL_HISTORY_SECTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.SocialHistorySectionImpl <em>Social History Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.SocialHistorySectionImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getSocialHistorySection()
+	 * @generated
+	 */
+	int SOCIAL_HISTORY_SECTION = 30;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__REALM_CODE = IHEPackage.SOCIAL_HISTORY_SECTION__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__TYPE_ID = IHEPackage.SOCIAL_HISTORY_SECTION__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__TEMPLATE_ID = IHEPackage.SOCIAL_HISTORY_SECTION__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__ID = IHEPackage.SOCIAL_HISTORY_SECTION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__CODE = IHEPackage.SOCIAL_HISTORY_SECTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__TITLE = IHEPackage.SOCIAL_HISTORY_SECTION__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__TEXT = IHEPackage.SOCIAL_HISTORY_SECTION__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__CONFIDENTIALITY_CODE = IHEPackage.SOCIAL_HISTORY_SECTION__CONFIDENTIALITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__LANGUAGE_CODE = IHEPackage.SOCIAL_HISTORY_SECTION__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__SUBJECT = IHEPackage.SOCIAL_HISTORY_SECTION__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__AUTHOR = IHEPackage.SOCIAL_HISTORY_SECTION__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__INFORMANT = IHEPackage.SOCIAL_HISTORY_SECTION__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__ENTRY = IHEPackage.SOCIAL_HISTORY_SECTION__ENTRY;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__COMPONENT = IHEPackage.SOCIAL_HISTORY_SECTION__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__SECTION_ID = IHEPackage.SOCIAL_HISTORY_SECTION__SECTION_ID;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__NULL_FLAVOR = IHEPackage.SOCIAL_HISTORY_SECTION__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__CLASS_CODE = IHEPackage.SOCIAL_HISTORY_SECTION__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION__MOOD_CODE = IHEPackage.SOCIAL_HISTORY_SECTION__MOOD_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Social History Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_HISTORY_SECTION_FEATURE_COUNT = IHEPackage.SOCIAL_HISTORY_SECTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.EncountersSectionImpl <em>Encounters Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.EncountersSectionImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getEncountersSection()
+	 * @generated
+	 */
+	int ENCOUNTERS_SECTION = 31;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__REALM_CODE = IHEPackage.ENCOUNTER_HISTORY_SECTION__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__TYPE_ID = IHEPackage.ENCOUNTER_HISTORY_SECTION__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__TEMPLATE_ID = IHEPackage.ENCOUNTER_HISTORY_SECTION__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__ID = IHEPackage.ENCOUNTER_HISTORY_SECTION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__CODE = IHEPackage.ENCOUNTER_HISTORY_SECTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__TITLE = IHEPackage.ENCOUNTER_HISTORY_SECTION__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__TEXT = IHEPackage.ENCOUNTER_HISTORY_SECTION__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__CONFIDENTIALITY_CODE = IHEPackage.ENCOUNTER_HISTORY_SECTION__CONFIDENTIALITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__LANGUAGE_CODE = IHEPackage.ENCOUNTER_HISTORY_SECTION__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__SUBJECT = IHEPackage.ENCOUNTER_HISTORY_SECTION__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__AUTHOR = IHEPackage.ENCOUNTER_HISTORY_SECTION__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__INFORMANT = IHEPackage.ENCOUNTER_HISTORY_SECTION__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__ENTRY = IHEPackage.ENCOUNTER_HISTORY_SECTION__ENTRY;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__COMPONENT = IHEPackage.ENCOUNTER_HISTORY_SECTION__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__SECTION_ID = IHEPackage.ENCOUNTER_HISTORY_SECTION__SECTION_ID;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__NULL_FLAVOR = IHEPackage.ENCOUNTER_HISTORY_SECTION__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__CLASS_CODE = IHEPackage.ENCOUNTER_HISTORY_SECTION__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION__MOOD_CODE = IHEPackage.ENCOUNTER_HISTORY_SECTION__MOOD_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Encounters Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCOUNTERS_SECTION_FEATURE_COUNT = IHEPackage.ENCOUNTER_HISTORY_SECTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.MedicalEquipmentSectionImpl <em>Medical Equipment Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.MedicalEquipmentSectionImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getMedicalEquipmentSection()
+	 * @generated
+	 */
+	int MEDICAL_EQUIPMENT_SECTION = 32;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__REALM_CODE = IHEPackage.MEDICAL_DEVICES_SECTION__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__TYPE_ID = IHEPackage.MEDICAL_DEVICES_SECTION__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__TEMPLATE_ID = IHEPackage.MEDICAL_DEVICES_SECTION__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__ID = IHEPackage.MEDICAL_DEVICES_SECTION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__CODE = IHEPackage.MEDICAL_DEVICES_SECTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__TITLE = IHEPackage.MEDICAL_DEVICES_SECTION__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__TEXT = IHEPackage.MEDICAL_DEVICES_SECTION__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__CONFIDENTIALITY_CODE = IHEPackage.MEDICAL_DEVICES_SECTION__CONFIDENTIALITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__LANGUAGE_CODE = IHEPackage.MEDICAL_DEVICES_SECTION__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__SUBJECT = IHEPackage.MEDICAL_DEVICES_SECTION__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__AUTHOR = IHEPackage.MEDICAL_DEVICES_SECTION__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__INFORMANT = IHEPackage.MEDICAL_DEVICES_SECTION__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__ENTRY = IHEPackage.MEDICAL_DEVICES_SECTION__ENTRY;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__COMPONENT = IHEPackage.MEDICAL_DEVICES_SECTION__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__SECTION_ID = IHEPackage.MEDICAL_DEVICES_SECTION__SECTION_ID;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__NULL_FLAVOR = IHEPackage.MEDICAL_DEVICES_SECTION__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__CLASS_CODE = IHEPackage.MEDICAL_DEVICES_SECTION__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION__MOOD_CODE = IHEPackage.MEDICAL_DEVICES_SECTION__MOOD_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Medical Equipment Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDICAL_EQUIPMENT_SECTION_FEATURE_COUNT = IHEPackage.MEDICAL_DEVICES_SECTION_FEATURE_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity <em>Allergy Drug Sensitivity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5059,6 +6689,96 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPhysicalExamSection();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.ReviewOfSystemsSection <em>Review Of Systems Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Review Of Systems Section</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.ReviewOfSystemsSection
+	 * @generated
+	 */
+	EClass getReviewOfSystemsSection();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.HospitalCourseSection <em>Hospital Course Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Hospital Course Section</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.HospitalCourseSection
+	 * @generated
+	 */
+	EClass getHospitalCourseSection();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection <em>Diagnostic Results Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Diagnostic Results Section</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection
+	 * @generated
+	 */
+	EClass getDiagnosticResultsSection();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.AssessmentAndPlanSection <em>Assessment And Plan Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Assessment And Plan Section</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.AssessmentAndPlanSection
+	 * @generated
+	 */
+	EClass getAssessmentAndPlanSection();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection <em>Plan Of Care Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Plan Of Care Section</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection
+	 * @generated
+	 */
+	EClass getPlanOfCareSection();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection <em>Family History Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Family History Section</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection
+	 * @generated
+	 */
+	EClass getFamilyHistorySection();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection <em>Social History Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Social History Section</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection
+	 * @generated
+	 */
+	EClass getSocialHistorySection();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection <em>Encounters Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Encounters Section</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection
+	 * @generated
+	 */
+	EClass getEncountersSection();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection <em>Medical Equipment Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Medical Equipment Section</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection
+	 * @generated
+	 */
+	EClass getMedicalEquipmentSection();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -5321,6 +7041,96 @@ public interface HITSPPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PHYSICAL_EXAM_SECTION = eINSTANCE.getPhysicalExamSection();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.ReviewOfSystemsSectionImpl <em>Review Of Systems Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.ReviewOfSystemsSectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getReviewOfSystemsSection()
+		 * @generated
+		 */
+		EClass REVIEW_OF_SYSTEMS_SECTION = eINSTANCE.getReviewOfSystemsSection();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.HospitalCourseSectionImpl <em>Hospital Course Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HospitalCourseSectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getHospitalCourseSection()
+		 * @generated
+		 */
+		EClass HOSPITAL_COURSE_SECTION = eINSTANCE.getHospitalCourseSection();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.DiagnosticResultsSectionImpl <em>Diagnostic Results Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.DiagnosticResultsSectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getDiagnosticResultsSection()
+		 * @generated
+		 */
+		EClass DIAGNOSTIC_RESULTS_SECTION = eINSTANCE.getDiagnosticResultsSection();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.AssessmentAndPlanSectionImpl <em>Assessment And Plan Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.AssessmentAndPlanSectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getAssessmentAndPlanSection()
+		 * @generated
+		 */
+		EClass ASSESSMENT_AND_PLAN_SECTION = eINSTANCE.getAssessmentAndPlanSection();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.PlanOfCareSectionImpl <em>Plan Of Care Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.PlanOfCareSectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getPlanOfCareSection()
+		 * @generated
+		 */
+		EClass PLAN_OF_CARE_SECTION = eINSTANCE.getPlanOfCareSection();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.FamilyHistorySectionImpl <em>Family History Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.FamilyHistorySectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getFamilyHistorySection()
+		 * @generated
+		 */
+		EClass FAMILY_HISTORY_SECTION = eINSTANCE.getFamilyHistorySection();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.SocialHistorySectionImpl <em>Social History Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.SocialHistorySectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getSocialHistorySection()
+		 * @generated
+		 */
+		EClass SOCIAL_HISTORY_SECTION = eINSTANCE.getSocialHistorySection();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.EncountersSectionImpl <em>Encounters Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.EncountersSectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getEncountersSection()
+		 * @generated
+		 */
+		EClass ENCOUNTERS_SECTION = eINSTANCE.getEncountersSection();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.MedicalEquipmentSectionImpl <em>Medical Equipment Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.MedicalEquipmentSectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getMedicalEquipmentSection()
+		 * @generated
+		 */
+		EClass MEDICAL_EQUIPMENT_SECTION = eINSTANCE.getMedicalEquipmentSection();
 
 	}
 

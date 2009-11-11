@@ -50,8 +50,8 @@ public class FamilyHistoryOrganizerImpl extends OrganizerImpl implements FamilyH
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FamilyHistoryOrganizer_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FamilyHistoryOrganizerOperations.FamilyHistoryOrganizer_templateId(this, diagnostics, context);
+	public boolean validateFamilyHistoryOrganizerTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class FamilyHistoryOrganizerImpl extends OrganizerImpl implements FamilyH
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FamilyHistoryOrganizer_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FamilyHistoryOrganizerOperations.FamilyHistoryOrganizer_statusCode(this, diagnostics, context);
+	public boolean validateFamilyHistoryOrganizerStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerStatusCode(this, diagnostics, context);
 	}
 
 	/**

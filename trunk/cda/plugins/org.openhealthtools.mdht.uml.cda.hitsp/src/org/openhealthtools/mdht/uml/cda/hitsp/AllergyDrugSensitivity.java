@@ -31,7 +31,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getAllergyDrugSensitivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='AllergyDrugSensitivity_templateId' templateId.root='2.16.840.1.113883.3.88.11.83.6'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='AllergyDrugSensitivityTemplateId' templateId.root='2.16.840.1.113883.3.88.11.83.6'"
  *        annotation="uml2.alias Allergies\040and\040Drug\040Sensitivities='null' Allergy\040and\040Drug\040Sensitivity='null'"
  * @generated
  */
@@ -47,7 +47,7 @@ public interface AllergyDrugSensitivity extends AllergyIntoleranceConcern {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.3.88.11.83.6\')'"
 	 * @generated
 	 */
-	boolean AllergyDrugSensitivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAllergyDrugSensitivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -16,18 +16,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -48,7 +43,6 @@ import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.Specimen;
 import org.openhealthtools.mdht.uml.cda.Subject;
-
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.operations.OrganizerOperations;
@@ -56,7 +50,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActClassDocumentEntryOrganizer;
@@ -68,22 +61,22 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActClassDocumentEntryOrganizer;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getStatusCode <em>Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getEffectiveTime <em>Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getSubject <em>Subject</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getSpecimen <em>Specimen</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getPerformer <em>Performer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getAuthor <em>Author</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getInformant <em>Informant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getParticipant <em>Participant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getPrecondition <em>Precondition</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getComponent <em>Component</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getSpecimens <em>Specimen</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getPerformers <em>Performer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getAuthors <em>Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getInformants <em>Informant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getParticipants <em>Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getReferences <em>Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getPreconditions <em>Precondition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getComponents <em>Component</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl#getMoodCode <em>Mood Code</em>}</li>
@@ -94,14 +87,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActClassDocumentEntryOrganizer;
  */
 public class OrganizerImpl extends EObjectImpl implements Organizer {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -114,24 +107,24 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getIds() <em>Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> id;
+	protected EList<II> ids;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
@@ -174,84 +167,84 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	protected Subject subject;
 
 	/**
-	 * The cached value of the '{@link #getSpecimen() <em>Specimen</em>}' containment reference list.
+	 * The cached value of the '{@link #getSpecimens() <em>Specimen</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpecimen()
+	 * @see #getSpecimens()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Specimen> specimen;
+	protected EList<Specimen> specimens;
 
 	/**
-	 * The cached value of the '{@link #getPerformer() <em>Performer</em>}' containment reference list.
+	 * The cached value of the '{@link #getPerformers() <em>Performer</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPerformer()
+	 * @see #getPerformers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Performer2> performer;
+	protected EList<Performer2> performers;
 
 	/**
-	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' containment reference list.
+	 * The cached value of the '{@link #getAuthors() <em>Author</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAuthor()
+	 * @see #getAuthors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Author> author;
+	protected EList<Author> authors;
 
 	/**
-	 * The cached value of the '{@link #getInformant() <em>Informant</em>}' containment reference list.
+	 * The cached value of the '{@link #getInformants() <em>Informant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInformant()
+	 * @see #getInformants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Informant12> informant;
+	protected EList<Informant12> informants;
 
 	/**
-	 * The cached value of the '{@link #getParticipant() <em>Participant</em>}' containment reference list.
+	 * The cached value of the '{@link #getParticipants() <em>Participant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParticipant()
+	 * @see #getParticipants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Participant2> participant;
+	protected EList<Participant2> participants;
 
 	/**
-	 * The cached value of the '{@link #getReference() <em>Reference</em>}' containment reference list.
+	 * The cached value of the '{@link #getReferences() <em>Reference</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReference()
+	 * @see #getReferences()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Reference> reference;
+	protected EList<Reference> references;
 
 	/**
-	 * The cached value of the '{@link #getPrecondition() <em>Precondition</em>}' containment reference list.
+	 * The cached value of the '{@link #getPreconditions() <em>Precondition</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrecondition()
+	 * @see #getPreconditions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Precondition> precondition;
+	protected EList<Precondition> preconditions;
 
 	/**
-	 * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference list.
+	 * The cached value of the '{@link #getComponents() <em>Component</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComponent()
+	 * @see #getComponents()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Component4> component;
+	protected EList<Component4> components;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -364,11 +357,11 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ORGANIZER__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ORGANIZER__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -419,11 +412,11 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ORGANIZER__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ORGANIZER__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -431,11 +424,11 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getId() {
-		if (id == null) {
-			id = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ORGANIZER__ID);
+	public EList<II> getIds() {
+		if (ids == null) {
+			ids = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ORGANIZER__ID);
 		}
-		return id;
+		return ids;
 	}
 
 	/**
@@ -615,11 +608,11 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Specimen> getSpecimen() {
-		if (specimen == null) {
-			specimen = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.ORGANIZER__SPECIMEN);
+	public EList<Specimen> getSpecimens() {
+		if (specimens == null) {
+			specimens = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.ORGANIZER__SPECIMEN);
 		}
-		return specimen;
+		return specimens;
 	}
 
 	/**
@@ -627,11 +620,11 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Performer2> getPerformer() {
-		if (performer == null) {
-			performer = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.ORGANIZER__PERFORMER);
+	public EList<Performer2> getPerformers() {
+		if (performers == null) {
+			performers = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.ORGANIZER__PERFORMER);
 		}
-		return performer;
+		return performers;
 	}
 
 	/**
@@ -639,11 +632,11 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Author> getAuthor() {
-		if (author == null) {
-			author = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.ORGANIZER__AUTHOR);
+	public EList<Author> getAuthors() {
+		if (authors == null) {
+			authors = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.ORGANIZER__AUTHOR);
 		}
-		return author;
+		return authors;
 	}
 
 	/**
@@ -651,11 +644,11 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Informant12> getInformant() {
-		if (informant == null) {
-			informant = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.ORGANIZER__INFORMANT);
+	public EList<Informant12> getInformants() {
+		if (informants == null) {
+			informants = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.ORGANIZER__INFORMANT);
 		}
-		return informant;
+		return informants;
 	}
 
 	/**
@@ -663,11 +656,11 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Participant2> getParticipant() {
-		if (participant == null) {
-			participant = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.ORGANIZER__PARTICIPANT);
+	public EList<Participant2> getParticipants() {
+		if (participants == null) {
+			participants = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.ORGANIZER__PARTICIPANT);
 		}
-		return participant;
+		return participants;
 	}
 
 	/**
@@ -675,11 +668,11 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Reference> getReference() {
-		if (reference == null) {
-			reference = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.ORGANIZER__REFERENCE);
+	public EList<Reference> getReferences() {
+		if (references == null) {
+			references = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.ORGANIZER__REFERENCE);
 		}
-		return reference;
+		return references;
 	}
 
 	/**
@@ -687,11 +680,11 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Precondition> getPrecondition() {
-		if (precondition == null) {
-			precondition = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.ORGANIZER__PRECONDITION);
+	public EList<Precondition> getPreconditions() {
+		if (preconditions == null) {
+			preconditions = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.ORGANIZER__PRECONDITION);
 		}
-		return precondition;
+		return preconditions;
 	}
 
 	/**
@@ -699,11 +692,11 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Component4> getComponent() {
-		if (component == null) {
-			component = new EObjectContainmentEList<Component4>(Component4.class, this, CDAPackage.ORGANIZER__COMPONENT);
+	public EList<Component4> getComponents() {
+		if (components == null) {
+			components = new EObjectContainmentEList<Component4>(Component4.class, this, CDAPackage.ORGANIZER__COMPONENT);
 		}
-		return component;
+		return components;
 	}
 
 	/**
@@ -930,8 +923,8 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Act> getAct() {
-		return OrganizerOperations.getAct(this);
+	public EList<Act> getActs() {
+		return OrganizerOperations.getActs(this);
 	}
 
 	/**
@@ -948,8 +941,8 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Encounter> getEncounter() {
-		return OrganizerOperations.getEncounter(this);
+	public EList<Encounter> getEncounters() {
+		return OrganizerOperations.getEncounters(this);
 	}
 
 	/**
@@ -957,8 +950,8 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Observation> getObservation() {
-		return OrganizerOperations.getObservation(this);
+	public EList<Observation> getObservations() {
+		return OrganizerOperations.getObservations(this);
 	}
 
 	/**
@@ -975,8 +968,8 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Organizer> getOrganizer() {
-		return OrganizerOperations.getOrganizer(this);
+	public EList<Organizer> getOrganizers() {
+		return OrganizerOperations.getOrganizers(this);
 	}
 
 	/**
@@ -984,8 +977,8 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Procedure> getProcedure() {
-		return OrganizerOperations.getProcedure(this);
+	public EList<Procedure> getProcedures() {
+		return OrganizerOperations.getProcedures(this);
 	}
 
 	/**
@@ -993,8 +986,8 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RegionOfInterest> getRegionOfInterest() {
-		return OrganizerOperations.getRegionOfInterest(this);
+	public EList<RegionOfInterest> getRegionsOfInterest() {
+		return OrganizerOperations.getRegionsOfInterest(this);
 	}
 
 	/**
@@ -1011,8 +1004,8 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SubstanceAdministration> getSubstanceAdministration() {
-		return OrganizerOperations.getSubstanceAdministration(this);
+	public EList<SubstanceAdministration> getSubstanceAdministrations() {
+		return OrganizerOperations.getSubstanceAdministrations(this);
 	}
 
 	/**
@@ -1020,8 +1013,8 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Supply> getSupply() {
-		return OrganizerOperations.getSupply(this);
+	public EList<Supply> getSupplies() {
+		return OrganizerOperations.getSupplies(this);
 	}
 
 	/**
@@ -1132,13 +1125,13 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.ORGANIZER__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZER__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.ORGANIZER__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZER__ID:
-				return ((InternalEList<?>)getId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZER__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.ORGANIZER__STATUS_CODE:
@@ -1148,21 +1141,21 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 			case CDAPackage.ORGANIZER__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.ORGANIZER__SPECIMEN:
-				return ((InternalEList<?>)getSpecimen()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getSpecimens()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZER__PERFORMER:
-				return ((InternalEList<?>)getPerformer()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPerformers()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZER__AUTHOR:
-				return ((InternalEList<?>)getAuthor()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZER__INFORMANT:
-				return ((InternalEList<?>)getInformant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZER__PARTICIPANT:
-				return ((InternalEList<?>)getParticipant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZER__REFERENCE:
-				return ((InternalEList<?>)getReference()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZER__PRECONDITION:
-				return ((InternalEList<?>)getPrecondition()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPreconditions()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ORGANIZER__COMPONENT:
-				return ((InternalEList<?>)getComponent()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getComponents()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1176,13 +1169,13 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.ORGANIZER__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.ORGANIZER__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.ORGANIZER__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.ORGANIZER__ID:
-				return getId();
+				return getIds();
 			case CDAPackage.ORGANIZER__CODE:
 				return getCode();
 			case CDAPackage.ORGANIZER__STATUS_CODE:
@@ -1192,21 +1185,21 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 			case CDAPackage.ORGANIZER__SUBJECT:
 				return getSubject();
 			case CDAPackage.ORGANIZER__SPECIMEN:
-				return getSpecimen();
+				return getSpecimens();
 			case CDAPackage.ORGANIZER__PERFORMER:
-				return getPerformer();
+				return getPerformers();
 			case CDAPackage.ORGANIZER__AUTHOR:
-				return getAuthor();
+				return getAuthors();
 			case CDAPackage.ORGANIZER__INFORMANT:
-				return getInformant();
+				return getInformants();
 			case CDAPackage.ORGANIZER__PARTICIPANT:
-				return getParticipant();
+				return getParticipants();
 			case CDAPackage.ORGANIZER__REFERENCE:
-				return getReference();
+				return getReferences();
 			case CDAPackage.ORGANIZER__PRECONDITION:
-				return getPrecondition();
+				return getPreconditions();
 			case CDAPackage.ORGANIZER__COMPONENT:
-				return getComponent();
+				return getComponents();
 			case CDAPackage.ORGANIZER__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.ORGANIZER__CLASS_CODE:
@@ -1227,19 +1220,19 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.ORGANIZER__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.ORGANIZER__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.ORGANIZER__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.ORGANIZER__ID:
-				getId().clear();
-				getId().addAll((Collection<? extends II>)newValue);
+				getIds().clear();
+				getIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.ORGANIZER__CODE:
 				setCode((CD)newValue);
@@ -1254,36 +1247,36 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 				setSubject((Subject)newValue);
 				return;
 			case CDAPackage.ORGANIZER__SPECIMEN:
-				getSpecimen().clear();
-				getSpecimen().addAll((Collection<? extends Specimen>)newValue);
+				getSpecimens().clear();
+				getSpecimens().addAll((Collection<? extends Specimen>)newValue);
 				return;
 			case CDAPackage.ORGANIZER__PERFORMER:
-				getPerformer().clear();
-				getPerformer().addAll((Collection<? extends Performer2>)newValue);
+				getPerformers().clear();
+				getPerformers().addAll((Collection<? extends Performer2>)newValue);
 				return;
 			case CDAPackage.ORGANIZER__AUTHOR:
-				getAuthor().clear();
-				getAuthor().addAll((Collection<? extends Author>)newValue);
+				getAuthors().clear();
+				getAuthors().addAll((Collection<? extends Author>)newValue);
 				return;
 			case CDAPackage.ORGANIZER__INFORMANT:
-				getInformant().clear();
-				getInformant().addAll((Collection<? extends Informant12>)newValue);
+				getInformants().clear();
+				getInformants().addAll((Collection<? extends Informant12>)newValue);
 				return;
 			case CDAPackage.ORGANIZER__PARTICIPANT:
-				getParticipant().clear();
-				getParticipant().addAll((Collection<? extends Participant2>)newValue);
+				getParticipants().clear();
+				getParticipants().addAll((Collection<? extends Participant2>)newValue);
 				return;
 			case CDAPackage.ORGANIZER__REFERENCE:
-				getReference().clear();
-				getReference().addAll((Collection<? extends Reference>)newValue);
+				getReferences().clear();
+				getReferences().addAll((Collection<? extends Reference>)newValue);
 				return;
 			case CDAPackage.ORGANIZER__PRECONDITION:
-				getPrecondition().clear();
-				getPrecondition().addAll((Collection<? extends Precondition>)newValue);
+				getPreconditions().clear();
+				getPreconditions().addAll((Collection<? extends Precondition>)newValue);
 				return;
 			case CDAPackage.ORGANIZER__COMPONENT:
-				getComponent().clear();
-				getComponent().addAll((Collection<? extends Component4>)newValue);
+				getComponents().clear();
+				getComponents().addAll((Collection<? extends Component4>)newValue);
 				return;
 			case CDAPackage.ORGANIZER__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -1307,16 +1300,16 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.ORGANIZER__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.ORGANIZER__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.ORGANIZER__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.ORGANIZER__ID:
-				getId().clear();
+				getIds().clear();
 				return;
 			case CDAPackage.ORGANIZER__CODE:
 				setCode((CD)null);
@@ -1331,28 +1324,28 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 				setSubject((Subject)null);
 				return;
 			case CDAPackage.ORGANIZER__SPECIMEN:
-				getSpecimen().clear();
+				getSpecimens().clear();
 				return;
 			case CDAPackage.ORGANIZER__PERFORMER:
-				getPerformer().clear();
+				getPerformers().clear();
 				return;
 			case CDAPackage.ORGANIZER__AUTHOR:
-				getAuthor().clear();
+				getAuthors().clear();
 				return;
 			case CDAPackage.ORGANIZER__INFORMANT:
-				getInformant().clear();
+				getInformants().clear();
 				return;
 			case CDAPackage.ORGANIZER__PARTICIPANT:
-				getParticipant().clear();
+				getParticipants().clear();
 				return;
 			case CDAPackage.ORGANIZER__REFERENCE:
-				getReference().clear();
+				getReferences().clear();
 				return;
 			case CDAPackage.ORGANIZER__PRECONDITION:
-				getPrecondition().clear();
+				getPreconditions().clear();
 				return;
 			case CDAPackage.ORGANIZER__COMPONENT:
-				getComponent().clear();
+				getComponents().clear();
 				return;
 			case CDAPackage.ORGANIZER__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -1376,13 +1369,13 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.ORGANIZER__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.ORGANIZER__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.ORGANIZER__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.ORGANIZER__ID:
-				return id != null && !id.isEmpty();
+				return ids != null && !ids.isEmpty();
 			case CDAPackage.ORGANIZER__CODE:
 				return code != null;
 			case CDAPackage.ORGANIZER__STATUS_CODE:
@@ -1392,21 +1385,21 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 			case CDAPackage.ORGANIZER__SUBJECT:
 				return subject != null;
 			case CDAPackage.ORGANIZER__SPECIMEN:
-				return specimen != null && !specimen.isEmpty();
+				return specimens != null && !specimens.isEmpty();
 			case CDAPackage.ORGANIZER__PERFORMER:
-				return performer != null && !performer.isEmpty();
+				return performers != null && !performers.isEmpty();
 			case CDAPackage.ORGANIZER__AUTHOR:
-				return author != null && !author.isEmpty();
+				return authors != null && !authors.isEmpty();
 			case CDAPackage.ORGANIZER__INFORMANT:
-				return informant != null && !informant.isEmpty();
+				return informants != null && !informants.isEmpty();
 			case CDAPackage.ORGANIZER__PARTICIPANT:
-				return participant != null && !participant.isEmpty();
+				return participants != null && !participants.isEmpty();
 			case CDAPackage.ORGANIZER__REFERENCE:
-				return reference != null && !reference.isEmpty();
+				return references != null && !references.isEmpty();
 			case CDAPackage.ORGANIZER__PRECONDITION:
-				return precondition != null && !precondition.isEmpty();
+				return preconditions != null && !preconditions.isEmpty();
 			case CDAPackage.ORGANIZER__COMPONENT:
-				return component != null && !component.isEmpty();
+				return components != null && !components.isEmpty();
 			case CDAPackage.ORGANIZER__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.ORGANIZER__CLASS_CODE:

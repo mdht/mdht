@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getSocialHistorySection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.15' constraints.validation.error='SocialHistorySection_templateId SocialHistorySection_code' code.displayName='Social history' code.codeSystem='2.16.840.1.113883.6.1' code.code='29762-2' constraints.validation.warning='SocialHistorySection_title'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.15' constraints.validation.error='SocialHistorySectionTemplateId SocialHistorySectionCode' code.displayName='Social history' code.codeSystem='2.16.840.1.113883.6.1' code.code='29762-2' constraints.validation.warning='SocialHistorySectionTitle'"
  * @generated
  */
 public interface SocialHistorySection extends Section {
@@ -42,7 +42,7 @@ public interface SocialHistorySection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.15\')'"
 	 * @generated
 	 */
-	boolean SocialHistorySection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateSocialHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -57,7 +57,7 @@ public interface SocialHistorySection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and \r\nlet value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (\r\nvalue.code = \'29762-2\' and value.codeSystem = \'2.16.840.1.113883.6.1\')'"
 	 * @generated
 	 */
-	boolean SocialHistorySection_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateSocialHistorySectionCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +70,7 @@ public interface SocialHistorySection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.title.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean SocialHistorySection_title(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateSocialHistorySectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

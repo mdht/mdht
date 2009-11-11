@@ -49,8 +49,8 @@ public class MedicationStatusObservationImpl extends StatusObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationStatusObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationStatusObservationOperations.MedicationStatusObservation_templateId(this, diagnostics, context);
+	public boolean validateMedicationStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationStatusObservationOperations.validateMedicationStatusObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -58,8 +58,8 @@ public class MedicationStatusObservationImpl extends StatusObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationStatusObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationStatusObservationOperations.MedicationStatusObservation_value(this, diagnostics, context);
+	public boolean validateMedicationStatusObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationStatusObservationOperations.validateMedicationStatusObservationValue(this, diagnostics, context);
 	}
 
 	/**

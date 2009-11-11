@@ -56,8 +56,8 @@ public class MedicalDocumentImpl extends ClinicalDocumentImpl implements Medical
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicalDocument_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicalDocumentOperations.MedicalDocument_templateId(this, diagnostics, context);
+	public boolean validateMedicalDocumentTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicalDocumentOperations.validateMedicalDocumentTemplateId(this, diagnostics, context);
 	}
 
 	/**

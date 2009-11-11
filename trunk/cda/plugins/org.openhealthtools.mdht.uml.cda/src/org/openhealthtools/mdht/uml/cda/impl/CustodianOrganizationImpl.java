@@ -16,28 +16,21 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.CustodianOrganization;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassOrganization;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -49,10 +42,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl#getTelecom <em>Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl#getAddr <em>Addr</em>}</li>
@@ -66,14 +59,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class CustodianOrganizationImpl extends EObjectImpl implements CustodianOrganization {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -86,24 +79,24 @@ public class CustodianOrganizationImpl extends EObjectImpl implements CustodianO
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getIds() <em>Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> id;
+	protected EList<II> ids;
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
@@ -246,11 +239,11 @@ public class CustodianOrganizationImpl extends EObjectImpl implements CustodianO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.CUSTODIAN_ORGANIZATION__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.CUSTODIAN_ORGANIZATION__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -301,11 +294,11 @@ public class CustodianOrganizationImpl extends EObjectImpl implements CustodianO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.CUSTODIAN_ORGANIZATION__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.CUSTODIAN_ORGANIZATION__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -313,11 +306,11 @@ public class CustodianOrganizationImpl extends EObjectImpl implements CustodianO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getId() {
-		if (id == null) {
-			id = new EObjectContainmentEList<II>(II.class, this, CDAPackage.CUSTODIAN_ORGANIZATION__ID);
+	public EList<II> getIds() {
+		if (ids == null) {
+			ids = new EObjectContainmentEList<II>(II.class, this, CDAPackage.CUSTODIAN_ORGANIZATION__ID);
 		}
-		return id;
+		return ids;
 	}
 
 	/**
@@ -596,13 +589,13 @@ public class CustodianOrganizationImpl extends EObjectImpl implements CustodianO
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.CUSTODIAN_ORGANIZATION__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CUSTODIAN_ORGANIZATION__ID:
-				return ((InternalEList<?>)getId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.CUSTODIAN_ORGANIZATION__NAME:
 				return basicSetName(null, msgs);
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM:
@@ -622,13 +615,13 @@ public class CustodianOrganizationImpl extends EObjectImpl implements CustodianO
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.CUSTODIAN_ORGANIZATION__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.CUSTODIAN_ORGANIZATION__ID:
-				return getId();
+				return getIds();
 			case CDAPackage.CUSTODIAN_ORGANIZATION__NAME:
 				return getName();
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM:
@@ -655,19 +648,19 @@ public class CustodianOrganizationImpl extends EObjectImpl implements CustodianO
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.CUSTODIAN_ORGANIZATION__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__ID:
-				getId().clear();
-				getId().addAll((Collection<? extends II>)newValue);
+				getIds().clear();
+				getIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__NAME:
 				setName((ON)newValue);
@@ -700,16 +693,16 @@ public class CustodianOrganizationImpl extends EObjectImpl implements CustodianO
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.CUSTODIAN_ORGANIZATION__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__ID:
-				getId().clear();
+				getIds().clear();
 				return;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__NAME:
 				setName((ON)null);
@@ -742,13 +735,13 @@ public class CustodianOrganizationImpl extends EObjectImpl implements CustodianO
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.CUSTODIAN_ORGANIZATION__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.CUSTODIAN_ORGANIZATION__ID:
-				return id != null && !id.isEmpty();
+				return ids != null && !ids.isEmpty();
 			case CDAPackage.CUSTODIAN_ORGANIZATION__NAME:
 				return name != null;
 			case CDAPackage.CUSTODIAN_ORGANIZATION__TELECOM:

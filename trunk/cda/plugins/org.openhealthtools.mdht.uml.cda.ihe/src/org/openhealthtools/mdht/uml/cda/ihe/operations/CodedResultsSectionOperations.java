@@ -11,18 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
-
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
-
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
 
 /**
@@ -33,8 +28,8 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection#CodedResultsSection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Coded Results Section template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection#CodedResultsSection_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Coded Results Section code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection#validateCodedResultsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Results Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection#validateCodedResultsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Results Section Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,24 +46,24 @@ public class CodedResultsSectionOperations extends SectionOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #CodedResultsSection_templateId(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Coded Results Section template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateCodedResultsSectionTemplateId(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Results Section Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CodedResultsSection_templateId(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCodedResultsSectionTemplateId(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.28')";
+	protected static final String VALIDATE_CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.28')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #CodedResultsSection_templateId(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Coded Results Section template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateCodedResultsSectionTemplateId(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Results Section Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CodedResultsSection_templateId(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCodedResultsSectionTemplateId(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,25 +76,25 @@ public class CodedResultsSectionOperations extends SectionOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean CodedResultsSection_templateId(CodedResultsSection codedResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateCodedResultsSectionTemplateId(CodedResultsSection codedResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.CODED_RESULTS_SECTION);
 			try {
-				CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(codedResultsSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CODED_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(codedResultsSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.CODED_RESULTS_SECTION__CODED_RESULTS_SECTION_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("CodedResultsSection_templateId"),
+						 IHEPlugin.INSTANCE.getString("CodedResultsSectionTemplateId"),
 						 new Object [] { codedResultsSection }));
 			}
 			return false;
@@ -108,26 +103,26 @@ public class CodedResultsSectionOperations extends SectionOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #CodedResultsSection_code(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Coded Results Section code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateCodedResultsSectionCode(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Results Section Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CodedResultsSection_code(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCodedResultsSectionCode(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and "+
+	protected static final String VALIDATE_CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and "+
 "let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in ("+
 "value.code = '30954-2' and value.codeSystem = '2.16.840.1.113883.6.1')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #CodedResultsSection_code(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Coded Results Section code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateCodedResultsSectionCode(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Results Section Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CodedResultsSection_code(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCodedResultsSectionCode(CodedResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,25 +137,25 @@ public class CodedResultsSectionOperations extends SectionOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean CodedResultsSection_code(CodedResultsSection codedResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateCodedResultsSectionCode(CodedResultsSection codedResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.CODED_RESULTS_SECTION);
 			try {
-				CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(codedResultsSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CODED_RESULTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(codedResultsSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.CODED_RESULTS_SECTION__CODED_RESULTS_SECTION_CODE,
-						 IHEPlugin.INSTANCE.getString("CodedResultsSection_code"),
+						 IHEPlugin.INSTANCE.getString("CodedResultsSectionCode"),
 						 new Object [] { codedResultsSection }));
 			}
 			return false;

@@ -13,7 +13,6 @@
 package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CV;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 

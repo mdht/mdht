@@ -50,8 +50,8 @@ public class EncounterLocationImpl extends Participant2Impl implements Encounter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EncounterLocation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncounterLocationOperations.EncounterLocation_templateId(this, diagnostics, context);
+	public boolean validateEncounterLocationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncounterLocationOperations.validateEncounterLocationTemplateId(this, diagnostics, context);
 	}
 
 	/**

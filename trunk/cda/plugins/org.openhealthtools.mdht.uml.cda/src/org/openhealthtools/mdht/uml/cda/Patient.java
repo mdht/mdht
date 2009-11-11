@@ -13,15 +13,12 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -34,9 +31,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getId <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getName <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getAdministrativeGenderCode <em>Administrative Gender Code</em>}</li>
@@ -45,9 +42,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getReligiousAffiliationCode <em>Religious Affiliation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getRaceCode <em>Race Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getEthnicGroupCode <em>Ethnic Group Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getGuardian <em>Guardian</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getGuardians <em>Guardian</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getBirthplace <em>Birthplace</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getLanguageCommunication <em>Language Communication</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getLanguageCommunications <em>Language Communication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getDeterminerCode <em>Determiner Code</em>}</li>
@@ -74,7 +71,7 @@ public interface Patient extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -118,7 +115,7 @@ public interface Patient extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' containment reference.
@@ -351,7 +348,7 @@ public interface Patient extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Guardian> getGuardian();
+	EList<Guardian> getGuardians();
 
 	/**
 	 * Returns the value of the '<em><b>Birthplace</b></em>' containment reference.
@@ -395,7 +392,7 @@ public interface Patient extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<LanguageCommunication> getLanguageCommunication();
+	EList<LanguageCommunication> getLanguageCommunications();
 
 	/**
 	 * Returns the value of the '<em><b>Null Flavor</b></em>' attribute.

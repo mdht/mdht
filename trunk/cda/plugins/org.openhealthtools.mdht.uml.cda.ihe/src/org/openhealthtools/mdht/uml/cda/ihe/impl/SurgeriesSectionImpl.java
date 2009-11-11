@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.impl.ProceduresSectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.SurgeriesSection;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.SurgeriesSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class SurgeriesSectionImpl extends ProceduresSectionImpl implements Surge
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SurgeriesSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SurgeriesSectionOperations.SurgeriesSection_templateId(this, diagnostics, context);
+	public boolean validateSurgeriesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SurgeriesSectionOperations.validateSurgeriesSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

@@ -13,16 +13,13 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassClinicalDocument;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -35,9 +32,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getId <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getTitle <em>Title</em>}</li>
@@ -47,19 +44,19 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getSetId <em>Set Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getVersionNumber <em>Version Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getCopyTime <em>Copy Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRecordTarget <em>Record Target</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthor <em>Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRecordTargets <em>Record Target</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthors <em>Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getDataEnterer <em>Data Enterer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInformant <em>Informant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInformants <em>Informant</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getCustodian <em>Custodian</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInformationRecipient <em>Information Recipient</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInformationRecipients <em>Information Recipient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getLegalAuthenticator <em>Legal Authenticator</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthenticator <em>Authenticator</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getParticipant <em>Participant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInFulfillmentOf <em>In Fulfillment Of</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getDocumentationOf <em>Documentation Of</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRelatedDocument <em>Related Document</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthorization <em>Authorization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthenticators <em>Authenticator</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getParticipants <em>Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInFulfillmentOfs <em>In Fulfillment Of</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getDocumentationOfs <em>Documentation Of</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRelatedDocuments <em>Related Document</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthorizations <em>Authorization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getComponentOf <em>Component Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getComponent <em>Component</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getNullFlavor <em>Null Flavor</em>}</li>
@@ -88,7 +85,7 @@ public interface ClinicalDocument extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -132,7 +129,7 @@ public interface ClinicalDocument extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' containment reference.
@@ -392,7 +389,7 @@ public interface ClinicalDocument extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<RecordTarget> getRecordTarget();
+	EList<RecordTarget> getRecordTargets();
 
 	/**
 	 * Returns the value of the '<em><b>Author</b></em>' containment reference list.
@@ -409,7 +406,7 @@ public interface ClinicalDocument extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Author> getAuthor();
+	EList<Author> getAuthors();
 
 	/**
 	 * Returns the value of the '<em><b>Data Enterer</b></em>' containment reference.
@@ -453,7 +450,7 @@ public interface ClinicalDocument extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Informant12> getInformant();
+	EList<Informant12> getInformants();
 
 	/**
 	 * Returns the value of the '<em><b>Custodian</b></em>' containment reference.
@@ -497,7 +494,7 @@ public interface ClinicalDocument extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<InformationRecipient> getInformationRecipient();
+	EList<InformationRecipient> getInformationRecipients();
 
 	/**
 	 * Returns the value of the '<em><b>Legal Authenticator</b></em>' containment reference.
@@ -541,7 +538,7 @@ public interface ClinicalDocument extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Authenticator> getAuthenticator();
+	EList<Authenticator> getAuthenticators();
 
 	/**
 	 * Returns the value of the '<em><b>Participant</b></em>' containment reference list.
@@ -558,7 +555,7 @@ public interface ClinicalDocument extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Participant1> getParticipant();
+	EList<Participant1> getParticipants();
 
 	/**
 	 * Returns the value of the '<em><b>In Fulfillment Of</b></em>' containment reference list.
@@ -575,7 +572,7 @@ public interface ClinicalDocument extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<InFulfillmentOf> getInFulfillmentOf();
+	EList<InFulfillmentOf> getInFulfillmentOfs();
 
 	/**
 	 * Returns the value of the '<em><b>Documentation Of</b></em>' containment reference list.
@@ -592,7 +589,7 @@ public interface ClinicalDocument extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<DocumentationOf> getDocumentationOf();
+	EList<DocumentationOf> getDocumentationOfs();
 
 	/**
 	 * Returns the value of the '<em><b>Related Document</b></em>' containment reference list.
@@ -609,7 +606,7 @@ public interface ClinicalDocument extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<RelatedDocument> getRelatedDocument();
+	EList<RelatedDocument> getRelatedDocuments();
 
 	/**
 	 * Returns the value of the '<em><b>Authorization</b></em>' containment reference list.
@@ -626,7 +623,7 @@ public interface ClinicalDocument extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Authorization> getAuthorization();
+	EList<Authorization> getAuthorizations();
 
 	/**
 	 * Returns the value of the '<em><b>Component Of</b></em>' containment reference.
@@ -878,7 +875,7 @@ public interface ClinicalDocument extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget.patientRole.patient'"
 	 * @generated
 	 */
-	EList<Patient> getPatient();
+	EList<Patient> getPatients();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -890,7 +887,7 @@ public interface ClinicalDocument extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget.patientRole'"
 	 * @generated
 	 */
-	EList<PatientRole> getPatientRole();
+	EList<PatientRole> getPatientRoles();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -902,7 +899,7 @@ public interface ClinicalDocument extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.structuredBody.component.section'"
 	 * @generated
 	 */
-	EList<Section> getSection();
+	EList<Section> getSections();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -920,10 +917,10 @@ public interface ClinicalDocument extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
+	 * self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasSectionTemplate(String templateId);

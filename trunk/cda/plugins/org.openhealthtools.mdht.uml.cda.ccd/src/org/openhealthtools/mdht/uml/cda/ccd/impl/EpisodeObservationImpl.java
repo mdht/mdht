@@ -50,8 +50,8 @@ public class EpisodeObservationImpl extends ObservationImpl implements EpisodeOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EpisodeObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EpisodeObservationOperations.EpisodeObservation_templateId(this, diagnostics, context);
+	public boolean validateEpisodeObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.validateEpisodeObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class EpisodeObservationImpl extends ObservationImpl implements EpisodeOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EpisodeObservation_classCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EpisodeObservationOperations.EpisodeObservation_classCode(this, diagnostics, context);
+	public boolean validateEpisodeObservationClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.validateEpisodeObservationClassCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class EpisodeObservationImpl extends ObservationImpl implements EpisodeOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EpisodeObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EpisodeObservationOperations.EpisodeObservation_moodCode(this, diagnostics, context);
+	public boolean validateEpisodeObservationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.validateEpisodeObservationMoodCode(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class EpisodeObservationImpl extends ObservationImpl implements EpisodeOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EpisodeObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EpisodeObservationOperations.EpisodeObservation_statusCode(this, diagnostics, context);
+	public boolean validateEpisodeObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.validateEpisodeObservationStatusCode(this, diagnostics, context);
 	}
 
 	/**
@@ -86,8 +86,8 @@ public class EpisodeObservationImpl extends ObservationImpl implements EpisodeOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EpisodeObservation_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EpisodeObservationOperations.EpisodeObservation_code(this, diagnostics, context);
+	public boolean validateEpisodeObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.validateEpisodeObservationCode(this, diagnostics, context);
 	}
 
 	/**

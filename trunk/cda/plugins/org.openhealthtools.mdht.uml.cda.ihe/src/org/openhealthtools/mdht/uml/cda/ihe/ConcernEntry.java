@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getConcernEntry()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='ConcernEntry_templateId ConcernEntry_effectiveTime' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.5.1'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='ConcernEntryTemplateId ConcernEntryEffectiveTime' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.5.1'"
  * @generated
  */
 public interface ConcernEntry extends ProblemAct {
@@ -39,7 +39,7 @@ public interface ConcernEntry extends ProblemAct {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.4.5.1\')'"
 	 * @generated
 	 */
-	boolean ConcernEntry_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateConcernEntryTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ public interface ConcernEntry extends ProblemAct {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.effectiveTime.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean ConcernEntry_effectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateConcernEntryEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPurposeActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' statusCode.codeSystemName='ActStatus' code.codeSystemName='SNOMED CT' constraints.validation.error='PurposeActivity_templateId PurposeActivity_hasReason PurposeActivity_reasonType PurposeActivity_classCode PurposeActivity_moodCode PurposeActivity_code PurposeActivity_statusCode' templateId.root='2.16.840.1.113883.10.20.1.30' statusCode.codeSystem='2.16.840.1.113883.5.14' code.displayName='Documentation procedure' statusCode.code='completed' code.codeSystem='2.16.840.1.113883.6.96' code.code='23745001'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' statusCode.codeSystemName='ActStatus' code.codeSystemName='SNOMED CT' constraints.validation.error='PurposeActivityTemplateId PurposeActivityHasReason PurposeActivityReasonType PurposeActivityClassCode PurposeActivityMoodCode PurposeActivityCode PurposeActivityStatusCode' templateId.root='2.16.840.1.113883.10.20.1.30' statusCode.codeSystem='2.16.840.1.113883.5.14' code.displayName='Documentation procedure' statusCode.code='completed' code.codeSystem='2.16.840.1.113883.6.96' code.code='23745001'"
  * @generated
  */
 public interface PurposeActivity extends Act {
@@ -44,7 +44,7 @@ public interface PurposeActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entryRelationship : cda::EntryRelationship | \r\n  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)\r\n'"
 	 * @generated
 	 */
-	boolean PurposeActivity_hasReason(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePurposeActivityHasReason(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public interface PurposeActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->forAll(entryRelationship : cda::EntryRelationship |\r\n  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON implies( \r\n  not (entryRelationship.act.oclIsUndefined() and entryRelationship.encounter.oclIsUndefined()\r\n       and entryRelationship.observation.oclIsUndefined() and entryRelationship.procedure.oclIsUndefined()\r\n       and entryRelationship.substanceAdministration.oclIsUndefined() and entryRelationship.supply.oclIsUndefined())))'"
 	 * @generated
 	 */
-	boolean PurposeActivity_reasonType(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePurposeActivityReasonType(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public interface PurposeActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.30\')'"
 	 * @generated
 	 */
-	boolean PurposeActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePurposeActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,7 +87,7 @@ public interface PurposeActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode=vocab::x_ActClassDocumentEntryAct::ACT'"
 	 * @generated
 	 */
-	boolean PurposeActivity_classCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePurposeActivityClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,7 +100,7 @@ public interface PurposeActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_DocumentActMood::EVN'"
 	 * @generated
 	 */
-	boolean PurposeActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePurposeActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,7 +115,7 @@ public interface PurposeActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and \r\nlet value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (\r\nvalue.code = \'23745001\' and value.codeSystem = \'2.16.840.1.113883.6.96\')'"
 	 * @generated
 	 */
-	boolean PurposeActivity_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePurposeActivityCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +130,7 @@ public interface PurposeActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\' and value.codeSystem = \'2.16.840.1.113883.5.14\')'"
 	 * @generated
 	 */
-	boolean PurposeActivity_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePurposeActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

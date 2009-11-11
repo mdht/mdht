@@ -44,10 +44,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassManufacturedProduct;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl#getManufacturedLabeledDrug <em>Manufactured Labeled Drug</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl#getManufacturedMaterial <em>Manufactured Material</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl#getManufacturerOrganization <em>Manufacturer Organization</em>}</li>
@@ -60,14 +60,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassManufacturedProduct;
  */
 public class ManufacturedProductImpl extends EObjectImpl implements ManufacturedProduct {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -80,24 +80,24 @@ public class ManufacturedProductImpl extends EObjectImpl implements Manufactured
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getIds() <em>Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> id;
+	protected EList<II> ids;
 
 	/**
 	 * The cached value of the '{@link #getManufacturedLabeledDrug() <em>Manufactured Labeled Drug</em>}' containment reference.
@@ -211,11 +211,11 @@ public class ManufacturedProductImpl extends EObjectImpl implements Manufactured
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.MANUFACTURED_PRODUCT__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.MANUFACTURED_PRODUCT__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -266,11 +266,11 @@ public class ManufacturedProductImpl extends EObjectImpl implements Manufactured
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.MANUFACTURED_PRODUCT__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.MANUFACTURED_PRODUCT__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -278,11 +278,11 @@ public class ManufacturedProductImpl extends EObjectImpl implements Manufactured
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getId() {
-		if (id == null) {
-			id = new EObjectContainmentEList<II>(II.class, this, CDAPackage.MANUFACTURED_PRODUCT__ID);
+	public EList<II> getIds() {
+		if (ids == null) {
+			ids = new EObjectContainmentEList<II>(II.class, this, CDAPackage.MANUFACTURED_PRODUCT__ID);
 		}
-		return id;
+		return ids;
 	}
 
 	/**
@@ -511,8 +511,8 @@ public class ManufacturedProductImpl extends EObjectImpl implements Manufactured
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean manufacturedDrugOrOtherMaterial(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ManufacturedProductOperations.manufacturedDrugOrOtherMaterial(this, diagnostics, context);
+	public boolean validateManufacturedDrugOrOtherMaterial(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ManufacturedProductOperations.validateManufacturedDrugOrOtherMaterial(this, diagnostics, context);
 	}
 
 	/**
@@ -524,13 +524,13 @@ public class ManufacturedProductImpl extends EObjectImpl implements Manufactured
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.MANUFACTURED_PRODUCT__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.MANUFACTURED_PRODUCT__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.MANUFACTURED_PRODUCT__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.MANUFACTURED_PRODUCT__ID:
-				return ((InternalEList<?>)getId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURED_LABELED_DRUG:
 				return basicSetManufacturedLabeledDrug(null, msgs);
 			case CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURED_MATERIAL:
@@ -550,13 +550,13 @@ public class ManufacturedProductImpl extends EObjectImpl implements Manufactured
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.MANUFACTURED_PRODUCT__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.MANUFACTURED_PRODUCT__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.MANUFACTURED_PRODUCT__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.MANUFACTURED_PRODUCT__ID:
-				return getId();
+				return getIds();
 			case CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURED_LABELED_DRUG:
 				return getManufacturedLabeledDrug();
 			case CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURED_MATERIAL:
@@ -581,19 +581,19 @@ public class ManufacturedProductImpl extends EObjectImpl implements Manufactured
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.MANUFACTURED_PRODUCT__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.MANUFACTURED_PRODUCT__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.MANUFACTURED_PRODUCT__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.MANUFACTURED_PRODUCT__ID:
-				getId().clear();
-				getId().addAll((Collection<? extends II>)newValue);
+				getIds().clear();
+				getIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURED_LABELED_DRUG:
 				setManufacturedLabeledDrug((LabeledDrug)newValue);
@@ -623,16 +623,16 @@ public class ManufacturedProductImpl extends EObjectImpl implements Manufactured
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.MANUFACTURED_PRODUCT__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.MANUFACTURED_PRODUCT__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.MANUFACTURED_PRODUCT__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.MANUFACTURED_PRODUCT__ID:
-				getId().clear();
+				getIds().clear();
 				return;
 			case CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURED_LABELED_DRUG:
 				setManufacturedLabeledDrug((LabeledDrug)null);
@@ -662,13 +662,13 @@ public class ManufacturedProductImpl extends EObjectImpl implements Manufactured
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.MANUFACTURED_PRODUCT__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.MANUFACTURED_PRODUCT__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.MANUFACTURED_PRODUCT__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.MANUFACTURED_PRODUCT__ID:
-				return id != null && !id.isEmpty();
+				return ids != null && !ids.isEmpty();
 			case CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURED_LABELED_DRUG:
 				return manufacturedLabeledDrug != null;
 			case CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURED_MATERIAL:

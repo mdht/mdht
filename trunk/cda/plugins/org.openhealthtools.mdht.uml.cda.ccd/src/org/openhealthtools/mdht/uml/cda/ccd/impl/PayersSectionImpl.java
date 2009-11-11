@@ -50,8 +50,8 @@ public class PayersSectionImpl extends SectionImpl implements PayersSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PayersSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PayersSectionOperations.PayersSection_templateId(this, diagnostics, context);
+	public boolean validatePayersSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PayersSectionOperations.validatePayersSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class PayersSectionImpl extends SectionImpl implements PayersSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PayersSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PayersSectionOperations.PayersSection_code(this, diagnostics, context);
+	public boolean validatePayersSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PayersSectionOperations.validatePayersSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class PayersSectionImpl extends SectionImpl implements PayersSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PayersSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PayersSectionOperations.PayersSection_title(this, diagnostics, context);
+	public boolean validatePayersSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PayersSectionOperations.validatePayersSectionTitle(this, diagnostics, context);
 	}
 
 	/**

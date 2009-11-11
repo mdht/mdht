@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.hitsp;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 
 /**
@@ -25,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getVitalSignsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.119' constraints.validation.error='VitalSignsSection_templateId HITSPVitalSignsSection_vitalSigns'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.119' constraints.validation.error='HITSPVitalSignsSectionTemplateId HITSPVitalSignsSectionVitalSigns'"
  * @generated
  */
 public interface VitalSignsSection extends CodedVitalSignsSection {
@@ -41,7 +40,20 @@ public interface VitalSignsSection extends CodedVitalSignsSection {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::IHEVitalSignsOrganizer) and\r\nentry.organizer.component.observation->exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))'"
 	 * @generated
 	 */
-	boolean HITSPVitalSignsSection_vitalSigns(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateHITSPVitalSignsSectionVitalSigns(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.hasTemplateId('2.16.840.1.113883.3.88.11.83.119')
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.3.88.11.83.119\')'"
+	 * @generated
+	 */
+	boolean validateHITSPVitalSignsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -34,8 +34,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#ActiveProblemsSection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#ActiveProblemsSection_problemConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section problem Concern Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#validateActiveProblemsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Active Problems Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection#validateActiveProblemsSectionProblemConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Active Problems Section Problem Concern Entry</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,24 +52,24 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #ActiveProblemsSection_templateId(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateActiveProblemsSectionTemplateId(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Active Problems Section Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ActiveProblemsSection_templateId(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateActiveProblemsSectionTemplateId(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.6')";
+	protected static final String VALIDATE_ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.6')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #ActiveProblemsSection_templateId(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateActiveProblemsSectionTemplateId(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Active Problems Section Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ActiveProblemsSection_templateId(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateActiveProblemsSectionTemplateId(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,25 +82,25 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ActiveProblemsSection_templateId(ActiveProblemsSection activeProblemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateActiveProblemsSectionTemplateId(ActiveProblemsSection activeProblemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.ACTIVE_PROBLEMS_SECTION);
 			try {
-				ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(activeProblemsSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(activeProblemsSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.ACTIVE_PROBLEMS_SECTION__ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("ActiveProblemsSection_templateId"),
+						 IHEPlugin.INSTANCE.getString("ActiveProblemsSectionTemplateId"),
 						 new Object [] { activeProblemsSection }));
 			}
 			return false;
@@ -109,24 +109,24 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #ActiveProblemsSection_problemConcernEntry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section problem Concern Entry</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateActiveProblemsSectionProblemConcernEntry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Active Problems Section Problem Concern Entry</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ActiveProblemsSection_problemConcernEntry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateActiveProblemsSectionProblemConcernEntry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ihe::ProblemConcernEntry))";
+	protected static final String VALIDATE_ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ihe::ProblemConcernEntry))";
 
 	/**
-	 * The cached OCL invariant for the '{@link #ActiveProblemsSection_problemConcernEntry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Active Problems Section problem Concern Entry</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateActiveProblemsSectionProblemConcernEntry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Active Problems Section Problem Concern Entry</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ActiveProblemsSection_problemConcernEntry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateActiveProblemsSectionProblemConcernEntry(ActiveProblemsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,25 +139,25 @@ public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ActiveProblemsSection_problemConcernEntry(ActiveProblemsSection activeProblemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateActiveProblemsSectionProblemConcernEntry(ActiveProblemsSection activeProblemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.ACTIVE_PROBLEMS_SECTION);
 			try {
-				ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(activeProblemsSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(activeProblemsSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.ACTIVE_PROBLEMS_SECTION__ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY,
-						 IHEPlugin.INSTANCE.getString("ActiveProblemsSection_problemConcernEntry"),
+						 IHEPlugin.INSTANCE.getString("ActiveProblemsSectionProblemConcernEntry"),
 						 new Object [] { activeProblemsSection }));
 			}
 			return false;

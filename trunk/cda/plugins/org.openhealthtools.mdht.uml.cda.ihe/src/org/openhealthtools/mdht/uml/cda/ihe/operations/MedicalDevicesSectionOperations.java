@@ -11,18 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicalEquipmentSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
-
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
 
 /**
@@ -33,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection#MedicalDevicesSection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medical Devices Section template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection#validateMedicalDevicesSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Devices Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,24 +45,24 @@ public class MedicalDevicesSectionOperations extends MedicalEquipmentSectionOper
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #MedicalDevicesSection_templateId(MedicalDevicesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medical Devices Section template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateMedicalDevicesSectionTemplateId(MedicalDevicesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Devices Section Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MedicalDevicesSection_templateId(MedicalDevicesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMedicalDevicesSectionTemplateId(MedicalDevicesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5')";
+	protected static final String VALIDATE_MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #MedicalDevicesSection_templateId(MedicalDevicesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medical Devices Section template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateMedicalDevicesSectionTemplateId(MedicalDevicesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Devices Section Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MedicalDevicesSection_templateId(MedicalDevicesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMedicalDevicesSectionTemplateId(MedicalDevicesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,25 +75,25 @@ public class MedicalDevicesSectionOperations extends MedicalEquipmentSectionOper
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean MedicalDevicesSection_templateId(MedicalDevicesSection medicalDevicesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateMedicalDevicesSectionTemplateId(MedicalDevicesSection medicalDevicesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.MEDICAL_DEVICES_SECTION);
 			try {
-				MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicalDevicesSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicalDevicesSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.MEDICAL_DEVICES_SECTION__MEDICAL_DEVICES_SECTION_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("MedicalDevicesSection_templateId"),
+						 IHEPlugin.INSTANCE.getString("MedicalDevicesSectionTemplateId"),
 						 new Object [] { medicalDevicesSection }));
 			}
 			return false;

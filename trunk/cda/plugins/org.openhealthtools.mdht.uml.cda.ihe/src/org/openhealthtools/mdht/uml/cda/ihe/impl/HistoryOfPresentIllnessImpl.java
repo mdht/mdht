@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.HistoryOfPresentIllnessOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class HistoryOfPresentIllnessImpl extends SectionImpl implements HistoryO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean HistoryOfPresentIllness_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HistoryOfPresentIllnessOperations.HistoryOfPresentIllness_templateId(this, diagnostics, context);
+	public boolean validateHistoryOfPresentIllnessTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class HistoryOfPresentIllnessImpl extends SectionImpl implements HistoryO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean HistoryOfPresentIllness_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HistoryOfPresentIllnessOperations.HistoryOfPresentIllness_code(this, diagnostics, context);
+	public boolean validateHistoryOfPresentIllnessCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessCode(this, diagnostics, context);
 	}
 
 	/**

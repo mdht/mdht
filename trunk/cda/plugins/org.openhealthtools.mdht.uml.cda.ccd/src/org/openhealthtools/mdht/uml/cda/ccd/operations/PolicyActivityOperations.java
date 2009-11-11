@@ -11,18 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
-
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-
 import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
 
 /**
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#PolicyActivity_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#PolicyActivity_classCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#PolicyActivity_moodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#PolicyActivity_id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#PolicyActivity_statusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Status Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,24 +49,24 @@ public class PolicyActivityOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PolicyActivity_templateId(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePolicyActivityTemplateId(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PolicyActivity_templateId(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePolicyActivityTemplateId(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.26')";
+	protected static final String VALIDATE_POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.26')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PolicyActivity_templateId(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePolicyActivityTemplateId(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PolicyActivity_templateId(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePolicyActivityTemplateId(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,25 +79,25 @@ public class PolicyActivityOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PolicyActivity_templateId(PolicyActivity policyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePolicyActivityTemplateId(PolicyActivity policyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.POLICY_ACTIVITY);
 			try {
-				POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(policyActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(policyActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.POLICY_ACTIVITY__POLICY_ACTIVITY_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("PolicyActivity_templateId"),
+						 CCDPlugin.INSTANCE.getString("PolicyActivityTemplateId"),
 						 new Object [] { policyActivity }));
 			}
 			return false;
@@ -111,24 +106,24 @@ public class PolicyActivityOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PolicyActivity_classCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity class Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePolicyActivityClassCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Class Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PolicyActivity_classCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePolicyActivityClassCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.classCode=vocab::x_ActClassDocumentEntryAct::ACT";
+	protected static final String VALIDATE_POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.classCode=vocab::x_ActClassDocumentEntryAct::ACT";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PolicyActivity_classCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity class Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePolicyActivityClassCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Class Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PolicyActivity_classCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePolicyActivityClassCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,25 +136,25 @@ public class PolicyActivityOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PolicyActivity_classCode(PolicyActivity policyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePolicyActivityClassCode(PolicyActivity policyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.POLICY_ACTIVITY);
 			try {
-				POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(policyActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(policyActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.POLICY_ACTIVITY__POLICY_ACTIVITY_CLASS_CODE,
-						 CCDPlugin.INSTANCE.getString("PolicyActivity_classCode"),
+						 CCDPlugin.INSTANCE.getString("PolicyActivityClassCode"),
 						 new Object [] { policyActivity }));
 			}
 			return false;
@@ -168,24 +163,24 @@ public class PolicyActivityOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PolicyActivity_moodCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity mood Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePolicyActivityMoodCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Mood Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PolicyActivity_moodCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePolicyActivityMoodCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode=vocab::x_DocumentActMood::EVN";
+	protected static final String VALIDATE_POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode=vocab::x_DocumentActMood::EVN";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PolicyActivity_moodCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity mood Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePolicyActivityMoodCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Mood Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PolicyActivity_moodCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePolicyActivityMoodCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,25 +193,25 @@ public class PolicyActivityOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PolicyActivity_moodCode(PolicyActivity policyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePolicyActivityMoodCode(PolicyActivity policyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.POLICY_ACTIVITY);
 			try {
-				POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(policyActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(policyActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.POLICY_ACTIVITY__POLICY_ACTIVITY_MOOD_CODE,
-						 CCDPlugin.INSTANCE.getString("PolicyActivity_moodCode"),
+						 CCDPlugin.INSTANCE.getString("PolicyActivityMoodCode"),
 						 new Object [] { policyActivity }));
 			}
 			return false;
@@ -225,24 +220,24 @@ public class PolicyActivityOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PolicyActivity_id(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePolicyActivityId(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PolicyActivity_id(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePolicyActivityId(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.id->isEmpty()";
+	protected static final String VALIDATE_POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.id->isEmpty()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PolicyActivity_id(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePolicyActivityId(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PolicyActivity_id(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePolicyActivityId(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,25 +250,25 @@ public class PolicyActivityOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PolicyActivity_id(PolicyActivity policyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePolicyActivityId(PolicyActivity policyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.POLICY_ACTIVITY);
 			try {
-				POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(policyActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(policyActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.POLICY_ACTIVITY__POLICY_ACTIVITY_ID,
-						 CCDPlugin.INSTANCE.getString("PolicyActivity_id"),
+						 CCDPlugin.INSTANCE.getString("PolicyActivityId"),
 						 new Object [] { policyActivity }));
 			}
 			return false;
@@ -282,26 +277,26 @@ public class PolicyActivityOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PolicyActivity_statusCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity status Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePolicyActivityStatusCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Status Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PolicyActivity_statusCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePolicyActivityStatusCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and "+
+	protected static final String VALIDATE_POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and "+
 "let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in ("+
 "value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PolicyActivity_statusCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Policy Activity status Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePolicyActivityStatusCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Status Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PolicyActivity_statusCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePolicyActivityStatusCode(PolicyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -316,25 +311,25 @@ public class PolicyActivityOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PolicyActivity_statusCode(PolicyActivity policyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePolicyActivityStatusCode(PolicyActivity policyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.POLICY_ACTIVITY);
 			try {
-				POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(policyActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(policyActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.POLICY_ACTIVITY__POLICY_ACTIVITY_STATUS_CODE,
-						 CCDPlugin.INSTANCE.getString("PolicyActivity_statusCode"),
+						 CCDPlugin.INSTANCE.getString("PolicyActivityStatusCode"),
 						 new Object [] { policyActivity }));
 			}
 			return false;

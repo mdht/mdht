@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.FulfillmentInstruction;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.FulfillmentInstructionOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.ActImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class FulfillmentInstructionImpl extends ActImpl implements FulfillmentIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FulfillmentInstruction_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FulfillmentInstructionOperations.FulfillmentInstruction_templateId(this, diagnostics, context);
+	public boolean validateFulfillmentInstructionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FulfillmentInstructionOperations.validateFulfillmentInstructionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class FulfillmentInstructionImpl extends ActImpl implements FulfillmentIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FulfillmentInstruction_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FulfillmentInstructionOperations.FulfillmentInstruction_moodCode(this, diagnostics, context);
+	public boolean validateFulfillmentInstructionMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FulfillmentInstructionOperations.validateFulfillmentInstructionMoodCode(this, diagnostics, context);
 	}
 
 	/**

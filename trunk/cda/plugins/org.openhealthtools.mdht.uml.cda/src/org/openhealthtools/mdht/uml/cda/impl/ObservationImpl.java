@@ -16,18 +16,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -49,7 +44,6 @@ import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.Specimen;
 import org.openhealthtools.mdht.uml.cda.Subject;
-
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
@@ -62,7 +56,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
@@ -74,10 +67,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getDerivationExpr <em>Derivation Expr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getText <em>Text</em>}</li>
@@ -86,20 +79,20 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getPriorityCode <em>Priority Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getRepeatNumber <em>Repeat Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getLanguageCode <em>Language Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getInterpretationCode <em>Interpretation Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getMethodCode <em>Method Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getTargetSiteCode <em>Target Site Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getValues <em>Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getInterpretationCodes <em>Interpretation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getMethodCodes <em>Method Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getTargetSiteCodes <em>Target Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getSubject <em>Subject</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getSpecimen <em>Specimen</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getPerformer <em>Performer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getAuthor <em>Author</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getInformant <em>Informant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getParticipant <em>Participant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getEntryRelationship <em>Entry Relationship</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getPrecondition <em>Precondition</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getReferenceRange <em>Reference Range</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getSpecimens <em>Specimen</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getPerformers <em>Performer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getAuthors <em>Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getInformants <em>Informant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getParticipants <em>Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getEntryRelationships <em>Entry Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getReferences <em>Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getPreconditions <em>Precondition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getReferenceRanges <em>Reference Range</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl#getMoodCode <em>Mood Code</em>}</li>
@@ -111,14 +104,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
  */
 public class ObservationImpl extends EObjectImpl implements Observation {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -131,24 +124,24 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getIds() <em>Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> id;
+	protected EList<II> ids;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
@@ -231,44 +224,44 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	protected CS languageCode;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference list.
+	 * The cached value of the '{@link #getValues() <em>Value</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getValues()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ANY> value;
+	protected EList<ANY> values;
 
 	/**
-	 * The cached value of the '{@link #getInterpretationCode() <em>Interpretation Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getInterpretationCodes() <em>Interpretation Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInterpretationCode()
+	 * @see #getInterpretationCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CE> interpretationCode;
+	protected EList<CE> interpretationCodes;
 
 	/**
-	 * The cached value of the '{@link #getMethodCode() <em>Method Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getMethodCodes() <em>Method Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMethodCode()
+	 * @see #getMethodCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CE> methodCode;
+	protected EList<CE> methodCodes;
 
 	/**
-	 * The cached value of the '{@link #getTargetSiteCode() <em>Target Site Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getTargetSiteCodes() <em>Target Site Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargetSiteCode()
+	 * @see #getTargetSiteCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CD> targetSiteCode;
+	protected EList<CD> targetSiteCodes;
 
 	/**
 	 * The cached value of the '{@link #getSubject() <em>Subject</em>}' containment reference.
@@ -281,94 +274,94 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	protected Subject subject;
 
 	/**
-	 * The cached value of the '{@link #getSpecimen() <em>Specimen</em>}' containment reference list.
+	 * The cached value of the '{@link #getSpecimens() <em>Specimen</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpecimen()
+	 * @see #getSpecimens()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Specimen> specimen;
+	protected EList<Specimen> specimens;
 
 	/**
-	 * The cached value of the '{@link #getPerformer() <em>Performer</em>}' containment reference list.
+	 * The cached value of the '{@link #getPerformers() <em>Performer</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPerformer()
+	 * @see #getPerformers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Performer2> performer;
+	protected EList<Performer2> performers;
 
 	/**
-	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' containment reference list.
+	 * The cached value of the '{@link #getAuthors() <em>Author</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAuthor()
+	 * @see #getAuthors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Author> author;
+	protected EList<Author> authors;
 
 	/**
-	 * The cached value of the '{@link #getInformant() <em>Informant</em>}' containment reference list.
+	 * The cached value of the '{@link #getInformants() <em>Informant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInformant()
+	 * @see #getInformants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Informant12> informant;
+	protected EList<Informant12> informants;
 
 	/**
-	 * The cached value of the '{@link #getParticipant() <em>Participant</em>}' containment reference list.
+	 * The cached value of the '{@link #getParticipants() <em>Participant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParticipant()
+	 * @see #getParticipants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Participant2> participant;
+	protected EList<Participant2> participants;
 
 	/**
-	 * The cached value of the '{@link #getEntryRelationship() <em>Entry Relationship</em>}' containment reference list.
+	 * The cached value of the '{@link #getEntryRelationships() <em>Entry Relationship</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntryRelationship()
+	 * @see #getEntryRelationships()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntryRelationship> entryRelationship;
+	protected EList<EntryRelationship> entryRelationships;
 
 	/**
-	 * The cached value of the '{@link #getReference() <em>Reference</em>}' containment reference list.
+	 * The cached value of the '{@link #getReferences() <em>Reference</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReference()
+	 * @see #getReferences()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Reference> reference;
+	protected EList<Reference> references;
 
 	/**
-	 * The cached value of the '{@link #getPrecondition() <em>Precondition</em>}' containment reference list.
+	 * The cached value of the '{@link #getPreconditions() <em>Precondition</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrecondition()
+	 * @see #getPreconditions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Precondition> precondition;
+	protected EList<Precondition> preconditions;
 
 	/**
-	 * The cached value of the '{@link #getReferenceRange() <em>Reference Range</em>}' containment reference list.
+	 * The cached value of the '{@link #getReferenceRanges() <em>Reference Range</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReferenceRange()
+	 * @see #getReferenceRanges()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ReferenceRange> referenceRange;
+	protected EList<ReferenceRange> referenceRanges;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -501,11 +494,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.OBSERVATION__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.OBSERVATION__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -556,11 +549,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.OBSERVATION__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.OBSERVATION__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -568,11 +561,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getId() {
-		if (id == null) {
-			id = new EObjectContainmentEList<II>(II.class, this, CDAPackage.OBSERVATION__ID);
+	public EList<II> getIds() {
+		if (ids == null) {
+			ids = new EObjectContainmentEList<II>(II.class, this, CDAPackage.OBSERVATION__ID);
 		}
-		return id;
+		return ids;
 	}
 
 	/**
@@ -924,11 +917,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ANY> getValue() {
-		if (value == null) {
-			value = new EObjectContainmentEList<ANY>(ANY.class, this, CDAPackage.OBSERVATION__VALUE);
+	public EList<ANY> getValues() {
+		if (values == null) {
+			values = new EObjectContainmentEList<ANY>(ANY.class, this, CDAPackage.OBSERVATION__VALUE);
 		}
-		return value;
+		return values;
 	}
 
 	/**
@@ -936,11 +929,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CE> getInterpretationCode() {
-		if (interpretationCode == null) {
-			interpretationCode = new EObjectContainmentEList<CE>(CE.class, this, CDAPackage.OBSERVATION__INTERPRETATION_CODE);
+	public EList<CE> getInterpretationCodes() {
+		if (interpretationCodes == null) {
+			interpretationCodes = new EObjectContainmentEList<CE>(CE.class, this, CDAPackage.OBSERVATION__INTERPRETATION_CODE);
 		}
-		return interpretationCode;
+		return interpretationCodes;
 	}
 
 	/**
@@ -948,11 +941,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CE> getMethodCode() {
-		if (methodCode == null) {
-			methodCode = new EObjectContainmentEList<CE>(CE.class, this, CDAPackage.OBSERVATION__METHOD_CODE);
+	public EList<CE> getMethodCodes() {
+		if (methodCodes == null) {
+			methodCodes = new EObjectContainmentEList<CE>(CE.class, this, CDAPackage.OBSERVATION__METHOD_CODE);
 		}
-		return methodCode;
+		return methodCodes;
 	}
 
 	/**
@@ -960,11 +953,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CD> getTargetSiteCode() {
-		if (targetSiteCode == null) {
-			targetSiteCode = new EObjectContainmentEList<CD>(CD.class, this, CDAPackage.OBSERVATION__TARGET_SITE_CODE);
+	public EList<CD> getTargetSiteCodes() {
+		if (targetSiteCodes == null) {
+			targetSiteCodes = new EObjectContainmentEList<CD>(CD.class, this, CDAPackage.OBSERVATION__TARGET_SITE_CODE);
 		}
-		return targetSiteCode;
+		return targetSiteCodes;
 	}
 
 	/**
@@ -1015,11 +1008,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Specimen> getSpecimen() {
-		if (specimen == null) {
-			specimen = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.OBSERVATION__SPECIMEN);
+	public EList<Specimen> getSpecimens() {
+		if (specimens == null) {
+			specimens = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.OBSERVATION__SPECIMEN);
 		}
-		return specimen;
+		return specimens;
 	}
 
 	/**
@@ -1027,11 +1020,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Performer2> getPerformer() {
-		if (performer == null) {
-			performer = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.OBSERVATION__PERFORMER);
+	public EList<Performer2> getPerformers() {
+		if (performers == null) {
+			performers = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.OBSERVATION__PERFORMER);
 		}
-		return performer;
+		return performers;
 	}
 
 	/**
@@ -1039,11 +1032,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Author> getAuthor() {
-		if (author == null) {
-			author = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.OBSERVATION__AUTHOR);
+	public EList<Author> getAuthors() {
+		if (authors == null) {
+			authors = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.OBSERVATION__AUTHOR);
 		}
-		return author;
+		return authors;
 	}
 
 	/**
@@ -1051,11 +1044,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Informant12> getInformant() {
-		if (informant == null) {
-			informant = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.OBSERVATION__INFORMANT);
+	public EList<Informant12> getInformants() {
+		if (informants == null) {
+			informants = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.OBSERVATION__INFORMANT);
 		}
-		return informant;
+		return informants;
 	}
 
 	/**
@@ -1063,11 +1056,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Participant2> getParticipant() {
-		if (participant == null) {
-			participant = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.OBSERVATION__PARTICIPANT);
+	public EList<Participant2> getParticipants() {
+		if (participants == null) {
+			participants = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.OBSERVATION__PARTICIPANT);
 		}
-		return participant;
+		return participants;
 	}
 
 	/**
@@ -1075,11 +1068,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntryRelationship> getEntryRelationship() {
-		if (entryRelationship == null) {
-			entryRelationship = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.OBSERVATION__ENTRY_RELATIONSHIP);
+	public EList<EntryRelationship> getEntryRelationships() {
+		if (entryRelationships == null) {
+			entryRelationships = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.OBSERVATION__ENTRY_RELATIONSHIP);
 		}
-		return entryRelationship;
+		return entryRelationships;
 	}
 
 	/**
@@ -1087,11 +1080,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Reference> getReference() {
-		if (reference == null) {
-			reference = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.OBSERVATION__REFERENCE);
+	public EList<Reference> getReferences() {
+		if (references == null) {
+			references = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.OBSERVATION__REFERENCE);
 		}
-		return reference;
+		return references;
 	}
 
 	/**
@@ -1099,11 +1092,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Precondition> getPrecondition() {
-		if (precondition == null) {
-			precondition = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.OBSERVATION__PRECONDITION);
+	public EList<Precondition> getPreconditions() {
+		if (preconditions == null) {
+			preconditions = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.OBSERVATION__PRECONDITION);
 		}
-		return precondition;
+		return preconditions;
 	}
 
 	/**
@@ -1111,11 +1104,11 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ReferenceRange> getReferenceRange() {
-		if (referenceRange == null) {
-			referenceRange = new EObjectContainmentEList<ReferenceRange>(ReferenceRange.class, this, CDAPackage.OBSERVATION__REFERENCE_RANGE);
+	public EList<ReferenceRange> getReferenceRanges() {
+		if (referenceRanges == null) {
+			referenceRanges = new EObjectContainmentEList<ReferenceRange>(ReferenceRange.class, this, CDAPackage.OBSERVATION__REFERENCE_RANGE);
 		}
-		return referenceRange;
+		return referenceRanges;
 	}
 
 	/**
@@ -1363,8 +1356,8 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Act> getAct() {
-		return ObservationOperations.getAct(this);
+	public EList<Act> getActs() {
+		return ObservationOperations.getActs(this);
 	}
 
 	/**
@@ -1381,8 +1374,8 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Encounter> getEncounter() {
-		return ObservationOperations.getEncounter(this);
+	public EList<Encounter> getEncounters() {
+		return ObservationOperations.getEncounters(this);
 	}
 
 	/**
@@ -1390,8 +1383,8 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Observation> getObservation() {
-		return ObservationOperations.getObservation(this);
+	public EList<Observation> getObservations() {
+		return ObservationOperations.getObservations(this);
 	}
 
 	/**
@@ -1408,8 +1401,8 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Organizer> getOrganizer() {
-		return ObservationOperations.getOrganizer(this);
+	public EList<Organizer> getOrganizers() {
+		return ObservationOperations.getOrganizers(this);
 	}
 
 	/**
@@ -1417,8 +1410,8 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Procedure> getProcedure() {
-		return ObservationOperations.getProcedure(this);
+	public EList<Procedure> getProcedures() {
+		return ObservationOperations.getProcedures(this);
 	}
 
 	/**
@@ -1426,8 +1419,8 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RegionOfInterest> getRegionOfInterest() {
-		return ObservationOperations.getRegionOfInterest(this);
+	public EList<RegionOfInterest> getRegionsOfInterest() {
+		return ObservationOperations.getRegionsOfInterest(this);
 	}
 
 	/**
@@ -1444,8 +1437,8 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SubstanceAdministration> getSubstanceAdministration() {
-		return ObservationOperations.getSubstanceAdministration(this);
+	public EList<SubstanceAdministration> getSubstanceAdministrations() {
+		return ObservationOperations.getSubstanceAdministrations(this);
 	}
 
 	/**
@@ -1453,8 +1446,8 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Supply> getSupply() {
-		return ObservationOperations.getSupply(this);
+	public EList<Supply> getSupplies() {
+		return ObservationOperations.getSupplies(this);
 	}
 
 	/**
@@ -1565,13 +1558,13 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.OBSERVATION__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.OBSERVATION__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__ID:
-				return ((InternalEList<?>)getId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.OBSERVATION__DERIVATION_EXPR:
@@ -1589,33 +1582,33 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 			case CDAPackage.OBSERVATION__LANGUAGE_CODE:
 				return basicSetLanguageCode(null, msgs);
 			case CDAPackage.OBSERVATION__VALUE:
-				return ((InternalEList<?>)getValue()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__INTERPRETATION_CODE:
-				return ((InternalEList<?>)getInterpretationCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInterpretationCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__METHOD_CODE:
-				return ((InternalEList<?>)getMethodCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getMethodCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__TARGET_SITE_CODE:
-				return ((InternalEList<?>)getTargetSiteCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTargetSiteCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.OBSERVATION__SPECIMEN:
-				return ((InternalEList<?>)getSpecimen()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getSpecimens()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__PERFORMER:
-				return ((InternalEList<?>)getPerformer()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPerformers()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__AUTHOR:
-				return ((InternalEList<?>)getAuthor()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__INFORMANT:
-				return ((InternalEList<?>)getInformant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__PARTICIPANT:
-				return ((InternalEList<?>)getParticipant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__ENTRY_RELATIONSHIP:
-				return ((InternalEList<?>)getEntryRelationship()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getEntryRelationships()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__REFERENCE:
-				return ((InternalEList<?>)getReference()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__PRECONDITION:
-				return ((InternalEList<?>)getPrecondition()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPreconditions()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION__REFERENCE_RANGE:
-				return ((InternalEList<?>)getReferenceRange()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getReferenceRanges()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1629,13 +1622,13 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.OBSERVATION__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.OBSERVATION__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.OBSERVATION__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.OBSERVATION__ID:
-				return getId();
+				return getIds();
 			case CDAPackage.OBSERVATION__CODE:
 				return getCode();
 			case CDAPackage.OBSERVATION__DERIVATION_EXPR:
@@ -1653,33 +1646,33 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 			case CDAPackage.OBSERVATION__LANGUAGE_CODE:
 				return getLanguageCode();
 			case CDAPackage.OBSERVATION__VALUE:
-				return getValue();
+				return getValues();
 			case CDAPackage.OBSERVATION__INTERPRETATION_CODE:
-				return getInterpretationCode();
+				return getInterpretationCodes();
 			case CDAPackage.OBSERVATION__METHOD_CODE:
-				return getMethodCode();
+				return getMethodCodes();
 			case CDAPackage.OBSERVATION__TARGET_SITE_CODE:
-				return getTargetSiteCode();
+				return getTargetSiteCodes();
 			case CDAPackage.OBSERVATION__SUBJECT:
 				return getSubject();
 			case CDAPackage.OBSERVATION__SPECIMEN:
-				return getSpecimen();
+				return getSpecimens();
 			case CDAPackage.OBSERVATION__PERFORMER:
-				return getPerformer();
+				return getPerformers();
 			case CDAPackage.OBSERVATION__AUTHOR:
-				return getAuthor();
+				return getAuthors();
 			case CDAPackage.OBSERVATION__INFORMANT:
-				return getInformant();
+				return getInformants();
 			case CDAPackage.OBSERVATION__PARTICIPANT:
-				return getParticipant();
+				return getParticipants();
 			case CDAPackage.OBSERVATION__ENTRY_RELATIONSHIP:
-				return getEntryRelationship();
+				return getEntryRelationships();
 			case CDAPackage.OBSERVATION__REFERENCE:
-				return getReference();
+				return getReferences();
 			case CDAPackage.OBSERVATION__PRECONDITION:
-				return getPrecondition();
+				return getPreconditions();
 			case CDAPackage.OBSERVATION__REFERENCE_RANGE:
-				return getReferenceRange();
+				return getReferenceRanges();
 			case CDAPackage.OBSERVATION__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.OBSERVATION__CLASS_CODE:
@@ -1702,19 +1695,19 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.OBSERVATION__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.OBSERVATION__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__ID:
-				getId().clear();
-				getId().addAll((Collection<? extends II>)newValue);
+				getIds().clear();
+				getIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__CODE:
 				setCode((CD)newValue);
@@ -1741,59 +1734,59 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 				setLanguageCode((CS)newValue);
 				return;
 			case CDAPackage.OBSERVATION__VALUE:
-				getValue().clear();
-				getValue().addAll((Collection<? extends ANY>)newValue);
+				getValues().clear();
+				getValues().addAll((Collection<? extends ANY>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__INTERPRETATION_CODE:
-				getInterpretationCode().clear();
-				getInterpretationCode().addAll((Collection<? extends CE>)newValue);
+				getInterpretationCodes().clear();
+				getInterpretationCodes().addAll((Collection<? extends CE>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__METHOD_CODE:
-				getMethodCode().clear();
-				getMethodCode().addAll((Collection<? extends CE>)newValue);
+				getMethodCodes().clear();
+				getMethodCodes().addAll((Collection<? extends CE>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__TARGET_SITE_CODE:
-				getTargetSiteCode().clear();
-				getTargetSiteCode().addAll((Collection<? extends CD>)newValue);
+				getTargetSiteCodes().clear();
+				getTargetSiteCodes().addAll((Collection<? extends CD>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__SUBJECT:
 				setSubject((Subject)newValue);
 				return;
 			case CDAPackage.OBSERVATION__SPECIMEN:
-				getSpecimen().clear();
-				getSpecimen().addAll((Collection<? extends Specimen>)newValue);
+				getSpecimens().clear();
+				getSpecimens().addAll((Collection<? extends Specimen>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__PERFORMER:
-				getPerformer().clear();
-				getPerformer().addAll((Collection<? extends Performer2>)newValue);
+				getPerformers().clear();
+				getPerformers().addAll((Collection<? extends Performer2>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__AUTHOR:
-				getAuthor().clear();
-				getAuthor().addAll((Collection<? extends Author>)newValue);
+				getAuthors().clear();
+				getAuthors().addAll((Collection<? extends Author>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__INFORMANT:
-				getInformant().clear();
-				getInformant().addAll((Collection<? extends Informant12>)newValue);
+				getInformants().clear();
+				getInformants().addAll((Collection<? extends Informant12>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__PARTICIPANT:
-				getParticipant().clear();
-				getParticipant().addAll((Collection<? extends Participant2>)newValue);
+				getParticipants().clear();
+				getParticipants().addAll((Collection<? extends Participant2>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__ENTRY_RELATIONSHIP:
-				getEntryRelationship().clear();
-				getEntryRelationship().addAll((Collection<? extends EntryRelationship>)newValue);
+				getEntryRelationships().clear();
+				getEntryRelationships().addAll((Collection<? extends EntryRelationship>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__REFERENCE:
-				getReference().clear();
-				getReference().addAll((Collection<? extends Reference>)newValue);
+				getReferences().clear();
+				getReferences().addAll((Collection<? extends Reference>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__PRECONDITION:
-				getPrecondition().clear();
-				getPrecondition().addAll((Collection<? extends Precondition>)newValue);
+				getPreconditions().clear();
+				getPreconditions().addAll((Collection<? extends Precondition>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__REFERENCE_RANGE:
-				getReferenceRange().clear();
-				getReferenceRange().addAll((Collection<? extends ReferenceRange>)newValue);
+				getReferenceRanges().clear();
+				getReferenceRanges().addAll((Collection<? extends ReferenceRange>)newValue);
 				return;
 			case CDAPackage.OBSERVATION__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -1820,16 +1813,16 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.OBSERVATION__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.OBSERVATION__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.OBSERVATION__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.OBSERVATION__ID:
-				getId().clear();
+				getIds().clear();
 				return;
 			case CDAPackage.OBSERVATION__CODE:
 				setCode((CD)null);
@@ -1856,46 +1849,46 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 				setLanguageCode((CS)null);
 				return;
 			case CDAPackage.OBSERVATION__VALUE:
-				getValue().clear();
+				getValues().clear();
 				return;
 			case CDAPackage.OBSERVATION__INTERPRETATION_CODE:
-				getInterpretationCode().clear();
+				getInterpretationCodes().clear();
 				return;
 			case CDAPackage.OBSERVATION__METHOD_CODE:
-				getMethodCode().clear();
+				getMethodCodes().clear();
 				return;
 			case CDAPackage.OBSERVATION__TARGET_SITE_CODE:
-				getTargetSiteCode().clear();
+				getTargetSiteCodes().clear();
 				return;
 			case CDAPackage.OBSERVATION__SUBJECT:
 				setSubject((Subject)null);
 				return;
 			case CDAPackage.OBSERVATION__SPECIMEN:
-				getSpecimen().clear();
+				getSpecimens().clear();
 				return;
 			case CDAPackage.OBSERVATION__PERFORMER:
-				getPerformer().clear();
+				getPerformers().clear();
 				return;
 			case CDAPackage.OBSERVATION__AUTHOR:
-				getAuthor().clear();
+				getAuthors().clear();
 				return;
 			case CDAPackage.OBSERVATION__INFORMANT:
-				getInformant().clear();
+				getInformants().clear();
 				return;
 			case CDAPackage.OBSERVATION__PARTICIPANT:
-				getParticipant().clear();
+				getParticipants().clear();
 				return;
 			case CDAPackage.OBSERVATION__ENTRY_RELATIONSHIP:
-				getEntryRelationship().clear();
+				getEntryRelationships().clear();
 				return;
 			case CDAPackage.OBSERVATION__REFERENCE:
-				getReference().clear();
+				getReferences().clear();
 				return;
 			case CDAPackage.OBSERVATION__PRECONDITION:
-				getPrecondition().clear();
+				getPreconditions().clear();
 				return;
 			case CDAPackage.OBSERVATION__REFERENCE_RANGE:
-				getReferenceRange().clear();
+				getReferenceRanges().clear();
 				return;
 			case CDAPackage.OBSERVATION__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -1922,13 +1915,13 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.OBSERVATION__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.OBSERVATION__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.OBSERVATION__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.OBSERVATION__ID:
-				return id != null && !id.isEmpty();
+				return ids != null && !ids.isEmpty();
 			case CDAPackage.OBSERVATION__CODE:
 				return code != null;
 			case CDAPackage.OBSERVATION__DERIVATION_EXPR:
@@ -1946,33 +1939,33 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 			case CDAPackage.OBSERVATION__LANGUAGE_CODE:
 				return languageCode != null;
 			case CDAPackage.OBSERVATION__VALUE:
-				return value != null && !value.isEmpty();
+				return values != null && !values.isEmpty();
 			case CDAPackage.OBSERVATION__INTERPRETATION_CODE:
-				return interpretationCode != null && !interpretationCode.isEmpty();
+				return interpretationCodes != null && !interpretationCodes.isEmpty();
 			case CDAPackage.OBSERVATION__METHOD_CODE:
-				return methodCode != null && !methodCode.isEmpty();
+				return methodCodes != null && !methodCodes.isEmpty();
 			case CDAPackage.OBSERVATION__TARGET_SITE_CODE:
-				return targetSiteCode != null && !targetSiteCode.isEmpty();
+				return targetSiteCodes != null && !targetSiteCodes.isEmpty();
 			case CDAPackage.OBSERVATION__SUBJECT:
 				return subject != null;
 			case CDAPackage.OBSERVATION__SPECIMEN:
-				return specimen != null && !specimen.isEmpty();
+				return specimens != null && !specimens.isEmpty();
 			case CDAPackage.OBSERVATION__PERFORMER:
-				return performer != null && !performer.isEmpty();
+				return performers != null && !performers.isEmpty();
 			case CDAPackage.OBSERVATION__AUTHOR:
-				return author != null && !author.isEmpty();
+				return authors != null && !authors.isEmpty();
 			case CDAPackage.OBSERVATION__INFORMANT:
-				return informant != null && !informant.isEmpty();
+				return informants != null && !informants.isEmpty();
 			case CDAPackage.OBSERVATION__PARTICIPANT:
-				return participant != null && !participant.isEmpty();
+				return participants != null && !participants.isEmpty();
 			case CDAPackage.OBSERVATION__ENTRY_RELATIONSHIP:
-				return entryRelationship != null && !entryRelationship.isEmpty();
+				return entryRelationships != null && !entryRelationships.isEmpty();
 			case CDAPackage.OBSERVATION__REFERENCE:
-				return reference != null && !reference.isEmpty();
+				return references != null && !references.isEmpty();
 			case CDAPackage.OBSERVATION__PRECONDITION:
-				return precondition != null && !precondition.isEmpty();
+				return preconditions != null && !preconditions.isEmpty();
 			case CDAPackage.OBSERVATION__REFERENCE_RANGE:
-				return referenceRange != null && !referenceRange.isEmpty();
+				return referenceRanges != null && !referenceRanges.isEmpty();
 			case CDAPackage.OBSERVATION__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.OBSERVATION__CLASS_CODE:

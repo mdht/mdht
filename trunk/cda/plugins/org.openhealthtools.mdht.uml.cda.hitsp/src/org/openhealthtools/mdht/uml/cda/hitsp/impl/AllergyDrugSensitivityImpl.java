@@ -56,8 +56,8 @@ public class AllergyDrugSensitivityImpl extends AllergyIntoleranceConcernImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AllergyDrugSensitivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AllergyDrugSensitivityOperations.AllergyDrugSensitivity_templateId(this, diagnostics, context);
+	public boolean validateAllergyDrugSensitivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AllergyDrugSensitivityOperations.validateAllergyDrugSensitivityTemplateId(this, diagnostics, context);
 	}
 
 	/**

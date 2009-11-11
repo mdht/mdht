@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ProductInstance;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProductInstanceOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class ProductInstanceImpl extends ParticipantRoleImpl implements ProductI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProductInstance_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProductInstanceOperations.ProductInstance_templateId(this, diagnostics, context);
+	public boolean validateProductInstanceTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProductInstanceOperations.validateProductInstanceTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class ProductInstanceImpl extends ParticipantRoleImpl implements ProductI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProductInstance_classCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProductInstanceOperations.ProductInstance_classCode(this, diagnostics, context);
+	public boolean validateProductInstanceClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProductInstanceOperations.validateProductInstanceClassCode(this, diagnostics, context);
 	}
 
 	/**

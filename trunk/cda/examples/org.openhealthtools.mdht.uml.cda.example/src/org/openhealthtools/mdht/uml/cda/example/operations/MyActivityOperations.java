@@ -11,18 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemActOperations;
-
 import org.openhealthtools.mdht.uml.cda.example.ExamplePackage;
 import org.openhealthtools.mdht.uml.cda.example.ExamplePlugin;
 import org.openhealthtools.mdht.uml.cda.example.MyActivity;
-
 import org.openhealthtools.mdht.uml.cda.example.util.ExampleValidator;
 
 /**
@@ -33,11 +28,11 @@ import org.openhealthtools.mdht.uml.cda.example.util.ExampleValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyActivity#MyActivity_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyActivity#MyActivity_classCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyActivity#MyActivity_moodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyActivity#MyActivity_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyActivity#MyActivity_statusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyActivity#validateMyActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyActivity#validateMyActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyActivity#validateMyActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyActivity#validateMyActivityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.example.MyActivity#validateMyActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Status Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,24 +49,24 @@ public class MyActivityOperations extends ProblemActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #MyActivity_templateId(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateMyActivityTemplateId(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MyActivity_templateId(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMyActivityTemplateId(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.2.3.4.2')";
+	protected static final String VALIDATE_MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.2.3.4.2')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #MyActivity_templateId(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateMyActivityTemplateId(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MyActivity_templateId(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMyActivityTemplateId(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,25 +79,25 @@ public class MyActivityOperations extends ProblemActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean MyActivity_templateId(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateMyActivityTemplateId(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(ExamplePackage.Literals.MY_ACTIVITY);
 			try {
-				MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 ExampleValidator.DIAGNOSTIC_SOURCE,
 						 ExampleValidator.MY_ACTIVITY__MY_ACTIVITY_TEMPLATE_ID,
-						 ExamplePlugin.INSTANCE.getString("MyActivity_templateId"),
+						 ExamplePlugin.INSTANCE.getString("MyActivityTemplateId"),
 						 new Object [] { myActivity }));
 			}
 			return false;
@@ -111,24 +106,24 @@ public class MyActivityOperations extends ProblemActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #MyActivity_classCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity class Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateMyActivityClassCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Class Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MyActivity_classCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMyActivityClassCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.classCode=vocab::x_ActClassDocumentEntryAct::ACT";
+	protected static final String VALIDATE_MY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.classCode=vocab::x_ActClassDocumentEntryAct::ACT";
 
 	/**
-	 * The cached OCL invariant for the '{@link #MyActivity_classCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity class Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateMyActivityClassCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Class Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MyActivity_classCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMyActivityClassCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint MY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_MY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,25 +136,25 @@ public class MyActivityOperations extends ProblemActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean MyActivity_classCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (MY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateMyActivityClassCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(ExamplePackage.Literals.MY_ACTIVITY);
 			try {
-				MY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_MY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(MY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_MY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 ExampleValidator.DIAGNOSTIC_SOURCE,
 						 ExampleValidator.MY_ACTIVITY__MY_ACTIVITY_CLASS_CODE,
-						 ExamplePlugin.INSTANCE.getString("MyActivity_classCode"),
+						 ExamplePlugin.INSTANCE.getString("MyActivityClassCode"),
 						 new Object [] { myActivity }));
 			}
 			return false;
@@ -168,24 +163,24 @@ public class MyActivityOperations extends ProblemActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #MyActivity_moodCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity mood Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateMyActivityMoodCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Mood Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MyActivity_moodCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMyActivityMoodCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode=vocab::x_DocumentActMood::EVN";
+	protected static final String VALIDATE_MY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode=vocab::x_DocumentActMood::EVN";
 
 	/**
-	 * The cached OCL invariant for the '{@link #MyActivity_moodCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity mood Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateMyActivityMoodCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Mood Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MyActivity_moodCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMyActivityMoodCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint MY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_MY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,25 +193,25 @@ public class MyActivityOperations extends ProblemActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean MyActivity_moodCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (MY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateMyActivityMoodCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(ExamplePackage.Literals.MY_ACTIVITY);
 			try {
-				MY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_MY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(MY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_MY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 ExampleValidator.DIAGNOSTIC_SOURCE,
 						 ExampleValidator.MY_ACTIVITY__MY_ACTIVITY_MOOD_CODE,
-						 ExamplePlugin.INSTANCE.getString("MyActivity_moodCode"),
+						 ExamplePlugin.INSTANCE.getString("MyActivityMoodCode"),
 						 new Object [] { myActivity }));
 			}
 			return false;
@@ -225,26 +220,26 @@ public class MyActivityOperations extends ProblemActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #MyActivity_code(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateMyActivityCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MyActivity_code(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMyActivityCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MY_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and "+
+	protected static final String VALIDATE_MY_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and "+
 "let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in ("+
 "value.code = '23745001' and value.codeSystem = '2.16.840.1.113883.6.96')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #MyActivity_code(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateMyActivityCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MyActivity_code(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMyActivityCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint MY_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_MY_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,25 +254,25 @@ public class MyActivityOperations extends ProblemActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean MyActivity_code(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (MY_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateMyActivityCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MY_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(ExamplePackage.Literals.MY_ACTIVITY);
 			try {
-				MY_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MY_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_MY_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MY_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(MY_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_MY_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 ExampleValidator.DIAGNOSTIC_SOURCE,
 						 ExampleValidator.MY_ACTIVITY__MY_ACTIVITY_CODE,
-						 ExamplePlugin.INSTANCE.getString("MyActivity_code"),
+						 ExamplePlugin.INSTANCE.getString("MyActivityCode"),
 						 new Object [] { myActivity }));
 			}
 			return false;
@@ -286,26 +281,26 @@ public class MyActivityOperations extends ProblemActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #MyActivity_statusCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity status Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateMyActivityStatusCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Status Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MyActivity_statusCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMyActivityStatusCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and "+
+	protected static final String VALIDATE_MY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and "+
 "let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in ("+
 "value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #MyActivity_statusCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>My Activity status Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateMyActivityStatusCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Status Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MyActivity_statusCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMyActivityStatusCode(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint MY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_MY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -320,25 +315,25 @@ public class MyActivityOperations extends ProblemActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean MyActivity_statusCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (MY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateMyActivityStatusCode(MyActivity myActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(ExamplePackage.Literals.MY_ACTIVITY);
 			try {
-				MY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_MY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(MY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_MY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 ExampleValidator.DIAGNOSTIC_SOURCE,
 						 ExampleValidator.MY_ACTIVITY__MY_ACTIVITY_STATUS_CODE,
-						 ExamplePlugin.INSTANCE.getString("MyActivity_statusCode"),
+						 ExamplePlugin.INSTANCE.getString("MyActivityStatusCode"),
 						 new Object [] { myActivity }));
 			}
 			return false;

@@ -28,11 +28,11 @@ import org.openhealthtools.mdht.uml.cda.operations.SupplyOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#SupplyActivity_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#SupplyActivity_id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#SupplyActivity_statusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#SupplyActivity_medicationStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity medication Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#SupplyActivity_fulfillmentInstruction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity fulfillment Instruction</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityMedicationStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Medication Status Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityFulfillmentInstruction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Fulfillment Instruction</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,24 +49,24 @@ public class SupplyActivityOperations extends SupplyOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #SupplyActivity_templateId(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateSupplyActivityTemplateId(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SupplyActivity_templateId(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSupplyActivityTemplateId(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.34')";
+	protected static final String VALIDATE_SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.34')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #SupplyActivity_templateId(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateSupplyActivityTemplateId(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SupplyActivity_templateId(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSupplyActivityTemplateId(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,25 +79,25 @@ public class SupplyActivityOperations extends SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean SupplyActivity_templateId(SupplyActivity supplyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateSupplyActivityTemplateId(SupplyActivity supplyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.SUPPLY_ACTIVITY);
 			try {
-				SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(supplyActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(supplyActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.SUPPLY_ACTIVITY__SUPPLY_ACTIVITY_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("SupplyActivity_templateId"),
+						 CCDPlugin.INSTANCE.getString("SupplyActivityTemplateId"),
 						 new Object [] { supplyActivity }));
 			}
 			return false;
@@ -106,24 +106,24 @@ public class SupplyActivityOperations extends SupplyOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #SupplyActivity_id(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateSupplyActivityId(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SupplyActivity_id(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSupplyActivityId(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.id->isEmpty()";
+	protected static final String VALIDATE_SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.id->isEmpty()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #SupplyActivity_id(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateSupplyActivityId(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SupplyActivity_id(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSupplyActivityId(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,25 +136,25 @@ public class SupplyActivityOperations extends SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean SupplyActivity_id(SupplyActivity supplyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateSupplyActivityId(SupplyActivity supplyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.SUPPLY_ACTIVITY);
 			try {
-				SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(supplyActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(supplyActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.SUPPLY_ACTIVITY__SUPPLY_ACTIVITY_ID,
-						 CCDPlugin.INSTANCE.getString("SupplyActivity_id"),
+						 CCDPlugin.INSTANCE.getString("SupplyActivityId"),
 						 new Object [] { supplyActivity }));
 			}
 			return false;
@@ -163,24 +163,24 @@ public class SupplyActivityOperations extends SupplyOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #SupplyActivity_statusCode(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity status Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateSupplyActivityStatusCode(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Status Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SupplyActivity_statusCode(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSupplyActivityStatusCode(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined()";
+	protected static final String VALIDATE_SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #SupplyActivity_statusCode(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity status Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateSupplyActivityStatusCode(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Status Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SupplyActivity_statusCode(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSupplyActivityStatusCode(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,25 +193,25 @@ public class SupplyActivityOperations extends SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean SupplyActivity_statusCode(SupplyActivity supplyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateSupplyActivityStatusCode(SupplyActivity supplyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.SUPPLY_ACTIVITY);
 			try {
-				SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(supplyActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(supplyActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.SUPPLY_ACTIVITY__SUPPLY_ACTIVITY_STATUS_CODE,
-						 CCDPlugin.INSTANCE.getString("SupplyActivity_statusCode"),
+						 CCDPlugin.INSTANCE.getString("SupplyActivityStatusCode"),
 						 new Object [] { supplyActivity }));
 			}
 			return false;
@@ -220,24 +220,24 @@ public class SupplyActivityOperations extends SupplyOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #SupplyActivity_medicationStatusObservation(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity medication Status Observation</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateSupplyActivityMedicationStatusObservation(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Medication Status Observation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SupplyActivity_medicationStatusObservation(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSupplyActivityMedicationStatusObservation(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))";
+	protected static final String VALIDATE_SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))";
 
 	/**
-	 * The cached OCL invariant for the '{@link #SupplyActivity_medicationStatusObservation(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity medication Status Observation</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateSupplyActivityMedicationStatusObservation(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Medication Status Observation</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SupplyActivity_medicationStatusObservation(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSupplyActivityMedicationStatusObservation(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,25 +250,25 @@ public class SupplyActivityOperations extends SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean SupplyActivity_medicationStatusObservation(SupplyActivity supplyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateSupplyActivityMedicationStatusObservation(SupplyActivity supplyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.SUPPLY_ACTIVITY);
 			try {
-				SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(supplyActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(supplyActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.INFO,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.SUPPLY_ACTIVITY__SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION,
-						 CCDPlugin.INSTANCE.getString("SupplyActivity_medicationStatusObservation"),
+						 CCDPlugin.INSTANCE.getString("SupplyActivityMedicationStatusObservation"),
 						 new Object [] { supplyActivity }));
 			}
 			return false;
@@ -277,24 +277,24 @@ public class SupplyActivityOperations extends SupplyOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #SupplyActivity_fulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity fulfillment Instruction</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateSupplyActivityFulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Fulfillment Instruction</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SupplyActivity_fulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSupplyActivityFulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)";
+	protected static final String VALIDATE_SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #SupplyActivity_fulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Supply Activity fulfillment Instruction</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateSupplyActivityFulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Fulfillment Instruction</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SupplyActivity_fulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSupplyActivityFulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -307,25 +307,25 @@ public class SupplyActivityOperations extends SupplyOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean SupplyActivity_fulfillmentInstruction(SupplyActivity supplyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateSupplyActivityFulfillmentInstruction(SupplyActivity supplyActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.SUPPLY_ACTIVITY);
 			try {
-				SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(supplyActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(supplyActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.INFO,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.SUPPLY_ACTIVITY__SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION,
-						 CCDPlugin.INSTANCE.getString("SupplyActivity_fulfillmentInstruction"),
+						 CCDPlugin.INSTANCE.getString("SupplyActivityFulfillmentInstruction"),
 						 new Object [] { supplyActivity }));
 			}
 			return false;

@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.impl.EncountersSectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterHistorySectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class EncounterHistorySectionImpl extends EncountersSectionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean EncounterHistorySection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncounterHistorySectionOperations.EncounterHistorySection_templateId(this, diagnostics, context);
+	public boolean validateEncounterHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncounterHistorySectionOperations.validateEncounterHistorySectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

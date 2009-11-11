@@ -27,8 +27,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation#MedicationStatusObservation_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Status Observation template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation#MedicationStatusObservation_value(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Status Observation value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation#validateMedicationStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Status Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation#validateMedicationStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Status Observation Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,24 +45,24 @@ public class MedicationStatusObservationOperations extends StatusObservationOper
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #MedicationStatusObservation_templateId(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Status Observation template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateMedicationStatusObservationTemplateId(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Status Observation Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MedicationStatusObservation_templateId(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMedicationStatusObservationTemplateId(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.47')";
+	protected static final String VALIDATE_MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.47')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #MedicationStatusObservation_templateId(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Status Observation template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateMedicationStatusObservationTemplateId(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Status Observation Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MedicationStatusObservation_templateId(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMedicationStatusObservationTemplateId(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,25 +75,25 @@ public class MedicationStatusObservationOperations extends StatusObservationOper
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean MedicationStatusObservation_templateId(MedicationStatusObservation medicationStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateMedicationStatusObservationTemplateId(MedicationStatusObservation medicationStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.MEDICATION_STATUS_OBSERVATION);
 			try {
-				MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicationStatusObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicationStatusObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.MEDICATION_STATUS_OBSERVATION__MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("MedicationStatusObservation_templateId"),
+						 CCDPlugin.INSTANCE.getString("MedicationStatusObservationTemplateId"),
 						 new Object [] { medicationStatusObservation }));
 			}
 			return false;
@@ -102,26 +102,26 @@ public class MedicationStatusObservationOperations extends StatusObservationOper
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #MedicationStatusObservation_value(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Status Observation value</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateMedicationStatusObservationValue(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Status Observation Value</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MedicationStatusObservation_value(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMedicationStatusObservationValue(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MEDICATION_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and "+
+	protected static final String VALIDATE_MEDICATION_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and "+
 "let value : datatypes::CE = element.oclAsType(datatypes::CE) in "+
 "value.codeSystem = '2.16.840.1.113883.1.11.20.7')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #MedicationStatusObservation_value(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medication Status Observation value</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateMedicationStatusObservationValue(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Status Observation Value</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MedicationStatusObservation_value(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMedicationStatusObservationValue(MedicationStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint MEDICATION_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_MEDICATION_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,25 +136,25 @@ public class MedicationStatusObservationOperations extends StatusObservationOper
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean MedicationStatusObservation_value(MedicationStatusObservation medicationStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (MEDICATION_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateMedicationStatusObservationValue(MedicationStatusObservation medicationStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MEDICATION_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.MEDICATION_STATUS_OBSERVATION);
 			try {
-				MEDICATION_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MEDICATION_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_MEDICATION_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MEDICATION_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(MEDICATION_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicationStatusObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_MEDICATION_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicationStatusObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.MEDICATION_STATUS_OBSERVATION__MEDICATION_STATUS_OBSERVATION_VALUE,
-						 CCDPlugin.INSTANCE.getString("MedicationStatusObservation_value"),
+						 CCDPlugin.INSTANCE.getString("MedicationStatusObservationValue"),
 						 new Object [] { medicationStatusObservation }));
 			}
 			return false;

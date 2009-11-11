@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CoverageActivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.ActImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class CoverageActivityImpl extends ActImpl implements CoverageActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean CoverageActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CoverageActivityOperations.CoverageActivity_templateId(this, diagnostics, context);
+	public boolean validateCoverageActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CoverageActivityOperations.validateCoverageActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class CoverageActivityImpl extends ActImpl implements CoverageActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean CoverageActivity_classCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CoverageActivityOperations.CoverageActivity_classCode(this, diagnostics, context);
+	public boolean validateCoverageActivityClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CoverageActivityOperations.validateCoverageActivityClassCode(this, diagnostics, context);
 	}
 
 	/**
@@ -73,8 +68,8 @@ public class CoverageActivityImpl extends ActImpl implements CoverageActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean CoverageActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CoverageActivityOperations.CoverageActivity_moodCode(this, diagnostics, context);
+	public boolean validateCoverageActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CoverageActivityOperations.validateCoverageActivityMoodCode(this, diagnostics, context);
 	}
 
 	/**
@@ -82,8 +77,8 @@ public class CoverageActivityImpl extends ActImpl implements CoverageActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean CoverageActivity_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CoverageActivityOperations.CoverageActivity_id(this, diagnostics, context);
+	public boolean validateCoverageActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CoverageActivityOperations.validateCoverageActivityId(this, diagnostics, context);
 	}
 
 	/**
@@ -91,8 +86,8 @@ public class CoverageActivityImpl extends ActImpl implements CoverageActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean CoverageActivity_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CoverageActivityOperations.CoverageActivity_statusCode(this, diagnostics, context);
+	public boolean validateCoverageActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CoverageActivityOperations.validateCoverageActivityStatusCode(this, diagnostics, context);
 	}
 
 	/**

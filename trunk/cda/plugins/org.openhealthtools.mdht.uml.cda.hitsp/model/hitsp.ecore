@@ -8,14 +8,14 @@
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>This module contains the allergy or intolerance conditions and the associated adverse reactions suffered&#xD;&#xA;    by the patient. See the HL7 Continuity of Care Document Section 3.8 for constraints applicable to this module.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="AllergyDrugSensitivity_templateId"/>
+      <details key="constraints.validation.error" value="AllergyDrugSensitivityTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.6"/>
     </eAnnotations>
     <eAnnotations source="uml2.alias">
       <details key="Allergies and Drug Sensitivities"/>
       <details key="Allergy and Drug Sensitivity"/>
     </eAnnotations>
-    <eOperations name="AllergyDrugSensitivity_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="AllergyDrugSensitivityTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.6')"/>
       </eAnnotations>
@@ -41,40 +41,37 @@
   <eClassifiers xsi:type="ecore:EClass" name="Medication" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//Medication">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.8"/>
-      <details key="constraints.validation.error" value="Medication_templateId"/>
+      <details key="constraints.validation.error" value="HITSPMedicationTemplateId"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="Medication_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.8')"/>
-        </eAnnotations>
+    <eOperations name="HITSPMedicationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.8')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.8')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.8')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//Medication/Medication_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//ProblemConcernEntry">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="Condition_templateId Condition_text"/>
+      <details key="constraints.validation.error" value="ConditionTemplateId ConditionText"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.7"/>
     </eAnnotations>
-    <eOperations name="Condition_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ConditionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.7')"/>
       </eAnnotations>
@@ -96,7 +93,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="Condition_text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ConditionText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.text.oclIsUndefined()"/>
       </eAnnotations>
@@ -126,9 +123,9 @@
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.32.1"/>
-      <details key="constraints.validation.error" value="PatientSummary_templateId"/>
+      <details key="constraints.validation.error" value="PatientSummaryTemplateId"/>
     </eAnnotations>
-    <eOperations name="PatientSummary_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PatientSummaryTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.32.1')"/>
       </eAnnotations>
@@ -159,34 +156,9 @@
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.119"/>
-      <details key="constraints.validation.error" value="VitalSignsSection_templateId HITSPVitalSignsSection_vitalSigns"/>
+      <details key="constraints.validation.error" value="HITSPVitalSignsSectionTemplateId HITSPVitalSignsSectionVitalSigns"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="VitalSignsSection_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.119')"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.119')"/>
-        </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//VitalSignsSection/VitalSignsSection_templateId ../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//VitalSignsSection/%duplicates%/VitalSignsSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
-    <eOperations name="HITSPVitalSignsSection_vitalSigns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="HITSPVitalSignsSectionVitalSigns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::IHEVitalSignsOrganizer) and&#xD;&#xA;entry.organizer.component.observation->exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))"/>
       </eAnnotations>
@@ -208,13 +180,35 @@
         </eGenericType>
       </eParameters>
     </eOperations>
+    <eOperations name="HITSPVitalSignsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.119')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.119')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VitalSign" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//VitalSignObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.14"/>
-      <details key="constraints.validation.error" value="VitalSign_templateId"/>
+      <details key="constraints.validation.error" value="VitalSignTemplateId"/>
     </eAnnotations>
-    <eOperations name="VitalSign_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="VitalSignTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.14')"/>
       </eAnnotations>
@@ -242,79 +236,72 @@
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Payers Section contains data on the patient’s payers, whether a ‘third party’ insurance, self-pay,&#xD;&#xA;    other payer or guarantor, or some combination. At a minimum, the patient's pertinent current payment sources should be&#xD;&#xA;    listed. If no payment sources are supplied, the reason shall be supplied as free text in the narrative block (e.g., Not&#xD;&#xA;    Insured, Payer Unknown, Medicare Pending, et cetera).&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="PayersSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPPayersSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.101"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="PayersSection_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.101')"/>
-        </eAnnotations>
+    <eOperations name="HITSPPayersSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.101')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.101')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.101')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//PayersSection/PayersSection_templateId ../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//PayersSection/%duplicates%/PayersSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AllergiesReactionsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//AllergiesReactionsSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Allergies and Other Adverse Reactions Section contains data on the substance intolerances and the&#xD;&#xA;    associated adverse reactions suffered by the patient. At a minimum, currently active and any relevant historical&#xD;&#xA;    allergies and adverse reactions shall be listed.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="AllergiesReactionsSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPAllergiesReactionsSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.102"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="AllergiesReactionsSection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.102')"/>
-        </eAnnotations>
+    <eOperations name="HITSPAllergiesReactionsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.102')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.102')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.102')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//AllergiesReactionsSection/AllergiesReactionsSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProblemListSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//ActiveProblemsSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Problem List Section contains data on the problems currently being monitored for the patient.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="ProblemListSection_templateId"/>
+      <details key="constraints.validation.error" value="ProblemListSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.103"/>
     </eAnnotations>
-    <eOperations name="ProblemListSection_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemListSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.103')"/>
       </eAnnotations>
@@ -342,345 +329,307 @@
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The History of Past Illness Section contains data about problems the patient suffered in the&#xD;&#xA;    past.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="HistoryOfPastIllnessSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPHistoryOfPastIllnessSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.104"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="HistoryOfPastIllnessSection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.104')"/>
-        </eAnnotations>
+    <eOperations name="HITSPHistoryOfPastIllnessSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.104')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.104')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.104')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//HistoryOfPastIllnessSection/HistoryOfPastIllnessSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChiefComplaintSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//ChiefComplaintSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Chief Complaint Section contains information about the patient's chief complaint.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="ChiefComplaintSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPChiefComplaintSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.105"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="ChiefComplaintSection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.105')"/>
-        </eAnnotations>
+    <eOperations name="HITSPChiefComplaintSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.105')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.105')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.105')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//ChiefComplaintSection/ChiefComplaintSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReasonForReferralSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//ReasonForReferralSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Reason for Referral Section contains information about the reason that the patient is being&#xD;&#xA;    referred.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="ReasonForReferralSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPReasonForReferralSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.106"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="ReasonForReferralSection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.106')"/>
-        </eAnnotations>
+    <eOperations name="HITSPReasonForReferralSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.106')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.106')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.106')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//ReasonForReferralSection/ReasonForReferralSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HistoryOfPresentIllness" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//HistoryOfPresentIllness">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The History of Present Illness Section contains information about the sequence of events preceding the&#xD;&#xA;    patient’s current complaints.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="HistoryOfPresentIllness_templateId"/>
+      <details key="constraints.validation.error" value="HITSPHistoryOfPresentIllnessTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.107"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="HistoryOfPresentIllness_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.107')"/>
-        </eAnnotations>
+    <eOperations name="HITSPHistoryOfPresentIllnessTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.107')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.107')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.107')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//HistoryOfPresentIllness/HistoryOfPresentIllness_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SurgeriesSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//CodedSurgeriesSection">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.108"/>
-      <details key="constraints.validation.error" value="SurgeriesSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPSurgeriesSectionTemplateId"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="SurgeriesSection_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.108')"/>
-        </eAnnotations>
+    <eOperations name="HITSPSurgeriesSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.108')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.108')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.108')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//SurgeriesSection/SurgeriesSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionalStatusSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//FunctionalStatusSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Functional Status Section provides information about the capability of the patient to perform acts&#xD;&#xA;    of daily living.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="FunctionalStatusSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPFunctionalStatusSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.109"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="FunctionalStatusSection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.109')"/>
-        </eAnnotations>
+    <eOperations name="HITSPFunctionalStatusSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.109')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.109')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.109')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//FunctionalStatusSection/FunctionalStatusSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HospitalAdmissionDiagnosisSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//HospitalAdmissionDiagnosisSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Hospital Admitting Diagnosis Section contains information about the primary reason for admission to&#xD;&#xA;    a hospital facility.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="HospitalAdmissionDiagnosisSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPHospitalAdmissionDiagnosisSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.110"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="HospitalAdmissionDiagnosisSection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.110')"/>
-        </eAnnotations>
+    <eOperations name="HITSPHospitalAdmissionDiagnosisSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.110')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.110')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.110')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//HospitalAdmissionDiagnosisSection/HospitalAdmissionDiagnosisSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DischargeDiagnosisSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//DischargeDiagnosisSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Discharge Diagnosis Section contains information about the conditions identified during the hospital&#xD;&#xA;    stay that either need to be monitored after discharge from the hospital and/or where resolved during the hospital&#xD;&#xA;    course.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="DischargeDiagnosisSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPDischargeDiagnosisSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.111"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="DischargeDiagnosisSection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.111')"/>
-        </eAnnotations>
+    <eOperations name="HITSPDischargeDiagnosisSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.111')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.111')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.111')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//DischargeDiagnosisSection/DischargeDiagnosisSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MedicationsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//MedicationsSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Medications Section contains information about the relevant medications for the patient. At a&#xD;&#xA;    minimum, the currently active medications should be listed.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="MedicationsSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPMedicationsSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.112"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="MedicationsSection_templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.112')"/>
-        </eAnnotations>
+    <eOperations name="HITSPMedicationsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.112')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.112')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.112')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//MedicationsSection/MedicationsSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AdmissionMedicationHistorySection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//AdmissionMedicationHistorySection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Admission Medication Section contains information about the relevant medications of a patient prior&#xD;&#xA;    to admission to a facility.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="AdmissionMedicationHistorySection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPAdmissionMedicationHistorySectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.113"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="AdmissionMedicationHistorySection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.113')"/>
-        </eAnnotations>
+    <eOperations name="HITSPAdmissionMedicationHistorySectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.113')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.113')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.113')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//AdmissionMedicationHistorySection/AdmissionMedicationHistorySection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HospitalDischargeMedicationsSection"
       eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//HospitalDischargeMedicationsSection">
@@ -688,174 +637,433 @@
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Hospital Discharge Medications Section contains information about the relevant medications of the&#xD;&#xA;    medications ordered for the patient for use after discharge from the hospital.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="HospitalDischargeMedicationsSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPHospitalDischargeMedicationsSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.114"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="HospitalDischargeMedicationsSection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.114')"/>
-        </eAnnotations>
+    <eOperations name="HITSPHospitalDischargeMedicationsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.114')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.114')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.114')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//HospitalDischargeMedicationsSection/HospitalDischargeMedicationsSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MedicationsAdministeredSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//MedicationsAdministeredSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Medications Administered Section contains information about the relevant medications administered to&#xD;&#xA;    a patient during the course of an encounter.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="MedicationsAdministeredSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPMedicationsAdministeredSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.115"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="MedicationsAdministeredSection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.115')"/>
-        </eAnnotations>
+    <eOperations name="HITSPMedicationsAdministeredSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.115')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.115')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.115')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//MedicationsAdministeredSection/MedicationsAdministeredSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AdvanceDirectivesSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//CodedAdvanceDirectivesSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Advance Directives Section contains information that defines the patient’s expectations and requests&#xD;&#xA;    for care along with the locations of the documents.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="AdvanceDirectivesSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPAdvanceDirectivesSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.116"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="AdvanceDirectivesSection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.116')"/>
-        </eAnnotations>
+    <eOperations name="HITSPAdvanceDirectivesSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.116')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.116')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.116')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//AdvanceDirectivesSection/AdvanceDirectivesSection_templateId ../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//AdvanceDirectivesSection/%duplicates%/AdvanceDirectivesSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImmunizationsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//ImmunizationsSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Immunizations Section contains information describing the immunizations administered to the&#xD;&#xA;    patient.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="ImmunizationsSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPImmunizationsSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.117"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="ImmunizationsSection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.117')"/>
-        </eAnnotations>
+    <eOperations name="HITSPImmunizationsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.117')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.117')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.117')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//ImmunizationsSection/ImmunizationsSection_templateId ../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//ImmunizationsSection/%duplicates%/ImmunizationsSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
-    </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PhysicalExamSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//PhysicalExamSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Physical Examination Section contains information describing the physical findings.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="PhysicalExamSection_templateId"/>
+      <details key="constraints.validation.error" value="HITSPPhysicalExamSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.118"/>
     </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EOperation" name="PhysicalExamSection_templateId"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-          <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.118')"/>
-        </eAnnotations>
+    <eOperations name="HITSPPhysicalExamSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.118')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.118')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.118')"/>
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//PhysicalExamSection/PhysicalExamSection_templateId"/>
-        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-          </eAnnotations>
-        </eParameters>
-        <eParameters name="context">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The cache of context-specific information."/>
-          </eAnnotations>
-          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          </eGenericType>
-        </eParameters>
-      </contents>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReviewOfSystemsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//ReviewOfSystemsSection">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Review of Systems Section contains information describing patient responses to questions about the&#xD;&#xA;    function of various body systems.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="constraints.validation.error" value="HITSPReviewOfSystemsSectionTemplateId"/>
+      <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.120"/>
+    </eAnnotations>
+    <eOperations name="HITSPReviewOfSystemsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.120')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.120')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HospitalCourseSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//HospitalCourseSection">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Hospital Course Section contains information about of the sequence of events from admission to&#xD;&#xA;    discharge in a hospital facility.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="constraints.validation.error" value="HITSPHospitalCourseSectionTemplateId"/>
+      <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.121"/>
+    </eAnnotations>
+    <eOperations name="HITSPHospitalCourseSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.121')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.121')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagnosticResultsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//CodedResultsSection">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Diagnostic Results Section contains information about the results from diagnostic procedures the&#xD;&#xA;    patient received.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="constraints.validation.error" value="DiagnosticResultsSectionTemplateId"/>
+      <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.122"/>
+    </eAnnotations>
+    <eOperations name="DiagnosticResultsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.122')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.122')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssessmentAndPlanSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//AssessmentAndPlanSection">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Assessment and Plan Section contains information about the assessment of the patient’s condition and&#xD;&#xA;    expectations for care including proposals, goals, and order requests for monitoring, tracking, or improving the&#xD;&#xA;    condition of the patient.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>An assessment and plan section varies from the plan of care section defined later in that it includes a&#xD;&#xA;    physician assessment of the patient condition.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>&lt;b>&lt;font size=&quot;2&quot;>NOTE&lt;/font>&lt;/b>&lt;font size=&quot;2&quot; face=&quot;Arial,Arial&quot;>&lt;font size=&quot;2&quot; face=&quot;Arial,Arial&quot;>:&#xD;&#xA;    The assessments described in this section are physician assessments of the patient's current condition, and do not&#xD;&#xA;    include assessments of functional status, or other assessments typically used in nursing. In Implementation Guides&#xD;&#xA;    currently selected, when both the assessment and plan are documented, they are included together in a single section&#xD;&#xA;    documenting both. When the physician assessment is not present, only the plan of care section appears. There are no&#xD;&#xA;    cases where a physician assessment is provided without a plan.&lt;/font>&lt;/font>&lt;/font>&#xD;&#xA;&lt;/p>"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="constraints.validation.error" value="HITSPAssessmentAndPlanSectionTemplateId"/>
+      <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.123"/>
+    </eAnnotations>
+    <eOperations name="HITSPAssessmentAndPlanSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.123')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.123')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//CarePlanSection">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Plan of Care Section contains information about the expectations for care to be provided including&#xD;&#xA;    proposed interventions and goals for improving the condition of the patient.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>A plan of care section varies from the assessment and plan section defined above in that it does not&#xD;&#xA;    include a physician assessment of the patient condition.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="constraints.validation.error" value="HITSPPlanOfCareSectionTemplateId"/>
+      <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.124"/>
+    </eAnnotations>
+    <eOperations name="HITSPPlanOfCareSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.124')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.124')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FamilyHistorySection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//FamilyMedicalHistorySection">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Family History Section contains information about the genetic family members, to the extent that&#xD;&#xA;    they are known, the diseases they suffered from, their ages at death, and other relevant genetic information.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="constraints.validation.error" value="HITSPFamilyHistorySectionTemplateId"/>
+      <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.125"/>
+    </eAnnotations>
+    <eOperations name="HITSPFamilyHistorySectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.125')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.125')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SocialHistorySection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//SocialHistorySection">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Social History Section contains information about the person’s beliefs, home life, community life,&#xD;&#xA;    work life, hobbies, and risky habits.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="constraints.validation.error" value="HITSPSocialHistorySectionTemplateId"/>
+      <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.126"/>
+    </eAnnotations>
+    <eOperations name="HITSPSocialHistorySectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.126')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.126')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EncountersSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//EncounterHistorySection">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Encounter Section contains information describing the patient history of encounters. At a minimum,&#xD;&#xA;    current and pertinent historical encounters should be included; a full encounter history may be included.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="constraints.validation.error" value="HITSPEncountersSectionTemplateId"/>
+      <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.127"/>
+    </eAnnotations>
+    <eOperations name="HITSPEncountersSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.127')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.127')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MedicalEquipmentSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//MedicalDevicesSection">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Medical Equipment section contains information describing a patient’s implanted and external medical&#xD;&#xA;    devices and equipment that their health status depends on, as well as any pertinent equipment or device history.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="constraints.validation.error" value="HITSPMedicalEquipmentSectionTemplateId"/>
+      <details key="templateId.root" value="2.16.840.1.113883.3.88.11.83.128"/>
+    </eAnnotations>
+    <eOperations name="HITSPMedicalEquipmentSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.128')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.3.88.11.83.128')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
 </ecore:EPackage>

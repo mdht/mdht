@@ -15,20 +15,15 @@ package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.TelecommunicationAddressUse;
 
 /**
@@ -38,8 +33,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.TelecommunicationAddressUse;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.TELImpl#getUseablePeriod <em>Useable Period</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.TELImpl#getUse <em>Use</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.TELImpl#getUseablePeriods <em>Useable Period</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.TELImpl#getUses <em>Use</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,24 +42,24 @@ import org.openhealthtools.mdht.uml.hl7.vocab.TelecommunicationAddressUse;
  */
 public class TELImpl extends URLImpl implements TEL {
 	/**
-	 * The cached value of the '{@link #getUseablePeriod() <em>Useable Period</em>}' containment reference list.
+	 * The cached value of the '{@link #getUseablePeriods() <em>Useable Period</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUseablePeriod()
+	 * @see #getUseablePeriods()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SXCM_TS> useablePeriod;
+	protected EList<SXCM_TS> useablePeriods;
 
 	/**
-	 * The cached value of the '{@link #getUse() <em>Use</em>}' attribute list.
+	 * The cached value of the '{@link #getUses() <em>Use</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUse()
+	 * @see #getUses()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TelecommunicationAddressUse> use;
+	protected EList<TelecommunicationAddressUse> uses;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,11 +85,11 @@ public class TELImpl extends URLImpl implements TEL {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SXCM_TS> getUseablePeriod() {
-		if (useablePeriod == null) {
-			useablePeriod = new EObjectContainmentEList<SXCM_TS>(SXCM_TS.class, this, DatatypesPackage.TEL__USEABLE_PERIOD);
+	public EList<SXCM_TS> getUseablePeriods() {
+		if (useablePeriods == null) {
+			useablePeriods = new EObjectContainmentEList<SXCM_TS>(SXCM_TS.class, this, DatatypesPackage.TEL__USEABLE_PERIOD);
 		}
-		return useablePeriod;
+		return useablePeriods;
 	}
 
 	/**
@@ -102,11 +97,11 @@ public class TELImpl extends URLImpl implements TEL {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TelecommunicationAddressUse> getUse() {
-		if (use == null) {
-			use = new EDataTypeUniqueEList.Unsettable<TelecommunicationAddressUse>(TelecommunicationAddressUse.class, this, DatatypesPackage.TEL__USE);
+	public EList<TelecommunicationAddressUse> getUses() {
+		if (uses == null) {
+			uses = new EDataTypeUniqueEList.Unsettable<TelecommunicationAddressUse>(TelecommunicationAddressUse.class, this, DatatypesPackage.TEL__USE);
 		}
-		return use;
+		return uses;
 	}
 
 	/**
@@ -114,8 +109,8 @@ public class TELImpl extends URLImpl implements TEL {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void unsetUse() {
-		if (use != null) ((InternalEList.Unsettable<?>)use).unset();
+	public void unsetUses() {
+		if (uses != null) ((InternalEList.Unsettable<?>)uses).unset();
 	}
 
 	/**
@@ -123,8 +118,8 @@ public class TELImpl extends URLImpl implements TEL {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetUse() {
-		return use != null && ((InternalEList.Unsettable<?>)use).isSet();
+	public boolean isSetUses() {
+		return uses != null && ((InternalEList.Unsettable<?>)uses).isSet();
 	}
 
 	/**
@@ -136,7 +131,7 @@ public class TELImpl extends URLImpl implements TEL {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DatatypesPackage.TEL__USEABLE_PERIOD:
-				return ((InternalEList<?>)getUseablePeriod()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getUseablePeriods()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -150,9 +145,9 @@ public class TELImpl extends URLImpl implements TEL {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DatatypesPackage.TEL__USEABLE_PERIOD:
-				return getUseablePeriod();
+				return getUseablePeriods();
 			case DatatypesPackage.TEL__USE:
-				return getUse();
+				return getUses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,12 +162,12 @@ public class TELImpl extends URLImpl implements TEL {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.TEL__USEABLE_PERIOD:
-				getUseablePeriod().clear();
-				getUseablePeriod().addAll((Collection<? extends SXCM_TS>)newValue);
+				getUseablePeriods().clear();
+				getUseablePeriods().addAll((Collection<? extends SXCM_TS>)newValue);
 				return;
 			case DatatypesPackage.TEL__USE:
-				getUse().clear();
-				getUse().addAll((Collection<? extends TelecommunicationAddressUse>)newValue);
+				getUses().clear();
+				getUses().addAll((Collection<? extends TelecommunicationAddressUse>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,10 +182,10 @@ public class TELImpl extends URLImpl implements TEL {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.TEL__USEABLE_PERIOD:
-				getUseablePeriod().clear();
+				getUseablePeriods().clear();
 				return;
 			case DatatypesPackage.TEL__USE:
-				unsetUse();
+				unsetUses();
 				return;
 		}
 		super.eUnset(featureID);
@@ -205,9 +200,9 @@ public class TELImpl extends URLImpl implements TEL {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.TEL__USEABLE_PERIOD:
-				return useablePeriod != null && !useablePeriod.isEmpty();
+				return useablePeriods != null && !useablePeriods.isEmpty();
 			case DatatypesPackage.TEL__USE:
-				return isSetUse();
+				return isSetUses();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -223,7 +218,7 @@ public class TELImpl extends URLImpl implements TEL {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (use: ");
-		result.append(use);
+		result.append(uses);
 		result.append(')');
 		return result.toString();
 	}

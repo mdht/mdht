@@ -19,16 +19,12 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartType;
 
@@ -40,11 +36,11 @@ import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartType;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#delimiter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delimiter</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#family(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Family</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#given(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Given</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#prefix(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Prefix</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#suffix(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Suffix</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#validateDelimiter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delimiter</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#validateFamily(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#validateGiven(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Given</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#validatePrefix(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prefix</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#validateSuffix(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Suffix</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#addDelimiter(java.lang.String) <em>Add Delimiter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#addFamily(java.lang.String) <em>Add Family</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#addGiven(java.lang.String) <em>Add Given</em>}</li>
@@ -77,24 +73,24 @@ public class ENOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #delimiter(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delimiter</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateDelimiter(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delimiter</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #delimiter(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDelimiter(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.delimiter->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::DEL)";
+	protected static final String VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.delimiter->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::DEL)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #delimiter(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delimiter</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateDelimiter(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delimiter</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #delimiter(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDelimiter(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -107,25 +103,25 @@ public class ENOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean delimiter(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateDelimiter(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
-				DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.EN__DELIMITER,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "delimiter", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDelimiter", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
 						 new Object [] { en }));
 			}
 			return false;
@@ -134,24 +130,24 @@ public class ENOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #family(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Family</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateFamily(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #family(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateFamily(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.family->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::FAM)";
+	protected static final String VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.family->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::FAM)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #family(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Family</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateFamily(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #family(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateFamily(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,25 +160,25 @@ public class ENOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean family(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateFamily(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
-				FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.EN__FAMILY,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "family", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateFamily", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
 						 new Object [] { en }));
 			}
 			return false;
@@ -191,24 +187,24 @@ public class ENOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #given(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Given</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateGiven(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Given</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #given(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateGiven(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.given->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::GIV)";
+	protected static final String VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.given->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::GIV)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #given(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Given</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateGiven(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Given</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #given(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateGiven(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,25 +217,25 @@ public class ENOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean given(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateGiven(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
-				GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_GIVEN__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.EN__GIVEN,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "given", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateGiven", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
 						 new Object [] { en }));
 			}
 			return false;
@@ -248,24 +244,24 @@ public class ENOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #prefix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Prefix</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePrefix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prefix</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #prefix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePrefix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.prefix->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::PFX)";
+	protected static final String VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.prefix->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::PFX)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #prefix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Prefix</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePrefix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Prefix</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #prefix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePrefix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,25 +274,25 @@ public class ENOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean prefix(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePrefix(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
-				PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PREFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.EN__PREFIX,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "prefix", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validatePrefix", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
 						 new Object [] { en }));
 			}
 			return false;
@@ -305,24 +301,24 @@ public class ENOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #suffix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Suffix</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateSuffix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Suffix</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #suffix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSuffix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.suffix->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::SFX)";
+	protected static final String VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.suffix->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::SFX)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #suffix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Suffix</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateSuffix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Suffix</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #suffix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateSuffix(EN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -335,25 +331,25 @@ public class ENOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean suffix(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateSuffix(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.EN);
 			try {
-				SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(en)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.EN__SUFFIX,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "suffix", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateSuffix", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(en, context) }),
 						 new Object [] { en }));
 			}
 			return false;
@@ -367,7 +363,7 @@ public class ENOperations {
 	 * @generated NOT
 	 */
 	public static  EN addDelimiter(EN en, String delimiter) {
-		en.getDelimiter().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.DEL, delimiter));
+		en.getDelimiters().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.DEL, delimiter));
 		return en;
 	}
 
@@ -377,7 +373,7 @@ public class ENOperations {
 	 * @generated NOT
 	 */
 	public static  EN addFamily(EN en, String family) {
-		en.getFamily().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.FAM, family));
+		en.getFamilies().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.FAM, family));
 		return en;
 	}
 
@@ -387,7 +383,7 @@ public class ENOperations {
 	 * @generated NOT
 	 */
 	public static  EN addGiven(EN en, String given) {
-		en.getGiven().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.GIV, given));
+		en.getGivens().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.GIV, given));
 		return en;
 	}
 
@@ -397,7 +393,7 @@ public class ENOperations {
 	 * @generated NOT
 	 */
 	public static  EN addPrefix(EN en, String prefix) {
-		en.getPrefix().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.PFX, prefix));
+		en.getPrefixes().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.PFX, prefix));
 		return en;
 	}
 
@@ -407,7 +403,7 @@ public class ENOperations {
 	 * @generated NOT
 	 */
 	public static  EN addSuffix(EN en, String suffix) {
-		en.getSuffix().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.SFX, suffix));
+		en.getSuffixes().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.SFX, suffix));
 		return en;
 	}
 

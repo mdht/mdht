@@ -28,12 +28,12 @@ import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#ProblemAct_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#ProblemAct_classCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#ProblemAct_moodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#ProblemAct_id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#ProblemAct_code_nullFlavor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act code null Flavor</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#ProblemAct_problemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActCodeNullFlavor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Code Null Flavor</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Problem Observation</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,6 +50,26 @@ public class ProblemActOperations extends ActOperations {
 	}
 
 	/**
+	 * The cached OCL expression body for the '{@link #validateProblemActTemplateId(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Template Id</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActTemplateId(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.27')";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateProblemActTemplateId(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Template Id</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActTemplateId(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -60,31 +80,51 @@ public class ProblemActOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ProblemAct_templateId(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemActTemplateId(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
 			try {
-				PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_ACT__PROBLEM_ACT_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("ProblemAct_templateId"),
+						 CCDPlugin.INSTANCE.getString("ProblemActTemplateId"),
 						 new Object [] { problemAct }));
 			}
 			return false;
 		}
 		return true;
 	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateProblemActClassCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Class Code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActClassCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.classCode=vocab::x_ActClassDocumentEntryAct::ACT";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateProblemActClassCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Class Code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActClassCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,31 +137,51 @@ public class ProblemActOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ProblemAct_classCode(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemActClassCode(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
 			try {
-				PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_ACT__PROBLEM_ACT_CLASS_CODE,
-						 CCDPlugin.INSTANCE.getString("ProblemAct_classCode"),
+						 CCDPlugin.INSTANCE.getString("ProblemActClassCode"),
 						 new Object [] { problemAct }));
 			}
 			return false;
 		}
 		return true;
 	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateProblemActMoodCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Mood Code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActMoodCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode=vocab::x_DocumentActMood::EVN";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateProblemActMoodCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Mood Code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActMoodCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,31 +194,51 @@ public class ProblemActOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ProblemAct_moodCode(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemActMoodCode(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
 			try {
-				PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_ACT__PROBLEM_ACT_MOOD_CODE,
-						 CCDPlugin.INSTANCE.getString("ProblemAct_moodCode"),
+						 CCDPlugin.INSTANCE.getString("ProblemActMoodCode"),
 						 new Object [] { problemAct }));
 			}
 			return false;
 		}
 		return true;
 	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateProblemActId(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Id</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActId(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.id->isEmpty()";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateProblemActId(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Id</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActId(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,31 +251,51 @@ public class ProblemActOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ProblemAct_id(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemActId(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
 			try {
-				PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_ACT__PROBLEM_ACT_ID,
-						 CCDPlugin.INSTANCE.getString("ProblemAct_id"),
+						 CCDPlugin.INSTANCE.getString("ProblemActId"),
 						 new Object [] { problemAct }));
 			}
 			return false;
 		}
 		return true;
 	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateProblemActCodeNullFlavor(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Code Null Flavor</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActCodeNullFlavor(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.code.nullFlavor = vocab::NullFlavor::NA";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateProblemActCodeNullFlavor(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Code Null Flavor</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActCodeNullFlavor(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,31 +308,51 @@ public class ProblemActOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ProblemAct_code_nullFlavor(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemActCodeNullFlavor(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
 			try {
-				PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_ACT__PROBLEM_ACT_CODE_NULL_FLAVOR,
-						 CCDPlugin.INSTANCE.getString("ProblemAct_code_nullFlavor"),
+						 CCDPlugin.INSTANCE.getString("ProblemActCodeNullFlavor"),
 						 new Object [] { problemAct }));
 			}
 			return false;
 		}
 		return true;
 	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateProblemActProblemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Problem Observation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActProblemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemObservation))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateProblemActProblemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Problem Observation</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActProblemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -245,150 +365,30 @@ public class ProblemActOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ProblemAct_problemObservation(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemActProblemObservation(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
 			try {
-				PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.WARNING,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_ACT__PROBLEM_ACT_PROBLEM_OBSERVATION,
-						 CCDPlugin.INSTANCE.getString("ProblemAct_problemObservation"),
+						 CCDPlugin.INSTANCE.getString("ProblemActProblemObservation"),
 						 new Object [] { problemAct }));
 			}
 			return false;
 		}
 		return true;
 	}
-
-	/**
-	 * The cached OCL expression body for the '{@link #ProblemAct_templateId(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act template Id</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ProblemAct_templateId(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.27')";
-
-	/**
-	 * The cached OCL invariant for the '{@link #ProblemAct_templateId(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act template Id</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ProblemAct_templateId(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * The cached OCL expression body for the '{@link #ProblemAct_classCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act class Code</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ProblemAct_classCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.classCode=vocab::x_ActClassDocumentEntryAct::ACT";
-
-	/**
-	 * The cached OCL invariant for the '{@link #ProblemAct_classCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act class Code</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ProblemAct_classCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * The cached OCL expression body for the '{@link #ProblemAct_moodCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act mood Code</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ProblemAct_moodCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.moodCode=vocab::x_DocumentActMood::EVN";
-
-	/**
-	 * The cached OCL invariant for the '{@link #ProblemAct_moodCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act mood Code</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ProblemAct_moodCode(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * The cached OCL expression body for the '{@link #ProblemAct_id(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act id</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ProblemAct_id(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.id->isEmpty()";
-
-	/**
-	 * The cached OCL invariant for the '{@link #ProblemAct_id(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act id</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ProblemAct_id(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint PROBLEM_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * The cached OCL expression body for the '{@link #ProblemAct_code_nullFlavor(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act code null Flavor</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ProblemAct_code_nullFlavor(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.code.nullFlavor = vocab::NullFlavor::NA";
-
-	/**
-	 * The cached OCL invariant for the '{@link #ProblemAct_code_nullFlavor(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act code null Flavor</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ProblemAct_code_nullFlavor(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * The cached OCL expression body for the '{@link #ProblemAct_problemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act problem Observation</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ProblemAct_problemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemObservation))";
-
-	/**
-	 * The cached OCL invariant for the '{@link #ProblemAct_problemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Problem Act problem Observation</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ProblemAct_problemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 } // ProblemActOperations

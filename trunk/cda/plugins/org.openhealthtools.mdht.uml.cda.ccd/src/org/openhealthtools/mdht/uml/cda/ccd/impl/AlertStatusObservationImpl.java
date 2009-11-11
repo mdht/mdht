@@ -49,8 +49,8 @@ public class AlertStatusObservationImpl extends StatusObservationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AlertStatusObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AlertStatusObservationOperations.AlertStatusObservation_templateId(this, diagnostics, context);
+	public boolean validateAlertStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertStatusObservationOperations.validateAlertStatusObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -58,8 +58,8 @@ public class AlertStatusObservationImpl extends StatusObservationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AlertStatusObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AlertStatusObservationOperations.AlertStatusObservation_value(this, diagnostics, context);
+	public boolean validateAlertStatusObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertStatusObservationOperations.validateAlertStatusObservationValue(this, diagnostics, context);
 	}
 
 	/**
