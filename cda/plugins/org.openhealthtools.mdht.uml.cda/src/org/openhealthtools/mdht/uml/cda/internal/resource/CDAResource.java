@@ -13,7 +13,6 @@
 package org.openhealthtools.mdht.uml.cda.internal.resource;
 
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.XMLResource;
 
 /**

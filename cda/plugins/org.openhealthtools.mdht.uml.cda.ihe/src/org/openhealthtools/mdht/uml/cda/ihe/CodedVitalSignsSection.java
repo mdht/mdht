@@ -32,7 +32,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getCodedVitalSignsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2' constraints.validation.error='CodedVitalSignsSection_templateId CodedVitalSignsSection_vitalSignsOrganizer'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2' constraints.validation.error='CodedVitalSignsSectionTemplateId CodedVitalSignsSectionVitalSignsOrganizer'"
  * @generated
  */
 public interface CodedVitalSignsSection extends VitalSignsSection {
@@ -47,7 +47,7 @@ public interface CodedVitalSignsSection extends VitalSignsSection {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2\')'"
 	 * @generated
 	 */
-	boolean CodedVitalSignsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateCodedVitalSignsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,7 +60,7 @@ public interface CodedVitalSignsSection extends VitalSignsSection {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::VitalSignsOrganizer))'"
 	 * @generated
 	 */
-	boolean CodedVitalSignsSection_vitalSignsOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateCodedVitalSignsSectionVitalSignsOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

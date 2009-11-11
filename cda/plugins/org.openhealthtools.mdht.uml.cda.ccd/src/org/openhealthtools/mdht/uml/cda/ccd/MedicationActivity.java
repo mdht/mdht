@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getMedicationActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.info='MedicationActivity_medicationSeriesNumberObservation MedicationActivity_medicationStatusObservation MedicationActivity_patientInstruction' constraints.validation.error='MedicationActivity_templateId MedicationActivity_moodCode MedicationActivity_id' templateId.root='2.16.840.1.113883.10.20.1.24' constraints.validation.warning='MedicationActivity_statusCode'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.info='MedicationActivityMedicationSeriesNumberObservation MedicationActivityMedicationStatusObservation MedicationActivityPatientInstruction' constraints.validation.error='MedicationActivityTemplateId MedicationActivityMoodCode MedicationActivityId' templateId.root='2.16.840.1.113883.10.20.1.24' constraints.validation.warning='MedicationActivityStatusCode'"
  * @generated
  */
 public interface MedicationActivity extends SubstanceAdministration {
@@ -40,7 +40,7 @@ public interface MedicationActivity extends SubstanceAdministration {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT '"
 	 * @generated
 	 */
-	boolean MedicationActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public interface MedicationActivity extends SubstanceAdministration {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.24\')'"
 	 * @generated
 	 */
-	boolean MedicationActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public interface MedicationActivity extends SubstanceAdministration {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.id->isEmpty()'"
 	 * @generated
 	 */
-	boolean MedicationActivity_id(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationActivityId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public interface MedicationActivity extends SubstanceAdministration {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean MedicationActivity_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,7 +92,7 @@ public interface MedicationActivity extends SubstanceAdministration {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::MedicationSeriesNumberObservation))'"
 	 * @generated
 	 */
-	boolean MedicationActivity_medicationSeriesNumberObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationActivityMedicationSeriesNumberObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,7 +105,7 @@ public interface MedicationActivity extends SubstanceAdministration {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))'"
 	 * @generated
 	 */
-	boolean MedicationActivity_medicationStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationActivityMedicationStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,7 +118,7 @@ public interface MedicationActivity extends SubstanceAdministration {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::PatientInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)'"
 	 * @generated
 	 */
-	boolean MedicationActivity_patientInstruction(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationActivityPatientInstruction(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

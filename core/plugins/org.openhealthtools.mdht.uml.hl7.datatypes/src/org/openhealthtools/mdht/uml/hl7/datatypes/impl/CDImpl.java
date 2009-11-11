@@ -16,17 +16,12 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CR;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
@@ -40,8 +35,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getOriginalText <em>Original Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getQualifier <em>Qualifier</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getTranslation <em>Translation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getQualifiers <em>Qualifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getTranslations <em>Translation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getCodeSystem <em>Code System</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.CDImpl#getCodeSystemName <em>Code System Name</em>}</li>
@@ -64,24 +59,24 @@ public class CDImpl extends ANYImpl implements CD {
 	protected ED originalText;
 
 	/**
-	 * The cached value of the '{@link #getQualifier() <em>Qualifier</em>}' containment reference list.
+	 * The cached value of the '{@link #getQualifiers() <em>Qualifier</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getQualifier()
+	 * @see #getQualifiers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CR> qualifier;
+	protected EList<CR> qualifiers;
 
 	/**
-	 * The cached value of the '{@link #getTranslation() <em>Translation</em>}' containment reference list.
+	 * The cached value of the '{@link #getTranslations() <em>Translation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTranslation()
+	 * @see #getTranslations()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CD> translation;
+	protected EList<CD> translations;
 
 	/**
 	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
@@ -250,11 +245,11 @@ public class CDImpl extends ANYImpl implements CD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CR> getQualifier() {
-		if (qualifier == null) {
-			qualifier = new EObjectContainmentEList<CR>(CR.class, this, DatatypesPackage.CD__QUALIFIER);
+	public EList<CR> getQualifiers() {
+		if (qualifiers == null) {
+			qualifiers = new EObjectContainmentEList<CR>(CR.class, this, DatatypesPackage.CD__QUALIFIER);
 		}
-		return qualifier;
+		return qualifiers;
 	}
 
 	/**
@@ -262,11 +257,11 @@ public class CDImpl extends ANYImpl implements CD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CD> getTranslation() {
-		if (translation == null) {
-			translation = new EObjectContainmentEList<CD>(CD.class, this, DatatypesPackage.CD__TRANSLATION);
+	public EList<CD> getTranslations() {
+		if (translations == null) {
+			translations = new EObjectContainmentEList<CD>(CD.class, this, DatatypesPackage.CD__TRANSLATION);
 		}
-		return translation;
+		return translations;
 	}
 
 	/**
@@ -385,9 +380,9 @@ public class CDImpl extends ANYImpl implements CD {
 			case DatatypesPackage.CD__ORIGINAL_TEXT:
 				return basicSetOriginalText(null, msgs);
 			case DatatypesPackage.CD__QUALIFIER:
-				return ((InternalEList<?>)getQualifier()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getQualifiers()).basicRemove(otherEnd, msgs);
 			case DatatypesPackage.CD__TRANSLATION:
-				return ((InternalEList<?>)getTranslation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTranslations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -403,9 +398,9 @@ public class CDImpl extends ANYImpl implements CD {
 			case DatatypesPackage.CD__ORIGINAL_TEXT:
 				return getOriginalText();
 			case DatatypesPackage.CD__QUALIFIER:
-				return getQualifier();
+				return getQualifiers();
 			case DatatypesPackage.CD__TRANSLATION:
-				return getTranslation();
+				return getTranslations();
 			case DatatypesPackage.CD__CODE:
 				return getCode();
 			case DatatypesPackage.CD__CODE_SYSTEM:
@@ -433,12 +428,12 @@ public class CDImpl extends ANYImpl implements CD {
 				setOriginalText((ED)newValue);
 				return;
 			case DatatypesPackage.CD__QUALIFIER:
-				getQualifier().clear();
-				getQualifier().addAll((Collection<? extends CR>)newValue);
+				getQualifiers().clear();
+				getQualifiers().addAll((Collection<? extends CR>)newValue);
 				return;
 			case DatatypesPackage.CD__TRANSLATION:
-				getTranslation().clear();
-				getTranslation().addAll((Collection<? extends CD>)newValue);
+				getTranslations().clear();
+				getTranslations().addAll((Collection<? extends CD>)newValue);
 				return;
 			case DatatypesPackage.CD__CODE:
 				setCode((String)newValue);
@@ -471,10 +466,10 @@ public class CDImpl extends ANYImpl implements CD {
 				setOriginalText((ED)null);
 				return;
 			case DatatypesPackage.CD__QUALIFIER:
-				getQualifier().clear();
+				getQualifiers().clear();
 				return;
 			case DatatypesPackage.CD__TRANSLATION:
-				getTranslation().clear();
+				getTranslations().clear();
 				return;
 			case DatatypesPackage.CD__CODE:
 				setCode(CODE_EDEFAULT);
@@ -506,9 +501,9 @@ public class CDImpl extends ANYImpl implements CD {
 			case DatatypesPackage.CD__ORIGINAL_TEXT:
 				return originalText != null;
 			case DatatypesPackage.CD__QUALIFIER:
-				return qualifier != null && !qualifier.isEmpty();
+				return qualifiers != null && !qualifiers.isEmpty();
 			case DatatypesPackage.CD__TRANSLATION:
-				return translation != null && !translation.isEmpty();
+				return translations != null && !translations.isEmpty();
 			case DatatypesPackage.CD__CODE:
 				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
 			case DatatypesPackage.CD__CODE_SYSTEM:

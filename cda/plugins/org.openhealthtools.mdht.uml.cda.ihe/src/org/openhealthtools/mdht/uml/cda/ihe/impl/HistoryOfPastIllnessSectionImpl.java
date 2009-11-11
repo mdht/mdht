@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.HistoryOfPastIllnessSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class HistoryOfPastIllnessSectionImpl extends SectionImpl implements Hist
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean HistoryOfPastIllnessSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HistoryOfPastIllnessSectionOperations.HistoryOfPastIllnessSection_templateId(this, diagnostics, context);
+	public boolean validateHistoryOfPastIllnessSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryOfPastIllnessSectionOperations.validateHistoryOfPastIllnessSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class HistoryOfPastIllnessSectionImpl extends SectionImpl implements Hist
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean HistoryOfPastIllnessSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HistoryOfPastIllnessSectionOperations.HistoryOfPastIllnessSection_code(this, diagnostics, context);
+	public boolean validateHistoryOfPastIllnessSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryOfPastIllnessSectionOperations.validateHistoryOfPastIllnessSectionCode(this, diagnostics, context);
 	}
 
 	/**

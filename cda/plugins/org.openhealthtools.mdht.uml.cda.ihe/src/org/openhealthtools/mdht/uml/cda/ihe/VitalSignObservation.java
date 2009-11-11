@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.ihe;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 
 /**
@@ -19,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getVitalSignObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='VitalSignObservation_templateId VitalSignObservation_code VitalSignObservation_value' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.13.2' code.codeSystem='2.16.840.1.113883.6.1'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='VitalSignObservationTemplateId VitalSignObservationCode VitalSignObservationValue' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.13.2' code.codeSystem='2.16.840.1.113883.6.1'"
  * @generated
  */
 public interface VitalSignObservation extends ResultObservation {
@@ -34,7 +33,7 @@ public interface VitalSignObservation extends ResultObservation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.4.13.2\')'"
 	 * @generated
 	 */
-	boolean VitalSignObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateVitalSignObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -49,7 +48,7 @@ public interface VitalSignObservation extends ResultObservation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and \r\nlet value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (\r\nvalue.codeSystem = \'2.16.840.1.113883.6.1\')'"
 	 * @generated
 	 */
-	boolean VitalSignObservation_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateVitalSignObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +61,7 @@ public interface VitalSignObservation extends ResultObservation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.value->forAll(element | element.oclIsTypeOf(datatypes::PQ))'"
 	 * @generated
 	 */
-	boolean VitalSignObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateVitalSignObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

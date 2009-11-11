@@ -16,29 +16,22 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.RelatedSubject;
 import org.openhealthtools.mdht.uml.cda.SubjectPerson;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubject;
 
@@ -49,12 +42,12 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubject;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getCode <em>Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getAddr <em>Addr</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getTelecom <em>Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getAddrs <em>Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getTelecoms <em>Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getSubjectPerson <em>Subject Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getClassCode <em>Class Code</em>}</li>
@@ -65,14 +58,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubject;
  */
 public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -85,14 +78,14 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
@@ -105,24 +98,24 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	protected CE code;
 
 	/**
-	 * The cached value of the '{@link #getAddr() <em>Addr</em>}' containment reference list.
+	 * The cached value of the '{@link #getAddrs() <em>Addr</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAddr()
+	 * @see #getAddrs()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AD> addr;
+	protected EList<AD> addrs;
 
 	/**
-	 * The cached value of the '{@link #getTelecom() <em>Telecom</em>}' containment reference list.
+	 * The cached value of the '{@link #getTelecoms() <em>Telecom</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTelecom()
+	 * @see #getTelecoms()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TEL> telecom;
+	protected EList<TEL> telecoms;
 
 	/**
 	 * The cached value of the '{@link #getSubjectPerson() <em>Subject Person</em>}' containment reference.
@@ -216,11 +209,11 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.RELATED_SUBJECT__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.RELATED_SUBJECT__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -271,11 +264,11 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.RELATED_SUBJECT__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.RELATED_SUBJECT__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -326,11 +319,11 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AD> getAddr() {
-		if (addr == null) {
-			addr = new EObjectContainmentEList<AD>(AD.class, this, CDAPackage.RELATED_SUBJECT__ADDR);
+	public EList<AD> getAddrs() {
+		if (addrs == null) {
+			addrs = new EObjectContainmentEList<AD>(AD.class, this, CDAPackage.RELATED_SUBJECT__ADDR);
 		}
-		return addr;
+		return addrs;
 	}
 
 	/**
@@ -338,11 +331,11 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TEL> getTelecom() {
-		if (telecom == null) {
-			telecom = new EObjectContainmentEList<TEL>(TEL.class, this, CDAPackage.RELATED_SUBJECT__TELECOM);
+	public EList<TEL> getTelecoms() {
+		if (telecoms == null) {
+			telecoms = new EObjectContainmentEList<TEL>(TEL.class, this, CDAPackage.RELATED_SUBJECT__TELECOM);
 		}
-		return telecom;
+		return telecoms;
 	}
 
 	/**
@@ -489,17 +482,17 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.RELATED_SUBJECT__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.RELATED_SUBJECT__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.RELATED_SUBJECT__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.RELATED_SUBJECT__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.RELATED_SUBJECT__ADDR:
-				return ((InternalEList<?>)getAddr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAddrs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.RELATED_SUBJECT__TELECOM:
-				return ((InternalEList<?>)getTelecom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
 			case CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON:
 				return basicSetSubjectPerson(null, msgs);
 		}
@@ -515,17 +508,17 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.RELATED_SUBJECT__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.RELATED_SUBJECT__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.RELATED_SUBJECT__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.RELATED_SUBJECT__CODE:
 				return getCode();
 			case CDAPackage.RELATED_SUBJECT__ADDR:
-				return getAddr();
+				return getAddrs();
 			case CDAPackage.RELATED_SUBJECT__TELECOM:
-				return getTelecom();
+				return getTelecoms();
 			case CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON:
 				return getSubjectPerson();
 			case CDAPackage.RELATED_SUBJECT__NULL_FLAVOR:
@@ -546,26 +539,26 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.RELATED_SUBJECT__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.RELATED_SUBJECT__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.RELATED_SUBJECT__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.RELATED_SUBJECT__CODE:
 				setCode((CE)newValue);
 				return;
 			case CDAPackage.RELATED_SUBJECT__ADDR:
-				getAddr().clear();
-				getAddr().addAll((Collection<? extends AD>)newValue);
+				getAddrs().clear();
+				getAddrs().addAll((Collection<? extends AD>)newValue);
 				return;
 			case CDAPackage.RELATED_SUBJECT__TELECOM:
-				getTelecom().clear();
-				getTelecom().addAll((Collection<? extends TEL>)newValue);
+				getTelecoms().clear();
+				getTelecoms().addAll((Collection<? extends TEL>)newValue);
 				return;
 			case CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON:
 				setSubjectPerson((SubjectPerson)newValue);
@@ -589,22 +582,22 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.RELATED_SUBJECT__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.RELATED_SUBJECT__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.RELATED_SUBJECT__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.RELATED_SUBJECT__CODE:
 				setCode((CE)null);
 				return;
 			case CDAPackage.RELATED_SUBJECT__ADDR:
-				getAddr().clear();
+				getAddrs().clear();
 				return;
 			case CDAPackage.RELATED_SUBJECT__TELECOM:
-				getTelecom().clear();
+				getTelecoms().clear();
 				return;
 			case CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON:
 				setSubjectPerson((SubjectPerson)null);
@@ -628,17 +621,17 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.RELATED_SUBJECT__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.RELATED_SUBJECT__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.RELATED_SUBJECT__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.RELATED_SUBJECT__CODE:
 				return code != null;
 			case CDAPackage.RELATED_SUBJECT__ADDR:
-				return addr != null && !addr.isEmpty();
+				return addrs != null && !addrs.isEmpty();
 			case CDAPackage.RELATED_SUBJECT__TELECOM:
-				return telecom != null && !telecom.isEmpty();
+				return telecoms != null && !telecoms.isEmpty();
 			case CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON:
 				return subjectPerson != null;
 			case CDAPackage.RELATED_SUBJECT__NULL_FLAVOR:

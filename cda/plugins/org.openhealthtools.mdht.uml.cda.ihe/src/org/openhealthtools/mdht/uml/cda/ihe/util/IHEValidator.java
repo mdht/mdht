@@ -14,24 +14,59 @@ package org.openhealthtools.mdht.uml.cda.ihe.util;
 
 import java.util.Map;
 
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-import org.openhealthtools.mdht.uml.cda.ihe.*;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern;
+import org.openhealthtools.mdht.uml.cda.ihe.AssessmentAndPlanSection;
+import org.openhealthtools.mdht.uml.cda.ihe.CarePlanSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ChiefComplaintSection;
+import org.openhealthtools.mdht.uml.cda.ihe.CodedAdvanceDirectivesSection;
+import org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.CodedSurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
+import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness;
+import org.openhealthtools.mdht.uml.cda.ihe.HospitalAdmissionDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.ihe.HospitalCourseSection;
+import org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
+import org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.Medication;
+import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.NormalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
+import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
+import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
+import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.SplitDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
+import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
+import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer;
+import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,15 +95,15 @@ public class IHEValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.openhealthtools.mdht.uml.cda.ihe";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Immunizations Section template Id' of 'Immunizations Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Immunizations Section Template Id' of 'Immunizations Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IMMUNIZATIONS_SECTION__IMMUNIZATIONS_SECTION_TEMPLATE_ID = 1;
+	public static final int IMMUNIZATIONS_SECTION__IHE_IMMUNIZATIONS_SECTION_TEMPLATE_ID = 1;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Medications Administered Section template Id' of 'Medications Administered Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medications Administered Section Template Id' of 'Medications Administered Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -76,7 +111,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int MEDICATIONS_ADMINISTERED_SECTION__MEDICATIONS_ADMINISTERED_SECTION_TEMPLATE_ID = 2;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Medications Administered Section code' of 'Medications Administered Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medications Administered Section Code' of 'Medications Administered Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -84,7 +119,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int MEDICATIONS_ADMINISTERED_SECTION__MEDICATIONS_ADMINISTERED_SECTION_CODE = 3;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Concern Entry template Id' of 'Concern Entry'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Concern Entry Template Id' of 'Concern Entry'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -92,7 +127,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int CONCERN_ENTRY__CONCERN_ENTRY_TEMPLATE_ID = 4;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Concern Entry effective Time' of 'Concern Entry'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Concern Entry Effective Time' of 'Concern Entry'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -100,7 +135,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int CONCERN_ENTRY__CONCERN_ENTRY_EFFECTIVE_TIME = 5;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Medical Document template Id' of 'Medical Document'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Document Template Id' of 'Medical Document'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -108,7 +143,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int MEDICAL_DOCUMENT__MEDICAL_DOCUMENT_TEMPLATE_ID = 6;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Active Problems Section template Id' of 'Active Problems Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Active Problems Section Template Id' of 'Active Problems Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -116,7 +151,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ACTIVE_PROBLEMS_SECTION__ACTIVE_PROBLEMS_SECTION_TEMPLATE_ID = 7;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Active Problems Section problem Concern Entry' of 'Active Problems Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Active Problems Section Problem Concern Entry' of 'Active Problems Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -124,7 +159,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ACTIVE_PROBLEMS_SECTION__ACTIVE_PROBLEMS_SECTION_PROBLEM_CONCERN_ENTRY = 8;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Problem Concern Entry template Id' of 'Problem Concern Entry'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Concern Entry Template Id' of 'Problem Concern Entry'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,7 +167,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int PROBLEM_CONCERN_ENTRY__PROBLEM_CONCERN_ENTRY_TEMPLATE_ID = 9;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Problem Concern Entry problem Entry' of 'Problem Concern Entry'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Concern Entry Problem Entry' of 'Problem Concern Entry'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -140,7 +175,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int PROBLEM_CONCERN_ENTRY__PROBLEM_CONCERN_ENTRY_PROBLEM_ENTRY = 10;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Problem Entry template Id' of 'Problem Entry'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Entry Template Id' of 'Problem Entry'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -148,7 +183,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int PROBLEM_ENTRY__PROBLEM_ENTRY_TEMPLATE_ID = 11;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Problem Entry text' of 'Problem Entry'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Entry Text' of 'Problem Entry'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -156,7 +191,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int PROBLEM_ENTRY__PROBLEM_ENTRY_TEXT = 12;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Problem Entry value' of 'Problem Entry'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Entry Value' of 'Problem Entry'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -164,7 +199,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int PROBLEM_ENTRY__PROBLEM_ENTRY_VALUE = 13;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Medication template Id' of 'Medication'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Template Id' of 'Medication'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -172,7 +207,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int MEDICATION__MEDICATION_TEMPLATE_ID = 14;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Medications Section template Id' of 'Medications Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medications Section Template Id' of 'Medications Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -180,7 +215,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int MEDICATIONS_SECTION__MEDICATIONS_SECTION_TEMPLATE_ID = 15;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Allergy Intolerance Concern template Id' of 'Allergy Intolerance Concern'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Allergy Intolerance Concern Template Id' of 'Allergy Intolerance Concern'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -188,7 +223,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ALLERGY_INTOLERANCE_CONCERN__ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID = 16;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Allergy Intolerance template Id' of 'Allergy Intolerance'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Allergy Intolerance Template Id' of 'Allergy Intolerance'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -196,7 +231,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ALLERGY_INTOLERANCE__ALLERGY_INTOLERANCE_TEMPLATE_ID = 17;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Allergies Reactions Section template Id' of 'Allergies Reactions Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Allergies Reactions Section Template Id' of 'Allergies Reactions Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -204,7 +239,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ALLERGIES_REACTIONS_SECTION__ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID = 18;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Normal Dosing template Id' of 'Normal Dosing'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Normal Dosing Template Id' of 'Normal Dosing'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -212,7 +247,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int NORMAL_DOSING__NORMAL_DOSING_TEMPLATE_ID = 19;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Tapered Dose template Id' of 'Tapered Dose'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Tapered Dose Template Id' of 'Tapered Dose'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -220,7 +255,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int TAPERED_DOSE__TAPERED_DOSE_TEMPLATE_ID = 20;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Split Dosing template Id' of 'Split Dosing'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Split Dosing Template Id' of 'Split Dosing'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -228,7 +263,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int SPLIT_DOSING__SPLIT_DOSING_TEMPLATE_ID = 21;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Conditional Dosing template Id' of 'Conditional Dosing'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Conditional Dosing Template Id' of 'Conditional Dosing'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -236,7 +271,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int CONDITIONAL_DOSING__CONDITIONAL_DOSING_TEMPLATE_ID = 22;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Combination Medication template Id' of 'Combination Medication'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Combination Medication Template Id' of 'Combination Medication'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -244,15 +279,15 @@ public class IHEValidator extends EObjectValidator {
 	public static final int COMBINATION_MEDICATION__COMBINATION_MEDICATION_TEMPLATE_ID = 23;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Signs Section template Id' of 'Vital Signs Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Section Template Id' of 'Vital Signs Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEMPLATE_ID = 24;
+	public static final int VITAL_SIGNS_SECTION__IHE_VITAL_SIGNS_SECTION_TEMPLATE_ID = 24;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Coded Vital Signs Section template Id' of 'Coded Vital Signs Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Vital Signs Section Template Id' of 'Coded Vital Signs Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -260,7 +295,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int CODED_VITAL_SIGNS_SECTION__CODED_VITAL_SIGNS_SECTION_TEMPLATE_ID = 25;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Coded Vital Signs Section vital Signs Organizer' of 'Coded Vital Signs Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Vital Signs Section Vital Signs Organizer' of 'Coded Vital Signs Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -268,7 +303,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int CODED_VITAL_SIGNS_SECTION__CODED_VITAL_SIGNS_SECTION_VITAL_SIGNS_ORGANIZER = 26;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Sign Observation template Id' of 'Vital Sign Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Template Id' of 'Vital Sign Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -276,7 +311,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_TEMPLATE_ID = 27;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Sign Observation code' of 'Vital Sign Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Code' of 'Vital Sign Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -284,7 +319,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_CODE = 28;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Sign Observation value' of 'Vital Sign Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Value' of 'Vital Sign Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -292,7 +327,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_VALUE = 29;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Simple Observation template Id' of 'Simple Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Simple Observation Template Id' of 'Simple Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -300,7 +335,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_TEMPLATE_ID = 30;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Simple Observation id' of 'Simple Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Simple Observation Id' of 'Simple Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -308,7 +343,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_ID = 31;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Simple Observation status Code' of 'Simple Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Simple Observation Status Code' of 'Simple Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -316,55 +351,55 @@ public class IHEValidator extends EObjectValidator {
 	public static final int SIMPLE_OBSERVATION__SIMPLE_OBSERVATION_STATUS_CODE = 32;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Signs Organizer code' of 'Vital Signs Organizer'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Template Id' of 'Vital Signs Organizer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_CODE = 33;
+	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_TEMPLATE_ID = 33;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Signs Organizer status Code' of 'Vital Signs Organizer'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Organizer Code' of 'Vital Signs Organizer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_STATUS_CODE = 34;
+	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_CODE = 34;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Signs Organizer effective Time' of 'Vital Signs Organizer'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Organizer Status Code' of 'Vital Signs Organizer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_EFFECTIVE_TIME = 35;
+	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_STATUS_CODE = 35;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Signs Organizer vital Sign Observation' of 'Vital Signs Organizer'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Organizer Effective Time' of 'Vital Signs Organizer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_VITAL_SIGN_OBSERVATION = 36;
+	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_EFFECTIVE_TIME = 36;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Vital Signs Organizer template Id' of 'Vital Signs Organizer'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Organizer Vital Sign Observation' of 'Vital Signs Organizer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_TEMPLATE_ID = 37;
+	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_VITAL_SIGN_OBSERVATION = 37;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Payers Section template Id' of 'Payers Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Payers Section Template Id' of 'Payers Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__PAYERS_SECTION_TEMPLATE_ID = 38;
+	public static final int PAYERS_SECTION__IHE_PAYERS_SECTION_TEMPLATE_ID = 38;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'History Of Past Illness Section template Id' of 'History Of Past Illness Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History Of Past Illness Section Template Id' of 'History Of Past Illness Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -372,7 +407,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int HISTORY_OF_PAST_ILLNESS_SECTION__HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID = 39;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'History Of Past Illness Section code' of 'History Of Past Illness Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History Of Past Illness Section Code' of 'History Of Past Illness Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -380,7 +415,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int HISTORY_OF_PAST_ILLNESS_SECTION__HISTORY_OF_PAST_ILLNESS_SECTION_CODE = 40;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Chief Complaint Section template Id' of 'Chief Complaint Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Chief Complaint Section Template Id' of 'Chief Complaint Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -388,7 +423,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int CHIEF_COMPLAINT_SECTION__CHIEF_COMPLAINT_SECTION_TEMPLATE_ID = 41;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Chief Complaint Section code' of 'Chief Complaint Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Chief Complaint Section Code' of 'Chief Complaint Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -396,7 +431,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int CHIEF_COMPLAINT_SECTION__CHIEF_COMPLAINT_SECTION_CODE = 42;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Reason For Referral Section template Id' of 'Reason For Referral Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Referral Section Template Id' of 'Reason For Referral Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -404,7 +439,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int REASON_FOR_REFERRAL_SECTION__REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID = 43;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Reason For Referral Section code' of 'Reason For Referral Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Referral Section Code' of 'Reason For Referral Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -412,7 +447,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int REASON_FOR_REFERRAL_SECTION__REASON_FOR_REFERRAL_SECTION_CODE = 44;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'History Of Present Illness template Id' of 'History Of Present Illness'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History Of Present Illness Template Id' of 'History Of Present Illness'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -420,7 +455,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int HISTORY_OF_PRESENT_ILLNESS__HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID = 45;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'History Of Present Illness code' of 'History Of Present Illness'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History Of Present Illness Code' of 'History Of Present Illness'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -428,7 +463,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int HISTORY_OF_PRESENT_ILLNESS__HISTORY_OF_PRESENT_ILLNESS_CODE = 46;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Surgeries Section template Id' of 'Surgeries Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Surgeries Section Template Id' of 'Surgeries Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -436,7 +471,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int SURGERIES_SECTION__SURGERIES_SECTION_TEMPLATE_ID = 47;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Coded Surgeries Section template Id' of 'Coded Surgeries Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Surgeries Section Template Id' of 'Coded Surgeries Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -444,7 +479,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int CODED_SURGERIES_SECTION__CODED_SURGERIES_SECTION_TEMPLATE_ID = 48;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Hospital Admission Diagnosis Section template Id' of 'Hospital Admission Diagnosis Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Admission Diagnosis Section Template Id' of 'Hospital Admission Diagnosis Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -452,7 +487,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID = 49;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Hospital Admission Diagnosis Section code' of 'Hospital Admission Diagnosis Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Admission Diagnosis Section Code' of 'Hospital Admission Diagnosis Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -460,7 +495,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_CODE = 50;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Discharge Diagnosis Section template Id' of 'Discharge Diagnosis Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Diagnosis Section Template Id' of 'Discharge Diagnosis Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -468,7 +503,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int DISCHARGE_DIAGNOSIS_SECTION__DISCHARGE_DIAGNOSIS_SECTION_TEMPLATE_ID = 51;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Discharge Diagnosis Section code' of 'Discharge Diagnosis Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Diagnosis Section Code' of 'Discharge Diagnosis Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -476,7 +511,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int DISCHARGE_DIAGNOSIS_SECTION__DISCHARGE_DIAGNOSIS_SECTION_CODE = 52;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Admission Medication History Section template Id' of 'Admission Medication History Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Admission Medication History Section Template Id' of 'Admission Medication History Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -484,7 +519,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ADMISSION_MEDICATION_HISTORY_SECTION__ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID = 53;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Admission Medication History Section code' of 'Admission Medication History Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Admission Medication History Section Code' of 'Admission Medication History Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -492,7 +527,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ADMISSION_MEDICATION_HISTORY_SECTION__ADMISSION_MEDICATION_HISTORY_SECTION_CODE = 54;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Hospital Discharge Medications Section template Id' of 'Hospital Discharge Medications Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Discharge Medications Section Template Id' of 'Hospital Discharge Medications Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -500,7 +535,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_TEMPLATE_ID = 55;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Hospital Discharge Medications Section code' of 'Hospital Discharge Medications Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Discharge Medications Section Code' of 'Hospital Discharge Medications Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -508,7 +543,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_CODE = 56;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Coded Advance Directives Section template Id' of 'Coded Advance Directives Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Advance Directives Section Template Id' of 'Coded Advance Directives Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -516,15 +551,15 @@ public class IHEValidator extends EObjectValidator {
 	public static final int CODED_ADVANCE_DIRECTIVES_SECTION__CODED_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 57;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Advance Directives Section template Id' of 'Advance Directives Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Advance Directives Section Template Id' of 'Advance Directives Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 58;
+	public static final int ADVANCE_DIRECTIVES_SECTION__IHE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 58;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Physical Exam Narrative Section template Id' of 'Physical Exam Narrative Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Physical Exam Narrative Section Template Id' of 'Physical Exam Narrative Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -532,7 +567,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int PHYSICAL_EXAM_NARRATIVE_SECTION__PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID = 59;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Physical Exam Narrative Section code' of 'Physical Exam Narrative Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Physical Exam Narrative Section Code' of 'Physical Exam Narrative Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -540,7 +575,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int PHYSICAL_EXAM_NARRATIVE_SECTION__PHYSICAL_EXAM_NARRATIVE_SECTION_CODE = 60;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Physical Exam Section template Id' of 'Physical Exam Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Physical Exam Section Template Id' of 'Physical Exam Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -548,7 +583,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int PHYSICAL_EXAM_SECTION__PHYSICAL_EXAM_SECTION_TEMPLATE_ID = 61;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Review Of Systems Section template Id' of 'Review Of Systems Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Review Of Systems Section Template Id' of 'Review Of Systems Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -556,7 +591,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int REVIEW_OF_SYSTEMS_SECTION__REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID = 62;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Review Of Systems Section code' of 'Review Of Systems Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Review Of Systems Section Code' of 'Review Of Systems Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -564,7 +599,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int REVIEW_OF_SYSTEMS_SECTION__REVIEW_OF_SYSTEMS_SECTION_CODE = 63;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Hospital Course Section template Id' of 'Hospital Course Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Course Section Template Id' of 'Hospital Course Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -572,7 +607,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int HOSPITAL_COURSE_SECTION__HOSPITAL_COURSE_SECTION_TEMPLATE_ID = 64;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Hospital Course Section code' of 'Hospital Course Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Course Section Code' of 'Hospital Course Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -580,7 +615,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int HOSPITAL_COURSE_SECTION__HOSPITAL_COURSE_SECTION_CODE = 65;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Coded Results Section template Id' of 'Coded Results Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Results Section Template Id' of 'Coded Results Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -588,7 +623,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int CODED_RESULTS_SECTION__CODED_RESULTS_SECTION_TEMPLATE_ID = 66;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Coded Results Section code' of 'Coded Results Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Results Section Code' of 'Coded Results Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -596,7 +631,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int CODED_RESULTS_SECTION__CODED_RESULTS_SECTION_CODE = 67;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Assessment And Plan Section template Id' of 'Assessment And Plan Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment And Plan Section Template Id' of 'Assessment And Plan Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -604,7 +639,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ASSESSMENT_AND_PLAN_SECTION__ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID = 68;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Assessment And Plan Section code' of 'Assessment And Plan Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment And Plan Section Code' of 'Assessment And Plan Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -612,7 +647,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ASSESSMENT_AND_PLAN_SECTION__ASSESSMENT_AND_PLAN_SECTION_CODE = 69;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Care Plan Section template Id' of 'Care Plan Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Care Plan Section Template Id' of 'Care Plan Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -620,7 +655,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int CARE_PLAN_SECTION__CARE_PLAN_SECTION_TEMPLATE_ID = 70;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Family Medical History Section template Id' of 'Family Medical History Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Family Medical History Section Template Id' of 'Family Medical History Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -628,15 +663,15 @@ public class IHEValidator extends EObjectValidator {
 	public static final int FAMILY_MEDICAL_HISTORY_SECTION__FAMILY_MEDICAL_HISTORY_SECTION_TEMPLATE_ID = 71;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Social History Section template Id' of 'Social History Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Social History Section Template Id' of 'Social History Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SOCIAL_HISTORY_SECTION__SOCIAL_HISTORY_SECTION_TEMPLATE_ID = 72;
+	public static final int SOCIAL_HISTORY_SECTION__IHE_SOCIAL_HISTORY_SECTION_TEMPLATE_ID = 72;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Encounter History Section template Id' of 'Encounter History Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter History Section Template Id' of 'Encounter History Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -644,7 +679,7 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ENCOUNTER_HISTORY_SECTION__ENCOUNTER_HISTORY_SECTION_TEMPLATE_ID = 73;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Medical Devices Section template Id' of 'Medical Devices Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Devices Section Template Id' of 'Medical Devices Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -816,39 +851,21 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(immunizationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateImmunizationsSection_ImmunizationsSection_templateId(immunizationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_ImmunizationsSection_code(immunizationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_ImmunizationsSection_title(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionCode(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionTitle(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateImmunizationsSection_validateIHEImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the ImmunizationsSection_templateId constraint of '<em>Immunizations Section</em>'.
+	 * Validates the validateIHEImmunizationsSectionTemplateId constraint of '<em>Immunizations Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateImmunizationsSection_ImmunizationsSection_templateId(ImmunizationsSection immunizationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "ImmunizationsSection_templateId", getObjectLabel(immunizationsSection, context) },
-						 new Object[] { immunizationsSection },
-						 context));
-			}
-			return false;
-		}
-		return ccdValidator.validateImmunizationsSection_ImmunizationsSection_templateId(immunizationsSection, diagnostics, context);
+	public boolean validateImmunizationsSection_validateIHEImmunizationsSectionTemplateId(ImmunizationsSection immunizationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return immunizationsSection.validateIHEImmunizationsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -864,29 +881,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(medicationsAdministeredSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationsAdministeredSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationsAdministeredSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicationsAdministeredSection_MedicationsAdministeredSection_templateId(medicationsAdministeredSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicationsAdministeredSection_MedicationsAdministeredSection_code(medicationsAdministeredSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicationsAdministeredSection_validateMedicationsAdministeredSectionTemplateId(medicationsAdministeredSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicationsAdministeredSection_validateMedicationsAdministeredSectionCode(medicationsAdministeredSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the MedicationsAdministeredSection_templateId constraint of '<em>Medications Administered Section</em>'.
+	 * Validates the validateMedicationsAdministeredSectionTemplateId constraint of '<em>Medications Administered Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationsAdministeredSection_MedicationsAdministeredSection_templateId(MedicationsAdministeredSection medicationsAdministeredSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return medicationsAdministeredSection.MedicationsAdministeredSection_templateId(diagnostics, context);
+	public boolean validateMedicationsAdministeredSection_validateMedicationsAdministeredSectionTemplateId(MedicationsAdministeredSection medicationsAdministeredSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicationsAdministeredSection.validateMedicationsAdministeredSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the MedicationsAdministeredSection_code constraint of '<em>Medications Administered Section</em>'.
+	 * Validates the validateMedicationsAdministeredSectionCode constraint of '<em>Medications Administered Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationsAdministeredSection_MedicationsAdministeredSection_code(MedicationsAdministeredSection medicationsAdministeredSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return medicationsAdministeredSection.MedicationsAdministeredSection_code(diagnostics, context);
+	public boolean validateMedicationsAdministeredSection_validateMedicationsAdministeredSectionCode(MedicationsAdministeredSection medicationsAdministeredSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicationsAdministeredSection.validateMedicationsAdministeredSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -902,35 +919,35 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(concernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_templateId(concernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_classCode(concernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_moodCode(concernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_id(concernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code_nullFlavor(concernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_problemObservation(concernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConcernEntry_ConcernEntry_templateId(concernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConcernEntry_ConcernEntry_effectiveTime(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActTemplateId(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActClassCode(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActProblemObservation(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryTemplateId(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryEffectiveTime(concernEntry, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the ConcernEntry_templateId constraint of '<em>Concern Entry</em>'.
+	 * Validates the validateConcernEntryTemplateId constraint of '<em>Concern Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConcernEntry_ConcernEntry_templateId(ConcernEntry concernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return concernEntry.ConcernEntry_templateId(diagnostics, context);
+	public boolean validateConcernEntry_validateConcernEntryTemplateId(ConcernEntry concernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return concernEntry.validateConcernEntryTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the ConcernEntry_effectiveTime constraint of '<em>Concern Entry</em>'.
+	 * Validates the validateConcernEntryEffectiveTime constraint of '<em>Concern Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConcernEntry_ConcernEntry_effectiveTime(ConcernEntry concernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return concernEntry.ConcernEntry_effectiveTime(diagnostics, context);
+	public boolean validateConcernEntry_validateConcernEntryEffectiveTime(ConcernEntry concernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return concernEntry.validateConcernEntryEffectiveTime(diagnostics, context);
 	}
 
 	/**
@@ -946,18 +963,18 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(medicalDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicalDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicalDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicalDocument_MedicalDocument_templateId(medicalDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalDocument_validateMedicalDocumentTemplateId(medicalDocument, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the MedicalDocument_templateId constraint of '<em>Medical Document</em>'.
+	 * Validates the validateMedicalDocumentTemplateId constraint of '<em>Medical Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicalDocument_MedicalDocument_templateId(MedicalDocument medicalDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return medicalDocument.MedicalDocument_templateId(diagnostics, context);
+	public boolean validateMedicalDocument_validateMedicalDocumentTemplateId(MedicalDocument medicalDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicalDocument.validateMedicalDocumentTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -973,33 +990,33 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(activeProblemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(activeProblemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(activeProblemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_ProblemSection_templateId(activeProblemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_ProblemSection_code(activeProblemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_ProblemSection_title(activeProblemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_ProblemSection_problemAct(activeProblemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateActiveProblemsSection_ActiveProblemsSection_templateId(activeProblemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateActiveProblemsSection_ActiveProblemsSection_problemConcernEntry(activeProblemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionTemplateId(activeProblemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionCode(activeProblemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionTitle(activeProblemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionProblemAct(activeProblemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateActiveProblemsSection_validateActiveProblemsSectionTemplateId(activeProblemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateActiveProblemsSection_validateActiveProblemsSectionProblemConcernEntry(activeProblemsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the ActiveProblemsSection_templateId constraint of '<em>Active Problems Section</em>'.
+	 * Validates the validateActiveProblemsSectionTemplateId constraint of '<em>Active Problems Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateActiveProblemsSection_ActiveProblemsSection_templateId(ActiveProblemsSection activeProblemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return activeProblemsSection.ActiveProblemsSection_templateId(diagnostics, context);
+	public boolean validateActiveProblemsSection_validateActiveProblemsSectionTemplateId(ActiveProblemsSection activeProblemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return activeProblemsSection.validateActiveProblemsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the ActiveProblemsSection_problemConcernEntry constraint of '<em>Active Problems Section</em>'.
+	 * Validates the validateActiveProblemsSectionProblemConcernEntry constraint of '<em>Active Problems Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateActiveProblemsSection_ActiveProblemsSection_problemConcernEntry(ActiveProblemsSection activeProblemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return activeProblemsSection.ActiveProblemsSection_problemConcernEntry(diagnostics, context);
+	public boolean validateActiveProblemsSection_validateActiveProblemsSectionProblemConcernEntry(ActiveProblemsSection activeProblemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return activeProblemsSection.validateActiveProblemsSectionProblemConcernEntry(diagnostics, context);
 	}
 
 	/**
@@ -1015,37 +1032,37 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemConcernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_templateId(problemConcernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_classCode(problemConcernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_moodCode(problemConcernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_id(problemConcernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code_nullFlavor(problemConcernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_problemObservation(problemConcernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConcernEntry_ConcernEntry_templateId(problemConcernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConcernEntry_ConcernEntry_effectiveTime(problemConcernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemConcernEntry_ProblemConcernEntry_templateId(problemConcernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemConcernEntry_ProblemConcernEntry_problemEntry(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActTemplateId(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActClassCode(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActProblemObservation(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryTemplateId(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryEffectiveTime(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemConcernEntry_validateProblemConcernEntryTemplateId(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemConcernEntry_validateProblemConcernEntryProblemEntry(problemConcernEntry, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the ProblemConcernEntry_templateId constraint of '<em>Problem Concern Entry</em>'.
+	 * Validates the validateProblemConcernEntryTemplateId constraint of '<em>Problem Concern Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemConcernEntry_ProblemConcernEntry_templateId(ProblemConcernEntry problemConcernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemConcernEntry.ProblemConcernEntry_templateId(diagnostics, context);
+	public boolean validateProblemConcernEntry_validateProblemConcernEntryTemplateId(ProblemConcernEntry problemConcernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemConcernEntry.validateProblemConcernEntryTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the ProblemConcernEntry_problemEntry constraint of '<em>Problem Concern Entry</em>'.
+	 * Validates the validateProblemConcernEntryProblemEntry constraint of '<em>Problem Concern Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemConcernEntry_ProblemConcernEntry_problemEntry(ProblemConcernEntry problemConcernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemConcernEntry.ProblemConcernEntry_problemEntry(diagnostics, context);
+	public boolean validateProblemConcernEntry_validateProblemConcernEntryProblemEntry(ProblemConcernEntry problemConcernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemConcernEntry.validateProblemConcernEntryProblemEntry(diagnostics, context);
 	}
 
 	/**
@@ -1061,45 +1078,45 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(problemEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_ProblemObservation_templateId(problemEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_ProblemObservation_moodCode(problemEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_ProblemObservation_statusCode(problemEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_ProblemObservation_effectiveTime(problemEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_ProblemObservation_code(problemEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemEntry_ProblemEntry_templateId(problemEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemEntry_ProblemEntry_text(problemEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemEntry_ProblemEntry_value(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationTemplateId(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationMoodCode(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationStatusCode(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationEffectiveTime(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationCode(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemEntry_validateProblemEntryTemplateId(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemEntry_validateProblemEntryText(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemEntry_validateProblemEntryValue(problemEntry, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the ProblemEntry_templateId constraint of '<em>Problem Entry</em>'.
+	 * Validates the validateProblemEntryTemplateId constraint of '<em>Problem Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemEntry_ProblemEntry_templateId(ProblemEntry problemEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemEntry.ProblemEntry_templateId(diagnostics, context);
+	public boolean validateProblemEntry_validateProblemEntryTemplateId(ProblemEntry problemEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemEntry.validateProblemEntryTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the ProblemEntry_text constraint of '<em>Problem Entry</em>'.
+	 * Validates the validateProblemEntryText constraint of '<em>Problem Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemEntry_ProblemEntry_text(ProblemEntry problemEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemEntry.ProblemEntry_text(diagnostics, context);
+	public boolean validateProblemEntry_validateProblemEntryText(ProblemEntry problemEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemEntry.validateProblemEntryText(diagnostics, context);
 	}
 
 	/**
-	 * Validates the ProblemEntry_value constraint of '<em>Problem Entry</em>'.
+	 * Validates the validateProblemEntryValue constraint of '<em>Problem Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemEntry_ProblemEntry_value(ProblemEntry problemEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemEntry.ProblemEntry_value(diagnostics, context);
+	public boolean validateProblemEntry_validateProblemEntryValue(ProblemEntry problemEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemEntry.validateProblemEntryValue(diagnostics, context);
 	}
 
 	/**
@@ -1115,25 +1132,25 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_moodCode(medication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(medication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(medication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(medication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationSeriesNumberObservation(medication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationStatusObservation(medication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_patientInstruction(medication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedication_Medication_templateId(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(medication, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the Medication_templateId constraint of '<em>Medication</em>'.
+	 * Validates the validateMedicationTemplateId constraint of '<em>Medication</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedication_Medication_templateId(Medication medication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return medication.Medication_templateId(diagnostics, context);
+	public boolean validateMedication_validateMedicationTemplateId(Medication medication, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medication.validateMedicationTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1149,21 +1166,21 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(medicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationSection_MedicationSection_templateId(medicationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationSection_MedicationSection_code(medicationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationSection_MedicationSection_title(medicationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicationsSection_MedicationsSection_templateId(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationSection_validateMedicationSectionTemplateId(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationSection_validateMedicationSectionCode(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationSection_validateMedicationSectionTitle(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicationsSection_validateMedicationsSectionTemplateId(medicationsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the MedicationsSection_templateId constraint of '<em>Medications Section</em>'.
+	 * Validates the validateMedicationsSectionTemplateId constraint of '<em>Medications Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationsSection_MedicationsSection_templateId(MedicationsSection medicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return medicationsSection.MedicationsSection_templateId(diagnostics, context);
+	public boolean validateMedicationsSection_validateMedicationsSectionTemplateId(MedicationsSection medicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicationsSection.validateMedicationsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1179,26 +1196,26 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(allergyIntoleranceConcern, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_templateId(allergyIntoleranceConcern, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_classCode(allergyIntoleranceConcern, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_moodCode(allergyIntoleranceConcern, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_id(allergyIntoleranceConcern, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_code_nullFlavor(allergyIntoleranceConcern, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_ProblemAct_problemObservation(allergyIntoleranceConcern, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConcernEntry_ConcernEntry_templateId(allergyIntoleranceConcern, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConcernEntry_ConcernEntry_effectiveTime(allergyIntoleranceConcern, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAllergyIntoleranceConcern_AllergyIntoleranceConcern_templateId(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActTemplateId(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActClassCode(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActProblemObservation(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryTemplateId(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryEffectiveTime(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAllergyIntoleranceConcern_validateAllergyIntoleranceConcernTemplateId(allergyIntoleranceConcern, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the AllergyIntoleranceConcern_templateId constraint of '<em>Allergy Intolerance Concern</em>'.
+	 * Validates the validateAllergyIntoleranceConcernTemplateId constraint of '<em>Allergy Intolerance Concern</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAllergyIntoleranceConcern_AllergyIntoleranceConcern_templateId(AllergyIntoleranceConcern allergyIntoleranceConcern, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return allergyIntoleranceConcern.AllergyIntoleranceConcern_templateId(diagnostics, context);
+	public boolean validateAllergyIntoleranceConcern_validateAllergyIntoleranceConcernTemplateId(AllergyIntoleranceConcern allergyIntoleranceConcern, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return allergyIntoleranceConcern.validateAllergyIntoleranceConcernTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1214,26 +1231,26 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(allergyIntolerance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(allergyIntolerance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(allergyIntolerance, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_ProblemObservation_templateId(allergyIntolerance, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_ProblemObservation_moodCode(allergyIntolerance, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_ProblemObservation_statusCode(allergyIntolerance, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_ProblemObservation_effectiveTime(allergyIntolerance, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_ProblemObservation_code(allergyIntolerance, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemEntry_ProblemEntry_templateId(allergyIntolerance, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemEntry_ProblemEntry_text(allergyIntolerance, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemEntry_ProblemEntry_value(allergyIntolerance, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAllergyIntolerance_AllergyIntolerance_templateId(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationTemplateId(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationMoodCode(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationStatusCode(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationEffectiveTime(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationCode(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemEntry_validateProblemEntryTemplateId(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemEntry_validateProblemEntryText(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemEntry_validateProblemEntryValue(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAllergyIntolerance_validateAllergyIntoleranceTemplateId(allergyIntolerance, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the AllergyIntolerance_templateId constraint of '<em>Allergy Intolerance</em>'.
+	 * Validates the validateAllergyIntoleranceTemplateId constraint of '<em>Allergy Intolerance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAllergyIntolerance_AllergyIntolerance_templateId(AllergyIntolerance allergyIntolerance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return allergyIntolerance.AllergyIntolerance_templateId(diagnostics, context);
+	public boolean validateAllergyIntolerance_validateAllergyIntoleranceTemplateId(AllergyIntolerance allergyIntolerance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return allergyIntolerance.validateAllergyIntoleranceTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1249,21 +1266,21 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(allergiesReactionsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(allergiesReactionsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(allergiesReactionsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_AlertsSection_templateId(allergiesReactionsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_AlertsSection_code(allergiesReactionsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_AlertsSection_title(allergiesReactionsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAllergiesReactionsSection_AllergiesReactionsSection_templateId(allergiesReactionsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionTemplateId(allergiesReactionsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionCode(allergiesReactionsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionTitle(allergiesReactionsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAllergiesReactionsSection_validateAllergiesReactionsSectionTemplateId(allergiesReactionsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the AllergiesReactionsSection_templateId constraint of '<em>Allergies Reactions Section</em>'.
+	 * Validates the validateAllergiesReactionsSectionTemplateId constraint of '<em>Allergies Reactions Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAllergiesReactionsSection_AllergiesReactionsSection_templateId(AllergiesReactionsSection allergiesReactionsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return allergiesReactionsSection.AllergiesReactionsSection_templateId(diagnostics, context);
+	public boolean validateAllergiesReactionsSection_validateAllergiesReactionsSectionTemplateId(AllergiesReactionsSection allergiesReactionsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return allergiesReactionsSection.validateAllergiesReactionsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1279,26 +1296,26 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(normalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(normalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_moodCode(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationSeriesNumberObservation(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationStatusObservation(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_patientInstruction(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedication_Medication_templateId(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNormalDosing_NormalDosing_templateId(normalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(normalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(normalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(normalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(normalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(normalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(normalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(normalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(normalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNormalDosing_validateNormalDosingTemplateId(normalDosing, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the NormalDosing_templateId constraint of '<em>Normal Dosing</em>'.
+	 * Validates the validateNormalDosingTemplateId constraint of '<em>Normal Dosing</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateNormalDosing_NormalDosing_templateId(NormalDosing normalDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return normalDosing.NormalDosing_templateId(diagnostics, context);
+	public boolean validateNormalDosing_validateNormalDosingTemplateId(NormalDosing normalDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return normalDosing.validateNormalDosingTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1314,26 +1331,26 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(taperedDose, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(taperedDose, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(taperedDose, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_moodCode(taperedDose, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(taperedDose, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(taperedDose, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(taperedDose, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationSeriesNumberObservation(taperedDose, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationStatusObservation(taperedDose, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_patientInstruction(taperedDose, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedication_Medication_templateId(taperedDose, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTaperedDose_TaperedDose_templateId(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(taperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTaperedDose_validateTaperedDoseTemplateId(taperedDose, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the TaperedDose_templateId constraint of '<em>Tapered Dose</em>'.
+	 * Validates the validateTaperedDoseTemplateId constraint of '<em>Tapered Dose</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTaperedDose_TaperedDose_templateId(TaperedDose taperedDose, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return taperedDose.TaperedDose_templateId(diagnostics, context);
+	public boolean validateTaperedDose_validateTaperedDoseTemplateId(TaperedDose taperedDose, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return taperedDose.validateTaperedDoseTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1349,26 +1366,26 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(splitDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(splitDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_moodCode(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationSeriesNumberObservation(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationStatusObservation(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_patientInstruction(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedication_Medication_templateId(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSplitDosing_SplitDosing_templateId(splitDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(splitDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(splitDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(splitDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(splitDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(splitDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(splitDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(splitDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(splitDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSplitDosing_validateSplitDosingTemplateId(splitDosing, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the SplitDosing_templateId constraint of '<em>Split Dosing</em>'.
+	 * Validates the validateSplitDosingTemplateId constraint of '<em>Split Dosing</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSplitDosing_SplitDosing_templateId(SplitDosing splitDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return splitDosing.SplitDosing_templateId(diagnostics, context);
+	public boolean validateSplitDosing_validateSplitDosingTemplateId(SplitDosing splitDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return splitDosing.validateSplitDosingTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1384,26 +1401,26 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(conditionalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(conditionalDosing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_moodCode(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationSeriesNumberObservation(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationStatusObservation(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_patientInstruction(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedication_Medication_templateId(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConditionalDosing_ConditionalDosing_templateId(conditionalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(conditionalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(conditionalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(conditionalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(conditionalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(conditionalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(conditionalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(conditionalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(conditionalDosing, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConditionalDosing_validateConditionalDosingTemplateId(conditionalDosing, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the ConditionalDosing_templateId constraint of '<em>Conditional Dosing</em>'.
+	 * Validates the validateConditionalDosingTemplateId constraint of '<em>Conditional Dosing</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConditionalDosing_ConditionalDosing_templateId(ConditionalDosing conditionalDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return conditionalDosing.ConditionalDosing_templateId(diagnostics, context);
+	public boolean validateConditionalDosing_validateConditionalDosingTemplateId(ConditionalDosing conditionalDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return conditionalDosing.validateConditionalDosingTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1419,26 +1436,26 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(combinationMedication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(combinationMedication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(combinationMedication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_moodCode(combinationMedication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_templateId(combinationMedication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_id(combinationMedication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_statusCode(combinationMedication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationSeriesNumberObservation(combinationMedication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_medicationStatusObservation(combinationMedication, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_MedicationActivity_patientInstruction(combinationMedication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedication_Medication_templateId(combinationMedication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCombinationMedication_CombinationMedication_templateId(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(combinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCombinationMedication_validateCombinationMedicationTemplateId(combinationMedication, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the CombinationMedication_templateId constraint of '<em>Combination Medication</em>'.
+	 * Validates the validateCombinationMedicationTemplateId constraint of '<em>Combination Medication</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCombinationMedication_CombinationMedication_templateId(CombinationMedication combinationMedication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return combinationMedication.CombinationMedication_templateId(diagnostics, context);
+	public boolean validateCombinationMedication_validateCombinationMedicationTemplateId(CombinationMedication combinationMedication, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return combinationMedication.validateCombinationMedicationTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1454,40 +1471,22 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vitalSignsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsSection_VitalSignsSection_templateId(vitalSignsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_VitalSignsSection_code(vitalSignsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_VitalSignsSection_title(vitalSignsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_VitalSignsSection_vitalSignsOrganizer(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionCode(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionTitle(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionVitalSignsOrganizer(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsSection_validateIHEVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the VitalSignsSection_templateId constraint of '<em>Vital Signs Section</em>'.
+	 * Validates the validateIHEVitalSignsSectionTemplateId constraint of '<em>Vital Signs Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignsSection_VitalSignsSection_templateId(VitalSignsSection vitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "VitalSignsSection_templateId", getObjectLabel(vitalSignsSection, context) },
-						 new Object[] { vitalSignsSection },
-						 context));
-			}
-			return false;
-		}
-		return ccdValidator.validateVitalSignsSection_VitalSignsSection_templateId(vitalSignsSection, diagnostics, context);
+	public boolean validateVitalSignsSection_validateIHEVitalSignsSectionTemplateId(VitalSignsSection vitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsSection.validateIHEVitalSignsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1503,33 +1502,34 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(codedVitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(codedVitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(codedVitalSignsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsSection_VitalSignsSection_templateId(codedVitalSignsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_VitalSignsSection_code(codedVitalSignsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_VitalSignsSection_title(codedVitalSignsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_VitalSignsSection_vitalSignsOrganizer(codedVitalSignsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCodedVitalSignsSection_CodedVitalSignsSection_templateId(codedVitalSignsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCodedVitalSignsSection_CodedVitalSignsSection_vitalSignsOrganizer(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionTemplateId(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionCode(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionTitle(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionVitalSignsOrganizer(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsSection_validateIHEVitalSignsSectionTemplateId(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCodedVitalSignsSection_validateCodedVitalSignsSectionTemplateId(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCodedVitalSignsSection_validateCodedVitalSignsSectionVitalSignsOrganizer(codedVitalSignsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the CodedVitalSignsSection_templateId constraint of '<em>Coded Vital Signs Section</em>'.
+	 * Validates the validateCodedVitalSignsSectionTemplateId constraint of '<em>Coded Vital Signs Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCodedVitalSignsSection_CodedVitalSignsSection_templateId(CodedVitalSignsSection codedVitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return codedVitalSignsSection.CodedVitalSignsSection_templateId(diagnostics, context);
+	public boolean validateCodedVitalSignsSection_validateCodedVitalSignsSectionTemplateId(CodedVitalSignsSection codedVitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return codedVitalSignsSection.validateCodedVitalSignsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the CodedVitalSignsSection_vitalSignsOrganizer constraint of '<em>Coded Vital Signs Section</em>'.
+	 * Validates the validateCodedVitalSignsSectionVitalSignsOrganizer constraint of '<em>Coded Vital Signs Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCodedVitalSignsSection_CodedVitalSignsSection_vitalSignsOrganizer(CodedVitalSignsSection codedVitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return codedVitalSignsSection.CodedVitalSignsSection_vitalSignsOrganizer(diagnostics, context);
+	public boolean validateCodedVitalSignsSection_validateCodedVitalSignsSectionVitalSignsOrganizer(CodedVitalSignsSection codedVitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return codedVitalSignsSection.validateCodedVitalSignsSectionVitalSignsOrganizer(diagnostics, context);
 	}
 
 	/**
@@ -1545,45 +1545,45 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vitalSignObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_ResultObservation_templateId(vitalSignObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_ResultObservation_moodCode(vitalSignObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_ResultObservation_id(vitalSignObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_ResultObservation_effectiveTime(vitalSignObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_ResultObservation_value(vitalSignObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignObservation_VitalSignObservation_templateId(vitalSignObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignObservation_VitalSignObservation_code(vitalSignObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignObservation_VitalSignObservation_value(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationTemplateId(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationMoodCode(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationId(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationEffectiveTime(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationValue(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationTemplateId(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationCode(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationValue(vitalSignObservation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the VitalSignObservation_templateId constraint of '<em>Vital Sign Observation</em>'.
+	 * Validates the validateVitalSignObservationTemplateId constraint of '<em>Vital Sign Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignObservation_VitalSignObservation_templateId(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignObservation.VitalSignObservation_templateId(diagnostics, context);
+	public boolean validateVitalSignObservation_validateVitalSignObservationTemplateId(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignObservation.validateVitalSignObservationTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the VitalSignObservation_code constraint of '<em>Vital Sign Observation</em>'.
+	 * Validates the validateVitalSignObservationCode constraint of '<em>Vital Sign Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignObservation_VitalSignObservation_code(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignObservation.VitalSignObservation_code(diagnostics, context);
+	public boolean validateVitalSignObservation_validateVitalSignObservationCode(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignObservation.validateVitalSignObservationCode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the VitalSignObservation_value constraint of '<em>Vital Sign Observation</em>'.
+	 * Validates the validateVitalSignObservationValue constraint of '<em>Vital Sign Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignObservation_VitalSignObservation_value(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignObservation.VitalSignObservation_value(diagnostics, context);
+	public boolean validateVitalSignObservation_validateVitalSignObservationValue(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignObservation.validateVitalSignObservationValue(diagnostics, context);
 	}
 
 	/**
@@ -1599,40 +1599,40 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(simpleObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(simpleObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(simpleObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSimpleObservation_SimpleObservation_templateId(simpleObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSimpleObservation_SimpleObservation_id(simpleObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSimpleObservation_SimpleObservation_statusCode(simpleObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSimpleObservation_validateSimpleObservationTemplateId(simpleObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSimpleObservation_validateSimpleObservationId(simpleObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSimpleObservation_validateSimpleObservationStatusCode(simpleObservation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the SimpleObservation_templateId constraint of '<em>Simple Observation</em>'.
+	 * Validates the validateSimpleObservationTemplateId constraint of '<em>Simple Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSimpleObservation_SimpleObservation_templateId(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return simpleObservation.SimpleObservation_templateId(diagnostics, context);
+	public boolean validateSimpleObservation_validateSimpleObservationTemplateId(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return simpleObservation.validateSimpleObservationTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the SimpleObservation_id constraint of '<em>Simple Observation</em>'.
+	 * Validates the validateSimpleObservationId constraint of '<em>Simple Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSimpleObservation_SimpleObservation_id(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return simpleObservation.SimpleObservation_id(diagnostics, context);
+	public boolean validateSimpleObservation_validateSimpleObservationId(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return simpleObservation.validateSimpleObservationId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the SimpleObservation_statusCode constraint of '<em>Simple Observation</em>'.
+	 * Validates the validateSimpleObservationStatusCode constraint of '<em>Simple Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSimpleObservation_SimpleObservation_statusCode(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return simpleObservation.SimpleObservation_statusCode(diagnostics, context);
+	public boolean validateSimpleObservation_validateSimpleObservationStatusCode(SimpleObservation simpleObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return simpleObservation.validateSimpleObservationStatusCode(diagnostics, context);
 	}
 
 	/**
@@ -1648,85 +1648,67 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_ResultOrganizer_templateId(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_ResultOrganizer_moodCode(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_ResultOrganizer_id(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_ResultOrganizer_resultObservation(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_VitalSignsOrganizer_templateId(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_VitalSignsOrganizer_code(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_VitalSignsOrganizer_statusCode(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_VitalSignsOrganizer_effectiveTime(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_VitalSignsOrganizer_vitalSignObservation(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerMoodCode(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerId(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerResultObservation(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsOrganizer_validateVitalSignsOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateVitalSignsOrganizerCode(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateVitalSignsOrganizerStatusCode(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateVitalSignsOrganizerEffectiveTime(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateVitalSignsOrganizerVitalSignObservation(vitalSignsOrganizer, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the VitalSignsOrganizer_code constraint of '<em>Vital Signs Organizer</em>'.
+	 * Validates the validateIHEVitalSignsOrganizerTemplateId constraint of '<em>Vital Signs Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignsOrganizer_VitalSignsOrganizer_code(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignsOrganizer.VitalSignsOrganizer_code(diagnostics, context);
+	public boolean validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerTemplateId(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.validateIHEVitalSignsOrganizerTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the VitalSignsOrganizer_statusCode constraint of '<em>Vital Signs Organizer</em>'.
+	 * Validates the validateVitalSignsOrganizerCode constraint of '<em>Vital Signs Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignsOrganizer_VitalSignsOrganizer_statusCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignsOrganizer.VitalSignsOrganizer_statusCode(diagnostics, context);
+	public boolean validateVitalSignsOrganizer_validateVitalSignsOrganizerCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.validateVitalSignsOrganizerCode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the VitalSignsOrganizer_effectiveTime constraint of '<em>Vital Signs Organizer</em>'.
+	 * Validates the validateVitalSignsOrganizerStatusCode constraint of '<em>Vital Signs Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignsOrganizer_VitalSignsOrganizer_effectiveTime(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignsOrganizer.VitalSignsOrganizer_effectiveTime(diagnostics, context);
+	public boolean validateVitalSignsOrganizer_validateVitalSignsOrganizerStatusCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.validateVitalSignsOrganizerStatusCode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the VitalSignsOrganizer_vitalSignObservation constraint of '<em>Vital Signs Organizer</em>'.
+	 * Validates the validateVitalSignsOrganizerEffectiveTime constraint of '<em>Vital Signs Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignsOrganizer_VitalSignsOrganizer_vitalSignObservation(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignsOrganizer.VitalSignsOrganizer_vitalSignObservation(diagnostics, context);
+	public boolean validateVitalSignsOrganizer_validateVitalSignsOrganizerEffectiveTime(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.validateVitalSignsOrganizerEffectiveTime(diagnostics, context);
 	}
 
 	/**
-	 * Validates the VitalSignsOrganizer_templateId constraint of '<em>Vital Signs Organizer</em>'.
+	 * Validates the validateVitalSignsOrganizerVitalSignObservation constraint of '<em>Vital Signs Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignsOrganizer_VitalSignsOrganizer_templateId(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "VitalSignsOrganizer_templateId", getObjectLabel(vitalSignsOrganizer, context) },
-						 new Object[] { vitalSignsOrganizer },
-						 context));
-			}
-			return false;
-		}
-		return ccdValidator.validateVitalSignsOrganizer_VitalSignsOrganizer_templateId(vitalSignsOrganizer, diagnostics, context);
+	public boolean validateVitalSignsOrganizer_validateVitalSignsOrganizerVitalSignObservation(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.validateVitalSignsOrganizerVitalSignObservation(diagnostics, context);
 	}
 
 	/**
@@ -1742,39 +1724,21 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(payersSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePayersSection_PayersSection_templateId(payersSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_PayersSection_code(payersSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_PayersSection_title(payersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionTemplateId(payersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionCode(payersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionTitle(payersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePayersSection_validateIHEPayersSectionTemplateId(payersSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the PayersSection_templateId constraint of '<em>Payers Section</em>'.
+	 * Validates the validateIHEPayersSectionTemplateId constraint of '<em>Payers Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePayersSection_PayersSection_templateId(PayersSection payersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "PayersSection_templateId", getObjectLabel(payersSection, context) },
-						 new Object[] { payersSection },
-						 context));
-			}
-			return false;
-		}
-		return ccdValidator.validatePayersSection_PayersSection_templateId(payersSection, diagnostics, context);
+	public boolean validatePayersSection_validateIHEPayersSectionTemplateId(PayersSection payersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return payersSection.validateIHEPayersSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1790,29 +1754,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(historyOfPastIllnessSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(historyOfPastIllnessSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(historyOfPastIllnessSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHistoryOfPastIllnessSection_HistoryOfPastIllnessSection_templateId(historyOfPastIllnessSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHistoryOfPastIllnessSection_HistoryOfPastIllnessSection_code(historyOfPastIllnessSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHistoryOfPastIllnessSection_validateHistoryOfPastIllnessSectionTemplateId(historyOfPastIllnessSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHistoryOfPastIllnessSection_validateHistoryOfPastIllnessSectionCode(historyOfPastIllnessSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the HistoryOfPastIllnessSection_templateId constraint of '<em>History Of Past Illness Section</em>'.
+	 * Validates the validateHistoryOfPastIllnessSectionTemplateId constraint of '<em>History Of Past Illness Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHistoryOfPastIllnessSection_HistoryOfPastIllnessSection_templateId(HistoryOfPastIllnessSection historyOfPastIllnessSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return historyOfPastIllnessSection.HistoryOfPastIllnessSection_templateId(diagnostics, context);
+	public boolean validateHistoryOfPastIllnessSection_validateHistoryOfPastIllnessSectionTemplateId(HistoryOfPastIllnessSection historyOfPastIllnessSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return historyOfPastIllnessSection.validateHistoryOfPastIllnessSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the HistoryOfPastIllnessSection_code constraint of '<em>History Of Past Illness Section</em>'.
+	 * Validates the validateHistoryOfPastIllnessSectionCode constraint of '<em>History Of Past Illness Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHistoryOfPastIllnessSection_HistoryOfPastIllnessSection_code(HistoryOfPastIllnessSection historyOfPastIllnessSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return historyOfPastIllnessSection.HistoryOfPastIllnessSection_code(diagnostics, context);
+	public boolean validateHistoryOfPastIllnessSection_validateHistoryOfPastIllnessSectionCode(HistoryOfPastIllnessSection historyOfPastIllnessSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return historyOfPastIllnessSection.validateHistoryOfPastIllnessSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -1828,29 +1792,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(chiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(chiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(chiefComplaintSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateChiefComplaintSection_ChiefComplaintSection_templateId(chiefComplaintSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateChiefComplaintSection_ChiefComplaintSection_code(chiefComplaintSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateChiefComplaintSection_validateChiefComplaintSectionTemplateId(chiefComplaintSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateChiefComplaintSection_validateChiefComplaintSectionCode(chiefComplaintSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the ChiefComplaintSection_templateId constraint of '<em>Chief Complaint Section</em>'.
+	 * Validates the validateChiefComplaintSectionTemplateId constraint of '<em>Chief Complaint Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateChiefComplaintSection_ChiefComplaintSection_templateId(ChiefComplaintSection chiefComplaintSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return chiefComplaintSection.ChiefComplaintSection_templateId(diagnostics, context);
+	public boolean validateChiefComplaintSection_validateChiefComplaintSectionTemplateId(ChiefComplaintSection chiefComplaintSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return chiefComplaintSection.validateChiefComplaintSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the ChiefComplaintSection_code constraint of '<em>Chief Complaint Section</em>'.
+	 * Validates the validateChiefComplaintSectionCode constraint of '<em>Chief Complaint Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateChiefComplaintSection_ChiefComplaintSection_code(ChiefComplaintSection chiefComplaintSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return chiefComplaintSection.ChiefComplaintSection_code(diagnostics, context);
+	public boolean validateChiefComplaintSection_validateChiefComplaintSectionCode(ChiefComplaintSection chiefComplaintSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return chiefComplaintSection.validateChiefComplaintSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -1866,29 +1830,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(reasonForReferralSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reasonForReferralSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reasonForReferralSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateReasonForReferralSection_ReasonForReferralSection_templateId(reasonForReferralSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateReasonForReferralSection_ReasonForReferralSection_code(reasonForReferralSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateReasonForReferralSection_validateReasonForReferralSectionTemplateId(reasonForReferralSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateReasonForReferralSection_validateReasonForReferralSectionCode(reasonForReferralSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the ReasonForReferralSection_templateId constraint of '<em>Reason For Referral Section</em>'.
+	 * Validates the validateReasonForReferralSectionTemplateId constraint of '<em>Reason For Referral Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateReasonForReferralSection_ReasonForReferralSection_templateId(ReasonForReferralSection reasonForReferralSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return reasonForReferralSection.ReasonForReferralSection_templateId(diagnostics, context);
+	public boolean validateReasonForReferralSection_validateReasonForReferralSectionTemplateId(ReasonForReferralSection reasonForReferralSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return reasonForReferralSection.validateReasonForReferralSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the ReasonForReferralSection_code constraint of '<em>Reason For Referral Section</em>'.
+	 * Validates the validateReasonForReferralSectionCode constraint of '<em>Reason For Referral Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateReasonForReferralSection_ReasonForReferralSection_code(ReasonForReferralSection reasonForReferralSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return reasonForReferralSection.ReasonForReferralSection_code(diagnostics, context);
+	public boolean validateReasonForReferralSection_validateReasonForReferralSectionCode(ReasonForReferralSection reasonForReferralSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return reasonForReferralSection.validateReasonForReferralSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -1904,29 +1868,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(historyOfPresentIllness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(historyOfPresentIllness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(historyOfPresentIllness, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHistoryOfPresentIllness_HistoryOfPresentIllness_templateId(historyOfPresentIllness, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHistoryOfPresentIllness_HistoryOfPresentIllness_code(historyOfPresentIllness, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHistoryOfPresentIllness_validateHistoryOfPresentIllnessTemplateId(historyOfPresentIllness, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHistoryOfPresentIllness_validateHistoryOfPresentIllnessCode(historyOfPresentIllness, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the HistoryOfPresentIllness_templateId constraint of '<em>History Of Present Illness</em>'.
+	 * Validates the validateHistoryOfPresentIllnessTemplateId constraint of '<em>History Of Present Illness</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHistoryOfPresentIllness_HistoryOfPresentIllness_templateId(HistoryOfPresentIllness historyOfPresentIllness, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return historyOfPresentIllness.HistoryOfPresentIllness_templateId(diagnostics, context);
+	public boolean validateHistoryOfPresentIllness_validateHistoryOfPresentIllnessTemplateId(HistoryOfPresentIllness historyOfPresentIllness, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return historyOfPresentIllness.validateHistoryOfPresentIllnessTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the HistoryOfPresentIllness_code constraint of '<em>History Of Present Illness</em>'.
+	 * Validates the validateHistoryOfPresentIllnessCode constraint of '<em>History Of Present Illness</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHistoryOfPresentIllness_HistoryOfPresentIllness_code(HistoryOfPresentIllness historyOfPresentIllness, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return historyOfPresentIllness.HistoryOfPresentIllness_code(diagnostics, context);
+	public boolean validateHistoryOfPresentIllness_validateHistoryOfPresentIllnessCode(HistoryOfPresentIllness historyOfPresentIllness, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return historyOfPresentIllness.validateHistoryOfPresentIllnessCode(diagnostics, context);
 	}
 
 	/**
@@ -1942,22 +1906,22 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(surgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(surgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(surgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_ProceduresSection_templateId(surgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_ProceduresSection_code(surgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_ProceduresSection_title(surgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_ProceduresSection_procedureActivity(surgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSurgeriesSection_SurgeriesSection_templateId(surgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionTemplateId(surgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionCode(surgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionTitle(surgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionProcedureActivity(surgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSurgeriesSection_validateSurgeriesSectionTemplateId(surgeriesSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the SurgeriesSection_templateId constraint of '<em>Surgeries Section</em>'.
+	 * Validates the validateSurgeriesSectionTemplateId constraint of '<em>Surgeries Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSurgeriesSection_SurgeriesSection_templateId(SurgeriesSection surgeriesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return surgeriesSection.SurgeriesSection_templateId(diagnostics, context);
+	public boolean validateSurgeriesSection_validateSurgeriesSectionTemplateId(SurgeriesSection surgeriesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return surgeriesSection.validateSurgeriesSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1973,23 +1937,23 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(codedSurgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(codedSurgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(codedSurgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_ProceduresSection_templateId(codedSurgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_ProceduresSection_code(codedSurgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_ProceduresSection_title(codedSurgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_ProceduresSection_procedureActivity(codedSurgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSurgeriesSection_SurgeriesSection_templateId(codedSurgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCodedSurgeriesSection_CodedSurgeriesSection_templateId(codedSurgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionTemplateId(codedSurgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionCode(codedSurgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionTitle(codedSurgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionProcedureActivity(codedSurgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSurgeriesSection_validateSurgeriesSectionTemplateId(codedSurgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCodedSurgeriesSection_validateCodedSurgeriesSectionTemplateId(codedSurgeriesSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the CodedSurgeriesSection_templateId constraint of '<em>Coded Surgeries Section</em>'.
+	 * Validates the validateCodedSurgeriesSectionTemplateId constraint of '<em>Coded Surgeries Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCodedSurgeriesSection_CodedSurgeriesSection_templateId(CodedSurgeriesSection codedSurgeriesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return codedSurgeriesSection.CodedSurgeriesSection_templateId(diagnostics, context);
+	public boolean validateCodedSurgeriesSection_validateCodedSurgeriesSectionTemplateId(CodedSurgeriesSection codedSurgeriesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return codedSurgeriesSection.validateCodedSurgeriesSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2005,29 +1969,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(hospitalAdmissionDiagnosisSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hospitalAdmissionDiagnosisSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hospitalAdmissionDiagnosisSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHospitalAdmissionDiagnosisSection_HospitalAdmissionDiagnosisSection_templateId(hospitalAdmissionDiagnosisSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHospitalAdmissionDiagnosisSection_HospitalAdmissionDiagnosisSection_code(hospitalAdmissionDiagnosisSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHospitalAdmissionDiagnosisSection_validateHospitalAdmissionDiagnosisSectionTemplateId(hospitalAdmissionDiagnosisSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHospitalAdmissionDiagnosisSection_validateHospitalAdmissionDiagnosisSectionCode(hospitalAdmissionDiagnosisSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the HospitalAdmissionDiagnosisSection_templateId constraint of '<em>Hospital Admission Diagnosis Section</em>'.
+	 * Validates the validateHospitalAdmissionDiagnosisSectionTemplateId constraint of '<em>Hospital Admission Diagnosis Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHospitalAdmissionDiagnosisSection_HospitalAdmissionDiagnosisSection_templateId(HospitalAdmissionDiagnosisSection hospitalAdmissionDiagnosisSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return hospitalAdmissionDiagnosisSection.HospitalAdmissionDiagnosisSection_templateId(diagnostics, context);
+	public boolean validateHospitalAdmissionDiagnosisSection_validateHospitalAdmissionDiagnosisSectionTemplateId(HospitalAdmissionDiagnosisSection hospitalAdmissionDiagnosisSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return hospitalAdmissionDiagnosisSection.validateHospitalAdmissionDiagnosisSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the HospitalAdmissionDiagnosisSection_code constraint of '<em>Hospital Admission Diagnosis Section</em>'.
+	 * Validates the validateHospitalAdmissionDiagnosisSectionCode constraint of '<em>Hospital Admission Diagnosis Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHospitalAdmissionDiagnosisSection_HospitalAdmissionDiagnosisSection_code(HospitalAdmissionDiagnosisSection hospitalAdmissionDiagnosisSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return hospitalAdmissionDiagnosisSection.HospitalAdmissionDiagnosisSection_code(diagnostics, context);
+	public boolean validateHospitalAdmissionDiagnosisSection_validateHospitalAdmissionDiagnosisSectionCode(HospitalAdmissionDiagnosisSection hospitalAdmissionDiagnosisSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return hospitalAdmissionDiagnosisSection.validateHospitalAdmissionDiagnosisSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -2043,29 +2007,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(dischargeDiagnosisSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dischargeDiagnosisSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dischargeDiagnosisSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDischargeDiagnosisSection_DischargeDiagnosisSection_templateId(dischargeDiagnosisSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDischargeDiagnosisSection_DischargeDiagnosisSection_code(dischargeDiagnosisSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDischargeDiagnosisSection_validateDischargeDiagnosisSectionTemplateId(dischargeDiagnosisSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDischargeDiagnosisSection_validateDischargeDiagnosisSectionCode(dischargeDiagnosisSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the DischargeDiagnosisSection_templateId constraint of '<em>Discharge Diagnosis Section</em>'.
+	 * Validates the validateDischargeDiagnosisSectionTemplateId constraint of '<em>Discharge Diagnosis Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDischargeDiagnosisSection_DischargeDiagnosisSection_templateId(DischargeDiagnosisSection dischargeDiagnosisSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return dischargeDiagnosisSection.DischargeDiagnosisSection_templateId(diagnostics, context);
+	public boolean validateDischargeDiagnosisSection_validateDischargeDiagnosisSectionTemplateId(DischargeDiagnosisSection dischargeDiagnosisSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return dischargeDiagnosisSection.validateDischargeDiagnosisSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the DischargeDiagnosisSection_code constraint of '<em>Discharge Diagnosis Section</em>'.
+	 * Validates the validateDischargeDiagnosisSectionCode constraint of '<em>Discharge Diagnosis Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDischargeDiagnosisSection_DischargeDiagnosisSection_code(DischargeDiagnosisSection dischargeDiagnosisSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return dischargeDiagnosisSection.DischargeDiagnosisSection_code(diagnostics, context);
+	public boolean validateDischargeDiagnosisSection_validateDischargeDiagnosisSectionCode(DischargeDiagnosisSection dischargeDiagnosisSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return dischargeDiagnosisSection.validateDischargeDiagnosisSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -2081,29 +2045,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(admissionMedicationHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(admissionMedicationHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(admissionMedicationHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAdmissionMedicationHistorySection_AdmissionMedicationHistorySection_templateId(admissionMedicationHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAdmissionMedicationHistorySection_AdmissionMedicationHistorySection_code(admissionMedicationHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAdmissionMedicationHistorySection_validateAdmissionMedicationHistorySectionTemplateId(admissionMedicationHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAdmissionMedicationHistorySection_validateAdmissionMedicationHistorySectionCode(admissionMedicationHistorySection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the AdmissionMedicationHistorySection_templateId constraint of '<em>Admission Medication History Section</em>'.
+	 * Validates the validateAdmissionMedicationHistorySectionTemplateId constraint of '<em>Admission Medication History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAdmissionMedicationHistorySection_AdmissionMedicationHistorySection_templateId(AdmissionMedicationHistorySection admissionMedicationHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return admissionMedicationHistorySection.AdmissionMedicationHistorySection_templateId(diagnostics, context);
+	public boolean validateAdmissionMedicationHistorySection_validateAdmissionMedicationHistorySectionTemplateId(AdmissionMedicationHistorySection admissionMedicationHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return admissionMedicationHistorySection.validateAdmissionMedicationHistorySectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the AdmissionMedicationHistorySection_code constraint of '<em>Admission Medication History Section</em>'.
+	 * Validates the validateAdmissionMedicationHistorySectionCode constraint of '<em>Admission Medication History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAdmissionMedicationHistorySection_AdmissionMedicationHistorySection_code(AdmissionMedicationHistorySection admissionMedicationHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return admissionMedicationHistorySection.AdmissionMedicationHistorySection_code(diagnostics, context);
+	public boolean validateAdmissionMedicationHistorySection_validateAdmissionMedicationHistorySectionCode(AdmissionMedicationHistorySection admissionMedicationHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return admissionMedicationHistorySection.validateAdmissionMedicationHistorySectionCode(diagnostics, context);
 	}
 
 	/**
@@ -2119,29 +2083,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(hospitalDischargeMedicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hospitalDischargeMedicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hospitalDischargeMedicationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHospitalDischargeMedicationsSection_HospitalDischargeMedicationsSection_templateId(hospitalDischargeMedicationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHospitalDischargeMedicationsSection_HospitalDischargeMedicationsSection_code(hospitalDischargeMedicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHospitalDischargeMedicationsSection_validateHospitalDischargeMedicationsSectionTemplateId(hospitalDischargeMedicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHospitalDischargeMedicationsSection_validateHospitalDischargeMedicationsSectionCode(hospitalDischargeMedicationsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the HospitalDischargeMedicationsSection_templateId constraint of '<em>Hospital Discharge Medications Section</em>'.
+	 * Validates the validateHospitalDischargeMedicationsSectionTemplateId constraint of '<em>Hospital Discharge Medications Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHospitalDischargeMedicationsSection_HospitalDischargeMedicationsSection_templateId(HospitalDischargeMedicationsSection hospitalDischargeMedicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return hospitalDischargeMedicationsSection.HospitalDischargeMedicationsSection_templateId(diagnostics, context);
+	public boolean validateHospitalDischargeMedicationsSection_validateHospitalDischargeMedicationsSectionTemplateId(HospitalDischargeMedicationsSection hospitalDischargeMedicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return hospitalDischargeMedicationsSection.validateHospitalDischargeMedicationsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the HospitalDischargeMedicationsSection_code constraint of '<em>Hospital Discharge Medications Section</em>'.
+	 * Validates the validateHospitalDischargeMedicationsSectionCode constraint of '<em>Hospital Discharge Medications Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHospitalDischargeMedicationsSection_HospitalDischargeMedicationsSection_code(HospitalDischargeMedicationsSection hospitalDischargeMedicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return hospitalDischargeMedicationsSection.HospitalDischargeMedicationsSection_code(diagnostics, context);
+	public boolean validateHospitalDischargeMedicationsSection_validateHospitalDischargeMedicationsSectionCode(HospitalDischargeMedicationsSection hospitalDischargeMedicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return hospitalDischargeMedicationsSection.validateHospitalDischargeMedicationsSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -2157,22 +2121,23 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(codedAdvanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(codedAdvanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(codedAdvanceDirectivesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAdvanceDirectivesSection_AdvanceDirectivesSection_templateId(codedAdvanceDirectivesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_AdvanceDirectivesSection_code(codedAdvanceDirectivesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_AdvanceDirectivesSection_title(codedAdvanceDirectivesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_AdvanceDirectivesSection_advanceDirectiveObservation(codedAdvanceDirectivesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCodedAdvanceDirectivesSection_CodedAdvanceDirectivesSection_templateId(codedAdvanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionTemplateId(codedAdvanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionCode(codedAdvanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionTitle(codedAdvanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionAdvanceDirectiveObservation(codedAdvanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAdvanceDirectivesSection_validateIHEAdvanceDirectivesSectionTemplateId(codedAdvanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCodedAdvanceDirectivesSection_validateCodedAdvanceDirectivesSectionTemplateId(codedAdvanceDirectivesSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the CodedAdvanceDirectivesSection_templateId constraint of '<em>Coded Advance Directives Section</em>'.
+	 * Validates the validateCodedAdvanceDirectivesSectionTemplateId constraint of '<em>Coded Advance Directives Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCodedAdvanceDirectivesSection_CodedAdvanceDirectivesSection_templateId(CodedAdvanceDirectivesSection codedAdvanceDirectivesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return codedAdvanceDirectivesSection.CodedAdvanceDirectivesSection_templateId(diagnostics, context);
+	public boolean validateCodedAdvanceDirectivesSection_validateCodedAdvanceDirectivesSectionTemplateId(CodedAdvanceDirectivesSection codedAdvanceDirectivesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return codedAdvanceDirectivesSection.validateCodedAdvanceDirectivesSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2188,40 +2153,22 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(advanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(advanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(advanceDirectivesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAdvanceDirectivesSection_AdvanceDirectivesSection_templateId(advanceDirectivesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_AdvanceDirectivesSection_code(advanceDirectivesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_AdvanceDirectivesSection_title(advanceDirectivesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_AdvanceDirectivesSection_advanceDirectiveObservation(advanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionTemplateId(advanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionCode(advanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionTitle(advanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionAdvanceDirectiveObservation(advanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAdvanceDirectivesSection_validateIHEAdvanceDirectivesSectionTemplateId(advanceDirectivesSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the AdvanceDirectivesSection_templateId constraint of '<em>Advance Directives Section</em>'.
+	 * Validates the validateIHEAdvanceDirectivesSectionTemplateId constraint of '<em>Advance Directives Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAdvanceDirectivesSection_AdvanceDirectivesSection_templateId(AdvanceDirectivesSection advanceDirectivesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "AdvanceDirectivesSection_templateId", getObjectLabel(advanceDirectivesSection, context) },
-						 new Object[] { advanceDirectivesSection },
-						 context));
-			}
-			return false;
-		}
-		return ccdValidator.validateAdvanceDirectivesSection_AdvanceDirectivesSection_templateId(advanceDirectivesSection, diagnostics, context);
+	public boolean validateAdvanceDirectivesSection_validateIHEAdvanceDirectivesSectionTemplateId(AdvanceDirectivesSection advanceDirectivesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return advanceDirectivesSection.validateIHEAdvanceDirectivesSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2237,29 +2184,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(physicalExamNarrativeSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(physicalExamNarrativeSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(physicalExamNarrativeSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePhysicalExamNarrativeSection_PhysicalExamNarrativeSection_templateId(physicalExamNarrativeSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePhysicalExamNarrativeSection_PhysicalExamNarrativeSection_code(physicalExamNarrativeSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePhysicalExamNarrativeSection_validatePhysicalExamNarrativeSectionTemplateId(physicalExamNarrativeSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePhysicalExamNarrativeSection_validatePhysicalExamNarrativeSectionCode(physicalExamNarrativeSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the PhysicalExamNarrativeSection_templateId constraint of '<em>Physical Exam Narrative Section</em>'.
+	 * Validates the validatePhysicalExamNarrativeSectionTemplateId constraint of '<em>Physical Exam Narrative Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePhysicalExamNarrativeSection_PhysicalExamNarrativeSection_templateId(PhysicalExamNarrativeSection physicalExamNarrativeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return physicalExamNarrativeSection.PhysicalExamNarrativeSection_templateId(diagnostics, context);
+	public boolean validatePhysicalExamNarrativeSection_validatePhysicalExamNarrativeSectionTemplateId(PhysicalExamNarrativeSection physicalExamNarrativeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return physicalExamNarrativeSection.validatePhysicalExamNarrativeSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the PhysicalExamNarrativeSection_code constraint of '<em>Physical Exam Narrative Section</em>'.
+	 * Validates the validatePhysicalExamNarrativeSectionCode constraint of '<em>Physical Exam Narrative Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePhysicalExamNarrativeSection_PhysicalExamNarrativeSection_code(PhysicalExamNarrativeSection physicalExamNarrativeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return physicalExamNarrativeSection.PhysicalExamNarrativeSection_code(diagnostics, context);
+	public boolean validatePhysicalExamNarrativeSection_validatePhysicalExamNarrativeSectionCode(PhysicalExamNarrativeSection physicalExamNarrativeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return physicalExamNarrativeSection.validatePhysicalExamNarrativeSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -2275,20 +2222,20 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(physicalExamSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(physicalExamSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(physicalExamSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePhysicalExamNarrativeSection_PhysicalExamNarrativeSection_templateId(physicalExamSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePhysicalExamNarrativeSection_PhysicalExamNarrativeSection_code(physicalExamSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePhysicalExamSection_PhysicalExamSection_templateId(physicalExamSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePhysicalExamNarrativeSection_validatePhysicalExamNarrativeSectionTemplateId(physicalExamSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePhysicalExamNarrativeSection_validatePhysicalExamNarrativeSectionCode(physicalExamSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePhysicalExamSection_validatePhysicalExamSectionTemplateId(physicalExamSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the PhysicalExamSection_templateId constraint of '<em>Physical Exam Section</em>'.
+	 * Validates the validatePhysicalExamSectionTemplateId constraint of '<em>Physical Exam Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePhysicalExamSection_PhysicalExamSection_templateId(PhysicalExamSection physicalExamSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return physicalExamSection.PhysicalExamSection_templateId(diagnostics, context);
+	public boolean validatePhysicalExamSection_validatePhysicalExamSectionTemplateId(PhysicalExamSection physicalExamSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return physicalExamSection.validatePhysicalExamSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2304,29 +2251,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(reviewOfSystemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reviewOfSystemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reviewOfSystemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateReviewOfSystemsSection_ReviewOfSystemsSection_templateId(reviewOfSystemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateReviewOfSystemsSection_ReviewOfSystemsSection_code(reviewOfSystemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateReviewOfSystemsSection_validateReviewOfSystemsSectionTemplateId(reviewOfSystemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateReviewOfSystemsSection_validateReviewOfSystemsSectionCode(reviewOfSystemsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the ReviewOfSystemsSection_templateId constraint of '<em>Review Of Systems Section</em>'.
+	 * Validates the validateReviewOfSystemsSectionTemplateId constraint of '<em>Review Of Systems Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateReviewOfSystemsSection_ReviewOfSystemsSection_templateId(ReviewOfSystemsSection reviewOfSystemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return reviewOfSystemsSection.ReviewOfSystemsSection_templateId(diagnostics, context);
+	public boolean validateReviewOfSystemsSection_validateReviewOfSystemsSectionTemplateId(ReviewOfSystemsSection reviewOfSystemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return reviewOfSystemsSection.validateReviewOfSystemsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the ReviewOfSystemsSection_code constraint of '<em>Review Of Systems Section</em>'.
+	 * Validates the validateReviewOfSystemsSectionCode constraint of '<em>Review Of Systems Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateReviewOfSystemsSection_ReviewOfSystemsSection_code(ReviewOfSystemsSection reviewOfSystemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return reviewOfSystemsSection.ReviewOfSystemsSection_code(diagnostics, context);
+	public boolean validateReviewOfSystemsSection_validateReviewOfSystemsSectionCode(ReviewOfSystemsSection reviewOfSystemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return reviewOfSystemsSection.validateReviewOfSystemsSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -2342,29 +2289,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(hospitalCourseSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hospitalCourseSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hospitalCourseSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHospitalCourseSection_HospitalCourseSection_templateId(hospitalCourseSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHospitalCourseSection_HospitalCourseSection_code(hospitalCourseSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHospitalCourseSection_validateHospitalCourseSectionTemplateId(hospitalCourseSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHospitalCourseSection_validateHospitalCourseSectionCode(hospitalCourseSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the HospitalCourseSection_templateId constraint of '<em>Hospital Course Section</em>'.
+	 * Validates the validateHospitalCourseSectionTemplateId constraint of '<em>Hospital Course Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHospitalCourseSection_HospitalCourseSection_templateId(HospitalCourseSection hospitalCourseSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return hospitalCourseSection.HospitalCourseSection_templateId(diagnostics, context);
+	public boolean validateHospitalCourseSection_validateHospitalCourseSectionTemplateId(HospitalCourseSection hospitalCourseSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return hospitalCourseSection.validateHospitalCourseSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the HospitalCourseSection_code constraint of '<em>Hospital Course Section</em>'.
+	 * Validates the validateHospitalCourseSectionCode constraint of '<em>Hospital Course Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHospitalCourseSection_HospitalCourseSection_code(HospitalCourseSection hospitalCourseSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return hospitalCourseSection.HospitalCourseSection_code(diagnostics, context);
+	public boolean validateHospitalCourseSection_validateHospitalCourseSectionCode(HospitalCourseSection hospitalCourseSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return hospitalCourseSection.validateHospitalCourseSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -2380,29 +2327,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(codedResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(codedResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(codedResultsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCodedResultsSection_CodedResultsSection_templateId(codedResultsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCodedResultsSection_CodedResultsSection_code(codedResultsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCodedResultsSection_validateCodedResultsSectionTemplateId(codedResultsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCodedResultsSection_validateCodedResultsSectionCode(codedResultsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the CodedResultsSection_templateId constraint of '<em>Coded Results Section</em>'.
+	 * Validates the validateCodedResultsSectionTemplateId constraint of '<em>Coded Results Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCodedResultsSection_CodedResultsSection_templateId(CodedResultsSection codedResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return codedResultsSection.CodedResultsSection_templateId(diagnostics, context);
+	public boolean validateCodedResultsSection_validateCodedResultsSectionTemplateId(CodedResultsSection codedResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return codedResultsSection.validateCodedResultsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the CodedResultsSection_code constraint of '<em>Coded Results Section</em>'.
+	 * Validates the validateCodedResultsSectionCode constraint of '<em>Coded Results Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCodedResultsSection_CodedResultsSection_code(CodedResultsSection codedResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return codedResultsSection.CodedResultsSection_code(diagnostics, context);
+	public boolean validateCodedResultsSection_validateCodedResultsSectionCode(CodedResultsSection codedResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return codedResultsSection.validateCodedResultsSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -2418,29 +2365,29 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(assessmentAndPlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assessmentAndPlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assessmentAndPlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssessmentAndPlanSection_AssessmentAndPlanSection_templateId(assessmentAndPlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssessmentAndPlanSection_AssessmentAndPlanSection_code(assessmentAndPlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssessmentAndPlanSection_validateAssessmentAndPlanSectionTemplateId(assessmentAndPlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssessmentAndPlanSection_validateAssessmentAndPlanSectionCode(assessmentAndPlanSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the AssessmentAndPlanSection_templateId constraint of '<em>Assessment And Plan Section</em>'.
+	 * Validates the validateAssessmentAndPlanSectionTemplateId constraint of '<em>Assessment And Plan Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAssessmentAndPlanSection_AssessmentAndPlanSection_templateId(AssessmentAndPlanSection assessmentAndPlanSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return assessmentAndPlanSection.AssessmentAndPlanSection_templateId(diagnostics, context);
+	public boolean validateAssessmentAndPlanSection_validateAssessmentAndPlanSectionTemplateId(AssessmentAndPlanSection assessmentAndPlanSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return assessmentAndPlanSection.validateAssessmentAndPlanSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the AssessmentAndPlanSection_code constraint of '<em>Assessment And Plan Section</em>'.
+	 * Validates the validateAssessmentAndPlanSectionCode constraint of '<em>Assessment And Plan Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAssessmentAndPlanSection_AssessmentAndPlanSection_code(AssessmentAndPlanSection assessmentAndPlanSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return assessmentAndPlanSection.AssessmentAndPlanSection_code(diagnostics, context);
+	public boolean validateAssessmentAndPlanSection_validateAssessmentAndPlanSectionCode(AssessmentAndPlanSection assessmentAndPlanSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return assessmentAndPlanSection.validateAssessmentAndPlanSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -2456,22 +2403,22 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(carePlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(carePlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(carePlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_PlanOfCareSection_templateId(carePlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_PlanOfCareSection_code(carePlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_PlanOfCareSection_title(carePlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_PlanOfCareSection_planOfCareActivity(carePlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCarePlanSection_CarePlanSection_templateId(carePlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionTemplateId(carePlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionCode(carePlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionTitle(carePlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivity(carePlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCarePlanSection_validateCarePlanSectionTemplateId(carePlanSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the CarePlanSection_templateId constraint of '<em>Care Plan Section</em>'.
+	 * Validates the validateCarePlanSectionTemplateId constraint of '<em>Care Plan Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCarePlanSection_CarePlanSection_templateId(CarePlanSection carePlanSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return carePlanSection.CarePlanSection_templateId(diagnostics, context);
+	public boolean validateCarePlanSection_validateCarePlanSectionTemplateId(CarePlanSection carePlanSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return carePlanSection.validateCarePlanSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2487,21 +2434,21 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(familyMedicalHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(familyMedicalHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(familyMedicalHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateFamilyHistorySection_FamilyHistorySection_templateId(familyMedicalHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateFamilyHistorySection_FamilyHistorySection_code(familyMedicalHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateFamilyHistorySection_FamilyHistorySection_title(familyMedicalHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateFamilyMedicalHistorySection_FamilyMedicalHistorySection_templateId(familyMedicalHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateFamilyHistorySection_validateFamilyHistorySectionTemplateId(familyMedicalHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateFamilyHistorySection_validateFamilyHistorySectionCode(familyMedicalHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateFamilyHistorySection_validateFamilyHistorySectionTitle(familyMedicalHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateFamilyMedicalHistorySection_validateFamilyMedicalHistorySectionTemplateId(familyMedicalHistorySection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the FamilyMedicalHistorySection_templateId constraint of '<em>Family Medical History Section</em>'.
+	 * Validates the validateFamilyMedicalHistorySectionTemplateId constraint of '<em>Family Medical History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFamilyMedicalHistorySection_FamilyMedicalHistorySection_templateId(FamilyMedicalHistorySection familyMedicalHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return familyMedicalHistorySection.FamilyMedicalHistorySection_templateId(diagnostics, context);
+	public boolean validateFamilyMedicalHistorySection_validateFamilyMedicalHistorySectionTemplateId(FamilyMedicalHistorySection familyMedicalHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return familyMedicalHistorySection.validateFamilyMedicalHistorySectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2517,39 +2464,21 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(socialHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(socialHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(socialHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSocialHistorySection_SocialHistorySection_templateId(socialHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateSocialHistorySection_SocialHistorySection_code(socialHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateSocialHistorySection_SocialHistorySection_title(socialHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateSocialHistorySection_validateSocialHistorySectionTemplateId(socialHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateSocialHistorySection_validateSocialHistorySectionCode(socialHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateSocialHistorySection_validateSocialHistorySectionTitle(socialHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSocialHistorySection_validateIHESocialHistorySectionTemplateId(socialHistorySection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the SocialHistorySection_templateId constraint of '<em>Social History Section</em>'.
+	 * Validates the validateIHESocialHistorySectionTemplateId constraint of '<em>Social History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSocialHistorySection_SocialHistorySection_templateId(SocialHistorySection socialHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "SocialHistorySection_templateId", getObjectLabel(socialHistorySection, context) },
-						 new Object[] { socialHistorySection },
-						 context));
-			}
-			return false;
-		}
-		return ccdValidator.validateSocialHistorySection_SocialHistorySection_templateId(socialHistorySection, diagnostics, context);
+	public boolean validateSocialHistorySection_validateIHESocialHistorySectionTemplateId(SocialHistorySection socialHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return socialHistorySection.validateIHESocialHistorySectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2565,21 +2494,21 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(encounterHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(encounterHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(encounterHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_EncountersSection_templateId(encounterHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_EncountersSection_code(encounterHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_EncountersSection_title(encounterHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEncounterHistorySection_EncounterHistorySection_templateId(encounterHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_validateEncountersSectionTemplateId(encounterHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_validateEncountersSectionCode(encounterHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_validateEncountersSectionTitle(encounterHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncounterHistorySection_validateEncounterHistorySectionTemplateId(encounterHistorySection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the EncounterHistorySection_templateId constraint of '<em>Encounter History Section</em>'.
+	 * Validates the validateEncounterHistorySectionTemplateId constraint of '<em>Encounter History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEncounterHistorySection_EncounterHistorySection_templateId(EncounterHistorySection encounterHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return encounterHistorySection.EncounterHistorySection_templateId(diagnostics, context);
+	public boolean validateEncounterHistorySection_validateEncounterHistorySectionTemplateId(EncounterHistorySection encounterHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encounterHistorySection.validateEncounterHistorySectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2595,21 +2524,21 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(medicalDevicesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicalDevicesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicalDevicesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicalEquipmentSection_MedicalEquipmentSection_templateId(medicalDevicesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicalEquipmentSection_MedicalEquipmentSection_code(medicalDevicesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicalEquipmentSection_MedicalEquipmentSection_title(medicalDevicesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicalDevicesSection_MedicalDevicesSection_templateId(medicalDevicesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicalEquipmentSection_validateMedicalEquipmentSectionTemplateId(medicalDevicesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicalEquipmentSection_validateMedicalEquipmentSectionCode(medicalDevicesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicalEquipmentSection_validateMedicalEquipmentSectionTitle(medicalDevicesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalDevicesSection_validateMedicalDevicesSectionTemplateId(medicalDevicesSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the MedicalDevicesSection_templateId constraint of '<em>Medical Devices Section</em>'.
+	 * Validates the validateMedicalDevicesSectionTemplateId constraint of '<em>Medical Devices Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicalDevicesSection_MedicalDevicesSection_templateId(MedicalDevicesSection medicalDevicesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return medicalDevicesSection.MedicalDevicesSection_templateId(diagnostics, context);
+	public boolean validateMedicalDevicesSection_validateMedicalDevicesSectionTemplateId(MedicalDevicesSection medicalDevicesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicalDevicesSection.validateMedicalDevicesSectionTemplateId(diagnostics, context);
 	}
 
 	/**

@@ -13,14 +13,11 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -33,15 +30,15 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getEffectiveTime <em>Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getDischargeDispositionCode <em>Discharge Disposition Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getResponsibleParty <em>Responsible Party</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getEncounterParticipant <em>Encounter Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getEncounterParticipants <em>Encounter Participant</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getLocation <em>Location</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getClassCode <em>Class Code</em>}</li>
@@ -69,7 +66,7 @@ public interface EncompassingEncounter extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -113,7 +110,7 @@ public interface EncompassingEncounter extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' containment reference list.
@@ -130,7 +127,7 @@ public interface EncompassingEncounter extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getId();
+	EList<II> getIds();
 
 	/**
 	 * Returns the value of the '<em><b>Code</b></em>' containment reference.
@@ -255,7 +252,7 @@ public interface EncompassingEncounter extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<EncounterParticipant> getEncounterParticipant();
+	EList<EncounterParticipant> getEncounterParticipants();
 
 	/**
 	 * Returns the value of the '<em><b>Location</b></em>' containment reference.

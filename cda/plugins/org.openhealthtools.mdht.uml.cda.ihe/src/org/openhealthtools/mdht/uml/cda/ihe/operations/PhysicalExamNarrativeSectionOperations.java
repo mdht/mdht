@@ -11,18 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
-
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
-
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
 
 /**
@@ -33,8 +28,8 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection#PhysicalExamNarrativeSection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Physical Exam Narrative Section template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection#PhysicalExamNarrativeSection_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Physical Exam Narrative Section code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection#validatePhysicalExamNarrativeSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Narrative Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection#validatePhysicalExamNarrativeSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Narrative Section Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,24 +46,24 @@ public class PhysicalExamNarrativeSectionOperations extends SectionOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PhysicalExamNarrativeSection_templateId(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Physical Exam Narrative Section template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePhysicalExamNarrativeSectionTemplateId(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Narrative Section Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PhysicalExamNarrativeSection_templateId(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePhysicalExamNarrativeSectionTemplateId(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.24')";
+	protected static final String VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.24')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PhysicalExamNarrativeSection_templateId(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Physical Exam Narrative Section template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePhysicalExamNarrativeSectionTemplateId(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Narrative Section Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PhysicalExamNarrativeSection_templateId(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePhysicalExamNarrativeSectionTemplateId(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,25 +76,25 @@ public class PhysicalExamNarrativeSectionOperations extends SectionOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PhysicalExamNarrativeSection_templateId(PhysicalExamNarrativeSection physicalExamNarrativeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePhysicalExamNarrativeSectionTemplateId(PhysicalExamNarrativeSection physicalExamNarrativeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.PHYSICAL_EXAM_NARRATIVE_SECTION);
 			try {
-				PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(physicalExamNarrativeSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(physicalExamNarrativeSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.PHYSICAL_EXAM_NARRATIVE_SECTION__PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("PhysicalExamNarrativeSection_templateId"),
+						 IHEPlugin.INSTANCE.getString("PhysicalExamNarrativeSectionTemplateId"),
 						 new Object [] { physicalExamNarrativeSection }));
 			}
 			return false;
@@ -108,26 +103,26 @@ public class PhysicalExamNarrativeSectionOperations extends SectionOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PhysicalExamNarrativeSection_code(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Physical Exam Narrative Section code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePhysicalExamNarrativeSectionCode(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Narrative Section Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PhysicalExamNarrativeSection_code(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePhysicalExamNarrativeSectionCode(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PHYSICAL_EXAM_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and "+
+	protected static final String VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and "+
 "let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in ("+
 "value.code = '29545-1' and value.codeSystem = '2.16.840.1.113883.6.1')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PhysicalExamNarrativeSection_code(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Physical Exam Narrative Section code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePhysicalExamNarrativeSectionCode(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Narrative Section Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PhysicalExamNarrativeSection_code(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePhysicalExamNarrativeSectionCode(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PHYSICAL_EXAM_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,25 +137,25 @@ public class PhysicalExamNarrativeSectionOperations extends SectionOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PhysicalExamNarrativeSection_code(PhysicalExamNarrativeSection physicalExamNarrativeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PHYSICAL_EXAM_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePhysicalExamNarrativeSectionCode(PhysicalExamNarrativeSection physicalExamNarrativeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.PHYSICAL_EXAM_NARRATIVE_SECTION);
 			try {
-				PHYSICAL_EXAM_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PHYSICAL_EXAM_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PHYSICAL_EXAM_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(physicalExamNarrativeSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(physicalExamNarrativeSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.PHYSICAL_EXAM_NARRATIVE_SECTION__PHYSICAL_EXAM_NARRATIVE_SECTION_CODE,
-						 IHEPlugin.INSTANCE.getString("PhysicalExamNarrativeSection_code"),
+						 IHEPlugin.INSTANCE.getString("PhysicalExamNarrativeSectionCode"),
 						 new Object [] { physicalExamNarrativeSection }));
 			}
 			return false;

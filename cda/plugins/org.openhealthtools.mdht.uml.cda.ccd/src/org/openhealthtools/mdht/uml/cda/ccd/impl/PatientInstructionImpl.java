@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PatientInstructionOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.ActImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class PatientInstructionImpl extends ActImpl implements PatientInstructio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PatientInstruction_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PatientInstructionOperations.PatientInstruction_templateId(this, diagnostics, context);
+	public boolean validatePatientInstructionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientInstructionOperations.validatePatientInstructionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class PatientInstructionImpl extends ActImpl implements PatientInstructio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PatientInstruction_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PatientInstructionOperations.PatientInstruction_moodCode(this, diagnostics, context);
+	public boolean validatePatientInstructionMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientInstructionOperations.validatePatientInstructionMoodCode(this, diagnostics, context);
 	}
 
 	/**

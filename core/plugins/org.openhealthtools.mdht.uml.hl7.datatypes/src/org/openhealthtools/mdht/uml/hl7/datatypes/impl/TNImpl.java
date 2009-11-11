@@ -54,8 +54,8 @@ public class TNImpl extends ENImpl implements TN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean invariant(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return TNOperations.invariant(this, diagnostics, context);
+	public boolean validateInvariant(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return TNOperations.validateInvariant(this, diagnostics, context);
 	}
 
 } //TNImpl

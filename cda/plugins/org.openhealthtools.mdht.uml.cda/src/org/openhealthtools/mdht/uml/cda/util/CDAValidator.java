@@ -16,12 +16,100 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
-
-import org.openhealthtools.mdht.uml.cda.*;
+import org.openhealthtools.mdht.uml.cda.Act;
+import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
+import org.openhealthtools.mdht.uml.cda.AssignedCustodian;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.AssociatedEntity;
+import org.openhealthtools.mdht.uml.cda.Authenticator;
+import org.openhealthtools.mdht.uml.cda.Author;
+import org.openhealthtools.mdht.uml.cda.AuthoringDevice;
+import org.openhealthtools.mdht.uml.cda.Authorization;
+import org.openhealthtools.mdht.uml.cda.Birthplace;
+import org.openhealthtools.mdht.uml.cda.CDAPackage;
+import org.openhealthtools.mdht.uml.cda.CDAPlugin;
+import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.Component1;
+import org.openhealthtools.mdht.uml.cda.Component2;
+import org.openhealthtools.mdht.uml.cda.Component3;
+import org.openhealthtools.mdht.uml.cda.Component4;
+import org.openhealthtools.mdht.uml.cda.Component5;
+import org.openhealthtools.mdht.uml.cda.Consent;
+import org.openhealthtools.mdht.uml.cda.Consumable;
+import org.openhealthtools.mdht.uml.cda.Criterion;
+import org.openhealthtools.mdht.uml.cda.Custodian;
+import org.openhealthtools.mdht.uml.cda.CustodianOrganization;
+import org.openhealthtools.mdht.uml.cda.DataEnterer;
+import org.openhealthtools.mdht.uml.cda.Device;
+import org.openhealthtools.mdht.uml.cda.DocumentRoot;
+import org.openhealthtools.mdht.uml.cda.DocumentationOf;
+import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
+import org.openhealthtools.mdht.uml.cda.Encounter;
+import org.openhealthtools.mdht.uml.cda.EncounterParticipant;
+import org.openhealthtools.mdht.uml.cda.Entity;
+import org.openhealthtools.mdht.uml.cda.Entry;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.ExternalAct;
+import org.openhealthtools.mdht.uml.cda.ExternalDocument;
+import org.openhealthtools.mdht.uml.cda.ExternalObservation;
+import org.openhealthtools.mdht.uml.cda.ExternalProcedure;
+import org.openhealthtools.mdht.uml.cda.Guardian;
+import org.openhealthtools.mdht.uml.cda.HealthCareFacility;
+import org.openhealthtools.mdht.uml.cda.InFulfillmentOf;
+import org.openhealthtools.mdht.uml.cda.Informant12;
+import org.openhealthtools.mdht.uml.cda.InformationRecipient;
+import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
+import org.openhealthtools.mdht.uml.cda.IntendedRecipient;
+import org.openhealthtools.mdht.uml.cda.LabeledDrug;
+import org.openhealthtools.mdht.uml.cda.LanguageCommunication;
+import org.openhealthtools.mdht.uml.cda.LegalAuthenticator;
+import org.openhealthtools.mdht.uml.cda.Location;
+import org.openhealthtools.mdht.uml.cda.MaintainedEntity;
+import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
+import org.openhealthtools.mdht.uml.cda.Material;
+import org.openhealthtools.mdht.uml.cda.NonXMLBody;
+import org.openhealthtools.mdht.uml.cda.Observation;
+import org.openhealthtools.mdht.uml.cda.ObservationMedia;
+import org.openhealthtools.mdht.uml.cda.ObservationRange;
+import org.openhealthtools.mdht.uml.cda.Order;
+import org.openhealthtools.mdht.uml.cda.Organization;
+import org.openhealthtools.mdht.uml.cda.OrganizationPartOf;
+import org.openhealthtools.mdht.uml.cda.Organizer;
+import org.openhealthtools.mdht.uml.cda.ParentDocument;
+import org.openhealthtools.mdht.uml.cda.Participant1;
+import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
+import org.openhealthtools.mdht.uml.cda.Patient;
+import org.openhealthtools.mdht.uml.cda.PatientRole;
+import org.openhealthtools.mdht.uml.cda.Performer1;
+import org.openhealthtools.mdht.uml.cda.Performer2;
+import org.openhealthtools.mdht.uml.cda.Person;
+import org.openhealthtools.mdht.uml.cda.Place;
+import org.openhealthtools.mdht.uml.cda.PlayingEntity;
+import org.openhealthtools.mdht.uml.cda.Precondition;
+import org.openhealthtools.mdht.uml.cda.Procedure;
+import org.openhealthtools.mdht.uml.cda.Product;
+import org.openhealthtools.mdht.uml.cda.RecordTarget;
+import org.openhealthtools.mdht.uml.cda.Reference;
+import org.openhealthtools.mdht.uml.cda.ReferenceRange;
+import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
+import org.openhealthtools.mdht.uml.cda.RegionOfInterestValue;
+import org.openhealthtools.mdht.uml.cda.RelatedDocument;
+import org.openhealthtools.mdht.uml.cda.RelatedEntity;
+import org.openhealthtools.mdht.uml.cda.RelatedSubject;
+import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
+import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.ServiceEvent;
+import org.openhealthtools.mdht.uml.cda.Specimen;
+import org.openhealthtools.mdht.uml.cda.SpecimenRole;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
+import org.openhealthtools.mdht.uml.cda.StructuredBody;
+import org.openhealthtools.mdht.uml.cda.Subject;
+import org.openhealthtools.mdht.uml.cda.SubjectPerson;
+import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.Supply;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +138,7 @@ public class CDAValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.openhealthtools.mdht.uml.cda";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Guardian Choice' of 'Guardian'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Guardian Choice' of 'Guardian'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -58,7 +146,7 @@ public class CDAValidator extends EObjectValidator {
 	public static final int GUARDIAN__GUARDIAN_CHOICE = 1;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Assigned Author Choice' of 'Assigned Author'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assigned Author Choice' of 'Assigned Author'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -66,7 +154,7 @@ public class CDAValidator extends EObjectValidator {
 	public static final int ASSIGNED_AUTHOR__ASSIGNED_AUTHOR_CHOICE = 2;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Informant Choice' of 'Informant12'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Informant Choice' of 'Informant12'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -74,7 +162,7 @@ public class CDAValidator extends EObjectValidator {
 	public static final int INFORMANT12__INFORMANT_CHOICE = 3;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Body Choice' of 'Component2'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Body Choice' of 'Component2'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -82,7 +170,7 @@ public class CDAValidator extends EObjectValidator {
 	public static final int COMPONENT2__BODY_CHOICE = 4;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Clinical Statement' of 'Entry'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Clinical Statement' of 'Entry'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -90,7 +178,7 @@ public class CDAValidator extends EObjectValidator {
 	public static final int ENTRY__CLINICAL_STATEMENT = 5;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Playing Entity Choice' of 'Participant Role'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Playing Entity Choice' of 'Participant Role'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -98,7 +186,7 @@ public class CDAValidator extends EObjectValidator {
 	public static final int PARTICIPANT_ROLE__PLAYING_ENTITY_CHOICE = 6;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Clinical Statement' of 'Entry Relationship'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Clinical Statement' of 'Entry Relationship'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -106,7 +194,7 @@ public class CDAValidator extends EObjectValidator {
 	public static final int ENTRY_RELATIONSHIP__CLINICAL_STATEMENT = 7;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'External Act Choice' of 'Reference'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate External Act Choice' of 'Reference'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -114,7 +202,7 @@ public class CDAValidator extends EObjectValidator {
 	public static final int REFERENCE__EXTERNAL_ACT_CHOICE = 8;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Clinical Statement' of 'Component4'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Clinical Statement' of 'Component4'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -122,7 +210,7 @@ public class CDAValidator extends EObjectValidator {
 	public static final int COMPONENT4__CLINICAL_STATEMENT = 9;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Manufactured Drug Or Other Material' of 'Manufactured Product'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Manufactured Drug Or Other Material' of 'Manufactured Product'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -418,18 +506,18 @@ public class CDAValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(guardian, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(guardian, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(guardian, diagnostics, context);
-		if (result || diagnostics != null) result &= validateGuardian_guardianChoice(guardian, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGuardian_validateGuardianChoice(guardian, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the guardianChoice constraint of '<em>Guardian</em>'.
+	 * Validates the validateGuardianChoice constraint of '<em>Guardian</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateGuardian_guardianChoice(Guardian guardian, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return guardian.guardianChoice(diagnostics, context);
+	public boolean validateGuardian_validateGuardianChoice(Guardian guardian, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return guardian.validateGuardianChoice(diagnostics, context);
 	}
 
 	/**
@@ -508,18 +596,18 @@ public class CDAValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(assignedAuthor, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assignedAuthor, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assignedAuthor, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssignedAuthor_assignedAuthorChoice(assignedAuthor, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssignedAuthor_validateAssignedAuthorChoice(assignedAuthor, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the assignedAuthorChoice constraint of '<em>Assigned Author</em>'.
+	 * Validates the validateAssignedAuthorChoice constraint of '<em>Assigned Author</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAssignedAuthor_assignedAuthorChoice(AssignedAuthor assignedAuthor, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return assignedAuthor.assignedAuthorChoice(diagnostics, context);
+	public boolean validateAssignedAuthor_validateAssignedAuthorChoice(AssignedAuthor assignedAuthor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return assignedAuthor.validateAssignedAuthorChoice(diagnostics, context);
 	}
 
 	/**
@@ -571,18 +659,18 @@ public class CDAValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(informant12, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(informant12, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(informant12, diagnostics, context);
-		if (result || diagnostics != null) result &= validateInformant12_informantChoice(informant12, diagnostics, context);
+		if (result || diagnostics != null) result &= validateInformant12_validateInformantChoice(informant12, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the informantChoice constraint of '<em>Informant12</em>'.
+	 * Validates the validateInformantChoice constraint of '<em>Informant12</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateInformant12_informantChoice(Informant12 informant12, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return informant12.informantChoice(diagnostics, context);
+	public boolean validateInformant12_validateInformantChoice(Informant12 informant12, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return informant12.validateInformantChoice(diagnostics, context);
 	}
 
 	/**
@@ -823,18 +911,18 @@ public class CDAValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(component2, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(component2, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(component2, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent2_bodyChoice(component2, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent2_validateBodyChoice(component2, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the bodyChoice constraint of '<em>Component2</em>'.
+	 * Validates the validateBodyChoice constraint of '<em>Component2</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComponent2_bodyChoice(Component2 component2, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return component2.bodyChoice(diagnostics, context);
+	public boolean validateComponent2_validateBodyChoice(Component2 component2, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return component2.validateBodyChoice(diagnostics, context);
 	}
 
 	/**
@@ -922,18 +1010,18 @@ public class CDAValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(entry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntry_clinicalStatement(entry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntry_validateClinicalStatement(entry, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the clinicalStatement constraint of '<em>Entry</em>'.
+	 * Validates the validateClinicalStatement constraint of '<em>Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEntry_clinicalStatement(Entry entry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return entry.clinicalStatement(diagnostics, context);
+	public boolean validateEntry_validateClinicalStatement(Entry entry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return entry.validateClinicalStatement(diagnostics, context);
 	}
 
 	/**
@@ -1003,18 +1091,18 @@ public class CDAValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(participantRole, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(participantRole, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(participantRole, diagnostics, context);
-		if (result || diagnostics != null) result &= validateParticipantRole_playingEntityChoice(participantRole, diagnostics, context);
+		if (result || diagnostics != null) result &= validateParticipantRole_validatePlayingEntityChoice(participantRole, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the playingEntityChoice constraint of '<em>Participant Role</em>'.
+	 * Validates the validatePlayingEntityChoice constraint of '<em>Participant Role</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateParticipantRole_playingEntityChoice(ParticipantRole participantRole, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return participantRole.playingEntityChoice(diagnostics, context);
+	public boolean validateParticipantRole_validatePlayingEntityChoice(ParticipantRole participantRole, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return participantRole.validatePlayingEntityChoice(diagnostics, context);
 	}
 
 	/**
@@ -1048,18 +1136,18 @@ public class CDAValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(entryRelationship, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entryRelationship, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entryRelationship, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntryRelationship_clinicalStatement(entryRelationship, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntryRelationship_validateClinicalStatement(entryRelationship, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the clinicalStatement constraint of '<em>Entry Relationship</em>'.
+	 * Validates the validateClinicalStatement constraint of '<em>Entry Relationship</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEntryRelationship_clinicalStatement(EntryRelationship entryRelationship, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return entryRelationship.clinicalStatement(diagnostics, context);
+	public boolean validateEntryRelationship_validateClinicalStatement(EntryRelationship entryRelationship, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return entryRelationship.validateClinicalStatement(diagnostics, context);
 	}
 
 	/**
@@ -1084,18 +1172,18 @@ public class CDAValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(reference, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reference, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reference, diagnostics, context);
-		if (result || diagnostics != null) result &= validateReference_externalActChoice(reference, diagnostics, context);
+		if (result || diagnostics != null) result &= validateReference_validateExternalActChoice(reference, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the externalActChoice constraint of '<em>Reference</em>'.
+	 * Validates the validateExternalActChoice constraint of '<em>Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateReference_externalActChoice(Reference reference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return reference.externalActChoice(diagnostics, context);
+	public boolean validateReference_validateExternalActChoice(Reference reference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return reference.validateExternalActChoice(diagnostics, context);
 	}
 
 	/**
@@ -1210,18 +1298,18 @@ public class CDAValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(component4, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(component4, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(component4, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent4_clinicalStatement(component4, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent4_validateClinicalStatement(component4, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the clinicalStatement constraint of '<em>Component4</em>'.
+	 * Validates the validateClinicalStatement constraint of '<em>Component4</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComponent4_clinicalStatement(Component4 component4, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return component4.clinicalStatement(diagnostics, context);
+	public boolean validateComponent4_validateClinicalStatement(Component4 component4, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return component4.validateClinicalStatement(diagnostics, context);
 	}
 
 	/**
@@ -1282,18 +1370,18 @@ public class CDAValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(manufacturedProduct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(manufacturedProduct, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(manufacturedProduct, diagnostics, context);
-		if (result || diagnostics != null) result &= validateManufacturedProduct_manufacturedDrugOrOtherMaterial(manufacturedProduct, diagnostics, context);
+		if (result || diagnostics != null) result &= validateManufacturedProduct_validateManufacturedDrugOrOtherMaterial(manufacturedProduct, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the manufacturedDrugOrOtherMaterial constraint of '<em>Manufactured Product</em>'.
+	 * Validates the validateManufacturedDrugOrOtherMaterial constraint of '<em>Manufactured Product</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateManufacturedProduct_manufacturedDrugOrOtherMaterial(ManufacturedProduct manufacturedProduct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return manufacturedProduct.manufacturedDrugOrOtherMaterial(diagnostics, context);
+	public boolean validateManufacturedProduct_validateManufacturedDrugOrOtherMaterial(ManufacturedProduct manufacturedProduct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return manufacturedProduct.validateManufacturedDrugOrOtherMaterial(diagnostics, context);
 	}
 
 	/**

@@ -26,7 +26,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ResultOrganizerImpl#getSpecimen <em>Specimen</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ResultOrganizerImpl#getSpecimens <em>Specimen</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,11 +58,11 @@ public class ResultOrganizerImpl extends OrganizerImpl implements ResultOrganize
 	 * @generated
 	 */
 	@Override
-	public EList<Specimen> getSpecimen() {
-		if (specimen == null) {
-			specimen = new EObjectResolvingEList<Specimen>(Specimen.class, this, CCDPackage.RESULT_ORGANIZER__SPECIMEN);
+	public EList<Specimen> getSpecimens() {
+		if (specimens == null) {
+			specimens = new EObjectResolvingEList<Specimen>(Specimen.class, this, CCDPackage.RESULT_ORGANIZER__SPECIMEN);
 		}
-		return specimen;
+		return specimens;
 	}
 
 	/**
@@ -70,8 +70,8 @@ public class ResultOrganizerImpl extends OrganizerImpl implements ResultOrganize
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetSpecimen() {
-		return specimen != null && !specimen.isEmpty();
+	public boolean isSetSpecimens() {
+		return specimens != null && !specimens.isEmpty();
 	}
 
 	/**
@@ -79,8 +79,8 @@ public class ResultOrganizerImpl extends OrganizerImpl implements ResultOrganize
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultOrganizer_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultOrganizerOperations.ResultOrganizer_templateId(this, diagnostics, context);
+	public boolean validateResultOrganizerTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultOrganizerOperations.validateResultOrganizerTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -88,8 +88,8 @@ public class ResultOrganizerImpl extends OrganizerImpl implements ResultOrganize
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultOrganizer_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultOrganizerOperations.ResultOrganizer_moodCode(this, diagnostics, context);
+	public boolean validateResultOrganizerMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultOrganizerOperations.validateResultOrganizerMoodCode(this, diagnostics, context);
 	}
 
 	/**
@@ -97,8 +97,8 @@ public class ResultOrganizerImpl extends OrganizerImpl implements ResultOrganize
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultOrganizer_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultOrganizerOperations.ResultOrganizer_id(this, diagnostics, context);
+	public boolean validateResultOrganizerId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultOrganizerOperations.validateResultOrganizerId(this, diagnostics, context);
 	}
 
 	/**
@@ -106,8 +106,8 @@ public class ResultOrganizerImpl extends OrganizerImpl implements ResultOrganize
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultOrganizer_resultObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultOrganizerOperations.ResultOrganizer_resultObservation(this, diagnostics, context);
+	public boolean validateResultOrganizerResultObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultOrganizerOperations.validateResultOrganizerResultObservation(this, diagnostics, context);
 	}
 
 	/**

@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PolicyActivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.ActImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class PolicyActivityImpl extends ActImpl implements PolicyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PolicyActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PolicyActivityOperations.PolicyActivity_templateId(this, diagnostics, context);
+	public boolean validatePolicyActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PolicyActivityOperations.validatePolicyActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class PolicyActivityImpl extends ActImpl implements PolicyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PolicyActivity_classCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PolicyActivityOperations.PolicyActivity_classCode(this, diagnostics, context);
+	public boolean validatePolicyActivityClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PolicyActivityOperations.validatePolicyActivityClassCode(this, diagnostics, context);
 	}
 
 	/**
@@ -73,8 +68,8 @@ public class PolicyActivityImpl extends ActImpl implements PolicyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PolicyActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PolicyActivityOperations.PolicyActivity_moodCode(this, diagnostics, context);
+	public boolean validatePolicyActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PolicyActivityOperations.validatePolicyActivityMoodCode(this, diagnostics, context);
 	}
 
 	/**
@@ -82,8 +77,8 @@ public class PolicyActivityImpl extends ActImpl implements PolicyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PolicyActivity_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PolicyActivityOperations.PolicyActivity_id(this, diagnostics, context);
+	public boolean validatePolicyActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PolicyActivityOperations.validatePolicyActivityId(this, diagnostics, context);
 	}
 
 	/**
@@ -91,8 +86,8 @@ public class PolicyActivityImpl extends ActImpl implements PolicyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PolicyActivity_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PolicyActivityOperations.PolicyActivity_statusCode(this, diagnostics, context);
+	public boolean validatePolicyActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PolicyActivityOperations.validatePolicyActivityStatusCode(this, diagnostics, context);
 	}
 
 	/**

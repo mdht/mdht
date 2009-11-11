@@ -19,16 +19,12 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
 import org.openhealthtools.mdht.uml.hl7.vocab.AddressPartType;
 
@@ -40,33 +36,33 @@ import org.openhealthtools.mdht.uml.hl7.vocab.AddressPartType;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#delimiter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delimiter</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#country(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Country</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#state(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>State</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#county(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>County</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#city(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>City</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#postalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Postal Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#streetAddressLine(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Street Address Line</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#houseNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>House Number</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#houseNumberNumeric(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>House Number Numeric</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#direction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Direction</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#streetName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Street Name</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#streetNameBase(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Street Name Base</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#streetNameType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Street Name Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#additionalLocator(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Additional Locator</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#unitID(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Unit ID</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#unitType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Unit Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#careOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Care Of</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#censusTract(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Census Tract</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#deliveryAddressLine(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Address Line</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#deliveryInstallationType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Installation Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#deliveryInstallationArea(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Installation Area</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#deliveryInstallationQualifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Installation Qualifier</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#deliveryMode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Mode</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#deliveryModeIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Mode Identifier</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#buildingNumberSuffix(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Building Number Suffix</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#postBox(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Post Box</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#precinct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Precinct</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateDelimiter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delimiter</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateCountry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Country</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateState(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate State</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateCounty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate County</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateCity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate City</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validatePostalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Postal Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateStreetAddressLine(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Street Address Line</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateHouseNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate House Number</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateHouseNumberNumeric(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate House Number Numeric</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateDirection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Direction</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateStreetName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Street Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateStreetNameBase(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Street Name Base</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateStreetNameType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Street Name Type</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateAdditionalLocator(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Additional Locator</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateUnitID(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unit ID</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateUnitType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unit Type</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateCareOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Care Of</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateCensusTract(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Census Tract</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateDeliveryAddressLine(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Address Line</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateDeliveryInstallationType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Installation Type</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateDeliveryInstallationArea(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Installation Area</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateDeliveryInstallationQualifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Installation Qualifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateDeliveryMode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Mode</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateDeliveryModeIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Mode Identifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validateBuildingNumberSuffix(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Building Number Suffix</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validatePostBox(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Post Box</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#validatePrecinct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Precinct</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#addDelimiter(java.lang.String) <em>Add Delimiter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#addCountry(java.lang.String) <em>Add Country</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#addState(java.lang.String) <em>Add State</em>}</li>
@@ -121,24 +117,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #delimiter(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delimiter</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateDelimiter(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delimiter</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #delimiter(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDelimiter(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.delimiter->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DEL)";
+	protected static final String VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.delimiter->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DEL)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #delimiter(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delimiter</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateDelimiter(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delimiter</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #delimiter(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDelimiter(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,25 +147,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean delimiter(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateDelimiter(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_DELIMITER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__DELIMITER,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "delimiter", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDelimiter", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -178,24 +174,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #country(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Country</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateCountry(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Country</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #country(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCountry(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.country->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CNT)";
+	protected static final String VALIDATE_COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.country->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CNT)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #country(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Country</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateCountry(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Country</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #country(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCountry(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,25 +204,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean country(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateCountry(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_COUNTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__COUNTRY,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "country", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCountry", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -235,24 +231,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #state(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>State</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateState(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate State</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #state(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateState(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.state->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STA)";
+	protected static final String VALIDATE_STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.state->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STA)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #state(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>State</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateState(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate State</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #state(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateState(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -265,25 +261,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean state(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateState(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_STATE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__STATE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "state", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateState", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -292,24 +288,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #county(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>County</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateCounty(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate County</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #county(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCounty(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COUNTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.county->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CPA)";
+	protected static final String VALIDATE_COUNTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.county->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CPA)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #county(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>County</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateCounty(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate County</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #county(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCounty(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint COUNTY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_COUNTY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -322,25 +318,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean county(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (COUNTY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateCounty(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_COUNTY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				COUNTY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(COUNTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_COUNTY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_COUNTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(COUNTY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_COUNTY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__COUNTY,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "county", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCounty", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -349,24 +345,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #city(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>City</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateCity(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate City</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #city(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCity(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.city->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CTY)";
+	protected static final String VALIDATE_CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.city->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CTY)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #city(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>City</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateCity(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate City</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #city(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCity(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -379,25 +375,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean city(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateCity(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__CITY,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "city", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCity", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -406,24 +402,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #postalCode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Postal Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePostalCode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Postal Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #postalCode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePostalCode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.postalCode->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ZIP)";
+	protected static final String VALIDATE_POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.postalCode->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ZIP)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #postalCode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Postal Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePostalCode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Postal Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #postalCode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePostalCode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -436,25 +432,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean postalCode(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePostalCode(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_POSTAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__POSTAL_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "postalCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validatePostalCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -463,24 +459,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #streetAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Street Address Line</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateStreetAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Street Address Line</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #streetAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateStreetAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.streetAddressLine->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::SAL)";
+	protected static final String VALIDATE_STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.streetAddressLine->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::SAL)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #streetAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Street Address Line</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateStreetAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Street Address Line</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #streetAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateStreetAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -493,25 +489,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean streetAddressLine(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateStreetAddressLine(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_STREET_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__STREET_ADDRESS_LINE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "streetAddressLine", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateStreetAddressLine", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -520,24 +516,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #houseNumber(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>House Number</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateHouseNumber(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate House Number</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #houseNumber(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateHouseNumber(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HOUSE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.houseNumber->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNR)";
+	protected static final String VALIDATE_HOUSE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.houseNumber->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNR)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #houseNumber(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>House Number</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateHouseNumber(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate House Number</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #houseNumber(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateHouseNumber(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint HOUSE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_HOUSE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -550,25 +546,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean houseNumber(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (HOUSE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateHouseNumber(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_HOUSE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				HOUSE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(HOUSE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_HOUSE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_HOUSE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(HOUSE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_HOUSE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__HOUSE_NUMBER,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "houseNumber", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateHouseNumber", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -577,24 +573,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #houseNumberNumeric(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>House Number Numeric</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateHouseNumberNumeric(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate House Number Numeric</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #houseNumberNumeric(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateHouseNumberNumeric(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HOUSE_NUMBER_NUMERIC__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.houseNumberNumeric->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNN)";
+	protected static final String VALIDATE_HOUSE_NUMBER_NUMERIC__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.houseNumberNumeric->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNN)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #houseNumberNumeric(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>House Number Numeric</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateHouseNumberNumeric(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate House Number Numeric</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #houseNumberNumeric(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateHouseNumberNumeric(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint HOUSE_NUMBER_NUMERIC__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_HOUSE_NUMBER_NUMERIC__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -607,25 +603,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean houseNumberNumeric(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (HOUSE_NUMBER_NUMERIC__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateHouseNumberNumeric(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_HOUSE_NUMBER_NUMERIC__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				HOUSE_NUMBER_NUMERIC__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(HOUSE_NUMBER_NUMERIC__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_HOUSE_NUMBER_NUMERIC__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_HOUSE_NUMBER_NUMERIC__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(HOUSE_NUMBER_NUMERIC__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_HOUSE_NUMBER_NUMERIC__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__HOUSE_NUMBER_NUMERIC,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "houseNumberNumeric", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateHouseNumberNumeric", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -634,24 +630,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #direction(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Direction</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateDirection(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Direction</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #direction(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDirection(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DIRECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.direction->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DIR)";
+	protected static final String VALIDATE_DIRECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.direction->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DIR)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #direction(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Direction</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateDirection(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Direction</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #direction(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDirection(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint DIRECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_DIRECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -664,25 +660,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean direction(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (DIRECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateDirection(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_DIRECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				DIRECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(DIRECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_DIRECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DIRECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(DIRECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_DIRECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__DIRECTION,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "direction", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDirection", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -691,24 +687,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #streetName(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Street Name</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateStreetName(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Street Name</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #streetName(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateStreetName(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STREET_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.streetName->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STR)";
+	protected static final String VALIDATE_STREET_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.streetName->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STR)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #streetName(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Street Name</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateStreetName(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Street Name</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #streetName(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateStreetName(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint STREET_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_STREET_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -721,25 +717,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean streetName(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (STREET_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateStreetName(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_STREET_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				STREET_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(STREET_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_STREET_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_STREET_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(STREET_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_STREET_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__STREET_NAME,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "streetName", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateStreetName", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -748,24 +744,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #streetNameBase(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Street Name Base</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateStreetNameBase(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Street Name Base</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #streetNameBase(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateStreetNameBase(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STREET_NAME_BASE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.streetNameBase->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STB)";
+	protected static final String VALIDATE_STREET_NAME_BASE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.streetNameBase->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STB)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #streetNameBase(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Street Name Base</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateStreetNameBase(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Street Name Base</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #streetNameBase(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateStreetNameBase(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint STREET_NAME_BASE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_STREET_NAME_BASE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -778,25 +774,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean streetNameBase(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (STREET_NAME_BASE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateStreetNameBase(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_STREET_NAME_BASE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				STREET_NAME_BASE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(STREET_NAME_BASE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_STREET_NAME_BASE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_STREET_NAME_BASE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(STREET_NAME_BASE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_STREET_NAME_BASE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__STREET_NAME_BASE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "streetNameBase", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateStreetNameBase", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -805,24 +801,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #streetNameType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Street Name Type</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateStreetNameType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Street Name Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #streetNameType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateStreetNameType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STREET_NAME_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.streetNameType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STTYP)";
+	protected static final String VALIDATE_STREET_NAME_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.streetNameType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STTYP)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #streetNameType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Street Name Type</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateStreetNameType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Street Name Type</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #streetNameType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateStreetNameType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint STREET_NAME_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_STREET_NAME_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -835,25 +831,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean streetNameType(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (STREET_NAME_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateStreetNameType(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_STREET_NAME_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				STREET_NAME_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(STREET_NAME_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_STREET_NAME_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_STREET_NAME_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(STREET_NAME_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_STREET_NAME_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__STREET_NAME_TYPE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "streetNameType", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateStreetNameType", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -862,24 +858,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #additionalLocator(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Additional Locator</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateAdditionalLocator(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Additional Locator</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #additionalLocator(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAdditionalLocator(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ADDITIONAL_LOCATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.additionalLocator->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ADL)";
+	protected static final String VALIDATE_ADDITIONAL_LOCATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.additionalLocator->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ADL)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #additionalLocator(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Additional Locator</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateAdditionalLocator(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Additional Locator</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #additionalLocator(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAdditionalLocator(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint ADDITIONAL_LOCATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_ADDITIONAL_LOCATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -892,25 +888,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean additionalLocator(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (ADDITIONAL_LOCATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateAdditionalLocator(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ADDITIONAL_LOCATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				ADDITIONAL_LOCATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(ADDITIONAL_LOCATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_ADDITIONAL_LOCATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ADDITIONAL_LOCATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(ADDITIONAL_LOCATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_ADDITIONAL_LOCATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__ADDITIONAL_LOCATOR,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "additionalLocator", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateAdditionalLocator", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -919,24 +915,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #unitID(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Unit ID</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateUnitID(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unit ID</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #unitID(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateUnitID(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UNIT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.unitID->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNID)";
+	protected static final String VALIDATE_UNIT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.unitID->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNID)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #unitID(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Unit ID</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateUnitID(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unit ID</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #unitID(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateUnitID(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint UNIT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_UNIT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -949,25 +945,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean unitID(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (UNIT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateUnitID(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_UNIT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				UNIT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(UNIT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_UNIT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_UNIT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(UNIT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_UNIT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__UNIT_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "unitID", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateUnitID", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -976,24 +972,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #unitType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Unit Type</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateUnitType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unit Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #unitType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateUnitType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UNIT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.unitType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNIT)";
+	protected static final String VALIDATE_UNIT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.unitType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNIT)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #unitType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Unit Type</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateUnitType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unit Type</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #unitType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateUnitType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint UNIT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_UNIT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1006,25 +1002,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean unitType(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (UNIT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateUnitType(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_UNIT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				UNIT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(UNIT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_UNIT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_UNIT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(UNIT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_UNIT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__UNIT_TYPE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "unitType", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateUnitType", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -1033,24 +1029,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #careOf(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Care Of</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateCareOf(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Care Of</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #careOf(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCareOf(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CARE_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.careOf->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CAR)";
+	protected static final String VALIDATE_CARE_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.careOf->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CAR)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #careOf(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Care Of</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateCareOf(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Care Of</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #careOf(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCareOf(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint CARE_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CARE_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1063,25 +1059,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean careOf(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (CARE_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateCareOf(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CARE_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				CARE_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CARE_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CARE_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CARE_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(CARE_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CARE_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__CARE_OF,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "careOf", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCareOf", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -1090,24 +1086,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #censusTract(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Census Tract</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateCensusTract(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Census Tract</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #censusTract(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCensusTract(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CENSUS_TRACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.censusTract->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CEN)";
+	protected static final String VALIDATE_CENSUS_TRACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.censusTract->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CEN)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #censusTract(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Census Tract</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateCensusTract(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Census Tract</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #censusTract(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateCensusTract(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint CENSUS_TRACT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CENSUS_TRACT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1120,25 +1116,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean censusTract(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (CENSUS_TRACT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateCensusTract(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CENSUS_TRACT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				CENSUS_TRACT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CENSUS_TRACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CENSUS_TRACT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CENSUS_TRACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(CENSUS_TRACT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CENSUS_TRACT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__CENSUS_TRACT,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "censusTract", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateCensusTract", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -1147,24 +1143,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #deliveryAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Address Line</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateDeliveryAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Address Line</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #deliveryAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDeliveryAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DELIVERY_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.deliveryAddressLine->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DAL)";
+	protected static final String VALIDATE_DELIVERY_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.deliveryAddressLine->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DAL)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #deliveryAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Address Line</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateDeliveryAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Address Line</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #deliveryAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDeliveryAddressLine(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint DELIVERY_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_DELIVERY_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1177,25 +1173,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean deliveryAddressLine(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (DELIVERY_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateDeliveryAddressLine(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_DELIVERY_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				DELIVERY_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(DELIVERY_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_DELIVERY_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DELIVERY_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(DELIVERY_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_DELIVERY_ADDRESS_LINE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__DELIVERY_ADDRESS_LINE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "deliveryAddressLine", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDeliveryAddressLine", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -1204,24 +1200,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #deliveryInstallationType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Installation Type</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateDeliveryInstallationType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Installation Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #deliveryInstallationType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDeliveryInstallationType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DELIVERY_INSTALLATION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.deliveryInstallationType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINST)";
+	protected static final String VALIDATE_DELIVERY_INSTALLATION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.deliveryInstallationType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINST)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #deliveryInstallationType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Installation Type</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateDeliveryInstallationType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Installation Type</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #deliveryInstallationType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDeliveryInstallationType(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint DELIVERY_INSTALLATION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_DELIVERY_INSTALLATION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1234,25 +1230,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean deliveryInstallationType(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (DELIVERY_INSTALLATION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateDeliveryInstallationType(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_DELIVERY_INSTALLATION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				DELIVERY_INSTALLATION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(DELIVERY_INSTALLATION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_DELIVERY_INSTALLATION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DELIVERY_INSTALLATION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(DELIVERY_INSTALLATION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_DELIVERY_INSTALLATION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__DELIVERY_INSTALLATION_TYPE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "deliveryInstallationType", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDeliveryInstallationType", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -1261,24 +1257,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #deliveryInstallationArea(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Installation Area</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateDeliveryInstallationArea(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Installation Area</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #deliveryInstallationArea(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDeliveryInstallationArea(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DELIVERY_INSTALLATION_AREA__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.deliveryInstallationArea->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTA)";
+	protected static final String VALIDATE_DELIVERY_INSTALLATION_AREA__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.deliveryInstallationArea->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTA)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #deliveryInstallationArea(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Installation Area</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateDeliveryInstallationArea(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Installation Area</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #deliveryInstallationArea(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDeliveryInstallationArea(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint DELIVERY_INSTALLATION_AREA__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_DELIVERY_INSTALLATION_AREA__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1291,25 +1287,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean deliveryInstallationArea(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (DELIVERY_INSTALLATION_AREA__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateDeliveryInstallationArea(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_DELIVERY_INSTALLATION_AREA__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				DELIVERY_INSTALLATION_AREA__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(DELIVERY_INSTALLATION_AREA__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_DELIVERY_INSTALLATION_AREA__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DELIVERY_INSTALLATION_AREA__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(DELIVERY_INSTALLATION_AREA__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_DELIVERY_INSTALLATION_AREA__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__DELIVERY_INSTALLATION_AREA,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "deliveryInstallationArea", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDeliveryInstallationArea", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -1318,24 +1314,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #deliveryInstallationQualifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Installation Qualifier</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateDeliveryInstallationQualifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Installation Qualifier</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #deliveryInstallationQualifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDeliveryInstallationQualifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DELIVERY_INSTALLATION_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.deliveryInstallationQualifier->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTQ)";
+	protected static final String VALIDATE_DELIVERY_INSTALLATION_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.deliveryInstallationQualifier->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTQ)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #deliveryInstallationQualifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Installation Qualifier</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateDeliveryInstallationQualifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Installation Qualifier</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #deliveryInstallationQualifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDeliveryInstallationQualifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint DELIVERY_INSTALLATION_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_DELIVERY_INSTALLATION_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1348,25 +1344,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean deliveryInstallationQualifier(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (DELIVERY_INSTALLATION_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateDeliveryInstallationQualifier(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_DELIVERY_INSTALLATION_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				DELIVERY_INSTALLATION_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(DELIVERY_INSTALLATION_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_DELIVERY_INSTALLATION_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DELIVERY_INSTALLATION_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(DELIVERY_INSTALLATION_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_DELIVERY_INSTALLATION_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__DELIVERY_INSTALLATION_QUALIFIER,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "deliveryInstallationQualifier", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDeliveryInstallationQualifier", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -1375,24 +1371,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #deliveryMode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Mode</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateDeliveryMode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Mode</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #deliveryMode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDeliveryMode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DELIVERY_MODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.deliveryMode->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMOD)";
+	protected static final String VALIDATE_DELIVERY_MODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.deliveryMode->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMOD)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #deliveryMode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Mode</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateDeliveryMode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Mode</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #deliveryMode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDeliveryMode(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint DELIVERY_MODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_DELIVERY_MODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1405,25 +1401,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean deliveryMode(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (DELIVERY_MODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateDeliveryMode(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_DELIVERY_MODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				DELIVERY_MODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(DELIVERY_MODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_DELIVERY_MODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DELIVERY_MODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(DELIVERY_MODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_DELIVERY_MODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__DELIVERY_MODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "deliveryMode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDeliveryMode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -1432,24 +1428,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #deliveryModeIdentifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Mode Identifier</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateDeliveryModeIdentifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Mode Identifier</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #deliveryModeIdentifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDeliveryModeIdentifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DELIVERY_MODE_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.deliveryModeIdentifier->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMODID)";
+	protected static final String VALIDATE_DELIVERY_MODE_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.deliveryModeIdentifier->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMODID)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #deliveryModeIdentifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Delivery Mode Identifier</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateDeliveryModeIdentifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Delivery Mode Identifier</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #deliveryModeIdentifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateDeliveryModeIdentifier(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint DELIVERY_MODE_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_DELIVERY_MODE_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1462,25 +1458,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean deliveryModeIdentifier(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (DELIVERY_MODE_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateDeliveryModeIdentifier(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_DELIVERY_MODE_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				DELIVERY_MODE_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(DELIVERY_MODE_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_DELIVERY_MODE_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_DELIVERY_MODE_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(DELIVERY_MODE_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_DELIVERY_MODE_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__DELIVERY_MODE_IDENTIFIER,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "deliveryModeIdentifier", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateDeliveryModeIdentifier", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -1489,24 +1485,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #buildingNumberSuffix(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Building Number Suffix</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateBuildingNumberSuffix(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Building Number Suffix</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #buildingNumberSuffix(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateBuildingNumberSuffix(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String BUILDING_NUMBER_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.buildingNumberSuffix->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNS)";
+	protected static final String VALIDATE_BUILDING_NUMBER_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.buildingNumberSuffix->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNS)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #buildingNumberSuffix(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Building Number Suffix</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateBuildingNumberSuffix(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Building Number Suffix</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #buildingNumberSuffix(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateBuildingNumberSuffix(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint BUILDING_NUMBER_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_BUILDING_NUMBER_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1519,25 +1515,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean buildingNumberSuffix(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (BUILDING_NUMBER_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateBuildingNumberSuffix(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_BUILDING_NUMBER_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				BUILDING_NUMBER_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(BUILDING_NUMBER_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_BUILDING_NUMBER_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_BUILDING_NUMBER_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(BUILDING_NUMBER_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_BUILDING_NUMBER_SUFFIX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__BUILDING_NUMBER_SUFFIX,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "buildingNumberSuffix", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateBuildingNumberSuffix", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -1546,24 +1542,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #postBox(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Post Box</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePostBox(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Post Box</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #postBox(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePostBox(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String POST_BOX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.postBox->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::POB)";
+	protected static final String VALIDATE_POST_BOX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.postBox->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::POB)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #postBox(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Post Box</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePostBox(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Post Box</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #postBox(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePostBox(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint POST_BOX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_POST_BOX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1576,25 +1572,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean postBox(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (POST_BOX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePostBox(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_POST_BOX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				POST_BOX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(POST_BOX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_POST_BOX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_POST_BOX__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(POST_BOX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_POST_BOX__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__POST_BOX,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "postBox", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validatePostBox", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -1603,24 +1599,24 @@ public class ADOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #precinct(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Precinct</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePrecinct(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Precinct</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #precinct(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePrecinct(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRECINCT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.precinct->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::PRE)";
+	protected static final String VALIDATE_PRECINCT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.precinct->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::PRE)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #precinct(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Precinct</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePrecinct(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Precinct</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #precinct(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePrecinct(AD, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PRECINCT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PRECINCT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1633,25 +1629,25 @@ public class ADOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean precinct(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PRECINCT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePrecinct(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PRECINCT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.AD);
 			try {
-				PRECINCT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PRECINCT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PRECINCT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PRECINCT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PRECINCT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PRECINCT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(ad)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.AD__PRECINCT,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "precinct", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validatePrecinct", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(ad, context) }),
 						 new Object [] { ad }));
 			}
 			return false;
@@ -1665,7 +1661,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDelimiter(AD ad, String delimiter) {
-		ad.getDelimiter().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DEL, delimiter));
+		ad.getDelimiters().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DEL, delimiter));
 		return ad;
 	}
 
@@ -1675,7 +1671,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addCountry(AD ad, String country) {
-		ad.getCountry().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CNT, country));
+		ad.getCountries().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CNT, country));
 		return ad;
 	}
 
@@ -1685,7 +1681,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addState(AD ad, String state) {
-		ad.getState().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STA, state));
+		ad.getStates().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STA, state));
 		return ad;
 	}
 
@@ -1695,7 +1691,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addCounty(AD ad, String county) {
-		ad.getCounty().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CPA, county));
+		ad.getCounties().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CPA, county));
 		return ad;
 	}
 
@@ -1705,7 +1701,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addCity(AD ad, String city) {
-		ad.getCity().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CTY, city));
+		ad.getCities().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CTY, city));
 		return ad;
 	}
 
@@ -1715,7 +1711,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addPostalCode(AD ad, String postalCode) {
-		ad.getPostalCode().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.ZIP, postalCode));
+		ad.getPostalCodes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.ZIP, postalCode));
 		return ad;
 	}
 
@@ -1725,7 +1721,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addStreetAddressLine(AD ad, String streetAddressLine) {
-		ad.getStreetAddressLine().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.SAL, streetAddressLine));
+		ad.getStreetAddressLines().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.SAL, streetAddressLine));
 		return ad;
 	}
 
@@ -1735,7 +1731,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addHouseNumber(AD ad, String houseNumber) {
-		ad.getHouseNumber().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.BNR, houseNumber));
+		ad.getHouseNumbers().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.BNR, houseNumber));
 		return ad;
 	}
 
@@ -1745,7 +1741,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addHouseNumberNumeric(AD ad, String houseNumberNumeric) {
-		ad.getHouseNumberNumeric().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.BNN, houseNumberNumeric));
+		ad.getHouseNumberNumerics().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.BNN, houseNumberNumeric));
 		return ad;
 	}
 
@@ -1755,7 +1751,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDirection(AD ad, String direction) {
-		ad.getDirection().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DIR, direction));
+		ad.getDirections().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DIR, direction));
 		return ad;
 	}
 
@@ -1765,7 +1761,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addStreetName(AD ad, String streetName) {
-		ad.getStreetName().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STR, streetName));
+		ad.getStreetNames().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STR, streetName));
 		return ad;
 	}
 
@@ -1775,7 +1771,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addStreetNameBase(AD ad, String streetNameBase) {
-		ad.getStreetNameBase().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STB, streetNameBase));
+		ad.getStreetNameBases().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STB, streetNameBase));
 		return ad;
 	}
 
@@ -1785,7 +1781,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addStreetNameType(AD ad, String streetNameType) {
-		ad.getStreetNameType().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STTYP, streetNameType));
+		ad.getStreetNameTypes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STTYP, streetNameType));
 		return ad;
 	}
 
@@ -1795,7 +1791,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addAdditionalLocator(AD ad, String additionalLocator) {
-		ad.getAdditionalLocator().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.ADL, additionalLocator));
+		ad.getAdditionalLocators().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.ADL, additionalLocator));
 		return ad;
 	}
 
@@ -1805,7 +1801,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addUnitID(AD ad, String unitID) {
-		ad.getUnitID().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.UNID, unitID));
+		ad.getUnitIDs().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.UNID, unitID));
 		return ad;
 	}
 
@@ -1815,7 +1811,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addUnitType(AD ad, String unitType) {
-		ad.getUnitType().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.UNIT, unitType));
+		ad.getUnitTypes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.UNIT, unitType));
 		return ad;
 	}
 
@@ -1825,7 +1821,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addCareOf(AD ad, String careOf) {
-		ad.getCareOf().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CAR, careOf));
+		ad.getCareOfs().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CAR, careOf));
 		return ad;
 	}
 
@@ -1835,7 +1831,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addCensusTract(AD ad, String censusTract) {
-		ad.getCensusTract().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CEN, censusTract));
+		ad.getCensusTracts().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CEN, censusTract));
 		return ad;
 	}
 
@@ -1845,7 +1841,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDeliveryAddressLine(AD ad, String deliveryAddressLine) {
-		ad.getDeliveryAddressLine().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DAL, deliveryAddressLine));
+		ad.getDeliveryAddressLines().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DAL, deliveryAddressLine));
 		return ad;
 	}
 
@@ -1855,7 +1851,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDeliveryInstallationType(AD ad, String deliveryInstallationType) {
-		ad.getDeliveryInstallationType().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DINST, deliveryInstallationType));
+		ad.getDeliveryInstallationTypes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DINST, deliveryInstallationType));
 		return ad;
 	}
 
@@ -1865,7 +1861,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDeliveryInstallationArea(AD ad, String deliveryInstallationArea) {
-		ad.getDeliveryInstallationArea().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DINSTA, deliveryInstallationArea));
+		ad.getDeliveryInstallationAreas().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DINSTA, deliveryInstallationArea));
 		return ad;
 	}
 
@@ -1875,7 +1871,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDeliveryInstallationQualifier(AD ad, String deliveryInstallationQualifier) {
-		ad.getDeliveryInstallationQualifier().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DINSTQ, deliveryInstallationQualifier));
+		ad.getDeliveryInstallationQualifiers().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DINSTQ, deliveryInstallationQualifier));
 		return ad;
 	}
 
@@ -1885,7 +1881,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDeliveryMode(AD ad, String deliveryMode) {
-		ad.getDeliveryMode().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DMOD, deliveryMode));
+		ad.getDeliveryModes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DMOD, deliveryMode));
 		return ad;
 	}
 
@@ -1895,7 +1891,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDeliveryModeIdentifier(AD ad, String deliveryModeIdentifier) {
-		ad.getDeliveryModeIdentifier().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DMODID, deliveryModeIdentifier));
+		ad.getDeliveryModeIdentifiers().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DMODID, deliveryModeIdentifier));
 		return ad;
 	}
 
@@ -1905,7 +1901,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addBuildingNumberSuffix(AD ad, String buildingNumberSuffix) {
-		ad.getBuildingNumberSuffix().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.BNS, buildingNumberSuffix));
+		ad.getBuildingNumberSuffixes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.BNS, buildingNumberSuffix));
 		return ad;
 	}
 
@@ -1915,7 +1911,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addPostBox(AD ad, String postBox) {
-		ad.getPostBox().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.POB, postBox));
+		ad.getPostBoxes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.POB, postBox));
 		return ad;
 	}
 
@@ -1925,7 +1921,7 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addPrecinct(AD ad, String precinct) {
-		ad.getPrecinct().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.PRE, precinct));
+		ad.getPrecincts().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.PRE, precinct));
 		return ad;
 	}
 

@@ -11,13 +11,41 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.openhealthtools.mdht.uml.cda.hitsp.*;
+import org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection;
+import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
+import org.openhealthtools.mdht.uml.cda.hitsp.AssessmentAndPlanSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
+import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection;
+import org.openhealthtools.mdht.uml.cda.hitsp.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPresentIllness;
+import org.openhealthtools.mdht.uml.cda.hitsp.HospitalAdmissionDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.HospitalCourseSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.HospitalDischargeMedicationsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsAdministeredSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
+import org.openhealthtools.mdht.uml.cda.hitsp.PayersSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
+import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +115,15 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.ADVANCE_DIRECTIVES_SECTION: return createAdvanceDirectivesSection();
 			case HITSPPackage.IMMUNIZATIONS_SECTION: return createImmunizationsSection();
 			case HITSPPackage.PHYSICAL_EXAM_SECTION: return createPhysicalExamSection();
+			case HITSPPackage.REVIEW_OF_SYSTEMS_SECTION: return createReviewOfSystemsSection();
+			case HITSPPackage.HOSPITAL_COURSE_SECTION: return createHospitalCourseSection();
+			case HITSPPackage.DIAGNOSTIC_RESULTS_SECTION: return createDiagnosticResultsSection();
+			case HITSPPackage.ASSESSMENT_AND_PLAN_SECTION: return createAssessmentAndPlanSection();
+			case HITSPPackage.PLAN_OF_CARE_SECTION: return createPlanOfCareSection();
+			case HITSPPackage.FAMILY_HISTORY_SECTION: return createFamilyHistorySection();
+			case HITSPPackage.SOCIAL_HISTORY_SECTION: return createSocialHistorySection();
+			case HITSPPackage.ENCOUNTERS_SECTION: return createEncountersSection();
+			case HITSPPackage.MEDICAL_EQUIPMENT_SECTION: return createMedicalEquipmentSection();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -330,6 +367,96 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 	public PhysicalExamSection createPhysicalExamSection() {
 		PhysicalExamSectionImpl physicalExamSection = new PhysicalExamSectionImpl();
 		return physicalExamSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReviewOfSystemsSection createReviewOfSystemsSection() {
+		ReviewOfSystemsSectionImpl reviewOfSystemsSection = new ReviewOfSystemsSectionImpl();
+		return reviewOfSystemsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HospitalCourseSection createHospitalCourseSection() {
+		HospitalCourseSectionImpl hospitalCourseSection = new HospitalCourseSectionImpl();
+		return hospitalCourseSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiagnosticResultsSection createDiagnosticResultsSection() {
+		DiagnosticResultsSectionImpl diagnosticResultsSection = new DiagnosticResultsSectionImpl();
+		return diagnosticResultsSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssessmentAndPlanSection createAssessmentAndPlanSection() {
+		AssessmentAndPlanSectionImpl assessmentAndPlanSection = new AssessmentAndPlanSectionImpl();
+		return assessmentAndPlanSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlanOfCareSection createPlanOfCareSection() {
+		PlanOfCareSectionImpl planOfCareSection = new PlanOfCareSectionImpl();
+		return planOfCareSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FamilyHistorySection createFamilyHistorySection() {
+		FamilyHistorySectionImpl familyHistorySection = new FamilyHistorySectionImpl();
+		return familyHistorySection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SocialHistorySection createSocialHistorySection() {
+		SocialHistorySectionImpl socialHistorySection = new SocialHistorySectionImpl();
+		return socialHistorySection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EncountersSection createEncountersSection() {
+		EncountersSectionImpl encountersSection = new EncountersSectionImpl();
+		return encountersSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicalEquipmentSection createMedicalEquipmentSection() {
+		MedicalEquipmentSectionImpl medicalEquipmentSection = new MedicalEquipmentSectionImpl();
+		return medicalEquipmentSection;
 	}
 
 	/**

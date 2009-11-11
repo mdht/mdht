@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getMedicationSeriesNumberObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' code.codeSystemName='LOINC' constraints.validation.error='MedicationSeriesNumberObservation_templateId MedicationSeriesNumberObservation_statusCode MedicationSeriesNumberObservation_code MedicationSeriesNumberObservation_value' templateId.root='2.16.840.1.113883.10.20.1.46' code.displayName='Dose number' code.codeSystem='2.16.840.1.113883.6.1' code.code='30973-2'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' code.codeSystemName='LOINC' constraints.validation.error='MedicationSeriesNumberObservationTemplateId MedicationSeriesNumberObservationStatusCode MedicationSeriesNumberObservationCode MedicationSeriesNumberObservationValue' templateId.root='2.16.840.1.113883.10.20.1.46' code.displayName='Dose number' code.codeSystem='2.16.840.1.113883.6.1' code.code='30973-2'"
  * @generated
  */
 public interface MedicationSeriesNumberObservation extends Observation {
@@ -40,7 +40,7 @@ public interface MedicationSeriesNumberObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.46\')'"
 	 * @generated
 	 */
-	boolean MedicationSeriesNumberObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationSeriesNumberObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public interface MedicationSeriesNumberObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean MedicationSeriesNumberObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationSeriesNumberObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,7 +68,7 @@ public interface MedicationSeriesNumberObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and \r\nlet value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (\r\nvalue.code = \'30973-2\' and value.codeSystem = \'2.16.840.1.113883.6.1\')'"
 	 * @generated
 	 */
-	boolean MedicationSeriesNumberObservation_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationSeriesNumberObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,7 +81,7 @@ public interface MedicationSeriesNumberObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.value->size() = 1 and self.value->forAll(element | element.oclIsTypeOf(datatypes::INT))'"
 	 * @generated
 	 */
-	boolean MedicationSeriesNumberObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationSeriesNumberObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

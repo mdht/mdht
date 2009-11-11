@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.example;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 
 /**
@@ -20,7 +19,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
  *
  * @see org.openhealthtools.mdht.uml.cda.example.ExamplePackage#getMyDocument()
  * @model extendedMetaData="name='ClinicalDocument'"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='MyDocument_templateId MyDocument_mySection' templateId.root='1.2.3.4'"
+ *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='MyDocumentTemplateId MyDocumentMySection' templateId.root='1.2.3.4'"
  * @generated
  */
 public interface MyDocument extends ContinuityOfCareDocument {
@@ -35,20 +34,20 @@ public interface MyDocument extends ContinuityOfCareDocument {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.2.3.4\')'"
 	 * @generated
 	 */
-	boolean MyDocument_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMyDocumentTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSection()->one(section : cda::Section | section.oclIsKindOf(example::MySection))
+	 * self.getSections()->one(section : cda::Section | section.oclIsKindOf(example::MySection))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSection()->one(section : cda::Section | section.oclIsKindOf(example::MySection))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->one(section : cda::Section | section.oclIsKindOf(example::MySection))'"
 	 * @generated
 	 */
-	boolean MyDocument_mySection(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMyDocumentMySection(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

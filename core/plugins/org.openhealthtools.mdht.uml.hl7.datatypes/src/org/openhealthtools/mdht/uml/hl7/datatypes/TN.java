@@ -38,6 +38,6 @@ public interface TN extends EN {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.delimiter->isEmpty() and self.family->isEmpty() and self.given->isEmpty() and self.prefix->isEmpty() and self.suffix->isEmpty() and mixed->size() = 1'"
 	 * @generated
 	 */
-	boolean invariant(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateInvariant(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // TN

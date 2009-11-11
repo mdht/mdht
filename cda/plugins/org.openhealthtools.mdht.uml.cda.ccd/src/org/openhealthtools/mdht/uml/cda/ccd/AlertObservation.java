@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getAlertObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.codeSystemName='ActStatus' templateId.root='2.16.840.1.113883.10.20.1.18' constraints.validation.error='AlertObservation_templateId AlertObservation_statusCode' statusCode.codeSystem='2.16.840.1.113883.5.14' statusCode.code='completed'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.codeSystemName='ActStatus' templateId.root='2.16.840.1.113883.10.20.1.18' constraints.validation.error='AlertObservationTemplateId AlertObservationStatusCode' statusCode.codeSystem='2.16.840.1.113883.5.14' statusCode.code='completed'"
  * @generated
  */
 public interface AlertObservation extends Observation {
@@ -33,7 +33,7 @@ public interface AlertObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.18\')'"
 	 * @generated
 	 */
-	boolean AlertObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAlertObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -48,7 +48,7 @@ public interface AlertObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\' and value.codeSystem = \'2.16.840.1.113883.5.14\')'"
 	 * @generated
 	 */
-	boolean AlertObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAlertObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.example;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 
 /**
@@ -28,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.example.ExamplePackage#getMyActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' statusCode.codeSystemName='ActStatus' code.codeSystemName='SNOMED CT' constraints.validation.error='MyActivity_templateId MyActivity_classCode MyActivity_moodCode MyActivity_code MyActivity_statusCode' templateId.root='1.2.3.4.2' statusCode.codeSystem='2.16.840.1.113883.5.14' code.displayName='Documentation procedure' statusCode.code='completed' code.codeSystem='2.16.840.1.113883.6.96' code.code='23745001'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' statusCode.codeSystemName='ActStatus' code.codeSystemName='SNOMED CT' constraints.validation.error='MyActivityTemplateId MyActivityClassCode MyActivityMoodCode MyActivityCode MyActivityStatusCode' templateId.root='1.2.3.4.2' statusCode.codeSystem='2.16.840.1.113883.5.14' code.displayName='Documentation procedure' statusCode.code='completed' code.codeSystem='2.16.840.1.113883.6.96' code.code='23745001'"
  * @generated
  */
 public interface MyActivity extends ProblemAct {
@@ -43,7 +42,7 @@ public interface MyActivity extends ProblemAct {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.2.3.4.2\')'"
 	 * @generated
 	 */
-	boolean MyActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMyActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -56,7 +55,7 @@ public interface MyActivity extends ProblemAct {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode=vocab::x_ActClassDocumentEntryAct::ACT'"
 	 * @generated
 	 */
-	boolean MyActivity_classCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMyActivityClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,7 +68,7 @@ public interface MyActivity extends ProblemAct {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_DocumentActMood::EVN'"
 	 * @generated
 	 */
-	boolean MyActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMyActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,7 +83,7 @@ public interface MyActivity extends ProblemAct {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and \r\nlet value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (\r\nvalue.code = \'23745001\' and value.codeSystem = \'2.16.840.1.113883.6.96\')'"
 	 * @generated
 	 */
-	boolean MyActivity_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMyActivityCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,7 +98,7 @@ public interface MyActivity extends ProblemAct {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\' and value.codeSystem = \'2.16.840.1.113883.5.14\')'"
 	 * @generated
 	 */
-	boolean MyActivity_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMyActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

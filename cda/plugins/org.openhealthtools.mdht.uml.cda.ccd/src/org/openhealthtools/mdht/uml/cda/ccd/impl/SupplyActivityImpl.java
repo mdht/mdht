@@ -50,8 +50,8 @@ public class SupplyActivityImpl extends SupplyImpl implements SupplyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SupplyActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SupplyActivityOperations.SupplyActivity_templateId(this, diagnostics, context);
+	public boolean validateSupplyActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class SupplyActivityImpl extends SupplyImpl implements SupplyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SupplyActivity_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SupplyActivityOperations.SupplyActivity_id(this, diagnostics, context);
+	public boolean validateSupplyActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityId(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class SupplyActivityImpl extends SupplyImpl implements SupplyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SupplyActivity_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SupplyActivityOperations.SupplyActivity_statusCode(this, diagnostics, context);
+	public boolean validateSupplyActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityStatusCode(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class SupplyActivityImpl extends SupplyImpl implements SupplyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SupplyActivity_medicationStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SupplyActivityOperations.SupplyActivity_medicationStatusObservation(this, diagnostics, context);
+	public boolean validateSupplyActivityMedicationStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityMedicationStatusObservation(this, diagnostics, context);
 	}
 
 	/**
@@ -86,8 +86,8 @@ public class SupplyActivityImpl extends SupplyImpl implements SupplyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SupplyActivity_fulfillmentInstruction(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SupplyActivityOperations.SupplyActivity_fulfillmentInstruction(this, diagnostics, context);
+	public boolean validateSupplyActivityFulfillmentInstruction(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityFulfillmentInstruction(this, diagnostics, context);
 	}
 
 	/**

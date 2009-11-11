@@ -16,9 +16,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.util.FeatureMap;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
 
 /**
@@ -29,37 +27,37 @@ import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUseablePeriod <em>Useable Period</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUse <em>Use</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUseablePeriods <em>Useable Period</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUses <em>Use</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getIsNotOrdered <em>Is Not Ordered</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDelimiter <em>Delimiter</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCountry <em>Country</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getState <em>State</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCounty <em>County</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCity <em>City</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostalCode <em>Postal Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetAddressLine <em>Street Address Line</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getHouseNumber <em>House Number</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getHouseNumberNumeric <em>House Number Numeric</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDirection <em>Direction</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetName <em>Street Name</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNameBase <em>Street Name Base</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNameType <em>Street Name Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getAdditionalLocator <em>Additional Locator</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUnitID <em>Unit ID</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUnitType <em>Unit Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCareOf <em>Care Of</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCensusTract <em>Census Tract</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryAddressLine <em>Delivery Address Line</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationType <em>Delivery Installation Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationArea <em>Delivery Installation Area</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationQualifier <em>Delivery Installation Qualifier</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryMode <em>Delivery Mode</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryModeIdentifier <em>Delivery Mode Identifier</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getBuildingNumberSuffix <em>Building Number Suffix</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostBox <em>Post Box</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPrecinct <em>Precinct</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPart <em>Part</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDelimiters <em>Delimiter</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCountries <em>Country</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStates <em>State</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCounties <em>County</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCities <em>City</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostalCodes <em>Postal Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetAddressLines <em>Street Address Line</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getHouseNumbers <em>House Number</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getHouseNumberNumerics <em>House Number Numeric</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDirections <em>Direction</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNames <em>Street Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNameBases <em>Street Name Base</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getStreetNameTypes <em>Street Name Type</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getAdditionalLocators <em>Additional Locator</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUnitIDs <em>Unit ID</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUnitTypes <em>Unit Type</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCareOfs <em>Care Of</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getCensusTracts <em>Census Tract</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryAddressLines <em>Delivery Address Line</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationTypes <em>Delivery Installation Type</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationAreas <em>Delivery Installation Area</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryInstallationQualifiers <em>Delivery Installation Qualifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryModes <em>Delivery Mode</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getDeliveryModeIdentifiers <em>Delivery Mode Identifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getBuildingNumberSuffixes <em>Building Number Suffix</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPostBoxes <em>Post Box</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getPrecincts <em>Precinct</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getParts <em>Part</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getMixed <em>Mixed</em>}</li>
  * </ul>
  * </p>
@@ -84,7 +82,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3'"
 	 * @generated
 	 */
-	EList<SXCM_TS> getUseablePeriod();
+	EList<SXCM_TS> getUseablePeriods();
 
 	/**
 	 * Returns the value of the '<em><b>Use</b></em>' attribute list.
@@ -98,34 +96,34 @@ public interface AD extends ANY {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Use</em>' attribute list.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse
-	 * @see #isSetUse()
-	 * @see #unsetUse()
+	 * @see #isSetUses()
+	 * @see #unsetUses()
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_Use()
 	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
-	EList<PostalAddressUse> getUse();
+	EList<PostalAddressUse> getUses();
 
 	/**
-	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUse <em>Use</em>}' attribute list.
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUses <em>Use</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSetUse()
-	 * @see #getUse()
+	 * @see #isSetUses()
+	 * @see #getUses()
 	 * @generated
 	 */
-	void unsetUse();
+	void unsetUses();
 
 	/**
-	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUse <em>Use</em>}' attribute list is set.
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.AD#getUses <em>Use</em>}' attribute list is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Use</em>' attribute list is set.
-	 * @see #unsetUse()
-	 * @see #getUse()
+	 * @see #unsetUses()
+	 * @see #getUses()
 	 * @generated
 	 */
-	boolean isSetUse();
+	boolean isSetUses();
 
 	/**
 	 * Returns the value of the '<em><b>Is Not Ordered</b></em>' attribute.
@@ -168,7 +166,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getDelimiter();
+	EList<ADXP> getDelimiters();
 
 	/**
 	 * Returns the value of the '<em><b>Country</b></em>' containment reference list.
@@ -185,7 +183,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getCountry();
+	EList<ADXP> getCountries();
 
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' containment reference list.
@@ -202,7 +200,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getState();
+	EList<ADXP> getStates();
 
 	/**
 	 * Returns the value of the '<em><b>County</b></em>' containment reference list.
@@ -219,7 +217,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getCounty();
+	EList<ADXP> getCounties();
 
 	/**
 	 * Returns the value of the '<em><b>City</b></em>' containment reference list.
@@ -236,7 +234,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getCity();
+	EList<ADXP> getCities();
 
 	/**
 	 * Returns the value of the '<em><b>Postal Code</b></em>' containment reference list.
@@ -253,7 +251,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getPostalCode();
+	EList<ADXP> getPostalCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Street Address Line</b></em>' containment reference list.
@@ -270,7 +268,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getStreetAddressLine();
+	EList<ADXP> getStreetAddressLines();
 
 	/**
 	 * Returns the value of the '<em><b>House Number</b></em>' containment reference list.
@@ -287,7 +285,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getHouseNumber();
+	EList<ADXP> getHouseNumbers();
 
 	/**
 	 * Returns the value of the '<em><b>House Number Numeric</b></em>' containment reference list.
@@ -304,7 +302,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getHouseNumberNumeric();
+	EList<ADXP> getHouseNumberNumerics();
 
 	/**
 	 * Returns the value of the '<em><b>Direction</b></em>' containment reference list.
@@ -321,7 +319,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getDirection();
+	EList<ADXP> getDirections();
 
 	/**
 	 * Returns the value of the '<em><b>Street Name</b></em>' containment reference list.
@@ -338,7 +336,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getStreetName();
+	EList<ADXP> getStreetNames();
 
 	/**
 	 * Returns the value of the '<em><b>Street Name Base</b></em>' containment reference list.
@@ -355,7 +353,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getStreetNameBase();
+	EList<ADXP> getStreetNameBases();
 
 	/**
 	 * Returns the value of the '<em><b>Street Name Type</b></em>' containment reference list.
@@ -372,7 +370,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getStreetNameType();
+	EList<ADXP> getStreetNameTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Additional Locator</b></em>' containment reference list.
@@ -389,7 +387,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getAdditionalLocator();
+	EList<ADXP> getAdditionalLocators();
 
 	/**
 	 * Returns the value of the '<em><b>Unit ID</b></em>' containment reference list.
@@ -406,7 +404,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getUnitID();
+	EList<ADXP> getUnitIDs();
 
 	/**
 	 * Returns the value of the '<em><b>Unit Type</b></em>' containment reference list.
@@ -423,7 +421,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getUnitType();
+	EList<ADXP> getUnitTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Care Of</b></em>' containment reference list.
@@ -440,7 +438,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getCareOf();
+	EList<ADXP> getCareOfs();
 
 	/**
 	 * Returns the value of the '<em><b>Census Tract</b></em>' containment reference list.
@@ -457,7 +455,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getCensusTract();
+	EList<ADXP> getCensusTracts();
 
 	/**
 	 * Returns the value of the '<em><b>Delivery Address Line</b></em>' containment reference list.
@@ -474,7 +472,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getDeliveryAddressLine();
+	EList<ADXP> getDeliveryAddressLines();
 
 	/**
 	 * Returns the value of the '<em><b>Delivery Installation Type</b></em>' containment reference list.
@@ -491,7 +489,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getDeliveryInstallationType();
+	EList<ADXP> getDeliveryInstallationTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Delivery Installation Area</b></em>' containment reference list.
@@ -508,7 +506,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getDeliveryInstallationArea();
+	EList<ADXP> getDeliveryInstallationAreas();
 
 	/**
 	 * Returns the value of the '<em><b>Delivery Installation Qualifier</b></em>' containment reference list.
@@ -525,7 +523,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getDeliveryInstallationQualifier();
+	EList<ADXP> getDeliveryInstallationQualifiers();
 
 	/**
 	 * Returns the value of the '<em><b>Delivery Mode</b></em>' containment reference list.
@@ -542,7 +540,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getDeliveryMode();
+	EList<ADXP> getDeliveryModes();
 
 	/**
 	 * Returns the value of the '<em><b>Delivery Mode Identifier</b></em>' containment reference list.
@@ -559,7 +557,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getDeliveryModeIdentifier();
+	EList<ADXP> getDeliveryModeIdentifiers();
 
 	/**
 	 * Returns the value of the '<em><b>Building Number Suffix</b></em>' containment reference list.
@@ -576,7 +574,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getBuildingNumberSuffix();
+	EList<ADXP> getBuildingNumberSuffixes();
 
 	/**
 	 * Returns the value of the '<em><b>Post Box</b></em>' containment reference list.
@@ -593,7 +591,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getPostBox();
+	EList<ADXP> getPostBoxes();
 
 	/**
 	 * Returns the value of the '<em><b>Precinct</b></em>' containment reference list.
@@ -610,7 +608,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="namespace='urn:hl7-org:v3' kind='element' group='#part'"
 	 * @generated
 	 */
-	EList<ADXP> getPrecinct();
+	EList<ADXP> getPrecincts();
 
 	/**
 	 * Returns the value of the '<em><b>Part</b></em>' attribute list.
@@ -627,7 +625,7 @@ public interface AD extends ANY {
 	 *        extendedMetaData="kind='group'"
 	 * @generated
 	 */
-	FeatureMap getPart();
+	FeatureMap getParts();
 
 	/**
 	 * Returns the value of the '<em><b>Mixed</b></em>' attribute list.
@@ -657,7 +655,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.delimiter->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DEL)'"
 	 * @generated
 	 */
-	boolean delimiter(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateDelimiter(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -670,7 +668,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.country->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CNT)'"
 	 * @generated
 	 */
-	boolean country(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateCountry(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -683,7 +681,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.state->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STA)'"
 	 * @generated
 	 */
-	boolean state(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateState(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -696,7 +694,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.county->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CPA)'"
 	 * @generated
 	 */
-	boolean county(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateCounty(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -709,7 +707,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.city->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CTY)'"
 	 * @generated
 	 */
-	boolean city(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateCity(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -722,7 +720,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.postalCode->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ZIP)'"
 	 * @generated
 	 */
-	boolean postalCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePostalCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -735,7 +733,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.streetAddressLine->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::SAL)'"
 	 * @generated
 	 */
-	boolean streetAddressLine(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateStreetAddressLine(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -748,7 +746,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.houseNumber->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNR)'"
 	 * @generated
 	 */
-	boolean houseNumber(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateHouseNumber(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -761,7 +759,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.houseNumberNumeric->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNN)'"
 	 * @generated
 	 */
-	boolean houseNumberNumeric(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateHouseNumberNumeric(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -774,7 +772,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.direction->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DIR)'"
 	 * @generated
 	 */
-	boolean direction(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateDirection(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -787,7 +785,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.streetName->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STR)'"
 	 * @generated
 	 */
-	boolean streetName(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateStreetName(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -800,7 +798,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.streetNameBase->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STB)'"
 	 * @generated
 	 */
-	boolean streetNameBase(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateStreetNameBase(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -813,7 +811,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.streetNameType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STTYP)'"
 	 * @generated
 	 */
-	boolean streetNameType(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateStreetNameType(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -826,7 +824,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.additionalLocator->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ADL)'"
 	 * @generated
 	 */
-	boolean additionalLocator(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAdditionalLocator(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -839,7 +837,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.unitID->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNID)'"
 	 * @generated
 	 */
-	boolean unitID(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateUnitID(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -852,7 +850,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.unitType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNIT)'"
 	 * @generated
 	 */
-	boolean unitType(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateUnitType(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -865,7 +863,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.careOf->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CAR)'"
 	 * @generated
 	 */
-	boolean careOf(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateCareOf(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -878,7 +876,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.censusTract->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CEN)'"
 	 * @generated
 	 */
-	boolean censusTract(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateCensusTract(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -891,7 +889,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryAddressLine->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DAL)'"
 	 * @generated
 	 */
-	boolean deliveryAddressLine(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateDeliveryAddressLine(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -904,7 +902,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryInstallationType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINST)'"
 	 * @generated
 	 */
-	boolean deliveryInstallationType(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateDeliveryInstallationType(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -917,7 +915,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryInstallationArea->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTA)'"
 	 * @generated
 	 */
-	boolean deliveryInstallationArea(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateDeliveryInstallationArea(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -930,7 +928,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryInstallationQualifier->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTQ)'"
 	 * @generated
 	 */
-	boolean deliveryInstallationQualifier(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateDeliveryInstallationQualifier(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -943,7 +941,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryMode->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMOD)'"
 	 * @generated
 	 */
-	boolean deliveryMode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateDeliveryMode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -956,7 +954,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryModeIdentifier->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMODID)'"
 	 * @generated
 	 */
-	boolean deliveryModeIdentifier(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateDeliveryModeIdentifier(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -969,7 +967,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.buildingNumberSuffix->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNS)'"
 	 * @generated
 	 */
-	boolean buildingNumberSuffix(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateBuildingNumberSuffix(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -982,7 +980,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.postBox->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::POB)'"
 	 * @generated
 	 */
-	boolean postBox(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePostBox(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -995,7 +993,7 @@ public interface AD extends ANY {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.precinct->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::PRE)'"
 	 * @generated
 	 */
-	boolean precinct(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePrecinct(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

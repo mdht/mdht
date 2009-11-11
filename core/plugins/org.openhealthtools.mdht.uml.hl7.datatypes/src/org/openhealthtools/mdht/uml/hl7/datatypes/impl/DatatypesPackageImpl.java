@@ -20,15 +20,11 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.BinaryDataEncoding;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.VocabPackage;
 
 /**
@@ -2213,7 +2209,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		initEClass(bnEClass, org.openhealthtools.mdht.uml.hl7.datatypes.BN.class, "BN", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(bnEClass, ecorePackage.getEBoolean(), "nullFlavor", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(bnEClass, ecorePackage.getEBoolean(), "validateNullFlavor", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2256,7 +2252,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEAttribute(getAD_Part(), ecorePackage.getEFeatureMapEntry(), "part", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAD_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.AD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "delimiter", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateDelimiter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2265,7 +2261,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "country", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateCountry", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2274,7 +2270,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "state", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateState", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2283,7 +2279,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "county", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateCounty", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2292,7 +2288,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "city", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateCity", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2301,7 +2297,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "postalCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validatePostalCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2310,7 +2306,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "streetAddressLine", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateStreetAddressLine", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2319,7 +2315,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "houseNumber", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateHouseNumber", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2328,7 +2324,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "houseNumberNumeric", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateHouseNumberNumeric", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2337,7 +2333,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "direction", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateDirection", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2346,7 +2342,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "streetName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateStreetName", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2355,7 +2351,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "streetNameBase", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateStreetNameBase", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2364,7 +2360,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "streetNameType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateStreetNameType", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2373,7 +2369,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "additionalLocator", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateAdditionalLocator", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2382,7 +2378,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "unitID", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateUnitID", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2391,7 +2387,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "unitType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateUnitType", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2400,7 +2396,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "careOf", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateCareOf", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2409,7 +2405,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "censusTract", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateCensusTract", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2418,7 +2414,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "deliveryAddressLine", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateDeliveryAddressLine", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2427,7 +2423,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "deliveryInstallationType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateDeliveryInstallationType", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2436,7 +2432,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "deliveryInstallationArea", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateDeliveryInstallationArea", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2445,7 +2441,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "deliveryInstallationQualifier", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateDeliveryInstallationQualifier", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2454,7 +2450,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "deliveryMode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateDeliveryMode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2463,7 +2459,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "deliveryModeIdentifier", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateDeliveryModeIdentifier", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2472,7 +2468,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "buildingNumberSuffix", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validateBuildingNumberSuffix", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2481,7 +2477,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "postBox", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validatePostBox", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2490,7 +2486,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "precinct", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(adEClass, ecorePackage.getEBoolean(), "validatePrecinct", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2599,7 +2595,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEAttribute(getEN_Part(), ecorePackage.getEFeatureMapEntry(), "part", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEN_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, org.openhealthtools.mdht.uml.hl7.datatypes.EN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = addEOperation(enEClass, ecorePackage.getEBoolean(), "delimiter", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(enEClass, ecorePackage.getEBoolean(), "validateDelimiter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2608,7 +2604,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(enEClass, ecorePackage.getEBoolean(), "family", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(enEClass, ecorePackage.getEBoolean(), "validateFamily", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2617,7 +2613,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(enEClass, ecorePackage.getEBoolean(), "given", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(enEClass, ecorePackage.getEBoolean(), "validateGiven", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2626,7 +2622,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(enEClass, ecorePackage.getEBoolean(), "prefix", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(enEClass, ecorePackage.getEBoolean(), "validatePrefix", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2635,7 +2631,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(enEClass, ecorePackage.getEBoolean(), "suffix", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(enEClass, ecorePackage.getEBoolean(), "validateSuffix", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2687,7 +2683,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		initEClass(onEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ON.class, "ON", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(onEClass, ecorePackage.getEBoolean(), "invariant", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(onEClass, ecorePackage.getEBoolean(), "validateInvariant", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2698,7 +2694,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		initEClass(pnEClass, org.openhealthtools.mdht.uml.hl7.datatypes.PN.class, "PN", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(pnEClass, ecorePackage.getEBoolean(), "invariant", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(pnEClass, ecorePackage.getEBoolean(), "validateInvariant", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2709,7 +2705,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		initEClass(tnEClass, org.openhealthtools.mdht.uml.hl7.datatypes.TN.class, "TN", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(tnEClass, ecorePackage.getEBoolean(), "invariant", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(tnEClass, ecorePackage.getEBoolean(), "validateInvariant", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());

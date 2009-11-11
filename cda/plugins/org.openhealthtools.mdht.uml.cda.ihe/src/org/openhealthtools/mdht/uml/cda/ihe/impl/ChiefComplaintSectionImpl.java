@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ChiefComplaintSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class ChiefComplaintSectionImpl extends SectionImpl implements ChiefCompl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ChiefComplaintSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ChiefComplaintSectionOperations.ChiefComplaintSection_templateId(this, diagnostics, context);
+	public boolean validateChiefComplaintSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ChiefComplaintSectionOperations.validateChiefComplaintSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class ChiefComplaintSectionImpl extends SectionImpl implements ChiefCompl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ChiefComplaintSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ChiefComplaintSectionOperations.ChiefComplaintSection_code(this, diagnostics, context);
+	public boolean validateChiefComplaintSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ChiefComplaintSectionOperations.validateChiefComplaintSectionCode(this, diagnostics, context);
 	}
 
 	/**

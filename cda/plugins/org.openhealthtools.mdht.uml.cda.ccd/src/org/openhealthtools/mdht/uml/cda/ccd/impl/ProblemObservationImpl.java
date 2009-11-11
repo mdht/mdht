@@ -56,8 +56,8 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemObservationOperations.ProblemObservation_templateId(this, diagnostics, context);
+	public boolean validateProblemObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateProblemObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -65,8 +65,8 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemObservationOperations.ProblemObservation_moodCode(this, diagnostics, context);
+	public boolean validateProblemObservationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateProblemObservationMoodCode(this, diagnostics, context);
 	}
 
 	/**
@@ -74,8 +74,8 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemObservationOperations.ProblemObservation_statusCode(this, diagnostics, context);
+	public boolean validateProblemObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateProblemObservationStatusCode(this, diagnostics, context);
 	}
 
 	/**
@@ -83,8 +83,8 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemObservation_effectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemObservationOperations.ProblemObservation_effectiveTime(this, diagnostics, context);
+	public boolean validateProblemObservationEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateProblemObservationEffectiveTime(this, diagnostics, context);
 	}
 
 	/**
@@ -92,8 +92,8 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemObservation_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemObservationOperations.ProblemObservation_code(this, diagnostics, context);
+	public boolean validateProblemObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateProblemObservationCode(this, diagnostics, context);
 	}
 
 	/**

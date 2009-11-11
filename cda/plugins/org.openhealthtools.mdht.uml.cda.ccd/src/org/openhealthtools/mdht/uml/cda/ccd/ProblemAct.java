@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemAct()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' code.nullFlavor='NA' templateId.root='2.16.840.1.113883.10.20.1.27' constraints.validation.error='ProblemAct_templateId ProblemAct_classCode ProblemAct_moodCode ProblemAct_id ProblemAct_code_nullFlavor' constraints.validation.warning='ProblemAct_problemObservation'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' code.nullFlavor='NA' templateId.root='2.16.840.1.113883.10.20.1.27' constraints.validation.error='ProblemActTemplateId ProblemActClassCode ProblemActMoodCode ProblemActId ProblemActCodeNullFlavor' constraints.validation.warning='ProblemActProblemObservation'"
  * @generated
  */
 public interface ProblemAct extends Act {
@@ -39,7 +39,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.27\')'"
 	 * @generated
 	 */
-	boolean ProblemAct_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemActTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode=vocab::x_ActClassDocumentEntryAct::ACT'"
 	 * @generated
 	 */
-	boolean ProblemAct_classCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemActClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_DocumentActMood::EVN'"
 	 * @generated
 	 */
-	boolean ProblemAct_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemActMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.id->isEmpty()'"
 	 * @generated
 	 */
-	boolean ProblemAct_id(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemActId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,7 +91,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.code.nullFlavor = vocab::NullFlavor::NA'"
 	 * @generated
 	 */
-	boolean ProblemAct_code_nullFlavor(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemActCodeNullFlavor(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,7 +104,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemObservation))'"
 	 * @generated
 	 */
-	boolean ProblemAct_problemObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemActProblemObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

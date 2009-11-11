@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.PayersSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,9 +49,8 @@ public class PayersSectionImpl extends org.openhealthtools.mdht.uml.cda.ccd.impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean PayersSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PayersSectionOperations.PayersSection_templateId(this, diagnostics, context);
+	public boolean validateIHEPayersSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PayersSectionOperations.validateIHEPayersSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

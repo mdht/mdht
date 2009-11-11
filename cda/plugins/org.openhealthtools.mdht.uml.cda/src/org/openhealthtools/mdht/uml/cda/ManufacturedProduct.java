@@ -16,12 +16,9 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassManufacturedProduct;
 
@@ -33,10 +30,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassManufacturedProduct;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getManufacturedLabeledDrug <em>Manufactured Labeled Drug</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getManufacturedMaterial <em>Manufactured Material</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getManufacturerOrganization <em>Manufacturer Organization</em>}</li>
@@ -65,7 +62,7 @@ public interface ManufacturedProduct extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -109,7 +106,7 @@ public interface ManufacturedProduct extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' containment reference list.
@@ -126,7 +123,7 @@ public interface ManufacturedProduct extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getId();
+	EList<II> getIds();
 
 	/**
 	 * Returns the value of the '<em><b>Manufactured Labeled Drug</b></em>' containment reference.
@@ -333,6 +330,6 @@ public interface ManufacturedProduct extends EObject {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.manufacturedLabeledDrug.oclIsUndefined() xor self.manufacturedMaterial.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean manufacturedDrugOrOtherMaterial(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateManufacturedDrugOrOtherMaterial(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // ManufacturedProduct

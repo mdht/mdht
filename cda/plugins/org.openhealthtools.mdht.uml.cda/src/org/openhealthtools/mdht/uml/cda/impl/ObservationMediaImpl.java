@@ -16,18 +16,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -48,14 +43,12 @@ import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.Specimen;
 import org.openhealthtools.mdht.uml.cda.Subject;
-
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.operations.ObservationMediaOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -67,21 +60,21 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getLanguageCode <em>Language Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getSubject <em>Subject</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getSpecimen <em>Specimen</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getPerformer <em>Performer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getAuthor <em>Author</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getInformant <em>Informant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getParticipant <em>Participant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getEntryRelationship <em>Entry Relationship</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getSpecimens <em>Specimen</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getPerformers <em>Performer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getAuthors <em>Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getInformants <em>Informant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getParticipants <em>Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getEntryRelationships <em>Entry Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getReferences <em>Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getPreconditions <em>Precondition</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getObservationMediaId <em>Observation Media Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl#getClassCode <em>Class Code</em>}</li>
@@ -93,14 +86,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class ObservationMediaImpl extends EObjectImpl implements ObservationMedia {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -113,24 +106,24 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getIds() <em>Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> id;
+	protected EList<II> ids;
 
 	/**
 	 * The cached value of the '{@link #getLanguageCode() <em>Language Code</em>}' containment reference.
@@ -163,84 +156,84 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	protected Subject subject;
 
 	/**
-	 * The cached value of the '{@link #getSpecimen() <em>Specimen</em>}' containment reference list.
+	 * The cached value of the '{@link #getSpecimens() <em>Specimen</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpecimen()
+	 * @see #getSpecimens()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Specimen> specimen;
+	protected EList<Specimen> specimens;
 
 	/**
-	 * The cached value of the '{@link #getPerformer() <em>Performer</em>}' containment reference list.
+	 * The cached value of the '{@link #getPerformers() <em>Performer</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPerformer()
+	 * @see #getPerformers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Performer2> performer;
+	protected EList<Performer2> performers;
 
 	/**
-	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' containment reference list.
+	 * The cached value of the '{@link #getAuthors() <em>Author</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAuthor()
+	 * @see #getAuthors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Author> author;
+	protected EList<Author> authors;
 
 	/**
-	 * The cached value of the '{@link #getInformant() <em>Informant</em>}' containment reference list.
+	 * The cached value of the '{@link #getInformants() <em>Informant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInformant()
+	 * @see #getInformants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Informant12> informant;
+	protected EList<Informant12> informants;
 
 	/**
-	 * The cached value of the '{@link #getParticipant() <em>Participant</em>}' containment reference list.
+	 * The cached value of the '{@link #getParticipants() <em>Participant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParticipant()
+	 * @see #getParticipants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Participant2> participant;
+	protected EList<Participant2> participants;
 
 	/**
-	 * The cached value of the '{@link #getEntryRelationship() <em>Entry Relationship</em>}' containment reference list.
+	 * The cached value of the '{@link #getEntryRelationships() <em>Entry Relationship</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntryRelationship()
+	 * @see #getEntryRelationships()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntryRelationship> entryRelationship;
+	protected EList<EntryRelationship> entryRelationships;
 
 	/**
-	 * The cached value of the '{@link #getReference() <em>Reference</em>}' containment reference list.
+	 * The cached value of the '{@link #getReferences() <em>Reference</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReference()
+	 * @see #getReferences()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Reference> reference;
+	protected EList<Reference> references;
 
 	/**
-	 * The cached value of the '{@link #getPrecondition() <em>Precondition</em>}' containment reference list.
+	 * The cached value of the '{@link #getPreconditions() <em>Precondition</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrecondition()
+	 * @see #getPreconditions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Precondition> precondition;
+	protected EList<Precondition> preconditions;
 
 	/**
 	 * The default value of the '{@link #getObservationMediaId() <em>Observation Media Id</em>}' attribute.
@@ -373,11 +366,11 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.OBSERVATION_MEDIA__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.OBSERVATION_MEDIA__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -428,11 +421,11 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.OBSERVATION_MEDIA__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.OBSERVATION_MEDIA__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -440,11 +433,11 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getId() {
-		if (id == null) {
-			id = new EObjectContainmentEList<II>(II.class, this, CDAPackage.OBSERVATION_MEDIA__ID);
+	public EList<II> getIds() {
+		if (ids == null) {
+			ids = new EObjectContainmentEList<II>(II.class, this, CDAPackage.OBSERVATION_MEDIA__ID);
 		}
-		return id;
+		return ids;
 	}
 
 	/**
@@ -581,11 +574,11 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Specimen> getSpecimen() {
-		if (specimen == null) {
-			specimen = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.OBSERVATION_MEDIA__SPECIMEN);
+	public EList<Specimen> getSpecimens() {
+		if (specimens == null) {
+			specimens = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.OBSERVATION_MEDIA__SPECIMEN);
 		}
-		return specimen;
+		return specimens;
 	}
 
 	/**
@@ -593,11 +586,11 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Performer2> getPerformer() {
-		if (performer == null) {
-			performer = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.OBSERVATION_MEDIA__PERFORMER);
+	public EList<Performer2> getPerformers() {
+		if (performers == null) {
+			performers = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.OBSERVATION_MEDIA__PERFORMER);
 		}
-		return performer;
+		return performers;
 	}
 
 	/**
@@ -605,11 +598,11 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Author> getAuthor() {
-		if (author == null) {
-			author = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.OBSERVATION_MEDIA__AUTHOR);
+	public EList<Author> getAuthors() {
+		if (authors == null) {
+			authors = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.OBSERVATION_MEDIA__AUTHOR);
 		}
-		return author;
+		return authors;
 	}
 
 	/**
@@ -617,11 +610,11 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Informant12> getInformant() {
-		if (informant == null) {
-			informant = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.OBSERVATION_MEDIA__INFORMANT);
+	public EList<Informant12> getInformants() {
+		if (informants == null) {
+			informants = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.OBSERVATION_MEDIA__INFORMANT);
 		}
-		return informant;
+		return informants;
 	}
 
 	/**
@@ -629,11 +622,11 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Participant2> getParticipant() {
-		if (participant == null) {
-			participant = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.OBSERVATION_MEDIA__PARTICIPANT);
+	public EList<Participant2> getParticipants() {
+		if (participants == null) {
+			participants = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.OBSERVATION_MEDIA__PARTICIPANT);
 		}
-		return participant;
+		return participants;
 	}
 
 	/**
@@ -641,11 +634,11 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntryRelationship> getEntryRelationship() {
-		if (entryRelationship == null) {
-			entryRelationship = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.OBSERVATION_MEDIA__ENTRY_RELATIONSHIP);
+	public EList<EntryRelationship> getEntryRelationships() {
+		if (entryRelationships == null) {
+			entryRelationships = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.OBSERVATION_MEDIA__ENTRY_RELATIONSHIP);
 		}
-		return entryRelationship;
+		return entryRelationships;
 	}
 
 	/**
@@ -653,11 +646,11 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Reference> getReference() {
-		if (reference == null) {
-			reference = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.OBSERVATION_MEDIA__REFERENCE);
+	public EList<Reference> getReferences() {
+		if (references == null) {
+			references = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.OBSERVATION_MEDIA__REFERENCE);
 		}
-		return reference;
+		return references;
 	}
 
 	/**
@@ -665,11 +658,11 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Precondition> getPrecondition() {
-		if (precondition == null) {
-			precondition = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.OBSERVATION_MEDIA__PRECONDITION);
+	public EList<Precondition> getPreconditions() {
+		if (preconditions == null) {
+			preconditions = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.OBSERVATION_MEDIA__PRECONDITION);
 		}
-		return precondition;
+		return preconditions;
 	}
 
 	/**
@@ -917,8 +910,8 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Act> getAct() {
-		return ObservationMediaOperations.getAct(this);
+	public EList<Act> getActs() {
+		return ObservationMediaOperations.getActs(this);
 	}
 
 	/**
@@ -935,8 +928,8 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Encounter> getEncounter() {
-		return ObservationMediaOperations.getEncounter(this);
+	public EList<Encounter> getEncounters() {
+		return ObservationMediaOperations.getEncounters(this);
 	}
 
 	/**
@@ -944,8 +937,8 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Observation> getObservation() {
-		return ObservationMediaOperations.getObservation(this);
+	public EList<Observation> getObservations() {
+		return ObservationMediaOperations.getObservations(this);
 	}
 
 	/**
@@ -962,8 +955,8 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Organizer> getOrganizer() {
-		return ObservationMediaOperations.getOrganizer(this);
+	public EList<Organizer> getOrganizers() {
+		return ObservationMediaOperations.getOrganizers(this);
 	}
 
 	/**
@@ -971,8 +964,8 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Procedure> getProcedure() {
-		return ObservationMediaOperations.getProcedure(this);
+	public EList<Procedure> getProcedures() {
+		return ObservationMediaOperations.getProcedures(this);
 	}
 
 	/**
@@ -980,8 +973,8 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RegionOfInterest> getRegionOfInterest() {
-		return ObservationMediaOperations.getRegionOfInterest(this);
+	public EList<RegionOfInterest> getRegionsOfInterest() {
+		return ObservationMediaOperations.getRegionsOfInterest(this);
 	}
 
 	/**
@@ -998,8 +991,8 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SubstanceAdministration> getSubstanceAdministration() {
-		return ObservationMediaOperations.getSubstanceAdministration(this);
+	public EList<SubstanceAdministration> getSubstanceAdministrations() {
+		return ObservationMediaOperations.getSubstanceAdministrations(this);
 	}
 
 	/**
@@ -1007,8 +1000,8 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Supply> getSupply() {
-		return ObservationMediaOperations.getSupply(this);
+	public EList<Supply> getSupplies() {
+		return ObservationMediaOperations.getSupplies(this);
 	}
 
 	/**
@@ -1110,13 +1103,13 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.OBSERVATION_MEDIA__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__ID:
-				return ((InternalEList<?>)getId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE:
 				return basicSetLanguageCode(null, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__VALUE:
@@ -1124,21 +1117,21 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 			case CDAPackage.OBSERVATION_MEDIA__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__SPECIMEN:
-				return ((InternalEList<?>)getSpecimen()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getSpecimens()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__PERFORMER:
-				return ((InternalEList<?>)getPerformer()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPerformers()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__AUTHOR:
-				return ((InternalEList<?>)getAuthor()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__INFORMANT:
-				return ((InternalEList<?>)getInformant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__PARTICIPANT:
-				return ((InternalEList<?>)getParticipant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__ENTRY_RELATIONSHIP:
-				return ((InternalEList<?>)getEntryRelationship()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getEntryRelationships()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__REFERENCE:
-				return ((InternalEList<?>)getReference()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.OBSERVATION_MEDIA__PRECONDITION:
-				return ((InternalEList<?>)getPrecondition()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPreconditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1152,13 +1145,13 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.OBSERVATION_MEDIA__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.OBSERVATION_MEDIA__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.OBSERVATION_MEDIA__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.OBSERVATION_MEDIA__ID:
-				return getId();
+				return getIds();
 			case CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE:
 				return getLanguageCode();
 			case CDAPackage.OBSERVATION_MEDIA__VALUE:
@@ -1166,21 +1159,21 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 			case CDAPackage.OBSERVATION_MEDIA__SUBJECT:
 				return getSubject();
 			case CDAPackage.OBSERVATION_MEDIA__SPECIMEN:
-				return getSpecimen();
+				return getSpecimens();
 			case CDAPackage.OBSERVATION_MEDIA__PERFORMER:
-				return getPerformer();
+				return getPerformers();
 			case CDAPackage.OBSERVATION_MEDIA__AUTHOR:
-				return getAuthor();
+				return getAuthors();
 			case CDAPackage.OBSERVATION_MEDIA__INFORMANT:
-				return getInformant();
+				return getInformants();
 			case CDAPackage.OBSERVATION_MEDIA__PARTICIPANT:
-				return getParticipant();
+				return getParticipants();
 			case CDAPackage.OBSERVATION_MEDIA__ENTRY_RELATIONSHIP:
-				return getEntryRelationship();
+				return getEntryRelationships();
 			case CDAPackage.OBSERVATION_MEDIA__REFERENCE:
-				return getReference();
+				return getReferences();
 			case CDAPackage.OBSERVATION_MEDIA__PRECONDITION:
-				return getPrecondition();
+				return getPreconditions();
 			case CDAPackage.OBSERVATION_MEDIA__OBSERVATION_MEDIA_ID:
 				return getObservationMediaId();
 			case CDAPackage.OBSERVATION_MEDIA__NULL_FLAVOR:
@@ -1203,19 +1196,19 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.OBSERVATION_MEDIA__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__ID:
-				getId().clear();
-				getId().addAll((Collection<? extends II>)newValue);
+				getIds().clear();
+				getIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE:
 				setLanguageCode((CS)newValue);
@@ -1227,36 +1220,36 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 				setSubject((Subject)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__SPECIMEN:
-				getSpecimen().clear();
-				getSpecimen().addAll((Collection<? extends Specimen>)newValue);
+				getSpecimens().clear();
+				getSpecimens().addAll((Collection<? extends Specimen>)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__PERFORMER:
-				getPerformer().clear();
-				getPerformer().addAll((Collection<? extends Performer2>)newValue);
+				getPerformers().clear();
+				getPerformers().addAll((Collection<? extends Performer2>)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__AUTHOR:
-				getAuthor().clear();
-				getAuthor().addAll((Collection<? extends Author>)newValue);
+				getAuthors().clear();
+				getAuthors().addAll((Collection<? extends Author>)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__INFORMANT:
-				getInformant().clear();
-				getInformant().addAll((Collection<? extends Informant12>)newValue);
+				getInformants().clear();
+				getInformants().addAll((Collection<? extends Informant12>)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__PARTICIPANT:
-				getParticipant().clear();
-				getParticipant().addAll((Collection<? extends Participant2>)newValue);
+				getParticipants().clear();
+				getParticipants().addAll((Collection<? extends Participant2>)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__ENTRY_RELATIONSHIP:
-				getEntryRelationship().clear();
-				getEntryRelationship().addAll((Collection<? extends EntryRelationship>)newValue);
+				getEntryRelationships().clear();
+				getEntryRelationships().addAll((Collection<? extends EntryRelationship>)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__REFERENCE:
-				getReference().clear();
-				getReference().addAll((Collection<? extends Reference>)newValue);
+				getReferences().clear();
+				getReferences().addAll((Collection<? extends Reference>)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__PRECONDITION:
-				getPrecondition().clear();
-				getPrecondition().addAll((Collection<? extends Precondition>)newValue);
+				getPreconditions().clear();
+				getPreconditions().addAll((Collection<? extends Precondition>)newValue);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__OBSERVATION_MEDIA_ID:
 				setObservationMediaId((String)newValue);
@@ -1283,16 +1276,16 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.OBSERVATION_MEDIA__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__ID:
-				getId().clear();
+				getIds().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE:
 				setLanguageCode((CS)null);
@@ -1304,28 +1297,28 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 				setSubject((Subject)null);
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__SPECIMEN:
-				getSpecimen().clear();
+				getSpecimens().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__PERFORMER:
-				getPerformer().clear();
+				getPerformers().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__AUTHOR:
-				getAuthor().clear();
+				getAuthors().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__INFORMANT:
-				getInformant().clear();
+				getInformants().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__PARTICIPANT:
-				getParticipant().clear();
+				getParticipants().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__ENTRY_RELATIONSHIP:
-				getEntryRelationship().clear();
+				getEntryRelationships().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__REFERENCE:
-				getReference().clear();
+				getReferences().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__PRECONDITION:
-				getPrecondition().clear();
+				getPreconditions().clear();
 				return;
 			case CDAPackage.OBSERVATION_MEDIA__OBSERVATION_MEDIA_ID:
 				setObservationMediaId(OBSERVATION_MEDIA_ID_EDEFAULT);
@@ -1352,13 +1345,13 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.OBSERVATION_MEDIA__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.OBSERVATION_MEDIA__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.OBSERVATION_MEDIA__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.OBSERVATION_MEDIA__ID:
-				return id != null && !id.isEmpty();
+				return ids != null && !ids.isEmpty();
 			case CDAPackage.OBSERVATION_MEDIA__LANGUAGE_CODE:
 				return languageCode != null;
 			case CDAPackage.OBSERVATION_MEDIA__VALUE:
@@ -1366,21 +1359,21 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 			case CDAPackage.OBSERVATION_MEDIA__SUBJECT:
 				return subject != null;
 			case CDAPackage.OBSERVATION_MEDIA__SPECIMEN:
-				return specimen != null && !specimen.isEmpty();
+				return specimens != null && !specimens.isEmpty();
 			case CDAPackage.OBSERVATION_MEDIA__PERFORMER:
-				return performer != null && !performer.isEmpty();
+				return performers != null && !performers.isEmpty();
 			case CDAPackage.OBSERVATION_MEDIA__AUTHOR:
-				return author != null && !author.isEmpty();
+				return authors != null && !authors.isEmpty();
 			case CDAPackage.OBSERVATION_MEDIA__INFORMANT:
-				return informant != null && !informant.isEmpty();
+				return informants != null && !informants.isEmpty();
 			case CDAPackage.OBSERVATION_MEDIA__PARTICIPANT:
-				return participant != null && !participant.isEmpty();
+				return participants != null && !participants.isEmpty();
 			case CDAPackage.OBSERVATION_MEDIA__ENTRY_RELATIONSHIP:
-				return entryRelationship != null && !entryRelationship.isEmpty();
+				return entryRelationships != null && !entryRelationships.isEmpty();
 			case CDAPackage.OBSERVATION_MEDIA__REFERENCE:
-				return reference != null && !reference.isEmpty();
+				return references != null && !references.isEmpty();
 			case CDAPackage.OBSERVATION_MEDIA__PRECONDITION:
-				return precondition != null && !precondition.isEmpty();
+				return preconditions != null && !preconditions.isEmpty();
 			case CDAPackage.OBSERVATION_MEDIA__OBSERVATION_MEDIA_ID:
 				return OBSERVATION_MEDIA_ID_EDEFAULT == null ? observationMediaId != null : !OBSERVATION_MEDIA_ID_EDEFAULT.equals(observationMediaId);
 			case CDAPackage.OBSERVATION_MEDIA__NULL_FLAVOR:

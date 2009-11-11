@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPurposeSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='PurposeSection_templateId PurposeSection_code PurposeSection_title' templateId.root='2.16.840.1.113883.10.20.1.13' code.displayName='Summary purpose' code.codeSystem='2.16.840.1.113883.6.1' code.code='48764-5' constraints.validation.warning='PurposeSection_purposeActivity'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='PurposeSectionTemplateId PurposeSectionCode PurposeSectionTitle' templateId.root='2.16.840.1.113883.10.20.1.13' code.displayName='Summary purpose' code.codeSystem='2.16.840.1.113883.6.1' code.code='48764-5' constraints.validation.warning='PurposeSectionPurposeActivity'"
  * @generated
  */
 public interface PurposeSection extends Section {
@@ -44,7 +44,7 @@ public interface PurposeSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.13\')'"
 	 * @generated
 	 */
-	boolean PurposeSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePurposeSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public interface PurposeSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and \r\nlet value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (\r\nvalue.code = \'48764-5\' and value.codeSystem = \'2.16.840.1.113883.6.1\')'"
 	 * @generated
 	 */
-	boolean PurposeSection_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePurposeSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public interface PurposeSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.title.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean PurposeSection_title(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePurposeSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,7 +85,7 @@ public interface PurposeSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PurposeActivity))'"
 	 * @generated
 	 */
-	boolean PurposeSection_purposeActivity(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePurposeSectionPurposeActivity(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -50,8 +50,8 @@ public class MedicalEquipmentSectionImpl extends SectionImpl implements MedicalE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicalEquipmentSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicalEquipmentSectionOperations.MedicalEquipmentSection_templateId(this, diagnostics, context);
+	public boolean validateMedicalEquipmentSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class MedicalEquipmentSectionImpl extends SectionImpl implements MedicalE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicalEquipmentSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicalEquipmentSectionOperations.MedicalEquipmentSection_code(this, diagnostics, context);
+	public boolean validateMedicalEquipmentSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class MedicalEquipmentSectionImpl extends SectionImpl implements MedicalE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicalEquipmentSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicalEquipmentSectionOperations.MedicalEquipmentSection_title(this, diagnostics, context);
+	public boolean validateMedicalEquipmentSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionTitle(this, diagnostics, context);
 	}
 
 	/**

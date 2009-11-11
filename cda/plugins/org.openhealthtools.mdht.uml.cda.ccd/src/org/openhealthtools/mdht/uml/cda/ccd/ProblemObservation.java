@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' statusCode.codeSystemName='ActStatus' constraints.validation.info='ProblemObservation_code' constraints.validation.error='ProblemObservation_templateId ProblemObservation_moodCode ProblemObservation_statusCode' templateId.root='2.16.840.1.113883.10.20.1.28' statusCode.codeSystem='2.16.840.1.113883.5.14' statusCode.code='completed' constraints.validation.warning='ProblemObservation_effectiveTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' statusCode.codeSystemName='ActStatus' constraints.validation.info='ProblemObservationCode' constraints.validation.error='ProblemObservationTemplateId ProblemObservationMoodCode ProblemObservationStatusCode' templateId.root='2.16.840.1.113883.10.20.1.28' statusCode.codeSystem='2.16.840.1.113883.5.14' statusCode.code='completed' constraints.validation.warning='ProblemObservationEffectiveTime'"
  * @generated
  */
 public interface ProblemObservation extends Observation {
@@ -39,7 +39,7 @@ public interface ProblemObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.28\')'"
 	 * @generated
 	 */
-	boolean ProblemObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ public interface ProblemObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_ActMoodDocumentObservation::EVN'"
 	 * @generated
 	 */
-	boolean ProblemObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemObservationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public interface ProblemObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\' and value.codeSystem = \'2.16.840.1.113883.5.14\')'"
 	 * @generated
 	 */
-	boolean ProblemObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +80,7 @@ public interface ProblemObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.effectiveTime.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean ProblemObservation_effectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemObservationEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,7 +95,7 @@ public interface ProblemObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and \r\nlet value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (\r\nnot value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined())'"
 	 * @generated
 	 */
-	boolean ProblemObservation_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

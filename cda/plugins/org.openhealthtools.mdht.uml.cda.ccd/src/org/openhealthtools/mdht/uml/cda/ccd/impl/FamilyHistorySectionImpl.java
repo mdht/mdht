@@ -50,8 +50,8 @@ public class FamilyHistorySectionImpl extends SectionImpl implements FamilyHisto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FamilyHistorySection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FamilyHistorySectionOperations.FamilyHistorySection_templateId(this, diagnostics, context);
+	public boolean validateFamilyHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FamilyHistorySectionOperations.validateFamilyHistorySectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class FamilyHistorySectionImpl extends SectionImpl implements FamilyHisto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FamilyHistorySection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FamilyHistorySectionOperations.FamilyHistorySection_code(this, diagnostics, context);
+	public boolean validateFamilyHistorySectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FamilyHistorySectionOperations.validateFamilyHistorySectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class FamilyHistorySectionImpl extends SectionImpl implements FamilyHisto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FamilyHistorySection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FamilyHistorySectionOperations.FamilyHistorySection_title(this, diagnostics, context);
+	public boolean validateFamilyHistorySectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FamilyHistorySectionOperations.validateFamilyHistorySectionTitle(this, diagnostics, context);
 	}
 
 	/**

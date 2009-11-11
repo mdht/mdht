@@ -47,13 +47,13 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getCode <em>Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getAddr <em>Addr</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getTelecom <em>Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getAddrs <em>Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getTelecoms <em>Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getPlayingDevice <em>Playing Device</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getPlayingEntity <em>Playing Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl#getScopingEntity <em>Scoping Entity</em>}</li>
@@ -66,14 +66,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
  */
 public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -86,24 +86,24 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getIds() <em>Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> id;
+	protected EList<II> ids;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
@@ -116,24 +116,24 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	protected CE code;
 
 	/**
-	 * The cached value of the '{@link #getAddr() <em>Addr</em>}' containment reference list.
+	 * The cached value of the '{@link #getAddrs() <em>Addr</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAddr()
+	 * @see #getAddrs()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AD> addr;
+	protected EList<AD> addrs;
 
 	/**
-	 * The cached value of the '{@link #getTelecom() <em>Telecom</em>}' containment reference list.
+	 * The cached value of the '{@link #getTelecoms() <em>Telecom</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTelecom()
+	 * @see #getTelecoms()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TEL> telecom;
+	protected EList<TEL> telecoms;
 
 	/**
 	 * The cached value of the '{@link #getPlayingDevice() <em>Playing Device</em>}' containment reference.
@@ -247,11 +247,11 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.PARTICIPANT_ROLE__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.PARTICIPANT_ROLE__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -302,11 +302,11 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PARTICIPANT_ROLE__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PARTICIPANT_ROLE__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -314,11 +314,11 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getId() {
-		if (id == null) {
-			id = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PARTICIPANT_ROLE__ID);
+	public EList<II> getIds() {
+		if (ids == null) {
+			ids = new EObjectContainmentEList<II>(II.class, this, CDAPackage.PARTICIPANT_ROLE__ID);
 		}
-		return id;
+		return ids;
 	}
 
 	/**
@@ -369,11 +369,11 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AD> getAddr() {
-		if (addr == null) {
-			addr = new EObjectContainmentEList<AD>(AD.class, this, CDAPackage.PARTICIPANT_ROLE__ADDR);
+	public EList<AD> getAddrs() {
+		if (addrs == null) {
+			addrs = new EObjectContainmentEList<AD>(AD.class, this, CDAPackage.PARTICIPANT_ROLE__ADDR);
 		}
-		return addr;
+		return addrs;
 	}
 
 	/**
@@ -381,11 +381,11 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TEL> getTelecom() {
-		if (telecom == null) {
-			telecom = new EObjectContainmentEList<TEL>(TEL.class, this, CDAPackage.PARTICIPANT_ROLE__TELECOM);
+	public EList<TEL> getTelecoms() {
+		if (telecoms == null) {
+			telecoms = new EObjectContainmentEList<TEL>(TEL.class, this, CDAPackage.PARTICIPANT_ROLE__TELECOM);
 		}
-		return telecom;
+		return telecoms;
 	}
 
 	/**
@@ -614,8 +614,8 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean playingEntityChoice(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ParticipantRoleOperations.playingEntityChoice(this, diagnostics, context);
+	public boolean validatePlayingEntityChoice(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ParticipantRoleOperations.validatePlayingEntityChoice(this, diagnostics, context);
 	}
 
 	/**
@@ -627,19 +627,19 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.PARTICIPANT_ROLE__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PARTICIPANT_ROLE__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.PARTICIPANT_ROLE__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PARTICIPANT_ROLE__ID:
-				return ((InternalEList<?>)getId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PARTICIPANT_ROLE__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.PARTICIPANT_ROLE__ADDR:
-				return ((InternalEList<?>)getAddr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAddrs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PARTICIPANT_ROLE__TELECOM:
-				return ((InternalEList<?>)getTelecom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE:
 				return basicSetPlayingDevice(null, msgs);
 			case CDAPackage.PARTICIPANT_ROLE__PLAYING_ENTITY:
@@ -659,19 +659,19 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.PARTICIPANT_ROLE__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.PARTICIPANT_ROLE__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.PARTICIPANT_ROLE__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.PARTICIPANT_ROLE__ID:
-				return getId();
+				return getIds();
 			case CDAPackage.PARTICIPANT_ROLE__CODE:
 				return getCode();
 			case CDAPackage.PARTICIPANT_ROLE__ADDR:
-				return getAddr();
+				return getAddrs();
 			case CDAPackage.PARTICIPANT_ROLE__TELECOM:
-				return getTelecom();
+				return getTelecoms();
 			case CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE:
 				return getPlayingDevice();
 			case CDAPackage.PARTICIPANT_ROLE__PLAYING_ENTITY:
@@ -696,30 +696,30 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.PARTICIPANT_ROLE__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__ID:
-				getId().clear();
-				getId().addAll((Collection<? extends II>)newValue);
+				getIds().clear();
+				getIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__CODE:
 				setCode((CE)newValue);
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__ADDR:
-				getAddr().clear();
-				getAddr().addAll((Collection<? extends AD>)newValue);
+				getAddrs().clear();
+				getAddrs().addAll((Collection<? extends AD>)newValue);
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__TELECOM:
-				getTelecom().clear();
-				getTelecom().addAll((Collection<? extends TEL>)newValue);
+				getTelecoms().clear();
+				getTelecoms().addAll((Collection<? extends TEL>)newValue);
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE:
 				setPlayingDevice((Device)newValue);
@@ -749,25 +749,25 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.PARTICIPANT_ROLE__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__ID:
-				getId().clear();
+				getIds().clear();
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__CODE:
 				setCode((CE)null);
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__ADDR:
-				getAddr().clear();
+				getAddrs().clear();
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__TELECOM:
-				getTelecom().clear();
+				getTelecoms().clear();
 				return;
 			case CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE:
 				setPlayingDevice((Device)null);
@@ -797,19 +797,19 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.PARTICIPANT_ROLE__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.PARTICIPANT_ROLE__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.PARTICIPANT_ROLE__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.PARTICIPANT_ROLE__ID:
-				return id != null && !id.isEmpty();
+				return ids != null && !ids.isEmpty();
 			case CDAPackage.PARTICIPANT_ROLE__CODE:
 				return code != null;
 			case CDAPackage.PARTICIPANT_ROLE__ADDR:
-				return addr != null && !addr.isEmpty();
+				return addrs != null && !addrs.isEmpty();
 			case CDAPackage.PARTICIPANT_ROLE__TELECOM:
-				return telecom != null && !telecom.isEmpty();
+				return telecoms != null && !telecoms.isEmpty();
 			case CDAPackage.PARTICIPANT_ROLE__PLAYING_DEVICE:
 				return playingDevice != null;
 			case CDAPackage.PARTICIPANT_ROLE__PLAYING_ENTITY:

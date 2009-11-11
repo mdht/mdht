@@ -17,15 +17,11 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
 
 /**
@@ -36,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#manufacturedDrugOrOtherMaterial(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Manufactured Drug Or Other Material</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#validateManufacturedDrugOrOtherMaterial(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Manufactured Drug Or Other Material</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,24 +58,24 @@ public class ManufacturedProductOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #manufacturedDrugOrOtherMaterial(ManufacturedProduct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Manufactured Drug Or Other Material</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateManufacturedDrugOrOtherMaterial(ManufacturedProduct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Manufactured Drug Or Other Material</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #manufacturedDrugOrOtherMaterial(ManufacturedProduct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateManufacturedDrugOrOtherMaterial(ManufacturedProduct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.manufacturedLabeledDrug.oclIsUndefined() xor self.manufacturedMaterial.oclIsUndefined()";
+	protected static final String VALIDATE_MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.manufacturedLabeledDrug.oclIsUndefined() xor self.manufacturedMaterial.oclIsUndefined()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #manufacturedDrugOrOtherMaterial(ManufacturedProduct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Manufactured Drug Or Other Material</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateManufacturedDrugOrOtherMaterial(ManufacturedProduct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Manufactured Drug Or Other Material</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #manufacturedDrugOrOtherMaterial(ManufacturedProduct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateManufacturedDrugOrOtherMaterial(ManufacturedProduct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,25 +88,25 @@ public class ManufacturedProductOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean manufacturedDrugOrOtherMaterial(ManufacturedProduct manufacturedProduct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateManufacturedDrugOrOtherMaterial(ManufacturedProduct manufacturedProduct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.eINSTANCE.getManufacturedProduct());
 			try {
-				MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(manufacturedProduct)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(manufacturedProduct)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CDAValidator.DIAGNOSTIC_SOURCE,
 						 CDAValidator.MANUFACTURED_PRODUCT__MANUFACTURED_DRUG_OR_OTHER_MATERIAL,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "manufacturedDrugOrOtherMaterial", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(manufacturedProduct, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateManufacturedDrugOrOtherMaterial", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(manufacturedProduct, context) }),
 						 new Object [] { manufacturedProduct }));
 			}
 			return false;

@@ -3,8 +3,9 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.hl7.datatypes/src"
     modelPluginID="org.openhealthtools.mdht.uml.hl7.datatypes" modelName="Datatypes"
-    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="5.0" copyrightFields="false"
-    usedGenPackages="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab">
+    modelPluginClass="DatatypesPlugin" importerID="org.eclipse.uml2.uml.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.genmodel#//vocab"
+    pluralizedGetters="true" invariantPrefix="validate">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="DUPLICATE_OPERATIONS" value="PROCESS"/>
     <details key="REDEFINING_OPERATIONS" value="PROCESS"/>
@@ -38,7 +39,8 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//ED">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EAttribute datatypes.ecore#//ED/mixed"/>
+          createChild="true" ecoreFeature="ecore:EAttribute datatypes.ecore#//ED/mixed"
+          pluralizationException="true"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference datatypes.ecore#//ED/reference"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -168,7 +170,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EAttribute datatypes.ecore#//AD/part"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EAttribute datatypes.ecore#//AD/mixed"/>
+          createChild="true" ecoreFeature="ecore:EAttribute datatypes.ecore#//AD/mixed"
+          pluralizationException="true"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//AD/delimiter">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/delimiter/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//AD/delimiter/context"/>
@@ -383,7 +386,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EAttribute datatypes.ecore#//EN/part"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EAttribute datatypes.ecore#//EN/mixed"/>
+          createChild="true" ecoreFeature="ecore:EAttribute datatypes.ecore#//EN/mixed"
+          pluralizationException="true"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//EN/delimiter">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/delimiter/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//EN/delimiter/context"/>

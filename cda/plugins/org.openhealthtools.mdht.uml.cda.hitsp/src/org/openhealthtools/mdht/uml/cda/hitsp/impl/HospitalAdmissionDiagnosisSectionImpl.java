@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.HospitalAdmissionDiagnosisSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.HospitalAdmissionDiagnosisSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,9 +49,8 @@ public class HospitalAdmissionDiagnosisSectionImpl extends org.openhealthtools.m
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean HospitalAdmissionDiagnosisSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HospitalAdmissionDiagnosisSectionOperations.HospitalAdmissionDiagnosisSection_templateId(this, diagnostics, context);
+	public boolean validateHITSPHospitalAdmissionDiagnosisSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HospitalAdmissionDiagnosisSectionOperations.validateHITSPHospitalAdmissionDiagnosisSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

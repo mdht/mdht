@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getPhysicalExamSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='PhysicalExamSection_templateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.9.15'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='PhysicalExamSectionTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.9.15'"
  * @generated
  */
 public interface PhysicalExamSection extends PhysicalExamNarrativeSection {
@@ -36,7 +36,7 @@ public interface PhysicalExamSection extends PhysicalExamNarrativeSection {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.1.9.15\')'"
 	 * @generated
 	 */
-	boolean PhysicalExamSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePhysicalExamSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

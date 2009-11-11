@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.ccd;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 
 /**
@@ -19,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getAuthorizationActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' constraints.validation.error='AuthorizationActivity_templateId AuthorizationActivity_classCode AuthorizationActivity_moodCode AuthorizationActivity_id' templateId.root='2.16.840.1.113883.10.20.1.19'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' constraints.validation.error='AuthorizationActivityTemplateId AuthorizationActivityClassCode AuthorizationActivityMoodCode AuthorizationActivityId' templateId.root='2.16.840.1.113883.10.20.1.19'"
  * @generated
  */
 public interface AuthorizationActivity extends Act {
@@ -34,7 +33,7 @@ public interface AuthorizationActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.19\')'"
 	 * @generated
 	 */
-	boolean AuthorizationActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAuthorizationActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,7 +46,7 @@ public interface AuthorizationActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode=vocab::x_ActClassDocumentEntryAct::ACT'"
 	 * @generated
 	 */
-	boolean AuthorizationActivity_classCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAuthorizationActivityClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,7 +59,7 @@ public interface AuthorizationActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_DocumentActMood::EVN'"
 	 * @generated
 	 */
-	boolean AuthorizationActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAuthorizationActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +72,7 @@ public interface AuthorizationActivity extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.id->isEmpty()'"
 	 * @generated
 	 */
-	boolean AuthorizationActivity_id(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAuthorizationActivityId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

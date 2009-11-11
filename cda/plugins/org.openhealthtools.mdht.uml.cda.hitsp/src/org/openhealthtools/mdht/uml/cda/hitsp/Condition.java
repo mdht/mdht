@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getCondition()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='Condition_templateId Condition_text' templateId.root='2.16.840.1.113883.3.88.11.83.7'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='ConditionTemplateId ConditionText' templateId.root='2.16.840.1.113883.3.88.11.83.7'"
  * @generated
  */
 public interface Condition extends ProblemConcernEntry {
@@ -40,7 +40,7 @@ public interface Condition extends ProblemConcernEntry {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.3.88.11.83.7\')'"
 	 * @generated
 	 */
-	boolean Condition_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateConditionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public interface Condition extends ProblemConcernEntry {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.text.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean Condition_text(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateConditionText(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

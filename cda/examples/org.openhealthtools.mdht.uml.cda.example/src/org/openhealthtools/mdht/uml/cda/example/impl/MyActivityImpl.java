@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.example.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemActImpl;
-
 import org.openhealthtools.mdht.uml.cda.example.ExamplePackage;
 import org.openhealthtools.mdht.uml.cda.example.MyActivity;
-
 import org.openhealthtools.mdht.uml.cda.example.operations.MyActivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class MyActivityImpl extends ProblemActImpl implements MyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MyActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MyActivityOperations.MyActivity_templateId(this, diagnostics, context);
+	public boolean validateMyActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MyActivityOperations.validateMyActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class MyActivityImpl extends ProblemActImpl implements MyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MyActivity_classCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MyActivityOperations.MyActivity_classCode(this, diagnostics, context);
+	public boolean validateMyActivityClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MyActivityOperations.validateMyActivityClassCode(this, diagnostics, context);
 	}
 
 	/**
@@ -73,8 +68,8 @@ public class MyActivityImpl extends ProblemActImpl implements MyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MyActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MyActivityOperations.MyActivity_moodCode(this, diagnostics, context);
+	public boolean validateMyActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MyActivityOperations.validateMyActivityMoodCode(this, diagnostics, context);
 	}
 
 	/**
@@ -82,8 +77,8 @@ public class MyActivityImpl extends ProblemActImpl implements MyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MyActivity_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MyActivityOperations.MyActivity_code(this, diagnostics, context);
+	public boolean validateMyActivityCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MyActivityOperations.validateMyActivityCode(this, diagnostics, context);
 	}
 
 	/**
@@ -91,8 +86,8 @@ public class MyActivityImpl extends ProblemActImpl implements MyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MyActivity_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MyActivityOperations.MyActivity_statusCode(this, diagnostics, context);
+	public boolean validateMyActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MyActivityOperations.validateMyActivityStatusCode(this, diagnostics, context);
 	}
 
 	/**

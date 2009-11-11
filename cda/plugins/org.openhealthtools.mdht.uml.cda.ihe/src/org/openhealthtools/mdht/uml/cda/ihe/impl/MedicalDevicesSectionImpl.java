@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.impl.MedicalEquipmentSectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.MedicalDevicesSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class MedicalDevicesSectionImpl extends MedicalEquipmentSectionImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicalDevicesSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicalDevicesSectionOperations.MedicalDevicesSection_templateId(this, diagnostics, context);
+	public boolean validateMedicalDevicesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicalDevicesSectionOperations.validateMedicalDevicesSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

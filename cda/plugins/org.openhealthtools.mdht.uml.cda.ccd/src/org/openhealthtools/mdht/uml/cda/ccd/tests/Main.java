@@ -42,7 +42,7 @@ public class Main {
 		// should produce validation error for incorrect reason type
 //		Organizer purposeReason = CDAFactory.eINSTANCE.createOrganizer();
 //		purposeActivity.addOrganizer(purposeReason);
-		purposeActivity.getEntryRelationship().get(0).setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+		purposeActivity.getEntryRelationships().get(0).setTypeCode(x_ActRelationshipEntryRelationship.RSON);
 		
 		ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct().init();
 		ProblemObservation problemObservation = CCDFactory.eINSTANCE.createProblemObservation().init();	

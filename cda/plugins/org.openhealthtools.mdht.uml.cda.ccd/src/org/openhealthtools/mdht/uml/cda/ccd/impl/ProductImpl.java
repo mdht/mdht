@@ -50,8 +50,8 @@ public class ProductImpl extends ManufacturedProductImpl implements Product {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean Product_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProductOperations.Product_templateId(this, diagnostics, context);
+	public boolean validateProductTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProductOperations.validateProductTemplateId(this, diagnostics, context);
 	}
 
 	/**

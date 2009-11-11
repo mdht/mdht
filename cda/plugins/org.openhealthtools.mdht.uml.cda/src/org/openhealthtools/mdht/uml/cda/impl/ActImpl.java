@@ -16,18 +16,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -48,7 +43,6 @@ import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.Specimen;
 import org.openhealthtools.mdht.uml.cda.Subject;
-
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
@@ -58,7 +52,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActClassDocumentEntryAct;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
@@ -70,10 +63,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getStatusCode <em>Status Code</em>}</li>
@@ -81,14 +74,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getPriorityCode <em>Priority Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getLanguageCode <em>Language Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getSubject <em>Subject</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getSpecimen <em>Specimen</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getPerformer <em>Performer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getAuthor <em>Author</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getInformant <em>Informant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getParticipant <em>Participant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getEntryRelationship <em>Entry Relationship</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getSpecimens <em>Specimen</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getPerformers <em>Performer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getAuthors <em>Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getInformants <em>Informant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getParticipants <em>Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getEntryRelationships <em>Entry Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getReferences <em>Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getPreconditions <em>Precondition</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl#getMoodCode <em>Mood Code</em>}</li>
@@ -100,14 +93,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
  */
 public class ActImpl extends EObjectImpl implements Act {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -120,24 +113,24 @@ public class ActImpl extends EObjectImpl implements Act {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getIds() <em>Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> id;
+	protected EList<II> ids;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
@@ -210,84 +203,84 @@ public class ActImpl extends EObjectImpl implements Act {
 	protected Subject subject;
 
 	/**
-	 * The cached value of the '{@link #getSpecimen() <em>Specimen</em>}' containment reference list.
+	 * The cached value of the '{@link #getSpecimens() <em>Specimen</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpecimen()
+	 * @see #getSpecimens()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Specimen> specimen;
+	protected EList<Specimen> specimens;
 
 	/**
-	 * The cached value of the '{@link #getPerformer() <em>Performer</em>}' containment reference list.
+	 * The cached value of the '{@link #getPerformers() <em>Performer</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPerformer()
+	 * @see #getPerformers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Performer2> performer;
+	protected EList<Performer2> performers;
 
 	/**
-	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' containment reference list.
+	 * The cached value of the '{@link #getAuthors() <em>Author</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAuthor()
+	 * @see #getAuthors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Author> author;
+	protected EList<Author> authors;
 
 	/**
-	 * The cached value of the '{@link #getInformant() <em>Informant</em>}' containment reference list.
+	 * The cached value of the '{@link #getInformants() <em>Informant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInformant()
+	 * @see #getInformants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Informant12> informant;
+	protected EList<Informant12> informants;
 
 	/**
-	 * The cached value of the '{@link #getParticipant() <em>Participant</em>}' containment reference list.
+	 * The cached value of the '{@link #getParticipants() <em>Participant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParticipant()
+	 * @see #getParticipants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Participant2> participant;
+	protected EList<Participant2> participants;
 
 	/**
-	 * The cached value of the '{@link #getEntryRelationship() <em>Entry Relationship</em>}' containment reference list.
+	 * The cached value of the '{@link #getEntryRelationships() <em>Entry Relationship</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntryRelationship()
+	 * @see #getEntryRelationships()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntryRelationship> entryRelationship;
+	protected EList<EntryRelationship> entryRelationships;
 
 	/**
-	 * The cached value of the '{@link #getReference() <em>Reference</em>}' containment reference list.
+	 * The cached value of the '{@link #getReferences() <em>Reference</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReference()
+	 * @see #getReferences()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Reference> reference;
+	protected EList<Reference> references;
 
 	/**
-	 * The cached value of the '{@link #getPrecondition() <em>Precondition</em>}' containment reference list.
+	 * The cached value of the '{@link #getPreconditions() <em>Precondition</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrecondition()
+	 * @see #getPreconditions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Precondition> precondition;
+	protected EList<Precondition> preconditions;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -420,11 +413,11 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ACT__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ACT__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -475,11 +468,11 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ACT__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ACT__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -487,11 +480,11 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getId() {
-		if (id == null) {
-			id = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ACT__ID);
+	public EList<II> getIds() {
+		if (ids == null) {
+			ids = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ACT__ID);
 		}
-		return id;
+		return ids;
 	}
 
 	/**
@@ -800,11 +793,11 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Specimen> getSpecimen() {
-		if (specimen == null) {
-			specimen = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.ACT__SPECIMEN);
+	public EList<Specimen> getSpecimens() {
+		if (specimens == null) {
+			specimens = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.ACT__SPECIMEN);
 		}
-		return specimen;
+		return specimens;
 	}
 
 	/**
@@ -812,11 +805,11 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Performer2> getPerformer() {
-		if (performer == null) {
-			performer = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.ACT__PERFORMER);
+	public EList<Performer2> getPerformers() {
+		if (performers == null) {
+			performers = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.ACT__PERFORMER);
 		}
-		return performer;
+		return performers;
 	}
 
 	/**
@@ -824,11 +817,11 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Author> getAuthor() {
-		if (author == null) {
-			author = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.ACT__AUTHOR);
+	public EList<Author> getAuthors() {
+		if (authors == null) {
+			authors = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.ACT__AUTHOR);
 		}
-		return author;
+		return authors;
 	}
 
 	/**
@@ -836,11 +829,11 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Informant12> getInformant() {
-		if (informant == null) {
-			informant = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.ACT__INFORMANT);
+	public EList<Informant12> getInformants() {
+		if (informants == null) {
+			informants = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.ACT__INFORMANT);
 		}
-		return informant;
+		return informants;
 	}
 
 	/**
@@ -848,11 +841,11 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Participant2> getParticipant() {
-		if (participant == null) {
-			participant = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.ACT__PARTICIPANT);
+	public EList<Participant2> getParticipants() {
+		if (participants == null) {
+			participants = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.ACT__PARTICIPANT);
 		}
-		return participant;
+		return participants;
 	}
 
 	/**
@@ -860,11 +853,11 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntryRelationship> getEntryRelationship() {
-		if (entryRelationship == null) {
-			entryRelationship = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.ACT__ENTRY_RELATIONSHIP);
+	public EList<EntryRelationship> getEntryRelationships() {
+		if (entryRelationships == null) {
+			entryRelationships = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.ACT__ENTRY_RELATIONSHIP);
 		}
-		return entryRelationship;
+		return entryRelationships;
 	}
 
 	/**
@@ -872,11 +865,11 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Reference> getReference() {
-		if (reference == null) {
-			reference = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.ACT__REFERENCE);
+	public EList<Reference> getReferences() {
+		if (references == null) {
+			references = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.ACT__REFERENCE);
 		}
-		return reference;
+		return references;
 	}
 
 	/**
@@ -884,11 +877,11 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Precondition> getPrecondition() {
-		if (precondition == null) {
-			precondition = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.ACT__PRECONDITION);
+	public EList<Precondition> getPreconditions() {
+		if (preconditions == null) {
+			preconditions = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.ACT__PRECONDITION);
 		}
-		return precondition;
+		return preconditions;
 	}
 
 	/**
@@ -1136,8 +1129,8 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Act> getAct() {
-		return ActOperations.getAct(this);
+	public EList<Act> getActs() {
+		return ActOperations.getActs(this);
 	}
 
 	/**
@@ -1154,8 +1147,8 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Encounter> getEncounter() {
-		return ActOperations.getEncounter(this);
+	public EList<Encounter> getEncounters() {
+		return ActOperations.getEncounters(this);
 	}
 
 	/**
@@ -1163,8 +1156,8 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Observation> getObservation() {
-		return ActOperations.getObservation(this);
+	public EList<Observation> getObservations() {
+		return ActOperations.getObservations(this);
 	}
 
 	/**
@@ -1181,8 +1174,8 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Organizer> getOrganizer() {
-		return ActOperations.getOrganizer(this);
+	public EList<Organizer> getOrganizers() {
+		return ActOperations.getOrganizers(this);
 	}
 
 	/**
@@ -1190,8 +1183,8 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Procedure> getProcedure() {
-		return ActOperations.getProcedure(this);
+	public EList<Procedure> getProcedures() {
+		return ActOperations.getProcedures(this);
 	}
 
 	/**
@@ -1199,8 +1192,8 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RegionOfInterest> getRegionOfInterest() {
-		return ActOperations.getRegionOfInterest(this);
+	public EList<RegionOfInterest> getRegionsOfInterest() {
+		return ActOperations.getRegionsOfInterest(this);
 	}
 
 	/**
@@ -1217,8 +1210,8 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SubstanceAdministration> getSubstanceAdministration() {
-		return ActOperations.getSubstanceAdministration(this);
+	public EList<SubstanceAdministration> getSubstanceAdministrations() {
+		return ActOperations.getSubstanceAdministrations(this);
 	}
 
 	/**
@@ -1226,8 +1219,8 @@ public class ActImpl extends EObjectImpl implements Act {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Supply> getSupply() {
-		return ActOperations.getSupply(this);
+	public EList<Supply> getSupplies() {
+		return ActOperations.getSupplies(this);
 	}
 
 	/**
@@ -1338,13 +1331,13 @@ public class ActImpl extends EObjectImpl implements Act {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.ACT__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ACT__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.ACT__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ACT__ID:
-				return ((InternalEList<?>)getId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ACT__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.ACT__TEXT:
@@ -1360,21 +1353,21 @@ public class ActImpl extends EObjectImpl implements Act {
 			case CDAPackage.ACT__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.ACT__SPECIMEN:
-				return ((InternalEList<?>)getSpecimen()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getSpecimens()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ACT__PERFORMER:
-				return ((InternalEList<?>)getPerformer()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPerformers()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ACT__AUTHOR:
-				return ((InternalEList<?>)getAuthor()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ACT__INFORMANT:
-				return ((InternalEList<?>)getInformant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ACT__PARTICIPANT:
-				return ((InternalEList<?>)getParticipant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ACT__ENTRY_RELATIONSHIP:
-				return ((InternalEList<?>)getEntryRelationship()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getEntryRelationships()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ACT__REFERENCE:
-				return ((InternalEList<?>)getReference()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ACT__PRECONDITION:
-				return ((InternalEList<?>)getPrecondition()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPreconditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1388,13 +1381,13 @@ public class ActImpl extends EObjectImpl implements Act {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.ACT__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.ACT__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.ACT__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.ACT__ID:
-				return getId();
+				return getIds();
 			case CDAPackage.ACT__CODE:
 				return getCode();
 			case CDAPackage.ACT__TEXT:
@@ -1410,21 +1403,21 @@ public class ActImpl extends EObjectImpl implements Act {
 			case CDAPackage.ACT__SUBJECT:
 				return getSubject();
 			case CDAPackage.ACT__SPECIMEN:
-				return getSpecimen();
+				return getSpecimens();
 			case CDAPackage.ACT__PERFORMER:
-				return getPerformer();
+				return getPerformers();
 			case CDAPackage.ACT__AUTHOR:
-				return getAuthor();
+				return getAuthors();
 			case CDAPackage.ACT__INFORMANT:
-				return getInformant();
+				return getInformants();
 			case CDAPackage.ACT__PARTICIPANT:
-				return getParticipant();
+				return getParticipants();
 			case CDAPackage.ACT__ENTRY_RELATIONSHIP:
-				return getEntryRelationship();
+				return getEntryRelationships();
 			case CDAPackage.ACT__REFERENCE:
-				return getReference();
+				return getReferences();
 			case CDAPackage.ACT__PRECONDITION:
-				return getPrecondition();
+				return getPreconditions();
 			case CDAPackage.ACT__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.ACT__CLASS_CODE:
@@ -1447,19 +1440,19 @@ public class ActImpl extends EObjectImpl implements Act {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.ACT__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.ACT__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.ACT__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.ACT__ID:
-				getId().clear();
-				getId().addAll((Collection<? extends II>)newValue);
+				getIds().clear();
+				getIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.ACT__CODE:
 				setCode((CD)newValue);
@@ -1483,36 +1476,36 @@ public class ActImpl extends EObjectImpl implements Act {
 				setSubject((Subject)newValue);
 				return;
 			case CDAPackage.ACT__SPECIMEN:
-				getSpecimen().clear();
-				getSpecimen().addAll((Collection<? extends Specimen>)newValue);
+				getSpecimens().clear();
+				getSpecimens().addAll((Collection<? extends Specimen>)newValue);
 				return;
 			case CDAPackage.ACT__PERFORMER:
-				getPerformer().clear();
-				getPerformer().addAll((Collection<? extends Performer2>)newValue);
+				getPerformers().clear();
+				getPerformers().addAll((Collection<? extends Performer2>)newValue);
 				return;
 			case CDAPackage.ACT__AUTHOR:
-				getAuthor().clear();
-				getAuthor().addAll((Collection<? extends Author>)newValue);
+				getAuthors().clear();
+				getAuthors().addAll((Collection<? extends Author>)newValue);
 				return;
 			case CDAPackage.ACT__INFORMANT:
-				getInformant().clear();
-				getInformant().addAll((Collection<? extends Informant12>)newValue);
+				getInformants().clear();
+				getInformants().addAll((Collection<? extends Informant12>)newValue);
 				return;
 			case CDAPackage.ACT__PARTICIPANT:
-				getParticipant().clear();
-				getParticipant().addAll((Collection<? extends Participant2>)newValue);
+				getParticipants().clear();
+				getParticipants().addAll((Collection<? extends Participant2>)newValue);
 				return;
 			case CDAPackage.ACT__ENTRY_RELATIONSHIP:
-				getEntryRelationship().clear();
-				getEntryRelationship().addAll((Collection<? extends EntryRelationship>)newValue);
+				getEntryRelationships().clear();
+				getEntryRelationships().addAll((Collection<? extends EntryRelationship>)newValue);
 				return;
 			case CDAPackage.ACT__REFERENCE:
-				getReference().clear();
-				getReference().addAll((Collection<? extends Reference>)newValue);
+				getReferences().clear();
+				getReferences().addAll((Collection<? extends Reference>)newValue);
 				return;
 			case CDAPackage.ACT__PRECONDITION:
-				getPrecondition().clear();
-				getPrecondition().addAll((Collection<? extends Precondition>)newValue);
+				getPreconditions().clear();
+				getPreconditions().addAll((Collection<? extends Precondition>)newValue);
 				return;
 			case CDAPackage.ACT__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -1539,16 +1532,16 @@ public class ActImpl extends EObjectImpl implements Act {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.ACT__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.ACT__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.ACT__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.ACT__ID:
-				getId().clear();
+				getIds().clear();
 				return;
 			case CDAPackage.ACT__CODE:
 				setCode((CD)null);
@@ -1572,28 +1565,28 @@ public class ActImpl extends EObjectImpl implements Act {
 				setSubject((Subject)null);
 				return;
 			case CDAPackage.ACT__SPECIMEN:
-				getSpecimen().clear();
+				getSpecimens().clear();
 				return;
 			case CDAPackage.ACT__PERFORMER:
-				getPerformer().clear();
+				getPerformers().clear();
 				return;
 			case CDAPackage.ACT__AUTHOR:
-				getAuthor().clear();
+				getAuthors().clear();
 				return;
 			case CDAPackage.ACT__INFORMANT:
-				getInformant().clear();
+				getInformants().clear();
 				return;
 			case CDAPackage.ACT__PARTICIPANT:
-				getParticipant().clear();
+				getParticipants().clear();
 				return;
 			case CDAPackage.ACT__ENTRY_RELATIONSHIP:
-				getEntryRelationship().clear();
+				getEntryRelationships().clear();
 				return;
 			case CDAPackage.ACT__REFERENCE:
-				getReference().clear();
+				getReferences().clear();
 				return;
 			case CDAPackage.ACT__PRECONDITION:
-				getPrecondition().clear();
+				getPreconditions().clear();
 				return;
 			case CDAPackage.ACT__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -1620,13 +1613,13 @@ public class ActImpl extends EObjectImpl implements Act {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.ACT__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.ACT__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.ACT__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.ACT__ID:
-				return id != null && !id.isEmpty();
+				return ids != null && !ids.isEmpty();
 			case CDAPackage.ACT__CODE:
 				return code != null;
 			case CDAPackage.ACT__TEXT:
@@ -1642,21 +1635,21 @@ public class ActImpl extends EObjectImpl implements Act {
 			case CDAPackage.ACT__SUBJECT:
 				return subject != null;
 			case CDAPackage.ACT__SPECIMEN:
-				return specimen != null && !specimen.isEmpty();
+				return specimens != null && !specimens.isEmpty();
 			case CDAPackage.ACT__PERFORMER:
-				return performer != null && !performer.isEmpty();
+				return performers != null && !performers.isEmpty();
 			case CDAPackage.ACT__AUTHOR:
-				return author != null && !author.isEmpty();
+				return authors != null && !authors.isEmpty();
 			case CDAPackage.ACT__INFORMANT:
-				return informant != null && !informant.isEmpty();
+				return informants != null && !informants.isEmpty();
 			case CDAPackage.ACT__PARTICIPANT:
-				return participant != null && !participant.isEmpty();
+				return participants != null && !participants.isEmpty();
 			case CDAPackage.ACT__ENTRY_RELATIONSHIP:
-				return entryRelationship != null && !entryRelationship.isEmpty();
+				return entryRelationships != null && !entryRelationships.isEmpty();
 			case CDAPackage.ACT__REFERENCE:
-				return reference != null && !reference.isEmpty();
+				return references != null && !references.isEmpty();
 			case CDAPackage.ACT__PRECONDITION:
-				return precondition != null && !precondition.isEmpty();
+				return preconditions != null && !preconditions.isEmpty();
 			case CDAPackage.ACT__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.ACT__CLASS_CODE:

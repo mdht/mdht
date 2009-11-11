@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.example.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.example.ExamplePackage;
 import org.openhealthtools.mdht.uml.cda.example.MySection;
-
 import org.openhealthtools.mdht.uml.cda.example.operations.MySectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class MySectionImpl extends SectionImpl implements MySection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MySection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MySectionOperations.MySection_templateId(this, diagnostics, context);
+	public boolean validateMySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MySectionOperations.validateMySectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class MySectionImpl extends SectionImpl implements MySection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MySection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MySectionOperations.MySection_code(this, diagnostics, context);
+	public boolean validateMySectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MySectionOperations.validateMySectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -73,8 +68,8 @@ public class MySectionImpl extends SectionImpl implements MySection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MySection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MySectionOperations.MySection_title(this, diagnostics, context);
+	public boolean validateMySectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MySectionOperations.validateMySectionTitle(this, diagnostics, context);
 	}
 
 	/**
@@ -82,8 +77,8 @@ public class MySectionImpl extends SectionImpl implements MySection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MySection_myActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MySectionOperations.MySection_myActivity(this, diagnostics, context);
+	public boolean validateMySectionMyActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MySectionOperations.validateMySectionMyActivity(this, diagnostics, context);
 	}
 
 	/**

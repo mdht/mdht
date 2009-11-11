@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.EntryRelationship#clinicalStatement(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Clinical Statement</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.EntryRelationship#validateClinicalStatement(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Statement</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,24 +58,24 @@ public class EntryRelationshipOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #clinicalStatement(EntryRelationship, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Clinical Statement</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateClinicalStatement(EntryRelationship, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Statement</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #clinicalStatement(EntryRelationship, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateClinicalStatement(EntryRelationship, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "Bag{self.act.oclIsUndefined(), self.encounter.oclIsUndefined(), self.observation.oclIsUndefined(), self.observationMedia.oclIsUndefined(), self.organizer.oclIsUndefined(), self.procedure.oclIsUndefined(), self.regionOfInterest.oclIsUndefined(), self.substanceAdministration.oclIsUndefined(), self.supply.oclIsUndefined()}->one(x | x = false)";
+	protected static final String VALIDATE_CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "Bag{self.act.oclIsUndefined(), self.encounter.oclIsUndefined(), self.observation.oclIsUndefined(), self.observationMedia.oclIsUndefined(), self.organizer.oclIsUndefined(), self.procedure.oclIsUndefined(), self.regionOfInterest.oclIsUndefined(), self.substanceAdministration.oclIsUndefined(), self.supply.oclIsUndefined()}->one(x | x = false)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #clinicalStatement(EntryRelationship, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Clinical Statement</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateClinicalStatement(EntryRelationship, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Clinical Statement</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #clinicalStatement(EntryRelationship, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateClinicalStatement(EntryRelationship, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,25 +88,25 @@ public class EntryRelationshipOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean clinicalStatement(EntryRelationship entryRelationship, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateClinicalStatement(EntryRelationship entryRelationship, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.eINSTANCE.getEntryRelationship());
 			try {
-				CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(entryRelationship)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(entryRelationship)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CDAValidator.DIAGNOSTIC_SOURCE,
 						 CDAValidator.ENTRY_RELATIONSHIP__CLINICAL_STATEMENT,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "clinicalStatement", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(entryRelationship, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateClinicalStatement", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(entryRelationship, context) }),
 						 new Object [] { entryRelationship }));
 			}
 			return false;

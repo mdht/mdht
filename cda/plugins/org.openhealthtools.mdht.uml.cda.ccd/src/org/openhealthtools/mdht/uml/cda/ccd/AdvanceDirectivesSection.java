@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getAdvanceDirectivesSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='AdvanceDirectivesSection_templateId AdvanceDirectivesSection_code AdvanceDirectivesSection_title' templateId.root='2.16.840.1.113883.10.20.1.1' code.displayName='Advance directives' code.codeSystem='2.16.840.1.113883.6.1' code.code='42348-3'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='AdvanceDirectivesSectionTemplateId AdvanceDirectivesSectionCode AdvanceDirectivesSectionTitle' templateId.root='2.16.840.1.113883.10.20.1.1' code.displayName='Advance directives' code.codeSystem='2.16.840.1.113883.6.1' code.code='42348-3'"
  * @generated
  */
 public interface AdvanceDirectivesSection extends Section {
@@ -33,7 +33,7 @@ public interface AdvanceDirectivesSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.1\')'"
 	 * @generated
 	 */
-	boolean AdvanceDirectivesSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAdvanceDirectivesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -48,7 +48,7 @@ public interface AdvanceDirectivesSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and \r\nlet value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (\r\nvalue.code = \'42348-3\' and value.codeSystem = \'2.16.840.1.113883.6.1\')'"
 	 * @generated
 	 */
-	boolean AdvanceDirectivesSection_code(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAdvanceDirectivesSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public interface AdvanceDirectivesSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.title.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean AdvanceDirectivesSection_title(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAdvanceDirectivesSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public interface AdvanceDirectivesSection extends Section {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::AdvanceDirectiveObservation))'"
 	 * @generated
 	 */
-	boolean AdvanceDirectivesSection_advanceDirectiveObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAdvanceDirectivesSectionAdvanceDirectiveObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

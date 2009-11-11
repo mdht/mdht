@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.AllergiesReactionsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,9 +49,8 @@ public class AllergiesReactionsSectionImpl extends org.openhealthtools.mdht.uml.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean AllergiesReactionsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AllergiesReactionsSectionOperations.AllergiesReactionsSection_templateId(this, diagnostics, context);
+	public boolean validateHITSPAllergiesReactionsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AllergiesReactionsSectionOperations.validateHITSPAllergiesReactionsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

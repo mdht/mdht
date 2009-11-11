@@ -35,8 +35,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.operations.ProblemConcernEntryOperat
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#Condition_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Condition template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#Condition_text(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Condition text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#createProblemEntry() <em>Create Problem Entry</em>}</li>
  * </ul>
  * </p>
@@ -54,24 +54,24 @@ public class ConditionOperations extends ProblemConcernEntryOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #Condition_templateId(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Condition template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateConditionTemplateId(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #Condition_templateId(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateConditionTemplateId(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.83.7')";
+	protected static final String VALIDATE_CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.83.7')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #Condition_templateId(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Condition template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateConditionTemplateId(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #Condition_templateId(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateConditionTemplateId(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,25 +84,25 @@ public class ConditionOperations extends ProblemConcernEntryOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean Condition_templateId(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateConditionTemplateId(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(HITSPPackage.Literals.CONDITION);
 			try {
-				CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(condition)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(condition)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HITSPValidator.DIAGNOSTIC_SOURCE,
 						 HITSPValidator.CONDITION__CONDITION_TEMPLATE_ID,
-						 HITSPPlugin.INSTANCE.getString("Condition_templateId"),
+						 HITSPPlugin.INSTANCE.getString("ConditionTemplateId"),
 						 new Object [] { condition }));
 			}
 			return false;
@@ -111,24 +111,24 @@ public class ConditionOperations extends ProblemConcernEntryOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #Condition_text(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Condition text</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateConditionText(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Text</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #Condition_text(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateConditionText(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.text.oclIsUndefined()";
+	protected static final String VALIDATE_CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.text.oclIsUndefined()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #Condition_text(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Condition text</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateConditionText(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Text</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #Condition_text(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateConditionText(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,25 +141,25 @@ public class ConditionOperations extends ProblemConcernEntryOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean Condition_text(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateConditionText(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(HITSPPackage.Literals.CONDITION);
 			try {
-				CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(condition)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(condition)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HITSPValidator.DIAGNOSTIC_SOURCE,
 						 HITSPValidator.CONDITION__CONDITION_TEXT,
-						 HITSPPlugin.INSTANCE.getString("Condition_text"),
+						 HITSPPlugin.INSTANCE.getString("ConditionText"),
 						 new Object [] { condition }));
 			}
 			return false;

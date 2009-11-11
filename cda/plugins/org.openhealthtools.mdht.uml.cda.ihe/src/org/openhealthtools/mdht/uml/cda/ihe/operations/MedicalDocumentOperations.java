@@ -34,7 +34,7 @@ import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument#MedicalDocument_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medical Document template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument#validateMedicalDocumentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Document Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,24 +51,24 @@ public class MedicalDocumentOperations extends ClinicalDocumentOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #MedicalDocument_templateId(MedicalDocument, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medical Document template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateMedicalDocumentTemplateId(MedicalDocument, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Document Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MedicalDocument_templateId(MedicalDocument, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMedicalDocumentTemplateId(MedicalDocument, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.1.1')";
+	protected static final String VALIDATE_MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.1.1')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #MedicalDocument_templateId(MedicalDocument, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Medical Document template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateMedicalDocumentTemplateId(MedicalDocument, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Document Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MedicalDocument_templateId(MedicalDocument, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateMedicalDocumentTemplateId(MedicalDocument, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,25 +81,25 @@ public class MedicalDocumentOperations extends ClinicalDocumentOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean MedicalDocument_templateId(MedicalDocument medicalDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateMedicalDocumentTemplateId(MedicalDocument medicalDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.MEDICAL_DOCUMENT);
 			try {
-				MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicalDocument)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicalDocument)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.MEDICAL_DOCUMENT__MEDICAL_DOCUMENT_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("MedicalDocument_templateId"),
+						 IHEPlugin.INSTANCE.getString("MedicalDocumentTemplateId"),
 						 new Object [] { medicalDocument }));
 			}
 			return false;

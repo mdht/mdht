@@ -16,27 +16,20 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.NonXMLBody;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -48,9 +41,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.NonXMLBodyImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.NonXMLBodyImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.NonXMLBodyImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.NonXMLBodyImpl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.NonXMLBodyImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.NonXMLBodyImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.NonXMLBodyImpl#getConfidentialityCode <em>Confidentiality Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.NonXMLBodyImpl#getLanguageCode <em>Language Code</em>}</li>
@@ -64,14 +57,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class NonXMLBodyImpl extends EObjectImpl implements NonXMLBody {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -84,14 +77,14 @@ public class NonXMLBodyImpl extends EObjectImpl implements NonXMLBody {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
@@ -234,11 +227,11 @@ public class NonXMLBodyImpl extends EObjectImpl implements NonXMLBody {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.NON_XML_BODY__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.NON_XML_BODY__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -289,11 +282,11 @@ public class NonXMLBodyImpl extends EObjectImpl implements NonXMLBody {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.NON_XML_BODY__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.NON_XML_BODY__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -572,11 +565,11 @@ public class NonXMLBodyImpl extends EObjectImpl implements NonXMLBody {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.NON_XML_BODY__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.NON_XML_BODY__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.NON_XML_BODY__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.NON_XML_BODY__TEXT:
 				return basicSetText(null, msgs);
 			case CDAPackage.NON_XML_BODY__CONFIDENTIALITY_CODE:
@@ -596,11 +589,11 @@ public class NonXMLBodyImpl extends EObjectImpl implements NonXMLBody {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.NON_XML_BODY__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.NON_XML_BODY__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.NON_XML_BODY__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.NON_XML_BODY__TEXT:
 				return getText();
 			case CDAPackage.NON_XML_BODY__CONFIDENTIALITY_CODE:
@@ -627,15 +620,15 @@ public class NonXMLBodyImpl extends EObjectImpl implements NonXMLBody {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.NON_XML_BODY__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.NON_XML_BODY__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.NON_XML_BODY__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.NON_XML_BODY__TEXT:
 				setText((ED)newValue);
@@ -668,13 +661,13 @@ public class NonXMLBodyImpl extends EObjectImpl implements NonXMLBody {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.NON_XML_BODY__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.NON_XML_BODY__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.NON_XML_BODY__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.NON_XML_BODY__TEXT:
 				setText((ED)null);
@@ -707,11 +700,11 @@ public class NonXMLBodyImpl extends EObjectImpl implements NonXMLBody {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.NON_XML_BODY__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.NON_XML_BODY__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.NON_XML_BODY__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.NON_XML_BODY__TEXT:
 				return text != null;
 			case CDAPackage.NON_XML_BODY__CONFIDENTIALITY_CODE:

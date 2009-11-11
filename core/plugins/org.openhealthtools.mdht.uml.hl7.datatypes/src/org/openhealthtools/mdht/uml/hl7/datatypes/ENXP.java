@@ -13,7 +13,6 @@
 package org.openhealthtools.mdht.uml.hl7.datatypes;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartQualifier;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartType;
 
@@ -26,7 +25,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartType;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ENXP#getPartType <em>Part Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ENXP#getQualifier <em>Qualifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ENXP#getQualifiers <em>Qualifier</em>}</li>
  * </ul>
  * </p>
  *
@@ -103,33 +102,33 @@ public interface ENXP extends ST {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Qualifier</em>' attribute list.
 	 * @see org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartQualifier
-	 * @see #isSetQualifier()
-	 * @see #unsetQualifier()
+	 * @see #isSetQualifiers()
+	 * @see #unsetQualifiers()
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getENXP_Qualifier()
 	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
-	EList<EntityNamePartQualifier> getQualifier();
+	EList<EntityNamePartQualifier> getQualifiers();
 
 	/**
-	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ENXP#getQualifier <em>Qualifier</em>}' attribute list.
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ENXP#getQualifiers <em>Qualifier</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSetQualifier()
-	 * @see #getQualifier()
+	 * @see #isSetQualifiers()
+	 * @see #getQualifiers()
 	 * @generated
 	 */
-	void unsetQualifier();
+	void unsetQualifiers();
 
 	/**
-	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ENXP#getQualifier <em>Qualifier</em>}' attribute list is set.
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ENXP#getQualifiers <em>Qualifier</em>}' attribute list is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Qualifier</em>' attribute list is set.
-	 * @see #unsetQualifier()
-	 * @see #getQualifier()
+	 * @see #unsetQualifiers()
+	 * @see #getQualifiers()
 	 * @generated
 	 */
-	boolean isSetQualifier();
+	boolean isSetQualifiers();
 
 } // ENXP

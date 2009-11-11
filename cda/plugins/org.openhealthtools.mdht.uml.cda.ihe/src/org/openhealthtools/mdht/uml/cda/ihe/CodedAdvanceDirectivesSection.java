@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getCodedAdvanceDirectivesSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.35' constraints.validation.error='CodedAdvanceDirectivesSection_templateId'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.35' constraints.validation.error='CodedAdvanceDirectivesSectionTemplateId'"
  * @generated
  */
 public interface CodedAdvanceDirectivesSection extends AdvanceDirectivesSection {
@@ -32,7 +32,7 @@ public interface CodedAdvanceDirectivesSection extends AdvanceDirectivesSection 
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.3.35\')'"
 	 * @generated
 	 */
-	boolean CodedAdvanceDirectivesSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateCodedAdvanceDirectivesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

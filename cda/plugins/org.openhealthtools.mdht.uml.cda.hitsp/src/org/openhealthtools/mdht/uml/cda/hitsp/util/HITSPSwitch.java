@@ -23,18 +23,51 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
-import org.openhealthtools.mdht.uml.cda.hitsp.*;
-import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection;
+import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
+import org.openhealthtools.mdht.uml.cda.hitsp.AssessmentAndPlanSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
+import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection;
+import org.openhealthtools.mdht.uml.cda.hitsp.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPresentIllness;
+import org.openhealthtools.mdht.uml.cda.hitsp.HospitalAdmissionDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.HospitalCourseSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.HospitalDischargeMedicationsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsAdministeredSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
+import org.openhealthtools.mdht.uml.cda.hitsp.PayersSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
+import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern;
+import org.openhealthtools.mdht.uml.cda.ihe.CarePlanSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CodedAdvanceDirectivesSection;
+import org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CodedSurgeriesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
@@ -320,6 +353,83 @@ public class HITSPSwitch<T> {
 				if (result == null) result = casePhysicalExamSection_1(physicalExamSection);
 				if (result == null) result = casePhysicalExamNarrativeSection(physicalExamSection);
 				if (result == null) result = caseSection(physicalExamSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.REVIEW_OF_SYSTEMS_SECTION: {
+				ReviewOfSystemsSection reviewOfSystemsSection = (ReviewOfSystemsSection)theEObject;
+				T result = caseReviewOfSystemsSection(reviewOfSystemsSection);
+				if (result == null) result = caseReviewOfSystemsSection_1(reviewOfSystemsSection);
+				if (result == null) result = caseSection(reviewOfSystemsSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.HOSPITAL_COURSE_SECTION: {
+				HospitalCourseSection hospitalCourseSection = (HospitalCourseSection)theEObject;
+				T result = caseHospitalCourseSection(hospitalCourseSection);
+				if (result == null) result = caseHospitalCourseSection_1(hospitalCourseSection);
+				if (result == null) result = caseSection(hospitalCourseSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.DIAGNOSTIC_RESULTS_SECTION: {
+				DiagnosticResultsSection diagnosticResultsSection = (DiagnosticResultsSection)theEObject;
+				T result = caseDiagnosticResultsSection(diagnosticResultsSection);
+				if (result == null) result = caseCodedResultsSection(diagnosticResultsSection);
+				if (result == null) result = caseSection(diagnosticResultsSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.ASSESSMENT_AND_PLAN_SECTION: {
+				AssessmentAndPlanSection assessmentAndPlanSection = (AssessmentAndPlanSection)theEObject;
+				T result = caseAssessmentAndPlanSection(assessmentAndPlanSection);
+				if (result == null) result = caseAssessmentAndPlanSection_1(assessmentAndPlanSection);
+				if (result == null) result = caseSection(assessmentAndPlanSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.PLAN_OF_CARE_SECTION: {
+				PlanOfCareSection planOfCareSection = (PlanOfCareSection)theEObject;
+				T result = casePlanOfCareSection(planOfCareSection);
+				if (result == null) result = caseCarePlanSection(planOfCareSection);
+				if (result == null) result = casePlanOfCareSection_1(planOfCareSection);
+				if (result == null) result = caseSection(planOfCareSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.FAMILY_HISTORY_SECTION: {
+				FamilyHistorySection familyHistorySection = (FamilyHistorySection)theEObject;
+				T result = caseFamilyHistorySection(familyHistorySection);
+				if (result == null) result = caseFamilyMedicalHistorySection(familyHistorySection);
+				if (result == null) result = caseFamilyHistorySection_1(familyHistorySection);
+				if (result == null) result = caseSection(familyHistorySection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.SOCIAL_HISTORY_SECTION: {
+				SocialHistorySection socialHistorySection = (SocialHistorySection)theEObject;
+				T result = caseSocialHistorySection(socialHistorySection);
+				if (result == null) result = caseSocialHistorySection_2(socialHistorySection);
+				if (result == null) result = caseSocialHistorySection_1(socialHistorySection);
+				if (result == null) result = caseSection(socialHistorySection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.ENCOUNTERS_SECTION: {
+				EncountersSection encountersSection = (EncountersSection)theEObject;
+				T result = caseEncountersSection(encountersSection);
+				if (result == null) result = caseEncounterHistorySection(encountersSection);
+				if (result == null) result = caseEncountersSection_1(encountersSection);
+				if (result == null) result = caseSection(encountersSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.MEDICAL_EQUIPMENT_SECTION: {
+				MedicalEquipmentSection medicalEquipmentSection = (MedicalEquipmentSection)theEObject;
+				T result = caseMedicalEquipmentSection(medicalEquipmentSection);
+				if (result == null) result = caseMedicalDevicesSection(medicalEquipmentSection);
+				if (result == null) result = caseMedicalEquipmentSection_1(medicalEquipmentSection);
+				if (result == null) result = caseSection(medicalEquipmentSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -684,6 +794,141 @@ public class HITSPSwitch<T> {
 	 * @generated
 	 */
 	public T casePhysicalExamSection(PhysicalExamSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Review Of Systems Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Review Of Systems Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReviewOfSystemsSection(ReviewOfSystemsSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Hospital Course Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Hospital Course Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHospitalCourseSection(HospitalCourseSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Diagnostic Results Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Diagnostic Results Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiagnosticResultsSection(DiagnosticResultsSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Assessment And Plan Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Assessment And Plan Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssessmentAndPlanSection(AssessmentAndPlanSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePlanOfCareSection(PlanOfCareSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Family History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Family History Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFamilyHistorySection(FamilyHistorySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Social History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Social History Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSocialHistorySection(SocialHistorySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Encounters Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Encounters Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEncountersSection(EncountersSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medical Equipment Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medical Equipment Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicalEquipmentSection(MedicalEquipmentSection object) {
 		return null;
 	}
 
@@ -1359,6 +1604,216 @@ public class HITSPSwitch<T> {
 	 * @generated
 	 */
 	public T casePhysicalExamSection_1(org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Review Of Systems Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Review Of Systems Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReviewOfSystemsSection_1(org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Hospital Course Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Hospital Course Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHospitalCourseSection_1(org.openhealthtools.mdht.uml.cda.ihe.HospitalCourseSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Coded Results Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Coded Results Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCodedResultsSection(CodedResultsSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Assessment And Plan Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Assessment And Plan Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssessmentAndPlanSection_1(org.openhealthtools.mdht.uml.cda.ihe.AssessmentAndPlanSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePlanOfCareSection_1(org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Care Plan Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Care Plan Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCarePlanSection(CarePlanSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Family History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Family History Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFamilyHistorySection_1(org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Family Medical History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Family Medical History Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFamilyMedicalHistorySection(FamilyMedicalHistorySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Social History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Social History Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSocialHistorySection_1(org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Social History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Social History Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSocialHistorySection_2(org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Encounters Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Encounters Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEncountersSection_1(org.openhealthtools.mdht.uml.cda.ccd.EncountersSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Encounter History Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Encounter History Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEncounterHistorySection(EncounterHistorySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medical Equipment Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medical Equipment Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicalEquipmentSection_1(org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medical Devices Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medical Devices Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicalDevicesSection(MedicalDevicesSection object) {
 		return null;
 	}
 

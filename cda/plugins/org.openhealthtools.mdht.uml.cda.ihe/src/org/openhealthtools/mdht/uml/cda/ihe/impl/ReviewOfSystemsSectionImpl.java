@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ReviewOfSystemsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class ReviewOfSystemsSectionImpl extends SectionImpl implements ReviewOfS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ReviewOfSystemsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ReviewOfSystemsSectionOperations.ReviewOfSystemsSection_templateId(this, diagnostics, context);
+	public boolean validateReviewOfSystemsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReviewOfSystemsSectionOperations.validateReviewOfSystemsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class ReviewOfSystemsSectionImpl extends SectionImpl implements ReviewOfS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ReviewOfSystemsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ReviewOfSystemsSectionOperations.ReviewOfSystemsSection_code(this, diagnostics, context);
+	public boolean validateReviewOfSystemsSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReviewOfSystemsSectionOperations.validateReviewOfSystemsSectionCode(this, diagnostics, context);
 	}
 
 	/**

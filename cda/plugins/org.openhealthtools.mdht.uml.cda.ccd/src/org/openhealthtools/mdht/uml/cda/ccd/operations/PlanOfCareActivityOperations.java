@@ -11,18 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity;
-
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-
 import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
 
 /**
@@ -33,8 +28,8 @@ import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity#PlanOfCareActivity_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Plan Of Care Activity template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity#PlanOfCareActivity_id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Plan Of Care Activity id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity#validatePlanOfCareActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity#validatePlanOfCareActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,24 +46,24 @@ public class PlanOfCareActivityOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PlanOfCareActivity_templateId(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Plan Of Care Activity template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePlanOfCareActivityTemplateId(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PlanOfCareActivity_templateId(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePlanOfCareActivityTemplateId(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.25')";
+	protected static final String VALIDATE_PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.25')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PlanOfCareActivity_templateId(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Plan Of Care Activity template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePlanOfCareActivityTemplateId(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PlanOfCareActivity_templateId(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePlanOfCareActivityTemplateId(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,25 +76,25 @@ public class PlanOfCareActivityOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PlanOfCareActivity_templateId(PlanOfCareActivity planOfCareActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePlanOfCareActivityTemplateId(PlanOfCareActivity planOfCareActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PLAN_OF_CARE_ACTIVITY);
 			try {
-				PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(planOfCareActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(planOfCareActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PLAN_OF_CARE_ACTIVITY__PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("PlanOfCareActivity_templateId"),
+						 CCDPlugin.INSTANCE.getString("PlanOfCareActivityTemplateId"),
 						 new Object [] { planOfCareActivity }));
 			}
 			return false;
@@ -108,24 +103,24 @@ public class PlanOfCareActivityOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PlanOfCareActivity_id(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Plan Of Care Activity id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePlanOfCareActivityId(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PlanOfCareActivity_id(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePlanOfCareActivityId(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PLAN_OF_CARE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.id->isEmpty()";
+	protected static final String VALIDATE_PLAN_OF_CARE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.id->isEmpty()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PlanOfCareActivity_id(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Plan Of Care Activity id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePlanOfCareActivityId(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PlanOfCareActivity_id(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePlanOfCareActivityId(PlanOfCareActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PLAN_OF_CARE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PLAN_OF_CARE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,25 +133,25 @@ public class PlanOfCareActivityOperations extends ActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PlanOfCareActivity_id(PlanOfCareActivity planOfCareActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PLAN_OF_CARE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePlanOfCareActivityId(PlanOfCareActivity planOfCareActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PLAN_OF_CARE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PLAN_OF_CARE_ACTIVITY);
 			try {
-				PLAN_OF_CARE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PLAN_OF_CARE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PLAN_OF_CARE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PLAN_OF_CARE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PLAN_OF_CARE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(planOfCareActivity)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PLAN_OF_CARE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(planOfCareActivity)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PLAN_OF_CARE_ACTIVITY__PLAN_OF_CARE_ACTIVITY_ID,
-						 CCDPlugin.INSTANCE.getString("PlanOfCareActivity_id"),
+						 CCDPlugin.INSTANCE.getString("PlanOfCareActivityId"),
 						 new Object [] { planOfCareActivity }));
 			}
 			return false;

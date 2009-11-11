@@ -16,27 +16,20 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.Authenticator;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 
@@ -47,12 +40,12 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getTime <em>Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getSignatureCode <em>Signature Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getAssignedEntity <em>Assigned Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getAssignedEntities <em>Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl#getTypeCode <em>Type Code</em>}</li>
  * </ul>
@@ -62,14 +55,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  */
 public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -82,14 +75,14 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getTime() <em>Time</em>}' containment reference.
@@ -112,14 +105,14 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 	protected CS signatureCode;
 
 	/**
-	 * The cached value of the '{@link #getAssignedEntity() <em>Assigned Entity</em>}' containment reference list.
+	 * The cached value of the '{@link #getAssignedEntities() <em>Assigned Entity</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssignedEntity()
+	 * @see #getAssignedEntities()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AssignedEntity> assignedEntity;
+	protected EList<AssignedEntity> assignedEntities;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -203,11 +196,11 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.AUTHENTICATOR__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.AUTHENTICATOR__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -258,11 +251,11 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.AUTHENTICATOR__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.AUTHENTICATOR__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -356,11 +349,11 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AssignedEntity> getAssignedEntity() {
-		if (assignedEntity == null) {
-			assignedEntity = new EObjectContainmentEList<AssignedEntity>(AssignedEntity.class, this, CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY);
+	public EList<AssignedEntity> getAssignedEntities() {
+		if (assignedEntities == null) {
+			assignedEntities = new EObjectContainmentEList<AssignedEntity>(AssignedEntity.class, this, CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY);
 		}
-		return assignedEntity;
+		return assignedEntities;
 	}
 
 	/**
@@ -464,17 +457,17 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.AUTHENTICATOR__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.AUTHENTICATOR__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.AUTHENTICATOR__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.AUTHENTICATOR__TIME:
 				return basicSetTime(null, msgs);
 			case CDAPackage.AUTHENTICATOR__SIGNATURE_CODE:
 				return basicSetSignatureCode(null, msgs);
 			case CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY:
-				return ((InternalEList<?>)getAssignedEntity()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAssignedEntities()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -488,17 +481,17 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.AUTHENTICATOR__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.AUTHENTICATOR__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.AUTHENTICATOR__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.AUTHENTICATOR__TIME:
 				return getTime();
 			case CDAPackage.AUTHENTICATOR__SIGNATURE_CODE:
 				return getSignatureCode();
 			case CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY:
-				return getAssignedEntity();
+				return getAssignedEntities();
 			case CDAPackage.AUTHENTICATOR__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.AUTHENTICATOR__TYPE_CODE:
@@ -517,15 +510,15 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.AUTHENTICATOR__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.AUTHENTICATOR__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.AUTHENTICATOR__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.AUTHENTICATOR__TIME:
 				setTime((TS)newValue);
@@ -534,8 +527,8 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 				setSignatureCode((CS)newValue);
 				return;
 			case CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY:
-				getAssignedEntity().clear();
-				getAssignedEntity().addAll((Collection<? extends AssignedEntity>)newValue);
+				getAssignedEntities().clear();
+				getAssignedEntities().addAll((Collection<? extends AssignedEntity>)newValue);
 				return;
 			case CDAPackage.AUTHENTICATOR__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -556,13 +549,13 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.AUTHENTICATOR__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.AUTHENTICATOR__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.AUTHENTICATOR__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.AUTHENTICATOR__TIME:
 				setTime((TS)null);
@@ -571,7 +564,7 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 				setSignatureCode((CS)null);
 				return;
 			case CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY:
-				getAssignedEntity().clear();
+				getAssignedEntities().clear();
 				return;
 			case CDAPackage.AUTHENTICATOR__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -592,17 +585,17 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.AUTHENTICATOR__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.AUTHENTICATOR__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.AUTHENTICATOR__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.AUTHENTICATOR__TIME:
 				return time != null;
 			case CDAPackage.AUTHENTICATOR__SIGNATURE_CODE:
 				return signatureCode != null;
 			case CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY:
-				return assignedEntity != null && !assignedEntity.isEmpty();
+				return assignedEntities != null && !assignedEntities.isEmpty();
 			case CDAPackage.AUTHENTICATOR__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.AUTHENTICATOR__TYPE_CODE:

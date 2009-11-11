@@ -16,18 +16,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -50,7 +45,6 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.Specimen;
 import org.openhealthtools.mdht.uml.cda.Subject;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
-
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.operations.SubstanceAdministrationOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
@@ -62,7 +56,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_PQ;
 import org.openhealthtools.mdht.uml.hl7.datatypes.RTO_PQ_PQ;
 import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
@@ -74,32 +67,32 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getStatusCode <em>Status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getEffectiveTime <em>Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getEffectiveTimes <em>Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getPriorityCode <em>Priority Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getRepeatNumber <em>Repeat Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getRouteCode <em>Route Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getApproachSiteCode <em>Approach Site Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getApproachSiteCodes <em>Approach Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getDoseQuantity <em>Dose Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getRateQuantity <em>Rate Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getMaxDoseQuantity <em>Max Dose Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getAdministrativeUnitCode <em>Administrative Unit Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getSubject <em>Subject</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getSpecimen <em>Specimen</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getSpecimens <em>Specimen</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getConsumable <em>Consumable</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getPerformer <em>Performer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getAuthor <em>Author</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getInformant <em>Informant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getParticipant <em>Participant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getEntryRelationship <em>Entry Relationship</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getPrecondition <em>Precondition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getPerformers <em>Performer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getAuthors <em>Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getInformants <em>Informant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getReferences <em>Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getParticipants <em>Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getEntryRelationships <em>Entry Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getPreconditions <em>Precondition</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getMoodCode <em>Mood Code</em>}</li>
@@ -111,14 +104,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  */
 public class SubstanceAdministrationImpl extends EObjectImpl implements SubstanceAdministration {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -131,24 +124,24 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getIds() <em>Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> id;
+	protected EList<II> ids;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
@@ -181,14 +174,14 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	protected CS statusCode;
 
 	/**
-	 * The cached value of the '{@link #getEffectiveTime() <em>Effective Time</em>}' containment reference list.
+	 * The cached value of the '{@link #getEffectiveTimes() <em>Effective Time</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEffectiveTime()
+	 * @see #getEffectiveTimes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SXCM_TS> effectiveTime;
+	protected EList<SXCM_TS> effectiveTimes;
 
 	/**
 	 * The cached value of the '{@link #getPriorityCode() <em>Priority Code</em>}' containment reference.
@@ -221,14 +214,14 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	protected CE routeCode;
 
 	/**
-	 * The cached value of the '{@link #getApproachSiteCode() <em>Approach Site Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getApproachSiteCodes() <em>Approach Site Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getApproachSiteCode()
+	 * @see #getApproachSiteCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CD> approachSiteCode;
+	protected EList<CD> approachSiteCodes;
 
 	/**
 	 * The cached value of the '{@link #getDoseQuantity() <em>Dose Quantity</em>}' containment reference.
@@ -281,14 +274,14 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	protected Subject subject;
 
 	/**
-	 * The cached value of the '{@link #getSpecimen() <em>Specimen</em>}' containment reference list.
+	 * The cached value of the '{@link #getSpecimens() <em>Specimen</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpecimen()
+	 * @see #getSpecimens()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Specimen> specimen;
+	protected EList<Specimen> specimens;
 
 	/**
 	 * The cached value of the '{@link #getConsumable() <em>Consumable</em>}' containment reference.
@@ -301,74 +294,74 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	protected Consumable consumable;
 
 	/**
-	 * The cached value of the '{@link #getPerformer() <em>Performer</em>}' containment reference list.
+	 * The cached value of the '{@link #getPerformers() <em>Performer</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPerformer()
+	 * @see #getPerformers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Performer2> performer;
+	protected EList<Performer2> performers;
 
 	/**
-	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' containment reference list.
+	 * The cached value of the '{@link #getAuthors() <em>Author</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAuthor()
+	 * @see #getAuthors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Author> author;
+	protected EList<Author> authors;
 
 	/**
-	 * The cached value of the '{@link #getInformant() <em>Informant</em>}' containment reference list.
+	 * The cached value of the '{@link #getInformants() <em>Informant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInformant()
+	 * @see #getInformants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Informant12> informant;
+	protected EList<Informant12> informants;
 
 	/**
-	 * The cached value of the '{@link #getReference() <em>Reference</em>}' containment reference list.
+	 * The cached value of the '{@link #getReferences() <em>Reference</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReference()
+	 * @see #getReferences()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Reference> reference;
+	protected EList<Reference> references;
 
 	/**
-	 * The cached value of the '{@link #getParticipant() <em>Participant</em>}' containment reference list.
+	 * The cached value of the '{@link #getParticipants() <em>Participant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParticipant()
+	 * @see #getParticipants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Participant2> participant;
+	protected EList<Participant2> participants;
 
 	/**
-	 * The cached value of the '{@link #getEntryRelationship() <em>Entry Relationship</em>}' containment reference list.
+	 * The cached value of the '{@link #getEntryRelationships() <em>Entry Relationship</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntryRelationship()
+	 * @see #getEntryRelationships()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntryRelationship> entryRelationship;
+	protected EList<EntryRelationship> entryRelationships;
 
 	/**
-	 * The cached value of the '{@link #getPrecondition() <em>Precondition</em>}' containment reference list.
+	 * The cached value of the '{@link #getPreconditions() <em>Precondition</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrecondition()
+	 * @see #getPreconditions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Precondition> precondition;
+	protected EList<Precondition> preconditions;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -501,11 +494,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -556,11 +549,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -568,11 +561,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getId() {
-		if (id == null) {
-			id = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__ID);
+	public EList<II> getIds() {
+		if (ids == null) {
+			ids = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__ID);
 		}
-		return id;
+		return ids;
 	}
 
 	/**
@@ -709,11 +702,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SXCM_TS> getEffectiveTime() {
-		if (effectiveTime == null) {
-			effectiveTime = new EObjectContainmentEList<SXCM_TS>(SXCM_TS.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME);
+	public EList<SXCM_TS> getEffectiveTimes() {
+		if (effectiveTimes == null) {
+			effectiveTimes = new EObjectContainmentEList<SXCM_TS>(SXCM_TS.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME);
 		}
-		return effectiveTime;
+		return effectiveTimes;
 	}
 
 	/**
@@ -850,11 +843,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CD> getApproachSiteCode() {
-		if (approachSiteCode == null) {
-			approachSiteCode = new EObjectContainmentEList<CD>(CD.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE);
+	public EList<CD> getApproachSiteCodes() {
+		if (approachSiteCodes == null) {
+			approachSiteCodes = new EObjectContainmentEList<CD>(CD.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE);
 		}
-		return approachSiteCode;
+		return approachSiteCodes;
 	}
 
 	/**
@@ -1077,11 +1070,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Specimen> getSpecimen() {
-		if (specimen == null) {
-			specimen = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN);
+	public EList<Specimen> getSpecimens() {
+		if (specimens == null) {
+			specimens = new EObjectContainmentEList<Specimen>(Specimen.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN);
 		}
-		return specimen;
+		return specimens;
 	}
 
 	/**
@@ -1132,11 +1125,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Performer2> getPerformer() {
-		if (performer == null) {
-			performer = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__PERFORMER);
+	public EList<Performer2> getPerformers() {
+		if (performers == null) {
+			performers = new EObjectContainmentEList<Performer2>(Performer2.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__PERFORMER);
 		}
-		return performer;
+		return performers;
 	}
 
 	/**
@@ -1144,11 +1137,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Author> getAuthor() {
-		if (author == null) {
-			author = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__AUTHOR);
+	public EList<Author> getAuthors() {
+		if (authors == null) {
+			authors = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__AUTHOR);
 		}
-		return author;
+		return authors;
 	}
 
 	/**
@@ -1156,11 +1149,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Informant12> getInformant() {
-		if (informant == null) {
-			informant = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT);
+	public EList<Informant12> getInformants() {
+		if (informants == null) {
+			informants = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT);
 		}
-		return informant;
+		return informants;
 	}
 
 	/**
@@ -1168,11 +1161,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Reference> getReference() {
-		if (reference == null) {
-			reference = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE);
+	public EList<Reference> getReferences() {
+		if (references == null) {
+			references = new EObjectContainmentEList<Reference>(Reference.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE);
 		}
-		return reference;
+		return references;
 	}
 
 	/**
@@ -1180,11 +1173,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Participant2> getParticipant() {
-		if (participant == null) {
-			participant = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT);
+	public EList<Participant2> getParticipants() {
+		if (participants == null) {
+			participants = new EObjectContainmentEList<Participant2>(Participant2.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT);
 		}
-		return participant;
+		return participants;
 	}
 
 	/**
@@ -1192,11 +1185,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntryRelationship> getEntryRelationship() {
-		if (entryRelationship == null) {
-			entryRelationship = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP);
+	public EList<EntryRelationship> getEntryRelationships() {
+		if (entryRelationships == null) {
+			entryRelationships = new EObjectContainmentEList<EntryRelationship>(EntryRelationship.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP);
 		}
-		return entryRelationship;
+		return entryRelationships;
 	}
 
 	/**
@@ -1204,11 +1197,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Precondition> getPrecondition() {
-		if (precondition == null) {
-			precondition = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION);
+	public EList<Precondition> getPreconditions() {
+		if (preconditions == null) {
+			preconditions = new EObjectContainmentEList<Precondition>(Precondition.class, this, CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION);
 		}
-		return precondition;
+		return preconditions;
 	}
 
 	/**
@@ -1456,8 +1449,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Act> getAct() {
-		return SubstanceAdministrationOperations.getAct(this);
+	public EList<Act> getActs() {
+		return SubstanceAdministrationOperations.getActs(this);
 	}
 
 	/**
@@ -1474,8 +1467,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Encounter> getEncounter() {
-		return SubstanceAdministrationOperations.getEncounter(this);
+	public EList<Encounter> getEncounters() {
+		return SubstanceAdministrationOperations.getEncounters(this);
 	}
 
 	/**
@@ -1483,8 +1476,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Observation> getObservation() {
-		return SubstanceAdministrationOperations.getObservation(this);
+	public EList<Observation> getObservations() {
+		return SubstanceAdministrationOperations.getObservations(this);
 	}
 
 	/**
@@ -1501,8 +1494,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Organizer> getOrganizer() {
-		return SubstanceAdministrationOperations.getOrganizer(this);
+	public EList<Organizer> getOrganizers() {
+		return SubstanceAdministrationOperations.getOrganizers(this);
 	}
 
 	/**
@@ -1510,8 +1503,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Procedure> getProcedure() {
-		return SubstanceAdministrationOperations.getProcedure(this);
+	public EList<Procedure> getProcedures() {
+		return SubstanceAdministrationOperations.getProcedures(this);
 	}
 
 	/**
@@ -1519,8 +1512,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RegionOfInterest> getRegionOfInterest() {
-		return SubstanceAdministrationOperations.getRegionOfInterest(this);
+	public EList<RegionOfInterest> getRegionsOfInterest() {
+		return SubstanceAdministrationOperations.getRegionsOfInterest(this);
 	}
 
 	/**
@@ -1537,8 +1530,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SubstanceAdministration> getSubstanceAdministration() {
-		return SubstanceAdministrationOperations.getSubstanceAdministration(this);
+	public EList<SubstanceAdministration> getSubstanceAdministrations() {
+		return SubstanceAdministrationOperations.getSubstanceAdministrations(this);
 	}
 
 	/**
@@ -1546,8 +1539,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Supply> getSupply() {
-		return SubstanceAdministrationOperations.getSupply(this);
+	public EList<Supply> getSupplies() {
+		return SubstanceAdministrationOperations.getSupplies(this);
 	}
 
 	/**
@@ -1658,13 +1651,13 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ID:
-				return ((InternalEList<?>)getId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TEXT:
@@ -1672,7 +1665,7 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__STATUS_CODE:
 				return basicSetStatusCode(null, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME:
-				return ((InternalEList<?>)getEffectiveTime()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getEffectiveTimes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE:
 				return basicSetPriorityCode(null, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER:
@@ -1680,7 +1673,7 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ROUTE_CODE:
 				return basicSetRouteCode(null, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE:
-				return ((InternalEList<?>)getApproachSiteCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getApproachSiteCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY:
 				return basicSetDoseQuantity(null, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__RATE_QUANTITY:
@@ -1692,23 +1685,23 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN:
-				return ((InternalEList<?>)getSpecimen()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getSpecimens()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE:
 				return basicSetConsumable(null, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PERFORMER:
-				return ((InternalEList<?>)getPerformer()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPerformers()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__AUTHOR:
-				return ((InternalEList<?>)getAuthor()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT:
-				return ((InternalEList<?>)getInformant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
-				return ((InternalEList<?>)getReference()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getReferences()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT:
-				return ((InternalEList<?>)getParticipant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP:
-				return ((InternalEList<?>)getEntryRelationship()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getEntryRelationships()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION:
-				return ((InternalEList<?>)getPrecondition()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPreconditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1722,13 +1715,13 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ID:
-				return getId();
+				return getIds();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__CODE:
 				return getCode();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TEXT:
@@ -1736,7 +1729,7 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__STATUS_CODE:
 				return getStatusCode();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME:
-				return getEffectiveTime();
+				return getEffectiveTimes();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE:
 				return getPriorityCode();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER:
@@ -1744,7 +1737,7 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ROUTE_CODE:
 				return getRouteCode();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE:
-				return getApproachSiteCode();
+				return getApproachSiteCodes();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY:
 				return getDoseQuantity();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__RATE_QUANTITY:
@@ -1756,23 +1749,23 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT:
 				return getSubject();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN:
-				return getSpecimen();
+				return getSpecimens();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE:
 				return getConsumable();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PERFORMER:
-				return getPerformer();
+				return getPerformers();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__AUTHOR:
-				return getAuthor();
+				return getAuthors();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT:
-				return getInformant();
+				return getInformants();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
-				return getReference();
+				return getReferences();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT:
-				return getParticipant();
+				return getParticipants();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP:
-				return getEntryRelationship();
+				return getEntryRelationships();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION:
-				return getPrecondition();
+				return getPreconditions();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__CLASS_CODE:
@@ -1795,19 +1788,19 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ID:
-				getId().clear();
-				getId().addAll((Collection<? extends II>)newValue);
+				getIds().clear();
+				getIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__CODE:
 				setCode((CD)newValue);
@@ -1819,8 +1812,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 				setStatusCode((CS)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME:
-				getEffectiveTime().clear();
-				getEffectiveTime().addAll((Collection<? extends SXCM_TS>)newValue);
+				getEffectiveTimes().clear();
+				getEffectiveTimes().addAll((Collection<? extends SXCM_TS>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE:
 				setPriorityCode((CE)newValue);
@@ -1832,8 +1825,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 				setRouteCode((CE)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE:
-				getApproachSiteCode().clear();
-				getApproachSiteCode().addAll((Collection<? extends CD>)newValue);
+				getApproachSiteCodes().clear();
+				getApproachSiteCodes().addAll((Collection<? extends CD>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY:
 				setDoseQuantity((IVL_PQ)newValue);
@@ -1851,39 +1844,39 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 				setSubject((Subject)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN:
-				getSpecimen().clear();
-				getSpecimen().addAll((Collection<? extends Specimen>)newValue);
+				getSpecimens().clear();
+				getSpecimens().addAll((Collection<? extends Specimen>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE:
 				setConsumable((Consumable)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PERFORMER:
-				getPerformer().clear();
-				getPerformer().addAll((Collection<? extends Performer2>)newValue);
+				getPerformers().clear();
+				getPerformers().addAll((Collection<? extends Performer2>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__AUTHOR:
-				getAuthor().clear();
-				getAuthor().addAll((Collection<? extends Author>)newValue);
+				getAuthors().clear();
+				getAuthors().addAll((Collection<? extends Author>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT:
-				getInformant().clear();
-				getInformant().addAll((Collection<? extends Informant12>)newValue);
+				getInformants().clear();
+				getInformants().addAll((Collection<? extends Informant12>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
-				getReference().clear();
-				getReference().addAll((Collection<? extends Reference>)newValue);
+				getReferences().clear();
+				getReferences().addAll((Collection<? extends Reference>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT:
-				getParticipant().clear();
-				getParticipant().addAll((Collection<? extends Participant2>)newValue);
+				getParticipants().clear();
+				getParticipants().addAll((Collection<? extends Participant2>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP:
-				getEntryRelationship().clear();
-				getEntryRelationship().addAll((Collection<? extends EntryRelationship>)newValue);
+				getEntryRelationships().clear();
+				getEntryRelationships().addAll((Collection<? extends EntryRelationship>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION:
-				getPrecondition().clear();
-				getPrecondition().addAll((Collection<? extends Precondition>)newValue);
+				getPreconditions().clear();
+				getPreconditions().addAll((Collection<? extends Precondition>)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -1910,16 +1903,16 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ID:
-				getId().clear();
+				getIds().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__CODE:
 				setCode((CD)null);
@@ -1931,7 +1924,7 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 				setStatusCode((CS)null);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME:
-				getEffectiveTime().clear();
+				getEffectiveTimes().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE:
 				setPriorityCode((CE)null);
@@ -1943,7 +1936,7 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 				setRouteCode((CE)null);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE:
-				getApproachSiteCode().clear();
+				getApproachSiteCodes().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY:
 				setDoseQuantity((IVL_PQ)null);
@@ -1961,31 +1954,31 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 				setSubject((Subject)null);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN:
-				getSpecimen().clear();
+				getSpecimens().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE:
 				setConsumable((Consumable)null);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PERFORMER:
-				getPerformer().clear();
+				getPerformers().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__AUTHOR:
-				getAuthor().clear();
+				getAuthors().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT:
-				getInformant().clear();
+				getInformants().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
-				getReference().clear();
+				getReferences().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT:
-				getParticipant().clear();
+				getParticipants().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP:
-				getEntryRelationship().clear();
+				getEntryRelationships().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION:
-				getPrecondition().clear();
+				getPreconditions().clear();
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -2012,13 +2005,13 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ID:
-				return id != null && !id.isEmpty();
+				return ids != null && !ids.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__CODE:
 				return code != null;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__TEXT:
@@ -2026,7 +2019,7 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__STATUS_CODE:
 				return statusCode != null;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME:
-				return effectiveTime != null && !effectiveTime.isEmpty();
+				return effectiveTimes != null && !effectiveTimes.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE:
 				return priorityCode != null;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER:
@@ -2034,7 +2027,7 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ROUTE_CODE:
 				return routeCode != null;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE:
-				return approachSiteCode != null && !approachSiteCode.isEmpty();
+				return approachSiteCodes != null && !approachSiteCodes.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY:
 				return doseQuantity != null;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__RATE_QUANTITY:
@@ -2046,23 +2039,23 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT:
 				return subject != null;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN:
-				return specimen != null && !specimen.isEmpty();
+				return specimens != null && !specimens.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE:
 				return consumable != null;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PERFORMER:
-				return performer != null && !performer.isEmpty();
+				return performers != null && !performers.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__AUTHOR:
-				return author != null && !author.isEmpty();
+				return authors != null && !authors.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT:
-				return informant != null && !informant.isEmpty();
+				return informants != null && !informants.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE:
-				return reference != null && !reference.isEmpty();
+				return references != null && !references.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT:
-				return participant != null && !participant.isEmpty();
+				return participants != null && !participants.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP:
-				return entryRelationship != null && !entryRelationship.isEmpty();
+				return entryRelationships != null && !entryRelationships.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION:
-				return precondition != null && !precondition.isEmpty();
+				return preconditions != null && !preconditions.isEmpty();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__CLASS_CODE:

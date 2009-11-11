@@ -50,8 +50,8 @@ public class MedicationSectionImpl extends SectionImpl implements MedicationSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationSectionOperations.MedicationSection_templateId(this, diagnostics, context);
+	public boolean validateMedicationSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSectionOperations.validateMedicationSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class MedicationSectionImpl extends SectionImpl implements MedicationSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationSectionOperations.MedicationSection_code(this, diagnostics, context);
+	public boolean validateMedicationSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSectionOperations.validateMedicationSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class MedicationSectionImpl extends SectionImpl implements MedicationSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationSectionOperations.MedicationSection_title(this, diagnostics, context);
+	public boolean validateMedicationSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSectionOperations.validateMedicationSectionTitle(this, diagnostics, context);
 	}
 
 	/**

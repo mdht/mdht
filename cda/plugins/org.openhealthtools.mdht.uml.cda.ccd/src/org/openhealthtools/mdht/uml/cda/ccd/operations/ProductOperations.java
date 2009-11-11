@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.operations.ManufacturedProductOperations
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.Product#Product_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Product template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,24 +45,24 @@ public class ProductOperations extends ManufacturedProductOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #Product_templateId(Product, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Product template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateProductTemplateId(Product, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #Product_templateId(Product, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProductTemplateId(Product, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.53')";
+	protected static final String VALIDATE_PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.53')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #Product_templateId(Product, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Product template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateProductTemplateId(Product, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #Product_templateId(Product, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProductTemplateId(Product, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,25 +75,25 @@ public class ProductOperations extends ManufacturedProductOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean Product_templateId(Product product, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProductTemplateId(Product product, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PRODUCT);
 			try {
-				PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(product)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(product)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PRODUCT__PRODUCT_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("Product_templateId"),
+						 CCDPlugin.INSTANCE.getString("ProductTemplateId"),
 						 new Object [] { product }));
 			}
 			return false;

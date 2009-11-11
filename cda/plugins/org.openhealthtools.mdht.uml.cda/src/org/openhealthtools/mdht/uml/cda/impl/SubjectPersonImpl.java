@@ -16,28 +16,21 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.SubjectPerson;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -49,10 +42,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getNames <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getAdministrativeGenderCode <em>Administrative Gender Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getBirthTime <em>Birth Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getNullFlavor <em>Null Flavor</em>}</li>
@@ -65,14 +58,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class SubjectPersonImpl extends EObjectImpl implements SubjectPerson {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -85,24 +78,24 @@ public class SubjectPersonImpl extends EObjectImpl implements SubjectPerson {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' containment reference list.
+	 * The cached value of the '{@link #getNames() <em>Name</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getNames()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PN> name;
+	protected EList<PN> names;
 
 	/**
 	 * The cached value of the '{@link #getAdministrativeGenderCode() <em>Administrative Gender Code</em>}' containment reference.
@@ -235,11 +228,11 @@ public class SubjectPersonImpl extends EObjectImpl implements SubjectPerson {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.SUBJECT_PERSON__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.SUBJECT_PERSON__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -290,11 +283,11 @@ public class SubjectPersonImpl extends EObjectImpl implements SubjectPerson {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SUBJECT_PERSON__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SUBJECT_PERSON__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -302,11 +295,11 @@ public class SubjectPersonImpl extends EObjectImpl implements SubjectPerson {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PN> getName() {
-		if (name == null) {
-			name = new EObjectContainmentEList<PN>(PN.class, this, CDAPackage.SUBJECT_PERSON__NAME);
+	public EList<PN> getNames() {
+		if (names == null) {
+			names = new EObjectContainmentEList<PN>(PN.class, this, CDAPackage.SUBJECT_PERSON__NAME);
 		}
-		return name;
+		return names;
 	}
 
 	/**
@@ -542,13 +535,13 @@ public class SubjectPersonImpl extends EObjectImpl implements SubjectPerson {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.SUBJECT_PERSON__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBJECT_PERSON__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.SUBJECT_PERSON__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBJECT_PERSON__NAME:
-				return ((InternalEList<?>)getName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getNames()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE:
 				return basicSetAdministrativeGenderCode(null, msgs);
 			case CDAPackage.SUBJECT_PERSON__BIRTH_TIME:
@@ -566,13 +559,13 @@ public class SubjectPersonImpl extends EObjectImpl implements SubjectPerson {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.SUBJECT_PERSON__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.SUBJECT_PERSON__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.SUBJECT_PERSON__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.SUBJECT_PERSON__NAME:
-				return getName();
+				return getNames();
 			case CDAPackage.SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE:
 				return getAdministrativeGenderCode();
 			case CDAPackage.SUBJECT_PERSON__BIRTH_TIME:
@@ -597,19 +590,19 @@ public class SubjectPersonImpl extends EObjectImpl implements SubjectPerson {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.SUBJECT_PERSON__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.SUBJECT_PERSON__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.SUBJECT_PERSON__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.SUBJECT_PERSON__NAME:
-				getName().clear();
-				getName().addAll((Collection<? extends PN>)newValue);
+				getNames().clear();
+				getNames().addAll((Collection<? extends PN>)newValue);
 				return;
 			case CDAPackage.SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE:
 				setAdministrativeGenderCode((CE)newValue);
@@ -639,16 +632,16 @@ public class SubjectPersonImpl extends EObjectImpl implements SubjectPerson {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.SUBJECT_PERSON__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.SUBJECT_PERSON__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.SUBJECT_PERSON__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.SUBJECT_PERSON__NAME:
-				getName().clear();
+				getNames().clear();
 				return;
 			case CDAPackage.SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE:
 				setAdministrativeGenderCode((CE)null);
@@ -678,13 +671,13 @@ public class SubjectPersonImpl extends EObjectImpl implements SubjectPerson {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.SUBJECT_PERSON__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.SUBJECT_PERSON__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.SUBJECT_PERSON__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.SUBJECT_PERSON__NAME:
-				return name != null && !name.isEmpty();
+				return names != null && !names.isEmpty();
 			case CDAPackage.SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE:
 				return administrativeGenderCode != null;
 			case CDAPackage.SUBJECT_PERSON__BIRTH_TIME:

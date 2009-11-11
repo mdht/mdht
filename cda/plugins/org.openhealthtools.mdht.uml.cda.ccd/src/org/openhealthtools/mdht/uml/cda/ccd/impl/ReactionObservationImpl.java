@@ -50,8 +50,8 @@ public class ReactionObservationImpl extends ObservationImpl implements Reaction
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ReactionObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ReactionObservationOperations.ReactionObservation_templateId(this, diagnostics, context);
+	public boolean validateReactionObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReactionObservationOperations.validateReactionObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class ReactionObservationImpl extends ObservationImpl implements Reaction
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ReactionObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ReactionObservationOperations.ReactionObservation_statusCode(this, diagnostics, context);
+	public boolean validateReactionObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReactionObservationOperations.validateReactionObservationStatusCode(this, diagnostics, context);
 	}
 
 	/**

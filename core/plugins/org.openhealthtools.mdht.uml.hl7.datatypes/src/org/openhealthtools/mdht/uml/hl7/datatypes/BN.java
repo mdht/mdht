@@ -38,6 +38,6 @@ public interface BN extends BL {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.nullFlavor.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean nullFlavor(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateNullFlavor(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // BN

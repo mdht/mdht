@@ -16,7 +16,6 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.URIConverter;
@@ -24,14 +23,10 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.GenericXMLResourceFactoryImpl;
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot;
-
 import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.OCL;
-
 import org.eclipse.ocl.expressions.OCLExpression;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -124,7 +119,7 @@ public class SectionOperations {
 	public static  void addAct(Section section, Act act) {
 		Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setAct(act);
-		section.getEntry().add(entry);
+		section.getEntries().add(entry);
 	}
 
 	/**
@@ -135,7 +130,7 @@ public class SectionOperations {
 	public static  void addEncounter(Section section, Encounter encounter) {
 		Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setEncounter(encounter);
-		section.getEntry().add(entry);
+		section.getEntries().add(entry);
 	}
 
 	/**
@@ -146,7 +141,7 @@ public class SectionOperations {
 	public static  void addObservation(Section section, Observation observation) {
 		Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setObservation(observation);
-		section.getEntry().add(entry);
+		section.getEntries().add(entry);
 	}
 
 	/**
@@ -157,7 +152,7 @@ public class SectionOperations {
 	public static  void addObservationMedia(Section section, ObservationMedia observationMedia) {
 		Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setObservationMedia(observationMedia);
-		section.getEntry().add(entry);
+		section.getEntries().add(entry);
 	}
 
 	/**
@@ -168,7 +163,7 @@ public class SectionOperations {
 	public static  void addOrganizer(Section section, Organizer organizer) {
 		Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setOrganizer(organizer);
-		section.getEntry().add(entry);
+		section.getEntries().add(entry);
 	}
 
 	/**
@@ -179,7 +174,7 @@ public class SectionOperations {
 	public static  void addProcedure(Section section, Procedure procedure) {
 		Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setProcedure(procedure);
-		section.getEntry().add(entry);
+		section.getEntries().add(entry);
 	}
 
 	/**
@@ -190,7 +185,7 @@ public class SectionOperations {
 	public static  void addRegionOfInterest(Section section, RegionOfInterest regionOfInterest) {
 		Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setRegionOfInterest(regionOfInterest);
-		section.getEntry().add(entry);
+		section.getEntries().add(entry);
 	}
 
 	/**
@@ -201,7 +196,7 @@ public class SectionOperations {
 	public static  void addSection(Section section, Section newSection) {
 		Component5 component5 = CDAFactory.eINSTANCE.createComponent5();
 		component5.setSection(newSection);
-		section.getComponent().add(component5);
+		section.getComponents().add(component5);
 	}
 
 	/**
@@ -212,7 +207,7 @@ public class SectionOperations {
 	public static  void addSubstanceAdministration(Section section, SubstanceAdministration substanceAdministration) {
 		Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setSubstanceAdministration(substanceAdministration);
-		section.getEntry().add(entry);
+		section.getEntries().add(entry);
 	}
 
 	/**
@@ -223,7 +218,7 @@ public class SectionOperations {
 	public static  void addSupply(Section section, Supply supply) {
 		Entry entry = CDAFactory.eINSTANCE.createEntry();
 		entry.setSupply(supply);
-		section.getEntry().add(entry);
+		section.getEntries().add(entry);
 	}
 
 	/**

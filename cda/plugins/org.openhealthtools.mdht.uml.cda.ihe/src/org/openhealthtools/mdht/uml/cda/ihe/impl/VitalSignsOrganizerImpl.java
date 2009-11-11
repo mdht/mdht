@@ -10,18 +10,12 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.openhealthtools.mdht.uml.cda.Author;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.VitalSignsOrganizerOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -31,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.impl.VitalSignsOrganizerImpl#getAuthor <em>Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.impl.VitalSignsOrganizerImpl#getAuthors <em>Author</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,11 +57,11 @@ public class VitalSignsOrganizerImpl extends org.openhealthtools.mdht.uml.cda.cc
 	 * @generated
 	 */
 	@Override
-	public EList<Author> getAuthor() {
-		if (author == null) {
-			author = new EObjectResolvingEList<Author>(Author.class, this, IHEPackage.VITAL_SIGNS_ORGANIZER__AUTHOR);
+	public EList<Author> getAuthors() {
+		if (authors == null) {
+			authors = new EObjectResolvingEList<Author>(Author.class, this, IHEPackage.VITAL_SIGNS_ORGANIZER__AUTHOR);
 		}
-		return author;
+		return authors;
 	}
 
 	/**
@@ -75,8 +69,8 @@ public class VitalSignsOrganizerImpl extends org.openhealthtools.mdht.uml.cda.cc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetAuthor() {
-		return author != null && !author.isEmpty();
+	public boolean isSetAuthors() {
+		return authors != null && !authors.isEmpty();
 	}
 
 	/**
@@ -84,8 +78,8 @@ public class VitalSignsOrganizerImpl extends org.openhealthtools.mdht.uml.cda.cc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean VitalSignsOrganizer_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsOrganizerOperations.VitalSignsOrganizer_code(this, diagnostics, context);
+	public boolean validateIHEVitalSignsOrganizerTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsOrganizerOperations.validateIHEVitalSignsOrganizerTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -93,8 +87,8 @@ public class VitalSignsOrganizerImpl extends org.openhealthtools.mdht.uml.cda.cc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean VitalSignsOrganizer_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsOrganizerOperations.VitalSignsOrganizer_statusCode(this, diagnostics, context);
+	public boolean validateVitalSignsOrganizerCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsOrganizerOperations.validateVitalSignsOrganizerCode(this, diagnostics, context);
 	}
 
 	/**
@@ -102,8 +96,8 @@ public class VitalSignsOrganizerImpl extends org.openhealthtools.mdht.uml.cda.cc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean VitalSignsOrganizer_effectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsOrganizerOperations.VitalSignsOrganizer_effectiveTime(this, diagnostics, context);
+	public boolean validateVitalSignsOrganizerStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsOrganizerOperations.validateVitalSignsOrganizerStatusCode(this, diagnostics, context);
 	}
 
 	/**
@@ -111,8 +105,8 @@ public class VitalSignsOrganizerImpl extends org.openhealthtools.mdht.uml.cda.cc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean VitalSignsOrganizer_vitalSignObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsOrganizerOperations.VitalSignsOrganizer_vitalSignObservation(this, diagnostics, context);
+	public boolean validateVitalSignsOrganizerEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsOrganizerOperations.validateVitalSignsOrganizerEffectiveTime(this, diagnostics, context);
 	}
 
 	/**
@@ -120,9 +114,8 @@ public class VitalSignsOrganizerImpl extends org.openhealthtools.mdht.uml.cda.cc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean VitalSignsOrganizer_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsOrganizerOperations.VitalSignsOrganizer_templateId(this, diagnostics, context);
+	public boolean validateVitalSignsOrganizerVitalSignObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsOrganizerOperations.validateVitalSignsOrganizerVitalSignObservation(this, diagnostics, context);
 	}
 
 	/**

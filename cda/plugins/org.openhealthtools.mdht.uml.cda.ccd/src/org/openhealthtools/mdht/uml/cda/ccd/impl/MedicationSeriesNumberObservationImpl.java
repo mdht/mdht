@@ -50,8 +50,8 @@ public class MedicationSeriesNumberObservationImpl extends ObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationSeriesNumberObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_templateId(this, diagnostics, context);
+	public boolean validateMedicationSeriesNumberObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class MedicationSeriesNumberObservationImpl extends ObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationSeriesNumberObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_statusCode(this, diagnostics, context);
+	public boolean validateMedicationSeriesNumberObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationStatusCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class MedicationSeriesNumberObservationImpl extends ObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationSeriesNumberObservation_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_code(this, diagnostics, context);
+	public boolean validateMedicationSeriesNumberObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationCode(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class MedicationSeriesNumberObservationImpl extends ObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean MedicationSeriesNumberObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationSeriesNumberObservationOperations.MedicationSeriesNumberObservation_value(this, diagnostics, context);
+	public boolean validateMedicationSeriesNumberObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationValue(this, diagnostics, context);
 	}
 
 	/**

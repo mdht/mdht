@@ -16,18 +16,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -45,7 +40,6 @@ import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.Subject;
-
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
@@ -53,7 +47,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -65,9 +58,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getTitle <em>Title</em>}</li>
@@ -75,10 +68,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getConfidentialityCode <em>Confidentiality Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getLanguageCode <em>Language Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getSubject <em>Subject</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getAuthor <em>Author</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getInformant <em>Informant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getEntry <em>Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getComponent <em>Component</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getAuthors <em>Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getInformants <em>Informant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getEntries <em>Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getComponents <em>Component</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getSectionId <em>Section Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl#getClassCode <em>Class Code</em>}</li>
@@ -90,14 +83,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class SectionImpl extends EObjectImpl implements Section {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -110,14 +103,14 @@ public class SectionImpl extends EObjectImpl implements Section {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference.
@@ -190,44 +183,44 @@ public class SectionImpl extends EObjectImpl implements Section {
 	protected Subject subject;
 
 	/**
-	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' containment reference list.
+	 * The cached value of the '{@link #getAuthors() <em>Author</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAuthor()
+	 * @see #getAuthors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Author> author;
+	protected EList<Author> authors;
 
 	/**
-	 * The cached value of the '{@link #getInformant() <em>Informant</em>}' containment reference list.
+	 * The cached value of the '{@link #getInformants() <em>Informant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInformant()
+	 * @see #getInformants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Informant12> informant;
+	protected EList<Informant12> informants;
 
 	/**
-	 * The cached value of the '{@link #getEntry() <em>Entry</em>}' containment reference list.
+	 * The cached value of the '{@link #getEntries() <em>Entry</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntry()
+	 * @see #getEntries()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Entry> entry;
+	protected EList<Entry> entries;
 
 	/**
-	 * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference list.
+	 * The cached value of the '{@link #getComponents() <em>Component</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComponent()
+	 * @see #getComponents()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Component5> component;
+	protected EList<Component5> components;
 
 	/**
 	 * The default value of the '{@link #getSectionId() <em>Section Id</em>}' attribute.
@@ -360,11 +353,11 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.SECTION__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.SECTION__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -415,11 +408,11 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SECTION__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SECTION__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -728,11 +721,11 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Author> getAuthor() {
-		if (author == null) {
-			author = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.SECTION__AUTHOR);
+	public EList<Author> getAuthors() {
+		if (authors == null) {
+			authors = new EObjectContainmentEList<Author>(Author.class, this, CDAPackage.SECTION__AUTHOR);
 		}
-		return author;
+		return authors;
 	}
 
 	/**
@@ -740,11 +733,11 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Informant12> getInformant() {
-		if (informant == null) {
-			informant = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.SECTION__INFORMANT);
+	public EList<Informant12> getInformants() {
+		if (informants == null) {
+			informants = new EObjectContainmentEList<Informant12>(Informant12.class, this, CDAPackage.SECTION__INFORMANT);
 		}
-		return informant;
+		return informants;
 	}
 
 	/**
@@ -752,11 +745,11 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Entry> getEntry() {
-		if (entry == null) {
-			entry = new EObjectContainmentEList<Entry>(Entry.class, this, CDAPackage.SECTION__ENTRY);
+	public EList<Entry> getEntries() {
+		if (entries == null) {
+			entries = new EObjectContainmentEList<Entry>(Entry.class, this, CDAPackage.SECTION__ENTRY);
 		}
-		return entry;
+		return entries;
 	}
 
 	/**
@@ -764,11 +757,11 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Component5> getComponent() {
-		if (component == null) {
-			component = new EObjectContainmentEList<Component5>(Component5.class, this, CDAPackage.SECTION__COMPONENT);
+	public EList<Component5> getComponents() {
+		if (components == null) {
+			components = new EObjectContainmentEList<Component5>(Component5.class, this, CDAPackage.SECTION__COMPONENT);
 		}
-		return component;
+		return components;
 	}
 
 	/**
@@ -1245,11 +1238,11 @@ public class SectionImpl extends EObjectImpl implements Section {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.SECTION__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SECTION__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.SECTION__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SECTION__ID:
 				return basicSetId(null, msgs);
 			case CDAPackage.SECTION__CODE:
@@ -1265,13 +1258,13 @@ public class SectionImpl extends EObjectImpl implements Section {
 			case CDAPackage.SECTION__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.SECTION__AUTHOR:
-				return ((InternalEList<?>)getAuthor()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SECTION__INFORMANT:
-				return ((InternalEList<?>)getInformant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInformants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SECTION__ENTRY:
-				return ((InternalEList<?>)getEntry()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getEntries()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SECTION__COMPONENT:
-				return ((InternalEList<?>)getComponent()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getComponents()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1285,11 +1278,11 @@ public class SectionImpl extends EObjectImpl implements Section {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.SECTION__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.SECTION__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.SECTION__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.SECTION__ID:
 				return getId();
 			case CDAPackage.SECTION__CODE:
@@ -1305,13 +1298,13 @@ public class SectionImpl extends EObjectImpl implements Section {
 			case CDAPackage.SECTION__SUBJECT:
 				return getSubject();
 			case CDAPackage.SECTION__AUTHOR:
-				return getAuthor();
+				return getAuthors();
 			case CDAPackage.SECTION__INFORMANT:
-				return getInformant();
+				return getInformants();
 			case CDAPackage.SECTION__ENTRY:
-				return getEntry();
+				return getEntries();
 			case CDAPackage.SECTION__COMPONENT:
-				return getComponent();
+				return getComponents();
 			case CDAPackage.SECTION__SECTION_ID:
 				return getSectionId();
 			case CDAPackage.SECTION__NULL_FLAVOR:
@@ -1334,15 +1327,15 @@ public class SectionImpl extends EObjectImpl implements Section {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.SECTION__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.SECTION__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.SECTION__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.SECTION__ID:
 				setId((II)newValue);
@@ -1366,20 +1359,20 @@ public class SectionImpl extends EObjectImpl implements Section {
 				setSubject((Subject)newValue);
 				return;
 			case CDAPackage.SECTION__AUTHOR:
-				getAuthor().clear();
-				getAuthor().addAll((Collection<? extends Author>)newValue);
+				getAuthors().clear();
+				getAuthors().addAll((Collection<? extends Author>)newValue);
 				return;
 			case CDAPackage.SECTION__INFORMANT:
-				getInformant().clear();
-				getInformant().addAll((Collection<? extends Informant12>)newValue);
+				getInformants().clear();
+				getInformants().addAll((Collection<? extends Informant12>)newValue);
 				return;
 			case CDAPackage.SECTION__ENTRY:
-				getEntry().clear();
-				getEntry().addAll((Collection<? extends Entry>)newValue);
+				getEntries().clear();
+				getEntries().addAll((Collection<? extends Entry>)newValue);
 				return;
 			case CDAPackage.SECTION__COMPONENT:
-				getComponent().clear();
-				getComponent().addAll((Collection<? extends Component5>)newValue);
+				getComponents().clear();
+				getComponents().addAll((Collection<? extends Component5>)newValue);
 				return;
 			case CDAPackage.SECTION__SECTION_ID:
 				setSectionId((String)newValue);
@@ -1406,13 +1399,13 @@ public class SectionImpl extends EObjectImpl implements Section {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.SECTION__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.SECTION__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.SECTION__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.SECTION__ID:
 				setId((II)null);
@@ -1436,16 +1429,16 @@ public class SectionImpl extends EObjectImpl implements Section {
 				setSubject((Subject)null);
 				return;
 			case CDAPackage.SECTION__AUTHOR:
-				getAuthor().clear();
+				getAuthors().clear();
 				return;
 			case CDAPackage.SECTION__INFORMANT:
-				getInformant().clear();
+				getInformants().clear();
 				return;
 			case CDAPackage.SECTION__ENTRY:
-				getEntry().clear();
+				getEntries().clear();
 				return;
 			case CDAPackage.SECTION__COMPONENT:
-				getComponent().clear();
+				getComponents().clear();
 				return;
 			case CDAPackage.SECTION__SECTION_ID:
 				setSectionId(SECTION_ID_EDEFAULT);
@@ -1472,11 +1465,11 @@ public class SectionImpl extends EObjectImpl implements Section {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.SECTION__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.SECTION__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.SECTION__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.SECTION__ID:
 				return id != null;
 			case CDAPackage.SECTION__CODE:
@@ -1492,13 +1485,13 @@ public class SectionImpl extends EObjectImpl implements Section {
 			case CDAPackage.SECTION__SUBJECT:
 				return subject != null;
 			case CDAPackage.SECTION__AUTHOR:
-				return author != null && !author.isEmpty();
+				return authors != null && !authors.isEmpty();
 			case CDAPackage.SECTION__INFORMANT:
-				return informant != null && !informant.isEmpty();
+				return informants != null && !informants.isEmpty();
 			case CDAPackage.SECTION__ENTRY:
-				return entry != null && !entry.isEmpty();
+				return entries != null && !entries.isEmpty();
 			case CDAPackage.SECTION__COMPONENT:
-				return component != null && !component.isEmpty();
+				return components != null && !components.isEmpty();
 			case CDAPackage.SECTION__SECTION_ID:
 				return SECTION_ID_EDEFAULT == null ? sectionId != null : !SECTION_ID_EDEFAULT.equals(sectionId);
 			case CDAPackage.SECTION__NULL_FLAVOR:

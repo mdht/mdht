@@ -17,15 +17,11 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ParticipantRole;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
 
 /**
@@ -36,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ParticipantRole#playingEntityChoice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Playing Entity Choice</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ParticipantRole#validatePlayingEntityChoice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Playing Entity Choice</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,24 +58,24 @@ public class ParticipantRoleOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #playingEntityChoice(ParticipantRole, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Playing Entity Choice</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePlayingEntityChoice(ParticipantRole, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Playing Entity Choice</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #playingEntityChoice(ParticipantRole, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePlayingEntityChoice(ParticipantRole, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.playingDevice.oclIsUndefined() or self.playingEntity.oclIsUndefined()";
+	protected static final String VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.playingDevice.oclIsUndefined() or self.playingEntity.oclIsUndefined()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #playingEntityChoice(ParticipantRole, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Playing Entity Choice</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePlayingEntityChoice(ParticipantRole, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Playing Entity Choice</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #playingEntityChoice(ParticipantRole, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePlayingEntityChoice(ParticipantRole, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,25 +88,25 @@ public class ParticipantRoleOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean playingEntityChoice(ParticipantRole participantRole, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePlayingEntityChoice(ParticipantRole participantRole, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.eINSTANCE.getParticipantRole());
 			try {
-				PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(participantRole)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(participantRole)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CDAValidator.DIAGNOSTIC_SOURCE,
 						 CDAValidator.PARTICIPANT_ROLE__PLAYING_ENTITY_CHOICE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "playingEntityChoice", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(participantRole, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validatePlayingEntityChoice", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(participantRole, context) }),
 						 new Object [] { participantRole }));
 			}
 			return false;

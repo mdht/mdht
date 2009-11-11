@@ -28,10 +28,10 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#PurposeSection_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Purpose Section template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#PurposeSection_code(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Purpose Section code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#PurposeSection_title(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Purpose Section title</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#PurposeSection_purposeActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Purpose Section purpose Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionPurposeActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Purpose Activity</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,24 +48,24 @@ public class PurposeSectionOperations extends SectionOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PurposeSection_templateId(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Purpose Section template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePurposeSectionTemplateId(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PurposeSection_templateId(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePurposeSectionTemplateId(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.13')";
+	protected static final String VALIDATE_PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.13')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PurposeSection_templateId(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Purpose Section template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePurposeSectionTemplateId(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PurposeSection_templateId(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePurposeSectionTemplateId(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,25 +78,25 @@ public class PurposeSectionOperations extends SectionOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PurposeSection_templateId(PurposeSection purposeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePurposeSectionTemplateId(PurposeSection purposeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PURPOSE_SECTION);
 			try {
-				PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(purposeSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(purposeSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PURPOSE_SECTION__PURPOSE_SECTION_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("PurposeSection_templateId"),
+						 CCDPlugin.INSTANCE.getString("PurposeSectionTemplateId"),
 						 new Object [] { purposeSection }));
 			}
 			return false;
@@ -105,26 +105,26 @@ public class PurposeSectionOperations extends SectionOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PurposeSection_code(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Purpose Section code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePurposeSectionCode(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PurposeSection_code(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePurposeSectionCode(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and "+
+	protected static final String VALIDATE_PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and "+
 "let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in ("+
 "value.code = '48764-5' and value.codeSystem = '2.16.840.1.113883.6.1')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PurposeSection_code(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Purpose Section code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePurposeSectionCode(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PurposeSection_code(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePurposeSectionCode(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,25 +139,25 @@ public class PurposeSectionOperations extends SectionOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PurposeSection_code(PurposeSection purposeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePurposeSectionCode(PurposeSection purposeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PURPOSE_SECTION);
 			try {
-				PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(purposeSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(purposeSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PURPOSE_SECTION__PURPOSE_SECTION_CODE,
-						 CCDPlugin.INSTANCE.getString("PurposeSection_code"),
+						 CCDPlugin.INSTANCE.getString("PurposeSectionCode"),
 						 new Object [] { purposeSection }));
 			}
 			return false;
@@ -166,24 +166,24 @@ public class PurposeSectionOperations extends SectionOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PurposeSection_title(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Purpose Section title</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePurposeSectionTitle(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Title</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PurposeSection_title(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePurposeSectionTitle(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.title.oclIsUndefined()";
+	protected static final String VALIDATE_PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.title.oclIsUndefined()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PurposeSection_title(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Purpose Section title</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePurposeSectionTitle(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Title</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PurposeSection_title(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePurposeSectionTitle(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,25 +196,25 @@ public class PurposeSectionOperations extends SectionOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PurposeSection_title(PurposeSection purposeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePurposeSectionTitle(PurposeSection purposeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PURPOSE_SECTION);
 			try {
-				PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(purposeSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(purposeSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PURPOSE_SECTION__PURPOSE_SECTION_TITLE,
-						 CCDPlugin.INSTANCE.getString("PurposeSection_title"),
+						 CCDPlugin.INSTANCE.getString("PurposeSectionTitle"),
 						 new Object [] { purposeSection }));
 			}
 			return false;
@@ -223,24 +223,24 @@ public class PurposeSectionOperations extends SectionOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #PurposeSection_purposeActivity(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Purpose Section purpose Activity</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePurposeSectionPurposeActivity(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Purpose Activity</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PurposeSection_purposeActivity(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePurposeSectionPurposeActivity(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PurposeActivity))";
+	protected static final String VALIDATE_PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PurposeActivity))";
 
 	/**
-	 * The cached OCL invariant for the '{@link #PurposeSection_purposeActivity(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Purpose Section purpose Activity</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePurposeSectionPurposeActivity(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Purpose Activity</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PurposeSection_purposeActivity(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePurposeSectionPurposeActivity(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,25 +253,25 @@ public class PurposeSectionOperations extends SectionOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean PurposeSection_purposeActivity(PurposeSection purposeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePurposeSectionPurposeActivity(PurposeSection purposeSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PURPOSE_SECTION);
 			try {
-				PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(purposeSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(purposeSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.WARNING,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PURPOSE_SECTION__PURPOSE_SECTION_PURPOSE_ACTIVITY,
-						 CCDPlugin.INSTANCE.getString("PurposeSection_purposeActivity"),
+						 CCDPlugin.INSTANCE.getString("PurposeSectionPurposeActivity"),
 						 new Object [] { purposeSection }));
 			}
 			return false;

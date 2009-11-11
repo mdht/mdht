@@ -34,8 +34,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#ConcernEntry_templateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Concern Entry template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#ConcernEntry_effectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Concern Entry effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#validateConcernEntryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#validateConcernEntryEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Effective Time</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,24 +52,24 @@ public class ConcernEntryOperations extends ProblemActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #ConcernEntry_templateId(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Concern Entry template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateConcernEntryTemplateId(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ConcernEntry_templateId(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateConcernEntryTemplateId(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.5.1')";
+	protected static final String VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.5.1')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #ConcernEntry_templateId(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Concern Entry template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateConcernEntryTemplateId(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ConcernEntry_templateId(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateConcernEntryTemplateId(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,25 +82,25 @@ public class ConcernEntryOperations extends ProblemActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ConcernEntry_templateId(ConcernEntry concernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateConcernEntryTemplateId(ConcernEntry concernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.CONCERN_ENTRY);
 			try {
-				CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(concernEntry)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(concernEntry)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.CONCERN_ENTRY__CONCERN_ENTRY_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("ConcernEntry_templateId"),
+						 IHEPlugin.INSTANCE.getString("ConcernEntryTemplateId"),
 						 new Object [] { concernEntry }));
 			}
 			return false;
@@ -109,24 +109,24 @@ public class ConcernEntryOperations extends ProblemActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #ConcernEntry_effectiveTime(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Concern Entry effective Time</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateConcernEntryEffectiveTime(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Effective Time</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ConcernEntry_effectiveTime(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateConcernEntryEffectiveTime(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.effectiveTime.oclIsUndefined()";
+	protected static final String VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.effectiveTime.oclIsUndefined()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #ConcernEntry_effectiveTime(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Concern Entry effective Time</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateConcernEntryEffectiveTime(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Effective Time</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ConcernEntry_effectiveTime(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateConcernEntryEffectiveTime(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,25 +139,25 @@ public class ConcernEntryOperations extends ProblemActOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean ConcernEntry_effectiveTime(ConcernEntry concernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateConcernEntryEffectiveTime(ConcernEntry concernEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.CONCERN_ENTRY);
 			try {
-				CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(concernEntry)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(concernEntry)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.CONCERN_ENTRY__CONCERN_ENTRY_EFFECTIVE_TIME,
-						 IHEPlugin.INSTANCE.getString("ConcernEntry_effectiveTime"),
+						 IHEPlugin.INSTANCE.getString("ConcernEntryEffectiveTime"),
 						 new Object [] { concernEntry }));
 			}
 			return false;

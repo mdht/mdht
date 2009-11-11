@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.ccd;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 
 /**
@@ -19,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ParticipantRole;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProductInstance()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation classCode='MANU' templateId.root='2.16.840.1.113883.10.20.1.52' constraints.validation.error='ProductInstance_templateId ProductInstance_classCode'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation classCode='MANU' templateId.root='2.16.840.1.113883.10.20.1.52' constraints.validation.error='ProductInstanceTemplateId ProductInstanceClassCode'"
  * @generated
  */
 public interface ProductInstance extends ParticipantRole {
@@ -34,7 +33,7 @@ public interface ProductInstance extends ParticipantRole {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.52\')'"
 	 * @generated
 	 */
-	boolean ProductInstance_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProductInstanceTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,7 +46,7 @@ public interface ProductInstance extends ParticipantRole {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.classCode.oclIsUndefined() and self.classCode=vocab::RoleClassRoot::MANU'"
 	 * @generated
 	 */
-	boolean ProductInstance_classCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProductInstanceClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

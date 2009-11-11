@@ -16,30 +16,23 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
 import org.openhealthtools.mdht.uml.cda.EncounterParticipant;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Location;
 import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -51,15 +44,15 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getEffectiveTime <em>Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getDischargeDispositionCode <em>Discharge Disposition Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getResponsibleParty <em>Responsible Party</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getEncounterParticipant <em>Encounter Participant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getEncounterParticipants <em>Encounter Participant</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl#getClassCode <em>Class Code</em>}</li>
@@ -71,14 +64,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class EncompassingEncounterImpl extends EObjectImpl implements EncompassingEncounter {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -91,24 +84,24 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getIds() <em>Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> id;
+	protected EList<II> ids;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
@@ -151,14 +144,14 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 	protected ResponsibleParty responsibleParty;
 
 	/**
-	 * The cached value of the '{@link #getEncounterParticipant() <em>Encounter Participant</em>}' containment reference list.
+	 * The cached value of the '{@link #getEncounterParticipants() <em>Encounter Participant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEncounterParticipant()
+	 * @see #getEncounterParticipants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EncounterParticipant> encounterParticipant;
+	protected EList<EncounterParticipant> encounterParticipants;
 
 	/**
 	 * The cached value of the '{@link #getLocation() <em>Location</em>}' containment reference.
@@ -281,11 +274,11 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ENCOMPASSING_ENCOUNTER__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.ENCOMPASSING_ENCOUNTER__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -336,11 +329,11 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ENCOMPASSING_ENCOUNTER__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ENCOMPASSING_ENCOUNTER__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -348,11 +341,11 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getId() {
-		if (id == null) {
-			id = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ENCOMPASSING_ENCOUNTER__ID);
+	public EList<II> getIds() {
+		if (ids == null) {
+			ids = new EObjectContainmentEList<II>(II.class, this, CDAPackage.ENCOMPASSING_ENCOUNTER__ID);
 		}
-		return id;
+		return ids;
 	}
 
 	/**
@@ -532,11 +525,11 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EncounterParticipant> getEncounterParticipant() {
-		if (encounterParticipant == null) {
-			encounterParticipant = new EObjectContainmentEList<EncounterParticipant>(EncounterParticipant.class, this, CDAPackage.ENCOMPASSING_ENCOUNTER__ENCOUNTER_PARTICIPANT);
+	public EList<EncounterParticipant> getEncounterParticipants() {
+		if (encounterParticipants == null) {
+			encounterParticipants = new EObjectContainmentEList<EncounterParticipant>(EncounterParticipant.class, this, CDAPackage.ENCOMPASSING_ENCOUNTER__ENCOUNTER_PARTICIPANT);
 		}
-		return encounterParticipant;
+		return encounterParticipants;
 	}
 
 	/**
@@ -729,13 +722,13 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__ID:
-				return ((InternalEList<?>)getId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__EFFECTIVE_TIME:
@@ -745,7 +738,7 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__RESPONSIBLE_PARTY:
 				return basicSetResponsibleParty(null, msgs);
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__ENCOUNTER_PARTICIPANT:
-				return ((InternalEList<?>)getEncounterParticipant()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getEncounterParticipants()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__LOCATION:
 				return basicSetLocation(null, msgs);
 		}
@@ -761,13 +754,13 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__ID:
-				return getId();
+				return getIds();
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__CODE:
 				return getCode();
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__EFFECTIVE_TIME:
@@ -777,7 +770,7 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__RESPONSIBLE_PARTY:
 				return getResponsibleParty();
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__ENCOUNTER_PARTICIPANT:
-				return getEncounterParticipant();
+				return getEncounterParticipants();
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__LOCATION:
 				return getLocation();
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__NULL_FLAVOR:
@@ -800,19 +793,19 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__ID:
-				getId().clear();
-				getId().addAll((Collection<? extends II>)newValue);
+				getIds().clear();
+				getIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__CODE:
 				setCode((CE)newValue);
@@ -827,8 +820,8 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 				setResponsibleParty((ResponsibleParty)newValue);
 				return;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__ENCOUNTER_PARTICIPANT:
-				getEncounterParticipant().clear();
-				getEncounterParticipant().addAll((Collection<? extends EncounterParticipant>)newValue);
+				getEncounterParticipants().clear();
+				getEncounterParticipants().addAll((Collection<? extends EncounterParticipant>)newValue);
 				return;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__LOCATION:
 				setLocation((Location)newValue);
@@ -855,16 +848,16 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__ID:
-				getId().clear();
+				getIds().clear();
 				return;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__CODE:
 				setCode((CE)null);
@@ -879,7 +872,7 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 				setResponsibleParty((ResponsibleParty)null);
 				return;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__ENCOUNTER_PARTICIPANT:
-				getEncounterParticipant().clear();
+				getEncounterParticipants().clear();
 				return;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__LOCATION:
 				setLocation((Location)null);
@@ -906,13 +899,13 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__ID:
-				return id != null && !id.isEmpty();
+				return ids != null && !ids.isEmpty();
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__CODE:
 				return code != null;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__EFFECTIVE_TIME:
@@ -922,7 +915,7 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__RESPONSIBLE_PARTY:
 				return responsibleParty != null;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__ENCOUNTER_PARTICIPANT:
-				return encounterParticipant != null && !encounterParticipant.isEmpty();
+				return encounterParticipants != null && !encounterParticipants.isEmpty();
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__LOCATION:
 				return location != null;
 			case CDAPackage.ENCOMPASSING_ENCOUNTER__NULL_FLAVOR:

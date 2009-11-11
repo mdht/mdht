@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ReasonForReferralSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,9 +49,8 @@ public class ReasonForReferralSectionImpl extends org.openhealthtools.mdht.uml.c
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean ReasonForReferralSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ReasonForReferralSectionOperations.ReasonForReferralSection_templateId(this, diagnostics, context);
+	public boolean validateHITSPReasonForReferralSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReasonForReferralSectionOperations.validateHITSPReasonForReferralSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

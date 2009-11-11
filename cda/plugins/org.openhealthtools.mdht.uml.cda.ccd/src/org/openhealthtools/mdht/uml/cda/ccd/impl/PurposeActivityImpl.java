@@ -50,8 +50,8 @@ public class PurposeActivityImpl extends ActImpl implements PurposeActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PurposeActivity_hasReason(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PurposeActivityOperations.PurposeActivity_hasReason(this, diagnostics, context);
+	public boolean validatePurposeActivityHasReason(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PurposeActivityOperations.validatePurposeActivityHasReason(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class PurposeActivityImpl extends ActImpl implements PurposeActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PurposeActivity_reasonType(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PurposeActivityOperations.PurposeActivity_reasonType(this, diagnostics, context);
+	public boolean validatePurposeActivityReasonType(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PurposeActivityOperations.validatePurposeActivityReasonType(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class PurposeActivityImpl extends ActImpl implements PurposeActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PurposeActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PurposeActivityOperations.PurposeActivity_templateId(this, diagnostics, context);
+	public boolean validatePurposeActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PurposeActivityOperations.validatePurposeActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class PurposeActivityImpl extends ActImpl implements PurposeActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PurposeActivity_classCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PurposeActivityOperations.PurposeActivity_classCode(this, diagnostics, context);
+	public boolean validatePurposeActivityClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PurposeActivityOperations.validatePurposeActivityClassCode(this, diagnostics, context);
 	}
 
 	/**
@@ -86,8 +86,8 @@ public class PurposeActivityImpl extends ActImpl implements PurposeActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PurposeActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PurposeActivityOperations.PurposeActivity_moodCode(this, diagnostics, context);
+	public boolean validatePurposeActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PurposeActivityOperations.validatePurposeActivityMoodCode(this, diagnostics, context);
 	}
 
 	/**
@@ -95,8 +95,8 @@ public class PurposeActivityImpl extends ActImpl implements PurposeActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PurposeActivity_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PurposeActivityOperations.PurposeActivity_code(this, diagnostics, context);
+	public boolean validatePurposeActivityCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PurposeActivityOperations.validatePurposeActivityCode(this, diagnostics, context);
 	}
 
 	/**
@@ -104,8 +104,8 @@ public class PurposeActivityImpl extends ActImpl implements PurposeActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PurposeActivity_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PurposeActivityOperations.PurposeActivity_statusCode(this, diagnostics, context);
+	public boolean validatePurposeActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PurposeActivityOperations.validatePurposeActivityStatusCode(this, diagnostics, context);
 	}
 
 	/**

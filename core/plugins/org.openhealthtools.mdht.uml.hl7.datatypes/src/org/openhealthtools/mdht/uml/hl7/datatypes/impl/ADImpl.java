@@ -41,37 +41,37 @@ import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getUseablePeriod <em>Useable Period</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getUse <em>Use</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getUseablePeriods <em>Useable Period</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getUses <em>Use</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getIsNotOrdered <em>Is Not Ordered</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDelimiter <em>Delimiter</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getCountry <em>Country</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getState <em>State</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getCounty <em>County</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getCity <em>City</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getPostalCode <em>Postal Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getStreetAddressLine <em>Street Address Line</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getHouseNumber <em>House Number</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getHouseNumberNumeric <em>House Number Numeric</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDirection <em>Direction</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getStreetName <em>Street Name</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getStreetNameBase <em>Street Name Base</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getStreetNameType <em>Street Name Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getAdditionalLocator <em>Additional Locator</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getUnitID <em>Unit ID</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getUnitType <em>Unit Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getCareOf <em>Care Of</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getCensusTract <em>Census Tract</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDeliveryAddressLine <em>Delivery Address Line</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDeliveryInstallationType <em>Delivery Installation Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDeliveryInstallationArea <em>Delivery Installation Area</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDeliveryInstallationQualifier <em>Delivery Installation Qualifier</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDeliveryMode <em>Delivery Mode</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDeliveryModeIdentifier <em>Delivery Mode Identifier</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getBuildingNumberSuffix <em>Building Number Suffix</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getPostBox <em>Post Box</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getPrecinct <em>Precinct</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getPart <em>Part</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDelimiters <em>Delimiter</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getCountries <em>Country</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getStates <em>State</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getCounties <em>County</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getCities <em>City</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getPostalCodes <em>Postal Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getStreetAddressLines <em>Street Address Line</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getHouseNumbers <em>House Number</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getHouseNumberNumerics <em>House Number Numeric</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDirections <em>Direction</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getStreetNames <em>Street Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getStreetNameBases <em>Street Name Base</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getStreetNameTypes <em>Street Name Type</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getAdditionalLocators <em>Additional Locator</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getUnitIDs <em>Unit ID</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getUnitTypes <em>Unit Type</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getCareOfs <em>Care Of</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getCensusTracts <em>Census Tract</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDeliveryAddressLines <em>Delivery Address Line</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDeliveryInstallationTypes <em>Delivery Installation Type</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDeliveryInstallationAreas <em>Delivery Installation Area</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDeliveryInstallationQualifiers <em>Delivery Installation Qualifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDeliveryModes <em>Delivery Mode</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getDeliveryModeIdentifiers <em>Delivery Mode Identifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getBuildingNumberSuffixes <em>Building Number Suffix</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getPostBoxes <em>Post Box</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getPrecincts <em>Precinct</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getParts <em>Part</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ADImpl#getMixed <em>Mixed</em>}</li>
  * </ul>
  * </p>
@@ -80,24 +80,24 @@ import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
  */
 public class ADImpl extends ANYImpl implements AD {
 	/**
-	 * The cached value of the '{@link #getUseablePeriod() <em>Useable Period</em>}' containment reference list.
+	 * The cached value of the '{@link #getUseablePeriods() <em>Useable Period</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUseablePeriod()
+	 * @see #getUseablePeriods()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SXCM_TS> useablePeriod;
+	protected EList<SXCM_TS> useablePeriods;
 
 	/**
-	 * The cached value of the '{@link #getUse() <em>Use</em>}' attribute list.
+	 * The cached value of the '{@link #getUses() <em>Use</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUse()
+	 * @see #getUses()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PostalAddressUse> use;
+	protected EList<PostalAddressUse> uses;
 
 	/**
 	 * The default value of the '{@link #getIsNotOrdered() <em>Is Not Ordered</em>}' attribute.
@@ -153,11 +153,11 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SXCM_TS> getUseablePeriod() {
-		if (useablePeriod == null) {
-			useablePeriod = new EObjectContainmentEList<SXCM_TS>(SXCM_TS.class, this, DatatypesPackage.AD__USEABLE_PERIOD);
+	public EList<SXCM_TS> getUseablePeriods() {
+		if (useablePeriods == null) {
+			useablePeriods = new EObjectContainmentEList<SXCM_TS>(SXCM_TS.class, this, DatatypesPackage.AD__USEABLE_PERIOD);
 		}
-		return useablePeriod;
+		return useablePeriods;
 	}
 
 	/**
@@ -165,11 +165,11 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PostalAddressUse> getUse() {
-		if (use == null) {
-			use = new EDataTypeUniqueEList.Unsettable<PostalAddressUse>(PostalAddressUse.class, this, DatatypesPackage.AD__USE);
+	public EList<PostalAddressUse> getUses() {
+		if (uses == null) {
+			uses = new EDataTypeUniqueEList.Unsettable<PostalAddressUse>(PostalAddressUse.class, this, DatatypesPackage.AD__USE);
 		}
-		return use;
+		return uses;
 	}
 
 	/**
@@ -177,8 +177,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void unsetUse() {
-		if (use != null) ((InternalEList.Unsettable<?>)use).unset();
+	public void unsetUses() {
+		if (uses != null) ((InternalEList.Unsettable<?>)uses).unset();
 	}
 
 	/**
@@ -186,8 +186,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetUse() {
-		return use != null && ((InternalEList.Unsettable<?>)use).isSet();
+	public boolean isSetUses() {
+		return uses != null && ((InternalEList.Unsettable<?>)uses).isSet();
 	}
 
 	/**
@@ -216,8 +216,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getDelimiter() {
-		return getPart().list(DatatypesPackage.Literals.AD__DELIMITER);
+	public EList<ADXP> getDelimiters() {
+		return getParts().list(DatatypesPackage.Literals.AD__DELIMITER);
 	}
 
 	/**
@@ -225,8 +225,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getCountry() {
-		return getPart().list(DatatypesPackage.Literals.AD__COUNTRY);
+	public EList<ADXP> getCountries() {
+		return getParts().list(DatatypesPackage.Literals.AD__COUNTRY);
 	}
 
 	/**
@@ -234,8 +234,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getState() {
-		return getPart().list(DatatypesPackage.Literals.AD__STATE);
+	public EList<ADXP> getStates() {
+		return getParts().list(DatatypesPackage.Literals.AD__STATE);
 	}
 
 	/**
@@ -243,8 +243,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getCounty() {
-		return getPart().list(DatatypesPackage.Literals.AD__COUNTY);
+	public EList<ADXP> getCounties() {
+		return getParts().list(DatatypesPackage.Literals.AD__COUNTY);
 	}
 
 	/**
@@ -252,8 +252,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getCity() {
-		return getPart().list(DatatypesPackage.Literals.AD__CITY);
+	public EList<ADXP> getCities() {
+		return getParts().list(DatatypesPackage.Literals.AD__CITY);
 	}
 
 	/**
@@ -261,8 +261,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getPostalCode() {
-		return getPart().list(DatatypesPackage.Literals.AD__POSTAL_CODE);
+	public EList<ADXP> getPostalCodes() {
+		return getParts().list(DatatypesPackage.Literals.AD__POSTAL_CODE);
 	}
 
 	/**
@@ -270,8 +270,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getStreetAddressLine() {
-		return getPart().list(DatatypesPackage.Literals.AD__STREET_ADDRESS_LINE);
+	public EList<ADXP> getStreetAddressLines() {
+		return getParts().list(DatatypesPackage.Literals.AD__STREET_ADDRESS_LINE);
 	}
 
 	/**
@@ -279,8 +279,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getHouseNumber() {
-		return getPart().list(DatatypesPackage.Literals.AD__HOUSE_NUMBER);
+	public EList<ADXP> getHouseNumbers() {
+		return getParts().list(DatatypesPackage.Literals.AD__HOUSE_NUMBER);
 	}
 
 	/**
@@ -288,8 +288,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getHouseNumberNumeric() {
-		return getPart().list(DatatypesPackage.Literals.AD__HOUSE_NUMBER_NUMERIC);
+	public EList<ADXP> getHouseNumberNumerics() {
+		return getParts().list(DatatypesPackage.Literals.AD__HOUSE_NUMBER_NUMERIC);
 	}
 
 	/**
@@ -297,8 +297,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getDirection() {
-		return getPart().list(DatatypesPackage.Literals.AD__DIRECTION);
+	public EList<ADXP> getDirections() {
+		return getParts().list(DatatypesPackage.Literals.AD__DIRECTION);
 	}
 
 	/**
@@ -306,8 +306,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getStreetName() {
-		return getPart().list(DatatypesPackage.Literals.AD__STREET_NAME);
+	public EList<ADXP> getStreetNames() {
+		return getParts().list(DatatypesPackage.Literals.AD__STREET_NAME);
 	}
 
 	/**
@@ -315,8 +315,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getStreetNameBase() {
-		return getPart().list(DatatypesPackage.Literals.AD__STREET_NAME_BASE);
+	public EList<ADXP> getStreetNameBases() {
+		return getParts().list(DatatypesPackage.Literals.AD__STREET_NAME_BASE);
 	}
 
 	/**
@@ -324,8 +324,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getStreetNameType() {
-		return getPart().list(DatatypesPackage.Literals.AD__STREET_NAME_TYPE);
+	public EList<ADXP> getStreetNameTypes() {
+		return getParts().list(DatatypesPackage.Literals.AD__STREET_NAME_TYPE);
 	}
 
 	/**
@@ -333,8 +333,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getAdditionalLocator() {
-		return getPart().list(DatatypesPackage.Literals.AD__ADDITIONAL_LOCATOR);
+	public EList<ADXP> getAdditionalLocators() {
+		return getParts().list(DatatypesPackage.Literals.AD__ADDITIONAL_LOCATOR);
 	}
 
 	/**
@@ -342,8 +342,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getUnitID() {
-		return getPart().list(DatatypesPackage.Literals.AD__UNIT_ID);
+	public EList<ADXP> getUnitIDs() {
+		return getParts().list(DatatypesPackage.Literals.AD__UNIT_ID);
 	}
 
 	/**
@@ -351,8 +351,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getUnitType() {
-		return getPart().list(DatatypesPackage.Literals.AD__UNIT_TYPE);
+	public EList<ADXP> getUnitTypes() {
+		return getParts().list(DatatypesPackage.Literals.AD__UNIT_TYPE);
 	}
 
 	/**
@@ -360,8 +360,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getCareOf() {
-		return getPart().list(DatatypesPackage.Literals.AD__CARE_OF);
+	public EList<ADXP> getCareOfs() {
+		return getParts().list(DatatypesPackage.Literals.AD__CARE_OF);
 	}
 
 	/**
@@ -369,8 +369,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getCensusTract() {
-		return getPart().list(DatatypesPackage.Literals.AD__CENSUS_TRACT);
+	public EList<ADXP> getCensusTracts() {
+		return getParts().list(DatatypesPackage.Literals.AD__CENSUS_TRACT);
 	}
 
 	/**
@@ -378,8 +378,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getDeliveryAddressLine() {
-		return getPart().list(DatatypesPackage.Literals.AD__DELIVERY_ADDRESS_LINE);
+	public EList<ADXP> getDeliveryAddressLines() {
+		return getParts().list(DatatypesPackage.Literals.AD__DELIVERY_ADDRESS_LINE);
 	}
 
 	/**
@@ -387,8 +387,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getDeliveryInstallationType() {
-		return getPart().list(DatatypesPackage.Literals.AD__DELIVERY_INSTALLATION_TYPE);
+	public EList<ADXP> getDeliveryInstallationTypes() {
+		return getParts().list(DatatypesPackage.Literals.AD__DELIVERY_INSTALLATION_TYPE);
 	}
 
 	/**
@@ -396,8 +396,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getDeliveryInstallationArea() {
-		return getPart().list(DatatypesPackage.Literals.AD__DELIVERY_INSTALLATION_AREA);
+	public EList<ADXP> getDeliveryInstallationAreas() {
+		return getParts().list(DatatypesPackage.Literals.AD__DELIVERY_INSTALLATION_AREA);
 	}
 
 	/**
@@ -405,8 +405,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getDeliveryInstallationQualifier() {
-		return getPart().list(DatatypesPackage.Literals.AD__DELIVERY_INSTALLATION_QUALIFIER);
+	public EList<ADXP> getDeliveryInstallationQualifiers() {
+		return getParts().list(DatatypesPackage.Literals.AD__DELIVERY_INSTALLATION_QUALIFIER);
 	}
 
 	/**
@@ -414,8 +414,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getDeliveryMode() {
-		return getPart().list(DatatypesPackage.Literals.AD__DELIVERY_MODE);
+	public EList<ADXP> getDeliveryModes() {
+		return getParts().list(DatatypesPackage.Literals.AD__DELIVERY_MODE);
 	}
 
 	/**
@@ -423,8 +423,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getDeliveryModeIdentifier() {
-		return getPart().list(DatatypesPackage.Literals.AD__DELIVERY_MODE_IDENTIFIER);
+	public EList<ADXP> getDeliveryModeIdentifiers() {
+		return getParts().list(DatatypesPackage.Literals.AD__DELIVERY_MODE_IDENTIFIER);
 	}
 
 	/**
@@ -432,8 +432,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getBuildingNumberSuffix() {
-		return getPart().list(DatatypesPackage.Literals.AD__BUILDING_NUMBER_SUFFIX);
+	public EList<ADXP> getBuildingNumberSuffixes() {
+		return getParts().list(DatatypesPackage.Literals.AD__BUILDING_NUMBER_SUFFIX);
 	}
 
 	/**
@@ -441,8 +441,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getPostBox() {
-		return getPart().list(DatatypesPackage.Literals.AD__POST_BOX);
+	public EList<ADXP> getPostBoxes() {
+		return getParts().list(DatatypesPackage.Literals.AD__POST_BOX);
 	}
 
 	/**
@@ -450,8 +450,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ADXP> getPrecinct() {
-		return getPart().list(DatatypesPackage.Literals.AD__PRECINCT);
+	public EList<ADXP> getPrecincts() {
+		return getParts().list(DatatypesPackage.Literals.AD__PRECINCT);
 	}
 
 	/**
@@ -459,7 +459,7 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureMap getPart() {
+	public FeatureMap getParts() {
 		return (FeatureMap)getMixed().<FeatureMap.Entry>list(DatatypesPackage.Literals.AD__PART);
 	}
 
@@ -480,8 +480,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean delimiter(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.delimiter(this, diagnostics, context);
+	public boolean validateDelimiter(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateDelimiter(this, diagnostics, context);
 	}
 
 	/**
@@ -489,8 +489,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean country(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.country(this, diagnostics, context);
+	public boolean validateCountry(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateCountry(this, diagnostics, context);
 	}
 
 	/**
@@ -498,8 +498,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean state(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.state(this, diagnostics, context);
+	public boolean validateState(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateState(this, diagnostics, context);
 	}
 
 	/**
@@ -507,8 +507,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean county(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.county(this, diagnostics, context);
+	public boolean validateCounty(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateCounty(this, diagnostics, context);
 	}
 
 	/**
@@ -516,8 +516,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean city(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.city(this, diagnostics, context);
+	public boolean validateCity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateCity(this, diagnostics, context);
 	}
 
 	/**
@@ -525,8 +525,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean postalCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.postalCode(this, diagnostics, context);
+	public boolean validatePostalCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validatePostalCode(this, diagnostics, context);
 	}
 
 	/**
@@ -534,8 +534,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean streetAddressLine(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.streetAddressLine(this, diagnostics, context);
+	public boolean validateStreetAddressLine(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateStreetAddressLine(this, diagnostics, context);
 	}
 
 	/**
@@ -543,8 +543,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean houseNumber(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.houseNumber(this, diagnostics, context);
+	public boolean validateHouseNumber(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateHouseNumber(this, diagnostics, context);
 	}
 
 	/**
@@ -552,8 +552,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean houseNumberNumeric(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.houseNumberNumeric(this, diagnostics, context);
+	public boolean validateHouseNumberNumeric(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateHouseNumberNumeric(this, diagnostics, context);
 	}
 
 	/**
@@ -561,8 +561,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean direction(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.direction(this, diagnostics, context);
+	public boolean validateDirection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateDirection(this, diagnostics, context);
 	}
 
 	/**
@@ -570,8 +570,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean streetName(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.streetName(this, diagnostics, context);
+	public boolean validateStreetName(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateStreetName(this, diagnostics, context);
 	}
 
 	/**
@@ -579,8 +579,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean streetNameBase(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.streetNameBase(this, diagnostics, context);
+	public boolean validateStreetNameBase(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateStreetNameBase(this, diagnostics, context);
 	}
 
 	/**
@@ -588,8 +588,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean streetNameType(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.streetNameType(this, diagnostics, context);
+	public boolean validateStreetNameType(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateStreetNameType(this, diagnostics, context);
 	}
 
 	/**
@@ -597,8 +597,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean additionalLocator(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.additionalLocator(this, diagnostics, context);
+	public boolean validateAdditionalLocator(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateAdditionalLocator(this, diagnostics, context);
 	}
 
 	/**
@@ -606,8 +606,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean unitID(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.unitID(this, diagnostics, context);
+	public boolean validateUnitID(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateUnitID(this, diagnostics, context);
 	}
 
 	/**
@@ -615,8 +615,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean unitType(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.unitType(this, diagnostics, context);
+	public boolean validateUnitType(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateUnitType(this, diagnostics, context);
 	}
 
 	/**
@@ -624,8 +624,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean careOf(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.careOf(this, diagnostics, context);
+	public boolean validateCareOf(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateCareOf(this, diagnostics, context);
 	}
 
 	/**
@@ -633,8 +633,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean censusTract(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.censusTract(this, diagnostics, context);
+	public boolean validateCensusTract(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateCensusTract(this, diagnostics, context);
 	}
 
 	/**
@@ -642,8 +642,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean deliveryAddressLine(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.deliveryAddressLine(this, diagnostics, context);
+	public boolean validateDeliveryAddressLine(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateDeliveryAddressLine(this, diagnostics, context);
 	}
 
 	/**
@@ -651,8 +651,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean deliveryInstallationType(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.deliveryInstallationType(this, diagnostics, context);
+	public boolean validateDeliveryInstallationType(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateDeliveryInstallationType(this, diagnostics, context);
 	}
 
 	/**
@@ -660,8 +660,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean deliveryInstallationArea(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.deliveryInstallationArea(this, diagnostics, context);
+	public boolean validateDeliveryInstallationArea(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateDeliveryInstallationArea(this, diagnostics, context);
 	}
 
 	/**
@@ -669,8 +669,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean deliveryInstallationQualifier(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.deliveryInstallationQualifier(this, diagnostics, context);
+	public boolean validateDeliveryInstallationQualifier(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateDeliveryInstallationQualifier(this, diagnostics, context);
 	}
 
 	/**
@@ -678,8 +678,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean deliveryMode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.deliveryMode(this, diagnostics, context);
+	public boolean validateDeliveryMode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateDeliveryMode(this, diagnostics, context);
 	}
 
 	/**
@@ -687,8 +687,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean deliveryModeIdentifier(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.deliveryModeIdentifier(this, diagnostics, context);
+	public boolean validateDeliveryModeIdentifier(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateDeliveryModeIdentifier(this, diagnostics, context);
 	}
 
 	/**
@@ -696,8 +696,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean buildingNumberSuffix(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.buildingNumberSuffix(this, diagnostics, context);
+	public boolean validateBuildingNumberSuffix(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validateBuildingNumberSuffix(this, diagnostics, context);
 	}
 
 	/**
@@ -705,8 +705,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean postBox(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.postBox(this, diagnostics, context);
+	public boolean validatePostBox(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validatePostBox(this, diagnostics, context);
 	}
 
 	/**
@@ -714,8 +714,8 @@ public class ADImpl extends ANYImpl implements AD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean precinct(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ADOperations.precinct(this, diagnostics, context);
+	public boolean validatePrecinct(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ADOperations.validatePrecinct(this, diagnostics, context);
 	}
 
 	/**
@@ -988,7 +988,7 @@ public class ADImpl extends ANYImpl implements AD {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DatatypesPackage.AD__USEABLE_PERIOD:
-				return ((InternalEList<?>)getUseablePeriod()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getUseablePeriods()).basicRemove(otherEnd, msgs);
 			case DatatypesPackage.AD__MIXED:
 				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
 		}
@@ -1004,68 +1004,68 @@ public class ADImpl extends ANYImpl implements AD {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DatatypesPackage.AD__USEABLE_PERIOD:
-				return getUseablePeriod();
+				return getUseablePeriods();
 			case DatatypesPackage.AD__USE:
-				return getUse();
+				return getUses();
 			case DatatypesPackage.AD__IS_NOT_ORDERED:
 				return getIsNotOrdered();
 			case DatatypesPackage.AD__DELIMITER:
-				return getDelimiter();
+				return getDelimiters();
 			case DatatypesPackage.AD__COUNTRY:
-				return getCountry();
+				return getCountries();
 			case DatatypesPackage.AD__STATE:
-				return getState();
+				return getStates();
 			case DatatypesPackage.AD__COUNTY:
-				return getCounty();
+				return getCounties();
 			case DatatypesPackage.AD__CITY:
-				return getCity();
+				return getCities();
 			case DatatypesPackage.AD__POSTAL_CODE:
-				return getPostalCode();
+				return getPostalCodes();
 			case DatatypesPackage.AD__STREET_ADDRESS_LINE:
-				return getStreetAddressLine();
+				return getStreetAddressLines();
 			case DatatypesPackage.AD__HOUSE_NUMBER:
-				return getHouseNumber();
+				return getHouseNumbers();
 			case DatatypesPackage.AD__HOUSE_NUMBER_NUMERIC:
-				return getHouseNumberNumeric();
+				return getHouseNumberNumerics();
 			case DatatypesPackage.AD__DIRECTION:
-				return getDirection();
+				return getDirections();
 			case DatatypesPackage.AD__STREET_NAME:
-				return getStreetName();
+				return getStreetNames();
 			case DatatypesPackage.AD__STREET_NAME_BASE:
-				return getStreetNameBase();
+				return getStreetNameBases();
 			case DatatypesPackage.AD__STREET_NAME_TYPE:
-				return getStreetNameType();
+				return getStreetNameTypes();
 			case DatatypesPackage.AD__ADDITIONAL_LOCATOR:
-				return getAdditionalLocator();
+				return getAdditionalLocators();
 			case DatatypesPackage.AD__UNIT_ID:
-				return getUnitID();
+				return getUnitIDs();
 			case DatatypesPackage.AD__UNIT_TYPE:
-				return getUnitType();
+				return getUnitTypes();
 			case DatatypesPackage.AD__CARE_OF:
-				return getCareOf();
+				return getCareOfs();
 			case DatatypesPackage.AD__CENSUS_TRACT:
-				return getCensusTract();
+				return getCensusTracts();
 			case DatatypesPackage.AD__DELIVERY_ADDRESS_LINE:
-				return getDeliveryAddressLine();
+				return getDeliveryAddressLines();
 			case DatatypesPackage.AD__DELIVERY_INSTALLATION_TYPE:
-				return getDeliveryInstallationType();
+				return getDeliveryInstallationTypes();
 			case DatatypesPackage.AD__DELIVERY_INSTALLATION_AREA:
-				return getDeliveryInstallationArea();
+				return getDeliveryInstallationAreas();
 			case DatatypesPackage.AD__DELIVERY_INSTALLATION_QUALIFIER:
-				return getDeliveryInstallationQualifier();
+				return getDeliveryInstallationQualifiers();
 			case DatatypesPackage.AD__DELIVERY_MODE:
-				return getDeliveryMode();
+				return getDeliveryModes();
 			case DatatypesPackage.AD__DELIVERY_MODE_IDENTIFIER:
-				return getDeliveryModeIdentifier();
+				return getDeliveryModeIdentifiers();
 			case DatatypesPackage.AD__BUILDING_NUMBER_SUFFIX:
-				return getBuildingNumberSuffix();
+				return getBuildingNumberSuffixes();
 			case DatatypesPackage.AD__POST_BOX:
-				return getPostBox();
+				return getPostBoxes();
 			case DatatypesPackage.AD__PRECINCT:
-				return getPrecinct();
+				return getPrecincts();
 			case DatatypesPackage.AD__PART:
-				if (coreType) return getPart();
-				return ((FeatureMap.Internal)getPart()).getWrapper();
+				if (coreType) return getParts();
+				return ((FeatureMap.Internal)getParts()).getWrapper();
 			case DatatypesPackage.AD__MIXED:
 				if (coreType) return getMixed();
 				return ((FeatureMap.Internal)getMixed()).getWrapper();
@@ -1083,126 +1083,126 @@ public class ADImpl extends ANYImpl implements AD {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DatatypesPackage.AD__USEABLE_PERIOD:
-				getUseablePeriod().clear();
-				getUseablePeriod().addAll((Collection<? extends SXCM_TS>)newValue);
+				getUseablePeriods().clear();
+				getUseablePeriods().addAll((Collection<? extends SXCM_TS>)newValue);
 				return;
 			case DatatypesPackage.AD__USE:
-				getUse().clear();
-				getUse().addAll((Collection<? extends PostalAddressUse>)newValue);
+				getUses().clear();
+				getUses().addAll((Collection<? extends PostalAddressUse>)newValue);
 				return;
 			case DatatypesPackage.AD__IS_NOT_ORDERED:
 				setIsNotOrdered((Boolean)newValue);
 				return;
 			case DatatypesPackage.AD__DELIMITER:
-				getDelimiter().clear();
-				getDelimiter().addAll((Collection<? extends ADXP>)newValue);
+				getDelimiters().clear();
+				getDelimiters().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__COUNTRY:
-				getCountry().clear();
-				getCountry().addAll((Collection<? extends ADXP>)newValue);
+				getCountries().clear();
+				getCountries().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__STATE:
-				getState().clear();
-				getState().addAll((Collection<? extends ADXP>)newValue);
+				getStates().clear();
+				getStates().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__COUNTY:
-				getCounty().clear();
-				getCounty().addAll((Collection<? extends ADXP>)newValue);
+				getCounties().clear();
+				getCounties().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__CITY:
-				getCity().clear();
-				getCity().addAll((Collection<? extends ADXP>)newValue);
+				getCities().clear();
+				getCities().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__POSTAL_CODE:
-				getPostalCode().clear();
-				getPostalCode().addAll((Collection<? extends ADXP>)newValue);
+				getPostalCodes().clear();
+				getPostalCodes().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__STREET_ADDRESS_LINE:
-				getStreetAddressLine().clear();
-				getStreetAddressLine().addAll((Collection<? extends ADXP>)newValue);
+				getStreetAddressLines().clear();
+				getStreetAddressLines().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__HOUSE_NUMBER:
-				getHouseNumber().clear();
-				getHouseNumber().addAll((Collection<? extends ADXP>)newValue);
+				getHouseNumbers().clear();
+				getHouseNumbers().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__HOUSE_NUMBER_NUMERIC:
-				getHouseNumberNumeric().clear();
-				getHouseNumberNumeric().addAll((Collection<? extends ADXP>)newValue);
+				getHouseNumberNumerics().clear();
+				getHouseNumberNumerics().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__DIRECTION:
-				getDirection().clear();
-				getDirection().addAll((Collection<? extends ADXP>)newValue);
+				getDirections().clear();
+				getDirections().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__STREET_NAME:
-				getStreetName().clear();
-				getStreetName().addAll((Collection<? extends ADXP>)newValue);
+				getStreetNames().clear();
+				getStreetNames().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__STREET_NAME_BASE:
-				getStreetNameBase().clear();
-				getStreetNameBase().addAll((Collection<? extends ADXP>)newValue);
+				getStreetNameBases().clear();
+				getStreetNameBases().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__STREET_NAME_TYPE:
-				getStreetNameType().clear();
-				getStreetNameType().addAll((Collection<? extends ADXP>)newValue);
+				getStreetNameTypes().clear();
+				getStreetNameTypes().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__ADDITIONAL_LOCATOR:
-				getAdditionalLocator().clear();
-				getAdditionalLocator().addAll((Collection<? extends ADXP>)newValue);
+				getAdditionalLocators().clear();
+				getAdditionalLocators().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__UNIT_ID:
-				getUnitID().clear();
-				getUnitID().addAll((Collection<? extends ADXP>)newValue);
+				getUnitIDs().clear();
+				getUnitIDs().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__UNIT_TYPE:
-				getUnitType().clear();
-				getUnitType().addAll((Collection<? extends ADXP>)newValue);
+				getUnitTypes().clear();
+				getUnitTypes().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__CARE_OF:
-				getCareOf().clear();
-				getCareOf().addAll((Collection<? extends ADXP>)newValue);
+				getCareOfs().clear();
+				getCareOfs().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__CENSUS_TRACT:
-				getCensusTract().clear();
-				getCensusTract().addAll((Collection<? extends ADXP>)newValue);
+				getCensusTracts().clear();
+				getCensusTracts().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__DELIVERY_ADDRESS_LINE:
-				getDeliveryAddressLine().clear();
-				getDeliveryAddressLine().addAll((Collection<? extends ADXP>)newValue);
+				getDeliveryAddressLines().clear();
+				getDeliveryAddressLines().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__DELIVERY_INSTALLATION_TYPE:
-				getDeliveryInstallationType().clear();
-				getDeliveryInstallationType().addAll((Collection<? extends ADXP>)newValue);
+				getDeliveryInstallationTypes().clear();
+				getDeliveryInstallationTypes().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__DELIVERY_INSTALLATION_AREA:
-				getDeliveryInstallationArea().clear();
-				getDeliveryInstallationArea().addAll((Collection<? extends ADXP>)newValue);
+				getDeliveryInstallationAreas().clear();
+				getDeliveryInstallationAreas().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__DELIVERY_INSTALLATION_QUALIFIER:
-				getDeliveryInstallationQualifier().clear();
-				getDeliveryInstallationQualifier().addAll((Collection<? extends ADXP>)newValue);
+				getDeliveryInstallationQualifiers().clear();
+				getDeliveryInstallationQualifiers().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__DELIVERY_MODE:
-				getDeliveryMode().clear();
-				getDeliveryMode().addAll((Collection<? extends ADXP>)newValue);
+				getDeliveryModes().clear();
+				getDeliveryModes().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__DELIVERY_MODE_IDENTIFIER:
-				getDeliveryModeIdentifier().clear();
-				getDeliveryModeIdentifier().addAll((Collection<? extends ADXP>)newValue);
+				getDeliveryModeIdentifiers().clear();
+				getDeliveryModeIdentifiers().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__BUILDING_NUMBER_SUFFIX:
-				getBuildingNumberSuffix().clear();
-				getBuildingNumberSuffix().addAll((Collection<? extends ADXP>)newValue);
+				getBuildingNumberSuffixes().clear();
+				getBuildingNumberSuffixes().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__POST_BOX:
-				getPostBox().clear();
-				getPostBox().addAll((Collection<? extends ADXP>)newValue);
+				getPostBoxes().clear();
+				getPostBoxes().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__PRECINCT:
-				getPrecinct().clear();
-				getPrecinct().addAll((Collection<? extends ADXP>)newValue);
+				getPrecincts().clear();
+				getPrecincts().addAll((Collection<? extends ADXP>)newValue);
 				return;
 			case DatatypesPackage.AD__PART:
-				((FeatureMap.Internal)getPart()).set(newValue);
+				((FeatureMap.Internal)getParts()).set(newValue);
 				return;
 			case DatatypesPackage.AD__MIXED:
 				((FeatureMap.Internal)getMixed()).set(newValue);
@@ -1220,97 +1220,97 @@ public class ADImpl extends ANYImpl implements AD {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.AD__USEABLE_PERIOD:
-				getUseablePeriod().clear();
+				getUseablePeriods().clear();
 				return;
 			case DatatypesPackage.AD__USE:
-				unsetUse();
+				unsetUses();
 				return;
 			case DatatypesPackage.AD__IS_NOT_ORDERED:
 				setIsNotOrdered(IS_NOT_ORDERED_EDEFAULT);
 				return;
 			case DatatypesPackage.AD__DELIMITER:
-				getDelimiter().clear();
+				getDelimiters().clear();
 				return;
 			case DatatypesPackage.AD__COUNTRY:
-				getCountry().clear();
+				getCountries().clear();
 				return;
 			case DatatypesPackage.AD__STATE:
-				getState().clear();
+				getStates().clear();
 				return;
 			case DatatypesPackage.AD__COUNTY:
-				getCounty().clear();
+				getCounties().clear();
 				return;
 			case DatatypesPackage.AD__CITY:
-				getCity().clear();
+				getCities().clear();
 				return;
 			case DatatypesPackage.AD__POSTAL_CODE:
-				getPostalCode().clear();
+				getPostalCodes().clear();
 				return;
 			case DatatypesPackage.AD__STREET_ADDRESS_LINE:
-				getStreetAddressLine().clear();
+				getStreetAddressLines().clear();
 				return;
 			case DatatypesPackage.AD__HOUSE_NUMBER:
-				getHouseNumber().clear();
+				getHouseNumbers().clear();
 				return;
 			case DatatypesPackage.AD__HOUSE_NUMBER_NUMERIC:
-				getHouseNumberNumeric().clear();
+				getHouseNumberNumerics().clear();
 				return;
 			case DatatypesPackage.AD__DIRECTION:
-				getDirection().clear();
+				getDirections().clear();
 				return;
 			case DatatypesPackage.AD__STREET_NAME:
-				getStreetName().clear();
+				getStreetNames().clear();
 				return;
 			case DatatypesPackage.AD__STREET_NAME_BASE:
-				getStreetNameBase().clear();
+				getStreetNameBases().clear();
 				return;
 			case DatatypesPackage.AD__STREET_NAME_TYPE:
-				getStreetNameType().clear();
+				getStreetNameTypes().clear();
 				return;
 			case DatatypesPackage.AD__ADDITIONAL_LOCATOR:
-				getAdditionalLocator().clear();
+				getAdditionalLocators().clear();
 				return;
 			case DatatypesPackage.AD__UNIT_ID:
-				getUnitID().clear();
+				getUnitIDs().clear();
 				return;
 			case DatatypesPackage.AD__UNIT_TYPE:
-				getUnitType().clear();
+				getUnitTypes().clear();
 				return;
 			case DatatypesPackage.AD__CARE_OF:
-				getCareOf().clear();
+				getCareOfs().clear();
 				return;
 			case DatatypesPackage.AD__CENSUS_TRACT:
-				getCensusTract().clear();
+				getCensusTracts().clear();
 				return;
 			case DatatypesPackage.AD__DELIVERY_ADDRESS_LINE:
-				getDeliveryAddressLine().clear();
+				getDeliveryAddressLines().clear();
 				return;
 			case DatatypesPackage.AD__DELIVERY_INSTALLATION_TYPE:
-				getDeliveryInstallationType().clear();
+				getDeliveryInstallationTypes().clear();
 				return;
 			case DatatypesPackage.AD__DELIVERY_INSTALLATION_AREA:
-				getDeliveryInstallationArea().clear();
+				getDeliveryInstallationAreas().clear();
 				return;
 			case DatatypesPackage.AD__DELIVERY_INSTALLATION_QUALIFIER:
-				getDeliveryInstallationQualifier().clear();
+				getDeliveryInstallationQualifiers().clear();
 				return;
 			case DatatypesPackage.AD__DELIVERY_MODE:
-				getDeliveryMode().clear();
+				getDeliveryModes().clear();
 				return;
 			case DatatypesPackage.AD__DELIVERY_MODE_IDENTIFIER:
-				getDeliveryModeIdentifier().clear();
+				getDeliveryModeIdentifiers().clear();
 				return;
 			case DatatypesPackage.AD__BUILDING_NUMBER_SUFFIX:
-				getBuildingNumberSuffix().clear();
+				getBuildingNumberSuffixes().clear();
 				return;
 			case DatatypesPackage.AD__POST_BOX:
-				getPostBox().clear();
+				getPostBoxes().clear();
 				return;
 			case DatatypesPackage.AD__PRECINCT:
-				getPrecinct().clear();
+				getPrecincts().clear();
 				return;
 			case DatatypesPackage.AD__PART:
-				getPart().clear();
+				getParts().clear();
 				return;
 			case DatatypesPackage.AD__MIXED:
 				getMixed().clear();
@@ -1328,67 +1328,67 @@ public class ADImpl extends ANYImpl implements AD {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DatatypesPackage.AD__USEABLE_PERIOD:
-				return useablePeriod != null && !useablePeriod.isEmpty();
+				return useablePeriods != null && !useablePeriods.isEmpty();
 			case DatatypesPackage.AD__USE:
-				return isSetUse();
+				return isSetUses();
 			case DatatypesPackage.AD__IS_NOT_ORDERED:
 				return IS_NOT_ORDERED_EDEFAULT == null ? isNotOrdered != null : !IS_NOT_ORDERED_EDEFAULT.equals(isNotOrdered);
 			case DatatypesPackage.AD__DELIMITER:
-				return !getDelimiter().isEmpty();
+				return !getDelimiters().isEmpty();
 			case DatatypesPackage.AD__COUNTRY:
-				return !getCountry().isEmpty();
+				return !getCountries().isEmpty();
 			case DatatypesPackage.AD__STATE:
-				return !getState().isEmpty();
+				return !getStates().isEmpty();
 			case DatatypesPackage.AD__COUNTY:
-				return !getCounty().isEmpty();
+				return !getCounties().isEmpty();
 			case DatatypesPackage.AD__CITY:
-				return !getCity().isEmpty();
+				return !getCities().isEmpty();
 			case DatatypesPackage.AD__POSTAL_CODE:
-				return !getPostalCode().isEmpty();
+				return !getPostalCodes().isEmpty();
 			case DatatypesPackage.AD__STREET_ADDRESS_LINE:
-				return !getStreetAddressLine().isEmpty();
+				return !getStreetAddressLines().isEmpty();
 			case DatatypesPackage.AD__HOUSE_NUMBER:
-				return !getHouseNumber().isEmpty();
+				return !getHouseNumbers().isEmpty();
 			case DatatypesPackage.AD__HOUSE_NUMBER_NUMERIC:
-				return !getHouseNumberNumeric().isEmpty();
+				return !getHouseNumberNumerics().isEmpty();
 			case DatatypesPackage.AD__DIRECTION:
-				return !getDirection().isEmpty();
+				return !getDirections().isEmpty();
 			case DatatypesPackage.AD__STREET_NAME:
-				return !getStreetName().isEmpty();
+				return !getStreetNames().isEmpty();
 			case DatatypesPackage.AD__STREET_NAME_BASE:
-				return !getStreetNameBase().isEmpty();
+				return !getStreetNameBases().isEmpty();
 			case DatatypesPackage.AD__STREET_NAME_TYPE:
-				return !getStreetNameType().isEmpty();
+				return !getStreetNameTypes().isEmpty();
 			case DatatypesPackage.AD__ADDITIONAL_LOCATOR:
-				return !getAdditionalLocator().isEmpty();
+				return !getAdditionalLocators().isEmpty();
 			case DatatypesPackage.AD__UNIT_ID:
-				return !getUnitID().isEmpty();
+				return !getUnitIDs().isEmpty();
 			case DatatypesPackage.AD__UNIT_TYPE:
-				return !getUnitType().isEmpty();
+				return !getUnitTypes().isEmpty();
 			case DatatypesPackage.AD__CARE_OF:
-				return !getCareOf().isEmpty();
+				return !getCareOfs().isEmpty();
 			case DatatypesPackage.AD__CENSUS_TRACT:
-				return !getCensusTract().isEmpty();
+				return !getCensusTracts().isEmpty();
 			case DatatypesPackage.AD__DELIVERY_ADDRESS_LINE:
-				return !getDeliveryAddressLine().isEmpty();
+				return !getDeliveryAddressLines().isEmpty();
 			case DatatypesPackage.AD__DELIVERY_INSTALLATION_TYPE:
-				return !getDeliveryInstallationType().isEmpty();
+				return !getDeliveryInstallationTypes().isEmpty();
 			case DatatypesPackage.AD__DELIVERY_INSTALLATION_AREA:
-				return !getDeliveryInstallationArea().isEmpty();
+				return !getDeliveryInstallationAreas().isEmpty();
 			case DatatypesPackage.AD__DELIVERY_INSTALLATION_QUALIFIER:
-				return !getDeliveryInstallationQualifier().isEmpty();
+				return !getDeliveryInstallationQualifiers().isEmpty();
 			case DatatypesPackage.AD__DELIVERY_MODE:
-				return !getDeliveryMode().isEmpty();
+				return !getDeliveryModes().isEmpty();
 			case DatatypesPackage.AD__DELIVERY_MODE_IDENTIFIER:
-				return !getDeliveryModeIdentifier().isEmpty();
+				return !getDeliveryModeIdentifiers().isEmpty();
 			case DatatypesPackage.AD__BUILDING_NUMBER_SUFFIX:
-				return !getBuildingNumberSuffix().isEmpty();
+				return !getBuildingNumberSuffixes().isEmpty();
 			case DatatypesPackage.AD__POST_BOX:
-				return !getPostBox().isEmpty();
+				return !getPostBoxes().isEmpty();
 			case DatatypesPackage.AD__PRECINCT:
-				return !getPrecinct().isEmpty();
+				return !getPrecincts().isEmpty();
 			case DatatypesPackage.AD__PART:
-				return !getPart().isEmpty();
+				return !getParts().isEmpty();
 			case DatatypesPackage.AD__MIXED:
 				return mixed != null && !mixed.isEmpty();
 		}
@@ -1406,7 +1406,7 @@ public class ADImpl extends ANYImpl implements AD {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (use: ");
-		result.append(use);
+		result.append(uses);
 		result.append(", isNotOrdered: ");
 		result.append(isNotOrdered);
 		result.append(", mixed: ");

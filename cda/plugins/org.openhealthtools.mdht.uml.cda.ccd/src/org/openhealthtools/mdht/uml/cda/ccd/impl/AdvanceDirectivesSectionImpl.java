@@ -50,8 +50,8 @@ public class AdvanceDirectivesSectionImpl extends SectionImpl implements Advance
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AdvanceDirectivesSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectivesSectionOperations.AdvanceDirectivesSection_templateId(this, diagnostics, context);
+	public boolean validateAdvanceDirectivesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class AdvanceDirectivesSectionImpl extends SectionImpl implements Advance
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AdvanceDirectivesSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectivesSectionOperations.AdvanceDirectivesSection_code(this, diagnostics, context);
+	public boolean validateAdvanceDirectivesSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class AdvanceDirectivesSectionImpl extends SectionImpl implements Advance
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AdvanceDirectivesSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectivesSectionOperations.AdvanceDirectivesSection_title(this, diagnostics, context);
+	public boolean validateAdvanceDirectivesSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionTitle(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class AdvanceDirectivesSectionImpl extends SectionImpl implements Advance
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AdvanceDirectivesSection_advanceDirectiveObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectivesSectionOperations.AdvanceDirectivesSection_advanceDirectiveObservation(this, diagnostics, context);
+	public boolean validateAdvanceDirectivesSectionAdvanceDirectiveObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionAdvanceDirectiveObservation(this, diagnostics, context);
 	}
 
 	/**

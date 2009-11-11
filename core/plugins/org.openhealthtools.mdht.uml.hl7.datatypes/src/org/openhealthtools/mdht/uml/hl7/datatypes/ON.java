@@ -38,6 +38,6 @@ public interface ON extends EN {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.family->isEmpty() and self.given->isEmpty()'"
 	 * @generated
 	 */
-	boolean invariant(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateInvariant(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // ON

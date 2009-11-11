@@ -17,15 +17,11 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
 
 /**
@@ -36,7 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.PN#invariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Invariant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.PN#validateInvariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Invariant</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,24 +49,24 @@ public class PNOperations extends ENOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #invariant(PN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Invariant</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateInvariant(PN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Invariant</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #invariant(PN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateInvariant(PN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.delimiter->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.family->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.given->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.prefix->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.suffix->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS))";
+	protected static final String VALIDATE_INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.delimiter->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.family->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.given->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.prefix->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.suffix->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS))";
 
 	/**
-	 * The cached OCL invariant for the '{@link #invariant(PN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Invariant</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateInvariant(PN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Invariant</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #invariant(PN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateInvariant(PN, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,25 +79,25 @@ public class PNOperations extends ENOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean invariant(PN pn, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateInvariant(PN pn, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(DatatypesPackage.Literals.PN);
 			try {
-				INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(pn)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_INVARIANT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(pn)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DatatypesValidator.DIAGNOSTIC_SOURCE,
 						 DatatypesValidator.PN__INVARIANT,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "invariant", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(pn, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateInvariant", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(pn, context) }),
 						 new Object [] { pn }));
 			}
 			return false;

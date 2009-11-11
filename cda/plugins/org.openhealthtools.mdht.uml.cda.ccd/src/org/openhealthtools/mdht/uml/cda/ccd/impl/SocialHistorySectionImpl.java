@@ -50,8 +50,8 @@ public class SocialHistorySectionImpl extends SectionImpl implements SocialHisto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SocialHistorySection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SocialHistorySectionOperations.SocialHistorySection_templateId(this, diagnostics, context);
+	public boolean validateSocialHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SocialHistorySectionOperations.validateSocialHistorySectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class SocialHistorySectionImpl extends SectionImpl implements SocialHisto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SocialHistorySection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SocialHistorySectionOperations.SocialHistorySection_code(this, diagnostics, context);
+	public boolean validateSocialHistorySectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SocialHistorySectionOperations.validateSocialHistorySectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class SocialHistorySectionImpl extends SectionImpl implements SocialHisto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean SocialHistorySection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SocialHistorySectionOperations.SocialHistorySection_title(this, diagnostics, context);
+	public boolean validateSocialHistorySectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SocialHistorySectionOperations.validateSocialHistorySectionTitle(this, diagnostics, context);
 	}
 
 	/**

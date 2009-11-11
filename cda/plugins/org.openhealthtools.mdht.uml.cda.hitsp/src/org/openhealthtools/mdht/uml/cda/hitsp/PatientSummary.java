@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getPatientSummary()
  * @model extendedMetaData="name='ClinicalDocument'"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.32.1' constraints.validation.error='PatientSummary_templateId'"
+ *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.32.1' constraints.validation.error='PatientSummaryTemplateId'"
  * @generated
  */
 public interface PatientSummary extends ContinuityOfCareDocument {
@@ -42,7 +42,7 @@ public interface PatientSummary extends ContinuityOfCareDocument {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.3.88.11.32.1\')'"
 	 * @generated
 	 */
-	boolean PatientSummary_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePatientSummaryTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

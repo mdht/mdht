@@ -13,14 +13,10 @@
 package org.openhealthtools.mdht.uml.cda.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.impl.IIImpl;
 
 /**

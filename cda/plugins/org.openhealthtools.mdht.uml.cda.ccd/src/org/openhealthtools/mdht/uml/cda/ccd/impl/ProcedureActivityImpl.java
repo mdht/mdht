@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProcedureActivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.ActImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class ProcedureActivityImpl extends ActImpl implements ProcedureActivity 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProcedureActivity_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProcedureActivityOperations.ProcedureActivity_templateId(this, diagnostics, context);
+	public boolean validateProcedureActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureActivityOperations.validateProcedureActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class ProcedureActivityImpl extends ActImpl implements ProcedureActivity 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProcedureActivity_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProcedureActivityOperations.ProcedureActivity_moodCode(this, diagnostics, context);
+	public boolean validateProcedureActivityMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureActivityOperations.validateProcedureActivityMoodCode(this, diagnostics, context);
 	}
 
 	/**
@@ -73,8 +68,8 @@ public class ProcedureActivityImpl extends ActImpl implements ProcedureActivity 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProcedureActivity_id(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProcedureActivityOperations.ProcedureActivity_id(this, diagnostics, context);
+	public boolean validateProcedureActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureActivityOperations.validateProcedureActivityId(this, diagnostics, context);
 	}
 
 	/**
@@ -82,8 +77,8 @@ public class ProcedureActivityImpl extends ActImpl implements ProcedureActivity 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProcedureActivity_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProcedureActivityOperations.ProcedureActivity_statusCode(this, diagnostics, context);
+	public boolean validateProcedureActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureActivityOperations.validateProcedureActivityStatusCode(this, diagnostics, context);
 	}
 
 	/**
@@ -91,8 +86,8 @@ public class ProcedureActivityImpl extends ActImpl implements ProcedureActivity 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProcedureActivity_effectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProcedureActivityOperations.ProcedureActivity_effectiveTime(this, diagnostics, context);
+	public boolean validateProcedureActivityEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureActivityOperations.validateProcedureActivityEffectiveTime(this, diagnostics, context);
 	}
 
 	/**

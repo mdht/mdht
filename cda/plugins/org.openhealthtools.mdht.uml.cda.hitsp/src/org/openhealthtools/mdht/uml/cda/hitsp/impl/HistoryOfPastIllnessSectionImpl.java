@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.HistoryOfPastIllnessSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,9 +49,8 @@ public class HistoryOfPastIllnessSectionImpl extends org.openhealthtools.mdht.um
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean HistoryOfPastIllnessSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HistoryOfPastIllnessSectionOperations.HistoryOfPastIllnessSection_templateId(this, diagnostics, context);
+	public boolean validateHITSPHistoryOfPastIllnessSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryOfPastIllnessSectionOperations.validateHITSPHistoryOfPastIllnessSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

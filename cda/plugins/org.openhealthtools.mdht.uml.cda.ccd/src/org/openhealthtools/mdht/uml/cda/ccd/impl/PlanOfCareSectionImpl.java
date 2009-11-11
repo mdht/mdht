@@ -50,8 +50,8 @@ public class PlanOfCareSectionImpl extends SectionImpl implements PlanOfCareSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PlanOfCareSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PlanOfCareSectionOperations.PlanOfCareSection_templateId(this, diagnostics, context);
+	public boolean validatePlanOfCareSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PlanOfCareSectionOperations.validatePlanOfCareSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class PlanOfCareSectionImpl extends SectionImpl implements PlanOfCareSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PlanOfCareSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PlanOfCareSectionOperations.PlanOfCareSection_code(this, diagnostics, context);
+	public boolean validatePlanOfCareSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PlanOfCareSectionOperations.validatePlanOfCareSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class PlanOfCareSectionImpl extends SectionImpl implements PlanOfCareSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PlanOfCareSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PlanOfCareSectionOperations.PlanOfCareSection_title(this, diagnostics, context);
+	public boolean validatePlanOfCareSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PlanOfCareSectionOperations.validatePlanOfCareSectionTitle(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class PlanOfCareSectionImpl extends SectionImpl implements PlanOfCareSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean PlanOfCareSection_planOfCareActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PlanOfCareSectionOperations.PlanOfCareSection_planOfCareActivity(this, diagnostics, context);
+	public boolean validatePlanOfCareSectionPlanOfCareActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PlanOfCareSectionOperations.validatePlanOfCareSectionPlanOfCareActivity(this, diagnostics, context);
 	}
 
 	/**

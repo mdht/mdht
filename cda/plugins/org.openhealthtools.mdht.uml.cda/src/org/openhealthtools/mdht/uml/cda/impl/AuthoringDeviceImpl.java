@@ -16,28 +16,21 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.AuthoringDevice;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.MaintainedEntity;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.SC;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassDevice;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -49,13 +42,13 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getManufacturerModelName <em>Manufacturer Model Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getSoftwareName <em>Software Name</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getAsMaintainedEntity <em>As Maintained Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getAsMaintainedEntities <em>As Maintained Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl#getDeterminerCode <em>Determiner Code</em>}</li>
@@ -66,14 +59,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -86,14 +79,14 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
@@ -126,14 +119,14 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 	protected SC softwareName;
 
 	/**
-	 * The cached value of the '{@link #getAsMaintainedEntity() <em>As Maintained Entity</em>}' containment reference list.
+	 * The cached value of the '{@link #getAsMaintainedEntities() <em>As Maintained Entity</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAsMaintainedEntity()
+	 * @see #getAsMaintainedEntities()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MaintainedEntity> asMaintainedEntity;
+	protected EList<MaintainedEntity> asMaintainedEntities;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -246,11 +239,11 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.AUTHORING_DEVICE__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.AUTHORING_DEVICE__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -301,11 +294,11 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.AUTHORING_DEVICE__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.AUTHORING_DEVICE__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -442,11 +435,11 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MaintainedEntity> getAsMaintainedEntity() {
-		if (asMaintainedEntity == null) {
-			asMaintainedEntity = new EObjectContainmentEList<MaintainedEntity>(MaintainedEntity.class, this, CDAPackage.AUTHORING_DEVICE__AS_MAINTAINED_ENTITY);
+	public EList<MaintainedEntity> getAsMaintainedEntities() {
+		if (asMaintainedEntities == null) {
+			asMaintainedEntities = new EObjectContainmentEList<MaintainedEntity>(MaintainedEntity.class, this, CDAPackage.AUTHORING_DEVICE__AS_MAINTAINED_ENTITY);
 		}
-		return asMaintainedEntity;
+		return asMaintainedEntities;
 	}
 
 	/**
@@ -596,11 +589,11 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.AUTHORING_DEVICE__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.AUTHORING_DEVICE__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.AUTHORING_DEVICE__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.AUTHORING_DEVICE__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.AUTHORING_DEVICE__MANUFACTURER_MODEL_NAME:
@@ -608,7 +601,7 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 			case CDAPackage.AUTHORING_DEVICE__SOFTWARE_NAME:
 				return basicSetSoftwareName(null, msgs);
 			case CDAPackage.AUTHORING_DEVICE__AS_MAINTAINED_ENTITY:
-				return ((InternalEList<?>)getAsMaintainedEntity()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAsMaintainedEntities()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -622,11 +615,11 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.AUTHORING_DEVICE__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.AUTHORING_DEVICE__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.AUTHORING_DEVICE__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.AUTHORING_DEVICE__CODE:
 				return getCode();
 			case CDAPackage.AUTHORING_DEVICE__MANUFACTURER_MODEL_NAME:
@@ -634,7 +627,7 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 			case CDAPackage.AUTHORING_DEVICE__SOFTWARE_NAME:
 				return getSoftwareName();
 			case CDAPackage.AUTHORING_DEVICE__AS_MAINTAINED_ENTITY:
-				return getAsMaintainedEntity();
+				return getAsMaintainedEntities();
 			case CDAPackage.AUTHORING_DEVICE__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.AUTHORING_DEVICE__CLASS_CODE:
@@ -655,15 +648,15 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.AUTHORING_DEVICE__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.AUTHORING_DEVICE__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.AUTHORING_DEVICE__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.AUTHORING_DEVICE__CODE:
 				setCode((CE)newValue);
@@ -675,8 +668,8 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 				setSoftwareName((SC)newValue);
 				return;
 			case CDAPackage.AUTHORING_DEVICE__AS_MAINTAINED_ENTITY:
-				getAsMaintainedEntity().clear();
-				getAsMaintainedEntity().addAll((Collection<? extends MaintainedEntity>)newValue);
+				getAsMaintainedEntities().clear();
+				getAsMaintainedEntities().addAll((Collection<? extends MaintainedEntity>)newValue);
 				return;
 			case CDAPackage.AUTHORING_DEVICE__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -700,13 +693,13 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.AUTHORING_DEVICE__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.AUTHORING_DEVICE__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.AUTHORING_DEVICE__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.AUTHORING_DEVICE__CODE:
 				setCode((CE)null);
@@ -718,7 +711,7 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 				setSoftwareName((SC)null);
 				return;
 			case CDAPackage.AUTHORING_DEVICE__AS_MAINTAINED_ENTITY:
-				getAsMaintainedEntity().clear();
+				getAsMaintainedEntities().clear();
 				return;
 			case CDAPackage.AUTHORING_DEVICE__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -742,11 +735,11 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.AUTHORING_DEVICE__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.AUTHORING_DEVICE__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.AUTHORING_DEVICE__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.AUTHORING_DEVICE__CODE:
 				return code != null;
 			case CDAPackage.AUTHORING_DEVICE__MANUFACTURER_MODEL_NAME:
@@ -754,7 +747,7 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 			case CDAPackage.AUTHORING_DEVICE__SOFTWARE_NAME:
 				return softwareName != null;
 			case CDAPackage.AUTHORING_DEVICE__AS_MAINTAINED_ENTITY:
-				return asMaintainedEntity != null && !asMaintainedEntity.isEmpty();
+				return asMaintainedEntities != null && !asMaintainedEntities.isEmpty();
 			case CDAPackage.AUTHORING_DEVICE__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.AUTHORING_DEVICE__CLASS_CODE:

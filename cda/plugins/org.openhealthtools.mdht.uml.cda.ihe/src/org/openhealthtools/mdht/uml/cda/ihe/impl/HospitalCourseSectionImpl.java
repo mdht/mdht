@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.HospitalCourseSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.HospitalCourseSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class HospitalCourseSectionImpl extends SectionImpl implements HospitalCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean HospitalCourseSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HospitalCourseSectionOperations.HospitalCourseSection_templateId(this, diagnostics, context);
+	public boolean validateHospitalCourseSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HospitalCourseSectionOperations.validateHospitalCourseSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -64,8 +59,8 @@ public class HospitalCourseSectionImpl extends SectionImpl implements HospitalCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean HospitalCourseSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HospitalCourseSectionOperations.HospitalCourseSection_code(this, diagnostics, context);
+	public boolean validateHospitalCourseSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HospitalCourseSectionOperations.validateHospitalCourseSectionCode(this, diagnostics, context);
 	}
 
 	/**

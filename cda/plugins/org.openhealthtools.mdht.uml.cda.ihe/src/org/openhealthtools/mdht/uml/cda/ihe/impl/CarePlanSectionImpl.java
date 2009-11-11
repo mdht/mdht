@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareSectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.ihe.CarePlanSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.CarePlanSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class CarePlanSectionImpl extends PlanOfCareSectionImpl implements CarePl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean CarePlanSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CarePlanSectionOperations.CarePlanSection_templateId(this, diagnostics, context);
+	public boolean validateCarePlanSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CarePlanSectionOperations.validateCarePlanSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

@@ -46,13 +46,13 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClass;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getTemplateId <em>Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getIds <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getCode <em>Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getAddr <em>Addr</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getTelecom <em>Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getAddrs <em>Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getTelecoms <em>Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getGuardianPerson <em>Guardian Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getGuardianOrganization <em>Guardian Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl#getNullFlavor <em>Null Flavor</em>}</li>
@@ -64,14 +64,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClass;
  */
 public class GuardianImpl extends EObjectImpl implements Guardian {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -84,24 +84,24 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getIds() <em>Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> id;
+	protected EList<II> ids;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
@@ -114,24 +114,24 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	protected CE code;
 
 	/**
-	 * The cached value of the '{@link #getAddr() <em>Addr</em>}' containment reference list.
+	 * The cached value of the '{@link #getAddrs() <em>Addr</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAddr()
+	 * @see #getAddrs()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AD> addr;
+	protected EList<AD> addrs;
 
 	/**
-	 * The cached value of the '{@link #getTelecom() <em>Telecom</em>}' containment reference list.
+	 * The cached value of the '{@link #getTelecoms() <em>Telecom</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTelecom()
+	 * @see #getTelecoms()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TEL> telecom;
+	protected EList<TEL> telecoms;
 
 	/**
 	 * The cached value of the '{@link #getGuardianPerson() <em>Guardian Person</em>}' containment reference.
@@ -235,11 +235,11 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.GUARDIAN__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.GUARDIAN__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -290,11 +290,11 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.GUARDIAN__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.GUARDIAN__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -302,11 +302,11 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getId() {
-		if (id == null) {
-			id = new EObjectContainmentEList<II>(II.class, this, CDAPackage.GUARDIAN__ID);
+	public EList<II> getIds() {
+		if (ids == null) {
+			ids = new EObjectContainmentEList<II>(II.class, this, CDAPackage.GUARDIAN__ID);
 		}
-		return id;
+		return ids;
 	}
 
 	/**
@@ -357,11 +357,11 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AD> getAddr() {
-		if (addr == null) {
-			addr = new EObjectContainmentEList<AD>(AD.class, this, CDAPackage.GUARDIAN__ADDR);
+	public EList<AD> getAddrs() {
+		if (addrs == null) {
+			addrs = new EObjectContainmentEList<AD>(AD.class, this, CDAPackage.GUARDIAN__ADDR);
 		}
-		return addr;
+		return addrs;
 	}
 
 	/**
@@ -369,11 +369,11 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TEL> getTelecom() {
-		if (telecom == null) {
-			telecom = new EObjectContainmentEList<TEL>(TEL.class, this, CDAPackage.GUARDIAN__TELECOM);
+	public EList<TEL> getTelecoms() {
+		if (telecoms == null) {
+			telecoms = new EObjectContainmentEList<TEL>(TEL.class, this, CDAPackage.GUARDIAN__TELECOM);
 		}
-		return telecom;
+		return telecoms;
 	}
 
 	/**
@@ -559,8 +559,8 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean guardianChoice(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return GuardianOperations.guardianChoice(this, diagnostics, context);
+	public boolean validateGuardianChoice(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return GuardianOperations.validateGuardianChoice(this, diagnostics, context);
 	}
 
 	/**
@@ -572,19 +572,19 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.GUARDIAN__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.GUARDIAN__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.GUARDIAN__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.GUARDIAN__ID:
-				return ((InternalEList<?>)getId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.GUARDIAN__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.GUARDIAN__ADDR:
-				return ((InternalEList<?>)getAddr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAddrs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.GUARDIAN__TELECOM:
-				return ((InternalEList<?>)getTelecom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
 			case CDAPackage.GUARDIAN__GUARDIAN_PERSON:
 				return basicSetGuardianPerson(null, msgs);
 			case CDAPackage.GUARDIAN__GUARDIAN_ORGANIZATION:
@@ -602,19 +602,19 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.GUARDIAN__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.GUARDIAN__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.GUARDIAN__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.GUARDIAN__ID:
-				return getId();
+				return getIds();
 			case CDAPackage.GUARDIAN__CODE:
 				return getCode();
 			case CDAPackage.GUARDIAN__ADDR:
-				return getAddr();
+				return getAddrs();
 			case CDAPackage.GUARDIAN__TELECOM:
-				return getTelecom();
+				return getTelecoms();
 			case CDAPackage.GUARDIAN__GUARDIAN_PERSON:
 				return getGuardianPerson();
 			case CDAPackage.GUARDIAN__GUARDIAN_ORGANIZATION:
@@ -637,30 +637,30 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.GUARDIAN__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.GUARDIAN__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.GUARDIAN__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.GUARDIAN__ID:
-				getId().clear();
-				getId().addAll((Collection<? extends II>)newValue);
+				getIds().clear();
+				getIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.GUARDIAN__CODE:
 				setCode((CE)newValue);
 				return;
 			case CDAPackage.GUARDIAN__ADDR:
-				getAddr().clear();
-				getAddr().addAll((Collection<? extends AD>)newValue);
+				getAddrs().clear();
+				getAddrs().addAll((Collection<? extends AD>)newValue);
 				return;
 			case CDAPackage.GUARDIAN__TELECOM:
-				getTelecom().clear();
-				getTelecom().addAll((Collection<? extends TEL>)newValue);
+				getTelecoms().clear();
+				getTelecoms().addAll((Collection<? extends TEL>)newValue);
 				return;
 			case CDAPackage.GUARDIAN__GUARDIAN_PERSON:
 				setGuardianPerson((Person)newValue);
@@ -687,25 +687,25 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.GUARDIAN__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.GUARDIAN__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.GUARDIAN__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.GUARDIAN__ID:
-				getId().clear();
+				getIds().clear();
 				return;
 			case CDAPackage.GUARDIAN__CODE:
 				setCode((CE)null);
 				return;
 			case CDAPackage.GUARDIAN__ADDR:
-				getAddr().clear();
+				getAddrs().clear();
 				return;
 			case CDAPackage.GUARDIAN__TELECOM:
-				getTelecom().clear();
+				getTelecoms().clear();
 				return;
 			case CDAPackage.GUARDIAN__GUARDIAN_PERSON:
 				setGuardianPerson((Person)null);
@@ -732,19 +732,19 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.GUARDIAN__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.GUARDIAN__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.GUARDIAN__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.GUARDIAN__ID:
-				return id != null && !id.isEmpty();
+				return ids != null && !ids.isEmpty();
 			case CDAPackage.GUARDIAN__CODE:
 				return code != null;
 			case CDAPackage.GUARDIAN__ADDR:
-				return addr != null && !addr.isEmpty();
+				return addrs != null && !addrs.isEmpty();
 			case CDAPackage.GUARDIAN__TELECOM:
-				return telecom != null && !telecom.isEmpty();
+				return telecoms != null && !telecoms.isEmpty();
 			case CDAPackage.GUARDIAN__GUARDIAN_PERSON:
 				return guardianPerson != null;
 			case CDAPackage.GUARDIAN__GUARDIAN_ORGANIZATION:

@@ -50,8 +50,8 @@ public class StatusObservationImpl extends ObservationImpl implements StatusObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean StatusObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return StatusObservationOperations.StatusObservation_templateId(this, diagnostics, context);
+	public boolean validateStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return StatusObservationOperations.validateStatusObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class StatusObservationImpl extends ObservationImpl implements StatusObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean StatusObservation_classCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return StatusObservationOperations.StatusObservation_classCode(this, diagnostics, context);
+	public boolean validateStatusObservationClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return StatusObservationOperations.validateStatusObservationClassCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class StatusObservationImpl extends ObservationImpl implements StatusObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean StatusObservation_moodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return StatusObservationOperations.StatusObservation_moodCode(this, diagnostics, context);
+	public boolean validateStatusObservationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return StatusObservationOperations.validateStatusObservationMoodCode(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class StatusObservationImpl extends ObservationImpl implements StatusObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean StatusObservation_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return StatusObservationOperations.StatusObservation_code(this, diagnostics, context);
+	public boolean validateStatusObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return StatusObservationOperations.validateStatusObservationCode(this, diagnostics, context);
 	}
 
 	/**
@@ -86,8 +86,8 @@ public class StatusObservationImpl extends ObservationImpl implements StatusObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean StatusObservation_statusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return StatusObservationOperations.StatusObservation_statusCode(this, diagnostics, context);
+	public boolean validateStatusObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return StatusObservationOperations.validateStatusObservationStatusCode(this, diagnostics, context);
 	}
 
 	/**
@@ -95,8 +95,8 @@ public class StatusObservationImpl extends ObservationImpl implements StatusObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean StatusObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return StatusObservationOperations.StatusObservation_value(this, diagnostics, context);
+	public boolean validateStatusObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return StatusObservationOperations.validateStatusObservationValue(this, diagnostics, context);
 	}
 
 	/**

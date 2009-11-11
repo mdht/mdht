@@ -13,14 +13,11 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -33,9 +30,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getId <em>Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getTitle <em>Title</em>}</li>
@@ -43,10 +40,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getConfidentialityCode <em>Confidentiality Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getLanguageCode <em>Language Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getSubject <em>Subject</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getAuthor <em>Author</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getInformant <em>Informant</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getEntry <em>Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getComponent <em>Component</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getAuthors <em>Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getInformants <em>Informant</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getEntries <em>Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getComponents <em>Component</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getSectionId <em>Section Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getClassCode <em>Class Code</em>}</li>
@@ -74,7 +71,7 @@ public interface Section extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -118,7 +115,7 @@ public interface Section extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' containment reference.
@@ -324,7 +321,7 @@ public interface Section extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Author> getAuthor();
+	EList<Author> getAuthors();
 
 	/**
 	 * Returns the value of the '<em><b>Informant</b></em>' containment reference list.
@@ -341,7 +338,7 @@ public interface Section extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Informant12> getInformant();
+	EList<Informant12> getInformants();
 
 	/**
 	 * Returns the value of the '<em><b>Entry</b></em>' containment reference list.
@@ -358,7 +355,7 @@ public interface Section extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Entry> getEntry();
+	EList<Entry> getEntries();
 
 	/**
 	 * Returns the value of the '<em><b>Component</b></em>' containment reference list.
@@ -375,7 +372,7 @@ public interface Section extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<Component5> getComponent();
+	EList<Component5> getComponents();
 
 	/**
 	 * Returns the value of the '<em><b>Section Id</b></em>' attribute.

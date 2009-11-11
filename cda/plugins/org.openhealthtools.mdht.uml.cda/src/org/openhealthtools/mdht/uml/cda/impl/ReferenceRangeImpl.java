@@ -16,26 +16,19 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.ObservationRange;
 import org.openhealthtools.mdht.uml.cda.ReferenceRange;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipType;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
@@ -46,9 +39,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ReferenceRangeImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ReferenceRangeImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ReferenceRangeImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ReferenceRangeImpl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ReferenceRangeImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ReferenceRangeImpl#getObservationRange <em>Observation Range</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ReferenceRangeImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.ReferenceRangeImpl#getTypeCode <em>Type Code</em>}</li>
@@ -59,14 +52,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  */
 public class ReferenceRangeImpl extends EObjectImpl implements ReferenceRange {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -79,14 +72,14 @@ public class ReferenceRangeImpl extends EObjectImpl implements ReferenceRange {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getObservationRange() <em>Observation Range</em>}' containment reference.
@@ -180,11 +173,11 @@ public class ReferenceRangeImpl extends EObjectImpl implements ReferenceRange {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.REFERENCE_RANGE__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.REFERENCE_RANGE__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -235,11 +228,11 @@ public class ReferenceRangeImpl extends EObjectImpl implements ReferenceRange {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.REFERENCE_RANGE__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.REFERENCE_RANGE__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -386,11 +379,11 @@ public class ReferenceRangeImpl extends EObjectImpl implements ReferenceRange {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.REFERENCE_RANGE__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.REFERENCE_RANGE__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.REFERENCE_RANGE__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.REFERENCE_RANGE__OBSERVATION_RANGE:
 				return basicSetObservationRange(null, msgs);
 		}
@@ -406,11 +399,11 @@ public class ReferenceRangeImpl extends EObjectImpl implements ReferenceRange {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.REFERENCE_RANGE__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.REFERENCE_RANGE__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.REFERENCE_RANGE__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.REFERENCE_RANGE__OBSERVATION_RANGE:
 				return getObservationRange();
 			case CDAPackage.REFERENCE_RANGE__NULL_FLAVOR:
@@ -431,15 +424,15 @@ public class ReferenceRangeImpl extends EObjectImpl implements ReferenceRange {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.REFERENCE_RANGE__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.REFERENCE_RANGE__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.REFERENCE_RANGE__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.REFERENCE_RANGE__OBSERVATION_RANGE:
 				setObservationRange((ObservationRange)newValue);
@@ -463,13 +456,13 @@ public class ReferenceRangeImpl extends EObjectImpl implements ReferenceRange {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.REFERENCE_RANGE__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.REFERENCE_RANGE__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.REFERENCE_RANGE__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.REFERENCE_RANGE__OBSERVATION_RANGE:
 				setObservationRange((ObservationRange)null);
@@ -493,11 +486,11 @@ public class ReferenceRangeImpl extends EObjectImpl implements ReferenceRange {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.REFERENCE_RANGE__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.REFERENCE_RANGE__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.REFERENCE_RANGE__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.REFERENCE_RANGE__OBSERVATION_RANGE:
 				return observationRange != null;
 			case CDAPackage.REFERENCE_RANGE__NULL_FLAVOR:

@@ -9,14 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ConditionalDosingOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -53,8 +49,8 @@ public class ConditionalDosingImpl extends MedicationImpl implements Conditional
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ConditionalDosing_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ConditionalDosingOperations.ConditionalDosing_templateId(this, diagnostics, context);
+	public boolean validateConditionalDosingTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionalDosingOperations.validateConditionalDosingTemplateId(this, diagnostics, context);
 	}
 
 	/**

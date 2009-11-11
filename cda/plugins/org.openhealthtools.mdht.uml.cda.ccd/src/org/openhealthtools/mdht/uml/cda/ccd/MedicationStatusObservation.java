@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getMedicationStatusObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation value.codeSystemName='MedicationStatusCode' value.codeSystem='2.16.840.1.113883.1.11.20.7' templateId.root='2.16.840.1.113883.10.20.1.47' constraints.validation.error='MedicationStatusObservation_templateId MedicationStatusObservation_value' value.codeSystemVersion='20061017'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation value.codeSystemName='MedicationStatusCode' value.codeSystem='2.16.840.1.113883.1.11.20.7' templateId.root='2.16.840.1.113883.10.20.1.47' constraints.validation.error='MedicationStatusObservationTemplateId MedicationStatusObservationValue' value.codeSystemVersion='20061017'"
  * @generated
  */
 public interface MedicationStatusObservation extends StatusObservation {
@@ -32,7 +32,7 @@ public interface MedicationStatusObservation extends StatusObservation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.47\')'"
 	 * @generated
 	 */
-	boolean MedicationStatusObservation_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,7 +47,7 @@ public interface MedicationStatusObservation extends StatusObservation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and \r\nlet value : datatypes::CE = element.oclAsType(datatypes::CE) in \r\nvalue.codeSystem = \'2.16.840.1.113883.1.11.20.7\')'"
 	 * @generated
 	 */
-	boolean MedicationStatusObservation_value(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationStatusObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

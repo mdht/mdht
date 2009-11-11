@@ -6,6 +6,10 @@
  */
 package org.openhealthtools.mdht.uml.cda.hitsp;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +25,23 @@ package org.openhealthtools.mdht.uml.cda.hitsp;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getHistoryOfPresentIllness()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='HistoryOfPresentIllness_templateId' templateId.root='2.16.840.1.113883.3.88.11.83.107'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='HITSPHistoryOfPresentIllnessTemplateId' templateId.root='2.16.840.1.113883.3.88.11.83.107'"
  * @generated
  */
 public interface HistoryOfPresentIllness extends org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.hasTemplateId('2.16.840.1.113883.3.88.11.83.107')
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.3.88.11.83.107\')'"
+	 * @generated
+	 */
+	boolean validateHITSPHistoryOfPresentIllnessTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

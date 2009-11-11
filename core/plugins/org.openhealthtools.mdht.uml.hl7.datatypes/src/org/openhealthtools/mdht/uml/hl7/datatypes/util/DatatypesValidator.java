@@ -16,12 +16,54 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
-
-import org.openhealthtools.mdht.uml.hl7.datatypes.*;
+import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ADXP;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BIN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BinaryDataEncoding;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CO;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CR;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CV;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPlugin;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ENXP;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_INT;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.MO;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PQR;
+import org.openhealthtools.mdht.uml.hl7.datatypes.QTY;
+import org.openhealthtools.mdht.uml.hl7.datatypes.REAL;
+import org.openhealthtools.mdht.uml.hl7.datatypes.RTO;
+import org.openhealthtools.mdht.uml.hl7.datatypes.RTO_PQ_PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.RTO_QTY_QTY;
+import org.openhealthtools.mdht.uml.hl7.datatypes.SC;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
+import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_INT;
+import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.URL;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +92,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.openhealthtools.mdht.uml.hl7.datatypes";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Null Flavor' of 'BN'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Null Flavor' of 'BN'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -58,7 +100,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int BN__NULL_FLAVOR = 1;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Delimiter' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delimiter' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -66,7 +108,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__DELIMITER = 2;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Country' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Country' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -74,7 +116,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__COUNTRY = 3;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'State' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate State' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -82,7 +124,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__STATE = 4;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'County' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate County' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -90,7 +132,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__COUNTY = 5;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'City' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate City' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -98,7 +140,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__CITY = 6;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Postal Code' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Postal Code' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -106,7 +148,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__POSTAL_CODE = 7;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Street Address Line' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Street Address Line' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -114,7 +156,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__STREET_ADDRESS_LINE = 8;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'House Number' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate House Number' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -122,7 +164,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__HOUSE_NUMBER = 9;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'House Number Numeric' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate House Number Numeric' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -130,7 +172,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__HOUSE_NUMBER_NUMERIC = 10;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Direction' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Direction' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -138,7 +180,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__DIRECTION = 11;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Street Name' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Street Name' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -146,7 +188,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__STREET_NAME = 12;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Street Name Base' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Street Name Base' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -154,7 +196,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__STREET_NAME_BASE = 13;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Street Name Type' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Street Name Type' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -162,7 +204,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__STREET_NAME_TYPE = 14;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Additional Locator' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Additional Locator' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -170,7 +212,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__ADDITIONAL_LOCATOR = 15;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Unit ID' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Unit ID' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -178,7 +220,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__UNIT_ID = 16;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Unit Type' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Unit Type' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -186,7 +228,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__UNIT_TYPE = 17;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Care Of' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Care Of' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -194,7 +236,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__CARE_OF = 18;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Census Tract' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Census Tract' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -202,7 +244,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__CENSUS_TRACT = 19;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Delivery Address Line' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delivery Address Line' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -210,7 +252,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__DELIVERY_ADDRESS_LINE = 20;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Delivery Installation Type' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delivery Installation Type' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -218,7 +260,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__DELIVERY_INSTALLATION_TYPE = 21;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Delivery Installation Area' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delivery Installation Area' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -226,7 +268,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__DELIVERY_INSTALLATION_AREA = 22;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Delivery Installation Qualifier' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delivery Installation Qualifier' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -234,7 +276,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__DELIVERY_INSTALLATION_QUALIFIER = 23;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Delivery Mode' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delivery Mode' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -242,7 +284,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__DELIVERY_MODE = 24;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Delivery Mode Identifier' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delivery Mode Identifier' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -250,7 +292,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__DELIVERY_MODE_IDENTIFIER = 25;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Building Number Suffix' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Building Number Suffix' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -258,7 +300,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__BUILDING_NUMBER_SUFFIX = 26;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Post Box' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Post Box' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -266,7 +308,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__POST_BOX = 27;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Precinct' of 'AD'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Precinct' of 'AD'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -274,7 +316,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int AD__PRECINCT = 28;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Delimiter' of 'EN'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Delimiter' of 'EN'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -282,7 +324,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int EN__DELIMITER = 29;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Family' of 'EN'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Family' of 'EN'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -290,7 +332,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int EN__FAMILY = 30;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Given' of 'EN'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Given' of 'EN'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -298,7 +340,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int EN__GIVEN = 31;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Prefix' of 'EN'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Prefix' of 'EN'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -306,7 +348,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int EN__PREFIX = 32;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Suffix' of 'EN'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Suffix' of 'EN'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -314,7 +356,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int EN__SUFFIX = 33;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Invariant' of 'ON'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Invariant' of 'ON'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -322,7 +364,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int ON__INVARIANT = 34;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Invariant' of 'PN'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Invariant' of 'PN'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -330,7 +372,7 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int PN__INVARIANT = 35;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Invariant' of 'TN'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Invariant' of 'TN'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -624,18 +666,18 @@ public class DatatypesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(bn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(bn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(bn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateBN_nullFlavor(bn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateBN_validateNullFlavor(bn, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the nullFlavor constraint of '<em>BN</em>'.
+	 * Validates the validateNullFlavor constraint of '<em>BN</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateBN_nullFlavor(BN bn, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return bn.nullFlavor(diagnostics, context);
+	public boolean validateBN_validateNullFlavor(BN bn, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return bn.validateNullFlavor(diagnostics, context);
 	}
 
 	/**
@@ -651,304 +693,304 @@ public class DatatypesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(ad, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ad, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_delimiter(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_country(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_state(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_county(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_city(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_postalCode(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_streetAddressLine(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_houseNumber(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_houseNumberNumeric(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_direction(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_streetName(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_streetNameBase(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_streetNameType(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_additionalLocator(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_unitID(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_unitType(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_careOf(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_censusTract(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_deliveryAddressLine(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_deliveryInstallationType(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_deliveryInstallationArea(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_deliveryInstallationQualifier(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_deliveryMode(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_deliveryModeIdentifier(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_buildingNumberSuffix(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_postBox(ad, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAD_precinct(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateDelimiter(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateCountry(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateState(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateCounty(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateCity(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validatePostalCode(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateStreetAddressLine(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateHouseNumber(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateHouseNumberNumeric(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateDirection(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateStreetName(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateStreetNameBase(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateStreetNameType(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateAdditionalLocator(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateUnitID(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateUnitType(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateCareOf(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateCensusTract(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateDeliveryAddressLine(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateDeliveryInstallationType(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateDeliveryInstallationArea(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateDeliveryInstallationQualifier(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateDeliveryMode(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateDeliveryModeIdentifier(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validateBuildingNumberSuffix(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validatePostBox(ad, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAD_validatePrecinct(ad, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the delimiter constraint of '<em>AD</em>'.
+	 * Validates the validateDelimiter constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_delimiter(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.delimiter(diagnostics, context);
+	public boolean validateAD_validateDelimiter(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateDelimiter(diagnostics, context);
 	}
 
 	/**
-	 * Validates the country constraint of '<em>AD</em>'.
+	 * Validates the validateCountry constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_country(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.country(diagnostics, context);
+	public boolean validateAD_validateCountry(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateCountry(diagnostics, context);
 	}
 
 	/**
-	 * Validates the state constraint of '<em>AD</em>'.
+	 * Validates the validateState constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_state(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.state(diagnostics, context);
+	public boolean validateAD_validateState(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateState(diagnostics, context);
 	}
 
 	/**
-	 * Validates the county constraint of '<em>AD</em>'.
+	 * Validates the validateCounty constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_county(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.county(diagnostics, context);
+	public boolean validateAD_validateCounty(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateCounty(diagnostics, context);
 	}
 
 	/**
-	 * Validates the city constraint of '<em>AD</em>'.
+	 * Validates the validateCity constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_city(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.city(diagnostics, context);
+	public boolean validateAD_validateCity(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateCity(diagnostics, context);
 	}
 
 	/**
-	 * Validates the postalCode constraint of '<em>AD</em>'.
+	 * Validates the validatePostalCode constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_postalCode(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.postalCode(diagnostics, context);
+	public boolean validateAD_validatePostalCode(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validatePostalCode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the streetAddressLine constraint of '<em>AD</em>'.
+	 * Validates the validateStreetAddressLine constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_streetAddressLine(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.streetAddressLine(diagnostics, context);
+	public boolean validateAD_validateStreetAddressLine(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateStreetAddressLine(diagnostics, context);
 	}
 
 	/**
-	 * Validates the houseNumber constraint of '<em>AD</em>'.
+	 * Validates the validateHouseNumber constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_houseNumber(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.houseNumber(diagnostics, context);
+	public boolean validateAD_validateHouseNumber(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateHouseNumber(diagnostics, context);
 	}
 
 	/**
-	 * Validates the houseNumberNumeric constraint of '<em>AD</em>'.
+	 * Validates the validateHouseNumberNumeric constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_houseNumberNumeric(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.houseNumberNumeric(diagnostics, context);
+	public boolean validateAD_validateHouseNumberNumeric(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateHouseNumberNumeric(diagnostics, context);
 	}
 
 	/**
-	 * Validates the direction constraint of '<em>AD</em>'.
+	 * Validates the validateDirection constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_direction(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.direction(diagnostics, context);
+	public boolean validateAD_validateDirection(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateDirection(diagnostics, context);
 	}
 
 	/**
-	 * Validates the streetName constraint of '<em>AD</em>'.
+	 * Validates the validateStreetName constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_streetName(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.streetName(diagnostics, context);
+	public boolean validateAD_validateStreetName(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateStreetName(diagnostics, context);
 	}
 
 	/**
-	 * Validates the streetNameBase constraint of '<em>AD</em>'.
+	 * Validates the validateStreetNameBase constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_streetNameBase(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.streetNameBase(diagnostics, context);
+	public boolean validateAD_validateStreetNameBase(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateStreetNameBase(diagnostics, context);
 	}
 
 	/**
-	 * Validates the streetNameType constraint of '<em>AD</em>'.
+	 * Validates the validateStreetNameType constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_streetNameType(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.streetNameType(diagnostics, context);
+	public boolean validateAD_validateStreetNameType(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateStreetNameType(diagnostics, context);
 	}
 
 	/**
-	 * Validates the additionalLocator constraint of '<em>AD</em>'.
+	 * Validates the validateAdditionalLocator constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_additionalLocator(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.additionalLocator(diagnostics, context);
+	public boolean validateAD_validateAdditionalLocator(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateAdditionalLocator(diagnostics, context);
 	}
 
 	/**
-	 * Validates the unitID constraint of '<em>AD</em>'.
+	 * Validates the validateUnitID constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_unitID(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.unitID(diagnostics, context);
+	public boolean validateAD_validateUnitID(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateUnitID(diagnostics, context);
 	}
 
 	/**
-	 * Validates the unitType constraint of '<em>AD</em>'.
+	 * Validates the validateUnitType constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_unitType(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.unitType(diagnostics, context);
+	public boolean validateAD_validateUnitType(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateUnitType(diagnostics, context);
 	}
 
 	/**
-	 * Validates the careOf constraint of '<em>AD</em>'.
+	 * Validates the validateCareOf constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_careOf(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.careOf(diagnostics, context);
+	public boolean validateAD_validateCareOf(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateCareOf(diagnostics, context);
 	}
 
 	/**
-	 * Validates the censusTract constraint of '<em>AD</em>'.
+	 * Validates the validateCensusTract constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_censusTract(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.censusTract(diagnostics, context);
+	public boolean validateAD_validateCensusTract(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateCensusTract(diagnostics, context);
 	}
 
 	/**
-	 * Validates the deliveryAddressLine constraint of '<em>AD</em>'.
+	 * Validates the validateDeliveryAddressLine constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_deliveryAddressLine(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.deliveryAddressLine(diagnostics, context);
+	public boolean validateAD_validateDeliveryAddressLine(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateDeliveryAddressLine(diagnostics, context);
 	}
 
 	/**
-	 * Validates the deliveryInstallationType constraint of '<em>AD</em>'.
+	 * Validates the validateDeliveryInstallationType constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_deliveryInstallationType(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.deliveryInstallationType(diagnostics, context);
+	public boolean validateAD_validateDeliveryInstallationType(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateDeliveryInstallationType(diagnostics, context);
 	}
 
 	/**
-	 * Validates the deliveryInstallationArea constraint of '<em>AD</em>'.
+	 * Validates the validateDeliveryInstallationArea constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_deliveryInstallationArea(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.deliveryInstallationArea(diagnostics, context);
+	public boolean validateAD_validateDeliveryInstallationArea(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateDeliveryInstallationArea(diagnostics, context);
 	}
 
 	/**
-	 * Validates the deliveryInstallationQualifier constraint of '<em>AD</em>'.
+	 * Validates the validateDeliveryInstallationQualifier constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_deliveryInstallationQualifier(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.deliveryInstallationQualifier(diagnostics, context);
+	public boolean validateAD_validateDeliveryInstallationQualifier(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateDeliveryInstallationQualifier(diagnostics, context);
 	}
 
 	/**
-	 * Validates the deliveryMode constraint of '<em>AD</em>'.
+	 * Validates the validateDeliveryMode constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_deliveryMode(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.deliveryMode(diagnostics, context);
+	public boolean validateAD_validateDeliveryMode(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateDeliveryMode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the deliveryModeIdentifier constraint of '<em>AD</em>'.
+	 * Validates the validateDeliveryModeIdentifier constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_deliveryModeIdentifier(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.deliveryModeIdentifier(diagnostics, context);
+	public boolean validateAD_validateDeliveryModeIdentifier(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateDeliveryModeIdentifier(diagnostics, context);
 	}
 
 	/**
-	 * Validates the buildingNumberSuffix constraint of '<em>AD</em>'.
+	 * Validates the validateBuildingNumberSuffix constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_buildingNumberSuffix(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.buildingNumberSuffix(diagnostics, context);
+	public boolean validateAD_validateBuildingNumberSuffix(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validateBuildingNumberSuffix(diagnostics, context);
 	}
 
 	/**
-	 * Validates the postBox constraint of '<em>AD</em>'.
+	 * Validates the validatePostBox constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_postBox(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.postBox(diagnostics, context);
+	public boolean validateAD_validatePostBox(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validatePostBox(diagnostics, context);
 	}
 
 	/**
-	 * Validates the precinct constraint of '<em>AD</em>'.
+	 * Validates the validatePrecinct constraint of '<em>AD</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAD_precinct(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ad.precinct(diagnostics, context);
+	public boolean validateAD_validatePrecinct(AD ad, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ad.validatePrecinct(diagnostics, context);
 	}
 
 	/**
@@ -973,62 +1015,62 @@ public class DatatypesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(en, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(en, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_delimiter(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_family(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_given(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_prefix(en, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_suffix(en, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateDelimiter(en, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateFamily(en, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateGiven(en, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validatePrefix(en, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateSuffix(en, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the delimiter constraint of '<em>EN</em>'.
+	 * Validates the validateDelimiter constraint of '<em>EN</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEN_delimiter(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return en.delimiter(diagnostics, context);
+	public boolean validateEN_validateDelimiter(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return en.validateDelimiter(diagnostics, context);
 	}
 
 	/**
-	 * Validates the family constraint of '<em>EN</em>'.
+	 * Validates the validateFamily constraint of '<em>EN</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEN_family(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return en.family(diagnostics, context);
+	public boolean validateEN_validateFamily(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return en.validateFamily(diagnostics, context);
 	}
 
 	/**
-	 * Validates the given constraint of '<em>EN</em>'.
+	 * Validates the validateGiven constraint of '<em>EN</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEN_given(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return en.given(diagnostics, context);
+	public boolean validateEN_validateGiven(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return en.validateGiven(diagnostics, context);
 	}
 
 	/**
-	 * Validates the prefix constraint of '<em>EN</em>'.
+	 * Validates the validatePrefix constraint of '<em>EN</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEN_prefix(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return en.prefix(diagnostics, context);
+	public boolean validateEN_validatePrefix(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return en.validatePrefix(diagnostics, context);
 	}
 
 	/**
-	 * Validates the suffix constraint of '<em>EN</em>'.
+	 * Validates the validateSuffix constraint of '<em>EN</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEN_suffix(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return en.suffix(diagnostics, context);
+	public boolean validateEN_validateSuffix(EN en, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return en.validateSuffix(diagnostics, context);
 	}
 
 	/**
@@ -1089,23 +1131,23 @@ public class DatatypesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(on, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(on, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_delimiter(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_family(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_given(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_prefix(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_suffix(on, diagnostics, context);
-		if (result || diagnostics != null) result &= validateON_invariant(on, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateDelimiter(on, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateFamily(on, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateGiven(on, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validatePrefix(on, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateSuffix(on, diagnostics, context);
+		if (result || diagnostics != null) result &= validateON_validateInvariant(on, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the invariant constraint of '<em>ON</em>'.
+	 * Validates the validateInvariant constraint of '<em>ON</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateON_invariant(ON on, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return on.invariant(diagnostics, context);
+	public boolean validateON_validateInvariant(ON on, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return on.validateInvariant(diagnostics, context);
 	}
 
 	/**
@@ -1121,23 +1163,23 @@ public class DatatypesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(pn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(pn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_delimiter(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_family(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_given(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_prefix(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_suffix(pn, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePN_invariant(pn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateDelimiter(pn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateFamily(pn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateGiven(pn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validatePrefix(pn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateSuffix(pn, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePN_validateInvariant(pn, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the invariant constraint of '<em>PN</em>'.
+	 * Validates the validateInvariant constraint of '<em>PN</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePN_invariant(PN pn, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return pn.invariant(diagnostics, context);
+	public boolean validatePN_validateInvariant(PN pn, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return pn.validateInvariant(diagnostics, context);
 	}
 
 	/**
@@ -1153,23 +1195,23 @@ public class DatatypesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(tn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(tn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_delimiter(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_family(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_given(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_prefix(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEN_suffix(tn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTN_invariant(tn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateDelimiter(tn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateFamily(tn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateGiven(tn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validatePrefix(tn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEN_validateSuffix(tn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTN_validateInvariant(tn, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the invariant constraint of '<em>TN</em>'.
+	 * Validates the validateInvariant constraint of '<em>TN</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTN_invariant(TN tn, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return tn.invariant(diagnostics, context);
+	public boolean validateTN_validateInvariant(TN tn, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return tn.validateInvariant(diagnostics, context);
 	}
 
 	/**
@@ -1333,10 +1375,7 @@ public class DatatypesValidator extends EObjectValidator {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		// TODO
-		// Specialize this to return a resource locator for messages specific to this validator.
-		// Ensure that you remove @generated or mark it @generated NOT
-		return super.getResourceLocator();
+		return DatatypesPlugin.INSTANCE;
 	}
 
 } //DatatypesValidator

@@ -17,15 +17,11 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Guardian;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
 
 /**
@@ -36,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Guardian#guardianChoice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Guardian Choice</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Guardian#validateGuardianChoice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Guardian Choice</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,24 +58,24 @@ public class GuardianOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #guardianChoice(Guardian, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Guardian Choice</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateGuardianChoice(Guardian, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Guardian Choice</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #guardianChoice(Guardian, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateGuardianChoice(Guardian, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.guardianPerson.oclIsUndefined() xor self.guardianOrganization.oclIsUndefined()";
+	protected static final String VALIDATE_GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.guardianPerson.oclIsUndefined() xor self.guardianOrganization.oclIsUndefined()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #guardianChoice(Guardian, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Guardian Choice</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateGuardianChoice(Guardian, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Guardian Choice</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #guardianChoice(Guardian, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateGuardianChoice(Guardian, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,25 +88,25 @@ public class GuardianOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean guardianChoice(Guardian guardian, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateGuardianChoice(Guardian guardian, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.eINSTANCE.getGuardian());
 			try {
-				GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(guardian)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(guardian)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CDAValidator.DIAGNOSTIC_SOURCE,
 						 CDAValidator.GUARDIAN__GUARDIAN_CHOICE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "guardianChoice", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(guardian, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateGuardianChoice", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(guardian, context) }),
 						 new Object [] { guardian }));
 			}
 			return false;

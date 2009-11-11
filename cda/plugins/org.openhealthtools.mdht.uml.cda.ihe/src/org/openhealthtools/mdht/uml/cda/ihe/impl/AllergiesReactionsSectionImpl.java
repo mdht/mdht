@@ -56,8 +56,8 @@ public class AllergiesReactionsSectionImpl extends AlertsSectionImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean AllergiesReactionsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AllergiesReactionsSectionOperations.AllergiesReactionsSection_templateId(this, diagnostics, context);
+	public boolean validateAllergiesReactionsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AllergiesReactionsSectionOperations.validateAllergiesReactionsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

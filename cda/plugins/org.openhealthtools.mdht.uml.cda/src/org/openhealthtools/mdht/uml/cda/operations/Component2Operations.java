@@ -17,15 +17,11 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.Component2;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
 
 /**
@@ -36,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Component2#bodyChoice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Body Choice</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Component2#validateBodyChoice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Body Choice</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,24 +58,24 @@ public class Component2Operations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #bodyChoice(Component2, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Body Choice</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateBodyChoice(Component2, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Body Choice</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #bodyChoice(Component2, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateBodyChoice(Component2, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.structuredBody.oclIsUndefined() xor self.nonXMLBody.oclIsUndefined()";
+	protected static final String VALIDATE_BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.structuredBody.oclIsUndefined() xor self.nonXMLBody.oclIsUndefined()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #bodyChoice(Component2, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Body Choice</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateBodyChoice(Component2, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Body Choice</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #bodyChoice(Component2, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateBodyChoice(Component2, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,25 +88,25 @@ public class Component2Operations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean bodyChoice(Component2 component2, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateBodyChoice(Component2 component2, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDAPackage.eINSTANCE.getComponent2());
 			try {
-				BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(component2)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(component2)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CDAValidator.DIAGNOSTIC_SOURCE,
 						 CDAValidator.COMPONENT2__BODY_CHOICE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "bodyChoice", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(component2, context) }),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validateBodyChoice", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(component2, context) }),
 						 new Object [] { component2 }));
 			}
 			return false;

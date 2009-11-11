@@ -50,8 +50,8 @@ public class ResultsSectionImpl extends SectionImpl implements ResultsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultsSectionOperations.ResultsSection_templateId(this, diagnostics, context);
+	public boolean validateResultsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultsSectionOperations.validateResultsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class ResultsSectionImpl extends SectionImpl implements ResultsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultsSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultsSectionOperations.ResultsSection_code(this, diagnostics, context);
+	public boolean validateResultsSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultsSectionOperations.validateResultsSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class ResultsSectionImpl extends SectionImpl implements ResultsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultsSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultsSectionOperations.ResultsSection_title(this, diagnostics, context);
+	public boolean validateResultsSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultsSectionOperations.validateResultsSectionTitle(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class ResultsSectionImpl extends SectionImpl implements ResultsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ResultsSection_resultOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultsSectionOperations.ResultsSection_resultOrganizer(this, diagnostics, context);
+	public boolean validateResultsSectionResultOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultsSectionOperations.validateResultsSectionResultOrganizer(this, diagnostics, context);
 	}
 
 	/**

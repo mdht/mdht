@@ -16,12 +16,9 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.ContextControl;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
@@ -34,9 +31,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Informant12#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Informant12#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Informant12#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Informant12#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Informant12#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Informant12#getAssignedEntity <em>Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Informant12#getRelatedEntity <em>Related Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Informant12#getNullFlavor <em>Null Flavor</em>}</li>
@@ -65,7 +62,7 @@ public interface Informant12 extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<CS> getRealmCode();
+	EList<CS> getRealmCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Type Id</b></em>' containment reference.
@@ -109,7 +106,7 @@ public interface Informant12 extends EObject {
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	EList<II> getTemplateId();
+	EList<II> getTemplateIds();
 
 	/**
 	 * Returns the value of the '<em><b>Assigned Entity</b></em>' containment reference.
@@ -346,6 +343,6 @@ public interface Informant12 extends EObject {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.assignedEntity.oclIsUndefined() xor self.relatedEntity.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean informantChoice(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateInformantChoice(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Informant12

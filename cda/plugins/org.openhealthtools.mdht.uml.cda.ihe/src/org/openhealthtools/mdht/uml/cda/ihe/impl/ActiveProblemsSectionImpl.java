@@ -56,8 +56,8 @@ public class ActiveProblemsSectionImpl extends ProblemSectionImpl implements Act
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ActiveProblemsSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ActiveProblemsSectionOperations.ActiveProblemsSection_templateId(this, diagnostics, context);
+	public boolean validateActiveProblemsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ActiveProblemsSectionOperations.validateActiveProblemsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -65,8 +65,8 @@ public class ActiveProblemsSectionImpl extends ProblemSectionImpl implements Act
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ActiveProblemsSection_problemConcernEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ActiveProblemsSectionOperations.ActiveProblemsSection_problemConcernEntry(this, diagnostics, context);
+	public boolean validateActiveProblemsSectionProblemConcernEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ActiveProblemsSectionOperations.validateActiveProblemsSectionProblemConcernEntry(this, diagnostics, context);
 	}
 
 	/**

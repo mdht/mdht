@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getMedication()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='Medication_templateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.7'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='MedicationTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.7'"
  * @generated
  */
 public interface Medication extends MedicationActivity {
@@ -44,7 +44,7 @@ public interface Medication extends MedicationActivity {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.4.7\')'"
 	 * @generated
 	 */
-	boolean Medication_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

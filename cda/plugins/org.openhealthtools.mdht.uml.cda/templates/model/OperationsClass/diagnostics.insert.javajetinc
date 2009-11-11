@@ -2,7 +2,7 @@
 String oclExp = UML2GenModelUtil.getUpperName(genOperation.getName()) + (genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))) + "__EOCL_EXP";
 
 EClass eClass = genClass.getEcoreClass();
-String name = genOperation.getName();
+String name = genOperation.getName().replaceFirst("^validate", "");
 
 String severity = null;
 
@@ -27,7 +27,7 @@ if (severity != null) {%>
 						(<%=genModel.getImportedName("org.eclipse.emf.common.util.Diagnostic")%>.<%=severity%>,
 						 <%=opClass.getGenPackage().getImportedValidatorClassName()%>.DIAGNOSTIC_SOURCE,
 						 <%=opClass.getGenPackage().getImportedValidatorClassName()%>.<%=opClass.getOperationID(genOperation)%>,
-						 <%if (genModel.hasModelPluginClass()) {%><%=genModel.getImportedName(genModel.getQualifiedModelPluginClassName())%>.INSTANCE.getString("<%=name%>"),<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%><%} else {%><%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.CDAPlugin")%>.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "<%=genOperation.getName()%>", <%=oclExp%>, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(<%=genClass.safeName(genClass.getUncapName())%>, <%=context%>) }),<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%><%}%>
+						 <%if (genModel.hasModelPluginClass()) {%><%=genModel.getImportedName(genModel.getQualifiedModelPluginClassName())%>.INSTANCE.getString("<%=name%>"),<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%><%} else {%><%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.CDAPlugin")%>.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "<%=name%>", <%=oclExp%>, org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(<%=genClass.safeName(genClass.getUncapName())%>, <%=context%>) }),<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%><%}%>
 						 new Object [] { <%=genClass.safeName(genClass.getUncapName())%> }));
 <%} else {%>
 				<%=diagnostics%>.add
@@ -35,6 +35,6 @@ if (severity != null) {%>
 						(<%=genModel.getImportedName("org.eclipse.emf.common.util.Diagnostic")%>.ERROR,
 						 <%=opClass.getGenPackage().getImportedValidatorClassName()%>.DIAGNOSTIC_SOURCE,
 						 <%=opClass.getGenPackage().getImportedValidatorClassName()%>.<%=opClass.getOperationID(genOperation)%>,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "<%=genOperation.getName()%>", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(<%=genClass.safeName(genClass.getUncapName())%>, <%=context%>) }),<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%>
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "<%=name%>", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(<%=genClass.safeName(genClass.getUncapName())%>, <%=context%>) }),<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%>
 						 new Object [] { <%=genClass.safeName(genClass.getUncapName())%> }));
 <%}%>

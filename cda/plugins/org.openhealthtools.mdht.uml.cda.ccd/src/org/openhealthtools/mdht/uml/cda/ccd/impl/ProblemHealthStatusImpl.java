@@ -49,8 +49,8 @@ public class ProblemHealthStatusImpl extends StatusObservationImpl implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemHealthStatus_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemHealthStatusOperations.ProblemHealthStatus_templateId(this, diagnostics, context);
+	public boolean validateProblemHealthStatusTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemHealthStatusOperations.validateProblemHealthStatusTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -58,8 +58,8 @@ public class ProblemHealthStatusImpl extends StatusObservationImpl implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemHealthStatus_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemHealthStatusOperations.ProblemHealthStatus_code(this, diagnostics, context);
+	public boolean validateProblemHealthStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemHealthStatusOperations.validateProblemHealthStatusCode(this, diagnostics, context);
 	}
 
 	/**
@@ -67,8 +67,8 @@ public class ProblemHealthStatusImpl extends StatusObservationImpl implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemHealthStatus_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemHealthStatusOperations.ProblemHealthStatus_value(this, diagnostics, context);
+	public boolean validateProblemHealthStatusValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemHealthStatusOperations.validateProblemHealthStatusValue(this, diagnostics, context);
 	}
 
 	/**

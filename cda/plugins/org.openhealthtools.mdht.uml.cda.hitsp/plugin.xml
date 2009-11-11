@@ -38,5 +38,14 @@
       <entry eClass="AdvanceDirectivesSection" id="2.16.840.1.113883.3.88.11.83.116" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
       <entry eClass="ImmunizationsSection" id="2.16.840.1.113883.3.88.11.83.117" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
       <entry eClass="PhysicalExamSection" id="2.16.840.1.113883.3.88.11.83.118" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="ReviewOfSystemsSection" id="2.16.840.1.113883.3.88.11.83.120" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="HospitalCourseSection" id="2.16.840.1.113883.3.88.11.83.121" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="DiagnosticResultsSection" id="2.16.840.1.113883.3.88.11.83.122" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="AssessmentAndPlanSection" id="2.16.840.1.113883.3.88.11.83.123" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="PlanOfCareSection" id="2.16.840.1.113883.3.88.11.83.124" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="FamilyHistorySection" id="2.16.840.1.113883.3.88.11.83.125" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="SocialHistorySection" id="2.16.840.1.113883.3.88.11.83.126" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="EncountersSection" id="2.16.840.1.113883.3.88.11.83.127" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="MedicalEquipmentSection" id="2.16.840.1.113883.3.88.11.83.128" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
    </extension>
 </plugin>

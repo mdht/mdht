@@ -15,19 +15,13 @@ package org.openhealthtools.mdht.uml.hl7.datatypes.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ENXP;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartQualifier;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartType;
 
@@ -39,7 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENXPImpl#getPartType <em>Part Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENXPImpl#getQualifier <em>Qualifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.impl.ENXPImpl#getQualifiers <em>Qualifier</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,14 +70,14 @@ public class ENXPImpl extends STImpl implements ENXP {
 	protected boolean partTypeESet;
 
 	/**
-	 * The cached value of the '{@link #getQualifier() <em>Qualifier</em>}' attribute list.
+	 * The cached value of the '{@link #getQualifiers() <em>Qualifier</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getQualifier()
+	 * @see #getQualifiers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntityNamePartQualifier> qualifier;
+	protected EList<EntityNamePartQualifier> qualifiers;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,11 +149,11 @@ public class ENXPImpl extends STImpl implements ENXP {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntityNamePartQualifier> getQualifier() {
-		if (qualifier == null) {
-			qualifier = new EDataTypeUniqueEList.Unsettable<EntityNamePartQualifier>(EntityNamePartQualifier.class, this, DatatypesPackage.ENXP__QUALIFIER);
+	public EList<EntityNamePartQualifier> getQualifiers() {
+		if (qualifiers == null) {
+			qualifiers = new EDataTypeUniqueEList.Unsettable<EntityNamePartQualifier>(EntityNamePartQualifier.class, this, DatatypesPackage.ENXP__QUALIFIER);
 		}
-		return qualifier;
+		return qualifiers;
 	}
 
 	/**
@@ -167,8 +161,8 @@ public class ENXPImpl extends STImpl implements ENXP {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void unsetQualifier() {
-		if (qualifier != null) ((InternalEList.Unsettable<?>)qualifier).unset();
+	public void unsetQualifiers() {
+		if (qualifiers != null) ((InternalEList.Unsettable<?>)qualifiers).unset();
 	}
 
 	/**
@@ -176,8 +170,8 @@ public class ENXPImpl extends STImpl implements ENXP {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetQualifier() {
-		return qualifier != null && ((InternalEList.Unsettable<?>)qualifier).isSet();
+	public boolean isSetQualifiers() {
+		return qualifiers != null && ((InternalEList.Unsettable<?>)qualifiers).isSet();
 	}
 
 	/**
@@ -191,7 +185,7 @@ public class ENXPImpl extends STImpl implements ENXP {
 			case DatatypesPackage.ENXP__PART_TYPE:
 				return getPartType();
 			case DatatypesPackage.ENXP__QUALIFIER:
-				return getQualifier();
+				return getQualifiers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,8 +203,8 @@ public class ENXPImpl extends STImpl implements ENXP {
 				setPartType((EntityNamePartType)newValue);
 				return;
 			case DatatypesPackage.ENXP__QUALIFIER:
-				getQualifier().clear();
-				getQualifier().addAll((Collection<? extends EntityNamePartQualifier>)newValue);
+				getQualifiers().clear();
+				getQualifiers().addAll((Collection<? extends EntityNamePartQualifier>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -228,7 +222,7 @@ public class ENXPImpl extends STImpl implements ENXP {
 				unsetPartType();
 				return;
 			case DatatypesPackage.ENXP__QUALIFIER:
-				unsetQualifier();
+				unsetQualifiers();
 				return;
 		}
 		super.eUnset(featureID);
@@ -245,7 +239,7 @@ public class ENXPImpl extends STImpl implements ENXP {
 			case DatatypesPackage.ENXP__PART_TYPE:
 				return isSetPartType();
 			case DatatypesPackage.ENXP__QUALIFIER:
-				return isSetQualifier();
+				return isSetQualifiers();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -263,7 +257,7 @@ public class ENXPImpl extends STImpl implements ENXP {
 		result.append(" (partType: ");
 		if (partTypeESet) result.append(partType); else result.append("<unset>");
 		result.append(", qualifier: ");
-		result.append(qualifier);
+		result.append(qualifiers);
 		result.append(')');
 		return result.toString();
 	}

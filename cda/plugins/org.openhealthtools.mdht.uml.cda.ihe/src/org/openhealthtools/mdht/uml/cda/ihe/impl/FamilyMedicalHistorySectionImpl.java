@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.impl.FamilyHistorySectionImpl;
-
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.FamilyMedicalHistorySectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -55,8 +50,8 @@ public class FamilyMedicalHistorySectionImpl extends FamilyHistorySectionImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean FamilyMedicalHistorySection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FamilyMedicalHistorySectionOperations.FamilyMedicalHistorySection_templateId(this, diagnostics, context);
+	public boolean validateFamilyMedicalHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FamilyMedicalHistorySectionOperations.validateFamilyMedicalHistorySectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

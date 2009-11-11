@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 
 /**
@@ -10295,11 +10294,11 @@ public interface CDAPackage extends EPackage {
 	EClass getClinicalDocument();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRealmCodes()
 	 * @see #getClinicalDocument()
 	 * @generated
 	 */
@@ -10317,11 +10316,11 @@ public interface CDAPackage extends EPackage {
 	EReference getClinicalDocument_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getTemplateIds()
 	 * @see #getClinicalDocument()
 	 * @generated
 	 */
@@ -10427,22 +10426,22 @@ public interface CDAPackage extends EPackage {
 	EReference getClinicalDocument_CopyTime();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRecordTarget <em>Record Target</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRecordTargets <em>Record Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Record Target</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRecordTarget()
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRecordTargets()
 	 * @see #getClinicalDocument()
 	 * @generated
 	 */
 	EReference getClinicalDocument_RecordTarget();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthors <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Author</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthor()
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthors()
 	 * @see #getClinicalDocument()
 	 * @generated
 	 */
@@ -10460,11 +10459,11 @@ public interface CDAPackage extends EPackage {
 	EReference getClinicalDocument_DataEnterer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInformant <em>Informant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInformants <em>Informant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Informant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInformant()
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInformants()
 	 * @see #getClinicalDocument()
 	 * @generated
 	 */
@@ -10482,11 +10481,11 @@ public interface CDAPackage extends EPackage {
 	EReference getClinicalDocument_Custodian();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInformationRecipient <em>Information Recipient</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInformationRecipients <em>Information Recipient</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Information Recipient</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInformationRecipient()
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInformationRecipients()
 	 * @see #getClinicalDocument()
 	 * @generated
 	 */
@@ -10504,66 +10503,66 @@ public interface CDAPackage extends EPackage {
 	EReference getClinicalDocument_LegalAuthenticator();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthenticator <em>Authenticator</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthenticators <em>Authenticator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Authenticator</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthenticator()
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthenticators()
 	 * @see #getClinicalDocument()
 	 * @generated
 	 */
 	EReference getClinicalDocument_Authenticator();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getParticipant <em>Participant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getParticipants <em>Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Participant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getParticipant()
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getParticipants()
 	 * @see #getClinicalDocument()
 	 * @generated
 	 */
 	EReference getClinicalDocument_Participant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInFulfillmentOf <em>In Fulfillment Of</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInFulfillmentOfs <em>In Fulfillment Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>In Fulfillment Of</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInFulfillmentOf()
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getInFulfillmentOfs()
 	 * @see #getClinicalDocument()
 	 * @generated
 	 */
 	EReference getClinicalDocument_InFulfillmentOf();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getDocumentationOf <em>Documentation Of</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getDocumentationOfs <em>Documentation Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Documentation Of</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getDocumentationOf()
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getDocumentationOfs()
 	 * @see #getClinicalDocument()
 	 * @generated
 	 */
 	EReference getClinicalDocument_DocumentationOf();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRelatedDocument <em>Related Document</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRelatedDocuments <em>Related Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Related Document</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRelatedDocument()
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getRelatedDocuments()
 	 * @see #getClinicalDocument()
 	 * @generated
 	 */
 	EReference getClinicalDocument_RelatedDocument();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthorization <em>Authorization</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthorizations <em>Authorization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Authorization</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthorization()
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAuthorizations()
 	 * @see #getClinicalDocument()
 	 * @generated
 	 */
@@ -10667,11 +10666,11 @@ public interface CDAPackage extends EPackage {
 	EClass getRecordTarget();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RecordTarget#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RecordTarget#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RecordTarget#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.RecordTarget#getRealmCodes()
 	 * @see #getRecordTarget()
 	 * @generated
 	 */
@@ -10689,11 +10688,11 @@ public interface CDAPackage extends EPackage {
 	EReference getRecordTarget_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RecordTarget#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RecordTarget#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RecordTarget#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.RecordTarget#getTemplateIds()
 	 * @see #getRecordTarget()
 	 * @generated
 	 */
@@ -10754,11 +10753,11 @@ public interface CDAPackage extends EPackage {
 	EClass getPatientRole();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PatientRole#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PatientRole#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.PatientRole#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.PatientRole#getRealmCodes()
 	 * @see #getPatientRole()
 	 * @generated
 	 */
@@ -10776,44 +10775,44 @@ public interface CDAPackage extends EPackage {
 	EReference getPatientRole_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PatientRole#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PatientRole#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.PatientRole#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.PatientRole#getTemplateIds()
 	 * @see #getPatientRole()
 	 * @generated
 	 */
 	EReference getPatientRole_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PatientRole#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PatientRole#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.PatientRole#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.PatientRole#getIds()
 	 * @see #getPatientRole()
 	 * @generated
 	 */
 	EReference getPatientRole_Id();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PatientRole#getAddr <em>Addr</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PatientRole#getAddrs <em>Addr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Addr</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.PatientRole#getAddr()
+	 * @see org.openhealthtools.mdht.uml.cda.PatientRole#getAddrs()
 	 * @see #getPatientRole()
 	 * @generated
 	 */
 	EReference getPatientRole_Addr();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PatientRole#getTelecom <em>Telecom</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PatientRole#getTelecoms <em>Telecom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Telecom</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.PatientRole#getTelecom()
+	 * @see org.openhealthtools.mdht.uml.cda.PatientRole#getTelecoms()
 	 * @see #getPatientRole()
 	 * @generated
 	 */
@@ -10874,11 +10873,11 @@ public interface CDAPackage extends EPackage {
 	EClass getPatient();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Patient#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Patient#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Patient#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Patient#getRealmCodes()
 	 * @see #getPatient()
 	 * @generated
 	 */
@@ -10896,11 +10895,11 @@ public interface CDAPackage extends EPackage {
 	EReference getPatient_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Patient#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Patient#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Patient#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Patient#getTemplateIds()
 	 * @see #getPatient()
 	 * @generated
 	 */
@@ -10995,11 +10994,11 @@ public interface CDAPackage extends EPackage {
 	EReference getPatient_EthnicGroupCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Patient#getGuardian <em>Guardian</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Patient#getGuardians <em>Guardian</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Guardian</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Patient#getGuardian()
+	 * @see org.openhealthtools.mdht.uml.cda.Patient#getGuardians()
 	 * @see #getPatient()
 	 * @generated
 	 */
@@ -11017,11 +11016,11 @@ public interface CDAPackage extends EPackage {
 	EReference getPatient_Birthplace();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Patient#getLanguageCommunication <em>Language Communication</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Patient#getLanguageCommunications <em>Language Communication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Language Communication</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Patient#getLanguageCommunication()
+	 * @see org.openhealthtools.mdht.uml.cda.Patient#getLanguageCommunications()
 	 * @see #getPatient()
 	 * @generated
 	 */
@@ -11071,11 +11070,11 @@ public interface CDAPackage extends EPackage {
 	EClass getGuardian();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Guardian#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Guardian#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Guardian#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Guardian#getRealmCodes()
 	 * @see #getGuardian()
 	 * @generated
 	 */
@@ -11093,22 +11092,22 @@ public interface CDAPackage extends EPackage {
 	EReference getGuardian_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Guardian#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Guardian#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Guardian#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Guardian#getTemplateIds()
 	 * @see #getGuardian()
 	 * @generated
 	 */
 	EReference getGuardian_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Guardian#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Guardian#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Guardian#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.Guardian#getIds()
 	 * @see #getGuardian()
 	 * @generated
 	 */
@@ -11126,22 +11125,22 @@ public interface CDAPackage extends EPackage {
 	EReference getGuardian_Code();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Guardian#getAddr <em>Addr</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Guardian#getAddrs <em>Addr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Addr</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Guardian#getAddr()
+	 * @see org.openhealthtools.mdht.uml.cda.Guardian#getAddrs()
 	 * @see #getGuardian()
 	 * @generated
 	 */
 	EReference getGuardian_Addr();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Guardian#getTelecom <em>Telecom</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Guardian#getTelecoms <em>Telecom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Telecom</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Guardian#getTelecom()
+	 * @see org.openhealthtools.mdht.uml.cda.Guardian#getTelecoms()
 	 * @see #getGuardian()
 	 * @generated
 	 */
@@ -11202,11 +11201,11 @@ public interface CDAPackage extends EPackage {
 	EClass getPerson();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Person#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Person#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Person#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Person#getRealmCodes()
 	 * @see #getPerson()
 	 * @generated
 	 */
@@ -11224,22 +11223,22 @@ public interface CDAPackage extends EPackage {
 	EReference getPerson_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Person#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Person#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Person#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Person#getTemplateIds()
 	 * @see #getPerson()
 	 * @generated
 	 */
 	EReference getPerson_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Person#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Person#getNames <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Name</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Person#getName()
+	 * @see org.openhealthtools.mdht.uml.cda.Person#getNames()
 	 * @see #getPerson()
 	 * @generated
 	 */
@@ -11289,11 +11288,11 @@ public interface CDAPackage extends EPackage {
 	EClass getOrganization();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organization#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organization#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organization#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Organization#getRealmCodes()
 	 * @see #getOrganization()
 	 * @generated
 	 */
@@ -11311,55 +11310,55 @@ public interface CDAPackage extends EPackage {
 	EReference getOrganization_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organization#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organization#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organization#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Organization#getTemplateIds()
 	 * @see #getOrganization()
 	 * @generated
 	 */
 	EReference getOrganization_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organization#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organization#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organization#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.Organization#getIds()
 	 * @see #getOrganization()
 	 * @generated
 	 */
 	EReference getOrganization_Id();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organization#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organization#getNames <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Name</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organization#getName()
+	 * @see org.openhealthtools.mdht.uml.cda.Organization#getNames()
 	 * @see #getOrganization()
 	 * @generated
 	 */
 	EReference getOrganization_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organization#getTelecom <em>Telecom</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organization#getTelecoms <em>Telecom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Telecom</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organization#getTelecom()
+	 * @see org.openhealthtools.mdht.uml.cda.Organization#getTelecoms()
 	 * @see #getOrganization()
 	 * @generated
 	 */
 	EReference getOrganization_Telecom();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organization#getAddr <em>Addr</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organization#getAddrs <em>Addr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Addr</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organization#getAddr()
+	 * @see org.openhealthtools.mdht.uml.cda.Organization#getAddrs()
 	 * @see #getOrganization()
 	 * @generated
 	 */
@@ -11431,11 +11430,11 @@ public interface CDAPackage extends EPackage {
 	EClass getOrganizationPartOf();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.OrganizationPartOf#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.OrganizationPartOf#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.OrganizationPartOf#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.OrganizationPartOf#getRealmCodes()
 	 * @see #getOrganizationPartOf()
 	 * @generated
 	 */
@@ -11453,22 +11452,22 @@ public interface CDAPackage extends EPackage {
 	EReference getOrganizationPartOf_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.OrganizationPartOf#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.OrganizationPartOf#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.OrganizationPartOf#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.OrganizationPartOf#getTemplateIds()
 	 * @see #getOrganizationPartOf()
 	 * @generated
 	 */
 	EReference getOrganizationPartOf_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.OrganizationPartOf#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.OrganizationPartOf#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.OrganizationPartOf#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.OrganizationPartOf#getIds()
 	 * @see #getOrganizationPartOf()
 	 * @generated
 	 */
@@ -11551,11 +11550,11 @@ public interface CDAPackage extends EPackage {
 	EClass getBirthplace();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Birthplace#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Birthplace#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Birthplace#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Birthplace#getRealmCodes()
 	 * @see #getBirthplace()
 	 * @generated
 	 */
@@ -11573,11 +11572,11 @@ public interface CDAPackage extends EPackage {
 	EReference getBirthplace_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Birthplace#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Birthplace#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Birthplace#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Birthplace#getTemplateIds()
 	 * @see #getBirthplace()
 	 * @generated
 	 */
@@ -11627,11 +11626,11 @@ public interface CDAPackage extends EPackage {
 	EClass getPlace();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Place#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Place#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Place#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Place#getRealmCodes()
 	 * @see #getPlace()
 	 * @generated
 	 */
@@ -11649,11 +11648,11 @@ public interface CDAPackage extends EPackage {
 	EReference getPlace_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Place#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Place#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Place#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Place#getTemplateIds()
 	 * @see #getPlace()
 	 * @generated
 	 */
@@ -11725,11 +11724,11 @@ public interface CDAPackage extends EPackage {
 	EClass getLanguageCommunication();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.LanguageCommunication#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.LanguageCommunication#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.LanguageCommunication#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.LanguageCommunication#getRealmCodes()
 	 * @see #getLanguageCommunication()
 	 * @generated
 	 */
@@ -11747,11 +11746,11 @@ public interface CDAPackage extends EPackage {
 	EReference getLanguageCommunication_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.LanguageCommunication#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.LanguageCommunication#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.LanguageCommunication#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.LanguageCommunication#getTemplateIds()
 	 * @see #getLanguageCommunication()
 	 * @generated
 	 */
@@ -11823,11 +11822,11 @@ public interface CDAPackage extends EPackage {
 	EClass getAuthor();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Author#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Author#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Author#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Author#getRealmCodes()
 	 * @see #getAuthor()
 	 * @generated
 	 */
@@ -11845,11 +11844,11 @@ public interface CDAPackage extends EPackage {
 	EReference getAuthor_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Author#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Author#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Author#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Author#getTemplateIds()
 	 * @see #getAuthor()
 	 * @generated
 	 */
@@ -11932,11 +11931,11 @@ public interface CDAPackage extends EPackage {
 	EClass getAssignedAuthor();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedAuthor#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedAuthor#getRealmCodes()
 	 * @see #getAssignedAuthor()
 	 * @generated
 	 */
@@ -11954,22 +11953,22 @@ public interface CDAPackage extends EPackage {
 	EReference getAssignedAuthor_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTemplateIds()
 	 * @see #getAssignedAuthor()
 	 * @generated
 	 */
 	EReference getAssignedAuthor_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedAuthor#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedAuthor#getIds()
 	 * @see #getAssignedAuthor()
 	 * @generated
 	 */
@@ -11987,22 +11986,22 @@ public interface CDAPackage extends EPackage {
 	EReference getAssignedAuthor_Code();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getAddr <em>Addr</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getAddrs <em>Addr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Addr</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedAuthor#getAddr()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedAuthor#getAddrs()
 	 * @see #getAssignedAuthor()
 	 * @generated
 	 */
 	EReference getAssignedAuthor_Addr();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTelecom <em>Telecom</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTelecoms <em>Telecom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Telecom</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTelecom()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedAuthor#getTelecoms()
 	 * @see #getAssignedAuthor()
 	 * @generated
 	 */
@@ -12074,11 +12073,11 @@ public interface CDAPackage extends EPackage {
 	EClass getAuthoringDevice();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AuthoringDevice#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AuthoringDevice#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AuthoringDevice#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.AuthoringDevice#getRealmCodes()
 	 * @see #getAuthoringDevice()
 	 * @generated
 	 */
@@ -12096,11 +12095,11 @@ public interface CDAPackage extends EPackage {
 	EReference getAuthoringDevice_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AuthoringDevice#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AuthoringDevice#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AuthoringDevice#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.AuthoringDevice#getTemplateIds()
 	 * @see #getAuthoringDevice()
 	 * @generated
 	 */
@@ -12140,11 +12139,11 @@ public interface CDAPackage extends EPackage {
 	EReference getAuthoringDevice_SoftwareName();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AuthoringDevice#getAsMaintainedEntity <em>As Maintained Entity</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AuthoringDevice#getAsMaintainedEntities <em>As Maintained Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>As Maintained Entity</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AuthoringDevice#getAsMaintainedEntity()
+	 * @see org.openhealthtools.mdht.uml.cda.AuthoringDevice#getAsMaintainedEntities()
 	 * @see #getAuthoringDevice()
 	 * @generated
 	 */
@@ -12194,11 +12193,11 @@ public interface CDAPackage extends EPackage {
 	EClass getMaintainedEntity();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.MaintainedEntity#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.MaintainedEntity#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.MaintainedEntity#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.MaintainedEntity#getRealmCodes()
 	 * @see #getMaintainedEntity()
 	 * @generated
 	 */
@@ -12216,11 +12215,11 @@ public interface CDAPackage extends EPackage {
 	EReference getMaintainedEntity_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.MaintainedEntity#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.MaintainedEntity#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.MaintainedEntity#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.MaintainedEntity#getTemplateIds()
 	 * @see #getMaintainedEntity()
 	 * @generated
 	 */
@@ -12281,11 +12280,11 @@ public interface CDAPackage extends EPackage {
 	EClass getDataEnterer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.DataEnterer#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.DataEnterer#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.DataEnterer#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.DataEnterer#getRealmCodes()
 	 * @see #getDataEnterer()
 	 * @generated
 	 */
@@ -12303,11 +12302,11 @@ public interface CDAPackage extends EPackage {
 	EReference getDataEnterer_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.DataEnterer#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.DataEnterer#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.DataEnterer#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.DataEnterer#getTemplateIds()
 	 * @see #getDataEnterer()
 	 * @generated
 	 */
@@ -12379,11 +12378,11 @@ public interface CDAPackage extends EPackage {
 	EClass getAssignedEntity();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getRealmCodes()
 	 * @see #getAssignedEntity()
 	 * @generated
 	 */
@@ -12401,22 +12400,22 @@ public interface CDAPackage extends EPackage {
 	EReference getAssignedEntity_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getTemplateIds()
 	 * @see #getAssignedEntity()
 	 * @generated
 	 */
 	EReference getAssignedEntity_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getIds()
 	 * @see #getAssignedEntity()
 	 * @generated
 	 */
@@ -12434,22 +12433,22 @@ public interface CDAPackage extends EPackage {
 	EReference getAssignedEntity_Code();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getAddr <em>Addr</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getAddrs <em>Addr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Addr</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getAddr()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getAddrs()
 	 * @see #getAssignedEntity()
 	 * @generated
 	 */
 	EReference getAssignedEntity_Addr();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getTelecom <em>Telecom</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getTelecoms <em>Telecom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Telecom</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getTelecom()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getTelecoms()
 	 * @see #getAssignedEntity()
 	 * @generated
 	 */
@@ -12467,11 +12466,11 @@ public interface CDAPackage extends EPackage {
 	EReference getAssignedEntity_AssignedPerson();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getRepresentedOrganization <em>Represented Organization</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getRepresentedOrganizations <em>Represented Organization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Represented Organization</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getRepresentedOrganization()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getRepresentedOrganizations()
 	 * @see #getAssignedEntity()
 	 * @generated
 	 */
@@ -12510,11 +12509,11 @@ public interface CDAPackage extends EPackage {
 	EClass getInformant12();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Informant12#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Informant12#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Informant12#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Informant12#getRealmCodes()
 	 * @see #getInformant12()
 	 * @generated
 	 */
@@ -12532,11 +12531,11 @@ public interface CDAPackage extends EPackage {
 	EReference getInformant12_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Informant12#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Informant12#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Informant12#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Informant12#getTemplateIds()
 	 * @see #getInformant12()
 	 * @generated
 	 */
@@ -12608,11 +12607,11 @@ public interface CDAPackage extends EPackage {
 	EClass getRelatedEntity();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RelatedEntity#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.RelatedEntity#getRealmCodes()
 	 * @see #getRelatedEntity()
 	 * @generated
 	 */
@@ -12630,11 +12629,11 @@ public interface CDAPackage extends EPackage {
 	EReference getRelatedEntity_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RelatedEntity#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.RelatedEntity#getTemplateIds()
 	 * @see #getRelatedEntity()
 	 * @generated
 	 */
@@ -12652,22 +12651,22 @@ public interface CDAPackage extends EPackage {
 	EReference getRelatedEntity_Code();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getAddr <em>Addr</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getAddrs <em>Addr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Addr</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RelatedEntity#getAddr()
+	 * @see org.openhealthtools.mdht.uml.cda.RelatedEntity#getAddrs()
 	 * @see #getRelatedEntity()
 	 * @generated
 	 */
 	EReference getRelatedEntity_Addr();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getTelecom <em>Telecom</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getTelecoms <em>Telecom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Telecom</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RelatedEntity#getTelecom()
+	 * @see org.openhealthtools.mdht.uml.cda.RelatedEntity#getTelecoms()
 	 * @see #getRelatedEntity()
 	 * @generated
 	 */
@@ -12728,11 +12727,11 @@ public interface CDAPackage extends EPackage {
 	EClass getCustodian();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Custodian#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Custodian#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Custodian#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Custodian#getRealmCodes()
 	 * @see #getCustodian()
 	 * @generated
 	 */
@@ -12750,11 +12749,11 @@ public interface CDAPackage extends EPackage {
 	EReference getCustodian_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Custodian#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Custodian#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Custodian#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Custodian#getTemplateIds()
 	 * @see #getCustodian()
 	 * @generated
 	 */
@@ -12804,11 +12803,11 @@ public interface CDAPackage extends EPackage {
 	EClass getAssignedCustodian();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedCustodian#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedCustodian#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedCustodian#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedCustodian#getRealmCodes()
 	 * @see #getAssignedCustodian()
 	 * @generated
 	 */
@@ -12826,11 +12825,11 @@ public interface CDAPackage extends EPackage {
 	EReference getAssignedCustodian_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedCustodian#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssignedCustodian#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssignedCustodian#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedCustodian#getTemplateIds()
 	 * @see #getAssignedCustodian()
 	 * @generated
 	 */
@@ -12880,11 +12879,11 @@ public interface CDAPackage extends EPackage {
 	EClass getCustodianOrganization();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.CustodianOrganization#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.CustodianOrganization#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.CustodianOrganization#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.CustodianOrganization#getRealmCodes()
 	 * @see #getCustodianOrganization()
 	 * @generated
 	 */
@@ -12902,22 +12901,22 @@ public interface CDAPackage extends EPackage {
 	EReference getCustodianOrganization_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.CustodianOrganization#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.CustodianOrganization#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.CustodianOrganization#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.CustodianOrganization#getTemplateIds()
 	 * @see #getCustodianOrganization()
 	 * @generated
 	 */
 	EReference getCustodianOrganization_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.CustodianOrganization#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.CustodianOrganization#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.CustodianOrganization#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.CustodianOrganization#getIds()
 	 * @see #getCustodianOrganization()
 	 * @generated
 	 */
@@ -13000,11 +12999,11 @@ public interface CDAPackage extends EPackage {
 	EClass getInformationRecipient();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.InformationRecipient#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.InformationRecipient#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.InformationRecipient#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.InformationRecipient#getRealmCodes()
 	 * @see #getInformationRecipient()
 	 * @generated
 	 */
@@ -13022,11 +13021,11 @@ public interface CDAPackage extends EPackage {
 	EReference getInformationRecipient_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.InformationRecipient#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.InformationRecipient#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.InformationRecipient#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.InformationRecipient#getTemplateIds()
 	 * @see #getInformationRecipient()
 	 * @generated
 	 */
@@ -13076,11 +13075,11 @@ public interface CDAPackage extends EPackage {
 	EClass getIntendedRecipient();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.IntendedRecipient#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.IntendedRecipient#getRealmCodes()
 	 * @see #getIntendedRecipient()
 	 * @generated
 	 */
@@ -13098,44 +13097,44 @@ public interface CDAPackage extends EPackage {
 	EReference getIntendedRecipient_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTemplateIds()
 	 * @see #getIntendedRecipient()
 	 * @generated
 	 */
 	EReference getIntendedRecipient_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.IntendedRecipient#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.IntendedRecipient#getIds()
 	 * @see #getIntendedRecipient()
 	 * @generated
 	 */
 	EReference getIntendedRecipient_Id();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getAddr <em>Addr</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getAddrs <em>Addr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Addr</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.IntendedRecipient#getAddr()
+	 * @see org.openhealthtools.mdht.uml.cda.IntendedRecipient#getAddrs()
 	 * @see #getIntendedRecipient()
 	 * @generated
 	 */
 	EReference getIntendedRecipient_Addr();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTelecom <em>Telecom</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTelecoms <em>Telecom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Telecom</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTelecom()
+	 * @see org.openhealthtools.mdht.uml.cda.IntendedRecipient#getTelecoms()
 	 * @see #getIntendedRecipient()
 	 * @generated
 	 */
@@ -13196,11 +13195,11 @@ public interface CDAPackage extends EPackage {
 	EClass getLegalAuthenticator();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getRealmCodes()
 	 * @see #getLegalAuthenticator()
 	 * @generated
 	 */
@@ -13218,11 +13217,11 @@ public interface CDAPackage extends EPackage {
 	EReference getLegalAuthenticator_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.LegalAuthenticator#getTemplateIds()
 	 * @see #getLegalAuthenticator()
 	 * @generated
 	 */
@@ -13305,11 +13304,11 @@ public interface CDAPackage extends EPackage {
 	EClass getAuthenticator();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Authenticator#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Authenticator#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Authenticator#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Authenticator#getRealmCodes()
 	 * @see #getAuthenticator()
 	 * @generated
 	 */
@@ -13327,11 +13326,11 @@ public interface CDAPackage extends EPackage {
 	EReference getAuthenticator_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Authenticator#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Authenticator#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Authenticator#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Authenticator#getTemplateIds()
 	 * @see #getAuthenticator()
 	 * @generated
 	 */
@@ -13360,11 +13359,11 @@ public interface CDAPackage extends EPackage {
 	EReference getAuthenticator_SignatureCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Authenticator#getAssignedEntity <em>Assigned Entity</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Authenticator#getAssignedEntities <em>Assigned Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Assigned Entity</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Authenticator#getAssignedEntity()
+	 * @see org.openhealthtools.mdht.uml.cda.Authenticator#getAssignedEntities()
 	 * @see #getAuthenticator()
 	 * @generated
 	 */
@@ -13403,11 +13402,11 @@ public interface CDAPackage extends EPackage {
 	EClass getParticipant1();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Participant1#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Participant1#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Participant1#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Participant1#getRealmCodes()
 	 * @see #getParticipant1()
 	 * @generated
 	 */
@@ -13425,11 +13424,11 @@ public interface CDAPackage extends EPackage {
 	EReference getParticipant1_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Participant1#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Participant1#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Participant1#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Participant1#getTemplateIds()
 	 * @see #getParticipant1()
 	 * @generated
 	 */
@@ -13512,11 +13511,11 @@ public interface CDAPackage extends EPackage {
 	EClass getAssociatedEntity();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssociatedEntity#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.AssociatedEntity#getRealmCodes()
 	 * @see #getAssociatedEntity()
 	 * @generated
 	 */
@@ -13534,22 +13533,22 @@ public interface CDAPackage extends EPackage {
 	EReference getAssociatedEntity_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssociatedEntity#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.AssociatedEntity#getTemplateIds()
 	 * @see #getAssociatedEntity()
 	 * @generated
 	 */
 	EReference getAssociatedEntity_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssociatedEntity#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.AssociatedEntity#getIds()
 	 * @see #getAssociatedEntity()
 	 * @generated
 	 */
@@ -13567,22 +13566,22 @@ public interface CDAPackage extends EPackage {
 	EReference getAssociatedEntity_Code();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getAddr <em>Addr</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getAddrs <em>Addr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Addr</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssociatedEntity#getAddr()
+	 * @see org.openhealthtools.mdht.uml.cda.AssociatedEntity#getAddrs()
 	 * @see #getAssociatedEntity()
 	 * @generated
 	 */
 	EReference getAssociatedEntity_Addr();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getTelecom <em>Telecom</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getTelecoms <em>Telecom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Telecom</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.AssociatedEntity#getTelecom()
+	 * @see org.openhealthtools.mdht.uml.cda.AssociatedEntity#getTelecoms()
 	 * @see #getAssociatedEntity()
 	 * @generated
 	 */
@@ -13643,11 +13642,11 @@ public interface CDAPackage extends EPackage {
 	EClass getInFulfillmentOf();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.InFulfillmentOf#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.InFulfillmentOf#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.InFulfillmentOf#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.InFulfillmentOf#getRealmCodes()
 	 * @see #getInFulfillmentOf()
 	 * @generated
 	 */
@@ -13665,11 +13664,11 @@ public interface CDAPackage extends EPackage {
 	EReference getInFulfillmentOf_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.InFulfillmentOf#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.InFulfillmentOf#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.InFulfillmentOf#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.InFulfillmentOf#getTemplateIds()
 	 * @see #getInFulfillmentOf()
 	 * @generated
 	 */
@@ -13719,11 +13718,11 @@ public interface CDAPackage extends EPackage {
 	EClass getOrder();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Order#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Order#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Order#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Order#getRealmCodes()
 	 * @see #getOrder()
 	 * @generated
 	 */
@@ -13741,22 +13740,22 @@ public interface CDAPackage extends EPackage {
 	EReference getOrder_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Order#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Order#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Order#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Order#getTemplateIds()
 	 * @see #getOrder()
 	 * @generated
 	 */
 	EReference getOrder_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Order#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Order#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Order#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.Order#getIds()
 	 * @see #getOrder()
 	 * @generated
 	 */
@@ -13828,11 +13827,11 @@ public interface CDAPackage extends EPackage {
 	EClass getDocumentationOf();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.DocumentationOf#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.DocumentationOf#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.DocumentationOf#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.DocumentationOf#getRealmCodes()
 	 * @see #getDocumentationOf()
 	 * @generated
 	 */
@@ -13850,11 +13849,11 @@ public interface CDAPackage extends EPackage {
 	EReference getDocumentationOf_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.DocumentationOf#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.DocumentationOf#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.DocumentationOf#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.DocumentationOf#getTemplateIds()
 	 * @see #getDocumentationOf()
 	 * @generated
 	 */
@@ -13904,11 +13903,11 @@ public interface CDAPackage extends EPackage {
 	EClass getServiceEvent();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ServiceEvent#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ServiceEvent#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ServiceEvent#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ServiceEvent#getRealmCodes()
 	 * @see #getServiceEvent()
 	 * @generated
 	 */
@@ -13926,22 +13925,22 @@ public interface CDAPackage extends EPackage {
 	EReference getServiceEvent_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ServiceEvent#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ServiceEvent#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ServiceEvent#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ServiceEvent#getTemplateIds()
 	 * @see #getServiceEvent()
 	 * @generated
 	 */
 	EReference getServiceEvent_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ServiceEvent#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ServiceEvent#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ServiceEvent#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.ServiceEvent#getIds()
 	 * @see #getServiceEvent()
 	 * @generated
 	 */
@@ -13970,11 +13969,11 @@ public interface CDAPackage extends EPackage {
 	EReference getServiceEvent_EffectiveTime();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ServiceEvent#getPerformer <em>Performer</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ServiceEvent#getPerformers <em>Performer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Performer</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ServiceEvent#getPerformer()
+	 * @see org.openhealthtools.mdht.uml.cda.ServiceEvent#getPerformers()
 	 * @see #getServiceEvent()
 	 * @generated
 	 */
@@ -14024,11 +14023,11 @@ public interface CDAPackage extends EPackage {
 	EClass getPerformer1();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Performer1#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Performer1#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Performer1#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Performer1#getRealmCodes()
 	 * @see #getPerformer1()
 	 * @generated
 	 */
@@ -14046,11 +14045,11 @@ public interface CDAPackage extends EPackage {
 	EReference getPerformer1_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Performer1#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Performer1#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Performer1#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Performer1#getTemplateIds()
 	 * @see #getPerformer1()
 	 * @generated
 	 */
@@ -14122,11 +14121,11 @@ public interface CDAPackage extends EPackage {
 	EClass getRelatedDocument();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedDocument#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedDocument#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RelatedDocument#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.RelatedDocument#getRealmCodes()
 	 * @see #getRelatedDocument()
 	 * @generated
 	 */
@@ -14144,11 +14143,11 @@ public interface CDAPackage extends EPackage {
 	EReference getRelatedDocument_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedDocument#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedDocument#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RelatedDocument#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.RelatedDocument#getTemplateIds()
 	 * @see #getRelatedDocument()
 	 * @generated
 	 */
@@ -14198,11 +14197,11 @@ public interface CDAPackage extends EPackage {
 	EClass getParentDocument();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParentDocument#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParentDocument#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ParentDocument#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ParentDocument#getRealmCodes()
 	 * @see #getParentDocument()
 	 * @generated
 	 */
@@ -14220,22 +14219,22 @@ public interface CDAPackage extends EPackage {
 	EReference getParentDocument_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParentDocument#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParentDocument#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ParentDocument#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ParentDocument#getTemplateIds()
 	 * @see #getParentDocument()
 	 * @generated
 	 */
 	EReference getParentDocument_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParentDocument#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParentDocument#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ParentDocument#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.ParentDocument#getIds()
 	 * @see #getParentDocument()
 	 * @generated
 	 */
@@ -14329,11 +14328,11 @@ public interface CDAPackage extends EPackage {
 	EClass getAuthorization();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Authorization#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Authorization#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Authorization#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Authorization#getRealmCodes()
 	 * @see #getAuthorization()
 	 * @generated
 	 */
@@ -14351,11 +14350,11 @@ public interface CDAPackage extends EPackage {
 	EReference getAuthorization_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Authorization#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Authorization#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Authorization#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Authorization#getTemplateIds()
 	 * @see #getAuthorization()
 	 * @generated
 	 */
@@ -14405,11 +14404,11 @@ public interface CDAPackage extends EPackage {
 	EClass getConsent();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Consent#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Consent#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Consent#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Consent#getRealmCodes()
 	 * @see #getConsent()
 	 * @generated
 	 */
@@ -14427,22 +14426,22 @@ public interface CDAPackage extends EPackage {
 	EReference getConsent_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Consent#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Consent#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Consent#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Consent#getTemplateIds()
 	 * @see #getConsent()
 	 * @generated
 	 */
 	EReference getConsent_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Consent#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Consent#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Consent#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.Consent#getIds()
 	 * @see #getConsent()
 	 * @generated
 	 */
@@ -14514,11 +14513,11 @@ public interface CDAPackage extends EPackage {
 	EClass getComponent1();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component1#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component1#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Component1#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Component1#getRealmCodes()
 	 * @see #getComponent1()
 	 * @generated
 	 */
@@ -14536,11 +14535,11 @@ public interface CDAPackage extends EPackage {
 	EReference getComponent1_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component1#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component1#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Component1#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Component1#getTemplateIds()
 	 * @see #getComponent1()
 	 * @generated
 	 */
@@ -14590,11 +14589,11 @@ public interface CDAPackage extends EPackage {
 	EClass getEncompassingEncounter();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getRealmCodes()
 	 * @see #getEncompassingEncounter()
 	 * @generated
 	 */
@@ -14612,22 +14611,22 @@ public interface CDAPackage extends EPackage {
 	EReference getEncompassingEncounter_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getTemplateIds()
 	 * @see #getEncompassingEncounter()
 	 * @generated
 	 */
 	EReference getEncompassingEncounter_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getIds()
 	 * @see #getEncompassingEncounter()
 	 * @generated
 	 */
@@ -14678,11 +14677,11 @@ public interface CDAPackage extends EPackage {
 	EReference getEncompassingEncounter_ResponsibleParty();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getEncounterParticipant <em>Encounter Participant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getEncounterParticipants <em>Encounter Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Encounter Participant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getEncounterParticipant()
+	 * @see org.openhealthtools.mdht.uml.cda.EncompassingEncounter#getEncounterParticipants()
 	 * @see #getEncompassingEncounter()
 	 * @generated
 	 */
@@ -14743,11 +14742,11 @@ public interface CDAPackage extends EPackage {
 	EClass getResponsibleParty();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ResponsibleParty#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ResponsibleParty#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ResponsibleParty#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ResponsibleParty#getRealmCodes()
 	 * @see #getResponsibleParty()
 	 * @generated
 	 */
@@ -14765,11 +14764,11 @@ public interface CDAPackage extends EPackage {
 	EReference getResponsibleParty_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ResponsibleParty#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ResponsibleParty#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ResponsibleParty#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ResponsibleParty#getTemplateIds()
 	 * @see #getResponsibleParty()
 	 * @generated
 	 */
@@ -14819,11 +14818,11 @@ public interface CDAPackage extends EPackage {
 	EClass getEncounterParticipant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EncounterParticipant#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EncounterParticipant#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.EncounterParticipant#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.EncounterParticipant#getRealmCodes()
 	 * @see #getEncounterParticipant()
 	 * @generated
 	 */
@@ -14841,11 +14840,11 @@ public interface CDAPackage extends EPackage {
 	EReference getEncounterParticipant_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EncounterParticipant#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EncounterParticipant#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.EncounterParticipant#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.EncounterParticipant#getTemplateIds()
 	 * @see #getEncounterParticipant()
 	 * @generated
 	 */
@@ -14906,11 +14905,11 @@ public interface CDAPackage extends EPackage {
 	EClass getLocation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Location#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Location#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Location#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Location#getRealmCodes()
 	 * @see #getLocation()
 	 * @generated
 	 */
@@ -14928,11 +14927,11 @@ public interface CDAPackage extends EPackage {
 	EReference getLocation_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Location#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Location#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Location#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Location#getTemplateIds()
 	 * @see #getLocation()
 	 * @generated
 	 */
@@ -14982,11 +14981,11 @@ public interface CDAPackage extends EPackage {
 	EClass getHealthCareFacility();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.HealthCareFacility#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.HealthCareFacility#getRealmCodes()
 	 * @see #getHealthCareFacility()
 	 * @generated
 	 */
@@ -15004,22 +15003,22 @@ public interface CDAPackage extends EPackage {
 	EReference getHealthCareFacility_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.HealthCareFacility#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.HealthCareFacility#getTemplateIds()
 	 * @see #getHealthCareFacility()
 	 * @generated
 	 */
 	EReference getHealthCareFacility_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.HealthCareFacility#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.HealthCareFacility#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.HealthCareFacility#getIds()
 	 * @see #getHealthCareFacility()
 	 * @generated
 	 */
@@ -15091,11 +15090,11 @@ public interface CDAPackage extends EPackage {
 	EClass getComponent2();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component2#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component2#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Component2#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Component2#getRealmCodes()
 	 * @see #getComponent2()
 	 * @generated
 	 */
@@ -15113,11 +15112,11 @@ public interface CDAPackage extends EPackage {
 	EReference getComponent2_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component2#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component2#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Component2#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Component2#getTemplateIds()
 	 * @see #getComponent2()
 	 * @generated
 	 */
@@ -15189,11 +15188,11 @@ public interface CDAPackage extends EPackage {
 	EClass getNonXMLBody();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.NonXMLBody#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.NonXMLBody#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.NonXMLBody#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.NonXMLBody#getRealmCodes()
 	 * @see #getNonXMLBody()
 	 * @generated
 	 */
@@ -15211,11 +15210,11 @@ public interface CDAPackage extends EPackage {
 	EReference getNonXMLBody_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.NonXMLBody#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.NonXMLBody#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.NonXMLBody#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.NonXMLBody#getTemplateIds()
 	 * @see #getNonXMLBody()
 	 * @generated
 	 */
@@ -15298,11 +15297,11 @@ public interface CDAPackage extends EPackage {
 	EClass getStructuredBody();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.StructuredBody#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.StructuredBody#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.StructuredBody#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.StructuredBody#getRealmCodes()
 	 * @see #getStructuredBody()
 	 * @generated
 	 */
@@ -15320,11 +15319,11 @@ public interface CDAPackage extends EPackage {
 	EReference getStructuredBody_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.StructuredBody#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.StructuredBody#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.StructuredBody#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.StructuredBody#getTemplateIds()
 	 * @see #getStructuredBody()
 	 * @generated
 	 */
@@ -15353,11 +15352,11 @@ public interface CDAPackage extends EPackage {
 	EReference getStructuredBody_LanguageCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.StructuredBody#getComponent <em>Component</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.StructuredBody#getComponents <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Component</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.StructuredBody#getComponent()
+	 * @see org.openhealthtools.mdht.uml.cda.StructuredBody#getComponents()
 	 * @see #getStructuredBody()
 	 * @generated
 	 */
@@ -15407,11 +15406,11 @@ public interface CDAPackage extends EPackage {
 	EClass getComponent3();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component3#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component3#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Component3#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Component3#getRealmCodes()
 	 * @see #getComponent3()
 	 * @generated
 	 */
@@ -15429,11 +15428,11 @@ public interface CDAPackage extends EPackage {
 	EReference getComponent3_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component3#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component3#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Component3#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Component3#getTemplateIds()
 	 * @see #getComponent3()
 	 * @generated
 	 */
@@ -15494,11 +15493,11 @@ public interface CDAPackage extends EPackage {
 	EClass getSection();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Section#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Section#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Section#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Section#getRealmCodes()
 	 * @see #getSection()
 	 * @generated
 	 */
@@ -15516,11 +15515,11 @@ public interface CDAPackage extends EPackage {
 	EReference getSection_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Section#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Section#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Section#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Section#getTemplateIds()
 	 * @see #getSection()
 	 * @generated
 	 */
@@ -15604,44 +15603,44 @@ public interface CDAPackage extends EPackage {
 	EReference getSection_Subject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Section#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Section#getAuthors <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Author</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Section#getAuthor()
+	 * @see org.openhealthtools.mdht.uml.cda.Section#getAuthors()
 	 * @see #getSection()
 	 * @generated
 	 */
 	EReference getSection_Author();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Section#getInformant <em>Informant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Section#getInformants <em>Informant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Informant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Section#getInformant()
+	 * @see org.openhealthtools.mdht.uml.cda.Section#getInformants()
 	 * @see #getSection()
 	 * @generated
 	 */
 	EReference getSection_Informant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Section#getEntry <em>Entry</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Section#getEntries <em>Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Entry</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Section#getEntry()
+	 * @see org.openhealthtools.mdht.uml.cda.Section#getEntries()
 	 * @see #getSection()
 	 * @generated
 	 */
 	EReference getSection_Entry();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Section#getComponent <em>Component</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Section#getComponents <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Component</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Section#getComponent()
+	 * @see org.openhealthtools.mdht.uml.cda.Section#getComponents()
 	 * @see #getSection()
 	 * @generated
 	 */
@@ -15734,11 +15733,11 @@ public interface CDAPackage extends EPackage {
 	EClass getSubject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Subject#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Subject#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Subject#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Subject#getRealmCodes()
 	 * @see #getSubject()
 	 * @generated
 	 */
@@ -15756,11 +15755,11 @@ public interface CDAPackage extends EPackage {
 	EReference getSubject_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Subject#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Subject#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Subject#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Subject#getTemplateIds()
 	 * @see #getSubject()
 	 * @generated
 	 */
@@ -15832,11 +15831,11 @@ public interface CDAPackage extends EPackage {
 	EClass getRelatedSubject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RelatedSubject#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.RelatedSubject#getRealmCodes()
 	 * @see #getRelatedSubject()
 	 * @generated
 	 */
@@ -15854,11 +15853,11 @@ public interface CDAPackage extends EPackage {
 	EReference getRelatedSubject_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RelatedSubject#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.RelatedSubject#getTemplateIds()
 	 * @see #getRelatedSubject()
 	 * @generated
 	 */
@@ -15876,22 +15875,22 @@ public interface CDAPackage extends EPackage {
 	EReference getRelatedSubject_Code();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getAddr <em>Addr</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getAddrs <em>Addr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Addr</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RelatedSubject#getAddr()
+	 * @see org.openhealthtools.mdht.uml.cda.RelatedSubject#getAddrs()
 	 * @see #getRelatedSubject()
 	 * @generated
 	 */
 	EReference getRelatedSubject_Addr();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getTelecom <em>Telecom</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getTelecoms <em>Telecom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Telecom</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RelatedSubject#getTelecom()
+	 * @see org.openhealthtools.mdht.uml.cda.RelatedSubject#getTelecoms()
 	 * @see #getRelatedSubject()
 	 * @generated
 	 */
@@ -15941,11 +15940,11 @@ public interface CDAPackage extends EPackage {
 	EClass getSubjectPerson();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubjectPerson#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.SubjectPerson#getRealmCodes()
 	 * @see #getSubjectPerson()
 	 * @generated
 	 */
@@ -15963,22 +15962,22 @@ public interface CDAPackage extends EPackage {
 	EReference getSubjectPerson_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubjectPerson#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.SubjectPerson#getTemplateIds()
 	 * @see #getSubjectPerson()
 	 * @generated
 	 */
 	EReference getSubjectPerson_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getNames <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Name</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubjectPerson#getName()
+	 * @see org.openhealthtools.mdht.uml.cda.SubjectPerson#getNames()
 	 * @see #getSubjectPerson()
 	 * @generated
 	 */
@@ -16050,11 +16049,11 @@ public interface CDAPackage extends EPackage {
 	EClass getEntry();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Entry#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Entry#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Entry#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Entry#getRealmCodes()
 	 * @see #getEntry()
 	 * @generated
 	 */
@@ -16072,11 +16071,11 @@ public interface CDAPackage extends EPackage {
 	EReference getEntry_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Entry#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Entry#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Entry#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Entry#getTemplateIds()
 	 * @see #getEntry()
 	 * @generated
 	 */
@@ -16225,11 +16224,11 @@ public interface CDAPackage extends EPackage {
 	EClass getAct();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Act#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Act#getRealmCodes()
 	 * @see #getAct()
 	 * @generated
 	 */
@@ -16247,22 +16246,22 @@ public interface CDAPackage extends EPackage {
 	EReference getAct_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Act#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Act#getTemplateIds()
 	 * @see #getAct()
 	 * @generated
 	 */
 	EReference getAct_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Act#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.Act#getIds()
 	 * @see #getAct()
 	 * @generated
 	 */
@@ -16346,88 +16345,88 @@ public interface CDAPackage extends EPackage {
 	EReference getAct_Subject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getSpecimen <em>Specimen</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getSpecimens <em>Specimen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Specimen</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Act#getSpecimen()
+	 * @see org.openhealthtools.mdht.uml.cda.Act#getSpecimens()
 	 * @see #getAct()
 	 * @generated
 	 */
 	EReference getAct_Specimen();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getPerformer <em>Performer</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getPerformers <em>Performer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Performer</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Act#getPerformer()
+	 * @see org.openhealthtools.mdht.uml.cda.Act#getPerformers()
 	 * @see #getAct()
 	 * @generated
 	 */
 	EReference getAct_Performer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getAuthors <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Author</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Act#getAuthor()
+	 * @see org.openhealthtools.mdht.uml.cda.Act#getAuthors()
 	 * @see #getAct()
 	 * @generated
 	 */
 	EReference getAct_Author();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getInformant <em>Informant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getInformants <em>Informant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Informant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Act#getInformant()
+	 * @see org.openhealthtools.mdht.uml.cda.Act#getInformants()
 	 * @see #getAct()
 	 * @generated
 	 */
 	EReference getAct_Informant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getParticipant <em>Participant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getParticipants <em>Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Participant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Act#getParticipant()
+	 * @see org.openhealthtools.mdht.uml.cda.Act#getParticipants()
 	 * @see #getAct()
 	 * @generated
 	 */
 	EReference getAct_Participant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getEntryRelationship <em>Entry Relationship</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getEntryRelationships <em>Entry Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Entry Relationship</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Act#getEntryRelationship()
+	 * @see org.openhealthtools.mdht.uml.cda.Act#getEntryRelationships()
 	 * @see #getAct()
 	 * @generated
 	 */
 	EReference getAct_EntryRelationship();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getReference <em>Reference</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getReferences <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Reference</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Act#getReference()
+	 * @see org.openhealthtools.mdht.uml.cda.Act#getReferences()
 	 * @see #getAct()
 	 * @generated
 	 */
 	EReference getAct_Reference();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getPrecondition <em>Precondition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Act#getPreconditions <em>Precondition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Precondition</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Act#getPrecondition()
+	 * @see org.openhealthtools.mdht.uml.cda.Act#getPreconditions()
 	 * @see #getAct()
 	 * @generated
 	 */
@@ -16488,11 +16487,11 @@ public interface CDAPackage extends EPackage {
 	EClass getSpecimen();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Specimen#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Specimen#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Specimen#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Specimen#getRealmCodes()
 	 * @see #getSpecimen()
 	 * @generated
 	 */
@@ -16510,11 +16509,11 @@ public interface CDAPackage extends EPackage {
 	EReference getSpecimen_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Specimen#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Specimen#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Specimen#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Specimen#getTemplateIds()
 	 * @see #getSpecimen()
 	 * @generated
 	 */
@@ -16564,11 +16563,11 @@ public interface CDAPackage extends EPackage {
 	EClass getSpecimenRole();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SpecimenRole#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SpecimenRole#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SpecimenRole#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.SpecimenRole#getRealmCodes()
 	 * @see #getSpecimenRole()
 	 * @generated
 	 */
@@ -16586,22 +16585,22 @@ public interface CDAPackage extends EPackage {
 	EReference getSpecimenRole_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SpecimenRole#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SpecimenRole#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SpecimenRole#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.SpecimenRole#getTemplateIds()
 	 * @see #getSpecimenRole()
 	 * @generated
 	 */
 	EReference getSpecimenRole_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SpecimenRole#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SpecimenRole#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SpecimenRole#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.SpecimenRole#getIds()
 	 * @see #getSpecimenRole()
 	 * @generated
 	 */
@@ -16651,11 +16650,11 @@ public interface CDAPackage extends EPackage {
 	EClass getPlayingEntity();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.PlayingEntity#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.PlayingEntity#getRealmCodes()
 	 * @see #getPlayingEntity()
 	 * @generated
 	 */
@@ -16673,11 +16672,11 @@ public interface CDAPackage extends EPackage {
 	EReference getPlayingEntity_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.PlayingEntity#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.PlayingEntity#getTemplateIds()
 	 * @see #getPlayingEntity()
 	 * @generated
 	 */
@@ -16695,22 +16694,22 @@ public interface CDAPackage extends EPackage {
 	EReference getPlayingEntity_Code();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getQuantity <em>Quantity</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getQuantities <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Quantity</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.PlayingEntity#getQuantity()
+	 * @see org.openhealthtools.mdht.uml.cda.PlayingEntity#getQuantities()
 	 * @see #getPlayingEntity()
 	 * @generated
 	 */
 	EReference getPlayingEntity_Quantity();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.PlayingEntity#getNames <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Name</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.PlayingEntity#getName()
+	 * @see org.openhealthtools.mdht.uml.cda.PlayingEntity#getNames()
 	 * @see #getPlayingEntity()
 	 * @generated
 	 */
@@ -16771,11 +16770,11 @@ public interface CDAPackage extends EPackage {
 	EClass getPerformer2();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Performer2#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Performer2#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Performer2#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Performer2#getRealmCodes()
 	 * @see #getPerformer2()
 	 * @generated
 	 */
@@ -16793,11 +16792,11 @@ public interface CDAPackage extends EPackage {
 	EReference getPerformer2_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Performer2#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Performer2#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Performer2#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Performer2#getTemplateIds()
 	 * @see #getPerformer2()
 	 * @generated
 	 */
@@ -16869,11 +16868,11 @@ public interface CDAPackage extends EPackage {
 	EClass getParticipant2();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Participant2#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Participant2#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Participant2#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Participant2#getRealmCodes()
 	 * @see #getParticipant2()
 	 * @generated
 	 */
@@ -16891,11 +16890,11 @@ public interface CDAPackage extends EPackage {
 	EReference getParticipant2_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Participant2#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Participant2#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Participant2#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Participant2#getTemplateIds()
 	 * @see #getParticipant2()
 	 * @generated
 	 */
@@ -16978,11 +16977,11 @@ public interface CDAPackage extends EPackage {
 	EClass getParticipantRole();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParticipantRole#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParticipantRole#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ParticipantRole#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ParticipantRole#getRealmCodes()
 	 * @see #getParticipantRole()
 	 * @generated
 	 */
@@ -17000,22 +16999,22 @@ public interface CDAPackage extends EPackage {
 	EReference getParticipantRole_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParticipantRole#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParticipantRole#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ParticipantRole#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ParticipantRole#getTemplateIds()
 	 * @see #getParticipantRole()
 	 * @generated
 	 */
 	EReference getParticipantRole_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParticipantRole#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParticipantRole#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ParticipantRole#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.ParticipantRole#getIds()
 	 * @see #getParticipantRole()
 	 * @generated
 	 */
@@ -17033,22 +17032,22 @@ public interface CDAPackage extends EPackage {
 	EReference getParticipantRole_Code();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParticipantRole#getAddr <em>Addr</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParticipantRole#getAddrs <em>Addr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Addr</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ParticipantRole#getAddr()
+	 * @see org.openhealthtools.mdht.uml.cda.ParticipantRole#getAddrs()
 	 * @see #getParticipantRole()
 	 * @generated
 	 */
 	EReference getParticipantRole_Addr();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParticipantRole#getTelecom <em>Telecom</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ParticipantRole#getTelecoms <em>Telecom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Telecom</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ParticipantRole#getTelecom()
+	 * @see org.openhealthtools.mdht.uml.cda.ParticipantRole#getTelecoms()
 	 * @see #getParticipantRole()
 	 * @generated
 	 */
@@ -17120,11 +17119,11 @@ public interface CDAPackage extends EPackage {
 	EClass getDevice();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Device#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Device#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Device#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Device#getRealmCodes()
 	 * @see #getDevice()
 	 * @generated
 	 */
@@ -17142,11 +17141,11 @@ public interface CDAPackage extends EPackage {
 	EReference getDevice_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Device#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Device#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Device#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Device#getTemplateIds()
 	 * @see #getDevice()
 	 * @generated
 	 */
@@ -17229,11 +17228,11 @@ public interface CDAPackage extends EPackage {
 	EClass getEntity();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Entity#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Entity#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Entity#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Entity#getRealmCodes()
 	 * @see #getEntity()
 	 * @generated
 	 */
@@ -17251,22 +17250,22 @@ public interface CDAPackage extends EPackage {
 	EReference getEntity_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Entity#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Entity#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Entity#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Entity#getTemplateIds()
 	 * @see #getEntity()
 	 * @generated
 	 */
 	EReference getEntity_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Entity#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Entity#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Entity#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.Entity#getIds()
 	 * @see #getEntity()
 	 * @generated
 	 */
@@ -17338,11 +17337,11 @@ public interface CDAPackage extends EPackage {
 	EClass getEntryRelationship();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EntryRelationship#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EntryRelationship#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.EntryRelationship#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.EntryRelationship#getRealmCodes()
 	 * @see #getEntryRelationship()
 	 * @generated
 	 */
@@ -17360,11 +17359,11 @@ public interface CDAPackage extends EPackage {
 	EReference getEntryRelationship_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EntryRelationship#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.EntryRelationship#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.EntryRelationship#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.EntryRelationship#getTemplateIds()
 	 * @see #getEntryRelationship()
 	 * @generated
 	 */
@@ -17557,11 +17556,11 @@ public interface CDAPackage extends EPackage {
 	EClass getEncounter();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getRealmCodes()
 	 * @see #getEncounter()
 	 * @generated
 	 */
@@ -17579,22 +17578,22 @@ public interface CDAPackage extends EPackage {
 	EReference getEncounter_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getTemplateIds()
 	 * @see #getEncounter()
 	 * @generated
 	 */
 	EReference getEncounter_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getIds()
 	 * @see #getEncounter()
 	 * @generated
 	 */
@@ -17667,88 +17666,88 @@ public interface CDAPackage extends EPackage {
 	EReference getEncounter_Subject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getSpecimen <em>Specimen</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getSpecimens <em>Specimen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Specimen</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getSpecimen()
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getSpecimens()
 	 * @see #getEncounter()
 	 * @generated
 	 */
 	EReference getEncounter_Specimen();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getPerformer <em>Performer</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getPerformers <em>Performer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Performer</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getPerformer()
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getPerformers()
 	 * @see #getEncounter()
 	 * @generated
 	 */
 	EReference getEncounter_Performer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getAuthors <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Author</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getAuthor()
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getAuthors()
 	 * @see #getEncounter()
 	 * @generated
 	 */
 	EReference getEncounter_Author();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getInformant <em>Informant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getInformants <em>Informant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Informant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getInformant()
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getInformants()
 	 * @see #getEncounter()
 	 * @generated
 	 */
 	EReference getEncounter_Informant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getParticipant <em>Participant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getParticipants <em>Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Participant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getParticipant()
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getParticipants()
 	 * @see #getEncounter()
 	 * @generated
 	 */
 	EReference getEncounter_Participant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getEntryRelationship <em>Entry Relationship</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getEntryRelationships <em>Entry Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Entry Relationship</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getEntryRelationship()
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getEntryRelationships()
 	 * @see #getEncounter()
 	 * @generated
 	 */
 	EReference getEncounter_EntryRelationship();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getReference <em>Reference</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getReferences <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Reference</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getReference()
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getReferences()
 	 * @see #getEncounter()
 	 * @generated
 	 */
 	EReference getEncounter_Reference();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getPrecondition <em>Precondition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Encounter#getPreconditions <em>Precondition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Precondition</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getPrecondition()
+	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getPreconditions()
 	 * @see #getEncounter()
 	 * @generated
 	 */
@@ -17798,11 +17797,11 @@ public interface CDAPackage extends EPackage {
 	EClass getReference();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Reference#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Reference#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Reference#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Reference#getRealmCodes()
 	 * @see #getReference()
 	 * @generated
 	 */
@@ -17820,11 +17819,11 @@ public interface CDAPackage extends EPackage {
 	EReference getReference_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Reference#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Reference#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Reference#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Reference#getTemplateIds()
 	 * @see #getReference()
 	 * @generated
 	 */
@@ -17918,11 +17917,11 @@ public interface CDAPackage extends EPackage {
 	EClass getExternalAct();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalAct#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalAct#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ExternalAct#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ExternalAct#getRealmCodes()
 	 * @see #getExternalAct()
 	 * @generated
 	 */
@@ -17940,22 +17939,22 @@ public interface CDAPackage extends EPackage {
 	EReference getExternalAct_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalAct#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalAct#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ExternalAct#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ExternalAct#getTemplateIds()
 	 * @see #getExternalAct()
 	 * @generated
 	 */
 	EReference getExternalAct_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalAct#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalAct#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ExternalAct#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.ExternalAct#getIds()
 	 * @see #getExternalAct()
 	 * @generated
 	 */
@@ -18027,11 +18026,11 @@ public interface CDAPackage extends EPackage {
 	EClass getExternalObservation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalObservation#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalObservation#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ExternalObservation#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ExternalObservation#getRealmCodes()
 	 * @see #getExternalObservation()
 	 * @generated
 	 */
@@ -18049,22 +18048,22 @@ public interface CDAPackage extends EPackage {
 	EReference getExternalObservation_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalObservation#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalObservation#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ExternalObservation#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ExternalObservation#getTemplateIds()
 	 * @see #getExternalObservation()
 	 * @generated
 	 */
 	EReference getExternalObservation_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalObservation#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalObservation#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ExternalObservation#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.ExternalObservation#getIds()
 	 * @see #getExternalObservation()
 	 * @generated
 	 */
@@ -18136,11 +18135,11 @@ public interface CDAPackage extends EPackage {
 	EClass getExternalProcedure();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalProcedure#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalProcedure#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ExternalProcedure#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ExternalProcedure#getRealmCodes()
 	 * @see #getExternalProcedure()
 	 * @generated
 	 */
@@ -18158,22 +18157,22 @@ public interface CDAPackage extends EPackage {
 	EReference getExternalProcedure_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalProcedure#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalProcedure#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ExternalProcedure#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ExternalProcedure#getTemplateIds()
 	 * @see #getExternalProcedure()
 	 * @generated
 	 */
 	EReference getExternalProcedure_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalProcedure#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalProcedure#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ExternalProcedure#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.ExternalProcedure#getIds()
 	 * @see #getExternalProcedure()
 	 * @generated
 	 */
@@ -18245,11 +18244,11 @@ public interface CDAPackage extends EPackage {
 	EClass getExternalDocument();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalDocument#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalDocument#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ExternalDocument#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ExternalDocument#getRealmCodes()
 	 * @see #getExternalDocument()
 	 * @generated
 	 */
@@ -18267,22 +18266,22 @@ public interface CDAPackage extends EPackage {
 	EReference getExternalDocument_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalDocument#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalDocument#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ExternalDocument#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ExternalDocument#getTemplateIds()
 	 * @see #getExternalDocument()
 	 * @generated
 	 */
 	EReference getExternalDocument_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalDocument#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ExternalDocument#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ExternalDocument#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.ExternalDocument#getIds()
 	 * @see #getExternalDocument()
 	 * @generated
 	 */
@@ -18376,11 +18375,11 @@ public interface CDAPackage extends EPackage {
 	EClass getPrecondition();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Precondition#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Precondition#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Precondition#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Precondition#getRealmCodes()
 	 * @see #getPrecondition()
 	 * @generated
 	 */
@@ -18398,11 +18397,11 @@ public interface CDAPackage extends EPackage {
 	EReference getPrecondition_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Precondition#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Precondition#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Precondition#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Precondition#getTemplateIds()
 	 * @see #getPrecondition()
 	 * @generated
 	 */
@@ -18452,11 +18451,11 @@ public interface CDAPackage extends EPackage {
 	EClass getCriterion();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Criterion#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Criterion#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Criterion#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Criterion#getRealmCodes()
 	 * @see #getCriterion()
 	 * @generated
 	 */
@@ -18474,11 +18473,11 @@ public interface CDAPackage extends EPackage {
 	EReference getCriterion_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Criterion#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Criterion#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Criterion#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Criterion#getTemplateIds()
 	 * @see #getCriterion()
 	 * @generated
 	 */
@@ -18561,11 +18560,11 @@ public interface CDAPackage extends EPackage {
 	EClass getObservation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getRealmCodes()
 	 * @see #getObservation()
 	 * @generated
 	 */
@@ -18583,22 +18582,22 @@ public interface CDAPackage extends EPackage {
 	EReference getObservation_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getTemplateIds()
 	 * @see #getObservation()
 	 * @generated
 	 */
 	EReference getObservation_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getIds()
 	 * @see #getObservation()
 	 * @generated
 	 */
@@ -18693,44 +18692,44 @@ public interface CDAPackage extends EPackage {
 	EReference getObservation_LanguageCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getValues <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Value</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getValue()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getValues()
 	 * @see #getObservation()
 	 * @generated
 	 */
 	EReference getObservation_Value();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getInterpretationCode <em>Interpretation Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getInterpretationCodes <em>Interpretation Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Interpretation Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getInterpretationCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getInterpretationCodes()
 	 * @see #getObservation()
 	 * @generated
 	 */
 	EReference getObservation_InterpretationCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getMethodCode <em>Method Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getMethodCodes <em>Method Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Method Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getMethodCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getMethodCodes()
 	 * @see #getObservation()
 	 * @generated
 	 */
 	EReference getObservation_MethodCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getTargetSiteCode <em>Target Site Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getTargetSiteCodes <em>Target Site Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Target Site Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getTargetSiteCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getTargetSiteCodes()
 	 * @see #getObservation()
 	 * @generated
 	 */
@@ -18748,99 +18747,99 @@ public interface CDAPackage extends EPackage {
 	EReference getObservation_Subject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getSpecimen <em>Specimen</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getSpecimens <em>Specimen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Specimen</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getSpecimen()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getSpecimens()
 	 * @see #getObservation()
 	 * @generated
 	 */
 	EReference getObservation_Specimen();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getPerformer <em>Performer</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getPerformers <em>Performer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Performer</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getPerformer()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getPerformers()
 	 * @see #getObservation()
 	 * @generated
 	 */
 	EReference getObservation_Performer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getAuthors <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Author</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getAuthor()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getAuthors()
 	 * @see #getObservation()
 	 * @generated
 	 */
 	EReference getObservation_Author();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getInformant <em>Informant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getInformants <em>Informant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Informant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getInformant()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getInformants()
 	 * @see #getObservation()
 	 * @generated
 	 */
 	EReference getObservation_Informant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getParticipant <em>Participant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getParticipants <em>Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Participant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getParticipant()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getParticipants()
 	 * @see #getObservation()
 	 * @generated
 	 */
 	EReference getObservation_Participant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getEntryRelationship <em>Entry Relationship</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getEntryRelationships <em>Entry Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Entry Relationship</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getEntryRelationship()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getEntryRelationships()
 	 * @see #getObservation()
 	 * @generated
 	 */
 	EReference getObservation_EntryRelationship();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getReference <em>Reference</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getReferences <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Reference</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getReference()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getReferences()
 	 * @see #getObservation()
 	 * @generated
 	 */
 	EReference getObservation_Reference();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getPrecondition <em>Precondition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getPreconditions <em>Precondition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Precondition</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getPrecondition()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getPreconditions()
 	 * @see #getObservation()
 	 * @generated
 	 */
 	EReference getObservation_Precondition();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getReferenceRange <em>Reference Range</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Observation#getReferenceRanges <em>Reference Range</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Reference Range</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Observation#getReferenceRange()
+	 * @see org.openhealthtools.mdht.uml.cda.Observation#getReferenceRanges()
 	 * @see #getObservation()
 	 * @generated
 	 */
@@ -18901,11 +18900,11 @@ public interface CDAPackage extends EPackage {
 	EClass getReferenceRange();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ReferenceRange#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ReferenceRange#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ReferenceRange#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ReferenceRange#getRealmCodes()
 	 * @see #getReferenceRange()
 	 * @generated
 	 */
@@ -18923,11 +18922,11 @@ public interface CDAPackage extends EPackage {
 	EReference getReferenceRange_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ReferenceRange#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ReferenceRange#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ReferenceRange#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ReferenceRange#getTemplateIds()
 	 * @see #getReferenceRange()
 	 * @generated
 	 */
@@ -18977,11 +18976,11 @@ public interface CDAPackage extends EPackage {
 	EClass getObservationRange();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationRange#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationRange#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationRange#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationRange#getRealmCodes()
 	 * @see #getObservationRange()
 	 * @generated
 	 */
@@ -18999,11 +18998,11 @@ public interface CDAPackage extends EPackage {
 	EReference getObservationRange_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationRange#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationRange#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationRange#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationRange#getTemplateIds()
 	 * @see #getObservationRange()
 	 * @generated
 	 */
@@ -19097,11 +19096,11 @@ public interface CDAPackage extends EPackage {
 	EClass getObservationMedia();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getRealmCodes()
 	 * @see #getObservationMedia()
 	 * @generated
 	 */
@@ -19119,22 +19118,22 @@ public interface CDAPackage extends EPackage {
 	EReference getObservationMedia_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getTemplateIds()
 	 * @see #getObservationMedia()
 	 * @generated
 	 */
 	EReference getObservationMedia_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getIds()
 	 * @see #getObservationMedia()
 	 * @generated
 	 */
@@ -19174,88 +19173,88 @@ public interface CDAPackage extends EPackage {
 	EReference getObservationMedia_Subject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getSpecimen <em>Specimen</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getSpecimens <em>Specimen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Specimen</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getSpecimen()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getSpecimens()
 	 * @see #getObservationMedia()
 	 * @generated
 	 */
 	EReference getObservationMedia_Specimen();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getPerformer <em>Performer</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getPerformers <em>Performer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Performer</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getPerformer()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getPerformers()
 	 * @see #getObservationMedia()
 	 * @generated
 	 */
 	EReference getObservationMedia_Performer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getAuthors <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Author</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getAuthor()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getAuthors()
 	 * @see #getObservationMedia()
 	 * @generated
 	 */
 	EReference getObservationMedia_Author();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getInformant <em>Informant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getInformants <em>Informant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Informant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getInformant()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getInformants()
 	 * @see #getObservationMedia()
 	 * @generated
 	 */
 	EReference getObservationMedia_Informant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getParticipant <em>Participant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getParticipants <em>Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Participant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getParticipant()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getParticipants()
 	 * @see #getObservationMedia()
 	 * @generated
 	 */
 	EReference getObservationMedia_Participant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getEntryRelationship <em>Entry Relationship</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getEntryRelationships <em>Entry Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Entry Relationship</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getEntryRelationship()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getEntryRelationships()
 	 * @see #getObservationMedia()
 	 * @generated
 	 */
 	EReference getObservationMedia_EntryRelationship();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getReference <em>Reference</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getReferences <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Reference</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getReference()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getReferences()
 	 * @see #getObservationMedia()
 	 * @generated
 	 */
 	EReference getObservationMedia_Reference();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getPrecondition <em>Precondition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ObservationMedia#getPreconditions <em>Precondition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Precondition</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getPrecondition()
+	 * @see org.openhealthtools.mdht.uml.cda.ObservationMedia#getPreconditions()
 	 * @see #getObservationMedia()
 	 * @generated
 	 */
@@ -19316,11 +19315,11 @@ public interface CDAPackage extends EPackage {
 	EClass getOrganizer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getRealmCodes()
 	 * @see #getOrganizer()
 	 * @generated
 	 */
@@ -19338,22 +19337,22 @@ public interface CDAPackage extends EPackage {
 	EReference getOrganizer_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getTemplateIds()
 	 * @see #getOrganizer()
 	 * @generated
 	 */
 	EReference getOrganizer_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getIds()
 	 * @see #getOrganizer()
 	 * @generated
 	 */
@@ -19404,88 +19403,88 @@ public interface CDAPackage extends EPackage {
 	EReference getOrganizer_Subject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getSpecimen <em>Specimen</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getSpecimens <em>Specimen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Specimen</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getSpecimen()
+	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getSpecimens()
 	 * @see #getOrganizer()
 	 * @generated
 	 */
 	EReference getOrganizer_Specimen();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getPerformer <em>Performer</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getPerformers <em>Performer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Performer</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getPerformer()
+	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getPerformers()
 	 * @see #getOrganizer()
 	 * @generated
 	 */
 	EReference getOrganizer_Performer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getAuthors <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Author</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getAuthor()
+	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getAuthors()
 	 * @see #getOrganizer()
 	 * @generated
 	 */
 	EReference getOrganizer_Author();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getInformant <em>Informant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getInformants <em>Informant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Informant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getInformant()
+	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getInformants()
 	 * @see #getOrganizer()
 	 * @generated
 	 */
 	EReference getOrganizer_Informant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getParticipant <em>Participant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getParticipants <em>Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Participant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getParticipant()
+	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getParticipants()
 	 * @see #getOrganizer()
 	 * @generated
 	 */
 	EReference getOrganizer_Participant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getReference <em>Reference</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getReferences <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Reference</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getReference()
+	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getReferences()
 	 * @see #getOrganizer()
 	 * @generated
 	 */
 	EReference getOrganizer_Reference();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getPrecondition <em>Precondition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getPreconditions <em>Precondition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Precondition</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getPrecondition()
+	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getPreconditions()
 	 * @see #getOrganizer()
 	 * @generated
 	 */
 	EReference getOrganizer_Precondition();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getComponent <em>Component</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Organizer#getComponents <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Component</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getComponent()
+	 * @see org.openhealthtools.mdht.uml.cda.Organizer#getComponents()
 	 * @see #getOrganizer()
 	 * @generated
 	 */
@@ -19535,11 +19534,11 @@ public interface CDAPackage extends EPackage {
 	EClass getComponent4();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component4#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component4#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Component4#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Component4#getRealmCodes()
 	 * @see #getComponent4()
 	 * @generated
 	 */
@@ -19557,11 +19556,11 @@ public interface CDAPackage extends EPackage {
 	EReference getComponent4_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component4#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component4#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Component4#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Component4#getTemplateIds()
 	 * @see #getComponent4()
 	 * @generated
 	 */
@@ -19732,11 +19731,11 @@ public interface CDAPackage extends EPackage {
 	EClass getProcedure();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getRealmCodes()
 	 * @see #getProcedure()
 	 * @generated
 	 */
@@ -19754,22 +19753,22 @@ public interface CDAPackage extends EPackage {
 	EReference getProcedure_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getTemplateIds()
 	 * @see #getProcedure()
 	 * @generated
 	 */
 	EReference getProcedure_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getIds()
 	 * @see #getProcedure()
 	 * @generated
 	 */
@@ -19842,33 +19841,33 @@ public interface CDAPackage extends EPackage {
 	EReference getProcedure_LanguageCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getMethodCode <em>Method Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getMethodCodes <em>Method Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Method Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getMethodCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getMethodCodes()
 	 * @see #getProcedure()
 	 * @generated
 	 */
 	EReference getProcedure_MethodCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getApproachSiteCode <em>Approach Site Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getApproachSiteCodes <em>Approach Site Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Approach Site Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getApproachSiteCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getApproachSiteCodes()
 	 * @see #getProcedure()
 	 * @generated
 	 */
 	EReference getProcedure_ApproachSiteCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getTargetSiteCode <em>Target Site Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getTargetSiteCodes <em>Target Site Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Target Site Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getTargetSiteCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getTargetSiteCodes()
 	 * @see #getProcedure()
 	 * @generated
 	 */
@@ -19886,88 +19885,88 @@ public interface CDAPackage extends EPackage {
 	EReference getProcedure_Subject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getSpecimen <em>Specimen</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getSpecimens <em>Specimen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Specimen</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getSpecimen()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getSpecimens()
 	 * @see #getProcedure()
 	 * @generated
 	 */
 	EReference getProcedure_Specimen();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getPerformer <em>Performer</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getPerformers <em>Performer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Performer</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getPerformer()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getPerformers()
 	 * @see #getProcedure()
 	 * @generated
 	 */
 	EReference getProcedure_Performer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getAuthors <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Author</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getAuthor()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getAuthors()
 	 * @see #getProcedure()
 	 * @generated
 	 */
 	EReference getProcedure_Author();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getInformant <em>Informant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getInformants <em>Informant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Informant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getInformant()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getInformants()
 	 * @see #getProcedure()
 	 * @generated
 	 */
 	EReference getProcedure_Informant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getParticipant <em>Participant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getParticipants <em>Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Participant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getParticipant()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getParticipants()
 	 * @see #getProcedure()
 	 * @generated
 	 */
 	EReference getProcedure_Participant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getEntryRelationship <em>Entry Relationship</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getEntryRelationships <em>Entry Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Entry Relationship</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getEntryRelationship()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getEntryRelationships()
 	 * @see #getProcedure()
 	 * @generated
 	 */
 	EReference getProcedure_EntryRelationship();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getReference <em>Reference</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getReferences <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Reference</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getReference()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getReferences()
 	 * @see #getProcedure()
 	 * @generated
 	 */
 	EReference getProcedure_Reference();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getPrecondition <em>Precondition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Procedure#getPreconditions <em>Precondition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Precondition</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getPrecondition()
+	 * @see org.openhealthtools.mdht.uml.cda.Procedure#getPreconditions()
 	 * @see #getProcedure()
 	 * @generated
 	 */
@@ -20028,11 +20027,11 @@ public interface CDAPackage extends EPackage {
 	EClass getRegionOfInterest();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getRealmCodes()
 	 * @see #getRegionOfInterest()
 	 * @generated
 	 */
@@ -20050,22 +20049,22 @@ public interface CDAPackage extends EPackage {
 	EReference getRegionOfInterest_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getTemplateIds()
 	 * @see #getRegionOfInterest()
 	 * @generated
 	 */
 	EReference getRegionOfInterest_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getIds()
 	 * @see #getRegionOfInterest()
 	 * @generated
 	 */
@@ -20083,11 +20082,11 @@ public interface CDAPackage extends EPackage {
 	EReference getRegionOfInterest_Code();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getValues <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Value</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getValue()
+	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getValues()
 	 * @see #getRegionOfInterest()
 	 * @generated
 	 */
@@ -20105,88 +20104,88 @@ public interface CDAPackage extends EPackage {
 	EReference getRegionOfInterest_Subject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getSpecimen <em>Specimen</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getSpecimens <em>Specimen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Specimen</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getSpecimen()
+	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getSpecimens()
 	 * @see #getRegionOfInterest()
 	 * @generated
 	 */
 	EReference getRegionOfInterest_Specimen();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getPerformer <em>Performer</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getPerformers <em>Performer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Performer</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getPerformer()
+	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getPerformers()
 	 * @see #getRegionOfInterest()
 	 * @generated
 	 */
 	EReference getRegionOfInterest_Performer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getAuthors <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Author</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getAuthor()
+	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getAuthors()
 	 * @see #getRegionOfInterest()
 	 * @generated
 	 */
 	EReference getRegionOfInterest_Author();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getInformant <em>Informant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getInformants <em>Informant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Informant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getInformant()
+	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getInformants()
 	 * @see #getRegionOfInterest()
 	 * @generated
 	 */
 	EReference getRegionOfInterest_Informant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getParticipant <em>Participant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getParticipants <em>Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Participant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getParticipant()
+	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getParticipants()
 	 * @see #getRegionOfInterest()
 	 * @generated
 	 */
 	EReference getRegionOfInterest_Participant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getEntryRelationship <em>Entry Relationship</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getEntryRelationships <em>Entry Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Entry Relationship</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getEntryRelationship()
+	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getEntryRelationships()
 	 * @see #getRegionOfInterest()
 	 * @generated
 	 */
 	EReference getRegionOfInterest_EntryRelationship();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getReference <em>Reference</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getReferences <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Reference</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getReference()
+	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getReferences()
 	 * @see #getRegionOfInterest()
 	 * @generated
 	 */
 	EReference getRegionOfInterest_Reference();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getPrecondition <em>Precondition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getPreconditions <em>Precondition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Precondition</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getPrecondition()
+	 * @see org.openhealthtools.mdht.uml.cda.RegionOfInterest#getPreconditions()
 	 * @see #getRegionOfInterest()
 	 * @generated
 	 */
@@ -20268,11 +20267,11 @@ public interface CDAPackage extends EPackage {
 	EClass getSubstanceAdministration();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getRealmCodes()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
@@ -20290,22 +20289,22 @@ public interface CDAPackage extends EPackage {
 	EReference getSubstanceAdministration_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getTemplateIds()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
 	EReference getSubstanceAdministration_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getIds()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
@@ -20345,11 +20344,11 @@ public interface CDAPackage extends EPackage {
 	EReference getSubstanceAdministration_StatusCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getEffectiveTime <em>Effective Time</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getEffectiveTimes <em>Effective Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Effective Time</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getEffectiveTime()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getEffectiveTimes()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
@@ -20389,11 +20388,11 @@ public interface CDAPackage extends EPackage {
 	EReference getSubstanceAdministration_RouteCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getApproachSiteCode <em>Approach Site Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getApproachSiteCodes <em>Approach Site Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Approach Site Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getApproachSiteCode()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getApproachSiteCodes()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
@@ -20455,11 +20454,11 @@ public interface CDAPackage extends EPackage {
 	EReference getSubstanceAdministration_Subject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getSpecimen <em>Specimen</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getSpecimens <em>Specimen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Specimen</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getSpecimen()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getSpecimens()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
@@ -20477,77 +20476,77 @@ public interface CDAPackage extends EPackage {
 	EReference getSubstanceAdministration_Consumable();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getPerformer <em>Performer</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getPerformers <em>Performer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Performer</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getPerformer()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getPerformers()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
 	EReference getSubstanceAdministration_Performer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAuthors <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Author</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAuthor()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAuthors()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
 	EReference getSubstanceAdministration_Author();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getInformant <em>Informant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getInformants <em>Informant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Informant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getInformant()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getInformants()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
 	EReference getSubstanceAdministration_Informant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getReference <em>Reference</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getReferences <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Reference</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getReference()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getReferences()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
 	EReference getSubstanceAdministration_Reference();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getParticipant <em>Participant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getParticipants <em>Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Participant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getParticipant()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getParticipants()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
 	EReference getSubstanceAdministration_Participant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getEntryRelationship <em>Entry Relationship</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getEntryRelationships <em>Entry Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Entry Relationship</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getEntryRelationship()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getEntryRelationships()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
 	EReference getSubstanceAdministration_EntryRelationship();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getPrecondition <em>Precondition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getPreconditions <em>Precondition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Precondition</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getPrecondition()
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getPreconditions()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
@@ -20608,11 +20607,11 @@ public interface CDAPackage extends EPackage {
 	EClass getConsumable();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Consumable#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Consumable#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Consumable#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Consumable#getRealmCodes()
 	 * @see #getConsumable()
 	 * @generated
 	 */
@@ -20630,11 +20629,11 @@ public interface CDAPackage extends EPackage {
 	EReference getConsumable_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Consumable#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Consumable#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Consumable#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Consumable#getTemplateIds()
 	 * @see #getConsumable()
 	 * @generated
 	 */
@@ -20684,11 +20683,11 @@ public interface CDAPackage extends EPackage {
 	EClass getManufacturedProduct();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getRealmCodes()
 	 * @see #getManufacturedProduct()
 	 * @generated
 	 */
@@ -20706,22 +20705,22 @@ public interface CDAPackage extends EPackage {
 	EReference getManufacturedProduct_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getTemplateIds()
 	 * @see #getManufacturedProduct()
 	 * @generated
 	 */
 	EReference getManufacturedProduct_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.ManufacturedProduct#getIds()
 	 * @see #getManufacturedProduct()
 	 * @generated
 	 */
@@ -20793,11 +20792,11 @@ public interface CDAPackage extends EPackage {
 	EClass getLabeledDrug();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.LabeledDrug#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.LabeledDrug#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.LabeledDrug#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.LabeledDrug#getRealmCodes()
 	 * @see #getLabeledDrug()
 	 * @generated
 	 */
@@ -20815,11 +20814,11 @@ public interface CDAPackage extends EPackage {
 	EReference getLabeledDrug_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.LabeledDrug#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.LabeledDrug#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.LabeledDrug#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.LabeledDrug#getTemplateIds()
 	 * @see #getLabeledDrug()
 	 * @generated
 	 */
@@ -20891,11 +20890,11 @@ public interface CDAPackage extends EPackage {
 	EClass getMaterial();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Material#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Material#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Material#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Material#getRealmCodes()
 	 * @see #getMaterial()
 	 * @generated
 	 */
@@ -20913,11 +20912,11 @@ public interface CDAPackage extends EPackage {
 	EReference getMaterial_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Material#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Material#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Material#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Material#getTemplateIds()
 	 * @see #getMaterial()
 	 * @generated
 	 */
@@ -21000,11 +20999,11 @@ public interface CDAPackage extends EPackage {
 	EClass getSupply();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getRealmCodes()
 	 * @see #getSupply()
 	 * @generated
 	 */
@@ -21022,22 +21021,22 @@ public interface CDAPackage extends EPackage {
 	EReference getSupply_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getTemplateIds()
 	 * @see #getSupply()
 	 * @generated
 	 */
 	EReference getSupply_TemplateId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getIds <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getId()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getIds()
 	 * @see #getSupply()
 	 * @generated
 	 */
@@ -21077,22 +21076,22 @@ public interface CDAPackage extends EPackage {
 	EReference getSupply_StatusCode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getEffectiveTime <em>Effective Time</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getEffectiveTimes <em>Effective Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Effective Time</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getEffectiveTime()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getEffectiveTimes()
 	 * @see #getSupply()
 	 * @generated
 	 */
 	EReference getSupply_EffectiveTime();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getPriorityCode <em>Priority Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getPriorityCodes <em>Priority Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Priority Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getPriorityCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getPriorityCodes()
 	 * @see #getSupply()
 	 * @generated
 	 */
@@ -21154,11 +21153,11 @@ public interface CDAPackage extends EPackage {
 	EReference getSupply_Subject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getSpecimen <em>Specimen</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getSpecimens <em>Specimen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Specimen</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getSpecimen()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getSpecimens()
 	 * @see #getSupply()
 	 * @generated
 	 */
@@ -21176,77 +21175,77 @@ public interface CDAPackage extends EPackage {
 	EReference getSupply_Product();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getPerformer <em>Performer</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getPerformers <em>Performer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Performer</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getPerformer()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getPerformers()
 	 * @see #getSupply()
 	 * @generated
 	 */
 	EReference getSupply_Performer();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getAuthor <em>Author</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getAuthors <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Author</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getAuthor()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getAuthors()
 	 * @see #getSupply()
 	 * @generated
 	 */
 	EReference getSupply_Author();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getInformant <em>Informant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getInformants <em>Informant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Informant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getInformant()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getInformants()
 	 * @see #getSupply()
 	 * @generated
 	 */
 	EReference getSupply_Informant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getParticipant <em>Participant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getParticipants <em>Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Participant</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getParticipant()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getParticipants()
 	 * @see #getSupply()
 	 * @generated
 	 */
 	EReference getSupply_Participant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getEntryRelationship <em>Entry Relationship</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getEntryRelationships <em>Entry Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Entry Relationship</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getEntryRelationship()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getEntryRelationships()
 	 * @see #getSupply()
 	 * @generated
 	 */
 	EReference getSupply_EntryRelationship();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getReference <em>Reference</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getReferences <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Reference</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getReference()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getReferences()
 	 * @see #getSupply()
 	 * @generated
 	 */
 	EReference getSupply_Reference();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getPrecondition <em>Precondition</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Supply#getPreconditions <em>Precondition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Precondition</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Supply#getPrecondition()
+	 * @see org.openhealthtools.mdht.uml.cda.Supply#getPreconditions()
 	 * @see #getSupply()
 	 * @generated
 	 */
@@ -21296,11 +21295,11 @@ public interface CDAPackage extends EPackage {
 	EClass getProduct();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Product#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Product#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Product#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Product#getRealmCodes()
 	 * @see #getProduct()
 	 * @generated
 	 */
@@ -21318,11 +21317,11 @@ public interface CDAPackage extends EPackage {
 	EReference getProduct_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Product#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Product#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Product#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Product#getTemplateIds()
 	 * @see #getProduct()
 	 * @generated
 	 */
@@ -21372,11 +21371,11 @@ public interface CDAPackage extends EPackage {
 	EClass getComponent5();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component5#getRealmCode <em>Realm Code</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component5#getRealmCodes <em>Realm Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Realm Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Component5#getRealmCode()
+	 * @see org.openhealthtools.mdht.uml.cda.Component5#getRealmCodes()
 	 * @see #getComponent5()
 	 * @generated
 	 */
@@ -21394,11 +21393,11 @@ public interface CDAPackage extends EPackage {
 	EReference getComponent5_TypeId();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component5#getTemplateId <em>Template Id</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Component5#getTemplateIds <em>Template Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Template Id</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Component5#getTemplateId()
+	 * @see org.openhealthtools.mdht.uml.cda.Component5#getTemplateIds()
 	 * @see #getComponent5()
 	 * @generated
 	 */

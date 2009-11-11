@@ -50,8 +50,8 @@ public class ProblemSectionImpl extends SectionImpl implements ProblemSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemSectionOperations.ProblemSection_templateId(this, diagnostics, context);
+	public boolean validateProblemSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemSectionOperations.validateProblemSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class ProblemSectionImpl extends SectionImpl implements ProblemSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemSection_code(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemSectionOperations.ProblemSection_code(this, diagnostics, context);
+	public boolean validateProblemSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemSectionOperations.validateProblemSectionCode(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class ProblemSectionImpl extends SectionImpl implements ProblemSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemSection_title(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemSectionOperations.ProblemSection_title(this, diagnostics, context);
+	public boolean validateProblemSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemSectionOperations.validateProblemSectionTitle(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class ProblemSectionImpl extends SectionImpl implements ProblemSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ProblemSection_problemAct(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemSectionOperations.ProblemSection_problemAct(this, diagnostics, context);
+	public boolean validateProblemSectionProblemAct(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemSectionOperations.validateProblemSectionProblemAct(this, diagnostics, context);
 	}
 
 	/**

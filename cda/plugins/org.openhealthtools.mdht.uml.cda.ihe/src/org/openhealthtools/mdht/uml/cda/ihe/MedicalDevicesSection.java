@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.ihe;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
 
 /**
@@ -23,7 +22,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getMedicalDevicesSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='MedicalDevicesSection_templateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='MedicalDevicesSectionTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5'"
  * @generated
  */
 public interface MedicalDevicesSection extends MedicalEquipmentSection {
@@ -38,7 +37,7 @@ public interface MedicalDevicesSection extends MedicalEquipmentSection {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5\')'"
 	 * @generated
 	 */
-	boolean MedicalDevicesSection_templateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateMedicalDevicesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

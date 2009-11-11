@@ -16,30 +16,23 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.RelatedEntity;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
-
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassMutualRelationship;
 
@@ -50,12 +43,12 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassMutualRelationship;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getRealmCode <em>Realm Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getTypeId <em>Type Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getTemplateId <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getCode <em>Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getAddr <em>Addr</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getTelecom <em>Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getAddrs <em>Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getTelecoms <em>Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getEffectiveTime <em>Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getRelatedPerson <em>Related Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getNullFlavor <em>Null Flavor</em>}</li>
@@ -67,14 +60,14 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassMutualRelationship;
  */
 public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	/**
-	 * The cached value of the '{@link #getRealmCode() <em>Realm Code</em>}' containment reference list.
+	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealmCode()
+	 * @see #getRealmCodes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CS> realmCode;
+	protected EList<CS> realmCodes;
 
 	/**
 	 * The cached value of the '{@link #getTypeId() <em>Type Id</em>}' containment reference.
@@ -87,14 +80,14 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	protected InfrastructureRootTypeId typeId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateId() <em>Template Id</em>}' containment reference list.
+	 * The cached value of the '{@link #getTemplateIds() <em>Template Id</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateId()
+	 * @see #getTemplateIds()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<II> templateId;
+	protected EList<II> templateIds;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
@@ -107,24 +100,24 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	protected CE code;
 
 	/**
-	 * The cached value of the '{@link #getAddr() <em>Addr</em>}' containment reference list.
+	 * The cached value of the '{@link #getAddrs() <em>Addr</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAddr()
+	 * @see #getAddrs()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AD> addr;
+	protected EList<AD> addrs;
 
 	/**
-	 * The cached value of the '{@link #getTelecom() <em>Telecom</em>}' containment reference list.
+	 * The cached value of the '{@link #getTelecoms() <em>Telecom</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTelecom()
+	 * @see #getTelecoms()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TEL> telecom;
+	protected EList<TEL> telecoms;
 
 	/**
 	 * The cached value of the '{@link #getEffectiveTime() <em>Effective Time</em>}' containment reference.
@@ -228,11 +221,11 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CS> getRealmCode() {
-		if (realmCode == null) {
-			realmCode = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.RELATED_ENTITY__REALM_CODE);
+	public EList<CS> getRealmCodes() {
+		if (realmCodes == null) {
+			realmCodes = new EObjectContainmentEList<CS>(CS.class, this, CDAPackage.RELATED_ENTITY__REALM_CODE);
 		}
-		return realmCode;
+		return realmCodes;
 	}
 
 	/**
@@ -283,11 +276,11 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<II> getTemplateId() {
-		if (templateId == null) {
-			templateId = new EObjectContainmentEList<II>(II.class, this, CDAPackage.RELATED_ENTITY__TEMPLATE_ID);
+	public EList<II> getTemplateIds() {
+		if (templateIds == null) {
+			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.RELATED_ENTITY__TEMPLATE_ID);
 		}
-		return templateId;
+		return templateIds;
 	}
 
 	/**
@@ -338,11 +331,11 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AD> getAddr() {
-		if (addr == null) {
-			addr = new EObjectContainmentEList<AD>(AD.class, this, CDAPackage.RELATED_ENTITY__ADDR);
+	public EList<AD> getAddrs() {
+		if (addrs == null) {
+			addrs = new EObjectContainmentEList<AD>(AD.class, this, CDAPackage.RELATED_ENTITY__ADDR);
 		}
-		return addr;
+		return addrs;
 	}
 
 	/**
@@ -350,11 +343,11 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TEL> getTelecom() {
-		if (telecom == null) {
-			telecom = new EObjectContainmentEList<TEL>(TEL.class, this, CDAPackage.RELATED_ENTITY__TELECOM);
+	public EList<TEL> getTelecoms() {
+		if (telecoms == null) {
+			telecoms = new EObjectContainmentEList<TEL>(TEL.class, this, CDAPackage.RELATED_ENTITY__TELECOM);
 		}
-		return telecom;
+		return telecoms;
 	}
 
 	/**
@@ -544,17 +537,17 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CDAPackage.RELATED_ENTITY__REALM_CODE:
-				return ((InternalEList<?>)getRealmCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getRealmCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.RELATED_ENTITY__TYPE_ID:
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.RELATED_ENTITY__TEMPLATE_ID:
-				return ((InternalEList<?>)getTemplateId()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.RELATED_ENTITY__CODE:
 				return basicSetCode(null, msgs);
 			case CDAPackage.RELATED_ENTITY__ADDR:
-				return ((InternalEList<?>)getAddr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAddrs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.RELATED_ENTITY__TELECOM:
-				return ((InternalEList<?>)getTelecom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				return basicSetEffectiveTime(null, msgs);
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
@@ -572,17 +565,17 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.RELATED_ENTITY__REALM_CODE:
-				return getRealmCode();
+				return getRealmCodes();
 			case CDAPackage.RELATED_ENTITY__TYPE_ID:
 				return getTypeId();
 			case CDAPackage.RELATED_ENTITY__TEMPLATE_ID:
-				return getTemplateId();
+				return getTemplateIds();
 			case CDAPackage.RELATED_ENTITY__CODE:
 				return getCode();
 			case CDAPackage.RELATED_ENTITY__ADDR:
-				return getAddr();
+				return getAddrs();
 			case CDAPackage.RELATED_ENTITY__TELECOM:
-				return getTelecom();
+				return getTelecoms();
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				return getEffectiveTime();
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
@@ -605,26 +598,26 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.RELATED_ENTITY__REALM_CODE:
-				getRealmCode().clear();
-				getRealmCode().addAll((Collection<? extends CS>)newValue);
+				getRealmCodes().clear();
+				getRealmCodes().addAll((Collection<? extends CS>)newValue);
 				return;
 			case CDAPackage.RELATED_ENTITY__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)newValue);
 				return;
 			case CDAPackage.RELATED_ENTITY__TEMPLATE_ID:
-				getTemplateId().clear();
-				getTemplateId().addAll((Collection<? extends II>)newValue);
+				getTemplateIds().clear();
+				getTemplateIds().addAll((Collection<? extends II>)newValue);
 				return;
 			case CDAPackage.RELATED_ENTITY__CODE:
 				setCode((CE)newValue);
 				return;
 			case CDAPackage.RELATED_ENTITY__ADDR:
-				getAddr().clear();
-				getAddr().addAll((Collection<? extends AD>)newValue);
+				getAddrs().clear();
+				getAddrs().addAll((Collection<? extends AD>)newValue);
 				return;
 			case CDAPackage.RELATED_ENTITY__TELECOM:
-				getTelecom().clear();
-				getTelecom().addAll((Collection<? extends TEL>)newValue);
+				getTelecoms().clear();
+				getTelecoms().addAll((Collection<? extends TEL>)newValue);
 				return;
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				setEffectiveTime((IVL_TS)newValue);
@@ -651,22 +644,22 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CDAPackage.RELATED_ENTITY__REALM_CODE:
-				getRealmCode().clear();
+				getRealmCodes().clear();
 				return;
 			case CDAPackage.RELATED_ENTITY__TYPE_ID:
 				setTypeId((InfrastructureRootTypeId)null);
 				return;
 			case CDAPackage.RELATED_ENTITY__TEMPLATE_ID:
-				getTemplateId().clear();
+				getTemplateIds().clear();
 				return;
 			case CDAPackage.RELATED_ENTITY__CODE:
 				setCode((CE)null);
 				return;
 			case CDAPackage.RELATED_ENTITY__ADDR:
-				getAddr().clear();
+				getAddrs().clear();
 				return;
 			case CDAPackage.RELATED_ENTITY__TELECOM:
-				getTelecom().clear();
+				getTelecoms().clear();
 				return;
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				setEffectiveTime((IVL_TS)null);
@@ -693,17 +686,17 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CDAPackage.RELATED_ENTITY__REALM_CODE:
-				return realmCode != null && !realmCode.isEmpty();
+				return realmCodes != null && !realmCodes.isEmpty();
 			case CDAPackage.RELATED_ENTITY__TYPE_ID:
 				return typeId != null;
 			case CDAPackage.RELATED_ENTITY__TEMPLATE_ID:
-				return templateId != null && !templateId.isEmpty();
+				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.RELATED_ENTITY__CODE:
 				return code != null;
 			case CDAPackage.RELATED_ENTITY__ADDR:
-				return addr != null && !addr.isEmpty();
+				return addrs != null && !addrs.isEmpty();
 			case CDAPackage.RELATED_ENTITY__TELECOM:
-				return telecom != null && !telecom.isEmpty();
+				return telecoms != null && !telecoms.isEmpty();
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				return effectiveTime != null;
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
