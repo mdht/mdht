@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 
 public class TransformAssociation extends TransformAbstract {
-
 	public TransformAssociation(EcoreTransformerOptions options) {
 		super(options);
 	}
@@ -122,7 +121,8 @@ public class TransformAssociation extends TransformAbstract {
 		}
 		
 //		String constraintName = sourceClass.getName() + "_" + targetLowerName;
-		String constraintName = sourceClass.getName() + targetName;
+//		String constraintName = sourceClass.getName() + targetName;
+		String constraintName = createConstraintName(sourceClass, targetName);
 		Constraint constraint = sourceClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
 		constraint.getConstrainedElements().add(sourceClass);
 		
@@ -153,5 +153,4 @@ public class TransformAssociation extends TransformAbstract {
 		
 		return association;
 	}
-
 }

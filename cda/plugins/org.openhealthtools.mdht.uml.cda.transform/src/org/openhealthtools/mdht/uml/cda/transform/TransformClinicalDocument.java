@@ -17,7 +17,6 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
 public class TransformClinicalDocument extends TransformAbstract {
-
 	public TransformClinicalDocument(EcoreTransformerOptions options) {
 		super(options);
 	}
@@ -29,12 +28,8 @@ public class TransformClinicalDocument extends TransformAbstract {
 			if (!umlClass.isStereotypeApplied(eClass)) {
 				UMLUtil.safeApplyStereotype(umlClass, eClass);
 			}
-			
-			umlClass.setValue(eClass, "xmlName", "ClinicalDocument");
-			
+			umlClass.setValue(eClass, UMLUtil.TAG_DEFINITION__XML_NAME, "ClinicalDocument");
 		}
-
 		return umlClass;
 	}
-	
 }

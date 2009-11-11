@@ -20,7 +20,6 @@ import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 
 public class TransformConstraint extends TransformAbstract {
-
 	public TransformConstraint(EcoreTransformerOptions options) {
 		super(options);
 	}
@@ -56,5 +55,4 @@ public class TransformConstraint extends TransformAbstract {
 
 		return constraint;
 	}
-	
 }

@@ -33,7 +33,6 @@ import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
  * Abstract base class for model transformations.
  */
 public abstract class TransformAbstract extends UMLSwitch<Object> {
-	
 	public static final String LF = System.getProperty("line.separator");
 	
 	public static final String VALIDATION_ERROR = "constraints.validation.error";
@@ -188,7 +187,8 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		if (constraintName == null) {
 //			String constraintName = property.getClass_().getName() + "_" + property.getName();
 //			constraintName = property.getClass_().getName() + "_" + property.getName();
-			constraintName = property.getClass_().getName() + property.getName().substring(0, 1).toUpperCase() + property.getName().substring(1);
+//			constraintName = property.getClass_().getName() + property.getName().substring(0, 1).toUpperCase() + property.getName().substring(1);
+			constraintName = createConstraintName(property.getClass_(), property.getName().substring(0, 1).toUpperCase() + property.getName().substring(1));
 		}
 		
 		if (property.getClass_().getOwnedRule(constraintName) != null) {
@@ -223,6 +223,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 					Stereotype ePackage = EcoreTransformUtil.getAppliedEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
 					if (ePackage != null) {
 						prefix = (String) umlPackage.getValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX);
+						break;
 					}
 				}
 			}
