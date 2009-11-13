@@ -23,6 +23,8 @@ plugin@org.openhealthtools.mdht.uml.ui.properties=SVN,trunk,https://mdht.project
 
 plugin@org.openhealthtools.mdht.uml.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.ui
 
+plugin@org.openhealthtools.mdht.uml.edit=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.edit
+
 
 !***************  OHT CDA FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda-feature
