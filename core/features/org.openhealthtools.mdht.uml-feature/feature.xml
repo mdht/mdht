@@ -25,7 +25,6 @@
       <import plugin="org.eclipse.core.runtime" version="3.3.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.emf" version="2.3.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.uml2" version="2.1.0" match="greaterOrEqual"/>
-      <import feature="net.sourceforge.xmlmodeling.uml.xsd" version="3.0.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -37,6 +36,34 @@
 
    <plugin
          id="org.openhealthtools.mdht.uml.common.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.ui.navigator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.ui.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
