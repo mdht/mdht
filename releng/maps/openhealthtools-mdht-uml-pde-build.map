@@ -17,6 +17,12 @@ plugin@org.openhealthtools.mdht.uml.common=SVN,trunk,https://mdht.projects.openh
 
 plugin@org.openhealthtools.mdht.uml.common.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.common.ui
 
+plugin@org.openhealthtools.mdht.uml.ui.navigator=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.ui.navigator
+
+plugin@org.openhealthtools.mdht.uml.ui.properties=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.ui.properties
+
+plugin@org.openhealthtools.mdht.uml.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.ui
+
 
 !***************  OHT CDA FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda-feature
