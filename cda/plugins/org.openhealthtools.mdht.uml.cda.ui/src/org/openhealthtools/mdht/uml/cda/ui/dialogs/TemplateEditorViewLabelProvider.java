@@ -12,9 +12,6 @@
  */
 package org.openhealthtools.mdht.uml.cda.ui.dialogs;
 
-import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.cda.ui.util.CDAPropertyUtil;
-import org.openhealthtools.mdht.uml.cda.ui.util.IHL7Appearance;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewLabelProvider;
 
 /**
@@ -23,14 +20,16 @@ import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewLabelPro
 public class TemplateEditorViewLabelProvider extends SubclassEditorViewLabelProvider {
 
 	public String getText(Object element) {
-		String text = "";
-		if (element instanceof Property) {
-			text = CDAPropertyUtil.getCustomLabel((Property)element,
-					IHL7Appearance.DEFAULT_HL7_PROPERTY);
-		} 
-		else {
-			text = super.getText(element);
-		}
-		return text;
+		return super.getText(element);
+		
+//		String text = "";
+//		if (element instanceof Property) {
+//			text = CDAPropertyNotation.getCustomLabel((Property)element,
+//					IHL7Appearance.DEFAULT_HL7_PROPERTY);
+//		} 
+//		else {
+//			text = super.getText(element);
+//		}
+//		return text;
 	}
 }

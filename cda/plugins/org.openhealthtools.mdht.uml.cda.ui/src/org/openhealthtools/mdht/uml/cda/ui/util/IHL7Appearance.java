@@ -12,7 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.util;
 
-import org.openhealthtools.mdht.uml.common.util.IUMLNotation;
+import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
 
 /**
  * Display style constants for HL7 diagram notation.
@@ -39,7 +39,17 @@ public interface IHL7Appearance extends IUMLNotation {
 	 */
 	public final static int DISP_BUSINESS_NAME = 1 << 12;
 
+	/**
+	 * Style constant for template ID display in labels.
+	 */
+	public final static int DISP_TEMPLATE_ID = 1 << 13;
+
 	
+	/**
+	 * Default HL7 class display.
+	 */
+	public final static int DEFAULT_HL7_CLASS = DISP_NAME;
+
 	/**
 	 * Default HL7 property display.
 	 */
