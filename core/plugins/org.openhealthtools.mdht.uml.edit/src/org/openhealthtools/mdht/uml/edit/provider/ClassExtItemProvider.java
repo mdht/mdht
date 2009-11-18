@@ -21,11 +21,14 @@ import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.ClassItemProvider;
-import org.openhealthtools.mdht.uml.common.util.ClassNotationUtil;
-import org.openhealthtools.mdht.uml.common.util.IUMLNotation;
+import org.openhealthtools.mdht.uml.common.notation.ClassNotationUtil;
+import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
+import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
+import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
@@ -101,9 +104,19 @@ public class ClassExtItemProvider extends ClassItemProvider
 				return "";
 			else
 				return classifier.getVisibility().getName();
-		case IUMLTableProperties.ANNOTATION_INDEX:
+		case IUMLTableProperties.ANNOTATION_INDEX: {
+			for (Profile profile : classifier.getNearestPackage().getAllAppliedProfiles()) {
+				// use the first notation provider found for an applied profile, ignore others
+				String profileURI = profile.eResource().getURI().toString();
+				INotationProvider provider = 
+					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+				if (provider != null) {
+					return provider.getAnnotation(classifier);
+				}
+			}
 			return ClassNotationUtil.getCustomLabel(classifier,
 					IUMLNotation.DEFAULT_UML_CLASS_ANNOTATIONS);
+		}
 		default:
 			return null;
 		}

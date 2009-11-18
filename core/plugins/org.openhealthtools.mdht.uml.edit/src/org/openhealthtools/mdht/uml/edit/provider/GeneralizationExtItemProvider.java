@@ -23,8 +23,11 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.edit.providers.GeneralizationItemProvider;
+import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
+import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 
 /**
@@ -94,9 +97,22 @@ public class GeneralizationExtItemProvider extends GeneralizationItemProvider
 	}
 
 	public String getColumnText(Object object, int columnIndex) {
+		Generalization generalization = (Generalization) object;
+		
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
 			return getText(object);
+		case IUMLTableProperties.ANNOTATION_INDEX: {
+			for (Profile profile : generalization.getNearestPackage().getAllAppliedProfiles()) {
+				// use the first notation provider found for an applied profile, ignore others
+				String profileURI = profile.eResource().getURI().toString();
+				INotationProvider provider = 
+					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+				if (provider != null) {
+					return provider.getAnnotation(generalization.getGeneral());
+				}
+			}
+		}
 		default:
 			return null;
 		}
