@@ -48,7 +48,8 @@ public class CommentExtItemProvider extends CommentItemProvider
 	 * @see org.eclipse.uml2.uml.provider.CommentItemProvider#getText(java.lang.Object)
 	 */
 	public String getText(Object object) {
-		return super.getText(object);
+		return appendType(appendKeywords(new StringBuffer(), object),
+					"_UI_Comment_type").toString(); //$NON-NLS-1$
 	}
 
 	/* (non-Javadoc)
