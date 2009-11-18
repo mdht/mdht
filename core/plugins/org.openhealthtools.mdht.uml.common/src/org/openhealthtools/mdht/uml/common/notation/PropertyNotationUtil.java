@@ -12,7 +12,7 @@
  *  David Carlson (XMLmodeling.com) - modified from Eclipse Papyrus source
  *  
  *****************************************************************************/
-package org.openhealthtools.mdht.uml.common.util;
+package org.openhealthtools.mdht.uml.common.notation;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,6 +20,8 @@ import java.util.List;
 
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
+import org.openhealthtools.mdht.uml.common.util.MultiplicityElementUtil;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 
 /**
  * Utility class for <code>org.eclipse.uml2.uml.Property</code><BR>
@@ -200,6 +202,8 @@ public class PropertyNotationUtil {
 			}
 		}
 
+		boolean showBrackets = buffer.length() > 0;
+		
 		if ((style & IUMLNotation.DISP_MOFIFIERS) != 0) {
 			boolean multiLine = ((style & IUMLNotation.DISP_MULTI_LINE) != 0);
 			// property modifiers
@@ -208,9 +212,9 @@ public class PropertyNotationUtil {
 				if (multiLine) {
 					buffer.append("\n");
 				}
-				buffer.append(" {");
+				buffer.append(showBrackets ? " {" : "");
 				buffer.append(modifiers);
-				buffer.append("}");
+				buffer.append(showBrackets ? "}" : "");
 			}
 		}
 		

@@ -12,7 +12,7 @@
  *  David Carlson (XMLmodeling.com) - modified from Eclipse Papyrus source
  *  
  *****************************************************************************/
-package org.openhealthtools.mdht.uml.common.util;
+package org.openhealthtools.mdht.uml.common.notation;
 
 /**
  * Display style constants for UML diagram notation.

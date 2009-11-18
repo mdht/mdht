@@ -10,9 +10,10 @@
  *     
  * $Id$
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.common.util;
+package org.openhealthtools.mdht.uml.common.notation;
 
 import org.eclipse.uml2.uml.Class;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 
 /**
  * Utility class for <code>org.eclipse.uml2.uml.Class</code><BR>
@@ -63,17 +64,19 @@ public class ClassNotationUtil {
 			buffer.append(clazz.getName());
 		}
 
+		boolean showBrackets = buffer.length() > 0;
+		
 		if ((style & IUMLNotation.DISP_MOFIFIERS) != 0) {
 			boolean multiLine = ((style & IUMLNotation.DISP_MULTI_LINE) != 0);
-			// property modifiers
+			// class modifiers
 			String modifiers = getModifiersAsString(clazz, multiLine);
 			if (!modifiers.equals("")) {
 				if (multiLine) {
 					buffer.append("\n");
 				}
-				buffer.append(" {");
+				buffer.append(showBrackets ? " {" : "");
 				buffer.append(modifiers);
-				buffer.append("}");
+				buffer.append(showBrackets ? "}" : "");
 			}
 		}
 		
