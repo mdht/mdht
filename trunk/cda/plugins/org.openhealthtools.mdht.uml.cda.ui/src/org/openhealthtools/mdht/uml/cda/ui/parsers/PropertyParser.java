@@ -21,8 +21,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Activator;
-import org.openhealthtools.mdht.uml.cda.ui.util.IHL7Appearance;
-import org.openhealthtools.mdht.uml.cda.ui.util.CDAPropertyUtil;
+import org.openhealthtools.mdht.uml.cda.ui.util.CDAAnnotationProvider;
 
 /**
  * Parser for editing and displaying properties.
@@ -37,8 +36,7 @@ public class PropertyParser implements IParser {
 		if (element instanceof EObjectAdapter) {
 			final Property property = ((Property) ((EObjectAdapter) element)
 					.getRealObject());
-			return CDAPropertyUtil.getCustomLabel(property,
-					IHL7Appearance.DEFAULT_UML_PROPERTY);
+			return new CDAAnnotationProvider().getPrintString(property);
 		}
 		return "";
 	}
@@ -52,8 +50,7 @@ public class PropertyParser implements IParser {
 		if (element instanceof EObjectAdapter) {
 			Property property = ((Property) ((EObjectAdapter) element)
 					.getRealObject());
-			return CDAPropertyUtil.getCustomLabel(property,
-					IHL7Appearance.DEFAULT_HL7_PROPERTY);
+			return new CDAAnnotationProvider().getPrintString(property);
 		}
 		return null;
 	}

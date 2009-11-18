@@ -16,14 +16,14 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.common.notation.PropertyNotationUtil;
 import org.openhealthtools.mdht.uml.common.util.MultiplicityElementUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
-import org.openhealthtools.mdht.uml.common.util.PropertyNotationUtil;
 
 /**
  * Utility class to display HL7 CDA property string.
  */
-public class CDAPropertyUtil extends PropertyNotationUtil {
+public class CDAPropertyNotation extends PropertyNotationUtil {
 
 	/**
 	 * return the custom label of the property, given UML2 specification and a
@@ -72,31 +72,35 @@ public class CDAPropertyUtil extends PropertyNotationUtil {
 			}
 		}
 
-		// default value
-		if (property.getDefault() != null) {
-			buffer.append(" = ");
-			buffer.append(property.getDefault());
+		if ((style & IHL7Appearance.DISP_DFLT_VALUE) != 0) {
+			// default value
+			if (property.getDefault() != null) {
+				buffer.append(" = ");
+				buffer.append(property.getDefault());
+			}
 		}
 
+		boolean showBrackets = buffer.length() > 0;
+		
 		if ((style & IHL7Appearance.DISP_MOFIFIERS) != 0) {
 			boolean multiLine = ((style & IHL7Appearance.DISP_MULTI_LINE) != 0);
 			// property modifiers
-			String modifiers = CDAPropertyUtil.getModifiersAsString(property, multiLine);
+			String modifiers = CDAPropertyNotation.getModifiersAsString(property, multiLine);
 			if (!modifiers.equals("")) {
 				if (multiLine) {
 					buffer.append("\n");
 				}
-				buffer.append(" {");
+				buffer.append(showBrackets ? " {" : "");
 				buffer.append(modifiers);
-				buffer.append("}");
+				buffer.append(showBrackets ? "}" : "");
 			}
 		}
 		
 		String hl7Metadata = getHL7Metadata(property, style);
 		if (hl7Metadata.length() > 0) {
-			buffer.append(" { ");
+			buffer.append(showBrackets ? " {" : "");
 			buffer.append(hl7Metadata);
-			buffer.append(" }");
+			buffer.append(showBrackets ? "}" : "");
 		}
 		
 		return buffer.toString();
