@@ -40,14 +40,17 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.MultiplicityElement;
+import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
-import org.openhealthtools.mdht.uml.common.util.IUMLNotation;
-import org.openhealthtools.mdht.uml.common.util.PropertyNotationUtil;
+import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
+import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
+import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
+import org.openhealthtools.mdht.uml.common.notation.PropertyNotationUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
@@ -216,9 +219,20 @@ public class PropertyExtItemProvider extends
 				return "";
 			else
 				return property.getVisibility().getName();
-		case IUMLTableProperties.ANNOTATION_INDEX:
-				return PropertyNotationUtil.getCustomLabel(property,
-						IUMLNotation.DEFAULT_UML_PROPERTY_ANNOTATIONS);
+		case IUMLTableProperties.ANNOTATION_INDEX: {
+			for (Profile profile : property.getNearestPackage().getAllAppliedProfiles()) {
+				// use the first notation provider found for an applied profile, ignore others
+				String profileURI = profile.eResource().getURI().toString();
+				INotationProvider provider = 
+					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+				if (provider != null) {
+					return provider.getAnnotation(property);
+				}
+			}
+			// return default UML standard annotations, if no extensions found
+			return PropertyNotationUtil.getCustomLabel(property,
+					IUMLNotation.DEFAULT_UML_PROPERTY_ANNOTATIONS);
+		}
 		case IUMLTableProperties.DEFAULT_VALUE_INDEX:
 			if (property.getDefaultValue() != null)
 				return property.getDefaultValue().stringValue();
