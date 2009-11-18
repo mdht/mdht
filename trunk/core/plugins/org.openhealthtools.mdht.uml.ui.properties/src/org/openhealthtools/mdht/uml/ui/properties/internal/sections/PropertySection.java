@@ -87,6 +87,12 @@ public class PropertySection extends AbstractModelerPropertySection {
 	private boolean aggregationModified = false;
 	private Button isDerived;
 	private boolean isDerivedModified = false;
+	private Button isReadOnly;
+	private boolean isReadOnlyModified = false;
+	private Button isOrdered;
+	private boolean isOrderedModified = false;
+	private Button isUnique;
+	private boolean isUniqueModified = false;
 	
     private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
@@ -118,8 +124,8 @@ public class PropertySection extends AbstractModelerPropertySection {
 	};
 	
 	private void modifyFields() {
-		if (!(defaultValueModified || isDerivedModified
-				|| multiplicityModified || aggregationModified)) {
+		if (!(defaultValueModified || multiplicityModified || aggregationModified
+				|| isDerivedModified || isReadOnlyModified || isUniqueModified || isOrderedModified)) {
 			return;
 		}
 		
@@ -168,6 +174,21 @@ public class PropertySection extends AbstractModelerPropertySection {
 						isDerivedModified = false;
 						this.setLabel("Set Derived");
 						property.setIsDerived(isDerived.getSelection());
+					}
+					else if (isReadOnlyModified) {
+						isReadOnlyModified = false;
+						this.setLabel("Set ReadOnly");
+						property.setIsReadOnly(isReadOnly.getSelection());
+					}
+					else if (isUniqueModified) {
+						isUniqueModified = false;
+						this.setLabel("Set Unique");
+						property.setIsUnique(isUnique.getSelection());
+					}
+					else if (isOrderedModified) {
+						isOrderedModified = false;
+						this.setLabel("Set Ordered");
+						property.setIsOrdered(isOrdered.getSelection());
 					}
 					else {
 						return Status.CANCEL_STATUS;
@@ -326,6 +347,48 @@ public class PropertySection extends AbstractModelerPropertySection {
 				modifyFields();
 			}
 		});
+
+		/* ---- Is ReadOnly checkbox ---- */
+		isReadOnly = getWidgetFactory().createButton(composite, 
+				"Read Only", SWT.CHECK);
+		isReadOnly.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				isReadOnlyModified = true;
+				modifyFields();
+			}
+			public void widgetSelected(SelectionEvent e) {
+				isReadOnlyModified = true;
+				modifyFields();
+			}
+		});
+
+		/* ---- Is Unique checkbox ---- */
+		isUnique = getWidgetFactory().createButton(composite, 
+				"Unique", SWT.CHECK);
+		isUnique.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				isUniqueModified = true;
+				modifyFields();
+			}
+			public void widgetSelected(SelectionEvent e) {
+				isUniqueModified = true;
+				modifyFields();
+			}
+		});
+
+		/* ---- Is Ordered checkbox ---- */
+		isOrdered = getWidgetFactory().createButton(composite, 
+				"Ordered", SWT.CHECK);
+		isOrdered.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				isOrderedModified = true;
+				modifyFields();
+			}
+			public void widgetSelected(SelectionEvent e) {
+				isOrderedModified = true;
+				modifyFields();
+			}
+		});
 		
 		/* ---- Aggregation combo ---- */
 		aggregationCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
@@ -349,19 +412,31 @@ public class PropertySection extends AbstractModelerPropertySection {
 		data.left = new FormAttachment(0,5);
 		data.top = new FormAttachment(aggregationCombo, 0, SWT.CENTER);
 		isDerived.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(isDerived, 5);
+		data.top = new FormAttachment(aggregationCombo, 0, SWT.CENTER);
+		isReadOnly.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(isReadOnly, 5);
+		data.top = new FormAttachment(aggregationCombo, 0, SWT.CENTER);
+		isUnique.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(isUnique, 5);
+		data.top = new FormAttachment(aggregationCombo, 0, SWT.CENTER);
+		isOrdered.setLayoutData(data);
 		
 		CLabel aggregationLabel = getWidgetFactory()
 				.createCLabel(composite, "Aggregation:"); //$NON-NLS-1$
 		data = new FormData();
-		data.left = new FormAttachment(isDerived, ITabbedPropertyConstants.HSPACE);
-//		data.right = new FormAttachment(aggregationCombo,
-//				-ITabbedPropertyConstants.HSPACE);
+		data.left = new FormAttachment(isOrdered, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(aggregationCombo, 0, SWT.CENTER);
 		aggregationLabel.setLayoutData(data);
 
 		data = new FormData();
-        data.left = new FormAttachment(isDerived,STANDARD_LABEL_WIDTH + 5);
-		//data.right = new FormAttachment(aggregationCombo, 100);
+        data.left = new FormAttachment(isOrdered, STANDARD_LABEL_WIDTH + 5);
 		data.top = new FormAttachment(2,3, ITabbedPropertyConstants.VSPACE + 2);
 		aggregationCombo.setLayoutData(data);
 	}
@@ -439,9 +514,15 @@ public class PropertySection extends AbstractModelerPropertySection {
 		multiplicityCombo.setText(displayMultiplicity(property));
 		aggregationCombo.setText(property.getAggregation().getName());
 		isDerived.setSelection(property.isDerived());
+		isReadOnly.setSelection(property.isReadOnly());
+		isUnique.setSelection(property.isUnique());
+		isOrdered.setSelection(property.isOrdered());
 
 		if (isReadOnly()) {
 			isDerived.setEnabled(false);
+			isReadOnly.setEnabled(false);
+			isUnique.setEnabled(false);
+			isOrdered.setEnabled(false);
 			typeButton.setEnabled(false);
 			multiplicityCombo.setEnabled(false);
 			defaultValueText.setEnabled(false);
@@ -449,6 +530,9 @@ public class PropertySection extends AbstractModelerPropertySection {
 		}
 		else {
 			isDerived.setEnabled(true);
+			isReadOnly.setEnabled(true);
+			isUnique.setEnabled(true);
+			isOrdered.setEnabled(true);
 			typeButton.setEnabled(true);
 			multiplicityCombo.setEnabled(true);
 			defaultValueText.setEnabled(true);
@@ -457,7 +541,7 @@ public class PropertySection extends AbstractModelerPropertySection {
 	}
 
 	/**
-	 * Update if nessesary, upon receiving the model event.
+	 * Update if necessary, upon receiving the model event.
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
@@ -479,7 +563,7 @@ public class PropertySection extends AbstractModelerPropertySection {
 	}
 
 	/**
-	 * Diplay a multiplicity string of the format [lower..upper], unless
+	 * Display a multiplicity string of the format [lower..upper], unless
 	 * both lower and upper are == 1.
 	 * 
 	 * @param multElement
