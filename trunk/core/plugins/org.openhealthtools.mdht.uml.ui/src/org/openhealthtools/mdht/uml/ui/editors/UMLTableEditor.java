@@ -792,9 +792,13 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 				Object[] newExpandedElements = new Object[newSelection.length + expandedElements.length];
 				System.arraycopy(expandedElements, 0, newExpandedElements, 0, expandedElements.length);
 				System.arraycopy(newSelection, 0, newExpandedElements, expandedElements.length, newSelection.length);
+				
+				// refresh is required when new content was added by an action
+				treeViewerWithColumns.refresh();
 				treeViewerWithColumns.setExpandedElements(newExpandedElements);
 			}
 			treeViewerWithColumns.setSelection(selection, true);
+			//TODO need to set the TreeCursor row, so that Properties view is updated
 		}
 	}
 
