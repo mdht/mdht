@@ -20,6 +20,11 @@
 
 <plugin>
 
+   <extension point="org.openhealthtools.mdht.uml.common.notation">
+      <provider profileURI="pathmap://HL7_PROFILES/HDF.profile.uml"
+      		 class="org.openhealthtools.mdht.uml.hdf.ui.util.HDFAnnotationProvider"/>
+   </extension>
+   
 	<!-- Definition of vocabulary provider utilized to define vocabulary constraints  -->
 	<extension-point id="org.openhealthtools.mdht.uml.hdf.vocabularyprovider"
 		name="vocabularyprovider" schema="schema/VocabularyProvider.exsd" />

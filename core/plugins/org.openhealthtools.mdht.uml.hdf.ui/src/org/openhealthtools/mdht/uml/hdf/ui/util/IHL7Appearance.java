@@ -12,7 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hdf.ui.util;
 
-import org.openhealthtools.mdht.uml.common.util.IUMLNotation;
+import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
 
 /**
  * Display style constants for HL7 diagram notation.
