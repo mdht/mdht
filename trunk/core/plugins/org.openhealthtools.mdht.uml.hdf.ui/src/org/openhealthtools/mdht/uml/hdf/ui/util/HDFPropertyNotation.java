@@ -19,16 +19,16 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.common.notation.PropertyNotationUtil;
 import org.openhealthtools.mdht.uml.common.util.MultiplicityElementUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
-import org.openhealthtools.mdht.uml.common.util.PropertyNotationUtil;
 import org.openhealthtools.mdht.uml.hdf.util.HL7ResourceUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 
 /**
  * Utility class for <code>org.eclipse.uml2.uml.Property</code><BR>
  */
-public class HDFPropertyUtil extends PropertyNotationUtil {
+public class HDFPropertyNotation extends PropertyNotationUtil {
 
 	/**
 	 * return the custom label of the property, given UML2 specification and a
@@ -91,7 +91,7 @@ public class HDFPropertyUtil extends PropertyNotationUtil {
 		if ((style & IHL7Appearance.DISP_MOFIFIERS) != 0) {
 			boolean multiLine = ((style & IHL7Appearance.DISP_MULTI_LINE) != 0);
 			// property modifiers
-			String modifiers = HDFPropertyUtil.getModifiersAsString(property, multiLine);
+			String modifiers = HDFPropertyNotation.getModifiersAsString(property, multiLine);
 			if (!modifiers.equals("")) {
 				if (multiLine) {
 					buffer.append("\n");

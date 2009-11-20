@@ -13,6 +13,9 @@
 package org.openhealthtools.mdht.uml.hdf.ui.properties;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -34,9 +37,11 @@ import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPro
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FormAttachment;
@@ -50,6 +55,7 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
@@ -69,35 +75,50 @@ public class EnumerationConstraintSection extends AbstractModelerPropertySection
 
 	private CLabel enumerationValue;
 	private Button enumerationValueButton;
+	private CCombo enumerationLiteralCombo;
+	private boolean enumerationLiteralModified = false;
 
-	private void openElementSelectionDialog() {
-		final NamedElement element = DialogLaunchUtil.chooseElement(
-				new java.lang.Class[] {Enumeration.class},
-				property.eResource().getResourceSet(), 
-				getPart().getSite().getShell());
-		
-		if (element == null) {
+	private void modifyFields() {
+		if (!(enumerationLiteralModified)) {
 			return;
 		}
-
+		
 		try {
 			TransactionalEditingDomain editingDomain = 
 				TransactionUtil.getEditingDomain(property);
 			
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+			    	Enumeration value = null;
 					Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
 							property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
-					
-					if (stereotype == null) {
-						return Status.CANCEL_STATUS;
-					}
-					this.setLabel("Set Enumeration value");
-
 					if (stereotype != null) {
-						property.setValue(stereotype, 
-								IHDFProfileConstants.ENUMERATION_VALUE,
-								(Enumeration)element);
+						value = (Enumeration) property.getValue(
+								stereotype, IHDFProfileConstants.ENUMERATION_VALUE);
+					}
+					
+					if (enumerationLiteralModified) {
+						enumerationLiteralModified = false;
+						this.setLabel("Set Enumeration Code");
+						if (stereotype != null && value != null) {
+							try {
+								if (enumerationLiteralCombo.getSelectionIndex() == 0) {
+									// remove stereotype property
+									property.setValue(stereotype, IHDFProfileConstants.ENUMERATION_CODE, null);
+								}
+								else {
+									EnumerationLiteral literal = (EnumerationLiteral) value.getOwnedLiterals()
+										.get(enumerationLiteralCombo.getSelectionIndex() - 1);
+									property.setValue(stereotype, IHDFProfileConstants.ENUMERATION_CODE, literal);
+								}
+							}
+							catch (IllegalArgumentException e) {
+								// temporary until profile is updated
+							}
+						}
+					}
+					else {
+						return Status.CANCEL_STATUS;
 					}
 
 					// fire notification for any stereotype property changes to update views
@@ -127,6 +148,91 @@ public class EnumerationConstraintSection extends AbstractModelerPropertySection
 		    
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
+		}
+	}
+
+	private void openElementSelectionDialog() {
+		final NamedElement element = DialogLaunchUtil.chooseElement(
+				new java.lang.Class[] {Enumeration.class},
+				property.eResource().getResourceSet(), 
+				getPart().getSite().getShell());
+		
+		if (element == null) {
+			return;
+		}
+
+		try {
+			TransactionalEditingDomain editingDomain = 
+				TransactionUtil.getEditingDomain(property);
+			
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
+			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
+							property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
+					
+					if (stereotype == null) {
+						return Status.CANCEL_STATUS;
+					}
+					this.setLabel("Set Enumeration value");
+
+					if (stereotype != null) {
+						property.setValue(stereotype, 
+								IHDFProfileConstants.ENUMERATION_VALUE,
+								(Enumeration)element);
+						refresh();
+					}
+
+					// fire notification for any stereotype property changes to update views
+					// this is a bogus notification of change to property name, but can't find a better option
+					Notification notification = new NotificationImpl(
+							Notification.SET, null, property.getName()) {
+						public Object getNotifier() {
+							return property;
+						}
+						public int getFeatureID(Class expectedClass) {
+							return UMLPackage.PROPERTY__NAME;
+						}
+					};
+					property.eNotify(notification);
+					
+			        return Status.OK_STATUS;
+			    }};
+
+		    try {
+				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
+				operation.addContext(commandStack.getDefaultUndoContext());
+		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+		        
+		    } catch (ExecutionException ee) {
+		        Logger.logException(ee);
+		    }
+		    
+		} catch (Exception e) {
+			throw new RuntimeException(e.getCause());
+		}
+	}
+	
+	private void fillEnumerationLiteralCombo() {
+    	Enumeration value = null;
+    	if (property != null) {
+			Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
+					property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
+			if (stereotype != null) {
+				value = (Enumeration) property.getValue(
+						stereotype, IHDFProfileConstants.ENUMERATION_VALUE);
+			}
+    	}
+		
+		if (value == null) {
+			enumerationLiteralCombo.setItems(new String[] {});
+		}
+		else {
+			List<String> items = new ArrayList<String>();
+			items.add("");
+			for (EnumerationLiteral literal : value.getOwnedLiterals()) {
+				items.add(literal.getName());
+			}
+			enumerationLiteralCombo.setItems(items.toArray(new String[items.size()]));
 		}
 	}
 	
@@ -170,8 +276,34 @@ public class EnumerationConstraintSection extends AbstractModelerPropertySection
 
         data = new FormData();
         data.left = new FormAttachment(enumerationValueButton, 0);
-        data.right = new FormAttachment(100, 0);
+        data.right = new FormAttachment(50, 0);
         enumerationValue.setLayoutData(data);
+
+		/* ---- literals combo ---- */
+        enumerationLiteralCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
+        fillEnumerationLiteralCombo();
+        enumerationLiteralCombo.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				enumerationLiteralModified = true;
+				modifyFields();
+			}
+			public void widgetSelected(SelectionEvent e) {
+				enumerationLiteralModified = true;
+				modifyFields();
+			}
+		});
+
+		CLabel enumerationLiteralLabel = getWidgetFactory()
+				.createCLabel(composite, "Code:"); //$NON-NLS-1$
+		data = new FormData();
+		data.left = new FormAttachment(enumerationValue, ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(enumerationValueButton, 0, SWT.CENTER);
+		enumerationLiteralLabel.setLayoutData(data);
+
+		data = new FormData();
+        data.left = new FormAttachment(enumerationLiteralLabel, 0);
+		data.top = new FormAttachment(enumerationValueButton, 0, SWT.CENTER);
+		enumerationLiteralCombo.setLayoutData(data);
 
 	}
 
@@ -229,6 +361,20 @@ public class EnumerationConstraintSection extends AbstractModelerPropertySection
 		}
 		else {
 			enumerationValue.setText("");
+		}
+
+        fillEnumerationLiteralCombo();
+        enumerationLiteralCombo.select(0);
+		try {
+			EnumerationLiteral code = (EnumerationLiteral) property.getValue(
+					stereotype, IHDFProfileConstants.ENUMERATION_CODE);
+			if (value != null && code != null) {
+				int index = value.getOwnedLiterals().indexOf(code);
+				enumerationLiteralCombo.select(index);
+			}
+		}
+		catch (IllegalArgumentException e) {
+			// temporary until profile is updated
 		}
 
 		if (isReadOnly()) {
