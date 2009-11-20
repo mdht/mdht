@@ -94,6 +94,7 @@
          <visibility>
             <objectState name="umlType" value="Package"/>
          </visibility>
+         <!--
          <action
                label="%addUMLPackage.label"
                icon="icons/full/obj16/Package.gif"
@@ -101,6 +102,15 @@
                menubarPath="mdht.addUML/packageGroup"
                enablesFor="1"
                id="mdht.actions.addUML.package">
+         </action>
+         -->
+         <action
+               label="%addUMLEnumeration.label"
+               icon="icons/full/obj16/Enumeration.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLEnumerationAction"
+               menubarPath="mdht.addUML/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.enumeration">
          </action>
          <action
                label="%addUMLClass.label"
@@ -119,11 +129,16 @@
             objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
             id="mdht.objectContribution.uml.classifier">
          <visibility>
-            <or>
-              <objectState name="umlType" value="Class"/>
-              <objectState name="umlType" value="DataType"/>
-            </or>
+            <objectState name="umlType" value="Class"/>
          </visibility>
+         <action
+               label="%addUMLAssociation.label"
+               icon="icons/full/obj16/Association_navigable.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLAssociationAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.association">
+         </action>
          <action
                label="%addUMLAttribute.label"
                icon="icons/full/obj16/Property.gif"
@@ -131,6 +146,24 @@
                menubarPath="mdht.addUML/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addUML.attribute">
+         </action>
+      </objectContribution>
+   </extension>
+         
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.uml.classifier">
+         <visibility>
+            <objectState name="umlType" value="Enumeration"/>
+         </visibility>
+         <action
+               label="%addUMLEnumerationLiteral.label"
+               icon="icons/full/obj16/EnumerationLiteral.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLEnumerationLiteralAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.enumerationLiteral">
          </action>
       </objectContribution>
    </extension>

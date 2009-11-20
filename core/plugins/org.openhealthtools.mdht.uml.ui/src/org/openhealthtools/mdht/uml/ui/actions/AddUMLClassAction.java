@@ -23,7 +23,9 @@ import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IActionDelegate;
+import org.eclipse.ui.part.ISetSelectionTarget;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
@@ -68,6 +70,10 @@ public class AddUMLClassAction extends UML2AbstractAction {
 							class_.setName(name);
 							((Class)element).getNestedClassifiers().add(class_);
 						}
+
+				        if (activePart instanceof ISetSelectionTarget) {
+				        	((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(class_));
+				        }
 
 				        return Status.OK_STATUS;
 				    }};

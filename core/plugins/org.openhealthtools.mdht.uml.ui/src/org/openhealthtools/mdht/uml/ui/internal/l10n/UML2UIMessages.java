@@ -34,6 +34,14 @@ public class UML2UIMessages extends NLS {
 	public static String AddUMLAttribute_default_name;
 	public static String AddUMLConstraint_operation_title;
 	public static String AddUMLConstraint_default_name;
+	public static String AddUMLEnumeration_operation_title;
+	public static String AddUMLEnumeration_default_name;
+	public static String AddUMLEnumerationLiteral_operation_title;
+	public static String AddUMLEnumerationLiteral_default_name;
+	public static String AddUMLAssociation_operation_title;
+
+	public static String TargetSelectionDialog_title;
+	public static String TargetSelectionDialog_message;
 	
 	public static String _UI_UMLEditor_menu;
 	public static String _UI_ApplyProfileActionCommand_label;

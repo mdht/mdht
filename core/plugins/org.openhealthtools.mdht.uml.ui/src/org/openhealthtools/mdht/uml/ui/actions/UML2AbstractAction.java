@@ -146,12 +146,12 @@ public abstract class UML2AbstractAction
 	 * Find next unused property name, using 'name' as the base.
 	 */
 	protected String getUniquePropertyName(Class owner, String name) {
-		int seqNo = 1;
-		String uniqueName;
+		int seqNo = 2;
+		String uniqueName = name;
 
-		do {
+		while (null != owner.getOwnedMember(uniqueName, false, UMLPackage.eINSTANCE.getProperty())) {
 			uniqueName = name + String.valueOf(seqNo++);
-		} while (null != owner.getOwnedMember(uniqueName, false, UMLPackage.eINSTANCE.getProperty()));
+		}
 
 		return uniqueName;
 	}
