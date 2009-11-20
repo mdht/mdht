@@ -65,11 +65,11 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 	public Object getImage(Object object) {
 //		Parameter parameter = (Parameter) object;
 //		if (ParameterDirectionKind.IN_LITERAL == parameter.getDirection())
-//			return UMLEditPlugin.getDefault().getImageURL("full/obj16/ParameterIn");
+//			return UMLExtEditPlugin.INSTANCE.getImage("full/obj16/ParameterIn");
 //		if (ParameterDirectionKind.RETURN_LITERAL == parameter.getDirection())
-//			return UMLEditPlugin.getDefault().getImageURL("full/obj16/ParameterReturn");
+//			return UMLExtEditPlugin.INSTANCE.getImage("full/obj16/ParameterReturn");
 //		else
-//			return UMLEditPlugin.getDefault().getImageURL("full/obj16/Parameter");
+//			return UMLExtEditPlugin.INSTANCE.getImage("full/obj16/Parameter");
 		
 		return super.getImage(object);
 	}
