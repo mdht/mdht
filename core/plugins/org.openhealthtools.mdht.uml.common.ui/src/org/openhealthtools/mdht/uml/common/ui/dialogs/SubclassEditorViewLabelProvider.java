@@ -32,7 +32,7 @@ public class SubclassEditorViewLabelProvider extends AdapterFactoryLabelProvider
 	}
 
 	public String getText(Object element) {
-		String text = "";
+		String text = null;
 		if (element instanceof Property) {
 			Property property = (Property) element;
 			for (Profile profile : property.getNearestPackage().getAllAppliedProfiles()) {
@@ -42,12 +42,14 @@ public class SubclassEditorViewLabelProvider extends AdapterFactoryLabelProvider
 					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
 				if (provider != null) {
 					text = provider.getPrintString(property);
+					break;
 				}
 			}
-			// return default UML standard annotations, if no extensions found
-			text = PropertyNotationUtil.getCustomLabel(property,
-					IUMLNotation.DEFAULT_UML_PROPERTY);
-			
+			if (text == null) {
+				// return default UML standard annotations, if no extensions found
+				text = PropertyNotationUtil.getCustomLabel(property,
+						IUMLNotation.DEFAULT_UML_PROPERTY);
+			}
 		} 
 		else {
 			text = super.getText(element);
