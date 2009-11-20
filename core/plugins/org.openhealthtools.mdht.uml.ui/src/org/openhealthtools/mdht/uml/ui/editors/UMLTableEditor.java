@@ -474,7 +474,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		treeViewerWithColumns = (TreeViewer) viewerPane.getViewer();
 		treeViewerWithColumns.setAutoExpandLevel(2);
 		
-		treeViewerWithColumns.setSorter(new UMLNavigatorSorter());
+//		treeViewerWithColumns.setSorter(new UMLNavigatorSorter());
 
 		final Tree tree = treeViewerWithColumns.getTree();
 		tree.setLayoutData(new FillLayout());
