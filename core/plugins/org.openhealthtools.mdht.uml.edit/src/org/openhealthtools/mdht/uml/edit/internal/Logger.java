@@ -29,7 +29,7 @@ import org.osgi.framework.Bundle;
  */
 public class Logger {
 	private static final String PLUGIN_ID = 
-		UMLEditPlugin.getDefault().getBundle().getSymbolicName();
+		UMLExtEditPlugin.getPlugin().getBundle().getSymbolicName();
 	
 	public static final int ERROR = IStatus.ERROR; // 4
 	public static final int ERROR_DEBUG = 200 + ERROR;

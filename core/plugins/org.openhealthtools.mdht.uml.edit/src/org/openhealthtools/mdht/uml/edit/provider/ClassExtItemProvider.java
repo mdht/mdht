@@ -74,8 +74,16 @@ public class ClassExtItemProvider extends ClassItemProvider
 		children.addAll(clazz.getOwnedRules());
 		children.addAll(clazz.getGeneralizations());
 		for (Property property : clazz.getOwnedAttributes()) {
-			if (property.getAssociation() == null)
+			if (property.getAssociation() == null) {
 				children.add(property);
+			}
+		}
+		// include associations after attributes
+		for (Property property : clazz.getOwnedAttributes()) {
+			if (property.getAssociation() != null
+					&& property.getOtherEnd().getType() == clazz) {
+				children.add(property.getAssociation());
+			}
 		}
 		children.addAll(clazz.getOwnedOperations());
 		children.addAll(clazz.getNestedClassifiers());

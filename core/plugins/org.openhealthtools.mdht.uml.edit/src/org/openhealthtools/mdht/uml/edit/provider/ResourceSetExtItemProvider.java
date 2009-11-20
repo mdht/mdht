@@ -41,7 +41,7 @@ public class ResourceSetExtItemProvider extends ResourceSetItemProvider {
 	 * @see org.eclipse.emf.edit.provider.resource.ResourceSetItemProvider#getImage(java.lang.Object)
 	 */
 	public Object getImage(Object object) {
-//		return UMLEditPlugin.getDefault().getImageURL("full/obj16/ResourceSet");
+//		return UMLExtEditPlugin.INSTANCE.getImage("full/obj16/ResourceSet");
 		return super.getImage(object);
 	}
 

@@ -21,9 +21,11 @@ import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.AssociationItemProvider;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
+import org.openhealthtools.mdht.uml.edit.internal.UMLExtEditPlugin;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 
@@ -41,21 +43,43 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 		super(adapterFactory);
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.uml2.uml.provider.ClassItemProvider#getImage(java.lang.Object)
-	 */
 	public Object getImage(Object object) {
-		return super.getImage(object);
+		boolean navigable = false;
+
+		for (Property memberEnd : ((Association) object).getMemberEnds()) {
+			if (memberEnd.isNavigable())
+				navigable = true;
+		}
+
+		if (navigable) {
+			return overlayImage(object,UMLExtEditPlugin.INSTANCE.getImage(
+					"full/obj16/Association_navigable")); //$NON-NLS-1$
+		}
+		else {
+			return super.getImage(object);
+		}
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.uml2.uml.provider.ClassItemProvider#getText(java.lang.Object)
-	 */
 	public String getText(Object object) {
 		String label = ((Association)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Association_type") : //$NON-NLS-1$
-			label;
+		if (label == null) {
+			StringBuffer labelBuffer = new StringBuffer();
+			for (Property end : ((Association)object).getMemberEnds()) {
+				if (end.isNavigable()) {
+					if (labelBuffer.length() > 0)
+						labelBuffer.append("_");
+					
+					if (end.getName() != null)
+						labelBuffer.append(end.getName());
+					else if (end.getType() != null)
+						labelBuffer.append(end.getType().getName());
+					else
+						labelBuffer.append("NULL");
+				}
+			}
+			label = labelBuffer.toString();
+		}
+		return label;
 	}
 
 	/* (non-Javadoc)
@@ -67,7 +91,11 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 		children.addAll(association.getOwnedComments());
 		children.addAll(association.getOwnedRules());
 		children.addAll(association.getGeneralizations());
-		children.addAll(association.getOwnedEnds());
+		// show only navigable ends
+		for (Property end : association.getMemberEnds()) {
+			if (end.isNavigable())
+				children.add(end);
+		}
 		children.addAll(association.getClientDependencies());
 		
 		return children;
@@ -87,7 +115,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 		
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
-			return classifier.getName();
+			return getText(element);
 		case IUMLTableProperties.VISIBILITY_INDEX:
 			if (VisibilityKind.PUBLIC_LITERAL == classifier.getVisibility())
 				return "";
