@@ -12,6 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.util;
 
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
@@ -134,6 +135,19 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 			if (buffer.length() > 0)
 				buffer.append(" ");
 			buffer.append("fixed");
+		}
+		
+		// nullFlavor
+		Stereotype nullFlavor = CDAProfileUtil.getAppliedCDAStereotype(
+				property, ICDAProfileConstants.NULL_FLAVOR);
+		if (nullFlavor != null) {
+			EnumerationLiteral literal = (EnumerationLiteral) property.getValue(nullFlavor, 
+					ICDAProfileConstants.NULL_FLAVOR_NULL_FLAVOR);
+			if (literal != null) {
+				if (buffer.length() > 0)
+					buffer.append(" ");
+				buffer.append("nullFlavor=" + literal.getName());
+			}
 		}
 		
 		return buffer.toString();
