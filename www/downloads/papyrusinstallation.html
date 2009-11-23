@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" type="text/css" media="screen" href="oht.css" />
+<title>MDHT Papyrus Installation Guide</title>
+</head>
+<body lang=EN-US>
+
+<div class=Section1>
+
+<div style='border:none;border-bottom:solid #365F91 1.5pt;padding:0in 0in 1.0pt 0in'>
+
+<h1>MDHT Papyrus Installation Guide</h1>
+
+</div>
+
+<p >This document contains the necessary steps required to
+successfully install the Open Source UML application Papyrus. Papyrus is
+currently part of the eclipse Model Driven Tools project (See <a
+href="http://wiki.eclipse.org/MDT/Papyrus">http://wiki.eclipse.org/MDT/Papyrus</a>
+). The installation will</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Install
+a new version of eclipse version 3.5 (also known as Galileo)</p>
+<p  style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Install
+Eclipse Model Development Tools (MDT)</p>
+
+<p  style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Install
+Eclipse Modeling Framework (EMF)</p>
+
+<p  style='text-indent:-.25in'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Install
+Eclipse Subversion</p>
+
+<p  style='text-indent:-.25in'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Install
+Eclipse Extended Editing Framework</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Install
+Papyrus for MDHT M3</p>
+
+<div style='border:none;border-bottom:solid #4F81BD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2>A note about Papyrus</h2>
+
+</div>
+
+<p >The version of Papyrus being installed is a modified version
+of the eclipse Papyrus project M3 release in order to work with the MDHT UML
+extensions.  The modification fixes a reported issue that has yet to be
+resolved and committed to the Papyrus build.  The details of issue and
+resolution can be found on the Papyrus issue tracker here <a
+href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=291818">Papyrus Issue
+291818</a></p>
+
+
+
+<div style='border:none;border-bottom:solid #4F81BD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2>A note about this Installation</h2>
+
+</div>
+
+<p >This installation will require you to download and install
+several file over the internet.  If you are behind a fire wall or on a VPN your
+overall download and installation time will be impacted.  If possible, attempt
+the installation when you have sufficient bandwidth and can dedicate up to an
+hour to complete the installation.  You must also have administration rights or
+the equivalent to down load and save several zipped files.</p>
+
+<div style='border:none;border-bottom:solid #4F81BD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2>Step 1  Install Eclipse 3.5 for Java Developers</h2>
+
+</div>
+
+<p  style='margin-bottom:10.0pt;line-height:115%'>Using the
+following link, down load and extract Eclipse Java Version 3.5 for Windows <span
+class=MsoIntenseEmphasis><span style='color:windowtext;font-weight:normal;
+font-style:normal'>(See </span></span><a
+href="http://www.eclipse.org/downloads/packages/compare-packages">eclipse
+packages</a><span class=MsoIntenseEmphasis><span style='color:windowtext;
+font-weight:normal;font-style:normal'> 
+&nbsp; for a description of the version to be
+installed) Be aware that this down load can take a while</span></span></p>
+
+<p  style='margin-bottom:10.0pt;line-height:115%'><a
+href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/galileo/SR1/eclipse-java-galileo-SR1-win32.zip"><span
+style='font-size:9.0pt;line-height:115%'>http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/galileo/SR1/eclipse-java-galileo-SR1-win32.zip</span></a></p>
+
+<p >Start the eclipse.exe application</p>
+
+<p >&nbsp;</p>
+
+<div style='border:none;border-bottom:solid #4F81BD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2>Step 2  Install <span class=MsoIntenseEmphasis>Eclipse Model Development Tools Project
+(MDT)</span></span></h2>
+
+</div>
+
+<p >Using the following menu options</p>
+
+<p >                Help-&gt;Install New
+Software..</p>
+
+<p >Add the MDT software site using the following location</p>
+
+<p ><a
+href="http://download.eclipse.org/modeling/mdt/updates/releases/">http://download.eclipse.org/modeling/mdt/updates/releases/</a></p>
+
+<h3>Install the following two components from the MDT project</h3>
+
+<h5>MDT OCL SDK 1.3.0</h5>
+
+<h5>MDT UML 2 SDK 3.0.1</h5>
+
+<p ><i> Please Restart Eclipse</i></p>
+
+<p >&nbsp;</p>
+
+<div style='border:none;border-bottom:solid #4F81BD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2>Step 3 Install Eclipse Modeling Framework Project (EMF)</h2>
+
+</div>
+
+<p >Using the following menu options</p>
+
+<p >                Help-&gt;Install New
+Software..</p>
+
+<p >Add the EMF software site using the following location</p>
+
+<p ><a
+href="http://download.eclipse.org/modeling/emf/updates/releases/">http://download.eclipse.org/modeling/emf/updates/releases/</a></p>
+
+<h3>Install the following three components from the EMF project</h3>
+
+<h5>EMF Query SDK 1.3</h5>
+
+<h5>EMF SDK 2.5</h5>
+
+<h5>EMF Transaction 1.3.1</h5>
+
+<p ><i> Please Restart Eclipse</i></p>
+
+<div style='border:none;border-bottom:solid #4F81BD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2>Step 4 Install Subversion Plugin</h2>
+</div>
+
+<p >Using the following menu options</p>
+
+<p >                Help-&gt;Install New
+Software..</p>
+
+<p >Add the Subversion site using the following location</p>
+
+<p ><a href="http://subclipse.tigris.org/update_1.6.x">http://subclipse.tigris.org/update_1.6.x</a></p>
+
+<h3 >Install the following three components from the Subversion
+plugin</h3>
+
+<h5> Core SVNKit Library</h5>
+
+<h5>Optiona JNA Library</h5>
+
+<h5>Subclipse</h5>
+
+<p ><i> Please Restart Eclipse</i></p>
+
+<p >&nbsp;</p>
+
+<div style='border:none;border-bottom:solid #4F81BD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2>Step 5 Download and Install Eclipse Extended Editing Framework Project
+(EEF)</h2>
+
+</div>
+
+<p >Using the following link, down load and save (you do not
+need to extract) the EEF Installation Site</p>
+
+<p >&lt;&lt; Insert Link Here &gt;&gt;</p>
+
+<p >Using the following menu options</p>
+
+<p >                Help-&gt; Install New
+Software..</p>
+
+<p >Add Archive Site for the Eclipse Extended Editing Framework
+Project (EEF) using the location of the download zip file.</p>
+
+<h3>Install the following component</h3>
+
+<h5>Extended Editing Framework Incubation</h5>
+
+<p ><b><i>Note  You must <u>UNSELECT</u> &nbsp; Group
+Items by Category check box by category for this plugin!</i></b></p>
+
+<p ><i> Please Restart Eclipse</i></p>
+
+<p >&nbsp;</p>
+
+<div style='border:none;border-bottom:solid #4F81BD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2>Step 6 Download and Install Eclipse Papyrus Application M3 by MDHT</h2>
+
+</div>
+
+<p >Using the following link, down load and save (you do not
+need to extract) the Eclipse Papyrus Application Installation Site</p>
+
+<p >&lt;&lt; Insert Link Here &gt;&gt;</p>
+
+<p >&nbsp;</p>
+
+<p >Using the following menu options</p>
+
+<p >                Help-&gt;Install New
+Software..</p>
+
+<p >Add Archive Site for the Eclipse Papyrus Application using
+the location of the download zip file.</p>
+
+<h3>Install the following component</h3>
+
+<h5>Additional Tools</h5>
+
+<h5>BackBone</h5>
+
+<h5>UML Diagrams</h5>
+
+<h5>UML Editor</h5>
+
+<p ><i> Please Restart Eclipse. </i> </p>
+
+<h3><i>
+Congratulations, you have successfully installed the MDHT Papyrus application and are now ready to install the MDHT CDA plugins.  Follow the intructions for installing the MDHT CDA plugin at the following location << insert link here>.
+</i></h3>
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p  style='margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.25in'>&nbsp;</p>
+
+<p >&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
+
+<html></html>
