@@ -83,7 +83,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 	private Object[] fExpandedElements;
 
-	private final static String ICONS_PATH = "/icons//full";
+	private final static String ICONS_PATH = "/icons/full";
 
 	private class SelectBaseTypeAction extends Action {
 
@@ -92,7 +92,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 			setToolTipText("Select template base type");
 
 			URL enableURL = Activator.getDefault().getBundle().getEntry(
-					ICONS_PATH + "//elcl16//Class.gif");
+					ICONS_PATH + "/elcl16/Class.gif");
 			ImageDescriptor enableImage = ImageDescriptor.createFromURL(enableURL);
 			setHoverImageDescriptor(enableImage);
 			setImageDescriptor(enableImage);
@@ -128,12 +128,12 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 		public OverrideFlatTreeAction() {
 			setToolTipText("Show superclass hierarchy");
 			URL disableURL = Activator.getDefault().getBundle().getEntry(
-					ICONS_PATH + "//dlcl16//impl_co.gif");
+					ICONS_PATH + "/dlcl16/impl_co.gif");
 			ImageDescriptor disableImage = ImageDescriptor.createFromURL(disableURL);
 			setDisabledImageDescriptor(disableImage);
 
 			URL enableURL = Activator.getDefault().getBundle().getEntry(
-					ICONS_PATH + "//elcl16//impl_co.gif");
+					ICONS_PATH + "/elcl16/impl_co.gif");
 			ImageDescriptor enableImage = ImageDescriptor.createFromURL(enableURL);
 			setHoverImageDescriptor(enableImage);
 			setImageDescriptor(enableImage);
