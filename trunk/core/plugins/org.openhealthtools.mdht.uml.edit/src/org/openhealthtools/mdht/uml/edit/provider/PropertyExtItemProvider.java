@@ -193,6 +193,17 @@ public class PropertyExtItemProvider extends
 				if (provider != null)
 					return provider.getImage(type);
 			}
+		case IUMLTableProperties.ANNOTATION_INDEX: {
+			for (Profile profile : property.getNearestPackage().getAllAppliedProfiles()) {
+				// use the first notation provider found for an applied profile, ignore others
+				String profileURI = profile.eResource().getURI().toString();
+				INotationProvider provider = 
+					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+				if (provider != null) {
+					return provider.getAnnotationImage(property);
+				}
+			}
+		}
 		default:
 			return null;
 		}

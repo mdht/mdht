@@ -21,9 +21,12 @@ import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.AssociationItemProvider;
+import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
+import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.UMLExtEditPlugin;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
@@ -102,25 +105,49 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 	}
 
 	public Object getColumnImage(Object object, int columnIndex) {
+		Association association = (Association) object;
+		
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
 			return getImage(object);
+		case IUMLTableProperties.ANNOTATION_INDEX: {
+			for (Profile profile : association.getNearestPackage().getAllAppliedProfiles()) {
+				// use the first notation provider found for an applied profile, ignore others
+				String profileURI = profile.eResource().getURI().toString();
+				INotationProvider provider = 
+					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+				if (provider != null) {
+					return provider.getAnnotationImage(association);
+				}
+			}
+		}
 		default:
 			return null;
 		}
 	}
 
 	public String getColumnText(Object element, int columnIndex) {
-		Classifier classifier = (Classifier) element;
+		Association association = (Association) element;
 		
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
 			return getText(element);
 		case IUMLTableProperties.VISIBILITY_INDEX:
-			if (VisibilityKind.PUBLIC_LITERAL == classifier.getVisibility())
+			if (VisibilityKind.PUBLIC_LITERAL == association.getVisibility())
 				return "";
 			else
-				return classifier.getVisibility().getName();
+				return association.getVisibility().getName();
+		case IUMLTableProperties.ANNOTATION_INDEX: {
+			for (Profile profile : association.getNearestPackage().getAllAppliedProfiles()) {
+				// use the first notation provider found for an applied profile, ignore others
+				String profileURI = profile.eResource().getURI().toString();
+				INotationProvider provider = 
+					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+				if (provider != null) {
+					return provider.getAnnotation(association);
+				}
+			}
+		}
 		default:
 			return null;
 		}
