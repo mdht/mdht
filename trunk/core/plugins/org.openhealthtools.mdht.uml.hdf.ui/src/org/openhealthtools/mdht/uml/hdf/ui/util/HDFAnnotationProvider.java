@@ -31,6 +31,14 @@ public class HDFAnnotationProvider implements INotationProvider, IExecutableExte
 		return annotation;
 	}
 
+	public Object getElementImage(Element element) {
+		return null;
+	}
+
+	public Object getAnnotationImage(Element element) {
+		return null;
+	}
+
 	public void setInitializationData(IConfigurationElement config, String propertyName, Object data)
 			throws CoreException {
 		// do nothing
