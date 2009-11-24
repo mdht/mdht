@@ -26,4 +26,14 @@ public interface INotationProvider {
 	 */
 	public String getAnnotation(Element element);
 
+	/**
+	 * Returns an image for the model element, or null.
+	 */
+	public Object getElementImage(Element element);
+
+	/**
+	 * Returns an image for the annotations, or null.
+	 */
+	public Object getAnnotationImage(Element element);
+
 }
