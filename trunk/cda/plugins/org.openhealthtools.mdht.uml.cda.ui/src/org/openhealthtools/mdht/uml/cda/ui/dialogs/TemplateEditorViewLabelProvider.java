@@ -12,6 +12,11 @@
  */
 package org.openhealthtools.mdht.uml.cda.ui.dialogs;
 
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.Property;
+import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
+import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewLabelProvider;
 
 /**
@@ -19,17 +24,26 @@ import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewLabelPro
  */
 public class TemplateEditorViewLabelProvider extends SubclassEditorViewLabelProvider {
 
+	public Image getImage(Object element) {
+		if (element instanceof Property) {
+			for (Profile profile : ((Property)element).getNearestPackage().getAllAppliedProfiles()) {
+				// use the first notation provider found for an applied profile, ignore others
+				String profileURI = profile.eResource().getURI().toString();
+				INotationProvider provider = 
+					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+				if (provider != null) {
+					Object image = provider.getAnnotationImage(((Property)element));
+					if (image instanceof Image) {
+						return (Image) image;
+					}
+				}
+			}
+		}
+		
+		return super.getImage(element);
+	}
+
 	public String getText(Object element) {
 		return super.getText(element);
-		
-//		String text = "";
-//		if (element instanceof Property) {
-//			text = CDAPropertyNotation.getCustomLabel((Property)element,
-//					IHL7Appearance.DEFAULT_HL7_PROPERTY);
-//		} 
-//		else {
-//			text = super.getText(element);
-//		}
-//		return text;
 	}
 }

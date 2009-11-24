@@ -1,5 +1,7 @@
 package org.openhealthtools.mdht.uml.cda.ui.internal;
 
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -47,4 +49,32 @@ public class Activator extends AbstractUIPlugin {
 		return plugin;
 	}
 
+	/**
+	 * Returns an image for the image file at the given plug-in relative path.
+	 * Client do not need to dispose this image. Images will be disposed automatically.
+	 *
+	 * @generated
+	 * @param path the path
+	 * @return image instance
+	 */
+	public Image getBundledImage(String path) {
+		Image image = getImageRegistry().get(path);
+		if (image == null) {
+			getImageRegistry().put(path, getBundledImageDescriptor(path));
+			image = getImageRegistry().get(path);
+		}
+		return image;
+	}
+
+	/**
+	 * Returns an image descriptor for the image file at the given
+	 * plug-in relative path.
+	 *
+	 * @generated
+	 * @param path the path
+	 * @return the image descriptor
+	 */
+	public static ImageDescriptor getBundledImageDescriptor(String path) {
+		return AbstractUIPlugin.imageDescriptorFromPlugin(PLUGIN_ID, path);
+	}
 }
