@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Refactoring Guide</title>
+<style>
+ img { border: 0; } a:link {
+	color: #0000FF
+}
+</style>
+</head>
+
+
+<body lang=EN-US>
+
+<div class="h1">
+<h1>CDA Tools Guide 1.1 for Papyrus</h1>
+</div>
+
+
+<p>John T.E. Timm, IBM Research</p>
+
+<p>David A. Carlson, Veterans Health Administration</p>
+
+<p></p>
+
+
+
+<div class=Section4>
+
+<div class="h2">
+<h2>Refactoring the Example project into your own project</h2>
+</div>
+
+<p>&nbsp;</p>
+
+<p>There is an Ant refactor script that can be used to convert the
+example project into a project for your specific needs. This can be
+accomplished in three steps:</p>
+
+<p>&nbsp;</p>
+
+<p style='margin-left: .25in; text-indent: -.25in'>1.<span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Download and disconnect the example project from the MDHT SVN:</p>
+
+<p style='margin-left: .75in; text-indent: -.25in'>a.<span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Check out cda/example/org.openhealthtools.mdht.uml.cda.example</p>
+
+<p style='margin-left: .75in; text-indent: -.25in'>b.<span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Right-click on Project and select Team &gt; Disconnect from SVN and
+select Also delete SVN meta-information from file system</p>
+
+<p>&nbsp;</p>
+
+<p><img  width=441 height=170 src="rsmimages/image016.jpg"/></p>
+
+<p>&nbsp;</p>
+
+<p>NOTE: It is recommended that you check out a clean copy of the
+example to use in this step.</p>
+
+<p>&nbsp;</p>
+
+<p style='margin-left: .25in; text-indent: -.25in'>2.<span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Rename the project:</p>
+
+<p style='margin-left: .75in; text-indent: -.25in'>a.<span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Right-click on Project and select Refactor &gt; Rename (example:
+org.openhealthtools.mdht.uml.cda.phmr)</p>
+
+<p>&nbsp;</p>
+
+<p><img  width=408 height=164 src="rsmimages/image017.jpg"/></p>
+
+<p>&nbsp;</p>
+
+<p style='margin-left: .25in; text-indent: -.25in'>3.<span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Edit and run the refactor.xml script:</p>
+
+<p style='margin-left: .75in; text-indent: -.25in'>a.<span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Open the refactor.xml script in the Ant or text editor</p>
+
+<p style='margin-left: .75in; text-indent: -.25in'>b.<span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Change the property values for the following properties:</p>
+
+<p style='margin-left: 1.25in; text-indent: -1.25in'><span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>i.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>basePackage (e.g. org.openhealthtools.mdht.uml.cda)</p>
+
+<p style='margin-left: 1.25in; text-indent: -1.25in'><span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ii.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>packageName (e.g. phmr)</p>
+
+<p style='margin-left: 1.25in; text-indent: -1.25in'><span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>iii.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>prefix (PHMR)</p>
+
+<p style='margin-left: 1.25in; text-indent: -1.25in'><span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>iv.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>nsURI (e.g. <a href="http://www.openhealthtools.org/mdht/uml/cda/phmr">http://www.openhealthtools.org/mdht/uml/cda/phmr</a>)</p>
+
+<p style='margin-left: .75in; text-indent: -.25in'>c.<span
+	style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Run the refactor.xml script as an Ant build using the same instructions
+found in the previous section. Make sure to run in the same JRE as the
+workpace.</p>
+
+<p>&nbsp;</p>
+
+<p><img  width=577 height=86 src="rsmimages/image018.jpg"/></p>
+
+<p>&nbsp;</p>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11131278-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+
+</html>
