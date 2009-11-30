@@ -4,71 +4,107 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Subversion Guide</title>
-<style>
- img { border: 0; } a:link {
+<style type="">
+img {
+	border: 0;
+}
+
+a:link {
 	color: #0000FF
 }
 </style>
 </head>
 
-<body lang=EN-US>
+<body lang="EN-US">
 
 <div class="h1">
-<h1>CDA Tools Guide for Subversion</h1>
+<h1 style="text-align: center">Model-Driven Health Tools (MDHT)</h1>
 </div>
-
-<p>John T.E. Timm, IBM Research</p>
-
-<p>David A. Carlson, Veterans Health Administration</p>
-
-<p></p>
-
-<p>&nbsp;</p>
 
 
 <div class="h2">
-<h2>CDA Models and Runtime</h2>
+<h2>Adding MDHT Subversion Repository</h2>
 </div>
 
-<p>The next step is to download the CDA models and runtime from the
-software repository at MDHT. Using the subversion client switch to the
-SVN Browsing Perspective and create a new repository location as show
-below:</p>
+<p>The CDA models are maintained in Subversion, a free/open-source
+version control system, on the MDHT site. The following instructions
+will walk you through the process of down loading the model projects.</p>
+
+<p>First, we must switch to the Subclipse perspective by selecting
+Window &gt; Open Perspective &gt; Other... &gt; SVN Repository Exploring</p>
+
+
+<p>Second, we will need to add the MDHT repository.</p>
+
+<p>To add a repository you can right click in the SVN Repository
+view and select New &gt; SVN Repository, or you can click the add
+repository button in the toolbar of the SVN Repository view.</p>
+
+<p>First you need to fill out the URL for the repository using the
+following MDHT Repository Location:</p>
+
+<p><a href="http://mdht.projects.openhealthtools.org/svn/mdht">http://mdht.projects.openhealthtools.org/svn/mdht</a>
+</p>
+
+
+
+
+<p>Next, you must provide your user id and password. The user id and
+password fields are the same as the login used to sign in at the OHT
+website.</p>
+
+
+<p><img width="439" height="508"
+	src="rsmimages/addsvnrepository.jpg" alt="" /></p>
+
+
+<div class="h2">
+<h2>Checking out the CDA Model Projects</h2>
+</div>
+
+<p>Click the + next to your repository to start browsing the
+repository.</p>
+<p>To check out a project right click on any folder/project and
+select Check Out as Project. USe the CTRL key to support multiple
+selections.</p>
+<p>If the project that you are checking out already exists in the
+workspace, the old project will be destroyed and the project from the
+SVN repository will be created in its place. Otherwise a new project
+will be created in the workspace.</p>
+
+<p>Check out the following projects located within the MDHT
+Subversion repository.</p>
+
+<ul>
+<li>core&#47;plugins&#47;org.openhealthtools.mdht.uml.hl7.datatypes</li>
+
+<li>core&#47;plugins&#47;org.openhealthtools.mdht.uml.hl7.vocab</li>
+
+<li>cda&#47;plugins&#47;org.openhealthtools.mdht.uml.cda</li>
+
+<li>cda&#47;plugins&#47;org.openhealthtools.mdht.uml.cda.ccd</li>
+
+<li>cda&#47;plugins&#47;org.openhealthtools.mdht.uml.cda.ihe</li>
+
+<li>cda&#47;plugins&#47;org.openhealthtools.mdht.uml.cda.hitsp</li>
+</ul>
 
 <p>&nbsp;</p>
 
-<p>Repository Location: <a
-	href="http://mdht.projects.openhealthtools.org/svn/mdht">http://mdht.projects.openhealthtools.org/svn/mdht</a></p>
+<p><img width="500" height="800" src="rsmimages/svncheckout1.jpg"
+	alt="" /></p>
 
-<p>&nbsp;</p>
 
-<p><img  width=438 height=517 src="rsmimages/image003.jpg"/></p>
+<p>Hit Finish to checkout the projects into the default workspace.</p>
 
-<p>&nbsp;</p>
+<p><img width="439" height="508" src="rsmimages/svncheckout2.jpg"
+	alt="" /></p>
 
-<p>Where the username and password fields are the login used to
-sign in at the OHT website. Check out the following plug-ins into your
-workspace (as shown below):</p>
 
-<p>&nbsp;</p>
 
-<p style='text-indent: .5in'>core/plugins/org.openhealthtools.mdht.uml.hl7.datatypes</p>
-
-<p style='text-indent: .5in'>core/plugins/org.openhealthtools.mdht.uml.hl7.vocab</p>
-
-<p style='text-indent: .5in'>cda/plugins/org.openhealthtools.mdht.uml.cda</p>
-
-<p style='text-indent: .5in'>cda/plugins/org.openhealthtools.mdht.uml.cda.ccd</p>
-
-<p style='text-indent: .5in'>cda/plugins/org.openhealthtools.mdht.uml.cda.ihe</p>
-
-<p style='text-indent: .5in'>cda/plugins/org.openhealthtools.mdht.uml.cda.hitsp</p>
-
-<p>&nbsp;</p>
-
-<p><img  width=419 height=169 src="rsmimages/image004.jpg"/></p>
-
-<p>&nbsp;</p>
+<p>The projects will be checked out to your workspace. When the
+process is complete, you can now Switch back to the modeling perspective
+to open the projects.</p>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
