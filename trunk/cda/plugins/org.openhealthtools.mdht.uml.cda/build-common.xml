@@ -4,13 +4,14 @@
 	<property name="modelPath.emx" location="${basedir}/model/${modelName}.emx"/>
 	<property name="modelPath.uml" location="${basedir}/model/${modelName}.uml"/>
 	<property name="ecoreModelPath.uml" location="${basedir}/model/${modelName}_Ecore.uml"/>
+	<uptodate targetfile="${modelPath.emx}" srcfile="${modelPath.uml}" property="emxIsNewer"/>
 	
 	<target name="all">
 		<antcall target="convertEmxToUml"></antcall>
 		<antcall target="transformModel"></antcall>
 	</target>
 
-	<target name="convertEmxToUml">
+	<target name="convertEmxToUml" if="emxIsNewer">
 		<delete file="${modelPath.uml}"/>
 
 		<xslt in="${modelPath.emx}" out="${modelPath.uml}" style="${cdaPluginPath}/resources/emx2uml.xsl"/>
