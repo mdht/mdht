@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Using the UML Table Editor</title>
+<style>
+img {
+	border: 0;
+}
+
+a:link {
+	color: #0000FF
+}
+</style>
+</head>
+
+<body>
+<h1 style="text-align: center">An Easy UML Editor for CDA Templates</h1>
+
+<ul>
+	<li><a href="#overview">Overview</a></li>
+	<li><a href="#tableEditor">UML Table Editor</a></li>
+	<li><a href="#templateDialog">Template Constraint Dialog</a></li>
+</ul>
+
+<div class="h2"><a name="overview" />
+<h2>Overview</h2>
+<p>The Easy UML Editor provides a simplified approach to browsing
+and editing UML models that is especially well suited to CDA template
+design. The MDHT project provides an open source UML editing solution
+that may be used alone, or integrated into other complete UML modeling
+solutions. With only minor differences in the way a table editor is
+opened, the same solution described below is available within Rational
+Software Modeler (RMS) and Eclipse Papyrus. Other Eclipse-based UML
+tools also may be compatible, but have not been tested.</p>
+<p>There are several key features in this Easy UML Editor:</p>
+<ul>
+	<li>A tree navigator view of UML content in Project Explorer.</li>
+	<li>A spreadsheet-like table where model content may be viewed and
+	edited.</li>
+	<li>Properties view tabs for easy access to most common UML model
+	value.</li>
+	<li>Template Constraint Dialog for adding attribute constraints.</li>
+	<li>Model validation with error markers (limited scope in this
+	milestone).</li>
+</ul>
+<p>This editing solution only supports UML classes and enumerations,
+the typical content of a UML class diagram, but without the diagram.
+Many analysts and developers of CDA templates and message structures use
+Excel spreadsheets for analysis. This table editor provides similar
+functionality, with the significant benefit that the underlying content
+is saved as a valid UML 2.1 model. This model may be input directly into
+Java code generation or reporting tools that are based on UML. And the
+model may be enhanced with class diagram using other full-featured and
+commercial UML modeling tools.</p>
+
+</div>
+<div class="h2"><a name="tableEditor" />
+<h2>UML Table Editor</h2>
+<p>Let's start with an example of using the Easy UML Editor to
+browse the HL7 Continuity of Care (CCD) template model. This is intended
+to be an <em>easy</em> UML editor, so every aspect of UML is not visible
+or editable, but we attempted to make all characteristics important to
+CDA template design easily accessible. We have more enhancements
+planned, but please let us know what would make it easier to use!</p>
+<ul>
+	<li>Assure that you are in the Resource Perspective, or some other
+	perspective that has the Project Explorer view open. Note that the Java
+	perspective Package Explorer view will <b>not</b> show the model tree
+	navigator.</li>
+	<li>Open a UML model file (with extension .uml) by double-clicking
+	in the Project Explorer, or right-clicking the file and choosing Open
+	Model from the context menu.</li>
+	<li>Open the UML Table Editor by double-clicking on a .uml model
+	file, or selecting Open With &gt; UML Table from the context menu of a
+	model element in the navigator tree. A <em>model element</em> is a
+	package or class contained in the model; it is not the .uml file.</li>
+	<li>Select a model element in either the Project Explorer
+	navigator or in the UML Table Editor. The detailed properties of that
+	element are shown in the Properties view. The properties are split into
+	several tabs, one of which displays extended metadata that is specific
+	to CDA template models.</li>
+</ul>
+<a href="images/TableEditorFull.png"><small>(click for full
+size)</small><br />
+<img src="images/TableEditorFull.png" width="800" /></a>
+
+<p>Many of the model element properties may be edited within the
+table cells. To activate editing (if allowable), either double-click on
+a cell or press the Enter key (NOTE: the table row must be
+selected/highlighted <em>before</em> editing a cell within that row). In
+the example shown below, a class attribute's multiplicity is edited
+using a pull-down list. Values shown in the Annotations column are a
+summary of more advanced HL7 metadata; these may be modified using the
+CDA Tools tab in the Properties tab.</p>
+<img src="images/TableEditorMultiplicity.png" />
+
+<p>The data type of a class attribute may be modified in either the
+table cell or using the General tab in the Properties view. The
+attribute type is selected using a dialog that allows searching for any
+model element in one of the <em>currently open model(s).</em> If several
+models are open simultaneously, then classes from all models are
+included in the dilog list. You can quickly narrow the selection by
+typing the first few characters of the class name you are searching for.</p>
+<p>In the example shown below, the 'code' type is changed from CD to
+CE. We expect to add more selection guidance in future milestones; for
+now, you are responsible for selecting an appropriate type. In the
+future, model validation will also verify model integrity, including
+template constraints.</p>
+<a href="images/TableEditorPropertyType.png"><small>(click
+for full size)</small><br />
+<img src="images/TableEditorPropertyType.png" width="800" /></a>
+
+<p>The Annotations table column shows a summary of HL7 metadata that
+is applied to a model element using UML stereotypes. Using the Easy UML
+Editor, you don't need to know the details of how UML stereotypes are
+used. The custom properties tab displays entry fields for values that
+are appropriate for the selected model element. In the example below, a
+code system constraint is assigned to the 'code' attribute, and a
+severity of INFO (a.k.a. MAY) is specified along with a message to be
+displayed when CDA documents are validated that don't satisfy this
+constraint.</p>
+<a href="images/TableEditorConstraintSeverity.png"><small>(click
+for full size)</small><br />
+<img src="images/TableEditorConstraintSeverity.png" width="800" /></a>
+
+<p></p>
+
+</div>
+<div class="h2"><a name="templateDialog" />
+<h2>CDA Template Dialog</h2>
+
+<p>A specialized edit dialog is included for HL7 templates. This
+dialog may be opened either to change selection of constrained
+attributes in an existing template, or to create a new template.</p>
+<ul>
+	<li>To change an existing template, right-click on a template
+	class, select <b>CDA Tools &gt; Open Template Editor</b></li>
+	<li>To add a new template, right-click on the model Package (e.g.
+	"ccd" or "hitsp"), select <b>Add CDA &gt; Template</b></li>
+</ul>
+<p>In the example below, a VitalSign template in the HITSP model
+specializes a VitalSignObservation template in the IHE model, which
+specializes ResultObservation in the CCD model, which specializes
+Observation in CDA. The HITSP template adds an attribute constraint for
+'code', but other attributes have been constrained in the IHE and CCD
+templates. This dialog shows the icons for info/warning/error beside
+inherited constraints so that you can see the aggregate effect of all
+templates.</p>
+<img src="images/TemplateEditorDialog.png" /></div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11131278-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+
