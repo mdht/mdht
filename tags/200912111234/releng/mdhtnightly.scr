@@ -1,0 +1,3 @@
+ /opt/IBM/SDP/jdk/bin/java  -cp ../org.eclipse.releng.basebuilder/plugins/org.eclipse.equinox.launcher.jar org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -DbuildType=N  -buildfile build.xml -target=main  -Dcomponent=openhealthtools-mdht-pde-build  
+
+/opt/IBM/SDP/jdk/bin/java  -jar ../org.eclipse.releng.basebuilder/plugins/org.eclipse.equinox.launcher_*.jar -application org.eclipse.equinox.p2.publisher.CategoryPublisher -metadataRepository file:/home/seanmuir/build/releng/mdht/repositories/nightly/repo -categoryDefinition file:/home/seanmuir/build/releng/openhealthtools-mdht-pde-build/categorycda.xml

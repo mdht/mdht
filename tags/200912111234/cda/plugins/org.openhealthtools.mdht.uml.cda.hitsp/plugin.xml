@@ -1,0 +1,51 @@
+<?eclipse version="3.0"?><!--
+  Copyright (c) 2009 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson - initial API and implementation
+      
+  $Id$
+--><plugin>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage" genModel="model/hitsp.genmodel" uri="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+   </extension>
+   <extension point="org.openhealthtools.mdht.uml.cda.extension">
+      <entry eClass="AllergyDrugSensitivity" id="2.16.840.1.113883.3.88.11.83.6" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="Medication" id="2.16.840.1.113883.3.88.11.83.8" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="Condition" id="2.16.840.1.113883.3.88.11.83.7" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="PatientSummary" id="2.16.840.1.113883.3.88.11.32.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="VitalSignsSection" id="2.16.840.1.113883.3.88.11.83.119" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="VitalSign" id="2.16.840.1.113883.3.88.11.83.14" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="PayersSection" id="2.16.840.1.113883.3.88.11.83.101" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="AllergiesReactionsSection" id="2.16.840.1.113883.3.88.11.83.102" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="ProblemListSection" id="2.16.840.1.113883.3.88.11.83.103" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="HistoryOfPastIllnessSection" id="2.16.840.1.113883.3.88.11.83.104" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="ChiefComplaintSection" id="2.16.840.1.113883.3.88.11.83.105" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="ReasonForReferralSection" id="2.16.840.1.113883.3.88.11.83.106" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="HistoryOfPresentIllness" id="2.16.840.1.113883.3.88.11.83.107" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="SurgeriesSection" id="2.16.840.1.113883.3.88.11.83.108" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="FunctionalStatusSection" id="2.16.840.1.113883.3.88.11.83.109" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="HospitalAdmissionDiagnosisSection" id="2.16.840.1.113883.3.88.11.83.110" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="DischargeDiagnosisSection" id="2.16.840.1.113883.3.88.11.83.111" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="MedicationsSection" id="2.16.840.1.113883.3.88.11.83.112" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="AdmissionMedicationHistorySection" id="2.16.840.1.113883.3.88.11.83.113" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="HospitalDischargeMedicationsSection" id="2.16.840.1.113883.3.88.11.83.114" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="MedicationsAdministeredSection" id="2.16.840.1.113883.3.88.11.83.115" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="AdvanceDirectivesSection" id="2.16.840.1.113883.3.88.11.83.116" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="ImmunizationsSection" id="2.16.840.1.113883.3.88.11.83.117" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="PhysicalExamSection" id="2.16.840.1.113883.3.88.11.83.118" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="ReviewOfSystemsSection" id="2.16.840.1.113883.3.88.11.83.120" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="HospitalCourseSection" id="2.16.840.1.113883.3.88.11.83.121" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="DiagnosticResultsSection" id="2.16.840.1.113883.3.88.11.83.122" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="AssessmentAndPlanSection" id="2.16.840.1.113883.3.88.11.83.123" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="PlanOfCareSection" id="2.16.840.1.113883.3.88.11.83.124" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="FamilyHistorySection" id="2.16.840.1.113883.3.88.11.83.125" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="SocialHistorySection" id="2.16.840.1.113883.3.88.11.83.126" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="EncountersSection" id="2.16.840.1.113883.3.88.11.83.127" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+      <entry eClass="MedicalEquipmentSection" id="2.16.840.1.113883.3.88.11.83.128" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp"/>
+   </extension>
+</plugin>

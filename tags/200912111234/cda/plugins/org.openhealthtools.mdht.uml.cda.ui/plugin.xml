@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2009 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson (XMLmodeling.com) - initial API and implementation
+      
+  $Id$
+-->
+
+<plugin>
+
+   <extension point="org.openhealthtools.mdht.uml.common.notation">
+      <provider profileURI="pathmap://CDA_PROFILES/cda.profile.uml"
+      		 class="org.openhealthtools.mdht.uml.cda.ui.util.CDAAnnotationProvider"/>
+   </extension>
+   
+  <!-- 
+    - Navigator Properties
+    -->
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.openhealthtools.mdht.uml.ui.properties">   
+         <propertyTab
+               category="domain"
+               label="%CDAPropertyTab.label"
+               afterTab="property.tab.GeneralPropertySection"
+               id="property.tab.CDAPropertySection">           
+         </propertyTab> 
+      </propertyTabs>
+   </extension>
+ 
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+       <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ValidationSection" 
+	 	     id="property.section.cda.ValidationSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.ValidationFilter"/>
+             
+          <propertySection tab="property.tab.CDAPropertySection"
+             class="org.openhealthtools.mdht.uml.cda.ui.properties.TemplateSection"
+             id="property.section.cda.TemplateSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.TemplateFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.VocabularySpecificationSection" 
+	 	     id="property.section.cda.VocabularyConstraintSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.CodedAttributeFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.TextValueSection" 
+	 	     id="property.section.cda.TextValueSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.EntrySection" 
+	 	     id="property.section.cda.EntrySection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.EntryFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.EntryRelationshipSection" 
+	 	     id="property.section.cda.EntryRelationshipSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.EntryRelationshipFilter"/>
+      </propertySections>
+   </extension> 
+ 
+	<!--
+      Template Editor Dialog
+   -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element" id="org.openhealthtools.mdht.uml.cda.ui.dialogs.contribution1">
+			<menu label="%CDATools.menu.label" path="additions" id="cdatools">
+				<separator name="edit">
+				</separator>
+			</menu>
+			<visibility>
+				<objectClass name="org.eclipse.uml2.uml.Class" />
+			</visibility>
+			<action label="%openTemplateEditor.label"
+				class="org.openhealthtools.mdht.uml.cda.ui.actions.OpenTemplateEditorAction"
+				menubarPath="cdatools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.hdf.ui.actions.openSubclassEditorAction">
+			</action>
+		</objectContribution>
+
+		<objectContribution adaptable="true"
+			objectClass="org.eclipse.gmf.runtime.notation.View" id="org.openhealthtools.mdht.uml.cda.ui.dialogs.contribution3">
+			<menu label="%CDATools.menu.label" path="additions" id="cdatools">
+				<separator name="edit">
+				</separator>
+			</menu>
+			<action label="%openTemplateEditor.label"
+				class="org.openhealthtools.mdht.uml.cda.ui.actions.OpenTemplateEditorAction"
+				menubarPath="cdatools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.hdf.ui.actions.openSubclassEditorAction">
+			</action>
+		</objectContribution>
+	</extension>
+	
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element"
+            id="mdht.objectContribution.uml">
+         <visibility>
+			<objectClass name="org.eclipse.uml2.uml.Element" />
+         </visibility>
+         <menu
+               label="%addCDA.label"
+               path="group.new"
+               id="mdht.addCDA">
+            <separator name="propertyGroup"/>
+            <separator name="classifierGroup"/>
+            <separator name="packageGroup"/>
+            <separator name="constraintGroup"/>
+            <separator name="commentGroup"/>
+         </menu>
+      </objectContribution>
+   </extension>
+   
+   <!-- UML Package menu items -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element"
+            id="mdht.objectContribution.uml.package">
+         <visibility>
+			<objectClass name="org.eclipse.uml2.uml.Package" />
+         </visibility>
+         <action
+               label="%addCDATemplate.label"
+               icon="icons/full/obj16/Class.gif"
+               class="org.openhealthtools.mdht.uml.cda.ui.actions.CreateNewTemplateAction"
+               menubarPath="mdht.addCDA/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addCDA.class">
+         </action>
+      </objectContribution>
+   </extension>
+         
+</plugin>

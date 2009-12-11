@@ -1,0 +1,106 @@
+!*******************************************************************************************
+! SVN map files format
+! <type>@<id>=SVN,<tag>[:revision],<svnRepositoryURL>,<preTagPath>,<postTagPath>
+!*******************************************************************************************
+!***************  SVN PDE BUILD CONTRIBUTION FOR MDHT  ********************************************** 
+
+!***************  XML Modeling Feature FEATURE  ********************************************** 
+feature@net.sourceforge.xmlmodeling.uml.xsd=SVN,trunk,https://xmlmodeling.svn.sourceforge.net/svnroot/xmlmodeling,,features/net.sourceforge.xmlmodeling.uml.xsd-feature
+
+plugin@net.sourceforge.xmlmodeling.uml.xsd.profile=SVN,trunk,https://xmlmodeling.svn.sourceforge.net/svnroot/xmlmodeling,,plugins/net.sourceforge.xmlmodeling.uml.xsd.profile
+
+
+!***************  OHT UML FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/features/org.openhealthtools.mdht.uml-feature
+
+plugin@org.openhealthtools.mdht.uml.common=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.common
+
+plugin@org.openhealthtools.mdht.uml.common.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.common.ui
+
+plugin@org.openhealthtools.mdht.uml.ui.navigator=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.ui.navigator
+
+plugin@org.openhealthtools.mdht.uml.ui.properties=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.ui.properties
+
+plugin@org.openhealthtools.mdht.uml.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.ui
+
+plugin@org.openhealthtools.mdht.uml.edit=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.edit
+
+
+!***************  OHT CDA FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda-feature
+
+plugin@org.openhealthtools.mdht.uml.cda.ant=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ant
+
+plugin@org.openhealthtools.mdht.uml.cda.resources=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.resources
+
+plugin@org.openhealthtools.mdht.uml.cda.transform=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.transform
+
+plugin@org.openhealthtools.mdht.uml.cda.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ui
+
+
+!***************  OHT CDA RSM FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml.cda.rsm=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.rsm-feature
+
+plugin@org.openhealthtools.mdht.uml.cda.ui.rsm=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ui.rsm
+
+
+!***************  OHT CDA PAPYRUS FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml.cda.papyrus=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.papyrus-feature
+
+plugin@org.openhealthtools.mdht.uml.cda.ui.papyrus=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ui.papyrus
+
+
+
+!***************  OHT HDF FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml.hdf=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/features/org.openhealthtools.mdht.uml.hdf-feature
+
+plugin@org.openhealthtools.mdht.emf.hl7.mif2=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.emf.hl7.mif2
+
+plugin@org.openhealthtools.mdht.uml-feature=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml-feature
+
+plugin@org.openhealthtools.mdht.uml.hdf=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hdf
+
+plugin@org.openhealthtools.mdht.uml.hdf2ecore=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hdf2ecore
+
+plugin@org.openhealthtools.mdht.uml.hdf2xsd=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hdf2xsd
+
+plugin@org.openhealthtools.mdht.uml.hdf.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hdf.ui
+
+plugin@org.openhealthtools.mdht.uml.hl7.ant=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.ant
+
+plugin@org.openhealthtools.mdht.uml.hl7.core=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.core
+
+plugin@org.openhealthtools.mdht.uml.hl7.mif2uml=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.mif2uml
+
+plugin@org.openhealthtools.mdht.uml.hl7.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.ui
+
+plugin@org.openhealthtools.mdht.uml.hl7.validation=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.validation
+
+!***************  OHT HDF RSM FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml.rsm=SVN,trunk,https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling,,features/org.openhealthtools.mdht.uml.rsm-feature
+
+plugin@org.openhealthtools.mdht.uml.hdf.tooling.rsm=SVN,trunk,https://oht-modeling.svn.sourceforge.net/svnroot/oht-modeling/,,plugins/org.openhealthtools.mdht.uml.hdf.tooling.rsm
+
+plugin@org.openhealthtools.mdht.uml.hdf.ui.rsm=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hdf.ui.rsm
+
+!***************  OHT HDF PAPYRUS FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml.papyrus=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/features/org.openhealthtools.mdht.uml.papyrus-feature
+
+plugin@org.openhealthtools.mdht.uml.hdf.ui.papyrus=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hdf.ui.papyrus
+
+!***************  OHT MDHT TEST FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/features/org.openhealthtools.mdht.test-feature
+
+fragment@org.openhealthtools.mdht.uml.common.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/tests/org.openhealthtools.mdht.uml.common.test
+
+fragment@org.openhealthtools.mdht.uml.hdf.test=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/tests/org.openhealthtools.mdht.uml.hdf.test
+
+
+
+
+
+
+
+
+
+

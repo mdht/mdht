@@ -1,0 +1,37 @@
+<project name="common">
+
+	<property name="cdaPluginPath" location="${basedir}/../org.openhealthtools.mdht.uml.cda"/>
+	<property name="modelPath.emx" location="${basedir}/model/${modelName}.emx"/>
+	<property name="modelPath.uml" location="${basedir}/model/${modelName}.uml"/>
+	<property name="ecoreModelPath.uml" location="${basedir}/model/${modelName}_Ecore.uml"/>
+	<uptodate targetfile="${modelPath.emx}" srcfile="${modelPath.uml}" property="emxIsNewer"/>
+	
+	<target name="all">
+		<antcall target="convertEmxToUml"></antcall>
+		<antcall target="transformModel"></antcall>
+	</target>
+
+	<target name="convertEmxToUml" if="emxIsNewer">
+		<delete file="${modelPath.uml}"/>
+
+		<xslt in="${modelPath.emx}" out="${modelPath.uml}" style="${cdaPluginPath}/resources/emx2uml.xsl"/>
+		<replace file="${modelPath.uml}" token=".emx" value=".uml"/>
+
+		<antcall target="refresh"/>
+	</target>
+
+    <target name="transformModel" description="Transform Ecore UML model.">
+        <cdatools model="${modelPath.uml}">
+            <transformToEcoreModel ecoreModel="${ecoreModelPath.uml}" />
+        </cdatools>
+
+    	<convertEcorePaths filePath="${ecoreModelPath.uml}"/>
+
+    	<antcall target="refresh"/>
+    </target>
+
+	<target name="refresh" if="eclipse.running" description="Refresh this folder.">
+	  <eclipse.convertPath fileSystemPath="${basedir}" property="resourcePath"/>
+	  <eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
+	</target>
+</project>

@@ -1,0 +1,64 @@
+<?eclipse version="3.0"?><!--
+  Copyright (c) 2009 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson - initial API and implementation
+      
+  $Id$
+--><plugin>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.openhealthtools.mdht.uml.cda.ihe.IHEPackage" genModel="model/ihe.genmodel" uri="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+   </extension>
+   <extension point="org.openhealthtools.mdht.uml.cda.extension">
+      <entry eClass="ImmunizationsSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.23" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="MedicationsAdministeredSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.21" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="ConcernEntry" id="1.3.6.1.4.1.19376.1.5.3.1.4.5.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="MedicalDocument" id="1.3.6.1.4.1.19376.1.5.3.1.1.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="ActiveProblemsSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.6" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="ProblemConcernEntry" id="1.3.6.1.4.1.19376.1.5.3.1.4.5.2" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="ProblemEntry" id="1.3.6.1.4.1.19376.1.5.3.1.4.5" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="Medication" id="1.3.6.1.4.1.19376.1.5.3.1.4.7" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="MedicationsSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.19" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="AllergyIntoleranceConcern" id="1.3.6.1.4.1.19376.1.5.3.1.4.5.3" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="AllergyIntolerance" id="1.3.6.1.4.1.19376.1.5.3.1.4.6" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="AllergiesReactionsSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.13" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="NormalDosing" id="1.3.6.1.4.1.19376.1.5.3.1.4.7.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="TaperedDose" id="1.3.6.1.4.1.19376.1.5.3.1.4.8" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="SplitDosing" id="1.3.6.1.4.1.19376.1.5.3.1.4.9" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="ConditionalDosing" id="1.3.6.1.4.1.19376.1.5.3.1.4.10" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="CombinationMedication" id="1.3.6.1.4.1.19376.1.5.3.1.4.11" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="VitalSignsSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.25" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="CodedVitalSignsSection" id="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="VitalSignObservation" id="1.3.6.1.4.1.19376.1.5.3.1.4.13.2" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="SimpleObservation" id="1.3.6.1.4.1.19376.1.5.3.1.4.13" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="VitalSignsOrganizer" id="1.3.6.1.4.1.19376.1.5.3.1.4.13.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="PayersSection" id="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="HistoryOfPastIllnessSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.8" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="ChiefComplaintSection" id="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="ReasonForReferralSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="HistoryOfPresentIllness" id="1.3.6.1.4.1.19376.1.5.3.1.3.4" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="SurgeriesSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.11" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="CodedSurgeriesSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.12" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="HospitalAdmissionDiagnosisSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.3" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="DischargeDiagnosisSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.7" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="AdmissionMedicationHistorySection" id="1.3.6.1.4.1.19376.1.5.3.1.3.20" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="HospitalDischargeMedicationsSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.22" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="CodedAdvanceDirectivesSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.35" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="AdvanceDirectivesSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.34" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="PhysicalExamNarrativeSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.24" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="PhysicalExamSection" id="1.3.6.1.4.1.19376.1.5.3.1.1.9.15" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="ReviewOfSystemsSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.18" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="HospitalCourseSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.5" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="CodedResultsSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.28" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="AssessmentAndPlanSection" id="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.5" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="CarePlanSection" id="1.3.6.1.4.1.19376.1.5.3.1.3.31" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="FamilyMedicalHistorySection" id="1.3.6.1.4.1.19376.1.5.3.1.3.14" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="SocialHistorySection" id="1.3.6.1.4.1.19376.1.5.3.1.3.16" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="EncounterHistorySection" id="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+      <entry eClass="MedicalDevicesSection" id="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe"/>
+   </extension>
+</plugin>
