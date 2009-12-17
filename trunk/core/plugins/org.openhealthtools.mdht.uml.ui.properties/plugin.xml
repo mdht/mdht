@@ -80,6 +80,12 @@
 	 	     id="property.section.uml2.ParameterSection">
 	            <input type="org.eclipse.uml2.uml.Parameter"/>
 	      </propertySection>
+          <propertySection tab="property.tab.GeneralPropertySection" 
+             afterSection="property.section.uml2.NamedElementSection"
+	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintSection" 
+	 	     id="property.section.uml2.ConstraintSection">
+	            <input type="org.eclipse.uml2.uml.Constraint"/>
+	      </propertySection>
 	      
           <propertySection tab="property.tab.DocumentationPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.CommentSection" 
