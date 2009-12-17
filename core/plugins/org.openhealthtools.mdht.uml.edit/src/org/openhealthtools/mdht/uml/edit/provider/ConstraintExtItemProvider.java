@@ -22,8 +22,14 @@ import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.edit.providers.ConstraintItemProvider;
+import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
+import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
+import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 /**
  *
@@ -80,18 +86,51 @@ public class ConstraintExtItemProvider extends ConstraintItemProvider
 	}
 
 	public Object getColumnImage(Object object, int columnIndex) {
+		Constraint constraint = (Constraint) object;
+		
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
 			return getImage(object);
+		case IUMLTableProperties.ANNOTATION_INDEX: {
+			for (Profile profile : constraint.getNearestPackage().getAllAppliedProfiles()) {
+				// use the first notation provider found for an applied profile, ignore others
+				String profileURI = profile.eResource().getURI().toString();
+				INotationProvider provider = 
+					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+				if (provider != null) {
+					return provider.getAnnotationImage(constraint);
+				}
+			}
+		}
 		default:
 			return null;
 		}
 	}
 
 	public String getColumnText(Object object, int columnIndex) {
+		Constraint constraint = (Constraint) object;
+
+		String body = null;
+		String languages = "";
+		ValueSpecification spec = constraint.getSpecification();
+		if (spec instanceof OpaqueExpression) {
+			for (int i=0; i<((OpaqueExpression) spec).getLanguages().size(); i++) {
+				String lang = ((OpaqueExpression) spec).getLanguages().get(i);
+				if (languages.length() > 0)
+					languages += ", ";
+				languages += lang;
+				if (body == null)
+					body = ((OpaqueExpression) spec).getBodies().get(i);
+			}
+		}
+		
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
 			return getText(object);
+		case IUMLTableProperties.ANNOTATION_INDEX:
+			return languages;
+		case IUMLTableProperties.DEFAULT_VALUE_INDEX:
+			return (body != null) ? body : "";
 		default:
 			return null;
 		}
@@ -111,6 +150,11 @@ public class ConstraintExtItemProvider extends ConstraintItemProvider
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
+		Constraint constraint = (Constraint) element;
+
+		if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
+			return constraint.getName();
+		}
 		return null;
 	}
 
@@ -118,6 +162,6 @@ public class ConstraintExtItemProvider extends ConstraintItemProvider
 	 * @see org.eclipse.jface.viewers.ICellModifier#modify(java.lang.Object, java.lang.String, java.lang.Object)
 	 */
 	public void modify(final Object element, final String property, final Object value) {
-		
+		NamedElementOperations.modify(element, property, value);
 	}
 }
