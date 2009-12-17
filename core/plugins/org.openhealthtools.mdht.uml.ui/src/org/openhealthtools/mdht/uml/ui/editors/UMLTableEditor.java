@@ -514,7 +514,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		column.setWidth(150);
 
 		column = new TreeColumn(tree, SWT.NONE);
-		column.setText("Default Value");
+		column.setText("Value");
 		column.setResizable(true);
 		column.setWidth(200);
 
