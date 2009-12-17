@@ -40,10 +40,13 @@ import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
@@ -209,7 +212,15 @@ public class ValidationSection extends AbstractModelerPropertySection {
 	public void createControls(final Composite parent,
 			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		
+
+        Shell shell = new Shell();
+        GC gc = new GC(shell);
+        gc.setFont(shell.getFont());
+        Point point = gc.textExtent("");//$NON-NLS-1$
+        int charHeight = point.y;
+        gc.dispose();
+        shell.dispose();
+
 		Composite composite = getWidgetFactory()
 				.createGroup(parent, "Validation");
         FormLayout layout = new FormLayout();
@@ -248,22 +259,27 @@ public class ValidationSection extends AbstractModelerPropertySection {
 
 		data = new FormData();
         data.left = new FormAttachment(severityLabel, 0);
-		data.top = new FormAttachment(0,2);
+		data.top = new FormAttachment(0,4);
 		severityCombo.setLayoutData(data);
 
 		/* ---- message text ---- */
-		messageText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
+		messageText = getWidgetFactory().createText(composite, "", 
+				SWT.V_SCROLL | SWT.WRAP); //$NON-NLS-1$
 		CLabel messageLabel = getWidgetFactory()
 				.createCLabel(composite, "Message:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
-		data.top = new FormAttachment(messageText, 0, SWT.CENTER);
+		data.top = new FormAttachment(severityCombo, 0, SWT.BOTTOM);
 		messageLabel.setLayoutData(data);
 
 		data = new FormData();
 		data.left = new FormAttachment(messageLabel, 0);
+		// if I set the width AND right, then I get proper wrapping for long text... whatever.
+		data.width = 300;
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(1,2, ITabbedPropertyConstants.VSPACE);
+		// if I set the top AND height, then I get vertical scroll within the tab page
+		data.top = new FormAttachment(severityCombo, 0, SWT.BOTTOM);
+		data.height = charHeight * 4;
 		messageText.setLayoutData(data);
 
 	}
