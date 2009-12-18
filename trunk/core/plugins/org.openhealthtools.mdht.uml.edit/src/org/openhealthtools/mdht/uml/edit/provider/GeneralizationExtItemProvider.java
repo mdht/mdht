@@ -21,9 +21,11 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.jface.viewers.ICellModifier;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.edit.providers.GeneralizationItemProvider;
 import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
@@ -56,7 +58,7 @@ public class GeneralizationExtItemProvider extends GeneralizationItemProvider
 	 */
 	public String getText(Object object) {
 		Classifier general = ((Generalization)object).getGeneral();
-		String label = general != null ? general.getName() : null;
+		String label = general != null ? general.getQualifiedName() : null;
 		return label == null || label.length() == 0 ?
 			getString("_UI_Generalization_type") : //$NON-NLS-1$
 			label;
@@ -69,6 +71,24 @@ public class GeneralizationExtItemProvider extends GeneralizationItemProvider
 		Generalization generalization = (Generalization) object;
 		List children = new ArrayList();
 		children.addAll(generalization.getOwnedComments());
+
+		Classifier general = generalization.getGeneral();
+		if (general instanceof Class) {
+			for (Property property : ((Class)general).getOwnedAttributes()) {
+				if (property.getAssociation() == null) {
+					children.add(property);
+				}
+			}
+			// include associations after attributes
+			for (Property property : ((Class)general).getOwnedAttributes()) {
+				if (property.getAssociation() != null
+						&& property.getOtherEnd().getType() == general) {
+					children.add(property.getAssociation());
+				}
+			}
+			children.addAll(general.getOwnedRules());
+			children.addAll(general.getGeneralizations());
+		}
 		
 		return children;
 	}
