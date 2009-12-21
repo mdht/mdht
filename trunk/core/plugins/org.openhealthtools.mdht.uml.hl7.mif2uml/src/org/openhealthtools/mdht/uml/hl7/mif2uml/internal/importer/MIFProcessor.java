@@ -860,7 +860,9 @@ public class MIFProcessor extends Mif2Switch {
 				ClassBase mifChild = MIFUtil.getClassByName(mifModel, mifGeneralization.getName());
 				if (mifChild == null) {
 					// look for a CMET reference
-					mifChild = getCommonModelClass(mifModel.eResource(), mifGeneralization.getName());
+					PackageRef cmetPackage = mifModel.getImportedCommonModelElementPackage();
+					
+					mifChild = getCommonModelClass(mifModel, mifGeneralization.getName());
 				}
 				if (mifChild != null) {
 					Classifier child = (Classifier) doSwitch(mifChild);
@@ -893,7 +895,7 @@ public class MIFProcessor extends Mif2Switch {
 				ClassBase mifGeneral = MIFUtil.getClassByName(mifModel, mifGeneralization.getName());
 				if (mifGeneral == null) {
 					// look for a CMET reference
-					mifGeneral = getCommonModelClass(mifModel.eResource(), mifGeneralization.getName());
+					mifGeneral = getCommonModelClass(mifModel, mifGeneralization.getName());
 				}
 				if (mifGeneral != null) {
 					Classifier general = (Classifier) doSwitch(mifGeneral);
@@ -2030,11 +2032,11 @@ public class MIFProcessor extends Mif2Switch {
 		
 	}
 	
-	private ClassBase getCommonModelClass(Resource referencingResource, String name) {
+	private ClassBase getCommonModelClass(StaticModelBase mifModel, String name) {
 		ClassBase mifClass = null;
 		try {
 			if (cmeUtil == null) {
-				cmeUtil = new CommonModelElements(referencingResource, diagnostics);
+				cmeUtil = new CommonModelElements(mifModel, diagnostics);
 			}
 			CommonModelElementDefinition cme = cmeUtil.resolveCommonModelElement(name);
 			if (cme != null) {
@@ -2067,7 +2069,7 @@ public class MIFProcessor extends Mif2Switch {
 			mifParticipant = MIFUtil.getClassByName(mifModel, className);
 			if (mifParticipant == null) {
 				// look for a CMET reference
-				mifParticipant = getCommonModelClass(mifModel.eResource(), className);
+				mifParticipant = getCommonModelClass(mifModel, className);
 			}
 		}
 		
@@ -2082,7 +2084,7 @@ public class MIFProcessor extends Mif2Switch {
 			ClassBase mifParticipant = MIFUtil.getClassByName(mifModel, className);
 			if (mifParticipant == null) {
 				// look for a CMET reference
-				mifParticipant = getCommonModelClass(mifModel.eResource(), className);
+				mifParticipant = getCommonModelClass(mifModel, className);
 				isCMET = true;
 			}
 			if (mifParticipant != null) {
