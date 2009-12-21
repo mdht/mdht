@@ -26,35 +26,48 @@ import org.openhealthtools.mdht.emf.hl7.mif2.CommonModelElementDefinition;
 import org.openhealthtools.mdht.emf.hl7.mif2.PackageRef;
 import org.openhealthtools.mdht.emf.hl7.mif2.SpecializationClass;
 import org.openhealthtools.mdht.emf.hl7.mif2.StaticModel;
+import org.openhealthtools.mdht.emf.hl7.mif2.StaticModelBase;
 import org.openhealthtools.mdht.emf.hl7.mif2.StaticModelInterfacePackage;
 import org.openhealthtools.mdht.uml.hl7.mif2uml.util.MIFUtil;
 
 
 public class CommonModelElements {
 	
-	public static final String CMETINFO_COREMIF = "DEFN=UV=IFC=1.8.3.coremif";
-
 	private StaticModelInterfacePackage cmePackage;
 	
 	private DiagnosticsHelper diagnostics;
 	
 	private List<URI> unresolvedResources = new ArrayList<URI>();
 	
-	public CommonModelElements(Resource referencingResource, DiagnosticsHelper diagnostics) {
+	public CommonModelElements(StaticModelBase mifModel, DiagnosticsHelper diagnostics) {
 		this.diagnostics = diagnostics;
+		
+		Resource referencingResource = mifModel.eResource();
 		
 		referencingResource.getResourceSet().getLoadOptions()
 			.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE,  Boolean.TRUE);
 		
 		Resource coremifResource = null;
 		URI baseURI = referencingResource.getURI().trimSegments(1);
-		URI coremifURI = baseURI.appendSegment(CMETINFO_COREMIF);
+		
+		PackageRef cmetPackageReference = mifModel.getImportedCommonModelElementPackage();
+	
+		// Create core mif uri from the cmet package reference in the mif model
+		
+		String coremifURISting = String.format("%s=%s=%s=%s.coremif",cmetPackageReference.getRoot().getLiteral(),
+																	 cmetPackageReference.getRealmNamespace(),
+																	 cmetPackageReference.getArtifact().getLiteral(),
+																	 cmetPackageReference.getVersion() );
+		
+		URI coremifURI = baseURI.appendSegment(coremifURISting);
+		
+		
 		try {
 			coremifResource = referencingResource.getResourceSet().createResource(coremifURI);
 			coremifResource.load(new HashMap());
 		}
 		catch (Exception e) {
-			diagnostics.error("Errors loading " + CMETINFO_COREMIF, null);
+			diagnostics.error("Errors loading " + coremifURI.toFileString(), null);
 		}
 
 		if (coremifResource != null) {
