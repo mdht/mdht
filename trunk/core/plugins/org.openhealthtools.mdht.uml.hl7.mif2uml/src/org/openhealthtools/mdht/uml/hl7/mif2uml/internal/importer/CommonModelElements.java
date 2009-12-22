@@ -18,6 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.openhealthtools.mdht.emf.hl7.mif2.ClassBase;
@@ -51,34 +52,38 @@ public class CommonModelElements {
 		URI baseURI = referencingResource.getURI().trimSegments(1);
 		
 		PackageRef cmetPackageReference = mifModel.getImportedCommonModelElementPackage();
-	
-		// Create core mif uri from the cmet package reference in the mif model
 		
-		String coremifURISting = String.format("%s=%s=%s=%s.coremif",cmetPackageReference.getRoot().getLiteral(),
-																	 cmetPackageReference.getRealmNamespace(),
-																	 cmetPackageReference.getArtifact().getLiteral(),
-																	 cmetPackageReference.getVersion() );
-		
-		URI coremifURI = baseURI.appendSegment(coremifURISting);
-		
-		
-		try {
-			coremifResource = referencingResource.getResourceSet().createResource(coremifURI);
-			coremifResource.load(new HashMap());
-		}
-		catch (Exception e) {
-			diagnostics.error("Errors loading " + coremifURI.toFileString(), null);
-		}
+		if (cmetPackageReference != null) {
 
-		if (coremifResource != null) {
-			for (Iterator iter = coremifResource.getAllContents(); iter.hasNext();) {
-				Object content = iter.next();
-				if (content instanceof StaticModelInterfacePackage) {
-					cmePackage = (StaticModelInterfacePackage) content;
-					break;
+			// Create core mif uri from the cmet package reference in the mif
+			// model
+
+			String coremifURISting = String.format("%s=%s=%s=%s.coremif", ((cmetPackageReference.getRoot() != null) ? cmetPackageReference.getRoot()
+					.getLiteral() : ""), cmetPackageReference.getRealmNamespace(), ((cmetPackageReference.getArtifact() != null) ? cmetPackageReference
+					.getArtifact().getLiteral() : ""), cmetPackageReference.getVersion());
+
+			URI coremifURI = baseURI.appendSegment(coremifURISting);
+
+			try {
+				coremifResource = referencingResource.getResourceSet().createResource(coremifURI);
+				coremifResource.load(new HashMap<Object, Object>());
+			} catch (Exception e) {
+				diagnostics.error("Errors loading " + coremifURI.toFileString(), null);
+			}
+
+			if (coremifResource != null) {
+				for (Iterator<EObject> iter = coremifResource.getAllContents(); iter.hasNext();) {
+					EObject content = iter.next();
+					if (content instanceof StaticModelInterfacePackage) {
+						cmePackage = (StaticModelInterfacePackage) content;
+						break;
+					}
 				}
 			}
+		} else {
+			diagnostics.error("Invalid MIF Instance, Common Model Reference with out proper common model import, Mif File : " + mifModel.getName(), null);
 		}
+		
 	}
 	
 	public CommonModelElementDefinition resolveCommonModelElement(String cmeRef) {
