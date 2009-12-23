@@ -16,6 +16,7 @@ package org.openhealthtools.mdht.uml.hl7.ant.taskdefs;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -55,6 +56,9 @@ public class HL7ModelingTask extends Task {
 	private File model;
 	private List<ModelLocation> modelLocations;
 	private Package defaultModel = null;
+	
+	// Cache of packages - used to improve performance and memory ussage
+	private static HashMap<String,Package> packagesCache = new HashMap<String,Package>();
 
 	/** Creates a new instance of this task. */
 	public HL7ModelingTask() {
@@ -152,13 +156,21 @@ public class HL7ModelingTask extends Task {
 									modelLocation.getFile().getAbsolutePath());
 						}
 					}
-					Package pkg = (Package) UMLUtil.load(resourceSet, uri, UMLPackage.Literals.PACKAGE);
-					if (pkg != null) {
-						logInfo("Loaded model: " + pkg.getQualifiedName());
+					// Cache the package - most cases it is CMET;  
+					// Currently no logic to check if CMET has changed but that is unlikely during the import process
+					// because it would be a change to the MIF
+					if (!packagesCache.containsKey(uri.toFileString()))
+					{
+						Package pkg = (Package) UMLUtil.load(resourceSet, uri, UMLPackage.Literals.PACKAGE);
+						if (pkg != null) {
+							logInfo("Loaded model: " + pkg.getQualifiedName());
+							packagesCache.put(uri.toFileString(), pkg);
+						}
+						else {
+							logError("Error loading model: " + modelLocation.getFile());
+						}		
 					}
-					else {
-						logError("Error loading model: " + modelLocation.getFile());
-					}
+				
 				}
 			}
 		} catch (Throwable t) {
