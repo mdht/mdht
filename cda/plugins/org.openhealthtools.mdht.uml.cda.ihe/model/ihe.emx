@@ -1651,9 +1651,8 @@ prescription list. It shall include entries for medications as described in the 
         <details xmi:id="_wqcZwHrUEd68l9lQ-TLEBQ" key="Allergy and Intolerance Concern"/>
       </eAnnotations>
       <ownedComment xmi:id="_PYW4kHrVEd68l9lQ-TLEBQ" annotatedElement="_pOtQsHrDEd68l9lQ-TLEBQ">
-        <body>This entry is a specialization of the &lt;span>&lt;a title=&quot;1.3.6.1.4.1.19376.1.5.3.1.4.5.1&quot;&#xD;
-href=&quot;http://wiki.ihe.net/index.php?title=1.3.6.1.4.1.19376.1.5.3.1.4.5.1&quot;>&lt;u>&lt;font color=&quot;#0066CC&quot;>Concern&#xD;
-Entry&lt;/font>&lt;/u>&lt;/a>&lt;/span>, wherein the subject of the concern is focused on an allergy or intolerance.</body>
+        <body>This entry is a specialization of the Concern&#xD;
+Entry, wherein the subject of the concern is focused on an allergy or intolerance.</body>
       </ownedComment>
       <generalization xmi:id="_F7xSEHrEEd68l9lQ-TLEBQ" general="_GgvgUDxbEd6JwqSGecoePg"/>
     </packagedElement>
@@ -1676,13 +1675,6 @@ associated adverse reactions suffered by the patient.</body>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="__HPx4HySEd6FS-4xbA1fBQ" name="NormalDosing">
-      <ownedComment xmi:id="_otgTQHyTEd6FS-4xbA1fBQ" annotatedElement="__HPx4HySEd6FS-4xbA1fBQ">
-        <body>This&amp;nbsp;template&amp;nbsp;identifier&amp;nbsp;is&amp;nbsp;used&amp;nbsp;to&amp;nbsp;identify&amp;nbsp;medication&amp;nbsp;administration&amp;nbsp;events&amp;nbsp;that&amp;nbsp;do&amp;nbsp;not&amp;nbsp;require&amp;nbsp;any&amp;nbsp;special&amp;nbsp;processing.&#xD;
-The parent template is &lt;span>&lt;a title=&quot;1.3.6.1.4.1.19376.1.5.3.1.4.7&quot;&#xD;
-href=&quot;http://wiki.ihe.net/index.php?title=1.3.6.1.4.1.19376.1.5.3.1.4.7#1.3.6.1.4.1.19376.1.5.3.1.4.7&quot;>&lt;u>&lt;font&#xD;
-color=&quot;#0066CC&quot;>1.3.6.1.4.1.19376.1.5.3.1.4.7&lt;/font>&lt;/u>&lt;/a>&lt;/span>. Medications that use this template identifier shall&#xD;
-not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
-      </ownedComment>
       <generalization xmi:id="_CsEjgHyTEd6FS-4xbA1fBQ" general="_sFGZUHGfEd6bf47ZOcft4w"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_OCqBQHyTEd6FS-4xbA1fBQ" name="TaperedDose">
@@ -1727,7 +1719,7 @@ not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_iFB1EK4EEd6_ioDelDcPPg" name="VitalSignsSection">
       <ownedComment xmi:id="_1MSkYK4FEd6_ioDelDcPPg" annotatedElement="_iFB1EK4EEd6_ioDelDcPPg">
         <body>&lt;p>&#xD;
-    The vital signs section shall contain a narrative description of the measurement results of a patient’s vital signs.&#xD;
+    The vital signs section shall contain a narrative description of the measurement results of a patient's vital signs.&#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_lkJAQK4EEd6_ioDelDcPPg">
@@ -1736,18 +1728,7 @@ not use subordinate &amp;lt;substanceAdministation&amp;gt; acts.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5k1R8K4FEd6_ioDelDcPPg" name="CodedVitalSignsSection">
       <ownedComment xmi:id="_Jx9SoMf2Ed6VjLXh4DcWSg" annotatedElement="_5k1R8K4FEd6_ioDelDcPPg">
-        <body>&lt;table>&#xD;
-    &lt;tr>&#xD;
-        &lt;th&#xD;
-        style=&quot;BORDER-BOTTOM: black 1px solid; TEXT-ALIGN: right; BORDER-LEFT: black 1px solid; WIDTH: 30%; BACKGROUND: lightgrey; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous&quot;>&#xD;
-        &lt;/th>&#xD;
-        &lt;td&#xD;
-        style=&quot;BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 70%; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid&quot;&#xD;
-         colspan=&quot;2&quot;>&#xD;
-            The vital signs section contains coded measurement results of a patient’s vital signs.&#xD;
-        &lt;/td>&#xD;
-    &lt;/tr>&#xD;
-&lt;/table></body>
+        <body>The vital signs section contains coded measurement results of a patient's vital signs.</body>
       </ownedComment>
       <generalization xmi:id="_8EJ0EK4FEd6_ioDelDcPPg" general="_iFB1EK4EEd6_ioDelDcPPg"/>
       <ownedAttribute xmi:id="_wHDyIK4UEd6_ioDelDcPPg" name="iheVitalSignsOrganizer" visibility="private" type="_hVMdIK4QEd6_ioDelDcPPg" association="_wHB88K4UEd6_ioDelDcPPg">
@@ -1846,7 +1827,7 @@ ASTM/HL7 Continuity of Care Document).</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ynU6sMfXEd6VjLXh4DcWSg" name="PayersSection">
       <ownedComment xmi:id="_gIRwAMfYEd6VjLXh4DcWSg" annotatedElement="_ynU6sMfXEd6VjLXh4DcWSg">
-        <body>The Payers section contains data on the patient’s payers, whether a ‘third party’ insurance, self-pay, other payer or&#xD;
+        <body>The Payers section contains data on the patient's payers, whether a 'third party' insurance, self-pay, other payer or&#xD;
 guarantor, or some combination.</body>
       </ownedComment>
       <generalization xmi:id="_1MYRYMfXEd6VjLXh4DcWSg">
@@ -1878,19 +1859,7 @@ past. It shall include entries for problems as described in the Entry Content Mo
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_XicJUMfdEd6VjLXh4DcWSg" name="ReasonForReferralSection">
       <ownedComment xmi:id="_tI8XsMfdEd6VjLXh4DcWSg" annotatedElement="_XicJUMfdEd6VjLXh4DcWSg">
-        <body>&lt;table>&#xD;
-    &lt;tr>&#xD;
-        &lt;th&#xD;
-        style=&quot;BORDER-BOTTOM: black 1px solid; TEXT-ALIGN: right; BORDER-LEFT: black 1px solid; WIDTH: 30%; BACKGROUND: lightgrey; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous&quot;>&#xD;
-        &lt;/th>&#xD;
-        &lt;td&#xD;
-        style=&quot;BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 70%; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid&quot;&#xD;
-         colspan=&quot;2&quot;>&#xD;
-            The reason for referral section shall contain a narrative description of the reason that the patient is being&#xD;
-            referred.&#xD;
-        &lt;/td>&#xD;
-    &lt;/tr>&#xD;
-&lt;/table></body>
+        <body>The reason for referral section shall contain a narrative description of the reason that the patient is being referred.</body>
       </ownedComment>
       <generalization xmi:id="_f1I_UMfdEd6VjLXh4DcWSg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
@@ -1902,7 +1871,7 @@ past. It shall include entries for problems as described in the Entry Content Mo
     <packagedElement xmi:type="uml:Class" xmi:id="_jWj60MfhEd6VjLXh4DcWSg" name="HistoryOfPresentIllness">
       <ownedComment xmi:id="_wSbUUMfhEd6VjLXh4DcWSg" annotatedElement="_jWj60MfhEd6VjLXh4DcWSg">
         <body>The history of present illness section shall contain a narrative description of the sequence of events preceding the&#xD;
-patient’s current complaints.</body>
+patient's current complaints.</body>
       </ownedComment>
       <generalization xmi:id="_nDBlgMfhEd6VjLXh4DcWSg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
@@ -1967,20 +1936,9 @@ Entry Content Module.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_JAhygMfyEd6VjLXh4DcWSg" name="HospitalDischargeMedicationsSection">
       <ownedComment xmi:id="_akYq0MfyEd6VjLXh4DcWSg" annotatedElement="_JAhygMfyEd6VjLXh4DcWSg">
-        <body>&lt;table>&#xD;
-    &lt;tr>&#xD;
-        &lt;th&#xD;
-        style=&quot;BORDER-BOTTOM: black 1px solid; TEXT-ALIGN: right; BORDER-LEFT: black 1px solid; WIDTH: 30%; BACKGROUND: lightgrey; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous&quot;>&#xD;
-        &lt;/th>&#xD;
-        &lt;td&#xD;
-        style=&quot;BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 70%; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid&quot;&#xD;
-         colspan=&quot;2&quot;>&#xD;
-            The hospital discharge medications section shall contain a narrative description of the medications requested&#xD;
+        <body>The hospital discharge medications section shall contain a narrative description of the medications requested&#xD;
             (ordered) to be administered to the patient after discharge from the hospital. It shall include entries for&#xD;
-            medication requests as described in the Entry Content Module.&#xD;
-        &lt;/td>&#xD;
-    &lt;/tr>&#xD;
-&lt;/table></body>
+            medication requests as described in the Entry Content Module.</body>
       </ownedComment>
       <generalization xmi:id="_S1iv0MfyEd6VjLXh4DcWSg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
@@ -1994,7 +1952,7 @@ Entry Content Module.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_fc6DgMfzEd6VjLXh4DcWSg" name="AdvanceDirectivesSection">
       <ownedComment xmi:id="_AwXoQMf0Ed6VjLXh4DcWSg" annotatedElement="_fc6DgMfzEd6VjLXh4DcWSg">
-        <body>The advance directive section shall contain a narrative description of the list of documents that define the patient’s&#xD;
+        <body>The advance directive section shall contain a narrative description of the list of documents that define the patient's&#xD;
 expectations and requests for care along with the locations of the documents.</body>
       </ownedComment>
       <generalization xmi:id="_ovC9QMfzEd6VjLXh4DcWSg">
@@ -2003,7 +1961,7 @@ expectations and requests for care along with the locations of the documents.</b
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_IAGv8Mf1Ed6VjLXh4DcWSg" name="PhysicalExamNarrativeSection">
       <ownedComment xmi:id="_y4jR8Mf1Ed6VjLXh4DcWSg" annotatedElement="_IAGv8Mf1Ed6VjLXh4DcWSg">
-        <body>The physical exam section shall contain a narrative description of the patient’s physical findings.</body>
+        <body>The physical exam section shall contain a narrative description of the patient's physical findings.</body>
       </ownedComment>
       <generalization xmi:id="_QAS5oMf1Ed6VjLXh4DcWSg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.emx#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
@@ -2088,7 +2046,7 @@ known, the diseases they suffered from, their ages at death, and other relevant 
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Kv5q4MihEd6mWrHPmrIIfQ" name="SocialHistorySection">
       <ownedComment xmi:id="_TCqyUMihEd6mWrHPmrIIfQ" annotatedElement="_Kv5q4MihEd6mWrHPmrIIfQ">
-        <body>The social history section shall contain a narrative description of the person’s beliefs, home life, community life, work&#xD;
+        <body>The social history section shall contain a narrative description of the person's beliefs, home life, community life, work&#xD;
 life, hobbies, and risky habits.</body>
       </ownedComment>
       <generalization xmi:id="_Nt9-gMihEd6mWrHPmrIIfQ">
@@ -2158,7 +2116,6 @@ life, hobbies, and risky habits.</body>
   <CDA:CDATemplate xmi:id="_OY9ocHyTEd6FS-4xbA1fBQ" base_Class="_OY9BYHyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.9" assigningAuthorityName="IHE PCC"/>
   <CDA:CDATemplate xmi:id="_OeXs4HyTEd6FS-4xbA1fBQ" base_Class="_OeXF0HyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.10" assigningAuthorityName="IHE PCC"/>
   <CDA:CDATemplate xmi:id="_QDIrQHyTEd6FS-4xbA1fBQ" base_Class="_QDIEMHyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.11" assigningAuthorityName="IHE PCC"/>
-  <Default:Documentation xmi:id="_otlLwHyTEd6FS-4xbA1fBQ" base_Comment="_otgTQHyTEd6FS-4xbA1fBQ"/>
   <Default:Documentation xmi:id="_uqBVAHyTEd6FS-4xbA1fBQ" base_Comment="_up71cHyTEd6FS-4xbA1fBQ"/>
   <CDA:CodegenSupport xmi:id="_saK-MJyQEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ihe" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe" packageName="ihe" prefix="IHE" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
   <CDA:AssociationValidation xmi:id="_xT_XYJyREd6BO7rW3XxHIA" message="The Active Problems Section must contain a(n) Problem Concern Entry Entry." base_Association="_w1oMsIwEEd6B6JSUB00H7g"/>
