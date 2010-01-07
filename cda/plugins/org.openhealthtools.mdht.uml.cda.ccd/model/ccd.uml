@@ -13,11 +13,11 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_OvmR4HfUEd6ZeOKq_2_a9g" name="MedicationSection">
       <ownedComment xmi:id="_CfWEYIjvEd66cKocspyVOg" annotatedElement="_OvmR4HfUEd6ZeOKq_2_a9g">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;&lt;font size="2"&gt;The Medications section defines a patient’s current medications and pertinent medication&#13;
+    The Medications section defines a patient's current medications and pertinent medication&#13;
     history. At a minimum, the currently active medications should be listed, with an entire medication history as an&#13;
     option, particularly when the summary document is used for comprehensive data export. The section may also include a&#13;
-    patient’s prescription history, and enables the determination of the source of a medication list (e.g. from a pharmacy&#13;
-    system vs. from the patient).&lt;/font&gt;&lt;/font&gt;&#13;
+    patient's prescription history, and enables the determination of the source of a medication list (e.g. from a pharmacy&#13;
+    system vs. from the patient).&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_rdDU0HfUEd6ZeOKq_2_a9g">
@@ -238,8 +238,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_5ET7oGwWEd6q29qQGU-SBA" name="FamilyHistorySection">
       <ownedComment xmi:id="_wVqokKPREd6t_4WfM070fA" annotatedElement="_5ET7oGwWEd6q29qQGU-SBA">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;This section contains data defining the patient’s genetic relatives in terms of possible or relevant&#13;
-    health risk factors that have a potential impact on the patient’s healthcare risk profile.&lt;/font&gt;&#13;
+    This section contains data defining the patient's genetic relatives in terms of possible or relevant&#13;
+    health risk factors that have a potential impact on the patient's healthcare risk profile.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_h1M7QGwXEd6q29qQGU-SBA">
@@ -276,15 +276,15 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_Ht_RsHDAEd6eItyqb1FoWg" name="ResultOrganizer">
       <ownedComment xmi:id="_HwtKgK31Ed6_ioDelDcPPg" annotatedElement="_Ht_RsHDAEd6eItyqb1FoWg">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;&lt;font size="2"&gt;The result organizer identifies an observation set, contained with the result organizer&#13;
+    The result organizer identifies an observation set, contained with the result organizer&#13;
     as a set of result observations. It contains information applicable to all of the contained result&#13;
-    observations.&lt;/font&gt;&lt;/font&gt;&#13;
+    observations.&#13;
 &lt;/p&gt;&#13;
 &lt;p&gt;&#13;
-    &lt;font size="2"&gt;Results in ASTM CCR and CCD are structured similarly to the HL7 Version 2 ORU Observation message, where&#13;
+    Results in ASTM CCR and CCD are structured similarly to the HL7 Version 2 ORU Observation message, where&#13;
     there is an outer result organizer (templateId 2.16.840.1.113883.10.20.1.32), analogous to the HL7 Version 2 OBR&#13;
     Observation Result Segment, which contains one or more result observations (templateId 2.16.840.1.113883.10.20.1.31),&#13;
-    analogous to the HL7 Version 2 OBX Observation/Result Segment.&lt;/font&gt;&#13;
+    analogous to the HL7 Version 2 OBX Observation/Result Segment.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_hZltMHDAEd6eItyqb1FoWg">
@@ -352,10 +352,10 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_UOVM0HDAEd6eItyqb1FoWg" name="SocialHistorySection">
       <ownedComment xmi:id="_rk6PUKPREd6t_4WfM070fA" annotatedElement="_UOVM0HDAEd6eItyqb1FoWg">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;This section contains data defining the patient’s occupational, personal (e.g. lifestyle), social, and&#13;
+    This section contains data defining the patient's occupational, personal (e.g. lifestyle), social, and&#13;
     environmental history and health risk factors, as well as administrative data such as marital status, race, ethnicity&#13;
-    and religious affiliation. Social history can have significant influence on a patient’s physical, psychological and&#13;
-    emotional health and wellbeing so should be considered in the development of a complete record.&lt;/font&gt;&#13;
+    and religious affiliation. Social history can have significant influence on a patient's physical, psychological and&#13;
+    emotional health and wellbeing so should be considered in the development of a complete record.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_pTCVsHDAEd6eItyqb1FoWg">
@@ -376,13 +376,13 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_rJDcIHDAEd6eItyqb1FoWg" name="EncountersSection">
       <ownedComment xmi:id="_1XZEwIjwEd66cKocspyVOg" annotatedElement="_rJDcIHDAEd6eItyqb1FoWg">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;This section is used to list and describe any healthcare encounters pertinent to the patient’s current&#13;
+    This section is used to list and describe any healthcare encounters pertinent to the patient's current&#13;
     health status or historical health history. An Encounter is an interaction, regardless of the setting, between a&#13;
     patient and a practitioner who is vested with primary responsibility for diagnosing, evaluating, or treating the&#13;
-    patient’s condition. It may include visits, appointments, as well as non face-to-face interactions. It is also a&#13;
+    patient's condition. It may include visits, appointments, as well as non face-to-face interactions. It is also a&#13;
     contact between a patient and a practitioner who has primary responsibility for assessing and treating the patient at a&#13;
     given contact, exercising independent judgment. This section may contain all encounters for the time period being&#13;
-    summarized, but should include notable encounters.&lt;/font&gt;&#13;
+    summarized, but should include notable encounters.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_wbv8cHDOEd6eItyqb1FoWg">
@@ -441,8 +441,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_W6aMoHfTEd6ZeOKq_2_a9g" name="MedicationActivity">
       <ownedComment xmi:id="_0hxWQIjuEd66cKocspyVOg" annotatedElement="_W6aMoHfTEd6ZeOKq_2_a9g">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;A medication activity is used to describe what is administered whereas a supply activity is used to&#13;
-    describe what has been dispensed.&lt;/font&gt;&#13;
+    A medication activity is used to describe what is administered whereas a supply activity is used to&#13;
+    describe what has been dispensed.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <ownedRule xmi:id="_yqHDEI5qEd6x-qh9FleSiA" name="MedicationActivity_moodCode" constrainedElement="_W6aMoHfTEd6ZeOKq_2_a9g">
@@ -501,9 +501,9 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_PgsSAHrREd68l9lQ-TLEBQ" name="AlertsSection">
       <ownedComment xmi:id="_8qOKcKPREd6t_4WfM070fA" annotatedElement="_PgsSAHrREd68l9lQ-TLEBQ">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;This section is used to list and describe any allergies, adverse reactions, and alerts that are&#13;
-    pertinent to the patient’s current or past medical history. At a minimum, currently active and any relevant historical&#13;
-    allergies and adverse reactions should be listed.&lt;/font&gt;&#13;
+    This section is used to list and describe any allergies, adverse reactions, and alerts that are&#13;
+    pertinent to the patient's current or past medical history. At a minimum, currently active and any relevant historical&#13;
+    allergies and adverse reactions should be listed.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_YiaKIHrREd68l9lQ-TLEBQ">
@@ -585,27 +585,27 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_7TVToIiAEd66cKocspyVOg" name="ResultsSection">
       <ownedComment xmi:id="_yswHoIjpEd66cKocspyVOg" annotatedElement="_7TVToIiAEd66cKocspyVOg">
-        <body>&lt;p align="left"&gt;&#13;
-    &lt;font size="2"&gt;This section contains the results of observations generated by laboratories, imaging procedures, and&#13;
+        <body>&lt;p&gt;&#13;
+    This section contains the results of observations generated by laboratories, imaging procedures, and&#13;
     other procedures. The scope includes hematology, chemistry, serology, virology, toxicology, microbiology, plain x-ray,&#13;
     ultrasound, CT, MRI, angiography, cardiac echo, nuclear medicine, pathology, and procedure observations. The section&#13;
     may contain all results for the period of time being summarized, but should include notable results such as abnormal&#13;
-    values or relevant trends.&lt;/font&gt;&#13;
-&lt;/p&gt;&#13;
-&lt;p align="left"&gt;&#13;
-    &lt;font size="2"&gt;Lab results are typically generated by laboratories providing analytic services in areas such as&#13;
-    chemistry, hematology, serology, histology, cytology, anatomic pathology, microbiology, and/or virology. These&#13;
-    observations are based on analysis of specimens obtained from the patient, submitted to the lab.&lt;/font&gt;&#13;
-&lt;/p&gt;&#13;
-&lt;p align="left"&gt;&#13;
-    &lt;font size="2"&gt;Imaging results are typically generated by a clinician reviewing the output of an imaging procedure,&#13;
-    such as where a cardiologist reports the left ventricular ejection fraction based on the review of a cardiac&#13;
-    echo.&lt;/font&gt;&#13;
+    values or relevant trends.&#13;
 &lt;/p&gt;&#13;
 &lt;p&gt;&#13;
-    &lt;font size="2"&gt;Procedure results are typically generated by a clinician wanting to provide more granular information&#13;
+    Lab results are typically generated by laboratories providing analytic services in areas such as&#13;
+    chemistry, hematology, serology, histology, cytology, anatomic pathology, microbiology, and/or virology. These&#13;
+    observations are based on analysis of specimens obtained from the patient, submitted to the lab.&#13;
+&lt;/p&gt;&#13;
+&lt;p&gt;&#13;
+    Imaging results are typically generated by a clinician reviewing the output of an imaging procedure,&#13;
+    such as where a cardiologist reports the left ventricular ejection fraction based on the review of a cardiac&#13;
+    echo.&#13;
+&lt;/p&gt;&#13;
+&lt;p&gt;&#13;
+    Procedure results are typically generated by a clinician wanting to provide more granular information&#13;
     about component observations made during the performance of a procedure, such as where a gastroenterologist reports the&#13;
-    size of a polyp observed during a colonoscopy.&lt;/font&gt;&#13;
+    size of a polyp observed during a colonoscopy.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_-vG7sIjoEd66cKocspyVOg">
@@ -625,8 +625,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_VL2w0IiBEd66cKocspyVOg" name="MedicationSeriesNumberObservation">
       <ownedComment xmi:id="_NUpzUIjqEd66cKocspyVOg" annotatedElement="_VL2w0IiBEd66cKocspyVOg">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;The medication series number observation can be used to indicate which in a series of administrations a&#13;
-    particular administration represents (e.g. "hepatitis B vaccine number 2 was administered on Feb 07, 2004).&lt;/font&gt;&#13;
+    The medication series number observation can be used to indicate which in a series of administrations a&#13;
+    particular administration represents (e.g. "hepatitis B vaccine number 2 was administered on Feb 07, 2004).&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_ciR0EIjqEd66cKocspyVOg">
@@ -700,9 +700,9 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_p_LEwIjvEd66cKocspyVOg" name="ProceduresSection">
       <ownedComment xmi:id="_p_LEwYjvEd66cKocspyVOg" annotatedElement="_p_LEwIjvEd66cKocspyVOg">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;This section defines all interventional, surgical, diagnostic, or therapeutic procedures or treatments&#13;
+    This section defines all interventional, surgical, diagnostic, or therapeutic procedures or treatments&#13;
     pertinent to the patient historically at the time the document is generated. The section may contain all procedures for&#13;
-    the period of time being summarized, but should include notable procedures.&lt;/font&gt;&#13;
+    the period of time being summarized, but should include notable procedures.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_p_LEwojvEd66cKocspyVOg">
@@ -781,17 +781,17 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_o9nLAKPTEd6t_4WfM070fA" name="PlanOfCareSection">
       <ownedComment xmi:id="_Stjz4KPUEd6t_4WfM070fA" annotatedElement="_o9nLAKPTEd6t_4WfM070fA">
-        <body>&lt;p align="left"&gt;&#13;
-    &lt;font size="2"&gt;The plan of care section contains data defining pending orders, interventions, encounters, services, and&#13;
+        <body>&lt;p&gt;&#13;
+    The plan of care section contains data defining pending orders, interventions, encounters, services, and&#13;
     procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All&#13;
     active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of&#13;
     clinical significance to the current and ongoing care of the patient should be listed, unless constrained due to issues&#13;
-    of privacy.&lt;/font&gt;&#13;
+    of privacy.&#13;
 &lt;/p&gt;&#13;
 &lt;p&gt;&#13;
-    &lt;font size="2"&gt;The plan of care section also contains information regarding goals and clinical reminders. Clinical&#13;
+    The plan of care section also contains information regarding goals and clinical reminders. Clinical&#13;
     reminders are placed here for purposes of providing prompts that may be used for disease prevention, disease&#13;
-    management, patient safety, and healthcare quality improvements, including widely accepted performance measures.&lt;/font&gt;&#13;
+    management, patient safety, and healthcare quality improvements, including widely accepted performance measures.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_2Hub4KPTEd6t_4WfM070fA">
@@ -822,20 +822,16 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GKpeMKPaEd6t_4WfM070fA" name="VitalSignsSection">
       <ownedComment xmi:id="_WyxuEKPaEd6t_4WfM070fA" annotatedElement="_GKpeMKPaEd6t_4WfM070fA">
-        <body>&lt;p align="left"&gt;&#13;
-    &lt;font size="2"&gt;This section contains current and historically relevant vital signs, such as blood pressure, heart rate,&#13;
+        <body>&lt;p&gt;&#13;
+    This section contains current and historically relevant vital signs, such as blood pressure, heart rate,&#13;
     respiratory rate, height, weight, body mass index, head circumference, crown-to-rump length, and pulse oximetry. The&#13;
     section may contain all vital signs for the period of time being summarized, but at a minimum should include notable&#13;
-    vital signs such as the most recent, maximum and/or minimum, or both, baseline, or relevant trends.&lt;/font&gt;&#13;
+    vital signs such as the most recent, maximum and/or minimum, or both, baseline, or relevant trends.&#13;
 &lt;/p&gt;&#13;
 &lt;p&gt;&#13;
-    &lt;font size="2"&gt;Vital signs are represented like other results (as defined in&lt;/font&gt; &lt;b&gt;&lt;i&gt;&lt;font size="2"&#13;
-    face="Times New Roman,Times New Roman"&gt;&lt;font size="2" face="Times New Roman,Times New Roman"&gt;Results&#13;
-    Section&lt;/font&gt;&lt;/font&gt;&lt;/i&gt;&lt;/b&gt;&lt;font size="2"&gt;), but are aggregated into their own section in order to follow clinical&#13;
-    conventions.&lt;/font&gt;&#13;
-&lt;/p&gt;&#13;
-&lt;p&gt;&#13;
-    &lt;font size="2"&gt;&amp;nbsp;&lt;/font&gt;&#13;
+    Vital signs are represented like other results (as defined in &lt;b&gt;&lt;i&gt;Results&#13;
+    Section&lt;/i&gt;&lt;/b&gt;), but are aggregated into their own section in order to follow clinical&#13;
+    conventions.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_aEDRkKPaEd6t_4WfM070fA">
@@ -861,10 +857,10 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_5hfTYKPbEd6t_4WfM070fA" name="MedicalEquipmentSection">
       <ownedComment xmi:id="_fMDbQKPcEd6t_4WfM070fA" annotatedElement="_5hfTYKPbEd6t_4WfM070fA">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;The Medical Equipment section defines a patient’s implanted and external medical devices and equipment&#13;
+    The Medical Equipment section defines a patient's implanted and external medical devices and equipment&#13;
     that their health status depends on, as well as any pertinent equipment or device history. This section is also used to&#13;
-    itemize any pertinent current or historical durable medical equipment (DME) used to help maintain the patient’s health&#13;
-    status. All pertinent equipment relevant to the diagnosis, care, and treatment of a patient should be included.&lt;/font&gt;&#13;
+    itemize any pertinent current or historical durable medical equipment (DME) used to help maintain the patient's health&#13;
+    status. All pertinent equipment relevant to the diagnosis, care, and treatment of a patient should be included.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_-eFwQKPbEd6t_4WfM070fA">
@@ -885,60 +881,30 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GoctIKPdEd6t_4WfM070fA" name="FunctionalStatusSection">
       <ownedComment xmi:id="_nhwsgKPdEd6t_4WfM070fA" annotatedElement="_GoctIKPdEd6t_4WfM070fA">
-        <body>&lt;p align="left"&gt;&#13;
-    &lt;i&gt;&lt;font size="2"&gt;Functional Status&lt;/font&gt;&lt;/i&gt; &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2"&#13;
-    face="Times New Roman,Times New Roman"&gt;describes the patient’s status of normal functioning at the time the Care Record&#13;
-    was created. Functional statuses include information regarding the patient relative to:&lt;/font&gt;&lt;/font&gt;&#13;
+        <body>&lt;p&gt;&#13;
+    &lt;i&gt;Functional Status&lt;/i&gt; describes the patient's status of normal functioning at the time the Care Record&#13;
+    was created. Functional statuses include information regarding the patient relative to:&#13;
 &lt;/p&gt;&#13;
-&lt;div style="margin-left: 4em"&gt;&#13;
-    &lt;p align="left"&gt;&#13;
-        &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2" face="Times New Roman,Times New Roman"&gt;•&#13;
-        Ambulatory ability&lt;/font&gt;&lt;/font&gt;&#13;
-    &lt;/p&gt;&#13;
-    &lt;p align="left"&gt;&#13;
-        &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2" face="Times New Roman,Times New Roman"&gt;•&#13;
-        Mental status or competency&lt;/font&gt;&lt;/font&gt;&#13;
-    &lt;/p&gt;&#13;
-    &lt;p align="left"&gt;&#13;
-        &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2" face="Times New Roman,Times New Roman"&gt;•&#13;
-        Activities of Daily Living (ADLs), including bathing, dressing, feeding, grooming&lt;/font&gt;&lt;/font&gt;&#13;
-    &lt;/p&gt;&#13;
-    &lt;p align="left"&gt;&#13;
-        &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2" face="Times New Roman,Times New Roman"&gt;• Home&#13;
-        / living situation having an effect on the health status of the patient&lt;/font&gt;&lt;/font&gt;&#13;
-    &lt;/p&gt;&#13;
-    &lt;p align="left"&gt;&#13;
-        &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2" face="Times New Roman,Times New Roman"&gt;•&#13;
-        Ability to care for self&lt;/font&gt;&lt;/font&gt;&#13;
-    &lt;/p&gt;&#13;
-&lt;/div&gt;&#13;
-&lt;div style="margin-left: 4em"&gt;&#13;
-    &lt;p align="left"&gt;&#13;
-        &lt;font size="2"&gt;•&lt;/font&gt; &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2"&#13;
-        face="Times New Roman,Times New Roman"&gt;Social activity, including issues with social cognition, participation with&#13;
-        friends and acquaintances other than family members&lt;/font&gt;&lt;/font&gt;&#13;
-    &lt;/p&gt;&#13;
-    &lt;p align="left"&gt;&#13;
-        &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2" face="Times New Roman,Times New Roman"&gt;•&#13;
-        Occupation activity, including activities partly or directly related to working, housework or volunteering, family&#13;
-        and home responsibilities or activities related to home and family&lt;/font&gt;&lt;/font&gt;&#13;
-    &lt;/p&gt;&#13;
-    &lt;p align="left"&gt;&#13;
-        &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2" face="Times New Roman,Times New Roman"&gt;•&#13;
-        Communication ability, including issues with speech, writing or cognition required for communication&lt;/font&gt;&lt;/font&gt;&#13;
-    &lt;/p&gt;&#13;
-    &lt;p align="left"&gt;&#13;
-        &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2" face="Times New Roman,Times New Roman"&gt;•&#13;
-        Perception, including sight, hearing, taste, skin sensation, kinesthetic sense, proprioception, or&#13;
-        balance&lt;/font&gt;&lt;/font&gt;&#13;
-    &lt;/p&gt;&#13;
-&lt;/div&gt;&#13;
+&#13;
+    &lt;ul&gt;&lt;li&gt;Ambulatory ability&lt;/li&gt;&#13;
+       &lt;li&gt;Mental status or competency&lt;/li&gt;&#13;
+        &lt;li&gt;Activities of Daily Living (ADLs), including bathing, dressing, feeding, grooming&lt;/li&gt;&#13;
+        &lt;li&gt;Home / living situation having an effect on the health status of the patient&lt;/li&gt;&#13;
+        &lt;li&gt;Ability to care for self&lt;/li&gt;&#13;
+        &lt;li&gt;Social activity, including issues with social cognition, participation with&#13;
+        friends and acquaintances other than family members&lt;/li&gt;&#13;
+       &lt;li&gt;Occupation activity, including activities partly or directly related to working, housework or volunteering, family&#13;
+        and home responsibilities or activities related to home and family&lt;/li&gt;&#13;
+      &lt;li&gt;Communication ability, including issues with speech, writing or cognition required for communication&lt;/li&gt;&#13;
+       &lt;li&gt; Perception, including sight, hearing, taste, skin sensation, kinesthetic sense, proprioception, or&#13;
+        balance&lt;/li&gt;&#13;
+&lt;/ul&gt;&#13;
 &lt;p&gt;&#13;
-    &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2" face="Times New Roman,Times New Roman"&gt;Any&#13;
+    Any&#13;
     deviation from normal function that the patient displays and is recorded in the record should be included. Of&#13;
     particular interest are those limitations that would in any way interfere with self care or the medical therapeutic&#13;
     process. In addition, an improvement, any change in or noting that the patient has normal functioning status is also&#13;
-    valid for inclusion.&lt;/font&gt;&lt;/font&gt;&#13;
+    valid for inclusion.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_Ju45oKPdEd6t_4WfM070fA">
@@ -982,25 +948,24 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_T79VIKPeEd6t_4WfM070fA" name="PayersSection">
       <ownedComment xmi:id="_vOEbcKPeEd6t_4WfM070fA" annotatedElement="_T79VIKPeEd6t_4WfM070fA">
-        <body>&lt;p align="left"&gt;&#13;
-    &lt;i&gt;&lt;font size="2"&gt;Payers&lt;/font&gt;&lt;/i&gt; &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2"&#13;
-    face="Times New Roman,Times New Roman"&gt;contains data on the patient’s payers, whether a ‘third party’ insurance,&#13;
+        <body>&lt;p&gt;&#13;
+    &lt;i&gt;Payers&lt;/i&gt; contains data on the patient's payers, whether a 'third party' insurance,&#13;
     self-pay, other payer or guarantor, or some combination of payers, and is used to define which entity is the&#13;
-    responsible fiduciary for the financial aspects of a patient’s care.&lt;/font&gt;&lt;/font&gt;&#13;
+    responsible fiduciary for the financial aspects of a patient's care.&#13;
 &lt;/p&gt;&#13;
-&lt;p align="left"&gt;&#13;
-    &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2" face="Times New Roman,Times New Roman"&gt;Each unique&#13;
+&lt;p&gt;&#13;
+    Each unique&#13;
     instance of a payer and all the pertinent data needed to contact, bill to, and collect from that payer should be&#13;
     included. Authorization information that can be used to define pertinent referral, authorization tracking number,&#13;
     procedure, therapy, intervention, device, or similar authorizations for the patient or provider, or both should be&#13;
-    included. At a minimum, the patient’s pertinent current payment sources should be listed.&lt;/font&gt;&lt;/font&gt;&#13;
+    included. At a minimum, the patient's pertinent current payment sources should be listed.&#13;
 &lt;/p&gt;&#13;
 &lt;p&gt;&#13;
-    &lt;font size="2" face="Times New Roman,Times New Roman"&gt;&lt;font size="2" face="Times New Roman,Times New Roman"&gt;The CCD&#13;
+    The CCD&#13;
     represents the sources of payment as a coverage act, which identifies all of the insurance policies or government or&#13;
     other programs that cover some or all of the patient's healthcare expenses. The policies or programs are sequenced by&#13;
     order of preference. Each policy or program identifies the covered party with respect to the payer, so that the&#13;
-    identifiers can be recorded.&lt;/font&gt;&lt;/font&gt;&#13;
+    identifiers can be recorded.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_WsOdUKPeEd6t_4WfM070fA">
@@ -1027,13 +992,13 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_f0mKEKRtEd6t_4WfM070fA" name="PurposeSection">
       <ownedComment xmi:id="_uBK9gKRtEd6t_4WfM070fA" annotatedElement="_f0mKEKRtEd6t_4WfM070fA">
-        <body>&lt;p align="left"&gt;&#13;
-    &lt;font size="2"&gt;Represents the specific reason for which the summarization was generated, such as in response to a&#13;
-    request.&lt;/font&gt;&#13;
+        <body>&lt;p&gt;&#13;
+    Represents the specific reason for which the summarization was generated, such as in response to a&#13;
+    request.&#13;
 &lt;/p&gt;&#13;
 &lt;p&gt;&#13;
-    &lt;font size="2"&gt;The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific&#13;
-    purpose such as a transfer, referral, or patient request.&lt;/font&gt;&#13;
+    The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific&#13;
+    purpose such as a transfer, referral, or patient request.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_mrDrkKRtEd6t_4WfM070fA">
@@ -1059,10 +1024,10 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_rrtFgKRuEd6t_4WfM070fA" name="PurposeActivity">
       <ownedComment xmi:id="_4IIJ8KRuEd6t_4WfM070fA" annotatedElement="_rrtFgKRuEd6t_4WfM070fA">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;CCD represents the ASTM CCR &amp;lt;Purpose&amp;gt; object as a relationship between two classes – the source&#13;
+    CCD represents the ASTM CCR &amp;lt;Purpose&amp;gt; object as a relationship between two classes -- the source&#13;
     represents the act of creating a summary document, the target is the reason for creating the document, and the&#13;
     relationship type is "RSON" (has reason). The target act may be an Observation, Procedure, or some other kind of act,&#13;
-    and it may represent an order, an event, etc.&lt;/font&gt;&#13;
+    and it may represent an order, an event, etc.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <ownedRule xmi:id="_a-lZMKR0Ed6t_4WfM070fA" name="PurposeActivity_hasReason" constrainedElement="_rrtFgKRuEd6t_4WfM070fA">
@@ -1345,8 +1310,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_F9_RAMKAEd6-XpBv2uxYrQ" name="PatientInstruction">
       <ownedComment xmi:id="_lM8K4MKBEd6-XpBv2uxYrQ" annotatedElement="_F9_RAMKAEd6-XpBv2uxYrQ">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;Patient instructions are additional information provided to a patient related to one of their&#13;
-    medications (e.g. "take on an empty stomach").&lt;/font&gt;&#13;
+    Patient instructions are additional information provided to a patient related to one of their&#13;
+    medications (e.g. "take on an empty stomach").&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_MqSJ4MKAEd6-XpBv2uxYrQ">
@@ -1363,8 +1328,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_IuPLEMKAEd6-XpBv2uxYrQ" name="FulfillmentInstruction">
       <ownedComment xmi:id="_rCdz0MKBEd6-XpBv2uxYrQ" annotatedElement="_IuPLEMKAEd6-XpBv2uxYrQ">
         <body>&lt;p&gt;&#13;
-    &lt;font size="2"&gt;Fulfillment instructions are additional information provided to the dispensing party (e.g. "label in&#13;
-    spanish").&lt;/font&gt;&#13;
+    Fulfillment instructions are additional information provided to the dispensing party (e.g. "label in&#13;
+    spanish").&#13;
 &lt;/p&gt;</body>
       </ownedComment>
       <generalization xmi:id="_NTNyIMKAEd6-XpBv2uxYrQ">
