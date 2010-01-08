@@ -717,7 +717,7 @@
           <children xmi:id="_tltwUa7QEd6_ioDelDcPPg" type="Description">
             <element xsi:nil="true"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_tltJQa7QEd6_ioDelDcPPg" fontName="Segoe UI" description="&lt;p>&#xD;&#xA;    Vital Sign code from&amp;nbsp;&lt;font size=&quot;1&quot;>HITSP/C80 Section 2.2.3.6.4 Vital Sign Result Type.&lt;/font>&#xD;&#xA;&lt;/p>" fillColor="13369343" lineColor="6737151" lineWidth="1"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_tltJQa7QEd6_ioDelDcPPg" fontName="Segoe UI" description="&lt;p>&#xD;&#xA;    Vital Sign code from HITSP/C80 Section 2.2.3.6.4 Vital Sign Result Type. &#xD;&#xA;&lt;/p>" fillColor="13369343" lineColor="6737151" lineWidth="1"/>
           <styles xmi:type="notation:TextStyle" xmi:id="_tltJQq7QEd6_ioDelDcPPg"/>
           <styles xmi:type="notation:LineTypeStyle" xmi:id="_tltJQ67QEd6_ioDelDcPPg"/>
           <element xsi:nil="true"/>
@@ -3800,8 +3800,8 @@
       </eAnnotations>
       <ownedComment xmi:id="_aq5R4HrXEd68l9lQ-TLEBQ" annotatedElement="_vB4EUGEIEd6bFO5yxRh3Nw">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>This module contains the allergy or intolerance conditions and the associated adverse reactions suffered&#xD;
-    by the patient. See the HL7 Continuity of Care Document Section 3.8 for constraints applicable to this module.&lt;/font>&#xD;
+    This module contains the allergy or intolerance conditions and the associated adverse reactions suffered&#xD;
+    by the patient. See the HL7 Continuity of Care Document Section 3.8 for constraints applicable to this module. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_hsBnwHrWEd68l9lQ-TLEBQ">
@@ -3844,7 +3844,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_L9yGgK7HEd6_ioDelDcPPg" name="VitalSignsSection">
       <ownedComment xmi:id="_EGGjEMf2Ed6VjLXh4DcWSg" annotatedElement="_L9yGgK7HEd6_ioDelDcPPg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Vital Signs Section contains information documenting the patient vital signs.&lt;/font>&#xD;
+    The Vital Signs Section contains information documenting the patient vital signs. &#xD;
 &lt;/p></body>
       </ownedComment>
       <ownedRule xmi:id="_hrcTgK7MEd6_ioDelDcPPg" name="HITSPVitalSignsSection_vitalSigns" constrainedElement="_L9yGgK7HEd6_ioDelDcPPg">
@@ -3868,10 +3868,10 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_DH404MfWEd6VjLXh4DcWSg" name="PayersSection">
       <ownedComment xmi:id="_KrHD0MfYEd6VjLXh4DcWSg" annotatedElement="_DH404MfWEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Payers Section contains data on the patient’s payers, whether a ‘third party’ insurance, self-pay,&#xD;
+    The Payers Section contains data on the patient's payers, whether a 'third party' insurance, self-pay,&#xD;
     other payer or guarantor, or some combination. At a minimum, the patient's pertinent current payment sources should be&#xD;
     listed. If no payment sources are supplied, the reason shall be supplied as free text in the narrative block (e.g., Not&#xD;
-    Insured, Payer Unknown, Medicare Pending, et cetera).&lt;/font>&#xD;
+    Insured, Payer Unknown, Medicare Pending, et cetera). &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_1sbqcMfXEd6VjLXh4DcWSg">
@@ -3881,9 +3881,9 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_VGnj8MfZEd6VjLXh4DcWSg" name="AllergiesReactionsSection">
       <ownedComment xmi:id="_J4LgIMfaEd6VjLXh4DcWSg" annotatedElement="_VGnj8MfZEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Allergies and Other Adverse Reactions Section contains data on the substance intolerances and the&#xD;
+    The Allergies and Other Adverse Reactions Section contains data on the substance intolerances and the&#xD;
     associated adverse reactions suffered by the patient. At a minimum, currently active and any relevant historical&#xD;
-    allergies and adverse reactions shall be listed.&lt;/font>&#xD;
+    allergies and adverse reactions shall be listed. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_Xue-EMfZEd6VjLXh4DcWSg">
@@ -3893,7 +3893,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_cPtREMfaEd6VjLXh4DcWSg" name="ProblemListSection">
       <ownedComment xmi:id="_mOi4wMfaEd6VjLXh4DcWSg" annotatedElement="_cPtREMfaEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Problem List Section contains data on the problems currently being monitored for the patient.&lt;/font>&#xD;
+    The Problem List Section contains data on the problems currently being monitored for the patient. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_epE8MMfaEd6VjLXh4DcWSg">
@@ -3903,8 +3903,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_lSC-0MfbEd6VjLXh4DcWSg" name="HistoryOfPastIllnessSection">
       <ownedComment xmi:id="_rhcgUMfbEd6VjLXh4DcWSg" annotatedElement="_lSC-0MfbEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The History of Past Illness Section contains data about problems the patient suffered in the&#xD;
-    past.&lt;/font>&#xD;
+    The History of Past Illness Section contains data about problems the patient suffered in the&#xD;
+    past. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_nhstQMfbEd6VjLXh4DcWSg">
@@ -3914,7 +3914,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_9ugRMMfcEd6VjLXh4DcWSg" name="ChiefComplaintSection">
       <ownedComment xmi:id="_EHhBsMfdEd6VjLXh4DcWSg" annotatedElement="_9ugRMMfcEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Chief Complaint Section contains information about the patient's chief complaint.&lt;/font>&#xD;
+    The Chief Complaint Section contains information about the patient's chief complaint. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="__87QkMfcEd6VjLXh4DcWSg">
@@ -3924,8 +3924,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_bX2UoMfdEd6VjLXh4DcWSg" name="ReasonForReferralSection">
       <ownedComment xmi:id="_vA-QUMfdEd6VjLXh4DcWSg" annotatedElement="_bX2UoMfdEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Reason for Referral Section contains information about the reason that the patient is being&#xD;
-    referred.&lt;/font>&#xD;
+    The Reason for Referral Section contains information about the reason that the patient is being&#xD;
+    referred. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_eIhFcMfdEd6VjLXh4DcWSg">
@@ -3935,8 +3935,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_w51SkMfhEd6VjLXh4DcWSg" name="HistoryOfPresentIllness">
       <ownedComment xmi:id="__Y1SwMfhEd6VjLXh4DcWSg" annotatedElement="_w51SkMfhEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The History of Present Illness Section contains information about the sequence of events preceding the&#xD;
-    patient’s current complaints.&lt;/font>&#xD;
+    The History of Present Illness Section contains information about the sequence of events preceding the&#xD;
+    patient's current complaints. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_yYzyAMfhEd6VjLXh4DcWSg">
@@ -3951,8 +3951,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_m5tlkMfuEd6VjLXh4DcWSg" name="FunctionalStatusSection">
       <ownedComment xmi:id="_z7tcQMfuEd6VjLXh4DcWSg" annotatedElement="_m5tlkMfuEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Functional Status Section provides information about the capability of the patient to perform acts&#xD;
-    of daily living.&lt;/font>&#xD;
+    The Functional Status Section provides information about the capability of the patient to perform acts&#xD;
+    of daily living. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_pp-twMfuEd6VjLXh4DcWSg">
@@ -3962,8 +3962,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_eg314MfvEd6VjLXh4DcWSg" name="HospitalAdmissionDiagnosisSection">
       <ownedComment xmi:id="_rzF54MfvEd6VjLXh4DcWSg" annotatedElement="_eg314MfvEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Hospital Admitting Diagnosis Section contains information about the primary reason for admission to&#xD;
-    a hospital facility.&lt;/font>&#xD;
+    The Hospital Admitting Diagnosis Section contains information about the primary reason for admission to&#xD;
+    a hospital facility. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_m79y4MfvEd6VjLXh4DcWSg">
@@ -3973,9 +3973,9 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_CEsTsMfwEd6VjLXh4DcWSg" name="DischargeDiagnosisSection">
       <ownedComment xmi:id="_NRLaQMfwEd6VjLXh4DcWSg" annotatedElement="_CEsTsMfwEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Discharge Diagnosis Section contains information about the conditions identified during the hospital&#xD;
+    The Discharge Diagnosis Section contains information about the conditions identified during the hospital&#xD;
     stay that either need to be monitored after discharge from the hospital and/or where resolved during the hospital&#xD;
-    course.&lt;/font>&#xD;
+    course. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_HTsIIMfwEd6VjLXh4DcWSg">
@@ -3985,8 +3985,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_WI3zsMfwEd6VjLXh4DcWSg" name="MedicationsSection">
       <ownedComment xmi:id="_iNKE8MfwEd6VjLXh4DcWSg" annotatedElement="_WI3zsMfwEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Medications Section contains information about the relevant medications for the patient. At a&#xD;
-    minimum, the currently active medications should be listed.&lt;/font>&#xD;
+    The Medications Section contains information about the relevant medications for the patient. At a&#xD;
+    minimum, the currently active medications should be listed. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_Y4PkAMfwEd6VjLXh4DcWSg">
@@ -3996,8 +3996,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_CoUvwMfxEd6VjLXh4DcWSg" name="AdmissionMedicationHistorySection">
       <ownedComment xmi:id="_NKd40MfxEd6VjLXh4DcWSg" annotatedElement="_CoUvwMfxEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Admission Medication Section contains information about the relevant medications of a patient prior&#xD;
-    to admission to a facility.&lt;/font>&#xD;
+    The Admission Medication Section contains information about the relevant medications of a patient prior&#xD;
+    to admission to a facility. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_IMdGsMfxEd6VjLXh4DcWSg">
@@ -4007,8 +4007,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_OORpwMfyEd6VjLXh4DcWSg" name="HospitalDischargeMedicationsSection">
       <ownedComment xmi:id="_cuSWkMfyEd6VjLXh4DcWSg" annotatedElement="_OORpwMfyEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Hospital Discharge Medications Section contains information about the relevant medications of the&#xD;
-    medications ordered for the patient for use after discharge from the hospital.&lt;/font>&#xD;
+    The Hospital Discharge Medications Section contains information about the relevant medications of the&#xD;
+    medications ordered for the patient for use after discharge from the hospital. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_TYzN4MfyEd6VjLXh4DcWSg">
@@ -4018,8 +4018,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_u9U54MfyEd6VjLXh4DcWSg" name="MedicationsAdministeredSection">
       <ownedComment xmi:id="_HScqoMfzEd6VjLXh4DcWSg" annotatedElement="_u9U54MfyEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Medications Administered Section contains information about the relevant medications administered to&#xD;
-    a patient during the course of an encounter.&lt;/font>&#xD;
+    The Medications Administered Section contains information about the relevant medications administered to&#xD;
+    a patient during the course of an encounter. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_-RLecMfyEd6VjLXh4DcWSg">
@@ -4029,8 +4029,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_uIr7cMfzEd6VjLXh4DcWSg" name="AdvanceDirectivesSection">
       <ownedComment xmi:id="_5aSLgMfzEd6VjLXh4DcWSg" annotatedElement="_uIr7cMfzEd6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Advance Directives Section contains information that defines the patient’s expectations and requests&#xD;
-    for care along with the locations of the documents.&lt;/font>&#xD;
+    The Advance Directives Section contains information that defines the patient's expectations and requests&#xD;
+    for care along with the locations of the documents. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_wzIIcMfzEd6VjLXh4DcWSg">
@@ -4040,8 +4040,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_gHDXQMf0Ed6VjLXh4DcWSg" name="ImmunizationsSection">
       <ownedComment xmi:id="_m9ylkMf0Ed6VjLXh4DcWSg" annotatedElement="_gHDXQMf0Ed6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Immunizations Section contains information describing the immunizations administered to the&#xD;
-    patient.&lt;/font>&#xD;
+    The Immunizations Section contains information describing the immunizations administered to the&#xD;
+    patient. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_iBayMMf0Ed6VjLXh4DcWSg">
@@ -4051,7 +4051,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_XaZ6wMf1Ed6VjLXh4DcWSg" name="PhysicalExamSection">
       <ownedComment xmi:id="_pXr_sMf1Ed6VjLXh4DcWSg" annotatedElement="_XaZ6wMf1Ed6VjLXh4DcWSg">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Physical Examination Section contains information describing the physical findings.&lt;/font>&#xD;
+    The Physical Examination Section contains information describing the physical findings. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_Yda28Mf1Ed6VjLXh4DcWSg">
@@ -4061,8 +4061,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_GuZI0MiXEd6mWrHPmrIIfQ" name="ReviewOfSystemsSection">
       <ownedComment xmi:id="_BxC2UMidEd6mWrHPmrIIfQ" annotatedElement="_GuZI0MiXEd6mWrHPmrIIfQ">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Review of Systems Section contains information describing patient responses to questions about the&#xD;
-    function of various body systems.&lt;/font>&#xD;
+    The Review of Systems Section contains information describing patient responses to questions about the&#xD;
+    function of various body systems. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_H4oHUMiXEd6mWrHPmrIIfQ">
@@ -4072,8 +4072,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_J1pl8MidEd6mWrHPmrIIfQ" name="HospitalCourseSection">
       <ownedComment xmi:id="_qTMPUMidEd6mWrHPmrIIfQ" annotatedElement="_J1pl8MidEd6mWrHPmrIIfQ">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Hospital Course Section contains information about of the sequence of events from admission to&#xD;
-    discharge in a hospital facility.&lt;/font>&#xD;
+    The Hospital Course Section contains information about of the sequence of events from admission to&#xD;
+    discharge in a hospital facility. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_LTgrEMidEd6mWrHPmrIIfQ">
@@ -4083,8 +4083,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_P3GVkMieEd6mWrHPmrIIfQ" name="DiagnosticResultsSection">
       <ownedComment xmi:id="_YY5XgMieEd6mWrHPmrIIfQ" annotatedElement="_P3GVkMieEd6mWrHPmrIIfQ">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Diagnostic Results Section contains information about the results from diagnostic procedures the&#xD;
-    patient received.&lt;/font>&#xD;
+    The Diagnostic Results Section contains information about the results from diagnostic procedures the&#xD;
+    patient received. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_RNzp0MieEd6mWrHPmrIIfQ">
@@ -4093,22 +4093,22 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ml82oMifEd6mWrHPmrIIfQ" name="AssessmentAndPlanSection">
       <ownedComment xmi:id="_yaHoQMifEd6mWrHPmrIIfQ" annotatedElement="_ml82oMifEd6mWrHPmrIIfQ">
-        <body>&lt;p align=&quot;left&quot;>&#xD;
-    &lt;font size=&quot;2&quot;>The Assessment and Plan Section contains information about the assessment of the patient’s condition and&#xD;
+        <body>&lt;p>&#xD;
+    The Assessment and Plan Section contains information about the assessment of the patient's condition and&#xD;
     expectations for care including proposals, goals, and order requests for monitoring, tracking, or improving the&#xD;
-    condition of the patient.&lt;/font>&#xD;
+    condition of the patient. &#xD;
 &lt;/p>&#xD;
 &lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>An assessment and plan section varies from the plan of care section defined later in that it includes a&#xD;
-    physician assessment of the patient condition.&lt;/font>&#xD;
+    An assessment and plan section varies from the plan of care section defined later in that it includes a&#xD;
+    physician assessment of the patient condition. &#xD;
 &lt;/p>&#xD;
 &lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>&lt;b>&lt;font size=&quot;2&quot;>NOTE&lt;/font>&lt;/b>&lt;font size=&quot;2&quot; face=&quot;Arial,Arial&quot;>&lt;font size=&quot;2&quot; face=&quot;Arial,Arial&quot;>:&#xD;
+    &lt;b>NOTE &lt;/b>:&#xD;
     The assessments described in this section are physician assessments of the patient's current condition, and do not&#xD;
     include assessments of functional status, or other assessments typically used in nursing. In Implementation Guides&#xD;
     currently selected, when both the assessment and plan are documented, they are included together in a single section&#xD;
     documenting both. When the physician assessment is not present, only the plan of care section appears. There are no&#xD;
-    cases where a physician assessment is provided without a plan.&lt;/font>&lt;/font>&lt;/font>&#xD;
+    cases where a physician assessment is provided without a plan.   &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_n1jdUMifEd6mWrHPmrIIfQ">
@@ -4117,13 +4117,13 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_SydBgMigEd6mWrHPmrIIfQ" name="PlanOfCareSection">
       <ownedComment xmi:id="_h3l0oMigEd6mWrHPmrIIfQ" annotatedElement="_SydBgMigEd6mWrHPmrIIfQ">
-        <body>&lt;p align=&quot;left&quot;>&#xD;
-    &lt;font size=&quot;2&quot;>The Plan of Care Section contains information about the expectations for care to be provided including&#xD;
-    proposed interventions and goals for improving the condition of the patient.&lt;/font>&#xD;
+        <body>&lt;p>&#xD;
+    The Plan of Care Section contains information about the expectations for care to be provided including&#xD;
+    proposed interventions and goals for improving the condition of the patient. &#xD;
 &lt;/p>&#xD;
 &lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>A plan of care section varies from the assessment and plan section defined above in that it does not&#xD;
-    include a physician assessment of the patient condition.&lt;/font>&#xD;
+    A plan of care section varies from the assessment and plan section defined above in that it does not&#xD;
+    include a physician assessment of the patient condition. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_U9euoMigEd6mWrHPmrIIfQ">
@@ -4133,8 +4133,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_4Mh2UMigEd6mWrHPmrIIfQ" name="FamilyHistorySection">
       <ownedComment xmi:id="__W9csMigEd6mWrHPmrIIfQ" annotatedElement="_4Mh2UMigEd6mWrHPmrIIfQ">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Family History Section contains information about the genetic family members, to the extent that&#xD;
-    they are known, the diseases they suffered from, their ages at death, and other relevant genetic information.&lt;/font>&#xD;
+    The Family History Section contains information about the genetic family members, to the extent that&#xD;
+    they are known, the diseases they suffered from, their ages at death, and other relevant genetic information. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_7ThccMigEd6mWrHPmrIIfQ">
@@ -4144,8 +4144,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_-ujjcMihEd6mWrHPmrIIfQ" name="SocialHistorySection">
       <ownedComment xmi:id="_Gu8hcMiiEd6mWrHPmrIIfQ" annotatedElement="_-ujjcMihEd6mWrHPmrIIfQ">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Social History Section contains information about the person’s beliefs, home life, community life,&#xD;
-    work life, hobbies, and risky habits.&lt;/font>&#xD;
+    The Social History Section contains information about the person's beliefs, home life, community life,&#xD;
+    work life, hobbies, and risky habits. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_BW7T4MiiEd6mWrHPmrIIfQ">
@@ -4155,8 +4155,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_F4b6wMijEd6mWrHPmrIIfQ" name="EncountersSection">
       <ownedComment xmi:id="_R7eO0MijEd6mWrHPmrIIfQ" annotatedElement="_F4b6wMijEd6mWrHPmrIIfQ">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Encounter Section contains information describing the patient history of encounters. At a minimum,&#xD;
-    current and pertinent historical encounters should be included; a full encounter history may be included.&lt;/font>&#xD;
+    The Encounter Section contains information describing the patient history of encounters. At a minimum,&#xD;
+    current and pertinent historical encounters should be included; a full encounter history may be included. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_KMB24MijEd6mWrHPmrIIfQ">
@@ -4166,8 +4166,8 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_d9cy8MijEd6mWrHPmrIIfQ" name="MedicalEquipmentSection">
       <ownedComment xmi:id="_kMSTwMijEd6mWrHPmrIIfQ" annotatedElement="_d9cy8MijEd6mWrHPmrIIfQ">
         <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The Medical Equipment section contains information describing a patient’s implanted and external medical&#xD;
-    devices and equipment that their health status depends on, as well as any pertinent equipment or device history.&lt;/font>&#xD;
+    The Medical Equipment section contains information describing a patient's implanted and external medical&#xD;
+    devices and equipment that their health status depends on, as well as any pertinent equipment or device history. &#xD;
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_gF0NoMijEd6mWrHPmrIIfQ">
