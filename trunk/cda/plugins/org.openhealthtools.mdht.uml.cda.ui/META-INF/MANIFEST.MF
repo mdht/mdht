@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.ui;singleton:=true
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 0.7.0.qualifier
 Bundle-Activator: org.openhealthtools.mdht.uml.cda.ui.internal.Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -13,6 +13,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.common.core,
  org.eclipse.gmf.runtime.diagram.ui.properties,
  org.openhealthtools.mdht.uml.cda.resources,
+ org.openhealthtools.mdht.uml.cda.core,
  org.openhealthtools.mdht.uml.common,
  org.openhealthtools.mdht.uml.common.ui,
  org.eclipse.uml2.uml.edit

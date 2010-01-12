@@ -69,26 +69,47 @@
    -->
 	<extension point="org.eclipse.ui.popupMenus">
 		<objectContribution adaptable="true"
-			objectClass="org.eclipse.uml2.uml.Element" id="org.openhealthtools.mdht.uml.cda.ui.dialogs.contribution1">
+			objectClass="org.eclipse.uml2.uml.Element" 
+			id="org.openhealthtools.mdht.uml.cda.ui.dialogs.contribution1">
 			<menu label="%CDATools.menu.label" path="additions" id="cdatools">
-				<separator name="edit">
-				</separator>
+				<separator name="edit"/>
 			</menu>
 			<visibility>
 				<objectClass name="org.eclipse.uml2.uml.Class" />
 			</visibility>
+			<action label="%assignValidationMessage.label"
+				class="org.openhealthtools.mdht.uml.cda.ui.actions.AssignValidationMessageAction"
+				menubarPath="cdatools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.hdf.ui.actions.assignValidationMessageAction">
+			</action>
 			<action label="%openTemplateEditor.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.OpenTemplateEditorAction"
 				menubarPath="cdatools/edit" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.hdf.ui.actions.openSubclassEditorAction">
 			</action>
 		</objectContribution>
+		<objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element" 
+			id="org.openhealthtools.mdht.uml.cda.ui.dialogs.contribution2">
+			<menu label="%CDATools.menu.label" path="additions" id="cdatools">
+				<separator name="edit"/>
+			</menu>
+			<visibility>
+				<objectClass name="org.eclipse.uml2.uml.Package" />
+			</visibility>
+			<action label="%assignValidationMessage.label"
+				class="org.openhealthtools.mdht.uml.cda.ui.actions.AssignValidationMessageAction"
+				menubarPath="cdatools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.hdf.ui.actions.assignValidationMessageAction">
+			</action>
+		</objectContribution>
+		
 
 		<objectContribution adaptable="true"
-			objectClass="org.eclipse.gmf.runtime.notation.View" id="org.openhealthtools.mdht.uml.cda.ui.dialogs.contribution3">
+			objectClass="org.eclipse.gmf.runtime.notation.View" 
+			id="org.openhealthtools.mdht.uml.cda.ui.dialogs.contribution3">
 			<menu label="%CDATools.menu.label" path="additions" id="cdatools">
-				<separator name="edit">
-				</separator>
+				<separator name="edit"/>
 			</menu>
 			<action label="%openTemplateEditor.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.OpenTemplateEditorAction"
