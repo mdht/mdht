@@ -65,8 +65,8 @@ public class AddUMLConstraintAction extends UML2AbstractAction {
 							if (element instanceof NamedElement) {
 								constraint.setName(((NamedElement)element).getName());
 							}
-							constraint.getConstrainedElements().add(element);
 						}
+						constraint.getConstrainedElements().add(element);
 
 				        return Status.OK_STATUS;
 				    }};
