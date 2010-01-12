@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.uml.cda.ncr;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.openhealthtools.mdht.uml.cda.Location;
+import org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.Location;
  * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation typeCode='LOC' constraints.validation.error='NeonatalICULocationTemplateId NeonatalICULocationTypeCode' templateId.root='2.16.840.1.113883.10.20.17.3.14'"
  * @generated
  */
-public interface NeonatalICULocation extends Location {
+public interface NeonatalICULocation extends EncounterLocation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

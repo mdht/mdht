@@ -56,6 +56,15 @@ public class NeonatalICUEncounterActivityImpl extends EncountersActivityImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateNeonatalICUEncounterActivityLocation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return NeonatalICUEncounterActivityOperations.validateNeonatalICUEncounterActivityLocation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateNeonatalICUEncounterActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return NeonatalICUEncounterActivityOperations.validateNeonatalICUEncounterActivityTemplateId(this, diagnostics, context);
 	}
@@ -103,15 +112,6 @@ public class NeonatalICUEncounterActivityImpl extends EncountersActivityImpl imp
 	 */
 	public boolean validateNeonatalICUEncounterActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return NeonatalICUEncounterActivityOperations.validateNeonatalICUEncounterActivityId(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateNeonatalICUEncounterActivityNeonatalICULocation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return NeonatalICUEncounterActivityOperations.validateNeonatalICUEncounterActivityNeonatalICULocation(this, diagnostics, context);
 	}
 
 	/**

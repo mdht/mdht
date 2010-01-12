@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.EncounterLocationOperations;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPlugin;
 import org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation;
@@ -40,16 +41,7 @@ import org.openhealthtools.mdht.uml.cda.ncr.util.NCRValidator;
  *
  * @generated
  */
-public class NeonatalICULocationOperations {
-	/**
-	 * The cached environment for evaluating OCL expressions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected static final OCL EOCL_ENV = OCL.newInstance();
-
+public class NeonatalICULocationOperations extends EncounterLocationOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

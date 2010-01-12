@@ -331,7 +331,7 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		encountersSectionEClass.getESuperTypes().add(theCCDPackage.getEncountersSection());
 		acuityDataSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		birthWeightEClass.getESuperTypes().add(theCCDPackage.getResultObservation());
-		neonatalICULocationEClass.getESuperTypes().add(theCDAPackage.getLocation());
+		neonatalICULocationEClass.getESuperTypes().add(theCCDPackage.getEncounterLocation());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(neonatalCareReportEClass, NeonatalCareReport.class, "NeonatalCareReport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -355,6 +355,15 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(neonatalICUEncounterActivityEClass, NeonatalICUEncounterActivity.class, "NeonatalICUEncounterActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(neonatalICUEncounterActivityEClass, ecorePackage.getEBoolean(), "validateNeonatalICUEncounterActivityLocation", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(neonatalICUEncounterActivityEClass, ecorePackage.getEBoolean(), "validateNeonatalICUEncounterActivityTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -402,15 +411,6 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(neonatalICUEncounterActivityEClass, ecorePackage.getEBoolean(), "validateNeonatalICUEncounterActivityId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(neonatalICUEncounterActivityEClass, ecorePackage.getEBoolean(), "validateNeonatalICUEncounterActivityNeonatalICULocation", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -669,7 +669,7 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 			 "classCode", "ENC",
 			 "code.codeSystemName", "HL7ActCode",
 			 "templateId.root", "2.16.840.1.113883.10.20.17.3.15",
-			 "constraints.validation.error", "NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId NeonatalICUEncounterActivityNeonatalICULocation",
+			 "constraints.validation.error", "NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId",
 			 "code.displayName", "Inpatient encounter",
 			 "code.codeSystem", "2.16.840.1.113883.5.4",
 			 "code.code", "IMP",

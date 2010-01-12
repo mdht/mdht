@@ -16,7 +16,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.cda.impl.LocationImpl;
+import org.openhealthtools.mdht.uml.cda.ccd.impl.EncounterLocationImpl;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
 import org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation;
 import org.openhealthtools.mdht.uml.cda.ncr.operations.NeonatalICULocationOperations;
@@ -31,7 +31,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class NeonatalICULocationImpl extends LocationImpl implements NeonatalICULocation {
+public class NeonatalICULocationImpl extends EncounterLocationImpl implements NeonatalICULocation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

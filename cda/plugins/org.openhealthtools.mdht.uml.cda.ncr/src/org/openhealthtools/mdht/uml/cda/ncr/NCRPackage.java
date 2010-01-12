@@ -1593,7 +1593,7 @@ public interface NCRPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEONATAL_ICU_LOCATION__REALM_CODE = CDAPackage.LOCATION__REALM_CODE;
+	int NEONATAL_ICU_LOCATION__REALM_CODE = CCDPackage.ENCOUNTER_LOCATION__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1602,7 +1602,7 @@ public interface NCRPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEONATAL_ICU_LOCATION__TYPE_ID = CDAPackage.LOCATION__TYPE_ID;
+	int NEONATAL_ICU_LOCATION__TYPE_ID = CCDPackage.ENCOUNTER_LOCATION__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1611,16 +1611,34 @@ public interface NCRPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEONATAL_ICU_LOCATION__TEMPLATE_ID = CDAPackage.LOCATION__TEMPLATE_ID;
+	int NEONATAL_ICU_LOCATION__TEMPLATE_ID = CCDPackage.ENCOUNTER_LOCATION__TEMPLATE_ID;
 
 	/**
-	 * The feature id for the '<em><b>Health Care Facility</b></em>' containment reference.
+	 * The feature id for the '<em><b>Time</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NEONATAL_ICU_LOCATION__HEALTH_CARE_FACILITY = CDAPackage.LOCATION__HEALTH_CARE_FACILITY;
+	int NEONATAL_ICU_LOCATION__TIME = CCDPackage.ENCOUNTER_LOCATION__TIME;
+
+	/**
+	 * The feature id for the '<em><b>Awareness Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEONATAL_ICU_LOCATION__AWARENESS_CODE = CCDPackage.ENCOUNTER_LOCATION__AWARENESS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Participant Role</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEONATAL_ICU_LOCATION__PARTICIPANT_ROLE = CCDPackage.ENCOUNTER_LOCATION__PARTICIPANT_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1629,7 +1647,7 @@ public interface NCRPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEONATAL_ICU_LOCATION__NULL_FLAVOR = CDAPackage.LOCATION__NULL_FLAVOR;
+	int NEONATAL_ICU_LOCATION__NULL_FLAVOR = CCDPackage.ENCOUNTER_LOCATION__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
@@ -1638,7 +1656,16 @@ public interface NCRPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEONATAL_ICU_LOCATION__TYPE_CODE = CDAPackage.LOCATION__TYPE_CODE;
+	int NEONATAL_ICU_LOCATION__TYPE_CODE = CCDPackage.ENCOUNTER_LOCATION__TYPE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Context Control Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEONATAL_ICU_LOCATION__CONTEXT_CONTROL_CODE = CCDPackage.ENCOUNTER_LOCATION__CONTEXT_CONTROL_CODE;
 
 	/**
 	 * The number of structural features of the '<em>Neonatal ICU Location</em>' class.
@@ -1647,7 +1674,7 @@ public interface NCRPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEONATAL_ICU_LOCATION_FEATURE_COUNT = CDAPackage.LOCATION_FEATURE_COUNT + 0;
+	int NEONATAL_ICU_LOCATION_FEATURE_COUNT = CCDPackage.ENCOUNTER_LOCATION_FEATURE_COUNT + 0;
 
 
 	/**
