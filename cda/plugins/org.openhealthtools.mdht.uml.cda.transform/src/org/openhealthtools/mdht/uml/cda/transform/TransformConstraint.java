@@ -12,10 +12,15 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 
@@ -25,6 +30,31 @@ public class TransformConstraint extends TransformAbstract {
 	}
 	
 	public Object caseConstraint(Constraint constraint) {
+		// remove all spec languages other than the first OCL expression
+		ValueSpecification spec = constraint.getSpecification();
+		if (spec instanceof OpaqueExpression) {
+			List<String> languages = new ArrayList<String>(((OpaqueExpression) spec).getLanguages());
+			String oclBody = null;
+			for (int i=0; i<languages.size(); i++) {
+				String lang = languages.get(i);
+				if ("OCL".equals(lang)) {
+					oclBody = ((OpaqueExpression) spec).getBodies().get(i);
+					break;
+				}
+			}
+			
+			if (oclBody == null) {
+				removeModelElement(constraint);
+				return null;
+			}
+			else {
+				((OpaqueExpression) spec).getLanguages().clear();
+				((OpaqueExpression) spec).getBodies().clear();
+				((OpaqueExpression) spec).getLanguages().add("OCL");
+				((OpaqueExpression) spec).getBodies().add(oclBody);
+			}
+		}
+		
 		Class constrainedClass = null;
 		if (constraint.getContext() instanceof Class) {
 			constrainedClass = (Class) constraint.getContext();
