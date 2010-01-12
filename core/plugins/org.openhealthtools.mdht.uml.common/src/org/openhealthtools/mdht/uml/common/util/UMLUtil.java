@@ -189,11 +189,11 @@ public static List<String> getAllParentNames(Classifier classifier) {
 	}
 
 	/**
-	 * Returns the outermost top package containing the given named element.
+	 * Returns the outermost top package containing the given element.
 	 * @param element
 	 * @return a Package
 	 */
-	public static Package getTopPackage(NamedElement element) {
+	public static Package getTopPackage(Element element) {
 		return getTopPackage(element.getNearestPackage());
 	}
 
@@ -872,6 +872,23 @@ public static List<String> getAllParentNames(Classifier classifier) {
 					: super.doSwitch(eObject);
 			}
 		}.doSwitch(type);
+	}
+
+	public static List<Property> getRedefinedProperties(Property property) {
+		List<Property> redefinedProperties = new ArrayList<Property>();
+		if (!property.getRedefinedProperties().isEmpty()) {
+			redefinedProperties.addAll(property.getRedefinedProperties());
+		}
+		else {
+			for (Classifier parent : property.getClass_().allParents()) {
+				Property p = parent.getAttribute(property.getName(), null);
+				if (p != null) {
+					redefinedProperties.add(p);
+				}
+			}
+		}
+		
+		return redefinedProperties;
 	}
 
 }
