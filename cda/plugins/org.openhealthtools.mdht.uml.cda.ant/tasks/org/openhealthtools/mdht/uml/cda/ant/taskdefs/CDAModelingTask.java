@@ -225,6 +225,12 @@ public class CDAModelingTask extends Task {
 		return subtask;
 	}
 
+	public TransformToDita createTransformToDita() {
+		TransformToDita subtask = new TransformToDita(this);
+		subtasks.add(subtask);
+		return subtask;
+	}
+
 	// Helper methods ----------------------------------------------------------
 	
 	protected void logError(String message) {
