@@ -28,10 +28,23 @@ import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ncr.NCRPackage#getNeonatalICUEncounterActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ENC' code.codeSystemName='HL7ActCode' templateId.root='2.16.840.1.113883.10.20.17.3.15' constraints.validation.error='NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId NeonatalICUEncounterActivityNeonatalICULocation' code.displayName='Inpatient encounter' code.codeSystem='2.16.840.1.113883.5.4' code.code='IMP' constraints.validation.warning='NeonatalICUEncounterActivityEffectiveTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ENC' code.codeSystemName='HL7ActCode' templateId.root='2.16.840.1.113883.10.20.17.3.15' constraints.validation.error='NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId' code.displayName='Inpatient encounter' code.codeSystem='2.16.840.1.113883.5.4' code.code='IMP' constraints.validation.warning='NeonatalICUEncounterActivityEffectiveTime'"
  * @generated
  */
 public interface NeonatalICUEncounterActivity extends EncountersActivity {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.participant->one(participant : cda::Participant2 | participant.typeCode=vocab::ParticipationType::LOC and participant.oclIsKindOf(ncr::NeonatalICULocation))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.participant->one(participant : cda::Participant2 | participant.typeCode=vocab::ParticipationType::LOC and participant.oclIsKindOf(ncr::NeonatalICULocation))'"
+	 * @generated
+	 */
+	boolean validateNeonatalICUEncounterActivityLocation(DiagnosticChain diagnostics, Map<Object, Object> context);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,19 +124,6 @@ public interface NeonatalICUEncounterActivity extends EncountersActivity {
 	 * @generated
 	 */
 	boolean validateNeonatalICUEncounterActivityId(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.location.oclIsKindOf(ncr::NeonatalICULocation))
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.location.oclIsKindOf(ncr::NeonatalICULocation))'"
-	 * @generated
-	 */
-	boolean validateNeonatalICUEncounterActivityNeonatalICULocation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

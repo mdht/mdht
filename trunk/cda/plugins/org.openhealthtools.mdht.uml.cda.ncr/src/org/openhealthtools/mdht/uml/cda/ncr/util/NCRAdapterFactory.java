@@ -18,9 +18,10 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Encounter;
-import org.openhealthtools.mdht.uml.cda.Location;
 import org.openhealthtools.mdht.uml.cda.Observation;
+import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ncr.AcuityDataSection;
@@ -150,8 +151,12 @@ public class NCRAdapterFactory extends AdapterFactoryImpl {
 				return createResultObservationAdapter();
 			}
 			@Override
-			public Adapter caseLocation(Location object) {
-				return createLocationAdapter();
+			public Adapter caseParticipant2(Participant2 object) {
+				return createParticipant2Adapter();
+			}
+			@Override
+			public Adapter caseEncounterLocation(EncounterLocation object) {
+				return createEncounterLocationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -384,16 +389,30 @@ public class NCRAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.Location <em>Location</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.Participant2 <em>Participant2</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.Location
+	 * @see org.openhealthtools.mdht.uml.cda.Participant2
 	 * @generated
 	 */
-	public Adapter createLocationAdapter() {
+	public Adapter createParticipant2Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation <em>Encounter Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation
+	 * @generated
+	 */
+	public Adapter createEncounterLocationAdapter() {
 		return null;
 	}
 

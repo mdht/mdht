@@ -18,9 +18,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Encounter;
-import org.openhealthtools.mdht.uml.cda.Location;
 import org.openhealthtools.mdht.uml.cda.Observation;
+import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ncr.AcuityDataSection;
@@ -163,7 +164,8 @@ public class NCRSwitch<T> {
 			case NCRPackage.NEONATAL_ICU_LOCATION: {
 				NeonatalICULocation neonatalICULocation = (NeonatalICULocation)theEObject;
 				T result = caseNeonatalICULocation(neonatalICULocation);
-				if (result == null) result = caseLocation(neonatalICULocation);
+				if (result == null) result = caseEncounterLocation(neonatalICULocation);
+				if (result == null) result = caseParticipant2(neonatalICULocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -397,17 +399,32 @@ public class NCRSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Location</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Participant2</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Location</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Participant2</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLocation(Location object) {
+	public T caseParticipant2(Participant2 object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Encounter Location</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Encounter Location</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEncounterLocation(EncounterLocation object) {
 		return null;
 	}
 

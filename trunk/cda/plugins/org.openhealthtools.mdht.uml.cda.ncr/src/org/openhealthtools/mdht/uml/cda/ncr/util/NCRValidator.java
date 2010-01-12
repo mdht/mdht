@@ -73,12 +73,20 @@ public class NCRValidator extends EObjectValidator {
 	public static final int NEONATAL_CARE_REPORT__NEONATAL_CARE_REPORT_PATIENT_DATA_SECTION_NCR = 2;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Location' of 'Neonatal ICU Encounter Activity'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_LOCATION = 3;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Template Id' of 'Neonatal ICU Encounter Activity'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_TEMPLATE_ID = 3;
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_TEMPLATE_ID = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Class Code' of 'Neonatal ICU Encounter Activity'.
@@ -86,7 +94,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_CLASS_CODE = 4;
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_CLASS_CODE = 5;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Mood Code' of 'Neonatal ICU Encounter Activity'.
@@ -94,7 +102,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_MOOD_CODE = 5;
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_MOOD_CODE = 6;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Code' of 'Neonatal ICU Encounter Activity'.
@@ -102,7 +110,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_CODE = 6;
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_CODE = 7;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Effective Time' of 'Neonatal ICU Encounter Activity'.
@@ -110,7 +118,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_EFFECTIVE_TIME = 7;
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_EFFECTIVE_TIME = 8;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Id' of 'Neonatal ICU Encounter Activity'.
@@ -118,15 +126,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_ID = 8;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Neonatal ICU Location' of 'Neonatal ICU Encounter Activity'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_NEONATAL_ICU_LOCATION = 9;
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_ID = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Data Section NCR Template Id' of 'Patient Data Section NCR'.
@@ -427,14 +427,24 @@ public class NCRValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateEncountersActivity_validateEncountersActivityId(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateEncountersActivity_validateEncountersActivityCode(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateEncountersActivity_validateEncountersActivityEffectiveTime(neonatalICUEncounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityLocation(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityTemplateId(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityClassCode(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityMoodCode(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityCode(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityEffectiveTime(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityId(neonatalICUEncounterActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityNeonatalICULocation(neonatalICUEncounterActivity, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the validateNeonatalICUEncounterActivityLocation constraint of '<em>Neonatal ICU Encounter Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityLocation(NeonatalICUEncounterActivity neonatalICUEncounterActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return neonatalICUEncounterActivity.validateNeonatalICUEncounterActivityLocation(diagnostics, context);
 	}
 
 	/**
@@ -495,16 +505,6 @@ public class NCRValidator extends EObjectValidator {
 	 */
 	public boolean validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityId(NeonatalICUEncounterActivity neonatalICUEncounterActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return neonatalICUEncounterActivity.validateNeonatalICUEncounterActivityId(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateNeonatalICUEncounterActivityNeonatalICULocation constraint of '<em>Neonatal ICU Encounter Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityNeonatalICULocation(NeonatalICUEncounterActivity neonatalICUEncounterActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return neonatalICUEncounterActivity.validateNeonatalICUEncounterActivityNeonatalICULocation(diagnostics, context);
 	}
 
 	/**
@@ -821,6 +821,7 @@ public class NCRValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(neonatalICULocation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(neonatalICULocation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(neonatalICULocation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateEncounterLocation_validateEncounterLocationTemplateId(neonatalICULocation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICULocation_validateNeonatalICULocationTemplateId(neonatalICULocation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICULocation_validateNeonatalICULocationTypeCode(neonatalICULocation, diagnostics, context);
 		return result;
