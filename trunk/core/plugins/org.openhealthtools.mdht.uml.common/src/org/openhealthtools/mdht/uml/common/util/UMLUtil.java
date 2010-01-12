@@ -61,6 +61,45 @@ import org.openhealthtools.mdht.uml.common.internal.Logger;
 */
 public class UMLUtil {
 
+	  /**
+	 * This method breaks sourceName into words delimited by separator and/or mixed-case naming.
+	 * Copied from org.eclipse.emf.codegen.util.CodeGenUtil.parseName()
+	 */
+	public static List<String> splitName(String sourceName) {
+		List<String> result = new ArrayList<String>();
+		if (sourceName != null) {
+			StringBuilder currentWord = new StringBuilder();
+			boolean lastIsLower = false;
+			for (int index = 0, length = sourceName.length(); index < length; ++index) {
+				char curChar = sourceName.charAt(index);
+				if (Character.isUpperCase(curChar) || (!lastIsLower && Character.isDigit(curChar))) {
+					if (lastIsLower && currentWord.length() > 1) {
+						result.add(currentWord.toString());
+						currentWord = new StringBuilder();
+					}
+					lastIsLower = false;
+				} else {
+					if (!lastIsLower) {
+						int currentWordLength = currentWord.length();
+						if (currentWordLength > 1) {
+							char lastChar = currentWord.charAt(--currentWordLength);
+							currentWord.setLength(currentWordLength);
+							result.add(currentWord.toString());
+							currentWord = new StringBuilder();
+							currentWord.append(lastChar);
+						}
+					}
+					lastIsLower = true;
+				}
+
+				currentWord.append(curChar);
+			}
+
+			result.add(currentWord.toString());
+		}
+		return result;
+	}  
+
 	/**
 	 * Accumulate a list containing the unqualified names of all
 	 * generalizations for the given classifier, including this classfier name.
@@ -68,7 +107,7 @@ public class UMLUtil {
 	 * @param classifier
 	 * @return a List with zero or more classifiers
 	 */
-public static List<String> getAllParentNames(Classifier classifier) {
+	public static List<String> getAllParentNames(Classifier classifier) {
 		
 		List<String> parentNames = new ArrayList<String>();
 		
