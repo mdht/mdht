@@ -15,14 +15,10 @@ package org.openhealthtools.mdht.uml.cda.ncr.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
 import org.openhealthtools.mdht.uml.cda.ncr.PatientDataSectionNCR;
-
 import org.openhealthtools.mdht.uml.cda.ncr.operations.PatientDataSectionNCROperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**

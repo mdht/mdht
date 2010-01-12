@@ -17,18 +17,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPlugin;
 import org.openhealthtools.mdht.uml.cda.ncr.PatientDataSection;
-
 import org.openhealthtools.mdht.uml.cda.ncr.util.NCRValidator;
-
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
 
 /**
@@ -107,7 +102,7 @@ public class PatientDataSectionOperations extends SectionOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.PATIENT_DATA_SECTION__PATIENT_DATA_SECTION_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "PatientDataSectionTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(patientDataSection, context) }),
+						 NCRPlugin.INSTANCE.getString("PatientDataSectionTemplateId"),
 						 new Object [] { patientDataSection }));
 			}
 			return false;
@@ -168,7 +163,7 @@ public class PatientDataSectionOperations extends SectionOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.PATIENT_DATA_SECTION__PATIENT_DATA_SECTION_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "PatientDataSectionCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(patientDataSection, context) }),
+						 NCRPlugin.INSTANCE.getString("PatientDataSectionCode"),
 						 new Object [] { patientDataSection }));
 			}
 			return false;
@@ -225,7 +220,7 @@ public class PatientDataSectionOperations extends SectionOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.PATIENT_DATA_SECTION__PATIENT_DATA_SECTION_TEXT,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "PatientDataSectionText", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(patientDataSection, context) }),
+						 NCRPlugin.INSTANCE.getString("PatientDataSectionText"),
 						 new Object [] { patientDataSection }));
 			}
 			return false;
@@ -282,7 +277,7 @@ public class PatientDataSectionOperations extends SectionOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.PATIENT_DATA_SECTION__PATIENT_DATA_SECTION_TITLE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "PatientDataSectionTitle", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(patientDataSection, context) }),
+						 NCRPlugin.INSTANCE.getString("PatientDataSectionTitle"),
 						 new Object [] { patientDataSection }));
 			}
 			return false;

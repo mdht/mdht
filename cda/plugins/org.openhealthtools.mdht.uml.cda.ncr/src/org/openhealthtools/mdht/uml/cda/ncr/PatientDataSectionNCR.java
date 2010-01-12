@@ -34,7 +34,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ncr.NCRPackage#getPatientDataSectionNCR()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.17.2.5' constraints.validation.error='PatientDataSectionNCR_templateId PatientDataSectionNCR_encountersSection PatientDataSectionNCR_acuityDataSection PatientDataSectionNCR_birthWeight'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.17.2.5' constraints.validation.error='PatientDataSectionNCRTemplateId PatientDataSectionNCREncountersSection PatientDataSectionNCRAcuityDataSection PatientDataSectionNCRBirthWeight'"
  * @generated
  */
 public interface PatientDataSectionNCR extends PatientDataSection {
@@ -55,11 +55,11 @@ public interface PatientDataSectionNCR extends PatientDataSection {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSection()->one(section : cda::Section | section.oclIsKindOf(ncr::EncountersSection))
+	 * self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::EncountersSection))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSection()->one(section : cda::Section | section.oclIsKindOf(ncr::EncountersSection))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::EncountersSection))'"
 	 * @generated
 	 */
 	boolean validatePatientDataSectionNCREncountersSection(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -68,11 +68,11 @@ public interface PatientDataSectionNCR extends PatientDataSection {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSection()->one(section : cda::Section | section.oclIsKindOf(ncr::AcuityDataSection))
+	 * self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::AcuityDataSection))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSection()->one(section : cda::Section | section.oclIsKindOf(ncr::AcuityDataSection))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::AcuityDataSection))'"
 	 * @generated
 	 */
 	boolean validatePatientDataSectionNCRAcuityDataSection(DiagnosticChain diagnostics, Map<Object, Object> context);

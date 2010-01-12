@@ -15,14 +15,10 @@ package org.openhealthtools.mdht.uml.cda.ncr.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ncr.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
-
 import org.openhealthtools.mdht.uml.cda.ncr.operations.EncountersSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -79,6 +75,15 @@ public class EncountersSectionImpl extends org.openhealthtools.mdht.uml.cda.ccd.
 	 */
 	public boolean validateNCREncountersSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return EncountersSectionOperations.validateNCREncountersSectionTitle(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNCREncountersSectionNeonatalICUEncounterActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersSectionOperations.validateNCREncountersSectionNeonatalICUEncounterActivity(this, diagnostics, context);
 	}
 
 	/**

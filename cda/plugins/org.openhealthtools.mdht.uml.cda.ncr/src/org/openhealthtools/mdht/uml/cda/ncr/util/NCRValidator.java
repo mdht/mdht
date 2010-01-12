@@ -14,17 +14,21 @@ package org.openhealthtools.mdht.uml.cda.ncr.util;
 
 import java.util.Map;
 
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
-
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-
-import org.openhealthtools.mdht.uml.cda.ncr.*;
+import org.openhealthtools.mdht.uml.cda.ncr.AcuityDataSection;
+import org.openhealthtools.mdht.uml.cda.ncr.BirthWeight;
+import org.openhealthtools.mdht.uml.cda.ncr.EncountersSection;
+import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
+import org.openhealthtools.mdht.uml.cda.ncr.NCRPlugin;
+import org.openhealthtools.mdht.uml.cda.ncr.NeonatalCareReport;
+import org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity;
+import org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation;
+import org.openhealthtools.mdht.uml.cda.ncr.PatientDataSection;
+import org.openhealthtools.mdht.uml.cda.ncr.PatientDataSectionNCR;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,20 +73,12 @@ public class NCRValidator extends EObjectValidator {
 	public static final int NEONATAL_CARE_REPORT__NEONATAL_CARE_REPORT_PATIENT_DATA_SECTION_NCR = 2;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Id' of 'Neonatal ICU Encounter Activity'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__ID = 3;
-
-	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Template Id' of 'Neonatal ICU Encounter Activity'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_TEMPLATE_ID = 4;
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_TEMPLATE_ID = 3;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Class Code' of 'Neonatal ICU Encounter Activity'.
@@ -90,7 +86,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_CLASS_CODE = 5;
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_CLASS_CODE = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Mood Code' of 'Neonatal ICU Encounter Activity'.
@@ -98,7 +94,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_MOOD_CODE = 6;
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_MOOD_CODE = 5;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Code' of 'Neonatal ICU Encounter Activity'.
@@ -106,7 +102,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_CODE = 7;
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_CODE = 6;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Effective Time' of 'Neonatal ICU Encounter Activity'.
@@ -114,7 +110,15 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_EFFECTIVE_TIME = 8;
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_EFFECTIVE_TIME = 7;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Id' of 'Neonatal ICU Encounter Activity'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_ID = 8;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Encounter Activity Neonatal ICU Location' of 'Neonatal ICU Encounter Activity'.
@@ -189,36 +193,36 @@ public class NCRValidator extends EObjectValidator {
 	public static final int PATIENT_DATA_SECTION__PATIENT_DATA_SECTION_TITLE = 17;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounters Section Text' of 'Encounters Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate NCR Encounters Section Template Id' of 'Encounters Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTERS_SECTION__ENCOUNTERS_SECTION_TEXT = 18;
+	public static final int ENCOUNTERS_SECTION__NCR_ENCOUNTERS_SECTION_TEMPLATE_ID = 18;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounters Section Neonatal ICU Encounter Activity' of 'Encounters Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate NCR Encounters Section Text' of 'Encounters Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTERS_SECTION__ENCOUNTERS_SECTION_NEONATAL_ICU_ENCOUNTER_ACTIVITY = 19;
+	public static final int ENCOUNTERS_SECTION__NCR_ENCOUNTERS_SECTION_TEXT = 19;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounters Section Template Id' of 'Encounters Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate NCR Encounters Section Title' of 'Encounters Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTERS_SECTION__ENCOUNTERS_SECTION_TEMPLATE_ID = 20;
+	public static final int ENCOUNTERS_SECTION__NCR_ENCOUNTERS_SECTION_TITLE = 20;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounters Section Title' of 'Encounters Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate NCR Encounters Section Neonatal ICU Encounter Activity' of 'Encounters Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTERS_SECTION__ENCOUNTERS_SECTION_TITLE = 21;
+	public static final int ENCOUNTERS_SECTION__NCR_ENCOUNTERS_SECTION_NEONATAL_ICU_ENCOUNTER_ACTIVITY = 21;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Acuity Data Section Template Id' of 'Acuity Data Section'.
@@ -229,20 +233,12 @@ public class NCRValidator extends EObjectValidator {
 	public static final int ACUITY_DATA_SECTION__ACUITY_DATA_SECTION_TEMPLATE_ID = 22;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Value' of 'Birth Weight'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int BIRTH_WEIGHT__VALUE = 23;
-
-	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Birth Weight Template Id' of 'Birth Weight'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int BIRTH_WEIGHT__BIRTH_WEIGHT_TEMPLATE_ID = 24;
+	public static final int BIRTH_WEIGHT__BIRTH_WEIGHT_TEMPLATE_ID = 23;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Birth Weight Class Code' of 'Birth Weight'.
@@ -250,7 +246,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int BIRTH_WEIGHT__BIRTH_WEIGHT_CLASS_CODE = 25;
+	public static final int BIRTH_WEIGHT__BIRTH_WEIGHT_CLASS_CODE = 24;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Birth Weight Mood Code' of 'Birth Weight'.
@@ -258,7 +254,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int BIRTH_WEIGHT__BIRTH_WEIGHT_MOOD_CODE = 26;
+	public static final int BIRTH_WEIGHT__BIRTH_WEIGHT_MOOD_CODE = 25;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Birth Weight Code' of 'Birth Weight'.
@@ -266,7 +262,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int BIRTH_WEIGHT__BIRTH_WEIGHT_CODE = 27;
+	public static final int BIRTH_WEIGHT__BIRTH_WEIGHT_CODE = 26;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Birth Weight Status Code' of 'Birth Weight'.
@@ -274,7 +270,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int BIRTH_WEIGHT__BIRTH_WEIGHT_STATUS_CODE = 28;
+	public static final int BIRTH_WEIGHT__BIRTH_WEIGHT_STATUS_CODE = 27;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Birth Weight Value' of 'Birth Weight'.
@@ -282,7 +278,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int BIRTH_WEIGHT__BIRTH_WEIGHT_VALUE = 29;
+	public static final int BIRTH_WEIGHT__BIRTH_WEIGHT_VALUE = 28;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Location Template Id' of 'Neonatal ICU Location'.
@@ -290,7 +286,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_LOCATION__NEONATAL_ICU_LOCATION_TEMPLATE_ID = 30;
+	public static final int NEONATAL_ICU_LOCATION__NEONATAL_ICU_LOCATION_TEMPLATE_ID = 29;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Neonatal ICU Location Type Code' of 'Neonatal ICU Location'.
@@ -298,7 +294,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NEONATAL_ICU_LOCATION__NEONATAL_ICU_LOCATION_TYPE_CODE = 31;
+	public static final int NEONATAL_ICU_LOCATION__NEONATAL_ICU_LOCATION_TYPE_CODE = 30;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -306,7 +302,7 @@ public class NCRValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 31;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 30;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -431,24 +427,14 @@ public class NCRValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateEncountersActivity_validateEncountersActivityId(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateEncountersActivity_validateEncountersActivityCode(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateEncountersActivity_validateEncountersActivityEffectiveTime(neonatalICUEncounterActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateId(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityTemplateId(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityClassCode(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityMoodCode(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityCode(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityEffectiveTime(neonatalICUEncounterActivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityId(neonatalICUEncounterActivity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityNeonatalICULocation(neonatalICUEncounterActivity, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * Validates the validateId constraint of '<em>Neonatal ICU Encounter Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateNeonatalICUEncounterActivity_validateId(NeonatalICUEncounterActivity neonatalICUEncounterActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return neonatalICUEncounterActivity.validateId(diagnostics, context);
 	}
 
 	/**
@@ -499,6 +485,16 @@ public class NCRValidator extends EObjectValidator {
 	 */
 	public boolean validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityEffectiveTime(NeonatalICUEncounterActivity neonatalICUEncounterActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return neonatalICUEncounterActivity.validateNeonatalICUEncounterActivityEffectiveTime(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateNeonatalICUEncounterActivityId constraint of '<em>Neonatal ICU Encounter Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNeonatalICUEncounterActivity_validateNeonatalICUEncounterActivityId(NeonatalICUEncounterActivity neonatalICUEncounterActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return neonatalICUEncounterActivity.validateNeonatalICUEncounterActivityId(diagnostics, context);
 	}
 
 	/**
@@ -648,90 +644,54 @@ public class NCRValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(encountersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(encountersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(encountersSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEncountersSection_validateEncountersSectionTemplateId(encountersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_validateEncountersSectionTemplateId(encountersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_validateEncountersSectionCode(encountersSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEncountersSection_validateEncountersSectionTitle(encountersSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEncountersSection_validateEncountersSectionText(encountersSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEncountersSection_validateEncountersSectionNeonatalICUEncounterActivity(encountersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_validateEncountersSectionTitle(encountersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncountersSection_validateNCREncountersSectionTemplateId(encountersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncountersSection_validateNCREncountersSectionText(encountersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncountersSection_validateNCREncountersSectionTitle(encountersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncountersSection_validateNCREncountersSectionNeonatalICUEncounterActivity(encountersSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateEncountersSectionText constraint of '<em>Encounters Section</em>'.
+	 * Validates the validateNCREncountersSectionTemplateId constraint of '<em>Encounters Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEncountersSection_validateEncountersSectionText(EncountersSection encountersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return encountersSection.validateEncountersSectionText(diagnostics, context);
+	public boolean validateEncountersSection_validateNCREncountersSectionTemplateId(EncountersSection encountersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encountersSection.validateNCREncountersSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateEncountersSectionNeonatalICUEncounterActivity constraint of '<em>Encounters Section</em>'.
+	 * Validates the validateNCREncountersSectionText constraint of '<em>Encounters Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEncountersSection_validateEncountersSectionNeonatalICUEncounterActivity(EncountersSection encountersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return encountersSection.validateEncountersSectionNeonatalICUEncounterActivity(diagnostics, context);
+	public boolean validateEncountersSection_validateNCREncountersSectionText(EncountersSection encountersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encountersSection.validateNCREncountersSectionText(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateEncountersSectionTemplateId constraint of '<em>Encounters Section</em>'.
+	 * Validates the validateNCREncountersSectionTitle constraint of '<em>Encounters Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEncountersSection_validateEncountersSectionTemplateId(EncountersSection encountersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateEncountersSectionTemplateId", getObjectLabel(encountersSection, context) },
-						 new Object[] { encountersSection },
-						 context));
-			}
-			return false;
-		}
-		return ccdValidator.validateEncountersSection_validateEncountersSectionTemplateId(encountersSection, diagnostics, context);
+	public boolean validateEncountersSection_validateNCREncountersSectionTitle(EncountersSection encountersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encountersSection.validateNCREncountersSectionTitle(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateEncountersSectionTitle constraint of '<em>Encounters Section</em>'.
+	 * Validates the validateNCREncountersSectionNeonatalICUEncounterActivity constraint of '<em>Encounters Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEncountersSection_validateEncountersSectionTitle(EncountersSection encountersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateEncountersSectionTitle", getObjectLabel(encountersSection, context) },
-						 new Object[] { encountersSection },
-						 context));
-			}
-			return false;
-		}
-		return ccdValidator.validateEncountersSection_validateEncountersSectionTitle(encountersSection, diagnostics, context);
+	public boolean validateEncountersSection_validateNCREncountersSectionNeonatalICUEncounterActivity(EncountersSection encountersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encountersSection.validateNCREncountersSectionNeonatalICUEncounterActivity(diagnostics, context);
 	}
 
 	/**
@@ -779,7 +739,6 @@ public class NCRValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationId(birthWeight, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationEffectiveTime(birthWeight, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationValue(birthWeight, diagnostics, context);
-		if (result || diagnostics != null) result &= validateBirthWeight_validateValue(birthWeight, diagnostics, context);
 		if (result || diagnostics != null) result &= validateBirthWeight_validateBirthWeightTemplateId(birthWeight, diagnostics, context);
 		if (result || diagnostics != null) result &= validateBirthWeight_validateBirthWeightClassCode(birthWeight, diagnostics, context);
 		if (result || diagnostics != null) result &= validateBirthWeight_validateBirthWeightMoodCode(birthWeight, diagnostics, context);
@@ -787,16 +746,6 @@ public class NCRValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateBirthWeight_validateBirthWeightStatusCode(birthWeight, diagnostics, context);
 		if (result || diagnostics != null) result &= validateBirthWeight_validateBirthWeightValue(birthWeight, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * Validates the validateValue constraint of '<em>Birth Weight</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateBirthWeight_validateValue(BirthWeight birthWeight, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return birthWeight.validateValue(diagnostics, context);
 	}
 
 	/**

@@ -15,7 +15,6 @@ package org.openhealthtools.mdht.uml.cda.ncr;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 
 /**
@@ -25,23 +24,10 @@ import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ncr.NCRPackage#getBirthWeight()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' statusCode.codeSystemName='HL7ActStatus' code.codeSystemName='SNOMEDCT' statusCode.codeSystem='2.16.840.1.113883.5.14' constraints.validation.error='BirthWeight_templateId value BirthWeight_classCode BirthWeight_moodCode BirthWeight_code BirthWeight_statusCode BirthWeight_value' templateId.root='2.16.840.1.113883.10.20.17.3.1' statusCode.code='completed' code.displayName='Birth weight' code.codeSystem='2.16.840.1.113883.6.96' statusCode.displayName='Completed' code.code='47340003'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' statusCode.codeSystemName='HL7ActStatus' code.codeSystemName='SNOMEDCT' statusCode.codeSystem='2.16.840.1.113883.5.14' templateId.root='2.16.840.1.113883.10.20.17.3.1' constraints.validation.error='BirthWeightTemplateId BirthWeightClassCode BirthWeightMoodCode BirthWeightCode BirthWeightStatusCode BirthWeightValue' statusCode.code='completed' code.displayName='Birth weight' code.codeSystem='2.16.840.1.113883.6.96' statusCode.displayName='Completed' code.code='47340003'"
  * @generated
  */
 public interface BirthWeight extends ResultObservation {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This value SHALL contain [1..1] @unit="g" gram (CodeSystem: 2.16.840.1.113883.6.8 UCUM) STATIC.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='This value SHALL contain [1..1] @unit=\"g\" gram (CodeSystem: 2.16.840.1.113883.6.8 UCUM) STATIC.'"
-	 * @generated
-	 */
-	boolean validateValue(DiagnosticChain diagnostics, Map<Object, Object> context);
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

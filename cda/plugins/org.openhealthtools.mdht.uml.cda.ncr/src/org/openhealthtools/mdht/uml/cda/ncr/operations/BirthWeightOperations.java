@@ -1,15 +1,9 @@
-/*******************************************************************************
- * Copyright (c) 2009, 2010 David A Carlson.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
+/**
+ * <copyright>
+ * </copyright>
+ *
  * $Id$
- *******************************************************************************/
+ */
 package org.openhealthtools.mdht.uml.cda.ncr.operations;
 
 import java.util.Map;
@@ -17,17 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.ncr.BirthWeight;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
-
+import org.openhealthtools.mdht.uml.cda.ncr.NCRPlugin;
 import org.openhealthtools.mdht.uml.cda.ncr.util.NCRValidator;
 
 /**
@@ -38,7 +28,6 @@ import org.openhealthtools.mdht.uml.cda.ncr.util.NCRValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.BirthWeight#validateValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.BirthWeight#validateBirthWeightTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Birth Weight Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.BirthWeight#validateBirthWeightClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Birth Weight Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.BirthWeight#validateBirthWeightMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Birth Weight Mood Code</em>}</li>
@@ -58,63 +47,6 @@ public class BirthWeightOperations extends ResultObservationOperations {
 	 */
 	protected BirthWeightOperations() {
 		super();
-	}
-
-	/**
-	 * The cached OCL expression body for the '{@link #validateValue(BirthWeight, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateValue(BirthWeight, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALIDATE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "This value SHALL contain [1..1] @unit="g" gram (CodeSystem: 2.16.840.1.113883.6.8 UCUM) STATIC.";
-
-	/**
-	 * The cached OCL invariant for the '{@link #validateValue(BirthWeight, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Value</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateValue(BirthWeight, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint VALIDATE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This value SHALL contain [1..1] @unit="g" gram (CodeSystem: 2.16.840.1.113883.6.8 UCUM) STATIC.
-	 * @param birthWeight The receiving '<em><b>Birth Weight</b></em>' model object.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
-	public static  boolean validateValue(BirthWeight birthWeight, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(NCRPackage.Literals.BIRTH_WEIGHT);
-			try {
-				VALIDATE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		if (!EOCL_ENV.createQuery(VALIDATE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(birthWeight)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 NCRValidator.DIAGNOSTIC_SOURCE,
-						 NCRValidator.BIRTH_WEIGHT__VALUE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Value", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(birthWeight, context) }),
-						 new Object [] { birthWeight }));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -166,7 +98,7 @@ public class BirthWeightOperations extends ResultObservationOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.BIRTH_WEIGHT__BIRTH_WEIGHT_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "BirthWeightTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(birthWeight, context) }),
+						 NCRPlugin.INSTANCE.getString("BirthWeightTemplateId"),
 						 new Object [] { birthWeight }));
 			}
 			return false;
@@ -223,7 +155,7 @@ public class BirthWeightOperations extends ResultObservationOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.BIRTH_WEIGHT__BIRTH_WEIGHT_CLASS_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "BirthWeightClassCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(birthWeight, context) }),
+						 NCRPlugin.INSTANCE.getString("BirthWeightClassCode"),
 						 new Object [] { birthWeight }));
 			}
 			return false;
@@ -280,7 +212,7 @@ public class BirthWeightOperations extends ResultObservationOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.BIRTH_WEIGHT__BIRTH_WEIGHT_MOOD_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "BirthWeightMoodCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(birthWeight, context) }),
+						 NCRPlugin.INSTANCE.getString("BirthWeightMoodCode"),
 						 new Object [] { birthWeight }));
 			}
 			return false;
@@ -341,7 +273,7 @@ public class BirthWeightOperations extends ResultObservationOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.BIRTH_WEIGHT__BIRTH_WEIGHT_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "BirthWeightCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(birthWeight, context) }),
+						 NCRPlugin.INSTANCE.getString("BirthWeightCode"),
 						 new Object [] { birthWeight }));
 			}
 			return false;
@@ -402,7 +334,7 @@ public class BirthWeightOperations extends ResultObservationOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.BIRTH_WEIGHT__BIRTH_WEIGHT_STATUS_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "BirthWeightStatusCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(birthWeight, context) }),
+						 NCRPlugin.INSTANCE.getString("BirthWeightStatusCode"),
 						 new Object [] { birthWeight }));
 			}
 			return false;
@@ -459,7 +391,7 @@ public class BirthWeightOperations extends ResultObservationOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.BIRTH_WEIGHT__BIRTH_WEIGHT_VALUE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "BirthWeightValue", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(birthWeight, context) }),
+						 NCRPlugin.INSTANCE.getString("BirthWeightValue"),
 						 new Object [] { birthWeight }));
 			}
 			return false;

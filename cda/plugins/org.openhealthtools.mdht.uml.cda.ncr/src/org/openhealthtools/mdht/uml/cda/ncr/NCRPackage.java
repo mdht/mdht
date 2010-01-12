@@ -14,9 +14,7 @@ package org.openhealthtools.mdht.uml.cda.ncr;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 
 /**

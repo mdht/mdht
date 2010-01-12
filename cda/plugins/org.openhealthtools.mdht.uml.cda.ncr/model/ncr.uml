@@ -4,7 +4,7 @@
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
       <importedPackage href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="Neonatal Care Report">
+    <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="NeonatalCareReport">
       <ownedComment xmi:id="_p4NQgPyzEd6S5szBt2gpEA">
         <body>The CDA the Neonatal Care Report (NCR) constrains CDA to express the data elements identified by CHNC. This NCR CDA R2 document template defines the data elements that belong in the header of the NCR CDA document and prescribes the sections that belong in the NCR. Within the NCR document is an initial segment of data elements from the CHNC Neonatal Intensive Care Unit (NICU) Core Data Set (CDS). This NCR CDA will send these data elements from Neonatal Intensive Care providers to the CHNC database in standardized CDA format for analysis and performance improvement work.&#xD;
 A complete NCR is created and sent after an infant is discharged. An initial NCR may be created and sent shortly after the infant is born. Many data elements in this initial NCR will have null values for the many values that are unknown or not applicable at this point. The complete NCR sent after discharge will replace the first NCR document.</body>
@@ -149,7 +149,7 @@ A complete NCR is created and sent after an infant is discharged. An initial NCR
       <ownedComment xmi:id="_dWSrIP4_Ed6S5szBt2gpEA">
         <body>This observation represents a birth weight.</body>
       </ownedComment>
-      <ownedRule xmi:id="_f2-qsP75Ed62UeYFRagr9A" name="value" constrainedElement="_TH4BQP49Ed6S5szBt2gpEA">
+      <ownedRule xmi:id="_f2-qsP75Ed62UeYFRagr9A" name="valueUnit" constrainedElement="_TH4BQP49Ed6S5szBt2gpEA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_hzk6QP75Ed62UeYFRagr9A">
           <language>Analysis</language>
           <body>This value SHALL contain [1..1] @unit=&quot;g&quot; gram (CodeSystem: 2.16.840.1.113883.6.8 UCUM) STATIC.</body>
@@ -220,43 +220,44 @@ A complete NCR is created and sent after an infant is discharged. An initial NCR
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
   </uml:Package>
-  <CDA:CDATemplate xmi:id="_1dDy4JmOEd6T5tg3G_f09Q" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.10.20.17.1.1" assigningAuthorityName="HL7"/>
+  <CDA:CDATemplate xmi:id="_1dDy4JmOEd6T5tg3G_f09Q" message="The template identifier for Neonatal Care Report must be 2.16.840.1.113883.10.20.17.1.1." base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.10.20.17.1.1" assigningAuthorityName="HL7"/>
   <CDA:CodegenSupport xmi:id="_THvvwJmzEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ncr" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr" packageName="ncr" prefix="NCR" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
-  <CDA:CDATemplate xmi:id="_Uc5uYKX0Ed6JRdOhEffuGA" base_Class="_Ucv9YKX0Ed6JRdOhEffuGA" templateId="2.16.840.1.113883.10.20.17.3.15" assigningAuthorityName="Example"/>
+  <CDA:CDATemplate xmi:id="_Uc5uYKX0Ed6JRdOhEffuGA" message="The template identifier for NeonatalICUEncounterActivity must be 2.16.840.1.113883.10.20.17.3.15." base_Class="_Ucv9YKX0Ed6JRdOhEffuGA" templateId="2.16.840.1.113883.10.20.17.3.15" assigningAuthorityName="Example"/>
   <Default:Documentation xmi:id="_Uc5uYaX0Ed6JRdOhEffuGA" base_Comment="_Ucv9YaX0Ed6JRdOhEffuGA"/>
-  <CDA:PropertyValidation xmi:id="_Uc5uZKX0Ed6JRdOhEffuGA" base_Property="_Ucv9Z6X0Ed6JRdOhEffuGA"/>
-  <CDA:PropertyValidation xmi:id="_Uc5uZaX0Ed6JRdOhEffuGA" base_Property="_Ucv9aaX0Ed6JRdOhEffuGA"/>
-  <CDA:VocabSpecification xmi:id="_Uc5uZqX0Ed6JRdOhEffuGA" base_Property="_Ucv9a6X0Ed6JRdOhEffuGA" code="IMP" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode" displayName="Inpatient encounter"/>
+  <CDA:PropertyValidation xmi:id="_Uc5uZKX0Ed6JRdOhEffuGA" message="SHALL contain [1..1] @classCode = &quot;ENC&quot;" base_Property="_Ucv9Z6X0Ed6JRdOhEffuGA"/>
+  <CDA:PropertyValidation xmi:id="_Uc5uZaX0Ed6JRdOhEffuGA" message="SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_Ucv9aaX0Ed6JRdOhEffuGA"/>
+  <CDA:VocabSpecification xmi:id="_Uc5uZqX0Ed6JRdOhEffuGA" message="SHALL contain [1..1] code/@code = &quot;IMP&quot; Inpatient encounter (CodeSystem: 2.16.840.1.113883.5.4 HL7ActCode STATIC)" base_Property="_Ucv9a6X0Ed6JRdOhEffuGA" code="IMP" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode" displayName="Inpatient encounter"/>
   <CDA:VocabSpecification xmi:id="_Uc5uZ6X0Ed6JRdOhEffuGA" message="My Activity SHALL contain exactly one Act / statusCode. The value for 'Act / statusCode' in a My Activity SHALL be 'completed' 2.16.840.1.113883.5.14 ActStatus STATIC." code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
-  <CDA:CDATemplate xmi:id="_Uc5uaaX0Ed6JRdOhEffuGA" base_Class="_Ucv9baX0Ed6JRdOhEffuGA" templateId="2.16.840.1.113883.10.20.17.2.5" assigningAuthorityName="HL7"/>
+  <CDA:CDATemplate xmi:id="_Uc5uaaX0Ed6JRdOhEffuGA" message="The template identifier for PatientDataSectionNCR must be 2.16.840.1.113883.10.20.17.2.5." base_Class="_Ucv9baX0Ed6JRdOhEffuGA" templateId="2.16.840.1.113883.10.20.17.2.5" assigningAuthorityName="HL7"/>
   <Default:Documentation xmi:id="_Uc5uaqX0Ed6JRdOhEffuGA" base_Comment="_Ucv9bqX0Ed6JRdOhEffuGA"/>
   <CDA:VocabSpecification xmi:id="_Uc5ua6X0Ed6JRdOhEffuGA" message="The value for My Activity code SHALL be 48764-5' 'Summary purpose' 2.16.840.1.113883.6.1 LOINC STATIC." code="48764-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summary purpose"/>
-  <CDA:AssociationValidation xmi:id="_vvhgIKX2Ed6JRdOhEffuGA" message="My Document SHALL contain one, and not more than one, My Section." base_Association="_v0rX0KX0Ed6JRdOhEffuGA"/>
+  <CDA:AssociationValidation xmi:id="_vvhgIKX2Ed6JRdOhEffuGA" message="SHALL contain [1..1] component such that it   SHALL contain [1..1] PatientDataSectionNCR (templateId: 2.16.840.1.113883.10.20.17.2.5)" base_Association="_v0rX0KX0Ed6JRdOhEffuGA"/>
   <CDA:Entry xmi:id="_auV_cK0UEd6_kOk8Ilc2Dw" message="My Section SHOULD contain one or more My Activity." severity="WARNING"/>
   <CDA:TextValue xmi:id="_xJaggK0jEd6_kOk8Ilc2Dw" message="My Section SHALL contain a title."/>
-  <CDA:VocabSpecification xmi:id="_ZE7EEPy0Ed6S5szBt2gpEA" base_Property="_KuXOMPy0Ed6S5szBt2gpEA" code="55188-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Clinical Information"/>
-  <CDA:TextValue xmi:id="_je4hgPy0Ed6S5szBt2gpEA" base_Property="_KuXONvy0Ed6S5szBt2gpEA" value="PATIENT DATA"/>
-  <CDA:PropertyValidation xmi:id="_zCVBQPy0Ed6S5szBt2gpEA" base_Property="_KuXOM_y0Ed6S5szBt2gpEA"/>
-  <CDA:CDATemplate xmi:id="_4O3-oPy0Ed6S5szBt2gpEA" base_Class="_IMw0IPy0Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.2.4"/>
-  <CDA:TextValue xmi:id="_ahMYUPy1Ed6S5szBt2gpEA" base_Property="_WJRV0_y1Ed6S5szBt2gpEA" value="Encounters"/>
-  <CDA:CDATemplate xmi:id="_3Gfk0Py1Ed6S5szBt2gpEA" base_Class="_wnPCYPy1Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.2.3"/>
-  <CDA:Entry xmi:id="_YWJAkPy2Ed6S5szBt2gpEA" base_Association="_R_SzQfy2Ed6S5szBt2gpEA" typeCode="DRIV"/>
+  <CDA:VocabSpecification xmi:id="_ZE7EEPy0Ed6S5szBt2gpEA" message="SHALL contain [1..1] code/@code = &quot;55188-7&quot; Clinical Information (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_KuXOMPy0Ed6S5szBt2gpEA" code="55188-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Clinical Information"/>
+  <CDA:TextValue xmi:id="_je4hgPy0Ed6S5szBt2gpEA" message="SHALL contain [1..1] title" base_Property="_KuXONvy0Ed6S5szBt2gpEA" value="PATIENT DATA"/>
+  <CDA:PropertyValidation xmi:id="_zCVBQPy0Ed6S5szBt2gpEA" message="SHALL contain [1..1] text" base_Property="_KuXOM_y0Ed6S5szBt2gpEA"/>
+  <CDA:CDATemplate xmi:id="_4O3-oPy0Ed6S5szBt2gpEA" message="The template identifier for PatientDataSection must be 2.16.840.1.113883.10.20.17.2.4." base_Class="_IMw0IPy0Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.2.4"/>
+  <CDA:TextValue xmi:id="_ahMYUPy1Ed6S5szBt2gpEA" message="SHALL contain [1..1] title" base_Property="_WJRV0_y1Ed6S5szBt2gpEA" value="Encounters"/>
+  <CDA:CDATemplate xmi:id="_3Gfk0Py1Ed6S5szBt2gpEA" message="The template identifier for AcuityDataSection must be 2.16.840.1.113883.10.20.17.2.3." base_Class="_wnPCYPy1Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.2.3"/>
+  <CDA:Entry xmi:id="_YWJAkPy2Ed6S5szBt2gpEA" message="SHALL contain [1..1] entry such that it   SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from)   SHALL contain [1..1] EncountersSection (templateId: 2.16.840.1.113883.10.20.17.2.2)" base_Association="_R_SzQfy2Ed6S5szBt2gpEA" typeCode="DRIV"/>
   <CDA:PropertyValidation xmi:id="_m5swoPy2Ed6S5szBt2gpEA" base_Property="_kpGnAPy2Ed6S5szBt2gpEA"/>
-  <CDA:CDATemplate xmi:id="_utkVkPy2Ed6S5szBt2gpEA" base_Class="_P2DEQPy1Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.2.2"/>
-  <CDA:Entry xmi:id="_IHWBQPy3Ed6S5szBt2gpEA" base_Association="_kpGnAfy2Ed6S5szBt2gpEA" typeCode="DRIV"/>
-  <CDA:PropertyValidation xmi:id="_IHjAI_y4Ed6S5szBt2gpEA" severity="WARNING" base_Property="_IHjAIPy4Ed6S5szBt2gpEA"/>
-  <CDA:Entry xmi:id="_RC0goP46Ed6S5szBt2gpEA" base_Association="_KWADUf46Ed6S5szBt2gpEA" typeCode="DRIV"/>
-  <CDA:VocabSpecification xmi:id="_xyfw8P48Ed6S5szBt2gpEA" base_Property="_YjB30f48Ed6S5szBt2gpEA" code="47340003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Birth weight"/>
-  <CDA:VocabSpecification xmi:id="_At1H0P49Ed6S5szBt2gpEA" base_Property="_YjB30_48Ed6S5szBt2gpEA" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="HL7ActStatus" displayName="Completed"/>
-  <CDA:PropertyValidation xmi:id="_TH4BQf49Ed6S5szBt2gpEA" base_Property="_TH4BQP49Ed6S5szBt2gpEA"/>
-  <CDA:CDATemplate xmi:id="_ryS3IP4-Ed6S5szBt2gpEA" base_Class="_SwqQkP48Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.3.1"/>
-  <CDA:Entry xmi:id="_x0zMIP4-Ed6S5szBt2gpEA" base_Association="_wbmkkf4-Ed6S5szBt2gpEA" typeCode="DRIV"/>
-  <CDA:PropertyValidation xmi:id="_BJvq8P5BEd6S5szBt2gpEA" base_Property="_-9EYAP5AEd6S5szBt2gpEA"/>
-  <CDA:CDATemplate xmi:id="_SFD8kP5BEd6S5szBt2gpEA" base_Class="_vQdVMP5AEd6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.3.14"/>
-  <CDA:AssociationValidation xmi:id="__1CsYP5BEd6S5szBt2gpEA" base_Association="_isyj0f5BEd6S5szBt2gpEA"/>
-  <CDA:ConstraintValidation xmi:id="_JHh3QP75Ed62UeYFRagr9A" base_Constraint="_O42U0Py4Ed6S5szBt2gpEA"/>
-  <CDA:ConstraintValidation xmi:id="_iK5OEP75Ed62UeYFRagr9A" base_Constraint="_f2-qsP75Ed62UeYFRagr9A"/>
-  <CDA:PropertyValidation xmi:id="_0RLMEP77Ed62UeYFRagr9A" base_Property="_WJRV0Py1Ed6S5szBt2gpEA"/>
-  <CDA:PropertyValidation xmi:id="_3d0HMP77Ed62UeYFRagr9A" base_Property="_YjB30P48Ed6S5szBt2gpEA"/>
-  <CDA:PropertyValidation xmi:id="_3-OsoP77Ed62UeYFRagr9A" base_Property="_YjB30v48Ed6S5szBt2gpEA"/>
+  <CDA:CDATemplate xmi:id="_utkVkPy2Ed6S5szBt2gpEA" message="The template identifier for EncountersSection must be 2.16.840.1.113883.10.20.17.2.2." base_Class="_P2DEQPy1Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.2.2"/>
+  <CDA:Entry xmi:id="_IHWBQPy3Ed6S5szBt2gpEA" message="SHALL contain [1..1] entry such that it   SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from)   SHALL contain [1..1] AcuityDataSection (templateId: 2.16.840.1.113883.10.20.17.2.3)" base_Association="_kpGnAfy2Ed6S5szBt2gpEA" typeCode="DRIV"/>
+  <CDA:PropertyValidation xmi:id="_IHjAI_y4Ed6S5szBt2gpEA" message="SHOULD contain [0..1] effectiveTime" severity="WARNING" base_Property="_IHjAIPy4Ed6S5szBt2gpEA"/>
+  <CDA:Entry xmi:id="_RC0goP46Ed6S5szBt2gpEA" message="SHALL contain [1..*] entry such that it   SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from)   SHALL contain [1..1] NeonatalICUEncounterActivity (templateId: 2.16.840.1.113883.10.20.17.3.15)" base_Association="_KWADUf46Ed6S5szBt2gpEA" typeCode="DRIV"/>
+  <CDA:VocabSpecification xmi:id="_xyfw8P48Ed6S5szBt2gpEA" message="SHALL contain [1..1] code/@code = &quot;47340003&quot; Birth weight (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC)" base_Property="_YjB30f48Ed6S5szBt2gpEA" code="47340003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="Birth weight"/>
+  <CDA:VocabSpecification xmi:id="_At1H0P49Ed6S5szBt2gpEA" message="SHALL contain [0..1] statusCode/@code = &quot;completed&quot; Completed (CodeSystem: 2.16.840.1.113883.5.14 HL7ActStatus STATIC)" base_Property="_YjB30_48Ed6S5szBt2gpEA" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="HL7ActStatus" displayName="Completed"/>
+  <CDA:PropertyValidation xmi:id="_TH4BQf49Ed6S5szBt2gpEA" message="SHALL contain [1..1] value, where its data type is PQ" base_Property="_TH4BQP49Ed6S5szBt2gpEA"/>
+  <CDA:CDATemplate xmi:id="_ryS3IP4-Ed6S5szBt2gpEA" message="The template identifier for BirthWeight must be 2.16.840.1.113883.10.20.17.3.1." base_Class="_SwqQkP48Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.3.1"/>
+  <CDA:Entry xmi:id="_x0zMIP4-Ed6S5szBt2gpEA" message="SHALL contain [1..1] entry such that it   SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from)   SHALL contain [1..1] BirthWeight (templateId: 2.16.840.1.113883.10.20.17.3.1)" base_Association="_wbmkkf4-Ed6S5szBt2gpEA" typeCode="DRIV"/>
+  <CDA:PropertyValidation xmi:id="_BJvq8P5BEd6S5szBt2gpEA" message="SHALL contain [1..1] @typeCode = &quot;LOC&quot;" base_Property="_-9EYAP5AEd6S5szBt2gpEA"/>
+  <CDA:CDATemplate xmi:id="_SFD8kP5BEd6S5szBt2gpEA" message="The template identifier for NeonatalICULocation must be 2.16.840.1.113883.10.20.17.3.14." base_Class="_vQdVMP5AEd6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.3.14"/>
+  <CDA:AssociationValidation xmi:id="__1CsYP5BEd6S5szBt2gpEA" message="SHALL contain [1..1] entryRelationship such that it   SHALL contain [1..1] NeonatalICULocation (templateId: 2.16.840.1.113883.10.20.17.3.14)" base_Association="_isyj0f5BEd6S5szBt2gpEA"/>
+  <CDA:ConstraintValidation xmi:id="_JHh3QP75Ed62UeYFRagr9A" message="SHALL satisfy: The encounter that is the same encounter as the encompassingEncounter SHALL contain an encounter/id that equals the encompassingEncounter id." base_Constraint="_O42U0Py4Ed6S5szBt2gpEA"/>
+  <CDA:ConstraintValidation xmi:id="_iK5OEP75Ed62UeYFRagr9A" message="SHALL satisfy: This value SHALL contain [1..1] @unit=&quot;g&quot; gram (CodeSystem: 2.16.840.1.113883.6.8 UCUM) STATIC." base_Constraint="_f2-qsP75Ed62UeYFRagr9A"/>
+  <CDA:PropertyValidation xmi:id="_0RLMEP77Ed62UeYFRagr9A" message="SHALL contain [1..1] text" base_Property="_WJRV0Py1Ed6S5szBt2gpEA"/>
+  <CDA:PropertyValidation xmi:id="_3d0HMP77Ed62UeYFRagr9A" message="SHALL contain [1..1] @classCode = &quot;OBS&quot;" base_Property="_YjB30P48Ed6S5szBt2gpEA"/>
+  <CDA:PropertyValidation xmi:id="_3-OsoP77Ed62UeYFRagr9A" message="SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_YjB30v48Ed6S5szBt2gpEA"/>
+  <CDA:PropertyValidation xmi:id="_DbXdgP8sEd6PLOlEGPkSFw" message="SHALL contain [1..*] id" base_Property="_IHjAJPy4Ed6S5szBt2gpEA"/>
 </xmi:XMI>

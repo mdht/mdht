@@ -15,16 +15,11 @@ package org.openhealthtools.mdht.uml.cda.ncr.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.impl.ResultObservationImpl;
-
 import org.openhealthtools.mdht.uml.cda.ncr.BirthWeight;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
-
 import org.openhealthtools.mdht.uml.cda.ncr.operations.BirthWeightOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -54,15 +49,6 @@ public class BirthWeightImpl extends ResultObservationImpl implements BirthWeigh
 	@Override
 	protected EClass eStaticClass() {
 		return NCRPackage.Literals.BIRTH_WEIGHT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return BirthWeightOperations.validateValue(this, diagnostics, context);
 	}
 
 	/**

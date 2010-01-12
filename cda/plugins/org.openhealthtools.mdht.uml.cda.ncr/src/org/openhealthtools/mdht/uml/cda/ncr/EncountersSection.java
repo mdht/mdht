@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ncr.NCRPackage#getEncountersSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='Encounters' templateId.root='2.16.840.1.113883.10.20.17.2.2' constraints.validation.error='NCREncountersSectionTemplateId NCREncountersSectionText NCREncountersSectionTitle'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='Encounters' constraints.validation.error='NCREncountersSectionTemplateId NCREncountersSectionText NCREncountersSectionTitle NCREncountersSectionNeonatalICUEncounterActivity' templateId.root='2.16.840.1.113883.10.20.17.2.2'"
  * @generated
  */
 public interface EncountersSection extends org.openhealthtools.mdht.uml.cda.ccd.EncountersSection {
@@ -65,6 +65,19 @@ public interface EncountersSection extends org.openhealthtools.mdht.uml.cda.ccd.
 	 * @generated
 	 */
 	boolean validateNCREncountersSectionTitle(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entry->exists(entry : cda::Entry | entry.encounter.oclIsKindOf(ncr::NeonatalICUEncounterActivity) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | entry.encounter.oclIsKindOf(ncr::NeonatalICUEncounterActivity) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)'"
+	 * @generated
+	 */
+	boolean validateNCREncountersSectionNeonatalICUEncounterActivity(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

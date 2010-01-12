@@ -17,15 +17,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
+import org.openhealthtools.mdht.uml.cda.ncr.NCRPlugin;
 import org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation;
-
 import org.openhealthtools.mdht.uml.cda.ncr.util.NCRValidator;
 
 /**
@@ -111,7 +108,7 @@ public class NeonatalICULocationOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.NEONATAL_ICU_LOCATION__NEONATAL_ICU_LOCATION_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "NeonatalICULocationTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(neonatalICULocation, context) }),
+						 NCRPlugin.INSTANCE.getString("NeonatalICULocationTemplateId"),
 						 new Object [] { neonatalICULocation }));
 			}
 			return false;
@@ -168,7 +165,7 @@ public class NeonatalICULocationOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.NEONATAL_ICU_LOCATION__NEONATAL_ICU_LOCATION_TYPE_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "NeonatalICULocationTypeCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(neonatalICULocation, context) }),
+						 NCRPlugin.INSTANCE.getString("NeonatalICULocationTypeCode"),
 						 new Object [] { neonatalICULocation }));
 			}
 			return false;
