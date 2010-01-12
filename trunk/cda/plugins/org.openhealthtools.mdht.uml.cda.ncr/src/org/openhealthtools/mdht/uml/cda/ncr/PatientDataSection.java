@@ -15,7 +15,6 @@ package org.openhealthtools.mdht.uml.cda.ncr;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.Section;
 
 /**
@@ -25,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ncr.NCRPackage#getPatientDataSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='PATIENT DATA' code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.17.2.4' constraints.validation.error='PatientDataSection_templateId PatientDataSection_code PatientDataSection_text PatientDataSection_title' code.displayName='Clinical Information' code.codeSystem='2.16.840.1.113883.6.1' code.code='55188-7'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='PATIENT DATA' code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.17.2.4' constraints.validation.error='PatientDataSectionTemplateId PatientDataSectionCode PatientDataSectionText PatientDataSectionTitle' code.displayName='Clinical Information' code.codeSystem='2.16.840.1.113883.6.1' code.code='55188-7'"
  * @generated
  */
 public interface PatientDataSection extends Section {

@@ -17,18 +17,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ncr.AcuityDataSection;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPlugin;
-
 import org.openhealthtools.mdht.uml.cda.ncr.util.NCRValidator;
-
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
 
 /**
@@ -104,7 +99,7 @@ public class AcuityDataSectionOperations extends SectionOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.ACUITY_DATA_SECTION__ACUITY_DATA_SECTION_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AcuityDataSectionTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(acuityDataSection, context) }),
+						 NCRPlugin.INSTANCE.getString("AcuityDataSectionTemplateId"),
 						 new Object [] { acuityDataSection }));
 			}
 			return false;

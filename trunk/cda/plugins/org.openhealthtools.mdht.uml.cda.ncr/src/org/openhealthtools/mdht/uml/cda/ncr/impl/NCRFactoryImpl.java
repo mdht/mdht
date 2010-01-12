@@ -15,12 +15,18 @@ package org.openhealthtools.mdht.uml.cda.ncr.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.openhealthtools.mdht.uml.cda.ncr.*;
+import org.openhealthtools.mdht.uml.cda.ncr.AcuityDataSection;
+import org.openhealthtools.mdht.uml.cda.ncr.BirthWeight;
+import org.openhealthtools.mdht.uml.cda.ncr.EncountersSection;
+import org.openhealthtools.mdht.uml.cda.ncr.NCRFactory;
+import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
+import org.openhealthtools.mdht.uml.cda.ncr.NeonatalCareReport;
+import org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity;
+import org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation;
+import org.openhealthtools.mdht.uml.cda.ncr.PatientDataSection;
+import org.openhealthtools.mdht.uml.cda.ncr.PatientDataSectionNCR;
 
 /**
  * <!-- begin-user-doc -->

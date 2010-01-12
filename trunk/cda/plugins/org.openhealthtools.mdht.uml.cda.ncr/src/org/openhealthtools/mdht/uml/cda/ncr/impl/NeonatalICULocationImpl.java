@@ -15,16 +15,11 @@ package org.openhealthtools.mdht.uml.cda.ncr.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.impl.LocationImpl;
-
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
 import org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation;
-
 import org.openhealthtools.mdht.uml.cda.ncr.operations.NeonatalICULocationOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**

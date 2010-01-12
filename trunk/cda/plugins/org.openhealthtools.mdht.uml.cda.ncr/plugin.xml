@@ -17,5 +17,6 @@
       <entry eClass="AcuityDataSection" id="2.16.840.1.113883.10.20.17.2.3" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
       <entry eClass="BirthWeight" id="2.16.840.1.113883.10.20.17.3.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
       <entry eClass="NeonatalICULocation" id="2.16.840.1.113883.10.20.17.3.14" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
+      <entry eClass="NeonatalCareReport" id="2.16.840.1.113883.10.20.17.1.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
    </extension>
 </plugin>

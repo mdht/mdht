@@ -15,7 +15,6 @@ package org.openhealthtools.mdht.uml.cda.ncr;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
 
 /**
@@ -29,23 +28,10 @@ import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ncr.NCRPackage#getNeonatalICUEncounterActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ENC' code.codeSystemName='HL7ActCode' templateId.root='2.16.840.1.113883.10.20.17.3.15' constraints.validation.error='NeonatalICUEncounterActivity_templateId id NeonatalICUEncounterActivity_classCode NeonatalICUEncounterActivity_moodCode NeonatalICUEncounterActivity_code NeonatalICUEncounterActivity_neonatalICULocation' code.displayName='Inpatient encounter' code.codeSystem='2.16.840.1.113883.5.4' code.code='IMP' constraints.validation.warning='NeonatalICUEncounterActivity_effectiveTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ENC' code.codeSystemName='HL7ActCode' templateId.root='2.16.840.1.113883.10.20.17.3.15' constraints.validation.error='NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId NeonatalICUEncounterActivityNeonatalICULocation' code.displayName='Inpatient encounter' code.codeSystem='2.16.840.1.113883.5.4' code.code='IMP' constraints.validation.warning='NeonatalICUEncounterActivityEffectiveTime'"
  * @generated
  */
 public interface NeonatalICUEncounterActivity extends EncountersActivity {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The encounter that is the same encounter as the encompassingEncounter SHALL contain an encounter/id that equals the encompassingEncounter id.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='The encounter that is the same encounter as the encompassingEncounter SHALL contain an encounter/id that equals the encompassingEncounter id.'"
-	 * @generated
-	 */
-	boolean validateId(DiagnosticChain diagnostics, Map<Object, Object> context);
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,6 +98,19 @@ public interface NeonatalICUEncounterActivity extends EncountersActivity {
 	 * @generated
 	 */
 	boolean validateNeonatalICUEncounterActivityEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.id->exists(value : datatypes::ANY | not value.oclIsUndefined())
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.id->exists(value : datatypes::ANY | not value.oclIsUndefined())'"
+	 * @generated
+	 */
+	boolean validateNeonatalICUEncounterActivityId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -15,16 +15,11 @@ package org.openhealthtools.mdht.uml.cda.ncr.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.ccd.impl.EncountersActivityImpl;
-
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
 import org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity;
-
 import org.openhealthtools.mdht.uml.cda.ncr.operations.NeonatalICUEncounterActivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -54,15 +49,6 @@ public class NeonatalICUEncounterActivityImpl extends EncountersActivityImpl imp
 	@Override
 	protected EClass eStaticClass() {
 		return NCRPackage.Literals.NEONATAL_ICU_ENCOUNTER_ACTIVITY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return NeonatalICUEncounterActivityOperations.validateId(this, diagnostics, context);
 	}
 
 	/**
@@ -108,6 +94,15 @@ public class NeonatalICUEncounterActivityImpl extends EncountersActivityImpl imp
 	 */
 	public boolean validateNeonatalICUEncounterActivityEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return NeonatalICUEncounterActivityOperations.validateNeonatalICUEncounterActivityEffectiveTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNeonatalICUEncounterActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return NeonatalICUEncounterActivityOperations.validateNeonatalICUEncounterActivityId(this, diagnostics, context);
 	}
 
 	/**

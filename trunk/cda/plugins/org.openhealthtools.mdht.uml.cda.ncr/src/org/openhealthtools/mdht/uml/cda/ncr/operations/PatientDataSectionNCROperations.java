@@ -17,16 +17,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPlugin;
 import org.openhealthtools.mdht.uml.cda.ncr.PatientDataSectionNCR;
-
 import org.openhealthtools.mdht.uml.cda.ncr.util.NCRValidator;
 
 /**
@@ -105,7 +101,7 @@ public class PatientDataSectionNCROperations extends PatientDataSectionOperation
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.PATIENT_DATA_SECTION_NCR__PATIENT_DATA_SECTION_NCR_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "PatientDataSectionNCRTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(patientDataSectionNCR, context) }),
+						 NCRPlugin.INSTANCE.getString("PatientDataSectionNCRTemplateId"),
 						 new Object [] { patientDataSectionNCR }));
 			}
 			return false;
@@ -121,7 +117,7 @@ public class PatientDataSectionNCROperations extends PatientDataSectionOperation
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_PATIENT_DATA_SECTION_NCR_ENCOUNTERS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSection()->one(section : cda::Section | section.oclIsKindOf(ncr::EncountersSection))";
+	protected static final String VALIDATE_PATIENT_DATA_SECTION_NCR_ENCOUNTERS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::EncountersSection))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validatePatientDataSectionNCREncountersSection(PatientDataSectionNCR, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Data Section NCR Encounters Section</em>}' invariant operation.
@@ -137,7 +133,7 @@ public class PatientDataSectionNCROperations extends PatientDataSectionOperation
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSection()->one(section : cda::Section | section.oclIsKindOf(ncr::EncountersSection))
+	 * self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::EncountersSection))
 	 * @param patientDataSectionNCR The receiving '<em><b>Patient Data Section NCR</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -162,7 +158,7 @@ public class PatientDataSectionNCROperations extends PatientDataSectionOperation
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.PATIENT_DATA_SECTION_NCR__PATIENT_DATA_SECTION_NCR_ENCOUNTERS_SECTION,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "PatientDataSectionNCREncountersSection", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(patientDataSectionNCR, context) }),
+						 NCRPlugin.INSTANCE.getString("PatientDataSectionNCREncountersSection"),
 						 new Object [] { patientDataSectionNCR }));
 			}
 			return false;
@@ -178,7 +174,7 @@ public class PatientDataSectionNCROperations extends PatientDataSectionOperation
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_PATIENT_DATA_SECTION_NCR_ACUITY_DATA_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSection()->one(section : cda::Section | section.oclIsKindOf(ncr::AcuityDataSection))";
+	protected static final String VALIDATE_PATIENT_DATA_SECTION_NCR_ACUITY_DATA_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::AcuityDataSection))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validatePatientDataSectionNCRAcuityDataSection(PatientDataSectionNCR, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Data Section NCR Acuity Data Section</em>}' invariant operation.
@@ -194,7 +190,7 @@ public class PatientDataSectionNCROperations extends PatientDataSectionOperation
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSection()->one(section : cda::Section | section.oclIsKindOf(ncr::AcuityDataSection))
+	 * self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::AcuityDataSection))
 	 * @param patientDataSectionNCR The receiving '<em><b>Patient Data Section NCR</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -219,7 +215,7 @@ public class PatientDataSectionNCROperations extends PatientDataSectionOperation
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.PATIENT_DATA_SECTION_NCR__PATIENT_DATA_SECTION_NCR_ACUITY_DATA_SECTION,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "PatientDataSectionNCRAcuityDataSection", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(patientDataSectionNCR, context) }),
+						 NCRPlugin.INSTANCE.getString("PatientDataSectionNCRAcuityDataSection"),
 						 new Object [] { patientDataSectionNCR }));
 			}
 			return false;
@@ -276,7 +272,7 @@ public class PatientDataSectionNCROperations extends PatientDataSectionOperation
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.PATIENT_DATA_SECTION_NCR__PATIENT_DATA_SECTION_NCR_BIRTH_WEIGHT,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "PatientDataSectionNCRBirthWeight", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(patientDataSectionNCR, context) }),
+						 NCRPlugin.INSTANCE.getString("PatientDataSectionNCRBirthWeight"),
 						 new Object [] { patientDataSectionNCR }));
 			}
 			return false;

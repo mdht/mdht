@@ -14,21 +14,24 @@ package org.openhealthtools.mdht.uml.cda.ncr.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.Location;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Section;
-
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
-
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
-import org.openhealthtools.mdht.uml.cda.ncr.*;
+import org.openhealthtools.mdht.uml.cda.ncr.AcuityDataSection;
+import org.openhealthtools.mdht.uml.cda.ncr.BirthWeight;
+import org.openhealthtools.mdht.uml.cda.ncr.EncountersSection;
+import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
+import org.openhealthtools.mdht.uml.cda.ncr.NeonatalCareReport;
+import org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity;
+import org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation;
+import org.openhealthtools.mdht.uml.cda.ncr.PatientDataSection;
+import org.openhealthtools.mdht.uml.cda.ncr.PatientDataSectionNCR;
 
 /**
  * <!-- begin-user-doc -->

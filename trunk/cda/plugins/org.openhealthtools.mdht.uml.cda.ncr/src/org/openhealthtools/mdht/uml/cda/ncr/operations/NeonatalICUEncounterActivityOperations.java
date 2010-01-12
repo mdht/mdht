@@ -17,18 +17,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.EncountersActivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPlugin;
 import org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity;
-
 import org.openhealthtools.mdht.uml.cda.ncr.util.NCRValidator;
 
 /**
@@ -39,12 +34,12 @@ import org.openhealthtools.mdht.uml.cda.ncr.util.NCRValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity#validateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity#validateNeonatalICUEncounterActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Encounter Activity Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity#validateNeonatalICUEncounterActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Encounter Activity Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity#validateNeonatalICUEncounterActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Encounter Activity Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity#validateNeonatalICUEncounterActivityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Encounter Activity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity#validateNeonatalICUEncounterActivityEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Encounter Activity Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity#validateNeonatalICUEncounterActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Encounter Activity Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.NeonatalICUEncounterActivity#validateNeonatalICUEncounterActivityNeonatalICULocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Encounter Activity Neonatal ICU Location</em>}</li>
  * </ul>
  * </p>
@@ -59,63 +54,6 @@ public class NeonatalICUEncounterActivityOperations extends EncountersActivityOp
 	 */
 	protected NeonatalICUEncounterActivityOperations() {
 		super();
-	}
-
-	/**
-	 * The cached OCL expression body for the '{@link #validateId(NeonatalICUEncounterActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Id</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateId(NeonatalICUEncounterActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALIDATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "The encounter that is the same encounter as the encompassingEncounter SHALL contain an encounter/id that equals the encompassingEncounter id.";
-
-	/**
-	 * The cached OCL invariant for the '{@link #validateId(NeonatalICUEncounterActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Id</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateId(NeonatalICUEncounterActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint VALIDATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The encounter that is the same encounter as the encompassingEncounter SHALL contain an encounter/id that equals the encompassingEncounter id.
-	 * @param neonatalICUEncounterActivity The receiving '<em><b>Neonatal ICU Encounter Activity</b></em>' model object.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
-	public static  boolean validateId(NeonatalICUEncounterActivity neonatalICUEncounterActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(NCRPackage.Literals.NEONATAL_ICU_ENCOUNTER_ACTIVITY);
-			try {
-				VALIDATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		if (!EOCL_ENV.createQuery(VALIDATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(neonatalICUEncounterActivity)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 NCRValidator.DIAGNOSTIC_SOURCE,
-						 NCRValidator.NEONATAL_ICU_ENCOUNTER_ACTIVITY__ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "Id", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(neonatalICUEncounterActivity, context) }),
-						 new Object [] { neonatalICUEncounterActivity }));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -167,7 +105,7 @@ public class NeonatalICUEncounterActivityOperations extends EncountersActivityOp
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_TEMPLATE_ID,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "NeonatalICUEncounterActivityTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(neonatalICUEncounterActivity, context) }),
+						 NCRPlugin.INSTANCE.getString("NeonatalICUEncounterActivityTemplateId"),
 						 new Object [] { neonatalICUEncounterActivity }));
 			}
 			return false;
@@ -224,7 +162,7 @@ public class NeonatalICUEncounterActivityOperations extends EncountersActivityOp
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_CLASS_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "NeonatalICUEncounterActivityClassCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(neonatalICUEncounterActivity, context) }),
+						 NCRPlugin.INSTANCE.getString("NeonatalICUEncounterActivityClassCode"),
 						 new Object [] { neonatalICUEncounterActivity }));
 			}
 			return false;
@@ -281,7 +219,7 @@ public class NeonatalICUEncounterActivityOperations extends EncountersActivityOp
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_MOOD_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "NeonatalICUEncounterActivityMoodCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(neonatalICUEncounterActivity, context) }),
+						 NCRPlugin.INSTANCE.getString("NeonatalICUEncounterActivityMoodCode"),
 						 new Object [] { neonatalICUEncounterActivity }));
 			}
 			return false;
@@ -342,7 +280,7 @@ public class NeonatalICUEncounterActivityOperations extends EncountersActivityOp
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_CODE,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "NeonatalICUEncounterActivityCode", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(neonatalICUEncounterActivity, context) }),
+						 NCRPlugin.INSTANCE.getString("NeonatalICUEncounterActivityCode"),
 						 new Object [] { neonatalICUEncounterActivity }));
 			}
 			return false;
@@ -396,10 +334,67 @@ public class NeonatalICUEncounterActivityOperations extends EncountersActivityOp
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
-						(Diagnostic.ERROR,
+						(Diagnostic.WARNING,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_EFFECTIVE_TIME,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "NeonatalICUEncounterActivityEffectiveTime", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(neonatalICUEncounterActivity, context) }),
+						 NCRPlugin.INSTANCE.getString("NeonatalICUEncounterActivityEffectiveTime"),
+						 new Object [] { neonatalICUEncounterActivity }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateNeonatalICUEncounterActivityId(NeonatalICUEncounterActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Encounter Activity Id</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateNeonatalICUEncounterActivityId(NeonatalICUEncounterActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_NEONATAL_ICU_ENCOUNTER_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.id->exists(value : datatypes::ANY | not value.oclIsUndefined())";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateNeonatalICUEncounterActivityId(NeonatalICUEncounterActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Encounter Activity Id</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateNeonatalICUEncounterActivityId(NeonatalICUEncounterActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_NEONATAL_ICU_ENCOUNTER_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.id->exists(value : datatypes::ANY | not value.oclIsUndefined())
+	 * @param neonatalICUEncounterActivity The receiving '<em><b>Neonatal ICU Encounter Activity</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateNeonatalICUEncounterActivityId(NeonatalICUEncounterActivity neonatalICUEncounterActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_NEONATAL_ICU_ENCOUNTER_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(NCRPackage.Literals.NEONATAL_ICU_ENCOUNTER_ACTIVITY);
+			try {
+				VALIDATE_NEONATAL_ICU_ENCOUNTER_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_NEONATAL_ICU_ENCOUNTER_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_NEONATAL_ICU_ENCOUNTER_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(neonatalICUEncounterActivity)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 NCRValidator.DIAGNOSTIC_SOURCE,
+						 NCRValidator.NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_ID,
+						 NCRPlugin.INSTANCE.getString("NeonatalICUEncounterActivityId"),
 						 new Object [] { neonatalICUEncounterActivity }));
 			}
 			return false;
@@ -456,7 +451,7 @@ public class NeonatalICUEncounterActivityOperations extends EncountersActivityOp
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.NEONATAL_ICU_ENCOUNTER_ACTIVITY__NEONATAL_ICU_ENCOUNTER_ACTIVITY_NEONATAL_ICU_LOCATION,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "NeonatalICUEncounterActivityNeonatalICULocation", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(neonatalICUEncounterActivity, context) }),
+						 NCRPlugin.INSTANCE.getString("NeonatalICUEncounterActivityNeonatalICULocation"),
 						 new Object [] { neonatalICUEncounterActivity }));
 			}
 			return false;
