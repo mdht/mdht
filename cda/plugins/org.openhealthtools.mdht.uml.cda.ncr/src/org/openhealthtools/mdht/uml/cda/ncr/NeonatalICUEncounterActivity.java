@@ -103,11 +103,11 @@ public interface NeonatalICUEncounterActivity extends EncountersActivity {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.id->exists(value : datatypes::ANY | not value.oclIsUndefined())
+	 * not self.id->isEmpty()
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.id->exists(value : datatypes::ANY | not value.oclIsUndefined())'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.id->isEmpty()'"
 	 * @generated
 	 */
 	boolean validateNeonatalICUEncounterActivityId(DiagnosticChain diagnostics, Map<Object, Object> context);

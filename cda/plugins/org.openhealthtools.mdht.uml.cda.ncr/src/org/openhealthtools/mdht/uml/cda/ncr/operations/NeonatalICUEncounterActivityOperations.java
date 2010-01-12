@@ -353,7 +353,7 @@ public class NeonatalICUEncounterActivityOperations extends EncountersActivityOp
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_NEONATAL_ICU_ENCOUNTER_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.id->exists(value : datatypes::ANY | not value.oclIsUndefined())";
+	protected static final String VALIDATE_NEONATAL_ICU_ENCOUNTER_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.id->isEmpty()";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateNeonatalICUEncounterActivityId(NeonatalICUEncounterActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Encounter Activity Id</em>}' invariant operation.
@@ -369,7 +369,7 @@ public class NeonatalICUEncounterActivityOperations extends EncountersActivityOp
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.id->exists(value : datatypes::ANY | not value.oclIsUndefined())
+	 * not self.id->isEmpty()
 	 * @param neonatalICUEncounterActivity The receiving '<em><b>Neonatal ICU Encounter Activity</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

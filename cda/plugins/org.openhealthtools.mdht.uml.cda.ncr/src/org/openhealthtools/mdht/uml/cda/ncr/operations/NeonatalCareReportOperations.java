@@ -21,7 +21,6 @@ import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 import org.openhealthtools.mdht.uml.cda.ncr.NCRPackage;
-import org.openhealthtools.mdht.uml.cda.ncr.NCRPlugin;
 import org.openhealthtools.mdht.uml.cda.ncr.NeonatalCareReport;
 import org.openhealthtools.mdht.uml.cda.ncr.util.NCRValidator;
 import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperations;
@@ -100,7 +99,7 @@ public class NeonatalCareReportOperations extends ClinicalDocumentOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.NEONATAL_CARE_REPORT__NEONATAL_CARE_REPORT_TEMPLATE_ID,
-						 NCRPlugin.INSTANCE.getString("NeonatalCareReportTemplateId"),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "NeonatalCareReportTemplateId", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(neonatalCareReport, context) }),
 						 new Object [] { neonatalCareReport }));
 			}
 			return false;
@@ -157,7 +156,7 @@ public class NeonatalCareReportOperations extends ClinicalDocumentOperations {
 						(Diagnostic.ERROR,
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.NEONATAL_CARE_REPORT__NEONATAL_CARE_REPORT_PATIENT_DATA_SECTION_NCR,
-						 NCRPlugin.INSTANCE.getString("NeonatalCareReportPatientDataSectionNCR"),
+						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "NeonatalCareReportPatientDataSectionNCR", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(neonatalCareReport, context) }),
 						 new Object [] { neonatalCareReport }));
 			}
 			return false;
