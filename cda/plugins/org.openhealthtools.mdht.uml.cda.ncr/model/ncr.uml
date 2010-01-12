@@ -4,7 +4,7 @@
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
       <importedPackage href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="NeonatalCareReport">
+    <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="Neonatal Care Report">
       <ownedComment xmi:id="_p4NQgPyzEd6S5szBt2gpEA">
         <body>The CDA the Neonatal Care Report (NCR) constrains CDA to express the data elements identified by CHNC. This NCR CDA R2 document template defines the data elements that belong in the header of the NCR CDA document and prescribes the sections that belong in the NCR. Within the NCR document is an initial segment of data elements from the CHNC Neonatal Intensive Care Unit (NICU) Core Data Set (CDS). This NCR CDA will send these data elements from Neonatal Intensive Care providers to the CHNC database in standardized CDA format for analysis and performance improvement work.&#xD;
 A complete NCR is created and sent after an infant is discharged. An initial NCR may be created and sent shortly after the infant is born. Many data elements in this initial NCR will have null values for the many values that are unknown or not applicable at this point. The complete NCR sent after discharge will replace the first NCR document.</body>
@@ -60,14 +60,8 @@ A complete NCR is created and sent after an infant is discharged. An initial NCR
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ucv9baX0Ed6JRdOhEffuGA" name="PatientDataSectionNCR">
       <ownedComment xmi:id="_Ucv9bqX0Ed6JRdOhEffuGA" annotatedElement="_Ucv9baX0Ed6JRdOhEffuGA">
-        <body>&lt;p align=&quot;left&quot;>&#xD;
-    &lt;font size=&quot;2&quot;>Represents the specific reason for which the summarization was generated, such as in response to a&#xD;
-    request.&lt;/font>&#xD;
-&lt;/p>&#xD;
-&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific&#xD;
-    purpose such as a transfer, referral, or patient request.&lt;/font>&#xD;
-&lt;/p></body>
+        <body>Represents the specific reason for which the summarization was generated, such as in response to a request.&#xD;
+The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific purpose such as a transfer, referral, or patient request.</body>
       </ownedComment>
       <generalization xmi:id="_Ucv9b6X0Ed6JRdOhEffuGA" general="_IMw0IPy0Ed6S5szBt2gpEA"/>
       <ownedAttribute xmi:id="_R_SzQPy2Ed6S5szBt2gpEA" name="encountersSection" type="_P2DEQPy1Ed6S5szBt2gpEA" aggregation="composite" association="_R_SzQfy2Ed6S5szBt2gpEA"/>
