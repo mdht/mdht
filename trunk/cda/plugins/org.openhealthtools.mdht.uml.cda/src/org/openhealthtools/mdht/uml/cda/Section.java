@@ -669,7 +669,7 @@ public interface Section extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.act->select(act : cda::Act | not act.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Act> getAct();
+	EList<Act> getActs();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -689,7 +689,7 @@ public interface Section extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Encounter> getEncounter();
+	EList<Encounter> getEncounters();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -701,7 +701,7 @@ public interface Section extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.observation->select(obs : cda::Observation | not obs.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Observation> getObservation();
+	EList<Observation> getObservations();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -725,7 +725,7 @@ public interface Section extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.organizer->select(org : cda::Organizer | not org.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Organizer> getOrganizer();
+	EList<Organizer> getOrganizers();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -737,7 +737,7 @@ public interface Section extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Procedure> getProcedure();
+	EList<Procedure> getProcedures();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -749,7 +749,7 @@ public interface Section extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<RegionOfInterest> getRegionOfInterest();
+	EList<RegionOfInterest> getRegionsOfInterest();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -761,7 +761,7 @@ public interface Section extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.section'"
 	 * @generated
 	 */
-	EList<Section> getSection();
+	EList<Section> getSections();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -773,7 +773,7 @@ public interface Section extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<SubstanceAdministration> getSubstanceAdministration();
+	EList<SubstanceAdministration> getSubstanceAdministrations();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -785,7 +785,7 @@ public interface Section extends EObject {
 	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry.supply->select(sup : cda::Supply | not sup.oclIsUndefined())'"
 	 * @generated
 	 */
-	EList<Supply> getSupply();
+	EList<Supply> getSupplies();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -1027,8 +1027,8 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Act> getAct() {
-		return SectionOperations.getAct(this);
+	public EList<Act> getActs() {
+		return SectionOperations.getActs(this);
 	}
 
 	/**
@@ -1045,8 +1045,8 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Encounter> getEncounter() {
-		return SectionOperations.getEncounter(this);
+	public EList<Encounter> getEncounters() {
+		return SectionOperations.getEncounters(this);
 	}
 
 	/**
@@ -1054,8 +1054,8 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Observation> getObservation() {
-		return SectionOperations.getObservation(this);
+	public EList<Observation> getObservations() {
+		return SectionOperations.getObservations(this);
 	}
 
 	/**
@@ -1072,8 +1072,8 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Organizer> getOrganizer() {
-		return SectionOperations.getOrganizer(this);
+	public EList<Organizer> getOrganizers() {
+		return SectionOperations.getOrganizers(this);
 	}
 
 	/**
@@ -1081,8 +1081,8 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Procedure> getProcedure() {
-		return SectionOperations.getProcedure(this);
+	public EList<Procedure> getProcedures() {
+		return SectionOperations.getProcedures(this);
 	}
 
 	/**
@@ -1090,8 +1090,8 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RegionOfInterest> getRegionOfInterest() {
-		return SectionOperations.getRegionOfInterest(this);
+	public EList<RegionOfInterest> getRegionsOfInterest() {
+		return SectionOperations.getRegionsOfInterest(this);
 	}
 
 	/**
@@ -1099,8 +1099,8 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Section> getSection() {
-		return SectionOperations.getSection(this);
+	public EList<Section> getSections() {
+		return SectionOperations.getSections(this);
 	}
 
 	/**
@@ -1108,8 +1108,8 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SubstanceAdministration> getSubstanceAdministration() {
-		return SectionOperations.getSubstanceAdministration(this);
+	public EList<SubstanceAdministration> getSubstanceAdministrations() {
+		return SectionOperations.getSubstanceAdministrations(this);
 	}
 
 	/**
@@ -1117,8 +1117,8 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Supply> getSupply() {
-		return SectionOperations.getSupply(this);
+	public EList<Supply> getSupplies() {
+		return SectionOperations.getSupplies(this);
 	}
 
 	/**

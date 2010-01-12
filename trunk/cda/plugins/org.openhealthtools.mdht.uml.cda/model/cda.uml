@@ -576,7 +576,7 @@
         </ownedParameter>
         <ownedParameter xmi:id="_9ql7sHrnEd648OeXdSIbLg" name="Parameter1" type="_0jvq8E8AEd6ohP_YEXs4Wg" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_mP-gIFxCEd6ZEsfifJz_3w" name="getAct" isQuery="true" bodyCondition="_HnA9UFxDEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_mP-gIFxCEd6ZEsfifJz_3w" name="getActs" isQuery="true" bodyCondition="_HnA9UFxDEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_HnA9UFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_mP-gIFxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_HnA9UVxDEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -591,7 +591,7 @@
       <ownedOperation xmi:id="_5qS8wHrsEd648OeXdSIbLg" name="getClinicalDocument" isQuery="true">
         <ownedParameter xmi:id="_8ErUgHrsEd648OeXdSIbLg" name="Parameter1" type="_S9OzADxXEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_p0aQMFxCEd6ZEsfifJz_3w" name="getEncounter" isQuery="true" bodyCondition="_PozpgFxDEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_p0aQMFxCEd6ZEsfifJz_3w" name="getEncounters" isQuery="true" bodyCondition="_PozpgFxDEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_PozpgFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_p0aQMFxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_PozpgVxDEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -603,7 +603,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_reqLgFxCEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_s4g6YFxCEd6ZEsfifJz_3w" name="getObservation" isQuery="true" bodyCondition="_Tjc6IFxDEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_s4g6YFxCEd6ZEsfifJz_3w" name="getObservations" isQuery="true" bodyCondition="_Tjc6IFxDEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_Tjc6IFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_s4g6YFxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_Tjc6IVxDEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -627,7 +627,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yQlLQVxCEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_1pY6IFxCEd6ZEsfifJz_3w" name="getOrganizer" isQuery="true" bodyCondition="_aoS14FxDEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_1pY6IFxCEd6ZEsfifJz_3w" name="getOrganizers" isQuery="true" bodyCondition="_aoS14FxDEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_aoS14FxDEd6ZEsfifJz_3w" name="body" constrainedElement="_1pY6IFxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_aoS14VxDEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -639,7 +639,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3736IFxCEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_48sd8FxCEd6ZEsfifJz_3w" name="getProcedure" isQuery="true" bodyCondition="_et9DsFxDEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_48sd8FxCEd6ZEsfifJz_3w" name="getProcedures" isQuery="true" bodyCondition="_et9DsFxDEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_et9DsFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_48sd8FxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_et9DsVxDEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -651,7 +651,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6k2ukVxCEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_67zO8FxCEd6ZEsfifJz_3w" name="getRegionOfInterest" isQuery="true" bodyCondition="_tJrtcFxDEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_67zO8FxCEd6ZEsfifJz_3w" name="getRegionsOfInterest" isQuery="true" bodyCondition="_tJrtcFxDEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_tJrtcFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_67zO8FxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_tJrtcVxDEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -663,7 +663,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9TCzIVxCEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_b3c10FwxEd6ZEsfifJz_3w" name="getSection" isQuery="true" bodyCondition="_b3c10VwxEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_b3c10FwxEd6ZEsfifJz_3w" name="getSections" isQuery="true" bodyCondition="_b3c10VwxEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_b3c10VwxEd6ZEsfifJz_3w" name="body" constrainedElement="_b3c10FwxEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_b3c10lwxEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -675,7 +675,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b3c11VwxEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_-AfvAFxCEd6ZEsfifJz_3w" name="getSubstanceAdministration" isQuery="true" bodyCondition="_1F9ngFxDEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_-AfvAFxCEd6ZEsfifJz_3w" name="getSubstanceAdministrations" isQuery="true" bodyCondition="_1F9ngFxDEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_1F9ngFxDEd6ZEsfifJz_3w" name="body" constrainedElement="_-AfvAFxCEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_1F9ngVxDEd6ZEsfifJz_3w">
             <language>OCL</language>
@@ -687,7 +687,7 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__r7WEFxCEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_CCIYcFxDEd6ZEsfifJz_3w" name="getSupply" isQuery="true" bodyCondition="_4omn0FxDEd6ZEsfifJz_3w">
+      <ownedOperation xmi:id="_CCIYcFxDEd6ZEsfifJz_3w" name="getSupplies" isQuery="true" bodyCondition="_4omn0FxDEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_4omn0FxDEd6ZEsfifJz_3w" name="body" constrainedElement="_CCIYcFxDEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_4omn0VxDEd6ZEsfifJz_3w">
             <language>OCL</language>

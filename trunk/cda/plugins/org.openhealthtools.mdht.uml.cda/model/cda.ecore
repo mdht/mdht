@@ -2704,7 +2704,7 @@
     <eOperations name="createStrucDocText" ordered="false" lowerBound="1" eType="#//StrucDocText">
       <eParameters name="xmlString" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act">
+    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.entry.act->select(act : cda::Act | not act.oclIsUndefined())"/>
       </eAnnotations>
@@ -2713,7 +2713,7 @@
       </eAnnotations>
     </eOperations>
     <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
-    <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.entry.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())"/>
@@ -2722,7 +2722,7 @@
         <details key="body" value="self.entry.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
         eType="#//Observation">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.entry.observation->select(obs : cda::Observation | not obs.oclIsUndefined())"/>
@@ -2740,7 +2740,7 @@
         <details key="body" value="self.entry.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getOrganizer" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
         eType="#//Organizer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.entry.organizer->select(org : cda::Organizer | not org.oclIsUndefined())"/>
@@ -2749,7 +2749,7 @@
         <details key="body" value="self.entry.organizer->select(org : cda::Organizer | not org.oclIsUndefined())"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getProcedure" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
         eType="#//Procedure">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.entry.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())"/>
@@ -2758,7 +2758,7 @@
         <details key="body" value="self.entry.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
         eType="#//RegionOfInterest">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.entry.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())"/>
@@ -2767,7 +2767,7 @@
         <details key="body" value="self.entry.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getSection" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getSections" ordered="false" unique="false" upperBound="-1"
         eType="#//Section">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.component.section"/>
@@ -2776,7 +2776,7 @@
         <details key="body" value="self.component.section"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
+    <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.entry.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())"/>
@@ -2785,7 +2785,8 @@
         <details key="body" value="self.entry.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())"/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply">
+    <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
+        eType="#//Supply">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.entry.supply->select(sup : cda::Supply | not sup.oclIsUndefined())"/>
       </eAnnotations>

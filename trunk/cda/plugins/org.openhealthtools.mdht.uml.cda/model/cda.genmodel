@@ -973,17 +973,17 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/createStrucDocText">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/createStrucDocText/xmlString"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getAct"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getActs"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getClinicalDocument"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getEncounter"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getObservation"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getEncounters"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getObservations"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getObservationMedia"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getOrganizer"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getProcedure"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getRegionOfInterest"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getSection"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getSubstanceAdministration"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getSupply"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getOrganizers"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getProcedures"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getRegionsOfInterest"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getSections"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getSubstanceAdministrations"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getSupplies"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/hasActTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/hasActTemplate/templateId"/>
       </genOperations>

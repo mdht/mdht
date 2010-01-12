@@ -2603,25 +2603,26 @@
     <eOperations name="createStrucDocText" ordered="false" lowerBound="1" eType="#//StrucDocText">
       <eParameters name="xmlString" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="getAct" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
+    <eOperations name="getActs" ordered="false" unique="false" upperBound="-1" eType="#//Act"/>
     <eOperations name="getClinicalDocument" ordered="false" lowerBound="1" eType="#//ClinicalDocument"/>
-    <eOperations name="getEncounter" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getEncounters" ordered="false" unique="false" upperBound="-1"
         eType="#//Encounter"/>
-    <eOperations name="getObservation" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getObservations" ordered="false" unique="false" upperBound="-1"
         eType="#//Observation"/>
     <eOperations name="getObservationMedia" ordered="false" unique="false" upperBound="-1"
         eType="#//ObservationMedia"/>
-    <eOperations name="getOrganizer" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getOrganizers" ordered="false" unique="false" upperBound="-1"
         eType="#//Organizer"/>
-    <eOperations name="getProcedure" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getProcedures" ordered="false" unique="false" upperBound="-1"
         eType="#//Procedure"/>
-    <eOperations name="getRegionOfInterest" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getRegionsOfInterest" ordered="false" unique="false" upperBound="-1"
         eType="#//RegionOfInterest"/>
-    <eOperations name="getSection" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getSections" ordered="false" unique="false" upperBound="-1"
         eType="#//Section"/>
-    <eOperations name="getSubstanceAdministration" ordered="false" unique="false"
+    <eOperations name="getSubstanceAdministrations" ordered="false" unique="false"
         upperBound="-1" eType="#//SubstanceAdministration"/>
-    <eOperations name="getSupply" ordered="false" unique="false" upperBound="-1" eType="#//Supply"/>
+    <eOperations name="getSupplies" ordered="false" unique="false" upperBound="-1"
+        eType="#//Supply"/>
     <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
