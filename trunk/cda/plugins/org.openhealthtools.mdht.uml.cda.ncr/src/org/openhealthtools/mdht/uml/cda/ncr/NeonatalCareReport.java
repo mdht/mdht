@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
  *
  * @see org.openhealthtools.mdht.uml.cda.ncr.NCRPackage#getNeonatalCareReport()
  * @model extendedMetaData="name='ClinicalDocument'"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.17.1.1' constraints.validation.error='NeonatalCareReportTemplateId NeonatalCareReportPatientDataSectionNCR'"
+ *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.17.1.1' constraints.validation.error='Neonatal Care ReportTemplateId Neonatal Care ReportTemplateId Neonatal Care ReportPatientDataSectionNCR'"
  * @generated
  */
 public interface NeonatalCareReport extends ClinicalDocument {

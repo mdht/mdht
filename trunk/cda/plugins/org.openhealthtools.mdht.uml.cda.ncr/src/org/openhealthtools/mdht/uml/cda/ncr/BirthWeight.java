@@ -101,11 +101,11 @@ public interface BirthWeight extends ResultObservation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.value->exists(value : datatypes::ANY | not value.oclIsUndefined())
+	 * self.value->forAll(element | element.oclIsTypeOf(datatypes::PQ))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.value->exists(value : datatypes::ANY | not value.oclIsUndefined())'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.value->forAll(element | element.oclIsTypeOf(datatypes::PQ))'"
 	 * @generated
 	 */
 	boolean validateBirthWeightValue(DiagnosticChain diagnostics, Map<Object, Object> context);
