@@ -224,7 +224,8 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				body.append("not " + selfName + ".oclIsUndefined()");
 			}
 			else {
-				body.append(selfName + "->exists(value : datatypes::ANY | not value.oclIsUndefined())");
+//				body.append(selfName + "->exists(value : datatypes::ANY | not value.oclIsUndefined())");
+				body.append("not " + selfName + "->isEmpty()");
 			}
 			addOCLConstraint(property, body);
 		}
