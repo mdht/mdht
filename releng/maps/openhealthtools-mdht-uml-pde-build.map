@@ -29,6 +29,8 @@ plugin@org.openhealthtools.mdht.uml.edit=SVN,trunk,https://mdht.projects.openhea
 !***************  OHT CDA FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda-feature
 
+plugin@org.openhealthtools.mdht.uml.cda.core=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.core
+
 plugin@org.openhealthtools.mdht.uml.cda.ant=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ant
 
 plugin@org.openhealthtools.mdht.uml.cda.resources=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.resources
@@ -36,6 +38,8 @@ plugin@org.openhealthtools.mdht.uml.cda.resources=SVN,trunk,https://mdht.project
 plugin@org.openhealthtools.mdht.uml.cda.transform=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.transform
 
 plugin@org.openhealthtools.mdht.uml.cda.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ui
+
+plugin@org.openhealthtools.mdht.uml.cda.dita=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.dita
 
 
 !***************  OHT CDA RSM FEATURE  ********************************************** 
