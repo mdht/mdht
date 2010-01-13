@@ -33,6 +33,7 @@ import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity#validateProcedureActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity#validateProcedureActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity#validateProcedureActivityEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity#validateProcedureActivityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -330,6 +331,63 @@ public class ProcedureActivityOperations extends ActOperations {
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROCEDURE_ACTIVITY__PROCEDURE_ACTIVITY_EFFECTIVE_TIME,
 						 CCDPlugin.INSTANCE.getString("ProcedureActivityEffectiveTime"),
+						 new Object [] { procedureActivity }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateProcedureActivityCode(ProcedureActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Code</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProcedureActivityCode(ProcedureActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PROCEDURE_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined()";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateProcedureActivityCode(ProcedureActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Code</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProcedureActivityCode(ProcedureActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_PROCEDURE_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.code.oclIsUndefined()
+	 * @param procedureActivity The receiving '<em><b>Procedure Activity</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateProcedureActivityCode(ProcedureActivity procedureActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROCEDURE_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROCEDURE_ACTIVITY);
+			try {
+				VALIDATE_PROCEDURE_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROCEDURE_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_PROCEDURE_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(procedureActivity)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROCEDURE_ACTIVITY__PROCEDURE_ACTIVITY_CODE,
+						 CCDPlugin.INSTANCE.getString("ProcedureActivityCode"),
 						 new Object [] { procedureActivity }));
 			}
 			return false;

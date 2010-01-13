@@ -18,8 +18,8 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The medication series number observation can be used to indicate which in a series of administrations a
- *     particular administration represents (e.g. "hepatitis B vaccine number 2 was administered on Feb 07, 2004).</font>
+ *     The medication series number observation can be used to indicate which in a series of administrations a
+ *     particular administration represents (e.g. "hepatitis B vaccine number 2 was administered on Feb 07, 2004).
  * </p>
  * <!-- end-model-doc -->
  *

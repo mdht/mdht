@@ -95,6 +95,15 @@ public class ProcedureActivityImpl extends ActImpl implements ProcedureActivity 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateProcedureActivityCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureActivityOperations.validateProcedureActivityCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ProcedureActivity init() {
     		CDAUtil.init(this);
     		return this;

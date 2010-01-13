@@ -17,60 +17,30 @@ import org.openhealthtools.mdht.uml.cda.Section;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p align="left">
- *     <i><font size="2">Functional Status</font></i> <font size="2" face="Times New Roman,Times New Roman"><font size="2"
- *     face="Times New Roman,Times New Roman">describes the patient’s status of normal functioning at the time the Care Record
- *     was created. Functional statuses include information regarding the patient relative to:</font></font>
- * </p>
- * <div style="margin-left: 4em">
- *     <p align="left">
- *         <font size="2" face="Times New Roman,Times New Roman"><font size="2" face="Times New Roman,Times New Roman">•
- *         Ambulatory ability</font></font>
- *     </p>
- *     <p align="left">
- *         <font size="2" face="Times New Roman,Times New Roman"><font size="2" face="Times New Roman,Times New Roman">•
- *         Mental status or competency</font></font>
- *     </p>
- *     <p align="left">
- *         <font size="2" face="Times New Roman,Times New Roman"><font size="2" face="Times New Roman,Times New Roman">•
- *         Activities of Daily Living (ADLs), including bathing, dressing, feeding, grooming</font></font>
- *     </p>
- *     <p align="left">
- *         <font size="2" face="Times New Roman,Times New Roman"><font size="2" face="Times New Roman,Times New Roman">• Home
- *         / living situation having an effect on the health status of the patient</font></font>
- *     </p>
- *     <p align="left">
- *         <font size="2" face="Times New Roman,Times New Roman"><font size="2" face="Times New Roman,Times New Roman">•
- *         Ability to care for self</font></font>
- *     </p>
- * </div>
- * <div style="margin-left: 4em">
- *     <p align="left">
- *         <font size="2">•</font> <font size="2" face="Times New Roman,Times New Roman"><font size="2"
- *         face="Times New Roman,Times New Roman">Social activity, including issues with social cognition, participation with
- *         friends and acquaintances other than family members</font></font>
- *     </p>
- *     <p align="left">
- *         <font size="2" face="Times New Roman,Times New Roman"><font size="2" face="Times New Roman,Times New Roman">•
- *         Occupation activity, including activities partly or directly related to working, housework or volunteering, family
- *         and home responsibilities or activities related to home and family</font></font>
- *     </p>
- *     <p align="left">
- *         <font size="2" face="Times New Roman,Times New Roman"><font size="2" face="Times New Roman,Times New Roman">•
- *         Communication ability, including issues with speech, writing or cognition required for communication</font></font>
- *     </p>
- *     <p align="left">
- *         <font size="2" face="Times New Roman,Times New Roman"><font size="2" face="Times New Roman,Times New Roman">•
- *         Perception, including sight, hearing, taste, skin sensation, kinesthetic sense, proprioception, or
- *         balance</font></font>
- *     </p>
- * </div>
  * <p>
- *     <font size="2" face="Times New Roman,Times New Roman"><font size="2" face="Times New Roman,Times New Roman">Any
+ *     <i>Functional Status</i> describes the patient's status of normal functioning at the time the Care Record
+ *     was created. Functional statuses include information regarding the patient relative to:
+ * </p>
+ * 
+ *     <ul><li>Ambulatory ability</li>
+ *        <li>Mental status or competency</li>
+ *         <li>Activities of Daily Living (ADLs), including bathing, dressing, feeding, grooming</li>
+ *         <li>Home / living situation having an effect on the health status of the patient</li>
+ *         <li>Ability to care for self</li>
+ *         <li>Social activity, including issues with social cognition, participation with
+ *         friends and acquaintances other than family members</li>
+ *        <li>Occupation activity, including activities partly or directly related to working, housework or volunteering, family
+ *         and home responsibilities or activities related to home and family</li>
+ *       <li>Communication ability, including issues with speech, writing or cognition required for communication</li>
+ *        <li> Perception, including sight, hearing, taste, skin sensation, kinesthetic sense, proprioception, or
+ *         balance</li>
+ * </ul>
+ * <p>
+ *     Any
  *     deviation from normal function that the patient displays and is recorded in the record should be included. Of
  *     particular interest are those limitations that would in any way interfere with self care or the medical therapeutic
  *     process. In addition, an improvement, any change in or noting that the patient has normal functioning status is also
- *     valid for inclusion.</font></font>
+ *     valid for inclusion.
  * </p>
  * <!-- end-model-doc -->
  *

@@ -271,7 +271,7 @@ public class AdvanceDirectivesSectionOperations extends SectionOperations {
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_ADVANCE_DIRECTIVE_OBSERVATION,
-						 org.eclipse.emf.ecore.plugin.EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "AdvanceDirectivesSectionAdvanceDirectiveObservation", org.eclipse.emf.ecore.util.EObjectValidator.getObjectLabel(advanceDirectivesSection, context) }),
+						 CCDPlugin.INSTANCE.getString("AdvanceDirectivesSectionAdvanceDirectiveObservation"),
 						 new Object [] { advanceDirectivesSection }));
 			}
 			return false;

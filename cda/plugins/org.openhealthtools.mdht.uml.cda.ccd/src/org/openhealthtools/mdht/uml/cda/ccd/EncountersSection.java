@@ -18,13 +18,13 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">This section is used to list and describe any healthcare encounters pertinent to the patient’s current
+ *     This section is used to list and describe any healthcare encounters pertinent to the patient's current
  *     health status or historical health history. An Encounter is an interaction, regardless of the setting, between a
  *     patient and a practitioner who is vested with primary responsibility for diagnosing, evaluating, or treating the
- *     patient’s condition. It may include visits, appointments, as well as non face-to-face interactions. It is also a
+ *     patient's condition. It may include visits, appointments, as well as non face-to-face interactions. It is also a
  *     contact between a patient and a practitioner who has primary responsibility for assessing and treating the patient at a
  *     given contact, exercising independent judgment. This section may contain all encounters for the time period being
- *     summarized, but should include notable encounters.</font>
+ *     summarized, but should include notable encounters.
  * </p>
  * <!-- end-model-doc -->
  *

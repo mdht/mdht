@@ -17,13 +17,13 @@ import org.openhealthtools.mdht.uml.cda.Section;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p align="left">
- *     <font size="2">Represents the specific reason for which the summarization was generated, such as in response to a
- *     request.</font>
+ * <p>
+ *     Represents the specific reason for which the summarization was generated, such as in response to a
+ *     request.
  * </p>
  * <p>
- *     <font size="2">The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific
- *     purpose such as a transfer, referral, or patient request.</font>
+ *     The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific
+ *     purpose such as a transfer, referral, or patient request.
  * </p>
  * <!-- end-model-doc -->
  *

@@ -18,10 +18,10 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">This section contains data defining the patient’s occupational, personal (e.g. lifestyle), social, and
+ *     This section contains data defining the patient's occupational, personal (e.g. lifestyle), social, and
  *     environmental history and health risk factors, as well as administrative data such as marital status, race, ethnicity
- *     and religious affiliation. Social history can have significant influence on a patient’s physical, psychological and
- *     emotional health and wellbeing so should be considered in the development of a complete record.</font>
+ *     and religious affiliation. Social history can have significant influence on a patient's physical, psychological and
+ *     emotional health and wellbeing so should be considered in the development of a complete record.
  * </p>
  * <!-- end-model-doc -->
  *

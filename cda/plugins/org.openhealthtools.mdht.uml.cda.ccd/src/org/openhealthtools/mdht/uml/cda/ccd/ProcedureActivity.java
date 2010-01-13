@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProcedureActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' statusCode.codeSystemName='ProcedureStatusCode' statusCode.codeSystem='2.16.840.1.113883.1.11.20.15' templateId.root='2.16.840.1.113883.10.20.1.29' constraints.validation.error='ProcedureActivityTemplateId ProcedureActivityMoodCode ProcedureActivityId ProcedureActivityStatusCode' statusCode.code='completed' statusCode.codeSystemVersion='20061017' constraints.validation.warning='ProcedureActivityEffectiveTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' statusCode.codeSystemName='ProcedureStatusCode' constraints.validation.error='ProcedureActivityTemplateId ProcedureActivityMoodCode ProcedureActivityId ProcedureActivityStatusCode ProcedureActivityCode' templateId.root='2.16.840.1.113883.10.20.1.29' statusCode.codeSystem='2.16.840.1.113883.1.11.20.15' statusCode.code='completed' statusCode.codeSystemVersion='20061017' constraints.validation.warning='ProcedureActivityEffectiveTime'"
  * @generated
  */
 public interface ProcedureActivity extends Act {
@@ -88,6 +88,19 @@ public interface ProcedureActivity extends Act {
 	 * @generated
 	 */
 	boolean validateProcedureActivityEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.code.oclIsUndefined()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean validateProcedureActivityCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

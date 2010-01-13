@@ -5,7 +5,7 @@
     nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd" nsPrefix="ccd">
   <eClassifiers xsi:type="ecore:EClass" name="MedicationSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>&lt;font size=&quot;2&quot;>The Medications section defines a patient’s current medications and pertinent medication&#xD;&#xA;    history. At a minimum, the currently active medications should be listed, with an entire medication history as an&#xD;&#xA;    option, particularly when the summary document is used for comprehensive data export. The section may also include a&#xD;&#xA;    patient’s prescription history, and enables the determination of the source of a medication list (e.g. from a pharmacy&#xD;&#xA;    system vs. from the patient).&lt;/font>&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    The Medications section defines a patient's current medications and pertinent medication&#xD;&#xA;    history. At a minimum, the currently active medications should be listed, with an entire medication history as an&#xD;&#xA;    option, particularly when the summary document is used for comprehensive data export. The section may also include a&#xD;&#xA;    patient's prescription history, and enables the determination of the source of a medication list (e.g. from a pharmacy&#xD;&#xA;    system vs. from the patient).&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -1314,7 +1314,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FamilyHistorySection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>This section contains data defining the patient’s genetic relatives in terms of possible or relevant&#xD;&#xA;    health risk factors that have a potential impact on the patient’s healthcare risk profile.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    This section contains data defining the patient's genetic relatives in terms of possible or relevant&#xD;&#xA;    health risk factors that have a potential impact on the patient's healthcare risk profile.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -1521,7 +1521,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResultOrganizer" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Organizer">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>&lt;font size=&quot;2&quot;>The result organizer identifies an observation set, contained with the result organizer&#xD;&#xA;    as a set of result observations. It contains information applicable to all of the contained result&#xD;&#xA;    observations.&lt;/font>&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>Results in ASTM CCR and CCD are structured similarly to the HL7 Version 2 ORU Observation message, where&#xD;&#xA;    there is an outer result organizer (templateId 2.16.840.1.113883.10.20.1.32), analogous to the HL7 Version 2 OBR&#xD;&#xA;    Observation Result Segment, which contains one or more result observations (templateId 2.16.840.1.113883.10.20.1.31),&#xD;&#xA;    analogous to the HL7 Version 2 OBX Observation/Result Segment.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    The result organizer identifies an observation set, contained with the result organizer&#xD;&#xA;    as a set of result observations. It contains information applicable to all of the contained result&#xD;&#xA;    observations.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    Results in ASTM CCR and CCD are structured similarly to the HL7 Version 2 ORU Observation message, where&#xD;&#xA;    there is an outer result organizer (templateId 2.16.840.1.113883.10.20.1.32), analogous to the HL7 Version 2 OBR&#xD;&#xA;    Observation Result Segment, which contains one or more result observations (templateId 2.16.840.1.113883.10.20.1.31),&#xD;&#xA;    analogous to the HL7 Version 2 OBX Observation/Result Segment.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="moodCode" value="EVN"/>
@@ -1743,7 +1743,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SocialHistorySection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>This section contains data defining the patient’s occupational, personal (e.g. lifestyle), social, and&#xD;&#xA;    environmental history and health risk factors, as well as administrative data such as marital status, race, ethnicity&#xD;&#xA;    and religious affiliation. Social history can have significant influence on a patient’s physical, psychological and&#xD;&#xA;    emotional health and wellbeing so should be considered in the development of a complete record.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    This section contains data defining the patient's occupational, personal (e.g. lifestyle), social, and&#xD;&#xA;    environmental history and health risk factors, as well as administrative data such as marital status, race, ethnicity&#xD;&#xA;    and religious affiliation. Social history can have significant influence on a patient's physical, psychological and&#xD;&#xA;    emotional health and wellbeing so should be considered in the development of a complete record.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -1851,7 +1851,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EncountersSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>This section is used to list and describe any healthcare encounters pertinent to the patient’s current&#xD;&#xA;    health status or historical health history. An Encounter is an interaction, regardless of the setting, between a&#xD;&#xA;    patient and a practitioner who is vested with primary responsibility for diagnosing, evaluating, or treating the&#xD;&#xA;    patient’s condition. It may include visits, appointments, as well as non face-to-face interactions. It is also a&#xD;&#xA;    contact between a patient and a practitioner who has primary responsibility for assessing and treating the patient at a&#xD;&#xA;    given contact, exercising independent judgment. This section may contain all encounters for the time period being&#xD;&#xA;    summarized, but should include notable encounters.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    This section is used to list and describe any healthcare encounters pertinent to the patient's current&#xD;&#xA;    health status or historical health history. An Encounter is an interaction, regardless of the setting, between a&#xD;&#xA;    patient and a practitioner who is vested with primary responsibility for diagnosing, evaluating, or treating the&#xD;&#xA;    patient's condition. It may include visits, appointments, as well as non face-to-face interactions. It is also a&#xD;&#xA;    contact between a patient and a practitioner who has primary responsibility for assessing and treating the patient at a&#xD;&#xA;    given contact, exercising independent judgment. This section may contain all encounters for the time period being&#xD;&#xA;    summarized, but should include notable encounters.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -2106,7 +2106,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MedicationActivity" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//SubstanceAdministration">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>A medication activity is used to describe what is administered whereas a supply activity is used to&#xD;&#xA;    describe what has been dispensed.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    A medication activity is used to describe what is administered whereas a supply activity is used to&#xD;&#xA;    describe what has been dispensed.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="constraints.validation.info" value="MedicationActivityMedicationSeriesNumberObservation MedicationActivityMedicationStatusObservation MedicationActivityPatientInstruction"/>
@@ -2388,7 +2388,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AlertsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>This section is used to list and describe any allergies, adverse reactions, and alerts that are&#xD;&#xA;    pertinent to the patient’s current or past medical history. At a minimum, currently active and any relevant historical&#xD;&#xA;    allergies and adverse reactions should be listed.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    This section is used to list and describe any allergies, adverse reactions, and alerts that are&#xD;&#xA;    pertinent to the patient's current or past medical history. At a minimum, currently active and any relevant historical&#xD;&#xA;    allergies and adverse reactions should be listed.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -2755,7 +2755,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResultsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;font size=&quot;2&quot;>This section contains the results of observations generated by laboratories, imaging procedures, and&#xD;&#xA;    other procedures. The scope includes hematology, chemistry, serology, virology, toxicology, microbiology, plain x-ray,&#xD;&#xA;    ultrasound, CT, MRI, angiography, cardiac echo, nuclear medicine, pathology, and procedure observations. The section&#xD;&#xA;    may contain all results for the period of time being summarized, but should include notable results such as abnormal&#xD;&#xA;    values or relevant trends.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;font size=&quot;2&quot;>Lab results are typically generated by laboratories providing analytic services in areas such as&#xD;&#xA;    chemistry, hematology, serology, histology, cytology, anatomic pathology, microbiology, and/or virology. These&#xD;&#xA;    observations are based on analysis of specimens obtained from the patient, submitted to the lab.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;font size=&quot;2&quot;>Imaging results are typically generated by a clinician reviewing the output of an imaging procedure,&#xD;&#xA;    such as where a cardiologist reports the left ventricular ejection fraction based on the review of a cardiac&#xD;&#xA;    echo.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>Procedure results are typically generated by a clinician wanting to provide more granular information&#xD;&#xA;    about component observations made during the performance of a procedure, such as where a gastroenterologist reports the&#xD;&#xA;    size of a polyp observed during a colonoscopy.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    This section contains the results of observations generated by laboratories, imaging procedures, and&#xD;&#xA;    other procedures. The scope includes hematology, chemistry, serology, virology, toxicology, microbiology, plain x-ray,&#xD;&#xA;    ultrasound, CT, MRI, angiography, cardiac echo, nuclear medicine, pathology, and procedure observations. The section&#xD;&#xA;    may contain all results for the period of time being summarized, but should include notable results such as abnormal&#xD;&#xA;    values or relevant trends.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    Lab results are typically generated by laboratories providing analytic services in areas such as&#xD;&#xA;    chemistry, hematology, serology, histology, cytology, anatomic pathology, microbiology, and/or virology. These&#xD;&#xA;    observations are based on analysis of specimens obtained from the patient, submitted to the lab.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    Imaging results are typically generated by a clinician reviewing the output of an imaging procedure,&#xD;&#xA;    such as where a cardiologist reports the left ventricular ejection fraction based on the review of a cardiac&#xD;&#xA;    echo.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    Procedure results are typically generated by a clinician wanting to provide more granular information&#xD;&#xA;    about component observations made during the performance of a procedure, such as where a gastroenterologist reports the&#xD;&#xA;    size of a polyp observed during a colonoscopy.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -2857,7 +2857,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MedicationSeriesNumberObservation" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Observation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The medication series number observation can be used to indicate which in a series of administrations a&#xD;&#xA;    particular administration represents (e.g. &quot;hepatitis B vaccine number 2 was administered on Feb 07, 2004).&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    The medication series number observation can be used to indicate which in a series of administrations a&#xD;&#xA;    particular administration represents (e.g. &quot;hepatitis B vaccine number 2 was administered on Feb 07, 2004).&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="moodCode" value="EVN"/>
@@ -3070,7 +3070,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProceduresSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>This section defines all interventional, surgical, diagnostic, or therapeutic procedures or treatments&#xD;&#xA;    pertinent to the patient historically at the time the document is generated. The section may contain all procedures for&#xD;&#xA;    the period of time being summarized, but should include notable procedures.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    This section defines all interventional, surgical, diagnostic, or therapeutic procedures or treatments&#xD;&#xA;    pertinent to the patient historically at the time the document is generated. The section may contain all procedures for&#xD;&#xA;    the period of time being summarized, but should include notable procedures.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -3172,7 +3172,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The plan of care section contains data defining pending orders, interventions, encounters, services, and&#xD;&#xA;    procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All&#xD;&#xA;    active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of&#xD;&#xA;    clinical significance to the current and ongoing care of the patient should be listed, unless constrained due to issues&#xD;&#xA;    of privacy.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The plan of care section also contains information regarding goals and clinical reminders. Clinical&#xD;&#xA;    reminders are placed here for purposes of providing prompts that may be used for disease prevention, disease&#xD;&#xA;    management, patient safety, and healthcare quality improvements, including widely accepted performance measures.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    The plan of care section contains data defining pending orders, interventions, encounters, services, and&#xD;&#xA;    procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All&#xD;&#xA;    active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of&#xD;&#xA;    clinical significance to the current and ongoing care of the patient should be listed, unless constrained due to issues&#xD;&#xA;    of privacy.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    The plan of care section also contains information regarding goals and clinical reminders. Clinical&#xD;&#xA;    reminders are placed here for purposes of providing prompts that may be used for disease prevention, disease&#xD;&#xA;    management, patient safety, and healthcare quality improvements, including widely accepted performance measures.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -3273,7 +3273,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VitalSignsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;font size=&quot;2&quot;>This section contains current and historically relevant vital signs, such as blood pressure, heart rate,&#xD;&#xA;    respiratory rate, height, weight, body mass index, head circumference, crown-to-rump length, and pulse oximetry. The&#xD;&#xA;    section may contain all vital signs for the period of time being summarized, but at a minimum should include notable&#xD;&#xA;    vital signs such as the most recent, maximum and/or minimum, or both, baseline, or relevant trends.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>Vital signs are represented like other results (as defined in&lt;/font> &lt;b>&lt;i>&lt;font size=&quot;2&quot;&#xD;&#xA;    face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>Results&#xD;&#xA;    Section&lt;/font>&lt;/font>&lt;/i>&lt;/b>&lt;font size=&quot;2&quot;>), but are aggregated into their own section in order to follow clinical&#xD;&#xA;    conventions.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>&amp;nbsp;&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    This section contains current and historically relevant vital signs, such as blood pressure, heart rate,&#xD;&#xA;    respiratory rate, height, weight, body mass index, head circumference, crown-to-rump length, and pulse oximetry. The&#xD;&#xA;    section may contain all vital signs for the period of time being summarized, but at a minimum should include notable&#xD;&#xA;    vital signs such as the most recent, maximum and/or minimum, or both, baseline, or relevant trends.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    Vital signs are represented like other results (as defined in &lt;b>&lt;i>Results&#xD;&#xA;    Section&lt;/i>&lt;/b>), but are aggregated into their own section in order to follow clinical&#xD;&#xA;    conventions.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -3375,7 +3375,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MedicalEquipmentSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The Medical Equipment section defines a patient’s implanted and external medical devices and equipment&#xD;&#xA;    that their health status depends on, as well as any pertinent equipment or device history. This section is also used to&#xD;&#xA;    itemize any pertinent current or historical durable medical equipment (DME) used to help maintain the patient’s health&#xD;&#xA;    status. All pertinent equipment relevant to the diagnosis, care, and treatment of a patient should be included.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    The Medical Equipment section defines a patient's implanted and external medical devices and equipment&#xD;&#xA;    that their health status depends on, as well as any pertinent equipment or device history. This section is also used to&#xD;&#xA;    itemize any pertinent current or historical durable medical equipment (DME) used to help maintain the patient's health&#xD;&#xA;    status. All pertinent equipment relevant to the diagnosis, care, and treatment of a patient should be included.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -3454,7 +3454,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionalStatusSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;i>&lt;font size=&quot;2&quot;>Functional Status&lt;/font>&lt;/i> &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot;&#xD;&#xA;    face=&quot;Times New Roman,Times New Roman&quot;>describes the patient’s status of normal functioning at the time the Care Record&#xD;&#xA;    was created. Functional statuses include information regarding the patient relative to:&lt;/font>&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;div style=&quot;margin-left: 4em&quot;>&#xD;&#xA;    &lt;p align=&quot;left&quot;>&#xD;&#xA;        &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>•&#xD;&#xA;        Ambulatory ability&lt;/font>&lt;/font>&#xD;&#xA;    &lt;/p>&#xD;&#xA;    &lt;p align=&quot;left&quot;>&#xD;&#xA;        &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>•&#xD;&#xA;        Mental status or competency&lt;/font>&lt;/font>&#xD;&#xA;    &lt;/p>&#xD;&#xA;    &lt;p align=&quot;left&quot;>&#xD;&#xA;        &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>•&#xD;&#xA;        Activities of Daily Living (ADLs), including bathing, dressing, feeding, grooming&lt;/font>&lt;/font>&#xD;&#xA;    &lt;/p>&#xD;&#xA;    &lt;p align=&quot;left&quot;>&#xD;&#xA;        &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>• Home&#xD;&#xA;        / living situation having an effect on the health status of the patient&lt;/font>&lt;/font>&#xD;&#xA;    &lt;/p>&#xD;&#xA;    &lt;p align=&quot;left&quot;>&#xD;&#xA;        &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>•&#xD;&#xA;        Ability to care for self&lt;/font>&lt;/font>&#xD;&#xA;    &lt;/p>&#xD;&#xA;&lt;/div>&#xD;&#xA;&lt;div style=&quot;margin-left: 4em&quot;>&#xD;&#xA;    &lt;p align=&quot;left&quot;>&#xD;&#xA;        &lt;font size=&quot;2&quot;>•&lt;/font> &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot;&#xD;&#xA;        face=&quot;Times New Roman,Times New Roman&quot;>Social activity, including issues with social cognition, participation with&#xD;&#xA;        friends and acquaintances other than family members&lt;/font>&lt;/font>&#xD;&#xA;    &lt;/p>&#xD;&#xA;    &lt;p align=&quot;left&quot;>&#xD;&#xA;        &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>•&#xD;&#xA;        Occupation activity, including activities partly or directly related to working, housework or volunteering, family&#xD;&#xA;        and home responsibilities or activities related to home and family&lt;/font>&lt;/font>&#xD;&#xA;    &lt;/p>&#xD;&#xA;    &lt;p align=&quot;left&quot;>&#xD;&#xA;        &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>•&#xD;&#xA;        Communication ability, including issues with speech, writing or cognition required for communication&lt;/font>&lt;/font>&#xD;&#xA;    &lt;/p>&#xD;&#xA;    &lt;p align=&quot;left&quot;>&#xD;&#xA;        &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>•&#xD;&#xA;        Perception, including sight, hearing, taste, skin sensation, kinesthetic sense, proprioception, or&#xD;&#xA;        balance&lt;/font>&lt;/font>&#xD;&#xA;    &lt;/p>&#xD;&#xA;&lt;/div>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>Any&#xD;&#xA;    deviation from normal function that the patient displays and is recorded in the record should be included. Of&#xD;&#xA;    particular interest are those limitations that would in any way interfere with self care or the medical therapeutic&#xD;&#xA;    process. In addition, an improvement, any change in or noting that the patient has normal functioning status is also&#xD;&#xA;    valid for inclusion.&lt;/font>&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;i>Functional Status&lt;/i> describes the patient's status of normal functioning at the time the Care Record&#xD;&#xA;    was created. Functional statuses include information regarding the patient relative to:&#xD;&#xA;&lt;/p>&#xD;&#xA;&#xD;&#xA;    &lt;ul>&lt;li>Ambulatory ability&lt;/li>&#xD;&#xA;       &lt;li>Mental status or competency&lt;/li>&#xD;&#xA;        &lt;li>Activities of Daily Living (ADLs), including bathing, dressing, feeding, grooming&lt;/li>&#xD;&#xA;        &lt;li>Home / living situation having an effect on the health status of the patient&lt;/li>&#xD;&#xA;        &lt;li>Ability to care for self&lt;/li>&#xD;&#xA;        &lt;li>Social activity, including issues with social cognition, participation with&#xD;&#xA;        friends and acquaintances other than family members&lt;/li>&#xD;&#xA;       &lt;li>Occupation activity, including activities partly or directly related to working, housework or volunteering, family&#xD;&#xA;        and home responsibilities or activities related to home and family&lt;/li>&#xD;&#xA;      &lt;li>Communication ability, including issues with speech, writing or cognition required for communication&lt;/li>&#xD;&#xA;       &lt;li> Perception, including sight, hearing, taste, skin sensation, kinesthetic sense, proprioception, or&#xD;&#xA;        balance&lt;/li>&#xD;&#xA;&lt;/ul>&#xD;&#xA;&lt;p>&#xD;&#xA;    Any&#xD;&#xA;    deviation from normal function that the patient displays and is recorded in the record should be included. Of&#xD;&#xA;    particular interest are those limitations that would in any way interfere with self care or the medical therapeutic&#xD;&#xA;    process. In addition, an improvement, any change in or noting that the patient has normal functioning status is also&#xD;&#xA;    valid for inclusion.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -3579,8 +3579,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="AdvanceDirectivesSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
-      <details key="constraints.validation.error" value="AdvanceDirectivesSectionTemplateId AdvanceDirectivesSectionCode AdvanceDirectivesSectionTitle"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.1"/>
+      <details key="constraints.validation.error" value="AdvanceDirectivesSectionTemplateId AdvanceDirectivesSectionCode AdvanceDirectivesSectionTitle AdvanceDirectivesSectionAdvanceDirectiveObservation"/>
       <details key="code.displayName" value="Advance directives"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="code.code" value="42348-3"/>
@@ -3676,7 +3676,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PayersSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;i>&lt;font size=&quot;2&quot;>Payers&lt;/font>&lt;/i> &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot;&#xD;&#xA;    face=&quot;Times New Roman,Times New Roman&quot;>contains data on the patient’s payers, whether a ‘third party’ insurance,&#xD;&#xA;    self-pay, other payer or guarantor, or some combination of payers, and is used to define which entity is the&#xD;&#xA;    responsible fiduciary for the financial aspects of a patient’s care.&lt;/font>&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>Each unique&#xD;&#xA;    instance of a payer and all the pertinent data needed to contact, bill to, and collect from that payer should be&#xD;&#xA;    included. Authorization information that can be used to define pertinent referral, authorization tracking number,&#xD;&#xA;    procedure, therapy, intervention, device, or similar authorizations for the patient or provider, or both should be&#xD;&#xA;    included. At a minimum, the patient’s pertinent current payment sources should be listed.&lt;/font>&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>&lt;font size=&quot;2&quot; face=&quot;Times New Roman,Times New Roman&quot;>The CCD&#xD;&#xA;    represents the sources of payment as a coverage act, which identifies all of the insurance policies or government or&#xD;&#xA;    other programs that cover some or all of the patient's healthcare expenses. The policies or programs are sequenced by&#xD;&#xA;    order of preference. Each policy or program identifies the covered party with respect to the payer, so that the&#xD;&#xA;    identifiers can be recorded.&lt;/font>&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;i>Payers&lt;/i> contains data on the patient's payers, whether a 'third party' insurance,&#xD;&#xA;    self-pay, other payer or guarantor, or some combination of payers, and is used to define which entity is the&#xD;&#xA;    responsible fiduciary for the financial aspects of a patient's care.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    Each unique&#xD;&#xA;    instance of a payer and all the pertinent data needed to contact, bill to, and collect from that payer should be&#xD;&#xA;    included. Authorization information that can be used to define pertinent referral, authorization tracking number,&#xD;&#xA;    procedure, therapy, intervention, device, or similar authorizations for the patient or provider, or both should be&#xD;&#xA;    included. At a minimum, the patient's pertinent current payment sources should be listed.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    The CCD&#xD;&#xA;    represents the sources of payment as a coverage act, which identifies all of the insurance policies or government or&#xD;&#xA;    other programs that cover some or all of the patient's healthcare expenses. The policies or programs are sequenced by&#xD;&#xA;    order of preference. Each policy or program identifies the covered party with respect to the payer, so that the&#xD;&#xA;    identifiers can be recorded.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -3755,7 +3755,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PurposeSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;font size=&quot;2&quot;>Represents the specific reason for which the summarization was generated, such as in response to a&#xD;&#xA;    request.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific&#xD;&#xA;    purpose such as a transfer, referral, or patient request.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    Represents the specific reason for which the summarization was generated, such as in response to a&#xD;&#xA;    request.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific&#xD;&#xA;    purpose such as a transfer, referral, or patient request.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -3857,7 +3857,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PurposeActivity" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Act">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>CCD represents the ASTM CCR &amp;lt;Purpose&amp;gt; object as a relationship between two classes – the source&#xD;&#xA;    represents the act of creating a summary document, the target is the reason for creating the document, and the&#xD;&#xA;    relationship type is &quot;RSON&quot; (has reason). The target act may be an Observation, Procedure, or some other kind of act,&#xD;&#xA;    and it may represent an order, an event, etc.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    CCD represents the ASTM CCR &amp;lt;Purpose&amp;gt; object as a relationship between two classes -- the source&#xD;&#xA;    represents the act of creating a summary document, the target is the reason for creating the document, and the&#xD;&#xA;    relationship type is &quot;RSON&quot; (has reason). The target act may be an Observation, Procedure, or some other kind of act,&#xD;&#xA;    and it may represent an order, an event, etc.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="moodCode" value="EVN"/>
@@ -4763,9 +4763,9 @@
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="moodCode" value="EVN"/>
       <details key="statusCode.codeSystemName" value="ProcedureStatusCode"/>
-      <details key="statusCode.codeSystem" value="2.16.840.1.113883.1.11.20.15"/>
+      <details key="constraints.validation.error" value="ProcedureActivityTemplateId ProcedureActivityMoodCode ProcedureActivityId ProcedureActivityStatusCode ProcedureActivityCode"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.29"/>
-      <details key="constraints.validation.error" value="ProcedureActivityTemplateId ProcedureActivityMoodCode ProcedureActivityId ProcedureActivityStatusCode"/>
+      <details key="statusCode.codeSystem" value="2.16.840.1.113883.1.11.20.15"/>
       <details key="statusCode.code" value="completed"/>
       <details key="statusCode.codeSystemVersion" value="20061017"/>
       <details key="constraints.validation.warning" value="ProcedureActivityEffectiveTime"/>
@@ -4880,10 +4880,32 @@
         </eGenericType>
       </eParameters>
     </eOperations>
+    <eOperations name="ProcedureActivityCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="not self.code.oclIsUndefined()"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="not self.code.oclIsUndefined()"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PatientInstruction" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Act">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>Patient instructions are additional information provided to a patient related to one of their&#xD;&#xA;    medications (e.g. &quot;take on an empty stomach&quot;).&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    Patient instructions are additional information provided to a patient related to one of their&#xD;&#xA;    medications (e.g. &quot;take on an empty stomach&quot;).&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="moodCode" value="INT"/>
@@ -4937,7 +4959,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FulfillmentInstruction" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Act">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>Fulfillment instructions are additional information provided to the dispensing party (e.g. &quot;label in&#xD;&#xA;    spanish&quot;).&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    Fulfillment instructions are additional information provided to the dispensing party (e.g. &quot;label in&#xD;&#xA;    spanish&quot;).&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="moodCode" value="INT"/>

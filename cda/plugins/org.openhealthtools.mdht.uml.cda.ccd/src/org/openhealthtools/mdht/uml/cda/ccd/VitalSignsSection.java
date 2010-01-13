@@ -17,20 +17,16 @@ import org.openhealthtools.mdht.uml.cda.Section;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p align="left">
- *     <font size="2">This section contains current and historically relevant vital signs, such as blood pressure, heart rate,
+ * <p>
+ *     This section contains current and historically relevant vital signs, such as blood pressure, heart rate,
  *     respiratory rate, height, weight, body mass index, head circumference, crown-to-rump length, and pulse oximetry. The
  *     section may contain all vital signs for the period of time being summarized, but at a minimum should include notable
- *     vital signs such as the most recent, maximum and/or minimum, or both, baseline, or relevant trends.</font>
+ *     vital signs such as the most recent, maximum and/or minimum, or both, baseline, or relevant trends.
  * </p>
  * <p>
- *     <font size="2">Vital signs are represented like other results (as defined in</font> <b><i><font size="2"
- *     face="Times New Roman,Times New Roman"><font size="2" face="Times New Roman,Times New Roman">Results
- *     Section</font></font></i></b><font size="2">), but are aggregated into their own section in order to follow clinical
- *     conventions.</font>
- * </p>
- * <p>
- *     <font size="2">&nbsp;</font>
+ *     Vital signs are represented like other results (as defined in <b><i>Results
+ *     Section</i></b>), but are aggregated into their own section in order to follow clinical
+ *     conventions.
  * </p>
  * <!-- end-model-doc -->
  *

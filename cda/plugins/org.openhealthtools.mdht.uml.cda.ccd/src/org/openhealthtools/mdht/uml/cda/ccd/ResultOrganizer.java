@@ -18,15 +18,15 @@ import org.openhealthtools.mdht.uml.cda.Organizer;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2"><font size="2">The result organizer identifies an observation set, contained with the result organizer
+ *     The result organizer identifies an observation set, contained with the result organizer
  *     as a set of result observations. It contains information applicable to all of the contained result
- *     observations.</font></font>
+ *     observations.
  * </p>
  * <p>
- *     <font size="2">Results in ASTM CCR and CCD are structured similarly to the HL7 Version 2 ORU Observation message, where
+ *     Results in ASTM CCR and CCD are structured similarly to the HL7 Version 2 ORU Observation message, where
  *     there is an outer result organizer (templateId 2.16.840.1.113883.10.20.1.32), analogous to the HL7 Version 2 OBR
  *     Observation Result Segment, which contains one or more result observations (templateId 2.16.840.1.113883.10.20.1.31),
- *     analogous to the HL7 Version 2 OBX Observation/Result Segment.</font>
+ *     analogous to the HL7 Version 2 OBX Observation/Result Segment.
  * </p>
  * <!-- end-model-doc -->
  *

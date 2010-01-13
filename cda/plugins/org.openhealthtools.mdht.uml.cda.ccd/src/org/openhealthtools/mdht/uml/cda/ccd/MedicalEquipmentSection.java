@@ -18,10 +18,10 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Medical Equipment section defines a patient’s implanted and external medical devices and equipment
+ *     The Medical Equipment section defines a patient's implanted and external medical devices and equipment
  *     that their health status depends on, as well as any pertinent equipment or device history. This section is also used to
- *     itemize any pertinent current or historical durable medical equipment (DME) used to help maintain the patient’s health
- *     status. All pertinent equipment relevant to the diagnosis, care, and treatment of a patient should be included.</font>
+ *     itemize any pertinent current or historical durable medical equipment (DME) used to help maintain the patient's health
+ *     status. All pertinent equipment relevant to the diagnosis, care, and treatment of a patient should be included.
  * </p>
  * <!-- end-model-doc -->
  *
