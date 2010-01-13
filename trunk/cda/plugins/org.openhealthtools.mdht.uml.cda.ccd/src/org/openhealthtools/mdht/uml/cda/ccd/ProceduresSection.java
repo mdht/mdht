@@ -18,9 +18,9 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">This section defines all interventional, surgical, diagnostic, or therapeutic procedures or treatments
+ *     This section defines all interventional, surgical, diagnostic, or therapeutic procedures or treatments
  *     pertinent to the patient historically at the time the document is generated. The section may contain all procedures for
- *     the period of time being summarized, but should include notable procedures.</font>
+ *     the period of time being summarized, but should include notable procedures.
  * </p>
  * <!-- end-model-doc -->
  *

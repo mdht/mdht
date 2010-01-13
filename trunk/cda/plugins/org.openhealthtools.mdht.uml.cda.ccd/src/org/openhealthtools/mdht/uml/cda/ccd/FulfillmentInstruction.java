@@ -18,8 +18,8 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">Fulfillment instructions are additional information provided to the dispensing party (e.g. "label in
- *     spanish").</font>
+ *     Fulfillment instructions are additional information provided to the dispensing party (e.g. "label in
+ *     spanish").
  * </p>
  * <!-- end-model-doc -->
  *

@@ -18,8 +18,8 @@ import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">A medication activity is used to describe what is administered whereas a supply activity is used to
- *     describe what has been dispensed.</font>
+ *     A medication activity is used to describe what is administered whereas a supply activity is used to
+ *     describe what has been dispensed.
  * </p>
  * <!-- end-model-doc -->
  *

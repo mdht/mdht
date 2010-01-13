@@ -18,8 +18,8 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">This section contains data defining the patient’s genetic relatives in terms of possible or relevant
- *     health risk factors that have a potential impact on the patient’s healthcare risk profile.</font>
+ *     This section contains data defining the patient's genetic relatives in terms of possible or relevant
+ *     health risk factors that have a potential impact on the patient's healthcare risk profile.
  * </p>
  * <!-- end-model-doc -->
  *

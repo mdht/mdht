@@ -3138,6 +3138,15 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(procedureActivityEClass, ecorePackage.getEBoolean(), "validateProcedureActivityCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(patientInstructionEClass, PatientInstruction.class, "PatientInstruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(patientInstructionEClass, ecorePackage.getEBoolean(), "validatePatientInstructionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -3243,7 +3252,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	
 	}
 
 	/**
@@ -3258,7 +3267,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		  (resultOrganizerEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																					
 	}
 
 	/**
@@ -3688,8 +3697,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "code.codeSystemName", "LOINC",
-			 "constraints.validation.error", "AdvanceDirectivesSectionTemplateId AdvanceDirectivesSectionCode AdvanceDirectivesSectionTitle",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.1",
+			 "constraints.validation.error", "AdvanceDirectivesSectionTemplateId AdvanceDirectivesSectionCode AdvanceDirectivesSectionTitle AdvanceDirectivesSectionAdvanceDirectiveObservation",
 			 "code.displayName", "Advance directives",
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "42348-3"
@@ -3819,13 +3828,13 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   new String[] {
 			 "moodCode", "EVN",
 			 "statusCode.codeSystemName", "ProcedureStatusCode",
-			 "statusCode.codeSystem", "2.16.840.1.113883.1.11.20.15",
+			 "constraints.validation.error", "ProcedureActivityTemplateId ProcedureActivityMoodCode ProcedureActivityId ProcedureActivityStatusCode ProcedureActivityCode",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.29",
-			 "constraints.validation.error", "ProcedureActivityTemplateId ProcedureActivityMoodCode ProcedureActivityId ProcedureActivityStatusCode",
+			 "statusCode.codeSystem", "2.16.840.1.113883.1.11.20.15",
 			 "statusCode.code", "completed",
 			 "statusCode.codeSystemVersion", "20061017",
 			 "constraints.validation.warning", "ProcedureActivityEffectiveTime"
-		   });																							
+		   });																											
 		addAnnotation
 		  (patientInstructionEClass, 
 		   source, 

@@ -18,11 +18,11 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2"><font size="2">The Medications section defines a patient’s current medications and pertinent medication
+ *     The Medications section defines a patient's current medications and pertinent medication
  *     history. At a minimum, the currently active medications should be listed, with an entire medication history as an
  *     option, particularly when the summary document is used for comprehensive data export. The section may also include a
- *     patient’s prescription history, and enables the determination of the source of a medication list (e.g. from a pharmacy
- *     system vs. from the patient).</font></font>
+ *     patient's prescription history, and enables the determination of the source of a medication list (e.g. from a pharmacy
+ *     system vs. from the patient).
  * </p>
  * <!-- end-model-doc -->
  *

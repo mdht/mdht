@@ -18,8 +18,8 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">Patient instructions are additional information provided to a patient related to one of their
- *     medications (e.g. "take on an empty stomach").</font>
+ *     Patient instructions are additional information provided to a patient related to one of their
+ *     medications (e.g. "take on an empty stomach").
  * </p>
  * <!-- end-model-doc -->
  *

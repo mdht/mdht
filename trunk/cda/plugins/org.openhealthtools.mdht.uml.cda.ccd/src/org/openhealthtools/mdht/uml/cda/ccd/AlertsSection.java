@@ -18,9 +18,9 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">This section is used to list and describe any allergies, adverse reactions, and alerts that are
- *     pertinent to the patient’s current or past medical history. At a minimum, currently active and any relevant historical
- *     allergies and adverse reactions should be listed.</font>
+ *     This section is used to list and describe any allergies, adverse reactions, and alerts that are
+ *     pertinent to the patient's current or past medical history. At a minimum, currently active and any relevant historical
+ *     allergies and adverse reactions should be listed.
  * </p>
  * <!-- end-model-doc -->
  *

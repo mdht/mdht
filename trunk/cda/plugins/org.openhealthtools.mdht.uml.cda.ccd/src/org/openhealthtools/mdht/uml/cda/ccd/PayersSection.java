@@ -17,25 +17,24 @@ import org.openhealthtools.mdht.uml.cda.Section;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p align="left">
- *     <i><font size="2">Payers</font></i> <font size="2" face="Times New Roman,Times New Roman"><font size="2"
- *     face="Times New Roman,Times New Roman">contains data on the patient’s payers, whether a ‘third party’ insurance,
+ * <p>
+ *     <i>Payers</i> contains data on the patient's payers, whether a 'third party' insurance,
  *     self-pay, other payer or guarantor, or some combination of payers, and is used to define which entity is the
- *     responsible fiduciary for the financial aspects of a patient’s care.</font></font>
+ *     responsible fiduciary for the financial aspects of a patient's care.
  * </p>
- * <p align="left">
- *     <font size="2" face="Times New Roman,Times New Roman"><font size="2" face="Times New Roman,Times New Roman">Each unique
+ * <p>
+ *     Each unique
  *     instance of a payer and all the pertinent data needed to contact, bill to, and collect from that payer should be
  *     included. Authorization information that can be used to define pertinent referral, authorization tracking number,
  *     procedure, therapy, intervention, device, or similar authorizations for the patient or provider, or both should be
- *     included. At a minimum, the patient’s pertinent current payment sources should be listed.</font></font>
+ *     included. At a minimum, the patient's pertinent current payment sources should be listed.
  * </p>
  * <p>
- *     <font size="2" face="Times New Roman,Times New Roman"><font size="2" face="Times New Roman,Times New Roman">The CCD
+ *     The CCD
  *     represents the sources of payment as a coverage act, which identifies all of the insurance policies or government or
  *     other programs that cover some or all of the patient's healthcare expenses. The policies or programs are sequenced by
  *     order of preference. Each policy or program identifies the covered party with respect to the payer, so that the
- *     identifiers can be recorded.</font></font>
+ *     identifiers can be recorded.
  * </p>
  * <!-- end-model-doc -->
  *

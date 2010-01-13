@@ -18,10 +18,10 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">CCD represents the ASTM CCR &lt;Purpose&gt; object as a relationship between two classes – the source
+ *     CCD represents the ASTM CCR &lt;Purpose&gt; object as a relationship between two classes -- the source
  *     represents the act of creating a summary document, the target is the reason for creating the document, and the
  *     relationship type is "RSON" (has reason). The target act may be an Observation, Procedure, or some other kind of act,
- *     and it may represent an order, an event, etc.</font>
+ *     and it may represent an order, an event, etc.
  * </p>
  * <!-- end-model-doc -->
  *

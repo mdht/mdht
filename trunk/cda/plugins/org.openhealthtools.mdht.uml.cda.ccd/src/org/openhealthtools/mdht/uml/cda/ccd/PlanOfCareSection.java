@@ -17,17 +17,17 @@ import org.openhealthtools.mdht.uml.cda.Section;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p align="left">
- *     <font size="2">The plan of care section contains data defining pending orders, interventions, encounters, services, and
+ * <p>
+ *     The plan of care section contains data defining pending orders, interventions, encounters, services, and
  *     procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All
  *     active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of
  *     clinical significance to the current and ongoing care of the patient should be listed, unless constrained due to issues
- *     of privacy.</font>
+ *     of privacy.
  * </p>
  * <p>
- *     <font size="2">The plan of care section also contains information regarding goals and clinical reminders. Clinical
+ *     The plan of care section also contains information regarding goals and clinical reminders. Clinical
  *     reminders are placed here for purposes of providing prompts that may be used for disease prevention, disease
- *     management, patient safety, and healthcare quality improvements, including widely accepted performance measures.</font>
+ *     management, patient safety, and healthcare quality improvements, including widely accepted performance measures.
  * </p>
  * <!-- end-model-doc -->
  *
