@@ -61,7 +61,10 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		String body = "self.hasTemplateId('" + templateId + "')";
 		expression.getBodies().add(body);
 
-		String message = "The template identifier for " + umlClass.getName() + " must be " + templateId + ".";
+		String message = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE);
+		if (message == null) {
+			message = "The template identifier for " + umlClass.getName() + " must be " + templateId + ".";
+		}
 		addValidationError(umlClass, constraintName, message);
 	}
 
