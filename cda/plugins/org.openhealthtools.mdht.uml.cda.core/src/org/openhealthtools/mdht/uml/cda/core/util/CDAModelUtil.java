@@ -227,7 +227,7 @@ public class CDAModelUtil {
 		String templateId = getTemplateId(template);
 		if (templateId != null) {
 			if (!markup) {
-				message.append(getModelPrefix(template)).append(" ").append(template.getName()).append(" ");
+				message.append(getPrefixedSplitName(template)).append(" ");
 			}
 			
 			message.append("SHALL contain the template identifier ").append(templateId);
@@ -253,7 +253,7 @@ public class CDAModelUtil {
 				
 				message.append("Conforms to ");
 				message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
-				message.append(prefix).append(general.getName());
+				message.append(prefix).append(UMLUtil.splitName(general.getName()));
 				message.append(showXref?"</xref>":"");
 				message.append(" template (templateId: ");
 				message.append(markup?"<tt>":"");
@@ -307,7 +307,7 @@ public class CDAModelUtil {
 		}
 		
 		if (!markup) {
-			message.append(getModelPrefix(property)).append(" ").append(property.getClass_().getName()).append(" ");
+			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
 		}
 		
 		String keyword = getValidationKeyword(association);
@@ -354,7 +354,7 @@ public class CDAModelUtil {
 			String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
 			
 			message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
-			message.append(prefix).append(endType.getName());
+			message.append(prefix).append(UMLUtil.splitName(endType.getName()));
 			message.append(showXref?"</xref>":"");
 			
 			String templateId = getTemplateId(endType);
@@ -388,7 +388,7 @@ public class CDAModelUtil {
 		}
 
 		if (!markup) {
-			message.append(getModelPrefix(property)).append(" ").append(property.getClass_().getName()).append(" ");
+			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
 		}
 		
 		String keyword = getValidationKeyword(property);
@@ -519,7 +519,7 @@ public class CDAModelUtil {
 		
 		if (body != null) {
 			if (!markup) {
-				message.append(getModelPrefix(constraint)).append(" ").append(constraint.getContext().getName()).append(" ");
+				message.append(getPrefixedSplitName(constraint.getContext())).append(" ");
 			}
 			
 			String keyword = getValidationKeyword(constraint);
@@ -606,6 +606,20 @@ public class CDAModelUtil {
 		}
 		
 		return prefix;
+	}
+	
+	public static String getPrefixedSplitName(NamedElement element) {
+		StringBuffer buffer = new StringBuffer();
+		String modelPrefix = getModelPrefix(element);
+		if (modelPrefix != null) {
+			buffer.append(modelPrefix);
+		}
+		for (String token : UMLUtil.splitName(element.getName())) {
+			buffer.append(buffer.length()>0 ? " " : "");
+			buffer.append(token);
+		}
+		
+		return buffer.toString();
 	}
 	
 	public static boolean hasValidationSupport(Element element) {
