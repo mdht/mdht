@@ -253,7 +253,7 @@ public class CDAModelUtil {
 				
 				message.append("Conforms to ");
 				message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
-				message.append(prefix).append(UMLUtil.splitName(general.getName()));
+				message.append(prefix).append(UMLUtil.splitName(general));
 				message.append(showXref?"</xref>":"");
 				message.append(" template (templateId: ");
 				message.append(markup?"<tt>":"");
@@ -354,7 +354,7 @@ public class CDAModelUtil {
 			String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
 			
 			message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
-			message.append(prefix).append(UMLUtil.splitName(endType.getName()));
+			message.append(prefix).append(UMLUtil.splitName(endType));
 			message.append(showXref?"</xref>":"");
 			
 			String templateId = getTemplateId(endType);
@@ -593,6 +593,9 @@ public class CDAModelUtil {
 		if (codegenSupport != null) {
 			prefix = (String) model.getValue(codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_PREFIX);
 		}
+		else if ("cda".equals(model.getName())) {
+			prefix = "CDA";
+		}
 		
 		return prefix;
 	}
@@ -607,17 +610,14 @@ public class CDAModelUtil {
 		
 		return prefix;
 	}
-	
+
 	public static String getPrefixedSplitName(NamedElement element) {
 		StringBuffer buffer = new StringBuffer();
 		String modelPrefix = getModelPrefix(element);
 		if (modelPrefix != null) {
-			buffer.append(modelPrefix);
+			buffer.append(modelPrefix).append(" ");
 		}
-		for (String token : UMLUtil.splitName(element.getName())) {
-			buffer.append(buffer.length()>0 ? " " : "");
-			buffer.append(token);
-		}
+		buffer.append(UMLUtil.splitName(element));
 		
 		return buffer.toString();
 	}
