@@ -61,8 +61,8 @@ import org.openhealthtools.mdht.uml.common.internal.Logger;
 */
 public class UMLUtil {
 
-	  /**
-	 * This method breaks sourceName into words delimited by separator and/or mixed-case naming.
+	/**
+	 * This method breaks sourceName into words delimited by mixed-case naming.
 	 * Copied from org.eclipse.emf.codegen.util.CodeGenUtil.parseName()
 	 */
 	public static List<String> splitName(String sourceName) {
@@ -100,6 +100,20 @@ public class UMLUtil {
 		return result;
 	}  
 
+	/**
+	 * This method breaks element's name into words delimited by mixed-case naming
+	 * and returns a string with name words separated by space.
+	 */
+	public static String splitName(NamedElement element) {
+		StringBuffer buffer = new StringBuffer();
+		for (String token : UMLUtil.splitName(element.getName())) {
+			buffer.append(buffer.length()>0 ? " " : "");
+			buffer.append(token);
+		}
+		
+		return buffer.toString();
+	}
+	
 	/**
 	 * Accumulate a list containing the unqualified names of all
 	 * generalizations for the given classifier, including this classfier name.

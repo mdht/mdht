@@ -15,6 +15,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformTemplateRules extends TransformAbstract {
 
@@ -55,13 +56,11 @@ public class TransformTemplateRules extends TransformAbstract {
 	}
 
 	private void appendHeader(PrintWriter writer, Class template) {
-		String className = template.getName();
-
 		writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 		writer.println("<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">");
 		writer.println("<topic id=\"template\" xml:lang=\"en-us\">");
 		writer.print("<title>");
-		writer.print(className);
+		writer.print(UMLUtil.splitName(template));
 		writer.print(" - conformance rules");
 		writer.println("</title>");
 		

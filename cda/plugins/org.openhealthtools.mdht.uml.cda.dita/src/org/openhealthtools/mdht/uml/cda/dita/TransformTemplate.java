@@ -13,6 +13,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformTemplate extends TransformAbstract {
 
@@ -73,7 +74,7 @@ public class TransformTemplate extends TransformAbstract {
 		writer.println("<!DOCTYPE topic PUBLIC \"-//OASIS//DTD DITA Topic//EN\" \"topic.dtd\">");
 		writer.println("<topic id=\"template\" xml:lang=\"en-us\">");
 		writer.print("<title>");
-		writer.print(className);
+		writer.print(UMLUtil.splitName(template));
 		writer.println("</title>");
 		writer.println("<shortdesc conref=\"generated/_" + className + ".dita#template/shortdesc\"></shortdesc>");
 		writer.println("<prolog conref=\"generated/_" + className + ".dita#template/prolog\"></prolog>");
@@ -102,7 +103,7 @@ public class TransformTemplate extends TransformAbstract {
 		writer.println("<li></li>");
 		writer.println("</ol>");
 		writer.println("<fig>");
-		writer.println("<title>" + className + " example</title>");
+		writer.println("<title>" + UMLUtil.splitName(template) + " example</title>");
 		writer.println("<codeblock>TODO: XML document snippet</codeblock>");
 		writer.println("</fig>");
 		
