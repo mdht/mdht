@@ -3,7 +3,7 @@ Bundle-Localization: plugin
 Bundle-ManifestVersion: 2
 Bundle-Name: Papyrus UI Extensions                     
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.hdf.ui.papyrus;singleton:=true
-Bundle-Version: 0.5.0.qualifier
+Bundle-Version: 0.7.0.qualifier
 Bundle-Activator: org.openhealthtools.mdht.hdf.uml.ui.papyrus.Activator
 Bundle-Vendor: XML Modeling
 Require-Bundle: org.eclipse.core.runtime,

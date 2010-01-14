@@ -2,7 +2,7 @@
 <feature
       id="org.openhealthtools.mdht.uml.cda.rsm"
       label="%featureName"
-      version="0.1.0.qualifier"
+      version="0.7.0.qualifier"
       provider-name="%featureProvider">
 
    <description url="http://mdht.projects.openhealthtools.org">
