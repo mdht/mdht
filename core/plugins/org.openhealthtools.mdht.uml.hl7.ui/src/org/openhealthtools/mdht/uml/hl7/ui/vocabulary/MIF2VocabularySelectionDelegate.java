@@ -870,7 +870,6 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 		return constraintResult;
 	}
 
-	@Override
 	public boolean isConfigured() {
 		boolean configured = false;
 		
