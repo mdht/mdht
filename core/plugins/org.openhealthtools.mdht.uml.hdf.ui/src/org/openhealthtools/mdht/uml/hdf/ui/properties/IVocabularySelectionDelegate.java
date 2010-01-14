@@ -27,6 +27,7 @@ public interface IVocabularySelectionDelegate {
 	
 	static public final String SELECTION_DELEGATE="selectiondelegate";
 	
+	public boolean isConfigured();
 	
 	public IVocabularyConstraint chooseVocabularyConstraint(org.eclipse.swt.widgets.Shell shell, org.eclipse.uml2.uml.Property property,Constraint constraint );
 	

@@ -870,4 +870,16 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 		return constraintResult;
 	}
 
+	@Override
+	public boolean isConfigured() {
+		boolean configured = false;
+		
+		IPath mif2VocabularyPath = ResourcesPlugin.getWorkspace().getPathVariableManager().getValue(Mif2VocabularyContentProvider.HL7_MIF2_VOCABULARY_PATH);
+
+		if (mif2VocabularyPath != null) {
+			configured = true;
+		}
+		return configured;
+	}
+
 }

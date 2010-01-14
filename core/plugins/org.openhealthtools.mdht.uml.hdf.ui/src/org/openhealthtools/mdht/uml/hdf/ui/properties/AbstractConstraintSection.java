@@ -58,10 +58,12 @@ public class AbstractConstraintSection extends AbstractModelerPropertySection {
 				Object vocabularyDelegateTarget = configrationElement.createExecutableExtension(IVocabularySelectionDelegate.SELECTION_DELEGATE);
 
 				IVocabularySelectionDelegate vocabularySelectionDelegate = (IVocabularySelectionDelegate) vocabularyDelegateTarget;
-
-				 return (IVocabularySelectionDelegate.IVocabularyConstraint) vocabularySelectionDelegate.chooseVocabularyConstraint(getPart().getSite().getShell(), property,
-						constraint);
-
+				
+				if (vocabularySelectionDelegate.isConfigured())
+				{
+					return (IVocabularySelectionDelegate.IVocabularyConstraint) vocabularySelectionDelegate.chooseVocabularyConstraint(getPart().getSite().getShell(), property,
+							constraint);
+				}
 			}
 
 		} catch (Throwable e) {
