@@ -2,7 +2,7 @@
 <feature
       id="org.openhealthtools.mdht.test"
       label="MDHT Test Feature"
-      version="0.5.0.qualifier"
+      version="0.7.0.qualifier"
       provider-name="OHT">
 
    <description url="http://www.example.com/description">
