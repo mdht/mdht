@@ -139,8 +139,8 @@ public class NCRAdapterFactory extends AdapterFactoryImpl {
 				return createSectionAdapter();
 			}
 			@Override
-			public Adapter caseEncountersSection_1(org.openhealthtools.mdht.uml.cda.ccd.EncountersSection object) {
-				return createEncountersSection_1Adapter();
+			public Adapter caseCCD_EncountersSection(org.openhealthtools.mdht.uml.cda.ccd.EncountersSection object) {
+				return createCCD_EncountersSectionAdapter();
 			}
 			@Override
 			public Adapter caseObservation(Observation object) {
@@ -356,7 +356,7 @@ public class NCRAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.EncountersSection
 	 * @generated
 	 */
-	public Adapter createEncountersSection_1Adapter() {
+	public Adapter createCCD_EncountersSectionAdapter() {
 		return null;
 	}
 

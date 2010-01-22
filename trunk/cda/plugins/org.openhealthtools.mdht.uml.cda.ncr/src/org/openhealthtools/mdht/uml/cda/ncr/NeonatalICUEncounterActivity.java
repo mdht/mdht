@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ncr.NCRPackage#getNeonatalICUEncounterActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ENC' code.codeSystemName='HL7ActCode' templateId.root='2.16.840.1.113883.10.20.17.3.15' constraints.validation.error='NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId' code.displayName='Inpatient encounter' code.codeSystem='2.16.840.1.113883.5.4' code.code='IMP' constraints.validation.warning='NeonatalICUEncounterActivityEffectiveTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.5.4' templateId.root='2.16.840.1.113883.10.20.17.3.15' code.displayName='Inpatient encounter' constraints.validation.error='NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId' code.codeSystemName='HL7ActCode' classCode='ENC' constraints.validation.warning='NeonatalICUEncounterActivityEffectiveTime' code.code='IMP' moodCode='EVN'"
  * @generated
  */
 public interface NeonatalICUEncounterActivity extends EncountersActivity {

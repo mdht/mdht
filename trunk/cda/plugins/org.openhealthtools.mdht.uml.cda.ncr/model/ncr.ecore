@@ -9,7 +9,7 @@
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.17.1.1"/>
-      <details key="constraints.validation.error" value="Neonatal Care ReportTemplateId Neonatal Care ReportTemplateId Neonatal Care ReportPatientDataSectionNCR"/>
+      <details key="constraints.validation.error" value="NeonatalCareReportTemplateId NeonatalCareReportPatientDataSectionNCR"/>
     </eAnnotations>
     <eOperations name="NeonatalCareReportTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -61,15 +61,15 @@
       <details key="documentation" value="The neonatal ICU encounter contains selected data specific to each admission and discharge in an encounter. This template captures data for the current encounter being reported and may capture data from historical encounters."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="moodCode" value="EVN"/>
-      <details key="classCode" value="ENC"/>
-      <details key="code.codeSystemName" value="HL7ActCode"/>
-      <details key="templateId.root" value="2.16.840.1.113883.10.20.17.3.15"/>
-      <details key="constraints.validation.error" value="NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId"/>
-      <details key="code.displayName" value="Inpatient encounter"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.5.4"/>
-      <details key="code.code" value="IMP"/>
+      <details key="templateId.root" value="2.16.840.1.113883.10.20.17.3.15"/>
+      <details key="code.displayName" value="Inpatient encounter"/>
+      <details key="constraints.validation.error" value="NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId"/>
+      <details key="code.codeSystemName" value="HL7ActCode"/>
+      <details key="classCode" value="ENC"/>
       <details key="constraints.validation.warning" value="NeonatalICUEncounterActivityEffectiveTime"/>
+      <details key="code.code" value="IMP"/>
+      <details key="moodCode" value="EVN"/>
     </eAnnotations>
     <eOperations name="NeonatalICUEncounterActivityLocation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -326,11 +326,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="PatientDataSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="title.mixed" value="PATIENT DATA"/>
-      <details key="code.codeSystemName" value="LOINC"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
+      <details key="code.displayName" value="Clinical Information"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.17.2.4"/>
       <details key="constraints.validation.error" value="PatientDataSectionTemplateId PatientDataSectionCode PatientDataSectionText PatientDataSectionTitle"/>
-      <details key="code.displayName" value="Clinical Information"/>
-      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="55188-7"/>
     </eAnnotations>
     <eOperations name="PatientDataSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -425,8 +425,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="EncountersSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//EncountersSection">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="title.mixed" value="Encounters"/>
-      <details key="constraints.validation.error" value="NCREncountersSectionTemplateId NCREncountersSectionText NCREncountersSectionTitle NCREncountersSectionNeonatalICUEncounterActivity"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.17.2.2"/>
+      <details key="constraints.validation.error" value="NCREncountersSectionTemplateId NCREncountersSectionText NCREncountersSectionTitle NCREncountersSectionNeonatalICUEncounterActivity"/>
     </eAnnotations>
     <eOperations name="NCREncountersSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -519,8 +519,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AcuityDataSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="AcuityDataSectionTemplateId"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.17.2.3"/>
+      <details key="constraints.validation.error" value="AcuityDataSectionTemplateId"/>
     </eAnnotations>
     <eOperations name="AcuityDataSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -547,18 +547,18 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BirthWeight" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//ResultObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="moodCode" value="EVN"/>
-      <details key="classCode" value="OBS"/>
-      <details key="statusCode.codeSystemName" value="HL7ActStatus"/>
-      <details key="code.codeSystemName" value="SNOMEDCT"/>
-      <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
+      <details key="statusCode.code" value="completed"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.96"/>
+      <details key="code.displayName" value="Birth weight"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.17.3.1"/>
       <details key="constraints.validation.error" value="BirthWeightTemplateId BirthWeightClassCode BirthWeightMoodCode BirthWeightCode BirthWeightStatusCode BirthWeightValue"/>
-      <details key="statusCode.code" value="completed"/>
-      <details key="code.displayName" value="Birth weight"/>
-      <details key="code.codeSystem" value="2.16.840.1.113883.6.96"/>
-      <details key="statusCode.displayName" value="Completed"/>
+      <details key="code.codeSystemName" value="SNOMEDCT"/>
+      <details key="classCode" value="OBS"/>
+      <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
       <details key="code.code" value="47340003"/>
+      <details key="statusCode.codeSystemName" value="HL7ActStatus"/>
+      <details key="moodCode" value="EVN"/>
+      <details key="statusCode.displayName" value="Completed"/>
     </eAnnotations>
     <eOperations name="BirthWeightTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -672,10 +672,10 @@
     </eOperations>
     <eOperations name="BirthWeightValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.value->forAll(element | element.oclIsTypeOf(datatypes::PQ))"/>
+        <details key="body" value="not self.value->isEmpty()"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.value->forAll(element | element.oclIsTypeOf(datatypes::PQ))"/>
+        <details key="documentation" value="not self.value->isEmpty()"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -695,9 +695,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NeonatalICULocation" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//EncounterLocation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="typeCode" value="LOC"/>
-      <details key="constraints.validation.error" value="NeonatalICULocationTemplateId NeonatalICULocationTypeCode"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.17.3.14"/>
+      <details key="constraints.validation.error" value="NeonatalICULocationTemplateId NeonatalICULocationTypeCode"/>
+      <details key="typeCode" value="LOC"/>
     </eAnnotations>
     <eOperations name="NeonatalICULocationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
