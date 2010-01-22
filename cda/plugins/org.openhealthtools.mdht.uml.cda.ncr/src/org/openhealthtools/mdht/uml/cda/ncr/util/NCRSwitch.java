@@ -141,7 +141,7 @@ public class NCRSwitch<T> {
 			case NCRPackage.ENCOUNTERS_SECTION: {
 				EncountersSection encountersSection = (EncountersSection)theEObject;
 				T result = caseEncountersSection(encountersSection);
-				if (result == null) result = caseEncountersSection_1(encountersSection);
+				if (result == null) result = caseCCD_EncountersSection(encountersSection);
 				if (result == null) result = caseSection(encountersSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -364,7 +364,7 @@ public class NCRSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEncountersSection_1(org.openhealthtools.mdht.uml.cda.ccd.EncountersSection object) {
+	public T caseCCD_EncountersSection(org.openhealthtools.mdht.uml.cda.ccd.EncountersSection object) {
 		return null;
 	}
 

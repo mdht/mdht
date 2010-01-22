@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default? http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default? http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
   <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="ncr">
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
       <importedPackage href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg"/>
@@ -13,19 +13,19 @@
     <packageImport xmi:id="_tV7QUIhOEd6UrJD25cKDew">
       <importedPackage href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVbeUDcEd6xYZuu1VKCVw"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="Neonatal Care Report">
+    <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="NeonatalCareReport">
       <ownedComment xmi:id="_p4NQgPyzEd6S5szBt2gpEA">
         <body>The CDA the Neonatal Care Report (NCR) constrains CDA to express the data elements identified by CHNC. This NCR CDA R2 document template defines the data elements that belong in the header of the NCR CDA document and prescribes the sections that belong in the NCR. Within the NCR document is an initial segment of data elements from the CHNC Neonatal Intensive Care Unit (NICU) Core Data Set (CDS). This NCR CDA will send these data elements from Neonatal Intensive Care providers to the CHNC database in standardized CDA format for analysis and performance improvement work.&#xD;
 A complete NCR is created and sent after an infant is discharged. An initial NCR may be created and sent shortly after the infant is born. Many data elements in this initial NCR will have null values for the many values that are unknown or not applicable at this point. The complete NCR sent after discharge will replace the first NCR document.</body>
       </ownedComment>
-      <ownedRule xmi:id="_wQ9Hwf_TEd6Y8ICOr4M99Q" name="Neonatal Care ReportTemplateId" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wQ9Hwv_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E3ZCQAcREd-MgeGnSjlhqg" name="NeonatalCareReportTemplateId" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E3ZCQQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.17.1.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wUWaAP_TEd6Y8ICOr4M99Q" name="Neonatal Care ReportPatientDataSectionNCR" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wUXBEP_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E9VSMAcREd-MgeGnSjlhqg" name="NeonatalCareReportPatientDataSectionNCR" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E9VSMQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::PatientDataSectionNCR))</body>
         </specification>
@@ -44,38 +44,38 @@ A complete NCR is created and sent after an infant is discharged. An initial NCR
           <body>self.participant->one(participant : cda::Participant2 | participant.typeCode=vocab::ParticipationType::LOC and participant.oclIsKindOf(ncr::NeonatalICULocation))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wSNsAP_TEd6Y8ICOr4M99Q" name="NeonatalICUEncounterActivityTemplateId" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wSNsAf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E6DUsAcREd-MgeGnSjlhqg" name="NeonatalICUEncounterActivityTemplateId" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E6DUsQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.17.3.15')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wTjIwP_TEd6Y8ICOr4M99Q" name="NeonatalICUEncounterActivityClassCode" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wTjIwf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E6_I0AcREd-MgeGnSjlhqg" name="NeonatalICUEncounterActivityClassCode" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E6_I0QcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.classCode=vocab::ActClass::ENC</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wTk98P_TEd6Y8ICOr4M99Q" name="NeonatalICUEncounterActivityMoodCode" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wTk98f_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E7A-AAcREd-MgeGnSjlhqg" name="NeonatalICUEncounterActivityMoodCode" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E7A-AQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.moodCode=vocab::x_DocumentEncounterMood::EVN</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wT6VIP_TEd6Y8ICOr4M99Q" name="NeonatalICUEncounterActivityCode" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wT6VIf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E7iicAcREd-MgeGnSjlhqg" name="NeonatalICUEncounterActivityCode" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E7iicQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = 'IMP' and value.codeSystem = '2.16.840.1.113883.5.4')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wT7jQP_TEd6Y8ICOr4M99Q" name="NeonatalICUEncounterActivityEffectiveTime" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wT7jQf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E9FakAcREd-MgeGnSjlhqg" name="NeonatalICUEncounterActivityEffectiveTime" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E9GBoAcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>not self.effectiveTime.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wT8KUP_TEd6Y8ICOr4M99Q" name="NeonatalICUEncounterActivityId" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wT8KUf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E9H20AcREd-MgeGnSjlhqg" name="NeonatalICUEncounterActivityId" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E9H20QcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>not self.id->isEmpty()</body>
         </specification>
@@ -89,26 +89,26 @@ A complete NCR is created and sent after an infant is discharged. An initial NCR
         <body>Represents the specific reason for which the summarization was generated, such as in response to a request.&#xD;
 The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific purpose such as a transfer, referral, or patient request.</body>
       </ownedComment>
-      <ownedRule xmi:id="_wT9YcP_TEd6Y8ICOr4M99Q" name="PatientDataSectionNCRTemplateId" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wT9Ycf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E9Id4AcREd-MgeGnSjlhqg" name="PatientDataSectionNCRTemplateId" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E9Id4QcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.17.2.5')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wWDqMP_TEd6Y8ICOr4M99Q" name="PatientDataSectionNCREncountersSection" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wWDqMf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E-K_sAcREd-MgeGnSjlhqg" name="PatientDataSectionNCREncountersSection" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E-K_sQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::EncountersSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wWDqMv_TEd6Y8ICOr4M99Q" name="PatientDataSectionNCRAcuityDataSection" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wWDqM__TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E-LmwAcREd-MgeGnSjlhqg" name="PatientDataSectionNCRAcuityDataSection" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E-LmwQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::AcuityDataSection))</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wWiyYP_TEd6Y8ICOr4M99Q" name="PatientDataSectionNCRBirthWeight" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wWiyYf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E_LsUAcREd-MgeGnSjlhqg" name="PatientDataSectionNCRBirthWeight" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E_LsUQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.entry->one(entry : cda::Entry | entry.observation.oclIsKindOf(ncr::BirthWeight) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)</body>
         </specification>
@@ -119,26 +119,26 @@ The general use case does not require a purpose. Purpose should be utilized when
       <ownedComment xmi:id="_UvAMsPy0Ed6S5szBt2gpEA">
         <body>The patient data section contains clinically significant patient data and may contain patient data elements and measure-specific grouping data elements as defined by particular measure(s).</body>
       </ownedComment>
-      <ownedRule xmi:id="_wUXBEf_TEd6Y8ICOr4M99Q" name="PatientDataSectionTemplateId" constrainedElement="_IMw0IPy0Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wUXBEv_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E9V5QAcREd-MgeGnSjlhqg" name="PatientDataSectionTemplateId" constrainedElement="_IMw0IPy0Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E9WgUAcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.17.2.4')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wUxQwP_TEd6Y8ICOr4M99Q" name="PatientDataSectionCode" constrainedElement="_IMw0IPy0Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wUxQwf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E9fqQAcREd-MgeGnSjlhqg" name="PatientDataSectionCode" constrainedElement="_IMw0IPy0Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E9fqQQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '55188-7' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wUx30P_TEd6Y8ICOr4M99Q" name="PatientDataSectionText" constrainedElement="_IMw0IPy0Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wUx30f_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E9gRUAcREd-MgeGnSjlhqg" name="PatientDataSectionText" constrainedElement="_IMw0IPy0Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E9gRUQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>not self.text.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wUye4P_TEd6Y8ICOr4M99Q" name="PatientDataSectionTitle" constrainedElement="_IMw0IPy0Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wUye4f_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E9iGgAcREd-MgeGnSjlhqg" name="PatientDataSectionTitle" constrainedElement="_IMw0IPy0Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E9itkAcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>not self.title.oclIsUndefined() and self.title.getText() = 'PATIENT DATA'</body>
         </specification>
@@ -151,26 +151,26 @@ The general use case does not require a purpose. Purpose should be utilized when
       <ownedComment xmi:id="_nWcMcPy1Ed6S5szBt2gpEA">
         <body>This section contains administrative encounter information and selected data specific to each admission and discharge in an encounter. This section contains data for the current encounter being reported and may contain information about historical encounters.</body>
       </ownedComment>
-      <ownedRule xmi:id="_wUzF8P_TEd6Y8ICOr4M99Q" name="NCREncountersSectionTemplateId" constrainedElement="_P2DEQPy1Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wUzF8f_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E9jUoAcREd-MgeGnSjlhqg" name="NCREncountersSectionTemplateId" constrainedElement="_P2DEQPy1Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E9jUoQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.17.2.2')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wVnlUP_TEd6Y8ICOr4M99Q" name="NCREncountersSectionText" constrainedElement="_P2DEQPy1Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wVnlUf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E9vh4AcREd-MgeGnSjlhqg" name="NCREncountersSectionText" constrainedElement="_P2DEQPy1Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E9wI8AcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>not self.text.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wVoMYP_TEd6Y8ICOr4M99Q" name="NCREncountersSectionTitle" constrainedElement="_P2DEQPy1Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wVoMYf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E9x-IAcREd-MgeGnSjlhqg" name="NCREncountersSectionTitle" constrainedElement="_P2DEQPy1Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E9x-IQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.title.getText() = 'Encounters'</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wWERQP_TEd6Y8ICOr4M99Q" name="NCREncountersSectionNeonatalICUEncounterActivity" constrainedElement="_P2DEQPy1Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wWERQf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E-LmwgcREd-MgeGnSjlhqg" name="NCREncountersSectionNeonatalICUEncounterActivity" constrainedElement="_P2DEQPy1Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E-MN0AcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.entry->exists(entry : cda::Entry | entry.encounter.oclIsKindOf(ncr::NeonatalICUEncounterActivity) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)</body>
         </specification>
@@ -183,8 +183,8 @@ The general use case does not require a purpose. Purpose should be utilized when
       <ownedComment xmi:id="_6i0hwPy1Ed6S5szBt2gpEA">
         <body>The patient data section in the NCR contains data collected during a neonatal intensive care unit (NICU) inpatient stay. This section contains data that could be used in endorsed quality measures, and it may inform the creation of NICU quality measures. It contains significant basic data about the infant's birth and two subsections: an encounter section and an acuity assessment section.</body>
       </ownedComment>
-      <ownedRule xmi:id="_wVpagP_TEd6Y8ICOr4M99Q" name="AcuityDataSectionTemplateId" constrainedElement="_wnPCYPy1Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wVpagf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E9ylMAcREd-MgeGnSjlhqg" name="AcuityDataSectionTemplateId" constrainedElement="_wnPCYPy1Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E9ylMQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.17.2.3')</body>
         </specification>
@@ -197,40 +197,40 @@ The general use case does not require a purpose. Purpose should be utilized when
       <ownedComment xmi:id="_dWSrIP4_Ed6S5szBt2gpEA">
         <body>This observation represents a birth weight.</body>
       </ownedComment>
-      <ownedRule xmi:id="_wWE4UP_TEd6Y8ICOr4M99Q" name="BirthWeightTemplateId" constrainedElement="_SwqQkP48Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wWE4Uf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E-MN0QcREd-MgeGnSjlhqg" name="BirthWeightTemplateId" constrainedElement="_SwqQkP48Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E-MN0gcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.17.3.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wWeg8P_TEd6Y8ICOr4M99Q" name="BirthWeightClassCode" constrainedElement="_SwqQkP48Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wWeg8f_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E--Q8AcREd-MgeGnSjlhqg" name="BirthWeightClassCode" constrainedElement="_SwqQkP48Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E--Q8QcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.classCode=vocab::ActClassObservation::OBS</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wWfIAP_TEd6Y8ICOr4M99Q" name="BirthWeightMoodCode" constrainedElement="_SwqQkP48Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wWfIAf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E--4AAcREd-MgeGnSjlhqg" name="BirthWeightMoodCode" constrainedElement="_SwqQkP48Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E_AGIAcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.moodCode=vocab::x_ActMoodDocumentObservation::EVN</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wWfvEP_TEd6Y8ICOr4M99Q" name="BirthWeightCode" constrainedElement="_SwqQkP48Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wWgWIP_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E_BUQAcREd-MgeGnSjlhqg" name="BirthWeightCode" constrainedElement="_SwqQkP48Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E_BUQQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '47340003' and value.codeSystem = '2.16.840.1.113883.6.96')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wWg9MP_TEd6Y8ICOr4M99Q" name="BirthWeightStatusCode" constrainedElement="_SwqQkP48Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wWg9Mf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E_CiYAcREd-MgeGnSjlhqg" name="BirthWeightStatusCode" constrainedElement="_SwqQkP48Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E_CiYQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wWiLUP_TEd6Y8ICOr4M99Q" name="BirthWeightValue" constrainedElement="_SwqQkP48Ed6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wWiLUf_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E_LFQAcREd-MgeGnSjlhqg" name="BirthWeightValue" constrainedElement="_SwqQkP48Ed6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E_LFQQcREd-MgeGnSjlhqg">
           <language>OCL</language>
-          <body>self.value->forAll(element | element.oclIsTypeOf(datatypes::PQ))</body>
+          <body>not self.value->isEmpty()</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_SwwXMP48Ed6S5szBt2gpEA">
@@ -241,14 +241,14 @@ The general use case does not require a purpose. Purpose should be utilized when
       <ownedComment xmi:id="_VILIQP5BEd6S5szBt2gpEA">
         <body>This template restricts the CCD location participation template to a Neonatal ICU.</body>
       </ownedComment>
-      <ownedRule xmi:id="_wWiyYv_TEd6Y8ICOr4M99Q" name="NeonatalICULocationTemplateId" constrainedElement="_vQdVMP5AEd6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wWjZcP_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E_MTYAcREd-MgeGnSjlhqg" name="NeonatalICULocationTemplateId" constrainedElement="_vQdVMP5AEd6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E_MTYQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.17.3.14')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_wW7z8P_TEd6Y8ICOr4M99Q" name="NeonatalICULocationTypeCode" constrainedElement="_vQdVMP5AEd6S5szBt2gpEA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wW7z8f_TEd6Y8ICOr4M99Q">
+      <ownedRule xmi:id="_E_ZuwAcREd-MgeGnSjlhqg" name="NeonatalICULocationTypeCode" constrainedElement="_vQdVMP5AEd6S5szBt2gpEA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_E_ZuwQcREd-MgeGnSjlhqg">
           <language>OCL</language>
           <body>not self.typeCode.oclIsUndefined()</body>
         </specification>
@@ -269,8 +269,8 @@ The general use case does not require a purpose. Purpose should be utilized when
       </eAnnotations>
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
-    <profileApplication xmi:id="_wLR9kP_TEd6Y8ICOr4M99Q">
-      <eAnnotations xmi:id="_wLR9kf_TEd6Y8ICOr4M99Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <profileApplication xmi:id="_ExyJgAcREd-MgeGnSjlhqg">
+      <eAnnotations xmi:id="_Ex2a8AcREd-MgeGnSjlhqg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
       </eAnnotations>
       <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
@@ -291,29 +291,29 @@ The general use case does not require a purpose. Purpose should be utilized when
   <CDA:CDATemplate xmi:id="_ryS3IP4-Ed6S5szBt2gpEA" message="NCR Birth Weight SHALL contain the template identifier 2.16.840.1.113883.10.20.17.3.1" base_Class="_SwqQkP48Ed6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.3.1"/>
   <CDA:CDATemplate xmi:id="_SFD8kP5BEd6S5szBt2gpEA" message="NCR Neonatal ICU Location SHALL contain the template identifier 2.16.840.1.113883.10.20.17.3.14" base_Class="_vQdVMP5AEd6S5szBt2gpEA" templateId="2.16.840.1.113883.10.20.17.3.14"/>
   <CDA:AssociationValidation xmi:id="__1CsYP5BEd6S5szBt2gpEA" message="NCR Neonatal ICU Encounter Activity SHALL contain [1..1] entryRelationship such that it, SHALL contain [1..1] NeonatalICULocation (templateId: 2.16.840.1.113883.10.20.17.3.14)"/>
-  <Ecore:EPackage xmi:id="_wOb_QP_TEd6Y8ICOr4M99Q" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="ncr" nsPrefix="ncr" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr" basePackage="org.openhealthtools.mdht.uml.cda" prefix="NCR"/>
-  <Ecore:EClass xmi:id="_wQ9HwP_TEd6Y8ICOr4M99Q" xmlName="ClinicalDocument" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.17.1.1' constraints.validation.error='Neonatal Care ReportTemplateId Neonatal Care ReportTemplateId Neonatal Care ReportPatientDataSectionNCR'</annotation>
+  <Ecore:EPackage xmi:id="_E069EAcREd-MgeGnSjlhqg" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="ncr" nsPrefix="ncr" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr" basePackage="org.openhealthtools.mdht.uml.cda" prefix="NCR"/>
+  <Ecore:EClass xmi:id="_E3YbMAcREd-MgeGnSjlhqg" xmlName="ClinicalDocument" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.17.1.1' constraints.validation.error='NeonatalCareReportTemplateId NeonatalCareReportPatientDataSectionNCR'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_wSNsAv_TEd6Y8ICOr4M99Q" base_Class="_Ucv9YKX0Ed6JRdOhEffuGA">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ENC' code.codeSystemName='HL7ActCode' templateId.root='2.16.840.1.113883.10.20.17.3.15' constraints.validation.error='NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId' code.displayName='Inpatient encounter' code.codeSystem='2.16.840.1.113883.5.4' code.code='IMP' constraints.validation.warning='NeonatalICUEncounterActivityEffectiveTime'</annotation>
+  <Ecore:EClass xmi:id="_E6D7wAcREd-MgeGnSjlhqg" base_Class="_Ucv9YKX0Ed6JRdOhEffuGA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.5.4' templateId.root='2.16.840.1.113883.10.20.17.3.15' code.displayName='Inpatient encounter' constraints.validation.error='NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId' code.codeSystemName='HL7ActCode' classCode='ENC' constraints.validation.warning='NeonatalICUEncounterActivityEffectiveTime' code.code='IMP' moodCode='EVN'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_wT9_gP_TEd6Y8ICOr4M99Q" base_Class="_Ucv9baX0Ed6JRdOhEffuGA">
+  <Ecore:EClass xmi:id="_E9JE8AcREd-MgeGnSjlhqg" base_Class="_Ucv9baX0Ed6JRdOhEffuGA">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.17.2.5' constraints.validation.error='PatientDataSectionNCRTemplateId PatientDataSectionNCREncountersSection PatientDataSectionNCRAcuityDataSection PatientDataSectionNCRBirthWeight'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_wUXoIP_TEd6Y8ICOr4M99Q" base_Class="_IMw0IPy0Ed6S5szBt2gpEA">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='PATIENT DATA' code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.17.2.4' constraints.validation.error='PatientDataSectionTemplateId PatientDataSectionCode PatientDataSectionText PatientDataSectionTitle' code.displayName='Clinical Information' code.codeSystem='2.16.840.1.113883.6.1' code.code='55188-7'</annotation>
+  <Ecore:EClass xmi:id="_E9WgUQcREd-MgeGnSjlhqg" base_Class="_IMw0IPy0Ed6S5szBt2gpEA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='PATIENT DATA' code.codeSystem='2.16.840.1.113883.6.1' code.displayName='Clinical Information' templateId.root='2.16.840.1.113883.10.20.17.2.4' constraints.validation.error='PatientDataSectionTemplateId PatientDataSectionCode PatientDataSectionText PatientDataSectionTitle' code.codeSystemName='LOINC' code.code='55188-7'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_wUzF8v_TEd6Y8ICOr4M99Q" base_Class="_P2DEQPy1Ed6S5szBt2gpEA">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='Encounters' constraints.validation.error='NCREncountersSectionTemplateId NCREncountersSectionText NCREncountersSectionTitle NCREncountersSectionNeonatalICUEncounterActivity' templateId.root='2.16.840.1.113883.10.20.17.2.2'</annotation>
+  <Ecore:EClass xmi:id="_E9j7sAcREd-MgeGnSjlhqg" base_Class="_P2DEQPy1Ed6S5szBt2gpEA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='Encounters' templateId.root='2.16.840.1.113883.10.20.17.2.2' constraints.validation.error='NCREncountersSectionTemplateId NCREncountersSectionText NCREncountersSectionTitle NCREncountersSectionNeonatalICUEncounterActivity'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_wVpagv_TEd6Y8ICOr4M99Q" base_Class="_wnPCYPy1Ed6S5szBt2gpEA">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='AcuityDataSectionTemplateId' templateId.root='2.16.840.1.113883.10.20.17.2.3'</annotation>
+  <Ecore:EClass xmi:id="_E9ylMgcREd-MgeGnSjlhqg" base_Class="_wnPCYPy1Ed6S5szBt2gpEA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.17.2.3' constraints.validation.error='AcuityDataSectionTemplateId'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_wWE4Uv_TEd6Y8ICOr4M99Q" base_Class="_SwqQkP48Ed6S5szBt2gpEA">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' statusCode.codeSystemName='HL7ActStatus' code.codeSystemName='SNOMEDCT' statusCode.codeSystem='2.16.840.1.113883.5.14' templateId.root='2.16.840.1.113883.10.20.17.3.1' constraints.validation.error='BirthWeightTemplateId BirthWeightClassCode BirthWeightMoodCode BirthWeightCode BirthWeightStatusCode BirthWeightValue' statusCode.code='completed' code.displayName='Birth weight' code.codeSystem='2.16.840.1.113883.6.96' statusCode.displayName='Completed' code.code='47340003'</annotation>
+  <Ecore:EClass xmi:id="_E-M04AcREd-MgeGnSjlhqg" base_Class="_SwqQkP48Ed6S5szBt2gpEA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' code.codeSystem='2.16.840.1.113883.6.96' code.displayName='Birth weight' templateId.root='2.16.840.1.113883.10.20.17.3.1' constraints.validation.error='BirthWeightTemplateId BirthWeightClassCode BirthWeightMoodCode BirthWeightCode BirthWeightStatusCode BirthWeightValue' code.codeSystemName='SNOMEDCT' classCode='OBS' statusCode.codeSystem='2.16.840.1.113883.5.14' code.code='47340003' statusCode.codeSystemName='HL7ActStatus' moodCode='EVN' statusCode.displayName='Completed'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_wWjZcf_TEd6Y8ICOr4M99Q" base_Class="_vQdVMP5AEd6S5szBt2gpEA">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation typeCode='LOC' constraints.validation.error='NeonatalICULocationTemplateId NeonatalICULocationTypeCode' templateId.root='2.16.840.1.113883.10.20.17.3.14'</annotation>
+  <Ecore:EClass xmi:id="_E_M6cAcREd-MgeGnSjlhqg" base_Class="_vQdVMP5AEd6S5szBt2gpEA">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.17.3.14' constraints.validation.error='NeonatalICULocationTemplateId NeonatalICULocationTypeCode' typeCode='LOC'</annotation>
   </Ecore:EClass>
 </xmi:XMI>

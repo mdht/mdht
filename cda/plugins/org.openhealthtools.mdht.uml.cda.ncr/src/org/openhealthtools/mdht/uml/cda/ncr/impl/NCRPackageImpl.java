@@ -122,20 +122,10 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 	private static boolean isInited = false;
 
 	/**
-	 * Creates, registers, and initializes the <b>Package</b> for this
-	 * model, and for any others upon which it depends.  Simple
-	 * dependencies are satisfied by calling this method on all
-	 * dependent packages before doing anything else.  This method drives
-	 * initialization for interdependent packages directly, in parallel
-	 * with this package, itself.
-	 * <p>Of this package and its interdependencies, all packages which
-	 * have not yet been registered by their URI values are first created
-	 * and registered.  The packages are then initialized in two steps:
-	 * meta-model objects for all of the packages are created before any
-	 * are initialized, since one package's meta-model objects may refer to
-	 * those of another.
-	 * <p>Invocation of this method will not affect any packages that have
-	 * already been initialized.
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 * 
+	 * <p>This method is used to initialize {@link NCRPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
@@ -147,7 +137,7 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		if (isInited) return (NCRPackage)EPackage.Registry.INSTANCE.getEPackage(NCRPackage.eNS_URI);
 
 		// Obtain or create and register package
-		NCRPackageImpl theNCRPackage = (NCRPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(eNS_URI) instanceof NCRPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(eNS_URI) : new NCRPackageImpl());
+		NCRPackageImpl theNCRPackage = (NCRPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof NCRPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new NCRPackageImpl());
 
 		isInited = true;
 
@@ -172,6 +162,9 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		// Mark meta-data to indicate it can't be changed
 		theNCRPackage.freeze();
 
+  
+		// Update the registry and return the package
+		EPackage.Registry.INSTANCE.put(NCRPackage.eNS_URI, theNCRPackage);
 		return theNCRPackage;
 	}
 
@@ -659,21 +652,21 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.17.1.1",
-			 "constraints.validation.error", "Neonatal Care ReportTemplateId Neonatal Care ReportTemplateId Neonatal Care ReportPatientDataSectionNCR"
+			 "constraints.validation.error", "NeonatalCareReportTemplateId NeonatalCareReportPatientDataSectionNCR"
 		   });											
 		addAnnotation
 		  (neonatalICUEncounterActivityEClass, 
 		   source, 
 		   new String[] {
-			 "moodCode", "EVN",
-			 "classCode", "ENC",
-			 "code.codeSystemName", "HL7ActCode",
-			 "templateId.root", "2.16.840.1.113883.10.20.17.3.15",
-			 "constraints.validation.error", "NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId",
-			 "code.displayName", "Inpatient encounter",
 			 "code.codeSystem", "2.16.840.1.113883.5.4",
+			 "templateId.root", "2.16.840.1.113883.10.20.17.3.15",
+			 "code.displayName", "Inpatient encounter",
+			 "constraints.validation.error", "NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId",
+			 "code.codeSystemName", "HL7ActCode",
+			 "classCode", "ENC",
+			 "constraints.validation.warning", "NeonatalICUEncounterActivityEffectiveTime",
 			 "code.code", "IMP",
-			 "constraints.validation.warning", "NeonatalICUEncounterActivityEffectiveTime"
+			 "moodCode", "EVN"
 		   });																															
 		addAnnotation
 		  (patientDataSectionNCREClass, 
@@ -687,11 +680,11 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		   source, 
 		   new String[] {
 			 "title.mixed", "PATIENT DATA",
-			 "code.codeSystemName", "LOINC",
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "code.displayName", "Clinical Information",
 			 "templateId.root", "2.16.840.1.113883.10.20.17.2.4",
 			 "constraints.validation.error", "PatientDataSectionTemplateId PatientDataSectionCode PatientDataSectionText PatientDataSectionTitle",
-			 "code.displayName", "Clinical Information",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "code.codeSystemName", "LOINC",
 			 "code.code", "55188-7"
 		   });																		
 		addAnnotation
@@ -699,40 +692,40 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		   source, 
 		   new String[] {
 			 "title.mixed", "Encounters",
-			 "constraints.validation.error", "NCREncountersSectionTemplateId NCREncountersSectionText NCREncountersSectionTitle NCREncountersSectionNeonatalICUEncounterActivity",
-			 "templateId.root", "2.16.840.1.113883.10.20.17.2.2"
+			 "templateId.root", "2.16.840.1.113883.10.20.17.2.2",
+			 "constraints.validation.error", "NCREncountersSectionTemplateId NCREncountersSectionText NCREncountersSectionTitle NCREncountersSectionNeonatalICUEncounterActivity"
 		   });																		
 		addAnnotation
 		  (acuityDataSectionEClass, 
 		   source, 
 		   new String[] {
-			 "constraints.validation.error", "AcuityDataSectionTemplateId",
-			 "templateId.root", "2.16.840.1.113883.10.20.17.2.3"
+			 "templateId.root", "2.16.840.1.113883.10.20.17.2.3",
+			 "constraints.validation.error", "AcuityDataSectionTemplateId"
 		   });						
 		addAnnotation
 		  (birthWeightEClass, 
 		   source, 
 		   new String[] {
-			 "moodCode", "EVN",
-			 "classCode", "OBS",
-			 "statusCode.codeSystemName", "HL7ActStatus",
-			 "code.codeSystemName", "SNOMEDCT",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
+			 "statusCode.code", "completed",
+			 "code.codeSystem", "2.16.840.1.113883.6.96",
+			 "code.displayName", "Birth weight",
 			 "templateId.root", "2.16.840.1.113883.10.20.17.3.1",
 			 "constraints.validation.error", "BirthWeightTemplateId BirthWeightClassCode BirthWeightMoodCode BirthWeightCode BirthWeightStatusCode BirthWeightValue",
-			 "statusCode.code", "completed",
-			 "code.displayName", "Birth weight",
-			 "code.codeSystem", "2.16.840.1.113883.6.96",
-			 "statusCode.displayName", "Completed",
-			 "code.code", "47340003"
+			 "code.codeSystemName", "SNOMEDCT",
+			 "classCode", "OBS",
+			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
+			 "code.code", "47340003",
+			 "statusCode.codeSystemName", "HL7ActStatus",
+			 "moodCode", "EVN",
+			 "statusCode.displayName", "Completed"
 		   });																										
 		addAnnotation
 		  (neonatalICULocationEClass, 
 		   source, 
 		   new String[] {
-			 "typeCode", "LOC",
+			 "templateId.root", "2.16.840.1.113883.10.20.17.3.14",
 			 "constraints.validation.error", "NeonatalICULocationTemplateId NeonatalICULocationTypeCode",
-			 "templateId.root", "2.16.840.1.113883.10.20.17.3.14"
+			 "typeCode", "LOC"
 		   });								
 	}
 
