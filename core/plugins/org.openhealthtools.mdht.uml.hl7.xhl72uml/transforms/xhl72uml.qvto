@@ -31,31 +31,32 @@ mapping smd::staticmetamodel::HL7StaticModel::toUML() : uml::Package
 	result.createPackageImport(datatypesLibrary.rootObjects()![uml::Package],VisibilityKind::public);
 	
 		
-	log('Map HL7Class Collection Template Bindings used to UML Class Instances owned by the Package');
 	/*
 	
 	Section will iterate over all HL7 Collection Template Bindings to create UML Class Instances owned by the package bound to HL7 UML Datatype collection template interfaces
+
+	TODO - current when clause does not seem to work on the following
 	
-	The following logic is to mimic a sql select distinct - todo - There must be the equivelant in qvto/ocl
+	self.allSubobjects()[smd::datatypemetamodel::HL7GenericDataType]->select(combinedLabel !=  baseType.name )-> map toUMLCollectionClass(result);
+
+	but when looping over the content - it works;	
 	
 	*/
-	var collectionTemplates := self.allSubobjects()[smd::datatypemetamodel::HL7GenericDataType]->asSequence()->select(combinedLabel !=  baseType.name );
-	
+	log('Map HL7Class Collection Template Bindings used to UML Class Instances owned by the Package');
+  //  		
+	 
+	var collectionTemplates := self.allSubobjects()[smd::datatypemetamodel::HL7GenericDataType]->select(combinedLabel !=  baseType.name )->asSequence();
+
 	var collectionTemplatesPosition : Integer := 1;
 	
 	while (collectionTemplatesPosition <= collectionTemplates->size()) {
-	
-		/* if we have not already processed the referenced data type - create data type and add it to the package */
-		if (result.ownedType->select(name=collectionTemplates->at(collectionTemplatesPosition).combinedLabel)->size() = 0) then
-		{
-			result.ownedType += collectionTemplates->at(collectionTemplatesPosition)-> map toUMLCollectionClass(result);		
-		}
-		endif;
-	
+
+		result.ownedType += collectionTemplates->at(collectionTemplatesPosition)-> map toUMLCollectionClass(result);		
+		
 		collectionTemplatesPosition := collectionTemplatesPosition + 1;
 	
 	};
-	
+
 	
 	
 	log('Map HL7Class instances to UML Class Instances owned by the Package');
@@ -126,7 +127,7 @@ mapping smd::staticmetamodel::HL7StaticModel::toUML() : uml::Package
 					
 					umlproperty.setValue(hdfstereotype,'isMandatory',hl7Attribute.conformance.mandatory.repr());
 					
-					if (hl7Attribute.vocabularySpecification->size() >= 1) then
+					if (hl7Attribute.vocabularySpecification->size() >= 1000) then
 					{
 						var vocabularyConstraint : smd::vocabularymetamodel::HL7VocabularySpecification := hl7Attribute.vocabularySpecification->asSequence()->at(1);
 								
@@ -268,11 +269,24 @@ mapping smd::staticmetamodel::HL7StaticModel::toUML() : uml::Package
 	
 	set defaulttype
 	
-
+ 
 	*/
-mapping smd::datatypemetamodel::HL7GenericDataType::toUMLCollectionClass(in currentPackage:uml::Package) : uml::Class
+	
+	
+	/*
+	query used to add on new uml type for each distinct combinedlabel
+	*/
+query smd::datatypemetamodel::HL7GenericDataType::notMapped(in currentPackage:uml::Package) : Boolean {
+   return  (currentPackage.ownedType->select(name=self.combinedLabel)->size() = 0);
+ }
+
+
+	
+mapping smd::datatypemetamodel::HL7GenericDataType::toUMLCollectionClass(in currentPackage:uml::Package) : uml::Class when { self.notMapped(currentPackage) }
 {
 	name := self.combinedLabel;
+	
+	log("Adding "+name);
 	
 	result.templateBinding += self->map toTemplateableElement(currentPackage);
 	
