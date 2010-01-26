@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_D8D5CD80DB904B57884687D9E5619D99"> 
+  <title>Fixed structural code value</title> 
+  <shortdesc>Restrict a structural attribute (classCode, moodCode, typeCode) to
+	 a specified fixed code value.
+  </shortdesc> 
+  <taskbody> 
+	 <steps id="steps_D98E512FAA4F4D63B70F8B0810CC36EA"> 
+		<step id="step_BB730C813C19465DB8981AA04C43818C">
+		  <cmd>Select the table row for the attribute you want to constrain.
+		  </cmd>
+		  <stepresult><image placement="break"
+			 id="image_5DEDB87770D74131B4361D585543A650"
+			 href="../images/TableFixedValueSelectRow.png"></image>
+		  </stepresult>
+		</step>
+		<step id="step_76CEB0CEFE254384A60ABD5597588077">
+		  <cmd>In the Properties view General tab, enter a code in the 
+			 <uicontrol>Default Value</uicontrol> field. For example, enter 
+			 <tt>OBS</tt>.
+		  </cmd> 
+		</step> 
+		<step id="step_9DDE7C622A694EF2A4AE7B177A3A8EC2">
+		  <cmd>Check the 
+			 <uicontrol>Read Only</uicontrol> box.
+		  </cmd>
+		</step>
+	 </steps> 
+	 <result id="result_B371D4FCD48143FF900A56FFDD6F39AF">The 
+		<tt>classCode</tt> attribute is now constrained to a fixed value of 
+		<tt>OBS</tt>.<image id="image_4C1560AE89F8427F8972CB304FC26B44"
+		href="../images/TableFixedValueConstraint.png" placement="break"></image>
+	 </result>
+  </taskbody>
+</task>
