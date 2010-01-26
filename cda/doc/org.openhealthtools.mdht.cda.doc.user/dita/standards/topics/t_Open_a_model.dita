@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_F154C65514FC4D408763357E77A2D492"> 
+  <title>Open a model</title> 
+  <shortdesc>Open a 
+	 <tt>.uml</tt> model file using the Project Explorer view. 
+  </shortdesc> 
+  <taskbody> 
+	 <steps id="steps_F5AB7F1DE7B64882B1EF512719317BD7"> 
+		<step id="step_BFFC67D574F84258BA3446E6C2C9606E"> 
+		  <cmd>Assure that you are in the Resource Perspective, or some other
+			 perspective that has the Project Explorer view open. Note that the Java
+			 perspective Package Explorer view will 
+			 <b>not</b> show the model tree navigator. 
+		  </cmd> 
+		</step> 
+		<step id="step_E2FEF85EAA614CEEB5B3F99201227E9A"> 
+		  <cmd>Open a UML model file (with extension 
+			 <tt>.uml</tt>) by double-clicking that file in the Project Explorer,
+			 or right-clicking the file and choosing Open Model from the context menu. 
+		  </cmd> 
+		</step> 
+		<step id="step_462DD6E9D54644298740CB9C640A7837"> 
+		  <cmd>Open the UML Table Editor by double-clicking on a 
+			 <tt>.uml</tt> model file, or selecting 
+			 <menucascade><uicontrol>Open With</uicontrol><uicontrol>UML
+				  Table</uicontrol></menucascade> from the context menu of a model element in the
+			 navigator tree. A 
+			 <i>model element</i> is a package or class contained in the model; it
+			 is not the 
+			 <tt>.uml</tt> file. 
+		  </cmd> 
+		</step> 
+	 </steps> 
+  </taskbody>
+</task>

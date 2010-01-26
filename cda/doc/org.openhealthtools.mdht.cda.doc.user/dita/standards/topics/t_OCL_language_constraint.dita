@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_6FB4B536D8F24DCBA160AB032E13C249"> 
+  <title>OCL language constraint</title> 
+  <shortdesc>Add formal constraint definition in Object Constraint Language
+	 (OCL).
+  </shortdesc> 
+  <taskbody> 
+	 <steps id="steps_F957FF97DD4148FDBD6040DB06F8BC21"> 
+		<step id="step_F81E212B8C7C4ED6ABC73A93E24335CB"> 
+		  <cmd>Select the table row for the template class that is context for
+			 the new constraint. 
+		  </cmd> 
+		</step>
+		<step id="step_2643A9CB9A5F40B3847EB165D8CD7849">
+		  <cmd>To add a new constraint, right-click on the table row and select 
+			 <menucascade><uicontrol>Add
+				  UML</uicontrol><uicontrol>Constraint</uicontrol></menucascade>
+		  </cmd> 
+		  <stepresult><image placement="break"
+			 id="image_B03B87E4D00A461B9894EE574175D802"
+			 href="../images/TableAddConstraint.png"></image>
+		  </stepresult>
+		</step>
+		<step id="step_2C3BD89C49AF486BBAFA24CB4D5CBBEA">
+		  <cmd>Select the table row with the new constraint (it has the general
+			 label 'Constraint'), as shown here. Enter the constraint name, select 'OCL'
+			 from the Language pull-down list, and enter the constraint body.
+		  </cmd> 
+		</step> 
+	 </steps> 
+	 <result id="result_1B911A33A93F4A878B3DE95A83F83359">This is an example of
+		a completed constraint within the Neonatal ICU Encounter Activity class. Notice
+		that this constraint has both Analysis and OCL languages assigned. You can
+		switch between the two body values by changing the selection in the Language
+		pull-down. Also notice that the Annotation table column displays which, if any,
+		constraint languages have been entered.<image placement="break"
+		id="image_FD4F48A04E0C431084E49982482901DF"
+		href="../images/TableConstraintOCL.png"></image>
+	 </result>
+  </taskbody>
+</task>
