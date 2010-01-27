@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+	<!--  Define MIF2 Vocabulary Extension Browse Provider -->
+	<extension point="org.openhealthtools.mdht.uml.hdf.vocabularyprovider">
+		<vocabularyprovider selectiondelegate="org.openhealthtools.mdht.uml.ui.smd.vocabulary.HL7VocabularySelectionDelegate" />
+	</extension>
+
+	
+
+</plugin>

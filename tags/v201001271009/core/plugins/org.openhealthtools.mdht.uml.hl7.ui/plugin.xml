@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+	<!--  Define MIF2 Vocabulary Extension Browse Provider -->
+	<extension point="org.openhealthtools.mdht.uml.hdf.vocabularyprovider">
+		<vocabularyprovider
+			selectiondelegate="org.openhealthtools.mdht.uml.hl7.ui.vocabulary.MIF2VocabularySelectionDelegate" />
+	</extension>
+
+
+
+
+
+
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+		<propertyTabs contributorId="org.openhealthtools.mdht.uml.ui.properties">
+			<propertyTab category="domain"
+				afterTab="property.tab.GeneralPropertySection" id="property.tab.HL7PropertySection"
+				label="%HealthcarePropertyTab.label">
+			</propertyTab>
+		</propertyTabs>
+	</extension>
+
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
+			<propertySection tab="property.tab.HL7PropertySection"
+				class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7DefinitionSection"
+				id="property.section.hl7.HL7DefinitionSection">
+				<input type="org.eclipse.uml2.uml.Class" />
+				<input type="org.eclipse.uml2.uml.Property" />
+				<input type="org.eclipse.uml2.uml.Package" />
+			</propertySection>
+			<propertySection tab="property.tab.HL7PropertySection"
+				afterSection="property.section.hl7.HL7DefinitionSection"
+				class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7TemplateSection"
+				id="property.section.HL7TemplateSection" filter="org.openhealthtools.mdht.uml.hdf.ui.filters.HL7TemplateFilter">
+			</propertySection>
+			<propertySection tab="property.tab.HL7PropertySection"
+				afterSection="property.section.hl7.HL7DefinitionSection"
+				class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7PropertySection"
+				id="property.section.HL7PropertySection">
+				<input type="org.eclipse.uml2.uml.Property" />
+			</propertySection>
+			<propertySection tab="property.tab.HL7PropertySection"
+				afterSection="property.section.HL7PropertySection"
+				class="org.openhealthtools.mdht.uml.hdf.ui.properties.HL7AttributeSection"
+				id="property.section.HL7AttributeSection" filter="org.openhealthtools.mdht.uml.hdf.ui.filters.HL7AttributeFilter">
+			</propertySection>
+			<propertySection tab="property.tab.HL7PropertySection"
+				afterSection="property.section.HL7AttributeSection"
+				class="org.openhealthtools.mdht.uml.hdf.ui.properties.VocabularyConstraintsSection"
+				id="property.section.VocabularyConstraintsSection"
+				filter="org.openhealthtools.mdht.uml.hdf.ui.filters.CodedAttributeFilter">
+			</propertySection>
+			<propertySection tab="property.tab.HL7PropertySection"
+				afterSection="property.section.VocabularyConstraintsSection"
+				class="org.openhealthtools.mdht.uml.hdf.ui.properties.ConceptDomainConstraintSection"
+				id="property.section.ConceptDomainConstraintSection" filter="org.openhealthtools.mdht.uml.hdf.ui.filters.ConceptDomainFilter">
+			</propertySection>
+			<propertySection tab="property.tab.HL7PropertySection"
+				afterSection="property.section.ConceptDomainConstraintSection"
+				class="org.openhealthtools.mdht.uml.hdf.ui.properties.CodeSystemConstraintSection"
+				id="property.section.CodeSystemConstraintSection" filter="org.openhealthtools.mdht.uml.hdf.ui.filters.CodeSystemFilter">
+			</propertySection>
+			<propertySection tab="property.tab.HL7PropertySection"
+				afterSection="property.section.CodeSystemConstraintSection"
+				class="org.openhealthtools.mdht.uml.hdf.ui.properties.ValueSetConstraintSection"
+				id="property.section.ValueSetConstraintSection" filter="org.openhealthtools.mdht.uml.hdf.ui.filters.ValueSetFilter">
+			</propertySection>
+			<propertySection tab="property.tab.HL7PropertySection"
+				afterSection="property.section.ValueSetConstraintSection"
+				class="org.openhealthtools.mdht.uml.hdf.ui.properties.EnumerationConstraintSection"
+				id="property.section.EnumerationConstraintSection"
+				filter="org.openhealthtools.mdht.uml.hdf.ui.filters.EnumerationConstraintFilter">
+			</propertySection>
+		</propertySections>
+	</extension>
+
+
+
+
+
+	<!--  Define MIF2 Import Export Menu  -->
+	<extension point="org.eclipse.ui.popupMenus">
+
+		<objectContribution id="org.openhealthtools.mdht.uml.hl7.ui.importmif"
+			objectClass="org.eclipse.core.resources.IFile">
+			<menu id="hl7tools" label="%menu_HL7Tools" path="additions">
+				<separator name="edit" />
+			</menu>
+			<visibility>
+				<or>
+					<objectState name="extension" value="mif" />
+					<objectState name="extension" value="coremif" />
+				</or>
+			</visibility>
+			<action class="org.openhealthtools.mdht.uml.hl7.ui.actions.ImportMIFAction"
+				enablesFor="1" id="org.openhealthtools.mdht.uml.hl7.ui.importmifaction"
+				label="%action.label.ImportMIF" menubarPath="hl7tools/edit" />
+		</objectContribution>
+
+		<objectContribution adaptable="true"
+			id="org.openhealthtools.mdht.uml.hl7.ui.exportmif" objectClass="org.eclipse.core.resources.IFile">
+			<menu label="%menu_HL7Tools" path="additions" id="hl7tools">
+				<separator name="edit" />
+			</menu>
+			<visibility>
+				<or>
+					<objectState name="extension" value="emx" />
+					<objectState name="extension" value="uml" />
+				</or>
+			</visibility>
+			<action label="%action_label_ExportUMLtoMIF"
+				class="org.openhealthtools.mdht.uml.hl7.ui.actions.ExportMIFAction"
+				menubarPath="hl7tools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.hl7.ui.exportmifaction" />
+		</objectContribution>
+
+	</extension>
+
+</plugin>

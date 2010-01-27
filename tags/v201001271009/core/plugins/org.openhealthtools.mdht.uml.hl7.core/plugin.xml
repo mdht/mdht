@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+  Copyright (c) 2006, 2009 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson - initial API and implementation
+      
+  $Id$
+-->
+
+<plugin>
+  <!-- RIM model library -->
+  <extension
+     point="org.eclipse.emf.ecore.uri_mapping">
+    <mapping
+       source="pathmap://HL7_RIM_UV/"
+       target="libraries/">
+    </mapping>
+  </extension>
+  
+  <extension
+        id="HL7RIM"
+        name="HL7 RIM"
+        point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+     <pathmap
+           name="HL7_RIM_UV"
+           path="libraries"
+           plugin="org.openhealthtools.mdht.uml.hl7.core"/>
+  </extension>
+  
+  <!-- HL7 Abstract datatypes library -->
+  <extension
+     point="org.eclipse.emf.ecore.uri_mapping">
+    <mapping
+       source="pathmap://HL7_DT_UV/"
+       target="libraries/">
+    </mapping>
+  </extension>
+  
+  <extension
+        id="HL7DT"
+        name="HL7 R1 Datatypes"
+        point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+     <pathmap
+           name="HL7_DT_UV"
+           path="libraries"
+           plugin="org.openhealthtools.mdht.uml.hl7.core"/>
+  </extension>
+</plugin>

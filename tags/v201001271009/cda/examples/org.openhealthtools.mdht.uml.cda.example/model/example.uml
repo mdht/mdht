@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:version="2.0" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
+  <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="example">
+    
+    <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
+      <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg?cda?"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="MyDocument">
+      <generalization xmi:id="_ZyMtMKX2Ed6JRdOhEffuGA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_Ze7UsGESEd69D7zx7EkLMA?ccd/ContinuityOfCareDocument?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_v0rX0aX0Ed6JRdOhEffuGA" name="mySection" visibility="private" type="_Ucv9baX0Ed6JRdOhEffuGA" association="_v0rX0KX0Ed6JRdOhEffuGA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v0rX06X0Ed6JRdOhEffuGA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v0rX0qX0Ed6JRdOhEffuGA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ucv9YKX0Ed6JRdOhEffuGA" name="MyActivity">
+      <ownedComment xmi:id="_Ucv9YaX0Ed6JRdOhEffuGA" annotatedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
+        <body>&lt;p&gt;&#13;
+    &lt;font size="2"&gt;CCD represents the ASTM CCR &amp;lt;Purpose&amp;gt; object as a relationship between two classes – the source&#13;
+    represents the act of creating a summary document, the target is the reason for creating the document, and the&#13;
+    relationship type is "RSON" (has reason). The target act may be an Observation, Procedure, or some other kind of act,&#13;
+    and it may represent an order, an event, etc.&lt;/font&gt;&#13;
+&lt;/p&gt;</body>
+      </ownedComment>
+      <generalization xmi:id="_Pl-JwKX2Ed6JRdOhEffuGA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_GgvgUDxbEd6JwqSGecoePg?ccd/ProblemAct?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_Ucv9Z6X0Ed6JRdOhEffuGA" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Ucv9aKX0Ed6JRdOhEffuGA" name="ACT">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVdYEDcEd6xYZuu1VKCVw?vocab/ActClass?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVdYUDcEd6xYZuu1VKCVw?vocab/ActClass/ACT?"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Ucv9aaX0Ed6JRdOhEffuGA" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_Ucv9aqX0Ed6JRdOhEffuGA" name="EVN">
+          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW30DcEd6xYZuu1VKCVw?vocab/ActMood/EVN?"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Ucv9a6X0Ed6JRdOhEffuGA" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Ucv9bKX0Ed6JRdOhEffuGA" name="statusCode" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ucv9baX0Ed6JRdOhEffuGA" name="MySection">
+      <ownedComment xmi:id="_Ucv9bqX0Ed6JRdOhEffuGA" annotatedElement="_Ucv9baX0Ed6JRdOhEffuGA">
+        <body>&lt;p align="left"&gt;&#13;
+    &lt;font size="2"&gt;Represents the specific reason for which the summarization was generated, such as in response to a&#13;
+    request.&lt;/font&gt;&#13;
+&lt;/p&gt;&#13;
+&lt;p&gt;&#13;
+    &lt;font size="2"&gt;The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific&#13;
+    purpose such as a transfer, referral, or patient request.&lt;/font&gt;&#13;
+&lt;/p&gt;</body>
+      </ownedComment>
+      <generalization xmi:id="_Ucv9b6X0Ed6JRdOhEffuGA">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_Ucv9cKX0Ed6JRdOhEffuGA" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Ucv9caX0Ed6JRdOhEffuGA" name="title" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Ucv9cqX0Ed6JRdOhEffuGA" name="myActivity" visibility="private" type="_Ucv9YKX0Ed6JRdOhEffuGA" association="_Ucv9daX0Ed6JRdOhEffuGA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ucv9c6X0Ed6JRdOhEffuGA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ucv9dKX0Ed6JRdOhEffuGA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Ucv9daX0Ed6JRdOhEffuGA" memberEnd="_Ucv9cqX0Ed6JRdOhEffuGA _Ucv9dqX0Ed6JRdOhEffuGA">
+      <ownedEnd xmi:id="_Ucv9dqX0Ed6JRdOhEffuGA" name="" visibility="private" type="_Ucv9baX0Ed6JRdOhEffuGA" association="_Ucv9daX0Ed6JRdOhEffuGA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ucv9d6X0Ed6JRdOhEffuGA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ucv9eKX0Ed6JRdOhEffuGA"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_v0rX0KX0Ed6JRdOhEffuGA" memberEnd="_v0rX0aX0Ed6JRdOhEffuGA _v01I0KX0Ed6JRdOhEffuGA">
+      <ownedEnd xmi:id="_v01I0KX0Ed6JRdOhEffuGA" name="" visibility="private" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_v0rX0KX0Ed6JRdOhEffuGA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v01I0qX0Ed6JRdOhEffuGA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v01I0aX0Ed6JRdOhEffuGA"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
+      <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    
+    
+    <profileApplication xmi:id="_SMdMMJmzEd6BO7rW3XxHIA">
+      <eAnnotations xmi:id="_SMdzQJmzEd6BO7rW3XxHIA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+  </uml:Package>
+  <CDA:CDATemplate xmi:id="_1dDy4JmOEd6T5tg3G_f09Q" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="1.2.3.4" assigningAuthorityName="Example"/>
+  <CDA:CodegenSupport xmi:id="_THvvwJmzEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="example" nsURI="http://www.openhealthtools.org/mdht/uml/cda/example" packageName="example" prefix="Example" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
+  <CDA:CDATemplate xmi:id="_Uc5uYKX0Ed6JRdOhEffuGA" base_Class="_Ucv9YKX0Ed6JRdOhEffuGA" templateId="1.2.3.4.2" assigningAuthorityName="Example"/>
+  <Default:Documentation xmi:id="_Uc5uYaX0Ed6JRdOhEffuGA" base_Comment="_Ucv9YaX0Ed6JRdOhEffuGA"/>
+  <CDA:PropertyValidation xmi:id="_Uc5uZKX0Ed6JRdOhEffuGA" message="My activity @classCode SHALL be 'ACT' 2.16.840.1.113883.5.6 ActClass STATIC." base_Property="_Ucv9Z6X0Ed6JRdOhEffuGA"/>
+  <CDA:PropertyValidation xmi:id="_Uc5uZaX0Ed6JRdOhEffuGA" message="My Activity @moodCode SHALL be 'EVN' 2.16.840.1.113883.5.1001 ActMood STATIC." base_Property="_Ucv9aaX0Ed6JRdOhEffuGA"/>
+  <CDA:VocabSpecification xmi:id="_Uc5uZqX0Ed6JRdOhEffuGA" message="My Activity SHALL contain exactly one Act / code, with a value of '23745001' 'Documentation procedure' 2.16.840.1.113883.6.96 SNOMED CT STATIC." base_Property="_Ucv9a6X0Ed6JRdOhEffuGA" code="23745001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Documentation procedure"/>
+  <CDA:VocabSpecification xmi:id="_Uc5uZ6X0Ed6JRdOhEffuGA" message="My Activity SHALL contain exactly one Act / statusCode. The value for 'Act / statusCode' in a My Activity SHALL be 'completed' 2.16.840.1.113883.5.14 ActStatus STATIC." base_Property="_Ucv9bKX0Ed6JRdOhEffuGA" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
+  <CDA:CDATemplate xmi:id="_Uc5uaaX0Ed6JRdOhEffuGA" base_Class="_Ucv9baX0Ed6JRdOhEffuGA" templateId="1.2.3.4.1" assigningAuthorityName="Example"/>
+  <Default:Documentation xmi:id="_Uc5uaqX0Ed6JRdOhEffuGA" base_Comment="_Ucv9bqX0Ed6JRdOhEffuGA"/>
+  <CDA:VocabSpecification xmi:id="_Uc5ua6X0Ed6JRdOhEffuGA" message="The value for My Activity code SHALL be 48764-5' 'Summary purpose' 2.16.840.1.113883.6.1 LOINC STATIC." base_Property="_Ucv9cKX0Ed6JRdOhEffuGA" code="48764-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summary purpose"/>
+  <CDA:AssociationValidation xmi:id="_vvhgIKX2Ed6JRdOhEffuGA" message="My Document SHALL contain one, and not more than one, My Section." base_Association="_v0rX0KX0Ed6JRdOhEffuGA"/>
+  <CDA:Entry xmi:id="_auV_cK0UEd6_kOk8Ilc2Dw" message="My Section SHOULD contain one or more My Activity." severity="WARNING" base_Association="_Ucv9daX0Ed6JRdOhEffuGA"/>
+  <CDA:TextValue xmi:id="_xJaggK0jEd6_kOk8Ilc2Dw" message="My Section SHALL contain a title." base_Property="_Ucv9caX0Ed6JRdOhEffuGA"/>
+</xmi:XMI>

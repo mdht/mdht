@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_529839F943CE4F6C9098468815337438"> 
+  <title>Text value constraint</title> 
+  <shortdesc>Specify a text value constraint for attributes with a data type
+	 that is a kind of ED. 
+  </shortdesc> 
+  <taskbody> 
+	 <steps id="steps_79F077D844814E729C961DF56E8EF5A9"> 
+		<step id="step_A663808F78B9419288DF1BA16FE05FB9"> 
+		  <cmd>Select the table row for the attribute you want to constrain. 
+		  </cmd> 
+		</step> 
+		<step id="step_F5329B38684A4661BC1DBD339F046D40"> 
+		  <cmd>In the Properties view CDA Tools tab, enter the<uicontrol>Text
+				Value Constraint</uicontrol>.
+		  </cmd> 
+		</step> 
+	 </steps> 
+	 <result id="result_01E1FAF8C9B24129AD7E582A02875AF8">In this example, the
+		EncountersSection title is constrained to the value 
+		<tt>Encounters</tt>.<image placement="break"
+		id="image_C67B1E2F78C047C7BB0BE0EA6A0AF9D3"
+		href="../images/TableTextConstraint.png"></image> 
+	 </result> 
+  </taskbody>
+</task>

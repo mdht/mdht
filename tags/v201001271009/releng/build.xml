@@ -1,0 +1,176 @@
+<project default="main">
+
+	<!-- <typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpath="svnant.jar" /> -->
+
+
+
+
+	<path id="classpath">
+
+		<fileset dir="/usr/share/ant/lib">
+			<include name="**/*.jar" />
+		</fileset>
+
+	</path>
+
+	<!-- Subversion Ant Task Definition -->
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="classpath" />
+
+	<!-- Code Coverage (EMMA) Ant Task Definition -->
+	<taskdef resource="emma_ant.properties" classpathref="classpath" />
+
+	<!-- JUnit Ant Task Definition -->
+	<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpathref="classpath" />
+
+	<!-- Conditional Support (ie <if> )  Ant Task Definitions -->
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="classpath" />
+
+
+
+	<!--       <property name="pde.build.scripts" value="${basedir}/../org.eclipse.releng.basebuilder.old/plugins/org.eclipse.pde.build_3.5.0.v20090312-1500/scripts" /> -->
+
+	<property name="pde.build.scripts" value="${basedir}/../org.eclipse.releng.basebuilder/plugins/org.eclipse.pde.build_3.5.0.v20090527-1800/scripts" />
+	<!-- value below is for people using basebuilder from the command line as described in the org.eclipse.releng.eclipsebuilder readme -->
+
+	<target name="main">
+
+
+
+
+		<echo message="==================== CLASS PATH START ---------------------------------" />
+		<pathconvert pathsep="${line.separator}|   |-- " property="echo.path.compile" refid="classpath">
+		</pathconvert>
+
+
+		<echo message="|-- compile classpath" />
+		<echo message="|   |" />
+		<echo message="|   |-- ${echo.path.compile}" />
+
+		<echo message="==================== CLASS END  START ---------------------------------" />
+
+
+		<echo message="====================${buildType}---------------------------------" />
+
+		<!--Default values for required properties-->
+		<!--		<property name="buildDirectory" value="${basedir}/mdht/nightlybuild" /> -->
+
+		<condition property="buildDirectory" value="${basedir}/mdht/builds/nightly">
+			<equals arg1="${buildType}" arg2="N" />
+		</condition>
+
+		<condition property="repoDirectory" value="${basedir}/mdht/repositories/nightly">
+			<equals arg1="${buildType}" arg2="N" />
+		</condition>
+
+		<condition property="buildDirectory" value="${basedir}/mdht/builds/integration">
+			<equals arg1="${buildType}" arg2="I" />
+		</condition>
+
+		<condition property="repoDirectory" value="${basedir}/mdht/repositories/integration">
+			<equals arg1="${buildType}" arg2="I" />
+		</condition>
+
+
+		<available file="${buildDirectory}/label.properties" property="label.properties.exists" />
+		<antcall target="create.label.properties" />
+		<property file="${buildDirectory}/label.properties" />
+
+		<!--fetch the HEAD stream of all projects if build type specified as N-->
+		<condition property="fetchTag" value="trunk:HEAD">
+			<or>
+				<equals arg1="${buildType}" arg2="N" />
+				<equals arg1="${buildType}" arg2="I" />
+			</or>
+		</condition>
+		<property name="fetchTag" value="" />
+
+		<condition property="maps.tag" value="trunk">
+			<or>
+				<equals arg1="${buildType}" arg2="N" />
+				<equals arg1="${buildType}" arg2="I" />
+			</or>
+		</condition>
+
+		<condition property="maps.revision" value="HEAD">
+			<or>
+				<equals arg1="${buildType}" arg2="N" />
+				<equals arg1="${buildType}" arg2="I" />
+			</or>
+		</condition>
+
+		<property name="buildScript" value="build.xml" />
+		<property name="buildScriptLocation" value="${pde.build.scripts}" />
+
+		<!--this property required as of Eclipse 3.0 stream builds > 20031126 -->
+		<property name="buildingOSGi" value="true" />
+
+		<echo message="" />
+		<echo message="PDE-Build-SVN Build Launcher" />
+		<echo message="======================================" />
+		<echo message="" />
+		<echo message="Build script:     ${buildScript}" />
+		<echo message="Script location:  ${buildScriptLocation}" />
+		<echo message="Component:        ${component}" />
+		<echo message="Build Type:       ${buildType}" />
+		<echo message="Build dir:        ${buildDirectory}" />
+		<echo message="Eclipse Base dir: ${baseLocation}" />
+		<echo message="buildId:          ${buildId}" />
+		<echo message="builder:          ${basedir}/${component}" />
+		<echo message="" />
+
+
+
+
+
+		<!--run the build for the specified component-->
+		<ant antfile="${buildScript}" dir="${buildScriptLocation}">
+			<property name="builder" value="${basedir}/${component}" />
+			<property name="builderBaseDir" value="${basedir}" />
+		</ant>
+	</target>
+
+	<target name="create.label.properties" unless="label.properties.exists">
+		<mkdir dir="${buildDirectory}" />
+		<tstamp />
+		<property name="date" value="${DSTAMP}" />
+		<property name="time" value="${TSTAMP}" />
+		<property name="timestamp" value="${date}${time}" />
+		<property name="buildType" value="${buildType}" />
+		<property name="buildId" value="${buildType}${date}" />
+
+
+		<!--this naming convention used by php scripts on download server-->
+		<property name="buildLabel" value="${buildType}-${buildId}-${timestamp}" />
+
+		<!--store the build label information in a file-->
+		<echo file="${buildDirectory}/label.properties" append="true">
+			buildType=${buildType}
+			</echo>
+		<echo file="${buildDirectory}/label.properties" append="true">
+			buildId=${buildId}
+			</echo>
+		<echo file="${buildDirectory}/label.properties" append="true">
+			timestamp=${timestamp}
+			</echo>
+		<echo file="${buildDirectory}/label.properties" append="true">
+			buildLabel=${buildLabel}
+			</echo>
+
+
+		<echo message="p2 start" />
+
+		<echo message="${eclipse.base}" />
+		<echo message="${p2.append}" />
+		<echo message="${p2.flavor}" />
+		<echo message="${p2.metadata.repo}" />
+		<echo message="${p2.artifact.repo}" />
+		<echo message="${p2.metadata.repo.name}" />
+		<echo message="${p2.artifact.repo.name}" />
+		<echo message="${p2.publish.artifacts}" />
+		<echo message="${p2.category.site}" />
+		<echo message="p2 end" />
+
+	</target>
+
+</project>
+
