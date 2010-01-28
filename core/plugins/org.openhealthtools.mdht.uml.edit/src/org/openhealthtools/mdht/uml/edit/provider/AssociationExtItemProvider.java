@@ -106,6 +106,10 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 
 	public Object getColumnImage(Object object, int columnIndex) {
 		Association association = (Association) object;
+		if (association.getNearestPackage() == null) {
+			// occurs when association is deleted
+			return null;
+		}
 		
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
@@ -128,6 +132,10 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 
 	public String getColumnText(Object element, int columnIndex) {
 		Association association = (Association) element;
+		if (association.getNearestPackage() == null) {
+			// occurs when association is deleted
+			return null;
+		}
 		
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
