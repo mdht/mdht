@@ -114,12 +114,15 @@ public class ClassExtItemProvider extends ClassItemProvider
 				return classifier.getVisibility().getName();
 		case IUMLTableProperties.ANNOTATION_INDEX: {
 			for (Profile profile : classifier.getNearestPackage().getAllAppliedProfiles()) {
-				// use the first notation provider found for an applied profile, ignore others
-				String profileURI = profile.eResource().getURI().toString();
-				INotationProvider provider = 
-					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-				if (provider != null) {
-					return provider.getAnnotation(classifier);
+				// eResource is null for unresolved eProxyURI, missing profiles
+				if (profile.eResource() != null) {
+					// use the first notation provider found for an applied profile, ignore others
+					String profileURI = profile.eResource().getURI().toString();
+					INotationProvider provider = 
+						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+					if (provider != null) {
+						return provider.getAnnotation(classifier);
+					}
 				}
 			}
 			return ClassNotationUtil.getCustomLabel(classifier,
