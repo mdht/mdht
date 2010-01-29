@@ -17,12 +17,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- *     <font size="2">CCD represents the ASTM CCR &lt;Purpose&gt; object as a relationship between two classes – the source
- *     represents the act of creating a summary document, the target is the reason for creating the document, and the
- *     relationship type is "RSON" (has reason). The target act may be an Observation, Procedure, or some other kind of act,
- *     and it may represent an order, an event, etc.</font>
- * </p>
+ * The tuberculosis result organizer identifies an observation set, contained within the result organizer as a set of result observations. It contains information applicable to all of the contained result observations. It is particularly useful to group a number of tests, such as culture results, that are performed on a common specimen.
  * <!-- end-model-doc -->
  *
  *

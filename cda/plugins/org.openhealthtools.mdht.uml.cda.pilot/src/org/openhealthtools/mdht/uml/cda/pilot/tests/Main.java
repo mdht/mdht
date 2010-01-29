@@ -25,6 +25,7 @@ import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActClassDocumentEntryOrganizer;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
@@ -37,13 +38,14 @@ public class Main {
 		clinicalDocument.addSection(section);
 		section.addOrganizer(organizer);
 		organizer.addObservation(observation);
+		organizer.setClassCode(x_ActClassDocumentEntryOrganizer.BATTERY);
 		
 		Patient patient = CDAFactory.eINSTANCE.createPatient();
 		clinicalDocument.addPatient(patient);
 		PN name = DatatypesFactory.eINSTANCE.createPN();
 		patient.getNames().add(name);
 		name.addFamily("Doe").addGiven("John").addPrefix("Dr.");
-		// to test the constraint
+		// to test the constraint, replace above line with this
 		//name.addGiven("John").addPrefix("Dr.");
 		PN name2 = DatatypesFactory.eINSTANCE.createPN();
 		patient.getNames().add(name2);
