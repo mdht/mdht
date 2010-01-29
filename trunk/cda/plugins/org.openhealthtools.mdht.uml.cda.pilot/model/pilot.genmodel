@@ -90,6 +90,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationTemplateId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultObservation/TBResultObservationClassCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationClassCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationClassCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultObservation/TBResultObservationCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationCode/context"/>

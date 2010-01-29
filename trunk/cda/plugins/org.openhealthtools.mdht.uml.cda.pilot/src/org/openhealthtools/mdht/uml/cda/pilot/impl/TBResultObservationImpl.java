@@ -59,6 +59,15 @@ public class TBResultObservationImpl extends ResultObservationImpl implements TB
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateTBResultObservationClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return TBResultObservationOperations.validateTBResultObservationClassCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateTBResultObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return TBResultObservationOperations.validateTBResultObservationCode(this, diagnostics, context);
 	}
