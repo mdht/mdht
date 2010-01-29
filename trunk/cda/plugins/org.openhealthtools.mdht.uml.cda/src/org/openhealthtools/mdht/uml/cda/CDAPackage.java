@@ -675,7 +675,7 @@ public interface CDAPackage extends EPackage {
 	int PATIENT__ID = 3;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Name</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -10917,11 +10917,11 @@ public interface CDAPackage extends EPackage {
 	EReference getPatient_Id();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.Patient#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Patient#getNames <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Name</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.Patient#getName()
+	 * @return the meta object for the containment reference list '<em>Name</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.Patient#getNames()
 	 * @see #getPatient()
 	 * @generated
 	 */

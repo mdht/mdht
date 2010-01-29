@@ -49,7 +49,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getTypeId <em>Type Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getId <em>Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getNames <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getAdministrativeGenderCode <em>Administrative Gender Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getBirthTime <em>Birth Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getMaritalStatusCode <em>Marital Status Code</em>}</li>
@@ -109,14 +109,14 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	protected II id;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+	 * The cached value of the '{@link #getNames() <em>Name</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getNames()
 	 * @generated
 	 * @ordered
 	 */
-	protected PN name;
+	protected EList<PN> names;
 
 	/**
 	 * The cached value of the '{@link #getAdministrativeGenderCode() <em>Administrative Gender Code</em>}' containment reference.
@@ -429,42 +429,11 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PN getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetName(PN newName, NotificationChain msgs) {
-		PN oldName = name;
-		name = newName;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT__NAME, oldName, newName);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<PN> getNames() {
+		if (names == null) {
+			names = new EObjectContainmentEList<PN>(PN.class, this, CDAPackage.PATIENT__NAME);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(PN newName) {
-		if (newName != name) {
-			NotificationChain msgs = null;
-			if (name != null)
-				msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PATIENT__NAME, null, msgs);
-			if (newName != null)
-				msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PATIENT__NAME, null, msgs);
-			msgs = basicSetName(newName, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT__NAME, newName, newName));
+		return names;
 	}
 
 	/**
@@ -947,7 +916,7 @@ public class PatientImpl extends EObjectImpl implements Patient {
 			case CDAPackage.PATIENT__ID:
 				return basicSetId(null, msgs);
 			case CDAPackage.PATIENT__NAME:
-				return basicSetName(null, msgs);
+				return ((InternalEList<?>)getNames()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PATIENT__ADMINISTRATIVE_GENDER_CODE:
 				return basicSetAdministrativeGenderCode(null, msgs);
 			case CDAPackage.PATIENT__BIRTH_TIME:
@@ -987,7 +956,7 @@ public class PatientImpl extends EObjectImpl implements Patient {
 			case CDAPackage.PATIENT__ID:
 				return getId();
 			case CDAPackage.PATIENT__NAME:
-				return getName();
+				return getNames();
 			case CDAPackage.PATIENT__ADMINISTRATIVE_GENDER_CODE:
 				return getAdministrativeGenderCode();
 			case CDAPackage.PATIENT__BIRTH_TIME:
@@ -1040,7 +1009,8 @@ public class PatientImpl extends EObjectImpl implements Patient {
 				setId((II)newValue);
 				return;
 			case CDAPackage.PATIENT__NAME:
-				setName((PN)newValue);
+				getNames().clear();
+				getNames().addAll((Collection<? extends PN>)newValue);
 				return;
 			case CDAPackage.PATIENT__ADMINISTRATIVE_GENDER_CODE:
 				setAdministrativeGenderCode((CE)newValue);
@@ -1105,7 +1075,7 @@ public class PatientImpl extends EObjectImpl implements Patient {
 				setId((II)null);
 				return;
 			case CDAPackage.PATIENT__NAME:
-				setName((PN)null);
+				getNames().clear();
 				return;
 			case CDAPackage.PATIENT__ADMINISTRATIVE_GENDER_CODE:
 				setAdministrativeGenderCode((CE)null);
@@ -1164,7 +1134,7 @@ public class PatientImpl extends EObjectImpl implements Patient {
 			case CDAPackage.PATIENT__ID:
 				return id != null;
 			case CDAPackage.PATIENT__NAME:
-				return name != null;
+				return names != null && !names.isEmpty();
 			case CDAPackage.PATIENT__ADMINISTRATIVE_GENDER_CODE:
 				return administrativeGenderCode != null;
 			case CDAPackage.PATIENT__BIRTH_TIME:

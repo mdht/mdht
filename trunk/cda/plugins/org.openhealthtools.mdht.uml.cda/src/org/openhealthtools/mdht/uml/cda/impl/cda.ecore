@@ -360,7 +360,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" ordered="false" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" ordered="false" upperBound="-1"
         eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//PN"
         containment="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
