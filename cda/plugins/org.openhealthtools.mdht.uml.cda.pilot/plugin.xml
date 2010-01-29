@@ -1,0 +1,20 @@
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2009 IBM Corporation, David A Carlson, and others.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+-->
+<plugin>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.openhealthtools.mdht.uml.cda.pilot.TBPNPackage" genModel="model/pilot.genmodel" uri="http://www.openhealthtools.org/mdht/uml/cda/pilot"/>
+   </extension>
+   <extension point="org.openhealthtools.mdht.uml.cda.extension">
+      <entry eClass="TuberculosisFollowUpProgressNote" id="2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3" nsURI="http://www.openhealthtools.org/mdht/uml/cda/pilot"/>
+      <entry eClass="TBResultOrganizer" id="2.16.840.1.113883.10.20.15.3.21" nsURI="http://www.openhealthtools.org/mdht/uml/cda/pilot"/>
+      <entry eClass="TBResultsSection" id="2.16.840.1.113883.10.20.15.2.6" nsURI="http://www.openhealthtools.org/mdht/uml/cda/pilot"/>
+      <entry eClass="TBResultObservation" id="2.16.840.1.113883.10.20.15.3.13" nsURI="http://www.openhealthtools.org/mdht/uml/cda/pilot"/>
+   </extension>
+</plugin>
