@@ -5,20 +5,29 @@
       <importedPackage href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="TuberculosisFollowUpProgressNote">
+      <ownedComment xmi:id="_lDY9EA0OEd-gR9nJK3sp7g">
+        <body>The CDA for Tuberculosis Follow Up Progress Note constrains CDA to express the data elements identified by the CRSWg as specific to a follow-up report of tuberculosis. Tuberculosis (TB) is a contagious and potentially life-threatening infectious disease caused by a bacterium called Mycobacterium tuberculosis. The tuberculosis bacteria are spread from person to person through the air.</body>
+      </ownedComment>
       <ownedRule xmi:id="_3Z2mAAxpEd-gR9nJK3sp7g" name="TuberculosisFollowUpProgressNotePatientNames" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_AqRogAxqEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>self.recordTarget.patientRole.patient.name->exists(&#xD;&#xA;   name : datatypes::PN | not name.given->isEmpty() and not name.family->isEmpty())</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_3nkgYQ0CEd-gR9nJK3sp7g" name="TuberculosisFollowUpProgressNoteTemplateId" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3nkgYg0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r6a0YQ0QEd-gR9nJK3sp7g" name="TuberculosisFollowUpProgressNoteTemplateId" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r6bbcA0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_3pfL8A0CEd-gR9nJK3sp7g" name="TuberculosisFollowUpProgressNoteTBResultsSection" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3pfL8Q0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r6-OAA0QEd-gR9nJK3sp7g" name="TuberculosisFollowUpProgressNoteTitle" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r6-OAQ0QEd-gR9nJK3sp7g">
+          <language>OCL</language>
+          <body>not self.title.oclIsUndefined() and self.title.getText() = 'Tuberculosis Follow Up Progress Note'</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_r72-0A0QEd-gR9nJK3sp7g" name="TuberculosisFollowUpProgressNoteTBResultsSection" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r73l4A0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>self.getSections()->one(section : cda::Section | section.oclIsKindOf(pilot::TBResultsSection))</body>
         </specification>
@@ -29,27 +38,22 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ucv9YKX0Ed6JRdOhEffuGA" name="TBResultOrganizer">
       <ownedComment xmi:id="_Ucv9YaX0Ed6JRdOhEffuGA" annotatedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
-        <body>&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>CCD represents the ASTM CCR &amp;lt;Purpose&amp;gt; object as a relationship between two classes – the source&#xD;
-    represents the act of creating a summary document, the target is the reason for creating the document, and the&#xD;
-    relationship type is &quot;RSON&quot; (has reason). The target act may be an Observation, Procedure, or some other kind of act,&#xD;
-    and it may represent an order, an event, etc.&lt;/font>&#xD;
-&lt;/p></body>
+        <body>The tuberculosis result organizer identifies an observation set, contained within the result organizer as a set of result observations. It contains information applicable to all of the contained result observations. It is particularly useful to group a number of tests, such as culture results, that are performed on a common specimen.</body>
       </ownedComment>
-      <ownedRule xmi:id="_3oqskA0CEd-gR9nJK3sp7g" name="TBResultOrganizerTemplateId" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3oqskQ0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r7VaYA0QEd-gR9nJK3sp7g" name="TBResultOrganizerTemplateId" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r7WBcA0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.15.3.21')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_3pJNsA0CEd-gR9nJK3sp7g" name="TBResultOrganizerCode" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3pJNsQ0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r7kq8A0QEd-gR9nJK3sp7g" name="TBResultOrganizerCode" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r7lSAA0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.114222.4.11.3205')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_3qM9oA0CEd-gR9nJK3sp7g" name="TBResultOrganizerTBResultObservation" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3qM9oQ0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r8c0sg0QEd-gR9nJK3sp7g" name="TBResultOrganizerTBResultObservation" constrainedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r8dbwA0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>self.component->one(component : cda::Component4 | component.observation.oclIsKindOf(pilot::TBResultObservation))</body>
         </specification>
@@ -60,49 +64,42 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ucv9baX0Ed6JRdOhEffuGA" name="TBResultsSection">
       <ownedComment xmi:id="_Ucv9bqX0Ed6JRdOhEffuGA" annotatedElement="_Ucv9baX0Ed6JRdOhEffuGA">
-        <body>&lt;p align=&quot;left&quot;>&#xD;
-    &lt;font size=&quot;2&quot;>Represents the specific reason for which the summarization was generated, such as in response to a&#xD;
-    request.&lt;/font>&#xD;
-&lt;/p>&#xD;
-&lt;p>&#xD;
-    &lt;font size=&quot;2&quot;>The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific&#xD;
-    purpose such as a transfer, referral, or patient request.&lt;/font>&#xD;
-&lt;/p></body>
+        <body>The tuberculosis results section represents the name of the laboratory tests, the date that the specimens for the laboratory tests were taken from the subject of the case report, and the date that the tests were performed on the specimen. It represents the result of the laboratory tests and observation ranges and susceptibility results. In addition, it captures the name of organization where the specimens were collected.</body>
       </ownedComment>
-      <ownedRule xmi:id="_3pLC4A0CEd-gR9nJK3sp7g" name="TBResultsSectionTemplateId" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3pLC4Q0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r7lSAQ0QEd-gR9nJK3sp7g" name="TBResultsSectionTemplateId" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r7lSAg0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.15.2.6')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_3pcvsA0CEd-gR9nJK3sp7g" name="TBResultsSectionCode" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3pdWwA0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r7wRIA0QEd-gR9nJK3sp7g" name="TBResultsSectionCode" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r7w4MA0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '30954-2' and value.codeSystem = '2.16.840.1.113883.6.1')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_3pdWwQ0CEd-gR9nJK3sp7g" name="TBResultsSectionText" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3pdWwg0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r7ytYA0QEd-gR9nJK3sp7g" name="TBResultsSectionText" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r7ytYQ0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>not self.text.oclIsUndefined()</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_3pek4A0CEd-gR9nJK3sp7g" name="TBResultsSectionTitle" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3pek4Q0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r70ikA0QEd-gR9nJK3sp7g" name="TBResultsSectionTitle" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r70ikQ0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>self.title.getText() = 'Relevant diagnostic tests and/or laboratory data'</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_3pek4g0CEd-gR9nJK3sp7g" name="TBResultsSectionTBResultOrganizer" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3pek4w0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r71wsA0QEd-gR9nJK3sp7g" name="TBResultsSectionTBResultOrganizer" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r71wsQ0QEd-gR9nJK3sp7g">
           <language>OCL</language>
-          <body>self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(pilot::TBResultOrganizer))</body>
+          <body>self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(pilot::TBResultOrganizer) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_3qMWkA0CEd-gR9nJK3sp7g" name="TBResultsSectionTBResultObservation" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3qMWkQ0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r8c0sA0QEd-gR9nJK3sp7g" name="TBResultsSectionTBResultObservation" constrainedElement="_Ucv9baX0Ed6JRdOhEffuGA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r8c0sQ0QEd-gR9nJK3sp7g">
           <language>OCL</language>
-          <body>self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(pilot::TBResultObservation))</body>
+          <body>self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(pilot::TBResultObservation) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_Ucv9b6X0Ed6JRdOhEffuGA">
@@ -110,26 +107,29 @@
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_DQh14AxmEd-gR9nJK3sp7g" name="TBResultObservation">
-      <ownedRule xmi:id="_3pfzAA0CEd-gR9nJK3sp7g" name="TBResultObservationTemplateId" constrainedElement="_DQh14AxmEd-gR9nJK3sp7g">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3pfzAQ0CEd-gR9nJK3sp7g">
+      <ownedComment xmi:id="_F3dFgA0OEd-gR9nJK3sp7g">
+        <body>This clinical statement represents the name of the laboratory test, the date that the specimen for the laboratory test was taken from the subject of the case report, the date that the laboratory test was performed on the specimen, and the result of the laboratory test. If applicable, it may capture the physical body location from where the specimen for the lab report was taken from the subject. In addition, it captures the name of organization where the specimen was collected. This tuberculosis result observation also contains a susceptibility clinical statement.</body>
+      </ownedComment>
+      <ownedRule xmi:id="_r740AA0QEd-gR9nJK3sp7g" name="TBResultObservationTemplateId" constrainedElement="_DQh14AxmEd-gR9nJK3sp7g">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r740AQ0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>self.hasTemplateId('2.16.840.1.113883.10.20.15.3.13')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_3qKhYA0CEd-gR9nJK3sp7g" name="TBResultObservationClassCode" constrainedElement="_DQh14AxmEd-gR9nJK3sp7g">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3qKhYQ0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r8a_gA0QEd-gR9nJK3sp7g" name="TBResultObservationClassCode" constrainedElement="_DQh14AxmEd-gR9nJK3sp7g">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r8a_gQ0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>self.classCode=vocab::ActClassObservation::OBS</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_3qLIcA0CEd-gR9nJK3sp7g" name="TBResultObservationCode" constrainedElement="_DQh14AxmEd-gR9nJK3sp7g">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3qLIcQ0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r8bmkA0QEd-gR9nJK3sp7g" name="TBResultObservationCode" constrainedElement="_DQh14AxmEd-gR9nJK3sp7g">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r8bmkQ0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.114222.4.11.3205')</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_3qLvgA0CEd-gR9nJK3sp7g" name="TBResultObservationStatusCode" constrainedElement="_DQh14AxmEd-gR9nJK3sp7g">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3qLvgQ0CEd-gR9nJK3sp7g">
+      <ownedRule xmi:id="_r8cNoA0QEd-gR9nJK3sp7g" name="TBResultObservationStatusCode" constrainedElement="_DQh14AxmEd-gR9nJK3sp7g">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_r8cNoQ0QEd-gR9nJK3sp7g">
           <language>OCL</language>
           <body>not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')</body>
         </specification>
@@ -150,8 +150,8 @@
       </eAnnotations>
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
-    <profileApplication xmi:id="_3jaZIA0CEd-gR9nJK3sp7g">
-      <eAnnotations xmi:id="_3jaZIQ0CEd-gR9nJK3sp7g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <profileApplication xmi:id="_r2ZQAA0QEd-gR9nJK3sp7g">
+      <eAnnotations xmi:id="_r2ZQAQ0QEd-gR9nJK3sp7g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
       </eAnnotations>
       <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
@@ -169,17 +169,17 @@
   <CDA:VocabSpecification xmi:id="_Uc5ua6X0Ed6JRdOhEffuGA" message="The value for My Activity code SHALL be 48764-5' 'Summary purpose' 2.16.840.1.113883.6.1 LOINC STATIC." code="48764-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summary purpose"/>
   <CDA:TextValue xmi:id="_xJaggK0jEd6_kOk8Ilc2Dw" message="My Section SHALL contain a title."/>
   <CDA:CDATemplate xmi:id="_QfGwAAxmEd-gR9nJK3sp7g" message="TBPN TB Result Observation SHALL contain the template identifier 2.16.840.1.113883.10.20.15.3.13" base_Class="_DQh14AxmEd-gR9nJK3sp7g" templateId="2.16.840.1.113883.10.20.15.3.13" assigningAuthorityName="HL7"/>
-  <Ecore:EPackage xmi:id="_3lxwoA0CEd-gR9nJK3sp7g" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="pilot" nsPrefix="pilot" nsURI="http://www.openhealthtools.org/mdht/uml/cda/pilot" basePackage="org.openhealthtools.mdht.uml.cda" prefix="TBPN"/>
-  <Ecore:EClass xmi:id="_3nkgYA0CEd-gR9nJK3sp7g" xmlName="ClinicalDocument" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw">
-    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3' constraints.validation.error='TuberculosisFollowUpProgressNoteTemplateId TuberculosisFollowUpProgressNotePatientNames TuberculosisFollowUpProgressNoteTBResultsSection'</annotation>
+  <Ecore:EPackage xmi:id="_r4rvAA0QEd-gR9nJK3sp7g" base_Package="_qQyD8jxVEd6JwqSGecoePg" packageName="pilot" nsPrefix="pilot" nsURI="http://www.openhealthtools.org/mdht/uml/cda/pilot" basePackage="org.openhealthtools.mdht.uml.cda" prefix="TBPN"/>
+  <Ecore:EClass xmi:id="_r6a0YA0QEd-gR9nJK3sp7g" xmlName="ClinicalDocument" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw">
+    <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='Tuberculosis Follow Up Progress Note' templateId.root='2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3' constraints.validation.error='TuberculosisFollowUpProgressNoteTemplateId TuberculosisFollowUpProgressNotePatientNames TuberculosisFollowUpProgressNoteTitle TuberculosisFollowUpProgressNoteTBResultsSection'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_3oqskg0CEd-gR9nJK3sp7g" base_Class="_Ucv9YKX0Ed6JRdOhEffuGA">
+  <Ecore:EClass xmi:id="_r7WBcQ0QEd-gR9nJK3sp7g" base_Class="_Ucv9YKX0Ed6JRdOhEffuGA">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.114222.4.11.3205' templateId.root='2.16.840.1.113883.10.20.15.3.21' constraints.validation.error='TBResultOrganizerTemplateId TBResultOrganizerCode TBResultOrganizerTBResultObservation' code.codeSystemName='Lab Test Result Name (TB)'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_3pMRAA0CEd-gR9nJK3sp7g" base_Class="_Ucv9baX0Ed6JRdOhEffuGA">
+  <Ecore:EClass xmi:id="_r7l5EA0QEd-gR9nJK3sp7g" base_Class="_Ucv9baX0Ed6JRdOhEffuGA">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='Relevant diagnostic tests and/or laboratory data' code.codeSystem='2.16.840.1.113883.6.1' code.displayName='Relevant diagnostic tests and/or laboratory data' templateId.root='2.16.840.1.113883.10.20.15.2.6' constraints.validation.error='TBResultsSectionTemplateId TBResultsSectionCode TBResultsSectionText TBResultsSectionTitle' code.codeSystemName='LOINC' code.code='30954-2' constraints.validation.info='TBResultsSectionTBResultOrganizer TBResultsSectionTBResultObservation'</annotation>
   </Ecore:EClass>
-  <Ecore:EClass xmi:id="_3pfzAg0CEd-gR9nJK3sp7g" base_Class="_DQh14AxmEd-gR9nJK3sp7g">
+  <Ecore:EClass xmi:id="_r76CIA0QEd-gR9nJK3sp7g" base_Class="_DQh14AxmEd-gR9nJK3sp7g">
     <annotation>http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' code.codeSystem='2.16.840.1.114222.4.11.3205' templateId.root='2.16.840.1.113883.10.20.15.3.13' constraints.validation.error='TBResultObservationTemplateId TBResultObservationClassCode TBResultObservationCode TBResultObservationStatusCode' code.codeSystemName='Lab Test Result Name (TB)' classCode='OBS' statusCode.codeSystem='2.16.840.1.113883.5.14' statusCode.codeSystemName='HL7ActStatus'</annotation>
   </Ecore:EClass>
 </xmi:XMI>

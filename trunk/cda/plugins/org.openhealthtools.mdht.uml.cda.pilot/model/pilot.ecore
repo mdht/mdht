@@ -8,8 +8,9 @@
       <details key="name" value="ClinicalDocument"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="title.mixed" value="Tuberculosis Follow Up Progress Note"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3"/>
-      <details key="constraints.validation.error" value="TuberculosisFollowUpProgressNoteTemplateId TuberculosisFollowUpProgressNotePatientNames TuberculosisFollowUpProgressNoteTBResultsSection"/>
+      <details key="constraints.validation.error" value="TuberculosisFollowUpProgressNoteTemplateId TuberculosisFollowUpProgressNotePatientNames TuberculosisFollowUpProgressNoteTitle TuberculosisFollowUpProgressNoteTBResultsSection"/>
     </eAnnotations>
     <eOperations name="TuberculosisFollowUpProgressNotePatientNames" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -55,6 +56,28 @@
         </eGenericType>
       </eParameters>
     </eOperations>
+    <eOperations name="TuberculosisFollowUpProgressNoteTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="not self.title.oclIsUndefined() and self.title.getText() = 'Tuberculosis Follow Up Progress Note'"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="not self.title.oclIsUndefined() and self.title.getText() = 'Tuberculosis Follow Up Progress Note'"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eOperations name="TuberculosisFollowUpProgressNoteTBResultsSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(pilot::TBResultsSection))"/>
@@ -80,7 +103,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TBResultOrganizer" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//ResultOrganizer">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>CCD represents the ASTM CCR &amp;lt;Purpose&amp;gt; object as a relationship between two classes – the source&#xD;&#xA;    represents the act of creating a summary document, the target is the reason for creating the document, and the&#xD;&#xA;    relationship type is &quot;RSON&quot; (has reason). The target act may be an Observation, Procedure, or some other kind of act,&#xD;&#xA;    and it may represent an order, an event, etc.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="The tuberculosis result organizer identifies an observation set, contained within the result organizer as a set of result observations. It contains information applicable to all of the contained result observations. It is particularly useful to group a number of tests, such as culture results, that are performed on a common specimen."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystem" value="2.16.840.1.114222.4.11.3205"/>
@@ -157,7 +180,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TBResultsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//ResultsSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;font size=&quot;2&quot;>Represents the specific reason for which the summarization was generated, such as in response to a&#xD;&#xA;    request.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific&#xD;&#xA;    purpose such as a transfer, referral, or patient request.&lt;/font>&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="The tuberculosis results section represents the name of the laboratory tests, the date that the specimens for the laboratory tests were taken from the subject of the case report, and the date that the tests were performed on the specimen. It represents the result of the laboratory tests and observation ranges and susceptibility results. In addition, it captures the name of organization where the specimens were collected."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="title.mixed" value="Relevant diagnostic tests and/or laboratory data"/>
@@ -259,10 +282,10 @@
     </eOperations>
     <eOperations name="TBResultsSectionTBResultOrganizer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(pilot::TBResultOrganizer))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(pilot::TBResultOrganizer) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(pilot::TBResultOrganizer))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(pilot::TBResultOrganizer) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -281,10 +304,10 @@
     </eOperations>
     <eOperations name="TBResultsSectionTBResultObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(pilot::TBResultObservation))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(pilot::TBResultObservation) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(pilot::TBResultObservation))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(pilot::TBResultObservation) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

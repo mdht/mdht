@@ -289,7 +289,7 @@ public class TBResultsSectionOperations extends ResultsSectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_TB_RESULTS_SECTION_TB_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(pilot::TBResultOrganizer))";
+	protected static final String VALIDATE_TB_RESULTS_SECTION_TB_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(pilot::TBResultOrganizer) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateTBResultsSectionTBResultOrganizer(TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section TB Result Organizer</em>}' invariant operation.
@@ -305,7 +305,7 @@ public class TBResultsSectionOperations extends ResultsSectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(pilot::TBResultOrganizer))
+	 * self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(pilot::TBResultOrganizer) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)
 	 * @param tbResultsSection The receiving '<em><b>TB Results Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -346,7 +346,7 @@ public class TBResultsSectionOperations extends ResultsSectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_TB_RESULTS_SECTION_TB_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(pilot::TBResultObservation))";
+	protected static final String VALIDATE_TB_RESULTS_SECTION_TB_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(pilot::TBResultObservation) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateTBResultsSectionTBResultObservation(TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section TB Result Observation</em>}' invariant operation.
@@ -362,7 +362,7 @@ public class TBResultsSectionOperations extends ResultsSectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(pilot::TBResultObservation))
+	 * self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(pilot::TBResultObservation) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)
 	 * @param tbResultsSection The receiving '<em><b>TB Results Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
