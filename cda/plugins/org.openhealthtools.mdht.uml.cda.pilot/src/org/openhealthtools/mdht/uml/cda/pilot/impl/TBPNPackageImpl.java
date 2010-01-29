@@ -366,6 +366,15 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(tbResultObservationEClass, ecorePackage.getEBoolean(), "validateTBResultObservationClassCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(tbResultObservationEClass, ecorePackage.getEBoolean(), "validateTBResultObservationCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -407,7 +416,7 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																		
+		   });																																																																						
 	}
 
 	/**
@@ -454,11 +463,12 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 			 "statusCode.code", "completed",
 			 "code.codeSystem", "2.16.840.1.114222.4.11.3205",
 			 "templateId.root", "2.16.840.1.113883.10.20.15.3.13",
-			 "constraints.validation.error", "TBResultObservationTemplateId TBResultObservationCode TBResultObservationStatusCode",
+			 "constraints.validation.error", "TBResultObservationTemplateId TBResultObservationClassCode TBResultObservationCode TBResultObservationStatusCode",
 			 "code.codeSystemName", "Lab Test Result Name (TB)",
+			 "classCode", "OBS",
 			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "statusCode.codeSystemName", "HL7ActStatus"
-		   });												
+		   });																
 	}
 
 } //TBPNPackageImpl

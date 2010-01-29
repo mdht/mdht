@@ -151,12 +151,20 @@ public class TBPNValidator extends EObjectValidator {
 	public static final int TB_RESULT_OBSERVATION__TB_RESULT_OBSERVATION_TEMPLATE_ID = 13;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Result Observation Class Code' of 'TB Result Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int TB_RESULT_OBSERVATION__TB_RESULT_OBSERVATION_CLASS_CODE = 14;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Result Observation Code' of 'TB Result Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULT_OBSERVATION__TB_RESULT_OBSERVATION_CODE = 14;
+	public static final int TB_RESULT_OBSERVATION__TB_RESULT_OBSERVATION_CODE = 15;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Result Observation Status Code' of 'TB Result Observation'.
@@ -164,7 +172,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULT_OBSERVATION__TB_RESULT_OBSERVATION_STATUS_CODE = 15;
+	public static final int TB_RESULT_OBSERVATION__TB_RESULT_OBSERVATION_STATUS_CODE = 16;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -172,7 +180,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 15;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 16;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -441,6 +449,7 @@ public class TBPNValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationEffectiveTime(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationValue(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTBResultObservation_validateTBResultObservationTemplateId(tbResultObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTBResultObservation_validateTBResultObservationClassCode(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTBResultObservation_validateTBResultObservationCode(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTBResultObservation_validateTBResultObservationStatusCode(tbResultObservation, diagnostics, context);
 		return result;
@@ -454,6 +463,16 @@ public class TBPNValidator extends EObjectValidator {
 	 */
 	public boolean validateTBResultObservation_validateTBResultObservationTemplateId(TBResultObservation tbResultObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return tbResultObservation.validateTBResultObservationTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateTBResultObservationClassCode constraint of '<em>TB Result Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTBResultObservation_validateTBResultObservationClassCode(TBResultObservation tbResultObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return tbResultObservation.validateTBResultObservationClassCode(diagnostics, context);
 	}
 
 	/**

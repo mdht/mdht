@@ -92,6 +92,11 @@
       <generalization xmi:id="_DQjrEAxmEd-gR9nJK3sp7g">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_MQHZEHDAEd6eItyqb1FoWg"/>
       </generalization>
+      <ownedAttribute xmi:id="_Kd5ioA0CEd-gR9nJK3sp7g" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVecEDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_FcjT0EbtEd6besF9iFIJkQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_OH3S8A0CEd-gR9nJK3sp7g" value="OBS"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_FZsh0AxmEd-gR9nJK3sp7g" name="code" visibility="private">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_H1HqAK6xEd6_ioDelDcPPg"/>

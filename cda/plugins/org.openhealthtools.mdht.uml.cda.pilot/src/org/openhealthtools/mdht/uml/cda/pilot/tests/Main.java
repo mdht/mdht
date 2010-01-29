@@ -41,8 +41,13 @@ public class Main {
 		Patient patient = CDAFactory.eINSTANCE.createPatient();
 		clinicalDocument.addPatient(patient);
 		PN name = DatatypesFactory.eINSTANCE.createPN();
-		patient.setName(name);
+		patient.getNames().add(name);
 		name.addFamily("Doe").addGiven("John").addPrefix("Dr.");
+		// to test the constraint
+		//name.addGiven("John").addPrefix("Dr.");
+		PN name2 = DatatypesFactory.eINSTANCE.createPN();
+		patient.getNames().add(name2);
+		name2.addFamily("Doe").addSuffix("M.D.");
 		
 		save(clinicalDocument);
 		validate(clinicalDocument);
