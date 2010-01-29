@@ -2073,6 +2073,8 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_QcivsEAMEd6wZe6nFLrjsw" name="name" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_3VD9wD5yEd6cla2oXsPtlA?datatypes/PN?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_--i8sAz8Ed-ykoLIWPzfyw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_--GQwAz8Ed-ykoLIWPzfyw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_2wfzIEreEd6FXKclYGEDCw" name="administrativeGenderCode" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>

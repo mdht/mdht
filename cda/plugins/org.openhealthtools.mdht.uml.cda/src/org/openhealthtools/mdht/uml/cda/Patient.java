@@ -35,7 +35,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getTypeId <em>Type Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getId <em>Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getName <em>Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getNames <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getAdministrativeGenderCode <em>Administrative Gender Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getBirthTime <em>Birth Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getMaritalStatusCode <em>Marital Status Code</em>}</li>
@@ -145,31 +145,21 @@ public interface Patient extends EObject {
 	void setId(II value);
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Name</b></em>' containment reference list.
+	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.PN}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Name</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' containment reference.
-	 * @see #setName(PN)
+	 * @return the value of the '<em>Name</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_Name()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	PN getName();
-
-	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.Patient#getName <em>Name</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' containment reference.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(PN value);
+	EList<PN> getNames();
 
 	/**
 	 * Returns the value of the '<em><b>Administrative Gender Code</b></em>' containment reference.

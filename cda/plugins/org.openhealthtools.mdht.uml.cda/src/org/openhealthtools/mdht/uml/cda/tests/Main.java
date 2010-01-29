@@ -71,7 +71,7 @@ public class Main {
 		
 		PN name = DatatypesFactory.eINSTANCE.createPN();
 		name.addGiven("Henry").addFamily("Levin").addSuffix("the 7th");
-		patient.setName(name);
+		patient.getNames().add(name);
 		
 		CE administrativeGenderCode = DatatypesFactory.eINSTANCE.createCE("M", "2.16.840.1.113883.5.1");
 		patient.setAdministrativeGenderCode(administrativeGenderCode);
