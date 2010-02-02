@@ -12,9 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
@@ -60,14 +58,16 @@ public class OperationExtItemProvider extends OperationItemProvider
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	public Collection getChildren(Object object) {
-		Operation operation = (Operation) object;
-		List children = new ArrayList();
-
-		children.addAll(operation.getOwnedComments());
-		children.addAll(operation.getOwnedParameters());
-		children.add(operation.getReturnResult());
+//		Operation operation = (Operation) object;
+//		List<Element> children = new ArrayList<Element>();
+//
+//		children.addAll(operation.getOwnedComments());
+//		children.addAll(operation.getOwnedParameters());
+//		children.add(operation.getReturnResult());
+//		
+//		return children;
 		
-		return children;
+		return super.getChildren(object);
 	}
 
 	public Object getColumnImage(Object object, int columnIndex) {

@@ -12,6 +12,9 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.edit.provider;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.StringTokenizer;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -32,6 +35,7 @@ import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.MultiplicityElement;
@@ -90,7 +94,7 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 			label.append(" : ").append(parameter.getType().getName());
 		}
 		
-//		label.append(displayMultiplicity(parameter));
+		label.append(displayMultiplicity(parameter));
 		
 		String defaultValue = parameter.getDefault();
 		if (defaultValue != null && defaultValue.length() > 0) {
@@ -98,6 +102,44 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 			label.append(defaultValue);
 		}
 		return label.toString();
+	}
+
+	/**
+	 * Diplay a multiplicity string of the format [lower..upper], unless
+	 * both lower and upper are == 1.
+	 * 
+	 * @param multElement
+	 * @return
+	 */
+	protected String displayMultiplicity(MultiplicityElement multElement) {
+		StringBuffer multDisplay = new StringBuffer();
+		if (checkDisplayRange(multElement)) {
+			multDisplay.append(" [");
+			multDisplay.append(multElement.getLower());
+			multDisplay.append("..");
+			multDisplay.append(
+				multElement.getUpper() == LiteralUnlimitedNatural.UNLIMITED 
+					? "*" : Integer.toString(multElement.getUpper()));
+			multDisplay.append("]");
+		}
+		
+		return multDisplay.toString();
+	}
+
+	protected boolean checkDisplayRange(MultiplicityElement multElement) {
+		return multElement.getLower() != 1 || multElement.getUpper() != 1;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
+	 */
+	public Collection getChildren(Object object) {
+		Parameter parameter = (Parameter) object;
+		List<Element> children = new ArrayList<Element>();
+
+		children.addAll(parameter.getOwnedComments());
+		
+		return children;
 	}
 
 	/* (non-Javadoc)
@@ -147,9 +189,33 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 		case IUMLTableProperties.TYPE_INDEX:
 			return (parameter.getType() == null) ? null :
 					parameter.getType().getName();
+		case IUMLTableProperties.MULTIPLICITY_INDEX:
+			return displayColumnMultiplicity(parameter);
+		case IUMLTableProperties.DEFAULT_VALUE_INDEX:
+			if (parameter.getDefaultValue() != null)
+				return parameter.getDefaultValue().stringValue();
+			else
+				return "";
 		default:
 			return null;
 		}
+	}
+
+	/**
+	 * Display a multiplicity string of the format "lower..upper".
+	 * 
+	 * @param multElement
+	 * @return
+	 */
+	protected String displayColumnMultiplicity(MultiplicityElement multElement) {
+		StringBuffer multDisplay = new StringBuffer();
+		multDisplay.append(multElement.getLower());
+		multDisplay.append("..");
+		multDisplay.append(
+			multElement.getUpper() == LiteralUnlimitedNatural.UNLIMITED 
+				? "*" : Integer.toString(multElement.getUpper()));
+		
+		return multDisplay.toString();
 	}
 
 	/* (non-Javadoc)
