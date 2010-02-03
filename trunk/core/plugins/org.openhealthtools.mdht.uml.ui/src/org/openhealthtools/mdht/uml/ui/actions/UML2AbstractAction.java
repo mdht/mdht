@@ -29,6 +29,7 @@ import org.eclipse.ui.IViewActionDelegate;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
@@ -145,7 +146,7 @@ public abstract class UML2AbstractAction
 	/**
 	 * Find next unused property name, using 'name' as the base.
 	 */
-	protected String getUniquePropertyName(Class owner, String name) {
+	protected String getUniqueMemberName(Classifier owner, String name) {
 		int seqNo = 2;
 		String uniqueName = name;
 
@@ -156,20 +157,6 @@ public abstract class UML2AbstractAction
 		return uniqueName;
 	}
 
-	/**
-	 * Find next unused property name, using 'name' as the base.
-	 */
-	protected String getUniquePropertyName(DataType owner, String name) {
-		int seqNo = 1;
-		String uniqueName;
-
-		do {
-			uniqueName = name + String.valueOf(seqNo++);
-		} while (null != owner.getOwnedMember(uniqueName, false, UMLPackage.eINSTANCE.getProperty()));
-
-		return uniqueName;
-	}
-	
 	/**
 	 * Find next unused type name, using 'name' as the base.
 	 */

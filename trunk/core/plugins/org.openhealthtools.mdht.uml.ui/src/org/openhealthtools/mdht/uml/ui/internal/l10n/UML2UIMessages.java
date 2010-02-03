@@ -32,6 +32,20 @@ public class UML2UIMessages extends NLS {
 	public static String AddUMLClass_default_name;
 	public static String AddUMLAttribute_operation_title;
 	public static String AddUMLAttribute_default_name;
+	
+	public static String AddUMLOperation_operation_title;
+	public static String AddUMLOperation_default_name;
+	public static String AddUMLInputParameter_operation_title;
+	public static String AddUMLInputParameter_default_name;
+	public static String AddUMLReturnParameter_operation_title;
+	public static String AddUMLReturnParameter_default_name;
+	public static String AddUMLBodyConstraint_operation_title;
+	public static String AddUMLBodyConstraint_default_name;
+	public static String AddUMLPreConditionConstraint_operation_title;
+	public static String AddUMLPreConditionConstraint_default_name;
+	public static String AddUMLPostConditionConstraint_operation_title;
+	public static String AddUMLPostConditionConstraint_default_name;
+	
 	public static String AddUMLConstraint_operation_title;
 	public static String AddUMLConstraint_default_name;
 	public static String AddUMLEnumeration_operation_title;

@@ -67,7 +67,7 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 							
 							String typeName = target.getName();
 							String endName = Character.toLowerCase(typeName.charAt(0)) + typeName.substring(1);
-							String propertyName = getUniquePropertyName(source, endName);
+							String propertyName = getUniqueMemberName(source, endName);
 
 							Property property = UMLFactory.eINSTANCE.createProperty();
 							property.setName(propertyName);
