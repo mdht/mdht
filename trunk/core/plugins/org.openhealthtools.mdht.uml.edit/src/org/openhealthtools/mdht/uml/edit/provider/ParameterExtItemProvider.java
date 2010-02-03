@@ -228,6 +228,12 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 		else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
 			return true;
 		}
+		else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
+			return true;
+		}
+		else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property)) {
+			return true;
+		}
 		return false;
 	}
 
@@ -242,6 +248,15 @@ public class ParameterExtItemProvider extends ParameterItemProvider
 		}
 		else if (IUMLTableProperties.TYPE_PROPERTY.equals(property)) {
 			return parameter.getType();
+		}
+		else if (IUMLTableProperties.MULTIPLICITY_PROPERTY.equals(property)) {
+			return displayColumnMultiplicity(parameter);
+		}
+		else if (IUMLTableProperties.DEFAULT_VALUE_PROPERTY.equals(property)) {
+			if (parameter.getDefaultValue() != null)
+				return parameter.getDefaultValue().stringValue();
+			else
+				return "";
 		}
 		return null;
 	}
