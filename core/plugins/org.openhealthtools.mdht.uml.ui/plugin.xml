@@ -132,6 +132,14 @@
             <objectState name="umlType" value="Class"/>
          </visibility>
          <action
+               label="%addUMLOperation.label"
+               icon="icons/full/obj16/Operation.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddOperationAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.operation">
+         </action>
+         <action
                label="%addUMLAssociation.label"
                icon="icons/full/obj16/Association_navigable.gif"
                class="org.openhealthtools.mdht.uml.ui.actions.AddUMLAssociationAction"
@@ -146,6 +154,57 @@
                menubarPath="mdht.addUML/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addUML.attribute">
+         </action>
+      </objectContribution>
+   </extension>
+         
+   <!-- UML Operation menu items -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.uml.operation">
+         <visibility>
+            <objectState name="umlType" value="Operation"/>
+         </visibility>
+         <action
+               label="%addUMLPostCondition.label"
+               icon="icons/full/obj16/Constraint.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddPostConditionAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.postCondition">
+         </action>
+         <action
+               label="%addUMLPreCondition.label"
+               icon="icons/full/obj16/Constraint.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddPreConditionAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.preCondition">
+         </action>
+         <action
+               label="%addUMLBodyCondition.label"
+               icon="icons/full/obj16/Constraint.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddBodyConditionAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.bodyCondition">
+         </action>
+         <action
+               label="%addUMLReturnParameter.label"
+               icon="icons/full/obj16/Parameter_return.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddReturnParameterAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.returnParameter">
+         </action>
+         <action
+               label="%addUMLInputParameter.label"
+               icon="icons/full/obj16/Parameter_in.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddInputParameterAction"
+               menubarPath="mdht.addUML/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.inputParameter">
          </action>
       </objectContribution>
    </extension>
