@@ -92,9 +92,9 @@ public class ConstraintExtItemProvider extends ConstraintItemProvider
 		case IUMLTableProperties.NAME_INDEX:
 			return getImage(object);
 		case IUMLTableProperties.ANNOTATION_INDEX: {
-			for (Profile profile : constraint.getNearestPackage().getAllAppliedProfiles()) {
-				// eResource is null deleted elements
-				if (profile.eResource() != null) {
+			// eResource is null for deleted elements
+			if (constraint.eResource() != null) {
+				for (Profile profile : constraint.getNearestPackage().getAllAppliedProfiles()) {
 					// use the first notation provider found for an applied profile, ignore others
 					String profileURI = profile.eResource().getURI().toString();
 					INotationProvider provider = 
