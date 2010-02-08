@@ -275,13 +275,13 @@ public interface ClinicalDocument extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Language Code</em>' containment reference.
-	 * @see #setLanguageCode(CE)
+	 * @see #setLanguageCode(CS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getClinicalDocument_LanguageCode()
 	 * @model containment="true" ordered="false"
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	CE getLanguageCode();
+	CS getLanguageCode();
 
 	/**
 	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getLanguageCode <em>Language Code</em>}' containment reference.
@@ -291,7 +291,7 @@ public interface ClinicalDocument extends EObject {
 	 * @see #getLanguageCode()
 	 * @generated
 	 */
-	void setLanguageCode(CE value);
+	void setLanguageCode(CS value);
 
 	/**
 	 * Returns the value of the '<em><b>Set Id</b></em>' containment reference.

@@ -187,7 +187,7 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * @generated
 	 * @ordered
 	 */
-	protected CE languageCode;
+	protected CS languageCode;
 
 	/**
 	 * The cached value of the '{@link #getSetId() <em>Set Id</em>}' containment reference.
@@ -762,7 +762,7 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CE getLanguageCode() {
+	public CS getLanguageCode() {
 		return languageCode;
 	}
 
@@ -771,8 +771,8 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLanguageCode(CE newLanguageCode, NotificationChain msgs) {
-		CE oldLanguageCode = languageCode;
+	public NotificationChain basicSetLanguageCode(CS newLanguageCode, NotificationChain msgs) {
+		CS oldLanguageCode = languageCode;
 		languageCode = newLanguageCode;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE, oldLanguageCode, newLanguageCode);
@@ -786,7 +786,7 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLanguageCode(CE newLanguageCode) {
+	public void setLanguageCode(CS newLanguageCode) {
 		if (newLanguageCode != languageCode) {
 			NotificationChain msgs = null;
 			if (languageCode != null)
@@ -1666,7 +1666,7 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 				setConfidentialityCode((CE)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE:
-				setLanguageCode((CE)newValue);
+				setLanguageCode((CS)newValue);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__SET_ID:
 				setSetId((II)newValue);
@@ -1778,7 +1778,7 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 				setConfidentialityCode((CE)null);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE:
-				setLanguageCode((CE)null);
+				setLanguageCode((CS)null);
 				return;
 			case CDAPackage.CLINICAL_DOCUMENT__SET_ID:
 				setSetId((II)null);
