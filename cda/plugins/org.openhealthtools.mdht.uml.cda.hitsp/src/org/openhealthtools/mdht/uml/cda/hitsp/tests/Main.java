@@ -38,6 +38,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -85,7 +86,7 @@ public class Main {
 		TS ts = DatatypesFactory.eINSTANCE.createTS("20071204103022-0500");
 		doc.setEffectiveTime(ts);
 
-		CE langCode = DatatypesFactory.eINSTANCE.createCE();
+		CS langCode = DatatypesFactory.eINSTANCE.createCS();
 		langCode.setCode("en-US");
 		doc.setLanguageCode(langCode);
 		
