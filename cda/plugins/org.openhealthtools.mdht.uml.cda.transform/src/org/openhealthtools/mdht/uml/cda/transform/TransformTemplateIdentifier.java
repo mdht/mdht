@@ -43,7 +43,7 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		if (hl7Template != null) {
 			addConstraint(umlClass, hl7Template);
 			addAnnotation(umlClass, hl7Template);
-			addExtensionPoint(umlClass, hl7Template);
+//			addExtensionPoint(umlClass, hl7Template);
 		}
 
 		return umlClass;
@@ -76,6 +76,7 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		annotationsUtil.saveAnnotations();
 	}
 	
+	@SuppressWarnings("unused")
 	private void addExtensionPoint(Class umlClass, Stereotype hl7Template) {
 		String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
 		String nsURI = null;
