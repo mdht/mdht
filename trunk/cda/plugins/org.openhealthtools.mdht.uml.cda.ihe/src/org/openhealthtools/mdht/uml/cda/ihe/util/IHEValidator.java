@@ -924,7 +924,6 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(concernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActProblemObservation(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryTemplateId(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryEffectiveTime(concernEntry, diagnostics, context);
 		return result;
@@ -1037,7 +1036,6 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(problemConcernEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActProblemObservation(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryTemplateId(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryEffectiveTime(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemConcernEntry_validateProblemConcernEntryTemplateId(problemConcernEntry, diagnostics, context);
@@ -1201,7 +1199,6 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(allergyIntoleranceConcern, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActProblemObservation(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryTemplateId(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryEffectiveTime(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAllergyIntoleranceConcern_validateAllergyIntoleranceConcernTemplateId(allergyIntoleranceConcern, diagnostics, context);
