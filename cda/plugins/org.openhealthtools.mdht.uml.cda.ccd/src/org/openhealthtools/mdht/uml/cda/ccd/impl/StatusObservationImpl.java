@@ -50,6 +50,15 @@ public class StatusObservationImpl extends ObservationImpl implements StatusObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateNoAdditionalParticipants(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return StatusObservationOperations.validateNoAdditionalParticipants(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return StatusObservationOperations.validateStatusObservationTemplateId(this, diagnostics, context);
 	}

@@ -77,7 +77,6 @@ public class PurposeActivityOperations extends ActOperations {
 	 * <!-- begin-model-doc -->
 	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | 
 	 *   entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)
-	 * 
 	 * @param purposeActivity The receiving '<em><b>Purpose Activity</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

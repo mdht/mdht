@@ -59,8 +59,35 @@ public class ReactionObservationImpl extends ObservationImpl implements Reaction
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateReactionObservationClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReactionObservationOperations.validateReactionObservationClassCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReactionObservationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReactionObservationOperations.validateReactionObservationMoodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateReactionObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ReactionObservationOperations.validateReactionObservationStatusCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReactionObservationSeverityObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReactionObservationOperations.validateReactionObservationSeverityObservation(this, diagnostics, context);
 	}
 
 	/**

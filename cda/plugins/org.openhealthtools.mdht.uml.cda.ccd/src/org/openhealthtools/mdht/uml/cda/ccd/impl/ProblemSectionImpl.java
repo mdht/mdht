@@ -77,6 +77,15 @@ public class ProblemSectionImpl extends SectionImpl implements ProblemSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateProblemSectionText(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemSectionOperations.validateProblemSectionText(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateProblemSectionProblemAct(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ProblemSectionOperations.validateProblemSectionProblemAct(this, diagnostics, context);
 	}

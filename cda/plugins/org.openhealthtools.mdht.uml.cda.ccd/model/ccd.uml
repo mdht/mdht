@@ -108,6 +108,52 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="ProblemAct">
+      <ownedComment xmi:id="_zB-WgBXPEd-6K-YJpbwRmQ">
+        <body>A problem is a clinical statement that a clinician is particularly concerned about and wants to track. It has important patient management use cases (e.g. health records often present the problem list as a way of summarizing a patient's medical history).</body>
+      </ownedComment>
+      <ownedRule xmi:id="_oImlABK1Ed-6K-YJpbwRmQ" name="entryRelationshipRequired" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_vhFOcBK1Ed-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Contains one or more entryRelationship</body>
+          <body>not self.entryRelationship-&gt;isEmpty()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_BSMQgBTjEd-6K-YJpbwRmQ" name="subjectTypeCode" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_BSNeoBTjEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <body>A problem act MAY reference a problem observation, alert observation (see section Alerts) or other clinical statement that is the subject of concern, by setting the value for "Act / entryRelationship / @typeCode" to be "SUBJ" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_fIRWIBToEd-6K-YJpbwRmQ" name="subjectOfTarget" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_fISkQBToEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>The target of a problem act with Act / entryRelationship / @typeCode="SUBJ" SHOULD be a problem observation (in the Problem section) or alert observation (in the Alert section), but MAY be some other clinical statement.</body>
+          <body>self.entryRelationship-&gt;forAll(entry : cda::EntryRelationship | (entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)&#13;
+   implies entry.observation.oclIsKindOf(ccd::ProblemObservation) &#13;
+   or entry.observation.oclIsKindOf(ccd::AlertObservation))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_tL4b0BTdEd-6K-YJpbwRmQ" name="containsObservation" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_tL5C4BTdEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>In Problem Section, a Problem Act SHOULD contain a Problem Observation. In Alert Section, a ProblemAct SHOULD contain an Alert Observation.</body>
+          <body>self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()&#13;
+   -&gt;exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))&#13;
+or self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()&#13;
+   -&gt;exists(obs : cda::Observation | obs.oclIsKindOf(ccd::AlertObservation))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_WdDEkBZrEd-kKd2N285_Sw" name="containsPatientAwareness" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_WdE5wBZrEd-kKd2N285_Sw">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Contains exactly one Patient Awareness</body>
+          <body>self.participant-&gt;one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg?cda/Act?"/>
       </generalization>
@@ -130,15 +176,41 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_poaUUIHNEd6Ncrr6L3Ublw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_poZtQIHNEd6Ncrr6L3Ublw" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_yqwygIt5Ed639sxyAgfSmw" name="problemObservation" visibility="private" type="_IjIO0DxbEd6JwqSGecoePg" association="_yqvkYIt5Ed639sxyAgfSmw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yqyAoYt5Ed639sxyAgfSmw" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yqyAoIt5Ed639sxyAgfSmw" value="1"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_Mjxx0JnGEd6BO7rW3XxHIA" name="code" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_TDpkgBK1Ed-6K-YJpbwRmQ" name="effectiveTime" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA?datatypes/IVL_TS?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TDpkgRK1Ed-6K-YJpbwRmQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TDpkghK1Ed-6K-YJpbwRmQ"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_hbddYEocEd6c3qsAxlFHaQ?cda/Act/effectiveTime?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_qqytIBWjEd-6K-YJpbwRmQ" name="episodeObservation" type="_AwcXkGaKEd6Hk_bPOfEjYA" association="_qqzUMBWjEd-6K-YJpbwRmQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rteSIBWjEd-6K-YJpbwRmQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rteSIRWjEd-6K-YJpbwRmQ"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_IjIO0DxbEd6JwqSGecoePg" name="ProblemObservation">
+      <ownedRule xmi:id="_LgbBQBTyEd-6K-YJpbwRmQ" name="informationSource" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Lgc2cBTyEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>A problem observation contains one or more sources of information.</body>
+          <body>not self.informant-&gt;isEmpty() &#13;
+or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#13;
+or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | &#13;
+   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#13;
+   and rel.observation.code.code = '48766-0'))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_vL9Y4BZsEd-kKd2N285_Sw" name="containsPatientAwareness" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_vL9Y4RZsEd-kKd2N285_Sw">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Contains exactly one Patient Awareness</body>
+          <body>self.participant-&gt;one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_KLIucDxbEd6JwqSGecoePg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
@@ -167,8 +239,29 @@
       <ownedAttribute xmi:id="_f1n6wIhTEd6UrJD25cKDew" name="code" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_n549sBWhEd-6K-YJpbwRmQ" name="problemStatus" type="_TrwngGaJEd6Hk_bPOfEjYA" association="_n55kwBWhEd-6K-YJpbwRmQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pAq_kBWhEd-6K-YJpbwRmQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pArmoBWhEd-6K-YJpbwRmQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_0k9iIBWhEd-6K-YJpbwRmQ" name="problemHealthStatus" type="_T6kfkGaJEd6Hk_bPOfEjYA" association="_0k-JMBWhEd-6K-YJpbwRmQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1Y12IBWhEd-6K-YJpbwRmQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1Y2dMBWhEd-6K-YJpbwRmQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_7kSb8BZ2Ed-i6Lz80y5G5g" name="ageObservation" type="_S7rEABZ1Ed-i6Lz80y5G5g" association="_7kTDABZ2Ed-i6Lz80y5G5g">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8mGeQBZ2Ed-i6Lz80y5G5g" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8mGeQRZ2Ed-i6Lz80y5G5g"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_vjPMEGaGEd6Hk_bPOfEjYA" name="ProblemSection">
+      <ownedComment xmi:id="_t1kjEBXPEd-6K-YJpbwRmQ">
+        <body>This section lists and describes all relevant clinical problems at the time the summary is generated. At a minimum, all pertinent current and historical problems should be listed. CDA R2 represents problems as Observations.</body>
+      </ownedComment>
+      <ownedRule xmi:id="_AYNOgBK0Ed-6K-YJpbwRmQ" name="titleValue" constrainedElement="_S9W4sIHNEd6Ncrr6L3Ublw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_S3emMBK0Ed-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <body>Contains a case-insensitive language-insensitive string containing "problems".</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_xw8ZwGaGEd6Hk_bPOfEjYA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
@@ -181,6 +274,12 @@
       <ownedAttribute xmi:id="_tr8IEIt5Ed639sxyAgfSmw" name="problemAct" visibility="private" type="_GgvgUDxbEd6JwqSGecoePg" association="_tr5r0It5Ed639sxyAgfSmw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tr_LYYt5Ed639sxyAgfSmw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tr_LYIt5Ed639sxyAgfSmw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Iz8hMBKzEd-6K-YJpbwRmQ" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jvq8E8AEd6ohP_YEXs4Wg?cda/StrucDocText?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_K3HS0BKzEd-6K-YJpbwRmQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_K3XxgBKzEd-6K-YJpbwRmQ" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_vJtnoEAMEd6wZe6nFLrjsw?cda/Section/text?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_TrwngGaJEd6Hk_bPOfEjYA" name="ProblemStatus">
@@ -199,6 +298,41 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_AwcXkGaKEd6Hk_bPOfEjYA" name="EpisodeObservation">
+      <ownedComment xmi:id="_7kkpsBXPEd-6K-YJpbwRmQ">
+        <body>Episode observations are used to distinguish among multiple occurrences of a problem or social history item. An episode observation is used to indicate that a problem act represents a new episode, distinct from other episodes of a similar concern.</body>
+      </ownedComment>
+      <ownedRule xmi:id="_DnqaYBWkEd-6K-YJpbwRmQ" name="valueExpression" constrainedElement="_AwcXkGaKEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_KSALcBWkEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <body>Value in an episode observation SHOULD be the following SNOMED CT expression:&#13;
+&lt;value xsi:type="CD" code="404684003" codeSystem="2.16.840.1.113883.6.96" displayName="Clinical finding"&gt;&#13;
+  &lt;qualifier&gt;&#13;
+    &lt;name code="246456000" displayName="Episodicity"/&gt;&#13;
+    &lt;value code="288527008" displayName="New episode"/&gt;&#13;
+  &lt;/qualifier&gt;&#13;
+&lt;/value&gt;</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_5Uu8kBWkEd-6K-YJpbwRmQ" name="oneEntryRelationshipSUBJ" constrainedElement="_AwcXkGaKEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_EBASABWlEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Contains exactly one entryRelationship whose typeCode is 'SUBJ'. This is used to link the episode observation to the target problem act or social history observation.</body>
+          <body>self.entryRelationship-&gt;one(entry : cda::EntryRelationship | &#13;
+  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and&#13;
+  (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_3OelQBWlEd-6K-YJpbwRmQ" name="existsEntryRelationshipSAS" constrainedElement="_AwcXkGaKEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_3OelQRWlEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Contain one or more entryRelationship whose typeCode is 'SAS'. The target of the entryRelationship SHALL be a problem act or social history observation. This is used to represent the temporal sequence of episodes.</body>
+          <body>self.entryRelationship-&gt;exists(entry : cda::EntryRelationship | &#13;
+  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SAS and&#13;
+  (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_AwcXk2aKEd6Hk_bPOfEjYA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
@@ -222,8 +356,24 @@
       <ownedAttribute xmi:id="_dRVmAHxTEd6jfbAJq2V82w" name="code" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_cdE0wBWkEd-6K-YJpbwRmQ" name="value" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fGiKUBWkEd-6K-YJpbwRmQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fGiKURWkEd-6K-YJpbwRmQ" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_tRpv0Eo-Ed6c3qsAxlFHaQ?cda/Observation/value?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_3cYVwGaKEd6Hk_bPOfEjYA" name="PatientAwareness">
+      <ownedRule xmi:id="_-c6TIBWrEd-6K-YJpbwRmQ" name="participantRoleId" constrainedElement="_3cYVwGaKEd6Hk_bPOfEjYA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Ch7nwBWsEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Patient awareness SHALL contain exactly one participant / participantRole / id, which SHALL have exactly one value, which SHALL also be present in ClinicalDocument / recordTarget / patientRole / id.</body>
+          <body>self.participantRole.id-&gt;one(id : datatypes::II |&#13;
+  not id.root.oclIsUndefined())&#13;
+-- TODO compare with ClinicalDocument/recordTarget/patientRole/id</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_3cYVw2aKEd6Hk_bPOfEjYA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_51DLwEcZEd6besF9iFIJkQ?cda/Participant2?"/>
       </generalization>
@@ -234,13 +384,16 @@
           <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7BqEDcEd6xYZuu1VKCVw?vocab/ParticipationType/SBJ?"/>
         </defaultValue>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_v_hcgBWrEd-6K-YJpbwRmQ" name="awarenessCode" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_w6yx8BWrEd-6K-YJpbwRmQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_w6zZABWrEd-6K-YJpbwRmQ" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_-j890ErdEd6FXKclYGEDCw?cda/Participant2/awarenessCode?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5ET7oGwWEd6q29qQGU-SBA" name="FamilyHistorySection">
       <ownedComment xmi:id="_wVqokKPREd6t_4WfM070fA" annotatedElement="_5ET7oGwWEd6q29qQGU-SBA">
-        <body>&lt;p&gt;&#13;
-    This section contains data defining the patient's genetic relatives in terms of possible or relevant&#13;
-    health risk factors that have a potential impact on the patient's healthcare risk profile.&#13;
-&lt;/p&gt;</body>
+        <body>This section contains data defining the patient's genetic relatives in terms of possible or relevant health risk factors that have a potential impact on the patient's healthcare risk profile.</body>
       </ownedComment>
       <generalization xmi:id="_h1M7QGwXEd6q29qQGU-SBA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
@@ -500,12 +653,20 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_PgsSAHrREd68l9lQ-TLEBQ" name="AlertsSection">
       <ownedComment xmi:id="_8qOKcKPREd6t_4WfM070fA" annotatedElement="_PgsSAHrREd68l9lQ-TLEBQ">
-        <body>&lt;p&gt;&#13;
-    This section is used to list and describe any allergies, adverse reactions, and alerts that are&#13;
-    pertinent to the patient's current or past medical history. At a minimum, currently active and any relevant historical&#13;
-    allergies and adverse reactions should be listed.&#13;
-&lt;/p&gt;</body>
+        <body>This section is used to list and describe any allergies, adverse reactions, and alerts that are pertinent to the patient's current or past medical history. At a minimum, currently active and any relevant historical allergies and adverse reactions should be listed.</body>
       </ownedComment>
+      <ownedRule xmi:id="_tq0h8BTaEd-6K-YJpbwRmQ" name="titleValue" constrainedElement="_tirVAIHOEd6Ncrr6L3Ublw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_wd_NIBTaEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <body>Contains a case-insensitive language-insensitive string containing "alert" and/or "allergies and adverse reactions".</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_P7PeMBTbEd-6K-YJpbwRmQ" name="absenceIsAsserted" constrainedElement="_PgsSAHrREd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_XAqowBTbEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <body>The absence of known allergies, adverse reactions or alerts SHALL be explicitly asserted.</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_YiaKIHrREd68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
@@ -515,19 +676,121 @@
       <ownedAttribute xmi:id="_tirVAIHOEd6Ncrr6L3Ublw" name="title" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_AD_RoBTbEd-6K-YJpbwRmQ" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jvq8E8AEd6ohP_YEXs4Wg?cda/StrucDocText?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BsQ3ABTbEd-6K-YJpbwRmQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BsReEBTbEd-6K-YJpbwRmQ" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_vJtnoEAMEd6wZe6nFLrjsw?cda/Section/text?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_5QtxkBTbEd-6K-YJpbwRmQ" name="problemAct" visibility="private" type="_GgvgUDxbEd6JwqSGecoePg" association="_5QGGgBTbEd-6K-YJpbwRmQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5Qz4MBTbEd-6K-YJpbwRmQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5QzRIBTbEd-6K-YJpbwRmQ" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_qV72IHrREd68l9lQ-TLEBQ" name="AlertObservation">
+      <ownedRule xmi:id="_4w6twBW4Ed-6K-YJpbwRmQ" name="absenceOfKnownAllergies" constrainedElement="_qV72IHrREd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_8K7WgBW4Ed-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <body>The absence of known allergies SHOULD be represented in an alert observation by valuing Observation / value with 160244002 "No known allergies" 2.16.840.1.113883.6.96 SNOMED CT STATIC.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_H_fwwBW5Ed-6K-YJpbwRmQ" name="informationSource" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_H_fwwRW5Ed-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>An alert observation contains one or more sources of information.</body>
+          <body>not self.informant-&gt;isEmpty() &#13;
+or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#13;
+or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | &#13;
+   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#13;
+   and rel.observation.code.code = '48766-0'))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_byigoBW9Ed-6K-YJpbwRmQ" name="agentRepresentation" constrainedElement="_qV72IHrREd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_bykV0BW9Ed-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>An alert observation SHOULD contain at least one Observation / participant, representing the agent that is the cause of the allergy or adverse reaction. The value for participant / @typeCode in an agent participation SHALL be "CSM" "Consumable" 2.16.840.1.113883.5.90 ParticipationType STATIC.</body>
+          <body>self.participant-&gt;exists(participant : cda::Participant2 | participant.typeCode = vocab::ParticipationType::CSM )</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_IEdXABW-Ed-6K-YJpbwRmQ" name="playingEntityRequired" constrainedElement="_qV72IHrREd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_IEd-EBW-Ed-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Contains exactly one participant / participantRole / playingEntity. The value for participant / participantRole / playingEntity / @classCode in an agent participation SHALL be "MMAT" "Manufactured material" 2.16.840.1.113883.5.41 EntityClass STATIC. Contains exactly one participant / participantRole / playingEntity / code.</body>
+          <body>self.participant.participantRole.playingEntity-&gt;one(entity : cda::PlayingEntity |&#13;
+  entity.classCode = vocab::EntityClassRoot::MMAT and not entity.code.oclIsUndefined())</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_ofo-ABXAEd-6K-YJpbwRmQ" name="playingEntityCode" constrainedElement="_qV72IHrREd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_ofplEBXAEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <body>The value for participant / participantRole / playingEntity / code in an agent participation SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations.</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_9yumAHrREd68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
+      <ownedAttribute xmi:id="_UKtl4BW4Ed-6K-YJpbwRmQ" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOoCEDcEd6xYZuu1VKCVw?vocab/x_ActMoodDocumentObservation?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_BLZhcEo_Ed6c3qsAxlFHaQ?cda/Observation/moodCode?"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_b1IT4BW4Ed-6K-YJpbwRmQ" value="EVN"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_bv82EIHVEd6Ncrr6L3Ublw" name="statusCode" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_UKs-0BW4Ed-6K-YJpbwRmQ" name="effectiveTime" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA?datatypes/IVL_TS?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UKs-0RW4Ed-6K-YJpbwRmQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UKs-0hW4Ed-6K-YJpbwRmQ"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_fUQ50Eo8Ed6c3qsAxlFHaQ?cda/Observation/effectiveTime?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_UKtl4RW4Ed-6K-YJpbwRmQ" name="value" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UKtl4hW4Ed-6K-YJpbwRmQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UKtl4xW4Ed-6K-YJpbwRmQ"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_tRpv0Eo-Ed6c3qsAxlFHaQ?cda/Observation/value?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_aCZVgBW5Ed-6K-YJpbwRmQ" name="alertStatusObservation" type="_e8n_EHrSEd68l9lQ-TLEBQ" association="_aCZVgRW5Ed-6K-YJpbwRmQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XcctUBXBEd-6K-YJpbwRmQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XcctURXBEd-6K-YJpbwRmQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_SKqDkBXBEd-6K-YJpbwRmQ" name="reactionObservation" type="__XC4cHrREd68l9lQ-TLEBQ" association="_SKqqoBXBEd-6K-YJpbwRmQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YPn2sBXBEd-6K-YJpbwRmQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YPpE0BXBEd-6K-YJpbwRmQ" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="__XC4cHrREd68l9lQ-TLEBQ" name="ReactionObservation">
+      <ownedRule xmi:id="__CX4MBXNEd-6K-YJpbwRmQ" name="reactionInterventionTypeCode" constrainedElement="__XC4cHrREd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_IrUIYBXOEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <body>The value for entryRelationship / @typeCode in a relationship between a reaction observation and reaction intervention SHALL be "RSON" "Has reason" 2.16.840.1.113883.5.1002 ActRelationshipType STATIC.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_OgP7cBXOEd-6K-YJpbwRmQ" name="reactionInterventionType" constrainedElement="__XC4cHrREd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_SLkWoBXOEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <body>A reaction observation MAY contain one or more reation interventions. A reaction intervention SHALL be represented as a procedure activity (templateId 2.16.840.1.113883.10.20.1.29), a medication activity (templateId 2.16.840.1.113883.10.20.1.24), or some other clinical statement.</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_PipkYHrSEd68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
+      <ownedAttribute xmi:id="_g6uloBXBEd-6K-YJpbwRmQ" name="severityObservation" type="_ILkpIHrSEd68l9lQ-TLEBQ" association="_g6vMsBXBEd-6K-YJpbwRmQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_h0mM4BXBEd-6K-YJpbwRmQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_h0mz8BXBEd-6K-YJpbwRmQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_3K_PwBXOEd-6K-YJpbwRmQ" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVecEDcEd6xYZuu1VKCVw?vocab/ActClassObservation?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_FcjT0EbtEd6besF9iFIJkQ?cda/Observation/classCode?"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_5V2k0BXOEd-6K-YJpbwRmQ" value="OBS"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_3K_20BXOEd-6K-YJpbwRmQ" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOoCEDcEd6xYZuu1VKCVw?vocab/x_ActMoodDocumentObservation?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_BLZhcEo_Ed6c3qsAxlFHaQ?cda/Observation/moodCode?"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_7_dEUBXOEd-6K-YJpbwRmQ" value="EVN"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_Hcg8oIHWEd6Ncrr6L3Ublw" name="statusCode" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
       </ownedAttribute>
@@ -536,6 +799,16 @@
       <generalization xmi:id="_QQ4jYHrSEd68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
+      <ownedAttribute xmi:id="_HpTcUBXPEd-6K-YJpbwRmQ" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVecEDcEd6xYZuu1VKCVw?vocab/ActClassObservation?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_FcjT0EbtEd6besF9iFIJkQ?cda/Observation/classCode?"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_JzIPkBXPEd-6K-YJpbwRmQ" value="OBS"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_HpUDYBXPEd-6K-YJpbwRmQ" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOoCEDcEd6xYZuu1VKCVw?vocab/x_ActMoodDocumentObservation?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_BLZhcEo_Ed6c3qsAxlFHaQ?cda/Observation/moodCode?"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_Lu7N4BXPEd-6K-YJpbwRmQ" value="EVN"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_tGVdoIHWEd6Ncrr6L3Ublw" name="code" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
       </ownedAttribute>
@@ -553,6 +826,26 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_V3Jy4HrTEd68l9lQ-TLEBQ" name="StatusObservation">
+      <ownedRule xmi:id="_nPDbgBWiEd-6K-YJpbwRmQ" name="noAdditionalAttributes" constrainedElement="_V3Jy4HrTEd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_qzRJIBWiEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <body>SHALL NOT contain any additional Observation attributes.</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_xgaWkBWiEd-6K-YJpbwRmQ" name="noAdditionalParticipants" constrainedElement="_V3Jy4HrTEd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_1O1JEBWiEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>SHALL NOT contain any Observation participants.</body>
+          <body>self.participant-&gt;isEmpty()</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_6Q6i4BWiEd-6K-YJpbwRmQ" name="noAdditionalRelationships" constrainedElement="_V3Jy4HrTEd68l9lQ-TLEBQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="__EcjUBWiEd-6K-YJpbwRmQ">
+          <language>Analysis</language>
+          <body>SHALL NOT be the source of any Observation relationships.</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_s4YvUHrSEd68l9lQ-TLEBQ">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
       </generalization>
@@ -723,12 +1016,6 @@
       <ownedEnd xmi:id="_tsCOsIt5Ed639sxyAgfSmw" name="" visibility="private" type="_vjPMEGaGEd6Hk_bPOfEjYA" association="_tr5r0It5Ed639sxyAgfSmw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tsEq8Yt5Ed639sxyAgfSmw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tsEq8It5Ed639sxyAgfSmw"/>
-      </ownedEnd>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_yqvkYIt5Ed639sxyAgfSmw" memberEnd="_yqwygIt5Ed639sxyAgfSmw _yqz10It5Ed639sxyAgfSmw">
-      <ownedEnd xmi:id="_yqz10It5Ed639sxyAgfSmw" name="" visibility="private" type="_GgvgUDxbEd6JwqSGecoePg" association="_yqvkYIt5Ed639sxyAgfSmw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yq0c4Yt5Ed639sxyAgfSmw" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yq0c4It5Ed639sxyAgfSmw"/>
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_3FDjoKPPEd6t_4WfM070fA" memberEnd="_3FF_4KPPEd6t_4WfM070fA _3FJDMKPPEd6t_4WfM070fA">
@@ -1032,15 +1319,18 @@
       </ownedComment>
       <ownedRule xmi:id="_a-lZMKR0Ed6t_4WfM070fA" name="PurposeActivity_hasReason" constrainedElement="_rrtFgKRuEd6t_4WfM070fA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_a-mnUKR0Ed6t_4WfM070fA">
+          <language>Analysis</language>
           <language>OCL</language>
+          <body>Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD.</body>
           <body>self.entryRelationship-&gt;one(entryRelationship : cda::EntryRelationship | &#13;
-  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)&#13;
-</body>
+  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_zYt64KR2Ed6t_4WfM070fA" name="PurposeActivity_reasonType" constrainedElement="_rrtFgKRuEd6t_4WfM070fA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_zZIKkKR2Ed6t_4WfM070fA">
+          <language>Analysis</language>
           <language>OCL</language>
+          <body>The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply.</body>
           <body>self.entryRelationship-&gt;forAll(entryRelationship : cda::EntryRelationship |&#13;
   entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON implies( &#13;
   not (entryRelationship.act.oclIsUndefined() and entryRelationship.encounter.oclIsUndefined()&#13;
@@ -1385,6 +1675,67 @@
         </defaultValue>
       </ownedAttribute>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_5QGGgBTbEd-6K-YJpbwRmQ" memberEnd="_5QtxkBTbEd-6K-YJpbwRmQ _5Q3ikBTbEd-6K-YJpbwRmQ">
+      <ownedEnd xmi:id="_5Q3ikBTbEd-6K-YJpbwRmQ" name="" visibility="private" type="_PgsSAHrREd68l9lQ-TLEBQ" association="_5QGGgBTbEd-6K-YJpbwRmQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5Q8bEBTbEd-6K-YJpbwRmQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5Q70ABTbEd-6K-YJpbwRmQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_n55kwBWhEd-6K-YJpbwRmQ" memberEnd="_n549sBWhEd-6K-YJpbwRmQ _n56L0BWhEd-6K-YJpbwRmQ">
+      <ownedEnd xmi:id="_n56L0BWhEd-6K-YJpbwRmQ" type="_IjIO0DxbEd6JwqSGecoePg" association="_n55kwBWhEd-6K-YJpbwRmQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_0k-JMBWhEd-6K-YJpbwRmQ" memberEnd="_0k9iIBWhEd-6K-YJpbwRmQ _0k_XUBWhEd-6K-YJpbwRmQ">
+      <ownedEnd xmi:id="_0k_XUBWhEd-6K-YJpbwRmQ" type="_IjIO0DxbEd6JwqSGecoePg" association="_0k-JMBWhEd-6K-YJpbwRmQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_qqzUMBWjEd-6K-YJpbwRmQ" memberEnd="_qqytIBWjEd-6K-YJpbwRmQ _qqzUMRWjEd-6K-YJpbwRmQ">
+      <ownedEnd xmi:id="_qqzUMRWjEd-6K-YJpbwRmQ" type="_GgvgUDxbEd6JwqSGecoePg" association="_qqzUMBWjEd-6K-YJpbwRmQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_aCZVgRW5Ed-6K-YJpbwRmQ" memberEnd="_aCZVgBW5Ed-6K-YJpbwRmQ _aCZ8kBW5Ed-6K-YJpbwRmQ">
+      <ownedEnd xmi:id="_aCZ8kBW5Ed-6K-YJpbwRmQ" type="_qV72IHrREd68l9lQ-TLEBQ" association="_aCZVgRW5Ed-6K-YJpbwRmQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_SKqqoBXBEd-6K-YJpbwRmQ" memberEnd="_SKqDkBXBEd-6K-YJpbwRmQ _SKrRsBXBEd-6K-YJpbwRmQ">
+      <ownedEnd xmi:id="_SKrRsBXBEd-6K-YJpbwRmQ" type="_qV72IHrREd68l9lQ-TLEBQ" association="_SKqqoBXBEd-6K-YJpbwRmQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_g6vMsBXBEd-6K-YJpbwRmQ" memberEnd="_g6uloBXBEd-6K-YJpbwRmQ _g6vzwBXBEd-6K-YJpbwRmQ">
+      <ownedEnd xmi:id="_g6vzwBXBEd-6K-YJpbwRmQ" type="__XC4cHrREd68l9lQ-TLEBQ" association="_g6vMsBXBEd-6K-YJpbwRmQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_S7rEABZ1Ed-i6Lz80y5G5g" name="AgeObservation">
+      <ownedComment xmi:id="_mW2qUBZ1Ed-i6Lz80y5G5g">
+        <body>A common scenario is that a patient will know the age of a relative when they had a certain condition or when they died, but will not know the actual year (e.g. "grandpa died of a heart attack at the age of 50"). Often times, neither precise dates nor ages are known (e.g. "cousin died of congenital heart disease as an infant"). In all cases, dates and times and ages can be expressed in narrative.</body>
+      </ownedComment>
+      <generalization xmi:id="_S72qMBZ1Ed-i6Lz80y5G5g">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_U9GJMBZ1Ed-i6Lz80y5G5g" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVecEDcEd6xYZuu1VKCVw?vocab/ActClassObservation?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_FcjT0EbtEd6besF9iFIJkQ?cda/Observation/classCode?"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_pPZkwBZ1Ed-i6Lz80y5G5g" value="OBS"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_U9H-YBZ1Ed-i6Lz80y5G5g" name="moodCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOoCEDcEd6xYZuu1VKCVw?vocab/x_ActMoodDocumentObservation?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_BLZhcEo_Ed6c3qsAxlFHaQ?cda/Observation/moodCode?"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_q_TcIBZ1Ed-i6Lz80y5G5g" value="EVN"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_U9GwQBZ1Ed-i6Lz80y5G5g" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_WEYp4Eo8Ed6c3qsAxlFHaQ?cda/Observation/code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_U9IlcBZ1Ed-i6Lz80y5G5g" name="statusCode" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_U9IlcRZ1Ed-i6Lz80y5G5g" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U9IlchZ1Ed-i6Lz80y5G5g"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_c-D3cEo8Ed6c3qsAxlFHaQ?cda/Observation/statusCode?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_U9IlcxZ1Ed-i6Lz80y5G5g" name="value" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#__I8BwDxZEd6JwqSGecoePg?datatypes/ANY?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8Z644BZ1Ed-i6Lz80y5G5g" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8Z644RZ1Ed-i6Lz80y5G5g" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_tRpv0Eo-Ed6c3qsAxlFHaQ?cda/Observation/value?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_7kTDABZ2Ed-i6Lz80y5G5g" memberEnd="_7kSb8BZ2Ed-i6Lz80y5G5g _7kTqEBZ2Ed-i6Lz80y5G5g">
+      <ownedEnd xmi:id="_7kTqEBZ2Ed-i6Lz80y5G5g" type="_IjIO0DxbEd6JwqSGecoePg" association="_7kTDABZ2Ed-i6Lz80y5G5g"/>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -1467,51 +1818,50 @@
   <Default:Documentation xmi:id="_1XdWMIjwEd66cKocspyVOg" base_Comment="_1XZEwIjwEd66cKocspyVOg"/>
   <CDA:VocabSpecification xmi:id="_D4_lo4j0Ed66cKocspyVOg" message="CCD Encounters Activity SHOULD contain [1..1] code, which SHOULD be selected from ValueSet 2.16.840.1.113883.1.11.13955 EncounterCode DYNAMIC" severity="WARNING" base_Property="_D4--kIj0Ed66cKocspyVOg" codeSystem="2.16.840.1.113883.1.11.13955" codeSystemName="EncounterCode"/>
   <CDA:CodegenSupport xmi:id="_HzmFgJm0Ed6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ccd" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd" packageName="ccd" prefix="CCD" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
-  <CDA:AssociationValidation xmi:id="_ft0_IJm2Ed6BO7rW3XxHIA" message="CCD Medication Activity MAY contain [0..1] entryRelationship such that it, SHALL contain [1..1] [Medication, Series, Number, Observation] (templateId: 2.16.840.1.113883.10.20.1.46)" severity="INFO" base_Association="_zfn5kIjqEd66cKocspyVOg"/>
-  <CDA:AssociationValidation xmi:id="_FB2PQJm3Ed6BO7rW3XxHIA" message="CCD Medication Activity MAY contain [0..1] entryRelationship such that it, SHALL contain [1..1] [Medication, Status, Observation] (templateId: 2.16.840.1.113883.10.20.1.47)" severity="INFO" base_Association="_CIfVgIjtEd66cKocspyVOg"/>
-  <CDA:AssociationValidation xmi:id="_F5VQ4Jm3Ed6BO7rW3XxHIA" message="CCD Supply Activity MAY contain [0..1] entryRelationship such that it, SHALL contain [1..1] [Medication, Status, Observation] (templateId: 2.16.840.1.113883.10.20.1.47)" severity="INFO" base_Association="_C_zYAIjtEd66cKocspyVOg"/>
-  <CDA:AssociationValidation xmi:id="_GqXsQJm3Ed6BO7rW3XxHIA" message="CCD Problem Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] [Problem, Act] (templateId: 2.16.840.1.113883.10.20.1.27)" severity="WARNING" base_Association="_tr5r0It5Ed639sxyAgfSmw"/>
-  <CDA:AssociationValidation xmi:id="_HeoawJm3Ed6BO7rW3XxHIA" message="CCD Problem Act SHOULD contain [1..*] entryRelationship such that it, SHALL contain [1..1] [Problem, Observation] (templateId: 2.16.840.1.113883.10.20.1.28)" severity="WARNING" base_Association="_yqvkYIt5Ed639sxyAgfSmw"/>
+  <CDA:AssociationValidation xmi:id="_ft0_IJm2Ed6BO7rW3XxHIA" message="CCD Medication Activity MAY contain [0..1] entryRelationship such that it, SHALL contain [1..1] Medication Series Number Observation (templateId: 2.16.840.1.113883.10.20.1.46)" severity="INFO" base_Association="_zfn5kIjqEd66cKocspyVOg"/>
+  <CDA:AssociationValidation xmi:id="_FB2PQJm3Ed6BO7rW3XxHIA" message="CCD Medication Activity MAY contain [0..1] entryRelationship such that it, SHALL contain [1..1] Medication Status Observation (templateId: 2.16.840.1.113883.10.20.1.47)" severity="INFO" base_Association="_CIfVgIjtEd66cKocspyVOg"/>
+  <CDA:AssociationValidation xmi:id="_F5VQ4Jm3Ed6BO7rW3XxHIA" message="CCD Supply Activity MAY contain [0..1] entryRelationship such that it, SHALL contain [1..1] Medication Status Observation (templateId: 2.16.840.1.113883.10.20.1.47)" severity="INFO" base_Association="_C_zYAIjtEd66cKocspyVOg"/>
+  <CDA:AssociationValidation xmi:id="_GqXsQJm3Ed6BO7rW3XxHIA" message="CCD Problem Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] Problem Act (templateId: 2.16.840.1.113883.10.20.1.27)" severity="WARNING" base_Association="_tr5r0It5Ed639sxyAgfSmw"/>
   <CDA:PropertyValidation xmi:id="_j7IQkJm3Ed6BO7rW3XxHIA" message="CCD Encounters Activity MAY contain [0..1] effectiveTime" severity="INFO" base_Property="_D4_loIj0Ed66cKocspyVOg"/>
   <CDA:PropertyValidation xmi:id="_a1KpQJnFEd6BO7rW3XxHIA" message="CCD Medication Activity SHALL contain [1..*] id" base_Property="_Rp0MMIHYEd6Ncrr6L3Ublw"/>
   <CDA:PropertyValidation xmi:id="_jXcMUJnFEd6BO7rW3XxHIA" message="CCD Medication Activity SHOULD contain [0..1] statusCode" severity="WARNING" base_Property="_f9zPMIHYEd6Ncrr6L3Ublw"/>
   <CDA:PropertyValidation xmi:id="_1CsGEJnFEd6BO7rW3XxHIA" message="CCD Problem Observation SHOULD contain [0..1] effectiveTime" severity="WARNING" base_Property="_t3kdcIhREd6UrJD25cKDew"/>
   <CDA:PropertyValidation xmi:id="_536voJnFEd6BO7rW3XxHIA" message="CCD Problem Observation SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_gh1ycIhREd6UrJD25cKDew"/>
   <CDA:NullFlavor xmi:id="_UA7f4JnGEd6BO7rW3XxHIA" message="CCD Problem Act SHALL contain [1..1] code/@nullFlavor = &quot;NA&quot; NA (not applicable)" base_Property="_Mjxx0JnGEd6BO7rW3XxHIA" nullFlavor="NA"/>
-  <CDA:AssociationValidation xmi:id="_B7-NYKPREd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Problem, Section] (templateId: 2.16.840.1.113883.10.20.1.11)" severity="WARNING" base_Association="_3FDjoKPPEd6t_4WfM070fA"/>
-  <CDA:AssociationValidation xmi:id="_GJEf8KPREd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Family, History, Section] (templateId: 2.16.840.1.113883.10.20.1.4)" severity="WARNING" base_Association="_42l9QKPQEd6t_4WfM070fA"/>
-  <CDA:AssociationValidation xmi:id="_kBAZAKPREd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Social, History, Section] (templateId: 2.16.840.1.113883.10.20.1.15)" severity="WARNING" base_Association="_VO7EwKPREd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_B7-NYKPREd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Problem Section (templateId: 2.16.840.1.113883.10.20.1.11)" severity="WARNING" base_Association="_3FDjoKPPEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_GJEf8KPREd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Family History Section (templateId: 2.16.840.1.113883.10.20.1.4)" severity="WARNING" base_Association="_42l9QKPQEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_kBAZAKPREd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Social History Section (templateId: 2.16.840.1.113883.10.20.1.15)" severity="WARNING" base_Association="_VO7EwKPREd6t_4WfM070fA"/>
   <Default:Documentation xmi:id="_rk9SoKPREd6t_4WfM070fA" base_Comment="_rk6PUKPREd6t_4WfM070fA"/>
   <Default:Documentation xmi:id="_wVuS8KPREd6t_4WfM070fA" base_Comment="_wVqokKPREd6t_4WfM070fA"/>
   <Default:Documentation xmi:id="_8qQmsKPREd6t_4WfM070fA" base_Comment="_8qOKcKPREd6t_4WfM070fA"/>
-  <CDA:AssociationValidation xmi:id="_CmU8gKPSEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Alerts, Section] (templateId: 2.16.840.1.113883.10.20.1.2)" severity="WARNING" base_Association="_9WlhMKPREd6t_4WfM070fA"/>
-  <CDA:AssociationValidation xmi:id="_UUr0oKPSEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Medication, Section] (templateId: 2.16.840.1.113883.10.20.1.8)" severity="WARNING" base_Association="_NhXGsKPSEd6t_4WfM070fA"/>
-  <CDA:AssociationValidation xmi:id="_8F0ncKPSEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Results, Section] (templateId: 2.16.840.1.113883.10.20.1.14)" severity="WARNING" base_Association="_3RJXgKPSEd6t_4WfM070fA"/>
-  <CDA:AssociationValidation xmi:id="_KH9FcKPTEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Procedures, Section] (templateId: 2.16.840.1.113883.10.20.1.12)" severity="WARNING" base_Association="_EF-U4KPTEd6t_4WfM070fA"/>
-  <CDA:AssociationValidation xmi:id="_R_MHcKPTEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Encounters, Section] (templateId: 2.16.840.1.113883.10.20.1.3)" severity="WARNING" base_Association="_QlgXsKPTEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_CmU8gKPSEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Alerts Section (templateId: 2.16.840.1.113883.10.20.1.2)" severity="WARNING" base_Association="_9WlhMKPREd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_UUr0oKPSEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Medication Section (templateId: 2.16.840.1.113883.10.20.1.8)" severity="WARNING" base_Association="_NhXGsKPSEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_8F0ncKPSEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Results Section (templateId: 2.16.840.1.113883.10.20.1.14)" severity="WARNING" base_Association="_3RJXgKPSEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_KH9FcKPTEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Procedures Section (templateId: 2.16.840.1.113883.10.20.1.12)" severity="WARNING" base_Association="_EF-U4KPTEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_R_MHcKPTEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Encounters Section (templateId: 2.16.840.1.113883.10.20.1.3)" severity="WARNING" base_Association="_QlgXsKPTEd6t_4WfM070fA"/>
   <CDA:CDATemplate xmi:id="_3ZQ8QKPTEd6t_4WfM070fA" message="CCD Plan Of Care Section SHALL contain the template identifier 2.16.840.1.113883.10.20.1.10" base_Class="_o9nLAKPTEd6t_4WfM070fA" templateId="2.16.840.1.113883.10.20.1.10" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_F29U4KPUEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Plan, Of, Care, Section] (templateId: 2.16.840.1.113883.10.20.1.10)" severity="WARNING" base_Association="_FT-joKPUEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_F29U4KPUEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Plan Of Care Section (templateId: 2.16.840.1.113883.10.20.1.10)" severity="WARNING" base_Association="_FT-joKPUEd6t_4WfM070fA"/>
   <Default:Documentation xmi:id="_Stm3MKPUEd6t_4WfM070fA" base_Comment="_Stjz4KPUEd6t_4WfM070fA"/>
-  <CDA:AssociationValidation xmi:id="_g-C28KPUEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Immunizations, Section] (templateId: 2.16.840.1.113883.10.20.1.6)" severity="WARNING" base_Association="_e_CMkKPUEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_g-C28KPUEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Immunizations Section (templateId: 2.16.840.1.113883.10.20.1.6)" severity="WARNING" base_Association="_e_CMkKPUEd6t_4WfM070fA"/>
   <Default:Documentation xmi:id="_Wy1YcKPaEd6t_4WfM070fA" base_Comment="_WyxuEKPaEd6t_4WfM070fA"/>
   <CDA:CDATemplate xmi:id="_fE-NwKPaEd6t_4WfM070fA" message="CCD Vital Signs Section SHALL contain the template identifier 2.16.840.1.113883.10.20.1.16" base_Class="_GKpeMKPaEd6t_4WfM070fA" templateId="2.16.840.1.113883.10.20.1.16" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_maaKQKPaEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Vital, Signs, Section] (templateId: 2.16.840.1.113883.10.20.1.16)" severity="WARNING" base_Association="_kxx_kKPaEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_maaKQKPaEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Vital Signs Section (templateId: 2.16.840.1.113883.10.20.1.16)" severity="WARNING" base_Association="_kxx_kKPaEd6t_4WfM070fA"/>
   <CDA:CDATemplate xmi:id="_CJFbUKPcEd6t_4WfM070fA" message="CCD Medical Equipment Section SHALL contain the template identifier 2.16.840.1.113883.10.20.1.7" base_Class="_5hfTYKPbEd6t_4WfM070fA" templateId="2.16.840.1.113883.10.20.1.7" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_QXIOYKPcEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Medical, Equipment, Section] (templateId: 2.16.840.1.113883.10.20.1.7)" severity="WARNING" base_Association="_MnFrQKPcEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_QXIOYKPcEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Medical Equipment Section (templateId: 2.16.840.1.113883.10.20.1.7)" severity="WARNING" base_Association="_MnFrQKPcEd6t_4WfM070fA"/>
   <Default:Documentation xmi:id="_fMHssKPcEd6t_4WfM070fA" base_Comment="_fMDbQKPcEd6t_4WfM070fA"/>
   <CDA:CDATemplate xmi:id="_Mlc3EKPdEd6t_4WfM070fA" message="CCD Functional Status Section SHALL contain the template identifier 2.16.840.1.113883.10.20.1.5" base_Class="_GoctIKPdEd6t_4WfM070fA" templateId="2.16.840.1.113883.10.20.1.5" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_ckz2wKPdEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Functional, Status, Section] (templateId: 2.16.840.1.113883.10.20.1.5)" severity="WARNING" base_Association="_Z1lQYKPdEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_ckz2wKPdEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Functional Status Section (templateId: 2.16.840.1.113883.10.20.1.5)" severity="WARNING" base_Association="_Z1lQYKPdEd6t_4WfM070fA"/>
   <Default:Documentation xmi:id="_nhzv0KPdEd6t_4WfM070fA" base_Comment="_nhwsgKPdEd6t_4WfM070fA"/>
   <CDA:CDATemplate xmi:id="_aeLE8KPeEd6t_4WfM070fA" message="CCD Advance Directives Section SHALL contain the template identifier 2.16.840.1.113883.10.20.1.1" base_Class="_NvRwcKPeEd6t_4WfM070fA" templateId="2.16.840.1.113883.10.20.1.1" assigningAuthorityName="CCD"/>
   <CDA:CDATemplate xmi:id="_fhWq8KPeEd6t_4WfM070fA" message="CCD Payers Section SHALL contain the template identifier 2.16.840.1.113883.10.20.1.9" base_Class="_T79VIKPeEd6t_4WfM070fA" templateId="2.16.840.1.113883.10.20.1.9" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_sHIfsKPeEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Payers, Section] (templateId: 2.16.840.1.113883.10.20.1.9)" severity="WARNING" base_Association="_nDb8UKPeEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_sHIfsKPeEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Payers Section (templateId: 2.16.840.1.113883.10.20.1.9)" severity="WARNING" base_Association="_nDb8UKPeEd6t_4WfM070fA"/>
   <Default:Documentation xmi:id="_vOIF0KPeEd6t_4WfM070fA" base_Comment="_vOEbcKPeEd6t_4WfM070fA"/>
-  <CDA:AssociationValidation xmi:id="_z_39kKPeEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] [Advance, Directives, Section] (templateId: 2.16.840.1.113883.10.20.1.1)" severity="WARNING" base_Association="_meUdEKPeEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_z_39kKPeEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHOULD contain [0..1] component such that it, SHALL contain [1..1] Advance Directives Section (templateId: 2.16.840.1.113883.10.20.1.1)" severity="WARNING" base_Association="_meUdEKPeEd6t_4WfM070fA"/>
   <CDA:VocabSpecification xmi:id="_Tb_ygKRpEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHALL contain [1..1] code/@code = &quot;34133-9&quot; Summarization of episode note (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_Tb-kYKRpEd6t_4WfM070fA" code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summarization of episode note"/>
   <CDA:VocabSpecification xmi:id="_ObyLgKRqEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHALL contain [1..1] languageCode" base_Property="_AfkIQKRqEd6t_4WfM070fA"/>
   <Default:Documentation xmi:id="_uBOA0KRtEd6t_4WfM070fA" base_Comment="_uBK9gKRtEd6t_4WfM070fA"/>
   <CDA:CDATemplate xmi:id="_wA3kYKRtEd6t_4WfM070fA" message="CCD Purpose Section SHALL contain the template identifier 2.16.840.1.113883.10.20.1.13" base_Class="_f0mKEKRtEd6t_4WfM070fA" templateId="2.16.840.1.113883.10.20.1.13" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_2TmtwKRtEd6t_4WfM070fA" message="CCD Continuity Of Care Document MAY contain [0..1] component such that it, SHALL contain [1..1] [Purpose, Section] (templateId: 2.16.840.1.113883.10.20.1.13)" severity="INFO" base_Association="_1ASrwKRtEd6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_2TmtwKRtEd6t_4WfM070fA" message="CCD Continuity Of Care Document MAY contain [0..1] component such that it, SHALL contain [1..1] Purpose Section (templateId: 2.16.840.1.113883.10.20.1.13)" severity="INFO" base_Association="_1ASrwKRtEd6t_4WfM070fA"/>
   <CDA:VocabSpecification xmi:id="_KfmF8KRuEd6t_4WfM070fA" message="CCD Purpose Section SHALL contain [1..1] code/@code = &quot;48764-5&quot; Summary purpose (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_Kfle4aRuEd6t_4WfM070fA" code="48764-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summary purpose"/>
   <CDA:CDATemplate xmi:id="_zC1EEKRuEd6t_4WfM070fA" message="CCD Purpose Activity SHALL contain the template identifier 2.16.840.1.113883.10.20.1.30" base_Class="_rrtFgKRuEd6t_4WfM070fA" templateId="2.16.840.1.113883.10.20.1.30" assigningAuthorityName="CCD"/>
   <Default:Documentation xmi:id="_4ILNQKRuEd6t_4WfM070fA" base_Comment="_4IIJ8KRuEd6t_4WfM070fA"/>
@@ -1519,18 +1869,18 @@
   <CDA:VocabSpecification xmi:id="_pQUywaRvEd6t_4WfM070fA" message="CCD Purpose Activity SHALL contain [1..1] code/@code = &quot;23745001&quot; Documentation procedure (CodeSystem: 2.16.840.1.113883.6.96 SNOMED CT STATIC)" base_Property="_pQULsaRvEd6t_4WfM070fA" code="23745001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Documentation procedure"/>
   <CDA:PropertyValidation xmi:id="_72ljQKRvEd6t_4WfM070fA" message="CCD Purpose Activity SHALL contain [1..1] @classCode = &quot;ACT&quot;" base_Property="_lCjKwqRvEd6t_4WfM070fA"/>
   <CDA:PropertyValidation xmi:id="__o9BoKRvEd6t_4WfM070fA" message="CCD Purpose Activity SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_lCjKwKRvEd6t_4WfM070fA"/>
-  <CDA:AssociationValidation xmi:id="_qmHZoKRyEd6t_4WfM070fA" message="CCD Purpose Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] [Purpose, Activity] (templateId: 2.16.840.1.113883.10.20.1.30)" severity="WARNING" base_Association="_Iui3sKRxEd6t_4WfM070fA"/>
-  <CDA:ConstraintValidation xmi:id="_RKMcEKR2Ed6t_4WfM070fA" message="CCD Purpose Activity SHALL satisfy: self.entryRelationship-&gt;one(entryRelationship : cda::EntryRelationship | &#13;&#10;  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)&#13;&#10;" base_Constraint="_a-lZMKR0Ed6t_4WfM070fA"/>
-  <CDA:ConstraintValidation xmi:id="_2qHaMKR2Ed6t_4WfM070fA" message="CCD Purpose Activity SHALL satisfy: self.entryRelationship-&gt;forAll(entryRelationship : cda::EntryRelationship |&#13;&#10;  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON implies( &#13;&#10;  not (entryRelationship.act.oclIsUndefined() and entryRelationship.encounter.oclIsUndefined()&#13;&#10;       and entryRelationship.observation.oclIsUndefined() and entryRelationship.procedure.oclIsUndefined()&#13;&#10;       and entryRelationship.substanceAdministration.oclIsUndefined() and entryRelationship.supply.oclIsUndefined())))" base_Constraint="_zYt64KR2Ed6t_4WfM070fA"/>
+  <CDA:AssociationValidation xmi:id="_qmHZoKRyEd6t_4WfM070fA" message="CCD Purpose Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] Purpose Activity (templateId: 2.16.840.1.113883.10.20.1.30)" severity="WARNING" base_Association="_Iui3sKRxEd6t_4WfM070fA"/>
+  <CDA:ConstraintValidation xmi:id="_RKMcEKR2Ed6t_4WfM070fA" message="CCD Purpose Activity SHALL satisfy: Contains exactly one entryRelationship / @typeCode, with a value of 'RSON' 'Has reason' 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate the reason or purpose for creating the CCD." base_Constraint="_a-lZMKR0Ed6t_4WfM070fA"/>
+  <CDA:ConstraintValidation xmi:id="_2qHaMKR2Ed6t_4WfM070fA" message="CCD Purpose Activity SHALL satisfy: The target of entryRelationship SHALL be an Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply." base_Constraint="_zYt64KR2Ed6t_4WfM070fA"/>
   <CDA:VocabSpecification xmi:id="_K6lz8K3yEd6_ioDelDcPPg" message="CCD Vital Signs Section SHALL contain [1..1] code/@code = &quot;8716-3&quot; Vital signs (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_K6ZmsK3yEd6_ioDelDcPPg" code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vital signs"/>
   <CDA:TextValue xmi:id="_dcoLwK3yEd6_ioDelDcPPg" message="CCD Vital Signs Section SHOULD contain [1..1] title" severity="WARNING" base_Property="_K6UHIK3yEd6_ioDelDcPPg"/>
   <CDA:TextValue xmi:id="_vwXo4K3yEd6_ioDelDcPPg" message="CCD Results Section SHOULD contain [1..1] title" severity="WARNING" base_Property="_GMTtEIjpEd66cKocspyVOg"/>
   <CDA:CDATemplate xmi:id="_3x-SYK3zEd6_ioDelDcPPg" message="CCD Vital Signs Organizer SHALL contain the template identifier 2.16.840.1.113883.10.20.1.35" base_Class="_wN4O0K3zEd6_ioDelDcPPg" templateId="2.16.840.1.113883.10.20.1.35" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_DyVs8K30Ed6_ioDelDcPPg" message="CCD Vital Signs Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] [Vital, Signs, Organizer] (templateId: 2.16.840.1.113883.10.20.1.35)" severity="WARNING" base_Association="__3xU0K3zEd6_ioDelDcPPg"/>
-  <CDA:AssociationValidation xmi:id="_tNsl4K30Ed6_ioDelDcPPg" message="CCD Result Organizer SHALL contain [1..*] component such that it, SHALL contain [1..1] [Result, Observation] (templateId: 2.16.840.1.113883.10.20.1.31)" base_Association="_Ubf3kK30Ed6_ioDelDcPPg"/>
+  <CDA:AssociationValidation xmi:id="_DyVs8K30Ed6_ioDelDcPPg" message="CCD Vital Signs Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] Vital Signs Organizer (templateId: 2.16.840.1.113883.10.20.1.35)" severity="WARNING" base_Association="__3xU0K3zEd6_ioDelDcPPg"/>
+  <CDA:AssociationValidation xmi:id="_tNsl4K30Ed6_ioDelDcPPg" message="CCD Result Organizer SHALL contain [1..*] component such that it, SHALL contain [1..1] Result Observation (templateId: 2.16.840.1.113883.10.20.1.31)" base_Association="_Ubf3kK30Ed6_ioDelDcPPg"/>
   <Default:Documentation xmi:id="_HwwN0K31Ed6_ioDelDcPPg" base_Comment="_HwtKgK31Ed6_ioDelDcPPg"/>
-  <CDA:AssociationValidation xmi:id="_nFWSIK31Ed6_ioDelDcPPg" message="CCD Results Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] [Result, Organizer] (templateId: 2.16.840.1.113883.10.20.1.32)" severity="WARNING" base_Association="_hl5m4K31Ed6_ioDelDcPPg"/>
-  <CDA:AssociationValidation xmi:id="_LpyC8K33Ed6_ioDelDcPPg" message="CCD Result Organizer SHOULD contain [1..*] component such that it, SHALL contain [1..1] null [Specimen]" severity="WARNING" base_Association="_EGc0YK33Ed6_ioDelDcPPg"/>
+  <CDA:AssociationValidation xmi:id="_nFWSIK31Ed6_ioDelDcPPg" message="CCD Results Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] Result Organizer (templateId: 2.16.840.1.113883.10.20.1.32)" severity="WARNING" base_Association="_hl5m4K31Ed6_ioDelDcPPg"/>
+  <CDA:AssociationValidation xmi:id="_LpyC8K33Ed6_ioDelDcPPg" message="CCD Result Organizer SHOULD contain [1..*] component such that it, SHALL contain [1..1] CDA Specimen" severity="WARNING" base_Association="_EGc0YK33Ed6_ioDelDcPPg"/>
   <CDA:ConstraintValidation xmi:id="_ALcL0K4BEd6_ioDelDcPPg" message="CCD Medication Activity SHALL satisfy: self.moodCode=vocab::x_DocumentSubstanceMood::EVN or self.moodCode=vocab::x_DocumentSubstanceMood::INT " base_Constraint="_yqHDEI5qEd6x-qh9FleSiA"/>
   <CDA:PropertyValidation xmi:id="_PhrfUK6sEd6_ioDelDcPPg" message="CCD Result Organizer SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_AAXGgK6sEd6_ioDelDcPPg"/>
   <CDA:PropertyValidation xmi:id="_gYlLAK6sEd6_ioDelDcPPg" message="CCD Result Observation SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_G2B90K6sEd6_ioDelDcPPg"/>
@@ -1555,7 +1905,7 @@
   <CDA:CDATemplate xmi:id="_dkV2EMJmEd6-XpBv2uxYrQ" message="CCD Advance Directive Status Observation SHALL contain the template identifier 2.16.840.1.113883.10.20.1.37" base_Class="_Wj-KoMJmEd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.37" assigningAuthorityName="CCD"/>
   <CDA:VocabSpecification xmi:id="_s7iCgMJmEd6-XpBv2uxYrQ" message="CCD Advance Directive Status Observation SHALL contain [1..1] value, which SHALL be selected from ValueSet 2.16.840.1.113883.1.11.20.1 AdvanceDirectiveStatusCode STATIC 20061017" base_Property="_s7hbcMJmEd6-XpBv2uxYrQ" codeSystem="2.16.840.1.113883.1.11.20.1" codeSystemName="AdvanceDirectiveStatusCode" codeSystemVersion="20061017"/>
   <CDA:CDATemplate xmi:id="_Rg0H4MJoEd6-XpBv2uxYrQ" message="CCD Advance Directive Verification SHALL contain the template identifier 2.16.840.1.113883.10.20.1.58" base_Class="_KIDxoMJoEd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.58" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_m_mksMJoEd6-XpBv2uxYrQ" message="CCD Advance Directive Observation MAY contain [1..*] entryRelationship such that it, SHALL contain [1..1] [Advance, Directive, Verification] (templateId: 2.16.840.1.113883.10.20.1.58)" severity="INFO" base_Association="_aBcFIMJoEd6-XpBv2uxYrQ"/>
+  <CDA:AssociationValidation xmi:id="_m_mksMJoEd6-XpBv2uxYrQ" message="CCD Advance Directive Observation MAY contain [1..*] entryRelationship such that it, SHALL contain [1..1] Advance Directive Verification (templateId: 2.16.840.1.113883.10.20.1.58)" severity="INFO" base_Association="_aBcFIMJoEd6-XpBv2uxYrQ"/>
   <CDA:PropertyValidation xmi:id="_3v6gMMJoEd6-XpBv2uxYrQ" message="CCD Advance Directive Verification SHALL contain [1..1] @typeCode = &quot;VRF&quot;" base_Property="_0MnYkMJoEd6-XpBv2uxYrQ"/>
   <CDA:PropertyValidation xmi:id="_nkxR0MJpEd6-XpBv2uxYrQ" message="CCD Advance Directive Verification SHOULD contain [0..1] time, where its data type is TS" severity="WARNING" base_Property="_b9g60MJpEd6-XpBv2uxYrQ"/>
   <CDA:TextValue xmi:id="_Yc-94MJqEd6-XpBv2uxYrQ" message="CCD Payers Section SHALL contain [1..1] title" base_Property="_Yc-W0MJqEd6-XpBv2uxYrQ"/>
@@ -1577,10 +1927,10 @@
   <CDA:TextValue xmi:id="_2FLDYMJtEd6-XpBv2uxYrQ" message="CCD Plan Of Care Section SHALL contain [1..1] title" base_Property="_2FKcUMJtEd6-XpBv2uxYrQ"/>
   <CDA:VocabSpecification xmi:id="_2FLDYcJtEd6-XpBv2uxYrQ" message="CCD Plan Of Care Section SHALL contain [1..1] code/@code = &quot;18776-5&quot; Treatment plan (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_2FKcUcJtEd6-XpBv2uxYrQ" code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Treatment plan"/>
   <CDA:CDATemplate xmi:id="_iPutgMJuEd6-XpBv2uxYrQ" message="CCD Plan Of Care Activity SHALL contain the template identifier 2.16.840.1.113883.10.20.1.25" base_Class="_azWbgMJuEd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.25" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_3rWhkMJuEd6-XpBv2uxYrQ" message="CCD Plan Of Care Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] [Plan, Of, Care, Activity] (templateId: 2.16.840.1.113883.10.20.1.25)" base_Association="_v8kQ8MJuEd6-XpBv2uxYrQ"/>
+  <CDA:AssociationValidation xmi:id="_3rWhkMJuEd6-XpBv2uxYrQ" message="CCD Plan Of Care Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Plan Of Care Activity (templateId: 2.16.840.1.113883.10.20.1.25)" base_Association="_v8kQ8MJuEd6-XpBv2uxYrQ"/>
   <CDA:PropertyValidation xmi:id="_I6_gkMJzEd6-XpBv2uxYrQ" message="CCD Plan Of Care Activity SHALL contain [1..*] id" base_Property="_I6-5gMJzEd6-XpBv2uxYrQ"/>
   <CDA:CDATemplate xmi:id="_OqVXEMJ1Ed6-XpBv2uxYrQ" message="CCD Procedure Activity SHALL contain the template identifier 2.16.840.1.113883.10.20.1.29" base_Class="_HDKxYMJ1Ed6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_W_edEMJ1Ed6-XpBv2uxYrQ" message="CCD Procedures Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] [Procedure, Activity] (templateId: 2.16.840.1.113883.10.20.1.29)" severity="WARNING" base_Association="_T9G4QMJ1Ed6-XpBv2uxYrQ"/>
+  <CDA:AssociationValidation xmi:id="_W_edEMJ1Ed6-XpBv2uxYrQ" message="CCD Procedures Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] Procedure Activity (templateId: 2.16.840.1.113883.10.20.1.29)" severity="WARNING" base_Association="_T9G4QMJ1Ed6-XpBv2uxYrQ"/>
   <CDA:VocabSpecification xmi:id="_nMalwcJ1Ed6-XpBv2uxYrQ" message="CCD Procedure Activity SHALL contain [1..1] statusCode/@code = &quot;completed&quot;  (CodeSystem: 2.16.840.1.113883.1.11.20.15 ProcedureStatusCode STATIC 20061017)" base_Property="_nMZXocJ1Ed6-XpBv2uxYrQ" code="completed" codeSystem="2.16.840.1.113883.1.11.20.15" codeSystemName="ProcedureStatusCode" codeSystemVersion="20061017"/>
   <CDA:PropertyValidation xmi:id="_nMalwsJ1Ed6-XpBv2uxYrQ" message="CCD Procedure Activity SHOULD contain [0..1] effectiveTime" severity="WARNING" base_Property="_nMZ-sMJ1Ed6-XpBv2uxYrQ"/>
   <CDA:PropertyValidation xmi:id="_nMalw8J1Ed6-XpBv2uxYrQ" message="CCD Procedure Activity SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_nMZ-s8J1Ed6-XpBv2uxYrQ"/>
@@ -1589,14 +1939,14 @@
   <CDA:CDATemplate xmi:id="_UkqmgMKAEd6-XpBv2uxYrQ" message="CCD Fulfillment Instruction SHALL contain the template identifier 2.16.840.1.113883.10.20.1.43" base_Class="_IuPLEMKAEd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.43" assigningAuthorityName="CCD"/>
   <CDA:PropertyValidation xmi:id="_tLXPcMKAEd6-XpBv2uxYrQ" message="CCD Patient Instruction SHALL contain [1..1] @moodCode = &quot;INT&quot;" base_Property="_gV9qUMKAEd6-XpBv2uxYrQ"/>
   <CDA:PropertyValidation xmi:id="_zYankMKAEd6-XpBv2uxYrQ" message="CCD Fulfillment Instruction SHALL contain [1..1] @moodCode = &quot;INT&quot;" base_Property="_hbmcsMKAEd6-XpBv2uxYrQ"/>
-  <CDA:EntryRelationship xmi:id="_VtD8gMKBEd6-XpBv2uxYrQ" message="CCD Medication Activity MAY contain [0..*] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;SUBJ&quot; SUBJ (has subject), SHALL contain [1..1] [Patient, Instruction] (templateId: 2.16.840.1.113883.10.20.1.49)" severity="INFO" base_Association="_JSLJIMKBEd6-XpBv2uxYrQ" typeCode="SUBJ"/>
+  <CDA:EntryRelationship xmi:id="_VtD8gMKBEd6-XpBv2uxYrQ" message="CCD Medication Activity MAY contain [0..*] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;SUBJ&quot; SUBJ (has subject), SHALL contain [1..1] Patient Instruction (templateId: 2.16.840.1.113883.10.20.1.49)" severity="INFO" base_Association="_JSLJIMKBEd6-XpBv2uxYrQ" typeCode="SUBJ"/>
   <Default:Documentation xmi:id="_lM_OMMKBEd6-XpBv2uxYrQ" base_Comment="_lM8K4MKBEd6-XpBv2uxYrQ"/>
   <Default:Documentation xmi:id="_rCfpAMKBEd6-XpBv2uxYrQ" base_Comment="_rCdz0MKBEd6-XpBv2uxYrQ"/>
-  <CDA:EntryRelationship xmi:id="_sFmr0MKBEd6-XpBv2uxYrQ" message="CCD Supply Activity MAY contain [0..*] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;SUBJ&quot; SUBJ (has subject), SHALL contain [1..1] [Fulfillment, Instruction] (templateId: 2.16.840.1.113883.10.20.1.43)" severity="INFO" base_Association="_Q0aykMKBEd6-XpBv2uxYrQ" typeCode="SUBJ"/>
+  <CDA:EntryRelationship xmi:id="_sFmr0MKBEd6-XpBv2uxYrQ" message="CCD Supply Activity MAY contain [0..*] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;SUBJ&quot; SUBJ (has subject), SHALL contain [1..1] Fulfillment Instruction (templateId: 2.16.840.1.113883.10.20.1.43)" severity="INFO" base_Association="_Q0aykMKBEd6-XpBv2uxYrQ" typeCode="SUBJ"/>
   <CDA:TextValue xmi:id="_TDhhcMMQEd6-XpBv2uxYrQ" message="CCD Functional Status Section SHALL contain [1..1] title" base_Property="_TDg6YMMQEd6-XpBv2uxYrQ"/>
   <CDA:VocabSpecification xmi:id="_TDhhccMQEd6-XpBv2uxYrQ" message="CCD Functional Status Section SHALL contain [1..1] code/@code = &quot;47420-5&quot; Functional status assessment (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_TDg6YcMQEd6-XpBv2uxYrQ" code="47420-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Functional status assessment"/>
-  <CDA:AssociationValidation xmi:id="_bVC2QMMREd6-XpBv2uxYrQ" message="CCD Functional Status Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] [Problem, Act] (templateId: 2.16.840.1.113883.10.20.1.27)" severity="WARNING" base_Association="_SUpMwMMREd6-XpBv2uxYrQ"/>
-  <CDA:AssociationValidation xmi:id="_iMfPMMMREd6-XpBv2uxYrQ" message="CCD Functional Status Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] [Result, Organizer] (templateId: 2.16.840.1.113883.10.20.1.32)" severity="WARNING" base_Association="_TXWm8MMREd6-XpBv2uxYrQ"/>
+  <CDA:AssociationValidation xmi:id="_bVC2QMMREd6-XpBv2uxYrQ" message="CCD Functional Status Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] Problem Act (templateId: 2.16.840.1.113883.10.20.1.27)" severity="WARNING" base_Association="_SUpMwMMREd6-XpBv2uxYrQ"/>
+  <CDA:AssociationValidation xmi:id="_iMfPMMMREd6-XpBv2uxYrQ" message="CCD Functional Status Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] Result Organizer (templateId: 2.16.840.1.113883.10.20.1.32)" severity="WARNING" base_Association="_TXWm8MMREd6-XpBv2uxYrQ"/>
   <CDA:CDATemplate xmi:id="_7L0akMMREd6-XpBv2uxYrQ" message="CCD Functional Status Observation SHALL contain the template identifier 2.16.840.1.113883.10.20.1.44" base_Class="_04s2sMMREd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.44" assigningAuthorityName="CCD"/>
   <CDA:VocabSpecification xmi:id="_G1LDUcMSEd6-XpBv2uxYrQ" message="CCD Functional Status Observation SHALL contain [1..1] value, which SHALL be selected from ValueSet 2.16.840.1.113883.1.11.20.5 StatusOfFunctionalStatusCode STATIC 20061017" base_Property="_G1LDUMMSEd6-XpBv2uxYrQ" codeSystem="2.16.840.1.113883.1.11.20.5" codeSystemName="StatusOfFunctionalStatusCode" codeSystemVersion="20061017"/>
   <CDA:CDATemplate xmi:id="_O-gakMMVEd6-XpBv2uxYrQ" message="CCD Product Instance SHALL contain the template identifier 2.16.840.1.113883.10.20.1.52" base_Class="_JpjIEMMVEd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.52" assigningAuthorityName="CCD"/>
@@ -1629,7 +1979,58 @@
   <CDA:PropertyValidation xmi:id="_9Sf2AP_UEd6Y8ICOr4M99Q" message="CCD Medication Series Number Observation SHALL contain [1..1] value, where its data type is INT" base_Property="_ANYwMIjsEd66cKocspyVOg"/>
   <CDA:PropertyValidation xmi:id="_9ShrMP_UEd6Y8ICOr4M99Q" message="CCD Procedures Section SHALL contain [1..1] title" base_Property="_p_LExIjvEd66cKocspyVOg"/>
   <CDA:PropertyValidation xmi:id="_9SkugP_UEd6Y8ICOr4M99Q" message="CCD Medical Equipment Section SHALL contain [1..1] title" base_Property="_CZOzgMikEd6mWrHPmrIIfQ"/>
-  <CDA:AssociationValidation xmi:id="_9SnKwP_UEd6Y8ICOr4M99Q" message="CCD Advance Directives Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] [Advance, Directive, Observation] (templateId: 2.16.840.1.113883.10.20.1.17)" base_Association="_YpRfsMJlEd6-XpBv2uxYrQ"/>
+  <CDA:AssociationValidation xmi:id="_9SnKwP_UEd6Y8ICOr4M99Q" message="CCD Advance Directives Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Advance Directive Observation (templateId: 2.16.840.1.113883.10.20.1.17)" base_Association="_YpRfsMJlEd6-XpBv2uxYrQ"/>
   <CDA:PropertyValidation xmi:id="_9So_8P_UEd6Y8ICOr4M99Q" message="CCD Purpose Section SHALL contain [1..1] title" base_Property="_Kfle4KRuEd6t_4WfM070fA"/>
   <CDA:PropertyValidation xmi:id="_9Sz_EP_UEd6Y8ICOr4M99Q" message="CCD Procedure Activity SHALL contain [1..1] code" base_Property="_nMZXoMJ1Ed6-XpBv2uxYrQ"/>
+  <CDA:PropertyValidation xmi:id="_Y4dGoBKzEd-6K-YJpbwRmQ" message="CCD Problem Section SHALL contain [1..1] text" base_Property="_Iz8hMBKzEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_CSd7wBK0Ed-6K-YJpbwRmQ" message="CCD Problem Section SHOULD satisfy: Contains a case-insensitive language-insensitive string containing &quot;problems&quot;." severity="WARNING" base_Constraint="_AYNOgBK0Ed-6K-YJpbwRmQ"/>
+  <CDA:PropertyValidation xmi:id="_UvR_4BK1Ed-6K-YJpbwRmQ" message="CCD Problem Act MAY contain [0..1] effectiveTime" severity="INFO" base_Property="_TDpkgBK1Ed-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_1DZAcBK1Ed-6K-YJpbwRmQ" message="CCD Problem Act SHALL satisfy: Contains one or more entryRelationship" base_Constraint="_oImlABK1Ed-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_8sKaMBTaEd-6K-YJpbwRmQ" message="CCD Alerts Section SHOULD satisfy: Contains a case-insensitive language-insensitive string containing &quot;alert&quot; and/or &quot;allergies and adverse reactions&quot;." severity="WARNING" base_Constraint="_tq0h8BTaEd-6K-YJpbwRmQ"/>
+  <CDA:PropertyValidation xmi:id="_AxkJUBTbEd-6K-YJpbwRmQ" message="CCD Alerts Section SHALL contain [1..1] text" base_Property="_AD_RoBTbEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_lNJ8oBTbEd-6K-YJpbwRmQ" message="CCD Alerts Section SHALL satisfy: The absence of known allergies, adverse reactions or alerts SHALL be explicitly asserted." base_Constraint="_P7PeMBTbEd-6K-YJpbwRmQ"/>
+  <CDA:AssociationValidation xmi:id="_BgWFcBTcEd-6K-YJpbwRmQ" message="CCD Alerts Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] Problem Act (templateId: 2.16.840.1.113883.10.20.1.27)" severity="WARNING" base_Association="_5QGGgBTbEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_vCq-UBTdEd-6K-YJpbwRmQ" message="CCD Problem Act SHOULD satisfy: In Problem Section, a Problem Act SHOULD contain a Problem Observation. In Alert Section, a ProblemAct SHOULD contain an Alert Observation." severity="WARNING" base_Constraint="_tL4b0BTdEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_T98lABTjEd-6K-YJpbwRmQ" message="CCD Problem Act MAY satisfy: A problem act MAY reference a problem observation, alert observation (see section Alerts) or other clinical statement that is the subject of concern, by setting the value for &quot;Act / entryRelationship / @typeCode&quot; to be &quot;SUBJ&quot; 2.16.840.1.113883.5.1002 ActRelationshipType STATIC." severity="INFO" base_Constraint="_BSMQgBTjEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_hpjAEBToEd-6K-YJpbwRmQ" message="CCD Problem Act SHOULD satisfy: The target of a problem act with Act / entryRelationship / @typeCode=&quot;SUBJ&quot; SHOULD be a problem observation (in the Problem section) or alert observation (in the Alert section), but MAY be some other clinical statement." severity="WARNING" base_Constraint="_fIRWIBToEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_5vwDsBTrEd-6K-YJpbwRmQ" message="CCD Problem Observation MAY satisfy: The value for entryRelationship / @typeCode in a problem observation MAY be &quot;SUBJ&quot; &quot;Subject&quot; 2.16.840.1.113883.5.1002 ActRelationshipType STATIC to reference an age observation." severity="INFO"/>
+  <CDA:ConstraintValidation xmi:id="_OrufoBTyEd-6K-YJpbwRmQ" message="CCD Problem Observation SHALL satisfy: A problem observation contains one or more sources of information." base_Constraint="_LgbBQBTyEd-6K-YJpbwRmQ"/>
+  <CDA:EntryRelationship xmi:id="_T47UUBWiEd-6K-YJpbwRmQ" message="CCD Problem Observation MAY contain [0..1] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;REFR&quot; REFR (refers to), SHALL contain [1..1] Problem Status (templateId: 2.16.840.1.113883.10.20.1.50)" severity="INFO" base_Association="_n55kwBWhEd-6K-YJpbwRmQ" typeCode="REFR"/>
+  <CDA:EntryRelationship xmi:id="_U1pbQBWiEd-6K-YJpbwRmQ" message="CCD Problem Observation MAY contain [0..1] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;REFR&quot; REFR (refers to), SHALL contain [1..1] Problem Health Status (templateId: 2.16.840.1.113883.10.20.1.51)" severity="INFO" base_Association="_0k-JMBWhEd-6K-YJpbwRmQ" typeCode="REFR"/>
+  <CDA:ConstraintValidation xmi:id="_uBjDABWiEd-6K-YJpbwRmQ" message="CCD Status Observation SHALL satisfy: SHALL NOT contain any additional Observation attributes." base_Constraint="_nPDbgBWiEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_1hBFQBWiEd-6K-YJpbwRmQ" message="CCD Status Observation SHALL satisfy: SHALL NOT contain any Observation participants." base_Constraint="_xgaWkBWiEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_7Bo1MBWiEd-6K-YJpbwRmQ" message="CCD Status Observation SHALL satisfy: SHALL NOT be the source of any Observation relationships." base_Constraint="_6Q6i4BWiEd-6K-YJpbwRmQ"/>
+  <CDA:AssociationValidation xmi:id="_sUU2wBWjEd-6K-YJpbwRmQ" message="CCD Problem Act MAY contain [0..1] entryRelationship such that it, SHALL contain [1..1] Episode Observation (templateId: 2.16.840.1.113883.10.20.1.41)" severity="INFO" base_Association="_qqzUMBWjEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_Fb70YBWkEd-6K-YJpbwRmQ" message="CCD Episode Observation SHOULD satisfy: Value in an episode observation SHOULD be the following SNOMED CT expression:&#13;&#10;&lt;value xsi:type=&quot;CD&quot; code=&quot;404684003&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Clinical finding&quot;&gt;&#13;&#10;  &lt;qualifier&gt;&#13;&#10;    &lt;name code=&quot;246456000&quot; displayName=&quot;Episodicity&quot;/&gt;&#13;&#10;    &lt;value code=&quot;288527008&quot; displayName=&quot;New episode&quot;/&gt;&#13;&#10;  &lt;/qualifier&gt;&#13;&#10;&lt;/value&gt;" severity="WARNING" base_Constraint="_DnqaYBWkEd-6K-YJpbwRmQ"/>
+  <CDA:VocabSpecification xmi:id="_fdmmgBWkEd-6K-YJpbwRmQ" message="CCD Episode Observation SHOULD contain [1..1] value/@code = &quot;404684003&quot; Clinical finding (CodeSystem: 2.16.840.1.113883.6.96 SNOMED CT STATIC), where its data type is CD" severity="WARNING" base_Property="_cdE0wBWkEd-6K-YJpbwRmQ" code="404684003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Clinical finding"/>
+  <CDA:ConstraintValidation xmi:id="_8TpkwBWkEd-6K-YJpbwRmQ" message="CCD Episode Observation SHALL satisfy: Contains exactly one entryRelationship whose typeCode is 'SUBJ'. This is used to link the episode observation to the target problem act or social history observation." base_Constraint="_5Uu8kBWkEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_3Ot10BWlEd-6K-YJpbwRmQ" message="CCD Episode Observation MAY satisfy: Contain one or more entryRelationship whose typeCode is 'SAS'. The target of the entryRelationship SHALL be a problem act or social history observation. This is used to represent the temporal sequence of episodes." severity="INFO" base_Constraint="_3OelQBWlEd-6K-YJpbwRmQ"/>
+  <CDA:VocabSpecification xmi:id="_xvQUwBWrEd-6K-YJpbwRmQ" message="CCD Patient Awareness SHALL contain [1..1] awarenessCode" base_Property="_v_hcgBWrEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_PpNAABWsEd-6K-YJpbwRmQ" message="CCD Patient Awareness SHALL satisfy: Patient awareness SHALL contain exactly one participant / participantRole / id, which SHALL have exactly one value, which SHALL also be present in ClinicalDocument / recordTarget / patientRole / id." base_Constraint="_-c6TIBWrEd-6K-YJpbwRmQ"/>
+  <CDA:PropertyValidation xmi:id="_Y69o0BW4Ed-6K-YJpbwRmQ" message="CCD Alert Observation SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_UKtl4BW4Ed-6K-YJpbwRmQ"/>
+  <CDA:VocabSpecification xmi:id="_qx_UwBW4Ed-6K-YJpbwRmQ" message="CCD Alert Observation MAY contain [0..*] value, which MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.4 AlertTypeCode STATIC 20061017, where its data type is CE" severity="INFO" base_Property="_UKtl4RW4Ed-6K-YJpbwRmQ" codeSystem="2.16.840.1.113883.1.11.20.4" codeSystemName="AlertTypeCode" codeSystemVersion="20061017"/>
+  <CDA:ConstraintValidation xmi:id="_5i9OsBW4Ed-6K-YJpbwRmQ" message="CCD Alert Observation SHOULD satisfy: The absence of known allergies SHOULD be represented in an alert observation by valuing Observation / value with 160244002 &quot;No known allergies&quot; 2.16.840.1.113883.6.96 SNOMED CT STATIC." severity="WARNING" base_Constraint="_4w6twBW4Ed-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_TOYEABW5Ed-6K-YJpbwRmQ" message="CCD Alert Observation SHALL satisfy: An alert observation contains one or more sources of information." base_Constraint="_H_fwwBW5Ed-6K-YJpbwRmQ"/>
+  <CDA:AssociationValidation xmi:id="_cAlggBW5Ed-6K-YJpbwRmQ" message="CCD Alert Observation MAY contain [0..1] entryRelationship such that it, SHALL contain [1..1] Alert Status Observation (templateId: 2.16.840.1.113883.10.20.1.39)" severity="INFO" base_Association="_aCZVgRW5Ed-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_dkY4wBW9Ed-6K-YJpbwRmQ" message="CCD Alert Observation SHOULD satisfy: An alert observation SHOULD contain at least one Observation / participant, representing the agent that is the cause of the allergy or adverse reaction. The value for participant / @typeCode in an agent participation SHALL be &quot;CSM&quot; &quot;Consumable&quot; 2.16.840.1.113883.5.90 ParticipationType STATIC." severity="WARNING" base_Constraint="_byigoBW9Ed-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_KDmkQBW-Ed-6K-YJpbwRmQ" message="CCD Alert Observation SHALL satisfy: Contains exactly one participant / participantRole / playingEntity. The value for participant / participantRole / playingEntity / @classCode in an agent participation SHALL be &quot;MMAT&quot; &quot;Manufactured material&quot; 2.16.840.1.113883.5.41 EntityClass STATIC. Contains exactly one participant / participantRole / playingEntity / code." base_Constraint="_IEdXABW-Ed-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_p7iUQBXAEd-6K-YJpbwRmQ" message="CCD Alert Observation SHOULD satisfy: The value for participant / participantRole / playingEntity / code in an agent participation SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations." severity="WARNING" base_Constraint="_ofo-ABXAEd-6K-YJpbwRmQ"/>
+  <CDA:AssociationValidation xmi:id="_iSV40BXBEd-6K-YJpbwRmQ" message="CCD Reaction Observation MAY contain [0..1] entryRelationship such that it, SHALL contain [1..1] Severity Observation (templateId: 2.16.840.1.113883.10.20.1.55)" severity="INFO" base_Association="_g6vMsBXBEd-6K-YJpbwRmQ"/>
+  <CDA:EntryRelationship xmi:id="_sb1RUBXBEd-6K-YJpbwRmQ" message="CCD Alert Observation MAY contain [1..*] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;MFST&quot; MFST (is manifestation of), SHALL contain [1..1] Reaction Observation (templateId: 2.16.840.1.113883.10.20.1.54)" severity="INFO" base_Association="_SKqqoBXBEd-6K-YJpbwRmQ" typeCode="MFST"/>
+  <CDA:ConstraintValidation xmi:id="_LZgM8BXOEd-6K-YJpbwRmQ" message="CCD Reaction Observation SHALL satisfy: The value for entryRelationship / @typeCode in a relationship between a reaction observation and reaction intervention SHALL be &quot;RSON&quot; &quot;Has reason&quot; 2.16.840.1.113883.5.1002 ActRelationshipType STATIC." base_Constraint="__CX4MBXNEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_SfTK8BXOEd-6K-YJpbwRmQ" message="CCD Reaction Observation SHALL satisfy: A reaction observation MAY contain one or more reation interventions. A reaction intervention SHALL be represented as a procedure activity (templateId 2.16.840.1.113883.10.20.1.29), a medication activity (templateId 2.16.840.1.113883.10.20.1.24), or some other clinical statement." base_Constraint="_OgP7cBXOEd-6K-YJpbwRmQ"/>
+  <CDA:PropertyValidation xmi:id="_6avJQBXOEd-6K-YJpbwRmQ" message="CCD Reaction Observation SHALL contain [1..1] @classCode = &quot;OBS&quot;" base_Property="_3K_PwBXOEd-6K-YJpbwRmQ"/>
+  <CDA:PropertyValidation xmi:id="_7GIPoBXOEd-6K-YJpbwRmQ" message="CCD Reaction Observation SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_3K_20BXOEd-6K-YJpbwRmQ"/>
+  <CDA:PropertyValidation xmi:id="_KJqgQBXPEd-6K-YJpbwRmQ" message="CCD Severity Observation SHALL contain [1..1] @classCode = &quot;OBS&quot;" base_Property="_HpTcUBXPEd-6K-YJpbwRmQ"/>
+  <CDA:PropertyValidation xmi:id="_MICRcBXPEd-6K-YJpbwRmQ" message="CCD Severity Observation SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_HpUDYBXPEd-6K-YJpbwRmQ"/>
+  <CDA:PropertyValidation xmi:id="__f8oMBXREd-6K-YJpbwRmQ" message="CCD Alert Observation SHALL contain [0..1] effectiveTime" base_Property="_UKs-0BW4Ed-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_a8sfsBZrEd-kKd2N285_Sw" message="CCD Problem Act MAY satisfy: Contains exactly one Patient Awareness" severity="INFO" base_Constraint="_WdDEkBZrEd-kKd2N285_Sw"/>
+  <CDA:ConstraintValidation xmi:id="_vMC4cBZsEd-kKd2N285_Sw" message="CCD Problem Observation MAY satisfy: Contains exactly one Patient Awareness" severity="INFO" base_Constraint="_vL9Y4BZsEd-kKd2N285_Sw"/>
+  <CDA:CDATemplate xmi:id="_YVLfUBZ1Ed-i6Lz80y5G5g" message="CCD Age Observation SHALL contain the template identifier 2.16.840.1.113883.10.20.1.38" base_Class="_S7rEABZ1Ed-i6Lz80y5G5g" templateId="2.16.840.1.113883.10.20.1.38" assigningAuthorityName="CCD"/>
+  <CDA:PropertyValidation xmi:id="_pqYQkBZ1Ed-i6Lz80y5G5g" message="CCD Age Observation SHALL contain [1..1] @classCode = &quot;OBS&quot;" base_Property="_U9GJMBZ1Ed-i6Lz80y5G5g"/>
+  <CDA:PropertyValidation xmi:id="_qSKCQBZ1Ed-i6Lz80y5G5g" message="CCD Age Observation SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_U9H-YBZ1Ed-i6Lz80y5G5g"/>
+  <CDA:VocabSpecification xmi:id="_wdaDkBZ1Ed-i6Lz80y5G5g" message="CCD Age Observation SHALL contain [1..1] code/@code = &quot;397659008&quot; Age (CodeSystem: 2.16.840.1.113883.6.96 SNOMED CT STATIC)" base_Property="_U9GwQBZ1Ed-i6Lz80y5G5g" code="397659008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Age"/>
+  <CDA:VocabSpecification xmi:id="_2a_cUBZ1Ed-i6Lz80y5G5g" message="CCD Age Observation SHALL contain [0..1] statusCode/@code = &quot;completed&quot;  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC)" base_Property="_U9IlcBZ1Ed-i6Lz80y5G5g" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
+  <CDA:PropertyValidation xmi:id="_8iQ8kBZ1Ed-i6Lz80y5G5g" message="CCD Age Observation SHALL contain [1..1] value" base_Property="_U9IlcxZ1Ed-i6Lz80y5G5g"/>
+  <CDA:EntryRelationship xmi:id="_-DLgQBZ2Ed-i6Lz80y5G5g" message="CCD Problem Observation MAY contain [0..1] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;SUBJ&quot; SUBJ (has subject), SHALL contain [1..1] Age Observation (templateId: 2.16.840.1.113883.10.20.1.38)" severity="INFO" base_Association="_7kTDABZ2Ed-i6Lz80y5G5g" typeCode="SUBJ"/>
 </xmi:XMI>

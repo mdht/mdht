@@ -9,31 +9,32 @@ package org.openhealthtools.mdht.uml.cda.ccd;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+
 import org.openhealthtools.mdht.uml.cda.Observation;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Severity Observation</b></em>'.
+ * A representation of the model object '<em><b>Age Observation</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getSeverityObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' statusCode.codeSystemName='ActStatus' code.codeSystemName='ActCode' statusCode.codeSystem='2.16.840.1.113883.5.14' constraints.validation.error='SeverityObservationTemplateId SeverityObservationClassCode SeverityObservationMoodCode SeverityObservationCode SeverityObservationStatusCode SeverityObservationValue' templateId.root='2.16.840.1.113883.10.20.1.55' statusCode.code='completed' code.displayName='Severity observation' code.codeSystem='2.16.840.1.113883.5.4' code.code='SEV'"
+ * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getAgeObservation()
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' statusCode.codeSystemName='ActStatus' code.codeSystemName='SNOMED CT' statusCode.codeSystem='2.16.840.1.113883.5.14' templateId.root='2.16.840.1.113883.10.20.1.38' constraints.validation.error='AgeObservationTemplateId AgeObservationClassCode AgeObservationMoodCode AgeObservationCode AgeObservationStatusCode AgeObservationValue' statusCode.code='completed' code.displayName='Age' code.codeSystem='2.16.840.1.113883.6.96' code.code='397659008'"
  * @generated
  */
-public interface SeverityObservation extends Observation {
+public interface AgeObservation extends Observation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.10.20.1.55')
+	 * self.hasTemplateId('2.16.840.1.113883.10.20.1.38')
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.55\')'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.1.38\')'"
 	 * @generated
 	 */
-	boolean validateSeverityObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAgeObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,7 +47,7 @@ public interface SeverityObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.classCode=vocab::ActClassObservation::OBS'"
 	 * @generated
 	 */
-	boolean validateSeverityObservationClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAgeObservationClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -59,7 +60,7 @@ public interface SeverityObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode=vocab::x_ActMoodDocumentObservation::EVN'"
 	 * @generated
 	 */
-	boolean validateSeverityObservationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAgeObservationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,29 +68,29 @@ public interface SeverityObservation extends Observation {
 	 * <!-- begin-model-doc -->
 	 * not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and 
 	 * let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (
-	 * value.code = 'SEV' and value.codeSystem = '2.16.840.1.113883.5.4')
+	 * value.code = '397659008' and value.codeSystem = '2.16.840.1.113883.6.96')
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and \r\nlet value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (\r\nvalue.code = \'SEV\' and value.codeSystem = \'2.16.840.1.113883.5.4\')'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and \r\nlet value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (\r\nvalue.code = \'397659008\' and value.codeSystem = \'2.16.840.1.113883.6.96\')'"
 	 * @generated
 	 */
-	boolean validateSeverityObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAgeObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and 
+	 * self.statusCode.oclIsKindOf(datatypes::CS) and 
 	 * let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (
 	 * value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\' and value.codeSystem = \'2.16.840.1.113883.5.14\')'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\' and value.codeSystem = \'2.16.840.1.113883.5.14\')'"
 	 * @generated
 	 */
-	boolean validateSeverityObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAgeObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,12 +103,12 @@ public interface SeverityObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.value->size() = 1'"
 	 * @generated
 	 */
-	boolean validateSeverityObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAgeObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SeverityObservation init();
-} // SeverityObservation
+	public AgeObservation init();
+} // AgeObservation

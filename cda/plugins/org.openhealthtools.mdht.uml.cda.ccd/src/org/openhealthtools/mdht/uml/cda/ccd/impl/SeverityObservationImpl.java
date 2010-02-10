@@ -59,6 +59,24 @@ public class SeverityObservationImpl extends ObservationImpl implements Severity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateSeverityObservationClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SeverityObservationOperations.validateSeverityObservationClassCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSeverityObservationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SeverityObservationOperations.validateSeverityObservationMoodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateSeverityObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return SeverityObservationOperations.validateSeverityObservationCode(this, diagnostics, context);
 	}

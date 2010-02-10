@@ -56,6 +56,24 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateInformationSource(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContainsPatientAwareness(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateContainsPatientAwareness(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateProblemObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ProblemObservationOperations.validateProblemObservationTemplateId(this, diagnostics, context);
 	}
@@ -94,6 +112,33 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 */
 	public boolean validateProblemObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ProblemObservationOperations.validateProblemObservationCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProblemObservationProblemStatus(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateProblemObservationProblemStatus(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProblemObservationProblemHealthStatus(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateProblemObservationProblemHealthStatus(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProblemObservationAgeObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateProblemObservationAgeObservation(this, diagnostics, context);
 	}
 
 	/**

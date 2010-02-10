@@ -37,11 +37,10 @@ public interface PurposeActivity extends Act {
 	 * <!-- begin-model-doc -->
 	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | 
 	 *   entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)
-	 * 
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entryRelationship : cda::EntryRelationship | \r\n  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)\r\n'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entryRelationship : cda::EntryRelationship | \r\n  entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::RSON)'"
 	 * @generated
 	 */
 	boolean validatePurposeActivityHasReason(DiagnosticChain diagnostics, Map<Object, Object> context);

@@ -50,6 +50,24 @@ public class EpisodeObservationImpl extends ObservationImpl implements EpisodeOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateOneEntryRelationshipSUBJ(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.validateOneEntryRelationshipSUBJ(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExistsEntryRelationshipSAS(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.validateExistsEntryRelationshipSAS(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateEpisodeObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return EpisodeObservationOperations.validateEpisodeObservationTemplateId(this, diagnostics, context);
 	}
@@ -88,6 +106,15 @@ public class EpisodeObservationImpl extends ObservationImpl implements EpisodeOb
 	 */
 	public boolean validateEpisodeObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return EpisodeObservationOperations.validateEpisodeObservationCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEpisodeObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.validateEpisodeObservationValue(this, diagnostics, context);
 	}
 
 	/**
