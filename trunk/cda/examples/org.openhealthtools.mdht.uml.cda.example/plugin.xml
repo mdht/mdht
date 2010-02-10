@@ -8,9 +8,4 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package class="org.openhealthtools.mdht.uml.cda.example.ExamplePackage" genModel="model/example.genmodel" uri="http://www.openhealthtools.org/mdht/uml/cda/example"/>
    </extension>
-   <extension point="org.openhealthtools.mdht.uml.cda.extension">
-      <entry eClass="MyDocument" id="1.2.3.4" nsURI="http://www.openhealthtools.org/mdht/uml/cda/example"/>
-      <entry eClass="MyActivity" id="1.2.3.4.2" nsURI="http://www.openhealthtools.org/mdht/uml/cda/example"/>
-      <entry eClass="MySection" id="1.2.3.4.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/example"/>
-   </extension>
 </plugin>

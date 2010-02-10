@@ -11,14 +11,4 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package class="org.openhealthtools.mdht.uml.cda.ncr.NCRPackage" genModel="model/ncr.genmodel" uri="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
    </extension>
-   <extension point="org.openhealthtools.mdht.uml.cda.extension">
-      <entry eClass="NeonatalCareReport" id="2.16.840.1.113883.10.20.17.1.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
-      <entry eClass="NeonatalICUEncounterActivity" id="2.16.840.1.113883.10.20.17.3.15" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
-      <entry eClass="PatientDataSectionNCR" id="2.16.840.1.113883.10.20.17.2.5" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
-      <entry eClass="PatientDataSection" id="2.16.840.1.113883.10.20.17.2.4" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
-      <entry eClass="EncountersSection" id="2.16.840.1.113883.10.20.17.2.2" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
-      <entry eClass="AcuityDataSection" id="2.16.840.1.113883.10.20.17.2.3" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
-      <entry eClass="BirthWeight" id="2.16.840.1.113883.10.20.17.3.1" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
-      <entry eClass="NeonatalICULocation" id="2.16.840.1.113883.10.20.17.3.14" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ncr"/>
-   </extension>
 </plugin>

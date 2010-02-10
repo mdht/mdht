@@ -17,7 +17,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
- org.junit4;bundle-version="4.3.1",
  org.openhealthtools.mdht.uml.hl7.datatypes;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport
 Bundle-ActivationPolicy: lazy
