@@ -2266,8 +2266,6 @@
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/hasCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegionOfInterest/hasCode/code"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegionOfInterest/hasCode/codeSystem"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegionOfInterest/hasCode/codeSystemName"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegionOfInterest/hasEncounterTemplate">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegionOfInterest/hasEncounterTemplate/templateId"/>

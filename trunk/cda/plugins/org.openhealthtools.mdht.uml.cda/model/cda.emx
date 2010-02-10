@@ -540,7 +540,7 @@
         <ownedRule xmi:id="_SbVWIFwwEd6ZEsfifJz_3w" name="body" constrainedElement="_yy2sgFwvEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_SbegEFwwEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.component.structuredBody.component.section</body>
+            <body>if self.component.structuredBody.oclIsUndefined() then Bag{} else self.component.structuredBody.component.section endif</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_0abHQFwvEd6ZEsfifJz_3w" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" isUnique="false" direction="return">
@@ -1060,7 +1060,7 @@
         <ownedRule xmi:id="_h4rBUFxFEd6ZEsfifJz_3w" name="body" constrainedElement="_zg9jIFxEEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_h4rBUVxFEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))</body>
+            <body>self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_09M3oFxEEd6ZEsfifJz_3w" name="templateId">
@@ -1094,7 +1094,7 @@
         <ownedRule xmi:id="_4FzK0FxFEd6ZEsfifJz_3w" name="body" constrainedElement="_1RBLgFxEEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_4FzK0VxFEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))</body>
+            <body>self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_2yxSIFxEEd6ZEsfifJz_3w" name="templateId">
@@ -1122,7 +1122,7 @@
         <ownedRule xmi:id="_lguQoFxGEd6ZEsfifJz_3w" name="body" constrainedElement="_5nXgsFxEEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_lguQoVxGEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))</body>
+            <body>self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_7WYnQFxEEd6ZEsfifJz_3w" name="templateId">
@@ -1136,7 +1136,7 @@
         <ownedRule xmi:id="_xBlEsFxGEd6ZEsfifJz_3w" name="body" constrainedElement="_Iu6HkFxFEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_xBlEsVxGEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))</body>
+            <body>self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_KMxzwFxFEd6ZEsfifJz_3w" name="templateId">
@@ -1150,7 +1150,7 @@
         <ownedRule xmi:id="_4-dbsFxGEd6ZEsfifJz_3w" name="body" constrainedElement="_GYQZQFxFEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_4-dbsVxGEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))</body>
+            <body>self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_ICzPgFxFEd6ZEsfifJz_3w" name="templateId">
@@ -1164,7 +1164,7 @@
         <ownedRule xmi:id="_D2yQIFxHEd6ZEsfifJz_3w" name="body" constrainedElement="_QzOjUFxFEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_D2yQIVxHEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))</body>
+            <body>self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_SjJBwFxFEd6ZEsfifJz_3w" name="templateId">
@@ -1178,7 +1178,7 @@
         <ownedRule xmi:id="_2KVRwFxHEd6ZEsfifJz_3w" name="body" constrainedElement="_UA3kAFxFEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_2KVRwVxHEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))</body>
+            <body>self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_VyQpIFxFEd6ZEsfifJz_3w" name="templateId">
@@ -1192,7 +1192,7 @@
         <ownedRule xmi:id="_-7BTAVxBEd6ZEsfifJz_3w" name="body" constrainedElement="_-7BTAFxBEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_-7BTAlxBEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))</body>
+            <body>self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_-7BTA1xBEd6ZEsfifJz_3w" name="templateId">
@@ -1206,7 +1206,7 @@
         <ownedRule xmi:id="_AjOYMFxIEd6ZEsfifJz_3w" name="body" constrainedElement="_W8eZgFxFEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_AjOYMVxIEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))</body>
+            <body>self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_ZHgGoFxFEd6ZEsfifJz_3w" name="templateId">
@@ -2749,16 +2749,10 @@
         <ownedRule xmi:id="_hHeWcVxcEd6ZEsfifJz_3w" name="body" constrainedElement="_hHeWcFxcEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_hHeWclxcEd6ZEsfifJz_3w">
             <language>OCL</language>
-            <body>self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName</body>
+            <body>self.code.code = code</body>
           </specification>
         </ownedRule>
         <ownedParameter xmi:id="_hHeWc1xcEd6ZEsfifJz_3w" name="code">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_hHeWdFxcEd6ZEsfifJz_3w" name="codeSystem">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_hHeWdVxcEd6ZEsfifJz_3w" name="codeSystemName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <ownedParameter xmi:id="_hHeWdlxcEd6ZEsfifJz_3w" name="Parameter1" direction="return">

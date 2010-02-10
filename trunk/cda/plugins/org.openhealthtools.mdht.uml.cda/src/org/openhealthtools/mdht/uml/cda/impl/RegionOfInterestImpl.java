@@ -987,8 +987,8 @@ public class RegionOfInterestImpl extends EObjectImpl implements RegionOfInteres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean hasCode(String code, String codeSystem, String codeSystemName) {
-		return RegionOfInterestOperations.hasCode(this, code, codeSystem, codeSystemName);
+	public boolean hasCode(String code) {
+		return RegionOfInterestOperations.hasCode(this, code);
 	}
 
 	/**

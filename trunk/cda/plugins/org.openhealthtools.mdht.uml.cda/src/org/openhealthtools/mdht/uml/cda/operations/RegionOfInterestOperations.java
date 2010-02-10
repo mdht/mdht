@@ -66,7 +66,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getSubstanceAdministrations() <em>Get Substance Administrations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#getSupplies() <em>Get Supplies</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#hasActTemplate(java.lang.String) <em>Has Act Template</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#hasCode(java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#hasCode(java.lang.String) <em>Has Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#hasEncounterTemplate(java.lang.String) <em>Has Encounter Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#hasObservationMediaTemplate(java.lang.String) <em>Has Observation Media Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RegionOfInterest#hasObservationTemplate(java.lang.String) <em>Has Observation Template</em>}</li>
@@ -678,50 +678,48 @@ public class RegionOfInterestOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #hasCode(RegionOfInterest, java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #hasCode(RegionOfInterest, java.lang.String) <em>Has Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #hasCode(RegionOfInterest, java.lang.String, java.lang.String, java.lang.String)
+	 * @see #hasCode(RegionOfInterest, java.lang.String)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_CODE__STRING_STRING_STRING__EOCL_EXP = "self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName";
+	protected static final String HAS_CODE__STRING__EOCL_EXP = "self.code.code = code";
 
 	/**
-	 * The cached OCL query for the '{@link #hasCode(RegionOfInterest, java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}' query operation.
+	 * The cached OCL query for the '{@link #hasCode(RegionOfInterest, java.lang.String) <em>Has Code</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #hasCode(RegionOfInterest, java.lang.String, java.lang.String, java.lang.String)
+	 * @see #hasCode(RegionOfInterest, java.lang.String)
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> HAS_CODE__STRING_STRING_STRING__EOCL_QRY;
+	protected static OCLExpression<EClassifier> HAS_CODE__STRING__EOCL_QRY;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
+	 * self.code.code = code
 	 * @param regionOfInterest The receiving '<em><b>Region Of Interest</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean hasCode(RegionOfInterest regionOfInterest, String code, String codeSystem, String codeSystemName) {
-		if (HAS_CODE__STRING_STRING_STRING__EOCL_QRY == null) {
+	public static  boolean hasCode(RegionOfInterest regionOfInterest, String code) {
+		if (HAS_CODE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(CDAPackage.eINSTANCE.getRegionOfInterest(), CDAPackage.eINSTANCE.getRegionOfInterest().getEAllOperations().get(21));
 			try {
-				HAS_CODE__STRING_STRING_STRING__EOCL_QRY = helper.createQuery(HAS_CODE__STRING_STRING_STRING__EOCL_EXP);
+				HAS_CODE__STRING__EOCL_QRY = helper.createQuery(HAS_CODE__STRING__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(HAS_CODE__STRING_STRING_STRING__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.createQuery(HAS_CODE__STRING__EOCL_QRY);
 		EvaluationEnvironment<?, ?, ?, ?, ?> environment = query.getEvaluationEnvironment();
 		environment.add("code", code);
-		environment.add("codeSystem", codeSystem);
-		environment.add("codeSystemName", codeSystemName);
 		return ((Boolean) query.evaluate(regionOfInterest)).booleanValue();
 	}
 

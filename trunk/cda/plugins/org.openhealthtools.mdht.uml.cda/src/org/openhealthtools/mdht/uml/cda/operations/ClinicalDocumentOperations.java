@@ -207,7 +207,7 @@ public class ClinicalDocumentOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GET_SECTIONS__EOCL_EXP = "self.component.structuredBody.component.section";
+	protected static final String GET_SECTIONS__EOCL_EXP = "if self.component.structuredBody.oclIsUndefined() then Bag{} else self.component.structuredBody.component.section endif";
 	/**
 	 * The cached OCL query for the '{@link #getSections(ClinicalDocument) <em>Get Sections</em>}' query operation.
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public class ClinicalDocumentOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.structuredBody.component.section
+	 * if self.component.structuredBody.oclIsUndefined() then Bag{} else self.component.structuredBody.component.section endif
 	 * @param clinicalDocument The receiving '<em><b>Clinical Document</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
