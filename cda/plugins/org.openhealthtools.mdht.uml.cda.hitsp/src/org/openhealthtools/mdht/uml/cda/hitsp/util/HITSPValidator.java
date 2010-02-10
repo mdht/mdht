@@ -509,7 +509,6 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(allergyDrugSensitivity, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActProblemObservation(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_validateConcernEntryTemplateId(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_validateConcernEntryEffectiveTime(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateAllergyIntoleranceConcern_validateAllergyIntoleranceConcernTemplateId(allergyDrugSensitivity, diagnostics, context);
@@ -580,7 +579,6 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(condition, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActProblemObservation(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_validateConcernEntryTemplateId(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_validateConcernEntryEffectiveTime(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateProblemConcernEntry_validateProblemConcernEntryTemplateId(condition, diagnostics, context);
