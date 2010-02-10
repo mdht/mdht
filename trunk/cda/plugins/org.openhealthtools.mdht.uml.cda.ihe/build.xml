@@ -11,5 +11,5 @@
 		</sequential>
 	</macrodef>
 	
-	<import file="${cdaPluginPath}/build-common.xml"/>
+	<import file="${cdaPluginPath}/transform-common.xml"/>
 </project>
