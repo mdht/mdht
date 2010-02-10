@@ -893,10 +893,10 @@ public interface ClinicalDocument extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component.structuredBody.component.section
+	 * if self.component.structuredBody.oclIsUndefined() then Bag{} else self.component.structuredBody.component.section endif
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" unique="false" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component.structuredBody.component.section'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='if self.component.structuredBody.oclIsUndefined() then Bag{} else self.component.structuredBody.component.section endif'"
 	 * @generated
 	 */
 	EList<Section> getSections();

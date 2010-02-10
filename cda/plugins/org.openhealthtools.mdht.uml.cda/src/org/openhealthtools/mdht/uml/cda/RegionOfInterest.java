@@ -749,13 +749,13 @@ public interface RegionOfInterest extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
+	 * self.code.code = code
 	 * <!-- end-model-doc -->
-	 * @model required="true" ordered="false" codeRequired="true" codeOrdered="false" codeSystemRequired="true" codeSystemOrdered="false" codeSystemNameRequired="true" codeSystemNameOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName'"
+	 * @model required="true" ordered="false" codeRequired="true" codeOrdered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.code.code = code'"
 	 * @generated
 	 */
-	boolean hasCode(String code, String codeSystem, String codeSystemName);
+	boolean hasCode(String code);
 
 	/**
 	 * <!-- begin-user-doc -->

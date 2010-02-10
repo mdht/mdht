@@ -791,10 +791,10 @@ public interface Section extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))
+	 * self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasActTemplate(String templateId);
@@ -815,10 +815,10 @@ public interface Section extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
+	 * self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasEncounterTemplate(String templateId);
@@ -839,10 +839,10 @@ public interface Section extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
+	 * self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasObservationTemplate(String templateId);
@@ -851,10 +851,10 @@ public interface Section extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
+	 * self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasOrganizerTemplate(String templateId);
@@ -863,10 +863,10 @@ public interface Section extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
+	 * self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasProcedureTemplate(String templateId);
@@ -875,10 +875,10 @@ public interface Section extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
+	 * self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasRegionOfInterestTemplate(String templateId);
@@ -887,10 +887,10 @@ public interface Section extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
+	 * self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasSubstanceAdministrationTemplate(String templateId);
@@ -899,10 +899,10 @@ public interface Section extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
+	 * self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasSectionTemplate(String templateId);
@@ -911,10 +911,10 @@ public interface Section extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
+	 * self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
 	 * <!-- end-model-doc -->
 	 * @model required="true" ordered="false" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasSupplyTemplate(String templateId);

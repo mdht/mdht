@@ -34,10 +34,10 @@
     <eOperations name="getSections" ordered="false" unique="false" upperBound="-1"
         eType="#//Section">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.component.structuredBody.component.section"/>
+        <details key="documentation" value="if self.component.structuredBody.oclIsUndefined() then Bag{} else self.component.structuredBody.component.section endif"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.component.structuredBody.component.section"/>
+        <details key="body" value="if self.component.structuredBody.oclIsUndefined() then Bag{} else self.component.structuredBody.component.section endif"/>
       </eAnnotations>
     </eOperations>
     <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -2796,10 +2796,10 @@
     </eOperations>
     <eOperations name="hasActTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))"/>
+        <details key="documentation" value="self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))"/>
+        <details key="body" value="self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
@@ -2816,10 +2816,10 @@
     </eOperations>
     <eOperations name="hasEncounterTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))"/>
+        <details key="documentation" value="self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))"/>
+        <details key="body" value="self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
@@ -2835,66 +2835,66 @@
     </eOperations>
     <eOperations name="hasObservationTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))"/>
+        <details key="documentation" value="self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))"/>
+        <details key="body" value="self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="hasOrganizerTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))"/>
+        <details key="documentation" value="self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))"/>
+        <details key="body" value="self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="hasProcedureTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))"/>
+        <details key="documentation" value="self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))"/>
+        <details key="body" value="self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="hasRegionOfInterestTemplate" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))"/>
+        <details key="documentation" value="self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))"/>
+        <details key="body" value="self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="hasSubstanceAdministrationTemplate" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))"/>
+        <details key="documentation" value="self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))"/>
+        <details key="body" value="self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="hasSectionTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))"/>
+        <details key="documentation" value="self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))"/>
+        <details key="body" value="self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="hasSupplyTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))"/>
+        <details key="documentation" value="self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))"/>
+        <details key="body" value="self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))"/>
       </eAnnotations>
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
@@ -6645,14 +6645,12 @@
     </eOperations>
     <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName"/>
+        <details key="documentation" value="self.code.code = code"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName"/>
+        <details key="body" value="self.code.code = code"/>
       </eAnnotations>
       <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystem" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eParameters name="codeSystemName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="hasEncounterTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

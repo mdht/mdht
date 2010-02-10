@@ -718,7 +718,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_ACT_TEMPLATE__STRING__EOCL_EXP = "self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))";
+	protected static final String HAS_ACT_TEMPLATE__STRING__EOCL_EXP = "self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasActTemplate(Section, java.lang.String) <em>Has Act Template</em>}' query operation.
@@ -734,7 +734,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getAct()->exists(act : cda::Act | act.hasTemplateId(templateId))
+	 * self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -812,7 +812,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP = "self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))";
+	protected static final String HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP = "self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasEncounterTemplate(Section, java.lang.String) <em>Has Encounter Template</em>}' query operation.
@@ -828,7 +828,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getEncounter()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
+	 * self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -904,7 +904,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP = "self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))";
+	protected static final String HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP = "self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasObservationTemplate(Section, java.lang.String) <em>Has Observation Template</em>}' query operation.
@@ -920,7 +920,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getObservation()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
+	 * self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -950,7 +950,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP = "self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))";
+	protected static final String HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP = "self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasOrganizerTemplate(Section, java.lang.String) <em>Has Organizer Template</em>}' query operation.
@@ -966,7 +966,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getOrganizer()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
+	 * self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -996,7 +996,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP = "self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))";
+	protected static final String HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP = "self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasProcedureTemplate(Section, java.lang.String) <em>Has Procedure Template</em>}' query operation.
@@ -1012,7 +1012,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getProcedure()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
+	 * self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -1042,7 +1042,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP = "self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))";
+	protected static final String HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP = "self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasRegionOfInterestTemplate(Section, java.lang.String) <em>Has Region Of Interest Template</em>}' query operation.
@@ -1058,7 +1058,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getRegionOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
+	 * self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -1088,7 +1088,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP = "self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))";
+	protected static final String HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP = "self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasSubstanceAdministrationTemplate(Section, java.lang.String) <em>Has Substance Administration Template</em>}' query operation.
@@ -1104,7 +1104,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSubstanceAdministration()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
+	 * self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -1134,7 +1134,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_SECTION_TEMPLATE__STRING__EOCL_EXP = "self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))";
+	protected static final String HAS_SECTION_TEMPLATE__STRING__EOCL_EXP = "self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasSectionTemplate(Section, java.lang.String) <em>Has Section Template</em>}' query operation.
@@ -1150,7 +1150,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSection()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
+	 * self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
@@ -1180,7 +1180,7 @@ public class SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP = "self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))";
+	protected static final String HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP = "self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))";
 
 	/**
 	 * The cached OCL query for the '{@link #hasSupplyTemplate(Section, java.lang.String) <em>Has Supply Template</em>}' query operation.
@@ -1196,7 +1196,7 @@ public class SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSupply()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
+	 * self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
 	 * @param section The receiving '<em><b>Section</b></em>' model object.
 	 * <!-- end-model-doc -->
 	 * @generated
