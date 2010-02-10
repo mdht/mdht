@@ -24,10 +24,67 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemAct()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' code.nullFlavor='NA' templateId.root='2.16.840.1.113883.10.20.1.27' constraints.validation.error='ProblemActTemplateId ProblemActClassCode ProblemActMoodCode ProblemActId ProblemActCodeNullFlavor' constraints.validation.warning='ProblemActProblemObservation'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' code.nullFlavor='NA' constraints.validation.info='ContainsPatientAwareness ProblemActEffectiveTime ProblemActEpisodeObservation' templateId.root='2.16.840.1.113883.10.20.1.27' constraints.validation.error='ProblemActTemplateId EntryRelationshipRequired ProblemActClassCode ProblemActMoodCode ProblemActId ProblemActCodeNullFlavor' constraints.validation.warning='SubjectOfTarget ContainsObservation'"
  * @generated
  */
 public interface ProblemAct extends Act {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.entryRelationship->isEmpty()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.entryRelationship->isEmpty()'"
+	 * @generated
+	 */
+	boolean validateEntryRelationshipRequired(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entryRelationship->forAll(entry : cda::EntryRelationship | (entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)
+	 *    implies entry.observation.oclIsKindOf(ccd::ProblemObservation) 
+	 *    or entry.observation.oclIsKindOf(ccd::AlertObservation))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->forAll(entry : cda::EntryRelationship | (entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)\r\n   implies entry.observation.oclIsKindOf(ccd::ProblemObservation) \r\n   or entry.observation.oclIsKindOf(ccd::AlertObservation))'"
+	 * @generated
+	 */
+	boolean validateSubjectOfTarget(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()
+	 *    ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))
+	 * or self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()
+	 *    ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::AlertObservation))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()\r\n   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))\r\nor self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()\r\n   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::AlertObservation))'"
+	 * @generated
+	 */
+	boolean validateContainsObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.participant->one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.participant->one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))'"
+	 * @generated
+	 */
+	boolean validateContainsPatientAwareness(DiagnosticChain diagnostics, Map<Object, Object> context);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,14 +154,27 @@ public interface ProblemAct extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemObservation))
+	 * not self.effectiveTime.oclIsUndefined()
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemObservation))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.effectiveTime.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean validateProblemActProblemObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemActEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::EpisodeObservation))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::EpisodeObservation))'"
+	 * @generated
+	 */
+	boolean validateProblemActEpisodeObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

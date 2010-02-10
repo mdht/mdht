@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.openhealthtools.mdht.uml.cda.ccd.*;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification;
@@ -174,6 +175,7 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.FULFILLMENT_INSTRUCTION: return createFulfillmentInstruction();
 			case CCDPackage.FUNCTIONAL_STATUS_OBSERVATION: return createFunctionalStatusObservation();
 			case CCDPackage.PRODUCT_INSTANCE: return createProductInstance();
+			case CCDPackage.AGE_OBSERVATION: return createAgeObservation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -717,6 +719,16 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public ProductInstance createProductInstance() {
 		ProductInstanceImpl productInstance = new ProductInstanceImpl();
 		return productInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AgeObservation createAgeObservation() {
+		AgeObservationImpl ageObservation = new AgeObservationImpl();
+		return ageObservation;
 	}
 
 	/**

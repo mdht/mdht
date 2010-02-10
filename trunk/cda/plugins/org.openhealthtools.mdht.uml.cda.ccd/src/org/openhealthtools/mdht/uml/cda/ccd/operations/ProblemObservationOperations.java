@@ -28,11 +28,16 @@ import org.openhealthtools.mdht.uml.cda.operations.ObservationOperations;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Information Source</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateContainsPatientAwareness(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Contains Patient Awareness</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationProblemStatus(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Problem Status</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationProblemHealthStatus(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Problem Health Status</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationAgeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Age Observation</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +51,128 @@ public class ProblemObservationOperations extends ObservationOperations {
 	 */
 	protected ProblemObservationOperations() {
 		super();
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateInformationSource(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Information Source</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateInformationSource(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.informant->isEmpty() "+
+"or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)"+
+"or (self.entryRelationship->exists(rel : cda::EntryRelationship | "+
+"   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR"+
+"   and rel.observation.code.code = '48766-0'))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateInformationSource(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Information Source</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateInformationSource(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.informant->isEmpty() 
+	 * or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
+	 * or (self.entryRelationship->exists(rel : cda::EntryRelationship | 
+	 *    rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
+	 *    and rel.observation.code.code = '48766-0'))
+	 * @param problemObservation The receiving '<em><b>Problem Observation</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateInformationSource(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROBLEM_OBSERVATION);
+			try {
+				VALIDATE_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROBLEM_OBSERVATION__INFORMATION_SOURCE,
+						 CCDPlugin.INSTANCE.getString("InformationSource"),
+						 new Object [] { problemObservation }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateContainsPatientAwareness(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Contains Patient Awareness</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateContainsPatientAwareness(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CONTAINS_PATIENT_AWARENESS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.participant->one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateContainsPatientAwareness(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Contains Patient Awareness</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateContainsPatientAwareness(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_CONTAINS_PATIENT_AWARENESS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.participant->one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))
+	 * @param problemObservation The receiving '<em><b>Problem Observation</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateContainsPatientAwareness(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CONTAINS_PATIENT_AWARENESS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROBLEM_OBSERVATION);
+			try {
+				VALIDATE_CONTAINS_PATIENT_AWARENESS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONTAINS_PATIENT_AWARENESS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_CONTAINS_PATIENT_AWARENESS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.INFO,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROBLEM_OBSERVATION__CONTAINS_PATIENT_AWARENESS,
+						 CCDPlugin.INSTANCE.getString("ContainsPatientAwareness"),
+						 new Object [] { problemObservation }));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -334,6 +461,177 @@ public class ProblemObservationOperations extends ObservationOperations {
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_CODE,
 						 CCDPlugin.INSTANCE.getString("ProblemObservationCode"),
+						 new Object [] { problemObservation }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateProblemObservationProblemStatus(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Problem Status</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemObservationProblemStatus(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PROBLEM_OBSERVATION_PROBLEM_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemStatus) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateProblemObservationProblemStatus(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Problem Status</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemObservationProblemStatus(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_PROBLEM_OBSERVATION_PROBLEM_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemStatus) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)
+	 * @param problemObservation The receiving '<em><b>Problem Observation</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateProblemObservationProblemStatus(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_OBSERVATION_PROBLEM_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROBLEM_OBSERVATION);
+			try {
+				VALIDATE_PROBLEM_OBSERVATION_PROBLEM_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_OBSERVATION_PROBLEM_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_OBSERVATION_PROBLEM_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.INFO,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_PROBLEM_STATUS,
+						 CCDPlugin.INSTANCE.getString("ProblemObservationProblemStatus"),
+						 new Object [] { problemObservation }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateProblemObservationProblemHealthStatus(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Problem Health Status</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemObservationProblemHealthStatus(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PROBLEM_OBSERVATION_PROBLEM_HEALTH_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemHealthStatus) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateProblemObservationProblemHealthStatus(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Problem Health Status</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemObservationProblemHealthStatus(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_PROBLEM_OBSERVATION_PROBLEM_HEALTH_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemHealthStatus) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)
+	 * @param problemObservation The receiving '<em><b>Problem Observation</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateProblemObservationProblemHealthStatus(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_OBSERVATION_PROBLEM_HEALTH_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROBLEM_OBSERVATION);
+			try {
+				VALIDATE_PROBLEM_OBSERVATION_PROBLEM_HEALTH_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_OBSERVATION_PROBLEM_HEALTH_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_OBSERVATION_PROBLEM_HEALTH_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.INFO,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_PROBLEM_HEALTH_STATUS,
+						 CCDPlugin.INSTANCE.getString("ProblemObservationProblemHealthStatus"),
+						 new Object [] { problemObservation }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateProblemObservationAgeObservation(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Age Observation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemObservationAgeObservation(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PROBLEM_OBSERVATION_AGE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::AgeObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateProblemObservationAgeObservation(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Age Observation</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemObservationAgeObservation(ProblemObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_PROBLEM_OBSERVATION_AGE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::AgeObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)
+	 * @param problemObservation The receiving '<em><b>Problem Observation</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateProblemObservationAgeObservation(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_OBSERVATION_AGE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROBLEM_OBSERVATION);
+			try {
+				VALIDATE_PROBLEM_OBSERVATION_AGE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_OBSERVATION_AGE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_OBSERVATION_AGE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemObservation)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.INFO,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_AGE_OBSERVATION,
+						 CCDPlugin.INSTANCE.getString("ProblemObservationAgeObservation"),
 						 new Object [] { problemObservation }));
 			}
 			return false;

@@ -50,6 +50,15 @@ public class PatientAwarenessImpl extends Participant2Impl implements PatientAwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateParticipantRoleId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientAwarenessOperations.validateParticipantRoleId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validatePatientAwarenessTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return PatientAwarenessOperations.validatePatientAwarenessTemplateId(this, diagnostics, context);
 	}

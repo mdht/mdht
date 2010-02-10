@@ -77,6 +77,24 @@ public class AlertsSectionImpl extends SectionImpl implements AlertsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateAlertsSectionText(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertsSectionOperations.validateAlertsSectionText(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAlertsSectionProblemAct(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertsSectionOperations.validateAlertsSectionProblemAct(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AlertsSection init() {
     		CDAUtil.init(this);
     		return this;

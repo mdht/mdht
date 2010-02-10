@@ -31,6 +31,8 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionProblemAct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Problem Act</em>}</li>
  * </ul>
  * </p>
  *
@@ -214,6 +216,120 @@ public class AlertsSectionOperations extends SectionOperations {
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.ALERTS_SECTION__ALERTS_SECTION_TITLE,
 						 CCDPlugin.INSTANCE.getString("AlertsSectionTitle"),
+						 new Object [] { alertsSection }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateAlertsSectionText(AlertsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Text</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateAlertsSectionText(AlertsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_ALERTS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.text.oclIsUndefined()";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateAlertsSectionText(AlertsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Text</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateAlertsSectionText(AlertsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_ALERTS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.text.oclIsUndefined()
+	 * @param alertsSection The receiving '<em><b>Alerts Section</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateAlertsSectionText(AlertsSection alertsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ALERTS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.ALERTS_SECTION);
+			try {
+				VALIDATE_ALERTS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ALERTS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_ALERTS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(alertsSection)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.ALERTS_SECTION__ALERTS_SECTION_TEXT,
+						 CCDPlugin.INSTANCE.getString("AlertsSectionText"),
+						 new Object [] { alertsSection }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateAlertsSectionProblemAct(AlertsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Problem Act</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateAlertsSectionProblemAct(AlertsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_ALERTS_SECTION_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProblemAct))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateAlertsSectionProblemAct(AlertsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Problem Act</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateAlertsSectionProblemAct(AlertsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_ALERTS_SECTION_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProblemAct))
+	 * @param alertsSection The receiving '<em><b>Alerts Section</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateAlertsSectionProblemAct(AlertsSection alertsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ALERTS_SECTION_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.ALERTS_SECTION);
+			try {
+				VALIDATE_ALERTS_SECTION_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ALERTS_SECTION_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_ALERTS_SECTION_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(alertsSection)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.WARNING,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.ALERTS_SECTION__ALERTS_SECTION_PROBLEM_ACT,
+						 CCDPlugin.INSTANCE.getString("AlertsSectionProblemAct"),
 						 new Object [] { alertsSection }));
 			}
 			return false;

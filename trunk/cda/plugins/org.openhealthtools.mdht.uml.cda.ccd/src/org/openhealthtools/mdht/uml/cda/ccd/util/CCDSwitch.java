@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
+import org.openhealthtools.mdht.uml.cda.ccd.*;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification;
@@ -548,6 +549,13 @@ public class CCDSwitch<T> {
 				ProductInstance productInstance = (ProductInstance)theEObject;
 				T result = caseProductInstance(productInstance);
 				if (result == null) result = caseParticipantRole(productInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.AGE_OBSERVATION: {
+				AgeObservation ageObservation = (AgeObservation)theEObject;
+				T result = caseAgeObservation(ageObservation);
+				if (result == null) result = caseObservation(ageObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1362,6 +1370,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseProductInstance(ProductInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Age Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Age Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAgeObservation(AgeObservation object) {
 		return null;
 	}
 

@@ -28,12 +28,17 @@ import org.openhealthtools.mdht.uml.cda.operations.ActOperations;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateEntryRelationshipRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Entry Relationship Required</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateSubjectOfTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Subject Of Target</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateContainsObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Contains Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateContainsPatientAwareness(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Contains Patient Awareness</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActCodeNullFlavor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Code Null Flavor</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemAct#validateProblemActEpisodeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Episode Observation</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +52,244 @@ public class ProblemActOperations extends ActOperations {
 	 */
 	protected ProblemActOperations() {
 		super();
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateEntryRelationshipRequired(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Entry Relationship Required</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateEntryRelationshipRequired(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_ENTRY_RELATIONSHIP_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.entryRelationship->isEmpty()";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateEntryRelationshipRequired(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Entry Relationship Required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateEntryRelationshipRequired(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_ENTRY_RELATIONSHIP_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.entryRelationship->isEmpty()
+	 * @param problemAct The receiving '<em><b>Problem Act</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateEntryRelationshipRequired(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ENTRY_RELATIONSHIP_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
+			try {
+				VALIDATE_ENTRY_RELATIONSHIP_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ENTRY_RELATIONSHIP_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_ENTRY_RELATIONSHIP_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROBLEM_ACT__ENTRY_RELATIONSHIP_REQUIRED,
+						 CCDPlugin.INSTANCE.getString("EntryRelationshipRequired"),
+						 new Object [] { problemAct }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateSubjectOfTarget(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Subject Of Target</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateSubjectOfTarget(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_SUBJECT_OF_TARGET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->forAll(entry : cda::EntryRelationship | (entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"+
+"   implies entry.observation.oclIsKindOf(ccd::ProblemObservation) "+
+"   or entry.observation.oclIsKindOf(ccd::AlertObservation))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateSubjectOfTarget(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Subject Of Target</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateSubjectOfTarget(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_SUBJECT_OF_TARGET__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entryRelationship->forAll(entry : cda::EntryRelationship | (entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)
+	 *    implies entry.observation.oclIsKindOf(ccd::ProblemObservation) 
+	 *    or entry.observation.oclIsKindOf(ccd::AlertObservation))
+	 * @param problemAct The receiving '<em><b>Problem Act</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateSubjectOfTarget(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_SUBJECT_OF_TARGET__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
+			try {
+				VALIDATE_SUBJECT_OF_TARGET__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_SUBJECT_OF_TARGET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_SUBJECT_OF_TARGET__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.WARNING,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROBLEM_ACT__SUBJECT_OF_TARGET,
+						 CCDPlugin.INSTANCE.getString("SubjectOfTarget"),
+						 new Object [] { problemAct }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateContainsObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Contains Observation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateContainsObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CONTAINS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()"+
+"   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))"+
+"or self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()"+
+"   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::AlertObservation))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateContainsObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Contains Observation</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateContainsObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_CONTAINS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()
+	 *    ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))
+	 * or self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()
+	 *    ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::AlertObservation))
+	 * @param problemAct The receiving '<em><b>Problem Act</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateContainsObservation(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CONTAINS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
+			try {
+				VALIDATE_CONTAINS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONTAINS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_CONTAINS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.WARNING,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROBLEM_ACT__CONTAINS_OBSERVATION,
+						 CCDPlugin.INSTANCE.getString("ContainsObservation"),
+						 new Object [] { problemAct }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateContainsPatientAwareness(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Contains Patient Awareness</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateContainsPatientAwareness(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CONTAINS_PATIENT_AWARENESS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.participant->one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateContainsPatientAwareness(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Contains Patient Awareness</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateContainsPatientAwareness(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_CONTAINS_PATIENT_AWARENESS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.participant->one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))
+	 * @param problemAct The receiving '<em><b>Problem Act</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateContainsPatientAwareness(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CONTAINS_PATIENT_AWARENESS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
+			try {
+				VALIDATE_CONTAINS_PATIENT_AWARENESS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONTAINS_PATIENT_AWARENESS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_CONTAINS_PATIENT_AWARENESS__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.INFO,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROBLEM_ACT__CONTAINS_PATIENT_AWARENESS,
+						 CCDPlugin.INSTANCE.getString("ContainsPatientAwareness"),
+						 new Object [] { problemAct }));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -335,55 +578,112 @@ public class ProblemActOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateProblemActProblemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Problem Observation</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateProblemActEffectiveTime(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Effective Time</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateProblemActProblemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemActEffectiveTime(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemObservation))";
+	protected static final String VALIDATE_PROBLEM_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.effectiveTime.oclIsUndefined()";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateProblemActProblemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Problem Observation</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateProblemActEffectiveTime(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Effective Time</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateProblemActProblemObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemActEffectiveTime(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PROBLEM_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemObservation))
+	 * not self.effectiveTime.oclIsUndefined()
 	 * @param problemAct The receiving '<em><b>Problem Act</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateProblemActProblemObservation(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemActEffectiveTime(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
 			try {
-				VALIDATE_PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_ACT_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
-						(Diagnostic.WARNING,
+						(Diagnostic.INFO,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
-						 CCDValidator.PROBLEM_ACT__PROBLEM_ACT_PROBLEM_OBSERVATION,
-						 CCDPlugin.INSTANCE.getString("ProblemActProblemObservation"),
+						 CCDValidator.PROBLEM_ACT__PROBLEM_ACT_EFFECTIVE_TIME,
+						 CCDPlugin.INSTANCE.getString("ProblemActEffectiveTime"),
+						 new Object [] { problemAct }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateProblemActEpisodeObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Episode Observation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActEpisodeObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PROBLEM_ACT_EPISODE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::EpisodeObservation))";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateProblemActEpisodeObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Episode Observation</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateProblemActEpisodeObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_PROBLEM_ACT_EPISODE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::EpisodeObservation))
+	 * @param problemAct The receiving '<em><b>Problem Act</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateProblemActEpisodeObservation(ProblemAct problemAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_ACT_EPISODE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(CCDPackage.Literals.PROBLEM_ACT);
+			try {
+				VALIDATE_PROBLEM_ACT_EPISODE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_ACT_EPISODE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_ACT_EPISODE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemAct)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.INFO,
+						 CCDValidator.DIAGNOSTIC_SOURCE,
+						 CCDValidator.PROBLEM_ACT__PROBLEM_ACT_EPISODE_OBSERVATION,
+						 CCDPlugin.INSTANCE.getString("ProblemActEpisodeObservation"),
 						 new Object [] { problemAct }));
 			}
 			return false;

@@ -56,6 +56,42 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateEntryRelationshipRequired(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateEntryRelationshipRequired(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSubjectOfTarget(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateSubjectOfTarget(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContainsObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateContainsObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContainsPatientAwareness(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateContainsPatientAwareness(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateProblemActTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ProblemActOperations.validateProblemActTemplateId(this, diagnostics, context);
 	}
@@ -101,8 +137,17 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemActProblemObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemActOperations.validateProblemActProblemObservation(this, diagnostics, context);
+	public boolean validateProblemActEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateProblemActEffectiveTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProblemActEpisodeObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateProblemActEpisodeObservation(this, diagnostics, context);
 	}
 
 	/**

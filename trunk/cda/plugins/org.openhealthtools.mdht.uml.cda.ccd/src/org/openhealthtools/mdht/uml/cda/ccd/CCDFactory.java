@@ -518,6 +518,15 @@ public interface CCDFactory extends EFactory {
 	ProductInstance createProductInstance();
 
 	/**
+	 * Returns a new object of class '<em>Age Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Age Observation</em>'.
+	 * @generated
+	 */
+	AgeObservation createAgeObservation();
+
+	/**
 	 * Returns a new object of class '<em>Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -50,6 +50,33 @@ public class AlertObservationImpl extends ObservationImpl implements AlertObserv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertObservationOperations.validateInformationSource(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAgentRepresentation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertObservationOperations.validateAgentRepresentation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlayingEntityRequired(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertObservationOperations.validatePlayingEntityRequired(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateAlertObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return AlertObservationOperations.validateAlertObservationTemplateId(this, diagnostics, context);
 	}
@@ -59,8 +86,53 @@ public class AlertObservationImpl extends ObservationImpl implements AlertObserv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateAlertObservationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertObservationOperations.validateAlertObservationMoodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateAlertObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return AlertObservationOperations.validateAlertObservationStatusCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAlertObservationEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertObservationOperations.validateAlertObservationEffectiveTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAlertObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertObservationOperations.validateAlertObservationValue(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAlertObservationAlertStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertObservationOperations.validateAlertObservationAlertStatusObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAlertObservationReactionObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertObservationOperations.validateAlertObservationReactionObservation(this, diagnostics, context);
 	}
 
 	/**
