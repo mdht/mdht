@@ -114,7 +114,7 @@ public class CDALoadImpl extends XMLLoadImpl {
 	private void handlePartType(Element element) {
 		String partType = partTypes.get(element.getLocalName());
 		if (partType != null) {
-			element.setAttribute("partType", partType);
+			element.setAttributeNS(null, "partType", partType);
 		}
 	}
 	
