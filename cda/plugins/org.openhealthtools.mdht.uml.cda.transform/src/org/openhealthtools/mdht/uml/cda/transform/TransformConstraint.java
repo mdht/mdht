@@ -63,7 +63,11 @@ public class TransformConstraint extends TransformAbstract {
 			return null;
 		}
 
-		constraint.setName(normalizeConstraintName(constraint.getName()));
+		String constraintName = normalizeConstraintName(constraint.getName());
+		if (!constraintName.startsWith(constrainedClass.getName())) {
+			constraintName = constrainedClass.getName() + constraintName;
+		}
+		constraint.setName(constraintName);
 		
 		String severity = SEVERITY_ERROR;
 		String message = null;
