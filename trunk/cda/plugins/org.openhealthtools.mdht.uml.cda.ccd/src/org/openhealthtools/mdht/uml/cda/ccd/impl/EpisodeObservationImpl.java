@@ -50,8 +50,8 @@ public class EpisodeObservationImpl extends ObservationImpl implements EpisodeOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateOneEntryRelationshipSUBJ(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EpisodeObservationOperations.validateOneEntryRelationshipSUBJ(this, diagnostics, context);
+	public boolean validateEpisodeObservationOneEntryRelationshipSUBJ(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.validateEpisodeObservationOneEntryRelationshipSUBJ(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class EpisodeObservationImpl extends ObservationImpl implements EpisodeOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateExistsEntryRelationshipSAS(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EpisodeObservationOperations.validateExistsEntryRelationshipSAS(this, diagnostics, context);
+	public boolean validateEpisodeObservationExistsEntryRelationshipSAS(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EpisodeObservationOperations.validateEpisodeObservationExistsEntryRelationshipSAS(this, diagnostics, context);
 	}
 
 	/**

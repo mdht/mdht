@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getEpisodeObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation value.codeSystemName='SNOMED CT' moodCode='EVN' classCode='OBS' code.codeSystemName='ActCode' value.code='404684003' constraints.validation.error='EpisodeObservationTemplateId OneEntryRelationshipSUBJ EpisodeObservationClassCode EpisodeObservationMoodCode EpisodeObservationStatusCode' constraints.validation.info='ExistsEntryRelationshipSAS' statusCode.codeSystem='2.16.840.1.113883.5.14' code.code='ASSERTION' value.displayName='Clinical finding' statusCode.codeSystemName='ActStatus' value.codeSystem='2.16.840.1.113883.6.96' templateId.root='2.16.840.1.113883.10.20.1.41' statusCode.code='completed' code.codeSystem='2.16.840.1.113883.5.4' constraints.validation.warning='EpisodeObservationCode EpisodeObservationValue'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation value.codeSystemName='SNOMED CT' moodCode='EVN' classCode='OBS' code.codeSystemName='ActCode' value.code='404684003' constraints.validation.error='EpisodeObservationTemplateId EpisodeObservationOneEntryRelationshipSUBJ EpisodeObservationClassCode EpisodeObservationMoodCode EpisodeObservationStatusCode' constraints.validation.info='EpisodeObservationExistsEntryRelationshipSAS' statusCode.codeSystem='2.16.840.1.113883.5.14' code.code='ASSERTION' value.displayName='Clinical finding' statusCode.codeSystemName='ActStatus' value.codeSystem='2.16.840.1.113883.6.96' templateId.root='2.16.840.1.113883.10.20.1.41' statusCode.code='completed' code.codeSystem='2.16.840.1.113883.5.4' constraints.validation.warning='EpisodeObservationCode EpisodeObservationValue'"
  * @generated
  */
 public interface EpisodeObservation extends Observation {
@@ -35,7 +35,7 @@ public interface EpisodeObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entry : cda::EntryRelationship | \r\n  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and\r\n  (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))'"
 	 * @generated
 	 */
-	boolean validateOneEntryRelationshipSUBJ(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateEpisodeObservationOneEntryRelationshipSUBJ(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public interface EpisodeObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entry : cda::EntryRelationship | \r\n  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SAS and\r\n  (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))'"
 	 * @generated
 	 */
-	boolean validateExistsEntryRelationshipSAS(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateEpisodeObservationExistsEntryRelationshipSAS(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

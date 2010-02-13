@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemAct()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' code.nullFlavor='NA' constraints.validation.info='ContainsPatientAwareness ProblemActEffectiveTime ProblemActEpisodeObservation' constraints.validation.error='ProblemActTemplateId EntryRelationshipRequired ProblemActClassCode ProblemActMoodCode ProblemActId ProblemActCodeNullFlavor' templateId.root='2.16.840.1.113883.10.20.1.27' constraints.validation.warning='SubjectOfTarget ContainsProblemObservation ContainsAlertObservation'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' code.nullFlavor='NA' constraints.validation.info='ProblemActContainsPatientAwareness ProblemActEffectiveTime ProblemActEpisodeObservation' constraints.validation.error='ProblemActTemplateId ProblemActEntryRelationshipRequired ProblemActClassCode ProblemActMoodCode ProblemActId ProblemActCodeNullFlavor' templateId.root='2.16.840.1.113883.10.20.1.27' constraints.validation.warning='ProblemActSubjectOfTarget ProblemActContainsProblemObservation ProblemActContainsAlertObservation'"
  * @generated
  */
 public interface ProblemAct extends Act {
@@ -39,7 +39,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.entryRelationship->isEmpty()'"
 	 * @generated
 	 */
-	boolean validateEntryRelationshipRequired(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemActEntryRelationshipRequired(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -54,7 +54,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->forAll(entry : cda::EntryRelationship | (entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)\r\n   implies entry.observation.oclIsKindOf(ccd::ProblemObservation) \r\n   or entry.observation.oclIsKindOf(ccd::AlertObservation))'"
 	 * @generated
 	 */
-	boolean validateSubjectOfTarget(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemActSubjectOfTarget(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,7 +68,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()\r\n   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))'"
 	 * @generated
 	 */
-	boolean validateContainsProblemObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemActContainsProblemObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,7 +82,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()\r\n   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::AlertObservation))'"
 	 * @generated
 	 */
-	boolean validateContainsAlertObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemActContainsAlertObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,7 +95,7 @@ public interface ProblemAct extends Act {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.participant->one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))'"
 	 * @generated
 	 */
-	boolean validateContainsPatientAwareness(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemActContainsPatientAwareness(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
