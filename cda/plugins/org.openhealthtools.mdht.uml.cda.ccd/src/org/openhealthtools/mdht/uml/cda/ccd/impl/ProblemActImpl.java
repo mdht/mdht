@@ -74,8 +74,17 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateContainsObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemActOperations.validateContainsObservation(this, diagnostics, context);
+	public boolean validateContainsProblemObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateContainsProblemObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContainsAlertObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateContainsAlertObservation(this, diagnostics, context);
 	}
 
 	/**

@@ -77,6 +77,15 @@ public class PurposeSectionImpl extends SectionImpl implements PurposeSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validatePurposeSectionText(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PurposeSectionOperations.validatePurposeSectionText(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validatePurposeSectionPurposeActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return PurposeSectionOperations.validatePurposeSectionPurposeActivity(this, diagnostics, context);
 	}

@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemAct()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' code.nullFlavor='NA' constraints.validation.info='ContainsPatientAwareness ProblemActEffectiveTime ProblemActEpisodeObservation' templateId.root='2.16.840.1.113883.10.20.1.27' constraints.validation.error='ProblemActTemplateId EntryRelationshipRequired ProblemActClassCode ProblemActMoodCode ProblemActId ProblemActCodeNullFlavor' constraints.validation.warning='SubjectOfTarget ContainsObservation'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' code.nullFlavor='NA' constraints.validation.info='ContainsPatientAwareness ProblemActEffectiveTime ProblemActEpisodeObservation' constraints.validation.error='ProblemActTemplateId EntryRelationshipRequired ProblemActClassCode ProblemActMoodCode ProblemActId ProblemActCodeNullFlavor' templateId.root='2.16.840.1.113883.10.20.1.27' constraints.validation.warning='SubjectOfTarget ContainsProblemObservation ContainsAlertObservation'"
  * @generated
  */
 public interface ProblemAct extends Act {
@@ -62,15 +62,27 @@ public interface ProblemAct extends Act {
 	 * <!-- begin-model-doc -->
 	 * self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()
 	 *    ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))
-	 * or self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()\r\n   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))'"
+	 * @generated
+	 */
+	boolean validateContainsProblemObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()
 	 *    ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::AlertObservation))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()\r\n   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))\r\nor self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()\r\n   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::AlertObservation))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()\r\n   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::AlertObservation))'"
 	 * @generated
 	 */
-	boolean validateContainsObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateContainsAlertObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
