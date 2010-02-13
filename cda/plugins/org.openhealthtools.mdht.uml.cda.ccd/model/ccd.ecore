@@ -88,15 +88,15 @@
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
-      <details key="constraints.validation.info" value="HasInformationRecipient ContinuityOfCareDocumentPurposeSection"/>
+      <details key="constraints.validation.info" value="ContinuityOfCareDocumentHasInformationRecipient ContinuityOfCareDocumentPurposeSection"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1"/>
-      <details key="constraints.validation.error" value="ContinuityOfCareDocumentTemplateId ServiceEventRequired ServiceEventClassCode ServiceEventEffectiveTime NoTemplateIdExtension OneOrTwoRecordTarget HasAssignedAuthorNullFlavor ContinuityOfCareDocumentCode"/>
+      <details key="constraints.validation.error" value="ContinuityOfCareDocumentTemplateId ContinuityOfCareDocumentServiceEventRequired ContinuityOfCareDocumentServiceEventClassCode ContinuityOfCareDocumentServiceEventEffectiveTime ContinuityOfCareDocumentNoTemplateIdExtension ContinuityOfCareDocumentOneOrTwoRecordTarget ContinuityOfCareDocumentHasAssignedAuthorNullFlavor ContinuityOfCareDocumentCode"/>
       <details key="code.displayName" value="Summarization of episode note"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="code.code" value="34133-9"/>
-      <details key="constraints.validation.warning" value="HasAssignedAuthor ContinuityOfCareDocumentProblemSection ContinuityOfCareDocumentFamilyHistorySection ContinuityOfCareDocumentSocialHistorySection ContinuityOfCareDocumentAlertsSection ContinuityOfCareDocumentMedicationSection ContinuityOfCareDocumentResultsSection ContinuityOfCareDocumentProceduresSection ContinuityOfCareDocumentEncountersSection ContinuityOfCareDocumentPlanOfCareSection ContinuityOfCareDocumentImmunizationsSection ContinuityOfCareDocumentVitalSignsSection ContinuityOfCareDocumentMedicalEquipmentSection ContinuityOfCareDocumentFunctionalStatusSection ContinuityOfCareDocumentAdvanceDirectivesSection ContinuityOfCareDocumentPayersSection"/>
+      <details key="constraints.validation.warning" value="ContinuityOfCareDocumentHasAssignedAuthor ContinuityOfCareDocumentProblemSection ContinuityOfCareDocumentFamilyHistorySection ContinuityOfCareDocumentSocialHistorySection ContinuityOfCareDocumentAlertsSection ContinuityOfCareDocumentMedicationSection ContinuityOfCareDocumentResultsSection ContinuityOfCareDocumentProceduresSection ContinuityOfCareDocumentEncountersSection ContinuityOfCareDocumentPlanOfCareSection ContinuityOfCareDocumentImmunizationsSection ContinuityOfCareDocumentVitalSignsSection ContinuityOfCareDocumentMedicalEquipmentSection ContinuityOfCareDocumentFunctionalStatusSection ContinuityOfCareDocumentAdvanceDirectivesSection ContinuityOfCareDocumentPayersSection"/>
     </eAnnotations>
-    <eOperations name="ServiceEventRequired" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ContinuityOfCareDocumentServiceEventRequired" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.documentationOf->one(doc : cda::DocumentationOf | not doc.serviceEvent.oclIsUndefined())"/>
       </eAnnotations>
@@ -118,7 +118,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ServiceEventClassCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ContinuityOfCareDocumentServiceEventClassCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.documentationOf->one(doc : cda::DocumentationOf | doc.serviceEvent.classCode = vocab::ActClassRoot::PCPR)"/>
       </eAnnotations>
@@ -140,7 +140,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ServiceEventEffectiveTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ContinuityOfCareDocumentServiceEventEffectiveTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.documentationOf->one(doc : cda::DocumentationOf | &#xD;&#xA;   not doc.serviceEvent.effectiveTime.low.oclIsUndefined() and not doc.serviceEvent.effectiveTime.high.oclIsUndefined())"/>
       </eAnnotations>
@@ -162,7 +162,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="NoTemplateIdExtension" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ContinuityOfCareDocumentNoTemplateIdExtension" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->forAll(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1' implies id.extension.oclIsUndefined())"/>
       </eAnnotations>
@@ -184,7 +184,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="OneOrTwoRecordTarget" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ContinuityOfCareDocumentOneOrTwoRecordTarget" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.recordTarget->size() = 1 or self.recordTarget->size() =2"/>
       </eAnnotations>
@@ -206,7 +206,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="HasAssignedAuthor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ContinuityOfCareDocumentHasAssignedAuthor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.author->exists(author : cda::Author | not author.assignedAuthor.assignedPerson.oclIsUndefined() &#xD;&#xA;   or not author.assignedAuthor.representedOrganization.oclIsUndefined())"/>
       </eAnnotations>
@@ -228,7 +228,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="HasAssignedAuthorNullFlavor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ContinuityOfCareDocumentHasAssignedAuthorNullFlavor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.author->exists(author : cda::Author | (not author.assignedAuthor.representedOrganization.oclIsUndefined()&#xD;&#xA;      and author.assignedAuthor.assignedPerson.oclIsUndefined() and author.assignedAuthor.assignedAuthoringDevice.oclIsUndefined())&#xD;&#xA;   implies author.assignedAuthor.id->one(id : datatypes::II | id.nullFlavor = vocab::NullFlavor::NA))"/>
       </eAnnotations>
@@ -250,7 +250,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="HasInformationRecipient" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ContinuityOfCareDocumentHasInformationRecipient" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.informationRecipient->size() > 0"/>
       </eAnnotations>
@@ -674,12 +674,12 @@
       <details key="moodCode" value="EVN"/>
       <details key="classCode" value="ACT"/>
       <details key="code.nullFlavor" value="NA"/>
-      <details key="constraints.validation.info" value="ContainsPatientAwareness ProblemActEffectiveTime ProblemActEpisodeObservation"/>
-      <details key="constraints.validation.error" value="ProblemActTemplateId EntryRelationshipRequired ProblemActClassCode ProblemActMoodCode ProblemActId ProblemActCodeNullFlavor"/>
+      <details key="constraints.validation.info" value="ProblemActContainsPatientAwareness ProblemActEffectiveTime ProblemActEpisodeObservation"/>
+      <details key="constraints.validation.error" value="ProblemActTemplateId ProblemActEntryRelationshipRequired ProblemActClassCode ProblemActMoodCode ProblemActId ProblemActCodeNullFlavor"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.27"/>
-      <details key="constraints.validation.warning" value="SubjectOfTarget ContainsProblemObservation ContainsAlertObservation"/>
+      <details key="constraints.validation.warning" value="ProblemActSubjectOfTarget ProblemActContainsProblemObservation ProblemActContainsAlertObservation"/>
     </eAnnotations>
-    <eOperations name="EntryRelationshipRequired" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemActEntryRelationshipRequired" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.entryRelationship->isEmpty()"/>
       </eAnnotations>
@@ -701,7 +701,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="SubjectOfTarget" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemActSubjectOfTarget" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.entryRelationship->forAll(entry : cda::EntryRelationship | (entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)&#xD;&#xA;   implies entry.observation.oclIsKindOf(ccd::ProblemObservation) &#xD;&#xA;   or entry.observation.oclIsKindOf(ccd::AlertObservation))"/>
       </eAnnotations>
@@ -723,7 +723,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ContainsProblemObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemActContainsProblemObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()&#xD;&#xA;   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))"/>
       </eAnnotations>
@@ -745,7 +745,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ContainsAlertObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemActContainsAlertObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.getSection().oclIsKindOf(ccd::AlertsSection) implies self.getObservations()&#xD;&#xA;   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::AlertObservation))"/>
       </eAnnotations>
@@ -767,7 +767,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ContainsPatientAwareness" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemActContainsPatientAwareness" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.participant->one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))"/>
       </eAnnotations>
@@ -950,13 +950,13 @@
       <details key="classCode" value="OBS"/>
       <details key="statusCode.codeSystemName" value="ActStatus"/>
       <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
-      <details key="constraints.validation.info" value="ContainsPatientAwareness ProblemObservationCode ProblemObservationProblemStatus ProblemObservationProblemHealthStatus ProblemObservationAgeObservation"/>
+      <details key="constraints.validation.info" value="ProblemObservationContainsPatientAwareness ProblemObservationCode ProblemObservationProblemStatus ProblemObservationProblemHealthStatus ProblemObservationAgeObservation"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.28"/>
-      <details key="constraints.validation.error" value="ProblemObservationTemplateId InformationSource ProblemObservationMoodCode ProblemObservationStatusCode"/>
+      <details key="constraints.validation.error" value="ProblemObservationTemplateId ProblemObservationInformationSource ProblemObservationMoodCode ProblemObservationStatusCode"/>
       <details key="statusCode.code" value="completed"/>
       <details key="constraints.validation.warning" value="ProblemObservationEffectiveTime"/>
     </eAnnotations>
-    <eOperations name="InformationSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemObservationInformationSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
       </eAnnotations>
@@ -978,7 +978,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ContainsPatientAwareness" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemObservationContainsPatientAwareness" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.participant->one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))"/>
       </eAnnotations>
@@ -1359,13 +1359,13 @@
       <details key="code.codeSystemName" value="LOINC"/>
       <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.57"/>
-      <details key="constraints.validation.error" value="StatusObservationTemplateId NoAdditionalParticipants StatusObservationClassCode StatusObservationMoodCode StatusObservationCode StatusObservationStatusCode StatusObservationValue"/>
+      <details key="constraints.validation.error" value="StatusObservationTemplateId StatusObservationNoAdditionalParticipants StatusObservationClassCode StatusObservationMoodCode StatusObservationCode StatusObservationStatusCode StatusObservationValue"/>
       <details key="statusCode.code" value="completed"/>
       <details key="code.displayName" value="Status"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="code.code" value="33999-4"/>
     </eAnnotations>
-    <eOperations name="NoAdditionalParticipants" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="StatusObservationNoAdditionalParticipants" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.participant->isEmpty()"/>
       </eAnnotations>
@@ -1606,8 +1606,8 @@
       <details key="classCode" value="OBS"/>
       <details key="code.codeSystemName" value="ActCode"/>
       <details key="value.code" value="404684003"/>
-      <details key="constraints.validation.error" value="EpisodeObservationTemplateId OneEntryRelationshipSUBJ EpisodeObservationClassCode EpisodeObservationMoodCode EpisodeObservationStatusCode"/>
-      <details key="constraints.validation.info" value="ExistsEntryRelationshipSAS"/>
+      <details key="constraints.validation.error" value="EpisodeObservationTemplateId EpisodeObservationOneEntryRelationshipSUBJ EpisodeObservationClassCode EpisodeObservationMoodCode EpisodeObservationStatusCode"/>
+      <details key="constraints.validation.info" value="EpisodeObservationExistsEntryRelationshipSAS"/>
       <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
       <details key="code.code" value="ASSERTION"/>
       <details key="value.displayName" value="Clinical finding"/>
@@ -1618,7 +1618,7 @@
       <details key="code.codeSystem" value="2.16.840.1.113883.5.4"/>
       <details key="constraints.validation.warning" value="EpisodeObservationCode EpisodeObservationValue"/>
     </eAnnotations>
-    <eOperations name="OneEntryRelationshipSUBJ" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="EpisodeObservationOneEntryRelationshipSUBJ" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.entryRelationship->one(entry : cda::EntryRelationship | &#xD;&#xA;  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and&#xD;&#xA;  (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))"/>
       </eAnnotations>
@@ -1640,7 +1640,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ExistsEntryRelationshipSAS" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="EpisodeObservationExistsEntryRelationshipSAS" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.entryRelationship->exists(entry : cda::EntryRelationship | &#xD;&#xA;  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SAS and&#xD;&#xA;  (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))"/>
       </eAnnotations>
@@ -1798,10 +1798,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="PatientAwareness" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Participant2">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="typeCode" value="SBJ"/>
-      <details key="constraints.validation.error" value="PatientAwarenessTemplateId ParticipantRoleId PatientAwarenessTypeCode"/>
+      <details key="constraints.validation.error" value="PatientAwarenessTemplateId PatientAwarenessParticipantRoleId PatientAwarenessTypeCode"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.48"/>
     </eAnnotations>
-    <eOperations name="ParticipantRoleId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PatientAwarenessParticipantRoleId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.participantRole.id->one(id : datatypes::II |&#xD;&#xA;  not id.root.oclIsUndefined())&#xD;&#xA;-- TODO compare with ClinicalDocument/recordTarget/patientRole/id"/>
       </eAnnotations>
@@ -3071,13 +3071,13 @@
       <details key="moodCode" value="EVN"/>
       <details key="statusCode.codeSystemName" value="ActStatus"/>
       <details key="constraints.validation.info" value="AlertObservationValue AlertObservationAlertStatusObservation AlertObservationReactionObservation"/>
-      <details key="constraints.validation.error" value="AlertObservationTemplateId InformationSource PlayingEntityRequired AlertObservationMoodCode AlertObservationStatusCode AlertObservationEffectiveTime"/>
+      <details key="constraints.validation.error" value="AlertObservationTemplateId AlertObservationInformationSource AlertObservationPlayingEntityRequired AlertObservationMoodCode AlertObservationStatusCode AlertObservationEffectiveTime"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.18"/>
       <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
       <details key="statusCode.code" value="completed"/>
-      <details key="constraints.validation.warning" value="AgentRepresentation"/>
+      <details key="constraints.validation.warning" value="AlertObservationAgentRepresentation"/>
     </eAnnotations>
-    <eOperations name="InformationSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="AlertObservationInformationSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
       </eAnnotations>
@@ -3099,7 +3099,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="AgentRepresentation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="AlertObservationAgentRepresentation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.participant->exists(participant : cda::Participant2 | participant.typeCode = vocab::ParticipationType::CSM )"/>
       </eAnnotations>
@@ -3121,7 +3121,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlayingEntityRequired" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="AlertObservationPlayingEntityRequired" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.participant.participantRole.playingEntity->one(entity : cda::PlayingEntity |&#xD;&#xA;  entity.classCode = vocab::EntityClassRoot::MMAT and not entity.code.oclIsUndefined())"/>
       </eAnnotations>

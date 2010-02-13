@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness#validateParticipantRoleId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Participant Role Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness#validatePatientAwarenessParticipantRoleId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Awareness Participant Role Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness#validatePatientAwarenessTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Awareness Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness#validatePatientAwarenessTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Awareness Type Code</em>}</li>
  * </ul>
@@ -55,26 +55,26 @@ public class PatientAwarenessOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateParticipantRoleId(PatientAwareness, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Participant Role Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePatientAwarenessParticipantRoleId(PatientAwareness, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Awareness Participant Role Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateParticipantRoleId(PatientAwareness, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePatientAwarenessParticipantRoleId(PatientAwareness, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_PARTICIPANT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.participantRole.id->one(id : datatypes::II |"+
+	protected static final String VALIDATE_PATIENT_AWARENESS_PARTICIPANT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.participantRole.id->one(id : datatypes::II |"+
 "  not id.root.oclIsUndefined())"+
 "-- TODO compare with ClinicalDocument/recordTarget/patientRole/id";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateParticipantRoleId(PatientAwareness, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Participant Role Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePatientAwarenessParticipantRoleId(PatientAwareness, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Awareness Participant Role Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateParticipantRoleId(PatientAwareness, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePatientAwarenessParticipantRoleId(PatientAwareness, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_PARTICIPANT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PATIENT_AWARENESS_PARTICIPANT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,25 +89,25 @@ public class PatientAwarenessOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateParticipantRoleId(PatientAwareness patientAwareness, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_PARTICIPANT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePatientAwarenessParticipantRoleId(PatientAwareness patientAwareness, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PATIENT_AWARENESS_PARTICIPANT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.PATIENT_AWARENESS);
 			try {
-				VALIDATE_PARTICIPANT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PARTICIPANT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PATIENT_AWARENESS_PARTICIPANT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PATIENT_AWARENESS_PARTICIPANT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_PARTICIPANT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(patientAwareness)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PATIENT_AWARENESS_PARTICIPANT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(patientAwareness)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
-						 CCDValidator.PATIENT_AWARENESS__PARTICIPANT_ROLE_ID,
-						 CCDPlugin.INSTANCE.getString("ParticipantRoleId"),
+						 CCDValidator.PATIENT_AWARENESS__PATIENT_AWARENESS_PARTICIPANT_ROLE_ID,
+						 CCDPlugin.INSTANCE.getString("PatientAwarenessParticipantRoleId"),
 						 new Object [] { patientAwareness }));
 			}
 			return false;

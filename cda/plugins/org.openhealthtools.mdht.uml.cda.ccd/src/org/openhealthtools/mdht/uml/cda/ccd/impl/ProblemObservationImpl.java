@@ -56,8 +56,8 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemObservationOperations.validateInformationSource(this, diagnostics, context);
+	public boolean validateProblemObservationInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateProblemObservationInformationSource(this, diagnostics, context);
 	}
 
 	/**
@@ -65,8 +65,8 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateContainsPatientAwareness(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemObservationOperations.validateContainsPatientAwareness(this, diagnostics, context);
+	public boolean validateProblemObservationContainsPatientAwareness(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateProblemObservationContainsPatientAwareness(this, diagnostics, context);
 	}
 
 	/**

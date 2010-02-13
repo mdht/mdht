@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getAlertObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' statusCode.codeSystemName='ActStatus' constraints.validation.info='AlertObservationValue AlertObservationAlertStatusObservation AlertObservationReactionObservation' constraints.validation.error='AlertObservationTemplateId InformationSource PlayingEntityRequired AlertObservationMoodCode AlertObservationStatusCode AlertObservationEffectiveTime' templateId.root='2.16.840.1.113883.10.20.1.18' statusCode.codeSystem='2.16.840.1.113883.5.14' statusCode.code='completed' constraints.validation.warning='AgentRepresentation'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' statusCode.codeSystemName='ActStatus' constraints.validation.info='AlertObservationValue AlertObservationAlertStatusObservation AlertObservationReactionObservation' constraints.validation.error='AlertObservationTemplateId AlertObservationInformationSource AlertObservationPlayingEntityRequired AlertObservationMoodCode AlertObservationStatusCode AlertObservationEffectiveTime' templateId.root='2.16.840.1.113883.10.20.1.18' statusCode.codeSystem='2.16.840.1.113883.5.14' statusCode.code='completed' constraints.validation.warning='AlertObservationAgentRepresentation'"
  * @generated
  */
 public interface AlertObservation extends Observation {
@@ -37,7 +37,7 @@ public interface AlertObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.informant->isEmpty() \r\nor self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)\r\nor (self.entryRelationship->exists(rel : cda::EntryRelationship | \r\n   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR\r\n   and rel.observation.code.code = \'48766-0\'))'"
 	 * @generated
 	 */
-	boolean validateInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAlertObservationInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public interface AlertObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.participant->exists(participant : cda::Participant2 | participant.typeCode = vocab::ParticipationType::CSM )'"
 	 * @generated
 	 */
-	boolean validateAgentRepresentation(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAlertObservationAgentRepresentation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public interface AlertObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.participant.participantRole.playingEntity->one(entity : cda::PlayingEntity |\r\n  entity.classCode = vocab::EntityClassRoot::MMAT and not entity.code.oclIsUndefined())'"
 	 * @generated
 	 */
-	boolean validatePlayingEntityRequired(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateAlertObservationPlayingEntityRequired(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

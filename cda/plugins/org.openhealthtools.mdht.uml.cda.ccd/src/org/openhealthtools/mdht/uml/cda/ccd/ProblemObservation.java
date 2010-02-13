@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' statusCode.codeSystemName='ActStatus' statusCode.codeSystem='2.16.840.1.113883.5.14' constraints.validation.info='ContainsPatientAwareness ProblemObservationCode ProblemObservationProblemStatus ProblemObservationProblemHealthStatus ProblemObservationAgeObservation' templateId.root='2.16.840.1.113883.10.20.1.28' constraints.validation.error='ProblemObservationTemplateId InformationSource ProblemObservationMoodCode ProblemObservationStatusCode' statusCode.code='completed' constraints.validation.warning='ProblemObservationEffectiveTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' statusCode.codeSystemName='ActStatus' statusCode.codeSystem='2.16.840.1.113883.5.14' constraints.validation.info='ProblemObservationContainsPatientAwareness ProblemObservationCode ProblemObservationProblemStatus ProblemObservationProblemHealthStatus ProblemObservationAgeObservation' templateId.root='2.16.840.1.113883.10.20.1.28' constraints.validation.error='ProblemObservationTemplateId ProblemObservationInformationSource ProblemObservationMoodCode ProblemObservationStatusCode' statusCode.code='completed' constraints.validation.warning='ProblemObservationEffectiveTime'"
  * @generated
  */
 public interface ProblemObservation extends Observation {
@@ -43,7 +43,7 @@ public interface ProblemObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.informant->isEmpty() \r\nor self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)\r\nor (self.entryRelationship->exists(rel : cda::EntryRelationship | \r\n   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR\r\n   and rel.observation.code.code = \'48766-0\'))'"
 	 * @generated
 	 */
-	boolean validateInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemObservationInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -56,7 +56,7 @@ public interface ProblemObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.participant->one(partic : cda::Participant2 | partic.oclIsKindOf(ccd::PatientAwareness))'"
 	 * @generated
 	 */
-	boolean validateContainsPatientAwareness(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateProblemObservationContainsPatientAwareness(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

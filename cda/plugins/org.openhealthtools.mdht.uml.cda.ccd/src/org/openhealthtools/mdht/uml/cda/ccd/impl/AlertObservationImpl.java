@@ -50,8 +50,8 @@ public class AlertObservationImpl extends ObservationImpl implements AlertObserv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AlertObservationOperations.validateInformationSource(this, diagnostics, context);
+	public boolean validateAlertObservationInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertObservationOperations.validateAlertObservationInformationSource(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class AlertObservationImpl extends ObservationImpl implements AlertObserv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAgentRepresentation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AlertObservationOperations.validateAgentRepresentation(this, diagnostics, context);
+	public boolean validateAlertObservationAgentRepresentation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertObservationOperations.validateAlertObservationAgentRepresentation(this, diagnostics, context);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class AlertObservationImpl extends ObservationImpl implements AlertObserv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePlayingEntityRequired(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AlertObservationOperations.validatePlayingEntityRequired(this, diagnostics, context);
+	public boolean validateAlertObservationPlayingEntityRequired(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertObservationOperations.validateAlertObservationPlayingEntityRequired(this, diagnostics, context);
 	}
 
 	/**

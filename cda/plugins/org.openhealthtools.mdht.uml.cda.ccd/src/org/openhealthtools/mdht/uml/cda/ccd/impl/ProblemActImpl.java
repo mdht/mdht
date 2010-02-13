@@ -56,8 +56,8 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEntryRelationshipRequired(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemActOperations.validateEntryRelationshipRequired(this, diagnostics, context);
+	public boolean validateProblemActEntryRelationshipRequired(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateProblemActEntryRelationshipRequired(this, diagnostics, context);
 	}
 
 	/**
@@ -65,8 +65,8 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSubjectOfTarget(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemActOperations.validateSubjectOfTarget(this, diagnostics, context);
+	public boolean validateProblemActSubjectOfTarget(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateProblemActSubjectOfTarget(this, diagnostics, context);
 	}
 
 	/**
@@ -74,8 +74,8 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateContainsProblemObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemActOperations.validateContainsProblemObservation(this, diagnostics, context);
+	public boolean validateProblemActContainsProblemObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateProblemActContainsProblemObservation(this, diagnostics, context);
 	}
 
 	/**
@@ -83,8 +83,8 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateContainsAlertObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemActOperations.validateContainsAlertObservation(this, diagnostics, context);
+	public boolean validateProblemActContainsAlertObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateProblemActContainsAlertObservation(this, diagnostics, context);
 	}
 
 	/**
@@ -92,8 +92,8 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateContainsPatientAwareness(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemActOperations.validateContainsPatientAwareness(this, diagnostics, context);
+	public boolean validateProblemActContainsPatientAwareness(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemActOperations.validateProblemActContainsPatientAwareness(this, diagnostics, context);
 	}
 
 	/**

@@ -19,7 +19,7 @@ import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getContinuityOfCareDocument()
  * @model extendedMetaData="name='ClinicalDocument'"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.info='HasInformationRecipient ContinuityOfCareDocumentPurposeSection' templateId.root='2.16.840.1.113883.10.20.1' constraints.validation.error='ContinuityOfCareDocumentTemplateId ServiceEventRequired ServiceEventClassCode ServiceEventEffectiveTime NoTemplateIdExtension OneOrTwoRecordTarget HasAssignedAuthorNullFlavor ContinuityOfCareDocumentCode' code.displayName='Summarization of episode note' code.codeSystem='2.16.840.1.113883.6.1' code.code='34133-9' constraints.validation.warning='HasAssignedAuthor ContinuityOfCareDocumentProblemSection ContinuityOfCareDocumentFamilyHistorySection ContinuityOfCareDocumentSocialHistorySection ContinuityOfCareDocumentAlertsSection ContinuityOfCareDocumentMedicationSection ContinuityOfCareDocumentResultsSection ContinuityOfCareDocumentProceduresSection ContinuityOfCareDocumentEncountersSection ContinuityOfCareDocumentPlanOfCareSection ContinuityOfCareDocumentImmunizationsSection ContinuityOfCareDocumentVitalSignsSection ContinuityOfCareDocumentMedicalEquipmentSection ContinuityOfCareDocumentFunctionalStatusSection ContinuityOfCareDocumentAdvanceDirectivesSection ContinuityOfCareDocumentPayersSection'"
+ *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.info='ContinuityOfCareDocumentHasInformationRecipient ContinuityOfCareDocumentPurposeSection' templateId.root='2.16.840.1.113883.10.20.1' constraints.validation.error='ContinuityOfCareDocumentTemplateId ContinuityOfCareDocumentServiceEventRequired ContinuityOfCareDocumentServiceEventClassCode ContinuityOfCareDocumentServiceEventEffectiveTime ContinuityOfCareDocumentNoTemplateIdExtension ContinuityOfCareDocumentOneOrTwoRecordTarget ContinuityOfCareDocumentHasAssignedAuthorNullFlavor ContinuityOfCareDocumentCode' code.displayName='Summarization of episode note' code.codeSystem='2.16.840.1.113883.6.1' code.code='34133-9' constraints.validation.warning='ContinuityOfCareDocumentHasAssignedAuthor ContinuityOfCareDocumentProblemSection ContinuityOfCareDocumentFamilyHistorySection ContinuityOfCareDocumentSocialHistorySection ContinuityOfCareDocumentAlertsSection ContinuityOfCareDocumentMedicationSection ContinuityOfCareDocumentResultsSection ContinuityOfCareDocumentProceduresSection ContinuityOfCareDocumentEncountersSection ContinuityOfCareDocumentPlanOfCareSection ContinuityOfCareDocumentImmunizationsSection ContinuityOfCareDocumentVitalSignsSection ContinuityOfCareDocumentMedicalEquipmentSection ContinuityOfCareDocumentFunctionalStatusSection ContinuityOfCareDocumentAdvanceDirectivesSection ContinuityOfCareDocumentPayersSection'"
  * @generated
  */
 public interface ContinuityOfCareDocument extends ClinicalDocument {
@@ -34,7 +34,7 @@ public interface ContinuityOfCareDocument extends ClinicalDocument {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.documentationOf->one(doc : cda::DocumentationOf | not doc.serviceEvent.oclIsUndefined())'"
 	 * @generated
 	 */
-	boolean validateServiceEventRequired(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateContinuityOfCareDocumentServiceEventRequired(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,7 +47,7 @@ public interface ContinuityOfCareDocument extends ClinicalDocument {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.documentationOf->one(doc : cda::DocumentationOf | doc.serviceEvent.classCode = vocab::ActClassRoot::PCPR)'"
 	 * @generated
 	 */
-	boolean validateServiceEventClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateContinuityOfCareDocumentServiceEventClassCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public interface ContinuityOfCareDocument extends ClinicalDocument {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.documentationOf->one(doc : cda::DocumentationOf | \r\n   not doc.serviceEvent.effectiveTime.low.oclIsUndefined() and not doc.serviceEvent.effectiveTime.high.oclIsUndefined())'"
 	 * @generated
 	 */
-	boolean validateServiceEventEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateContinuityOfCareDocumentServiceEventEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public interface ContinuityOfCareDocument extends ClinicalDocument {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->forAll(id : datatypes::II | id.root = \'2.16.840.1.113883.10.20.1\' implies id.extension.oclIsUndefined())'"
 	 * @generated
 	 */
-	boolean validateNoTemplateIdExtension(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateContinuityOfCareDocumentNoTemplateIdExtension(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,7 +87,7 @@ public interface ContinuityOfCareDocument extends ClinicalDocument {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget->size() = 1 or self.recordTarget->size() =2'"
 	 * @generated
 	 */
-	boolean validateOneOrTwoRecordTarget(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateContinuityOfCareDocumentOneOrTwoRecordTarget(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +101,7 @@ public interface ContinuityOfCareDocument extends ClinicalDocument {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.author->exists(author : cda::Author | not author.assignedAuthor.assignedPerson.oclIsUndefined() \r\n   or not author.assignedAuthor.representedOrganization.oclIsUndefined())'"
 	 * @generated
 	 */
-	boolean validateHasAssignedAuthor(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateContinuityOfCareDocumentHasAssignedAuthor(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,7 +116,7 @@ public interface ContinuityOfCareDocument extends ClinicalDocument {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.author->exists(author : cda::Author | (not author.assignedAuthor.representedOrganization.oclIsUndefined()\r\n      and author.assignedAuthor.assignedPerson.oclIsUndefined() and author.assignedAuthor.assignedAuthoringDevice.oclIsUndefined())\r\n   implies author.assignedAuthor.id->one(id : datatypes::II | id.nullFlavor = vocab::NullFlavor::NA))'"
 	 * @generated
 	 */
-	boolean validateHasAssignedAuthorNullFlavor(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateContinuityOfCareDocumentHasAssignedAuthorNullFlavor(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +129,7 @@ public interface ContinuityOfCareDocument extends ClinicalDocument {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.informationRecipient->size() > 0'"
 	 * @generated
 	 */
-	boolean validateHasInformationRecipient(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateContinuityOfCareDocumentHasInformationRecipient(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
