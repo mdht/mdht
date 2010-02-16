@@ -99,6 +99,7 @@ import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.EditorPart;
 import org.eclipse.ui.part.ISetSelectionTarget;
 import org.eclipse.ui.views.contentoutline.ContentOutline;
+import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
@@ -756,14 +757,19 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 	 * This is how the framework determines which interfaces we implement.
 	 */
 	public Object getAdapter(Class key) {
-        if (key == IPropertySheetPage.class) {
-            return new TabbedPropertySheetPage(this);
-        }
-		else if (IUndoContext.class == key) {
+		
+		if (key == IPropertySheetPage.class) {
+			return new TabbedPropertySheetPage(this);
+		} else if (IUndoContext.class == key) {
 			// used by undo/redo actions to get their undo context
 			return getUndoContext();
+		} else if (key.equals(IContentOutlinePage.class)) {
+			
+			
+			
+			return new UMLOutlinePage(treeViewerWithColumns);
 		}
-        
+
 		return super.getAdapter(key);
 	}
 

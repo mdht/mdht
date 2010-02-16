@@ -371,4 +371,12 @@
       </action>
     </editorContribution>
   </extension>
+  <extension
+        point="org.eclipse.ui.perspectives">
+     <perspective
+           class="org.openhealthtools.mdht.uml.ui.perspective.PerspectiveFactory"
+           id="org.openhealthtools.mdht.uml.ui.perspective"
+           name="Model Driven Health Tools">
+     </perspective>
+  </extension>
 </plugin>
