@@ -50,6 +50,33 @@ public class ResultObservationImpl extends ObservationImpl implements ResultObse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateResultObservationReferenceRangeRequired(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultObservationOperations.validateResultObservationReferenceRangeRequired(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateResultObservationNoObservationRangeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultObservationOperations.validateResultObservationNoObservationRangeCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateResultObservationInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultObservationOperations.validateResultObservationInformationSource(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateResultObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ResultObservationOperations.validateResultObservationTemplateId(this, diagnostics, context);
 	}

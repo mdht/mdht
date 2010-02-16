@@ -2103,6 +2103,24 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 
 		initEClass(resultOrganizerEClass, ResultOrganizer.class, "ResultOrganizer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		op = addEOperation(resultOrganizerEClass, ecorePackage.getEBoolean(), "validateResultOrganizerComponentElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resultOrganizerEClass, ecorePackage.getEBoolean(), "validateResultOrganizerInformationSource", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(resultOrganizerEClass, ecorePackage.getEBoolean(), "validateResultOrganizerTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -2140,6 +2158,33 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(resultObservationEClass, ResultObservation.class, "ResultObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(resultObservationEClass, ecorePackage.getEBoolean(), "validateResultObservationReferenceRangeRequired", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resultObservationEClass, ecorePackage.getEBoolean(), "validateResultObservationNoObservationRangeCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resultObservationEClass, ecorePackage.getEBoolean(), "validateResultObservationInformationSource", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(resultObservationEClass, ecorePackage.getEBoolean(), "validateResultObservationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2276,6 +2321,33 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(immunizationsSectionEClass, ecorePackage.getEBoolean(), "validateImmunizationsSectionTitle", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(immunizationsSectionEClass, ecorePackage.getEBoolean(), "validateImmunizationsSectionText", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(immunizationsSectionEClass, ecorePackage.getEBoolean(), "validateImmunizationsSectionMedicationActivity", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(immunizationsSectionEClass, ecorePackage.getEBoolean(), "validateImmunizationsSectionSupplyActivity", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2736,6 +2808,15 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(resultsSectionEClass, ecorePackage.getEBoolean(), "validateResultsSectionText", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(resultsSectionEClass, ecorePackage.getEBoolean(), "validateResultsSectionResultOrganizer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -2922,6 +3003,15 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "validateVitalSignsSectionTitle", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(vitalSignsSectionEClass, ecorePackage.getEBoolean(), "validateVitalSignsSectionText", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -3195,6 +3285,15 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(vitalSignsOrganizerEClass, VitalSignsOrganizer.class, "VitalSignsOrganizer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateVitalSignsOrganizerInformationSource", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateVitalSignsOrganizerTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -3697,7 +3796,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										
 	}
 
 	/**
@@ -3712,7 +3811,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		  (resultOrganizerEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										
 	}
 
 	/**
@@ -3890,18 +3989,18 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "moodCode", "EVN",
-			 "constraints.validation.error", "ResultOrganizerTemplateId ResultOrganizerMoodCode ResultOrganizerId ResultOrganizerResultObservation",
+			 "constraints.validation.error", "ResultOrganizerTemplateId ResultOrganizerComponentElement ResultOrganizerInformationSource ResultOrganizerMoodCode ResultOrganizerId ResultOrganizerResultObservation",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.32"
-		   });																			
+		   });																											
 		addAnnotation
 		  (resultObservationEClass, 
 		   source, 
 		   new String[] {
 			 "moodCode", "EVN",
-			 "constraints.validation.error", "ResultObservationTemplateId ResultObservationMoodCode ResultObservationId ResultObservationValue",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.31",
-			 "constraints.validation.warning", "ResultObservationEffectiveTime"
-		   });																							
+			 "constraints.validation.error", "ResultObservationTemplateId ResultObservationNoObservationRangeCode ResultObservationInformationSource ResultObservationMoodCode ResultObservationId ResultObservationValue",
+			 "constraints.validation.warning", "ResultObservationReferenceRangeRequired ResultObservationEffectiveTime"
+		   });																																			
 		addAnnotation
 		  (socialHistorySectionEClass, 
 		   source, 
@@ -3937,12 +4036,13 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "code.codeSystemName", "LOINC",
-			 "constraints.validation.error", "ImmunizationsSectionTemplateId ImmunizationsSectionCode ImmunizationsSectionTitle",
+			 "constraints.validation.error", "ImmunizationsSectionTemplateId ImmunizationsSectionCode ImmunizationsSectionTitle ImmunizationsSectionText",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.6",
 			 "code.displayName", "History of immunizations",
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
-			 "code.code", "11369-6"
-		   });														
+			 "code.code", "11369-6",
+			 "constraints.validation.warning", "ImmunizationsSectionMedicationActivity ImmunizationsSectionSupplyActivity"
+		   });																										
 		addAnnotation
 		  (encountersActivityEClass, 
 		   source, 
@@ -4049,13 +4149,13 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "code.codeSystemName", "LOINC",
-			 "constraints.validation.error", "ResultsSectionTemplateId ResultsSectionCode",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.14",
+			 "constraints.validation.error", "ResultsSectionTemplateId ResultsSectionCode ResultsSectionTitle ResultsSectionText",
 			 "code.displayName", "Relevant diagnostic tests and/or laboratory data",
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "30954-2",
-			 "constraints.validation.warning", "ResultsSectionTitle ResultsSectionResultOrganizer"
-		   });																			
+			 "constraints.validation.warning", "ResultsSectionResultOrganizer"
+		   });																							
 		addAnnotation
 		  (medicationSeriesNumberObservationEClass, 
 		   source, 
@@ -4122,13 +4222,13 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "code.codeSystemName", "LOINC",
-			 "constraints.validation.error", "VitalSignsSectionTemplateId VitalSignsSectionCode",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.16",
+			 "constraints.validation.error", "VitalSignsSectionTemplateId VitalSignsSectionCode VitalSignsSectionTitle VitalSignsSectionText",
 			 "code.displayName", "Vital signs",
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "8716-3",
-			 "constraints.validation.warning", "VitalSignsSectionTitle VitalSignsSectionVitalSignsOrganizer"
-		   });																			
+			 "constraints.validation.warning", "VitalSignsSectionVitalSignsOrganizer"
+		   });																							
 		addAnnotation
 		  (medicalEquipmentSectionEClass, 
 		   source, 
@@ -4206,9 +4306,9 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		  (vitalSignsOrganizerEClass, 
 		   source, 
 		   new String[] {
-			 "templateId.root", "2.16.840.1.113883.10.20.1.35",
-			 "constraints.validation.error", "VitalSignsOrganizerTemplateId"
-		   });						
+			 "constraints.validation.error", "VitalSignsOrganizerTemplateId VitalSignsOrganizerInformationSource",
+			 "templateId.root", "2.16.840.1.113883.10.20.1.35"
+		   });										
 		addAnnotation
 		  (advanceDirectiveObservationEClass, 
 		   source, 

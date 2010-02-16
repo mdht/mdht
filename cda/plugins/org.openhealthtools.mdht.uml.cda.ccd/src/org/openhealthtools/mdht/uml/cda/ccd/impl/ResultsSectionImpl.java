@@ -77,6 +77,15 @@ public class ResultsSectionImpl extends SectionImpl implements ResultsSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateResultsSectionText(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultsSectionOperations.validateResultsSectionText(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateResultsSectionResultOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ResultsSectionOperations.validateResultsSectionResultOrganizer(this, diagnostics, context);
 	}

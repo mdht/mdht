@@ -77,6 +77,33 @@ public class ImmunizationsSectionImpl extends SectionImpl implements Immunizatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateImmunizationsSectionText(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ImmunizationsSectionOperations.validateImmunizationsSectionText(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateImmunizationsSectionMedicationActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ImmunizationsSectionOperations.validateImmunizationsSectionMedicationActivity(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateImmunizationsSectionSupplyActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ImmunizationsSectionOperations.validateImmunizationsSectionSupplyActivity(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ImmunizationsSection init() {
     		CDAUtil.init(this);
     		return this;
