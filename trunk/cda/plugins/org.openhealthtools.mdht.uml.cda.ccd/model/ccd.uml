@@ -577,10 +577,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | &#13;
           <language>OCL</language>
           <body>Contains one or more sources of information.</body>
           <body>not self.informant-&gt;isEmpty() &#13;
-or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#13;
-or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | &#13;
-   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#13;
-   and rel.observation.code.code = '48766-0'))</body>
+or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_hZltMHDAEd6eItyqb1FoWg">
@@ -646,7 +643,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | &#13;
           <language>Analysis</language>
           <language>OCL</language>
           <body>SHALL NOT contain referenceRange / observationRange / code, as this attribute is not used by the HL7 Clinical Statement or Lab Committee models.</body>
-          <body>self.referenceRange-&gt;forAll(range : ReferenceRange | range.observationRange.code.code.oclIsUndefined())</body>
+          <body>self.referenceRange-&gt;forAll(range : cda::ReferenceRange | range.observationRange.code.code.oclIsUndefined())</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_MZDpYBtIEd-vGNAsDUJvgw" name="informationSource" constrainedElement="_MQHZEHDAEd6eItyqb1FoWg">
@@ -1645,10 +1642,7 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | &#13;
           <language>OCL</language>
           <body>Contains one or more sources of information.</body>
           <body>not self.informant-&gt;isEmpty() &#13;
-or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#13;
-or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | &#13;
-   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#13;
-   and rel.observation.code.code = '48766-0'))</body>
+or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_1CKdMK3zEd6_ioDelDcPPg" general="_Ht_RsHDAEd6eItyqb1FoWg"/>

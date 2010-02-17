@@ -3369,15 +3369,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(advanceDirectiveObservationEClass, ecorePackage.getEBoolean(), "validateAdvanceDirectiveObservationAdvanceDirectiveVerification", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(advanceDirectiveStatusObservationEClass, AdvanceDirectiveStatusObservation.class, "AdvanceDirectiveStatusObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(advanceDirectiveStatusObservationEClass, ecorePackage.getEBoolean(), "validateAdvanceDirectiveStatusObservationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -3779,8 +3770,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		createAnnotationAnnotations();
 		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
 		createExtendedMetaDataAnnotations();
-		// duplicates
-		createDuplicatesAnnotations();
 	}
 
 	/**
@@ -3796,22 +3785,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										
-	}
-
-	/**
-	 * Initializes the annotations for <b>duplicates</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																																																																																																																																																																																																																																																																																																																																																																
-		addAnnotation
-		  (resultOrganizerEClass, 
-		   source, 
-		   new String[] {
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																					
 	}
 
 	/**
@@ -3991,7 +3965,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "moodCode", "EVN",
 			 "constraints.validation.error", "ResultOrganizerTemplateId ResultOrganizerComponentElement ResultOrganizerInformationSource ResultOrganizerMoodCode ResultOrganizerId ResultOrganizerResultObservation",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.32"
-		   });																											
+		   });																										
 		addAnnotation
 		  (resultObservationEClass, 
 		   source, 
@@ -4316,13 +4290,13 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "moodCode", "EVN",
 			 "classCode", "OBS",
 			 "statusCode.codeSystemName", "ActStatus",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "templateId.root", "2.16.840.1.113883.10.20.1.17",
+			 "constraints.validation.info", "AdvanceDirectiveObservationCode",
 			 "constraints.validation.error", "AdvanceDirectiveObservationTemplateId AdvanceDirectiveObservationClassCode AdvanceDirectiveObservationMoodCode AdvanceDirectiveObservationId AdvanceDirectiveObservationStatusCode",
-			 "constraints.validation.info", "AdvanceDirectiveObservationCode AdvanceDirectiveObservationAdvanceDirectiveVerification",
+			 "templateId.root", "2.16.840.1.113883.10.20.1.17",
+			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "statusCode.code", "completed",
 			 "constraints.validation.warning", "AdvanceDirectiveObservationEffectiveTime"
-		   });																																		
+		   });																														
 		addAnnotation
 		  (advanceDirectiveStatusObservationEClass, 
 		   source, 
