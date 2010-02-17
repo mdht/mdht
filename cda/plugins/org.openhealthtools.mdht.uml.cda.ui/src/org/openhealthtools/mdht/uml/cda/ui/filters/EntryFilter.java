@@ -16,6 +16,7 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 
 /**
  * Selects an object if it is an association applicable to <<Entry>> stereotype.
@@ -41,7 +42,8 @@ public class EntryFilter extends CDAFilter {
 				srcType = property.getType();
 		}
 		
-		return isSection(srcType) && isClinicalStatement(targetType);
+		return CDAModelUtil.isSection(srcType) && 
+			(CDAModelUtil.isSection(targetType) || CDAModelUtil.isClinicalStatement(targetType));
 	}
 
 }

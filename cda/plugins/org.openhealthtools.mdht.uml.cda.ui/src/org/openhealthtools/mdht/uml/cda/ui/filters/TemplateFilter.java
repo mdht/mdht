@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.cda.ui.filters;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 
 /**
  * Selects an object if it is a UML Class or Package with 
@@ -29,7 +30,7 @@ public class TemplateFilter extends CDAFilter {
 		else if (object instanceof IAdaptable)
 			element = (Element) ((IAdaptable)object).getAdapter(Element.class);
 		
-		if (element instanceof Class && getCDAClass((Class) element) != null) {
+		if (element instanceof Class && CDAModelUtil.getCDAClass((Class) element) != null) {
 			return true;
 		}
 		return false;
