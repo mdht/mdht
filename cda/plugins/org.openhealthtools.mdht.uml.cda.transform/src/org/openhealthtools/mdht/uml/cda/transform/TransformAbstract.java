@@ -25,6 +25,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
@@ -133,50 +134,18 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	}
 
 	protected Class getCDAClass(Class templateClass) {
-		for (Classifier parent : templateClass.allParents()) {
-			if (CDA_PACKAGE_NAME.equals(parent.getNearestPackage().getName()) 
-					&& parent instanceof Class) {
-				return (Class) parent;
-			}
-		}
-		
-		return null;
+		return CDAModelUtil.getCDAClass(templateClass);
 	}
 	
 	protected Property getCDAProperty(Property templateProperty) {
-		if (templateProperty.getClass_() == null) {
-			return null;
-		}
-		
-		for (Classifier parent : templateProperty.getClass_().allParents()) {
-			for (Property inherited : parent.getAttributes()) {
-				if (inherited.getName().equals(templateProperty.getName())
-						&& CDA_PACKAGE_NAME.equals(inherited.getNearestPackage().getName())) {
-					return inherited;
-				}
-			}
-		}
-		
-		return null;
+		return CDAModelUtil.getCDAProperty(templateProperty);
 	}
 	
 	/**
 	 * Returns the nearest inherited property with the same name, or null if not found.
 	 */
 	protected Property getInheritedProperty(Property templateProperty) {
-		if (templateProperty.getClass_() == null) {
-			return null;
-		}
-		
-		for (Classifier parent : templateProperty.getClass_().allParents()) {
-			for (Property inherited : parent.getAttributes()) {
-				if (inherited.getName().equals(templateProperty.getName())) {
-					return inherited;
-				}
-			}
-		}
-		
-		return null;
+		return CDAModelUtil.getInheritedProperty(templateProperty);
 	}
 	
 	protected void addOCLConstraint(Property property, StringBuffer body) {
