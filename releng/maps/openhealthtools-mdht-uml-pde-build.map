@@ -26,6 +26,24 @@ plugin@org.openhealthtools.mdht.uml.ui=SVN,trunk,https://mdht.projects.openhealt
 plugin@org.openhealthtools.mdht.uml.edit=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.edit
 
 
+
+
+!***************  OHT CDA MODELs FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml.cda.models=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.models-feature
+
+plugin@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda
+
+plugin@org.openhealthtools.mdht.uml.cda.ccd=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ccd
+
+plugin@org.openhealthtools.mdht.uml.cda.hitsp=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.hitsp
+
+plugin@org.openhealthtools.mdht.uml.cda.ihe=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/@org.openhealthtools.mdht.uml.cda.ihe
+
+plugin@org.openhealthtools.mdht.uml.cda.ncr=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ncr
+
+plugin@org.openhealthtools.mdht.uml.cda.pilot=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.pilot
+
+
 !***************  OHT CDA FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda-feature
 
@@ -41,6 +59,9 @@ plugin@org.openhealthtools.mdht.uml.cda.ui=SVN,trunk,https://mdht.projects.openh
 
 plugin@org.openhealthtools.mdht.uml.cda.dita=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.dita
 
+plugin@org.openhealthtools.mdht.uml.hl7.datatypes=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.datatypes
+
+plugin@org.openhealthtools.mdht.uml.hl7.vocab=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.vocab
 
 !***************  OHT CDA RSM FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda.rsm=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.rsm-feature
