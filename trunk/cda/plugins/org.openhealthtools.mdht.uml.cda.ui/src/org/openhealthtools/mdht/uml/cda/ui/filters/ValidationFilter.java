@@ -18,6 +18,7 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 
 /**
  * Selects an object if it is a UML Class or Package with 
@@ -48,7 +49,7 @@ public class ValidationFilter extends CDAFilter {
 			templateClass = (Class) ((Constraint)element).getContext();
 		}
 		
-		if (templateClass != null && getCDAClass(templateClass) != null) {
+		if (templateClass != null && CDAModelUtil.getCDAClass(templateClass) != null) {
 			return true;
 		}
 		return false;
