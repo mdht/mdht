@@ -5798,7 +5798,7 @@
           <language>Analysis</language>
           <language>OCL</language>
           <body>Contains one or more sources of information.</body>
-          <body>not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))</body>
+          <body>not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_hZltMHDAEd6eItyqb1FoWg">
@@ -5864,7 +5864,7 @@
           <language>Analysis</language>
           <language>OCL</language>
           <body>SHALL NOT contain referenceRange / observationRange / code, as this attribute is not used by the HL7 Clinical Statement or Lab Committee models.</body>
-          <body>self.referenceRange->forAll(range : ReferenceRange | range.observationRange.code.code.oclIsUndefined())</body>
+          <body>self.referenceRange->forAll(range : cda::ReferenceRange | range.observationRange.code.code.oclIsUndefined())</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_MZDpYBtIEd-vGNAsDUJvgw" name="informationSource" constrainedElement="_MQHZEHDAEd6eItyqb1FoWg">
@@ -6848,7 +6848,7 @@ This section is optional, however it is strongly recommended that it be present 
           <language>Analysis</language>
           <language>OCL</language>
           <body>Contains one or more sources of information.</body>
-          <body>not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))</body>
+          <body>not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_1CKdMK3zEd6_ioDelDcPPg" general="_Ht_RsHDAEd6eItyqb1FoWg"/>

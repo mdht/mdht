@@ -9,10 +9,7 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.openhealthtools.mdht.uml.cda.Specimen;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultOrganizerOperations;
@@ -24,10 +21,6 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  * An implementation of the model object '<em><b>Result Organizer</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are implemented:
- * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ResultOrganizerImpl#getSpecimens <em>Specimen</em>}</li>
- * </ul>
  * </p>
  *
  * @generated
@@ -50,28 +43,6 @@ public class ResultOrganizerImpl extends OrganizerImpl implements ResultOrganize
 	@Override
 	protected EClass eStaticClass() {
 		return CCDPackage.Literals.RESULT_ORGANIZER;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Specimen> getSpecimens() {
-		if (specimens == null) {
-			specimens = new EObjectResolvingEList<Specimen>(Specimen.class, this, CCDPackage.RESULT_ORGANIZER__SPECIMEN);
-		}
-		return specimens;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetSpecimens() {
-		return specimens != null && !specimens.isEmpty();
 	}
 
 	/**
