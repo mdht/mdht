@@ -31,6 +31,7 @@ import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
@@ -46,16 +47,25 @@ public class CDAModelUtil {
 	public static final String SEVERITY_INFO = "INFO";
 
 	public static Class getCDAClass(Class templateClass) {
+		Class cdaClass = null;
+		
+		// if the provided class is from CDA and not a template
+		if (CDA_PACKAGE_NAME.equals(templateClass.getNearestPackage().getName()))
+			return templateClass;
+		
 		for (Classifier parent : templateClass.allParents()) {
-			if (CDA_PACKAGE_NAME.equals(parent.getNearestPackage().getName()) 
-					&& parent instanceof Class) {
-				return (Class) parent;
+			// nearest package may be null if CDA model is not available
+			if (parent.getNearestPackage() != null) {
+				if (CDA_PACKAGE_NAME.equals(parent.getNearestPackage().getName()) && parent instanceof Class) {
+					cdaClass = (Class) parent;
+					break;
+				}
 			}
 		}
 		
-		return null;
+		return cdaClass;
 	}
-	
+
 	public static Property getCDAProperty(Property templateProperty) {
 		if (templateProperty.getClass_() == null) {
 			return null;
@@ -92,6 +102,33 @@ public class CDAModelUtil {
 		return null;
 	}
 
+	public static boolean isSection(Type templateClass) {
+		if (templateClass instanceof Class) {
+			Class cdaClass = getCDAClass((Class)templateClass);
+			if (cdaClass != null && "Section".equals(cdaClass.getName()))
+				return true;
+		}
+		
+		return false;
+	}
+	
+	public static boolean isClinicalStatement(Type templateClass) {
+		if (templateClass instanceof Class) {
+			Class cdaClass = getCDAClass((Class)templateClass);
+			String cdaName = cdaClass==null ? null : cdaClass.getName();
+			if (cdaClass != null && (
+					"Act".equals(cdaName) || "Encounter".equals(cdaName)
+					|| "Observation".equals(cdaName) || "ObservationMedia".equals(cdaName)
+					|| "Organizer".equals(cdaName) || "Procedure".equals(cdaName)
+					|| "RegionOfInterest".equals(cdaName) || "SubstanceAdministration".equals(cdaName)
+					|| "Supply".equals(cdaName))) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 	public static void composeAllConformanceMessages(Element element, final PrintStream stream, final boolean markup) {
 		final TreeIterator<EObject> iterator = EcoreUtil.getAllContents(
 				Collections.singletonList(element));
