@@ -15,8 +15,7 @@ package org.openhealthtools.mdht.uml.cda.hitsp;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
-import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
+import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 
 /**
@@ -30,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
  *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.32.1' constraints.validation.error='PatientSummaryTemplateId'"
  * @generated
  */
-public interface PatientSummary extends ContinuityOfCareDocument {
+public interface PatientSummary extends ClinicalDocument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -50,7 +49,7 @@ public interface PatientSummary extends ContinuityOfCareDocument {
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	ActiveProblemsSection createProblemListSection();
+	ProblemListSection createProblemListSection();
 
 	/**
 	 * <!-- begin-user-doc -->

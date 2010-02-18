@@ -18,9 +18,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Allergies and Other Adverse Reactions Section contains data on the substance intolerances and the
+ *     The Allergies and Other Adverse Reactions Section contains data on the substance intolerances and the
  *     associated adverse reactions suffered by the patient. At a minimum, currently active and any relevant historical
- *     allergies and adverse reactions shall be listed.</font>
+ *     allergies and adverse reactions shall be listed. 
  * </p>
  * <!-- end-model-doc -->
  *

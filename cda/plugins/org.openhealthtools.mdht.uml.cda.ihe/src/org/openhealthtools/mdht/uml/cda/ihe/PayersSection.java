@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The Payers section contains data on the patient’s payers, whether a ‘third party’ insurance, self-pay, other payer or
+ * The Payers section contains data on the patient's payers, whether a 'third party' insurance, self-pay, other payer or
  * guarantor, or some combination.
  * <!-- end-model-doc -->
  *

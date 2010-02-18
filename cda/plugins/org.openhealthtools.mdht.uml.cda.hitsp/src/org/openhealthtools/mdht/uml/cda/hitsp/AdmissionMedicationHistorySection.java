@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Admission Medication Section contains information about the relevant medications of a patient prior
- *     to admission to a facility.</font>
+ *     The Admission Medication Section contains information about the relevant medications of a patient prior
+ *     to admission to a facility. 
  * </p>
  * <!-- end-model-doc -->
  *

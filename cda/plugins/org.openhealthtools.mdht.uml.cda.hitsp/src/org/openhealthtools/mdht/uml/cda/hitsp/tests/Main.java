@@ -28,13 +28,13 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
+import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDosing;
-import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
@@ -149,8 +149,7 @@ public class Main {
 		effectiveTime.setLow(TS_UNK);
 		condition.setEffectiveTime(effectiveTime);
 		
-		ProblemEntry problemEntry = IHEFactory.eINSTANCE.createProblemEntry().init();
-		condition.addObservation(problemEntry);
+		ConditionEntry problemEntry = condition.createConditionEntry();
 		problemEntry.getIds().add(DatatypesFactory.eINSTANCE.createII("ab1791b0-5c71-11db-b0de-0800200c9a66"));
 		problemEntry.setCode(DatatypesFactory.eINSTANCE.createCD(
 				"64572001", "2.16.840.1.113883.6.96", "SNOMED-CT", "Condition"));

@@ -15,17 +15,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * A representation of the model object '<em><b>Normal Dosing</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * This&nbsp;template&nbsp;identifier&nbsp;is&nbsp;used&nbsp;to&nbsp;identify&nbsp;medication&nbsp;administration&nbsp;events&nbsp;that&nbsp;do&nbsp;not&nbsp;require&nbsp;any&nbsp;special&nbsp;processing.
- * The parent template is <span><a title="1.3.6.1.4.1.19376.1.5.3.1.4.7"
- * href="http://wiki.ihe.net/index.php?title=1.3.6.1.4.1.19376.1.5.3.1.4.7#1.3.6.1.4.1.19376.1.5.3.1.4.7"><u><font
- * color="#0066CC">1.3.6.1.4.1.19376.1.5.3.1.4.7</font></u></a></span>. Medications that use this template identifier shall
- * not use subordinate &lt;substanceAdministation&gt; acts.
- * <!-- end-model-doc -->
- *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getNormalDosing()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='NormalDosingTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.7.1'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.7.1' constraints.validation.error='NormalDosingTemplateId'"
  * @generated
  */
 public interface NormalDosing extends Medication {

@@ -20,6 +20,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
+import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection;
@@ -109,12 +110,20 @@ public class HITSPValidator extends EObjectValidator {
 	public static final int CONDITION__CONDITION_TEXT = 4;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Condition Condition Entry' of 'Condition'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONDITION__CONDITION_CONDITION_ENTRY = 5;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Summary Template Id' of 'Patient Summary'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_TEMPLATE_ID = 5;
+	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_TEMPLATE_ID = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Vital Signs Section Vital Signs' of 'Vital Signs Section'.
@@ -122,7 +131,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS = 6;
+	public static final int VITAL_SIGNS_SECTION__HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS = 13;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Vital Signs Section Template Id' of 'Vital Signs Section'.
@@ -130,7 +139,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__HITSP_VITAL_SIGNS_SECTION_TEMPLATE_ID = 7;
+	public static final int VITAL_SIGNS_SECTION__HITSP_VITAL_SIGNS_SECTION_TEMPLATE_ID = 14;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Template Id' of 'Vital Sign'.
@@ -138,7 +147,15 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN__VITAL_SIGN_TEMPLATE_ID = 8;
+	public static final int VITAL_SIGN__VITAL_SIGN_TEMPLATE_ID = 15;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Code' of 'Vital Sign'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGN__VITAL_SIGN_CODE = 16;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Payers Section Template Id' of 'Payers Section'.
@@ -146,7 +163,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__HITSP_PAYERS_SECTION_TEMPLATE_ID = 9;
+	public static final int PAYERS_SECTION__HITSP_PAYERS_SECTION_TEMPLATE_ID = 17;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Allergies Reactions Section Template Id' of 'Allergies Reactions Section'.
@@ -154,7 +171,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ALLERGIES_REACTIONS_SECTION__HITSP_ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID = 10;
+	public static final int ALLERGIES_REACTIONS_SECTION__HITSP_ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID = 18;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem List Section Template Id' of 'Problem List Section'.
@@ -162,7 +179,15 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_LIST_SECTION__PROBLEM_LIST_SECTION_TEMPLATE_ID = 11;
+	public static final int PROBLEM_LIST_SECTION__PROBLEM_LIST_SECTION_TEMPLATE_ID = 10;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem List Section Condition' of 'Problem List Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROBLEM_LIST_SECTION__PROBLEM_LIST_SECTION_CONDITION = 11;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP History Of Past Illness Section Template Id' of 'History Of Past Illness Section'.
@@ -170,7 +195,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_OF_PAST_ILLNESS_SECTION__HITSP_HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID = 12;
+	public static final int HISTORY_OF_PAST_ILLNESS_SECTION__HITSP_HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID = 19;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Chief Complaint Section Template Id' of 'Chief Complaint Section'.
@@ -178,7 +203,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CHIEF_COMPLAINT_SECTION__HITSP_CHIEF_COMPLAINT_SECTION_TEMPLATE_ID = 13;
+	public static final int CHIEF_COMPLAINT_SECTION__HITSP_CHIEF_COMPLAINT_SECTION_TEMPLATE_ID = 20;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Reason For Referral Section Template Id' of 'Reason For Referral Section'.
@@ -186,7 +211,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REASON_FOR_REFERRAL_SECTION__HITSP_REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID = 14;
+	public static final int REASON_FOR_REFERRAL_SECTION__HITSP_REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID = 21;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP History Of Present Illness Template Id' of 'History Of Present Illness'.
@@ -194,7 +219,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_OF_PRESENT_ILLNESS__HITSP_HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID = 15;
+	public static final int HISTORY_OF_PRESENT_ILLNESS__HITSP_HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID = 22;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Surgeries Section Template Id' of 'Surgeries Section'.
@@ -202,7 +227,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SURGERIES_SECTION__HITSP_SURGERIES_SECTION_TEMPLATE_ID = 16;
+	public static final int SURGERIES_SECTION__HITSP_SURGERIES_SECTION_TEMPLATE_ID = 23;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Functional Status Section Template Id' of 'Functional Status Section'.
@@ -210,7 +235,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_SECTION__HITSP_FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID = 17;
+	public static final int FUNCTIONAL_STATUS_SECTION__HITSP_FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID = 24;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Hospital Admission Diagnosis Section Template Id' of 'Hospital Admission Diagnosis Section'.
@@ -218,7 +243,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__HITSP_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID = 18;
+	public static final int HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__HITSP_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID = 25;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Discharge Diagnosis Section Template Id' of 'Discharge Diagnosis Section'.
@@ -226,7 +251,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DISCHARGE_DIAGNOSIS_SECTION__HITSP_DISCHARGE_DIAGNOSIS_SECTION_TEMPLATE_ID = 19;
+	public static final int DISCHARGE_DIAGNOSIS_SECTION__HITSP_DISCHARGE_DIAGNOSIS_SECTION_TEMPLATE_ID = 26;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Medications Section Template Id' of 'Medications Section'.
@@ -234,7 +259,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICATIONS_SECTION__HITSP_MEDICATIONS_SECTION_TEMPLATE_ID = 20;
+	public static final int MEDICATIONS_SECTION__HITSP_MEDICATIONS_SECTION_TEMPLATE_ID = 12;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Admission Medication History Section Template Id' of 'Admission Medication History Section'.
@@ -242,7 +267,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADMISSION_MEDICATION_HISTORY_SECTION__HITSP_ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID = 21;
+	public static final int ADMISSION_MEDICATION_HISTORY_SECTION__HITSP_ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID = 27;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Hospital Discharge Medications Section Template Id' of 'Hospital Discharge Medications Section'.
@@ -250,7 +275,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__HITSP_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_TEMPLATE_ID = 22;
+	public static final int HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__HITSP_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_TEMPLATE_ID = 28;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Medications Administered Section Template Id' of 'Medications Administered Section'.
@@ -258,7 +283,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICATIONS_ADMINISTERED_SECTION__HITSP_MEDICATIONS_ADMINISTERED_SECTION_TEMPLATE_ID = 23;
+	public static final int MEDICATIONS_ADMINISTERED_SECTION__HITSP_MEDICATIONS_ADMINISTERED_SECTION_TEMPLATE_ID = 29;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Advance Directives Section Template Id' of 'Advance Directives Section'.
@@ -266,7 +291,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVES_SECTION__HITSP_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 24;
+	public static final int ADVANCE_DIRECTIVES_SECTION__HITSP_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 30;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Immunizations Section Template Id' of 'Immunizations Section'.
@@ -274,7 +299,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IMMUNIZATIONS_SECTION__HITSP_IMMUNIZATIONS_SECTION_TEMPLATE_ID = 25;
+	public static final int IMMUNIZATIONS_SECTION__HITSP_IMMUNIZATIONS_SECTION_TEMPLATE_ID = 31;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Physical Exam Section Template Id' of 'Physical Exam Section'.
@@ -282,7 +307,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PHYSICAL_EXAM_SECTION__HITSP_PHYSICAL_EXAM_SECTION_TEMPLATE_ID = 26;
+	public static final int PHYSICAL_EXAM_SECTION__HITSP_PHYSICAL_EXAM_SECTION_TEMPLATE_ID = 32;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Review Of Systems Section Template Id' of 'Review Of Systems Section'.
@@ -290,7 +315,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REVIEW_OF_SYSTEMS_SECTION__HITSP_REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID = 27;
+	public static final int REVIEW_OF_SYSTEMS_SECTION__HITSP_REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID = 33;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Hospital Course Section Template Id' of 'Hospital Course Section'.
@@ -298,7 +323,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HOSPITAL_COURSE_SECTION__HITSP_HOSPITAL_COURSE_SECTION_TEMPLATE_ID = 28;
+	public static final int HOSPITAL_COURSE_SECTION__HITSP_HOSPITAL_COURSE_SECTION_TEMPLATE_ID = 34;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Diagnostic Results Section Template Id' of 'Diagnostic Results Section'.
@@ -306,7 +331,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DIAGNOSTIC_RESULTS_SECTION__DIAGNOSTIC_RESULTS_SECTION_TEMPLATE_ID = 29;
+	public static final int DIAGNOSTIC_RESULTS_SECTION__DIAGNOSTIC_RESULTS_SECTION_TEMPLATE_ID = 35;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Assessment And Plan Section Template Id' of 'Assessment And Plan Section'.
@@ -314,7 +339,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSESSMENT_AND_PLAN_SECTION__HITSP_ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID = 30;
+	public static final int ASSESSMENT_AND_PLAN_SECTION__HITSP_ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID = 36;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Plan Of Care Section Template Id' of 'Plan Of Care Section'.
@@ -322,7 +347,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__HITSP_PLAN_OF_CARE_SECTION_TEMPLATE_ID = 31;
+	public static final int PLAN_OF_CARE_SECTION__HITSP_PLAN_OF_CARE_SECTION_TEMPLATE_ID = 37;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Family History Section Template Id' of 'Family History Section'.
@@ -330,7 +355,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FAMILY_HISTORY_SECTION__HITSP_FAMILY_HISTORY_SECTION_TEMPLATE_ID = 32;
+	public static final int FAMILY_HISTORY_SECTION__HITSP_FAMILY_HISTORY_SECTION_TEMPLATE_ID = 38;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Social History Section Template Id' of 'Social History Section'.
@@ -338,7 +363,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SOCIAL_HISTORY_SECTION__HITSP_SOCIAL_HISTORY_SECTION_TEMPLATE_ID = 33;
+	public static final int SOCIAL_HISTORY_SECTION__HITSP_SOCIAL_HISTORY_SECTION_TEMPLATE_ID = 39;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Encounters Section Template Id' of 'Encounters Section'.
@@ -346,7 +371,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTERS_SECTION__HITSP_ENCOUNTERS_SECTION_TEMPLATE_ID = 34;
+	public static final int ENCOUNTERS_SECTION__HITSP_ENCOUNTERS_SECTION_TEMPLATE_ID = 40;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Medical Equipment Section Template Id' of 'Medical Equipment Section'.
@@ -354,7 +379,31 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_EQUIPMENT_SECTION__HITSP_MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID = 35;
+	public static final int MEDICAL_EQUIPMENT_SECTION__HITSP_MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID = 41;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Condition Entry Code' of 'Condition Entry'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONDITION_ENTRY__CONDITION_ENTRY_CODE = 6;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Condition Entry Value' of 'Condition Entry'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONDITION_ENTRY__CONDITION_ENTRY_VALUE = 7;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Condition Entry Effective Time' of 'Condition Entry'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONDITION_ENTRY__CONDITION_ENTRY_EFFECTIVE_TIME = 8;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -362,7 +411,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 35;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 41;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -426,8 +475,14 @@ public class HITSPValidator extends EObjectValidator {
 				return validateMedication((Medication)value, diagnostics, context);
 			case HITSPPackage.CONDITION:
 				return validateCondition((Condition)value, diagnostics, context);
+			case HITSPPackage.CONDITION_ENTRY:
+				return validateConditionEntry((ConditionEntry)value, diagnostics, context);
 			case HITSPPackage.PATIENT_SUMMARY:
 				return validatePatientSummary((PatientSummary)value, diagnostics, context);
+			case HITSPPackage.PROBLEM_LIST_SECTION:
+				return validateProblemListSection((ProblemListSection)value, diagnostics, context);
+			case HITSPPackage.MEDICATIONS_SECTION:
+				return validateMedicationsSection((MedicationsSection)value, diagnostics, context);
 			case HITSPPackage.VITAL_SIGNS_SECTION:
 				return validateVitalSignsSection((VitalSignsSection)value, diagnostics, context);
 			case HITSPPackage.VITAL_SIGN:
@@ -436,8 +491,6 @@ public class HITSPValidator extends EObjectValidator {
 				return validatePayersSection((PayersSection)value, diagnostics, context);
 			case HITSPPackage.ALLERGIES_REACTIONS_SECTION:
 				return validateAllergiesReactionsSection((AllergiesReactionsSection)value, diagnostics, context);
-			case HITSPPackage.PROBLEM_LIST_SECTION:
-				return validateProblemListSection((ProblemListSection)value, diagnostics, context);
 			case HITSPPackage.HISTORY_OF_PAST_ILLNESS_SECTION:
 				return validateHistoryOfPastIllnessSection((HistoryOfPastIllnessSection)value, diagnostics, context);
 			case HITSPPackage.CHIEF_COMPLAINT_SECTION:
@@ -454,8 +507,6 @@ public class HITSPValidator extends EObjectValidator {
 				return validateHospitalAdmissionDiagnosisSection((HospitalAdmissionDiagnosisSection)value, diagnostics, context);
 			case HITSPPackage.DISCHARGE_DIAGNOSIS_SECTION:
 				return validateDischargeDiagnosisSection((DischargeDiagnosisSection)value, diagnostics, context);
-			case HITSPPackage.MEDICATIONS_SECTION:
-				return validateMedicationsSection((MedicationsSection)value, diagnostics, context);
 			case HITSPPackage.ADMISSION_MEDICATION_HISTORY_SECTION:
 				return validateAdmissionMedicationHistorySection((AdmissionMedicationHistorySection)value, diagnostics, context);
 			case HITSPPackage.HOSPITAL_DISCHARGE_MEDICATIONS_SECTION:
@@ -599,6 +650,7 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= iheValidator.validateProblemConcernEntry_validateProblemConcernEntryProblemEntry(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCondition_validateConditionTemplateId(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCondition_validateConditionText(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCondition_validateConditionConditionEntry(condition, diagnostics, context);
 		return result;
 	}
 
@@ -623,6 +675,16 @@ public class HITSPValidator extends EObjectValidator {
 	}
 
 	/**
+	 * Validates the validateConditionConditionEntry constraint of '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCondition_validateConditionConditionEntry(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return condition.validateConditionConditionEntry(diagnostics, context);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -635,32 +697,6 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentServiceEventRequired(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentServiceEventClassCode(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentServiceEventEffectiveTime(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentNoTemplateIdExtension(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentOneOrTwoRecordTarget(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentHasAssignedAuthor(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentHasAssignedAuthorNullFlavor(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentHasInformationRecipient(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentTemplateId(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentCode(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentProblemSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentFamilyHistorySection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentSocialHistorySection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentAlertsSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentMedicationSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentResultsSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentProceduresSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentEncountersSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentPlanOfCareSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentImmunizationsSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentVitalSignsSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentMedicalEquipmentSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentFunctionalStatusSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentAdvanceDirectivesSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentPayersSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentPurposeSection(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePatientSummary_validatePatientSummaryTemplateId(patientSummary, diagnostics, context);
 		return result;
 	}
@@ -691,6 +727,7 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionCode(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionTitle(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionText(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionVitalSignsOrganizer(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateVitalSignsSection_validateIHEVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateCodedVitalSignsSection_validateCodedVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
@@ -733,6 +770,9 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vitalSign, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationReferenceRangeRequired(vitalSign, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationNoObservationRangeCode(vitalSign, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationInformationSource(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationTemplateId(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationMoodCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationId(vitalSign, diagnostics, context);
@@ -742,6 +782,7 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationValue(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSign_validateVitalSignTemplateId(vitalSign, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSign_validateVitalSignCode(vitalSign, diagnostics, context);
 		return result;
 	}
 
@@ -753,6 +794,16 @@ public class HITSPValidator extends EObjectValidator {
 	 */
 	public boolean validateVitalSign_validateVitalSignTemplateId(VitalSign vitalSign, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return vitalSign.validateVitalSignTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateVitalSignCode constraint of '<em>Vital Sign</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSign_validateVitalSignCode(VitalSign vitalSign, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSign.validateVitalSignCode(diagnostics, context);
 	}
 
 	/**
@@ -840,6 +891,7 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= iheValidator.validateActiveProblemsSection_validateActiveProblemsSectionTemplateId(problemListSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateActiveProblemsSection_validateActiveProblemsSectionProblemConcernEntry(problemListSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemListSection_validateProblemListSectionTemplateId(problemListSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemListSection_validateProblemListSectionCondition(problemListSection, diagnostics, context);
 		return result;
 	}
 
@@ -851,6 +903,16 @@ public class HITSPValidator extends EObjectValidator {
 	 */
 	public boolean validateProblemListSection_validateProblemListSectionTemplateId(ProblemListSection problemListSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return problemListSection.validateProblemListSectionTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProblemListSectionCondition constraint of '<em>Problem List Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProblemListSection_validateProblemListSectionCondition(ProblemListSection problemListSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemListSection.validateProblemListSectionCondition(diagnostics, context);
 	}
 
 	/**
@@ -1259,6 +1321,9 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionCode(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionTitle(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionText(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionMedicationActivity(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionSupplyActivity(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateImmunizationsSection_validateIHEImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateImmunizationsSection_validateHITSPImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
 		return result;
@@ -1574,6 +1639,68 @@ public class HITSPValidator extends EObjectValidator {
 	 */
 	public boolean validateMedicalEquipmentSection_validateHITSPMedicalEquipmentSectionTemplateId(MedicalEquipmentSection medicalEquipmentSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return medicalEquipmentSection.validateHITSPMedicalEquipmentSectionTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConditionEntry(ConditionEntry conditionEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationInformationSource(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationContainsPatientAwareness(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationTemplateId(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationMoodCode(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationStatusCode(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationEffectiveTime(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationCode(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationProblemStatus(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationProblemHealthStatus(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationAgeObservation(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateProblemEntry_validateProblemEntryTemplateId(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateProblemEntry_validateProblemEntryText(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateProblemEntry_validateProblemEntryValue(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConditionEntry_validateConditionEntryCode(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConditionEntry_validateConditionEntryValue(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConditionEntry_validateConditionEntryEffectiveTime(conditionEntry, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateConditionEntryCode constraint of '<em>Condition Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConditionEntry_validateConditionEntryCode(ConditionEntry conditionEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return conditionEntry.validateConditionEntryCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateConditionEntryValue constraint of '<em>Condition Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConditionEntry_validateConditionEntryValue(ConditionEntry conditionEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return conditionEntry.validateConditionEntryValue(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateConditionEntryEffectiveTime constraint of '<em>Condition Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConditionEntry_validateConditionEntryEffectiveTime(ConditionEntry conditionEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return conditionEntry.validateConditionEntryEffectiveTime(diagnostics, context);
 	}
 
 	/**

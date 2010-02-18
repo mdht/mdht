@@ -24,8 +24,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">This module contains the allergy or intolerance conditions and the associated adverse reactions suffered
- *     by the patient. See the HL7 Continuity of Care Document Section 3.8 for constraints applicable to this module.</font>
+ *     This module contains the allergy or intolerance conditions and the associated adverse reactions suffered
+ *     by the patient. See the HL7 Continuity of Care Document Section 3.8 for constraints applicable to this module. 
  * </p>
  * <!-- end-model-doc -->
  *

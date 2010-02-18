@@ -17,13 +17,13 @@ import org.openhealthtools.mdht.uml.cda.ihe.CarePlanSection;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p align="left">
- *     <font size="2">The Plan of Care Section contains information about the expectations for care to be provided including
- *     proposed interventions and goals for improving the condition of the patient.</font>
+ * <p>
+ *     The Plan of Care Section contains information about the expectations for care to be provided including
+ *     proposed interventions and goals for improving the condition of the patient. 
  * </p>
  * <p>
- *     <font size="2">A plan of care section varies from the assessment and plan section defined above in that it does not
- *     include a physician assessment of the patient condition.</font>
+ *     A plan of care section varies from the assessment and plan section defined above in that it does not
+ *     include a physician assessment of the patient condition. 
  * </p>
  * <!-- end-model-doc -->
  *

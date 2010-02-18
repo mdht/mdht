@@ -17,8 +17,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Social History Section contains information about the person’s beliefs, home life, community life,
- *     work life, hobbies, and risky habits.</font>
+ *     The Social History Section contains information about the person's beliefs, home life, community life,
+ *     work life, hobbies, and risky habits. 
  * </p>
  * <!-- end-model-doc -->
  *

@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The History of Past Illness Section contains data about problems the patient suffered in the
- *     past.</font>
+ *     The History of Past Illness Section contains data about problems the patient suffered in the
+ *     past. 
  * </p>
  * <!-- end-model-doc -->
  *

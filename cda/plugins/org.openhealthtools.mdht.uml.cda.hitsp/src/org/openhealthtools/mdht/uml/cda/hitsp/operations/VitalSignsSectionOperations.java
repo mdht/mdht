@@ -53,7 +53,7 @@ public class VitalSignsSectionOperations extends CodedVitalSignsSectionOperation
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::IHEVitalSignsOrganizer) and"+
+	protected static final String VALIDATE_HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::VitalSignsOrganizer) and"+
 "entry.organizer.component.observation->exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))";
 
 	/**
@@ -70,7 +70,7 @@ public class VitalSignsSectionOperations extends CodedVitalSignsSectionOperation
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::IHEVitalSignsOrganizer) and
+	 * self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::VitalSignsOrganizer) and
 	 * entry.organizer.component.observation->exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))
 	 * @param vitalSignsSection The receiving '<em><b>Vital Signs Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.

@@ -206,21 +206,21 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerTemplateId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignsOrganizer/VitalSignsOrganizerCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/VitalSignsOrganizerCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/VitalSignsOrganizerCode/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerCode/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignsOrganizer/VitalSignsOrganizerStatusCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/VitalSignsOrganizerStatusCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/VitalSignsOrganizerStatusCode/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerStatusCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerStatusCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerStatusCode/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignsOrganizer/VitalSignsOrganizerEffectiveTime">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/VitalSignsOrganizerEffectiveTime/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/VitalSignsOrganizerEffectiveTime/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerEffectiveTime">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerEffectiveTime/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerEffectiveTime/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignsOrganizer/VitalSignsOrganizerVitalSignObservation">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/VitalSignsOrganizerVitalSignObservation/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/VitalSignsOrganizerVitalSignObservation/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerVitalSignObservation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerVitalSignObservation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignsOrganizer/IHEVitalSignsOrganizerVitalSignObservation/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//PayersSection">

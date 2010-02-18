@@ -18,8 +18,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Medical Equipment section contains information describing a patient’s implanted and external medical
- *     devices and equipment that their health status depends on, as well as any pertinent equipment or device history.</font>
+ *     The Medical Equipment section contains information describing a patient's implanted and external medical
+ *     devices and equipment that their health status depends on, as well as any pertinent equipment or device history. 
  * </p>
  * <!-- end-model-doc -->
  *

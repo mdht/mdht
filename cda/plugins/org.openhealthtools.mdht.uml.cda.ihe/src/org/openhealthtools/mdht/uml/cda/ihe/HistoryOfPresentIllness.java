@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  * <!-- begin-model-doc -->
  * The history of present illness section shall contain a narrative description of the sequence of events preceding the
- * patient’s current complaints.
+ * patient's current complaints.
  * <!-- end-model-doc -->
  *
  *

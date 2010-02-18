@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Medications Section contains information about the relevant medications for the patient. At a
- *     minimum, the currently active medications should be listed.</font>
+ *     The Medications Section contains information about the relevant medications for the patient. At a
+ *     minimum, the currently active medications should be listed. 
  * </p>
  * <!-- end-model-doc -->
  *

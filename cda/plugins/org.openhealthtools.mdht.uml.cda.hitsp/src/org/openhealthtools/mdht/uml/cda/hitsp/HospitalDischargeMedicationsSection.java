@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Hospital Discharge Medications Section contains information about the relevant medications of the
- *     medications ordered for the patient for use after discharge from the hospital.</font>
+ *     The Hospital Discharge Medications Section contains information about the relevant medications of the
+ *     medications ordered for the patient for use after discharge from the hospital. 
  * </p>
  * <!-- end-model-doc -->
  *

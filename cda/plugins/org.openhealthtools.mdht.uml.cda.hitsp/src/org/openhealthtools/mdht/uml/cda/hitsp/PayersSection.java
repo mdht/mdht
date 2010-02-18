@@ -18,10 +18,10 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Payers Section contains data on the patient’s payers, whether a ‘third party’ insurance, self-pay,
+ *     The Payers Section contains data on the patient's payers, whether a 'third party' insurance, self-pay,
  *     other payer or guarantor, or some combination. At a minimum, the patient's pertinent current payment sources should be
  *     listed. If no payment sources are supplied, the reason shall be supplied as free text in the narrative block (e.g., Not
- *     Insured, Payer Unknown, Medicare Pending, et cetera).</font>
+ *     Insured, Payer Unknown, Medicare Pending, et cetera). 
  * </p>
  * <!-- end-model-doc -->
  *

@@ -18,8 +18,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Family History Section contains information about the genetic family members, to the extent that
- *     they are known, the diseases they suffered from, their ages at death, and other relevant genetic information.</font>
+ *     The Family History Section contains information about the genetic family members, to the extent that
+ *     they are known, the diseases they suffered from, their ages at death, and other relevant genetic information. 
  * </p>
  * <!-- end-model-doc -->
  *

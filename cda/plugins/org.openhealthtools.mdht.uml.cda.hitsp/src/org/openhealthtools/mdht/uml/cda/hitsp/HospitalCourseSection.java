@@ -17,8 +17,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Hospital Course Section contains information about of the sequence of events from admission to
- *     discharge in a hospital facility.</font>
+ *     The Hospital Course Section contains information about of the sequence of events from admission to
+ *     discharge in a hospital facility. 
  * </p>
  * <!-- end-model-doc -->
  *

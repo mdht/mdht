@@ -359,36 +359,36 @@ public class IHEValidator extends EObjectValidator {
 	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_TEMPLATE_ID = 33;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Organizer Code' of 'Vital Signs Organizer'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Code' of 'Vital Signs Organizer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_CODE = 34;
+	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_CODE = 34;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Organizer Status Code' of 'Vital Signs Organizer'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Status Code' of 'Vital Signs Organizer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_STATUS_CODE = 35;
+	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_STATUS_CODE = 35;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Organizer Effective Time' of 'Vital Signs Organizer'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Effective Time' of 'Vital Signs Organizer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_EFFECTIVE_TIME = 36;
+	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_EFFECTIVE_TIME = 36;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Organizer Vital Sign Observation' of 'Vital Signs Organizer'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Vital Sign Observation' of 'Vital Signs Organizer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_VITAL_SIGN_OBSERVATION = 37;
+	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_VITAL_SIGN_OBSERVATION = 37;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Payers Section Template Id' of 'Payers Section'.
@@ -854,6 +854,9 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionCode(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionTitle(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionText(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionMedicationActivity(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionSupplyActivity(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateImmunizationsSection_validateIHEImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
 		return result;
 	}
@@ -919,11 +922,18 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEntryRelationshipRequired(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActSubjectOfTarget(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsProblemObservation(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsAlertObservation(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsPatientAwareness(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActTemplateId(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActClassCode(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEffectiveTime(concernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEpisodeObservation(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryTemplateId(concernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryEffectiveTime(concernEntry, diagnostics, context);
 		return result;
@@ -992,6 +1002,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionTemplateId(activeProblemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionCode(activeProblemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionTitle(activeProblemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionText(activeProblemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionProblemAct(activeProblemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateActiveProblemsSection_validateActiveProblemsSectionTemplateId(activeProblemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateActiveProblemsSection_validateActiveProblemsSectionProblemConcernEntry(activeProblemsSection, diagnostics, context);
@@ -1031,11 +1042,18 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEntryRelationshipRequired(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActSubjectOfTarget(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsProblemObservation(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsAlertObservation(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsPatientAwareness(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActTemplateId(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActClassCode(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEffectiveTime(problemConcernEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEpisodeObservation(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryTemplateId(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryEffectiveTime(problemConcernEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemConcernEntry_validateProblemConcernEntryTemplateId(problemConcernEntry, diagnostics, context);
@@ -1076,11 +1094,16 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(problemEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationInformationSource(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationContainsPatientAwareness(problemEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationTemplateId(problemEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationMoodCode(problemEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationStatusCode(problemEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationEffectiveTime(problemEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationCode(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationProblemStatus(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationProblemHealthStatus(problemEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationAgeObservation(problemEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemEntry_validateProblemEntryTemplateId(problemEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemEntry_validateProblemEntryText(problemEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemEntry_validateProblemEntryValue(problemEntry, diagnostics, context);
@@ -1194,11 +1217,18 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEntryRelationshipRequired(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActSubjectOfTarget(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsProblemObservation(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsAlertObservation(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsPatientAwareness(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActTemplateId(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActClassCode(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEffectiveTime(allergyIntoleranceConcern, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEpisodeObservation(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryTemplateId(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConcernEntry_validateConcernEntryEffectiveTime(allergyIntoleranceConcern, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAllergyIntoleranceConcern_validateAllergyIntoleranceConcernTemplateId(allergyIntoleranceConcern, diagnostics, context);
@@ -1228,11 +1258,16 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(allergyIntolerance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(allergyIntolerance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationInformationSource(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationContainsPatientAwareness(allergyIntolerance, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationTemplateId(allergyIntolerance, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationMoodCode(allergyIntolerance, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationStatusCode(allergyIntolerance, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationEffectiveTime(allergyIntolerance, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationCode(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationProblemStatus(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationProblemHealthStatus(allergyIntolerance, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationAgeObservation(allergyIntolerance, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemEntry_validateProblemEntryTemplateId(allergyIntolerance, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemEntry_validateProblemEntryText(allergyIntolerance, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemEntry_validateProblemEntryValue(allergyIntolerance, diagnostics, context);
@@ -1266,6 +1301,8 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionTemplateId(allergiesReactionsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionCode(allergiesReactionsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionTitle(allergiesReactionsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionText(allergiesReactionsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionProblemAct(allergiesReactionsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAllergiesReactionsSection_validateAllergiesReactionsSectionTemplateId(allergiesReactionsSection, diagnostics, context);
 		return result;
 	}
@@ -1471,6 +1508,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionCode(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionTitle(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionText(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionVitalSignsOrganizer(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignsSection_validateIHEVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
 		return result;
@@ -1502,6 +1540,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionTemplateId(codedVitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionCode(codedVitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionTitle(codedVitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionText(codedVitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionVitalSignsOrganizer(codedVitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignsSection_validateIHEVitalSignsSectionTemplateId(codedVitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCodedVitalSignsSection_validateCodedVitalSignsSectionTemplateId(codedVitalSignsSection, diagnostics, context);
@@ -1542,6 +1581,9 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationReferenceRangeRequired(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationNoObservationRangeCode(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationInformationSource(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationTemplateId(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationMoodCode(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationId(vitalSignObservation, diagnostics, context);
@@ -1645,16 +1687,19 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerComponentElement(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerInformationSource(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerMoodCode(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerId(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerResultObservation(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsOrganizer_validateVitalSignsOrganizerInformationSource(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsOrganizer_validateVitalSignsOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateVitalSignsOrganizerCode(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateVitalSignsOrganizerStatusCode(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateVitalSignsOrganizerEffectiveTime(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateVitalSignsOrganizerVitalSignObservation(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerCode(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerStatusCode(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerEffectiveTime(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerVitalSignObservation(vitalSignsOrganizer, diagnostics, context);
 		return result;
 	}
 
@@ -1669,43 +1714,43 @@ public class IHEValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateVitalSignsOrganizerCode constraint of '<em>Vital Signs Organizer</em>'.
+	 * Validates the validateIHEVitalSignsOrganizerCode constraint of '<em>Vital Signs Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignsOrganizer_validateVitalSignsOrganizerCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignsOrganizer.validateVitalSignsOrganizerCode(diagnostics, context);
+	public boolean validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.validateIHEVitalSignsOrganizerCode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateVitalSignsOrganizerStatusCode constraint of '<em>Vital Signs Organizer</em>'.
+	 * Validates the validateIHEVitalSignsOrganizerStatusCode constraint of '<em>Vital Signs Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignsOrganizer_validateVitalSignsOrganizerStatusCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignsOrganizer.validateVitalSignsOrganizerStatusCode(diagnostics, context);
+	public boolean validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerStatusCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.validateIHEVitalSignsOrganizerStatusCode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateVitalSignsOrganizerEffectiveTime constraint of '<em>Vital Signs Organizer</em>'.
+	 * Validates the validateIHEVitalSignsOrganizerEffectiveTime constraint of '<em>Vital Signs Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignsOrganizer_validateVitalSignsOrganizerEffectiveTime(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignsOrganizer.validateVitalSignsOrganizerEffectiveTime(diagnostics, context);
+	public boolean validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerEffectiveTime(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.validateIHEVitalSignsOrganizerEffectiveTime(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateVitalSignsOrganizerVitalSignObservation constraint of '<em>Vital Signs Organizer</em>'.
+	 * Validates the validateIHEVitalSignsOrganizerVitalSignObservation constraint of '<em>Vital Signs Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignsOrganizer_validateVitalSignsOrganizerVitalSignObservation(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignsOrganizer.validateVitalSignsOrganizerVitalSignObservation(diagnostics, context);
+	public boolean validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerVitalSignObservation(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsOrganizer.validateIHEVitalSignsOrganizerVitalSignObservation(diagnostics, context);
 	}
 
 	/**

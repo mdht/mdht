@@ -1435,7 +1435,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateVitalSignsOrganizerCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateIHEVitalSignsOrganizerCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1444,7 +1444,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateVitalSignsOrganizerStatusCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateIHEVitalSignsOrganizerStatusCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1453,7 +1453,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateVitalSignsOrganizerEffectiveTime", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateIHEVitalSignsOrganizerEffectiveTime", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1462,7 +1462,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateVitalSignsOrganizerVitalSignObservation", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateIHEVitalSignsOrganizerVitalSignObservation", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1862,8 +1862,6 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		createExtendedMetaDataAnnotations();
 		// uml2.alias
 		createUml2Annotations();
-		// duplicates
-		createDuplicatesAnnotations();
 	}
 
 	/**
@@ -1961,13 +1959,13 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   new String[] {
 			 "constraints.validation.error", "AllergiesReactionsSectionTemplateId",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.13"
-		   });								
+		   });							
 		addAnnotation
 		  (normalDosingEClass, 
 		   source, 
 		   new String[] {
-			 "constraints.validation.error", "NormalDosingTemplateId",
-			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.7.1"
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.7.1",
+			 "constraints.validation.error", "NormalDosingTemplateId"
 		   });							
 		addAnnotation
 		  (taperedDoseEClass, 
@@ -2037,13 +2035,13 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 			 "statusCode.codeSystemName", "ActStatus",
 			 "code.codeSystemName", "SNOMED CT",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.13.1",
-			 "constraints.validation.error", "IHEVitalSignsOrganizerTemplateId VitalSignsOrganizerCode VitalSignsOrganizerStatusCode VitalSignsOrganizerEffectiveTime VitalSignsOrganizerVitalSignObservation",
+			 "constraints.validation.error", "IHEVitalSignsOrganizerTemplateId IHEVitalSignsOrganizerCode IHEVitalSignsOrganizerStatusCode IHEVitalSignsOrganizerEffectiveTime IHEVitalSignsOrganizerVitalSignObservation",
 			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "code.displayName", "Vital signs",
 			 "statusCode.code", "completed",
 			 "code.codeSystem", "2.16.840.1.113883.6.96",
 			 "code.code", "46680005"
-		   });																								
+		   });																							
 		addAnnotation
 		  (payersSectionEClass, 
 		   source, 
@@ -2279,7 +2277,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																						
+		   });																																																																																																																																																																																																																																																																																																																																																																				
 	}
 
 	/**
@@ -2319,22 +2317,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Allergies and Other Adverse Reactions Section", null
-		   });																																																																																																																																																																																																																																																																																																			
-	}
-
-	/**
-	 * Initializes the annotations for <b>duplicates</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																																																																																																																																																										
-		addAnnotation
-		  (vitalSignsOrganizerEClass, 
-		   source, 
-		   new String[] {
-		   });																																																																																																																																																																																																																							
+		   });																																																																																																																																																																																																																																																																																																	
 	}
 
 } //IHEPackageImpl

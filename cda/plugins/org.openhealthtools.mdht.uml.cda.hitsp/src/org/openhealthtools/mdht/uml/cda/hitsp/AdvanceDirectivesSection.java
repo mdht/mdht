@@ -18,8 +18,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedAdvanceDirectivesSection;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Advance Directives Section contains information that defines the patient’s expectations and requests
- *     for care along with the locations of the documents.</font>
+ *     The Advance Directives Section contains information that defines the patient's expectations and requests
+ *     for care along with the locations of the documents. 
  * </p>
  * <!-- end-model-doc -->
  *

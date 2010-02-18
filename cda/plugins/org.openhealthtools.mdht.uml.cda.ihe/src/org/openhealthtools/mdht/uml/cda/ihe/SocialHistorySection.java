@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The social history section shall contain a narrative description of the person’s beliefs, home life, community life, work
+ * The social history section shall contain a narrative description of the person's beliefs, home life, community life, work
  * life, hobbies, and risky habits.
  * <!-- end-model-doc -->
  *

@@ -18,9 +18,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Discharge Diagnosis Section contains information about the conditions identified during the hospital
+ *     The Discharge Diagnosis Section contains information about the conditions identified during the hospital
  *     stay that either need to be monitored after discharge from the hospital and/or where resolved during the hospital
- *     course.</font>
+ *     course. 
  * </p>
  * <!-- end-model-doc -->
  *

@@ -59,6 +59,15 @@ public class VitalSignImpl extends VitalSignObservationImpl implements VitalSign
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateVitalSignCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignOperations.validateVitalSignCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public VitalSign init() {
     		CDAUtil.init(this);
     		return this;

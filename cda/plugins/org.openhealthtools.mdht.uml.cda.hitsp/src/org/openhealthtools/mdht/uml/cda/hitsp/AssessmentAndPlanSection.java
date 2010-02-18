@@ -16,22 +16,22 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p align="left">
- *     <font size="2">The Assessment and Plan Section contains information about the assessment of the patient’s condition and
+ * <p>
+ *     The Assessment and Plan Section contains information about the assessment of the patient's condition and
  *     expectations for care including proposals, goals, and order requests for monitoring, tracking, or improving the
- *     condition of the patient.</font>
+ *     condition of the patient. 
  * </p>
  * <p>
- *     <font size="2">An assessment and plan section varies from the plan of care section defined later in that it includes a
- *     physician assessment of the patient condition.</font>
+ *     An assessment and plan section varies from the plan of care section defined later in that it includes a
+ *     physician assessment of the patient condition. 
  * </p>
  * <p>
- *     <font size="2"><b><font size="2">NOTE</font></b><font size="2" face="Arial,Arial"><font size="2" face="Arial,Arial">:
+ *     <b>NOTE </b>:
  *     The assessments described in this section are physician assessments of the patient's current condition, and do not
  *     include assessments of functional status, or other assessments typically used in nursing. In Implementation Guides
  *     currently selected, when both the assessment and plan are documented, they are included together in a single section
  *     documenting both. When the physician assessment is not present, only the plan of care section appears. There are no
- *     cases where a physician assessment is provided without a plan.</font></font></font>
+ *     cases where a physician assessment is provided without a plan.   
  * </p>
  * <!-- end-model-doc -->
  *

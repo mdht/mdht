@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Physical Examination Section contains information describing the physical findings.</font>
+ *     The Physical Examination Section contains information describing the physical findings. 
  * </p>
  * <!-- end-model-doc -->
  *

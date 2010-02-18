@@ -17,9 +17,9 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
+import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ConditionOperations;
-import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.impl.ProblemConcernEntryImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -75,8 +75,17 @@ public class ConditionImpl extends ProblemConcernEntryImpl implements Condition 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProblemEntry createProblemEntry() {
-		return ConditionOperations.createProblemEntry(this);
+	public boolean validateConditionConditionEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionOperations.validateConditionConditionEntry(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConditionEntry createConditionEntry() {
+		return ConditionOperations.createConditionEntry(this);
 	}
 
 	/**
