@@ -20,8 +20,10 @@ import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 
 public class TransformAssociation extends TransformAbstract {
 	public TransformAssociation(EcoreTransformerOptions options) {
@@ -59,14 +61,14 @@ public class TransformAssociation extends TransformAbstract {
 			return null;
 		}
 		
-		// TODO: Add support to validate target and source classes to allow only valid relationships:
-		//       Document -> Section, Section -> Section, Section -> { Act, Encounter, ... }, { Act, Encounter, ... } -> { Act, Encounter, ... }
+		// Validate target and source classes to include only supported relationships:
+		//		ClinicalDocument -> Section, Section -> Section
+		//		Section -> { Act, Encounter, ... }
+		//		Organizer -> { Act, Encounter, ... }
+		//		{ Act, Encounter, ... } -> { Act, Encounter, ... }
 
-		String cdaSourceName = cdaSourceClass.getName();
-		
 		String cdaTargetName = cdaTargetClass.getName();
 		String cdaTargetLowerName = cdaTargetName.substring(0, 1).toLowerCase() + cdaTargetName.substring(1);
-//		String cdaTargetQName = cdaTargetClass.getQualifiedName();
 		
 		String targetName = targetClass.getName();
 //		String targetLowerName = targetName.substring(0, 1).toLowerCase() + targetName.substring(1);
@@ -74,27 +76,33 @@ public class TransformAssociation extends TransformAbstract {
 		
 		StringBuffer body = new StringBuffer();
 		Stereotype stereotype = null;
-		
-		if (("ClinicalDocument".equals(cdaSourceName) || "Section".equals(cdaSourceName)) && "Section".equals(cdaTargetName)) {
-			// Document -> Section || Section -> Section
+
+		if ((CDAModelUtil.isClinicalDocument(sourceClass) || CDAModelUtil.isSection(sourceClass))
+				&& CDAModelUtil.isSection(targetClass)) {
+			// ClinicalDocument -> Section || Section -> Section
 			body.append("self.getSections()->");
 			body.append((sourceProperty.getUpper() == 1) ? "one(" : "exists(");
 			body.append("section : cda::Section | section.oclIsKindOf(" + targetQName + "))");
 		} else {
-			// Section || Entry || { Act, Encounter, ... }
-//			String associationEnd = "Section".equals(cdaSourceName) ? "entry" : "entryRelationship";
-//			String variableDeclaration = "Section".equals(cdaSourceName) ? "entry : cda::Entry" : "entryRelationship : cda::EntryRelationship";
 			String associationEnd = null;
 			String variableDeclaration = null;
-			if ("Section".equals(cdaSourceName)) {
+			if (CDAModelUtil.isSection(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass)) {
 				associationEnd = "entry";
 				variableDeclaration = "entry : cda::Entry";
-			} else if ("Organizer".equals(cdaSourceName)) {
+			} else if (CDAModelUtil.isOrganizer(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass)) {
 				associationEnd = "component";
 				variableDeclaration = "component : cda::Component4";
-			} else {
+			} else if (CDAModelUtil.isClinicalStatement(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass)) {
 				associationEnd = "entryRelationship";
 				variableDeclaration = "entryRelationship : cda::EntryRelationship";
+			} else {
+				String message = "Unsupported association: " + sourceClass.getQualifiedName() 
+						+ " -> " + targetClass.getQualifiedName();
+				Logger.log(Logger.ERROR, message);
+
+				removeModelElement(sourceProperty);
+				removeModelElement(association);
+				return null;
 			}
 
 			body.append("self." + associationEnd + "->");
@@ -106,13 +114,12 @@ public class TransformAssociation extends TransformAbstract {
 			}
 			body.append(".oclIsKindOf(" + targetQName + ")");
 			
-			String stereotypeName = "Section".equals(cdaSourceName) ? ICDAProfileConstants.ENTRY : ICDAProfileConstants.ENTRY_RELATIONSHIP;
-//			Stereotype stereotype = EcoreTransformUtil.getAppliedCDAStereotype(association, stereotypeName);
+			String stereotypeName = CDAModelUtil.isSection(sourceClass) ? ICDAProfileConstants.ENTRY : ICDAProfileConstants.ENTRY_RELATIONSHIP;
 			stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, stereotypeName);
 			if (stereotype != null) {
 				EnumerationLiteral literal = (EnumerationLiteral) association.getValue(stereotype, "typeCode");
 				if (literal != null) {
-					String enumerationQName = "Section".equals(cdaSourceName) ? "vocab::x_ActRelationshipEntry" : "vocab::x_ActRelationshipEntryRelationship";
+					String enumerationQName = CDAModelUtil.isSection(sourceClass) ? "vocab::x_ActRelationshipEntry" : "vocab::x_ActRelationshipEntryRelationship";
 					body.append(" and " + associationEnd + ".typeCode = " + enumerationQName + "::" + literal.getName());
 				}
 			}
@@ -120,8 +127,14 @@ public class TransformAssociation extends TransformAbstract {
 			body.append(")");
 		}
 		
-//		String constraintName = sourceClass.getName() + "_" + targetLowerName;
-//		String constraintName = sourceClass.getName() + targetName;
+		if (CDAModelUtil.getTemplateId(sourceClass) == null 
+				|| CDAModelUtil.getTemplateId(targetClass) == null) {
+			String message = "Source or target is not a template: " 
+					+ sourceClass.getQualifiedName() 
+					+ " -> " + targetClass.getQualifiedName();
+			Logger.log(Logger.WARNING, message);
+		}
+		
 		String constraintName = createConstraintName(sourceClass, targetName);
 		Constraint constraint = sourceClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
 		constraint.getConstrainedElements().add(sourceClass);

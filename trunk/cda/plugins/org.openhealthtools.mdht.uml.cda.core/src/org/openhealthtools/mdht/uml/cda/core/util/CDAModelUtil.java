@@ -102,14 +102,26 @@ public class CDAModelUtil {
 		return null;
 	}
 
-	public static boolean isSection(Type templateClass) {
-		if (templateClass instanceof Class) {
+	public static boolean isCDAType(Type templateClass, String typeName) {
+		if (templateClass instanceof Class && typeName != null) {
 			Class cdaClass = getCDAClass((Class)templateClass);
-			if (cdaClass != null && "Section".equals(cdaClass.getName()))
+			if (cdaClass != null && typeName.equals(cdaClass.getName()))
 				return true;
 		}
 		
 		return false;
+	}
+
+	public static boolean isClinicalDocument(Type templateClass) {
+		return isCDAType(templateClass, "ClinicalDocument");
+	}
+	
+	public static boolean isSection(Type templateClass) {
+		return isCDAType(templateClass, "Section");
+	}
+
+	public static boolean isOrganizer(Type templateClass) {
+		return isCDAType(templateClass, "Organizer");
 	}
 	
 	public static boolean isClinicalStatement(Type templateClass) {
@@ -206,8 +218,8 @@ public class CDAModelUtil {
 							umlClass.setValue(hl7Template, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE, message);
 						}
 					}
-					else {
-						// prune children of non-template classes
+					else if (CDAModelUtil.getCDAClass(umlClass) == null) {
+						// prune children of non-CDA classes, but include non-template subclasses
 						iterator.prune();
 					}
 					return umlClass;
