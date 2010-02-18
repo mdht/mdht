@@ -20,14 +20,14 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-import org.openhealthtools.mdht.uml.cda.ccd.operations.ContinuityOfCareDocumentOperations;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPlugin;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
+import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.util.HITSPValidator;
-import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
-import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
-import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperations;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
@@ -46,7 +46,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *
  * @generated
  */
-public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations {
+public class PatientSummaryOperations extends ClinicalDocumentOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,11 +117,11 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public static  ActiveProblemsSection createProblemListSection(PatientSummary patientSummary) {
-		ActiveProblemsSection section = IHEFactory.eINSTANCE.createActiveProblemsSection().init();
+	public static  ProblemListSection createProblemListSection(PatientSummary patientSummary) {
+		ProblemListSection section = HITSPFactory.eINSTANCE.createProblemListSection().init();
 		patientSummary.addSection(section);
 
-		section.setTitle(DatatypesFactory.eINSTANCE.createST("Problems"));
+		section.setTitle(DatatypesFactory.eINSTANCE.createST("Conditions or Problems"));
 		
 		return section;
 	}
@@ -132,7 +132,7 @@ public class PatientSummaryOperations extends ContinuityOfCareDocumentOperations
 	 * @generated NOT
 	 */
 	public static  MedicationsSection createMedicationsSection(PatientSummary patientSummary) {
-		MedicationsSection section = IHEFactory.eINSTANCE.createMedicationsSection().init();
+		MedicationsSection section = HITSPFactory.eINSTANCE.createMedicationsSection().init();
 		patientSummary.addSection(section);
 		
 		return section;

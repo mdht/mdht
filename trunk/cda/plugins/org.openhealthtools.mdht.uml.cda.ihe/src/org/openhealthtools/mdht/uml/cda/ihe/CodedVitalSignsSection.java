@@ -16,18 +16,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <table>
- *     <tr>
- *         <th
- *         style="BORDER-BOTTOM: black 1px solid; TEXT-ALIGN: right; BORDER-LEFT: black 1px solid; WIDTH: 30%; BACKGROUND: lightgrey; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous">
- *         </th>
- *         <td
- *         style="BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 70%; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid"
- *          colspan="2">
- *             The vital signs section contains coded measurement results of a patient’s vital signs.
- *         </td>
- *     </tr>
- * </table>
+ * The vital signs section contains coded measurement results of a patient's vital signs.
  * <!-- end-model-doc -->
  *
  *

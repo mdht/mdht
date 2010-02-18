@@ -417,7 +417,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AllergyIntoleranceConcern" eSuperTypes="#//ConcernEntry">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This entry is a specialization of the &lt;span>&lt;a title=&quot;1.3.6.1.4.1.19376.1.5.3.1.4.5.1&quot;&#xD;&#xA;href=&quot;http://wiki.ihe.net/index.php?title=1.3.6.1.4.1.19376.1.5.3.1.4.5.1&quot;>&lt;u>&lt;font color=&quot;#0066CC&quot;>Concern&#xD;&#xA;Entry&lt;/font>&lt;/u>&lt;/a>&lt;/span>, wherein the subject of the concern is focused on an allergy or intolerance."/>
+      <details key="documentation" value="This entry is a specialization of the Concern&#xD;&#xA;Entry, wherein the subject of the concern is focused on an allergy or intolerance."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="constraints.validation.error" value="AllergyIntoleranceConcernTemplateId"/>
@@ -515,12 +515,9 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NormalDosing" eSuperTypes="#//Medication">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This&amp;nbsp;template&amp;nbsp;identifier&amp;nbsp;is&amp;nbsp;used&amp;nbsp;to&amp;nbsp;identify&amp;nbsp;medication&amp;nbsp;administration&amp;nbsp;events&amp;nbsp;that&amp;nbsp;do&amp;nbsp;not&amp;nbsp;require&amp;nbsp;any&amp;nbsp;special&amp;nbsp;processing.&#xD;&#xA;The parent template is &lt;span>&lt;a title=&quot;1.3.6.1.4.1.19376.1.5.3.1.4.7&quot;&#xD;&#xA;href=&quot;http://wiki.ihe.net/index.php?title=1.3.6.1.4.1.19376.1.5.3.1.4.7#1.3.6.1.4.1.19376.1.5.3.1.4.7&quot;>&lt;u>&lt;font&#xD;&#xA;color=&quot;#0066CC&quot;>1.3.6.1.4.1.19376.1.5.3.1.4.7&lt;/font>&lt;/u>&lt;/a>&lt;/span>. Medications that use this template identifier shall&#xD;&#xA;not use subordinate &amp;lt;substanceAdministation&amp;gt; acts."/>
-    </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="NormalDosingTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+      <details key="constraints.validation.error" value="NormalDosingTemplateId"/>
     </eAnnotations>
     <eOperations name="NormalDosingTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -662,7 +659,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VitalSignsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//VitalSignsSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    The vital signs section shall contain a narrative description of the measurement results of a patient’s vital signs.&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    The vital signs section shall contain a narrative description of the measurement results of a patient's vital signs.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="constraints.validation.error" value="IHEVitalSignsSectionTemplateId"/>
@@ -693,7 +690,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CodedVitalSignsSection" eSuperTypes="#//VitalSignsSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;table>&#xD;&#xA;    &lt;tr>&#xD;&#xA;        &lt;th&#xD;&#xA;        style=&quot;BORDER-BOTTOM: black 1px solid; TEXT-ALIGN: right; BORDER-LEFT: black 1px solid; WIDTH: 30%; BACKGROUND: lightgrey; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous&quot;>&#xD;&#xA;        &lt;/th>&#xD;&#xA;        &lt;td&#xD;&#xA;        style=&quot;BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 70%; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid&quot;&#xD;&#xA;         colspan=&quot;2&quot;>&#xD;&#xA;            The vital signs section contains coded measurement results of a patient’s vital signs.&#xD;&#xA;        &lt;/td>&#xD;&#xA;    &lt;/tr>&#xD;&#xA;&lt;/table>"/>
+      <details key="documentation" value="The vital signs section contains coded measurement results of a patient's vital signs."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"/>
@@ -901,18 +898,12 @@
       <details key="statusCode.codeSystemName" value="ActStatus"/>
       <details key="code.codeSystemName" value="SNOMED CT"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
-      <details key="constraints.validation.error" value="IHEVitalSignsOrganizerTemplateId VitalSignsOrganizerCode VitalSignsOrganizerStatusCode VitalSignsOrganizerEffectiveTime VitalSignsOrganizerVitalSignObservation"/>
+      <details key="constraints.validation.error" value="IHEVitalSignsOrganizerTemplateId IHEVitalSignsOrganizerCode IHEVitalSignsOrganizerStatusCode IHEVitalSignsOrganizerEffectiveTime IHEVitalSignsOrganizerVitalSignObservation"/>
       <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
       <details key="code.displayName" value="Vital signs"/>
       <details key="statusCode.code" value="completed"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.6.96"/>
       <details key="code.code" value="46680005"/>
-    </eAnnotations>
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EReference" name="author" ordered="false" upperBound="-1"
-          eType="ecore:EClass ../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Author">
-        <eAnnotations source="redefines" references="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Organizer/author"/>
-      </contents>
     </eAnnotations>
     <eOperations name="IHEVitalSignsOrganizerTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -936,7 +927,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="VitalSignsOrganizerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="IHEVitalSignsOrganizerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '46680005' and value.codeSystem = '2.16.840.1.113883.6.96')"/>
       </eAnnotations>
@@ -958,7 +949,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="VitalSignsOrganizerStatusCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="IHEVitalSignsOrganizerStatusCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
       </eAnnotations>
@@ -980,7 +971,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="VitalSignsOrganizerEffectiveTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="IHEVitalSignsOrganizerEffectiveTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.effectiveTime.oclIsUndefined()"/>
       </eAnnotations>
@@ -1002,7 +993,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="VitalSignsOrganizerVitalSignObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="IHEVitalSignsOrganizerVitalSignObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ihe::VitalSignObservation) and component.typeCode = vocab::x_ActRelationshipEntryRelationship::COMP)"/>
       </eAnnotations>
@@ -1027,7 +1018,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PayersSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//PayersSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Payers section contains data on the patient’s payers, whether a ‘third party’ insurance, self-pay, other payer or&#xD;&#xA;guarantor, or some combination."/>
+      <details key="documentation" value="The Payers section contains data on the patient's payers, whether a 'third party' insurance, self-pay, other payer or&#xD;&#xA;guarantor, or some combination."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="constraints.validation.error" value="IHEPayersSectionTemplateId"/>
@@ -1172,7 +1163,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReasonForReferralSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;table>&#xD;&#xA;    &lt;tr>&#xD;&#xA;        &lt;th&#xD;&#xA;        style=&quot;BORDER-BOTTOM: black 1px solid; TEXT-ALIGN: right; BORDER-LEFT: black 1px solid; WIDTH: 30%; BACKGROUND: lightgrey; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous&quot;>&#xD;&#xA;        &lt;/th>&#xD;&#xA;        &lt;td&#xD;&#xA;        style=&quot;BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 70%; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid&quot;&#xD;&#xA;         colspan=&quot;2&quot;>&#xD;&#xA;            The reason for referral section shall contain a narrative description of the reason that the patient is being&#xD;&#xA;            referred.&#xD;&#xA;        &lt;/td>&#xD;&#xA;    &lt;/tr>&#xD;&#xA;&lt;/table>"/>
+      <details key="documentation" value="The reason for referral section shall contain a narrative description of the reason that the patient is being referred."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -1229,7 +1220,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HistoryOfPresentIllness" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The history of present illness section shall contain a narrative description of the sequence of events preceding the&#xD;&#xA;patient’s current complaints."/>
+      <details key="documentation" value="The history of present illness section shall contain a narrative description of the sequence of events preceding the&#xD;&#xA;patient's current complaints."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -1520,7 +1511,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="HospitalDischargeMedicationsSection"
       eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;table>&#xD;&#xA;    &lt;tr>&#xD;&#xA;        &lt;th&#xD;&#xA;        style=&quot;BORDER-BOTTOM: black 1px solid; TEXT-ALIGN: right; BORDER-LEFT: black 1px solid; WIDTH: 30%; BACKGROUND: lightgrey; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous&quot;>&#xD;&#xA;        &lt;/th>&#xD;&#xA;        &lt;td&#xD;&#xA;        style=&quot;BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 70%; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid&quot;&#xD;&#xA;         colspan=&quot;2&quot;>&#xD;&#xA;            The hospital discharge medications section shall contain a narrative description of the medications requested&#xD;&#xA;            (ordered) to be administered to the patient after discharge from the hospital. It shall include entries for&#xD;&#xA;            medication requests as described in the Entry Content Module.&#xD;&#xA;        &lt;/td>&#xD;&#xA;    &lt;/tr>&#xD;&#xA;&lt;/table>"/>
+      <details key="documentation" value="The hospital discharge medications section shall contain a narrative description of the medications requested&#xD;&#xA;            (ordered) to be administered to the patient after discharge from the hospital. It shall include entries for&#xD;&#xA;            medication requests as described in the Entry Content Module."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -1605,7 +1596,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AdvanceDirectivesSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//AdvanceDirectivesSection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The advance directive section shall contain a narrative description of the list of documents that define the patient’s&#xD;&#xA;expectations and requests for care along with the locations of the documents."/>
+      <details key="documentation" value="The advance directive section shall contain a narrative description of the list of documents that define the patient's&#xD;&#xA;expectations and requests for care along with the locations of the documents."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="constraints.validation.error" value="IHEAdvanceDirectivesSectionTemplateId"/>
@@ -1636,7 +1627,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PhysicalExamNarrativeSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The physical exam section shall contain a narrative description of the patient’s physical findings."/>
+      <details key="documentation" value="The physical exam section shall contain a narrative description of the patient's physical findings."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystemName" value="LOINC"/>
@@ -2014,7 +2005,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SocialHistorySection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//SocialHistorySection">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The social history section shall contain a narrative description of the person’s beliefs, home life, community life, work&#xD;&#xA;life, hobbies, and risky habits."/>
+      <details key="documentation" value="The social history section shall contain a narrative description of the person's beliefs, home life, community life, work&#xD;&#xA;life, hobbies, and risky habits."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="constraints.validation.error" value="IHESocialHistorySectionTemplateId"/>

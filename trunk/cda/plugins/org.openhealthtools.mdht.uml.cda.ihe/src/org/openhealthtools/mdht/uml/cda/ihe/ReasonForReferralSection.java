@@ -17,19 +17,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <table>
- *     <tr>
- *         <th
- *         style="BORDER-BOTTOM: black 1px solid; TEXT-ALIGN: right; BORDER-LEFT: black 1px solid; WIDTH: 30%; BACKGROUND: lightgrey; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous">
- *         </th>
- *         <td
- *         style="BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 70%; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid"
- *          colspan="2">
- *             The reason for referral section shall contain a narrative description of the reason that the patient is being
- *             referred.
- *         </td>
- *     </tr>
- * </table>
+ * The reason for referral section shall contain a narrative description of the reason that the patient is being referred.
  * <!-- end-model-doc -->
  *
  *

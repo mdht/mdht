@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The History of Present Illness Section contains information about the sequence of events preceding the
- *     patient’s current complaints.</font>
+ *     The History of Present Illness Section contains information about the sequence of events preceding the
+ *     patient's current complaints. 
  * </p>
  * <!-- end-model-doc -->
  *

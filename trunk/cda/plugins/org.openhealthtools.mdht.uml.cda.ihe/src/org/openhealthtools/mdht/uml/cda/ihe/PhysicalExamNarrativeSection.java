@@ -17,7 +17,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The physical exam section shall contain a narrative description of the patient’s physical findings.
+ * The physical exam section shall contain a narrative description of the patient's physical findings.
  * <!-- end-model-doc -->
  *
  *

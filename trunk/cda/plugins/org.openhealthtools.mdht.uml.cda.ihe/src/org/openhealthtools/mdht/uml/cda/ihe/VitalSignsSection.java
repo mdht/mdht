@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     The vital signs section shall contain a narrative description of the measurement results of a patient’s vital signs.
+ *     The vital signs section shall contain a narrative description of the measurement results of a patient's vital signs.
  * </p>
  * <!-- end-model-doc -->
  *

@@ -18,8 +18,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Diagnostic Results Section contains information about the results from diagnostic procedures the
- *     patient received.</font>
+ *     The Diagnostic Results Section contains information about the results from diagnostic procedures the
+ *     patient received. 
  * </p>
  * <!-- end-model-doc -->
  *

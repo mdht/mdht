@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Chief Complaint Section contains information about the patient's chief complaint.</font>
+ *     The Chief Complaint Section contains information about the patient's chief complaint. 
  * </p>
  * <!-- end-model-doc -->
  *

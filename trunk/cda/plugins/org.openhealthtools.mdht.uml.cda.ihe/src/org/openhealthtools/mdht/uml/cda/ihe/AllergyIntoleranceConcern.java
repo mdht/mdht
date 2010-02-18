@@ -22,9 +22,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This entry is a specialization of the <span><a title="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"
- * href="http://wiki.ihe.net/index.php?title=1.3.6.1.4.1.19376.1.5.3.1.4.5.1"><u><font color="#0066CC">Concern
- * Entry</font></u></a></span>, wherein the subject of the concern is focused on an allergy or intolerance.
+ * This entry is a specialization of the Concern
+ * Entry, wherein the subject of the concern is focused on an allergy or intolerance.
  * <!-- end-model-doc -->
  *
  *

@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Hospital Admitting Diagnosis Section contains information about the primary reason for admission to
- *     a hospital facility.</font>
+ *     The Hospital Admitting Diagnosis Section contains information about the primary reason for admission to
+ *     a hospital facility. 
  * </p>
  * <!-- end-model-doc -->
  *

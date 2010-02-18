@@ -16,7 +16,6 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
-import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getCondition()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='ConditionTemplateId ConditionText' templateId.root='2.16.840.1.113883.3.88.11.83.7'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.7' constraints.validation.error='ConditionTemplateId ConditionText ConditionConditionEntry'"
  * @generated
  */
 public interface Condition extends ProblemConcernEntry {
@@ -58,10 +57,23 @@ public interface Condition extends ProblemConcernEntry {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(hitsp::ConditionEntry) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(hitsp::ConditionEntry) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)'"
+	 * @generated
+	 */
+	boolean validateConditionConditionEntry(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	ProblemEntry createProblemEntry();
+	ConditionEntry createConditionEntry();
 
 	/**
 	 * <!-- begin-user-doc -->

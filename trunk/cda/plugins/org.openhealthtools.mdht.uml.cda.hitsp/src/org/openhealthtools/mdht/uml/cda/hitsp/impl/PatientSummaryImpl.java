@@ -16,12 +16,12 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.cda.ccd.impl.ContinuityOfCareDocumentImpl;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
+import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PatientSummaryOperations;
-import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
-import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -33,7 +33,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements PatientSummary {
+public class PatientSummaryImpl extends ClinicalDocumentImpl implements PatientSummary {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,7 +67,7 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActiveProblemsSection createProblemListSection() {
+	public ProblemListSection createProblemListSection() {
 		return PatientSummaryOperations.createProblemListSection(this);
 	}
 

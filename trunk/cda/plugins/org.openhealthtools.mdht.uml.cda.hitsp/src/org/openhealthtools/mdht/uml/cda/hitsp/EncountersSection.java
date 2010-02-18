@@ -18,8 +18,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Encounter Section contains information describing the patient history of encounters. At a minimum,
- *     current and pertinent historical encounters should be included; a full encounter history may be included.</font>
+ *     The Encounter Section contains information describing the patient history of encounters. At a minimum,
+ *     current and pertinent historical encounters should be included; a full encounter history may be included. 
  * </p>
  * <!-- end-model-doc -->
  *

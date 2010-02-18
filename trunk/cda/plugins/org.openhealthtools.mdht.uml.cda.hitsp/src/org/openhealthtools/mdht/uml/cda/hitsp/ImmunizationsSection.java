@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Immunizations Section contains information describing the immunizations administered to the
- *     patient.</font>
+ *     The Immunizations Section contains information describing the immunizations administered to the
+ *     patient. 
  * </p>
  * <!-- end-model-doc -->
  *

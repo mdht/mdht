@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getVitalSign()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.14' constraints.validation.error='VitalSignTemplateId'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='VitalSignTemplateId VitalSignCode' templateId.root='2.16.840.1.113883.3.88.11.83.14'"
  * @generated
  */
 public interface VitalSign extends VitalSignObservation {
@@ -34,6 +34,19 @@ public interface VitalSign extends VitalSignObservation {
 	 * @generated
 	 */
 	boolean validateVitalSignTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.code.oclIsUndefined()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean validateVitalSignCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Reason for Referral Section contains information about the reason that the patient is being
- *     referred.</font>
+ *     The Reason for Referral Section contains information about the reason that the patient is being
+ *     referred. 
  * </p>
  * <!-- end-model-doc -->
  *

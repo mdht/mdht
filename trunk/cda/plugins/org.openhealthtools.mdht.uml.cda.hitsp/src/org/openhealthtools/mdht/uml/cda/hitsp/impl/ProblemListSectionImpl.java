@@ -59,6 +59,15 @@ public class ProblemListSectionImpl extends ActiveProblemsSectionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateProblemListSectionCondition(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemListSectionOperations.validateProblemListSectionCondition(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ProblemListSection init() {
     		CDAUtil.init(this);
     		return this;

@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Medications Administered Section contains information about the relevant medications administered to
- *     a patient during the course of an encounter.</font>
+ *     The Medications Administered Section contains information about the relevant medications administered to
+ *     a patient during the course of an encounter. 
  * </p>
  * <!-- end-model-doc -->
  *

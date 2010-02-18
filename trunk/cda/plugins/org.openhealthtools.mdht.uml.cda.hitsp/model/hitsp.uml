@@ -39,25 +39,23 @@
       <ownedAttribute xmi:id="_Kp7UYIwJEd6B6JSUB00H7g" name="text" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg?datatypes/ED?"/>
       </ownedAttribute>
-      <ownedOperation xmi:id="_wzkWAGdLEd6Hk_bPOfEjYA" name="createProblemEntry">
-        <ownedParameter xmi:id="_zxKvkGdLEd6Hk_bPOfEjYA" name="Parameter1" direction="return">
-          <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_3ZiEwGdIEd6Hk_bPOfEjYA?ihe/ProblemEntry?"/>
-        </ownedParameter>
+      <ownedAttribute xmi:id="_-HhPcBvhEd-yI6xBTkJSNw" name="conditionEntry" visibility="private" type="_c6bN4BvgEd-yI6xBTkJSNw" association="_-HcW8BvhEd-yI6xBTkJSNw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-Hlg4BvhEd-yI6xBTkJSNw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-Hk50BvhEd-yI6xBTkJSNw" value="1"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_wzkWAGdLEd6Hk_bPOfEjYA" name="createConditionEntry">
+        <ownedParameter xmi:id="_zxKvkGdLEd6Hk_bPOfEjYA" name="return" type="_c6bN4BvgEd-yI6xBTkJSNw" direction="return"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="PatientSummary">
       <generalization xmi:id="_0EOJQKRmEd6t_4WfM070fA">
-        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_Ze7UsGESEd69D7zx7EkLMA?ccd/ContinuityOfCareDocument?"/>
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_S9OzADxXEd6JwqSGecoePg?cda/ClinicalDocument?"/>
       </generalization>
       <ownedOperation xmi:id="_C1Qp0GG6Ed6bFO5yxRh3Nw" name="createProblemListSection">
-        <ownedParameter xmi:id="_vMia4GdYEd6Hk_bPOfEjYA" name="Parameter1" direction="return">
-          <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_vz5koGGsEd6bFO5yxRh3Nw?ihe/ActiveProblemsSection?"/>
-        </ownedParameter>
+        <ownedParameter xmi:id="_vMia4GdYEd6Hk_bPOfEjYA" name="Parameter1" type="_cPtREMfaEd6VjLXh4DcWSg" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_FdooAHopEd6WAZ28-5wkSg" name="createMedicationsSection">
-        <ownedParameter xmi:id="_H3ai0HopEd6WAZ28-5wkSg" name="Parameter1" direction="return">
-          <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_8YbB4HomEd6WAZ28-5wkSg?ihe/MedicationsSection?"/>
-        </ownedParameter>
+        <ownedParameter xmi:id="_H3ai0HopEd6WAZ28-5wkSg" name="Parameter1" type="_WI3zsMfwEd6VjLXh4DcWSg" direction="return"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_L9yGgK7HEd6_ioDelDcPPg" name="VitalSignsSection">
@@ -66,11 +64,13 @@
     The Vital Signs Section contains information documenting the patient vital signs. &#13;
 &lt;/p&gt;</body>
       </ownedComment>
-      <ownedRule xmi:id="_hrcTgK7MEd6_ioDelDcPPg" name="HITSPVitalSignsSection_vitalSigns" constrainedElement="_L9yGgK7HEd6_ioDelDcPPg">
+      <ownedRule xmi:id="_hrcTgK7MEd6_ioDelDcPPg" name="vitalSigns" constrainedElement="_L9yGgK7HEd6_ioDelDcPPg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_hrc6kK7MEd6_ioDelDcPPg">
           <language>OCL</language>
-          <body>self.entry-&gt;exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::IHEVitalSignsOrganizer) and&#13;
+          <language>Analysis</language>
+          <body>self.entry-&gt;exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::VitalSignsOrganizer) and&#13;
 entry.organizer.component.observation-&gt;exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))</body>
+          <body>Contains entries conforming to the Vital Sign module.</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_VeaIMK7HEd6_ioDelDcPPg">
@@ -119,6 +119,10 @@ entry.organizer.component.observation-&gt;exists(obs : cda::Observation | obs.oc
       <generalization xmi:id="_epE8MMfaEd6VjLXh4DcWSg">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_vz5koGGsEd6bFO5yxRh3Nw?ihe/ActiveProblemsSection?"/>
       </generalization>
+      <ownedAttribute xmi:id="_4EDnQBvYEd-yI6xBTkJSNw" name="condition" visibility="private" type="_GgvgUDxbEd6JwqSGecoePg" association="_4D4oIBvYEd-yI6xBTkJSNw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4EWiMBvYEd-yI6xBTkJSNw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4EV7IBvYEd-yI6xBTkJSNw" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_lSC-0MfbEd6VjLXh4DcWSg" name="HistoryOfPastIllnessSection">
       <ownedComment xmi:id="_rhcgUMfbEd6VjLXh4DcWSg" annotatedElement="_lSC-0MfbEd6VjLXh4DcWSg">
@@ -394,6 +398,42 @@ entry.organizer.component.observation-&gt;exists(obs : cda::Observation | obs.oc
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_tqabEMijEd6mWrHPmrIIfQ?ihe/MedicalDevicesSection?"/>
       </generalization>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_4D4oIBvYEd-yI6xBTkJSNw" memberEnd="_4EDnQBvYEd-yI6xBTkJSNw _4EZlgBvYEd-yI6xBTkJSNw">
+      <ownedEnd xmi:id="_4EZlgBvYEd-yI6xBTkJSNw" name="" visibility="private" type="_cPtREMfaEd6VjLXh4DcWSg" association="_4D4oIBvYEd-yI6xBTkJSNw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4EfsIRvYEd-yI6xBTkJSNw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4EfsIBvYEd-yI6xBTkJSNw"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_c6bN4BvgEd-yI6xBTkJSNw" name="ConditionEntry">
+      <generalization xmi:id="_fv2i4BvgEd-yI6xBTkJSNw">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_3ZiEwGdIEd6Hk_bPOfEjYA?ihe/ProblemEntry?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_hjpbwBvgEd-yI6xBTkJSNw" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_f1n6wIhTEd6UrJD25cKDew?ccd/ProblemObservation/code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_hjsfEBvgEd-yI6xBTkJSNw" name="value" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_slNZAIwHEd6B6JSUB00H7g?ihe/ProblemEntry/value?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lkLxoBvjEd-yI6xBTkJSNw" name="effectiveTime" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_tM2MIBvjEd-yI6xBTkJSNw" annotatedElement="_lkLxoBvjEd-yI6xBTkJSNw">
+          <body>The problem date constraints include the onset and resolution dates for the problem. The onset date shall be recorded in the &lt;low&gt; element of the &lt;effectiveTime&gt; element when known. The resolution data shall be recorded in the &lt;high&gt; element of the &lt;effectiveTime&gt; element when known. These dates represent the clinically effective time span over which the problem existed.&#13;
+&#13;
+If the problem is known to be resolved, but the date of resolution is not known, then the &lt;high&gt; element shall be present, and the nullFlavor attribute shall be set to 'UNK'. Therefore, the existence of an &lt;high&gt; element within a problem does indicate that the problem has been resolved.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA?datatypes/IVL_TS?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lkLxoRvjEd-yI6xBTkJSNw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lkLxohvjEd-yI6xBTkJSNw" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_t3kdcIhREd6UrJD25cKDew?ccd/ProblemObservation/effectiveTime?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_-HcW8BvhEd-yI6xBTkJSNw" memberEnd="_-HhPcBvhEd-yI6xBTkJSNw _-HpLQBvhEd-yI6xBTkJSNw">
+      <ownedEnd xmi:id="_-HpLQBvhEd-yI6xBTkJSNw" name="" visibility="private" type="_GgvgUDxbEd6JwqSGecoePg" association="_-HcW8BvhEd-yI6xBTkJSNw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-HrAcRvhEd-yI6xBTkJSNw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-HrAcBvhEd-yI6xBTkJSNw"/>
+      </ownedEnd>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -409,68 +449,75 @@ entry.organizer.component.observation-&gt;exists(obs : cda::Observation | obs.oc
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
   </uml:Package>
-  <CDA:CDATemplate xmi:id="_t9ej4HcIEd6ZeOKq_2_a9g" base_Class="_vB4EUGEIEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.83.6" assigningAuthorityName="HITSP C83"/>
-  <CDA:CDATemplate xmi:id="_uxtdMHcIEd6ZeOKq_2_a9g" base_Class="_GgvgUDxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.7" assigningAuthorityName="HITSP C83"/>
-  <CDA:CDATemplate xmi:id="_vuEXwHcIEd6ZeOKq_2_a9g" base_Class="_IjIO0DxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.8" assigningAuthorityName="HITSP C83"/>
-  <CDA:CDATemplate xmi:id="_wcI-sHcIEd6ZeOKq_2_a9g" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.32.1" assigningAuthorityName="HITSP C32"/>
+  <CDA:CDATemplate xmi:id="_t9ej4HcIEd6ZeOKq_2_a9g" message="HITSP Allergy Drug Sensitivity SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.6" base_Class="_vB4EUGEIEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.83.6" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_uxtdMHcIEd6ZeOKq_2_a9g" message="HITSP Condition SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.7" base_Class="_GgvgUDxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.7" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_vuEXwHcIEd6ZeOKq_2_a9g" message="HITSP Medication SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.8" base_Class="_IjIO0DxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.8" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_wcI-sHcIEd6ZeOKq_2_a9g" message="HITSP Patient Summary SHALL contain the template identifier 2.16.840.1.113883.3.88.11.32.1" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.32.1" assigningAuthorityName="HITSP C32"/>
   <Default:Documentation xmi:id="_aq9jUHrXEd68l9lQ-TLEBQ" base_Comment="_aq5R4HrXEd68l9lQ-TLEBQ"/>
   <CDA:CodegenSupport xmi:id="_lVjhYJyPEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" packageName="hitsp" prefix="HITSP" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
-  <CDA:PropertyValidation xmi:id="_JvJwoJyQEd6BO7rW3XxHIA" message="The Condition problem name shall be recorded in the text entry by recording a &lt;reference&gt; where the value attribute points to the narrative text containing the name of the problem." base_Property="_Kp7UYIwJEd6B6JSUB00H7g"/>
-  <CDA:CDATemplate xmi:id="_jNa14K7HEd6_ioDelDcPPg" base_Class="_L9yGgK7HEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.119" assigningAuthorityName="HITSP C83"/>
-  <CDA:CDATemplate xmi:id="_j4cTYK7IEd6_ioDelDcPPg" base_Class="_dobt4K7IEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.14" assigningAuthorityName="HITSP"/>
-  <CDA:ConstraintValidation xmi:id="_AKv5IK7OEd6_ioDelDcPPg" message="HITSP vital signs information elements SHALL be contained in a conforming IHE Vital Signs Organizer element within a HITSP Vital Signs Section." base_Constraint="_hrcTgK7MEd6_ioDelDcPPg"/>
-  <CDA:CDATemplate xmi:id="_8Urw0MfXEd6VjLXh4DcWSg" base_Class="_DH404MfWEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.101" assigningAuthorityName="HITSP C83"/>
+  <CDA:PropertyValidation xmi:id="_JvJwoJyQEd6BO7rW3XxHIA" message="HITSP Condition SHALL contain [1..1] text" base_Property="_Kp7UYIwJEd6B6JSUB00H7g"/>
+  <CDA:CDATemplate xmi:id="_jNa14K7HEd6_ioDelDcPPg" message="HITSP Vital Signs Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.119" base_Class="_L9yGgK7HEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.119" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_j4cTYK7IEd6_ioDelDcPPg" message="HITSP Vital Sign SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.14" base_Class="_dobt4K7IEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.14" assigningAuthorityName="HITSP"/>
+  <CDA:ConstraintValidation xmi:id="_AKv5IK7OEd6_ioDelDcPPg" message="HITSP Vital Signs Section SHALL satisfy: Contains entries conforming to the Vital Sign module." base_Constraint="_hrcTgK7MEd6_ioDelDcPPg"/>
+  <CDA:CDATemplate xmi:id="_8Urw0MfXEd6VjLXh4DcWSg" message="HITSP Payers Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.101" base_Class="_DH404MfWEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.101" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_KrKuMMfYEd6VjLXh4DcWSg" base_Comment="_KrHD0MfYEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_Ymm44MfZEd6VjLXh4DcWSg" base_Class="_VGnj8MfZEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.102" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_Ymm44MfZEd6VjLXh4DcWSg" message="HITSP Allergies Reactions Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.102" base_Class="_VGnj8MfZEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.102" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_J4PxkMfaEd6VjLXh4DcWSg" base_Comment="_J4LgIMfaEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_f6v_cMfaEd6VjLXh4DcWSg" base_Class="_cPtREMfaEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.103" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_f6v_cMfaEd6VjLXh4DcWSg" message="HITSP Problem List Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.103" base_Class="_cPtREMfaEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.103" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_mOnKMMfaEd6VjLXh4DcWSg" base_Comment="_mOi4wMfaEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_oW-vcMfbEd6VjLXh4DcWSg" base_Class="_lSC-0MfbEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.104" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_oW-vcMfbEd6VjLXh4DcWSg" message="HITSP History Of Past Illness Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.104" base_Class="_lSC-0MfbEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.104" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_rhe8kMfbEd6VjLXh4DcWSg" base_Comment="_rhcgUMfbEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_AxgIIMfdEd6VjLXh4DcWSg" base_Class="_9ugRMMfcEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.105" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_AxgIIMfdEd6VjLXh4DcWSg" message="HITSP Chief Complaint Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.105" base_Class="_9ugRMMfcEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.105" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_EHkFAMfdEd6VjLXh4DcWSg" base_Comment="_EHhBsMfdEd6VjLXh4DcWSg"/>
   <Default:Documentation xmi:id="_vBBToMfdEd6VjLXh4DcWSg" base_Comment="_vA-QUMfdEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_xMUGgMfdEd6VjLXh4DcWSg" base_Class="_bX2UoMfdEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.106" assigningAuthorityName="HITSP C83"/>
-  <CDA:CDATemplate xmi:id="_4p-OEMfhEd6VjLXh4DcWSg" base_Class="_w51SkMfhEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.107" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_xMUGgMfdEd6VjLXh4DcWSg" message="HITSP Reason For Referral Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.106" base_Class="_bX2UoMfdEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.106" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_4p-OEMfhEd6VjLXh4DcWSg" message="HITSP History Of Present Illness SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.107" base_Class="_w51SkMfhEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.107" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="__Y49IMfhEd6VjLXh4DcWSg" base_Comment="__Y1SwMfhEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_VedPoMfuEd6VjLXh4DcWSg" base_Class="_OCM5cMfuEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.108" assigningAuthorityName="HITSP C83"/>
-  <CDA:CDATemplate xmi:id="_qi550MfuEd6VjLXh4DcWSg" base_Class="_m5tlkMfuEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.109" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_VedPoMfuEd6VjLXh4DcWSg" message="HITSP Surgeries Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.108" base_Class="_OCM5cMfuEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.108" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_qi550MfuEd6VjLXh4DcWSg" message="HITSP Functional Status Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.109" base_Class="_m5tlkMfuEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.109" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_z7wfkMfuEd6VjLXh4DcWSg" base_Comment="_z7tcQMfuEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_oA9sEMfvEd6VjLXh4DcWSg" base_Class="_eg314MfvEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.110" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_oA9sEMfvEd6VjLXh4DcWSg" message="HITSP Hospital Admission Diagnosis Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.110" base_Class="_eg314MfvEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.110" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_rzJkQMfvEd6VjLXh4DcWSg" base_Comment="_rzF54MfvEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_JyDoAMfwEd6VjLXh4DcWSg" base_Class="_CEsTsMfwEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.111" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_JyDoAMfwEd6VjLXh4DcWSg" message="HITSP Discharge Diagnosis Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.111" base_Class="_CEsTsMfwEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.111" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_NROdkMfwEd6VjLXh4DcWSg" base_Comment="_NRLaQMfwEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_dtEk8MfwEd6VjLXh4DcWSg" base_Class="_WI3zsMfwEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.112" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_dtEk8MfwEd6VjLXh4DcWSg" message="HITSP Medications Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.112" base_Class="_WI3zsMfwEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.112" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_iNMhMMfwEd6VjLXh4DcWSg" base_Comment="_iNKE8MfwEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_Jms3IMfxEd6VjLXh4DcWSg" base_Class="_CoUvwMfxEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.113" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_Jms3IMfxEd6VjLXh4DcWSg" message="HITSP Admission Medication History Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.113" base_Class="_CoUvwMfxEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.113" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_NKgVEMfxEd6VjLXh4DcWSg" base_Comment="_NKd40MfxEd6VjLXh4DcWSg"/>
   <Default:Documentation xmi:id="_cuVZ4MfyEd6VjLXh4DcWSg" base_Comment="_cuSWkMfyEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_exNQkMfyEd6VjLXh4DcWSg" base_Class="_OORpwMfyEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.114" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_exNQkMfyEd6VjLXh4DcWSg" message="HITSP Hospital Discharge Medications Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.114" base_Class="_OORpwMfyEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.114" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_HSgVAMfzEd6VjLXh4DcWSg" base_Comment="_HScqoMfzEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_JaSg4MfzEd6VjLXh4DcWSg" base_Class="_u9U54MfyEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.115" assigningAuthorityName="HITSP C83"/>
-  <CDA:CDATemplate xmi:id="_x0oowMfzEd6VjLXh4DcWSg" base_Class="_uIr7cMfzEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.116" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_JaSg4MfzEd6VjLXh4DcWSg" message="HITSP Medications Administered Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.115" base_Class="_u9U54MfyEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.115" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_x0oowMfzEd6VjLXh4DcWSg" message="HITSP Advance Directives Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.116" base_Class="_uIr7cMfzEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.116" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_5aWc8MfzEd6VjLXh4DcWSg" base_Comment="_5aSLgMfzEd6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_johS4Mf0Ed6VjLXh4DcWSg" base_Class="_gHDXQMf0Ed6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.117" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_johS4Mf0Ed6VjLXh4DcWSg" message="HITSP Immunizations Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.117" base_Class="_gHDXQMf0Ed6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.117" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_m91o4Mf0Ed6VjLXh4DcWSg" base_Comment="_m9ylkMf0Ed6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_mV4bkMf1Ed6VjLXh4DcWSg" base_Class="_XaZ6wMf1Ed6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.118" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_mV4bkMf1Ed6VjLXh4DcWSg" message="HITSP Physical Exam Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.118" base_Class="_XaZ6wMf1Ed6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.118" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_pXub8Mf1Ed6VjLXh4DcWSg" base_Comment="_pXr_sMf1Ed6VjLXh4DcWSg"/>
   <Default:Documentation xmi:id="_EGI_UMf2Ed6VjLXh4DcWSg" base_Comment="_EGGjEMf2Ed6VjLXh4DcWSg"/>
-  <CDA:CDATemplate xmi:id="_Mkc9QMiXEd6mWrHPmrIIfQ" base_Class="_GuZI0MiXEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.120" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_Mkc9QMiXEd6mWrHPmrIIfQ" message="HITSP Review Of Systems Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.120" base_Class="_GuZI0MiXEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.120" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_BxF5oMidEd6mWrHPmrIIfQ" base_Comment="_BxC2UMidEd6mWrHPmrIIfQ"/>
-  <CDA:CDATemplate xmi:id="_imN8kMidEd6mWrHPmrIIfQ" base_Class="_J1pl8MidEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.121" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_imN8kMidEd6mWrHPmrIIfQ" message="HITSP Hospital Course Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.121" base_Class="_J1pl8MidEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.121" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_qTRH0MidEd6mWrHPmrIIfQ" base_Comment="_qTMPUMidEd6mWrHPmrIIfQ"/>
-  <CDA:CDATemplate xmi:id="_VbEUcMieEd6mWrHPmrIIfQ" base_Class="_P3GVkMieEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.122" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_VbEUcMieEd6mWrHPmrIIfQ" message="HITSP Diagnostic Results Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.122" base_Class="_P3GVkMieEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.122" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_YY7zwMieEd6mWrHPmrIIfQ" base_Comment="_YY5XgMieEd6mWrHPmrIIfQ"/>
-  <CDA:CDATemplate xmi:id="_ryd-0MifEd6mWrHPmrIIfQ" base_Class="_ml82oMifEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.123" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_ryd-0MifEd6mWrHPmrIIfQ" message="HITSP Assessment And Plan Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.123" base_Class="_ml82oMifEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.123" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_yaKrkMifEd6mWrHPmrIIfQ" base_Comment="_yaHoQMifEd6mWrHPmrIIfQ"/>
-  <CDA:CDATemplate xmi:id="_XUbX4MigEd6mWrHPmrIIfQ" base_Class="_SydBgMigEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.124" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_XUbX4MigEd6mWrHPmrIIfQ" message="HITSP Plan Of Care Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.124" base_Class="_SydBgMigEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.124" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_h3o38MigEd6mWrHPmrIIfQ" base_Comment="_h3l0oMigEd6mWrHPmrIIfQ"/>
-  <CDA:CDATemplate xmi:id="_8IgjsMigEd6mWrHPmrIIfQ" base_Class="_4Mh2UMigEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.125" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_8IgjsMigEd6mWrHPmrIIfQ" message="HITSP Family History Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.125" base_Class="_4Mh2UMigEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.125" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="__W_48MigEd6mWrHPmrIIfQ" base_Comment="__W9csMigEd6mWrHPmrIIfQ"/>
-  <CDA:CDATemplate xmi:id="_CY01wMiiEd6mWrHPmrIIfQ" base_Class="_-ujjcMihEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.126" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_CY01wMiiEd6mWrHPmrIIfQ" message="HITSP Social History Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.126" base_Class="_-ujjcMihEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.126" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_Gu-9sMiiEd6mWrHPmrIIfQ" base_Comment="_Gu8hcMiiEd6mWrHPmrIIfQ"/>
-  <CDA:CDATemplate xmi:id="_Ld8KsMijEd6mWrHPmrIIfQ" base_Class="_F4b6wMijEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.127" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_Ld8KsMijEd6mWrHPmrIIfQ" message="HITSP Encounters Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.127" base_Class="_F4b6wMijEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.127" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_R7grEMijEd6mWrHPmrIIfQ" base_Comment="_R7eO0MijEd6mWrHPmrIIfQ"/>
-  <CDA:CDATemplate xmi:id="_hOYYMMijEd6mWrHPmrIIfQ" base_Class="_d9cy8MijEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.128" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_hOYYMMijEd6mWrHPmrIIfQ" message="HITSP Medical Equipment Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.128" base_Class="_d9cy8MijEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.128" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_kMVXEMijEd6mWrHPmrIIfQ" base_Comment="_kMSTwMijEd6mWrHPmrIIfQ"/>
+  <CDA:VocabSpecification xmi:id="_hjqC0BvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.2 Problem Type Value Set DYNAMIC" base_Property="_hjpbwBvgEd-yI6xBTkJSNw" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="Problem Type Value Set"/>
+  <CDA:VocabSpecification xmi:id="_JYg4ABvhEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] value, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.4 Problem Value Set DYNAMIC" base_Property="_hjsfEBvgEd-yI6xBTkJSNw" codeSystem="2.16.840.1.113883.3.88.12.3221.7.4" codeSystemName="Problem Value Set"/>
+  <CDA:EntryRelationship xmi:id="_k2HnMBviEd-yI6xBTkJSNw" message="HITSP Condition SHALL contain [1..*] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;SUBJ&quot; SUBJ (has subject), SHALL contain [1..1] Condition Entry" base_Association="_-HcW8BvhEd-yI6xBTkJSNw" typeCode="SUBJ"/>
+  <CDA:PropertyValidation xmi:id="_lkLxoxvjEd-yI6xBTkJSNw" message="HITSP Condition Entry SHOULD contain [1..1] effectiveTime" severity="WARNING" base_Property="_lkLxoBvjEd-yI6xBTkJSNw"/>
+  <Default:Documentation xmi:id="_tM_WEBvjEd-yI6xBTkJSNw" base_Comment="_tM2MIBvjEd-yI6xBTkJSNw"/>
+  <CDA:PropertyValidation xmi:id="_ozph0BvkEd-yI6xBTkJSNw" message="HITSP Vital Sign SHALL contain [1..1] code" base_Property="_K4Lk0K7REd6_ioDelDcPPg"/>
+  <CDA:AssociationValidation xmi:id="_ozqv8BvkEd-yI6xBTkJSNw" message="HITSP Problem List Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Condition (templateId: 2.16.840.1.113883.3.88.11.83.7)" base_Association="_4D4oIBvYEd-yI6xBTkJSNw"/>
 </xmi:XMI>

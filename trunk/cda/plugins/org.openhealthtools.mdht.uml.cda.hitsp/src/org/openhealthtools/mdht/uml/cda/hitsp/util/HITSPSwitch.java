@@ -16,10 +16,10 @@ import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
-import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
@@ -30,6 +30,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
+import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection;
@@ -70,6 +71,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
 
 /**
@@ -175,11 +177,37 @@ public class HITSPSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case HITSPPackage.CONDITION_ENTRY: {
+				ConditionEntry conditionEntry = (ConditionEntry)theEObject;
+				T result = caseConditionEntry(conditionEntry);
+				if (result == null) result = caseProblemEntry(conditionEntry);
+				if (result == null) result = caseProblemObservation(conditionEntry);
+				if (result == null) result = caseObservation(conditionEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case HITSPPackage.PATIENT_SUMMARY: {
 				PatientSummary patientSummary = (PatientSummary)theEObject;
 				T result = casePatientSummary(patientSummary);
-				if (result == null) result = caseContinuityOfCareDocument(patientSummary);
 				if (result == null) result = caseClinicalDocument(patientSummary);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.PROBLEM_LIST_SECTION: {
+				ProblemListSection problemListSection = (ProblemListSection)theEObject;
+				T result = caseProblemListSection(problemListSection);
+				if (result == null) result = caseActiveProblemsSection(problemListSection);
+				if (result == null) result = caseProblemSection(problemListSection);
+				if (result == null) result = caseSection(problemListSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HITSPPackage.MEDICATIONS_SECTION: {
+				MedicationsSection medicationsSection = (MedicationsSection)theEObject;
+				T result = caseMedicationsSection(medicationsSection);
+				if (result == null) result = caseMedicationsSection_1(medicationsSection);
+				if (result == null) result = caseMedicationSection(medicationsSection);
+				if (result == null) result = caseSection(medicationsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -217,15 +245,6 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseAllergiesReactionsSection_1(allergiesReactionsSection);
 				if (result == null) result = caseAlertsSection(allergiesReactionsSection);
 				if (result == null) result = caseSection(allergiesReactionsSection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HITSPPackage.PROBLEM_LIST_SECTION: {
-				ProblemListSection problemListSection = (ProblemListSection)theEObject;
-				T result = caseProblemListSection(problemListSection);
-				if (result == null) result = caseActiveProblemsSection(problemListSection);
-				if (result == null) result = caseProblemSection(problemListSection);
-				if (result == null) result = caseSection(problemListSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -292,15 +311,6 @@ public class HITSPSwitch<T> {
 				T result = caseDischargeDiagnosisSection(dischargeDiagnosisSection);
 				if (result == null) result = caseDischargeDiagnosisSection_1(dischargeDiagnosisSection);
 				if (result == null) result = caseSection(dischargeDiagnosisSection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HITSPPackage.MEDICATIONS_SECTION: {
-				MedicationsSection medicationsSection = (MedicationsSection)theEObject;
-				T result = caseMedicationsSection(medicationsSection);
-				if (result == null) result = caseMedicationsSection_1(medicationsSection);
-				if (result == null) result = caseMedicationSection(medicationsSection);
-				if (result == null) result = caseSection(medicationsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -933,6 +943,21 @@ public class HITSPSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Condition Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Condition Entry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConditionEntry(ConditionEntry object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1064,21 +1089,6 @@ public class HITSPSwitch<T> {
 	 * @generated
 	 */
 	public T caseClinicalDocument(ClinicalDocument object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Continuity Of Care Document</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Continuity Of Care Document</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseContinuityOfCareDocument(ContinuityOfCareDocument object) {
 		return null;
 	}
 
@@ -1814,6 +1824,36 @@ public class HITSPSwitch<T> {
 	 * @generated
 	 */
 	public T caseMedicalDevicesSection(MedicalDevicesSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProblemObservation(ProblemObservation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Entry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProblemEntry(ProblemEntry object) {
 		return null;
 	}
 

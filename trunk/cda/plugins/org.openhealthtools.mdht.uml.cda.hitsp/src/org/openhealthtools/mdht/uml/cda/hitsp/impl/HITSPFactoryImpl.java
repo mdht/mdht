@@ -18,6 +18,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
+import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection;
@@ -94,12 +95,14 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.ALLERGY_DRUG_SENSITIVITY: return createAllergyDrugSensitivity();
 			case HITSPPackage.MEDICATION: return createMedication();
 			case HITSPPackage.CONDITION: return createCondition();
+			case HITSPPackage.CONDITION_ENTRY: return createConditionEntry();
 			case HITSPPackage.PATIENT_SUMMARY: return createPatientSummary();
+			case HITSPPackage.PROBLEM_LIST_SECTION: return createProblemListSection();
+			case HITSPPackage.MEDICATIONS_SECTION: return createMedicationsSection();
 			case HITSPPackage.VITAL_SIGNS_SECTION: return createVitalSignsSection();
 			case HITSPPackage.VITAL_SIGN: return createVitalSign();
 			case HITSPPackage.PAYERS_SECTION: return createPayersSection();
 			case HITSPPackage.ALLERGIES_REACTIONS_SECTION: return createAllergiesReactionsSection();
-			case HITSPPackage.PROBLEM_LIST_SECTION: return createProblemListSection();
 			case HITSPPackage.HISTORY_OF_PAST_ILLNESS_SECTION: return createHistoryOfPastIllnessSection();
 			case HITSPPackage.CHIEF_COMPLAINT_SECTION: return createChiefComplaintSection();
 			case HITSPPackage.REASON_FOR_REFERRAL_SECTION: return createReasonForReferralSection();
@@ -108,7 +111,6 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.FUNCTIONAL_STATUS_SECTION: return createFunctionalStatusSection();
 			case HITSPPackage.HOSPITAL_ADMISSION_DIAGNOSIS_SECTION: return createHospitalAdmissionDiagnosisSection();
 			case HITSPPackage.DISCHARGE_DIAGNOSIS_SECTION: return createDischargeDiagnosisSection();
-			case HITSPPackage.MEDICATIONS_SECTION: return createMedicationsSection();
 			case HITSPPackage.ADMISSION_MEDICATION_HISTORY_SECTION: return createAdmissionMedicationHistorySection();
 			case HITSPPackage.HOSPITAL_DISCHARGE_MEDICATIONS_SECTION: return createHospitalDischargeMedicationsSection();
 			case HITSPPackage.MEDICATIONS_ADMINISTERED_SECTION: return createMedicationsAdministeredSection();
@@ -457,6 +459,16 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 	public MedicalEquipmentSection createMedicalEquipmentSection() {
 		MedicalEquipmentSectionImpl medicalEquipmentSection = new MedicalEquipmentSectionImpl();
 		return medicalEquipmentSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConditionEntry createConditionEntry() {
+		ConditionEntryImpl conditionEntry = new ConditionEntryImpl();
+		return conditionEntry;
 	}
 
 	/**

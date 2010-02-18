@@ -17,8 +17,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Review of Systems Section contains information describing patient responses to questions about the
- *     function of various body systems.</font>
+ *     The Review of Systems Section contains information describing patient responses to questions about the
+ *     function of various body systems. 
  * </p>
  * <!-- end-model-doc -->
  *

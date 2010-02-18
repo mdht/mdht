@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * <!-- begin-model-doc -->
  * <p>
- *     <font size="2">The Functional Status Section provides information about the capability of the patient to perform acts
- *     of daily living.</font>
+ *     The Functional Status Section provides information about the capability of the patient to perform acts
+ *     of daily living. 
  * </p>
  * <!-- end-model-doc -->
  *

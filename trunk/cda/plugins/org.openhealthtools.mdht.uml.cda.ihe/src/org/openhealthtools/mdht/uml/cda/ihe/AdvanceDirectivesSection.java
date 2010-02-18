@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The advance directive section shall contain a narrative description of the list of documents that define the patient’s
+ * The advance directive section shall contain a narrative description of the list of documents that define the patient's
  * expectations and requests for care along with the locations of the documents.
  * <!-- end-model-doc -->
  *
