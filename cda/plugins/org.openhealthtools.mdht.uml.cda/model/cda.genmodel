@@ -2657,5 +2657,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EReference cda.ecore#//DocumentRoot/clinicalDocument"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="cda.ecore#//RegistryDelegate">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//RegistryDelegate/getEClass">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegistryDelegate/getEClass/templateId"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//RegistryDelegate/getEClass/context"/>
+      </genOperations>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

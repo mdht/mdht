@@ -1,3 +1,4 @@
+<%if (!genClass.getInterfaceName().endsWith("RegistryDelegate")) {%>
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11,4 +12,5 @@
     		<%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.util.CDAUtil")%>.init(this);
     		return this;
 	}
+<%}%>
 <%}%>

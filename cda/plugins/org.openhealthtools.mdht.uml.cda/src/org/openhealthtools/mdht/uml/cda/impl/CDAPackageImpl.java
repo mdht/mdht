@@ -677,6 +677,13 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	private EClass documentRootEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass registryDelegateEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -10275,6 +10282,18 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 */
 	public EReference getDocumentRoot_ClinicalDocument() {
         return (EReference)getDocumentRoot().getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRegistryDelegate() {
+		if (registryDelegateEClass == null) {
+			registryDelegateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI).getEClassifiers().get(90);
+		}
+		return registryDelegateEClass;
 	}
 
 	/**
