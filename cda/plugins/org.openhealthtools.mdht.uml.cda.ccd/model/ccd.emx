@@ -5631,7 +5631,7 @@
       <ownedRule xmi:id="_DnqaYBWkEd-6K-YJpbwRmQ" name="valueExpression" constrainedElement="_AwcXkGaKEd6Hk_bPOfEjYA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_KSALcBWkEd-6K-YJpbwRmQ">
           <language>Analysis</language>
-          <body>Value in an episode observation SHOULD be the following SNOMED CT expression:&#xD;&#xA;&lt;value xsi:type=&quot;CD&quot; code=&quot;404684003&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Clinical finding&quot;>&#xD;&#xA;  &lt;qualifier>&#xD;&#xA;    &lt;name code=&quot;246456000&quot; displayName=&quot;Episodicity&quot;/>&#xD;&#xA;    &lt;value code=&quot;288527008&quot; displayName=&quot;New episode&quot;/>&#xD;&#xA;  &lt;/qualifier>&#xD;&#xA;&lt;/value></body>
+          <body>Value in an episode observation SHOULD be the following SNOMED CT expression:&#xD;&#xA;&amp;lt;value xsi:type=&quot;CD&quot; code=&quot;404684003&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; displayName=&quot;Clinical finding&quot;&amp;gt;&#xD;&#xA;  &amp;lt;qualifier&amp;gt;&#xD;&#xA;    &amp;lt;name code=&quot;246456000&quot; displayName=&quot;Episodicity&quot;/&amp;gt;&#xD;&#xA;    &amp;lt;value code=&quot;288527008&quot; displayName=&quot;New episode&quot;/&amp;gt;&#xD;&#xA;  &amp;lt;/qualifier&amp;gt;&#xD;&#xA;&amp;lt;/value&amp;gt;</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_5Uu8kBWkEd-6K-YJpbwRmQ" name="oneEntryRelationshipSUBJ" constrainedElement="_AwcXkGaKEd6Hk_bPOfEjYA">
@@ -5784,7 +5784,7 @@
       <ownedRule xmi:id="_Jl7XQBtEEd-vGNAsDUJvgw" name="componentProcedure" constrainedElement="_Ht_RsHDAEd6eItyqb1FoWg">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_MwG0QBtEEd-vGNAsDUJvgw">
           <language>Analysis</language>
-          <body>The target of one or more result organizer component relationships MAY be a procedure, to indicate the means or technique by which a result is obtained, particularly if the means or technique isn’t inherent in code or if there is a need to further specialize the code value.</body>
+          <body>The target of one or more result organizer component relationships MAY be a procedure, to indicate the means or technique by which a result is obtained, particularly if the means or technique isn't inherent in code or if there is a need to further specialize the code value.</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_cs62QBtEEd-vGNAsDUJvgw" name="componentProcedureReference" constrainedElement="_Ht_RsHDAEd6eItyqb1FoWg">
@@ -5974,7 +5974,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_CinbMHDPEd6eItyqb1FoWg" name="ImmunizationsSection">
       <ownedComment xmi:id="_jTB1UBtJEd-vGNAsDUJvgw">
-        <body>The Immunizations section defines a patient’s current immunization status and pertinent immunization history. The primary use case for the Immunization section is to enable communication of a patient’s immunization status. The section should include current immunization status, and may contain the entire immunization history that is relevant to the period of time being summarized.&#xD;
+        <body>The Immunizations section defines a patient's current immunization status and pertinent immunization history. The primary use case for the Immunization section is to enable communication of a patient's immunization status. The section should include current immunization status, and may contain the entire immunization history that is relevant to the period of time being summarized.&#xD;
 This section is optional, however it is strongly recommended that it be present in cases of pediatric care and in other cases when such information is available.</body>
       </ownedComment>
       <ownedRule xmi:id="_54_VkBtJEd-vGNAsDUJvgw" name="titleValue" constrainedElement="_CinbMHDPEd6eItyqb1FoWg">
