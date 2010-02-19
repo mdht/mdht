@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     John T.E. Timm (IBM Corporation) - added support for contextDependent
  *     
  * $Id$
  *******************************************************************************/
@@ -25,6 +26,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -33,6 +35,8 @@ import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 
 public class TransformTemplateIdentifier extends TransformAbstract {
+	private static final String REGISTRY_DELEGATE_NAME = "RegistryDelegate";
+
 	public TransformTemplateIdentifier(EcoreTransformerOptions options) {
 		super(options);
 	}
@@ -70,10 +74,41 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 
 	private void addAnnotation(Class umlClass, Stereotype hl7Template) {
 		String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
+		Boolean contextDependent = false;
+		try {
+			contextDependent = (Boolean) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_CONTEXT_DEPENDENT);
+		} catch (IllegalArgumentException e) {}
 		
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(umlClass);
 		annotationsUtil.setAnnotation("templateId.root", templateId);
+		if (contextDependent) {
+			createRegistryDelegate(umlClass);
+			annotationsUtil.setAnnotation("contextDependent", "true");
+		}
+		
 		annotationsUtil.saveAnnotations();
+	}
+
+	private void createRegistryDelegate(Class umlClass) {
+		org.eclipse.uml2.uml.Package umlPackage = umlClass.getNearestPackage();
+		Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
+		if (umlPackage.isStereotypeApplied(ePackage)) {
+			String prefix = (String) umlPackage.getValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX);
+			String name = prefix + "RegistryDelegate";
+			if (umlPackage.getOwnedType(name) == null) {
+				org.eclipse.uml2.uml.Package cdaPackage = getCDAPackage(umlClass);
+				if (cdaPackage != null) {
+					Interface delegateInterface = (Interface) cdaPackage.getOwnedType(REGISTRY_DELEGATE_NAME);
+					if (delegateInterface != null) {
+						Class delegateClass = umlPackage.createOwnedClass(name, false);
+						delegateClass.createInterfaceRealization(null, delegateInterface);
+						AnnotationsUtil annotationsUtil = new AnnotationsUtil(umlPackage);
+						annotationsUtil.setAnnotation("registryDelegate", name);
+						annotationsUtil.saveAnnotations();
+					}
+				}
+			}
+		}
 	}
 	
 	@SuppressWarnings("unused")
