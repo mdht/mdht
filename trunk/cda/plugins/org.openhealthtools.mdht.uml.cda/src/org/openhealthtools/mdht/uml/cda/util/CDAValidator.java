@@ -96,6 +96,7 @@ import org.openhealthtools.mdht.uml.cda.Reference;
 import org.openhealthtools.mdht.uml.cda.ReferenceRange;
 import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.RegionOfInterestValue;
+import org.openhealthtools.mdht.uml.cda.RegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.RelatedDocument;
 import org.openhealthtools.mdht.uml.cda.RelatedEntity;
 import org.openhealthtools.mdht.uml.cda.RelatedSubject;
@@ -443,6 +444,8 @@ public class CDAValidator extends EObjectValidator {
 				return validateComponent5((Component5)value, diagnostics, context);
 			case CDAPackage.DOCUMENT_ROOT:
 				return validateDocumentRoot((DocumentRoot)value, diagnostics, context);
+			case CDAPackage.REGISTRY_DELEGATE:
+				return validateRegistryDelegate((RegistryDelegate)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -1436,6 +1439,15 @@ public class CDAValidator extends EObjectValidator {
 	 */
 	public boolean validateDocumentRoot(DocumentRoot documentRoot, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(documentRoot, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRegistryDelegate(RegistryDelegate registryDelegate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(registryDelegate, diagnostics, context);
 	}
 
 	/**

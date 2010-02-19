@@ -50,6 +50,26 @@
           <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_jK9eoJ7rEd6BCKDGgDgllw" showListSignature="true" showStereotype="Label"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jK9eoZ7rEd6BCKDGgDgllw" x="951" y="7608"/>
         </children>
+        <children xmi:id="_M9ddYBgbEd-f6JfqlBX7nQ" element="_M9TsYBgbEd-f6JfqlBX7nQ">
+          <children xmi:id="_M9ddYxgbEd-f6JfqlBX7nQ" type="ImageCompartment">
+            <layoutConstraint xmi:type="notation:Size" xmi:id="_M9ddZBgbEd-f6JfqlBX7nQ" width="530" height="530"/>
+          </children>
+          <children xmi:id="_M9ddZRgbEd-f6JfqlBX7nQ" type="Stereotype"/>
+          <children xmi:id="_M9ddZhgbEd-f6JfqlBX7nQ" type="Kind"/>
+          <children xmi:id="_M9ddZxgbEd-f6JfqlBX7nQ" type="Name"/>
+          <children xmi:id="_M9ddaBgbEd-f6JfqlBX7nQ" type="Parent"/>
+          <children xmi:id="_M9ddaRgbEd-f6JfqlBX7nQ" type="AttributeCompartment">
+            <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_M9ddahgbEd-f6JfqlBX7nQ"/>
+          </children>
+          <children xmi:id="_M9ddaxgbEd-f6JfqlBX7nQ" type="OperationCompartment">
+            <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_M9ddbBgbEd-f6JfqlBX7nQ"/>
+          </children>
+          <children xmi:id="_M9ddbRgbEd-f6JfqlBX7nQ" visible="false" type="SignalCompartment">
+            <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_M9ddbhgbEd-f6JfqlBX7nQ"/>
+          </children>
+          <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_M9ddYRgbEd-f6JfqlBX7nQ" showListSignature="true" showStereotype="Label" useClassifierShape="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M9ddYhgbEd-f6JfqlBX7nQ" x="951" y="3170"/>
+        </children>
         <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_qxesgVwuEd6ZEsfifJz_3w"/>
         <element xsi:nil="true"/>
         <edges xmi:id="_vlMKsJ7rEd6BCKDGgDgllw" element="_vkJB0J7rEd6BCKDGgDgllw" source="_jKztoJ7rEd6BCKDGgDgllw" target="_vLtcIFwuEd6ZEsfifJz_3w">
@@ -360,6 +380,9 @@
     </eAnnotations>
     <elementImport xmi:id="_EvWGMJ7qEd6BCKDGgDgllw">
       <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStringToStringMapEntry"/>
+    </elementImport>
+    <elementImport xmi:id="_JeifcBgbEd-f6JfqlBX7nQ">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
     </elementImport>
     <packageImport xmi:id="_3JZ8MDxVEd6JwqSGecoePg">
       <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_XgMSwzxVEd6JwqSGecoePg?datatypes?"/>
@@ -9717,6 +9740,19 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vkltwp7rEd6BCKDGgDgllw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vkltwZ7rEd6BCKDGgDgllw" value="1"/>
       </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_M9TsYBgbEd-f6JfqlBX7nQ" name="RegistryDelegate">
+      <ownedOperation xmi:id="_Oqr0MBgbEd-f6JfqlBX7nQ" name="getEClass">
+        <ownedParameter xmi:id="_RYuu0BgbEd-f6JfqlBX7nQ" name="templateId">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_RY4f0BgbEd-f6JfqlBX7nQ" name="context">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_RY4f0RgbEd-f6JfqlBX7nQ" name="Parameter1" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <profileApplication xmi:id="_ii81lzxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_ii81mDxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">

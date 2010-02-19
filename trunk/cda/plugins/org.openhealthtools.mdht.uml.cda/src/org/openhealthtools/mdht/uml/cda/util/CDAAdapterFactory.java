@@ -93,6 +93,7 @@ import org.openhealthtools.mdht.uml.cda.Reference;
 import org.openhealthtools.mdht.uml.cda.ReferenceRange;
 import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.RegionOfInterestValue;
+import org.openhealthtools.mdht.uml.cda.RegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.RelatedDocument;
 import org.openhealthtools.mdht.uml.cda.RelatedEntity;
 import org.openhealthtools.mdht.uml.cda.RelatedSubject;
@@ -527,6 +528,10 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDocumentRoot(DocumentRoot object) {
 				return createDocumentRootAdapter();
+			}
+			@Override
+			public Adapter caseRegistryDelegate(RegistryDelegate object) {
+				return createRegistryDelegateAdapter();
 			}
 			@Override
 			public Adapter caseANY(ANY object) {
@@ -1821,6 +1826,20 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDocumentRootAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.RegistryDelegate <em>Registry Delegate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.RegistryDelegate
+	 * @generated
+	 */
+	public Adapter createRegistryDelegateAdapter() {
 		return null;
 	}
 

@@ -93,6 +93,7 @@ import org.openhealthtools.mdht.uml.cda.Reference;
 import org.openhealthtools.mdht.uml.cda.ReferenceRange;
 import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.RegionOfInterestValue;
+import org.openhealthtools.mdht.uml.cda.RegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.RelatedDocument;
 import org.openhealthtools.mdht.uml.cda.RelatedEntity;
 import org.openhealthtools.mdht.uml.cda.RelatedSubject;
@@ -728,6 +729,12 @@ public class CDASwitch<T> {
 			case CDAPackage.DOCUMENT_ROOT: {
 				DocumentRoot documentRoot = (DocumentRoot)theEObject;
 				T result = caseDocumentRoot(documentRoot);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDAPackage.REGISTRY_DELEGATE: {
+				RegistryDelegate registryDelegate = (RegistryDelegate)theEObject;
+				T result = caseRegistryDelegate(registryDelegate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -2082,6 +2089,21 @@ public class CDASwitch<T> {
 	 * @generated
 	 */
 	public T caseDocumentRoot(DocumentRoot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Registry Delegate</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Registry Delegate</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRegistryDelegate(RegistryDelegate object) {
 		return null;
 	}
 

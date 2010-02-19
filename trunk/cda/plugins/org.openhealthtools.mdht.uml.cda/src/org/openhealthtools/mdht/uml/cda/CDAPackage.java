@@ -10284,6 +10284,25 @@ public interface CDAPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.RegistryDelegate <em>Registry Delegate</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.RegistryDelegate
+	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRegistryDelegate()
+	 * @generated
+	 */
+	int REGISTRY_DELEGATE = 90;
+
+	/**
+	 * The number of structural features of the '<em>Registry Delegate</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRY_DELEGATE_FEATURE_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument <em>Clinical Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -21500,6 +21519,16 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDocumentRoot_ClinicalDocument();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.RegistryDelegate <em>Registry Delegate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Registry Delegate</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.RegistryDelegate
+	 * @generated
+	 */
+	EClass getRegistryDelegate();
 
 	/**
 	 * Returns the factory that creates the instances of the model.

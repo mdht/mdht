@@ -4,6 +4,9 @@
     <elementImport xmi:id="_EvWGMJ7qEd6BCKDGgDgllw">
       <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EStringToStringMapEntry"/>
     </elementImport>
+    <elementImport xmi:id="_JeifcBgbEd-f6JfqlBX7nQ">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
+    </elementImport>
     <packageImport xmi:id="_3JZ8MDxVEd6JwqSGecoePg">
       <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg?datatypes?"/>
     </packageImport>
@@ -9360,6 +9363,19 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vkltwp7rEd6BCKDGgDgllw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vkltwZ7rEd6BCKDGgDgllw" value="1"/>
       </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_M9TsYBgbEd-f6JfqlBX7nQ" name="RegistryDelegate">
+      <ownedOperation xmi:id="_Oqr0MBgbEd-f6JfqlBX7nQ" name="getEClass">
+        <ownedParameter xmi:id="_RYuu0BgbEd-f6JfqlBX7nQ" name="templateId">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_RY4f0BgbEd-f6JfqlBX7nQ" name="context">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_RY4f0RgbEd-f6JfqlBX7nQ" name="Parameter1" direction="return">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EClass"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <profileApplication xmi:id="_ii81lzxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_ii81mDxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
