@@ -215,7 +215,7 @@ public class CDAModelUtil {
 					if (hl7Template != null) {
 						String message = computeConformanceMessage(umlClass, markup);
 						if (message.length() > 0) {
-							umlClass.setValue(hl7Template, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE, message);
+							umlClass.setValue(hl7Template, ICDAProfileConstants.VALIDATION_MESSAGE, message);
 						}
 					}
 					else if (CDAModelUtil.getCDAClass(umlClass) == null) {
@@ -699,7 +699,7 @@ public class CDAModelUtil {
 	public static void setValidationMessage(Element constrainedElement, String message) {
 		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(constrainedElement, ICDAProfileConstants.VALIDATION);
 		if (validationSupport != null) {
-			constrainedElement.setValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE, message);
+			constrainedElement.setValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE, message);
 		}
 	}
 
