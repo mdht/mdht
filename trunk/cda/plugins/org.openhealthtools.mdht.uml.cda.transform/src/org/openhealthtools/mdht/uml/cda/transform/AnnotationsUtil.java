@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
@@ -44,6 +45,10 @@ public class AnnotationsUtil {
 
 	public AnnotationsUtil(Property property) {
 		this.element = property;
+	}
+	
+	public AnnotationsUtil(Package umlPackage) {
+		this.element = umlPackage;
 	}
 
 	/**
@@ -112,6 +117,9 @@ public class AnnotationsUtil {
 				stereotype = EcoreTransformUtil.getEcoreStereotype(element, UMLUtil.STEREOTYPE__E_ATTRIBUTE);
 			else
 				stereotype = EcoreTransformUtil.getEcoreStereotype(element, UMLUtil.STEREOTYPE__E_REFERENCE);
+		}
+		else if (element instanceof Package) {
+			stereotype = EcoreTransformUtil.getEcoreStereotype(element, UMLUtil.STEREOTYPE__E_PACKAGE);
 		}
 		
 		return stereotype;

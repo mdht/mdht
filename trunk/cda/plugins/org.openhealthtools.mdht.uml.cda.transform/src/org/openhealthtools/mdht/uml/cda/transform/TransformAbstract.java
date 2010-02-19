@@ -137,6 +137,15 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return CDAModelUtil.getCDAClass(templateClass);
 	}
 	
+	protected Package getCDAPackage(Class templateClass) {
+		for (Package package_ : templateClass.getNearestPackage().getImportedPackages()) {
+			if (CDA_PACKAGE_NAME.equals(package_.getName())) {
+				return package_;
+			}
+		}
+		return null;
+	}
+	
 	protected Property getCDAProperty(Property templateProperty) {
 		return CDAModelUtil.getCDAProperty(templateProperty);
 	}
