@@ -78,6 +78,7 @@ public interface ICDAProfileConstants {
 	public static final String CDA_TEMPLATE = "CDATemplate";
 	public static final String CDA_TEMPLATE_TEMPLATE_ID = "templateId";
 	public static final String CDA_TEMPLATE_ASSIGNING_AUTHORITY_NAME = "assigningAuthorityName";
+	public static final String CDA_TEMPLATE_CONTEXT_DEPENDENT = "contextDependent";
 	
 	/*
 	 * Codegen Support Stereotype and Properties
