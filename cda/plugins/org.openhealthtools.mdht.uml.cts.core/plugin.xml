@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+
+<!--
+ Copyright (c) 2010 David A Carlson, IBM Corporation
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+ 	 David A Carlson (XMLmodeling.com) - initial API and implementation
+     IBM Corporation
+-->
+
+<plugin>
+   <extension
+         id="CTSProfiles"
+         name="CTS Profiles"
+         point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+      <pathmap
+            name="CTS_PROFILES"
+            path="profiles"
+            plugin="org.openhealthtools.mdht.uml.cts.core"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://CTS_PROFILES/"
+            target="profiles/">
+      </mapping>
+   </extension>
+  
+   <extension
+         id="CTSModels"
+         name="CTS Models"
+         point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+      <pathmap
+            name="CTS_MODELS"
+            path="models"
+            plugin="org.openhealthtools.mdht.uml.cts.core"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://CTS_MODELS/"
+            target="models/">
+      </mapping>
+   </extension>
+</plugin>
