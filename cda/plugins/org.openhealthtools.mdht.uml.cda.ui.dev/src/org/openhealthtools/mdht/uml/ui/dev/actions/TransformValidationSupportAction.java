@@ -37,7 +37,6 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
@@ -70,24 +69,24 @@ public class TransformValidationSupportAction implements IObjectActionDelegate {
 					while (iterator != null && iterator.hasNext()) {
 						Object child = iterator.next();
 						if (child instanceof NamedElement) {
-							NamedElement childElement = (NamedElement) child;
-							Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(childElement, ICDAProfileConstants.VALIDATION_SUPPORT);
-							if (validationSupport != null) {
-								String message = (String) childElement.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE);
-								EnumerationLiteral literal = (EnumerationLiteral) childElement.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_SEVERITY);
-								String severity = (literal != null) ? literal.getName() : null;
-								
-								Stereotype validation = applyValidationStereotype(childElement);
-								if (validation != null) {
-									childElement.setValue(validation, ICDAProfileConstants.VALIDATION_SEVERITY, severity);
-									childElement.setValue(validation, ICDAProfileConstants.VALIDATION_MESSAGE, message);
-									
-									childElement.unapplyStereotype(validationSupport);
-								}
-								else {
-									System.err.println("Error: could not migrate ValidationSupport on " + childElement.getQualifiedName());
-								}
-							}
+//							NamedElement childElement = (NamedElement) child;
+//							Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(childElement, ICDAProfileConstants.VALIDATION_SUPPORT);
+//							if (validationSupport != null) {
+//								String message = (String) childElement.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE);
+//								EnumerationLiteral literal = (EnumerationLiteral) childElement.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_SEVERITY);
+//								String severity = (literal != null) ? literal.getName() : null;
+//								
+//								Stereotype validation = applyValidationStereotype(childElement);
+//								if (validation != null) {
+//									childElement.setValue(validation, ICDAProfileConstants.VALIDATION_SEVERITY, severity);
+//									childElement.setValue(validation, ICDAProfileConstants.VALIDATION_MESSAGE, message);
+//									
+//									childElement.unapplyStereotype(validationSupport);
+//								}
+//								else {
+//									System.err.println("Error: could not migrate ValidationSupport on " + childElement.getQualifiedName());
+//								}
+//							}
 							
 						}
 					}
