@@ -5,13 +5,6 @@ public interface ICDAProfileConstants {
 	public static final String CDA_PROFILE_NAME = "CDA";
 
 	/*
-	 * Validation Support Stereotype and Properties
-	 */
-	public static final String VALIDATION_SUPPORT = "ValidationSupport";
-	public static final String VALIDATION_SUPPORT_MESSAGE = "message";
-	public static final String VALIDATION_SUPPORT_SEVERITY = "severity";
-	
-	/*
 	 * Entry Stereotype and Properties
 	 */
 	public static final String ENTRY = "Entry";
@@ -29,6 +22,7 @@ public interface ICDAProfileConstants {
 	public static final String VALIDATION = "Validation";
 	public static final String VALIDATION_MESSAGE = "message";
 	public static final String VALIDATION_SEVERITY = "severity";
+	public static final String VALIDATION_RULE_ID = "ruleId";
 	
 	/*
 	 * Property Validation Stereotype and properties
@@ -71,6 +65,7 @@ public interface ICDAProfileConstants {
 	 */
 	public static final String TEXT_VALUE = "TextValue";
 	public static final String TEXT_VALUE_VALUE = "value";
+	public static final String TEXT_VALUE_IGNORE_CASE = "ignoreCase";
 	
 	/*
 	 * CDA Template Stereotype and Properties
@@ -79,6 +74,11 @@ public interface ICDAProfileConstants {
 	public static final String CDA_TEMPLATE_TEMPLATE_ID = "templateId";
 	public static final String CDA_TEMPLATE_ASSIGNING_AUTHORITY_NAME = "assigningAuthorityName";
 	public static final String CDA_TEMPLATE_CONTEXT_DEPENDENT = "contextDependent";
+
+	/*
+	 * ConformsTo Stereotype
+	 */
+	public static final String CONFORMS_TO = "ConformsTo";
 	
 	/*
 	 * Codegen Support Stereotype and Properties
