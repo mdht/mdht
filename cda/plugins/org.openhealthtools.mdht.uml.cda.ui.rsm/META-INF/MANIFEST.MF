@@ -8,6 +8,7 @@ Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.cda.ui,
- com.ibm.xtools.modeler.ui
+ com.ibm.xtools.modeler.ui,
+ org.openhealthtools.mdht.uml.cts.ui
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
