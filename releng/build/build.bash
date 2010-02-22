@@ -83,6 +83,6 @@ $JAVA_HOME/java -cp $MDHT_LAUNCHER org.eclipse.core.launcher.Main -application o
 
 echo Building : $JAVA_HOME/java  -jar $MDHT_LAUNCHER -application org.eclipse.equinox.p2.publisher.CategoryPublisher -metadataRepository file:$MDHT_REPODIRECTORY -categoryDefinition file:$CATEGORY_XML -DbuildType=$MDHT_BUILDTARGET
 
-#$JAVA_HOME/java  -jar $MDHT_LAUNCHER -application org.eclipse.equinox.p2.publisher.CategoryPublisher -metadataRepository file:$MDHT_REPODIRECTORY -categoryDefinition file:$CATEGORY_XML -Drepodir=$MDHT_REPODIRECTORY
+$JAVA_HOME/java  -jar $MDHT_LAUNCHER -application org.eclipse.equinox.p2.publisher.CategoryPublisher -metadataRepository file:$MDHT_REPODIRECTORY -categoryDefinition file:$CATEGORY_XML -Drepodir=$MDHT_REPODIRECTORY
 
 
