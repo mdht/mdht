@@ -41,6 +41,29 @@
 	 	     id="property.section.cda.ValidationSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.ValidationFilter"/>
              
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cts.ui.properties.ValueSetConstraintSection" 
+	 	     id="property.section.ValueSetConstraintSection"
+             filter="org.openhealthtools.mdht.uml.cts.ui.filters.ValueSetFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cts.ui.properties.CodeSystemConstraintSection" 
+	 	     id="property.section.CodeSystemConstraintSection"
+             filter="org.openhealthtools.mdht.uml.cts.ui.filters.CodeSystemFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cts.ui.properties.ConceptDomainConstraintSection" 
+	 	     id="property.section.ConceptDomainConstraintSection"
+             filter="org.openhealthtools.mdht.uml.cts.ui.filters.ConceptDomainFilter">
+	      </propertySection>
+	      
+	      <!-- must use cda.ui.properties.VocabularyConstraintsSection because we are applying CDA stereotypes -->
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.VocabularyConstraintsSection" 
+	 	     id="property.section.VocabularyConstraintsSection"
+             filter="org.openhealthtools.mdht.uml.cts.ui.filters.CodedAttributeFilter">
+	      </propertySection>
+	      
           <propertySection tab="property.tab.CDAPropertySection"
              class="org.openhealthtools.mdht.uml.cda.ui.properties.TemplateSection"
              id="property.section.cda.TemplateSection"
@@ -48,7 +71,7 @@
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.VocabularySpecificationSection" 
 	 	     id="property.section.cda.VocabularyConstraintSection"
-             filter="org.openhealthtools.mdht.uml.cda.ui.filters.CodedAttributeFilter"/>
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.VocabSpecificationFilter"/>
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.TextValueSection" 
 	 	     id="property.section.cda.TextValueSection"
@@ -80,12 +103,12 @@
 			<action label="%assignValidationMessage.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.AssignValidationMessageAction"
 				menubarPath="cdatools/edit" enablesFor="1"
-				id="org.openhealthtools.mdht.uml.hdf.ui.actions.assignValidationMessageAction">
+				id="org.openhealthtools.mdht.uml.cda.ui.actions.assignValidationMessageAction">
 			</action>
 			<action label="%openTemplateEditor.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.OpenTemplateEditorAction"
 				menubarPath="cdatools/edit" enablesFor="1"
-				id="org.openhealthtools.mdht.uml.hdf.ui.actions.openSubclassEditorAction">
+				id="org.openhealthtools.mdht.uml.cda.ui.actions.openSubclassEditorAction">
 			</action>
 		</objectContribution>
 		<objectContribution adaptable="true"
@@ -97,10 +120,15 @@
 			<visibility>
 				<objectClass name="org.eclipse.uml2.uml.Package" />
 			</visibility>
+			<action label="%updateProfileVersion.label"
+				class="org.openhealthtools.mdht.uml.cda.ui.actions.UpdateProfileVersionAction"
+				menubarPath="cdatools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.cda.ui.actions.updateProfileVersionAction">
+			</action>
 			<action label="%assignValidationMessage.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.AssignValidationMessageAction"
 				menubarPath="cdatools/edit" enablesFor="1"
-				id="org.openhealthtools.mdht.uml.hdf.ui.actions.assignValidationMessageAction">
+				id="org.openhealthtools.mdht.uml.cda.ui.actions.assignValidationMessageAction">
 			</action>
 		</objectContribution>
 		
@@ -114,7 +142,7 @@
 			<action label="%openTemplateEditor.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.OpenTemplateEditorAction"
 				menubarPath="cdatools/edit" enablesFor="1"
-				id="org.openhealthtools.mdht.uml.hdf.ui.actions.openSubclassEditorAction">
+				id="org.openhealthtools.mdht.uml.cda.ui.actions.openSubclassEditorAction">
 			</action>
 		</objectContribution>
 	</extension>
