@@ -2,16 +2,29 @@
 Windows Build Read Me
 
 In order to build using a windows machine you need to complete the following one installation steps
+At this time - you need to use these exact version due to some svn compatibility issues with other updated builds
 
-1 - Download and extract PDE Releng BaseBuilder which will execute the build process from here 
+1 - Download and extract PDE Releng BaseBuilder which will execute the build process from here
+
+	http://oht-modeling.sourceforge.net/zips/org.eclipse.releng.basebuilder.zip
+
 2 - Download and Install SVN Client from here
+
+	http://www.visualsvn.com/files/VisualSVN-Server-2.1.1.msi
+
 3 - Download and Install the following Ant Extensions
+
 	ant-contrib-0.6-bin.zip
+
+	http://oht-modeling.sourceforge.net/zips/ant-contrib-0.6-bin.zip
 
 	svnant-1.3.0.zip
 
+	http://oht-modeling.sourceforge.net/zips/svnant-1.3.0.zip
+
 	emma-2.0.5312.zip 
-	
+
+	http://oht-modeling.sourceforge.net/zips/emma-2.0.5312.zip	
 	
 4 - Copy samplebuildenv.bat to a local copy such as mybuildenv.bat and properly set all the required environment variables
 
