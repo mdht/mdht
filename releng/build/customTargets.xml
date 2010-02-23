@@ -1,29 +1,27 @@
 <project name="Build specific targets and properties" default="noDefault" >
 
-<property name="basews" value="win32" />
-<property name="baseos" value="win32" />
-<property name="basearch" value="x86" />
-<property name="basenl" value="en_US" />
+	<property name="basews" value="win32" />
+	<property name="baseos" value="win32" />
+	<property name="basearch" value="x86" />
+	<property name="basenl" value="en_US" />
 
-
-
-	<path id="classpath">
-		<fileset dir="/usr/share/ant/lib">
+	<path id="antclasspath">
+		<fileset dir="${ANT_HOME}/lib">
 			<include name="**/*.jar" />
 		</fileset>
 	</path>
 
 	<!-- Subversion Ant Task Definition -->
-	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="classpath" />
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="antclasspath" />
 
 	<!-- Code Coverage (EMMA) Ant Task Definition -->
-	<taskdef resource="emma_ant.properties" classpathref="classpath" />
+	<taskdef resource="emma_ant.properties" classpathref="antclasspath" />
 
 	<!-- JUnit Ant Task Definition -->
-	<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpathref="classpath" />
+	<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpathref="antclasspath" />
 
 	<!-- Conditional Support (ie <if> )  Ant Task Definitions -->
-	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="classpath" />
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="antclasspath" />
 
 
 
@@ -31,18 +29,10 @@
 <!-- Run a given ${target} on all elements being built -->
 <!-- Add on <ant> task for each top level element being built. -->
 <!-- ===================================================================== -->
-<target name="allElements">
-	
-		<!--
-	<ant antfile="${genericTargets}" target="${target}" >
-		<property name="type" value="<feature | plugin | fragment>" />
-		<property name="id" value="<element.id>" />
-	</ant>
-	-->
 
+<target name="MDHT">
 
 		<!--- Temporary Feature Target for XML Modeling Feature -->
-
 		<ant antfile="${genericTargets}" target="${target}">
 			<property name="type" value="feature" />
 			<property name="id" value="net.sourceforge.xmlmodeling.uml.xsd" />
@@ -54,9 +44,11 @@
 			<property name="type" value="feature" />
 			<property name="id" value="org.openhealthtools.mdht.uml" />
 		</ant>
+</target>
 
 
-		
+<target name="RIM">
+
 		<ant antfile="${genericTargets}" target="${target}">
 			<property name="type" value="feature" />
 			<property name="id" value="org.openhealthtools.mdht.uml.hdf" />
@@ -76,6 +68,11 @@
 
 
 		
+
+</target>
+
+
+<target name="CDA">
 		<ant antfile="${genericTargets}" target="${target}">
 			<property name="type" value="feature" />
 			<property name="id" value="org.openhealthtools.mdht.uml.cda" />
@@ -93,10 +90,72 @@
 		</ant> 
 
 
+</target>
+
+<target name="CDAMODELS">
+
 		<ant antfile="${genericTargets}" target="${target}">
 			<property name="type" value="feature" />
 			<property name="id" value="org.openhealthtools.mdht.uml.cda.models" />
 		</ant>
+
+</target>
+
+
+
+
+<target name="allElements">
+	
+		<!--
+	<ant antfile="${genericTargets}" target="${target}" >
+		<property name="type" value="<feature | plugin | fragment>" />
+		<property name="id" value="<element.id>" />
+	</ant>
+	-->
+
+	<!--  Target Build Logic
+		Targets are RIM, CDA, CDAMODEL
+		Default is to build all
+		Did not use ant "depends" to prevent multiple invocations resulting in multiple plugin version being built, SWM
+         -->
+
+	<if>
+		<equals arg1="${mdhtcomponent}" arg2="RIM" />
+	<then>
+		<echo message="Building RIM" />
+		<antcall target="MDHT" />
+		<antcall target="RIM" />
+	</then>
+		<else>
+			<if>
+				<equals arg1="${mdhtcomponent}" arg2="CDA" />
+			<then>
+				<echo message="Building CDA" />
+				<antcall target="MDHT" />
+				<antcall target="CDA" />
+			</then>
+				<else>
+					<if>
+						<equals arg1="${mdhtcomponent}" arg2="CDAMODELS" />
+					<then>
+						<echo message="Building CDA Models" />
+						<antcall target="MDHT" />
+						<antcall target="CDA" />
+						<antcall target="CDAMODELS" />
+					</then>
+						<else>
+							<echo message="Bulding All" />
+							<antcall target="MDHT" />
+							<antcall target="RIM" />
+							<antcall target="CDA" />
+							<antcall target="CDAMODELS" />
+						</else>
+					</if>
+				</else>
+			</if>
+		</else>
+	</if>
+
 </target>
 
 <!-- ===================================================================== -->
