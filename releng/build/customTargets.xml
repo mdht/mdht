@@ -5,23 +5,24 @@
 	<property name="basearch" value="x86" />
 	<property name="basenl" value="en_US" />
 
-	<path id="antclasspath">
+	<path id="ant.classpath">
 		<fileset dir="${ANT_HOME}/lib">
 			<include name="**/*.jar" />
 		</fileset>
 	</path>
 
 	<!-- Subversion Ant Task Definition -->
-	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="antclasspath" />
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="ant.classpath" />
+	<!-- <typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="svn.classpath" /> --> 
 
 	<!-- Code Coverage (EMMA) Ant Task Definition -->
-	<taskdef resource="emma_ant.properties" classpathref="antclasspath" />
+	<taskdef resource="emma_ant.properties" classpathref="ant.classpath" />
 
 	<!-- JUnit Ant Task Definition -->
-	<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpathref="antclasspath" />
+	<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpathref="ant.classpath" />
 
 	<!-- Conditional Support (ie <if> )  Ant Task Definitions -->
-	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="antclasspath" />
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="ant.classpath" />
 
 
 
