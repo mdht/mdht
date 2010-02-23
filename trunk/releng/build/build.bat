@@ -2,6 +2,15 @@
 SETLOCAL
 cls
 
+
+
+IF '%1'=='-t' GOTO SETCOMPONENT
+GOTO DONECHECKING
+
+:SETCOMPONENT
+set MDHT_COMPONENT=%2
+:DONECHECKING
+
 if not "%JAVA_HOME%" == "" goto gotJavaHome
 
 echo The JAVA_HOME environment variable is not defined
@@ -102,10 +111,11 @@ echo MDHT_BUILD_XML=%MDHT_BUILD_XML%
 
 echo CATEGORY_XML=%CATEGORY_XML%
 
+echo MDHT_COMPONENT=%MDHT_COMPONENT%
+
 echo MDHT_BUILDTARGET=%MDHT_BUILDTARGET%
 
 echo "********************************************************************"
-
 
 echo Building : %JAVA_HOME%/java -cp %MDHT_LAUNCHER% org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile %MDHT_BUILD_XML% -DbaseLocation=%MDHT_ECLIPSE% -Dbuilder=%MDHT_BUILDER%  -DbuildType=%MDHT_BUILDTARGET% -DbuildDirectory=%MDHT_BUILDDIRECTORY% -Drepodir=%MDHT_REPODIRECTORY% -DANT_HOME=%ANT_HOME% -Dmdhtcomponent=%MDHT_COMPONENT%
 
