@@ -4,13 +4,27 @@
 # default configuration file is ./config_build.sh, unless another file is 
 # specified in command-line. Available config variables:
 
-if [ -z $1 ]; then
+clear
+
+vflag=off
+configfilename=
+
+while getopts "t:f" optionName; do
+case "$optionName" in
+  t)  MDHT_COMPONENT="$OPTARG";;
+  f)  configfilename="$OPTARG";;
+[?])  "usage: $0 [-t target] [-f configfile ]"
+	  exit 1;;
+esac
+done
+
+if [ -z $configfilename ]; then
   . ./build_config.bash
 else
-  . $1
+  . $configfilename
 fi
 
-clear
+
 
 echo "********************************************************************"
 echo "MDHT BUILD ENVIRONMENT"
@@ -19,6 +33,14 @@ echo JAVA_HOME=$JAVA_HOME
 
 if [ ! -d "$JAVA_HOME" ]; then
    echo Error MDHT Build Directory Setting for JAVA_HOME  does not exist - $JAVA_HOME
+   exit -1
+fi
+
+
+echo ANT_HOME=$ANT_HOME
+
+if [ ! -d "$ANT_HOME" ]; then
+   echo Error MDHT Build Directory Setting for ANT_HOME  does not exist - $ANT_HOME
    exit -1
 fi
 
@@ -77,9 +99,9 @@ echo MDHT_BUILDTARGET=$MDHT_BUILDTARGET
 
 echo "********************************************************************"
 
-echo Building : $JAVA_HOME/java -cp $MDHT_LAUNCHER org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile $MDHT_BUILD_XML -DbaseLocation=$MDHT_ECLIPSE -Dbuilder=$MDHT_BUILDER -DbuildType=$MDHT_BUILDTARGET -DbuildDirectory=${MDHT_BUILDDIRECTORY} -Drepodir=$MDHT_REPODIRECTORY
+echo Building : $JAVA_HOME/java -cp $MDHT_LAUNCHER org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile $MDHT_BUILD_XML -DbaseLocation=$MDHT_ECLIPSE -Dbuilder=$MDHT_BUILDER -DbuildType=$MDHT_BUILDTARGET -DbuildDirectory=${MDHT_BUILDDIRECTORY} -Drepodir=$MDHT_REPODIRECTORY -DANT_HOME=$ANT_HOME -Dmdhtcomponent=$MDHT_COMPONENT
 
-$JAVA_HOME/java -cp $MDHT_LAUNCHER org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile $MDHT_BUILD_XML -DbaseLocation=$MDHT_ECLIPSE -Dbuilder=$MDHT_BUILDER  -DbuildType=$MDHT_BUILDTARGET -DbuildDirectory=${MDHT_BUILDDIRECTORY} -Drepodir=$MDHT_REPODIRECTORY
+$JAVA_HOME/java -cp $MDHT_LAUNCHER org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile $MDHT_BUILD_XML -DbaseLocation=$MDHT_ECLIPSE -Dbuilder=$MDHT_BUILDER  -DbuildType=$MDHT_BUILDTARGET -DbuildDirectory=${MDHT_BUILDDIRECTORY} -Drepodir=$MDHT_REPODIRECTORY -DANT_HOME=$ANT_HOME -Dmdhtcomponent=$MDHT_COMPONENT
 
 echo Building : $JAVA_HOME/java  -jar $MDHT_LAUNCHER -application org.eclipse.equinox.p2.publisher.CategoryPublisher -metadataRepository file:$MDHT_REPODIRECTORY -categoryDefinition file:$CATEGORY_XML -DbuildType=$MDHT_BUILDTARGET
 

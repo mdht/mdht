@@ -6,6 +6,9 @@
 # JAVA_HOME - /usr/bin - is atypical location for installed java on linux machines
 if [ "x" == "x$JAVA_HOME" ]; then JAVA_HOME=/usr/bin; fi
 
+# ANT_HOME - /usr/share/ant - is atypical location for installed java on linux machines
+if [ "x" == "x$ANT_HOME" ]; then ANT_HOME=/usr/share/ant; fi
+
 # Location of eclipse PDE Installation - PDE build application - relative path
 if [ "x" == "x$MDHT_PDELOCATION" ]; then MDHT_PDELOCATION=../org.eclipse.releng.basebuilder; fi
 
@@ -36,6 +39,9 @@ if [ "x" == "x$CATEGORY_XML" ]; then CATEGORY_XML=$MDHT_BUILDER/category.xml; fi
 # Build Target - N-Nightly; I-Integration; etc
 if [ "x" == "x$MDHT_BUILDTARGET" ]; then MDHT_BUILDTARGET=N; fi
 
+
+# Build Target - N-Nightly; I-Integration; etc
+if [ "x" == "x$MDHT_COMPONENT" ]; then MDHT_COMPONENT=ALL; fi
 
 
 
