@@ -7,11 +7,9 @@
 package org.openhealthtools.mdht.uml.cda.core.cdaprofile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.openhealthtools.mdht.uml.cda.core.cdaprofile.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.core.cdaprofile.Entry;
 import org.openhealthtools.mdht.uml.cda.core.cdaprofile.EntryKind;
@@ -107,13 +105,18 @@ public class EntryImpl extends AssociationValidationImpl implements Entry {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.ENTRY__TYPE_CODE:
-				setTypeCode((EntryKind)newValue);
+				if (newValue instanceof EEnumLiteral) {
+					setTypeCode(EntryKind.getByName(((EEnumLiteral)newValue).getName()));
+				}
+				else {
+					setTypeCode((EntryKind)newValue);
+				}
 				return;
 		}
 		super.eSet(featureID, newValue);

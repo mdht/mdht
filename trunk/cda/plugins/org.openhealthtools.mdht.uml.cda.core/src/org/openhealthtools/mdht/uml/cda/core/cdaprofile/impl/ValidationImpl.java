@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnumLiteral;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -183,7 +184,7 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -192,9 +193,15 @@ public abstract class ValidationImpl extends EObjectImpl implements Validation {
 			case CDAPackage.VALIDATION__MESSAGE:
 				setMessage((String)newValue);
 				return;
-			case CDAPackage.VALIDATION__SEVERITY:
-				setSeverity((SeverityKind)newValue);
+			case CDAPackage.VALIDATION__SEVERITY: {
+				if (newValue instanceof EEnumLiteral) {
+					setSeverity(SeverityKind.getByName(((EEnumLiteral)newValue).getName()));
+				}
+				else {
+					setSeverity((SeverityKind)newValue);
+				}
 				return;
+			}
 			case CDAPackage.VALIDATION__RULE_ID:
 				getRuleId().clear();
 				getRuleId().addAll((Collection<? extends String>)newValue);

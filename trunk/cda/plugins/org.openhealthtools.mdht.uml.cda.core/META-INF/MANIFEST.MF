@@ -11,4 +11,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.cts.core
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.uml.cda.core.util
+Export-Package: org.openhealthtools.mdht.uml.cda.core.cdaprofile,
+ org.openhealthtools.mdht.uml.cda.core.cdaprofile.impl,
+ org.openhealthtools.mdht.uml.cda.core.cdaprofile.util,
+ org.openhealthtools.mdht.uml.cda.core.util
