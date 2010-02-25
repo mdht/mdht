@@ -25,6 +25,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -230,14 +231,31 @@ public class EntrySection extends AbstractModelerPropertySection {
 		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
 				namedElement, ICDAProfileConstants.ENTRY);
 
+		Enumeration entryKind = null;
+		Profile cdaProfile = CDAProfileUtil.getCDAProfile(namedElement.eResource().getResourceSet());
+		if (cdaProfile != null) {
+			entryKind = (Enumeration)
+					cdaProfile.getOwnedType(ICDAProfileConstants.ENTRY_KIND);
+		}
+
         fillTypeCodeCombo();
         typeCodeCombo.select(0);
         if (stereotype != null) {
-			EnumerationLiteral code = (EnumerationLiteral) namedElement.getValue(
-					stereotype, ICDAProfileConstants.ENTRY_TYPE_CODE);
-			if (code != null) {
-				int index = code.getEnumeration().getOwnedLiterals().indexOf(code);
-				typeCodeCombo.select(index + 1);
+			Object value = namedElement.getValue(stereotype, ICDAProfileConstants.ENTRY_TYPE_CODE);
+			String typeCode = null;
+			if (value instanceof EnumerationLiteral) {
+				typeCode = ((EnumerationLiteral)value).getName();
+			}
+			else if (value instanceof Enumerator) {
+				typeCode = ((Enumerator)value).getName();
+			}
+			
+			if (typeCode != null) {
+				EnumerationLiteral literal = entryKind.getOwnedLiteral(typeCode);
+				if (literal != null) {
+					int index = entryKind.getOwnedLiterals().indexOf(literal);
+					typeCodeCombo.select(index + 1);
+				}
 			}
         }
 

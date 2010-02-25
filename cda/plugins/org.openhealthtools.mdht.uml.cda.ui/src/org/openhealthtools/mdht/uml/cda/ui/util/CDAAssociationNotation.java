@@ -12,7 +12,9 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.util;
 
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
@@ -117,19 +119,42 @@ public class CDAAssociationNotation {
 		
 		try {
 			if (entry != null) {
-				EnumerationLiteral typeCode = (EnumerationLiteral) association.getValue(entry, 
-						ICDAProfileConstants.ENTRY_TYPE_CODE);
+				Object literal = association.getValue(entry, ICDAProfileConstants.ENTRY_TYPE_CODE);
+				String typeCode = null;
+				if (literal instanceof EnumerationLiteral) {
+					typeCode = ((EnumerationLiteral)literal).getLabel();
+				}
+				else if (literal instanceof Enumerator) {
+					typeCode = ((Enumerator)literal).getName();
+					
+					Enumeration entryKind = (Enumeration) entry.getProfile().getOwnedType(ICDAProfileConstants.ENTRY_KIND);
+					if (entryKind != null) {
+						typeCode = entryKind.getOwnedLiteral(typeCode).getLabel();
+					}
+				}
 
 				if (typeCode != null) {
-					value.append(typeCode.getLabel());
+					value.append(typeCode);
 				}
 			}
 			else if (entryRelationship != null) {
-				EnumerationLiteral typeCode = (EnumerationLiteral) association.getValue(entryRelationship, 
+				Object literal = association.getValue(entryRelationship, 
 						ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
+				String typeCode = null;
+				if (literal instanceof EnumerationLiteral) {
+					typeCode = ((EnumerationLiteral)literal).getLabel();
+				}
+				else if (literal instanceof Enumerator) {
+					typeCode = ((Enumerator)literal).getName();
+					
+					Enumeration entryRelKind = (Enumeration) entryRelationship.getProfile().getOwnedType(ICDAProfileConstants.ENTRY_RELATIONSHIP_KIND);
+					if (entryRelKind != null) {
+						typeCode = entryRelKind.getOwnedLiteral(typeCode).getLabel();
+					}
+				}
 
 				if (typeCode != null) {
-					value.append(typeCode.getLabel());
+					value.append(typeCode);
 				}
 			}
 		}
