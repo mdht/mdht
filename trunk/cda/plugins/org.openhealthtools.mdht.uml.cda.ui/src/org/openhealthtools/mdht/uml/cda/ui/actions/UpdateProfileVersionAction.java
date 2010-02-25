@@ -134,7 +134,9 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 		String codeSystemVersion = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
 		String code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
 		String displayName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
-
+		Object severity = property.getValue(vocabSpecification, ICDAProfileConstants.VALIDATION_SEVERITY);
+		String message = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VALIDATION_MESSAGE);
+		
 		Stereotype codeSystemConstraint = cdaProfile.getOwnedStereotype(ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT);
 		Stereotype valueSetConstraint = cdaProfile.getOwnedStereotype(ICTSProfileConstants.VALUE_SET_CONSTRAINT);
 		if (codeSystemConstraint == null || valueSetConstraint == null) {
@@ -153,6 +155,10 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 					ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_CODE, code);
 			property.setValue(codeSystemConstraint,
 					ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_DISPLAY_NAME, displayName);
+			property.setValue(codeSystemConstraint,
+					ICDAProfileConstants.VALIDATION_SEVERITY, severity);
+			property.setValue(codeSystemConstraint,
+					ICDAProfileConstants.VALIDATION_MESSAGE, message);
 			
 			property.unapplyStereotype(vocabSpecification);
 		}
@@ -164,6 +170,10 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 					ICTSProfileConstants.VALUE_SET_CONSTRAINT_NAME, codeSystemName);
 			property.setValue(valueSetConstraint,
 					ICTSProfileConstants.VALUE_SET_CONSTRAINT_VERSION, codeSystemVersion);
+			property.setValue(valueSetConstraint,
+					ICDAProfileConstants.VALIDATION_SEVERITY, severity);
+			property.setValue(valueSetConstraint,
+					ICDAProfileConstants.VALIDATION_MESSAGE, message);
 			
 			property.unapplyStereotype(vocabSpecification);
 		}

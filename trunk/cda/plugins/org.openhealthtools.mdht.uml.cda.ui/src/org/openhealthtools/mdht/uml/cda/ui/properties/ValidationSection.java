@@ -22,6 +22,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -350,11 +351,21 @@ public class ValidationSection extends AbstractModelerPropertySection {
 
 		severityCombo.select(0);
 		if (stereotype != null) {
-			EnumerationLiteral literal = (EnumerationLiteral) namedElement.getValue(
-					stereotype, ICDAProfileConstants.VALIDATION_SEVERITY);
-			if (severityKind != null && literal != null) {
-				int index = severityKind.getOwnedLiterals().indexOf(literal);
-				severityCombo.select(index + 1);
+			Object value = namedElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY);
+			String severity = null;
+			if (value instanceof EnumerationLiteral) {
+				severity = ((EnumerationLiteral)value).getName();
+			}
+			else if (value instanceof Enumerator) {
+				severity = ((Enumerator)value).getName();
+			}
+			
+			if (severityKind != null && severity != null) {
+				EnumerationLiteral literal = severityKind.getOwnedLiteral(severity);
+				if (literal != null) {
+					int index = severityKind.getOwnedLiterals().indexOf(literal);
+					severityCombo.select(index + 1);
+				}
 			}
 		}
 
