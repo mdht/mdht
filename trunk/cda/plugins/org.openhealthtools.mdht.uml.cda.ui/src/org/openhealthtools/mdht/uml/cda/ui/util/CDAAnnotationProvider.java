@@ -3,6 +3,7 @@ package org.openhealthtools.mdht.uml.cda.ui.util;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExecutableExtension;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
@@ -63,10 +64,16 @@ public class CDAAnnotationProvider implements INotationProvider, IExecutableExte
 	public Object getAnnotationImage(Element element) {
 		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
 		if (validationSupport != null) {
-			EnumerationLiteral literal = (EnumerationLiteral) element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
-			if (literal != null) {
-				String severity = literal.getName();
-
+			Object literal = element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
+			String severity = null;
+			if (literal instanceof EnumerationLiteral) {
+				severity = ((EnumerationLiteral)literal).getName();
+			}
+			else if (literal instanceof Enumerator) {
+				severity = ((Enumerator)literal).getName();
+			}
+			
+			if (severity != null) {
 				if (SEVERITY_INFO.equals(severity)) {
 					return Activator.getDefault().getBundledImage("/icons/full/obj16/information.gif");
 				} else if (SEVERITY_WARNING.equals(severity)) {
