@@ -32,6 +32,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -42,6 +43,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xml.type.AnyType;
+import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
@@ -416,4 +419,13 @@ public class CDAUtil {
 	    }
 	}
 	// END: Path Expression Support
+	
+	public static Object query(EObject eObject, String body) throws Exception {
+		OCL ocl = OCL.newInstance();
+		OCL.Helper helper = ocl.createOCLHelper();
+		helper.setContext(eObject.eClass());
+		OCLExpression<EClassifier> expression = helper.createQuery(body);
+		OCL.Query query = ocl.createQuery(expression);
+		return query.evaluate(eObject);
+	}
 }
