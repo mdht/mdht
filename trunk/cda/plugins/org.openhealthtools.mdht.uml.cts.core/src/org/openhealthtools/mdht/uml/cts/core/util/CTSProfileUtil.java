@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.cts.core.util;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -91,7 +92,36 @@ public class CTSProfileUtil {
 			element.unapplyStereotype(stereotype);
 		}
 	}
+
+	/**
+	 * Use when stereotype property value refers to another stereotyped element.
+	 * Returns the underlying base element of the property's stereotype application.
+	 */
+	public static Object getStereotypeApplicationValue(Element element, 
+			String stereotypeName, String propertyName) {
+		Object value = null;
+		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(element, stereotypeName);
+		if (stereotype != null) {
+			Object stereoAppl = element.getValue(stereotype, propertyName);
+			if (stereoAppl instanceof EObject) {
+				value = UMLUtil.getBaseElement((EObject)stereoAppl);
+			}
+		}
+		return value;
+	}
 	
+	/**
+	 * Set an element's stereotype property value, when that property is typed by a stereotyped element.
+	 */
+	public static void setStereotypeApplicationValue(Element element,
+			Stereotype stereotype, String propertyName,
+			Element value, String valueStereotypeName) {
+		Stereotype valueStereotype = getAppliedCTSStereotype(value, valueStereotypeName);
+		if (valueStereotype != null) {
+			EObject stereotypeApplication = value.getStereotypeApplication(valueStereotype);
+			element.setValue(stereotype, propertyName, stereotypeApplication);
+		}
+	}
 	
 	/**
 	 * Check all containing packages for applied profile.
