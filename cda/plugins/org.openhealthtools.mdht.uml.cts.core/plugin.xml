@@ -14,6 +14,20 @@
 -->
 
 <plugin>
+   <extension point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            uri="http://www.openhealthtools.org/mdht/schemas/cts/1"
+            location="pathmap://CTS_PROFILES/CTS.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q">
+      </profile>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package 
+         uri="http://www.openhealthtools.org/mdht/schemas/cts/1" 
+         class="org.openhealthtools.mdht.uml.cts.core.ctsprofile.CTSPackage"
+         genModel="profiles/CTS.profile.genmodel" /> 
+   </extension>
+
    <extension
          id="CTSProfiles"
          name="CTS Profiles"
