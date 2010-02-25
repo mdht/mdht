@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cdaprofile"
+    nsURI="http://www.openhealthtools.org/mdht/schemas/cda/4" nsPrefix="CDA">
+  <eClassifiers xsi:type="ecore:EEnum" name="SeverityKind">
+    <eLiterals name="ERROR"/>
+    <eLiterals name="WARNING" value="1"/>
+    <eLiterals name="INFO" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValidationSupport">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" ordered="false"
+        eType="#//SeverityKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Association" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Association"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Property" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntryKind">
+    <eLiterals name="COMP"/>
+    <eLiterals name="DRIV" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entry" eSuperTypes="#//AssociationValidation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
+        eType="#//EntryKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssociationValidation" eSuperTypes="#//Validation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Association" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Association"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Validation" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" ordered="false"
+        eType="#//SeverityKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleId" ordered="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntryRelationshipKind">
+    <eLiterals name="CAUS"/>
+    <eLiterals name="COMP" value="1"/>
+    <eLiterals name="GEVL" value="2"/>
+    <eLiterals name="MFST" value="3"/>
+    <eLiterals name="REFR" value="4"/>
+    <eLiterals name="RSON" value="5"/>
+    <eLiterals name="SAS" value="6"/>
+    <eLiterals name="SPRT" value="7"/>
+    <eLiterals name="SUBJ" value="8"/>
+    <eLiterals name="XCRPT" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntryRelationship" eSuperTypes="#//AssociationValidation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeCode" ordered="false"
+        eType="#//EntryRelationshipKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodegenSupport">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="basePackage" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nsPrefix" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nsURI" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Namespace" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Namespace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyValidation" eSuperTypes="#//Validation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Property" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassValidation" eSuperTypes="#//Validation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VocabSpecification" eSuperTypes="#//PropertyValidation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="codeSystem" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="codeSystemName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="codeSystemVersion" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="NullFlavorKind">
+    <eLiterals name="ASKU"/>
+    <eLiterals name="MSK" value="1"/>
+    <eLiterals name="NA" value="2"/>
+    <eLiterals name="NASK" value="3"/>
+    <eLiterals name="NAV" value="4"/>
+    <eLiterals name="NI" value="5"/>
+    <eLiterals name="NINF" value="6"/>
+    <eLiterals name="OTH" value="7"/>
+    <eLiterals name="PINF" value="8"/>
+    <eLiterals name="QS" value="9"/>
+    <eLiterals name="TRC" value="10"/>
+    <eLiterals name="UNC" value="11"/>
+    <eLiterals name="UNK" value="12"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NullFlavor" eSuperTypes="#//PropertyValidation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullFlavor" ordered="false"
+        eType="#//NullFlavorKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextValue" eSuperTypes="#//PropertyValidation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ignoreCase" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CDATemplate" eSuperTypes="#//ClassValidation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateId" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assigningAuthorityName"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextDependent" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintValidation" eSuperTypes="#//Validation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Constraint" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConformsTo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Generalization" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Generalization"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConceptDomainConstraint" eSuperTypes="platform:/plugin/org.openhealthtools.mdht.uml.cts.core/profiles/ctsprofile.ecore#//ConceptDomainConstraint #//Validation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeSystemConstraint" eSuperTypes="platform:/plugin/org.openhealthtools.mdht.uml.cts.core/profiles/ctsprofile.ecore#//CodeSystemConstraint #//Validation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSetConstraint" eSuperTypes="platform:/plugin/org.openhealthtools.mdht.uml.cts.core/profiles/ctsprofile.ecore#//ValueSetConstraint #//Validation"/>
+</ecore:EPackage>
