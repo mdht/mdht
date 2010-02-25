@@ -21,6 +21,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.NotificationImpl;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -231,7 +232,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 			return;
 		}
 		final Stereotype valueSetStereotype = CTSProfileUtil.getAppliedCTSStereotype(
-				valueSet, ICTSProfileConstants.VALUE_SET);
+				valueSet, ICTSProfileConstants.VALUE_SET_VERSION);
 		if (valueSetStereotype == null) {
 			MessageDialog.openError(getPart().getSite().getShell(), 
 					"Invalid Enumeration", "The selected Enumertion must be a <<ValueSet>>");
@@ -253,13 +254,14 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 					this.setLabel("Set ValueSet reference");
 
 					if (stereotype != null) {
-						property.setValue(stereotype, 
-								ICTSProfileConstants.VALUE_SET_CONSTRAINT_REFERENCE, valueSet);
+						CTSProfileUtil.setStereotypeApplicationValue(property, stereotype, 
+								ICTSProfileConstants.VALUE_SET_CONSTRAINT_REFERENCE, 
+								valueSet, ICTSProfileConstants.VALUE_SET_VERSION);
 						
-						String valueSetId = (String) valueSet.getValue(valueSetStereotype, ICTSProfileConstants.VALUE_SET_ID);
-						String valueSetName = (String) valueSet.getValue(valueSetStereotype, ICTSProfileConstants.VALUE_SET_NAME);
-						String valueSetVersion = (String) valueSet.getValue(valueSetStereotype, ICTSProfileConstants.VALUE_SET_VERSION);
-						EnumerationLiteral valueSetBinding = (EnumerationLiteral) valueSet.getValue(valueSetStereotype, ICTSProfileConstants.VALUE_SET_BINDING);
+						String valueSetId = (String) valueSet.getValue(valueSetStereotype, ICTSProfileConstants.VALUE_SET_VERSION_ID);
+						String valueSetName = (String) valueSet.getValue(valueSetStereotype, ICTSProfileConstants.VALUE_SET_VERSION_NAME);
+						String valueSetVersion = (String) valueSet.getValue(valueSetStereotype, ICTSProfileConstants.VALUE_SET_VERSION_VERSION);
+						EnumerationLiteral valueSetBinding = (EnumerationLiteral) valueSet.getValue(valueSetStereotype, ICTSProfileConstants.VALUE_SET_VERSION_BINDING);
 						
 						property.setValue(stereotype,
 								ICTSProfileConstants.VALUE_SET_CONSTRAINT_ID, valueSetId);
@@ -519,11 +521,11 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 		Enumeration bindingKind = (Enumeration)
 			ctsProfile.getOwnedType(ICTSProfileConstants.BINDING_KIND);
 		
-		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
-				property, ICTSProfileConstants.VALUE_SET_CONSTRAINT);
-
-		Enumeration reference = (Enumeration) property.getValue(
-				stereotype, ICTSProfileConstants.VALUE_SET_CONSTRAINT_REFERENCE);
+		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(property, 
+				ICTSProfileConstants.VALUE_SET_CONSTRAINT);
+		Enumeration reference = (Enumeration) CTSProfileUtil.getStereotypeApplicationValue(
+				property, ICTSProfileConstants.VALUE_SET_CONSTRAINT, 
+				ICTSProfileConstants.VALUE_SET_CONSTRAINT_REFERENCE);
 		if (reference != null) {
 			valueSetRefLabel.setText(reference.getQualifiedName());
 			valueSetRefLabel.layout();
@@ -577,9 +579,17 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 		bindingCombo.select(0);
 		if (stereotype != null && property.hasValue(
 				stereotype, ICTSProfileConstants.VALUE_SET_CONSTRAINT_BINDING)) {
-			EnumerationLiteral literal = (EnumerationLiteral) property.getValue(
-					stereotype, ICTSProfileConstants.VALUE_SET_CONSTRAINT_BINDING);
-			if (bindingKind != null && literal != null) {
+			Object value = property.getValue(stereotype, ICTSProfileConstants.VALUE_SET_CONSTRAINT_BINDING);
+			String binding = null;
+			if (value instanceof EnumerationLiteral) {
+				binding = ((EnumerationLiteral)value).getName();
+			}
+			else if (value instanceof Enumerator) {
+				binding = ((Enumerator)value).getName();
+			}
+			
+			if (bindingKind != null && binding != null) {
+				EnumerationLiteral literal = bindingKind.getOwnedLiteral(binding);
 				int index = bindingKind.getOwnedLiterals().indexOf(literal);
 				bindingCombo.select(index);
 			}
