@@ -95,12 +95,15 @@ public class ConstraintExtItemProvider extends ConstraintItemProvider
 			// eResource is null for deleted elements
 			if (constraint.eResource() != null) {
 				for (Profile profile : constraint.getNearestPackage().getAllAppliedProfiles()) {
-					// use the first notation provider found for an applied profile, ignore others
-					String profileURI = profile.eResource().getURI().toString();
-					INotationProvider provider = 
-						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-					if (provider != null) {
-						return provider.getAnnotationImage(constraint);
+					// eResource is null for unresolved eProxyURI, missing profiles
+					if (profile.eResource() != null) {
+						// use the first notation provider found for an applied profile, ignore others
+						String profileURI = profile.eResource().getURI().toString();
+						INotationProvider provider = 
+							NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+						if (provider != null) {
+							return provider.getAnnotationImage(constraint);
+						}
 					}
 				}
 			}
