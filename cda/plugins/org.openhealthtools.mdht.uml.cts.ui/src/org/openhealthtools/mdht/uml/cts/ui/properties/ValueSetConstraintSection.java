@@ -21,7 +21,6 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.NotificationImpl;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -63,6 +62,9 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.BindingKind;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
 import org.openhealthtools.mdht.uml.cts.core.util.ICTSProfileConstants;
 import org.openhealthtools.mdht.uml.cts.ui.internal.Logger;
@@ -78,8 +80,8 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 	private boolean idModified = false;
 	private Text nameText;
 	private boolean nameModified = false;
-	private Text versionDateText;
-	private boolean versionDateModified = false;
+	private Text versionText;
+	private boolean versionModified = false;
 	private CCombo bindingCombo;
 	private boolean bindingModified = false;
 
@@ -95,8 +97,8 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 			if (nameText == event.getSource()) {
 				nameModified = true;
 			}
-			if (versionDateText == event.getSource()) {
-				versionDateModified = true;
+			if (versionText == event.getSource()) {
+				versionModified = true;
 			}
 		}
 	};
@@ -123,7 +125,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 	};
 	
 	private void modifyFields() {
-		if (!(idModified || nameModified || versionDateModified
+		if (!(idModified || nameModified || versionModified
 				|| bindingModified)) {
 			return;
 		}
@@ -171,12 +173,12 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 
 						}
 					}
-					else if (versionDateModified) {
-						versionDateModified = false;
+					else if (versionModified) {
+						versionModified = false;
 						this.setLabel("Set Value Set Version");
 
 						if (stereotype != null) {
-							String value = versionDateText.getText().trim();
+							String value = versionText.getText().trim();
 							property.setValue(stereotype, 
 									ICTSProfileConstants.VALUE_SET_CONSTRAINT_VERSION,
 									value.length()>0 ? value : null);
@@ -185,7 +187,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 					}
 					else if (bindingModified) {
 						bindingModified = false;
-						this.setLabel("Set Coding Strength");
+						this.setLabel("Set Binding");
 						if (stereotype != null && bindingKind != null) {
 							if (bindingCombo.getSelectionIndex() == 0) {
 								// remove stereotype property
@@ -223,21 +225,22 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 	}
 
 	private void addValueSetReference() {
-		final Enumeration valueSet = (Enumeration) DialogLaunchUtil.chooseElement(
+		final Enumeration valueSetEnum = (Enumeration) DialogLaunchUtil.chooseElement(
 				new java.lang.Class[] {Enumeration.class},
 				property.eResource().getResourceSet(), 
 				getPart().getSite().getShell());
 		
-		if (valueSet == null) {
+		if (valueSetEnum == null) {
 			return;
 		}
 		final Stereotype valueSetStereotype = CTSProfileUtil.getAppliedCTSStereotype(
-				valueSet, ICTSProfileConstants.VALUE_SET_VERSION);
+				valueSetEnum, ICTSProfileConstants.VALUE_SET_VERSION);
 		if (valueSetStereotype == null) {
 			MessageDialog.openError(getPart().getSite().getShell(), 
 					"Invalid Enumeration", "The selected Enumertion must be a <<ValueSet>>");
 			return;
 		}
+		final ValueSetVersion valueSet = (ValueSetVersion) valueSetEnum.getStereotypeApplication(valueSetStereotype);
 
 		try {
 			TransactionalEditingDomain editingDomain = 
@@ -245,35 +248,19 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 			
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
-							property, ICTSProfileConstants.VALUE_SET_CONSTRAINT);
-					
-					if (stereotype == null) {
+			    	ValueSetConstraint valueSetConstraint = CTSProfileUtil.getValueSetConstraint(property);
+					if (valueSetConstraint == null) {
 						return Status.CANCEL_STATUS;
 					}
 					this.setLabel("Set ValueSet reference");
-
-					if (stereotype != null) {
-						CTSProfileUtil.setStereotypeApplicationValue(property, stereotype, 
-								ICTSProfileConstants.VALUE_SET_CONSTRAINT_REFERENCE, 
-								valueSet, ICTSProfileConstants.VALUE_SET_VERSION);
+					valueSetConstraint.setReference(valueSet);
+					
+					valueSetConstraint.setIdentifier(null);
+					valueSetConstraint.setName(null);
+					valueSetConstraint.setVersion(null);
+					valueSetConstraint.setBinding(null);
 						
-						String valueSetId = (String) valueSet.getValue(valueSetStereotype, ICTSProfileConstants.VALUE_SET_VERSION_ID);
-						String valueSetName = (String) valueSet.getValue(valueSetStereotype, ICTSProfileConstants.VALUE_SET_VERSION_NAME);
-						String valueSetVersion = (String) valueSet.getValue(valueSetStereotype, ICTSProfileConstants.VALUE_SET_VERSION_VERSION);
-						EnumerationLiteral valueSetBinding = (EnumerationLiteral) valueSet.getValue(valueSetStereotype, ICTSProfileConstants.VALUE_SET_VERSION_BINDING);
-						
-						property.setValue(stereotype,
-								ICTSProfileConstants.VALUE_SET_CONSTRAINT_ID, valueSetId);
-						property.setValue(stereotype,
-								ICTSProfileConstants.VALUE_SET_CONSTRAINT_NAME, valueSetName);
-						property.setValue(stereotype,
-								ICTSProfileConstants.VALUE_SET_CONSTRAINT_VERSION, valueSetVersion);
-						property.setValue(stereotype,
-								ICTSProfileConstants.VALUE_SET_CONSTRAINT_BINDING, valueSetBinding);
-							
-						refresh();
-					}
+					refresh();
 					
 			        return Status.OK_STATUS;
 			    }};
@@ -299,27 +286,20 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 			
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
-							property, ICTSProfileConstants.VALUE_SET_CONSTRAINT);
-					
-					if (stereotype == null) {
+			    	ValueSetConstraint valueSetConstraint = CTSProfileUtil.getValueSetConstraint(property);
+					if (valueSetConstraint == null) {
 						return Status.CANCEL_STATUS;
 					}
+					
 					this.setLabel("Remove ValueSet reference");
-
-					if (stereotype != null) {
-						property.setValue(stereotype, 
-								ICTSProfileConstants.VALUE_SET_CONSTRAINT_REFERENCE, null);
-						property.setValue(stereotype,
-								ICTSProfileConstants.VALUE_SET_CONSTRAINT_ID, null);
-						property.setValue(stereotype,
-								ICTSProfileConstants.VALUE_SET_CONSTRAINT_NAME, null);
-						property.setValue(stereotype,
-								ICTSProfileConstants.VALUE_SET_CONSTRAINT_VERSION, null);
-						property.setValue(stereotype,
-								ICTSProfileConstants.VALUE_SET_CONSTRAINT_BINDING, null);
-						refresh();
-					}
+					valueSetConstraint.setReference(null);
+					
+					valueSetConstraint.setIdentifier(null);
+					valueSetConstraint.setName(null);
+					valueSetConstraint.setVersion(null);
+					valueSetConstraint.setBinding(null);
+					
+					refresh();
 					
 			        return Status.OK_STATUS;
 			    }};
@@ -409,7 +389,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 
 		data = new FormData();
 		data.left = new FormAttachment(nameLabel, 0);
-		data.right = new FormAttachment(30, 0);
+		data.right = new FormAttachment(50, 0);
 		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		nameText.setLayoutData(data);
 
@@ -424,7 +404,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 
 		data = new FormData();
 		data.left = new FormAttachment(idLabel, 0);
-		data.right = new FormAttachment(60, 0);
+		data.right = new FormAttachment(100, 0);
 		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		idText.setLayoutData(data);
 
@@ -457,20 +437,20 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		bindingCombo.setLayoutData(data);
 
-		/* ------ Version Date field ------ */
-		versionDateText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
+		/* ------ Version field ------ */
+		versionText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
 		CLabel versionLabel = getWidgetFactory()
-				.createCLabel(composite, "Version Date:"); //$NON-NLS-1$
+				.createCLabel(composite, "Version:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(bindingCombo, ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(versionDateText, 0, SWT.CENTER);
+		data.top = new FormAttachment(versionText, 0, SWT.CENTER);
 		versionLabel.setLayoutData(data);
 
 		data = new FormData();
 		data.left = new FormAttachment(versionLabel, 0);
-		data.right = new FormAttachment(60, 0);
+		data.right = new FormAttachment(50, 0);
 		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
-		versionDateText.setLayoutData(data);
+		versionText.setLayoutData(data);
 
 	}
 	
@@ -520,14 +500,15 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 		}
 		Enumeration bindingKind = (Enumeration)
 			ctsProfile.getOwnedType(ICTSProfileConstants.BINDING_KIND);
+
+    	ValueSetConstraint valueSetConstraint = CTSProfileUtil.getValueSetConstraint(property);
 		
-		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(property, 
-				ICTSProfileConstants.VALUE_SET_CONSTRAINT);
-		Enumeration reference = (Enumeration) CTSProfileUtil.getStereotypeApplicationValue(
-				property, ICTSProfileConstants.VALUE_SET_CONSTRAINT, 
-				ICTSProfileConstants.VALUE_SET_CONSTRAINT_REFERENCE);
-		if (reference != null) {
-			valueSetRefLabel.setText(reference.getQualifiedName());
+		ValueSetVersion valueSet = null;
+		Enumeration referenceEnum = null;
+		if (valueSetConstraint != null && valueSetConstraint.getReference() != null) {
+			valueSet = valueSetConstraint.getReference();
+			referenceEnum = (Enumeration) valueSet.getBase_Enumeration();
+			valueSetRefLabel.setText(referenceEnum.getQualifiedName());
 			valueSetRefLabel.layout();
 		}
 		else {
@@ -537,9 +518,9 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 		idText.removeModifyListener(modifyListener);
 		idText.removeKeyListener(keyListener);
 		idText.removeFocusListener(focusListener);
-		if (stereotype != null) {
-			String name = (String) property.getValue(stereotype, ICTSProfileConstants.VALUE_SET_CONSTRAINT_ID);
-			idText.setText(name!=null ? name : "");
+		if (valueSetConstraint != null) {
+			String id = valueSet==null ? valueSetConstraint.getIdentifier() : valueSet.getIdentifier();
+			idText.setText(id!=null ? id : "");
 		}
 		else {
 			idText.setText("");
@@ -551,8 +532,8 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 		nameText.removeModifyListener(modifyListener);
 		nameText.removeKeyListener(keyListener);
 		nameText.removeFocusListener(focusListener);
-		if (stereotype != null) {
-			String name = (String) property.getValue(stereotype, ICTSProfileConstants.VALUE_SET_CONSTRAINT_NAME);
+		if (valueSetConstraint != null) {
+			String name = valueSet==null ? valueSetConstraint.getName() : valueSet.getBase_Enumeration().getName();
 			nameText.setText(name!=null ? name : "");
 		}
 		else {
@@ -562,34 +543,26 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 		nameText.addKeyListener(keyListener);
 		nameText.addFocusListener(focusListener);
 
-		versionDateText.removeModifyListener(modifyListener);
-		versionDateText.removeKeyListener(keyListener);
-		versionDateText.removeFocusListener(focusListener);
-		if (stereotype != null) {
-			String name = (String) property.getValue(stereotype, ICTSProfileConstants.VALUE_SET_CONSTRAINT_VERSION);
-			versionDateText.setText(name!=null ? name : "");
+		versionText.removeModifyListener(modifyListener);
+		versionText.removeKeyListener(keyListener);
+		versionText.removeFocusListener(focusListener);
+		if (valueSetConstraint != null) {
+			String version = valueSet==null ? valueSetConstraint.getVersion() : valueSet.getVersion();
+			versionText.setText(version!=null ? version : "");
 		}
 		else {
-			versionDateText.setText("");
+			versionText.setText("");
 		}
-		versionDateText.addModifyListener(modifyListener);
-		versionDateText.addKeyListener(keyListener);
-		versionDateText.addFocusListener(focusListener);
+		versionText.addModifyListener(modifyListener);
+		versionText.addKeyListener(keyListener);
+		versionText.addFocusListener(focusListener);
 
 		bindingCombo.select(0);
-		if (stereotype != null && property.hasValue(
-				stereotype, ICTSProfileConstants.VALUE_SET_CONSTRAINT_BINDING)) {
-			Object value = property.getValue(stereotype, ICTSProfileConstants.VALUE_SET_CONSTRAINT_BINDING);
-			String binding = null;
-			if (value instanceof EnumerationLiteral) {
-				binding = ((EnumerationLiteral)value).getName();
-			}
-			else if (value instanceof Enumerator) {
-				binding = ((Enumerator)value).getName();
-			}
+		if (valueSetConstraint != null) {
+			BindingKind binding = valueSet==null ? valueSetConstraint.getBinding() : valueSet.getBinding();
 			
 			if (bindingKind != null && binding != null) {
-				EnumerationLiteral literal = bindingKind.getOwnedLiteral(binding);
+				EnumerationLiteral literal = bindingKind.getOwnedLiteral(binding.getName());
 				int index = bindingKind.getOwnedLiterals().indexOf(literal);
 				bindingCombo.select(index);
 			}
@@ -599,21 +572,21 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 			valueSetRefLabel.setEnabled(false);
 			idText.setEnabled(false);
 			nameText.setEnabled(false);
-			versionDateText.setEnabled(false);
+			versionText.setEnabled(false);
 			bindingCombo.setEnabled(false);
 		}
-		else if (reference != null) {
+		else if (referenceEnum != null) {
 			valueSetRefLabel.setEnabled(true);
 			idText.setEnabled(false);
 			nameText.setEnabled(false);
-			versionDateText.setEnabled(false);
+			versionText.setEnabled(false);
 			bindingCombo.setEnabled(false);
 		}
 		else {
 			valueSetRefLabel.setEnabled(true);
 			idText.setEnabled(true);
 			nameText.setEnabled(true);
-			versionDateText.setEnabled(true);
+			versionText.setEnabled(true);
 			bindingCombo.setEnabled(true);
 		}
 
