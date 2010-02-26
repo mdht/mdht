@@ -7,11 +7,9 @@
 package org.openhealthtools.mdht.uml.cda.core.cdaprofile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.openhealthtools.mdht.uml.cda.core.cdaprofile.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.core.cdaprofile.NullFlavor;
 import org.openhealthtools.mdht.uml.cda.core.cdaprofile.NullFlavorKind;
@@ -107,13 +105,18 @@ public class NullFlavorImpl extends PropertyValidationImpl implements NullFlavor
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.NULL_FLAVOR__NULL_FLAVOR:
-				setNullFlavor((NullFlavorKind)newValue);
+				if (newValue instanceof EEnumLiteral) {
+					setNullFlavor(NullFlavorKind.getByName(((EEnumLiteral)newValue).getName()));
+				}
+				else {
+					setNullFlavor((NullFlavorKind)newValue);
+				}
 				return;
 		}
 		super.eSet(featureID, newValue);
