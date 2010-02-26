@@ -67,8 +67,12 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 						if (child instanceof Package) {
 							Package umlPackage = (Package)child;
 							Profile cdaProfile = CDAProfileUtil.getCDAProfile(umlPackage.eResource().getResourceSet());
-							umlPackage.applyProfile(cdaProfile);
-							
+							try {
+								umlPackage.applyProfile(cdaProfile);
+							}
+							catch (Exception e) {
+								// occurs if latest version of profile is re-applied
+							}
 						}
 						if (child instanceof Property) {
 							Property property = (Property) child;
@@ -136,7 +140,8 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 		String displayName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
 		Object severity = property.getValue(vocabSpecification, ICDAProfileConstants.VALIDATION_SEVERITY);
 		String message = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VALIDATION_MESSAGE);
-		
+
+		Stereotype propertyValidation = cdaProfile.getOwnedStereotype(ICDAProfileConstants.PROPERTY_VALIDATION);
 		Stereotype codeSystemConstraint = cdaProfile.getOwnedStereotype(ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT);
 		Stereotype valueSetConstraint = cdaProfile.getOwnedStereotype(ICTSProfileConstants.VALUE_SET_CONSTRAINT);
 		if (codeSystemConstraint == null || valueSetConstraint == null) {
@@ -162,7 +167,8 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 			
 			property.unapplyStereotype(vocabSpecification);
 		}
-		else if (property.isStereotypeApplicable(valueSetConstraint)) {
+		else if (property.isStereotypeApplicable(valueSetConstraint)
+				&& (codeSystem != null || codeSystemName != null)) {
 			property.applyStereotype(valueSetConstraint);
 			property.setValue(valueSetConstraint,
 					ICTSProfileConstants.VALUE_SET_CONSTRAINT_ID, codeSystem);
@@ -173,6 +179,16 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 			property.setValue(valueSetConstraint,
 					ICDAProfileConstants.VALIDATION_SEVERITY, severity);
 			property.setValue(valueSetConstraint,
+					ICDAProfileConstants.VALIDATION_MESSAGE, message);
+			
+			property.unapplyStereotype(vocabSpecification);
+		}
+		else if (property.isStereotypeApplicable(propertyValidation)
+				&& !property.isStereotypeApplied(propertyValidation)) {
+			property.applyStereotype(propertyValidation);
+			property.setValue(propertyValidation,
+					ICDAProfileConstants.VALIDATION_SEVERITY, severity);
+			property.setValue(propertyValidation,
 					ICDAProfileConstants.VALIDATION_MESSAGE, message);
 			
 			property.unapplyStereotype(vocabSpecification);
