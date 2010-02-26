@@ -81,7 +81,7 @@ public class GeneralizationExtItemProvider extends GeneralizationItemProvider
 			}
 			// include associations after attributes
 			for (Property property : ((Class)general).getOwnedAttributes()) {
-				if (property.getAssociation() != null
+				if (property.getAssociation() != null && property.getOtherEnd() != null
 						&& property.getOtherEnd().getType() == general) {
 					children.add(property.getAssociation());
 				}
@@ -124,12 +124,15 @@ public class GeneralizationExtItemProvider extends GeneralizationItemProvider
 			return getText(object);
 		case IUMLTableProperties.ANNOTATION_INDEX: {
 			for (Profile profile : generalization.getNearestPackage().getAllAppliedProfiles()) {
-				// use the first notation provider found for an applied profile, ignore others
-				String profileURI = profile.eResource().getURI().toString();
-				INotationProvider provider = 
-					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-				if (provider != null) {
-					return provider.getAnnotation(generalization.getGeneral());
+				// eResource is null for unresolved eProxyURI, missing profiles
+				if (profile.eResource() != null) {
+					// use the first notation provider found for an applied profile, ignore others
+					String profileURI = profile.eResource().getURI().toString();
+					INotationProvider provider = 
+						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+					if (provider != null) {
+						return provider.getAnnotation(generalization.getGeneral());
+					}
 				}
 			}
 		}

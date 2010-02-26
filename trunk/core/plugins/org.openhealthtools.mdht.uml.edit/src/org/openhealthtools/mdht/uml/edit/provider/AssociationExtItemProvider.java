@@ -116,12 +116,15 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 			return getImage(object);
 		case IUMLTableProperties.ANNOTATION_INDEX: {
 			for (Profile profile : association.getNearestPackage().getAllAppliedProfiles()) {
-				// use the first notation provider found for an applied profile, ignore others
-				String profileURI = profile.eResource().getURI().toString();
-				INotationProvider provider = 
-					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-				if (provider != null) {
-					return provider.getAnnotationImage(association);
+				// eResource is null for unresolved eProxyURI, missing profiles
+				if (profile.eResource() != null) {
+					// use the first notation provider found for an applied profile, ignore others
+					String profileURI = profile.eResource().getURI().toString();
+					INotationProvider provider = 
+						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+					if (provider != null) {
+						return provider.getAnnotationImage(association);
+					}
 				}
 			}
 		}
@@ -147,12 +150,15 @@ public class AssociationExtItemProvider extends AssociationItemProvider
 				return association.getVisibility().getName();
 		case IUMLTableProperties.ANNOTATION_INDEX: {
 			for (Profile profile : association.getNearestPackage().getAllAppliedProfiles()) {
-				// use the first notation provider found for an applied profile, ignore others
-				String profileURI = profile.eResource().getURI().toString();
-				INotationProvider provider = 
-					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-				if (provider != null) {
-					return provider.getAnnotation(association);
+				// eResource is null for unresolved eProxyURI, missing profiles
+				if (profile.eResource() != null) {
+					// use the first notation provider found for an applied profile, ignore others
+					String profileURI = profile.eResource().getURI().toString();
+					INotationProvider provider = 
+						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+					if (provider != null) {
+						return provider.getAnnotation(association);
+					}
 				}
 			}
 		}

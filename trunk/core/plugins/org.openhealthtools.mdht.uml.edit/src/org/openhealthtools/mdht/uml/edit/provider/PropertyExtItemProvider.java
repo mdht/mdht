@@ -195,12 +195,15 @@ public class PropertyExtItemProvider extends
 			}
 		case IUMLTableProperties.ANNOTATION_INDEX: {
 			for (Profile profile : property.getNearestPackage().getAllAppliedProfiles()) {
-				// use the first notation provider found for an applied profile, ignore others
-				String profileURI = profile.eResource().getURI().toString();
-				INotationProvider provider = 
-					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-				if (provider != null) {
-					return provider.getAnnotationImage(property);
+				// eResource is null for unresolved eProxyURI, missing profiles
+				if (profile.eResource() != null) {
+					// use the first notation provider found for an applied profile, ignore others
+					String profileURI = profile.eResource().getURI().toString();
+					INotationProvider provider = 
+						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+					if (provider != null) {
+						return provider.getAnnotationImage(property);
+					}
 				}
 			}
 		}
@@ -232,12 +235,15 @@ public class PropertyExtItemProvider extends
 				return property.getVisibility().getName();
 		case IUMLTableProperties.ANNOTATION_INDEX: {
 			for (Profile profile : property.getNearestPackage().getAllAppliedProfiles()) {
-				// use the first notation provider found for an applied profile, ignore others
-				String profileURI = profile.eResource().getURI().toString();
-				INotationProvider provider = 
-					NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-				if (provider != null) {
-					return provider.getAnnotation(property);
+				// eResource is null for unresolved eProxyURI, missing profiles
+				if (profile.eResource() != null) {
+					// use the first notation provider found for an applied profile, ignore others
+					String profileURI = profile.eResource().getURI().toString();
+					INotationProvider provider = 
+						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+					if (provider != null) {
+						return provider.getAnnotation(property);
+					}
 				}
 			}
 			// return default UML standard annotations, if no extensions found
