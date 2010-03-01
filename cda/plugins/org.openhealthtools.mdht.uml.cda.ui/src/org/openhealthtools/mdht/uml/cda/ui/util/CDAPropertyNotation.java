@@ -22,8 +22,10 @@ import org.openhealthtools.mdht.uml.common.notation.PropertyNotationUtil;
 import org.openhealthtools.mdht.uml.common.util.MultiplicityElementUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemVersion;
 import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ConceptDomainConstraint;
 import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
 
 /**
@@ -191,36 +193,58 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 		StringBuffer value = new StringBuffer();
 		CodeSystemConstraint codeSystemConstraint = CTSProfileUtil.getCodeSystemConstraint(property);
 		
+		String id = null;
+		String name = null;
+		String code = null;
+		String version = null;
 		if (codeSystemConstraint != null) {
-			String id = codeSystemConstraint.getIdentifier();
-			String name = codeSystemConstraint.getName();
-			String code = codeSystemConstraint.getCode();
-			String version = codeSystemConstraint.getVersion();
-
-			StringBuffer annotation = getVocabularyString(id, name, version, code);
-			if (annotation != null) {
-				value.append("C:" + annotation);
+			if (codeSystemConstraint.getReference() != null) {
+				CodeSystemVersion codeSystemVersion = codeSystemConstraint.getReference();
+				id = codeSystemVersion.getIdentifier();
+				name = codeSystemVersion.getBase_Enumeration().getName();
+				version = codeSystemVersion.getVersion();
 			}
+			else {
+				id = codeSystemConstraint.getIdentifier();
+				name = codeSystemConstraint.getName();
+				version = codeSystemConstraint.getVersion();
+			}
+
+			code = codeSystemConstraint.getCode();
 		}
-		
+
+		StringBuffer annotation = getVocabularyString(id, name, version, code);
+		if (annotation != null && annotation.length() > 0) {
+			value.append("C:" + annotation);
+		}
 		return value.toString();
 	}
 
 	private static String getValueSetAnnotation(Property property) {
 		StringBuffer value = new StringBuffer();
-		ValueSetConstraint codeSystemConstraint = CTSProfileUtil.getValueSetConstraint(property);
-		
-		if (codeSystemConstraint != null) {
-			String id = codeSystemConstraint.getIdentifier();
-			String name = codeSystemConstraint.getName();
-			String version = codeSystemConstraint.getVersion();
+		ValueSetConstraint valueSetConstraint = CTSProfileUtil.getValueSetConstraint(property);
 
-			StringBuffer annotation = getVocabularyString(id, name, version, null);
-			if (annotation != null) {
-				value.append("V:" + annotation);
+		String id = null;
+		String name = null;
+		String version = null;
+		if (valueSetConstraint != null) {
+			if (valueSetConstraint.getReference() != null) {
+				ValueSetVersion valueSetVersion = valueSetConstraint.getReference();
+				id = valueSetVersion.getIdentifier();
+				name = valueSetVersion.getBase_Enumeration().getName();
+				version = valueSetVersion.getVersion();
+			}
+			else {
+				id = valueSetConstraint.getIdentifier();
+				name = valueSetConstraint.getName();
+				version = valueSetConstraint.getVersion();
 			}
 		}
-		
+
+		StringBuffer annotation = getVocabularyString(id, name, version, null);
+		if (annotation != null && annotation.length() > 0) {
+			value.append("V:" + annotation);
+		}
 		return value.toString();
 	}
 	
