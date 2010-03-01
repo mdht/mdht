@@ -3358,7 +3358,7 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LIyZkErtEd6FXKclYGEDCw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LIookErtEd6FXKclYGEDCw"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_OJ6BMErtEd6FXKclYGEDCw" name="administrativeUnitCode" visibility="private" aggregation="composite">
+      <ownedAttribute xmi:id="_OJ6BMErtEd6FXKclYGEDCw" name="administrationUnitCode" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PGjPoUrtEd6FXKclYGEDCw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PGjPoErtEd6FXKclYGEDCw"/>

@@ -9383,7 +9383,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubstanceAdministration_AdministrativeUnitCode() {
+	public EReference getSubstanceAdministration_AdministrationUnitCode() {
         return (EReference)getSubstanceAdministration().getEStructuralFeatures().get(15);
 	}
 

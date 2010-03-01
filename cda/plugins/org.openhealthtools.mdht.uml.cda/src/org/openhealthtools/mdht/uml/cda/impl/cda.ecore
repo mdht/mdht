@@ -5835,7 +5835,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="administrativeUnitCode"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="administrationUnitCode"
         ordered="false" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CE"
         containment="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">

@@ -50,7 +50,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getDoseQuantity <em>Dose Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getRateQuantity <em>Rate Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getMaxDoseQuantity <em>Max Dose Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAdministrativeUnitCode <em>Administrative Unit Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAdministrationUnitCode <em>Administration Unit Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getSpecimens <em>Specimen</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getConsumable <em>Consumable</em>}</li>
@@ -429,31 +429,31 @@ public interface SubstanceAdministration extends EObject {
 	void setMaxDoseQuantity(RTO_PQ_PQ value);
 
 	/**
-	 * Returns the value of the '<em><b>Administrative Unit Code</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Administration Unit Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Administrative Unit Code</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Administration Unit Code</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Administrative Unit Code</em>' containment reference.
-	 * @see #setAdministrativeUnitCode(CE)
-	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_AdministrativeUnitCode()
+	 * @return the value of the '<em>Administration Unit Code</em>' containment reference.
+	 * @see #setAdministrationUnitCode(CE)
+	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubstanceAdministration_AdministrationUnitCode()
 	 * @model containment="true" ordered="false"
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	CE getAdministrativeUnitCode();
+	CE getAdministrationUnitCode();
 
 	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAdministrativeUnitCode <em>Administrative Unit Code</em>}' containment reference.
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAdministrationUnitCode <em>Administration Unit Code</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Administrative Unit Code</em>' containment reference.
-	 * @see #getAdministrativeUnitCode()
+	 * @param value the new value of the '<em>Administration Unit Code</em>' containment reference.
+	 * @see #getAdministrationUnitCode()
 	 * @generated
 	 */
-	void setAdministrativeUnitCode(CE value);
+	void setAdministrationUnitCode(CE value);
 
 	/**
 	 * Returns the value of the '<em><b>Subject</b></em>' containment reference.
