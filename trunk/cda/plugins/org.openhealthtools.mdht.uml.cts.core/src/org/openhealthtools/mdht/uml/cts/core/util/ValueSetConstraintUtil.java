@@ -11,44 +11,83 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cts.core.util;
 
-import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetConstraint;
 
 public class ValueSetConstraintUtil {
+	
 	public static final String getOCL(Property property) {
 		StringBuffer body = new StringBuffer();
 		boolean needsAnd = false;
+
+		ValueSetConstraint valueSetConstraint = CTSProfileUtil.getValueSetConstraint(property);
+		if (valueSetConstraint == null) {
+			return null;
+		}
 		
-		Stereotype valueSetConstraint = CTSProfileUtil.getAppliedCTSStereotype(property, 
-				ICTSProfileConstants.VALUE_SET_CONSTRAINT);
-		Enumeration reference = (Enumeration) property.getValue(valueSetConstraint, 
-				ICTSProfileConstants.VALUE_SET_CONSTRAINT_REFERENCE);
-		if (reference != null) {
-			// get code system ID from ValueSet stereotype
-			Enumeration valueSet = (Enumeration) property.getValue(
-					valueSetConstraint, ICTSProfileConstants.VALUE_SET_CONSTRAINT_REFERENCE);
-			Stereotype valueSetStereotype = null;
-			if (valueSet != null) {
-				valueSetStereotype = CTSProfileUtil.getAppliedCTSStereotype(
-						valueSet, ICTSProfileConstants.VALUE_SET_VERSION);
-			}
-			if (valueSetStereotype != null) {
-//				
-//				String codeSystemId = (String) valueSet.getValue(valueSetStereotype, 
-//						ICTSProfileConstants.VALUE_SET_CODE_SYSTEM_ID);
-				String codeSystemId = null;
-			
-				if (codeSystemId != null && codeSystemId.length() > 0) {
-					if (needsAnd) {
-						body.append(" and ");
-					}
-					body.append("value.codeSystem = '");
-					body.append(codeSystemId);
-					body.append("'");
-					needsAnd = true;
+		if (valueSetConstraint.getReference() != null 
+				&& valueSetConstraint.getReference().getCodeSystem() != null) {
+			CodeSystemVersion codeSystem = valueSetConstraint.getReference().getCodeSystem();
+			String id = codeSystem.getIdentifier();
+			String name = codeSystem.getBase_Enumeration().getName();
+//			String version = codeSystem.getVersion();
+
+			if (id != null && id.length() > 0) {
+				if (needsAnd) {
+					body.append(" and ");
 				}
+				body.append("value.codeSystem = '");
+				body.append(id);
+				body.append("'");
+				needsAnd = true;
 			}
+			
+			/*
+			 * Only add this constraint if codeSystem is not specified.
+			 */
+			if ((id == null || id.length() == 0)
+					&& name != null && name.length() > 0) {
+				if (needsAnd) {
+					body.append(" and ");
+				}
+				body.append("value.codeSystemName = '");
+				body.append(name);
+				body.append("'");
+				needsAnd = true;
+			}
+			
+//			if (version != null && version.length() > 0) {
+//				if (needsAnd) {
+//					body.append(" and ");
+//				}
+//				body.append("value.codeSystemVersion = '");
+//				body.append(version);
+//				body.append("'");
+//			}
+
+			if (valueSetConstraint.getReference().getBase_Enumeration()
+					.getOwnedLiterals().size() < 20) {
+				if (needsAnd) {
+					body.append(" and (");
+				}
+				boolean firstCode = true;
+				for (EnumerationLiteral literal : valueSetConstraint.getReference()
+						.getBase_Enumeration().getOwnedLiterals()) {
+					if (firstCode) {
+						firstCode = false;
+					}
+					else {
+						body.append(" or ");
+					}
+					body.append("value.code = '");
+					body.append(literal.getName());
+					body.append("'");
+				}
+				body.append(")");
+			}
+			
 		}
 		
 		return body.toString();
