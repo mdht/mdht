@@ -15,19 +15,52 @@ package org.openhealthtools.mdht.uml.cts.core.util;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ConceptDomainConstraint;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetConstraint;
 
 public class CTSProfileUtil {
 
+	public static ConceptDomainConstraint getConceptDomainConstraint(Property property) {
+		ConceptDomainConstraint conceptDomainConstraint = null;
+		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
+				property, ICTSProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+		if (stereotype != null) {
+			conceptDomainConstraint = (ConceptDomainConstraint) property.getStereotypeApplication(stereotype);
+		}
+		return conceptDomainConstraint;
+	}
+	
+	public static CodeSystemConstraint getCodeSystemConstraint(Property property) {
+		CodeSystemConstraint codeSystemConstraint = null;
+		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
+				property, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT);
+		if (stereotype != null) {
+			codeSystemConstraint = (CodeSystemConstraint) property.getStereotypeApplication(stereotype);
+		}
+		return codeSystemConstraint;
+	}
+	
+	public static ValueSetConstraint getValueSetConstraint(Property property) {
+		ValueSetConstraint valueSetConstraint = null;
+		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
+				property, ICTSProfileConstants.VALUE_SET_CONSTRAINT);
+		if (stereotype != null) {
+			valueSetConstraint = (ValueSetConstraint) property.getStereotypeApplication(stereotype);
+		}
+		return valueSetConstraint;
+	}
+	
 	/**
 	 * Load CTS profile into provided resource set and return Profile.
 	 */
@@ -93,36 +126,6 @@ public class CTSProfileUtil {
 		}
 	}
 
-	/**
-	 * Use when stereotype property value refers to another stereotyped element.
-	 * Returns the underlying base element of the property's stereotype application.
-	 */
-	public static Object getStereotypeApplicationValue(Element element, 
-			String stereotypeName, String propertyName) {
-		Object value = null;
-		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(element, stereotypeName);
-		if (stereotype != null) {
-			Object stereoAppl = element.getValue(stereotype, propertyName);
-			if (stereoAppl instanceof EObject) {
-				value = UMLUtil.getBaseElement((EObject)stereoAppl);
-			}
-		}
-		return value;
-	}
-	
-	/**
-	 * Set an element's stereotype property value, when that property is typed by a stereotyped element.
-	 */
-	public static void setStereotypeApplicationValue(Element element,
-			Stereotype stereotype, String propertyName,
-			Element value, String valueStereotypeName) {
-		Stereotype valueStereotype = getAppliedCTSStereotype(value, valueStereotypeName);
-		if (valueStereotype != null) {
-			EObject stereotypeApplication = value.getStereotypeApplication(valueStereotype);
-			element.setValue(stereotype, propertyName, stereotypeApplication);
-		}
-	}
-	
 	/**
 	 * Check all containing packages for applied profile.
 	 */

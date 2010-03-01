@@ -12,19 +12,30 @@
 package org.openhealthtools.mdht.uml.cts.core.util;
 
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemConstraint;
 
 public class CodeSystemConstraintUtil {
+
 	public static final String getOCL(Property property) {
-		Stereotype codeSystemConstraint = CTSProfileUtil.getAppliedCTSStereotype(property, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT);
-		
-		String id = (String) property.getValue(codeSystemConstraint, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_ID);
-		String name = (String) property.getValue(codeSystemConstraint, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_NAME);
-//		String version = (String) property.getValue(codeSystemConstraint, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_VERSION);
-		String code = (String) property.getValue(codeSystemConstraint, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_CODE);
-		
 		StringBuffer body = new StringBuffer();
 		boolean needsAnd = false;
+		
+		CodeSystemConstraint codeSystemConstraint = CTSProfileUtil.getCodeSystemConstraint(property);
+		if (codeSystemConstraint == null) {
+			return null;
+		}
+		
+		String id = codeSystemConstraint.getIdentifier();
+		String name = codeSystemConstraint.getName();
+		String code = codeSystemConstraint.getCode();
+//		String version = codeSystemConstraint.getVersion();
+		
+		if (codeSystemConstraint.getReference() != null) {
+			id = codeSystemConstraint.getReference().getIdentifier();
+			name = codeSystemConstraint.getReference().getBase_Enumeration().getName();
+//			version = codeSystemConstraint.getReference().getVersion();
+		}
+		
 		if (code != null && code.length() > 0) {
 			body.append("value.code = '");
 			body.append(code);
@@ -55,12 +66,12 @@ public class CodeSystemConstraintUtil {
 			needsAnd = true;
 		}
 		
-//		if (codeSystemVersion != null && codeSystemVersion.length() > 0) {
+//		if (version != null && version.length() > 0) {
 //			if (needsAnd) {
 //				body.append(" and ");
 //			}
 //			body.append("value.codeSystemVersion = '");
-//			body.append(codeSystemVersion);
+//			body.append(version);
 //			body.append("'");
 //		}
 		
