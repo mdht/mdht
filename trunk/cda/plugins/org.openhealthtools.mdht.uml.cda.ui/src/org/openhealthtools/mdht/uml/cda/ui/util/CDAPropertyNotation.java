@@ -12,6 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.util;
 
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
@@ -20,6 +21,10 @@ import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.common.notation.PropertyNotationUtil;
 import org.openhealthtools.mdht.uml.common.util.MultiplicityElementUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ConceptDomainConstraint;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
 
 /**
  * Utility class to display HL7 CDA property string.
@@ -110,19 +115,22 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 	private static String getHL7Metadata(Property property, int style) {
 		StringBuffer buffer = new StringBuffer();
 
-		// mandatoryConf
-//		Boolean isMandatory = (Boolean) getPropertyValidationValue(property, ICDAProfileConstants.IS_MANDATORY);
-//		String conformance = getPropertyValidationString(property, ICDAProfileConstants.CONFORMANCE);
-//		if (Boolean.TRUE.equals(isMandatory)) {
-//			buffer.append("M");
-//		}
-//		else if (conformance != null) {
-//			buffer.append(conformance);
-//		}
-
 		// vocabBinding
 		if ((style & IHL7Appearance.DISP_VOCABULARY) != 0) {
-			String vocab = getVocabularySpecification(property);
+			String vocab = null;
+			if (CTSProfileUtil.getConceptDomainConstraint(property) != null) {
+				vocab = getConceptDomainAnnotation(property);
+			}
+			else if (CTSProfileUtil.getCodeSystemConstraint(property) != null) {
+				vocab = getCodeSystemAnnotation(property);
+			}
+			else if (CTSProfileUtil.getValueSetConstraint(property) != null) {
+				vocab = getValueSetAnnotation(property);
+			}
+			else {
+				vocab = getVocabularySpecification(property);
+			}
+			
 			if (vocab != null && vocab.length() > 0) {
 				if (buffer.length() > 0)
 					buffer.append(" ");
@@ -138,77 +146,100 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 		}
 		
 		// nullFlavor
-		Stereotype nullFlavor = CDAProfileUtil.getAppliedCDAStereotype(
+		Stereotype nullFlavorStereotype = CDAProfileUtil.getAppliedCDAStereotype(
 				property, ICDAProfileConstants.NULL_FLAVOR);
-		if (nullFlavor != null) {
-			EnumerationLiteral literal = (EnumerationLiteral) property.getValue(nullFlavor, 
+		if (nullFlavorStereotype != null) {
+			Object value = property.getValue(nullFlavorStereotype, 
 					ICDAProfileConstants.NULL_FLAVOR_NULL_FLAVOR);
-			if (literal != null) {
+
+			String nullFlavor = null;
+			if (value instanceof EnumerationLiteral) {
+				nullFlavor = ((EnumerationLiteral)value).getName();
+			}
+			else if (value instanceof Enumerator) {
+				nullFlavor = ((Enumerator)value).getName();
+			}
+			
+			if (nullFlavor != null) {
 				if (buffer.length() > 0)
 					buffer.append(" ");
-				buffer.append("nullFlavor=" + literal.getName());
+				buffer.append("nullFlavor=" + nullFlavor);
 			}
 		}
 		
 		return buffer.toString();
 	}
 
-//	private static String getPropertyValidationString(Property property, String cdaProperty) {
-//		Object value = getPropertyValidationValue(property, cdaProperty);
-//		if (value instanceof EnumerationLiteral) {
-//			if (!"null".equals(((EnumerationLiteral)value).getName()))
-//				return ((EnumerationLiteral)value).getName();
-//			else
-//				return "";
-//		}
-//		else {
-//			return (value!=null) ? value.toString() : "";
-//		}
-//	}
-//	
-//	private static Object getPropertyValidationValue(Property property, String cdaProperty) {
-//		Object value = null;
-//		Stereotype propertyValidation = CDAProfileUtil.getAppliedCDAStereotype(
-//				property, ICDAProfileConstants.PROPERTY_VALIDATION);
-//		if (propertyValidation != null) {
-//			try {
-//				value = property.getValue(propertyValidation, cdaProperty);
-//			}
-//			catch (IllegalArgumentException ex) {
-//				// ignore invalid property names
-//			}
-//		}
-//		
-//		return value;
-//	}
+	private static String getConceptDomainAnnotation(Property property) {
+		StringBuffer value = new StringBuffer();
+		ConceptDomainConstraint conceptDomainConstraint = CTSProfileUtil.getConceptDomainConstraint(property);
+		
+		if (conceptDomainConstraint != null) {
+			String id = conceptDomainConstraint.getIdentifier();
+			String name = conceptDomainConstraint.getName();
+
+			StringBuffer annotation = getVocabularyString(id, name, null, null);
+			if (annotation != null) {
+				value.append("CD:" + annotation);
+			}
+		}
+		
+		return value.toString();
+	}
+
+	private static String getCodeSystemAnnotation(Property property) {
+		StringBuffer value = new StringBuffer();
+		CodeSystemConstraint codeSystemConstraint = CTSProfileUtil.getCodeSystemConstraint(property);
+		
+		if (codeSystemConstraint != null) {
+			String id = codeSystemConstraint.getIdentifier();
+			String name = codeSystemConstraint.getName();
+			String code = codeSystemConstraint.getCode();
+			String version = codeSystemConstraint.getVersion();
+
+			StringBuffer annotation = getVocabularyString(id, name, version, code);
+			if (annotation != null) {
+				value.append("C:" + annotation);
+			}
+		}
+		
+		return value.toString();
+	}
+
+	private static String getValueSetAnnotation(Property property) {
+		StringBuffer value = new StringBuffer();
+		ValueSetConstraint codeSystemConstraint = CTSProfileUtil.getValueSetConstraint(property);
+		
+		if (codeSystemConstraint != null) {
+			String id = codeSystemConstraint.getIdentifier();
+			String name = codeSystemConstraint.getName();
+			String version = codeSystemConstraint.getVersion();
+
+			StringBuffer annotation = getVocabularyString(id, name, version, null);
+			if (annotation != null) {
+				value.append("V:" + annotation);
+			}
+		}
+		
+		return value.toString();
+	}
 	
+	/**
+	 * @deprecated
+	 */
 	private static String getVocabularySpecification(Property property) {
 		StringBuffer value = new StringBuffer();
 		Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
 				property, ICDAProfileConstants.VOCAB_SPECIFICATION);
 		
 		try {
-			// Code System
 			if (vocabSpecification != null) {
-				String codeSystem = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
-				String codeSystemName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
+				String id = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
+				String name = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
 				String code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
-				Object version = property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
+				String version = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
 
-				if (codeSystemName != null) {
-					value.append(codeSystemName);
-				}
-				else if (codeSystem != null) {
-					value.append(codeSystem);
-				}
-				
-				if (code != null) {
-					value.append("#" + code);
-				}
-				if (version != null) {
-					value.append("#" + version);
-				}
-
+				value.append(getVocabularyString(id, name, version, code));
 			}
 		}
 		catch (IllegalArgumentException ex) {
@@ -216,6 +247,25 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 		}
 		
 		return value.toString();
+	}
+	
+	private static StringBuffer getVocabularyString(String id, String name, String version, String code) {
+		StringBuffer value = new StringBuffer();
+		if (name != null) {
+			value.append(name);
+		}
+		else if (id != null) {
+			value.append(id);
+		}
+		
+		if (code != null) {
+			value.append("#" + code);
+		}
+		if (version != null) {
+			value.append("#" + version);
+		}
+		
+		return value;
 	}
 
 }
