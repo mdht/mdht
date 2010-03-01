@@ -62,6 +62,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
+import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
 import org.openhealthtools.mdht.uml.cts.core.ctsprofile.BindingKind;
 import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetVersion;
@@ -225,19 +226,33 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 	}
 
 	private void addValueSetReference() {
-		final Enumeration valueSetEnum = (Enumeration) DialogLaunchUtil.chooseElement(
-				new java.lang.Class[] {Enumeration.class},
-				property.eResource().getResourceSet(), 
-				getPart().getSite().getShell());
+		Profile ctsProfile = CTSProfileUtil.getCTSProfile(property.eResource().getResourceSet());
+		if (ctsProfile == null) {
+			return;
+		}
+		final Stereotype valueSetVersionStereotype = (Stereotype)
+			ctsProfile.getOwnedType(ICTSProfileConstants.VALUE_SET_VERSION);
+		IElementFilter filter = new IElementFilter() {
+			public boolean accept(Element element) {
+				return (element instanceof Enumeration)
+					&& element.isStereotypeApplied(valueSetVersionStereotype);
+			}
+		};
 		
+		final Enumeration valueSetEnum = (Enumeration) DialogLaunchUtil.chooseElement(
+				filter,
+				property.eResource().getResourceSet(), 
+				getPart().getSite().getShell(), null,
+				"Select a Value Set");
 		if (valueSetEnum == null) {
 			return;
 		}
+
 		final Stereotype valueSetStereotype = CTSProfileUtil.getAppliedCTSStereotype(
 				valueSetEnum, ICTSProfileConstants.VALUE_SET_VERSION);
 		if (valueSetStereotype == null) {
 			MessageDialog.openError(getPart().getSite().getShell(), 
-					"Invalid Enumeration", "The selected Enumertion must be a <<ValueSet>>");
+					"Invalid Enumeration", "The selected Enumertion must be a <<ValueSetVersion>>");
 			return;
 		}
 		final ValueSetVersion valueSet = (ValueSetVersion) valueSetEnum.getStereotypeApplication(valueSetStereotype);
@@ -287,7 +302,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 			    	ValueSetConstraint valueSetConstraint = CTSProfileUtil.getValueSetConstraint(property);
-					if (valueSetConstraint == null) {
+					if (valueSetConstraint == null || valueSetConstraint.getReference() == null) {
 						return Status.CANCEL_STATUS;
 					}
 					
