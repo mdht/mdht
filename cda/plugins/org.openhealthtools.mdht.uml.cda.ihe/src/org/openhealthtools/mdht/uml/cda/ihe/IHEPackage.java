@@ -1785,13 +1785,13 @@ public interface IHEPackage extends EPackage {
 	int MEDICATION__MAX_DOSE_QUANTITY = CCDPackage.MEDICATION_ACTIVITY__MAX_DOSE_QUANTITY;
 
 	/**
-	 * The feature id for the '<em><b>Administrative Unit Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICATION__ADMINISTRATIVE_UNIT_CODE = CCDPackage.MEDICATION_ACTIVITY__ADMINISTRATIVE_UNIT_CODE;
+	int MEDICATION__ADMINISTRATION_UNIT_CODE = CCDPackage.MEDICATION_ACTIVITY__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -2953,13 +2953,13 @@ public interface IHEPackage extends EPackage {
 	int NORMAL_DOSING__MAX_DOSE_QUANTITY = MEDICATION__MAX_DOSE_QUANTITY;
 
 	/**
-	 * The feature id for the '<em><b>Administrative Unit Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__ADMINISTRATIVE_UNIT_CODE = MEDICATION__ADMINISTRATIVE_UNIT_CODE;
+	int NORMAL_DOSING__ADMINISTRATION_UNIT_CODE = MEDICATION__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -3242,13 +3242,13 @@ public interface IHEPackage extends EPackage {
 	int TAPERED_DOSE__MAX_DOSE_QUANTITY = MEDICATION__MAX_DOSE_QUANTITY;
 
 	/**
-	 * The feature id for the '<em><b>Administrative Unit Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAPERED_DOSE__ADMINISTRATIVE_UNIT_CODE = MEDICATION__ADMINISTRATIVE_UNIT_CODE;
+	int TAPERED_DOSE__ADMINISTRATION_UNIT_CODE = MEDICATION__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -3531,13 +3531,13 @@ public interface IHEPackage extends EPackage {
 	int SPLIT_DOSING__MAX_DOSE_QUANTITY = MEDICATION__MAX_DOSE_QUANTITY;
 
 	/**
-	 * The feature id for the '<em><b>Administrative Unit Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__ADMINISTRATIVE_UNIT_CODE = MEDICATION__ADMINISTRATIVE_UNIT_CODE;
+	int SPLIT_DOSING__ADMINISTRATION_UNIT_CODE = MEDICATION__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -3820,13 +3820,13 @@ public interface IHEPackage extends EPackage {
 	int CONDITIONAL_DOSING__MAX_DOSE_QUANTITY = MEDICATION__MAX_DOSE_QUANTITY;
 
 	/**
-	 * The feature id for the '<em><b>Administrative Unit Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__ADMINISTRATIVE_UNIT_CODE = MEDICATION__ADMINISTRATIVE_UNIT_CODE;
+	int CONDITIONAL_DOSING__ADMINISTRATION_UNIT_CODE = MEDICATION__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -4109,13 +4109,13 @@ public interface IHEPackage extends EPackage {
 	int COMBINATION_MEDICATION__MAX_DOSE_QUANTITY = MEDICATION__MAX_DOSE_QUANTITY;
 
 	/**
-	 * The feature id for the '<em><b>Administrative Unit Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMBINATION_MEDICATION__ADMINISTRATIVE_UNIT_CODE = MEDICATION__ADMINISTRATIVE_UNIT_CODE;
+	int COMBINATION_MEDICATION__ADMINISTRATION_UNIT_CODE = MEDICATION__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
