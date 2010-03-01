@@ -82,7 +82,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getDoseQuantity <em>Dose Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getRateQuantity <em>Rate Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getMaxDoseQuantity <em>Max Dose Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getAdministrativeUnitCode <em>Administrative Unit Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getAdministrationUnitCode <em>Administration Unit Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getSpecimens <em>Specimen</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl#getConsumable <em>Consumable</em>}</li>
@@ -254,14 +254,14 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	protected RTO_PQ_PQ maxDoseQuantity;
 
 	/**
-	 * The cached value of the '{@link #getAdministrativeUnitCode() <em>Administrative Unit Code</em>}' containment reference.
+	 * The cached value of the '{@link #getAdministrationUnitCode() <em>Administration Unit Code</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAdministrativeUnitCode()
+	 * @see #getAdministrationUnitCode()
 	 * @generated
 	 * @ordered
 	 */
-	protected CE administrativeUnitCode;
+	protected CE administrationUnitCode;
 
 	/**
 	 * The cached value of the '{@link #getSubject() <em>Subject</em>}' containment reference.
@@ -984,8 +984,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CE getAdministrativeUnitCode() {
-		return administrativeUnitCode;
+	public CE getAdministrationUnitCode() {
+		return administrationUnitCode;
 	}
 
 	/**
@@ -993,11 +993,11 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAdministrativeUnitCode(CE newAdministrativeUnitCode, NotificationChain msgs) {
-		CE oldAdministrativeUnitCode = administrativeUnitCode;
-		administrativeUnitCode = newAdministrativeUnitCode;
+	public NotificationChain basicSetAdministrationUnitCode(CE newAdministrationUnitCode, NotificationChain msgs) {
+		CE oldAdministrationUnitCode = administrationUnitCode;
+		administrationUnitCode = newAdministrationUnitCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATIVE_UNIT_CODE, oldAdministrativeUnitCode, newAdministrativeUnitCode);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE, oldAdministrationUnitCode, newAdministrationUnitCode);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -1008,18 +1008,18 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAdministrativeUnitCode(CE newAdministrativeUnitCode) {
-		if (newAdministrativeUnitCode != administrativeUnitCode) {
+	public void setAdministrationUnitCode(CE newAdministrationUnitCode) {
+		if (newAdministrationUnitCode != administrationUnitCode) {
 			NotificationChain msgs = null;
-			if (administrativeUnitCode != null)
-				msgs = ((InternalEObject)administrativeUnitCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATIVE_UNIT_CODE, null, msgs);
-			if (newAdministrativeUnitCode != null)
-				msgs = ((InternalEObject)newAdministrativeUnitCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATIVE_UNIT_CODE, null, msgs);
-			msgs = basicSetAdministrativeUnitCode(newAdministrativeUnitCode, msgs);
+			if (administrationUnitCode != null)
+				msgs = ((InternalEObject)administrationUnitCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE, null, msgs);
+			if (newAdministrationUnitCode != null)
+				msgs = ((InternalEObject)newAdministrationUnitCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE, null, msgs);
+			msgs = basicSetAdministrationUnitCode(newAdministrationUnitCode, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATIVE_UNIT_CODE, newAdministrativeUnitCode, newAdministrativeUnitCode));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE, newAdministrationUnitCode, newAdministrationUnitCode));
 	}
 
 	/**
@@ -1680,8 +1680,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 				return basicSetRateQuantity(null, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY:
 				return basicSetMaxDoseQuantity(null, msgs);
-			case CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATIVE_UNIT_CODE:
-				return basicSetAdministrativeUnitCode(null, msgs);
+			case CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE:
+				return basicSetAdministrationUnitCode(null, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN:
@@ -1744,8 +1744,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 				return getRateQuantity();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY:
 				return getMaxDoseQuantity();
-			case CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATIVE_UNIT_CODE:
-				return getAdministrativeUnitCode();
+			case CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE:
+				return getAdministrationUnitCode();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT:
 				return getSubject();
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN:
@@ -1837,8 +1837,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY:
 				setMaxDoseQuantity((RTO_PQ_PQ)newValue);
 				return;
-			case CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATIVE_UNIT_CODE:
-				setAdministrativeUnitCode((CE)newValue);
+			case CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE:
+				setAdministrationUnitCode((CE)newValue);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT:
 				setSubject((Subject)newValue);
@@ -1947,8 +1947,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY:
 				setMaxDoseQuantity((RTO_PQ_PQ)null);
 				return;
-			case CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATIVE_UNIT_CODE:
-				setAdministrativeUnitCode((CE)null);
+			case CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE:
+				setAdministrationUnitCode((CE)null);
 				return;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT:
 				setSubject((Subject)null);
@@ -2034,8 +2034,8 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 				return rateQuantity != null;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY:
 				return maxDoseQuantity != null;
-			case CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATIVE_UNIT_CODE:
-				return administrativeUnitCode != null;
+			case CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE:
+				return administrationUnitCode != null;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT:
 				return subject != null;
 			case CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN:

@@ -2330,7 +2330,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SubstanceAdministration/maxDoseQuantity"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SubstanceAdministration/administrativeUnitCode"/>
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SubstanceAdministration/administrationUnitCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SubstanceAdministration/subject"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

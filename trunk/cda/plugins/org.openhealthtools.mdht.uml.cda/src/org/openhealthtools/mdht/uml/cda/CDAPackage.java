@@ -9311,13 +9311,13 @@ public interface CDAPackage extends EPackage {
 	int SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY = 14;
 
 	/**
-	 * The feature id for the '<em><b>Administrative Unit Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSTANCE_ADMINISTRATION__ADMINISTRATIVE_UNIT_CODE = 15;
+	int SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -20451,15 +20451,15 @@ public interface CDAPackage extends EPackage {
 	EReference getSubstanceAdministration_MaxDoseQuantity();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAdministrativeUnitCode <em>Administrative Unit Code</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAdministrationUnitCode <em>Administration Unit Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Administrative Unit Code</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAdministrativeUnitCode()
+	 * @return the meta object for the containment reference '<em>Administration Unit Code</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getAdministrationUnitCode()
 	 * @see #getSubstanceAdministration()
 	 * @generated
 	 */
-	EReference getSubstanceAdministration_AdministrativeUnitCode();
+	EReference getSubstanceAdministration_AdministrationUnitCode();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.SubstanceAdministration#getSubject <em>Subject</em>}'.
