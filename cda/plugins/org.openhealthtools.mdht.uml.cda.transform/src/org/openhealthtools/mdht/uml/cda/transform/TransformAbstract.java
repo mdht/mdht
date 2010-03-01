@@ -13,6 +13,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
@@ -70,8 +71,16 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	public String getValidationSeverity(Element element) {
 		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
 		if (validationSupport != null) {
-			EnumerationLiteral literal = (EnumerationLiteral) element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
-			return (literal != null) ? literal.getName() : SEVERITY_ERROR;
+			Object value = element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
+			String severity = null;
+			if (value instanceof EnumerationLiteral) {
+				severity = ((EnumerationLiteral)value).getName();
+			}
+			else if (value instanceof Enumerator) {
+				severity = ((Enumerator)value).getName();
+			}
+			
+			return (severity != null) ? severity : SEVERITY_ERROR;
 		}
 		
 		return null;
@@ -84,8 +93,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.VALIDATION);
 		if (validationSupport != null) {
 			message = (String) property.getValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE);
-			EnumerationLiteral literal = (EnumerationLiteral) property.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
-			severity = (literal != null) ? literal.getName() : SEVERITY_ERROR;
+			severity = getValidationSeverity(property);
 		}
 
 		Class constrainedClass = property.getClass_();

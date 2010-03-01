@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.cda.transform;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Enumeration;
@@ -169,18 +170,24 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		String constraintName = null;
 		Stereotype nullFlavor = CDAProfileUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.NULL_FLAVOR);
 		if (nullFlavor != null) {
-			EnumerationLiteral literal = 
-				(EnumerationLiteral) property.getValue(nullFlavor, ICDAProfileConstants.NULL_FLAVOR_NULL_FLAVOR);
-			if (literal != null) {
+			Object value = property.getValue(nullFlavor, ICDAProfileConstants.NULL_FLAVOR_NULL_FLAVOR);
+			String nullFlavorValue = null;
+			if (value instanceof EnumerationLiteral) {
+				nullFlavorValue = ((EnumerationLiteral)value).getName();
+			}
+			else if (value instanceof Enumerator) {
+				nullFlavorValue = ((Enumerator)value).getName();
+			}
+			if (nullFlavorValue != null) {
 				Class class_ = property.getClass_();
 				if (class_ != null) {
 					if (body.length() > 0) {
 						body.append(" and ");
 					}
-					body.append("self." + property.getName() + ".nullFlavor = vocab::NullFlavor::" + literal.getName());
+					body.append("self." + property.getName() + ".nullFlavor = vocab::NullFlavor::" + nullFlavorValue);
 					
 					AnnotationsUtil annotationUtil = new AnnotationsUtil(class_);
-					annotationUtil.setAnnotation(property.getName() + ".nullFlavor", literal.getName());
+					annotationUtil.setAnnotation(property.getName() + ".nullFlavor", nullFlavorValue);
 					annotationUtil.saveAnnotations();
 					
 //					constraintName = class_.getName() + "_" + property.getName() + "_nullFlavor";

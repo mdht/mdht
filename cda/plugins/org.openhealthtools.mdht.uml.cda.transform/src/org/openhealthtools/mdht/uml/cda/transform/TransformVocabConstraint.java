@@ -22,6 +22,12 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
+import org.openhealthtools.mdht.uml.cts.core.util.CodeSystemConstraintUtil;
+import org.openhealthtools.mdht.uml.cts.core.util.ValueSetConstraintUtil;
 
 public class TransformVocabConstraint extends TransformAbstract {
 	public TransformVocabConstraint(EcoreTransformerOptions options) {
@@ -37,20 +43,51 @@ public class TransformVocabConstraint extends TransformAbstract {
 		if (property.getClass_() == null) {
 			return null;
 		}
-		
+
+		CodeSystemConstraint codeSystemConstraint = CTSProfileUtil.getCodeSystemConstraint(property);
+		ValueSetConstraint valueSetConstraint = CTSProfileUtil.getValueSetConstraint(property);
 		Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
 				property, ICDAProfileConstants.VOCAB_SPECIFICATION);
-		
-		if (vocabSpecification != null) {
-			String codeSystem = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
-			String codeSystemName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
-			String codeSystemVersion = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
-			String code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
-			String displayName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
-			
-			addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
-			addConstraint(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
 
+		String codeSystem = null;
+		String codeSystemName = null;
+		String codeSystemVersion = null;
+		String code = null;
+		String displayName = null;
+
+		if (codeSystemConstraint != null) {
+			codeSystem= codeSystemConstraint.getIdentifier();
+			codeSystemName= codeSystemConstraint.getName();
+			codeSystemVersion= codeSystemConstraint.getVersion();
+			code= codeSystemConstraint.getCode();
+			displayName= codeSystemConstraint.getDisplayName();
+
+			addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
+			addConstraint(property);
+			removeModelElement(property);
+		}
+		else if (valueSetConstraint != null) {
+			if (valueSetConstraint.getReference() != null 
+					&& valueSetConstraint.getReference().getCodeSystem() != null) {
+				CodeSystemVersion codeSystemDef = valueSetConstraint.getReference().getCodeSystem();
+				codeSystem = codeSystemDef.getIdentifier();
+				codeSystemName = codeSystemDef.getBase_Enumeration().getName();
+				codeSystemVersion = codeSystemDef.getVersion();
+			}
+
+			addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
+			addConstraint(property);
+			removeModelElement(property);
+		}
+		else if (vocabSpecification != null) {
+			codeSystem = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
+			codeSystemName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
+			codeSystemVersion = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
+			code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
+			displayName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
+
+			addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
+			addConstraint(property);
 			removeModelElement(property);
 		}
 		
@@ -85,13 +122,31 @@ public class TransformVocabConstraint extends TransformAbstract {
 		annotationsUtil.saveAnnotations();
 	}
 
-	private void addConstraint(Property property, String codeSystem, String codeSystemName,
-			String code, String displayName, String codeSystemVersion) {
+	private void addConstraint(Property property) {
+		String ocl = null;
+//		if (conceptDomainConstraint != null) {
+//			ocl = ConceptDomainConstraintUtil.getOCL(property);
+//		}
+//		else 
+		if (CTSProfileUtil.getCodeSystemConstraint(property) != null) {
+			ocl = CodeSystemConstraintUtil.getOCL(property);
+		}
+		else if (CTSProfileUtil.getValueSetConstraint(property) != null) {
+			ocl = ValueSetConstraintUtil.getOCL(property);
+		}
+		else {
+			Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
+					property, ICDAProfileConstants.VOCAB_SPECIFICATION);
+			if (vocabSpecification != null) {
+				ocl = getVocabSpecificationOCL(property, vocabSpecification);
+			}
+		}
 		
-		if (codeSystem == null && codeSystemName == null && code == null) {
+		if (ocl == null || ocl.length() == 0) {
+			// no vocabulary specified
 			return;
 		}
-
+		
 		StringBuffer body = getValueExpression(property);
 		if (body == null) {
 			return;
@@ -102,45 +157,7 @@ public class TransformVocabConstraint extends TransformAbstract {
 			body.append("not value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined()");
 		}
 		else {
-			boolean needsAnd = false;
-			if (code != null && code.length() > 0) {
-				body.append("value.code = '");
-				body.append(code);
-				body.append("'");
-				needsAnd = true;
-			}
-			if (codeSystem != null && codeSystem.length() > 0) {
-				if (needsAnd) {
-					body.append(" and ");
-				}
-				body.append("value.codeSystem = '");
-				body.append(codeSystem);
-				body.append("'");
-				needsAnd = true;
-			}
-			
-			/*
-			 * Only add this constraint if codeSystem is not specified.
-			 */
-			if ((codeSystem == null || codeSystem.length() == 0)
-					&& codeSystemName != null && codeSystemName.length() > 0) {
-				if (needsAnd) {
-					body.append(" and ");
-				}
-				body.append("value.codeSystemName = '");
-				body.append(codeSystemName);
-				body.append("'");
-				needsAnd = true;
-			}
-			
-//			if (codeSystemVersion != null && codeSystemVersion.length() > 0) {
-//				if (needsAnd) {
-//					body.append(" and ");
-//				}
-//				body.append("value.codeSystemVersion = '");
-//				body.append(codeSystemVersion);
-//				body.append("'");
-//			}
+			body.append(ocl);
 		}
 
 		if (body.length() > 0) {
@@ -217,6 +234,60 @@ public class TransformVocabConstraint extends TransformAbstract {
 		}
 		
 		return body;
+	}
+	
+	/**
+	 * @deprecated
+	 */
+	private String getVocabSpecificationOCL(Property property, Stereotype vocabSpecification) {
+		String codeSystem = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
+		String codeSystemName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
+//		String codeSystemVersion = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
+		String code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
+//		String displayName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
+
+		StringBuffer body = new StringBuffer();
+		boolean needsAnd = false;
+		if (code != null && code.length() > 0) {
+			body.append("value.code = '");
+			body.append(code);
+			body.append("'");
+			needsAnd = true;
+		}
+		if (codeSystem != null && codeSystem.length() > 0) {
+			if (needsAnd) {
+				body.append(" and ");
+			}
+			body.append("value.codeSystem = '");
+			body.append(codeSystem);
+			body.append("'");
+			needsAnd = true;
+		}
+		
+		/*
+		 * Only add this constraint if codeSystem is not specified.
+		 */
+		if ((codeSystem == null || codeSystem.length() == 0)
+				&& codeSystemName != null && codeSystemName.length() > 0) {
+			if (needsAnd) {
+				body.append(" and ");
+			}
+			body.append("value.codeSystemName = '");
+			body.append(codeSystemName);
+			body.append("'");
+			needsAnd = true;
+		}
+		
+//		if (codeSystemVersion != null && codeSystemVersion.length() > 0) {
+//			if (needsAnd) {
+//				body.append(" and ");
+//			}
+//			body.append("value.codeSystemVersion = '");
+//			body.append(codeSystemVersion);
+//			body.append("'");
+//		}
+		
+		return body.toString();
 	}
 
 	private boolean isCDType(Property property) {

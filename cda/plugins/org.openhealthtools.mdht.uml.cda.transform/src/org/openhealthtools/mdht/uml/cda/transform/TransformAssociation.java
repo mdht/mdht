@@ -12,6 +12,7 @@
  */
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
@@ -117,10 +118,18 @@ public class TransformAssociation extends TransformAbstract {
 			String stereotypeName = CDAModelUtil.isSection(sourceClass) ? ICDAProfileConstants.ENTRY : ICDAProfileConstants.ENTRY_RELATIONSHIP;
 			stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, stereotypeName);
 			if (stereotype != null) {
-				EnumerationLiteral literal = (EnumerationLiteral) association.getValue(stereotype, "typeCode");
-				if (literal != null) {
+				Object value = association.getValue(stereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
+				String typeCode = null;
+				if (value instanceof EnumerationLiteral) {
+					typeCode = ((EnumerationLiteral)value).getName();
+				}
+				else if (value instanceof Enumerator) {
+					typeCode = ((Enumerator)value).getName();
+				}
+				
+				if (typeCode != null) {
 					String enumerationQName = CDAModelUtil.isSection(sourceClass) ? "vocab::x_ActRelationshipEntry" : "vocab::x_ActRelationshipEntryRelationship";
-					body.append(" and " + associationEnd + ".typeCode = " + enumerationQName + "::" + literal.getName());
+					body.append(" and " + associationEnd + ".typeCode = " + enumerationQName + "::" + typeCode);
 				}
 			}
 
@@ -143,14 +152,17 @@ public class TransformAssociation extends TransformAbstract {
 		expression.getLanguages().add("OCL");
 		expression.getBodies().add(body.toString());
 
-//		Stereotype validationSupport = EcoreTransformUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.VALIDATION_SUPPORT);
 		Stereotype validationSupport = stereotype != null ? stereotype : CDAProfileUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ASSOCIATION_VALIDATION);
 		if (validationSupport != null) {
-//			String message = (String) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE);
+			Object value = association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
+			String severity = "ERROR";
+			if (value instanceof EnumerationLiteral) {
+				severity = ((EnumerationLiteral)value).getName();
+			}
+			else if (value instanceof Enumerator) {
+				severity = ((Enumerator)value).getName();
+			}
 			String message = (String) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE);
-//			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_SEVERITY);
-			EnumerationLiteral literal = (EnumerationLiteral) association.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
-			String severity = (literal != null) ? literal.getName() : "ERROR";
 			
 			if ("INFO".equals(severity)) {
 				addValidationInfo(sourceClass, constraintName, message);

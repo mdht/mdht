@@ -17,7 +17,6 @@ import java.util.List;
 
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
-import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.ValueSpecification;
@@ -75,8 +74,7 @@ public class TransformConstraint extends TransformAbstract {
 		Stereotype validation = CDAProfileUtil.getAppliedCDAStereotype(constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
 		if (validation != null) {
 			message = (String) constraint.getValue(validation, ICDAProfileConstants.VALIDATION_MESSAGE);
-			EnumerationLiteral literal = (EnumerationLiteral) constraint.getValue(validation, ICDAProfileConstants.VALIDATION_SEVERITY);
-			severity = (literal != null) ? literal.getName() : SEVERITY_ERROR;
+			severity = getValidationSeverity(constraint);
 			CDAProfileUtil.unapplyCDAStereotype(constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
 		}
 		
