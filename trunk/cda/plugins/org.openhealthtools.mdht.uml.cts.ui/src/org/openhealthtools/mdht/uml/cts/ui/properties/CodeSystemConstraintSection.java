@@ -64,6 +64,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
+import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
 import org.openhealthtools.mdht.uml.cts.core.ctsprofile.BindingKind;
 import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemVersion;
@@ -256,10 +257,24 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 	}
 
 	private void addCodeSystemReference() {
+		Profile ctsProfile = CTSProfileUtil.getCTSProfile(property.eResource().getResourceSet());
+		if (ctsProfile == null) {
+			return;
+		}
+		final Stereotype codeSystemVersionStereotype = (Stereotype)
+			ctsProfile.getOwnedType(ICTSProfileConstants.CODE_SYSTEM_VERSION);
+		IElementFilter filter = new IElementFilter() {
+			public boolean accept(Element element) {
+				return (element instanceof Enumeration)
+					&& element.isStereotypeApplied(codeSystemVersionStereotype);
+			}
+		};
+		
 		final Enumeration codeSystemEnum = (Enumeration) DialogLaunchUtil.chooseElement(
-				new java.lang.Class[] {Enumeration.class},
+				filter,
 				property.eResource().getResourceSet(), 
-				getPart().getSite().getShell());
+				getPart().getSite().getShell(), null,
+				"Select a Code System");
 		
 		if (codeSystemEnum == null) {
 			return;
@@ -268,7 +283,7 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 				codeSystemEnum, ICTSProfileConstants.CODE_SYSTEM_VERSION);
 		if (codeSystemStereotype == null) {
 			MessageDialog.openError(getPart().getSite().getShell(), 
-					"Invalid Enumeration", "The selected Enumertion must be a <<CodeSystem>>");
+					"Invalid Enumeration", "The selected Enumertion must be a <<CodeSystemVersion>>");
 			return;
 		}
 		final CodeSystemVersion codeSystem = (CodeSystemVersion) codeSystemEnum.getStereotypeApplication(codeSystemStereotype);
@@ -317,7 +332,7 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 			    	CodeSystemConstraint codeSystemConstraint = CTSProfileUtil.getCodeSystemConstraint(property);
-					if (codeSystemConstraint == null) {
+					if (codeSystemConstraint == null || codeSystemConstraint.getReference() == null) {
 						return Status.CANCEL_STATUS;
 					}
 					
