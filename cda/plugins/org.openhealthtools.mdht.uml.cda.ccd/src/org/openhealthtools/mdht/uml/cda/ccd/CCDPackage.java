@@ -4861,13 +4861,13 @@ public interface CCDPackage extends EPackage {
 	int MEDICATION_ACTIVITY__MAX_DOSE_QUANTITY = CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY;
 
 	/**
-	 * The feature id for the '<em><b>Administrative Unit Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICATION_ACTIVITY__ADMINISTRATIVE_UNIT_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATIVE_UNIT_CODE;
+	int MEDICATION_ACTIVITY__ADMINISTRATION_UNIT_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
