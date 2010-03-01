@@ -432,13 +432,13 @@ public interface HITSPPackage extends EPackage {
 	int MEDICATION__MAX_DOSE_QUANTITY = IHEPackage.MEDICATION__MAX_DOSE_QUANTITY;
 
 	/**
-	 * The feature id for the '<em><b>Administrative Unit Code</b></em>' containment reference.
+	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEDICATION__ADMINISTRATIVE_UNIT_CODE = IHEPackage.MEDICATION__ADMINISTRATIVE_UNIT_CODE;
+	int MEDICATION__ADMINISTRATION_UNIT_CODE = IHEPackage.MEDICATION__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
