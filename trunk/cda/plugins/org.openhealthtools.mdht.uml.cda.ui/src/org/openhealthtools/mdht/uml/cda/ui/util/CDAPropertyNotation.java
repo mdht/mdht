@@ -285,9 +285,9 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 		if (code != null) {
 			value.append("#" + code);
 		}
-		if (version != null) {
-			value.append("#" + version);
-		}
+//		if (version != null) {
+//			value.append("#" + version);
+//		}
 		
 		return value;
 	}
