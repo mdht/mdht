@@ -45,6 +45,12 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
        <propertySections contributorId="com.ibm.xtools.modeler.ui.properties">
           <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cts.ui.properties.ValueSetVersionSection" 
+	 	     id="property.section.ValueSetVersionSection"
+             filter="org.openhealthtools.mdht.uml.cts.ui.filters.ValueSetVersionFilter">
+	      </propertySection>
+	      
+          <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ValidationSection" 
 	 	     id="property.section.cda.ValidationSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.ValidationFilter"/>
@@ -52,17 +58,17 @@
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cts.ui.properties.ValueSetConstraintSection" 
 	 	     id="property.section.ValueSetConstraintSection"
-             filter="org.openhealthtools.mdht.uml.cts.ui.filters.ValueSetFilter">
+             filter="org.openhealthtools.mdht.uml.cts.ui.filters.ValueSetConstraintFilter">
 	      </propertySection>
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cts.ui.properties.CodeSystemConstraintSection" 
 	 	     id="property.section.CodeSystemConstraintSection"
-             filter="org.openhealthtools.mdht.uml.cts.ui.filters.CodeSystemFilter">
+             filter="org.openhealthtools.mdht.uml.cts.ui.filters.CodeSystemConstraintFilter">
 	      </propertySection>
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cts.ui.properties.ConceptDomainConstraintSection" 
 	 	     id="property.section.ConceptDomainConstraintSection"
-             filter="org.openhealthtools.mdht.uml.cts.ui.filters.ConceptDomainFilter">
+             filter="org.openhealthtools.mdht.uml.cts.ui.filters.ConceptDomainConstraintFilter">
 	      </propertySection>
 	      
 	      <!-- must use cda.ui.properties.VocabularyConstraintsSection because we are applying CDA stereotypes -->
