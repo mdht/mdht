@@ -17,6 +17,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -25,7 +26,9 @@ import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.resource.UMLResource;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  *
@@ -38,6 +41,32 @@ public class ModelSearch {
 	 */
 	private ModelSearch() { }
 
+	public static List findStereotypeApplications(ResourceSet resourceSet, Stereotype stereotype) {
+		List elementList = new ArrayList();
+		for (Resource resource : resourceSet.getResources()) {
+			String uri = resource.getURI().toString();
+			if (uri.equals(UMLResource.UML_METAMODEL_URI)
+					|| uri.equals(UMLResource.ECORE_METAMODEL_URI)) {
+				continue;
+			}
+				
+			elementList.addAll(findStereotypeApplications(resource, stereotype));
+		}
+		
+		return elementList;
+	}
+
+	public static List<EObject> findStereotypeApplications(Resource resource, Stereotype stereotype) {
+		List<EObject> elementList = new ArrayList<EObject>();
+		for (EObject eObject : resource.getContents()) {
+			if (stereotype.equals(UMLUtil.getStereotype(eObject))) {
+				elementList.add(eObject);
+			}
+		}
+		
+		return elementList;
+	}
+	
 	public static List findAllOf(ResourceSet resourceSet, IElementFilter filter) {
 		List elementList = new ArrayList();
 		TreeIterator iterator = EcoreUtil.getAllContents(resourceSet.getResources());
@@ -68,15 +97,15 @@ public class ModelSearch {
 				else if (UMLResource.ECORE_METAMODEL_URI.equals(
 						((Model)element).eResource().getURI().toString()))
 					iterator.prune();
-				else if (UMLResource.ECORE_PRIMITIVE_TYPES_LIBRARY_URI.equals(
-						((Model)element).eResource().getURI().toString()))
-					iterator.prune();
-				else if (UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI.equals(
-						((Model)element).eResource().getURI().toString()))
-					iterator.prune();
-				else if (UMLResource.JAVA_PRIMITIVE_TYPES_LIBRARY_URI.equals(
-						((Model)element).eResource().getURI().toString()))
-					iterator.prune();
+//				else if (UMLResource.ECORE_PRIMITIVE_TYPES_LIBRARY_URI.equals(
+//						((Model)element).eResource().getURI().toString()))
+//					iterator.prune();
+//				else if (UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI.equals(
+//						((Model)element).eResource().getURI().toString()))
+//					iterator.prune();
+//				else if (UMLResource.JAVA_PRIMITIVE_TYPES_LIBRARY_URI.equals(
+//						((Model)element).eResource().getURI().toString()))
+//					iterator.prune();
 				
 			}
 

@@ -30,6 +30,7 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
 import org.openhealthtools.mdht.uml.common.ui.internal.l10n.Messages;
+import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
 import org.openhealthtools.mdht.uml.common.ui.search.ModelSearch;
 
 /**
@@ -68,6 +69,15 @@ public class DialogLaunchUtil {
 	/**
 	 * 
 	 */
+	public static NamedElement chooseElement( Class[] filter, ResourceSet resourceSet, Shell shell ) {
+		return chooseElement(filter, resourceSet, shell,
+				Messages.ElementSelectionDialog_title,
+				Messages.ElementSelectionDialog_message);
+	}
+
+	/**
+	 * 
+	 */
 	public static NamedElement chooseElement( Class[] filter, Model model, Shell shell ) {
 		return chooseElement(filter, model, shell,
 				Messages.ElementSelectionDialog_title,
@@ -97,21 +107,35 @@ public class DialogLaunchUtil {
 	/**
 	 * 
 	 */
-	public static NamedElement chooseElement( Class[] filter, ResourceSet resourceSet, Shell shell ) {
-		return chooseElement(filter, resourceSet, shell,
-				Messages.ElementSelectionDialog_title,
-				Messages.ElementSelectionDialog_message);
-	}
-
-	/**
-	 * 
-	 */
 	public static NamedElement chooseElement( Class[] filter, ResourceSet resourceSet, 
 			Shell shell, String title, String message) {
 		List typeList = new ArrayList();
 		for (int i = 0; i < filter.length; i++) {
 			typeList.addAll(ModelSearch.findAllOf(resourceSet, filter[i]));
 		}
+
+		ElementSelectionDialog dialog= new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
+		dialog.setTitle(title);
+		dialog.setMessage(message);
+
+		if (dialog.open() == Window.OK) {
+			return (NamedElement) dialog.getFirstResult();
+		}
+		return null;
+	}
+
+	/**
+	 * 
+	 */
+	public static NamedElement chooseElement( IElementFilter filter, ResourceSet resourceSet, 
+			Shell shell, String title, String message) {
+		if (title == null) {
+			title = Messages.ElementSelectionDialog_title;
+		}
+		if (message == null) {
+			message = Messages.ElementSelectionDialog_message;
+		}
+		List typeList = ModelSearch.findAllOf(resourceSet, filter);
 
 		ElementSelectionDialog dialog= new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
 		dialog.setTitle(title);
