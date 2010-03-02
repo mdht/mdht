@@ -486,7 +486,7 @@ public class SubstanceAdministrationImpl extends EObjectImpl implements Substanc
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getSubstanceAdministration();
+		return CDAPackage.Literals.SUBSTANCE_ADMINISTRATION;
 	}
 
 	/**

@@ -165,7 +165,7 @@ public class SpecimenImpl extends EObjectImpl implements Specimen {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getSpecimen();
+		return CDAPackage.Literals.SPECIMEN;
 	}
 
 	/**

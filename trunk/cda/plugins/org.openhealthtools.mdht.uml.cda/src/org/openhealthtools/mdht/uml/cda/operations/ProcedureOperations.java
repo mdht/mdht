@@ -231,7 +231,7 @@ public class ProcedureOperations {
 	public static  EList<Act> getActs(Procedure procedure) {
 		if (GET_ACTS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(9));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(9));
 			try {
 				GET_ACTS__EOCL_QRY = helper.createQuery(GET_ACTS__EOCL_EXP);
 			}
@@ -286,7 +286,7 @@ public class ProcedureOperations {
 	public static  EList<Encounter> getEncounters(Procedure procedure) {
 		if (GET_ENCOUNTERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(11));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(11));
 			try {
 				GET_ENCOUNTERS__EOCL_QRY = helper.createQuery(GET_ENCOUNTERS__EOCL_EXP);
 			}
@@ -332,7 +332,7 @@ public class ProcedureOperations {
 	public static  EList<Observation> getObservations(Procedure procedure) {
 		if (GET_OBSERVATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(12));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(12));
 			try {
 				GET_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_OBSERVATIONS__EOCL_EXP);
 			}
@@ -378,7 +378,7 @@ public class ProcedureOperations {
 	public static  EList<ObservationMedia> getObservationMedia(Procedure procedure) {
 		if (GET_OBSERVATION_MEDIA__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(13));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(13));
 			try {
 				GET_OBSERVATION_MEDIA__EOCL_QRY = helper.createQuery(GET_OBSERVATION_MEDIA__EOCL_EXP);
 			}
@@ -424,7 +424,7 @@ public class ProcedureOperations {
 	public static  EList<Organizer> getOrganizers(Procedure procedure) {
 		if (GET_ORGANIZERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(14));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(14));
 			try {
 				GET_ORGANIZERS__EOCL_QRY = helper.createQuery(GET_ORGANIZERS__EOCL_EXP);
 			}
@@ -470,7 +470,7 @@ public class ProcedureOperations {
 	public static  EList<Procedure> getProcedures(Procedure procedure) {
 		if (GET_PROCEDURES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(15));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(15));
 			try {
 				GET_PROCEDURES__EOCL_QRY = helper.createQuery(GET_PROCEDURES__EOCL_EXP);
 			}
@@ -516,7 +516,7 @@ public class ProcedureOperations {
 	public static  EList<RegionOfInterest> getRegionsOfInterest(Procedure procedure) {
 		if (GET_REGIONS_OF_INTEREST__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(16));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(16));
 			try {
 				GET_REGIONS_OF_INTEREST__EOCL_QRY = helper.createQuery(GET_REGIONS_OF_INTEREST__EOCL_EXP);
 			}
@@ -571,7 +571,7 @@ public class ProcedureOperations {
 	public static  EList<SubstanceAdministration> getSubstanceAdministrations(Procedure procedure) {
 		if (GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(18));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(18));
 			try {
 				GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY = helper.createQuery(GET_SUBSTANCE_ADMINISTRATIONS__EOCL_EXP);
 			}
@@ -617,7 +617,7 @@ public class ProcedureOperations {
 	public static  EList<Supply> getSupplies(Procedure procedure) {
 		if (GET_SUPPLIES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(19));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(19));
 			try {
 				GET_SUPPLIES__EOCL_QRY = helper.createQuery(GET_SUPPLIES__EOCL_EXP);
 			}
@@ -663,7 +663,7 @@ public class ProcedureOperations {
 	public static  boolean hasActTemplate(Procedure procedure, String templateId) {
 		if (HAS_ACT_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(20));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(20));
 			try {
 				HAS_ACT_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ACT_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -709,7 +709,7 @@ public class ProcedureOperations {
 	public static  boolean hasCode(Procedure procedure, String code, String codeSystem, String codeSystemName) {
 		if (HAS_CODE__STRING_STRING_STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(21));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(21));
 			try {
 				HAS_CODE__STRING_STRING_STRING__EOCL_QRY = helper.createQuery(HAS_CODE__STRING_STRING_STRING__EOCL_EXP);
 			}
@@ -757,7 +757,7 @@ public class ProcedureOperations {
 	public static  boolean hasEncounterTemplate(Procedure procedure, String templateId) {
 		if (HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(22));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(22));
 			try {
 				HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -803,7 +803,7 @@ public class ProcedureOperations {
 	public static  boolean hasObservationMediaTemplate(Procedure procedure, String templateId) {
 		if (HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(23));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(23));
 			try {
 				HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -849,7 +849,7 @@ public class ProcedureOperations {
 	public static  boolean hasObservationTemplate(Procedure procedure, String templateId) {
 		if (HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(24));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(24));
 			try {
 				HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -895,7 +895,7 @@ public class ProcedureOperations {
 	public static  boolean hasOrganizerTemplate(Procedure procedure, String templateId) {
 		if (HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(25));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(25));
 			try {
 				HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -941,7 +941,7 @@ public class ProcedureOperations {
 	public static  boolean hasProcedureTemplate(Procedure procedure, String templateId) {
 		if (HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(26));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(26));
 			try {
 				HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -987,7 +987,7 @@ public class ProcedureOperations {
 	public static  boolean hasRegionOfInterestTemplate(Procedure procedure, String templateId) {
 		if (HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(27));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(27));
 			try {
 				HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1033,7 +1033,7 @@ public class ProcedureOperations {
 	public static  boolean hasSubstanceAdministrationTemplate(Procedure procedure, String templateId) {
 		if (HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(28));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(28));
 			try {
 				HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1079,7 +1079,7 @@ public class ProcedureOperations {
 	public static  boolean hasSupplyTemplate(Procedure procedure, String templateId) {
 		if (HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(29));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(29));
 			try {
 				HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1125,7 +1125,7 @@ public class ProcedureOperations {
 	public static  boolean hasTemplateId(Procedure procedure, String templateId) {
 		if (HAS_TEMPLATE_ID__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getProcedure(), CDAPackage.eINSTANCE.getProcedure().getEAllOperations().get(30));
+			helper.setOperationContext(CDAPackage.Literals.PROCEDURE, CDAPackage.Literals.PROCEDURE.getEAllOperations().get(30));
 			try {
 				HAS_TEMPLATE_ID__STRING__EOCL_QRY = helper.createQuery(HAS_TEMPLATE_ID__STRING__EOCL_EXP);
 			}

@@ -201,7 +201,7 @@ public class Component2Impl extends EObjectImpl implements Component2 {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getComponent2();
+		return CDAPackage.Literals.COMPONENT2;
 	}
 
 	/**

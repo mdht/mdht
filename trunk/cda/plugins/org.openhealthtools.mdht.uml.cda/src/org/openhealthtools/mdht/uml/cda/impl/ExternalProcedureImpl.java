@@ -219,7 +219,7 @@ public class ExternalProcedureImpl extends EObjectImpl implements ExternalProced
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getExternalProcedure();
+		return CDAPackage.Literals.EXTERNAL_PROCEDURE;
 	}
 
 	/**

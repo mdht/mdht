@@ -165,7 +165,7 @@ public class ReferenceRangeImpl extends EObjectImpl implements ReferenceRange {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getReferenceRange();
+		return CDAPackage.Literals.REFERENCE_RANGE;
 	}
 
 	/**

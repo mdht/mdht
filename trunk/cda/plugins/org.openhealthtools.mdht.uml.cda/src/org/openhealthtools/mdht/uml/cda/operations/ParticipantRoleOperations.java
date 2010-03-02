@@ -91,7 +91,7 @@ public class ParticipantRoleOperations {
 	public static  boolean validatePlayingEntityChoice(ParticipantRole participantRole, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CDAPackage.eINSTANCE.getParticipantRole());
+			helper.setContext(CDAPackage.Literals.PARTICIPANT_ROLE);
 			try {
 				VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PLAYING_ENTITY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}

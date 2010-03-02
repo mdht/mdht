@@ -219,7 +219,7 @@ public class ExternalActImpl extends EObjectImpl implements ExternalAct {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getExternalAct();
+		return CDAPackage.Literals.EXTERNAL_ACT;
 	}
 
 	/**

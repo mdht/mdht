@@ -165,7 +165,7 @@ public class ProductImpl extends EObjectImpl implements Product {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getProduct();
+		return CDAPackage.Literals.PRODUCT;
 	}
 
 	/**

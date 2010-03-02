@@ -472,7 +472,7 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getClinicalDocument();
+		return CDAPackage.Literals.CLINICAL_DOCUMENT;
 	}
 
 	/**

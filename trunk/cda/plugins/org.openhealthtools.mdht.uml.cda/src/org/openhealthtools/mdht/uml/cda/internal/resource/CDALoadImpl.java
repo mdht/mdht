@@ -13,15 +13,20 @@
 package org.openhealthtools.mdht.uml.cda.internal.resource;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl;
+import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.internal.registry.CDARegistry;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.w3c.dom.Element;
@@ -32,12 +37,17 @@ import org.xml.sax.ext.LexicalHandler;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class CDALoadImpl extends XMLLoadImpl {
-	private Map<String, String> partTypes = new HashMap<String, String>();
-	private Map<String, String> nsPrefixMap = new HashMap<String, String>();
-	private int nsPrefixIndex = 0;
+	private Map<String, String> partTypes = null;
+	private Map<String, String> nsPrefixMap = null;
+	private int nsPrefixIndex;
 	
 	public CDALoadImpl(XMLHelper helper) {
 		super(helper);
+		
+		partTypes = new HashMap<String, String>();
+		nsPrefixMap = new HashMap<String, String>();
+		nsPrefixIndex = 0;
+		
 		populatePartTypes();
 	}
 	
@@ -137,12 +147,14 @@ public class CDALoadImpl extends XMLLoadImpl {
 		int last = 0;
 		NodeList nodeList = element.getChildNodes();
 		
+		EClass type = getType(element);
+		
 		for (int i = 0; i < nodeList.getLength(); i++) {
 			if (nodeList.item(i) instanceof Element) {
 				Element e = (Element) nodeList.item(i);
 				if ("templateId".equals(e.getLocalName())) {
 					EClass eClass = CDARegistry.INSTANCE.getEClass(e.getAttributeNS(null, "root"), element);
-					if (eClass != null && eClass.getEAllSuperTypes().size() > last) {
+					if (eClass != null && conformsTo(eClass, type) && eClass.getEAllSuperTypes().size() > last) {
 						result = eClass;
 						last = eClass.getEAllSuperTypes().size();
 					}
@@ -167,6 +179,43 @@ public class CDALoadImpl extends XMLLoadImpl {
 			
 			element.setAttributeNS(XMLResource.XSI_URI, "xsi:type", nsPrefix + ":" + getName(result));
 		}
+	}
+	
+	private List<String> getPath(Element element) {
+	    LinkedList<String> result = new LinkedList<String>();
+	    result.add(element.getLocalName());
+	    Node parent = element.getParentNode();
+	    while (parent instanceof Element) {
+	        Element e = (Element) parent;
+	        if ("ClinicalDocument".equals(e.getLocalName())) {
+	        	result.addFirst("clinicalDocument");
+	        } else {
+	        	result.addFirst(e.getLocalName());
+	        }
+	        parent = e.getParentNode();
+	    }
+	    return result;
+	}
+	
+	private EClass getType(Element element) {
+	    EClass eClass = CDAPackage.Literals.DOCUMENT_ROOT;
+	    List<String> path = getPath(element);
+	    for (String component : path) {
+	        EStructuralFeature feature = eClass.getEStructuralFeature(component);
+	        if (feature instanceof EReference) {
+	            eClass = (EClass) feature.getEType();
+	        } else {
+	            return null;
+	        }
+	    }
+	    return eClass;
+	}
+	
+	private boolean conformsTo(EClass eClass, EClass type) {
+		if (eClass == null || type == null) {
+			return false;
+		}
+		return type.isSuperTypeOf(eClass);
 	}
 	
 	private String getName(EClass eClass) {

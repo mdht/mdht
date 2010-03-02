@@ -165,7 +165,7 @@ public class InFulfillmentOfImpl extends EObjectImpl implements InFulfillmentOf 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getInFulfillmentOf();
+		return CDAPackage.Literals.IN_FULFILLMENT_OF;
 	}
 
 	/**

@@ -165,7 +165,7 @@ public class PreconditionImpl extends EObjectImpl implements Precondition {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getPrecondition();
+		return CDAPackage.Literals.PRECONDITION;
 	}
 
 	/**

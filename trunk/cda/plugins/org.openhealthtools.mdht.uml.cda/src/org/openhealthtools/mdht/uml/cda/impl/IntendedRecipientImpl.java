@@ -212,7 +212,7 @@ public class IntendedRecipientImpl extends EObjectImpl implements IntendedRecipi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getIntendedRecipient();
+		return CDAPackage.Literals.INTENDED_RECIPIENT;
 	}
 
 	/**

@@ -438,7 +438,7 @@ public class ProcedureImpl extends EObjectImpl implements Procedure {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getProcedure();
+		return CDAPackage.Literals.PROCEDURE;
 	}
 
 	/**

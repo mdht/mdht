@@ -309,7 +309,7 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getComponent4();
+		return CDAPackage.Literals.COMPONENT4;
 	}
 
 	/**

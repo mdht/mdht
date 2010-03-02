@@ -211,7 +211,7 @@ public class Informant12Impl extends EObjectImpl implements Informant12 {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getInformant12();
+		return CDAPackage.Literals.INFORMANT12;
 	}
 
 	/**

@@ -220,7 +220,7 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getAuthor();
+		return CDAPackage.Literals.AUTHOR;
 	}
 
 	/**

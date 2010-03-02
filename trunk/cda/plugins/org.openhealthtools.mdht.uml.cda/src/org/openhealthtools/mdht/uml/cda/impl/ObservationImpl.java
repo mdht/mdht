@@ -486,7 +486,7 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getObservation();
+		return CDAPackage.Literals.OBSERVATION;
 	}
 
 	/**

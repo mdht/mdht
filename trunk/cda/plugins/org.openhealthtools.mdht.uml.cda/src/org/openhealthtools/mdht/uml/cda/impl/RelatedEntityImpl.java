@@ -213,7 +213,7 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getRelatedEntity();
+		return CDAPackage.Literals.RELATED_ENTITY;
 	}
 
 	/**

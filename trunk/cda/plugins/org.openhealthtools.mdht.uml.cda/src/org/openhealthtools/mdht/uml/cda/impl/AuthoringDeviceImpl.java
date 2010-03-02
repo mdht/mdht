@@ -231,7 +231,7 @@ public class AuthoringDeviceImpl extends EObjectImpl implements AuthoringDevice 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getAuthoringDevice();
+		return CDAPackage.Literals.AUTHORING_DEVICE;
 	}
 
 	/**

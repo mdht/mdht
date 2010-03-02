@@ -165,7 +165,7 @@ public class ConsumableImpl extends EObjectImpl implements Consumable {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getConsumable();
+		return CDAPackage.Literals.CONSUMABLE;
 	}
 
 	/**

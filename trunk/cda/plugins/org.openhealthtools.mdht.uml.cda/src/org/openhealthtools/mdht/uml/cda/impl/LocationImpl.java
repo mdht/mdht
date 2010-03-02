@@ -165,7 +165,7 @@ public class LocationImpl extends EObjectImpl implements Location {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getLocation();
+		return CDAPackage.Literals.LOCATION;
 	}
 
 	/**

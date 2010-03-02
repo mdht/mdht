@@ -219,7 +219,7 @@ public class ExternalObservationImpl extends EObjectImpl implements ExternalObse
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getExternalObservation();
+		return CDAPackage.Literals.EXTERNAL_OBSERVATION;
 	}
 
 	/**

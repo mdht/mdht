@@ -91,7 +91,7 @@ public class Informant12Operations {
 	public static  boolean validateInformantChoice(Informant12 informant12, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_INFORMANT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CDAPackage.eINSTANCE.getInformant12());
+			helper.setContext(CDAPackage.Literals.INFORMANT12);
 			try {
 				VALIDATE_INFORMANT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_INFORMANT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}

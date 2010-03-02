@@ -311,7 +311,7 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getPatient();
+		return CDAPackage.Literals.PATIENT;
 	}
 
 	/**

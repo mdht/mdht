@@ -176,7 +176,7 @@ public class SpecimenRoleImpl extends EObjectImpl implements SpecimenRole {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getSpecimenRole();
+		return CDAPackage.Literals.SPECIMEN_ROLE;
 	}
 
 	/**

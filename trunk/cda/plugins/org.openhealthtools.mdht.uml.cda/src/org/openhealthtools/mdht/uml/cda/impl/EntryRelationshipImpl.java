@@ -351,7 +351,7 @@ public class EntryRelationshipImpl extends EObjectImpl implements EntryRelations
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getEntryRelationship();
+		return CDAPackage.Literals.ENTRY_RELATIONSHIP;
 	}
 
 	/**

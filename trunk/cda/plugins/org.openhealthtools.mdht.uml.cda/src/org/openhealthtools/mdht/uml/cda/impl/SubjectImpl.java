@@ -208,7 +208,7 @@ public class SubjectImpl extends EObjectImpl implements Subject {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getSubject();
+		return CDAPackage.Literals.SUBJECT;
 	}
 
 	/**

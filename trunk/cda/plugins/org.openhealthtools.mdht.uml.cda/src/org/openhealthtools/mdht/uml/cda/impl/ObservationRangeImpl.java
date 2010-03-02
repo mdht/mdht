@@ -232,7 +232,7 @@ public class ObservationRangeImpl extends EObjectImpl implements ObservationRang
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getObservationRange();
+		return CDAPackage.Literals.OBSERVATION_RANGE;
 	}
 
 	/**

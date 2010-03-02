@@ -219,7 +219,7 @@ public class EntityImpl extends EObjectImpl implements Entity {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getEntity();
+		return CDAPackage.Literals.ENTITY;
 	}
 
 	/**

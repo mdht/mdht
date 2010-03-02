@@ -196,7 +196,7 @@ public class RecordTargetImpl extends EObjectImpl implements RecordTarget {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getRecordTarget();
+		return CDAPackage.Literals.RECORD_TARGET;
 	}
 
 	/**

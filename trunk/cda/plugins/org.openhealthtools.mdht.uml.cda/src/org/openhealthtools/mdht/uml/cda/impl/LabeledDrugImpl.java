@@ -208,7 +208,7 @@ public class LabeledDrugImpl extends EObjectImpl implements LabeledDrug {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getLabeledDrug();
+		return CDAPackage.Literals.LABELED_DRUG;
 	}
 
 	/**

@@ -358,7 +358,7 @@ public class ObservationMediaImpl extends EObjectImpl implements ObservationMedi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getObservationMedia();
+		return CDAPackage.Literals.OBSERVATION_MEDIA;
 	}
 
 	/**

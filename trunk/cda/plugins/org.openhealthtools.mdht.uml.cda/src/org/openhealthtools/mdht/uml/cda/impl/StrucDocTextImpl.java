@@ -64,7 +64,7 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getStrucDocText();
+		return CDAPackage.Literals.STRUC_DOC_TEXT;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 	 * @generated
 	 */
 	public FeatureMap getAny() {
-		return (FeatureMap)getMixed().<FeatureMap.Entry>list(CDAPackage.eINSTANCE.getStrucDocText_Any());
+		return (FeatureMap)getMixed().<FeatureMap.Entry>list(CDAPackage.Literals.STRUC_DOC_TEXT__ANY);
 	}
 
 	/**

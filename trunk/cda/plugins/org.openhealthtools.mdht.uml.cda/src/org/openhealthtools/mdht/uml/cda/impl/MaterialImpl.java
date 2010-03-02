@@ -220,7 +220,7 @@ public class MaterialImpl extends EObjectImpl implements Material {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getMaterial();
+		return CDAPackage.Literals.MATERIAL;
 	}
 
 	/**

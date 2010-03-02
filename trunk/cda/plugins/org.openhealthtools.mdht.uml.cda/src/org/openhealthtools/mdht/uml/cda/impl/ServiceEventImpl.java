@@ -231,7 +231,7 @@ public class ServiceEventImpl extends EObjectImpl implements ServiceEvent {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getServiceEvent();
+		return CDAPackage.Literals.SERVICE_EVENT;
 	}
 
 	/**

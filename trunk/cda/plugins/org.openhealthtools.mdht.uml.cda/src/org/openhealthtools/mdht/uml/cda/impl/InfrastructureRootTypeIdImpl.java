@@ -99,7 +99,7 @@ public class InfrastructureRootTypeIdImpl extends IIImpl implements Infrastructu
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getInfrastructureRootTypeId();
+		return CDAPackage.Literals.INFRASTRUCTURE_ROOT_TYPE_ID;
 	}
 
 	/**

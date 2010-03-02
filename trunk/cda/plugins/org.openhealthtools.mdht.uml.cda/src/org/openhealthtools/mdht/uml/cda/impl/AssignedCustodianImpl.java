@@ -165,7 +165,7 @@ public class AssignedCustodianImpl extends EObjectImpl implements AssignedCustod
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getAssignedCustodian();
+		return CDAPackage.Literals.ASSIGNED_CUSTODIAN;
 	}
 
 	/**

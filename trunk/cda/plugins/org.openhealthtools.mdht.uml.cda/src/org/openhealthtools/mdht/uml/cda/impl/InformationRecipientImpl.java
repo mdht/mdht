@@ -165,7 +165,7 @@ public class InformationRecipientImpl extends EObjectImpl implements Information
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getInformationRecipient();
+		return CDAPackage.Literals.INFORMATION_RECIPIENT;
 	}
 
 	/**

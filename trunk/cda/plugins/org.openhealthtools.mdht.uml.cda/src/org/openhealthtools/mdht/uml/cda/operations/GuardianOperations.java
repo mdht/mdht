@@ -91,7 +91,7 @@ public class GuardianOperations {
 	public static  boolean validateGuardianChoice(Guardian guardian, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CDAPackage.eINSTANCE.getGuardian());
+			helper.setContext(CDAPackage.Literals.GUARDIAN);
 			try {
 				VALIDATE_GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_GUARDIAN_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}

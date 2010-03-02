@@ -232,7 +232,7 @@ public class PlayingEntityImpl extends EObjectImpl implements PlayingEntity {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getPlayingEntity();
+		return CDAPackage.Literals.PLAYING_ENTITY;
 	}
 
 	/**

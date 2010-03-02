@@ -91,7 +91,7 @@ public class Component2Operations {
 	public static  boolean validateBodyChoice(Component2 component2, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CDAPackage.eINSTANCE.getComponent2());
+			helper.setContext(CDAPackage.Literals.COMPONENT2);
 			try {
 				VALIDATE_BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_BODY_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}

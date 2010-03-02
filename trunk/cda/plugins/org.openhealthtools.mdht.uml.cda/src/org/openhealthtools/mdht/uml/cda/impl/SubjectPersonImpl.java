@@ -220,7 +220,7 @@ public class SubjectPersonImpl extends EObjectImpl implements SubjectPerson {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getSubjectPerson();
+		return CDAPackage.Literals.SUBJECT_PERSON;
 	}
 
 	/**

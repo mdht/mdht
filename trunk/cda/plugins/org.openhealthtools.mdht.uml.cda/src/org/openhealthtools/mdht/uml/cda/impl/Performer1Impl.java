@@ -189,7 +189,7 @@ public class Performer1Impl extends EObjectImpl implements Performer1 {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getPerformer1();
+		return CDAPackage.Literals.PERFORMER1;
 	}
 
 	/**

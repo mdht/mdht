@@ -242,7 +242,7 @@ public class ExternalDocumentImpl extends EObjectImpl implements ExternalDocumen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getExternalDocument();
+		return CDAPackage.Literals.EXTERNAL_DOCUMENT;
 	}
 
 	/**

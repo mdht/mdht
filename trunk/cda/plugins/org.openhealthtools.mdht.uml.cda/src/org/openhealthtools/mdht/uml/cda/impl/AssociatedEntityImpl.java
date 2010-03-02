@@ -224,7 +224,7 @@ public class AssociatedEntityImpl extends EObjectImpl implements AssociatedEntit
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getAssociatedEntity();
+		return CDAPackage.Literals.ASSOCIATED_ENTITY;
 	}
 
 	/**

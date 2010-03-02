@@ -203,7 +203,7 @@ public class ManufacturedProductImpl extends EObjectImpl implements Manufactured
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getManufacturedProduct();
+		return CDAPackage.Literals.MANUFACTURED_PRODUCT;
 	}
 
 	/**

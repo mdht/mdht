@@ -218,7 +218,7 @@ public class ConsentImpl extends EObjectImpl implements Consent {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getConsent();
+		return CDAPackage.Literals.CONSENT;
 	}
 
 	/**
