@@ -11,7 +11,9 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
@@ -33,6 +35,8 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
@@ -40,10 +44,18 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
+import org.openhealthtools.mdht.uml.common.ui.search.ModelSearch;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetVersion;
+import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
 import org.openhealthtools.mdht.uml.cts.core.util.ICTSProfileConstants;
 
 public class UpdateProfileVersionAction implements IObjectActionDelegate {
 	private NamedElement namedElement;
+	
+	private List<CodeSystemVersion> codeSystems = new ArrayList<CodeSystemVersion>();
+	private List<ValueSetVersion> valueSets = new ArrayList<ValueSetVersion>();
 	
 	public UpdateProfileVersionAction() {
 		super();
@@ -53,6 +65,8 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
+		cacheTerminology();
+		
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 			IUndoableOperation operation = new AbstractEMFOperation(
@@ -128,14 +142,73 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 		
 		action.setEnabled(namedElement != null);
 	}
+	
+	private void cacheTerminology() {
+		Profile ctsProfile = CTSProfileUtil.getCTSProfile(namedElement.eResource().getResourceSet());
+		if (ctsProfile == null) {
+			return;
+		}
+		final Stereotype codeSystemVersionStereotype = (Stereotype)
+			ctsProfile.getOwnedType(ICTSProfileConstants.CODE_SYSTEM_VERSION);
+		final Stereotype valueSetVersionStereotype = (Stereotype)
+			ctsProfile.getOwnedType(ICTSProfileConstants.VALUE_SET_VERSION);
+		IElementFilter codeSystemFilter = new IElementFilter() {
+			public boolean accept(Element element) {
+				return (element instanceof Enumeration)
+					&& element.isStereotypeApplied(codeSystemVersionStereotype);
+			}
+		};
+		IElementFilter valueSetFilter = new IElementFilter() {
+			public boolean accept(Element element) {
+				return (element instanceof Enumeration)
+					&& element.isStereotypeApplied(valueSetVersionStereotype);
+			}
+		};
+		
+		List<Element> codeSystemEnums = ModelSearch.findAllOf(namedElement.eResource().getResourceSet(), codeSystemFilter);
+		List<Element> valueSetEnums = ModelSearch.findAllOf(namedElement.eResource().getResourceSet(), valueSetFilter);
+		
+		for (Element element : codeSystemEnums) {
+			CodeSystemVersion codeSystemVersion = (CodeSystemVersion) element.getStereotypeApplication(codeSystemVersionStereotype);
+			if (codeSystemVersion != null) {
+				codeSystems.add(codeSystemVersion);
+			}
+		}
+		for (Element element : valueSetEnums) {
+			ValueSetVersion valueSetVersion = (ValueSetVersion) element.getStereotypeApplication(valueSetVersionStereotype);
+			if (valueSetVersion != null) {
+				valueSets.add(valueSetVersion);
+			}
+		}
+	}
+	
+	private CodeSystemVersion findCodeSystem(String identifier) {
+		if (identifier != null) {
+			for (CodeSystemVersion codeSystem : codeSystems) {
+				if (codeSystem.getIdentifier().equals(identifier))
+					return codeSystem;
+			}
+		}
+		return null;
+	}
+
+	private ValueSetVersion findValueSet(String identifier) {
+		if (identifier != null) {
+			for (ValueSetVersion valueSet : valueSets) {
+				if (valueSet.getIdentifier().equals(identifier))
+					return valueSet;
+			}
+		}
+		return null;
+	}
 
 	private void updateVocabSpecification(Property property) {
 		Profile cdaProfile = CDAProfileUtil.getAppliedCDAProfile(property);
 		Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
 				property, ICDAProfileConstants.VOCAB_SPECIFICATION);
-		String codeSystem = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
-		String codeSystemName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
-		String codeSystemVersion = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
+		String identifier = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
+		String name = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
+		String version = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
 		String code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
 		String displayName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
 		Object severity = property.getValue(vocabSpecification, ICDAProfileConstants.VALIDATION_SEVERITY);
@@ -147,15 +220,27 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 		if (codeSystemConstraint == null || valueSetConstraint == null) {
 			return;
 		}
+
+		CodeSystemVersion codeSystemVersion = findCodeSystem(identifier);
+		ValueSetVersion valueSetVersion = findValueSet(identifier);
 		
-		if (code != null && property.isStereotypeApplicable(codeSystemConstraint)) {
+		if (property.isStereotypeApplicable(codeSystemConstraint)
+				 && (code != null || codeSystemVersion != null)) {
 			property.applyStereotype(codeSystemConstraint);
-			property.setValue(codeSystemConstraint,
-					ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_ID, codeSystem);
-			property.setValue(codeSystemConstraint,
-					ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_NAME, codeSystemName);
-			property.setValue(codeSystemConstraint,
-					ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_VERSION, codeSystemVersion);
+			
+			if (codeSystemVersion != null) {
+				property.setValue(codeSystemConstraint,
+						ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_REFERENCE, codeSystemVersion);
+			}
+			else {
+				System.err.println("Cannot find code system: " + name + " ID: " + identifier);
+				property.setValue(codeSystemConstraint,
+						ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_ID, identifier);
+				property.setValue(codeSystemConstraint,
+						ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_NAME, name);
+				property.setValue(codeSystemConstraint,
+						ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_VERSION, version);
+			}
 			property.setValue(codeSystemConstraint,
 					ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_CODE, code);
 			property.setValue(codeSystemConstraint,
@@ -168,14 +253,22 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 			property.unapplyStereotype(vocabSpecification);
 		}
 		else if (property.isStereotypeApplicable(valueSetConstraint)
-				&& (codeSystem != null || codeSystemName != null)) {
+				&& (identifier != null || name != null)) {
 			property.applyStereotype(valueSetConstraint);
-			property.setValue(valueSetConstraint,
-					ICTSProfileConstants.VALUE_SET_CONSTRAINT_ID, codeSystem);
-			property.setValue(valueSetConstraint,
-					ICTSProfileConstants.VALUE_SET_CONSTRAINT_NAME, codeSystemName);
-			property.setValue(valueSetConstraint,
-					ICTSProfileConstants.VALUE_SET_CONSTRAINT_VERSION, codeSystemVersion);
+
+			if (valueSetVersion != null) {
+				property.setValue(valueSetConstraint,
+						ICTSProfileConstants.VALUE_SET_CONSTRAINT_REFERENCE, valueSetVersion);
+			}
+			else {
+				System.err.println("Cannot find value set: " + name + " ID: " + identifier);
+				property.setValue(valueSetConstraint,
+						ICTSProfileConstants.VALUE_SET_CONSTRAINT_ID, identifier);
+				property.setValue(valueSetConstraint,
+						ICTSProfileConstants.VALUE_SET_CONSTRAINT_NAME, name);
+				property.setValue(valueSetConstraint,
+						ICTSProfileConstants.VALUE_SET_CONSTRAINT_VERSION, version);
+			}
 			property.setValue(valueSetConstraint,
 					ICDAProfileConstants.VALIDATION_SEVERITY, severity);
 			property.setValue(valueSetConstraint,
