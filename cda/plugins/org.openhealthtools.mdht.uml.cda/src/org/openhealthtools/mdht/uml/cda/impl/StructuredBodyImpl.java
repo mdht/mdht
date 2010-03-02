@@ -219,7 +219,7 @@ public class StructuredBodyImpl extends EObjectImpl implements StructuredBody {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getStructuredBody();
+		return CDAPackage.Literals.STRUCTURED_BODY;
 	}
 
 	/**

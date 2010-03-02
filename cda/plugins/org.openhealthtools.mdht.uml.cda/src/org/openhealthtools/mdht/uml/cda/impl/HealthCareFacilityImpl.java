@@ -200,7 +200,7 @@ public class HealthCareFacilityImpl extends EObjectImpl implements HealthCareFac
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getHealthCareFacility();
+		return CDAPackage.Literals.HEALTH_CARE_FACILITY;
 	}
 
 	/**

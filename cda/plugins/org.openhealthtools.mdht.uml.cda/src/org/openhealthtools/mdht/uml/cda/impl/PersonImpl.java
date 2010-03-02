@@ -196,7 +196,7 @@ public class PersonImpl extends EObjectImpl implements Person {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getPerson();
+		return CDAPackage.Literals.PERSON;
 	}
 
 	/**

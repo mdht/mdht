@@ -165,7 +165,7 @@ public class DocumentationOfImpl extends EObjectImpl implements DocumentationOf 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getDocumentationOf();
+		return CDAPackage.Literals.DOCUMENTATION_OF;
 	}
 
 	/**

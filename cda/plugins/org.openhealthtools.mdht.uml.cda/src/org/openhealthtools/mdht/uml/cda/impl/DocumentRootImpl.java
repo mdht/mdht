@@ -85,7 +85,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getDocumentRoot();
+		return CDAPackage.Literals.DOCUMENT_ROOT;
 	}
 
 	/**
@@ -130,7 +130,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public ClinicalDocument getClinicalDocument() {
-		return (ClinicalDocument)getMixed().get(CDAPackage.eINSTANCE.getDocumentRoot_ClinicalDocument(), true);
+		return (ClinicalDocument)getMixed().get(CDAPackage.Literals.DOCUMENT_ROOT__CLINICAL_DOCUMENT, true);
 	}
 
 	/**
@@ -139,7 +139,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetClinicalDocument(ClinicalDocument newClinicalDocument, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(CDAPackage.eINSTANCE.getDocumentRoot_ClinicalDocument(), newClinicalDocument, msgs);
+		return ((FeatureMap.Internal)getMixed()).basicAdd(CDAPackage.Literals.DOCUMENT_ROOT__CLINICAL_DOCUMENT, newClinicalDocument, msgs);
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setClinicalDocument(ClinicalDocument newClinicalDocument) {
-		((FeatureMap.Internal)getMixed()).set(CDAPackage.eINSTANCE.getDocumentRoot_ClinicalDocument(), newClinicalDocument);
+		((FeatureMap.Internal)getMixed()).set(CDAPackage.Literals.DOCUMENT_ROOT__CLINICAL_DOCUMENT, newClinicalDocument);
 	}
 
 	/**

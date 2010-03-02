@@ -219,7 +219,7 @@ public class LegalAuthenticatorImpl extends EObjectImpl implements LegalAuthenti
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getLegalAuthenticator();
+		return CDAPackage.Literals.LEGAL_AUTHENTICATOR;
 	}
 
 	/**

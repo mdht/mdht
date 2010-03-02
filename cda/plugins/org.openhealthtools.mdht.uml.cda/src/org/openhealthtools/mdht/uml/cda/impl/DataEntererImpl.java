@@ -208,7 +208,7 @@ public class DataEntererImpl extends EObjectImpl implements DataEnterer {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getDataEnterer();
+		return CDAPackage.Literals.DATA_ENTERER;
 	}
 
 	/**

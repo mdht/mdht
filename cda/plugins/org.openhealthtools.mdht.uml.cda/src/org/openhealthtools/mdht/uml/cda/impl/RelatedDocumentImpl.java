@@ -165,7 +165,7 @@ public class RelatedDocumentImpl extends EObjectImpl implements RelatedDocument 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getRelatedDocument();
+		return CDAPackage.Literals.RELATED_DOCUMENT;
 	}
 
 	/**

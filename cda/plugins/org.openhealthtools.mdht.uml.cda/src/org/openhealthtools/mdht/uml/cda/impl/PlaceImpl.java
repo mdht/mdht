@@ -208,7 +208,7 @@ public class PlaceImpl extends EObjectImpl implements Place {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getPlace();
+		return CDAPackage.Literals.PLACE;
 	}
 
 	/**

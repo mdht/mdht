@@ -239,7 +239,7 @@ public class AssignedAuthorImpl extends EObjectImpl implements AssignedAuthor {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getAssignedAuthor();
+		return CDAPackage.Literals.ASSIGNED_AUTHOR;
 	}
 
 	/**

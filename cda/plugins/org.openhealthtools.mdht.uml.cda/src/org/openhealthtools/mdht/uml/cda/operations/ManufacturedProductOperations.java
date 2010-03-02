@@ -91,7 +91,7 @@ public class ManufacturedProductOperations {
 	public static  boolean validateManufacturedDrugOrOtherMaterial(ManufacturedProduct manufacturedProduct, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CDAPackage.eINSTANCE.getManufacturedProduct());
+			helper.setContext(CDAPackage.Literals.MANUFACTURED_PRODUCT);
 			try {
 				VALIDATE_MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MANUFACTURED_DRUG_OR_OTHER_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}

@@ -211,7 +211,7 @@ public class OrganizationPartOfImpl extends EObjectImpl implements OrganizationP
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getOrganizationPartOf();
+		return CDAPackage.Literals.ORGANIZATION_PART_OF;
 	}
 
 	/**

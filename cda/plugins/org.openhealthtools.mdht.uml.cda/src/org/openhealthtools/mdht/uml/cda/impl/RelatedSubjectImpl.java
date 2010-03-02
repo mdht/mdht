@@ -201,7 +201,7 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getRelatedSubject();
+		return CDAPackage.Literals.RELATED_SUBJECT;
 	}
 
 	/**

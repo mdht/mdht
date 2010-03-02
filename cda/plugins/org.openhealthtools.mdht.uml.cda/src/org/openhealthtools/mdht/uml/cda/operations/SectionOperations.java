@@ -273,7 +273,7 @@ public class SectionOperations {
 	public static  EList<Act> getActs(Section section) {
 		if (GET_ACTS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(11));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(11));
 			try {
 				GET_ACTS__EOCL_QRY = helper.createQuery(GET_ACTS__EOCL_EXP);
 			}
@@ -328,7 +328,7 @@ public class SectionOperations {
 	public static  EList<Encounter> getEncounters(Section section) {
 		if (GET_ENCOUNTERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(13));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(13));
 			try {
 				GET_ENCOUNTERS__EOCL_QRY = helper.createQuery(GET_ENCOUNTERS__EOCL_EXP);
 			}
@@ -374,7 +374,7 @@ public class SectionOperations {
 	public static  EList<Observation> getObservations(Section section) {
 		if (GET_OBSERVATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(14));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(14));
 			try {
 				GET_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_OBSERVATIONS__EOCL_EXP);
 			}
@@ -420,7 +420,7 @@ public class SectionOperations {
 	public static  EList<ObservationMedia> getObservationMedia(Section section) {
 		if (GET_OBSERVATION_MEDIA__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(15));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(15));
 			try {
 				GET_OBSERVATION_MEDIA__EOCL_QRY = helper.createQuery(GET_OBSERVATION_MEDIA__EOCL_EXP);
 			}
@@ -466,7 +466,7 @@ public class SectionOperations {
 	public static  EList<Organizer> getOrganizers(Section section) {
 		if (GET_ORGANIZERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(16));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(16));
 			try {
 				GET_ORGANIZERS__EOCL_QRY = helper.createQuery(GET_ORGANIZERS__EOCL_EXP);
 			}
@@ -512,7 +512,7 @@ public class SectionOperations {
 	public static  EList<Procedure> getProcedures(Section section) {
 		if (GET_PROCEDURES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(17));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(17));
 			try {
 				GET_PROCEDURES__EOCL_QRY = helper.createQuery(GET_PROCEDURES__EOCL_EXP);
 			}
@@ -558,7 +558,7 @@ public class SectionOperations {
 	public static  EList<RegionOfInterest> getRegionsOfInterest(Section section) {
 		if (GET_REGIONS_OF_INTEREST__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(18));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(18));
 			try {
 				GET_REGIONS_OF_INTEREST__EOCL_QRY = helper.createQuery(GET_REGIONS_OF_INTEREST__EOCL_EXP);
 			}
@@ -604,7 +604,7 @@ public class SectionOperations {
 	public static  EList<Section> getSections(Section section) {
 		if (GET_SECTIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(19));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(19));
 			try {
 				GET_SECTIONS__EOCL_QRY = helper.createQuery(GET_SECTIONS__EOCL_EXP);
 			}
@@ -650,7 +650,7 @@ public class SectionOperations {
 	public static  EList<SubstanceAdministration> getSubstanceAdministrations(Section section) {
 		if (GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(20));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(20));
 			try {
 				GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY = helper.createQuery(GET_SUBSTANCE_ADMINISTRATIONS__EOCL_EXP);
 			}
@@ -696,7 +696,7 @@ public class SectionOperations {
 	public static  EList<Supply> getSupplies(Section section) {
 		if (GET_SUPPLIES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(21));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(21));
 			try {
 				GET_SUPPLIES__EOCL_QRY = helper.createQuery(GET_SUPPLIES__EOCL_EXP);
 			}
@@ -742,7 +742,7 @@ public class SectionOperations {
 	public static  boolean hasActTemplate(Section section, String templateId) {
 		if (HAS_ACT_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(22));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(22));
 			try {
 				HAS_ACT_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ACT_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -788,7 +788,7 @@ public class SectionOperations {
 	public static  boolean hasCode(Section section, String code, String codeSystem, String codeSystemName) {
 		if (HAS_CODE__STRING_STRING_STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(23));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(23));
 			try {
 				HAS_CODE__STRING_STRING_STRING__EOCL_QRY = helper.createQuery(HAS_CODE__STRING_STRING_STRING__EOCL_EXP);
 			}
@@ -836,7 +836,7 @@ public class SectionOperations {
 	public static  boolean hasEncounterTemplate(Section section, String templateId) {
 		if (HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(24));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(24));
 			try {
 				HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -882,7 +882,7 @@ public class SectionOperations {
 	public static  boolean hasObservationMediaTemplate(Section section, String templateId) {
 		if (HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(25));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(25));
 			try {
 				HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -928,7 +928,7 @@ public class SectionOperations {
 	public static  boolean hasObservationTemplate(Section section, String templateId) {
 		if (HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(26));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(26));
 			try {
 				HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -974,7 +974,7 @@ public class SectionOperations {
 	public static  boolean hasOrganizerTemplate(Section section, String templateId) {
 		if (HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(27));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(27));
 			try {
 				HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1020,7 +1020,7 @@ public class SectionOperations {
 	public static  boolean hasProcedureTemplate(Section section, String templateId) {
 		if (HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(28));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(28));
 			try {
 				HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1066,7 +1066,7 @@ public class SectionOperations {
 	public static  boolean hasRegionOfInterestTemplate(Section section, String templateId) {
 		if (HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(29));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(29));
 			try {
 				HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1112,7 +1112,7 @@ public class SectionOperations {
 	public static  boolean hasSubstanceAdministrationTemplate(Section section, String templateId) {
 		if (HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(30));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(30));
 			try {
 				HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1158,7 +1158,7 @@ public class SectionOperations {
 	public static  boolean hasSectionTemplate(Section section, String templateId) {
 		if (HAS_SECTION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(31));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(31));
 			try {
 				HAS_SECTION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SECTION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1204,7 +1204,7 @@ public class SectionOperations {
 	public static  boolean hasSupplyTemplate(Section section, String templateId) {
 		if (HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(32));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(32));
 			try {
 				HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1250,7 +1250,7 @@ public class SectionOperations {
 	public static  boolean hasTemplateId(Section section, String templateId) {
 		if (HAS_TEMPLATE_ID__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSection(), CDAPackage.eINSTANCE.getSection().getEAllOperations().get(33));
+			helper.setOperationContext(CDAPackage.Literals.SECTION, CDAPackage.Literals.SECTION.getEAllOperations().get(33));
 			try {
 				HAS_TEMPLATE_ID__STRING__EOCL_QRY = helper.createQuery(HAS_TEMPLATE_ID__STRING__EOCL_EXP);
 			}

@@ -168,7 +168,7 @@ public class LanguageCommunicationImpl extends EObjectImpl implements LanguageCo
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getLanguageCommunication();
+		return CDAPackage.Literals.LANGUAGE_COMMUNICATION;
 	}
 
 	/**

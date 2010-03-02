@@ -21539,4 +21539,8433 @@ public interface CDAPackage extends EPackage {
 	 */
 	CDAFactory getCDAFactory();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * Defines literals for the meta objects that represent
+	 * <ul>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
+	 * </ul>
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl <em>Clinical Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getClinicalDocument()
+		 * @generated
+		 */
+		EClass CLINICAL_DOCUMENT = eINSTANCE.getClinicalDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__REALM_CODE = eINSTANCE.getClinicalDocument_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__TYPE_ID = eINSTANCE.getClinicalDocument_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__TEMPLATE_ID = eINSTANCE.getClinicalDocument_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__ID = eINSTANCE.getClinicalDocument_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__CODE = eINSTANCE.getClinicalDocument_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__TITLE = eINSTANCE.getClinicalDocument_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__EFFECTIVE_TIME = eINSTANCE.getClinicalDocument_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Confidentiality Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE = eINSTANCE.getClinicalDocument_ConfidentialityCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Language Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__LANGUAGE_CODE = eINSTANCE.getClinicalDocument_LanguageCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__SET_ID = eINSTANCE.getClinicalDocument_SetId();
+
+		/**
+		 * The meta object literal for the '<em><b>Version Number</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__VERSION_NUMBER = eINSTANCE.getClinicalDocument_VersionNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Copy Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__COPY_TIME = eINSTANCE.getClinicalDocument_CopyTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Record Target</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__RECORD_TARGET = eINSTANCE.getClinicalDocument_RecordTarget();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__AUTHOR = eINSTANCE.getClinicalDocument_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Enterer</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__DATA_ENTERER = eINSTANCE.getClinicalDocument_DataEnterer();
+
+		/**
+		 * The meta object literal for the '<em><b>Informant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__INFORMANT = eINSTANCE.getClinicalDocument_Informant();
+
+		/**
+		 * The meta object literal for the '<em><b>Custodian</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__CUSTODIAN = eINSTANCE.getClinicalDocument_Custodian();
+
+		/**
+		 * The meta object literal for the '<em><b>Information Recipient</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__INFORMATION_RECIPIENT = eINSTANCE.getClinicalDocument_InformationRecipient();
+
+		/**
+		 * The meta object literal for the '<em><b>Legal Authenticator</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR = eINSTANCE.getClinicalDocument_LegalAuthenticator();
+
+		/**
+		 * The meta object literal for the '<em><b>Authenticator</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__AUTHENTICATOR = eINSTANCE.getClinicalDocument_Authenticator();
+
+		/**
+		 * The meta object literal for the '<em><b>Participant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__PARTICIPANT = eINSTANCE.getClinicalDocument_Participant();
+
+		/**
+		 * The meta object literal for the '<em><b>In Fulfillment Of</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__IN_FULFILLMENT_OF = eINSTANCE.getClinicalDocument_InFulfillmentOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Documentation Of</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__DOCUMENTATION_OF = eINSTANCE.getClinicalDocument_DocumentationOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Related Document</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__RELATED_DOCUMENT = eINSTANCE.getClinicalDocument_RelatedDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Authorization</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__AUTHORIZATION = eINSTANCE.getClinicalDocument_Authorization();
+
+		/**
+		 * The meta object literal for the '<em><b>Component Of</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__COMPONENT_OF = eINSTANCE.getClinicalDocument_ComponentOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Component</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__COMPONENT = eINSTANCE.getClinicalDocument_Component();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLINICAL_DOCUMENT__NULL_FLAVOR = eINSTANCE.getClinicalDocument_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLINICAL_DOCUMENT__CLASS_CODE = eINSTANCE.getClinicalDocument_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLINICAL_DOCUMENT__MOOD_CODE = eINSTANCE.getClinicalDocument_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.InfrastructureRootTypeIdImpl <em>Infrastructure Root Type Id</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.InfrastructureRootTypeIdImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getInfrastructureRootTypeId()
+		 * @generated
+		 */
+		EClass INFRASTRUCTURE_ROOT_TYPE_ID = eINSTANCE.getInfrastructureRootTypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Redefined Root</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT = eINSTANCE.getInfrastructureRootTypeId_RedefinedRoot();
+
+		/**
+		 * The meta object literal for the '<em><b>Redefined Extension</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_EXTENSION = eINSTANCE.getInfrastructureRootTypeId_RedefinedExtension();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.RecordTargetImpl <em>Record Target</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.RecordTargetImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRecordTarget()
+		 * @generated
+		 */
+		EClass RECORD_TARGET = eINSTANCE.getRecordTarget();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECORD_TARGET__REALM_CODE = eINSTANCE.getRecordTarget_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECORD_TARGET__TYPE_ID = eINSTANCE.getRecordTarget_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECORD_TARGET__TEMPLATE_ID = eINSTANCE.getRecordTarget_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Patient Role</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECORD_TARGET__PATIENT_ROLE = eINSTANCE.getRecordTarget_PatientRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECORD_TARGET__NULL_FLAVOR = eINSTANCE.getRecordTarget_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECORD_TARGET__TYPE_CODE = eINSTANCE.getRecordTarget_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Control Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECORD_TARGET__CONTEXT_CONTROL_CODE = eINSTANCE.getRecordTarget_ContextControlCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.PatientRoleImpl <em>Patient Role</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.PatientRoleImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getPatientRole()
+		 * @generated
+		 */
+		EClass PATIENT_ROLE = eINSTANCE.getPatientRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT_ROLE__REALM_CODE = eINSTANCE.getPatientRole_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT_ROLE__TYPE_ID = eINSTANCE.getPatientRole_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT_ROLE__TEMPLATE_ID = eINSTANCE.getPatientRole_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT_ROLE__ID = eINSTANCE.getPatientRole_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Addr</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT_ROLE__ADDR = eINSTANCE.getPatientRole_Addr();
+
+		/**
+		 * The meta object literal for the '<em><b>Telecom</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT_ROLE__TELECOM = eINSTANCE.getPatientRole_Telecom();
+
+		/**
+		 * The meta object literal for the '<em><b>Patient</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT_ROLE__PATIENT = eINSTANCE.getPatientRole_Patient();
+
+		/**
+		 * The meta object literal for the '<em><b>Provider Organization</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT_ROLE__PROVIDER_ORGANIZATION = eINSTANCE.getPatientRole_ProviderOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PATIENT_ROLE__NULL_FLAVOR = eINSTANCE.getPatientRole_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PATIENT_ROLE__CLASS_CODE = eINSTANCE.getPatientRole_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl <em>Patient</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.PatientImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getPatient()
+		 * @generated
+		 */
+		EClass PATIENT = eINSTANCE.getPatient();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__REALM_CODE = eINSTANCE.getPatient_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__TYPE_ID = eINSTANCE.getPatient_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__TEMPLATE_ID = eINSTANCE.getPatient_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__ID = eINSTANCE.getPatient_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__NAME = eINSTANCE.getPatient_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Administrative Gender Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__ADMINISTRATIVE_GENDER_CODE = eINSTANCE.getPatient_AdministrativeGenderCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Birth Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__BIRTH_TIME = eINSTANCE.getPatient_BirthTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Marital Status Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__MARITAL_STATUS_CODE = eINSTANCE.getPatient_MaritalStatusCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Religious Affiliation Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__RELIGIOUS_AFFILIATION_CODE = eINSTANCE.getPatient_ReligiousAffiliationCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Race Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__RACE_CODE = eINSTANCE.getPatient_RaceCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Ethnic Group Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__ETHNIC_GROUP_CODE = eINSTANCE.getPatient_EthnicGroupCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Guardian</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__GUARDIAN = eINSTANCE.getPatient_Guardian();
+
+		/**
+		 * The meta object literal for the '<em><b>Birthplace</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__BIRTHPLACE = eINSTANCE.getPatient_Birthplace();
+
+		/**
+		 * The meta object literal for the '<em><b>Language Communication</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__LANGUAGE_COMMUNICATION = eINSTANCE.getPatient_LanguageCommunication();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PATIENT__NULL_FLAVOR = eINSTANCE.getPatient_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PATIENT__CLASS_CODE = eINSTANCE.getPatient_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Determiner Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PATIENT__DETERMINER_CODE = eINSTANCE.getPatient_DeterminerCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl <em>Guardian</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.GuardianImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getGuardian()
+		 * @generated
+		 */
+		EClass GUARDIAN = eINSTANCE.getGuardian();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GUARDIAN__REALM_CODE = eINSTANCE.getGuardian_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GUARDIAN__TYPE_ID = eINSTANCE.getGuardian_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GUARDIAN__TEMPLATE_ID = eINSTANCE.getGuardian_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GUARDIAN__ID = eINSTANCE.getGuardian_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GUARDIAN__CODE = eINSTANCE.getGuardian_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Addr</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GUARDIAN__ADDR = eINSTANCE.getGuardian_Addr();
+
+		/**
+		 * The meta object literal for the '<em><b>Telecom</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GUARDIAN__TELECOM = eINSTANCE.getGuardian_Telecom();
+
+		/**
+		 * The meta object literal for the '<em><b>Guardian Person</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GUARDIAN__GUARDIAN_PERSON = eINSTANCE.getGuardian_GuardianPerson();
+
+		/**
+		 * The meta object literal for the '<em><b>Guardian Organization</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GUARDIAN__GUARDIAN_ORGANIZATION = eINSTANCE.getGuardian_GuardianOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GUARDIAN__NULL_FLAVOR = eINSTANCE.getGuardian_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GUARDIAN__CLASS_CODE = eINSTANCE.getGuardian_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.PersonImpl <em>Person</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.PersonImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getPerson()
+		 * @generated
+		 */
+		EClass PERSON = eINSTANCE.getPerson();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERSON__REALM_CODE = eINSTANCE.getPerson_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERSON__TYPE_ID = eINSTANCE.getPerson_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERSON__TEMPLATE_ID = eINSTANCE.getPerson_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERSON__NAME = eINSTANCE.getPerson_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSON__NULL_FLAVOR = eINSTANCE.getPerson_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSON__CLASS_CODE = eINSTANCE.getPerson_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Determiner Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSON__DETERMINER_CODE = eINSTANCE.getPerson_DeterminerCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.OrganizationImpl <em>Organization</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.OrganizationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getOrganization()
+		 * @generated
+		 */
+		EClass ORGANIZATION = eINSTANCE.getOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__REALM_CODE = eINSTANCE.getOrganization_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__TYPE_ID = eINSTANCE.getOrganization_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__TEMPLATE_ID = eINSTANCE.getOrganization_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__ID = eINSTANCE.getOrganization_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__NAME = eINSTANCE.getOrganization_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Telecom</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__TELECOM = eINSTANCE.getOrganization_Telecom();
+
+		/**
+		 * The meta object literal for the '<em><b>Addr</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__ADDR = eINSTANCE.getOrganization_Addr();
+
+		/**
+		 * The meta object literal for the '<em><b>Standard Industry Class Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__STANDARD_INDUSTRY_CLASS_CODE = eINSTANCE.getOrganization_StandardIndustryClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>As Organization Part Of</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__AS_ORGANIZATION_PART_OF = eINSTANCE.getOrganization_AsOrganizationPartOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORGANIZATION__NULL_FLAVOR = eINSTANCE.getOrganization_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORGANIZATION__CLASS_CODE = eINSTANCE.getOrganization_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Determiner Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORGANIZATION__DETERMINER_CODE = eINSTANCE.getOrganization_DeterminerCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.OrganizationPartOfImpl <em>Organization Part Of</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.OrganizationPartOfImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getOrganizationPartOf()
+		 * @generated
+		 */
+		EClass ORGANIZATION_PART_OF = eINSTANCE.getOrganizationPartOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION_PART_OF__REALM_CODE = eINSTANCE.getOrganizationPartOf_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION_PART_OF__TYPE_ID = eINSTANCE.getOrganizationPartOf_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION_PART_OF__TEMPLATE_ID = eINSTANCE.getOrganizationPartOf_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION_PART_OF__ID = eINSTANCE.getOrganizationPartOf_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION_PART_OF__CODE = eINSTANCE.getOrganizationPartOf_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Status Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION_PART_OF__STATUS_CODE = eINSTANCE.getOrganizationPartOf_StatusCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION_PART_OF__EFFECTIVE_TIME = eINSTANCE.getOrganizationPartOf_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Whole Organization</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION_PART_OF__WHOLE_ORGANIZATION = eINSTANCE.getOrganizationPartOf_WholeOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORGANIZATION_PART_OF__NULL_FLAVOR = eINSTANCE.getOrganizationPartOf_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORGANIZATION_PART_OF__CLASS_CODE = eINSTANCE.getOrganizationPartOf_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.BirthplaceImpl <em>Birthplace</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.BirthplaceImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getBirthplace()
+		 * @generated
+		 */
+		EClass BIRTHPLACE = eINSTANCE.getBirthplace();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BIRTHPLACE__REALM_CODE = eINSTANCE.getBirthplace_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BIRTHPLACE__TYPE_ID = eINSTANCE.getBirthplace_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BIRTHPLACE__TEMPLATE_ID = eINSTANCE.getBirthplace_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Place</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BIRTHPLACE__PLACE = eINSTANCE.getBirthplace_Place();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BIRTHPLACE__NULL_FLAVOR = eINSTANCE.getBirthplace_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BIRTHPLACE__CLASS_CODE = eINSTANCE.getBirthplace_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.PlaceImpl <em>Place</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.PlaceImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getPlace()
+		 * @generated
+		 */
+		EClass PLACE = eINSTANCE.getPlace();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLACE__REALM_CODE = eINSTANCE.getPlace_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLACE__TYPE_ID = eINSTANCE.getPlace_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLACE__TEMPLATE_ID = eINSTANCE.getPlace_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLACE__NAME = eINSTANCE.getPlace_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Addr</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLACE__ADDR = eINSTANCE.getPlace_Addr();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLACE__NULL_FLAVOR = eINSTANCE.getPlace_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLACE__CLASS_CODE = eINSTANCE.getPlace_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Determiner Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLACE__DETERMINER_CODE = eINSTANCE.getPlace_DeterminerCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.LanguageCommunicationImpl <em>Language Communication</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.LanguageCommunicationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getLanguageCommunication()
+		 * @generated
+		 */
+		EClass LANGUAGE_COMMUNICATION = eINSTANCE.getLanguageCommunication();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_COMMUNICATION__REALM_CODE = eINSTANCE.getLanguageCommunication_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_COMMUNICATION__TYPE_ID = eINSTANCE.getLanguageCommunication_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_COMMUNICATION__TEMPLATE_ID = eINSTANCE.getLanguageCommunication_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Language Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_COMMUNICATION__LANGUAGE_CODE = eINSTANCE.getLanguageCommunication_LanguageCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mode Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_COMMUNICATION__MODE_CODE = eINSTANCE.getLanguageCommunication_ModeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Proficiency Level Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE = eINSTANCE.getLanguageCommunication_ProficiencyLevelCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Preference Ind</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_COMMUNICATION__PREFERENCE_IND = eINSTANCE.getLanguageCommunication_PreferenceInd();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LANGUAGE_COMMUNICATION__NULL_FLAVOR = eINSTANCE.getLanguageCommunication_NullFlavor();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.AuthorImpl <em>Author</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.AuthorImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAuthor()
+		 * @generated
+		 */
+		EClass AUTHOR = eINSTANCE.getAuthor();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHOR__REALM_CODE = eINSTANCE.getAuthor_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHOR__TYPE_ID = eINSTANCE.getAuthor_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHOR__TEMPLATE_ID = eINSTANCE.getAuthor_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Function Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHOR__FUNCTION_CODE = eINSTANCE.getAuthor_FunctionCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHOR__TIME = eINSTANCE.getAuthor_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Author</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHOR__ASSIGNED_AUTHOR = eINSTANCE.getAuthor_AssignedAuthor();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHOR__NULL_FLAVOR = eINSTANCE.getAuthor_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHOR__TYPE_CODE = eINSTANCE.getAuthor_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Control Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHOR__CONTEXT_CONTROL_CODE = eINSTANCE.getAuthor_ContextControlCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.AssignedAuthorImpl <em>Assigned Author</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.AssignedAuthorImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAssignedAuthor()
+		 * @generated
+		 */
+		EClass ASSIGNED_AUTHOR = eINSTANCE.getAssignedAuthor();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_AUTHOR__REALM_CODE = eINSTANCE.getAssignedAuthor_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_AUTHOR__TYPE_ID = eINSTANCE.getAssignedAuthor_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_AUTHOR__TEMPLATE_ID = eINSTANCE.getAssignedAuthor_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_AUTHOR__ID = eINSTANCE.getAssignedAuthor_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_AUTHOR__CODE = eINSTANCE.getAssignedAuthor_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Addr</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_AUTHOR__ADDR = eINSTANCE.getAssignedAuthor_Addr();
+
+		/**
+		 * The meta object literal for the '<em><b>Telecom</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_AUTHOR__TELECOM = eINSTANCE.getAssignedAuthor_Telecom();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Person</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_AUTHOR__ASSIGNED_PERSON = eINSTANCE.getAssignedAuthor_AssignedPerson();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Authoring Device</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_AUTHOR__ASSIGNED_AUTHORING_DEVICE = eINSTANCE.getAssignedAuthor_AssignedAuthoringDevice();
+
+		/**
+		 * The meta object literal for the '<em><b>Represented Organization</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_AUTHOR__REPRESENTED_ORGANIZATION = eINSTANCE.getAssignedAuthor_RepresentedOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSIGNED_AUTHOR__NULL_FLAVOR = eINSTANCE.getAssignedAuthor_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSIGNED_AUTHOR__CLASS_CODE = eINSTANCE.getAssignedAuthor_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl <em>Authoring Device</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.AuthoringDeviceImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAuthoringDevice()
+		 * @generated
+		 */
+		EClass AUTHORING_DEVICE = eINSTANCE.getAuthoringDevice();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHORING_DEVICE__REALM_CODE = eINSTANCE.getAuthoringDevice_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHORING_DEVICE__TYPE_ID = eINSTANCE.getAuthoringDevice_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHORING_DEVICE__TEMPLATE_ID = eINSTANCE.getAuthoringDevice_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHORING_DEVICE__CODE = eINSTANCE.getAuthoringDevice_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Manufacturer Model Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHORING_DEVICE__MANUFACTURER_MODEL_NAME = eINSTANCE.getAuthoringDevice_ManufacturerModelName();
+
+		/**
+		 * The meta object literal for the '<em><b>Software Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHORING_DEVICE__SOFTWARE_NAME = eINSTANCE.getAuthoringDevice_SoftwareName();
+
+		/**
+		 * The meta object literal for the '<em><b>As Maintained Entity</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHORING_DEVICE__AS_MAINTAINED_ENTITY = eINSTANCE.getAuthoringDevice_AsMaintainedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHORING_DEVICE__NULL_FLAVOR = eINSTANCE.getAuthoringDevice_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHORING_DEVICE__CLASS_CODE = eINSTANCE.getAuthoringDevice_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Determiner Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHORING_DEVICE__DETERMINER_CODE = eINSTANCE.getAuthoringDevice_DeterminerCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.MaintainedEntityImpl <em>Maintained Entity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.MaintainedEntityImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getMaintainedEntity()
+		 * @generated
+		 */
+		EClass MAINTAINED_ENTITY = eINSTANCE.getMaintainedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAINTAINED_ENTITY__REALM_CODE = eINSTANCE.getMaintainedEntity_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAINTAINED_ENTITY__TYPE_ID = eINSTANCE.getMaintainedEntity_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAINTAINED_ENTITY__TEMPLATE_ID = eINSTANCE.getMaintainedEntity_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAINTAINED_ENTITY__EFFECTIVE_TIME = eINSTANCE.getMaintainedEntity_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Maintaining Person</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAINTAINED_ENTITY__MAINTAINING_PERSON = eINSTANCE.getMaintainedEntity_MaintainingPerson();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAINTAINED_ENTITY__NULL_FLAVOR = eINSTANCE.getMaintainedEntity_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAINTAINED_ENTITY__CLASS_CODE = eINSTANCE.getMaintainedEntity_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.DataEntererImpl <em>Data Enterer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.DataEntererImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getDataEnterer()
+		 * @generated
+		 */
+		EClass DATA_ENTERER = eINSTANCE.getDataEnterer();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_ENTERER__REALM_CODE = eINSTANCE.getDataEnterer_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_ENTERER__TYPE_ID = eINSTANCE.getDataEnterer_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_ENTERER__TEMPLATE_ID = eINSTANCE.getDataEnterer_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_ENTERER__TIME = eINSTANCE.getDataEnterer_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_ENTERER__ASSIGNED_ENTITY = eINSTANCE.getDataEnterer_AssignedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_ENTERER__NULL_FLAVOR = eINSTANCE.getDataEnterer_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_ENTERER__TYPE_CODE = eINSTANCE.getDataEnterer_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Control Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_ENTERER__CONTEXT_CONTROL_CODE = eINSTANCE.getDataEnterer_ContextControlCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl <em>Assigned Entity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAssignedEntity()
+		 * @generated
+		 */
+		EClass ASSIGNED_ENTITY = eINSTANCE.getAssignedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_ENTITY__REALM_CODE = eINSTANCE.getAssignedEntity_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_ENTITY__TYPE_ID = eINSTANCE.getAssignedEntity_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_ENTITY__TEMPLATE_ID = eINSTANCE.getAssignedEntity_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_ENTITY__ID = eINSTANCE.getAssignedEntity_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_ENTITY__CODE = eINSTANCE.getAssignedEntity_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Addr</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_ENTITY__ADDR = eINSTANCE.getAssignedEntity_Addr();
+
+		/**
+		 * The meta object literal for the '<em><b>Telecom</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_ENTITY__TELECOM = eINSTANCE.getAssignedEntity_Telecom();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Person</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_ENTITY__ASSIGNED_PERSON = eINSTANCE.getAssignedEntity_AssignedPerson();
+
+		/**
+		 * The meta object literal for the '<em><b>Represented Organization</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION = eINSTANCE.getAssignedEntity_RepresentedOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSIGNED_ENTITY__NULL_FLAVOR = eINSTANCE.getAssignedEntity_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSIGNED_ENTITY__CLASS_CODE = eINSTANCE.getAssignedEntity_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.Informant12Impl <em>Informant12</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.Informant12Impl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getInformant12()
+		 * @generated
+		 */
+		EClass INFORMANT12 = eINSTANCE.getInformant12();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INFORMANT12__REALM_CODE = eINSTANCE.getInformant12_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INFORMANT12__TYPE_ID = eINSTANCE.getInformant12_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INFORMANT12__TEMPLATE_ID = eINSTANCE.getInformant12_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INFORMANT12__ASSIGNED_ENTITY = eINSTANCE.getInformant12_AssignedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Related Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INFORMANT12__RELATED_ENTITY = eINSTANCE.getInformant12_RelatedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INFORMANT12__NULL_FLAVOR = eINSTANCE.getInformant12_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INFORMANT12__TYPE_CODE = eINSTANCE.getInformant12_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Control Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INFORMANT12__CONTEXT_CONTROL_CODE = eINSTANCE.getInformant12_ContextControlCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl <em>Related Entity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRelatedEntity()
+		 * @generated
+		 */
+		EClass RELATED_ENTITY = eINSTANCE.getRelatedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_ENTITY__REALM_CODE = eINSTANCE.getRelatedEntity_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_ENTITY__TYPE_ID = eINSTANCE.getRelatedEntity_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_ENTITY__TEMPLATE_ID = eINSTANCE.getRelatedEntity_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_ENTITY__CODE = eINSTANCE.getRelatedEntity_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Addr</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_ENTITY__ADDR = eINSTANCE.getRelatedEntity_Addr();
+
+		/**
+		 * The meta object literal for the '<em><b>Telecom</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_ENTITY__TELECOM = eINSTANCE.getRelatedEntity_Telecom();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_ENTITY__EFFECTIVE_TIME = eINSTANCE.getRelatedEntity_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Related Person</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_ENTITY__RELATED_PERSON = eINSTANCE.getRelatedEntity_RelatedPerson();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATED_ENTITY__NULL_FLAVOR = eINSTANCE.getRelatedEntity_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATED_ENTITY__CLASS_CODE = eINSTANCE.getRelatedEntity_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.CustodianImpl <em>Custodian</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CustodianImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getCustodian()
+		 * @generated
+		 */
+		EClass CUSTODIAN = eINSTANCE.getCustodian();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTODIAN__REALM_CODE = eINSTANCE.getCustodian_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTODIAN__TYPE_ID = eINSTANCE.getCustodian_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTODIAN__TEMPLATE_ID = eINSTANCE.getCustodian_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Custodian</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTODIAN__ASSIGNED_CUSTODIAN = eINSTANCE.getCustodian_AssignedCustodian();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CUSTODIAN__NULL_FLAVOR = eINSTANCE.getCustodian_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CUSTODIAN__TYPE_CODE = eINSTANCE.getCustodian_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.AssignedCustodianImpl <em>Assigned Custodian</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.AssignedCustodianImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAssignedCustodian()
+		 * @generated
+		 */
+		EClass ASSIGNED_CUSTODIAN = eINSTANCE.getAssignedCustodian();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_CUSTODIAN__REALM_CODE = eINSTANCE.getAssignedCustodian_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_CUSTODIAN__TYPE_ID = eINSTANCE.getAssignedCustodian_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_CUSTODIAN__TEMPLATE_ID = eINSTANCE.getAssignedCustodian_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Represented Custodian Organization</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION = eINSTANCE.getAssignedCustodian_RepresentedCustodianOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSIGNED_CUSTODIAN__NULL_FLAVOR = eINSTANCE.getAssignedCustodian_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSIGNED_CUSTODIAN__CLASS_CODE = eINSTANCE.getAssignedCustodian_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl <em>Custodian Organization</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CustodianOrganizationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getCustodianOrganization()
+		 * @generated
+		 */
+		EClass CUSTODIAN_ORGANIZATION = eINSTANCE.getCustodianOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTODIAN_ORGANIZATION__REALM_CODE = eINSTANCE.getCustodianOrganization_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTODIAN_ORGANIZATION__TYPE_ID = eINSTANCE.getCustodianOrganization_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTODIAN_ORGANIZATION__TEMPLATE_ID = eINSTANCE.getCustodianOrganization_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTODIAN_ORGANIZATION__ID = eINSTANCE.getCustodianOrganization_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTODIAN_ORGANIZATION__NAME = eINSTANCE.getCustodianOrganization_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Telecom</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTODIAN_ORGANIZATION__TELECOM = eINSTANCE.getCustodianOrganization_Telecom();
+
+		/**
+		 * The meta object literal for the '<em><b>Addr</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTODIAN_ORGANIZATION__ADDR = eINSTANCE.getCustodianOrganization_Addr();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CUSTODIAN_ORGANIZATION__NULL_FLAVOR = eINSTANCE.getCustodianOrganization_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CUSTODIAN_ORGANIZATION__CLASS_CODE = eINSTANCE.getCustodianOrganization_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Determiner Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CUSTODIAN_ORGANIZATION__DETERMINER_CODE = eINSTANCE.getCustodianOrganization_DeterminerCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.InformationRecipientImpl <em>Information Recipient</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.InformationRecipientImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getInformationRecipient()
+		 * @generated
+		 */
+		EClass INFORMATION_RECIPIENT = eINSTANCE.getInformationRecipient();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INFORMATION_RECIPIENT__REALM_CODE = eINSTANCE.getInformationRecipient_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INFORMATION_RECIPIENT__TYPE_ID = eINSTANCE.getInformationRecipient_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INFORMATION_RECIPIENT__TEMPLATE_ID = eINSTANCE.getInformationRecipient_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Intended Recipient</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INFORMATION_RECIPIENT__INTENDED_RECIPIENT = eINSTANCE.getInformationRecipient_IntendedRecipient();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INFORMATION_RECIPIENT__NULL_FLAVOR = eINSTANCE.getInformationRecipient_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INFORMATION_RECIPIENT__TYPE_CODE = eINSTANCE.getInformationRecipient_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.IntendedRecipientImpl <em>Intended Recipient</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.IntendedRecipientImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getIntendedRecipient()
+		 * @generated
+		 */
+		EClass INTENDED_RECIPIENT = eINSTANCE.getIntendedRecipient();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTENDED_RECIPIENT__REALM_CODE = eINSTANCE.getIntendedRecipient_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTENDED_RECIPIENT__TYPE_ID = eINSTANCE.getIntendedRecipient_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTENDED_RECIPIENT__TEMPLATE_ID = eINSTANCE.getIntendedRecipient_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTENDED_RECIPIENT__ID = eINSTANCE.getIntendedRecipient_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Addr</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTENDED_RECIPIENT__ADDR = eINSTANCE.getIntendedRecipient_Addr();
+
+		/**
+		 * The meta object literal for the '<em><b>Telecom</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTENDED_RECIPIENT__TELECOM = eINSTANCE.getIntendedRecipient_Telecom();
+
+		/**
+		 * The meta object literal for the '<em><b>Information Recipient</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTENDED_RECIPIENT__INFORMATION_RECIPIENT = eINSTANCE.getIntendedRecipient_InformationRecipient();
+
+		/**
+		 * The meta object literal for the '<em><b>Received Organization</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTENDED_RECIPIENT__RECEIVED_ORGANIZATION = eINSTANCE.getIntendedRecipient_ReceivedOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTENDED_RECIPIENT__NULL_FLAVOR = eINSTANCE.getIntendedRecipient_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTENDED_RECIPIENT__CLASS_CODE = eINSTANCE.getIntendedRecipient_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.LegalAuthenticatorImpl <em>Legal Authenticator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.LegalAuthenticatorImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getLegalAuthenticator()
+		 * @generated
+		 */
+		EClass LEGAL_AUTHENTICATOR = eINSTANCE.getLegalAuthenticator();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LEGAL_AUTHENTICATOR__REALM_CODE = eINSTANCE.getLegalAuthenticator_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LEGAL_AUTHENTICATOR__TYPE_ID = eINSTANCE.getLegalAuthenticator_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LEGAL_AUTHENTICATOR__TEMPLATE_ID = eINSTANCE.getLegalAuthenticator_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LEGAL_AUTHENTICATOR__TIME = eINSTANCE.getLegalAuthenticator_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Signature Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LEGAL_AUTHENTICATOR__SIGNATURE_CODE = eINSTANCE.getLegalAuthenticator_SignatureCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LEGAL_AUTHENTICATOR__ASSIGNED_ENTITY = eINSTANCE.getLegalAuthenticator_AssignedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LEGAL_AUTHENTICATOR__NULL_FLAVOR = eINSTANCE.getLegalAuthenticator_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LEGAL_AUTHENTICATOR__TYPE_CODE = eINSTANCE.getLegalAuthenticator_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Control Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE = eINSTANCE.getLegalAuthenticator_ContextControlCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl <em>Authenticator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.AuthenticatorImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAuthenticator()
+		 * @generated
+		 */
+		EClass AUTHENTICATOR = eINSTANCE.getAuthenticator();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHENTICATOR__REALM_CODE = eINSTANCE.getAuthenticator_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHENTICATOR__TYPE_ID = eINSTANCE.getAuthenticator_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHENTICATOR__TEMPLATE_ID = eINSTANCE.getAuthenticator_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHENTICATOR__TIME = eINSTANCE.getAuthenticator_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Signature Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHENTICATOR__SIGNATURE_CODE = eINSTANCE.getAuthenticator_SignatureCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Entity</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHENTICATOR__ASSIGNED_ENTITY = eINSTANCE.getAuthenticator_AssignedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHENTICATOR__NULL_FLAVOR = eINSTANCE.getAuthenticator_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHENTICATOR__TYPE_CODE = eINSTANCE.getAuthenticator_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.Participant1Impl <em>Participant1</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.Participant1Impl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getParticipant1()
+		 * @generated
+		 */
+		EClass PARTICIPANT1 = eINSTANCE.getParticipant1();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT1__REALM_CODE = eINSTANCE.getParticipant1_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT1__TYPE_ID = eINSTANCE.getParticipant1_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT1__TEMPLATE_ID = eINSTANCE.getParticipant1_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Function Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT1__FUNCTION_CODE = eINSTANCE.getParticipant1_FunctionCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT1__TIME = eINSTANCE.getParticipant1_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Associated Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT1__ASSOCIATED_ENTITY = eINSTANCE.getParticipant1_AssociatedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARTICIPANT1__NULL_FLAVOR = eINSTANCE.getParticipant1_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARTICIPANT1__TYPE_CODE = eINSTANCE.getParticipant1_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Control Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARTICIPANT1__CONTEXT_CONTROL_CODE = eINSTANCE.getParticipant1_ContextControlCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.AssociatedEntityImpl <em>Associated Entity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.AssociatedEntityImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAssociatedEntity()
+		 * @generated
+		 */
+		EClass ASSOCIATED_ENTITY = eINSTANCE.getAssociatedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATED_ENTITY__REALM_CODE = eINSTANCE.getAssociatedEntity_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATED_ENTITY__TYPE_ID = eINSTANCE.getAssociatedEntity_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATED_ENTITY__TEMPLATE_ID = eINSTANCE.getAssociatedEntity_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATED_ENTITY__ID = eINSTANCE.getAssociatedEntity_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATED_ENTITY__CODE = eINSTANCE.getAssociatedEntity_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Addr</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATED_ENTITY__ADDR = eINSTANCE.getAssociatedEntity_Addr();
+
+		/**
+		 * The meta object literal for the '<em><b>Telecom</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATED_ENTITY__TELECOM = eINSTANCE.getAssociatedEntity_Telecom();
+
+		/**
+		 * The meta object literal for the '<em><b>Associated Person</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATED_ENTITY__ASSOCIATED_PERSON = eINSTANCE.getAssociatedEntity_AssociatedPerson();
+
+		/**
+		 * The meta object literal for the '<em><b>Scoping Organization</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATED_ENTITY__SCOPING_ORGANIZATION = eINSTANCE.getAssociatedEntity_ScopingOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSOCIATED_ENTITY__NULL_FLAVOR = eINSTANCE.getAssociatedEntity_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSOCIATED_ENTITY__CLASS_CODE = eINSTANCE.getAssociatedEntity_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.InFulfillmentOfImpl <em>In Fulfillment Of</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.InFulfillmentOfImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getInFulfillmentOf()
+		 * @generated
+		 */
+		EClass IN_FULFILLMENT_OF = eINSTANCE.getInFulfillmentOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IN_FULFILLMENT_OF__REALM_CODE = eINSTANCE.getInFulfillmentOf_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IN_FULFILLMENT_OF__TYPE_ID = eINSTANCE.getInFulfillmentOf_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IN_FULFILLMENT_OF__TEMPLATE_ID = eINSTANCE.getInFulfillmentOf_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Order</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IN_FULFILLMENT_OF__ORDER = eINSTANCE.getInFulfillmentOf_Order();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IN_FULFILLMENT_OF__NULL_FLAVOR = eINSTANCE.getInFulfillmentOf_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IN_FULFILLMENT_OF__TYPE_CODE = eINSTANCE.getInFulfillmentOf_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.OrderImpl <em>Order</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.OrderImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getOrder()
+		 * @generated
+		 */
+		EClass ORDER = eINSTANCE.getOrder();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORDER__REALM_CODE = eINSTANCE.getOrder_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORDER__TYPE_ID = eINSTANCE.getOrder_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORDER__TEMPLATE_ID = eINSTANCE.getOrder_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORDER__ID = eINSTANCE.getOrder_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORDER__CODE = eINSTANCE.getOrder_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Priority Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORDER__PRIORITY_CODE = eINSTANCE.getOrder_PriorityCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORDER__NULL_FLAVOR = eINSTANCE.getOrder_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORDER__CLASS_CODE = eINSTANCE.getOrder_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORDER__MOOD_CODE = eINSTANCE.getOrder_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.DocumentationOfImpl <em>Documentation Of</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.DocumentationOfImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getDocumentationOf()
+		 * @generated
+		 */
+		EClass DOCUMENTATION_OF = eINSTANCE.getDocumentationOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENTATION_OF__REALM_CODE = eINSTANCE.getDocumentationOf_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENTATION_OF__TYPE_ID = eINSTANCE.getDocumentationOf_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENTATION_OF__TEMPLATE_ID = eINSTANCE.getDocumentationOf_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Service Event</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENTATION_OF__SERVICE_EVENT = eINSTANCE.getDocumentationOf_ServiceEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOCUMENTATION_OF__NULL_FLAVOR = eINSTANCE.getDocumentationOf_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOCUMENTATION_OF__TYPE_CODE = eINSTANCE.getDocumentationOf_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ServiceEventImpl <em>Service Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ServiceEventImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getServiceEvent()
+		 * @generated
+		 */
+		EClass SERVICE_EVENT = eINSTANCE.getServiceEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_EVENT__REALM_CODE = eINSTANCE.getServiceEvent_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_EVENT__TYPE_ID = eINSTANCE.getServiceEvent_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_EVENT__TEMPLATE_ID = eINSTANCE.getServiceEvent_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_EVENT__ID = eINSTANCE.getServiceEvent_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_EVENT__CODE = eINSTANCE.getServiceEvent_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_EVENT__EFFECTIVE_TIME = eINSTANCE.getServiceEvent_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Performer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_EVENT__PERFORMER = eINSTANCE.getServiceEvent_Performer();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_EVENT__NULL_FLAVOR = eINSTANCE.getServiceEvent_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_EVENT__CLASS_CODE = eINSTANCE.getServiceEvent_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_EVENT__MOOD_CODE = eINSTANCE.getServiceEvent_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.Performer1Impl <em>Performer1</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.Performer1Impl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getPerformer1()
+		 * @generated
+		 */
+		EClass PERFORMER1 = eINSTANCE.getPerformer1();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERFORMER1__REALM_CODE = eINSTANCE.getPerformer1_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERFORMER1__TYPE_ID = eINSTANCE.getPerformer1_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERFORMER1__TEMPLATE_ID = eINSTANCE.getPerformer1_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Function Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERFORMER1__FUNCTION_CODE = eINSTANCE.getPerformer1_FunctionCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERFORMER1__TIME = eINSTANCE.getPerformer1_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERFORMER1__ASSIGNED_ENTITY = eINSTANCE.getPerformer1_AssignedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERFORMER1__NULL_FLAVOR = eINSTANCE.getPerformer1_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERFORMER1__TYPE_CODE = eINSTANCE.getPerformer1_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.RelatedDocumentImpl <em>Related Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.RelatedDocumentImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRelatedDocument()
+		 * @generated
+		 */
+		EClass RELATED_DOCUMENT = eINSTANCE.getRelatedDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_DOCUMENT__REALM_CODE = eINSTANCE.getRelatedDocument_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_DOCUMENT__TYPE_ID = eINSTANCE.getRelatedDocument_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_DOCUMENT__TEMPLATE_ID = eINSTANCE.getRelatedDocument_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent Document</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_DOCUMENT__PARENT_DOCUMENT = eINSTANCE.getRelatedDocument_ParentDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATED_DOCUMENT__NULL_FLAVOR = eINSTANCE.getRelatedDocument_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATED_DOCUMENT__TYPE_CODE = eINSTANCE.getRelatedDocument_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ParentDocumentImpl <em>Parent Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ParentDocumentImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getParentDocument()
+		 * @generated
+		 */
+		EClass PARENT_DOCUMENT = eINSTANCE.getParentDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARENT_DOCUMENT__REALM_CODE = eINSTANCE.getParentDocument_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARENT_DOCUMENT__TYPE_ID = eINSTANCE.getParentDocument_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARENT_DOCUMENT__TEMPLATE_ID = eINSTANCE.getParentDocument_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARENT_DOCUMENT__ID = eINSTANCE.getParentDocument_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARENT_DOCUMENT__CODE = eINSTANCE.getParentDocument_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARENT_DOCUMENT__TEXT = eINSTANCE.getParentDocument_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARENT_DOCUMENT__SET_ID = eINSTANCE.getParentDocument_SetId();
+
+		/**
+		 * The meta object literal for the '<em><b>Version Number</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARENT_DOCUMENT__VERSION_NUMBER = eINSTANCE.getParentDocument_VersionNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARENT_DOCUMENT__NULL_FLAVOR = eINSTANCE.getParentDocument_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARENT_DOCUMENT__CLASS_CODE = eINSTANCE.getParentDocument_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARENT_DOCUMENT__MOOD_CODE = eINSTANCE.getParentDocument_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.AuthorizationImpl <em>Authorization</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.AuthorizationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAuthorization()
+		 * @generated
+		 */
+		EClass AUTHORIZATION = eINSTANCE.getAuthorization();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHORIZATION__REALM_CODE = eINSTANCE.getAuthorization_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHORIZATION__TYPE_ID = eINSTANCE.getAuthorization_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHORIZATION__TEMPLATE_ID = eINSTANCE.getAuthorization_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Consent</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHORIZATION__CONSENT = eINSTANCE.getAuthorization_Consent();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHORIZATION__NULL_FLAVOR = eINSTANCE.getAuthorization_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHORIZATION__TYPE_CODE = eINSTANCE.getAuthorization_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ConsentImpl <em>Consent</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ConsentImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getConsent()
+		 * @generated
+		 */
+		EClass CONSENT = eINSTANCE.getConsent();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSENT__REALM_CODE = eINSTANCE.getConsent_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSENT__TYPE_ID = eINSTANCE.getConsent_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSENT__TEMPLATE_ID = eINSTANCE.getConsent_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSENT__ID = eINSTANCE.getConsent_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSENT__CODE = eINSTANCE.getConsent_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Status Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSENT__STATUS_CODE = eINSTANCE.getConsent_StatusCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSENT__NULL_FLAVOR = eINSTANCE.getConsent_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSENT__CLASS_CODE = eINSTANCE.getConsent_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSENT__MOOD_CODE = eINSTANCE.getConsent_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.Component1Impl <em>Component1</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.Component1Impl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getComponent1()
+		 * @generated
+		 */
+		EClass COMPONENT1 = eINSTANCE.getComponent1();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT1__REALM_CODE = eINSTANCE.getComponent1_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT1__TYPE_ID = eINSTANCE.getComponent1_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT1__TEMPLATE_ID = eINSTANCE.getComponent1_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Encompassing Encounter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT1__ENCOMPASSING_ENCOUNTER = eINSTANCE.getComponent1_EncompassingEncounter();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT1__NULL_FLAVOR = eINSTANCE.getComponent1_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT1__TYPE_CODE = eINSTANCE.getComponent1_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl <em>Encompassing Encounter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.EncompassingEncounterImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getEncompassingEncounter()
+		 * @generated
+		 */
+		EClass ENCOMPASSING_ENCOUNTER = eINSTANCE.getEncompassingEncounter();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOMPASSING_ENCOUNTER__REALM_CODE = eINSTANCE.getEncompassingEncounter_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOMPASSING_ENCOUNTER__TYPE_ID = eINSTANCE.getEncompassingEncounter_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOMPASSING_ENCOUNTER__TEMPLATE_ID = eINSTANCE.getEncompassingEncounter_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOMPASSING_ENCOUNTER__ID = eINSTANCE.getEncompassingEncounter_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOMPASSING_ENCOUNTER__CODE = eINSTANCE.getEncompassingEncounter_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOMPASSING_ENCOUNTER__EFFECTIVE_TIME = eINSTANCE.getEncompassingEncounter_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Discharge Disposition Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOMPASSING_ENCOUNTER__DISCHARGE_DISPOSITION_CODE = eINSTANCE.getEncompassingEncounter_DischargeDispositionCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Responsible Party</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOMPASSING_ENCOUNTER__RESPONSIBLE_PARTY = eINSTANCE.getEncompassingEncounter_ResponsibleParty();
+
+		/**
+		 * The meta object literal for the '<em><b>Encounter Participant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOMPASSING_ENCOUNTER__ENCOUNTER_PARTICIPANT = eINSTANCE.getEncompassingEncounter_EncounterParticipant();
+
+		/**
+		 * The meta object literal for the '<em><b>Location</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOMPASSING_ENCOUNTER__LOCATION = eINSTANCE.getEncompassingEncounter_Location();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENCOMPASSING_ENCOUNTER__NULL_FLAVOR = eINSTANCE.getEncompassingEncounter_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENCOMPASSING_ENCOUNTER__CLASS_CODE = eINSTANCE.getEncompassingEncounter_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENCOMPASSING_ENCOUNTER__MOOD_CODE = eINSTANCE.getEncompassingEncounter_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ResponsiblePartyImpl <em>Responsible Party</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ResponsiblePartyImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getResponsibleParty()
+		 * @generated
+		 */
+		EClass RESPONSIBLE_PARTY = eINSTANCE.getResponsibleParty();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESPONSIBLE_PARTY__REALM_CODE = eINSTANCE.getResponsibleParty_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESPONSIBLE_PARTY__TYPE_ID = eINSTANCE.getResponsibleParty_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESPONSIBLE_PARTY__TEMPLATE_ID = eINSTANCE.getResponsibleParty_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESPONSIBLE_PARTY__ASSIGNED_ENTITY = eINSTANCE.getResponsibleParty_AssignedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESPONSIBLE_PARTY__NULL_FLAVOR = eINSTANCE.getResponsibleParty_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESPONSIBLE_PARTY__TYPE_CODE = eINSTANCE.getResponsibleParty_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.EncounterParticipantImpl <em>Encounter Participant</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.EncounterParticipantImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getEncounterParticipant()
+		 * @generated
+		 */
+		EClass ENCOUNTER_PARTICIPANT = eINSTANCE.getEncounterParticipant();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER_PARTICIPANT__REALM_CODE = eINSTANCE.getEncounterParticipant_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER_PARTICIPANT__TYPE_ID = eINSTANCE.getEncounterParticipant_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER_PARTICIPANT__TEMPLATE_ID = eINSTANCE.getEncounterParticipant_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER_PARTICIPANT__TIME = eINSTANCE.getEncounterParticipant_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER_PARTICIPANT__ASSIGNED_ENTITY = eINSTANCE.getEncounterParticipant_AssignedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENCOUNTER_PARTICIPANT__NULL_FLAVOR = eINSTANCE.getEncounterParticipant_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENCOUNTER_PARTICIPANT__TYPE_CODE = eINSTANCE.getEncounterParticipant_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.LocationImpl <em>Location</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.LocationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getLocation()
+		 * @generated
+		 */
+		EClass LOCATION = eINSTANCE.getLocation();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCATION__REALM_CODE = eINSTANCE.getLocation_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCATION__TYPE_ID = eINSTANCE.getLocation_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCATION__TEMPLATE_ID = eINSTANCE.getLocation_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Health Care Facility</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCATION__HEALTH_CARE_FACILITY = eINSTANCE.getLocation_HealthCareFacility();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOCATION__NULL_FLAVOR = eINSTANCE.getLocation_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOCATION__TYPE_CODE = eINSTANCE.getLocation_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.HealthCareFacilityImpl <em>Health Care Facility</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.HealthCareFacilityImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getHealthCareFacility()
+		 * @generated
+		 */
+		EClass HEALTH_CARE_FACILITY = eINSTANCE.getHealthCareFacility();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HEALTH_CARE_FACILITY__REALM_CODE = eINSTANCE.getHealthCareFacility_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HEALTH_CARE_FACILITY__TYPE_ID = eINSTANCE.getHealthCareFacility_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HEALTH_CARE_FACILITY__TEMPLATE_ID = eINSTANCE.getHealthCareFacility_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HEALTH_CARE_FACILITY__ID = eINSTANCE.getHealthCareFacility_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HEALTH_CARE_FACILITY__CODE = eINSTANCE.getHealthCareFacility_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Location</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HEALTH_CARE_FACILITY__LOCATION = eINSTANCE.getHealthCareFacility_Location();
+
+		/**
+		 * The meta object literal for the '<em><b>Service Provider Organization</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION = eINSTANCE.getHealthCareFacility_ServiceProviderOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH_CARE_FACILITY__NULL_FLAVOR = eINSTANCE.getHealthCareFacility_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HEALTH_CARE_FACILITY__CLASS_CODE = eINSTANCE.getHealthCareFacility_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.Component2Impl <em>Component2</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.Component2Impl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getComponent2()
+		 * @generated
+		 */
+		EClass COMPONENT2 = eINSTANCE.getComponent2();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT2__REALM_CODE = eINSTANCE.getComponent2_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT2__TYPE_ID = eINSTANCE.getComponent2_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT2__TEMPLATE_ID = eINSTANCE.getComponent2_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Non XML Body</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT2__NON_XML_BODY = eINSTANCE.getComponent2_NonXMLBody();
+
+		/**
+		 * The meta object literal for the '<em><b>Structured Body</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT2__STRUCTURED_BODY = eINSTANCE.getComponent2_StructuredBody();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT2__NULL_FLAVOR = eINSTANCE.getComponent2_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT2__TYPE_CODE = eINSTANCE.getComponent2_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Conduction Ind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT2__CONTEXT_CONDUCTION_IND = eINSTANCE.getComponent2_ContextConductionInd();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.NonXMLBodyImpl <em>Non XML Body</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.NonXMLBodyImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getNonXMLBody()
+		 * @generated
+		 */
+		EClass NON_XML_BODY = eINSTANCE.getNonXMLBody();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NON_XML_BODY__REALM_CODE = eINSTANCE.getNonXMLBody_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NON_XML_BODY__TYPE_ID = eINSTANCE.getNonXMLBody_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NON_XML_BODY__TEMPLATE_ID = eINSTANCE.getNonXMLBody_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NON_XML_BODY__TEXT = eINSTANCE.getNonXMLBody_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Confidentiality Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NON_XML_BODY__CONFIDENTIALITY_CODE = eINSTANCE.getNonXMLBody_ConfidentialityCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Language Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NON_XML_BODY__LANGUAGE_CODE = eINSTANCE.getNonXMLBody_LanguageCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NON_XML_BODY__NULL_FLAVOR = eINSTANCE.getNonXMLBody_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NON_XML_BODY__CLASS_CODE = eINSTANCE.getNonXMLBody_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NON_XML_BODY__MOOD_CODE = eINSTANCE.getNonXMLBody_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.StructuredBodyImpl <em>Structured Body</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.StructuredBodyImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getStructuredBody()
+		 * @generated
+		 */
+		EClass STRUCTURED_BODY = eINSTANCE.getStructuredBody();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURED_BODY__REALM_CODE = eINSTANCE.getStructuredBody_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURED_BODY__TYPE_ID = eINSTANCE.getStructuredBody_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURED_BODY__TEMPLATE_ID = eINSTANCE.getStructuredBody_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Confidentiality Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURED_BODY__CONFIDENTIALITY_CODE = eINSTANCE.getStructuredBody_ConfidentialityCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Language Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURED_BODY__LANGUAGE_CODE = eINSTANCE.getStructuredBody_LanguageCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Component</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURED_BODY__COMPONENT = eINSTANCE.getStructuredBody_Component();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCTURED_BODY__NULL_FLAVOR = eINSTANCE.getStructuredBody_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCTURED_BODY__CLASS_CODE = eINSTANCE.getStructuredBody_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCTURED_BODY__MOOD_CODE = eINSTANCE.getStructuredBody_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.Component3Impl <em>Component3</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.Component3Impl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getComponent3()
+		 * @generated
+		 */
+		EClass COMPONENT3 = eINSTANCE.getComponent3();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT3__REALM_CODE = eINSTANCE.getComponent3_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT3__TYPE_ID = eINSTANCE.getComponent3_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT3__TEMPLATE_ID = eINSTANCE.getComponent3_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Section</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT3__SECTION = eINSTANCE.getComponent3_Section();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT3__NULL_FLAVOR = eINSTANCE.getComponent3_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT3__TYPE_CODE = eINSTANCE.getComponent3_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Conduction Ind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT3__CONTEXT_CONDUCTION_IND = eINSTANCE.getComponent3_ContextConductionInd();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.SectionImpl <em>Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.SectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSection()
+		 * @generated
+		 */
+		EClass SECTION = eINSTANCE.getSection();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__REALM_CODE = eINSTANCE.getSection_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__TYPE_ID = eINSTANCE.getSection_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__TEMPLATE_ID = eINSTANCE.getSection_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__ID = eINSTANCE.getSection_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__CODE = eINSTANCE.getSection_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__TITLE = eINSTANCE.getSection_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__TEXT = eINSTANCE.getSection_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Confidentiality Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__CONFIDENTIALITY_CODE = eINSTANCE.getSection_ConfidentialityCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Language Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__LANGUAGE_CODE = eINSTANCE.getSection_LanguageCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Subject</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__SUBJECT = eINSTANCE.getSection_Subject();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__AUTHOR = eINSTANCE.getSection_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Informant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__INFORMANT = eINSTANCE.getSection_Informant();
+
+		/**
+		 * The meta object literal for the '<em><b>Entry</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__ENTRY = eINSTANCE.getSection_Entry();
+
+		/**
+		 * The meta object literal for the '<em><b>Component</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__COMPONENT = eINSTANCE.getSection_Component();
+
+		/**
+		 * The meta object literal for the '<em><b>Section Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECTION__SECTION_ID = eINSTANCE.getSection_SectionId();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECTION__NULL_FLAVOR = eINSTANCE.getSection_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECTION__CLASS_CODE = eINSTANCE.getSection_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECTION__MOOD_CODE = eINSTANCE.getSection_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.StrucDocTextImpl <em>Struc Doc Text</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.StrucDocTextImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getStrucDocText()
+		 * @generated
+		 */
+		EClass STRUC_DOC_TEXT = eINSTANCE.getStrucDocText();
+
+		/**
+		 * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUC_DOC_TEXT__MIXED = eINSTANCE.getStrucDocText_Mixed();
+
+		/**
+		 * The meta object literal for the '<em><b>Any</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUC_DOC_TEXT__ANY = eINSTANCE.getStrucDocText_Any();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.SubjectImpl <em>Subject</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.SubjectImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSubject()
+		 * @generated
+		 */
+		EClass SUBJECT = eINSTANCE.getSubject();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT__REALM_CODE = eINSTANCE.getSubject_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT__TYPE_ID = eINSTANCE.getSubject_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT__TEMPLATE_ID = eINSTANCE.getSubject_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Awareness Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT__AWARENESS_CODE = eINSTANCE.getSubject_AwarenessCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Related Subject</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT__RELATED_SUBJECT = eINSTANCE.getSubject_RelatedSubject();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUBJECT__NULL_FLAVOR = eINSTANCE.getSubject_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUBJECT__TYPE_CODE = eINSTANCE.getSubject_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Control Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUBJECT__CONTEXT_CONTROL_CODE = eINSTANCE.getSubject_ContextControlCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl <em>Related Subject</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRelatedSubject()
+		 * @generated
+		 */
+		EClass RELATED_SUBJECT = eINSTANCE.getRelatedSubject();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_SUBJECT__REALM_CODE = eINSTANCE.getRelatedSubject_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_SUBJECT__TYPE_ID = eINSTANCE.getRelatedSubject_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_SUBJECT__TEMPLATE_ID = eINSTANCE.getRelatedSubject_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_SUBJECT__CODE = eINSTANCE.getRelatedSubject_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Addr</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_SUBJECT__ADDR = eINSTANCE.getRelatedSubject_Addr();
+
+		/**
+		 * The meta object literal for the '<em><b>Telecom</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_SUBJECT__TELECOM = eINSTANCE.getRelatedSubject_Telecom();
+
+		/**
+		 * The meta object literal for the '<em><b>Subject Person</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_SUBJECT__SUBJECT_PERSON = eINSTANCE.getRelatedSubject_SubjectPerson();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATED_SUBJECT__NULL_FLAVOR = eINSTANCE.getRelatedSubject_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATED_SUBJECT__CLASS_CODE = eINSTANCE.getRelatedSubject_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl <em>Subject Person</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSubjectPerson()
+		 * @generated
+		 */
+		EClass SUBJECT_PERSON = eINSTANCE.getSubjectPerson();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT_PERSON__REALM_CODE = eINSTANCE.getSubjectPerson_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT_PERSON__TYPE_ID = eINSTANCE.getSubjectPerson_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT_PERSON__TEMPLATE_ID = eINSTANCE.getSubjectPerson_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT_PERSON__NAME = eINSTANCE.getSubjectPerson_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Administrative Gender Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE = eINSTANCE.getSubjectPerson_AdministrativeGenderCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Birth Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT_PERSON__BIRTH_TIME = eINSTANCE.getSubjectPerson_BirthTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUBJECT_PERSON__NULL_FLAVOR = eINSTANCE.getSubjectPerson_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUBJECT_PERSON__CLASS_CODE = eINSTANCE.getSubjectPerson_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Determiner Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUBJECT_PERSON__DETERMINER_CODE = eINSTANCE.getSubjectPerson_DeterminerCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.EntryImpl <em>Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.EntryImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getEntry()
+		 * @generated
+		 */
+		EClass ENTRY = eINSTANCE.getEntry();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY__REALM_CODE = eINSTANCE.getEntry_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY__TYPE_ID = eINSTANCE.getEntry_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY__TEMPLATE_ID = eINSTANCE.getEntry_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Act</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY__ACT = eINSTANCE.getEntry_Act();
+
+		/**
+		 * The meta object literal for the '<em><b>Encounter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY__ENCOUNTER = eINSTANCE.getEntry_Encounter();
+
+		/**
+		 * The meta object literal for the '<em><b>Observation</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY__OBSERVATION = eINSTANCE.getEntry_Observation();
+
+		/**
+		 * The meta object literal for the '<em><b>Observation Media</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY__OBSERVATION_MEDIA = eINSTANCE.getEntry_ObservationMedia();
+
+		/**
+		 * The meta object literal for the '<em><b>Organizer</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY__ORGANIZER = eINSTANCE.getEntry_Organizer();
+
+		/**
+		 * The meta object literal for the '<em><b>Procedure</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY__PROCEDURE = eINSTANCE.getEntry_Procedure();
+
+		/**
+		 * The meta object literal for the '<em><b>Region Of Interest</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY__REGION_OF_INTEREST = eINSTANCE.getEntry_RegionOfInterest();
+
+		/**
+		 * The meta object literal for the '<em><b>Substance Administration</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY__SUBSTANCE_ADMINISTRATION = eINSTANCE.getEntry_SubstanceAdministration();
+
+		/**
+		 * The meta object literal for the '<em><b>Supply</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY__SUPPLY = eINSTANCE.getEntry_Supply();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTRY__NULL_FLAVOR = eINSTANCE.getEntry_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTRY__TYPE_CODE = eINSTANCE.getEntry_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Conduction Ind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTRY__CONTEXT_CONDUCTION_IND = eINSTANCE.getEntry_ContextConductionInd();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ActImpl <em>Act</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ActImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAct()
+		 * @generated
+		 */
+		EClass ACT = eINSTANCE.getAct();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__REALM_CODE = eINSTANCE.getAct_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__TYPE_ID = eINSTANCE.getAct_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__TEMPLATE_ID = eINSTANCE.getAct_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__ID = eINSTANCE.getAct_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__CODE = eINSTANCE.getAct_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__TEXT = eINSTANCE.getAct_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Status Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__STATUS_CODE = eINSTANCE.getAct_StatusCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__EFFECTIVE_TIME = eINSTANCE.getAct_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Priority Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__PRIORITY_CODE = eINSTANCE.getAct_PriorityCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Language Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__LANGUAGE_CODE = eINSTANCE.getAct_LanguageCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Subject</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__SUBJECT = eINSTANCE.getAct_Subject();
+
+		/**
+		 * The meta object literal for the '<em><b>Specimen</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__SPECIMEN = eINSTANCE.getAct_Specimen();
+
+		/**
+		 * The meta object literal for the '<em><b>Performer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__PERFORMER = eINSTANCE.getAct_Performer();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__AUTHOR = eINSTANCE.getAct_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Informant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__INFORMANT = eINSTANCE.getAct_Informant();
+
+		/**
+		 * The meta object literal for the '<em><b>Participant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__PARTICIPANT = eINSTANCE.getAct_Participant();
+
+		/**
+		 * The meta object literal for the '<em><b>Entry Relationship</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__ENTRY_RELATIONSHIP = eINSTANCE.getAct_EntryRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__REFERENCE = eINSTANCE.getAct_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACT__PRECONDITION = eINSTANCE.getAct_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACT__NULL_FLAVOR = eINSTANCE.getAct_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACT__CLASS_CODE = eINSTANCE.getAct_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACT__MOOD_CODE = eINSTANCE.getAct_MoodCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Negation Ind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACT__NEGATION_IND = eINSTANCE.getAct_NegationInd();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.SpecimenImpl <em>Specimen</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.SpecimenImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSpecimen()
+		 * @generated
+		 */
+		EClass SPECIMEN = eINSTANCE.getSpecimen();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIMEN__REALM_CODE = eINSTANCE.getSpecimen_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIMEN__TYPE_ID = eINSTANCE.getSpecimen_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIMEN__TEMPLATE_ID = eINSTANCE.getSpecimen_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Specimen Role</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIMEN__SPECIMEN_ROLE = eINSTANCE.getSpecimen_SpecimenRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPECIMEN__NULL_FLAVOR = eINSTANCE.getSpecimen_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPECIMEN__TYPE_CODE = eINSTANCE.getSpecimen_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.SpecimenRoleImpl <em>Specimen Role</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.SpecimenRoleImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSpecimenRole()
+		 * @generated
+		 */
+		EClass SPECIMEN_ROLE = eINSTANCE.getSpecimenRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIMEN_ROLE__REALM_CODE = eINSTANCE.getSpecimenRole_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIMEN_ROLE__TYPE_ID = eINSTANCE.getSpecimenRole_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIMEN_ROLE__TEMPLATE_ID = eINSTANCE.getSpecimenRole_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIMEN_ROLE__ID = eINSTANCE.getSpecimenRole_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Specimen Playing Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIMEN_ROLE__SPECIMEN_PLAYING_ENTITY = eINSTANCE.getSpecimenRole_SpecimenPlayingEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPECIMEN_ROLE__NULL_FLAVOR = eINSTANCE.getSpecimenRole_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPECIMEN_ROLE__CLASS_CODE = eINSTANCE.getSpecimenRole_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl <em>Playing Entity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.PlayingEntityImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getPlayingEntity()
+		 * @generated
+		 */
+		EClass PLAYING_ENTITY = eINSTANCE.getPlayingEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLAYING_ENTITY__REALM_CODE = eINSTANCE.getPlayingEntity_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLAYING_ENTITY__TYPE_ID = eINSTANCE.getPlayingEntity_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLAYING_ENTITY__TEMPLATE_ID = eINSTANCE.getPlayingEntity_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLAYING_ENTITY__CODE = eINSTANCE.getPlayingEntity_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Quantity</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLAYING_ENTITY__QUANTITY = eINSTANCE.getPlayingEntity_Quantity();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLAYING_ENTITY__NAME = eINSTANCE.getPlayingEntity_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Desc</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLAYING_ENTITY__DESC = eINSTANCE.getPlayingEntity_Desc();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLAYING_ENTITY__NULL_FLAVOR = eINSTANCE.getPlayingEntity_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLAYING_ENTITY__CLASS_CODE = eINSTANCE.getPlayingEntity_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Determiner Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLAYING_ENTITY__DETERMINER_CODE = eINSTANCE.getPlayingEntity_DeterminerCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.Performer2Impl <em>Performer2</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.Performer2Impl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getPerformer2()
+		 * @generated
+		 */
+		EClass PERFORMER2 = eINSTANCE.getPerformer2();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERFORMER2__REALM_CODE = eINSTANCE.getPerformer2_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERFORMER2__TYPE_ID = eINSTANCE.getPerformer2_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERFORMER2__TEMPLATE_ID = eINSTANCE.getPerformer2_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERFORMER2__TIME = eINSTANCE.getPerformer2_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Mode Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERFORMER2__MODE_CODE = eINSTANCE.getPerformer2_ModeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Assigned Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERFORMER2__ASSIGNED_ENTITY = eINSTANCE.getPerformer2_AssignedEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERFORMER2__NULL_FLAVOR = eINSTANCE.getPerformer2_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERFORMER2__TYPE_CODE = eINSTANCE.getPerformer2_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.Participant2Impl <em>Participant2</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.Participant2Impl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getParticipant2()
+		 * @generated
+		 */
+		EClass PARTICIPANT2 = eINSTANCE.getParticipant2();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT2__REALM_CODE = eINSTANCE.getParticipant2_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT2__TYPE_ID = eINSTANCE.getParticipant2_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT2__TEMPLATE_ID = eINSTANCE.getParticipant2_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT2__TIME = eINSTANCE.getParticipant2_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Awareness Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT2__AWARENESS_CODE = eINSTANCE.getParticipant2_AwarenessCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Participant Role</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT2__PARTICIPANT_ROLE = eINSTANCE.getParticipant2_ParticipantRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARTICIPANT2__NULL_FLAVOR = eINSTANCE.getParticipant2_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARTICIPANT2__TYPE_CODE = eINSTANCE.getParticipant2_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Control Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARTICIPANT2__CONTEXT_CONTROL_CODE = eINSTANCE.getParticipant2_ContextControlCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl <em>Participant Role</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ParticipantRoleImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getParticipantRole()
+		 * @generated
+		 */
+		EClass PARTICIPANT_ROLE = eINSTANCE.getParticipantRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT_ROLE__REALM_CODE = eINSTANCE.getParticipantRole_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT_ROLE__TYPE_ID = eINSTANCE.getParticipantRole_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT_ROLE__TEMPLATE_ID = eINSTANCE.getParticipantRole_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT_ROLE__ID = eINSTANCE.getParticipantRole_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT_ROLE__CODE = eINSTANCE.getParticipantRole_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Addr</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT_ROLE__ADDR = eINSTANCE.getParticipantRole_Addr();
+
+		/**
+		 * The meta object literal for the '<em><b>Telecom</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT_ROLE__TELECOM = eINSTANCE.getParticipantRole_Telecom();
+
+		/**
+		 * The meta object literal for the '<em><b>Playing Device</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT_ROLE__PLAYING_DEVICE = eINSTANCE.getParticipantRole_PlayingDevice();
+
+		/**
+		 * The meta object literal for the '<em><b>Playing Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT_ROLE__PLAYING_ENTITY = eINSTANCE.getParticipantRole_PlayingEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Scoping Entity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT_ROLE__SCOPING_ENTITY = eINSTANCE.getParticipantRole_ScopingEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARTICIPANT_ROLE__NULL_FLAVOR = eINSTANCE.getParticipantRole_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARTICIPANT_ROLE__CLASS_CODE = eINSTANCE.getParticipantRole_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.DeviceImpl <em>Device</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.DeviceImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getDevice()
+		 * @generated
+		 */
+		EClass DEVICE = eINSTANCE.getDevice();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE__REALM_CODE = eINSTANCE.getDevice_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE__TYPE_ID = eINSTANCE.getDevice_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE__TEMPLATE_ID = eINSTANCE.getDevice_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE__CODE = eINSTANCE.getDevice_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Manufacturer Model Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE__MANUFACTURER_MODEL_NAME = eINSTANCE.getDevice_ManufacturerModelName();
+
+		/**
+		 * The meta object literal for the '<em><b>Software Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE__SOFTWARE_NAME = eINSTANCE.getDevice_SoftwareName();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE__NULL_FLAVOR = eINSTANCE.getDevice_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE__CLASS_CODE = eINSTANCE.getDevice_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Determiner Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE__DETERMINER_CODE = eINSTANCE.getDevice_DeterminerCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.EntityImpl <em>Entity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.EntityImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getEntity()
+		 * @generated
+		 */
+		EClass ENTITY = eINSTANCE.getEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__REALM_CODE = eINSTANCE.getEntity_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__TYPE_ID = eINSTANCE.getEntity_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__TEMPLATE_ID = eINSTANCE.getEntity_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__ID = eINSTANCE.getEntity_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__CODE = eINSTANCE.getEntity_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Desc</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__DESC = eINSTANCE.getEntity_Desc();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__NULL_FLAVOR = eINSTANCE.getEntity_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__CLASS_CODE = eINSTANCE.getEntity_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Determiner Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__DETERMINER_CODE = eINSTANCE.getEntity_DeterminerCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.EntryRelationshipImpl <em>Entry Relationship</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.EntryRelationshipImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getEntryRelationship()
+		 * @generated
+		 */
+		EClass ENTRY_RELATIONSHIP = eINSTANCE.getEntryRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__REALM_CODE = eINSTANCE.getEntryRelationship_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__TYPE_ID = eINSTANCE.getEntryRelationship_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__TEMPLATE_ID = eINSTANCE.getEntryRelationship_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Sequence Number</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__SEQUENCE_NUMBER = eINSTANCE.getEntryRelationship_SequenceNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Seperatable Ind</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__SEPERATABLE_IND = eINSTANCE.getEntryRelationship_SeperatableInd();
+
+		/**
+		 * The meta object literal for the '<em><b>Act</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__ACT = eINSTANCE.getEntryRelationship_Act();
+
+		/**
+		 * The meta object literal for the '<em><b>Encounter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__ENCOUNTER = eINSTANCE.getEntryRelationship_Encounter();
+
+		/**
+		 * The meta object literal for the '<em><b>Observation</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__OBSERVATION = eINSTANCE.getEntryRelationship_Observation();
+
+		/**
+		 * The meta object literal for the '<em><b>Observation Media</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__OBSERVATION_MEDIA = eINSTANCE.getEntryRelationship_ObservationMedia();
+
+		/**
+		 * The meta object literal for the '<em><b>Organizer</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__ORGANIZER = eINSTANCE.getEntryRelationship_Organizer();
+
+		/**
+		 * The meta object literal for the '<em><b>Procedure</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__PROCEDURE = eINSTANCE.getEntryRelationship_Procedure();
+
+		/**
+		 * The meta object literal for the '<em><b>Region Of Interest</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__REGION_OF_INTEREST = eINSTANCE.getEntryRelationship_RegionOfInterest();
+
+		/**
+		 * The meta object literal for the '<em><b>Substance Administration</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__SUBSTANCE_ADMINISTRATION = eINSTANCE.getEntryRelationship_SubstanceAdministration();
+
+		/**
+		 * The meta object literal for the '<em><b>Supply</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_RELATIONSHIP__SUPPLY = eINSTANCE.getEntryRelationship_Supply();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTRY_RELATIONSHIP__NULL_FLAVOR = eINSTANCE.getEntryRelationship_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTRY_RELATIONSHIP__TYPE_CODE = eINSTANCE.getEntryRelationship_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Inversion Ind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTRY_RELATIONSHIP__INVERSION_IND = eINSTANCE.getEntryRelationship_InversionInd();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Conduction Ind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTRY_RELATIONSHIP__CONTEXT_CONDUCTION_IND = eINSTANCE.getEntryRelationship_ContextConductionInd();
+
+		/**
+		 * The meta object literal for the '<em><b>Negation Ind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTRY_RELATIONSHIP__NEGATION_IND = eINSTANCE.getEntryRelationship_NegationInd();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.EncounterImpl <em>Encounter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.EncounterImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getEncounter()
+		 * @generated
+		 */
+		EClass ENCOUNTER = eINSTANCE.getEncounter();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__REALM_CODE = eINSTANCE.getEncounter_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__TYPE_ID = eINSTANCE.getEncounter_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__TEMPLATE_ID = eINSTANCE.getEncounter_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__ID = eINSTANCE.getEncounter_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__CODE = eINSTANCE.getEncounter_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__TEXT = eINSTANCE.getEncounter_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Status Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__STATUS_CODE = eINSTANCE.getEncounter_StatusCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__EFFECTIVE_TIME = eINSTANCE.getEncounter_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Priority Code</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__PRIORITY_CODE = eINSTANCE.getEncounter_PriorityCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Subject</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__SUBJECT = eINSTANCE.getEncounter_Subject();
+
+		/**
+		 * The meta object literal for the '<em><b>Specimen</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__SPECIMEN = eINSTANCE.getEncounter_Specimen();
+
+		/**
+		 * The meta object literal for the '<em><b>Performer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__PERFORMER = eINSTANCE.getEncounter_Performer();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__AUTHOR = eINSTANCE.getEncounter_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Informant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__INFORMANT = eINSTANCE.getEncounter_Informant();
+
+		/**
+		 * The meta object literal for the '<em><b>Participant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__PARTICIPANT = eINSTANCE.getEncounter_Participant();
+
+		/**
+		 * The meta object literal for the '<em><b>Entry Relationship</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__ENTRY_RELATIONSHIP = eINSTANCE.getEncounter_EntryRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__REFERENCE = eINSTANCE.getEncounter_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCOUNTER__PRECONDITION = eINSTANCE.getEncounter_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENCOUNTER__NULL_FLAVOR = eINSTANCE.getEncounter_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENCOUNTER__CLASS_CODE = eINSTANCE.getEncounter_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENCOUNTER__MOOD_CODE = eINSTANCE.getEncounter_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ReferenceImpl <em>Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ReferenceImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getReference()
+		 * @generated
+		 */
+		EClass REFERENCE = eINSTANCE.getReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE__REALM_CODE = eINSTANCE.getReference_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE__TYPE_ID = eINSTANCE.getReference_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE__TEMPLATE_ID = eINSTANCE.getReference_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Seperatable Ind</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE__SEPERATABLE_IND = eINSTANCE.getReference_SeperatableInd();
+
+		/**
+		 * The meta object literal for the '<em><b>External Act</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE__EXTERNAL_ACT = eINSTANCE.getReference_ExternalAct();
+
+		/**
+		 * The meta object literal for the '<em><b>External Observation</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE__EXTERNAL_OBSERVATION = eINSTANCE.getReference_ExternalObservation();
+
+		/**
+		 * The meta object literal for the '<em><b>External Procedure</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE__EXTERNAL_PROCEDURE = eINSTANCE.getReference_ExternalProcedure();
+
+		/**
+		 * The meta object literal for the '<em><b>External Document</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE__EXTERNAL_DOCUMENT = eINSTANCE.getReference_ExternalDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REFERENCE__NULL_FLAVOR = eINSTANCE.getReference_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REFERENCE__TYPE_CODE = eINSTANCE.getReference_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ExternalActImpl <em>External Act</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ExternalActImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getExternalAct()
+		 * @generated
+		 */
+		EClass EXTERNAL_ACT = eINSTANCE.getExternalAct();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_ACT__REALM_CODE = eINSTANCE.getExternalAct_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_ACT__TYPE_ID = eINSTANCE.getExternalAct_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_ACT__TEMPLATE_ID = eINSTANCE.getExternalAct_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_ACT__ID = eINSTANCE.getExternalAct_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_ACT__CODE = eINSTANCE.getExternalAct_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_ACT__TEXT = eINSTANCE.getExternalAct_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_ACT__NULL_FLAVOR = eINSTANCE.getExternalAct_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_ACT__CLASS_CODE = eINSTANCE.getExternalAct_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_ACT__MOOD_CODE = eINSTANCE.getExternalAct_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ExternalObservationImpl <em>External Observation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ExternalObservationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getExternalObservation()
+		 * @generated
+		 */
+		EClass EXTERNAL_OBSERVATION = eINSTANCE.getExternalObservation();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_OBSERVATION__REALM_CODE = eINSTANCE.getExternalObservation_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_OBSERVATION__TYPE_ID = eINSTANCE.getExternalObservation_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_OBSERVATION__TEMPLATE_ID = eINSTANCE.getExternalObservation_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_OBSERVATION__ID = eINSTANCE.getExternalObservation_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_OBSERVATION__CODE = eINSTANCE.getExternalObservation_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_OBSERVATION__TEXT = eINSTANCE.getExternalObservation_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_OBSERVATION__NULL_FLAVOR = eINSTANCE.getExternalObservation_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_OBSERVATION__CLASS_CODE = eINSTANCE.getExternalObservation_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_OBSERVATION__MOOD_CODE = eINSTANCE.getExternalObservation_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ExternalProcedureImpl <em>External Procedure</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ExternalProcedureImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getExternalProcedure()
+		 * @generated
+		 */
+		EClass EXTERNAL_PROCEDURE = eINSTANCE.getExternalProcedure();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_PROCEDURE__REALM_CODE = eINSTANCE.getExternalProcedure_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_PROCEDURE__TYPE_ID = eINSTANCE.getExternalProcedure_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_PROCEDURE__TEMPLATE_ID = eINSTANCE.getExternalProcedure_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_PROCEDURE__ID = eINSTANCE.getExternalProcedure_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_PROCEDURE__CODE = eINSTANCE.getExternalProcedure_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_PROCEDURE__TEXT = eINSTANCE.getExternalProcedure_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_PROCEDURE__NULL_FLAVOR = eINSTANCE.getExternalProcedure_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_PROCEDURE__CLASS_CODE = eINSTANCE.getExternalProcedure_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_PROCEDURE__MOOD_CODE = eINSTANCE.getExternalProcedure_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ExternalDocumentImpl <em>External Document</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ExternalDocumentImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getExternalDocument()
+		 * @generated
+		 */
+		EClass EXTERNAL_DOCUMENT = eINSTANCE.getExternalDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_DOCUMENT__REALM_CODE = eINSTANCE.getExternalDocument_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_DOCUMENT__TYPE_ID = eINSTANCE.getExternalDocument_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_DOCUMENT__TEMPLATE_ID = eINSTANCE.getExternalDocument_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_DOCUMENT__ID = eINSTANCE.getExternalDocument_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_DOCUMENT__CODE = eINSTANCE.getExternalDocument_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_DOCUMENT__TEXT = eINSTANCE.getExternalDocument_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_DOCUMENT__SET_ID = eINSTANCE.getExternalDocument_SetId();
+
+		/**
+		 * The meta object literal for the '<em><b>Version Number</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_DOCUMENT__VERSION_NUMBER = eINSTANCE.getExternalDocument_VersionNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_DOCUMENT__NULL_FLAVOR = eINSTANCE.getExternalDocument_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_DOCUMENT__CLASS_CODE = eINSTANCE.getExternalDocument_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_DOCUMENT__MOOD_CODE = eINSTANCE.getExternalDocument_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.PreconditionImpl <em>Precondition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.PreconditionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getPrecondition()
+		 * @generated
+		 */
+		EClass PRECONDITION = eINSTANCE.getPrecondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRECONDITION__REALM_CODE = eINSTANCE.getPrecondition_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRECONDITION__TYPE_ID = eINSTANCE.getPrecondition_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRECONDITION__TEMPLATE_ID = eINSTANCE.getPrecondition_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Criterion</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRECONDITION__CRITERION = eINSTANCE.getPrecondition_Criterion();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRECONDITION__NULL_FLAVOR = eINSTANCE.getPrecondition_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRECONDITION__TYPE_CODE = eINSTANCE.getPrecondition_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.CriterionImpl <em>Criterion</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CriterionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getCriterion()
+		 * @generated
+		 */
+		EClass CRITERION = eINSTANCE.getCriterion();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CRITERION__REALM_CODE = eINSTANCE.getCriterion_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CRITERION__TYPE_ID = eINSTANCE.getCriterion_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CRITERION__TEMPLATE_ID = eINSTANCE.getCriterion_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CRITERION__CODE = eINSTANCE.getCriterion_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CRITERION__TEXT = eINSTANCE.getCriterion_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CRITERION__VALUE = eINSTANCE.getCriterion_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CRITERION__NULL_FLAVOR = eINSTANCE.getCriterion_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CRITERION__CLASS_CODE = eINSTANCE.getCriterion_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CRITERION__MOOD_CODE = eINSTANCE.getCriterion_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ObservationImpl <em>Observation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ObservationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getObservation()
+		 * @generated
+		 */
+		EClass OBSERVATION = eINSTANCE.getObservation();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__REALM_CODE = eINSTANCE.getObservation_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__TYPE_ID = eINSTANCE.getObservation_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__TEMPLATE_ID = eINSTANCE.getObservation_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__ID = eINSTANCE.getObservation_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__CODE = eINSTANCE.getObservation_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Derivation Expr</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__DERIVATION_EXPR = eINSTANCE.getObservation_DerivationExpr();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__TEXT = eINSTANCE.getObservation_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Status Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__STATUS_CODE = eINSTANCE.getObservation_StatusCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__EFFECTIVE_TIME = eINSTANCE.getObservation_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Priority Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__PRIORITY_CODE = eINSTANCE.getObservation_PriorityCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Repeat Number</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__REPEAT_NUMBER = eINSTANCE.getObservation_RepeatNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Language Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__LANGUAGE_CODE = eINSTANCE.getObservation_LanguageCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__VALUE = eINSTANCE.getObservation_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Interpretation Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__INTERPRETATION_CODE = eINSTANCE.getObservation_InterpretationCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Method Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__METHOD_CODE = eINSTANCE.getObservation_MethodCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Site Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__TARGET_SITE_CODE = eINSTANCE.getObservation_TargetSiteCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Subject</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__SUBJECT = eINSTANCE.getObservation_Subject();
+
+		/**
+		 * The meta object literal for the '<em><b>Specimen</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__SPECIMEN = eINSTANCE.getObservation_Specimen();
+
+		/**
+		 * The meta object literal for the '<em><b>Performer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__PERFORMER = eINSTANCE.getObservation_Performer();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__AUTHOR = eINSTANCE.getObservation_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Informant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__INFORMANT = eINSTANCE.getObservation_Informant();
+
+		/**
+		 * The meta object literal for the '<em><b>Participant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__PARTICIPANT = eINSTANCE.getObservation_Participant();
+
+		/**
+		 * The meta object literal for the '<em><b>Entry Relationship</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__ENTRY_RELATIONSHIP = eINSTANCE.getObservation_EntryRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__REFERENCE = eINSTANCE.getObservation_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__PRECONDITION = eINSTANCE.getObservation_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference Range</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION__REFERENCE_RANGE = eINSTANCE.getObservation_ReferenceRange();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVATION__NULL_FLAVOR = eINSTANCE.getObservation_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVATION__CLASS_CODE = eINSTANCE.getObservation_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVATION__MOOD_CODE = eINSTANCE.getObservation_MoodCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Negation Ind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVATION__NEGATION_IND = eINSTANCE.getObservation_NegationInd();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ReferenceRangeImpl <em>Reference Range</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ReferenceRangeImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getReferenceRange()
+		 * @generated
+		 */
+		EClass REFERENCE_RANGE = eINSTANCE.getReferenceRange();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE_RANGE__REALM_CODE = eINSTANCE.getReferenceRange_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE_RANGE__TYPE_ID = eINSTANCE.getReferenceRange_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE_RANGE__TEMPLATE_ID = eINSTANCE.getReferenceRange_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Observation Range</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFERENCE_RANGE__OBSERVATION_RANGE = eINSTANCE.getReferenceRange_ObservationRange();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REFERENCE_RANGE__NULL_FLAVOR = eINSTANCE.getReferenceRange_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REFERENCE_RANGE__TYPE_CODE = eINSTANCE.getReferenceRange_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ObservationRangeImpl <em>Observation Range</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ObservationRangeImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getObservationRange()
+		 * @generated
+		 */
+		EClass OBSERVATION_RANGE = eINSTANCE.getObservationRange();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_RANGE__REALM_CODE = eINSTANCE.getObservationRange_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_RANGE__TYPE_ID = eINSTANCE.getObservationRange_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_RANGE__TEMPLATE_ID = eINSTANCE.getObservationRange_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_RANGE__CODE = eINSTANCE.getObservationRange_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_RANGE__TEXT = eINSTANCE.getObservationRange_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_RANGE__VALUE = eINSTANCE.getObservationRange_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Interpretation Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_RANGE__INTERPRETATION_CODE = eINSTANCE.getObservationRange_InterpretationCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVATION_RANGE__NULL_FLAVOR = eINSTANCE.getObservationRange_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVATION_RANGE__CLASS_CODE = eINSTANCE.getObservationRange_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVATION_RANGE__MOOD_CODE = eINSTANCE.getObservationRange_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl <em>Observation Media</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ObservationMediaImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getObservationMedia()
+		 * @generated
+		 */
+		EClass OBSERVATION_MEDIA = eINSTANCE.getObservationMedia();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__REALM_CODE = eINSTANCE.getObservationMedia_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__TYPE_ID = eINSTANCE.getObservationMedia_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__TEMPLATE_ID = eINSTANCE.getObservationMedia_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__ID = eINSTANCE.getObservationMedia_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Language Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__LANGUAGE_CODE = eINSTANCE.getObservationMedia_LanguageCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__VALUE = eINSTANCE.getObservationMedia_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Subject</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__SUBJECT = eINSTANCE.getObservationMedia_Subject();
+
+		/**
+		 * The meta object literal for the '<em><b>Specimen</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__SPECIMEN = eINSTANCE.getObservationMedia_Specimen();
+
+		/**
+		 * The meta object literal for the '<em><b>Performer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__PERFORMER = eINSTANCE.getObservationMedia_Performer();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__AUTHOR = eINSTANCE.getObservationMedia_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Informant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__INFORMANT = eINSTANCE.getObservationMedia_Informant();
+
+		/**
+		 * The meta object literal for the '<em><b>Participant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__PARTICIPANT = eINSTANCE.getObservationMedia_Participant();
+
+		/**
+		 * The meta object literal for the '<em><b>Entry Relationship</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__ENTRY_RELATIONSHIP = eINSTANCE.getObservationMedia_EntryRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__REFERENCE = eINSTANCE.getObservationMedia_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBSERVATION_MEDIA__PRECONDITION = eINSTANCE.getObservationMedia_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Observation Media Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVATION_MEDIA__OBSERVATION_MEDIA_ID = eINSTANCE.getObservationMedia_ObservationMediaId();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVATION_MEDIA__NULL_FLAVOR = eINSTANCE.getObservationMedia_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVATION_MEDIA__CLASS_CODE = eINSTANCE.getObservationMedia_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVATION_MEDIA__MOOD_CODE = eINSTANCE.getObservationMedia_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl <em>Organizer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.OrganizerImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getOrganizer()
+		 * @generated
+		 */
+		EClass ORGANIZER = eINSTANCE.getOrganizer();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__REALM_CODE = eINSTANCE.getOrganizer_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__TYPE_ID = eINSTANCE.getOrganizer_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__TEMPLATE_ID = eINSTANCE.getOrganizer_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__ID = eINSTANCE.getOrganizer_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__CODE = eINSTANCE.getOrganizer_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Status Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__STATUS_CODE = eINSTANCE.getOrganizer_StatusCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__EFFECTIVE_TIME = eINSTANCE.getOrganizer_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Subject</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__SUBJECT = eINSTANCE.getOrganizer_Subject();
+
+		/**
+		 * The meta object literal for the '<em><b>Specimen</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__SPECIMEN = eINSTANCE.getOrganizer_Specimen();
+
+		/**
+		 * The meta object literal for the '<em><b>Performer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__PERFORMER = eINSTANCE.getOrganizer_Performer();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__AUTHOR = eINSTANCE.getOrganizer_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Informant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__INFORMANT = eINSTANCE.getOrganizer_Informant();
+
+		/**
+		 * The meta object literal for the '<em><b>Participant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__PARTICIPANT = eINSTANCE.getOrganizer_Participant();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__REFERENCE = eINSTANCE.getOrganizer_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__PRECONDITION = eINSTANCE.getOrganizer_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Component</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZER__COMPONENT = eINSTANCE.getOrganizer_Component();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORGANIZER__NULL_FLAVOR = eINSTANCE.getOrganizer_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORGANIZER__CLASS_CODE = eINSTANCE.getOrganizer_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORGANIZER__MOOD_CODE = eINSTANCE.getOrganizer_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.Component4Impl <em>Component4</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.Component4Impl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getComponent4()
+		 * @generated
+		 */
+		EClass COMPONENT4 = eINSTANCE.getComponent4();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__REALM_CODE = eINSTANCE.getComponent4_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__TYPE_ID = eINSTANCE.getComponent4_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__TEMPLATE_ID = eINSTANCE.getComponent4_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Sequence Number</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__SEQUENCE_NUMBER = eINSTANCE.getComponent4_SequenceNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Seperatable Ind</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__SEPERATABLE_IND = eINSTANCE.getComponent4_SeperatableInd();
+
+		/**
+		 * The meta object literal for the '<em><b>Act</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__ACT = eINSTANCE.getComponent4_Act();
+
+		/**
+		 * The meta object literal for the '<em><b>Encounter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__ENCOUNTER = eINSTANCE.getComponent4_Encounter();
+
+		/**
+		 * The meta object literal for the '<em><b>Observation</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__OBSERVATION = eINSTANCE.getComponent4_Observation();
+
+		/**
+		 * The meta object literal for the '<em><b>Observation Media</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__OBSERVATION_MEDIA = eINSTANCE.getComponent4_ObservationMedia();
+
+		/**
+		 * The meta object literal for the '<em><b>Organizer</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__ORGANIZER = eINSTANCE.getComponent4_Organizer();
+
+		/**
+		 * The meta object literal for the '<em><b>Procedure</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__PROCEDURE = eINSTANCE.getComponent4_Procedure();
+
+		/**
+		 * The meta object literal for the '<em><b>Region Of Interest</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__REGION_OF_INTEREST = eINSTANCE.getComponent4_RegionOfInterest();
+
+		/**
+		 * The meta object literal for the '<em><b>Substance Administration</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__SUBSTANCE_ADMINISTRATION = eINSTANCE.getComponent4_SubstanceAdministration();
+
+		/**
+		 * The meta object literal for the '<em><b>Supply</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT4__SUPPLY = eINSTANCE.getComponent4_Supply();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT4__NULL_FLAVOR = eINSTANCE.getComponent4_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT4__TYPE_CODE = eINSTANCE.getComponent4_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Conduction Ind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT4__CONTEXT_CONDUCTION_IND = eINSTANCE.getComponent4_ContextConductionInd();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl <em>Procedure</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getProcedure()
+		 * @generated
+		 */
+		EClass PROCEDURE = eINSTANCE.getProcedure();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__REALM_CODE = eINSTANCE.getProcedure_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__TYPE_ID = eINSTANCE.getProcedure_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__TEMPLATE_ID = eINSTANCE.getProcedure_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__ID = eINSTANCE.getProcedure_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__CODE = eINSTANCE.getProcedure_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__TEXT = eINSTANCE.getProcedure_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Status Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__STATUS_CODE = eINSTANCE.getProcedure_StatusCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__EFFECTIVE_TIME = eINSTANCE.getProcedure_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Priority Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__PRIORITY_CODE = eINSTANCE.getProcedure_PriorityCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Language Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__LANGUAGE_CODE = eINSTANCE.getProcedure_LanguageCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Method Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__METHOD_CODE = eINSTANCE.getProcedure_MethodCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Approach Site Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__APPROACH_SITE_CODE = eINSTANCE.getProcedure_ApproachSiteCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Site Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__TARGET_SITE_CODE = eINSTANCE.getProcedure_TargetSiteCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Subject</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__SUBJECT = eINSTANCE.getProcedure_Subject();
+
+		/**
+		 * The meta object literal for the '<em><b>Specimen</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__SPECIMEN = eINSTANCE.getProcedure_Specimen();
+
+		/**
+		 * The meta object literal for the '<em><b>Performer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__PERFORMER = eINSTANCE.getProcedure_Performer();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__AUTHOR = eINSTANCE.getProcedure_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Informant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__INFORMANT = eINSTANCE.getProcedure_Informant();
+
+		/**
+		 * The meta object literal for the '<em><b>Participant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__PARTICIPANT = eINSTANCE.getProcedure_Participant();
+
+		/**
+		 * The meta object literal for the '<em><b>Entry Relationship</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__ENTRY_RELATIONSHIP = eINSTANCE.getProcedure_EntryRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__REFERENCE = eINSTANCE.getProcedure_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCEDURE__PRECONDITION = eINSTANCE.getProcedure_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROCEDURE__NULL_FLAVOR = eINSTANCE.getProcedure_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROCEDURE__CLASS_CODE = eINSTANCE.getProcedure_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROCEDURE__MOOD_CODE = eINSTANCE.getProcedure_MoodCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Negation Ind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROCEDURE__NEGATION_IND = eINSTANCE.getProcedure_NegationInd();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.RegionOfInterestImpl <em>Region Of Interest</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.RegionOfInterestImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRegionOfInterest()
+		 * @generated
+		 */
+		EClass REGION_OF_INTEREST = eINSTANCE.getRegionOfInterest();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__REALM_CODE = eINSTANCE.getRegionOfInterest_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__TYPE_ID = eINSTANCE.getRegionOfInterest_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__TEMPLATE_ID = eINSTANCE.getRegionOfInterest_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__ID = eINSTANCE.getRegionOfInterest_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__CODE = eINSTANCE.getRegionOfInterest_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__VALUE = eINSTANCE.getRegionOfInterest_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Subject</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__SUBJECT = eINSTANCE.getRegionOfInterest_Subject();
+
+		/**
+		 * The meta object literal for the '<em><b>Specimen</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__SPECIMEN = eINSTANCE.getRegionOfInterest_Specimen();
+
+		/**
+		 * The meta object literal for the '<em><b>Performer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__PERFORMER = eINSTANCE.getRegionOfInterest_Performer();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__AUTHOR = eINSTANCE.getRegionOfInterest_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Informant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__INFORMANT = eINSTANCE.getRegionOfInterest_Informant();
+
+		/**
+		 * The meta object literal for the '<em><b>Participant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__PARTICIPANT = eINSTANCE.getRegionOfInterest_Participant();
+
+		/**
+		 * The meta object literal for the '<em><b>Entry Relationship</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__ENTRY_RELATIONSHIP = eINSTANCE.getRegionOfInterest_EntryRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__REFERENCE = eINSTANCE.getRegionOfInterest_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION_OF_INTEREST__PRECONDITION = eINSTANCE.getRegionOfInterest_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Region Of Interest Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGION_OF_INTEREST__REGION_OF_INTEREST_ID = eINSTANCE.getRegionOfInterest_RegionOfInterestId();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGION_OF_INTEREST__NULL_FLAVOR = eINSTANCE.getRegionOfInterest_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGION_OF_INTEREST__CLASS_CODE = eINSTANCE.getRegionOfInterest_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGION_OF_INTEREST__MOOD_CODE = eINSTANCE.getRegionOfInterest_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.RegionOfInterestValueImpl <em>Region Of Interest Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.RegionOfInterestValueImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRegionOfInterestValue()
+		 * @generated
+		 */
+		EClass REGION_OF_INTEREST_VALUE = eINSTANCE.getRegionOfInterestValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Unsorted</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGION_OF_INTEREST_VALUE__UNSORTED = eINSTANCE.getRegionOfInterestValue_Unsorted();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl <em>Substance Administration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSubstanceAdministration()
+		 * @generated
+		 */
+		EClass SUBSTANCE_ADMINISTRATION = eINSTANCE.getSubstanceAdministration();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__REALM_CODE = eINSTANCE.getSubstanceAdministration_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__TYPE_ID = eINSTANCE.getSubstanceAdministration_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__TEMPLATE_ID = eINSTANCE.getSubstanceAdministration_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__ID = eINSTANCE.getSubstanceAdministration_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__CODE = eINSTANCE.getSubstanceAdministration_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__TEXT = eINSTANCE.getSubstanceAdministration_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Status Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__STATUS_CODE = eINSTANCE.getSubstanceAdministration_StatusCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME = eINSTANCE.getSubstanceAdministration_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Priority Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__PRIORITY_CODE = eINSTANCE.getSubstanceAdministration_PriorityCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Repeat Number</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER = eINSTANCE.getSubstanceAdministration_RepeatNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Route Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__ROUTE_CODE = eINSTANCE.getSubstanceAdministration_RouteCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Approach Site Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE = eINSTANCE.getSubstanceAdministration_ApproachSiteCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Dose Quantity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY = eINSTANCE.getSubstanceAdministration_DoseQuantity();
+
+		/**
+		 * The meta object literal for the '<em><b>Rate Quantity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__RATE_QUANTITY = eINSTANCE.getSubstanceAdministration_RateQuantity();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Dose Quantity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY = eINSTANCE.getSubstanceAdministration_MaxDoseQuantity();
+
+		/**
+		 * The meta object literal for the '<em><b>Administration Unit Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE = eINSTANCE.getSubstanceAdministration_AdministrationUnitCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Subject</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__SUBJECT = eINSTANCE.getSubstanceAdministration_Subject();
+
+		/**
+		 * The meta object literal for the '<em><b>Specimen</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__SPECIMEN = eINSTANCE.getSubstanceAdministration_Specimen();
+
+		/**
+		 * The meta object literal for the '<em><b>Consumable</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__CONSUMABLE = eINSTANCE.getSubstanceAdministration_Consumable();
+
+		/**
+		 * The meta object literal for the '<em><b>Performer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__PERFORMER = eINSTANCE.getSubstanceAdministration_Performer();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__AUTHOR = eINSTANCE.getSubstanceAdministration_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Informant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__INFORMANT = eINSTANCE.getSubstanceAdministration_Informant();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__REFERENCE = eINSTANCE.getSubstanceAdministration_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Participant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__PARTICIPANT = eINSTANCE.getSubstanceAdministration_Participant();
+
+		/**
+		 * The meta object literal for the '<em><b>Entry Relationship</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP = eINSTANCE.getSubstanceAdministration_EntryRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBSTANCE_ADMINISTRATION__PRECONDITION = eINSTANCE.getSubstanceAdministration_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUBSTANCE_ADMINISTRATION__NULL_FLAVOR = eINSTANCE.getSubstanceAdministration_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUBSTANCE_ADMINISTRATION__CLASS_CODE = eINSTANCE.getSubstanceAdministration_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUBSTANCE_ADMINISTRATION__MOOD_CODE = eINSTANCE.getSubstanceAdministration_MoodCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Negation Ind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUBSTANCE_ADMINISTRATION__NEGATION_IND = eINSTANCE.getSubstanceAdministration_NegationInd();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ConsumableImpl <em>Consumable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ConsumableImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getConsumable()
+		 * @generated
+		 */
+		EClass CONSUMABLE = eINSTANCE.getConsumable();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSUMABLE__REALM_CODE = eINSTANCE.getConsumable_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSUMABLE__TYPE_ID = eINSTANCE.getConsumable_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSUMABLE__TEMPLATE_ID = eINSTANCE.getConsumable_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Manufactured Product</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSUMABLE__MANUFACTURED_PRODUCT = eINSTANCE.getConsumable_ManufacturedProduct();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSUMABLE__NULL_FLAVOR = eINSTANCE.getConsumable_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSUMABLE__TYPE_CODE = eINSTANCE.getConsumable_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl <em>Manufactured Product</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ManufacturedProductImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getManufacturedProduct()
+		 * @generated
+		 */
+		EClass MANUFACTURED_PRODUCT = eINSTANCE.getManufacturedProduct();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANUFACTURED_PRODUCT__REALM_CODE = eINSTANCE.getManufacturedProduct_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANUFACTURED_PRODUCT__TYPE_ID = eINSTANCE.getManufacturedProduct_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANUFACTURED_PRODUCT__TEMPLATE_ID = eINSTANCE.getManufacturedProduct_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANUFACTURED_PRODUCT__ID = eINSTANCE.getManufacturedProduct_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Manufactured Labeled Drug</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANUFACTURED_PRODUCT__MANUFACTURED_LABELED_DRUG = eINSTANCE.getManufacturedProduct_ManufacturedLabeledDrug();
+
+		/**
+		 * The meta object literal for the '<em><b>Manufactured Material</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANUFACTURED_PRODUCT__MANUFACTURED_MATERIAL = eINSTANCE.getManufacturedProduct_ManufacturedMaterial();
+
+		/**
+		 * The meta object literal for the '<em><b>Manufacturer Organization</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANUFACTURED_PRODUCT__MANUFACTURER_ORGANIZATION = eINSTANCE.getManufacturedProduct_ManufacturerOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MANUFACTURED_PRODUCT__NULL_FLAVOR = eINSTANCE.getManufacturedProduct_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MANUFACTURED_PRODUCT__CLASS_CODE = eINSTANCE.getManufacturedProduct_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.LabeledDrugImpl <em>Labeled Drug</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.LabeledDrugImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getLabeledDrug()
+		 * @generated
+		 */
+		EClass LABELED_DRUG = eINSTANCE.getLabeledDrug();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LABELED_DRUG__REALM_CODE = eINSTANCE.getLabeledDrug_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LABELED_DRUG__TYPE_ID = eINSTANCE.getLabeledDrug_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LABELED_DRUG__TEMPLATE_ID = eINSTANCE.getLabeledDrug_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LABELED_DRUG__CODE = eINSTANCE.getLabeledDrug_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LABELED_DRUG__NAME = eINSTANCE.getLabeledDrug_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LABELED_DRUG__NULL_FLAVOR = eINSTANCE.getLabeledDrug_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LABELED_DRUG__CLASS_CODE = eINSTANCE.getLabeledDrug_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Determiner Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LABELED_DRUG__DETERMINER_CODE = eINSTANCE.getLabeledDrug_DeterminerCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.MaterialImpl <em>Material</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.MaterialImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getMaterial()
+		 * @generated
+		 */
+		EClass MATERIAL = eINSTANCE.getMaterial();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MATERIAL__REALM_CODE = eINSTANCE.getMaterial_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MATERIAL__TYPE_ID = eINSTANCE.getMaterial_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MATERIAL__TEMPLATE_ID = eINSTANCE.getMaterial_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MATERIAL__CODE = eINSTANCE.getMaterial_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MATERIAL__NAME = eINSTANCE.getMaterial_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Lot Number Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MATERIAL__LOT_NUMBER_TEXT = eINSTANCE.getMaterial_LotNumberText();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATERIAL__NULL_FLAVOR = eINSTANCE.getMaterial_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATERIAL__CLASS_CODE = eINSTANCE.getMaterial_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Determiner Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATERIAL__DETERMINER_CODE = eINSTANCE.getMaterial_DeterminerCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.SupplyImpl <em>Supply</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.SupplyImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSupply()
+		 * @generated
+		 */
+		EClass SUPPLY = eINSTANCE.getSupply();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__REALM_CODE = eINSTANCE.getSupply_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__TYPE_ID = eINSTANCE.getSupply_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__TEMPLATE_ID = eINSTANCE.getSupply_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__ID = eINSTANCE.getSupply_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__CODE = eINSTANCE.getSupply_Code();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__TEXT = eINSTANCE.getSupply_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Status Code</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__STATUS_CODE = eINSTANCE.getSupply_StatusCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Effective Time</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__EFFECTIVE_TIME = eINSTANCE.getSupply_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Priority Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__PRIORITY_CODE = eINSTANCE.getSupply_PriorityCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Repeat Number</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__REPEAT_NUMBER = eINSTANCE.getSupply_RepeatNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Independent Ind</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__INDEPENDENT_IND = eINSTANCE.getSupply_IndependentInd();
+
+		/**
+		 * The meta object literal for the '<em><b>Quantity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__QUANTITY = eINSTANCE.getSupply_Quantity();
+
+		/**
+		 * The meta object literal for the '<em><b>Expected Use Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__EXPECTED_USE_TIME = eINSTANCE.getSupply_ExpectedUseTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Subject</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__SUBJECT = eINSTANCE.getSupply_Subject();
+
+		/**
+		 * The meta object literal for the '<em><b>Specimen</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__SPECIMEN = eINSTANCE.getSupply_Specimen();
+
+		/**
+		 * The meta object literal for the '<em><b>Product</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__PRODUCT = eINSTANCE.getSupply_Product();
+
+		/**
+		 * The meta object literal for the '<em><b>Performer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__PERFORMER = eINSTANCE.getSupply_Performer();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__AUTHOR = eINSTANCE.getSupply_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Informant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__INFORMANT = eINSTANCE.getSupply_Informant();
+
+		/**
+		 * The meta object literal for the '<em><b>Participant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__PARTICIPANT = eINSTANCE.getSupply_Participant();
+
+		/**
+		 * The meta object literal for the '<em><b>Entry Relationship</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__ENTRY_RELATIONSHIP = eINSTANCE.getSupply_EntryRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__REFERENCE = eINSTANCE.getSupply_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLY__PRECONDITION = eINSTANCE.getSupply_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUPPLY__NULL_FLAVOR = eINSTANCE.getSupply_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUPPLY__CLASS_CODE = eINSTANCE.getSupply_ClassCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Mood Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUPPLY__MOOD_CODE = eINSTANCE.getSupply_MoodCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.ProductImpl <em>Product</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.ProductImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getProduct()
+		 * @generated
+		 */
+		EClass PRODUCT = eINSTANCE.getProduct();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRODUCT__REALM_CODE = eINSTANCE.getProduct_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRODUCT__TYPE_ID = eINSTANCE.getProduct_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRODUCT__TEMPLATE_ID = eINSTANCE.getProduct_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Manufactured Product</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRODUCT__MANUFACTURED_PRODUCT = eINSTANCE.getProduct_ManufacturedProduct();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRODUCT__NULL_FLAVOR = eINSTANCE.getProduct_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRODUCT__TYPE_CODE = eINSTANCE.getProduct_TypeCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.Component5Impl <em>Component5</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.Component5Impl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getComponent5()
+		 * @generated
+		 */
+		EClass COMPONENT5 = eINSTANCE.getComponent5();
+
+		/**
+		 * The meta object literal for the '<em><b>Realm Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT5__REALM_CODE = eINSTANCE.getComponent5_RealmCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT5__TYPE_ID = eINSTANCE.getComponent5_TypeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT5__TEMPLATE_ID = eINSTANCE.getComponent5_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>Section</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT5__SECTION = eINSTANCE.getComponent5_Section();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT5__NULL_FLAVOR = eINSTANCE.getComponent5_NullFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT5__TYPE_CODE = eINSTANCE.getComponent5_TypeCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Conduction Ind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT5__CONTEXT_CONDUCTION_IND = eINSTANCE.getComponent5_ContextConductionInd();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.DocumentRootImpl <em>Document Root</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.DocumentRootImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getDocumentRoot()
+		 * @generated
+		 */
+		EClass DOCUMENT_ROOT = eINSTANCE.getDocumentRoot();
+
+		/**
+		 * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOCUMENT_ROOT__MIXED = eINSTANCE.getDocumentRoot_Mixed();
+
+		/**
+		 * The meta object literal for the '<em><b>XMLNS Prefix Map</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__XMLNS_PREFIX_MAP = eINSTANCE.getDocumentRoot_XMLNSPrefixMap();
+
+		/**
+		 * The meta object literal for the '<em><b>XSI Schema Location</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = eINSTANCE.getDocumentRoot_XSISchemaLocation();
+
+		/**
+		 * The meta object literal for the '<em><b>Clinical Document</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__CLINICAL_DOCUMENT = eINSTANCE.getDocumentRoot_ClinicalDocument();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.RegistryDelegate <em>Registry Delegate</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.RegistryDelegate
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRegistryDelegate()
+		 * @generated
+		 */
+		EClass REGISTRY_DELEGATE = eINSTANCE.getRegistryDelegate();
+
+	}
+
 } //CDAPackage

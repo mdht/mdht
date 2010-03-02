@@ -177,7 +177,7 @@ public class MaintainedEntityImpl extends EObjectImpl implements MaintainedEntit
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getMaintainedEntity();
+		return CDAPackage.Literals.MAINTAINED_ENTITY;
 	}
 
 	/**

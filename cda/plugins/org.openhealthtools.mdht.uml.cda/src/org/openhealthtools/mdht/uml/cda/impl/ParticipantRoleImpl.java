@@ -239,7 +239,7 @@ public class ParticipantRoleImpl extends EObjectImpl implements ParticipantRole 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getParticipantRole();
+		return CDAPackage.Literals.PARTICIPANT_ROLE;
 	}
 
 	/**

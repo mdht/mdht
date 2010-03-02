@@ -165,7 +165,7 @@ public class BirthplaceImpl extends EObjectImpl implements Birthplace {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getBirthplace();
+		return CDAPackage.Literals.BIRTHPLACE;
 	}
 
 	/**

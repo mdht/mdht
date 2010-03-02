@@ -218,7 +218,7 @@ public class OrderImpl extends EObjectImpl implements Order {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getOrder();
+		return CDAPackage.Literals.ORDER;
 	}
 
 	/**

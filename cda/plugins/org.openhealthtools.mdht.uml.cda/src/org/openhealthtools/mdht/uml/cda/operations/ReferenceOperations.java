@@ -91,7 +91,7 @@ public class ReferenceOperations {
 	public static  boolean validateExternalActChoice(Reference reference, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CDAPackage.eINSTANCE.getReference());
+			helper.setContext(CDAPackage.Literals.REFERENCE);
 			try {
 				VALIDATE_EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_EXTERNAL_ACT_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}

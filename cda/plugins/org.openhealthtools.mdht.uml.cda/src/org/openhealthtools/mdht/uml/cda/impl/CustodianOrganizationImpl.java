@@ -231,7 +231,7 @@ public class CustodianOrganizationImpl extends EObjectImpl implements CustodianO
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getCustodianOrganization();
+		return CDAPackage.Literals.CUSTODIAN_ORGANIZATION;
 	}
 
 	/**

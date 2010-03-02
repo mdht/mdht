@@ -373,7 +373,7 @@ public class EncounterImpl extends EObjectImpl implements Encounter {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getEncounter();
+		return CDAPackage.Literals.ENCOUNTER;
 	}
 
 	/**

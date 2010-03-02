@@ -91,7 +91,7 @@ public class AssignedAuthorOperations {
 	public static  boolean validateAssignedAuthorChoice(AssignedAuthor assignedAuthor, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_ASSIGNED_AUTHOR_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CDAPackage.eINSTANCE.getAssignedAuthor());
+			helper.setContext(CDAPackage.Literals.ASSIGNED_AUTHOR);
 			try {
 				VALIDATE_ASSIGNED_AUTHOR_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ASSIGNED_AUTHOR_CHOICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}

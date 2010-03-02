@@ -91,7 +91,7 @@ public class Component4Operations {
 	public static  boolean validateClinicalStatement(Component4 component4, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CDAPackage.eINSTANCE.getComponent4());
+			helper.setContext(CDAPackage.Literals.COMPONENT4);
 			try {
 				VALIDATE_CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}

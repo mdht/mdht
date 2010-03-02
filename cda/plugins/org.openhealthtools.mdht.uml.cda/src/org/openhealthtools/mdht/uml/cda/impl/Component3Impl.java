@@ -186,7 +186,7 @@ public class Component3Impl extends EObjectImpl implements Component3 {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getComponent3();
+		return CDAPackage.Literals.COMPONENT3;
 	}
 
 	/**

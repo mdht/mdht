@@ -349,7 +349,7 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getOrganizer();
+		return CDAPackage.Literals.ORGANIZER;
 	}
 
 	/**

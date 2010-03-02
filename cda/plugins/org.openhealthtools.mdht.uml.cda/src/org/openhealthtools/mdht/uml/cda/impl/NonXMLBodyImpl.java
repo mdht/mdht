@@ -219,7 +219,7 @@ public class NonXMLBodyImpl extends EObjectImpl implements NonXMLBody {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getNonXMLBody();
+		return CDAPackage.Literals.NON_XML_BODY;
 	}
 
 	/**

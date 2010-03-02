@@ -177,7 +177,7 @@ public class EncounterParticipantImpl extends EObjectImpl implements EncounterPa
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getEncounterParticipant();
+		return CDAPackage.Literals.ENCOUNTER_PARTICIPANT;
 	}
 
 	/**

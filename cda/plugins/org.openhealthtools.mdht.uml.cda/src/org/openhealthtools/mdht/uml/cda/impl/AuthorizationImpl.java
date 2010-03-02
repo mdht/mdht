@@ -165,7 +165,7 @@ public class AuthorizationImpl extends EObjectImpl implements Authorization {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getAuthorization();
+		return CDAPackage.Literals.AUTHORIZATION;
 	}
 
 	/**

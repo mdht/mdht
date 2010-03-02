@@ -231,7 +231,7 @@ public class SubstanceAdministrationOperations {
 	public static  EList<Act> getActs(SubstanceAdministration substanceAdministration) {
 		if (GET_ACTS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(9));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(9));
 			try {
 				GET_ACTS__EOCL_QRY = helper.createQuery(GET_ACTS__EOCL_EXP);
 			}
@@ -286,7 +286,7 @@ public class SubstanceAdministrationOperations {
 	public static  EList<Encounter> getEncounters(SubstanceAdministration substanceAdministration) {
 		if (GET_ENCOUNTERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(11));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(11));
 			try {
 				GET_ENCOUNTERS__EOCL_QRY = helper.createQuery(GET_ENCOUNTERS__EOCL_EXP);
 			}
@@ -332,7 +332,7 @@ public class SubstanceAdministrationOperations {
 	public static  EList<Observation> getObservations(SubstanceAdministration substanceAdministration) {
 		if (GET_OBSERVATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(12));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(12));
 			try {
 				GET_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_OBSERVATIONS__EOCL_EXP);
 			}
@@ -378,7 +378,7 @@ public class SubstanceAdministrationOperations {
 	public static  EList<ObservationMedia> getObservationMedia(SubstanceAdministration substanceAdministration) {
 		if (GET_OBSERVATION_MEDIA__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(13));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(13));
 			try {
 				GET_OBSERVATION_MEDIA__EOCL_QRY = helper.createQuery(GET_OBSERVATION_MEDIA__EOCL_EXP);
 			}
@@ -424,7 +424,7 @@ public class SubstanceAdministrationOperations {
 	public static  EList<Organizer> getOrganizers(SubstanceAdministration substanceAdministration) {
 		if (GET_ORGANIZERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(14));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(14));
 			try {
 				GET_ORGANIZERS__EOCL_QRY = helper.createQuery(GET_ORGANIZERS__EOCL_EXP);
 			}
@@ -470,7 +470,7 @@ public class SubstanceAdministrationOperations {
 	public static  EList<Procedure> getProcedures(SubstanceAdministration substanceAdministration) {
 		if (GET_PROCEDURES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(15));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(15));
 			try {
 				GET_PROCEDURES__EOCL_QRY = helper.createQuery(GET_PROCEDURES__EOCL_EXP);
 			}
@@ -516,7 +516,7 @@ public class SubstanceAdministrationOperations {
 	public static  EList<RegionOfInterest> getRegionsOfInterest(SubstanceAdministration substanceAdministration) {
 		if (GET_REGIONS_OF_INTEREST__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(16));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(16));
 			try {
 				GET_REGIONS_OF_INTEREST__EOCL_QRY = helper.createQuery(GET_REGIONS_OF_INTEREST__EOCL_EXP);
 			}
@@ -571,7 +571,7 @@ public class SubstanceAdministrationOperations {
 	public static  EList<SubstanceAdministration> getSubstanceAdministrations(SubstanceAdministration substanceAdministration) {
 		if (GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(18));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(18));
 			try {
 				GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY = helper.createQuery(GET_SUBSTANCE_ADMINISTRATIONS__EOCL_EXP);
 			}
@@ -617,7 +617,7 @@ public class SubstanceAdministrationOperations {
 	public static  EList<Supply> getSupplies(SubstanceAdministration substanceAdministration) {
 		if (GET_SUPPLIES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(19));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(19));
 			try {
 				GET_SUPPLIES__EOCL_QRY = helper.createQuery(GET_SUPPLIES__EOCL_EXP);
 			}
@@ -663,7 +663,7 @@ public class SubstanceAdministrationOperations {
 	public static  boolean hasActTemplate(SubstanceAdministration substanceAdministration, String templateId) {
 		if (HAS_ACT_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(20));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(20));
 			try {
 				HAS_ACT_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ACT_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -709,7 +709,7 @@ public class SubstanceAdministrationOperations {
 	public static  boolean hasCode(SubstanceAdministration substanceAdministration, String code, String codeSystem, String codeSystemName) {
 		if (HAS_CODE__STRING_STRING_STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(21));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(21));
 			try {
 				HAS_CODE__STRING_STRING_STRING__EOCL_QRY = helper.createQuery(HAS_CODE__STRING_STRING_STRING__EOCL_EXP);
 			}
@@ -757,7 +757,7 @@ public class SubstanceAdministrationOperations {
 	public static  boolean hasEncounterTemplate(SubstanceAdministration substanceAdministration, String templateId) {
 		if (HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(22));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(22));
 			try {
 				HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -803,7 +803,7 @@ public class SubstanceAdministrationOperations {
 	public static  boolean hasObservationMediaTemplate(SubstanceAdministration substanceAdministration, String templateId) {
 		if (HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(23));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(23));
 			try {
 				HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -849,7 +849,7 @@ public class SubstanceAdministrationOperations {
 	public static  boolean hasObservationTemplate(SubstanceAdministration substanceAdministration, String templateId) {
 		if (HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(24));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(24));
 			try {
 				HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -895,7 +895,7 @@ public class SubstanceAdministrationOperations {
 	public static  boolean hasOrganizerTemplate(SubstanceAdministration substanceAdministration, String templateId) {
 		if (HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(25));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(25));
 			try {
 				HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -941,7 +941,7 @@ public class SubstanceAdministrationOperations {
 	public static  boolean hasProcedureTemplate(SubstanceAdministration substanceAdministration, String templateId) {
 		if (HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(26));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(26));
 			try {
 				HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -987,7 +987,7 @@ public class SubstanceAdministrationOperations {
 	public static  boolean hasRegionOfInterestTemplate(SubstanceAdministration substanceAdministration, String templateId) {
 		if (HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(27));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(27));
 			try {
 				HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1033,7 +1033,7 @@ public class SubstanceAdministrationOperations {
 	public static  boolean hasSubstanceAdministrationTemplate(SubstanceAdministration substanceAdministration, String templateId) {
 		if (HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(28));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(28));
 			try {
 				HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1079,7 +1079,7 @@ public class SubstanceAdministrationOperations {
 	public static  boolean hasSupplyTemplate(SubstanceAdministration substanceAdministration, String templateId) {
 		if (HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(29));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(29));
 			try {
 				HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1125,7 +1125,7 @@ public class SubstanceAdministrationOperations {
 	public static  boolean hasTemplateId(SubstanceAdministration substanceAdministration, String templateId) {
 		if (HAS_TEMPLATE_ID__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.eINSTANCE.getSubstanceAdministration(), CDAPackage.eINSTANCE.getSubstanceAdministration().getEAllOperations().get(30));
+			helper.setOperationContext(CDAPackage.Literals.SUBSTANCE_ADMINISTRATION, CDAPackage.Literals.SUBSTANCE_ADMINISTRATION.getEAllOperations().get(30));
 			try {
 				HAS_TEMPLATE_ID__STRING__EOCL_QRY = helper.createQuery(HAS_TEMPLATE_ID__STRING__EOCL_EXP);
 			}

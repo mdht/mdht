@@ -242,7 +242,7 @@ public class ParentDocumentImpl extends EObjectImpl implements ParentDocument {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getParentDocument();
+		return CDAPackage.Literals.PARENT_DOCUMENT;
 	}
 
 	/**

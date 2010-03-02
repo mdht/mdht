@@ -285,7 +285,7 @@ public class EntryImpl extends EObjectImpl implements Entry {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getEntry();
+		return CDAPackage.Literals.ENTRY;
 	}
 
 	/**

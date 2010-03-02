@@ -405,7 +405,7 @@ public class ActImpl extends EObjectImpl implements Act {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getAct();
+		return CDAPackage.Literals.ACT;
 	}
 
 	/**

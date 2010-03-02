@@ -219,7 +219,7 @@ public class DeviceImpl extends EObjectImpl implements Device {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getDevice();
+		return CDAPackage.Literals.DEVICE;
 	}
 
 	/**

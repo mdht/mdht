@@ -433,7 +433,7 @@ public class SupplyImpl extends EObjectImpl implements Supply {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getSupply();
+		return CDAPackage.Literals.SUPPLY;
 	}
 
 	/**

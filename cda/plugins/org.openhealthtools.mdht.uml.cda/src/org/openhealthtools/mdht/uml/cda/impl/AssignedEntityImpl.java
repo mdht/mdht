@@ -224,7 +224,7 @@ public class AssignedEntityImpl extends EObjectImpl implements AssignedEntity {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getAssignedEntity();
+		return CDAPackage.Literals.ASSIGNED_ENTITY;
 	}
 
 	/**

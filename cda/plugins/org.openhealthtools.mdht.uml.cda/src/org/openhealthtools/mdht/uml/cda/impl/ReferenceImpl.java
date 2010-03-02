@@ -216,7 +216,7 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getReference();
+		return CDAPackage.Literals.REFERENCE;
 	}
 
 	/**

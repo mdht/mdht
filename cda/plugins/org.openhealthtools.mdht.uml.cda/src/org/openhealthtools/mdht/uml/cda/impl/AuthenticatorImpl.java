@@ -188,7 +188,7 @@ public class AuthenticatorImpl extends EObjectImpl implements Authenticator {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getAuthenticator();
+		return CDAPackage.Literals.AUTHENTICATOR;
 	}
 
 	/**

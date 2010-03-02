@@ -69,7 +69,7 @@ public class RegionOfInterestValueImpl extends INTImpl implements RegionOfIntere
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getRegionOfInterestValue();
+		return CDAPackage.Literals.REGION_OF_INTEREST_VALUE;
 	}
 
 	/**

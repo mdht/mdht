@@ -220,7 +220,7 @@ public class Participant1Impl extends EObjectImpl implements Participant1 {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getParticipant1();
+		return CDAPackage.Literals.PARTICIPANT1;
 	}
 
 	/**

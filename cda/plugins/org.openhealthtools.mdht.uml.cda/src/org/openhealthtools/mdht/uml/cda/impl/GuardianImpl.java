@@ -227,7 +227,7 @@ public class GuardianImpl extends EObjectImpl implements Guardian {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getGuardian();
+		return CDAPackage.Literals.GUARDIAN;
 	}
 
 	/**

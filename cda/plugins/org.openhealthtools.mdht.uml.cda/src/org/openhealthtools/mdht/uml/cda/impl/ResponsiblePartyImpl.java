@@ -165,7 +165,7 @@ public class ResponsiblePartyImpl extends EObjectImpl implements ResponsiblePart
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getResponsibleParty();
+		return CDAPackage.Literals.RESPONSIBLE_PARTY;
 	}
 
 	/**

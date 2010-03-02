@@ -358,7 +358,7 @@ public class RegionOfInterestImpl extends EObjectImpl implements RegionOfInteres
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getRegionOfInterest();
+		return CDAPackage.Literals.REGION_OF_INTEREST;
 	}
 
 	/**

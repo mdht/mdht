@@ -266,7 +266,7 @@ public class EncompassingEncounterImpl extends EObjectImpl implements Encompassi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getEncompassingEncounter();
+		return CDAPackage.Literals.ENCOMPASSING_ENCOUNTER;
 	}
 
 	/**

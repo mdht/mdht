@@ -212,7 +212,7 @@ public class PatientRoleImpl extends EObjectImpl implements PatientRole {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getPatientRole();
+		return CDAPackage.Literals.PATIENT_ROLE;
 	}
 
 	/**

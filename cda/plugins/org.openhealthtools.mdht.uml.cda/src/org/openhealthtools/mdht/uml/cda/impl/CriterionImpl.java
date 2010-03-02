@@ -220,7 +220,7 @@ public class CriterionImpl extends EObjectImpl implements Criterion {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getCriterion();
+		return CDAPackage.Literals.CRITERION;
 	}
 
 	/**

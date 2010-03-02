@@ -255,7 +255,7 @@ public class OrganizationImpl extends EObjectImpl implements Organization {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getOrganization();
+		return CDAPackage.Literals.ORGANIZATION;
 	}
 
 	/**

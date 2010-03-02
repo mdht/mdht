@@ -345,7 +345,7 @@ public class SectionImpl extends EObjectImpl implements Section {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CDAPackage.eINSTANCE.getSection();
+		return CDAPackage.Literals.SECTION;
 	}
 
 	/**
