@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
@@ -26,11 +27,33 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemVersion;
 import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ConceptDomainConstraint;
 import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetVersion;
 
 public class CTSProfileUtil {
 
+	public static CodeSystemVersion getCodeSystemVersion(Enumeration umlEnumeration) {
+		CodeSystemVersion codeSystemVersion = null;
+		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
+				umlEnumeration, ICTSProfileConstants.CODE_SYSTEM_VERSION);
+		if (stereotype != null) {
+			codeSystemVersion = (CodeSystemVersion) umlEnumeration.getStereotypeApplication(stereotype);
+		}
+		return codeSystemVersion;
+	}
+
+	public static ValueSetVersion getValueSetVersion(Enumeration umlEnumeration) {
+		ValueSetVersion valueSetVersion = null;
+		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
+				umlEnumeration, ICTSProfileConstants.VALUE_SET_VERSION);
+		if (stereotype != null) {
+			valueSetVersion = (ValueSetVersion) umlEnumeration.getStereotypeApplication(stereotype);
+		}
+		return valueSetVersion;
+	}
+	
 	public static ConceptDomainConstraint getConceptDomainConstraint(Property property) {
 		ConceptDomainConstraint conceptDomainConstraint = null;
 		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
@@ -40,7 +63,7 @@ public class CTSProfileUtil {
 		}
 		return conceptDomainConstraint;
 	}
-	
+
 	public static CodeSystemConstraint getCodeSystemConstraint(Property property) {
 		CodeSystemConstraint codeSystemConstraint = null;
 		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
