@@ -67,8 +67,8 @@ public class ModelSearch {
 		return elementList;
 	}
 	
-	public static List findAllOf(ResourceSet resourceSet, IElementFilter filter) {
-		List elementList = new ArrayList();
+	public static List<Element> findAllOf(ResourceSet resourceSet, IElementFilter filter) {
+		List<Element> elementList = new ArrayList<Element>();
 		TreeIterator iterator = EcoreUtil.getAllContents(resourceSet.getResources());
 
 		while (iterator != null && iterator.hasNext()) {
@@ -110,7 +110,7 @@ public class ModelSearch {
 			}
 
 			else if (element instanceof Element && filter.accept((Element)element)) {
-				elementList.add(element);
+				elementList.add((Element)element);
 			}
 			else if (!Package.class.isInstance(element)) {
 				iterator.prune();
