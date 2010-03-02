@@ -16,6 +16,7 @@ import java.io.PrintStream;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -24,6 +25,7 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
@@ -34,9 +36,15 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
+import org.openhealthtools.mdht.uml.cda.core.cdaprofile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.cda.core.cdaprofile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.BindingKind;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetVersion;
+import org.openhealthtools.mdht.uml.cts.core.util.ICTSProfileConstants;
 
 public class CDAModelUtil {
 
@@ -326,20 +334,14 @@ public class CDAModelUtil {
 		String typeCode = null;
 		String typeCodeDisplay = null;
 		if (entryStereotype != null) {
-			EnumerationLiteral typeCodeLiteral = (EnumerationLiteral) association.getValue(
-					entryStereotype, ICDAProfileConstants.ENTRY_TYPE_CODE);
-			if (typeCodeLiteral != null) {
-				typeCode = typeCodeLiteral.getName();
-				typeCodeDisplay = typeCodeLiteral.getLabel();
-			}
+			typeCode = getLiteralValue(association, entryStereotype, ICDAProfileConstants.ENTRY_TYPE_CODE);
+			Enumeration profileEnum = (Enumeration) entryStereotype.getProfile().getOwnedType(ICDAProfileConstants.ENTRY_KIND);
+			typeCodeDisplay = getLiteralValueLabel(association, entryStereotype, ICDAProfileConstants.ENTRY_TYPE_CODE, profileEnum);
 		}
 		else if (entryRelationshipStereotype != null) {
-			EnumerationLiteral typeCodeLiteral = (EnumerationLiteral) association.getValue(
-					entryRelationshipStereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
-			if (typeCodeLiteral != null) {
-				typeCode = typeCodeLiteral.getName();
-				typeCodeDisplay = typeCodeLiteral.getLabel();
-			}
+			typeCode = getLiteralValue(association, entryRelationshipStereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
+			Enumeration profileEnum = (Enumeration) entryRelationshipStereotype.getProfile().getOwnedType(ICDAProfileConstants.ENTRY_RELATIONSHIP_KIND);
+			typeCodeDisplay = getLiteralValueLabel(association, entryRelationshipStereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE, profileEnum);
 		}
 
 		//TODO this is incomplete determination of XML element name
@@ -463,85 +465,224 @@ public class CDAModelUtil {
 				property, ICDAProfileConstants.NULL_FLAVOR);
 
 		if (nullFlavorSpecification != null) {
-			EnumerationLiteral nullFlavor = (EnumerationLiteral) property.getValue(nullFlavorSpecification, ICDAProfileConstants.NULL_FLAVOR_NULL_FLAVOR);
+			String nullFlavor = getLiteralValue(property, nullFlavorSpecification, ICDAProfileConstants.NULL_FLAVOR_NULL_FLAVOR);
+			Enumeration profileEnum = (Enumeration) nullFlavorSpecification.getProfile().getOwnedType(ICDAProfileConstants.NULL_FLAVOR_KIND);
+			String nullFlavorLabel = getLiteralValueLabel(property, nullFlavorSpecification, ICDAProfileConstants.NULL_FLAVOR_NULL_FLAVOR, profileEnum);
 			
 			if (nullFlavor != null) {
 				message.append(markup?"<tt>":"");
 				message.append("/@nullFlavor");
 				message.append(markup?"</tt>":"");
 
-				message.append(" = \"").append(nullFlavor.getName()).append("\" ");
+				message.append(" = \"").append(nullFlavor).append("\" ");
 				message.append(markup?"<i>":"");
-				message.append(nullFlavor.getLabel());
+				message.append(nullFlavorLabel);
 				message.append(markup?"</i>":"");
 			}
 		}
 
+//		Stereotype conceptDomainConstraint = CDAProfileUtil.getAppliedCDAStereotype(
+//				property, ICTSProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+		Stereotype codeSystemConstraint = CDAProfileUtil.getAppliedCDAStereotype(
+				property, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT);
+		Stereotype valueSetConstraint = CDAProfileUtil.getAppliedCDAStereotype(
+				property, ICTSProfileConstants.VALUE_SET_CONSTRAINT);
+		Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
+				property, ICDAProfileConstants.VOCAB_SPECIFICATION);
+
+		if (codeSystemConstraint != null) {
+			String vocab = computeCodeSystemMessage(property, markup);
+			message.append(vocab);
+		}
+		else if (valueSetConstraint != null) {
+			String vocab = computeValueSetMessage(property, markup);
+			message.append(vocab);
+		}
+		else if (vocabSpecification != null) {
+			String vocab = computeVocabSpecificationMessage(property, markup);
+			message.append(vocab);
+		}
+
+		if (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())) {
+			message.append(", where its data type is ").append(property.getType().getName());
+		}
+		
+		return message.toString();
+	}
+
+	private static String computeCodeSystemMessage(Property property, boolean markup) {
+		Stereotype codeSystemConstraintStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				property, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT);
+		CodeSystemConstraint codeSystemConstraint = (CodeSystemConstraint) property.getStereotypeApplication(codeSystemConstraintStereotype);
+
+		String id = null;
+		String name = null;
+		String version = null;
+		BindingKind binding = null;
+		String code = null;
+		String displayName = null;
+		if (codeSystemConstraint != null) {
+			if (codeSystemConstraint.getReference() != null) {
+				CodeSystemVersion codeSystemVersion = codeSystemConstraint.getReference();
+				id = codeSystemVersion.getIdentifier();
+				name = codeSystemVersion.getBase_Enumeration().getName();
+				version = codeSystemVersion.getVersion();
+			}
+			else {
+				id = codeSystemConstraint.getIdentifier();
+				name = codeSystemConstraint.getName();
+				version = codeSystemConstraint.getVersion();
+			}
+
+			binding = codeSystemConstraint.getBinding();
+			code = codeSystemConstraint.getCode();
+			displayName = codeSystemConstraint.getDisplayName();
+		}
+		
+		StringBuffer message = new StringBuffer();
+		if (code != null) {
+			message.append(markup?"<tt>":"");
+			message.append("/@code");
+			message.append(markup?"</tt>":"");
+
+			message.append(" = \"").append(code).append("\" ");
+		}
+			
+		if (displayName != null) {
+			message.append(markup?"<i>":"");
+			message.append(displayName);
+			message.append(markup?"</i>":"");
+		}
+
+		if (id !=null || name != null) {
+			message.append(" (CodeSystem:");
+			if (id != null) {
+				message.append(" ").append(id);
+			}
+			if (name != null) {
+				message.append(" ").append(name);
+			}
+			message.append(" ").append(binding.getName().toUpperCase());
+			if (version != null) {
+				message.append(" ").append(version);
+			}
+			message.append(")");
+		}
+		
+		return message.toString();
+	}
+
+	private static String computeValueSetMessage(Property property, boolean markup) {
+		Stereotype valueSetConstraintStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+				property, ICTSProfileConstants.VALUE_SET_CONSTRAINT);
+		ValueSetConstraint valueSetConstraint = (ValueSetConstraint) property.getStereotypeApplication(valueSetConstraintStereotype);
+
+		String keyword = getValidationKeyword(property);
+		String id = null;
+		String name = null;
+		String version = null;
+		BindingKind binding = null;
+		if (valueSetConstraint != null) {
+			if (valueSetConstraint.getReference() != null) {
+				ValueSetVersion valueSetVersion = valueSetConstraint.getReference();
+				id = valueSetVersion.getIdentifier();
+				name = valueSetVersion.getBase_Enumeration().getName();
+				version = valueSetVersion.getVersion();
+				binding = valueSetVersion.getBinding();
+			}
+			else {
+				id = valueSetConstraint.getIdentifier();
+				name = valueSetConstraint.getName();
+				version = valueSetConstraint.getVersion();
+				binding = valueSetConstraint.getBinding();
+			}
+		}
+
+		StringBuffer message = new StringBuffer();
+		message.append(", which ");
+		message.append(markup?"<b>":"");
+		message.append(keyword);
+		message.append(markup?"</b>":"");
+		message.append(" be selected from ValueSet");
+
+		if (id != null) {
+			message.append(" ").append(id);
+		}
+		if (name != null) {
+			message.append(" ").append(name);
+		}
+
+		message.append(" ").append(binding.getName().toUpperCase());
+		if (version != null) {
+			message.append(" ").append(version);
+		}
+		
+		return message.toString();
+	}
+	
+	private static String computeVocabSpecificationMessage(Property property, boolean markup) {
 		Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
 				property, ICDAProfileConstants.VOCAB_SPECIFICATION);
 		
-		if (vocabSpecification != null) {
-			String codeSystem = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
-			String codeSystemName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
-			String codeSystemVersion = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
-			String code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
-			String displayName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
+		StringBuffer message = new StringBuffer();
+		String codeSystem = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
+		String codeSystemName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
+		String codeSystemVersion = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
+		String code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
+		String displayName = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
+		
+		if (code != null) {
+			message.append(markup?"<tt>":"");
+			message.append("/@code");
+			message.append(markup?"</tt>":"");
+
+			message.append(" = \"").append(code).append("\" ");
 			
-			if (code != null) {
-				message.append(markup?"<tt>":"");
-				message.append("/@code");
-				message.append(markup?"</tt>":"");
-
-				message.append(" = \"").append(code).append("\" ");
-				
-				if (displayName != null) {
-					message.append(markup?"<i>":"");
-					message.append(displayName);
-					message.append(markup?"</i>":"");
-				}
-
-				if (codeSystem !=null || codeSystemName != null) {
-					message.append(" (CodeSystem:");
-					if (codeSystem != null) {
-						message.append(" ").append(codeSystem);
-					}
-					if (codeSystemName != null) {
-						message.append(" ").append(codeSystemName);
-					}
-					message.append(" STATIC");
-					if (codeSystemVersion != null) {
-						message.append(" ").append(codeSystemVersion);
-					}
-					message.append(")");
-				}
+			if (displayName != null) {
+				message.append(markup?"<i>":"");
+				message.append(displayName);
+				message.append(markup?"</i>":"");
 			}
-			//TODO for now, assume it's a value set if no code
-			else if (codeSystem !=null || codeSystemName != null) {
-				message.append(", which ");
-				message.append(markup?"<b>":"");
-				message.append(keyword);
-				message.append(markup?"</b>":"");
-				message.append(" be selected from ValueSet");
 
+			if (codeSystem !=null || codeSystemName != null) {
+				message.append(" (CodeSystem:");
 				if (codeSystem != null) {
 					message.append(" ").append(codeSystem);
 				}
 				if (codeSystemName != null) {
 					message.append(" ").append(codeSystemName);
 				}
-				
+				message.append(" STATIC");
 				if (codeSystemVersion != null) {
-					message.append(" STATIC");
 					message.append(" ").append(codeSystemVersion);
 				}
-				else {
-					message.append(" DYNAMIC");
-				}
+				message.append(")");
 			}
 		}
+		//TODO for now, assume it's a value set if no code
+		else if (codeSystem !=null || codeSystemName != null) {
+			String keyword = getValidationKeyword(property);
+			
+			message.append(", which ");
+			message.append(markup?"<b>":"");
+			message.append(keyword);
+			message.append(markup?"</b>":"");
+			message.append(" be selected from ValueSet");
 
-		if (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())) {
-			message.append(", where its data type is ").append(property.getType().getName());
+			if (codeSystem != null) {
+				message.append(" ").append(codeSystem);
+			}
+			if (codeSystemName != null) {
+				message.append(" ").append(codeSystemName);
+			}
+			
+			if (codeSystemVersion != null) {
+				message.append(" STATIC");
+				message.append(" ").append(codeSystemVersion);
+			}
+			else {
+				message.append(" DYNAMIC");
+			}
 		}
 		
 		return message.toString();
@@ -679,13 +820,21 @@ public class CDAModelUtil {
 	public static String getValidationSeverity(Element element) {
 		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
 		if (validationSupport != null) {
-			EnumerationLiteral literal = (EnumerationLiteral) element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
-			return (literal != null) ? literal.getName() : SEVERITY_ERROR;
+			Object value = element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
+			String severity = null;
+			if (value instanceof EnumerationLiteral) {
+				severity = ((EnumerationLiteral)value).getName();
+			}
+			else if (value instanceof Enumerator) {
+				severity = ((Enumerator)value).getName();
+			}
+			
+			return (severity != null) ? severity : SEVERITY_ERROR;
 		}
 		
 		return null;
 	}
-	
+
 	public static String getValidationKeyword(Element element) {
 		String severity = getValidationSeverity(element);
 		if (SEVERITY_INFO.equals(severity))
@@ -701,6 +850,36 @@ public class CDAModelUtil {
 		if (validationSupport != null) {
 			constrainedElement.setValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE, message);
 		}
+	}
+	
+	protected static String getLiteralValue(Element element, Stereotype stereotype, String propertyName) {
+		Object value = element.getValue(stereotype, propertyName);
+		String name = null;
+		if (value instanceof EnumerationLiteral) {
+			name = ((EnumerationLiteral)value).getName();
+		}
+		else if (value instanceof Enumerator) {
+			name = ((Enumerator)value).getName();
+		}
+		
+		return name;
+	}
+
+	protected static String getLiteralValueLabel(Element element, Stereotype stereotype, String propertyName, Enumeration umlEnumeration) {
+		Object value = element.getValue(stereotype, propertyName);
+		String name = null;
+		if (value instanceof EnumerationLiteral) {
+			name = ((EnumerationLiteral)value).getLabel();
+		}
+		else if (value instanceof Enumerator) {
+			name = ((Enumerator)value).getName();
+			
+			if (umlEnumeration != null) {
+				name = umlEnumeration.getOwnedLiteral(name).getLabel();
+			}
+		}
+		
+		return name;
 	}
 
 }
