@@ -16,49 +16,33 @@
 <plugin>
    <extension point="org.eclipse.uml2.uml.generated_package">
       <profile
-            uri="http://www.openhealthtools.org/mdht/schemas/cts/1"
-            location="pathmap://CTS_PROFILES/CTS.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q">
+            uri="http://www.openhealthtools.org/mdht/schemas/term/1"
+            location="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q">
       </profile>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package 
-         uri="http://www.openhealthtools.org/mdht/schemas/cts/1" 
-         class="org.openhealthtools.mdht.uml.cts.core.ctsprofile.CTSPackage"
-         genModel="profiles/CTS.profile.genmodel" /> 
+         uri="http://www.openhealthtools.org/mdht/schemas/term/1" 
+         class="org.openhealthtools.mdht.uml.term.core.profile.TermPackage"
+         genModel="profiles/Terminology.profile.genmodel" /> 
    </extension>
 
    <extension
-         id="CTSProfiles"
-         name="CTS Profiles"
+         id="TermProfiles"
+         name="Terminology Profiles"
          point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
       <pathmap
-            name="CTS_PROFILES"
+            name="MDHT_TERM_PROFILES"
             path="profiles"
-            plugin="org.openhealthtools.mdht.uml.cts.core"/>
+            plugin="org.openhealthtools.mdht.uml.term.core"/>
    </extension>
    <extension
          point="org.eclipse.emf.ecore.uri_mapping">
       <mapping
-            source="pathmap://CTS_PROFILES/"
+            source="pathmap://MDHT_TERM_PROFILES/"
             target="profiles/">
       </mapping>
    </extension>
   
-   <extension
-         id="CTSModels"
-         name="CTS Models"
-         point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
-      <pathmap
-            name="CTS_MODELS"
-            path="models"
-            plugin="org.openhealthtools.mdht.uml.cts.core"/>
-   </extension>
-   <extension
-         point="org.eclipse.emf.ecore.uri_mapping">
-      <mapping
-            source="pathmap://CTS_MODELS/"
-            target="models/">
-      </mapping>
-   </extension>
 </plugin>
