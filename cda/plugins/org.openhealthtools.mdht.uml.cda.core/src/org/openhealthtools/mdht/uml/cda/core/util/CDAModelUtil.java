@@ -28,6 +28,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.MultiplicityElement;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Package;
@@ -163,16 +164,9 @@ public class CDAModelUtil {
 				}
 
 				public Object caseClass(Class umlClass) {
-					Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(
-							umlClass, ICDAProfileConstants.CDA_TEMPLATE);
-					if (hl7Template != null) {
-						String message = computeConformanceMessage(umlClass, markup);
-						stream.println(message);
-					}
-					else {
-						// prune children of non-template classes
-						iterator.prune();
-					}
+					String message = computeConformanceMessage(umlClass, markup);
+					stream.println(message);
+					
 					return umlClass;
 				}
 
@@ -299,19 +293,20 @@ public class CDAModelUtil {
 		if (generalization.getGeneral() instanceof Class) {
 			Class general = (Class) generalization.getGeneral();
 
+			Package thisModel = UMLUtil.getTopPackage(generalization);
+			Package generalModel = UMLUtil.getTopPackage(general);
+			String prefix = (thisModel != generalModel) ? getModelPrefix(general)+" " : "";
+			String xref = computeXref(generalization, general);
+			boolean showXref = markup && (xref != null);
+			String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
+			
+			message.append("Conforms to ");
+			message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
+			message.append(prefix).append(UMLUtil.splitName(general));
+			message.append(showXref?"</xref>":"");
+
 			String templateId = getTemplateId(general);
 			if (templateId != null) {
-				Package thisModel = UMLUtil.getTopPackage(generalization);
-				Package generalModel = UMLUtil.getTopPackage(general);
-				String prefix = (thisModel != generalModel) ? getModelPrefix(general)+" " : "";
-				String xref = computeXref(generalization, general);
-				boolean showXref = markup && (xref != null);
-				String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
-				
-				message.append("Conforms to ");
-				message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
-				message.append(prefix).append(UMLUtil.splitName(general));
-				message.append(showXref?"</xref>":"");
 				message.append(" template (templateId: ");
 				message.append(markup?"<tt>":"");
 				message.append(templateId);
@@ -324,6 +319,49 @@ public class CDAModelUtil {
 	}
 
 	private static String computeAssociationConformanceMessage(Property property, boolean markup) {
+		if (getTemplateId(property.getClass_()) != null) {
+			return computeTemplateAssociationConformanceMessage(property, markup);
+		}
+
+		StringBuffer message = new StringBuffer();
+		Association association = property.getAssociation();
+
+		if (!markup) {
+			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
+		}
+		
+		String keyword = getValidationKeyword(association);
+		message.append(markup?"<b>":"");
+		message.append(keyword);
+		message.append(markup?"</b>":"");
+		
+		message.append(" contain ");
+		message.append(getMultiplicityString(property)).append(" ");
+
+		message.append(markup?"<tt>":"");
+		message.append(property.getName());
+		message.append(markup?"</tt>":"");
+
+		Class endType = (property.getType() instanceof Class) 
+				? (Class)property.getType() : null;
+
+		if (endType != null) {
+			message.append(", where its type is ");
+			
+			String prefix = !isSamePackage(property, endType) ? getModelPrefix(endType)+" " : "";
+			String xref = computeXref(property, endType);
+			boolean showXref = markup && (xref != null);
+			String format = showXref && xref.endsWith(".html") ? "format=\"html\" " : "";
+			
+			message.append(showXref ? "<xref " + format + "href=\"" + xref + "\">" : "");
+			message.append(prefix).append(UMLUtil.splitName(endType));
+			message.append(showXref?"</xref>":"");
+		}
+		
+		return message.toString();
+	}
+
+	private static String computeTemplateAssociationConformanceMessage(Property property, boolean markup) {
 		StringBuffer message = new StringBuffer();
 		Association association = property.getAssociation();
 		Stereotype entryStereotype = CDAProfileUtil.getAppliedCDAStereotype(
@@ -347,7 +385,9 @@ public class CDAModelUtil {
 		//TODO this is incomplete determination of XML element name
 		String elementName = "component";
 		Class cdaSourceClass = getCDAClass(property.getClass_());
-		if ("ClinicalDocument".equals(cdaSourceClass.getName())) {
+		if (cdaSourceClass == null) {
+			elementName = property.getName();
+		} else if ("ClinicalDocument".equals(cdaSourceClass.getName())) {
 			elementName = "component";
 		} else if ("Section".equals(cdaSourceClass.getName())) {
 			elementName = "entry";
@@ -430,13 +470,6 @@ public class CDAModelUtil {
 		}
 		
 		StringBuffer message = new StringBuffer();
-		
-		List<Property> redefinedProperties = UMLUtil.getRedefinedProperties(property);
-		Property redefinedProperty = redefinedProperties.isEmpty() ? null : redefinedProperties.get(0);
-		if (redefinedProperty == null) {
-			System.err.println("Cannot find redefined property for: " + property.getQualifiedName());
-			return "";
-		}
 
 		if (!markup) {
 			message.append(getPrefixedSplitName(property.getClass_())).append(" ");
@@ -503,7 +536,12 @@ public class CDAModelUtil {
 			message.append(vocab);
 		}
 
-		if (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())) {
+		List<Property> redefinedProperties = UMLUtil.getRedefinedProperties(property);
+		Property redefinedProperty = redefinedProperties.isEmpty() ? null : redefinedProperties.get(0);
+		
+		if (redefinedProperty == null || (!isXMLAttribute(property)
+				&& (property.getType() != redefinedProperty.getType()))) {
+			message.append(", where its data type is ").append(property.getType().getName());
 			message.append(", where its data type is ").append(property.getType().getName());
 		}
 		
@@ -837,12 +875,33 @@ public class CDAModelUtil {
 
 	public static String getValidationKeyword(Element element) {
 		String severity = getValidationSeverity(element);
-		if (SEVERITY_INFO.equals(severity))
-			return "MAY";
-		if (SEVERITY_WARNING.equals(severity))
-			return "SHOULD";
-		else
+		if (severity != null) {
+			if (SEVERITY_INFO.equals(severity))
+				return "MAY";
+			if (SEVERITY_WARNING.equals(severity))
+				return "SHOULD";
+			else
+				return "SHALL";
+		}
+		
+		if (element instanceof Association) {
+			for (Property end : ((Association)element).getMemberEnds()) {
+				if (end.isNavigable()) {
+					element = end;
+					break;
+				}
+			}
+		}
+		
+		if (element instanceof MultiplicityElement) {
+			if (((MultiplicityElement)element).getLower() == 0)
+				return "MAY";
+			else
+				return "SHALL";
+		}
+		else {
 			return "SHALL";
+		}
 	}
 
 	public static void setValidationMessage(Element constrainedElement, String message) {
