@@ -59,15 +59,6 @@ public class TBResultOrganizerImpl extends ResultOrganizerImpl implements TBResu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTBResultOrganizerCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return TBResultOrganizerOperations.validateTBResultOrganizerCode(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateTBResultOrganizerTBResultObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return TBResultOrganizerOperations.validateTBResultOrganizerTBResultObservation(this, diagnostics, context);
 	}

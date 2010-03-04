@@ -905,24 +905,6 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 
 		initEClass(conditionEntryEClass, ConditionEntry.class, "ConditionEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(conditionEntryEClass, ecorePackage.getEBoolean(), "validateConditionEntryCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(conditionEntryEClass, ecorePackage.getEBoolean(), "validateConditionEntryValue", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(conditionEntryEClass, ecorePackage.getEBoolean(), "validateConditionEntryEffectiveTime", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -1338,13 +1320,8 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		  (conditionEntryEClass, 
 		   source, 
 		   new String[] {
-			 "value.codeSystemName", "Problem Value Set",
-			 "code.codeSystemName", "Problem Type Value Set",
-			 "value.codeSystem", "2.16.840.1.113883.3.88.12.3221.7.4",
-			 "constraints.validation.error", "ConditionEntryCode ConditionEntryValue",
-			 "code.codeSystem", "2.16.840.1.113883.3.88.12.3221.7.2",
 			 "constraints.validation.warning", "ConditionEntryEffectiveTime"
-		   });															
+		   });							
 		addAnnotation
 		  (patientSummaryEClass, 
 		   source, 
@@ -1571,7 +1548,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   new String[] {
 			 "Allergies and Drug Sensitivities", null,
 			 "Allergy and Drug Sensitivity", null
-		   });																																																																																																																																																																																																																																	
+		   });																																																																																																																																																																																																																									
 	}
 
 	/**
@@ -1581,7 +1558,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																																								
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																																
 		addAnnotation
 		  (patientSummaryEClass, 
 		   source, 

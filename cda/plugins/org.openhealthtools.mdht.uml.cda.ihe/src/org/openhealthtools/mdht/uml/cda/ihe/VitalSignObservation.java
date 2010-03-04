@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getVitalSignObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='VitalSignObservationTemplateId VitalSignObservationCode VitalSignObservationValue' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.13.2' code.codeSystem='2.16.840.1.113883.6.1'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.info='VitalSignObservationInterpretationCode VitalSignObservationMethodCode VitalSignObservationTargetSiteCode' constraints.validation.error='VitalSignObservationTemplateId VitalSignObservationCode VitalSignObservationValue' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.13.2'"
  * @generated
  */
 public interface VitalSignObservation extends ResultObservation {
@@ -62,6 +62,45 @@ public interface VitalSignObservation extends ResultObservation {
 	 * @generated
 	 */
 	boolean validateVitalSignObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.interpretationCode->isEmpty()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.interpretationCode->isEmpty()'"
+	 * @generated
+	 */
+	boolean validateVitalSignObservationInterpretationCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.methodCode->isEmpty()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.methodCode->isEmpty()'"
+	 * @generated
+	 */
+	boolean validateVitalSignObservationMethodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.targetSiteCode->isEmpty()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.targetSiteCode->isEmpty()'"
+	 * @generated
+	 */
+	boolean validateVitalSignObservationTargetSiteCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

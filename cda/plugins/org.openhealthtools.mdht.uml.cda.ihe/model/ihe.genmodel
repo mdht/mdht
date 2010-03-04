@@ -186,6 +186,18 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationValue/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationValue/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignObservation/VitalSignObservationInterpretationCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationInterpretationCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationInterpretationCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignObservation/VitalSignObservationMethodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationMethodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationMethodCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//VitalSignObservation/VitalSignObservationTargetSiteCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationTargetSiteCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//VitalSignObservation/VitalSignObservationTargetSiteCode/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ihe.ecore#//SimpleObservation">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//SimpleObservation/SimpleObservationTemplateId">

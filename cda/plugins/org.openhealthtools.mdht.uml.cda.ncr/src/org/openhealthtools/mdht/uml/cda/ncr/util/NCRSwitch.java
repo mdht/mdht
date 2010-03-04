@@ -24,6 +24,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
+import org.openhealthtools.mdht.uml.cda.ncr.*;
 import org.openhealthtools.mdht.uml.cda.ncr.AcuityDataSection;
 import org.openhealthtools.mdht.uml.cda.ncr.BirthWeight;
 import org.openhealthtools.mdht.uml.cda.ncr.EncountersSection;

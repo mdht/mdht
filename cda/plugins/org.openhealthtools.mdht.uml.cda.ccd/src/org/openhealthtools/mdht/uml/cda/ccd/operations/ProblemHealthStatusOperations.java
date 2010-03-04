@@ -29,7 +29,6 @@ import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus#validateProblemHealthStatusTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Health Status Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus#validateProblemHealthStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Health Status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus#validateProblemHealthStatusValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Health Status Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -156,67 +155,6 @@ public class ProblemHealthStatusOperations extends StatusObservationOperations {
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.PROBLEM_HEALTH_STATUS__PROBLEM_HEALTH_STATUS_CODE,
 						 CCDPlugin.INSTANCE.getString("ProblemHealthStatusCode"),
-						 new Object [] { problemHealthStatus }));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * The cached OCL expression body for the '{@link #validateProblemHealthStatusValue(ProblemHealthStatus, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Health Status Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateProblemHealthStatusValue(ProblemHealthStatus, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALIDATE_PROBLEM_HEALTH_STATUS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and "+
-"let value : datatypes::CE = element.oclAsType(datatypes::CE) in "+
-"value.codeSystem = '2.16.840.1.113883.1.11.20.12')";
-
-	/**
-	 * The cached OCL invariant for the '{@link #validateProblemHealthStatusValue(ProblemHealthStatus, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Health Status Value</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateProblemHealthStatusValue(ProblemHealthStatus, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint VALIDATE_PROBLEM_HEALTH_STATUS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and 
-	 * let value : datatypes::CE = element.oclAsType(datatypes::CE) in 
-	 * value.codeSystem = '2.16.840.1.113883.1.11.20.12')
-	 * @param problemHealthStatus The receiving '<em><b>Problem Health Status</b></em>' model object.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
-	public static  boolean validateProblemHealthStatusValue(ProblemHealthStatus problemHealthStatus, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_PROBLEM_HEALTH_STATUS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CCDPackage.Literals.PROBLEM_HEALTH_STATUS);
-			try {
-				VALIDATE_PROBLEM_HEALTH_STATUS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_HEALTH_STATUS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_HEALTH_STATUS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(problemHealthStatus)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CCDValidator.DIAGNOSTIC_SOURCE,
-						 CCDValidator.PROBLEM_HEALTH_STATUS__PROBLEM_HEALTH_STATUS_VALUE,
-						 CCDPlugin.INSTANCE.getString("ProblemHealthStatusValue"),
 						 new Object [] { problemHealthStatus }));
 			}
 			return false;

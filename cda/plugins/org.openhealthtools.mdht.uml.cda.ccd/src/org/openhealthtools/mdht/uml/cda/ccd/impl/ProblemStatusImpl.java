@@ -58,15 +58,6 @@ public class ProblemStatusImpl extends StatusObservationImpl implements ProblemS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemStatusValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemStatusOperations.validateProblemStatusValue(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ProblemStatus init() {
     		CDAUtil.init(this);
     		return this;

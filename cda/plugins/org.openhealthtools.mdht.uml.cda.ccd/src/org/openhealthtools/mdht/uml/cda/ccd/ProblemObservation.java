@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProblemObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' statusCode.codeSystemName='ActStatus' statusCode.codeSystem='2.16.840.1.113883.5.14' constraints.validation.info='ProblemObservationContainsPatientAwareness ProblemObservationCode ProblemObservationProblemStatus ProblemObservationProblemHealthStatus ProblemObservationAgeObservation' templateId.root='2.16.840.1.113883.10.20.1.28' constraints.validation.error='ProblemObservationTemplateId ProblemObservationInformationSource ProblemObservationMoodCode ProblemObservationStatusCode' statusCode.code='completed' constraints.validation.warning='ProblemObservationEffectiveTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' constraints.validation.error='ProblemObservationTemplateId ProblemObservationInformationSource ProblemObservationMoodCode ProblemObservationStatusCode' templateId.root='2.16.840.1.113883.10.20.1.28' constraints.validation.info='ProblemObservationContainsPatientAwareness ProblemObservationProblemStatus ProblemObservationProblemHealthStatus ProblemObservationAgeObservation' statusCode.code='completed' constraints.validation.warning='ProblemObservationEffectiveTime'"
  * @generated
  */
 public interface ProblemObservation extends Observation {
@@ -111,21 +111,6 @@ public interface ProblemObservation extends Observation {
 	 * @generated
 	 */
 	boolean validateProblemObservationEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and 
-	 * let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (
-	 * not value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined())
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and \r\nlet value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (\r\nnot value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined())'"
-	 * @generated
-	 */
-	boolean validateProblemObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

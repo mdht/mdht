@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPurposeSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.13' constraints.validation.error='PurposeSectionTemplateId PurposeSectionCode PurposeSectionTitle PurposeSectionText' code.displayName='Summary purpose' code.codeSystem='2.16.840.1.113883.6.1' code.code='48764-5' constraints.validation.warning='PurposeSectionPurposeActivity'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.13' constraints.validation.error='PurposeSectionTemplateId PurposeSectionCode PurposeSectionTitle PurposeSectionText' code.displayName='Summary purpose' code.code='48764-5' constraints.validation.warning='PurposeSectionPurposeActivity'"
  * @generated
  */
 public interface PurposeSection extends Section {

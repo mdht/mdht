@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Encounter;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getEncountersActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ENC' code.codeSystemName='EncounterCode' constraints.validation.info='EncountersActivityEffectiveTime' templateId.root='2.16.840.1.113883.10.20.1.21' constraints.validation.error='EncountersActivityTemplateId EncountersActivityId' code.codeSystem='2.16.840.1.113883.1.11.13955' constraints.validation.warning='EncountersActivityCode'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ENC' constraints.validation.info='EncountersActivityEffectiveTime' templateId.root='2.16.840.1.113883.10.20.1.21' constraints.validation.error='EncountersActivityTemplateId EncountersActivityId'"
  * @generated
  */
 public interface EncountersActivity extends Encounter {
@@ -47,21 +47,6 @@ public interface EncountersActivity extends Encounter {
 	 * @generated
 	 */
 	boolean validateEncountersActivityId(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and 
-	 * let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (
-	 * value.codeSystem = '2.16.840.1.113883.1.11.13955')
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and \r\nlet value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (\r\nvalue.codeSystem = \'2.16.840.1.113883.1.11.13955\')'"
-	 * @generated
-	 */
-	boolean validateEncountersActivityCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

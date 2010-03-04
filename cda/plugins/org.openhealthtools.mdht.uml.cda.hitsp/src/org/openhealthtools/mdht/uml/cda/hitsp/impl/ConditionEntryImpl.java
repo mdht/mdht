@@ -50,24 +50,6 @@ public class ConditionEntryImpl extends ProblemEntryImpl implements ConditionEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConditionEntryCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ConditionEntryOperations.validateConditionEntryCode(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateConditionEntryValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ConditionEntryOperations.validateConditionEntryValue(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateConditionEntryEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ConditionEntryOperations.validateConditionEntryEffectiveTime(this, diagnostics, context);
 	}

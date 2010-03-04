@@ -58,15 +58,6 @@ public class MedicationStatusObservationImpl extends StatusObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationStatusObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationStatusObservationOperations.validateMedicationStatusObservationValue(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public MedicationStatusObservation init() {
     		CDAUtil.init(this);
     		return this;

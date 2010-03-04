@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getAlertObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' statusCode.codeSystemName='ActStatus' constraints.validation.info='AlertObservationValue AlertObservationAlertStatusObservation AlertObservationReactionObservation' constraints.validation.error='AlertObservationTemplateId AlertObservationInformationSource AlertObservationPlayingEntityRequired AlertObservationMoodCode AlertObservationStatusCode AlertObservationEffectiveTime' templateId.root='2.16.840.1.113883.10.20.1.18' statusCode.codeSystem='2.16.840.1.113883.5.14' statusCode.code='completed' constraints.validation.warning='AlertObservationAgentRepresentation'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' templateId.root='2.16.840.1.113883.10.20.1.18' constraints.validation.error='AlertObservationTemplateId AlertObservationInformationSource AlertObservationPlayingEntityRequired AlertObservationMoodCode AlertObservationStatusCode AlertObservationEffectiveTime' constraints.validation.info='AlertObservationAlertStatusObservation AlertObservationReactionObservation' statusCode.code='completed' constraints.validation.warning='AlertObservationAgentRepresentation'"
  * @generated
  */
 public interface AlertObservation extends Observation {
@@ -119,21 +119,6 @@ public interface AlertObservation extends Observation {
 	 * @generated
 	 */
 	boolean validateAlertObservationEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and 
-	 * let value : datatypes::CE = element.oclAsType(datatypes::CE) in 
-	 * not value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined())
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.value->forAll(element | element.oclIsKindOf(datatypes::CE) and \r\nlet value : datatypes::CE = element.oclAsType(datatypes::CE) in \r\nnot value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined())'"
-	 * @generated
-	 */
-	boolean validateAlertObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

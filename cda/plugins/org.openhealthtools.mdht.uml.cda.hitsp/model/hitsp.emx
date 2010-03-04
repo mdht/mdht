@@ -2,7 +2,7 @@
 <!--xtools2_universal_type_manager-->
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.model" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xsi:schemaLocation="http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
   <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="hitsp">
     <eAnnotations xmi:id="_qQyD8zxVEd6JwqSGecoePg" source="uml2.diagrams">
       <contents xmi:type="notation:Diagram" xmi:id="_Ex6JMGdLEd6Hk_bPOfEjYA" type="Class" name="HITSP Allergies">
@@ -4487,7 +4487,7 @@ If the problem is known to be resolved, but the date of resolution is not known,
     </profileApplication>
     <profileApplication xmi:id="_aMu68IwJEd6B6JSUB00H7g">
       <eAnnotations xmi:id="_aMviAIwJEd6B6JSUB00H7g" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw"/>
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/cda/4#/"/>
       </eAnnotations>
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
@@ -4497,7 +4497,7 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:CDATemplate xmi:id="_vuEXwHcIEd6ZeOKq_2_a9g" message="HITSP Medication SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.8" base_Class="_IjIO0DxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.8" assigningAuthorityName="HITSP C83"/>
   <CDA:CDATemplate xmi:id="_wcI-sHcIEd6ZeOKq_2_a9g" message="HITSP Patient Summary SHALL contain the template identifier 2.16.840.1.113883.3.88.11.32.1" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.32.1" assigningAuthorityName="HITSP C32"/>
   <Default:Documentation xmi:id="_aq9jUHrXEd68l9lQ-TLEBQ" base_Comment="_aq5R4HrXEd68l9lQ-TLEBQ"/>
-  <CDA:CodegenSupport xmi:id="_lVjhYJyPEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" packageName="hitsp" prefix="HITSP" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
+  <CDA:CodegenSupport xmi:id="_lVjhYJyPEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" packageName="hitsp" prefix="HITSP" base_Namespace="_qQyD8jxVEd6JwqSGecoePg"/>
   <CDA:PropertyValidation xmi:id="_JvJwoJyQEd6BO7rW3XxHIA" message="HITSP Condition SHALL contain [1..1] text" base_Property="_Kp7UYIwJEd6B6JSUB00H7g"/>
   <CDA:CDATemplate xmi:id="_jNa14K7HEd6_ioDelDcPPg" message="HITSP Vital Signs Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.119" base_Class="_L9yGgK7HEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.119" assigningAuthorityName="HITSP C83"/>
   <CDA:CDATemplate xmi:id="_j4cTYK7IEd6_ioDelDcPPg" message="HITSP Vital Sign SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.14" base_Class="_dobt4K7IEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.14" assigningAuthorityName="HITSP"/>
@@ -4556,11 +4556,11 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <Default:Documentation xmi:id="_R7grEMijEd6mWrHPmrIIfQ" base_Comment="_R7eO0MijEd6mWrHPmrIIfQ"/>
   <CDA:CDATemplate xmi:id="_hOYYMMijEd6mWrHPmrIIfQ" message="HITSP Medical Equipment Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.128" base_Class="_d9cy8MijEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.128" assigningAuthorityName="HITSP C83"/>
   <Default:Documentation xmi:id="_kMVXEMijEd6mWrHPmrIIfQ" base_Comment="_kMSTwMijEd6mWrHPmrIIfQ"/>
-  <CDA:VocabSpecification xmi:id="_hjqC0BvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.2 Problem Type Value Set DYNAMIC" base_Property="_hjpbwBvgEd-yI6xBTkJSNw" codeSystem="2.16.840.1.113883.3.88.12.3221.7.2" codeSystemName="Problem Type Value Set"/>
-  <CDA:VocabSpecification xmi:id="_JYg4ABvhEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] value, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.4 Problem Value Set DYNAMIC" base_Property="_hjsfEBvgEd-yI6xBTkJSNw" codeSystem="2.16.840.1.113883.3.88.12.3221.7.4" codeSystemName="Problem Value Set"/>
   <CDA:EntryRelationship xmi:id="_k2HnMBviEd-yI6xBTkJSNw" message="HITSP Condition SHALL contain [1..*] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;SUBJ&quot; SUBJ (has subject), SHALL contain [1..1] Condition Entry" base_Association="_-HcW8BvhEd-yI6xBTkJSNw" typeCode="SUBJ"/>
   <CDA:PropertyValidation xmi:id="_lkLxoxvjEd-yI6xBTkJSNw" message="HITSP Condition Entry SHOULD contain [1..1] effectiveTime" severity="WARNING" base_Property="_lkLxoBvjEd-yI6xBTkJSNw"/>
   <Default:Documentation xmi:id="_tM_WEBvjEd-yI6xBTkJSNw" base_Comment="_tM2MIBvjEd-yI6xBTkJSNw"/>
   <CDA:PropertyValidation xmi:id="_ozph0BvkEd-yI6xBTkJSNw" message="HITSP Vital Sign SHALL contain [1..1] code" base_Property="_K4Lk0K7REd6_ioDelDcPPg"/>
   <CDA:AssociationValidation xmi:id="_ozqv8BvkEd-yI6xBTkJSNw" message="HITSP Problem List Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Condition (templateId: 2.16.840.1.113883.3.88.11.83.7)" base_Association="_4D4oIBvYEd-yI6xBTkJSNw"/>
+  <CDA:ValueSetConstraint xmi:id="_baveQCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.2" name="Problem Type Value Set" base_Property="_hjpbwBvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.2 Problem Type Value Set DYNAMIC"/>
+  <CDA:ValueSetConstraint xmi:id="_bayhkCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.4" name="Problem Value Set" base_Property="_hjsfEBvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] value, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.4 Problem Value Set DYNAMIC"/>
 </xmi:XMI>

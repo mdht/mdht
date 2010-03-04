@@ -113,15 +113,6 @@ public class AlertObservationImpl extends ObservationImpl implements AlertObserv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAlertObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AlertObservationOperations.validateAlertObservationValue(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateAlertObservationAlertStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return AlertObservationOperations.validateAlertObservationAlertStatusObservation(this, diagnostics, context);
 	}
