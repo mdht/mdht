@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
-  <uml:Profile xmi:id="_cxOJEIEVEd6H8o-hO3-B4Q" name="CDA" metaclassReference="_egRPYIEWEd6H8o-hO3-B4Q _egRPYYEWEd6H8o-hO3-B4Q _egRPYoEWEd6H8o-hO3-B4Q _9ks2IJmTEd6OiP9GTesZug _CxDn0KFLEd6NOYTVzzK9uw _S6oGUB10Ed-N4c96fT7fpQ">
+  <uml:Profile xmi:id="_cxOJEIEVEd6H8o-hO3-B4Q" name="CDA" metaclassReference="_egRPYIEWEd6H8o-hO3-B4Q _egRPYYEWEd6H8o-hO3-B4Q _egRPYoEWEd6H8o-hO3-B4Q _9ks2IJmTEd6OiP9GTesZug _CxDn0KFLEd6NOYTVzzK9uw _S6oGUB10Ed-N4c96fT7fpQ _vJNUYCcWEd-F25YcmQx-uw">
     <eAnnotations xmi:id="_uMwWYIEWEd6H8o-hO3-B4Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <contents xmi:type="ecore:EPackage" xmi:id="_l1U9sKFdEd6NOYTVzzK9uw" name="CDA" nsURI="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" nsPrefix="CDA">
         <eClassifiers xmi:type="ecore:EEnum" xmi:id="_l1U9saFdEd6NOYTVzzK9uw" name="SeverityKind">
@@ -408,8 +408,11 @@
     <elementImport xmi:id="_S6oGUB10Ed-N4c96fT7fpQ">
       <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Generalization"/>
     </elementImport>
+    <elementImport xmi:id="_vJNUYCcWEd-F25YcmQx-uw">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Namespace"/>
+    </elementImport>
     <packageImport xmi:id="_XlGuUBz5Ed-WH9Qw4coEMg">
-      <importedPackage xmi:type="uml:Profile" href="pathmap://CTS_PROFILES/CTS.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+      <importedPackage xmi:type="uml:Profile" href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </packageImport>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_sBP9kIEVEd6H8o-hO3-B4Q" name="SeverityKind">
       <ownedLiteral xmi:id="_3J00gIEVEd6H8o-hO3-B4Q" name="ERROR"/>
@@ -492,12 +495,9 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TTKe8JmaEd6OiP9GTesZug"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_Fm8OQpmUEd6OiP9GTesZug" name="base_Package" association="_Fm8OQJmUEd6OiP9GTesZug">
-        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+      <ownedAttribute xmi:id="_xApXICcWEd-F25YcmQx-uw" name="base_Namespace" association="_xAmT0CcWEd-F25YcmQx-uw">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Namespace"/>
       </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Extension" xmi:id="_Fm8OQJmUEd6OiP9GTesZug" name="Package_CodegenSupport" memberEnd="_Fm8OQZmUEd6OiP9GTesZug _Fm8OQpmUEd6OiP9GTesZug">
-      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_Fm8OQZmUEd6OiP9GTesZug" name="extension_CodegenSupport" type="_Cvp4EJmUEd6OiP9GTesZug" aggregation="composite" association="_Fm8OQJmUEd6OiP9GTesZug"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_e_WLgJmVEd6OiP9GTesZug" name="Validation" isAbstract="true">
       <ownedAttribute xmi:id="_liOCoJmVEd6OiP9GTesZug" name="message">
@@ -631,21 +631,24 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_dSS6MB1zEd-N4c96fT7fpQ" name="ConceptDomainConstraint">
       <generalization xmi:id="_izDNAB1zEd-N4c96fT7fpQ">
-        <general xmi:type="uml:Stereotype" href="pathmap://CTS_PROFILES/CTS.profile.uml#_tDzWAB1xEd-DaIarnYb4TQ"/>
+        <general xmi:type="uml:Stereotype" href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_tDzWAB1xEd-DaIarnYb4TQ"/>
       </generalization>
       <generalization xmi:id="_jhF-wB1zEd-N4c96fT7fpQ" general="_e_WLgJmVEd6OiP9GTesZug"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_MAaUYBz_Ed-8epCW8Ea1Ww" name="CodeSystemConstraint">
       <generalization xmi:id="_Y4h2UBz_Ed-8epCW8Ea1Ww">
-        <general xmi:type="uml:Stereotype" href="pathmap://CTS_PROFILES/CTS.profile.uml#_m7zPQJmWEd6OiP9GTesZug"/>
+        <general xmi:type="uml:Stereotype" href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_m7zPQJmWEd6OiP9GTesZug"/>
       </generalization>
       <generalization xmi:id="_w5XZIBz_Ed-8epCW8Ea1Ww" general="_e_WLgJmVEd6OiP9GTesZug"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_WVHlwBz8Ed-EBJafBfeHvw" name="ValueSetConstraint">
       <generalization xmi:id="_aHRowBz8Ed-EBJafBfeHvw">
-        <general xmi:type="uml:Stereotype" href="pathmap://CTS_PROFILES/CTS.profile.uml#_w72YUBzyEd-_DcMhO5t7TQ"/>
+        <general xmi:type="uml:Stereotype" href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_w72YUBzyEd-_DcMhO5t7TQ"/>
       </generalization>
       <generalization xmi:id="_3CkzEBz_Ed-8epCW8Ea1Ww" general="_e_WLgJmVEd6OiP9GTesZug"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_xAmT0CcWEd-F25YcmQx-uw" name="Namespace_CodegenSupport" memberEnd="_xAowECcWEd-F25YcmQx-uw _xApXICcWEd-F25YcmQx-uw">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_xAowECcWEd-F25YcmQx-uw" name="extension_CodegenSupport" type="_Cvp4EJmUEd6OiP9GTesZug" aggregation="composite" association="_xAmT0CcWEd-F25YcmQx-uw"/>
     </packagedElement>
     <profileApplication xmi:id="_ud74ACCuEd-RxoWH9gAx2A">
       <eAnnotations xmi:id="_ud8fECCuEd-RxoWH9gAx2A" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -654,5 +657,5 @@
       <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
     </profileApplication>
   </uml:Profile>
-  <Ecore:EPackage xmi:id="_Z4pFkCGLEd-qCq9YyNgB9Q" base_Package="_cxOJEIEVEd6H8o-hO3-B4Q" packageName="cdaprofile" nsPrefix="CDA" nsURI="http://www.openhealthtools.org/mdht/schemas/cda/4" basePackage="org.openhealthtools.mdht.uml.cda.core" prefix="CDA"/>
+  <Ecore:EPackage xmi:id="_Z4pFkCGLEd-qCq9YyNgB9Q" base_Package="_cxOJEIEVEd6H8o-hO3-B4Q" packageName="profile" nsPrefix="CDA" nsURI="http://www.openhealthtools.org/mdht/schemas/cda/4" basePackage="org.openhealthtools.mdht.uml.cda.core" prefix="CDA"/>
 </xmi:XMI>

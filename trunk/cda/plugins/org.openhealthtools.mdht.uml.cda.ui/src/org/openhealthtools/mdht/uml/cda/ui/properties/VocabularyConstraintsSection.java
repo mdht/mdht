@@ -45,7 +45,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
-import org.openhealthtools.mdht.uml.cts.core.util.ICTSProfileConstants;
+import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 
 /**
  * The general properties section for Property.
@@ -83,42 +83,42 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 						isConceptDomainConstraintModified = false;
 						this.setLabel("Add ConceptDomainConstraint");
 						Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-								property, ICTSProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+								property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 						if (isConceptDomainConstraint.getSelection() && stereotype == null) {
 							CDAProfileUtil.applyCDAStereotype(
-								property, ICTSProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+								property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 						}
 						if (!isConceptDomainConstraint.getSelection() && stereotype != null) {
 							CDAProfileUtil.unapplyCDAStereotype(
-									property, ICTSProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+									property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 						}
 					}
 					else if (isCodeSystemConstraintModified) {
 						isCodeSystemConstraintModified = false;
 						this.setLabel("Add CodeSystemConstraint");
 						Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-								property, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT);
+								property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
 						if (isCodeSystemConstraint.getSelection() && stereotype == null) {
 							CDAProfileUtil.applyCDAStereotype(
-								property, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT);
+								property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
 						}
 						if (!isCodeSystemConstraint.getSelection() && stereotype != null) {
 							CDAProfileUtil.unapplyCDAStereotype(
-									property, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT);
+									property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
 						}
 					}
 					else if (isValueSetConstraintModified) {
 						isValueSetConstraintModified = false;
 						this.setLabel("Add ValueSetConstraint");
 						Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-								property, ICTSProfileConstants.VALUE_SET_CONSTRAINT);
+								property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
 						if (isValueSetConstraint.getSelection() && stereotype == null) {
 							CDAProfileUtil.applyCDAStereotype(
-								property, ICTSProfileConstants.VALUE_SET_CONSTRAINT);
+								property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
 						}
 						if (!isValueSetConstraint.getSelection() && stereotype != null) {
 							CDAProfileUtil.unapplyCDAStereotype(
-									property, ICTSProfileConstants.VALUE_SET_CONSTRAINT);
+									property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
 						}
 					}
 					else {
@@ -268,15 +268,15 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 
 	public void refresh() {
 		boolean isChecked = CDAProfileUtil.getAppliedCDAStereotype(
-				property, ICTSProfileConstants.CONCEPT_DOMAIN_CONSTRAINT) != null;
+				property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT) != null;
 		isConceptDomainConstraint.setSelection(isChecked);
 
 		isChecked = CDAProfileUtil.getAppliedCDAStereotype(
-				property, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT) != null;
+				property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT) != null;
 		isCodeSystemConstraint.setSelection(isChecked);
 
 		isChecked = CDAProfileUtil.getAppliedCDAStereotype(
-				property, ICTSProfileConstants.VALUE_SET_CONSTRAINT) != null;
+				property, ITermProfileConstants.VALUE_SET_CONSTRAINT) != null;
 		isValueSetConstraint.setSelection(isChecked);
 
 		if (isReadOnly()) {

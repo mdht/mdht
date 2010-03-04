@@ -21,12 +21,12 @@ import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.common.notation.PropertyNotationUtil;
 import org.openhealthtools.mdht.uml.common.util.MultiplicityElementUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemConstraint;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemVersion;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ConceptDomainConstraint;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetConstraint;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetVersion;
-import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 /**
  * Utility class to display HL7 CDA property string.
@@ -120,13 +120,13 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 		// vocabBinding
 		if ((style & IHL7Appearance.DISP_VOCABULARY) != 0) {
 			String vocab = null;
-			if (CTSProfileUtil.getConceptDomainConstraint(property) != null) {
+			if (TermProfileUtil.getConceptDomainConstraint(property) != null) {
 				vocab = getConceptDomainAnnotation(property);
 			}
-			else if (CTSProfileUtil.getCodeSystemConstraint(property) != null) {
+			else if (TermProfileUtil.getCodeSystemConstraint(property) != null) {
 				vocab = getCodeSystemAnnotation(property);
 			}
-			else if (CTSProfileUtil.getValueSetConstraint(property) != null) {
+			else if (TermProfileUtil.getValueSetConstraint(property) != null) {
 				vocab = getValueSetAnnotation(property);
 			}
 			else {
@@ -174,7 +174,7 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 
 	private static String getConceptDomainAnnotation(Property property) {
 		StringBuffer value = new StringBuffer();
-		ConceptDomainConstraint conceptDomainConstraint = CTSProfileUtil.getConceptDomainConstraint(property);
+		ConceptDomainConstraint conceptDomainConstraint = TermProfileUtil.getConceptDomainConstraint(property);
 		
 		if (conceptDomainConstraint != null) {
 			String id = conceptDomainConstraint.getIdentifier();
@@ -191,7 +191,7 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 
 	private static String getCodeSystemAnnotation(Property property) {
 		StringBuffer value = new StringBuffer();
-		CodeSystemConstraint codeSystemConstraint = CTSProfileUtil.getCodeSystemConstraint(property);
+		CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 		
 		String id = null;
 		String name = null;
@@ -222,7 +222,7 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 
 	private static String getValueSetAnnotation(Property property) {
 		StringBuffer value = new StringBuffer();
-		ValueSetConstraint valueSetConstraint = CTSProfileUtil.getValueSetConstraint(property);
+		ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
 
 		String id = null;
 		String name = null;

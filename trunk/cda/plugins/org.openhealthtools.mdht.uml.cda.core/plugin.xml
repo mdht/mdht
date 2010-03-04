@@ -24,7 +24,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.openhealthtools.org/mdht/schemas/cda/4"
-            class="org.openhealthtools.mdht.uml.cda.core.cdaprofile.CDAPackage"
+            class="org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage"
             genModel="model/CDA.profile.genmodel"/>
    </extension>
 

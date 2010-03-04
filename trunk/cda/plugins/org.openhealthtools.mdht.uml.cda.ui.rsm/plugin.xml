@@ -45,9 +45,9 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
        <propertySections contributorId="com.ibm.xtools.modeler.ui.properties">
           <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.cts.ui.properties.ValueSetVersionSection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetVersionSection" 
 	 	     id="property.section.ValueSetVersionSection"
-             filter="org.openhealthtools.mdht.uml.cts.ui.filters.ValueSetVersionFilter">
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetVersionFilter">
 	      </propertySection>
 	      
           <propertySection tab="property.tab.CDAPropertySection" 
@@ -56,26 +56,26 @@
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.ValidationFilter"/>
              
           <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.cts.ui.properties.ValueSetConstraintSection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetConstraintSection" 
 	 	     id="property.section.ValueSetConstraintSection"
-             filter="org.openhealthtools.mdht.uml.cts.ui.filters.ValueSetConstraintFilter">
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetConstraintFilter">
 	      </propertySection>
           <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.cts.ui.properties.CodeSystemConstraintSection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemConstraintSection" 
 	 	     id="property.section.CodeSystemConstraintSection"
-             filter="org.openhealthtools.mdht.uml.cts.ui.filters.CodeSystemConstraintFilter">
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemConstraintFilter">
 	      </propertySection>
           <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.cts.ui.properties.ConceptDomainConstraintSection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ConceptDomainConstraintSection" 
 	 	     id="property.section.ConceptDomainConstraintSection"
-             filter="org.openhealthtools.mdht.uml.cts.ui.filters.ConceptDomainConstraintFilter">
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ConceptDomainConstraintFilter">
 	      </propertySection>
 	      
 	      <!-- must use cda.ui.properties.VocabularyConstraintsSection because we are applying CDA stereotypes -->
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.VocabularyConstraintsSection" 
 	 	     id="property.section.VocabularyConstraintsSection"
-             filter="org.openhealthtools.mdht.uml.cts.ui.filters.CodedAttributeFilter">
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodedAttributeFilter">
 	      </propertySection>
 	      
           <propertySection tab="property.tab.CDAPropertySection"
