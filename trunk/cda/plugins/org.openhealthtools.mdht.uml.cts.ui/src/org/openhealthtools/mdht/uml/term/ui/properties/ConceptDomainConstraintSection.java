@@ -9,7 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *    
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cts.ui.properties;
+package org.openhealthtools.mdht.uml.term.ui.properties;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
@@ -49,9 +49,9 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
-import org.openhealthtools.mdht.uml.cts.core.util.ICTSProfileConstants;
-import org.openhealthtools.mdht.uml.cts.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
+import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
+import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
 
 /**
  * The profile properties section for Concept Domain Constraint.
@@ -103,8 +103,8 @@ public class ConceptDomainConstraintSection extends AbstractModelerPropertySecti
 			
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
-							property, ICTSProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+					Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
+							property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 					
 					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
@@ -116,7 +116,7 @@ public class ConceptDomainConstraintSection extends AbstractModelerPropertySecti
 						if (stereotype != null) {
 							String value = conceptDomainNameText.getText().trim();
 							property.setValue(stereotype, 
-									ICTSProfileConstants.CONCEPT_DOMAIN_CONSTRAINT_NAME,
+									ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT_NAME,
 									value.length()>0 ? value : null);
 						}
 					}
@@ -205,14 +205,14 @@ public class ConceptDomainConstraintSection extends AbstractModelerPropertySecti
 	}
 
 	public void refresh() {
-		Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
-				property, ICTSProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+		Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
+				property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 
 		conceptDomainNameText.removeModifyListener(modifyListener);
 		conceptDomainNameText.removeKeyListener(keyListener);
 		conceptDomainNameText.removeFocusListener(focusListener);
 		if (stereotype != null) {
-			String name = (String) property.getValue(stereotype, ICTSProfileConstants.CONCEPT_DOMAIN_CONSTRAINT_NAME);
+			String name = (String) property.getValue(stereotype, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT_NAME);
 			conceptDomainNameText.setText(name!=null ? name : "");
 		}
 		else {

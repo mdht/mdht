@@ -10,26 +10,26 @@
  *     
  * $Id$
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cts.ui.filters;
+package org.openhealthtools.mdht.uml.term.ui.filters;
 
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
-import org.openhealthtools.mdht.uml.cts.core.util.ICTSProfileConstants;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
+import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 
 /**
  * Selects an object if it is a UML Property with 
- * ConceptDomainConstraint stereotype applied.
+ * ValueSetConstraint stereotype applied.
  */
-public class ConceptDomainConstraintFilter extends CTSFilter {
+public class ValueSetConstraintFilter extends CTSFilter {
 
 	public boolean select(Object object) {
 		Element element = getElement(object);
 		
 		if (element instanceof Property) {
-			Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
-					element, ICTSProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+			Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
+					element, ITermProfileConstants.VALUE_SET_CONSTRAINT);
 			return stereotype != null;
 		}
 		return false;

@@ -1,4 +1,4 @@
-package org.openhealthtools.mdht.uml.cts.ui.internal;
+package org.openhealthtools.mdht.uml.term.ui.internal;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;

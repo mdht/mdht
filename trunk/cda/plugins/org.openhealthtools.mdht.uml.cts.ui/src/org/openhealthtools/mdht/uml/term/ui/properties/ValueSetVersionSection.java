@@ -8,10 +8,8 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     
- * $Id$
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cts.ui.properties;
-
+package org.openhealthtools.mdht.uml.term.ui.properties;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
@@ -58,26 +56,25 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
-import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
-import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.BindingKind;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemConstraint;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemVersion;
-import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
-import org.openhealthtools.mdht.uml.cts.core.util.ICTSProfileConstants;
-import org.openhealthtools.mdht.uml.cts.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetType;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
+import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
+import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
 
 /**
- * The profile properties section for Code System Constraint.
+ * The profile properties section for Value Set Version.
  */
-public class CodeSystemConstraintSection extends AbstractModelerPropertySection {
+public class ValueSetVersionSection extends AbstractModelerPropertySection {
 
-	private Property property;
+	private Enumeration umlEnumeration;
 	
 	private Text idText;
 	private boolean idModified = false;
@@ -85,10 +82,8 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 	private boolean nameModified = false;
 	private Text versionText;
 	private boolean versionModified = false;
-	private Text codeText;
-	private boolean codeModified = false;
-	private Text displayNameText;
-	private boolean displayNameModified = false;
+	private CCombo typeCombo;
+	private boolean typeModified = false;
 	private CCombo bindingCombo;
 	private boolean bindingModified = false;
 
@@ -106,12 +101,6 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 			}
 			if (versionText == event.getSource()) {
 				versionModified = true;
-			}
-			if (codeText == event.getSource()) {
-				codeModified = true;
-			}
-			if (displayNameText == event.getSource()) {
-				displayNameModified = true;
 			}
 		}
 	};
@@ -139,105 +128,84 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 	
 	private void modifyFields() {
 		if (!(idModified || nameModified || versionModified
-				|| codeModified || displayNameModified || bindingModified)) {
+				|| typeModified || bindingModified)) {
 			return;
 		}
 		
 		try {
 			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+				TransactionUtil.getEditingDomain(umlEnumeration);
 			
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					Profile ctsProfile = CTSProfileUtil.getCTSProfile(property.eResource().getResourceSet());
+					Profile ctsProfile = TermProfileUtil.getTerminologyProfile(umlEnumeration.eResource().getResourceSet());
 					if (ctsProfile == null) {
 						return Status.CANCEL_STATUS;
 					}
 					Enumeration bindingKind = (Enumeration)
-						ctsProfile.getOwnedType(ICTSProfileConstants.BINDING_KIND);
+						ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
+					Enumeration valueSetType = (Enumeration)
+					ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_TYPE);
 					
-					Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
-							property, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT);
+					ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
 					
-					if (stereotype == null) {
+					if (valueSetVersion == null) {
 						return Status.CANCEL_STATUS;
 					}
 					else if (idModified) {
 						idModified = false;
-						this.setLabel("Set Code System ID");
+						this.setLabel("Set Value Set ID");
+						String value = idText.getText().trim();
+						valueSetVersion.setIdentifier(value.length()>0 ? value : null);
 
-						if (stereotype != null) {
-							String value = idText.getText().trim();
-							property.setValue(stereotype, 
-									ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_ID,
-									value.length()>0 ? value : null);
-						}
 					}
 					else if (nameModified) {
 						nameModified = false;
-						this.setLabel("Set Code System Name");
-
-						if (stereotype != null) {
-							String value = nameText.getText().trim();
-							property.setValue(stereotype, 
-									ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_NAME,
-									value.length()>0 ? value : null);
-						}
+						this.setLabel("Set Value Set Full Name");
+						String value = nameText.getText().trim();
+						// set the Enumeration name
+						valueSetVersion.getBase_Enumeration().setName(value.length()>0 ? value : null);
+						
 					}
 					else if (versionModified) {
 						versionModified = false;
-						this.setLabel("Set Code System Version");
-
-						if (stereotype != null) {
-							String value = versionText.getText().trim();
-							property.setValue(stereotype, 
-									ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_VERSION,
-									value.length()>0 ? value : null);
-						}
+						this.setLabel("Set Value Set Version");
+						String value = versionText.getText().trim();
+						valueSetVersion.setVersion(value.length()>0 ? value : null);
+						
 					}
-					else if (codeModified) {
-						codeModified = false;
-						this.setLabel("Set Code");
-
-						if (stereotype != null) {
-							String value = codeText.getText().trim();
-							property.setValue(stereotype, 
-									ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_CODE,
-									value.length()>0 ? value : null);
-						}
+					else if (typeModified && valueSetType != null) {
+						typeModified = false;
+						this.setLabel("Set Value Set Type");
+							if (typeCombo.getSelectionIndex() == 0) {
+								// remove stereotype umlEnumeration
+								valueSetVersion.setType(null);
+							}
+							else {
+								EnumerationLiteral literal = (EnumerationLiteral) valueSetType.getOwnedLiterals()
+									.get(typeCombo.getSelectionIndex());
+								valueSetVersion.setType(ValueSetType.getByName(literal.getName()));
+							}
 					}
-					else if (displayNameModified) {
-						displayNameModified = false;
-						this.setLabel("Set Code Display Name");
-
-						if (stereotype != null) {
-							String value = displayNameText.getText().trim();
-							property.setValue(stereotype, 
-									ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_DISPLAY_NAME,
-									value.length()>0 ? value : null);
-						}
-					}
-					else if (bindingModified) {
+					else if (bindingModified && bindingKind != null) {
 						bindingModified = false;
 						this.setLabel("Set Binding");
-						if (stereotype != null && bindingKind != null) {
 							if (bindingCombo.getSelectionIndex() == 0) {
-								// remove stereotype property
-								property.setValue(stereotype, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_BINDING, null);
+								// remove stereotype umlEnumeration
+								valueSetVersion.setBinding(null);
 							}
 							else {
 								EnumerationLiteral literal = (EnumerationLiteral) bindingKind.getOwnedLiterals()
 									.get(bindingCombo.getSelectionIndex());
-								property.setValue(stereotype, ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_BINDING, literal);
+								valueSetVersion.setBinding(BindingKind.getByName(literal.getName()));
 							}
-						}
 					}
 					else {
 						return Status.CANCEL_STATUS;
 					}
 
-					// fire notification for any stereotype property changes to update views
 					updateViews();
+
 					
 			        return Status.OK_STATUS;
 			    }};
@@ -257,12 +225,12 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 	}
 
 	private void addCodeSystemReference() {
-		Profile ctsProfile = CTSProfileUtil.getCTSProfile(property.eResource().getResourceSet());
+		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(umlEnumeration.eResource().getResourceSet());
 		if (ctsProfile == null) {
 			return;
 		}
 		final Stereotype codeSystemVersionStereotype = (Stereotype)
-			ctsProfile.getOwnedType(ICTSProfileConstants.CODE_SYSTEM_VERSION);
+			ctsProfile.getOwnedType(ITermProfileConstants.CODE_SYSTEM_VERSION);
 		IElementFilter filter = new IElementFilter() {
 			public boolean accept(Element element) {
 				return (element instanceof Enumeration)
@@ -272,15 +240,15 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 		
 		final Enumeration codeSystemEnum = (Enumeration) DialogLaunchUtil.chooseElement(
 				filter,
-				property.eResource().getResourceSet(), 
+				umlEnumeration.eResource().getResourceSet(), 
 				getPart().getSite().getShell(), null,
 				"Select a Code System");
 		
 		if (codeSystemEnum == null) {
 			return;
 		}
-		final Stereotype codeSystemStereotype = CTSProfileUtil.getAppliedCTSStereotype(
-				codeSystemEnum, ICTSProfileConstants.CODE_SYSTEM_VERSION);
+		final Stereotype codeSystemStereotype = TermProfileUtil.getAppliedStereotype(
+				codeSystemEnum, ITermProfileConstants.CODE_SYSTEM_VERSION);
 		if (codeSystemStereotype == null) {
 			MessageDialog.openError(getPart().getSite().getShell(), 
 					"Invalid Enumeration", "The selected Enumertion must be a <<CodeSystemVersion>>");
@@ -290,21 +258,17 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 
 		try {
 			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+				TransactionUtil.getEditingDomain(umlEnumeration);
 			
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	CodeSystemConstraint codeSystemConstraint = CTSProfileUtil.getCodeSystemConstraint(property);
-					if (codeSystemConstraint == null) {
+			    	ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
+					if (valueSetVersion == null) {
 						return Status.CANCEL_STATUS;
 					}
 					this.setLabel("Set CodeSystem reference");
-					codeSystemConstraint.setReference(codeSystem);
+					valueSetVersion.setCodeSystem(codeSystem);
 					
-					codeSystemConstraint.setIdentifier(null);
-					codeSystemConstraint.setName(null);
-					codeSystemConstraint.setVersion(null);
-						
 					refresh();
 					
 			        return Status.OK_STATUS;
@@ -327,21 +291,17 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 	private void deleteCodeSystemReference() {
 		try {
 			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+				TransactionUtil.getEditingDomain(umlEnumeration);
 			
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	CodeSystemConstraint codeSystemConstraint = CTSProfileUtil.getCodeSystemConstraint(property);
-					if (codeSystemConstraint == null || codeSystemConstraint.getReference() == null) {
+			    	ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
+					if (valueSetVersion == null) {
 						return Status.CANCEL_STATUS;
 					}
 					
 					this.setLabel("Remove CodeSystem reference");
-					codeSystemConstraint.setReference(null);
-					
-					codeSystemConstraint.setIdentifier(null);
-					codeSystemConstraint.setName(null);
-					codeSystemConstraint.setVersion(null);
+					valueSetVersion.setCodeSystem(null);
 					
 					refresh();
 					
@@ -375,7 +335,7 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
         shell.dispose();
 
 		Composite composite = getWidgetFactory()
-				.createGroup(parent, "Code System");
+				.createGroup(parent, "Value Set Version");
         FormLayout layout = new FormLayout();
         layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
         layout.marginHeight = ITabbedPropertyConstants.VSPACE;
@@ -420,7 +380,7 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
         data.left = new FormAttachment(codeSystemRefDeleteButton, 0);
         data.right = new FormAttachment(100, 0);
 		data.top = new FormAttachment(codeSystemRefButton, 0, SWT.CENTER);
-		codeSystemRefLabel.setLayoutData(data);
+        codeSystemRefLabel.setLayoutData(data);
 
 		/* ------ Name field ------ */
 		nameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
@@ -433,7 +393,7 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 
 		data = new FormData();
 		data.left = new FormAttachment(nameLabel, 0);
-		data.right = new FormAttachment(35, 0);
+		data.right = new FormAttachment(50, 0);
 		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		nameText.setLayoutData(data);
 
@@ -443,29 +403,43 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 				.createCLabel(composite, "ID:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(nameText, ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(idText, 0, SWT.CENTER);
+		data.top = new FormAttachment(nameText, 0, SWT.CENTER);
 		idLabel.setLayoutData(data);
 
 		data = new FormData();
 		data.left = new FormAttachment(idLabel, 0);
-		data.right = new FormAttachment(70, 0);
+		data.right = new FormAttachment(100, 0);
 		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		idText.setLayoutData(data);
 
-		/* ------ Version field ------ */
-		versionText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel versionLabel = getWidgetFactory()
-				.createCLabel(composite, "Version:"); //$NON-NLS-1$
+		/* ---- type combo ---- */
+		typeCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
+		typeCombo.setItems(new String[] {
+				"Extensional", 
+				"Intensional"
+		});
+		typeCombo.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				typeModified = true;
+				modifyFields();
+			}
+			public void widgetSelected(SelectionEvent e) {
+				typeModified = true;
+				modifyFields();
+			}
+		});
+
+		CLabel typeLabel = getWidgetFactory()
+				.createCLabel(composite, "Type:"); //$NON-NLS-1$
 		data = new FormData();
-		data.left = new FormAttachment(idText, ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(versionText, 0, SWT.CENTER);
-		versionLabel.setLayoutData(data);
+		data.left = new FormAttachment(0, 0);
+		data.top = new FormAttachment(typeCombo, 0, SWT.CENTER);
+		typeLabel.setLayoutData(data);
 
 		data = new FormData();
-		data.left = new FormAttachment(versionLabel, 0);
-		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
-		versionText.setLayoutData(data);
+        data.left = new FormAttachment(typeLabel, 0);
+		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		typeCombo.setLayoutData(data);
 
 		/* ---- binding combo ---- */
 		bindingCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
@@ -487,7 +461,7 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 		CLabel bindingLabel = getWidgetFactory()
 				.createCLabel(composite, "Binding:"); //$NON-NLS-1$
 		data = new FormData();
-		data.left = new FormAttachment(0, 0);
+		data.left = new FormAttachment(typeCombo, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(bindingCombo, 0, SWT.CENTER);
 		bindingLabel.setLayoutData(data);
 
@@ -496,43 +470,28 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		bindingCombo.setLayoutData(data);
 
-		/* ------ Code field ------ */
-		codeText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel codeLabel = getWidgetFactory()
-				.createCLabel(composite, "Code:"); //$NON-NLS-1$
+		/* ------ Version field ------ */
+		versionText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
+		CLabel versionLabel = getWidgetFactory()
+				.createCLabel(composite, "Version:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(bindingCombo, ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(codeText, 0, SWT.CENTER);
-		codeLabel.setLayoutData(data);
+		data.top = new FormAttachment(versionText, 0, SWT.CENTER);
+		versionLabel.setLayoutData(data);
 
 		data = new FormData();
-		data.left = new FormAttachment(codeLabel, 0);
-		data.right = new FormAttachment(50, 0);
+		data.left = new FormAttachment(versionLabel, 0);
+		data.right = new FormAttachment(70, 0);
 		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
-		codeText.setLayoutData(data);
+		versionText.setLayoutData(data);
 
-		/* ------ Code Display Name field ------ */
-		displayNameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel codeNameLabel = getWidgetFactory()
-				.createCLabel(composite, "Code Display Name:"); //$NON-NLS-1$
-		data = new FormData();
-		data.left = new FormAttachment(codeText, ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(displayNameText, 0, SWT.CENTER);
-		codeNameLabel.setLayoutData(data);
-
-		data = new FormData();
-		data.left = new FormAttachment(codeNameLabel, 0);
-		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
-		displayNameText.setLayoutData(data);
-		
 	}
-
+	
 	protected boolean isReadOnly() {
-		if (property != null) {
+		if (umlEnumeration != null) {
 			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			if (editingDomain != null && editingDomain.isReadOnly(property.eResource())) {
+				TransactionUtil.getEditingDomain(umlEnumeration);
+			if (editingDomain != null && editingDomain.isReadOnly(umlEnumeration.eResource())) {
 				return true;
 			}
 		}
@@ -558,8 +517,8 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
-		Assert.isTrue(element instanceof NamedElement);
-		this.property = (Property) element;
+		Assert.isTrue(element instanceof Enumeration);
+		this.umlEnumeration = (Enumeration) element;
 	}
 
 	public void dispose() {
@@ -568,20 +527,23 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 	}
 
 	public void refresh() {
-		Profile ctsProfile = CTSProfileUtil.getCTSProfile(property.eResource().getResourceSet());
+		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(umlEnumeration.eResource().getResourceSet());
 		if (ctsProfile == null) {
 			return;
 		}
-		Enumeration bindingKind = (Enumeration)
-			ctsProfile.getOwnedType(ICTSProfileConstants.BINDING_KIND);
+		Enumeration bindingKindEnum = (Enumeration)
+			ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
+		Enumeration valueSetTypeEnum = (Enumeration)
+			ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_TYPE);
 
-    	CodeSystemConstraint codeSystemConstraint = CTSProfileUtil.getCodeSystemConstraint(property);
+    	ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
+		
 		CodeSystemVersion codeSystem = null;
-		Enumeration referenceEnum = null;
-		if (codeSystemConstraint != null && codeSystemConstraint.getReference() != null) {
-			codeSystem = codeSystemConstraint.getReference();
-			referenceEnum = (Enumeration) codeSystem.getBase_Enumeration();
-			codeSystemRefLabel.setText(referenceEnum.getQualifiedName());
+		Enumeration codeSystemEnum = null;
+		if (valueSetVersion != null && valueSetVersion.getCodeSystem() != null) {
+			codeSystem = valueSetVersion.getCodeSystem();
+			codeSystemEnum = (Enumeration) codeSystem.getBase_Enumeration();
+			codeSystemRefLabel.setText(codeSystemEnum.getQualifiedName());
 			codeSystemRefLabel.layout();
 		}
 		else {
@@ -591,8 +553,8 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 		idText.removeModifyListener(modifyListener);
 		idText.removeKeyListener(keyListener);
 		idText.removeFocusListener(focusListener);
-		if (codeSystemConstraint != null) {
-			String id = codeSystem==null ? codeSystemConstraint.getIdentifier() : codeSystem.getIdentifier();
+		if (valueSetVersion != null) {
+			String id = valueSetVersion.getIdentifier();
 			idText.setText(id!=null ? id : "");
 		}
 		else {
@@ -605,8 +567,8 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 		nameText.removeModifyListener(modifyListener);
 		nameText.removeKeyListener(keyListener);
 		nameText.removeFocusListener(focusListener);
-		if (codeSystemConstraint != null) {
-			String name = codeSystem==null ? codeSystemConstraint.getName() : codeSystem.getBase_Enumeration().getName();
+		if (valueSetVersion != null) {
+			String name = valueSetVersion.getBase_Enumeration().getName();
 			nameText.setText(name!=null ? name : "");
 		}
 		else {
@@ -619,8 +581,8 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 		versionText.removeModifyListener(modifyListener);
 		versionText.removeKeyListener(keyListener);
 		versionText.removeFocusListener(focusListener);
-		if (codeSystemConstraint != null) {
-			String version = codeSystem==null ? codeSystemConstraint.getVersion() : codeSystem.getVersion();
+		if (valueSetVersion != null) {
+			String version = valueSetVersion.getVersion();
 			versionText.setText(version!=null ? version : "");
 		}
 		else {
@@ -630,70 +592,49 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 		versionText.addKeyListener(keyListener);
 		versionText.addFocusListener(focusListener);
 
-		codeText.removeModifyListener(modifyListener);
-		codeText.removeKeyListener(keyListener);
-		codeText.removeFocusListener(focusListener);
-		if (codeSystemConstraint != null) {
-			String code = codeSystemConstraint.getCode();
-			codeText.setText(code!=null ? code : "");
+		typeCombo.select(0);
+		if (valueSetVersion != null) {
+			ValueSetType valueSetType = valueSetVersion.getType();
+			
+			if (valueSetTypeEnum != null && valueSetType != null) {
+				EnumerationLiteral literal = valueSetTypeEnum.getOwnedLiteral(valueSetType.getName());
+				int index = valueSetTypeEnum.getOwnedLiterals().indexOf(literal);
+				typeCombo.select(index);
+			}
 		}
-		else {
-			codeText.setText("");
-		}
-		codeText.addModifyListener(modifyListener);
-		codeText.addKeyListener(keyListener);
-		codeText.addFocusListener(focusListener);
-
-		displayNameText.removeModifyListener(modifyListener);
-		displayNameText.removeKeyListener(keyListener);
-		displayNameText.removeFocusListener(focusListener);
-		if (codeSystemConstraint != null) {
-			String displayName = codeSystemConstraint.getDisplayName();
-			displayNameText.setText(displayName!=null ? displayName : "");
-		}
-		else {
-			displayNameText.setText("");
-		}
-		displayNameText.addModifyListener(modifyListener);
-		displayNameText.addKeyListener(keyListener);
-		displayNameText.addFocusListener(focusListener);
 
 		bindingCombo.select(0);
-		if (codeSystemConstraint != null) {
-			BindingKind binding = codeSystemConstraint.getBinding();
+		if (valueSetVersion != null) {
+			BindingKind binding = valueSetVersion.getBinding();
 			
-			if (bindingKind != null && binding != null) {
-				EnumerationLiteral literal = bindingKind.getOwnedLiteral(binding.getName());
-				int index = bindingKind.getOwnedLiterals().indexOf(literal);
+			if (bindingKindEnum != null && binding != null) {
+				EnumerationLiteral literal = bindingKindEnum.getOwnedLiteral(binding.getName());
+				int index = bindingKindEnum.getOwnedLiterals().indexOf(literal);
 				bindingCombo.select(index);
 			}
 		}
 
 		if (isReadOnly()) {
+			codeSystemRefLabel.setEnabled(false);
 			idText.setEnabled(false);
 			nameText.setEnabled(false);
 			versionText.setEnabled(false);
-			codeText.setEnabled(false);
-			displayNameText.setEnabled(false);
-		}
-		else if (referenceEnum != null) {
-			codeSystemRefLabel.setEnabled(true);
-			idText.setEnabled(false);
-			nameText.setEnabled(false);
-			versionText.setEnabled(false);
+			typeCombo.setEnabled(false);
+			bindingCombo.setEnabled(false);
 		}
 		else {
+			codeSystemRefLabel.setEnabled(true);
 			idText.setEnabled(true);
 			nameText.setEnabled(true);
 			versionText.setEnabled(true);
-			codeText.setEnabled(true);
-			displayNameText.setEnabled(true);
+			typeCombo.setEnabled(true);
+			bindingCombo.setEnabled(true);
 		}
 
 	}
 
 	/**
-	 * Update if nessesary, upon receiving the model event.
+	 * Update if necessary, upon receiving the model event.
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
@@ -708,7 +649,7 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && property.eResource() != null)
+					if (!isDisposed() && umlEnumeration.eResource() != null)
 						refresh();
 				}
 			});
@@ -716,15 +657,17 @@ public class CodeSystemConstraintSection extends AbstractModelerPropertySection 
 	}
 
 	protected void updateViews() {
-		Notification notification = new NotificationImpl(Notification.SET, null, property.getName()) {
+		// fire notification for any stereotype umlEnumeration changes to update views
+		// this is a bogus notification of change to umlEnumeration name, but can't find a better option
+		Notification notification = new NotificationImpl(Notification.SET, null, umlEnumeration.getName()) {
 			public Object getNotifier() {
-				return property;
+				return umlEnumeration;
 			}
 
 			public int getFeatureID(Class expectedClass) {
 				return UMLPackage.PROPERTY__NAME;
 			}
 		};
-		property.eNotify(notification);
+		umlEnumeration.eNotify(notification);
 	}
 }

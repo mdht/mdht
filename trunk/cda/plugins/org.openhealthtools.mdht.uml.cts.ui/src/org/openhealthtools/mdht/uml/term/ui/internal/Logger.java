@@ -10,7 +10,7 @@
  *     
  * $Id$
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cts.ui.internal;
+package org.openhealthtools.mdht.uml.term.ui.internal;
 
 import java.util.StringTokenizer;
 
