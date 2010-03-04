@@ -24,8 +24,8 @@
    <requires>
       <import plugin="org.eclipse.core.runtime" version="3.4.0" match="greaterOrEqual"/>
    </requires>
-   
-     <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.core"
          download-size="0"
          install-size="0"
@@ -59,27 +59,26 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-     <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.dita"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-            <plugin
-         id="org.openhealthtools.mdht.uml.cts.core"
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.term.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-            <plugin
-         id="org.openhealthtools.mdht.uml.cts.ui"
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.term.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
 
 </feature>
