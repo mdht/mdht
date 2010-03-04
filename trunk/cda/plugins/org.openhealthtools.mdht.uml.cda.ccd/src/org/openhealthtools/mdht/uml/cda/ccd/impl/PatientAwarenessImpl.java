@@ -77,6 +77,15 @@ public class PatientAwarenessImpl extends Participant2Impl implements PatientAwa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validatePatientAwarenessAwarenessCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientAwarenessOperations.validatePatientAwarenessAwarenessCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PatientAwareness init() {
     		CDAUtil.init(this);
     		return this;

@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getResultObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' templateId.root='2.16.840.1.113883.10.20.1.31' constraints.validation.error='ResultObservationTemplateId ResultObservationNoObservationRangeCode ResultObservationInformationSource ResultObservationMoodCode ResultObservationId ResultObservationValue' constraints.validation.warning='ResultObservationReferenceRangeRequired ResultObservationEffectiveTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' constraints.validation.info='ResultObservationMethodCode' templateId.root='2.16.840.1.113883.10.20.1.31' constraints.validation.error='ResultObservationTemplateId ResultObservationNoObservationRangeCode ResultObservationInformationSource ResultObservationMoodCode ResultObservationId ResultObservationStatusCode ResultObservationCode ResultObservationValue' constraints.validation.warning='ResultObservationReferenceRangeRequired ResultObservationEffectiveTime ResultObservationInterpretationCode'"
  * @generated
  */
 public interface ResultObservation extends Observation {
@@ -116,6 +116,58 @@ public interface ResultObservation extends Observation {
 	 * @generated
 	 */
 	boolean validateResultObservationEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.statusCode.oclIsUndefined()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean validateResultObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.code.oclIsUndefined()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.code.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean validateResultObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.methodCode->isEmpty()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.methodCode->isEmpty()'"
+	 * @generated
+	 */
+	boolean validateResultObservationMethodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.interpretationCode->isEmpty()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.interpretationCode->isEmpty()'"
+	 * @generated
+	 */
+	boolean validateResultObservationInterpretationCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

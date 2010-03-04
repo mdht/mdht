@@ -61,11 +61,9 @@
       <details key="documentation" value="The neonatal ICU encounter contains selected data specific to each admission and discharge in an encounter. This template captures data for the current encounter being reported and may capture data from historical encounters."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="code.codeSystem" value="2.16.840.1.113883.5.4"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.17.3.15"/>
       <details key="code.displayName" value="Inpatient encounter"/>
       <details key="constraints.validation.error" value="NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId"/>
-      <details key="code.codeSystemName" value="HL7ActCode"/>
       <details key="classCode" value="ENC"/>
       <details key="constraints.validation.warning" value="NeonatalICUEncounterActivityEffectiveTime"/>
       <details key="code.code" value="IMP"/>
@@ -326,11 +324,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="PatientDataSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="title.mixed" value="PATIENT DATA"/>
-      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="code.displayName" value="Clinical Information"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.17.2.4"/>
       <details key="constraints.validation.error" value="PatientDataSectionTemplateId PatientDataSectionCode PatientDataSectionText PatientDataSectionTitle"/>
-      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="55188-7"/>
     </eAnnotations>
     <eOperations name="PatientDataSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -548,15 +544,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="BirthWeight" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//ResultObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="statusCode.code" value="completed"/>
-      <details key="code.codeSystem" value="2.16.840.1.113883.6.96"/>
       <details key="code.displayName" value="Birth weight"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.17.3.1"/>
       <details key="constraints.validation.error" value="BirthWeightTemplateId BirthWeightClassCode BirthWeightMoodCode BirthWeightCode BirthWeightStatusCode BirthWeightValue"/>
-      <details key="code.codeSystemName" value="SNOMEDCT"/>
       <details key="classCode" value="OBS"/>
-      <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
       <details key="code.code" value="47340003"/>
-      <details key="statusCode.codeSystemName" value="HL7ActStatus"/>
       <details key="moodCode" value="EVN"/>
       <details key="statusCode.displayName" value="Completed"/>
     </eAnnotations>

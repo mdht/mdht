@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getVitalSignsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.16' constraints.validation.error='VitalSignsSectionTemplateId VitalSignsSectionCode VitalSignsSectionTitle VitalSignsSectionText' code.displayName='Vital signs' code.codeSystem='2.16.840.1.113883.6.1' code.code='8716-3' constraints.validation.warning='VitalSignsSectionVitalSignsOrganizer'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.16' constraints.validation.error='VitalSignsSectionTemplateId VitalSignsSectionCode VitalSignsSectionTitle VitalSignsSectionText' code.displayName='Vital signs' code.code='8716-3' constraints.validation.warning='VitalSignsSectionVitalSignsOrganizer'"
  * @generated
  */
 public interface VitalSignsSection extends Section {

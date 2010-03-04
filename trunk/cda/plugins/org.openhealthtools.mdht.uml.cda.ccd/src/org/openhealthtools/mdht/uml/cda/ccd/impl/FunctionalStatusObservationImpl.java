@@ -58,15 +58,6 @@ public class FunctionalStatusObservationImpl extends StatusObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFunctionalStatusObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FunctionalStatusObservationOperations.validateFunctionalStatusObservationValue(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public FunctionalStatusObservation init() {
     		CDAUtil.init(this);
     		return this;

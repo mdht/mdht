@@ -26,7 +26,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProceduresSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='ProceduresSectionTemplateId ProceduresSectionCode ProceduresSectionTitle' templateId.root='2.16.840.1.113883.10.20.1.12' code.displayName='History of procedures' code.codeSystem='2.16.840.1.113883.6.1' code.code='47519-4' constraints.validation.warning='ProceduresSectionProcedureActivity'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='ProceduresSectionTemplateId ProceduresSectionCode ProceduresSectionTitle' templateId.root='2.16.840.1.113883.10.20.1.12' code.displayName='History of procedures' code.code='47519-4' constraints.validation.warning='ProceduresSectionProcedureActivity'"
  * @generated
  */
 public interface ProceduresSection extends Section {

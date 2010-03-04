@@ -77,6 +77,33 @@ public class VitalSignObservationImpl extends ResultObservationImpl implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateVitalSignObservationInterpretationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignObservationOperations.validateVitalSignObservationInterpretationCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignObservationMethodCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignObservationOperations.validateVitalSignObservationMethodCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignObservationTargetSiteCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignObservationOperations.validateVitalSignObservationTargetSiteCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public VitalSignObservation init() {
     		CDAUtil.init(this);
     		return this;

@@ -1395,6 +1395,33 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(vitalSignObservationEClass, ecorePackage.getEBoolean(), "validateVitalSignObservationInterpretationCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(vitalSignObservationEClass, ecorePackage.getEBoolean(), "validateVitalSignObservationMethodCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(vitalSignObservationEClass, ecorePackage.getEBoolean(), "validateVitalSignObservationTargetSiteCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(simpleObservationEClass, SimpleObservation.class, "SimpleObservation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(simpleObservationEClass, ecorePackage.getEBoolean(), "validateSimpleObservationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1883,11 +1910,9 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (medicationsAdministeredSectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "MedicationsAdministeredSectionTemplateId MedicationsAdministeredSectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.21",
 			 "code.displayName", "MEDICATION ADMINISTERED",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "18610-6"
 		   });										
 		addAnnotation
@@ -2013,33 +2038,26 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (vitalSignObservationEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
+			 "constraints.validation.info", "VitalSignObservationInterpretationCode VitalSignObservationMethodCode VitalSignObservationTargetSiteCode",
 			 "constraints.validation.error", "VitalSignObservationTemplateId VitalSignObservationCode VitalSignObservationValue",
-			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.13.2",
-			 "code.codeSystem", "2.16.840.1.113883.6.1"
-		   });															
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.13.2"
+		   });																											
 		addAnnotation
 		  (simpleObservationEClass, 
 		   source, 
 		   new String[] {
-			 "statusCode.codeSystemName", "ActStatus",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.13",
 			 "constraints.validation.error", "SimpleObservationTemplateId SimpleObservationId SimpleObservationStatusCode",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "statusCode.code", "completed"
 		   });														
 		addAnnotation
 		  (vitalSignsOrganizerEClass, 
 		   source, 
 		   new String[] {
-			 "statusCode.codeSystemName", "ActStatus",
-			 "code.codeSystemName", "SNOMED CT",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.13.1",
 			 "constraints.validation.error", "IHEVitalSignsOrganizerTemplateId IHEVitalSignsOrganizerCode IHEVitalSignsOrganizerStatusCode IHEVitalSignsOrganizerEffectiveTime IHEVitalSignsOrganizerVitalSignObservation",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "code.displayName", "Vital signs",
 			 "statusCode.code", "completed",
-			 "code.codeSystem", "2.16.840.1.113883.6.96",
 			 "code.code", "46680005"
 		   });																							
 		addAnnotation
@@ -2053,44 +2071,36 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (historyOfPastIllnessSectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "HistoryOfPastIllnessSectionTemplateId HistoryOfPastIllnessSectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.8",
 			 "code.displayName", "HISTORY OF PAST ILLNESS",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "11348-0"
 		   });											
 		addAnnotation
 		  (chiefComplaintSectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "ChiefComplaintSectionTemplateId ChiefComplaintSectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1",
 			 "code.displayName", "CHIEF COMPLAINT",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "10154-3"
 		   });											
 		addAnnotation
 		  (reasonForReferralSectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "ReasonForReferralSectionTemplateId ReasonForReferralSectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.1",
 			 "code.displayName", "REASON FOR REFERRAL",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "42349-1"
 		   });											
 		addAnnotation
 		  (historyOfPresentIllnessEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "HistoryOfPresentIllnessTemplateId HistoryOfPresentIllnessCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.4",
 			 "code.displayName", "HISTORY OF PRESENT ILLNESS",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "10164-2"
 		   });											
 		addAnnotation
@@ -2111,44 +2121,36 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (hospitalAdmissionDiagnosisSectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "HospitalAdmissionDiagnosisSectionTemplateId HospitalAdmissionDiagnosisSectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.3",
 			 "code.displayName", "HOSPITAL ADMISSION DX",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "46241-6"
 		   });											
 		addAnnotation
 		  (dischargeDiagnosisSectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "DischargeDiagnosisSectionTemplateId DischargeDiagnosisSectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.7",
 			 "code.displayName", "HOSPITAL DISCHARGE DX",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "11535-2"
 		   });											
 		addAnnotation
 		  (admissionMedicationHistorySectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "AdmissionMedicationHistorySectionTemplateId AdmissionMedicationHistorySectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.20",
 			 "code.displayName", "MEDICATIONS ON ADMISSION",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "42346-7"
 		   });											
 		addAnnotation
 		  (hospitalDischargeMedicationsSectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "HospitalDischargeMedicationsSectionTemplateId HospitalDischargeMedicationsSectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.22",
 			 "code.displayName", "HOSPITAL DISCHARGE MEDICATIONS",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "10183-2"
 		   });										
 		addAnnotation
@@ -2169,11 +2171,9 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (physicalExamNarrativeSectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "PhysicalExamNarrativeSectionTemplateId PhysicalExamNarrativeSectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.24",
 			 "code.displayName", "PHYSICAL EXAMINATION",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "29545-1"
 		   });											
 		addAnnotation
@@ -2187,44 +2187,36 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (reviewOfSystemsSectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "ReviewOfSystemsSectionTemplateId ReviewOfSystemsSectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.18",
 			 "code.displayName", "REVIEW OF SYSTEMS",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "10187-3"
 		   });											
 		addAnnotation
 		  (hospitalCourseSectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "HospitalCourseSectionTemplateId HospitalCourseSectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.5",
 			 "code.displayName", "HOSPITAL COURSE",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "8648-8"
 		   });											
 		addAnnotation
 		  (codedResultsSectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "CodedResultsSectionTemplateId CodedResultsSectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.28",
 			 "code.displayName", "STUDIES SUMMARY",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "30954-2"
 		   });											
 		addAnnotation
 		  (assessmentAndPlanSectionEClass, 
 		   source, 
 		   new String[] {
-			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.error", "AssessmentAndPlanSectionTemplateId AssessmentAndPlanSectionCode",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.1.13.2.5",
 			 "code.displayName", "ASSESSMENT AND PLAN",
-			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.code", "51847-2"
 		   });											
 		addAnnotation
@@ -2277,7 +2269,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																				
+		   });																																																																																																																																																																																																																																																																																																																																																																																
 	}
 
 	/**
@@ -2317,7 +2309,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Allergies and Other Adverse Reactions Section", null
-		   });																																																																																																																																																																																																																																																																																																	
+		   });																																																																																																																																																																																																																																																																																																													
 	}
 
 } //IHEPackageImpl

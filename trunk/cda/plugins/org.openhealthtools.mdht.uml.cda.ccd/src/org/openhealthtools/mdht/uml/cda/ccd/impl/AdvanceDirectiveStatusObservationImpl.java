@@ -58,15 +58,6 @@ public class AdvanceDirectiveStatusObservationImpl extends StatusObservationImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAdvanceDirectiveStatusObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectiveStatusObservationOperations.validateAdvanceDirectiveStatusObservationValue(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AdvanceDirectiveStatusObservation init() {
     		CDAUtil.init(this);
     		return this;

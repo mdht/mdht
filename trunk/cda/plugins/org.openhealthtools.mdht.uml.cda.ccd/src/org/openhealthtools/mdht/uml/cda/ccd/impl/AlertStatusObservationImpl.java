@@ -58,15 +58,6 @@ public class AlertStatusObservationImpl extends StatusObservationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAlertStatusObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AlertStatusObservationOperations.validateAlertStatusObservationValue(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AlertStatusObservation init() {
     		CDAUtil.init(this);
     		return this;

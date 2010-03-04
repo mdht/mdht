@@ -22,7 +22,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getChiefComplaintSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='ChiefComplaintSectionTemplateId ChiefComplaintSectionCode' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1' code.displayName='CHIEF COMPLAINT' code.codeSystem='2.16.840.1.113883.6.1' code.code='10154-3'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='ChiefComplaintSectionTemplateId ChiefComplaintSectionCode' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1' code.displayName='CHIEF COMPLAINT' code.code='10154-3'"
  * @generated
  */
 public interface ChiefComplaintSection extends Section {

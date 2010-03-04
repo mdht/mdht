@@ -67,15 +67,6 @@ public class ProblemHealthStatusImpl extends StatusObservationImpl implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemHealthStatusValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemHealthStatusOperations.validateProblemHealthStatusValue(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ProblemHealthStatus init() {
     		CDAUtil.init(this);
     		return this;

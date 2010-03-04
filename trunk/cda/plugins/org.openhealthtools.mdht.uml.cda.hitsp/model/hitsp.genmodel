@@ -59,14 +59,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Condition/createConditionEntry"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//ConditionEntry">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//ConditionEntry/ConditionEntryCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryCode/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//ConditionEntry/ConditionEntryValue">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryValue/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryValue/context"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//ConditionEntry/ConditionEntryEffectiveTime">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryEffectiveTime/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//ConditionEntry/ConditionEntryEffectiveTime/context"/>

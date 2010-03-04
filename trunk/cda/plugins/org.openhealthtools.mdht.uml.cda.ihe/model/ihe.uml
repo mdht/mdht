@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:version="2.0" xsi:schemaLocation="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3 pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:version="2.0" xsi:schemaLocation="http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
   <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="ihe">
     
     <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
@@ -537,7 +536,7 @@ life, hobbies, and risky habits.</body>
     
     <profileApplication xmi:id="__XON4IwEEd6B6JSUB00H7g">
       <eAnnotations xmi:id="__XPcAIwEEd6B6JSUB00H7g" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="pathmap://CDA_PROFILES/CDA.profile.uml#_l1U9sKFdEd6NOYTVzzK9uw"/>
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/cda/4#/"/>
       </eAnnotations>
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
@@ -563,7 +562,7 @@ life, hobbies, and risky habits.</body>
   <CDA:CDATemplate xmi:id="_OeXs4HyTEd6FS-4xbA1fBQ" message="IHE Conditional Dosing SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.10" base_Class="_OeXF0HyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.10" assigningAuthorityName="IHE PCC"/>
   <CDA:CDATemplate xmi:id="_QDIrQHyTEd6FS-4xbA1fBQ" message="IHE Combination Medication SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.11" base_Class="_QDIEMHyTEd6FS-4xbA1fBQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.11" assigningAuthorityName="IHE PCC"/>
   <Default:Documentation xmi:id="_uqBVAHyTEd6FS-4xbA1fBQ" base_Comment="_up71cHyTEd6FS-4xbA1fBQ"/>
-  <CDA:CodegenSupport xmi:id="_saK-MJyQEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ihe" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe" packageName="ihe" prefix="IHE" base_Package="_qQyD8jxVEd6JwqSGecoePg"/>
+  <CDA:CodegenSupport xmi:id="_saK-MJyQEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ihe" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ihe" packageName="ihe" prefix="IHE" base_Namespace="_qQyD8jxVEd6JwqSGecoePg"/>
   <CDA:AssociationValidation xmi:id="_xT_XYJyREd6BO7rW3XxHIA" message="IHE Active Problems Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Problem Concern Entry (templateId: 1.3.6.1.4.1.19376.1.5.3.1.4.5.2)" base_Association="_w1oMsIwEEd6B6JSUB00H7g"/>
   <CDA:AssociationValidation xmi:id="_z6eRcJyREd6BO7rW3XxHIA" message="IHE Problem Concern Entry SHALL contain [1..*] entryRelationship such that it, SHALL contain [1..1] Problem Entry (templateId: 1.3.6.1.4.1.19376.1.5.3.1.4.5)" base_Association="_XVchkIwFEd6B6JSUB00H7g"/>
   <CDA:PropertyValidation xmi:id="_4ltRgJyREd6BO7rW3XxHIA" message="IHE Concern Entry SHALL contain [1..1] effectiveTime" base_Property="_IC2EwIwGEd6B6JSUB00H7g"/>
@@ -574,20 +573,13 @@ life, hobbies, and risky habits.</body>
   <CDA:CDATemplate xmi:id="_WyKqoK4NEd6_ioDelDcPPg" message="IHE Vital Sign Observation SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.13.2" base_Class="_LriUcK4NEd6_ioDelDcPPg" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.13.2" assigningAuthorityName="IHE PCC"/>
   <CDA:CDATemplate xmi:id="_oa_igK4NEd6_ioDelDcPPg" message="IHE Simple Observation SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.13" base_Class="_dLvb0K4NEd6_ioDelDcPPg" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC"/>
   <Default:Documentation xmi:id="_x8r7MK4NEd6_ioDelDcPPg" base_Comment="_x8oQ0K4NEd6_ioDelDcPPg"/>
-  <CDA:VocabSpecification xmi:id="_bO--wK4OEd6_ioDelDcPPg" message="IHE Simple Observation SHALL contain [1..1] statusCode/@code = &quot;completed&quot;  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC)" base_Property="_bO-XsK4OEd6_ioDelDcPPg" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
-  <CDA:VocabSpecification xmi:id="_8nnXYK4OEd6_ioDelDcPPg" message="IHE Vital Sign Observation SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.6.1 LOINC DYNAMIC, where its data type is CE" base_Property="_8nmwUK4OEd6_ioDelDcPPg" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
   <CDA:CDATemplate xmi:id="_nVnHcK4QEd6_ioDelDcPPg" message="IHE Vital Signs Organizer SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.13.1" base_Class="_hVMdIK4QEd6_ioDelDcPPg" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.13.1" assigningAuthorityName="IHE PCC"/>
   <CDA:PropertyValidation xmi:id="_2r0ccK4QEd6_ioDelDcPPg" message="IHE Simple Observation SHALL contain [1..*] id" base_Property="_SDxzcK4OEd6_ioDelDcPPg"/>
   <CDA:PropertyValidation xmi:id="_ia9V4K4REd6_ioDelDcPPg" message="IHE Vital Sign Observation SHALL contain [1..1] value, where its data type is PQ" base_Property="_R9GuQK4PEd6_ioDelDcPPg"/>
-  <CDA:VocabSpecification xmi:id="_wV3xka4REd6_ioDelDcPPg" message="IHE Vital Signs Organizer SHALL contain [1..1] code/@code = &quot;46680005&quot; Vital signs (CodeSystem: 2.16.840.1.113883.6.96 SNOMED CT STATIC), where its data type is CE" base_Property="_wV3xkK4REd6_ioDelDcPPg" code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vital signs"/>
-  <CDA:VocabSpecification xmi:id="_NhGVoK4SEd6_ioDelDcPPg" message="IHE Vital Signs Organizer SHALL contain [1..1] statusCode/@code = &quot;completed&quot;  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC)" base_Property="_NhFHgK4SEd6_ioDelDcPPg" code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/>
   <CDA:EntryRelationship xmi:id="_eFLL8K4SEd6_ioDelDcPPg" message="IHE Vital Signs Organizer SHALL contain [1..*] component such that it, SHALL contain [1..1] @typeCode=&quot;COMP&quot; COMP (has component), SHALL contain [1..1] Vital Sign Observation (templateId: 1.3.6.1.4.1.19376.1.5.3.1.4.13.2)" base_Association="_WBrPkK4SEd6_ioDelDcPPg" typeCode="COMP"/>
   <CDA:PropertyValidation xmi:id="_t6rFA64SEd6_ioDelDcPPg" message="IHE Vital Signs Organizer SHALL contain [1..1] effectiveTime" base_Property="_t6rFAK4SEd6_ioDelDcPPg"/>
   <CDA:AssociationValidation xmi:id="_K5H74K4UEd6_ioDelDcPPg" message="IHE Vital Signs Organizer SHALL contain [1..1] component such that it, SHALL contain [1..1] CDA Author" base_Association="_IFnScK4UEd6_ioDelDcPPg"/>
   <CDA:AssociationValidation xmi:id="_-x-HYK4UEd6_ioDelDcPPg" message="IHE Coded Vital Signs Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Vital Signs Organizer (templateId: 1.3.6.1.4.1.19376.1.5.3.1.4.13.1)" base_Association="_wHB88K4UEd6_ioDelDcPPg"/>
-  <CDA:VocabSpecification xmi:id="_nUCAkK60Ed6_ioDelDcPPg" message="IHE Vital Sign Observation MAY contain [0..*] interpretationCode" severity="INFO" base_Property="_Lb-7oK60Ed6_ioDelDcPPg"/>
-  <CDA:VocabSpecification xmi:id="_Dn6F4K61Ed6_ioDelDcPPg" message="IHE Vital Sign Observation MAY contain [0..*] methodCode" severity="INFO" base_Property="_Pwh6AK60Ed6_ioDelDcPPg"/>
-  <CDA:VocabSpecification xmi:id="_MKDtIK61Ed6_ioDelDcPPg" message="IHE Vital Sign Observation MAY contain [0..*] targetSiteCode" severity="INFO" base_Property="_RF7msK60Ed6_ioDelDcPPg"/>
   <CDA:CDATemplate xmi:id="_47pYcMfXEd6VjLXh4DcWSg" message="IHE Payers Section SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7" base_Class="_ynU6sMfXEd6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7" assigningAuthorityName="IHE PCC"/>
   <Default:Documentation xmi:id="_gIVaYMfYEd6VjLXh4DcWSg" base_Comment="_gIRwAMfYEd6VjLXh4DcWSg"/>
   <Default:Documentation xmi:id="_fAEDYMfbEd6VjLXh4DcWSg" base_Comment="_fABAEMfbEd6VjLXh4DcWSg"/>
@@ -623,17 +615,13 @@ life, hobbies, and risky habits.</body>
   <Default:Documentation xmi:id="_pH5FoMf0Ed6VjLXh4DcWSg" base_Comment="_pH00MMf0Ed6VjLXh4DcWSg"/>
   <CDA:CDATemplate xmi:id="_cn5v0Mf0Ed6VjLXh4DcWSg" message="IHE Immunizations Section SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.3.23" base_Class="_ZEjk4Mf0Ed6VjLXh4DcWSg" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.23" assigningAuthorityName="IHE PCC"/>
   <CDA:CDATemplate xmi:id="_EocwAMiXEd6mWrHPmrIIfQ" message="IHE Review Of Systems Section SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.3.18" base_Class="_6fSusMiWEd6mWrHPmrIIfQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.18" assigningAuthorityName="IHE PCC"/>
-  <CDA:VocabSpecification xmi:id="_boIX0MiXEd6mWrHPmrIIfQ" message="IHE Review Of Systems Section SHALL contain [1..1] code/@code = &quot;10187-3&quot; REVIEW OF SYSTEMS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_boHwwMiXEd6mWrHPmrIIfQ" code="10187-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="REVIEW OF SYSTEMS"/>
   <Default:Documentation xmi:id="_cZREYMiYEd6mWrHPmrIIfQ" base_Comment="_cZMy8MiYEd6mWrHPmrIIfQ"/>
-  <CDA:VocabSpecification xmi:id="_F3GswcidEd6mWrHPmrIIfQ" message="IHE Hospital Course Section SHALL contain [1..1] code/@code = &quot;8648-8&quot; HOSPITAL COURSE (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_F3GswMidEd6mWrHPmrIIfQ" code="8648-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL COURSE"/>
   <CDA:CDATemplate xmi:id="_Or_CwMidEd6mWrHPmrIIfQ" message="IHE Hospital Course Section SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.3.5" base_Class="_DO0b4MidEd6mWrHPmrIIfQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.5" assigningAuthorityName="IHE PCC"/>
   <Default:Documentation xmi:id="_UTrEAMidEd6mWrHPmrIIfQ" base_Comment="_UToAsMidEd6mWrHPmrIIfQ"/>
   <CDA:CDATemplate xmi:id="_F1DB0MieEd6mWrHPmrIIfQ" message="IHE Coded Results Section SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.3.28" base_Class="_-OeSAMidEd6mWrHPmrIIfQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.28" assigningAuthorityName="IHE PCC"/>
   <Default:Documentation xmi:id="_I7FlsMieEd6mWrHPmrIIfQ" base_Comment="_I7CiYMieEd6mWrHPmrIIfQ"/>
-  <CDA:VocabSpecification xmi:id="_Jxx9IcieEd6mWrHPmrIIfQ" message="IHE Coded Results Section SHALL contain [1..1] code/@code = &quot;30954-2&quot; STUDIES SUMMARY (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_Jxx9IMieEd6mWrHPmrIIfQ" code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="STUDIES SUMMARY"/>
   <CDA:CDATemplate xmi:id="_ZzMV0MifEd6mWrHPmrIIfQ" message="IHE Assessment And Plan Section SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.1.13.2.5" base_Class="_SNPREMifEd6mWrHPmrIIfQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.5" assigningAuthorityName="IHE PCC"/>
   <Default:Documentation xmi:id="_ddUeMMifEd6mWrHPmrIIfQ" base_Comment="_ddQz0MifEd6mWrHPmrIIfQ"/>
-  <CDA:VocabSpecification xmi:id="_eP9cEMifEd6mWrHPmrIIfQ" message="IHE Assessment And Plan Section SHALL contain [1..1] code/@code = &quot;51847-2&quot; ASSESSMENT AND PLAN (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_eP81AMifEd6mWrHPmrIIfQ" code="51847-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ASSESSMENT AND PLAN"/>
   <CDA:CDATemplate xmi:id="_EGTWIMigEd6mWrHPmrIIfQ" message="IHE Care Plan Section SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.3.31" base_Class="_BEcusMigEd6mWrHPmrIIfQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.31" assigningAuthorityName="IHE PCC"/>
   <Default:Documentation xmi:id="_QMN_EMigEd6mWrHPmrIIfQ" base_Comment="_QMLi0MigEd6mWrHPmrIIfQ"/>
   <CDA:CDATemplate xmi:id="_ooeSkMigEd6mWrHPmrIIfQ" message="IHE Family Medical History Section SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.3.14" base_Class="_kKnAIMigEd6mWrHPmrIIfQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.3.14" assigningAuthorityName="IHE PCC"/>
@@ -644,15 +632,62 @@ life, hobbies, and risky habits.</body>
   <Default:Documentation xmi:id="_z7tPcMiiEd6mWrHPmrIIfQ" base_Comment="_z7qzMMiiEd6mWrHPmrIIfQ"/>
   <CDA:CDATemplate xmi:id="_xkcAoMijEd6mWrHPmrIIfQ" message="IHE Medical Devices Section SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5" base_Class="_tqabEMijEd6mWrHPmrIIfQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5" assigningAuthorityName="IHE PCC"/>
   <Default:Documentation xmi:id="_1yNBkMijEd6mWrHPmrIIfQ" base_Comment="_1yJXMMijEd6mWrHPmrIIfQ"/>
-  <CDA:VocabSpecification xmi:id="_cQOKMMilEd6NKIaf5H7MFg" message="IHE History Of Past Illness Section SHALL contain [1..1] code/@code = &quot;11348-0&quot; HISTORY OF PAST ILLNESS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_cQJ4wMilEd6NKIaf5H7MFg" code="11348-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF PAST ILLNESS"/>
-  <CDA:VocabSpecification xmi:id="_caaA8MilEd6NKIaf5H7MFg" message="IHE History Of Present Illness SHALL contain [1..1] code/@code = &quot;10164-2&quot; HISTORY OF PRESENT ILLNESS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_caQ3AMilEd6NKIaf5H7MFg" code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF PRESENT ILLNESS"/>
-  <CDA:VocabSpecification xmi:id="_rBpXIcilEd6NKIaf5H7MFg" message="IHE Chief Complaint Section SHALL contain [1..1] code/@code = &quot;10154-3&quot; CHIEF COMPLAINT (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_rBpXIMilEd6NKIaf5H7MFg" code="10154-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CHIEF COMPLAINT"/>
-  <CDA:VocabSpecification xmi:id="_sBqpsMilEd6NKIaf5H7MFg" message="IHE Reason For Referral Section SHALL contain [1..1] code/@code = &quot;42349-1&quot; REASON FOR REFERRAL (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_sBqCoMilEd6NKIaf5H7MFg" code="42349-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="REASON FOR REFERRAL"/>
-  <CDA:VocabSpecification xmi:id="_6XxMkcilEd6NKIaf5H7MFg" message="IHE Hospital Admission Diagnosis Section SHALL contain [1..1] code/@code = &quot;46241-6&quot; HOSPITAL ADMISSION DX (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_6XxMkMilEd6NKIaf5H7MFg" code="46241-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL ADMISSION DX"/>
-  <CDA:VocabSpecification xmi:id="_7bR4AMilEd6NKIaf5H7MFg" message="IHE Discharge Diagnosis Section SHALL contain [1..1] code/@code = &quot;11535-2&quot; HOSPITAL DISCHARGE DX (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_7bQp4MilEd6NKIaf5H7MFg" code="11535-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE DX"/>
-  <CDA:VocabSpecification xmi:id="_JaVM0cimEd6NKIaf5H7MFg" message="IHE Admission Medication History Section SHALL contain [1..1] code/@code = &quot;42346-7&quot; MEDICATIONS ON ADMISSION (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_JaVM0MimEd6NKIaf5H7MFg" code="42346-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATIONS ON ADMISSION"/>
-  <CDA:VocabSpecification xmi:id="_KLT90cimEd6NKIaf5H7MFg" message="IHE Hospital Discharge Medications Section SHALL contain [1..1] code/@code = &quot;10183-2&quot; HOSPITAL DISCHARGE MEDICATIONS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_KLT90MimEd6NKIaf5H7MFg" code="10183-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE MEDICATIONS"/>
-  <CDA:VocabSpecification xmi:id="_W7HRQcimEd6NKIaf5H7MFg" message="IHE Medications Administered Section SHALL contain [1..1] code/@code = &quot;18610-6&quot; MEDICATION ADMINISTERED (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_W7HRQMimEd6NKIaf5H7MFg" code="18610-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION ADMINISTERED"/>
-  <CDA:VocabSpecification xmi:id="_YW7vAMimEd6NKIaf5H7MFg" message="IHE Physical Exam Narrative Section SHALL contain [1..1] code/@code = &quot;29545-1&quot; PHYSICAL EXAMINATION (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)" base_Property="_YW7H8MimEd6NKIaf5H7MFg" code="29545-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PHYSICAL EXAMINATION"/>
   <CDA:PropertyValidation xmi:id="_kcsIoBvkEd-yI6xBTkJSNw" message="IHE Problem Entry SHALL contain [1..1] value, where its data type is CD" base_Property="_slNZAIwHEd6B6JSUB00H7g"/>
+  <CDA:CodeSystemConstraint xmi:id="_NztA0CfdEd-4R4ealYN1gQ" code="18610-6" displayName="MEDICATION ADMINISTERED" base_Property="_W7HRQMimEd6NKIaf5H7MFg" message="IHE Medications Administered Section SHALL contain [1..1] code/@code = &quot;18610-6&quot; MEDICATION ADMINISTERED (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_NzvdECfdEd-4R4ealYN1gQ" base_Property="_8nmwUK4OEd6_ioDelDcPPg" message="IHE Vital Sign Observation SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.6.1 LOINC DYNAMIC, where its data type is CE">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:PropertyValidation xmi:id="_NzxSQCfdEd-4R4ealYN1gQ" message="IHE Vital Sign Observation MAY contain [0..*] interpretationCode" severity="INFO" base_Property="_Lb-7oK60Ed6_ioDelDcPPg"/>
+  <CDA:PropertyValidation xmi:id="_NzzHcCfdEd-4R4ealYN1gQ" message="IHE Vital Sign Observation MAY contain [0..*] methodCode" severity="INFO" base_Property="_Pwh6AK60Ed6_ioDelDcPPg"/>
+  <CDA:PropertyValidation xmi:id="_Nz08oCfdEd-4R4ealYN1gQ" message="IHE Vital Sign Observation MAY contain [0..*] targetSiteCode" severity="INFO" base_Property="_RF7msK60Ed6_ioDelDcPPg"/>
+  <CDA:CodeSystemConstraint xmi:id="_Nz2KwCfdEd-4R4ealYN1gQ" code="completed" base_Property="_bO-XsK4OEd6_ioDelDcPPg" message="IHE Simple Observation SHALL contain [1..1] statusCode/@code = &quot;completed&quot;  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_Nz3_8CfdEd-4R4ealYN1gQ" code="46680005" displayName="Vital signs" base_Property="_wV3xkK4REd6_ioDelDcPPg" message="IHE Vital Signs Organizer SHALL contain [1..1] code/@code = &quot;46680005&quot; Vital signs (CodeSystem: 2.16.840.1.113883.6.96 SNOMED CT STATIC), where its data type is CE">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_Nz6cMCfdEd-4R4ealYN1gQ" code="completed" base_Property="_NhFHgK4SEd6_ioDelDcPPg" message="IHE Vital Signs Organizer SHALL contain [1..1] statusCode/@code = &quot;completed&quot;  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_Nz8RYCfdEd-4R4ealYN1gQ" code="11348-0" displayName="HISTORY OF PAST ILLNESS" base_Property="_cQJ4wMilEd6NKIaf5H7MFg" message="IHE History Of Past Illness Section SHALL contain [1..1] code/@code = &quot;11348-0&quot; HISTORY OF PAST ILLNESS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_Nz-GkCfdEd-4R4ealYN1gQ" code="10154-3" displayName="CHIEF COMPLAINT" base_Property="_rBpXIMilEd6NKIaf5H7MFg" message="IHE Chief Complaint Section SHALL contain [1..1] code/@code = &quot;10154-3&quot; CHIEF COMPLAINT (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_N0Ai0CfdEd-4R4ealYN1gQ" code="42349-1" displayName="REASON FOR REFERRAL" base_Property="_sBqCoMilEd6NKIaf5H7MFg" message="IHE Reason For Referral Section SHALL contain [1..1] code/@code = &quot;42349-1&quot; REASON FOR REFERRAL (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_N0CYACfdEd-4R4ealYN1gQ" code="10164-2" displayName="HISTORY OF PRESENT ILLNESS" base_Property="_caQ3AMilEd6NKIaf5H7MFg" message="IHE History Of Present Illness SHALL contain [1..1] code/@code = &quot;10164-2&quot; HISTORY OF PRESENT ILLNESS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_N0E0QCfdEd-4R4ealYN1gQ" code="46241-6" displayName="HOSPITAL ADMISSION DX" base_Property="_6XxMkMilEd6NKIaf5H7MFg" message="IHE Hospital Admission Diagnosis Section SHALL contain [1..1] code/@code = &quot;46241-6&quot; HOSPITAL ADMISSION DX (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_N0GpcCfdEd-4R4ealYN1gQ" code="11535-2" displayName="HOSPITAL DISCHARGE DX" base_Property="_7bQp4MilEd6NKIaf5H7MFg" message="IHE Discharge Diagnosis Section SHALL contain [1..1] code/@code = &quot;11535-2&quot; HOSPITAL DISCHARGE DX (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_N0IeoCfdEd-4R4ealYN1gQ" code="42346-7" displayName="MEDICATIONS ON ADMISSION" base_Property="_JaVM0MimEd6NKIaf5H7MFg" message="IHE Admission Medication History Section SHALL contain [1..1] code/@code = &quot;42346-7&quot; MEDICATIONS ON ADMISSION (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_N0K64CfdEd-4R4ealYN1gQ" code="10183-2" displayName="HOSPITAL DISCHARGE MEDICATIONS" base_Property="_KLT90MimEd6NKIaf5H7MFg" message="IHE Hospital Discharge Medications Section SHALL contain [1..1] code/@code = &quot;10183-2&quot; HOSPITAL DISCHARGE MEDICATIONS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_N0MwECfdEd-4R4ealYN1gQ" code="29545-1" displayName="PHYSICAL EXAMINATION" base_Property="_YW7H8MimEd6NKIaf5H7MFg" message="IHE Physical Exam Narrative Section SHALL contain [1..1] code/@code = &quot;29545-1&quot; PHYSICAL EXAMINATION (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_N0OlQCfdEd-4R4ealYN1gQ" code="10187-3" displayName="REVIEW OF SYSTEMS" base_Property="_boHwwMiXEd6mWrHPmrIIfQ" message="IHE Review Of Systems Section SHALL contain [1..1] code/@code = &quot;10187-3&quot; REVIEW OF SYSTEMS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_N0QacCfdEd-4R4ealYN1gQ" code="8648-8" displayName="HOSPITAL COURSE" base_Property="_F3GswMidEd6mWrHPmrIIfQ" message="IHE Hospital Course Section SHALL contain [1..1] code/@code = &quot;8648-8&quot; HOSPITAL COURSE (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_N0S2sCfdEd-4R4ealYN1gQ" code="30954-2" displayName="STUDIES SUMMARY" base_Property="_Jxx9IMieEd6mWrHPmrIIfQ" message="IHE Coded Results Section SHALL contain [1..1] code/@code = &quot;30954-2&quot; STUDIES SUMMARY (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_N0Ur4CfdEd-4R4ealYN1gQ" code="51847-2" displayName="ASSESSMENT AND PLAN" base_Property="_eP81AMifEd6mWrHPmrIIfQ" message="IHE Assessment And Plan Section SHALL contain [1..1] code/@code = &quot;51847-2&quot; ASSESSMENT AND PLAN (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
 </xmi:XMI>
