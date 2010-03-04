@@ -2,7 +2,7 @@ package org.openhealthtools.mdht.uml.term.core.util;
 
 public interface ITermProfileConstants {
 
-	public static final String CTS_PROFILE_NAME = "CTS";
+	public static final String TERM_PROFILE_NAME = "Terminology";
 
 	/*
 	 * ConceptDomainConstraint Stereotype and Properties
@@ -61,7 +61,7 @@ public interface ITermProfileConstants {
 	public static final String VALUE_SET_VERSION_BINDING = "binding";
 	
 	/*
-	 * CTS Enumerations
+	 * Enumerations
 	 */
 	public static final String BINDING_KIND = "BindingKind";
 	public static final String BINDING_KIND_STATIC = "Static";
