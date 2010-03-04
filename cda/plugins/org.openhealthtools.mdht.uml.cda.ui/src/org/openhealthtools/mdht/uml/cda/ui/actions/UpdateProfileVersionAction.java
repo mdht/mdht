@@ -46,10 +46,10 @@ import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
 import org.openhealthtools.mdht.uml.common.ui.search.ModelSearch;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemVersion;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetVersion;
-import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
-import org.openhealthtools.mdht.uml.cts.core.util.ICTSProfileConstants;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
+import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 
 public class UpdateProfileVersionAction implements IObjectActionDelegate {
 	private NamedElement namedElement;
@@ -144,14 +144,14 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 	}
 	
 	private void cacheTerminology() {
-		Profile ctsProfile = CTSProfileUtil.getCTSProfile(namedElement.eResource().getResourceSet());
+		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(namedElement.eResource().getResourceSet());
 		if (ctsProfile == null) {
 			return;
 		}
 		final Stereotype codeSystemVersionStereotype = (Stereotype)
-			ctsProfile.getOwnedType(ICTSProfileConstants.CODE_SYSTEM_VERSION);
+			ctsProfile.getOwnedType(ITermProfileConstants.CODE_SYSTEM_VERSION);
 		final Stereotype valueSetVersionStereotype = (Stereotype)
-			ctsProfile.getOwnedType(ICTSProfileConstants.VALUE_SET_VERSION);
+			ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_VERSION);
 		IElementFilter codeSystemFilter = new IElementFilter() {
 			public boolean accept(Element element) {
 				return (element instanceof Enumeration)
@@ -215,8 +215,8 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 		String message = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VALIDATION_MESSAGE);
 
 		Stereotype propertyValidation = cdaProfile.getOwnedStereotype(ICDAProfileConstants.PROPERTY_VALIDATION);
-		Stereotype codeSystemConstraint = cdaProfile.getOwnedStereotype(ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT);
-		Stereotype valueSetConstraint = cdaProfile.getOwnedStereotype(ICTSProfileConstants.VALUE_SET_CONSTRAINT);
+		Stereotype codeSystemConstraint = cdaProfile.getOwnedStereotype(ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
+		Stereotype valueSetConstraint = cdaProfile.getOwnedStereotype(ITermProfileConstants.VALUE_SET_CONSTRAINT);
 		if (codeSystemConstraint == null || valueSetConstraint == null) {
 			return;
 		}
@@ -230,21 +230,21 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 			
 			if (codeSystemVersion != null) {
 				property.setValue(codeSystemConstraint,
-						ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_REFERENCE, codeSystemVersion);
+						ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_REFERENCE, codeSystemVersion);
 			}
 			else {
 				System.err.println("Cannot find code system: " + name + " ID: " + identifier);
 				property.setValue(codeSystemConstraint,
-						ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_ID, identifier);
+						ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_ID, identifier);
 				property.setValue(codeSystemConstraint,
-						ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_NAME, name);
+						ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_NAME, name);
 				property.setValue(codeSystemConstraint,
-						ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_VERSION, version);
+						ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_VERSION, version);
 			}
 			property.setValue(codeSystemConstraint,
-					ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_CODE, code);
+					ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_CODE, code);
 			property.setValue(codeSystemConstraint,
-					ICTSProfileConstants.CODE_SYSTEM_CONSTRAINT_DISPLAY_NAME, displayName);
+					ITermProfileConstants.CODE_SYSTEM_CONSTRAINT_DISPLAY_NAME, displayName);
 			property.setValue(codeSystemConstraint,
 					ICDAProfileConstants.VALIDATION_SEVERITY, severity);
 			property.setValue(codeSystemConstraint,
@@ -258,16 +258,16 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 
 			if (valueSetVersion != null) {
 				property.setValue(valueSetConstraint,
-						ICTSProfileConstants.VALUE_SET_CONSTRAINT_REFERENCE, valueSetVersion);
+						ITermProfileConstants.VALUE_SET_CONSTRAINT_REFERENCE, valueSetVersion);
 			}
 			else {
 				System.err.println("Cannot find value set: " + name + " ID: " + identifier);
 				property.setValue(valueSetConstraint,
-						ICTSProfileConstants.VALUE_SET_CONSTRAINT_ID, identifier);
+						ITermProfileConstants.VALUE_SET_CONSTRAINT_ID, identifier);
 				property.setValue(valueSetConstraint,
-						ICTSProfileConstants.VALUE_SET_CONSTRAINT_NAME, name);
+						ITermProfileConstants.VALUE_SET_CONSTRAINT_NAME, name);
 				property.setValue(valueSetConstraint,
-						ICTSProfileConstants.VALUE_SET_CONSTRAINT_VERSION, version);
+						ITermProfileConstants.VALUE_SET_CONSTRAINT_VERSION, version);
 			}
 			property.setValue(valueSetConstraint,
 					ICDAProfileConstants.VALIDATION_SEVERITY, severity);

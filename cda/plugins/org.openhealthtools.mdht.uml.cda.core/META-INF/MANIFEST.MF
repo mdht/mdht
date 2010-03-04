@@ -8,10 +8,10 @@ Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.cda.resources,
  org.openhealthtools.mdht.uml.common,
- org.openhealthtools.mdht.uml.cts.core
+ org.openhealthtools.mdht.uml.term.core
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.uml.cda.core.cdaprofile,
- org.openhealthtools.mdht.uml.cda.core.cdaprofile.impl,
- org.openhealthtools.mdht.uml.cda.core.cdaprofile.util,
+Export-Package: org.openhealthtools.mdht.uml.cda.core.profile,
+ org.openhealthtools.mdht.uml.cda.core.profile.impl,
+ org.openhealthtools.mdht.uml.cda.core.profile.util,
  org.openhealthtools.mdht.uml.cda.core.util

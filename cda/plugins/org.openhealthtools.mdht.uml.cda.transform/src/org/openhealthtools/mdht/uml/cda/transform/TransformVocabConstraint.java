@@ -22,12 +22,12 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemConstraint;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.CodeSystemVersion;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetConstraint;
-import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
-import org.openhealthtools.mdht.uml.cts.core.util.CodeSystemConstraintUtil;
-import org.openhealthtools.mdht.uml.cts.core.util.ValueSetConstraintUtil;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
+import org.openhealthtools.mdht.uml.term.core.util.CodeSystemConstraintUtil;
+import org.openhealthtools.mdht.uml.term.core.util.ValueSetConstraintUtil;
 
 public class TransformVocabConstraint extends TransformAbstract {
 	public TransformVocabConstraint(EcoreTransformerOptions options) {
@@ -44,8 +44,8 @@ public class TransformVocabConstraint extends TransformAbstract {
 			return null;
 		}
 
-		CodeSystemConstraint codeSystemConstraint = CTSProfileUtil.getCodeSystemConstraint(property);
-		ValueSetConstraint valueSetConstraint = CTSProfileUtil.getValueSetConstraint(property);
+		CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
+		ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
 		Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
 				property, ICDAProfileConstants.VOCAB_SPECIFICATION);
 
@@ -128,10 +128,10 @@ public class TransformVocabConstraint extends TransformAbstract {
 //			ocl = ConceptDomainConstraintUtil.getOCL(property);
 //		}
 //		else 
-		if (CTSProfileUtil.getCodeSystemConstraint(property) != null) {
+		if (TermProfileUtil.getCodeSystemConstraint(property) != null) {
 			ocl = CodeSystemConstraintUtil.getOCL(property);
 		}
-		else if (CTSProfileUtil.getValueSetConstraint(property) != null) {
+		else if (TermProfileUtil.getValueSetConstraint(property) != null) {
 			ocl = ValueSetConstraintUtil.getOCL(property);
 		}
 		else {
