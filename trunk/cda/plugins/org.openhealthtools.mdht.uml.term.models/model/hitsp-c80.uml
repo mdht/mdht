@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:Term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML">
+  <uml:Package xmi:id="_KnCD4CFjEd-3s7f6mWX-3A" name="c80">
+    <packageImport xmi:id="_2Ce8sCTOEd-ZbpoADxtvhg">
+      <importedPackage href="CodeSystems.uml#_KnCD4CFjEd-3s7f6mWX-3A"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_P4DRkCFjEd-3s7f6mWX-3A" name="AdministrativeGender">
+      <ownedLiteral xmi:id="_QRRNYCFkEd-3s7f6mWX-3A" name="F"/>
+      <ownedLiteral xmi:id="_SCZMwCFkEd-3s7f6mWX-3A" name="M"/>
+      <ownedLiteral xmi:id="_TPOMQCFkEd-3s7f6mWX-3A" name="UN">
+        <ownedComment xmi:id="_kmQwkCFkEd-3s7f6mWX-3A">
+          <body>The gender of a person could not be uniquely defined as male or female, such as hermaphrodite.</body>
+        </ownedComment>
+      </ownedLiteral>
+    </packagedElement>
+    <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
+      <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/cts/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+  </uml:Package>
+  <Term:ValueSetVersion xmi:id="_MxITMCF_Ed-M3adQxwHq4g" identifier="2.16.840.1.113883.1.11.1" version="20081218" source="HITSP" effectiveDate="20081218" releaseDate="20081218" base_Enumeration="_P4DRkCFjEd-3s7f6mWX-3A">
+    <codeSystem href="CodeSystems.uml#_VXEOQCF_Ed-M3adQxwHq4g"/>
+  </Term:ValueSetVersion>
+  <Term:ValueSetCode xmi:id="_k7flcCF_Ed-M3adQxwHq4g" conceptName="Female" base_EnumerationLiteral="_QRRNYCFkEd-3s7f6mWX-3A"/>
+  <Term:ValueSetCode xmi:id="_yR6L0CMSEd-O_ZXtK8biUg" conceptName="Male" base_EnumerationLiteral="_SCZMwCFkEd-3s7f6mWX-3A"/>
+  <Term:ValueSetCode xmi:id="_0gXncCMSEd-O_ZXtK8biUg" conceptName="Undifferentiated" base_EnumerationLiteral="_TPOMQCFkEd-3s7f6mWX-3A"/>
+</xmi:XMI>
