@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
-Bundle-SymbolicName: org.openhealthtools.mdht.uml.cts.ui
+Bundle-SymbolicName: org.openhealthtools.mdht.uml.term.ui
 Bundle-Version: 0.7.0.qualifier
-Bundle-Activator: org.openhealthtools.mdht.uml.cts.ui.internal.Activator
+Bundle-Activator: org.openhealthtools.mdht.uml.term.ui.internal.Activator
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -14,8 +14,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.diagram.ui.properties,
  org.openhealthtools.mdht.uml.common,
  org.openhealthtools.mdht.uml.common.ui,
- org.openhealthtools.mdht.uml.cts.core;visibility:=reexport
+ org.openhealthtools.mdht.uml.term.core;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.uml.cts.ui.filters,
- org.openhealthtools.mdht.uml.cts.ui.properties
+Export-Package: org.openhealthtools.mdht.uml.term.ui.filters,
+ org.openhealthtools.mdht.uml.term.ui.properties

@@ -10,7 +10,7 @@
  *     
  * $Id$
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cts.ui.filters;
+package org.openhealthtools.mdht.uml.term.ui.filters;
 
 import java.util.List;
 

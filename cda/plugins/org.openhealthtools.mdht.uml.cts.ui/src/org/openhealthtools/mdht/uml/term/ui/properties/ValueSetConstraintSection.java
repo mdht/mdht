@@ -9,7 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cts.ui.properties;
+package org.openhealthtools.mdht.uml.term.ui.properties;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
@@ -63,12 +63,12 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.common.ui.search.IElementFilter;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.BindingKind;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetConstraint;
-import org.openhealthtools.mdht.uml.cts.core.ctsprofile.ValueSetVersion;
-import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
-import org.openhealthtools.mdht.uml.cts.core.util.ICTSProfileConstants;
-import org.openhealthtools.mdht.uml.cts.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
+import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
+import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
 
 /**
  * The profile properties section for Value Set Constraint.
@@ -137,15 +137,15 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 			
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					Profile ctsProfile = CTSProfileUtil.getCTSProfile(property.eResource().getResourceSet());
+					Profile ctsProfile = TermProfileUtil.getTerminologyProfile(property.eResource().getResourceSet());
 					if (ctsProfile == null) {
 						return Status.CANCEL_STATUS;
 					}
 					Enumeration bindingKind = (Enumeration)
-						ctsProfile.getOwnedType(ICTSProfileConstants.BINDING_KIND);
+						ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
 					
-					Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
-							property, ICTSProfileConstants.VALUE_SET_CONSTRAINT);
+					Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
+							property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
 					
 					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
@@ -157,7 +157,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 						if (stereotype != null) {
 							String value = idText.getText().trim();
 							property.setValue(stereotype, 
-									ICTSProfileConstants.VALUE_SET_CONSTRAINT_ID,
+									ITermProfileConstants.VALUE_SET_CONSTRAINT_ID,
 									value.length()>0 ? value : null);
 
 						}
@@ -169,7 +169,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 						if (stereotype != null) {
 							String value = nameText.getText().trim();
 							property.setValue(stereotype, 
-									ICTSProfileConstants.VALUE_SET_CONSTRAINT_NAME,
+									ITermProfileConstants.VALUE_SET_CONSTRAINT_NAME,
 									value.length()>0 ? value : null);
 
 						}
@@ -181,7 +181,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 						if (stereotype != null) {
 							String value = versionText.getText().trim();
 							property.setValue(stereotype, 
-									ICTSProfileConstants.VALUE_SET_CONSTRAINT_VERSION,
+									ITermProfileConstants.VALUE_SET_CONSTRAINT_VERSION,
 									value.length()>0 ? value : null);
 
 						}
@@ -192,12 +192,12 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 						if (stereotype != null && bindingKind != null) {
 							if (bindingCombo.getSelectionIndex() == 0) {
 								// remove stereotype property
-								property.setValue(stereotype, ICTSProfileConstants.VALUE_SET_CONSTRAINT_BINDING, null);
+								property.setValue(stereotype, ITermProfileConstants.VALUE_SET_CONSTRAINT_BINDING, null);
 							}
 							else {
 								EnumerationLiteral literal = (EnumerationLiteral) bindingKind.getOwnedLiterals()
 									.get(bindingCombo.getSelectionIndex());
-								property.setValue(stereotype, ICTSProfileConstants.VALUE_SET_CONSTRAINT_BINDING, literal);
+								property.setValue(stereotype, ITermProfileConstants.VALUE_SET_CONSTRAINT_BINDING, literal);
 							}
 						}
 					}
@@ -226,12 +226,12 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 	}
 
 	private void addValueSetReference() {
-		Profile ctsProfile = CTSProfileUtil.getCTSProfile(property.eResource().getResourceSet());
+		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(property.eResource().getResourceSet());
 		if (ctsProfile == null) {
 			return;
 		}
 		final Stereotype valueSetVersionStereotype = (Stereotype)
-			ctsProfile.getOwnedType(ICTSProfileConstants.VALUE_SET_VERSION);
+			ctsProfile.getOwnedType(ITermProfileConstants.VALUE_SET_VERSION);
 		IElementFilter filter = new IElementFilter() {
 			public boolean accept(Element element) {
 				return (element instanceof Enumeration)
@@ -248,8 +248,8 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 			return;
 		}
 
-		final Stereotype valueSetStereotype = CTSProfileUtil.getAppliedCTSStereotype(
-				valueSetEnum, ICTSProfileConstants.VALUE_SET_VERSION);
+		final Stereotype valueSetStereotype = TermProfileUtil.getAppliedStereotype(
+				valueSetEnum, ITermProfileConstants.VALUE_SET_VERSION);
 		if (valueSetStereotype == null) {
 			MessageDialog.openError(getPart().getSite().getShell(), 
 					"Invalid Enumeration", "The selected Enumertion must be a <<ValueSetVersion>>");
@@ -263,7 +263,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 			
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	ValueSetConstraint valueSetConstraint = CTSProfileUtil.getValueSetConstraint(property);
+			    	ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
 					if (valueSetConstraint == null) {
 						return Status.CANCEL_STATUS;
 					}
@@ -301,7 +301,7 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 			
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	ValueSetConstraint valueSetConstraint = CTSProfileUtil.getValueSetConstraint(property);
+			    	ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
 					if (valueSetConstraint == null || valueSetConstraint.getReference() == null) {
 						return Status.CANCEL_STATUS;
 					}
@@ -509,14 +509,14 @@ public class ValueSetConstraintSection extends AbstractModelerPropertySection {
 	}
 
 	public void refresh() {
-		Profile ctsProfile = CTSProfileUtil.getCTSProfile(property.eResource().getResourceSet());
+		Profile ctsProfile = TermProfileUtil.getTerminologyProfile(property.eResource().getResourceSet());
 		if (ctsProfile == null) {
 			return;
 		}
 		Enumeration bindingKind = (Enumeration)
-			ctsProfile.getOwnedType(ICTSProfileConstants.BINDING_KIND);
+			ctsProfile.getOwnedType(ITermProfileConstants.BINDING_KIND);
 
-    	ValueSetConstraint valueSetConstraint = CTSProfileUtil.getValueSetConstraint(property);
+    	ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
 		
 		ValueSetVersion valueSet = null;
 		Enumeration referenceEnum = null;

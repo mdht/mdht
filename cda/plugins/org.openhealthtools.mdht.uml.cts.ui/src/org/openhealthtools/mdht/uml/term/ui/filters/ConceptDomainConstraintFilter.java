@@ -10,26 +10,26 @@
  *     
  * $Id$
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cts.ui.filters;
+package org.openhealthtools.mdht.uml.term.ui.filters;
 
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.cts.core.util.CTSProfileUtil;
-import org.openhealthtools.mdht.uml.cts.core.util.ICTSProfileConstants;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
+import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 
 /**
  * Selects an object if it is a UML Property with 
- * ValueSetVersion stereotype applied.
+ * ConceptDomainConstraint stereotype applied.
  */
-public class ValueSetVersionFilter extends CTSFilter {
+public class ConceptDomainConstraintFilter extends CTSFilter {
 
 	public boolean select(Object object) {
 		Element element = getElement(object);
 		
-		if (element instanceof Enumeration) {
-			Stereotype stereotype = CTSProfileUtil.getAppliedCTSStereotype(
-					element, ICTSProfileConstants.VALUE_SET_VERSION);
+		if (element instanceof Property) {
+			Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
+					element, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 			return stereotype != null;
 		}
 		return false;
