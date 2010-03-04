@@ -17,8 +17,8 @@ public interface TermResource {
 	public static final String PROFILE_FILE_EXTENSION = "profile." //$NON-NLS-1$
 		+ UMLResource.FILE_EXTENSION;
 
-	public static final String PROFILES_PATHMAP = "pathmap://CTS_PROFILES/"; //$NON-NLS-1$
+	public static final String PROFILES_PATHMAP = "pathmap://MDHT_TERM_PROFILES/"; //$NON-NLS-1$
 
-	public static final String CTS_PROFILE_URI = PROFILES_PATHMAP + "CTS." //$NON-NLS-1$
+	public static final String TERM_PROFILE_URI = PROFILES_PATHMAP + "Terminology." //$NON-NLS-1$
 		+ PROFILE_FILE_EXTENSION;
 }
