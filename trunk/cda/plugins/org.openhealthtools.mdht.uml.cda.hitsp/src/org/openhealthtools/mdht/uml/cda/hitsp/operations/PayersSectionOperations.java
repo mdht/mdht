@@ -51,7 +51,7 @@ public class PayersSectionOperations extends org.openhealthtools.mdht.uml.cda.ih
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_HITSP_PAYERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.83.101')";
+	protected static final String VALIDATE_HITSP_PAYERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.101')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateHITSPPayersSectionTemplateId(PayersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Payers Section Template Id</em>}' invariant operation.
@@ -67,7 +67,7 @@ public class PayersSectionOperations extends org.openhealthtools.mdht.uml.cda.ih
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.3.88.11.83.101')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.101')
 	 * @param payersSection The receiving '<em><b>Payers Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

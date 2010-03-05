@@ -57,7 +57,7 @@ public class AllergyIntoleranceConcernOperations extends ConcernEntryOperations 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.5.3')";
+	protected static final String VALIDATE_ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.4.5.3')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateAllergyIntoleranceConcernTemplateId(AllergyIntoleranceConcern, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Concern Template Id</em>}' invariant operation.
@@ -73,7 +73,7 @@ public class AllergyIntoleranceConcernOperations extends ConcernEntryOperations 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.5.3')
+	 * self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.4.5.3')
 	 * @param allergyIntoleranceConcern The receiving '<em><b>Allergy Intolerance Concern</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

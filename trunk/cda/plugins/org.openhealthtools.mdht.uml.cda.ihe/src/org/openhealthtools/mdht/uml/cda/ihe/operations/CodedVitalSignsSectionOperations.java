@@ -52,7 +52,7 @@ public class CodedVitalSignsSectionOperations extends VitalSignsSectionOperation
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_CODED_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2')";
+	protected static final String VALIDATE_CODED_VITAL_SIGNS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateCodedVitalSignsSectionTemplateId(CodedVitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Vital Signs Section Template Id</em>}' invariant operation.
@@ -68,7 +68,7 @@ public class CodedVitalSignsSectionOperations extends VitalSignsSectionOperation
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2')
+	 * self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2')
 	 * @param codedVitalSignsSection The receiving '<em><b>Coded Vital Signs Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
