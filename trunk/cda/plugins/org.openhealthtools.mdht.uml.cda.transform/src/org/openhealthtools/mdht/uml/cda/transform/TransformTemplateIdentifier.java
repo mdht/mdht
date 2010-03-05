@@ -62,7 +62,8 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
 		OpaqueExpression expression = (OpaqueExpression)constraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
 		expression.getLanguages().add("OCL");
-		String body = "self.hasTemplateId('" + templateId + "')";
+//		String body = "self.hasTemplateId('" + templateId + "')";
+		String body = "self.templateId->exists(id : datatypes::II | id.root = '" + templateId + "')";
 		expression.getBodies().add(body);
 
 		String message = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.VALIDATION_MESSAGE);
