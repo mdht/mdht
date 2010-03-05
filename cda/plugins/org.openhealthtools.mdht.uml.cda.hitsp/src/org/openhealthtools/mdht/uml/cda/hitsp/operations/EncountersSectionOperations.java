@@ -52,7 +52,7 @@ public class EncountersSectionOperations extends EncounterHistorySectionOperatio
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_HITSP_ENCOUNTERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.83.127')";
+	protected static final String VALIDATE_HITSP_ENCOUNTERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.127')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateHITSPEncountersSectionTemplateId(EncountersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Encounters Section Template Id</em>}' invariant operation.
@@ -68,7 +68,7 @@ public class EncountersSectionOperations extends EncounterHistorySectionOperatio
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.3.88.11.83.127')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.127')
 	 * @param encountersSection The receiving '<em><b>Encounters Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

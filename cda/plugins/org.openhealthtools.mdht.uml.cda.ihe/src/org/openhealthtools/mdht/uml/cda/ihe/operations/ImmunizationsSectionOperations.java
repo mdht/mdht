@@ -51,7 +51,7 @@ public class ImmunizationsSectionOperations extends org.openhealthtools.mdht.uml
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_IHE_IMMUNIZATIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.23')";
+	protected static final String VALIDATE_IHE_IMMUNIZATIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.3.23')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateIHEImmunizationsSectionTemplateId(ImmunizationsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Immunizations Section Template Id</em>}' invariant operation.
@@ -67,7 +67,7 @@ public class ImmunizationsSectionOperations extends org.openhealthtools.mdht.uml
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.23')
+	 * self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.3.23')
 	 * @param immunizationsSection The receiving '<em><b>Immunizations Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

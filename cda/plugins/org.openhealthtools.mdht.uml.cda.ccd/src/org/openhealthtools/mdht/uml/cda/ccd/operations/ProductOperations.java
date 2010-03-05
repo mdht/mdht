@@ -52,7 +52,7 @@ public class ProductOperations extends ManufacturedProductOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.53')";
+	protected static final String VALIDATE_PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.53')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateProductTemplateId(Product, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Template Id</em>}' invariant operation.
@@ -68,7 +68,7 @@ public class ProductOperations extends ManufacturedProductOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.10.20.1.53')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.53')
 	 * @param product The receiving '<em><b>Product</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

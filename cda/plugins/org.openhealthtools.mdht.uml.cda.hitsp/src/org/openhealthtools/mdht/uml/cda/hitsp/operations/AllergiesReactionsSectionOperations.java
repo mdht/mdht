@@ -51,7 +51,7 @@ public class AllergiesReactionsSectionOperations extends org.openhealthtools.mdh
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_HITSP_ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.83.102')";
+	protected static final String VALIDATE_HITSP_ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.102')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateHITSPAllergiesReactionsSectionTemplateId(AllergiesReactionsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Allergies Reactions Section Template Id</em>}' invariant operation.
@@ -67,7 +67,7 @@ public class AllergiesReactionsSectionOperations extends org.openhealthtools.mdh
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.3.88.11.83.102')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.102')
 	 * @param allergiesReactionsSection The receiving '<em><b>Allergies Reactions Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

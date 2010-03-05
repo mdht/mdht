@@ -52,7 +52,7 @@ public class ProblemHealthStatusOperations extends StatusObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_PROBLEM_HEALTH_STATUS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.1.51')";
+	protected static final String VALIDATE_PROBLEM_HEALTH_STATUS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.51')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateProblemHealthStatusTemplateId(ProblemHealthStatus, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Health Status Template Id</em>}' invariant operation.
@@ -68,7 +68,7 @@ public class ProblemHealthStatusOperations extends StatusObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.10.20.1.51')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.51')
 	 * @param problemHealthStatus The receiving '<em><b>Problem Health Status</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

@@ -53,7 +53,7 @@ public class PhysicalExamNarrativeSectionOperations extends SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.24')";
+	protected static final String VALIDATE_PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.3.24')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validatePhysicalExamNarrativeSectionTemplateId(PhysicalExamNarrativeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Narrative Section Template Id</em>}' invariant operation.
@@ -69,7 +69,7 @@ public class PhysicalExamNarrativeSectionOperations extends SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.3.24')
+	 * self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.3.24')
 	 * @param physicalExamNarrativeSection The receiving '<em><b>Physical Exam Narrative Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

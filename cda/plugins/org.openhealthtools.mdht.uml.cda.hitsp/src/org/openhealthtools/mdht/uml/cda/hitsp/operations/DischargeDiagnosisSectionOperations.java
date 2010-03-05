@@ -51,7 +51,7 @@ public class DischargeDiagnosisSectionOperations extends org.openhealthtools.mdh
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_HITSP_DISCHARGE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.83.111')";
+	protected static final String VALIDATE_HITSP_DISCHARGE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.111')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateHITSPDischargeDiagnosisSectionTemplateId(DischargeDiagnosisSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Discharge Diagnosis Section Template Id</em>}' invariant operation.
@@ -67,7 +67,7 @@ public class DischargeDiagnosisSectionOperations extends org.openhealthtools.mdh
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.3.88.11.83.111')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.111')
 	 * @param dischargeDiagnosisSection The receiving '<em><b>Discharge Diagnosis Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

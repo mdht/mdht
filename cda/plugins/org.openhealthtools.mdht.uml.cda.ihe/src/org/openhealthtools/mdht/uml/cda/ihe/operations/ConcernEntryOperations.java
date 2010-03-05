@@ -59,7 +59,7 @@ public class ConcernEntryOperations extends ProblemActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.5.1')";
+	protected static final String VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.4.5.1')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateConcernEntryTemplateId(ConcernEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Template Id</em>}' invariant operation.
@@ -75,7 +75,7 @@ public class ConcernEntryOperations extends ProblemActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('1.3.6.1.4.1.19376.1.5.3.1.4.5.1')
+	 * self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.4.5.1')
 	 * @param concernEntry The receiving '<em><b>Concern Entry</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

@@ -51,7 +51,7 @@ public class HistoryOfPresentIllnessOperations extends org.openhealthtools.mdht.
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_HITSP_HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.3.88.11.83.107')";
+	protected static final String VALIDATE_HITSP_HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.107')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateHITSPHistoryOfPresentIllnessTemplateId(HistoryOfPresentIllness, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP History Of Present Illness Template Id</em>}' invariant operation.
@@ -67,7 +67,7 @@ public class HistoryOfPresentIllnessOperations extends org.openhealthtools.mdht.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.3.88.11.83.107')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.107')
 	 * @param historyOfPresentIllness The receiving '<em><b>History Of Present Illness</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
