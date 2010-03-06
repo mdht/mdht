@@ -37,6 +37,11 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
        <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
           <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemVersionSection" 
+	 	     id="property.section.CodeSystemVersionSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemVersionFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetVersionSection" 
 	 	     id="property.section.ValueSetVersionSection"
              filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetVersionFilter">
