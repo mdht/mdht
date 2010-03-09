@@ -20,7 +20,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.edit.providers.EnumerationLiteralItemProvider;
+import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
+import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
@@ -82,6 +85,20 @@ public class EnumerationLiteralExtItemProvider extends EnumerationLiteralItemPro
 		switch (columnIndex) {
 		case IUMLTableProperties.NAME_INDEX:
 			return literal.getName();
+		case IUMLTableProperties.ANNOTATION_INDEX: {
+			for (Profile profile : literal.getNearestPackage().getAllAppliedProfiles()) {
+				// eResource is null for unresolved eProxyURI, missing profiles
+				if (profile.eResource() != null) {
+					// use the first notation provider found for an applied profile, ignore others
+					String profileURI = profile.eResource().getURI().toString();
+					INotationProvider provider = 
+						NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+					if (provider != null) {
+						return provider.getAnnotation(literal);
+					}
+				}
+			}
+		}
 		default:
 			return null;
 		}
