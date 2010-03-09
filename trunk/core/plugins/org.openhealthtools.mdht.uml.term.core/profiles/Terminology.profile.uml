@@ -180,6 +180,7 @@
       <ownedAttribute xmi:id="_Yh67oR2YEd-L1oNCLqPFJA" name="base_Class" association="_Yh6UkB2YEd-L1oNCLqPFJA">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
       </ownedAttribute>
+      <icon xmi:id="_7mJeMCugEd-B64Fk_ickIA" location="../icons/full/ovr16/ConceptDomain.gif"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_6Qu1EB2XEd-L1oNCLqPFJA" name="CodeSystemVersion">
       <ownedAttribute xmi:id="_6Qu1ER2XEd-L1oNCLqPFJA" name="identifier">
@@ -229,6 +230,7 @@
       <ownedAttribute xmi:id="_PxH_sSCeEd-qXIhUbGWC6A" name="base_Enumeration" association="_PxDHMCCeEd-qXIhUbGWC6A">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Enumeration"/>
       </ownedAttribute>
+      <icon xmi:id="_ERONYCugEd-B64Fk_ickIA" location="../icons/full/ovr16/CodeSystem.gif"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_e9b84BzwEd-WH9Qw4coEMg" name="ValueSetVersion">
       <ownedAttribute xmi:id="_SYR9wBzxEd-_DcMhO5t7TQ" name="identifier">
@@ -304,6 +306,7 @@
       <ownedAttribute xmi:id="_RPn-ACCeEd-qXIhUbGWC6A" name="base_Enumeration" association="_RPnW8CCeEd-qXIhUbGWC6A">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Enumeration"/>
       </ownedAttribute>
+      <icon xmi:id="_J-FCgCugEd-B64Fk_ickIA" location="../icons/full/ovr16/ValueSet.gif"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_sfEHIBz2Ed-_DcMhO5t7TQ" name="ValueSetCode">
       <ownedAttribute xmi:id="_sfEHIRz2Ed-_DcMhO5t7TQ" name="conceptName">
