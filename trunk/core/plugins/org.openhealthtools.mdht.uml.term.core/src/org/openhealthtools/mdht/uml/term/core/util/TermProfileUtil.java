@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
@@ -29,6 +30,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
 import org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 
@@ -52,6 +54,16 @@ public class TermProfileUtil {
 			valueSetVersion = (ValueSetVersion) umlEnumeration.getStereotypeApplication(stereotype);
 		}
 		return valueSetVersion;
+	}
+
+	public static ValueSetCode getValueSetCode(EnumerationLiteral literal) {
+		ValueSetCode valueSetCode = null;
+		Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
+				literal, ITermProfileConstants.VALUE_SET_CODE);
+		if (stereotype != null) {
+			valueSetCode = (ValueSetCode) literal.getStereotypeApplication(stereotype);
+		}
+		return valueSetCode;
 	}
 	
 	public static ConceptDomainConstraint getConceptDomainConstraint(Property property) {

@@ -59,6 +59,14 @@ public interface ITermProfileConstants {
 	public static final String VALUE_SET_VERSION_NAME = "fullName";
 	public static final String VALUE_SET_VERSION_VERSION = "version";
 	public static final String VALUE_SET_VERSION_BINDING = "binding";
+
+	/*
+	 * ValueSetCode Stereotype and Properties
+	 */
+	public static final String VALUE_SET_CODE = "ValueSetCode";
+	public static final String VALUE_SET_CODE_CONCEPT_NAME = "conceptName";
+	public static final String VALUE_SET_CODE_USAGE_NAME = "usageNote";
+	public static final String VALUE_SET_CODE_CODE_SYSTEM = "codeSystem";
 	
 	/*
 	 * Enumerations
