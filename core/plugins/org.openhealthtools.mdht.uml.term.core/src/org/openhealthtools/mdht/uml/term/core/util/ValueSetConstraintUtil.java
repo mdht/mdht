@@ -11,6 +11,8 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.util;
 
+import java.util.List;
+
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
@@ -67,8 +69,9 @@ public class ValueSetConstraintUtil {
 //				body.append("'");
 //			}
 
-			if (valueSetConstraint.getReference().getBase_Enumeration()
-					.getOwnedLiterals().size() < 20) {
+			List<EnumerationLiteral> literals = valueSetConstraint.getReference()
+					.getBase_Enumeration().getOwnedLiterals();
+			if (literals.size() > 0 && literals.size() < 20) {
 				if (needsAnd) {
 					body.append(" and (");
 				}
@@ -86,6 +89,12 @@ public class ValueSetConstraintUtil {
 					body.append("'");
 				}
 				body.append(")");
+			}
+			else {
+				if (needsAnd) {
+					body.append(" and ");
+				}
+				body.append("not value.code.oclIsUndefined()");
 			}
 			
 		}
