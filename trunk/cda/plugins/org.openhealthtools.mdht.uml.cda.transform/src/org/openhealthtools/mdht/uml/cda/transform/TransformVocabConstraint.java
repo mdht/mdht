@@ -56,9 +56,16 @@ public class TransformVocabConstraint extends TransformAbstract {
 		String displayName = null;
 
 		if (codeSystemConstraint != null) {
-			codeSystem= codeSystemConstraint.getIdentifier();
-			codeSystemName= codeSystemConstraint.getName();
-			codeSystemVersion= codeSystemConstraint.getVersion();
+			if (codeSystemConstraint.getReference() != null) {
+				codeSystem = codeSystemConstraint.getReference().getIdentifier();
+				codeSystemName = codeSystemConstraint.getReference().getBase_Enumeration().getName();
+//				codeSystemVersion = codeSystemConstraint.getReference().getVersion();
+			}
+			else {
+				codeSystem= codeSystemConstraint.getIdentifier();
+				codeSystemName= codeSystemConstraint.getName();
+//				codeSystemVersion= codeSystemConstraint.getVersion();
+			}
 			code= codeSystemConstraint.getCode();
 			displayName= codeSystemConstraint.getDisplayName();
 
@@ -72,7 +79,7 @@ public class TransformVocabConstraint extends TransformAbstract {
 				CodeSystemVersion codeSystemDef = valueSetConstraint.getReference().getCodeSystem();
 				codeSystem = codeSystemDef.getIdentifier();
 				codeSystemName = codeSystemDef.getBase_Enumeration().getName();
-				codeSystemVersion = codeSystemDef.getVersion();
+//				codeSystemVersion = codeSystemDef.getVersion();
 			}
 
 			addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
