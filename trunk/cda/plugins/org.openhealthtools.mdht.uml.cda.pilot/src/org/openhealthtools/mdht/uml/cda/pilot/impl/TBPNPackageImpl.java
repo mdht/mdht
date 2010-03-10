@@ -290,6 +290,15 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(tbResultOrganizerEClass, ecorePackage.getEBoolean(), "validateTBResultOrganizerCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(tbResultOrganizerEClass, ecorePackage.getEBoolean(), "validateTBResultOrganizerTBResultObservation", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -375,6 +384,15 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(tbResultObservationEClass, ecorePackage.getEBoolean(), "validateTBResultObservationCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = addEOperation(tbResultObservationEClass, ecorePackage.getEBoolean(), "validateTBResultObservationStatusCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -407,7 +425,7 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																		
+		   });																																																																										
 	}
 
 	/**
@@ -430,17 +448,21 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 		  (tbResultOrganizerEClass, 
 		   source, 
 		   new String[] {
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "templateId.root", "2.16.840.1.113883.10.20.15.3.21",
-			 "constraints.validation.error", "TBResultOrganizerTemplateId TBResultOrganizerTBResultObservation"
-		   });											
+			 "constraints.validation.error", "TBResultOrganizerTemplateId TBResultOrganizerCode TBResultOrganizerTBResultObservation",
+			 "code.codeSystemName", "LOINC"
+		   });															
 		addAnnotation
 		  (tbResultsSectionEClass, 
 		   source, 
 		   new String[] {
 			 "title.mixed", "Relevant diagnostic tests and/or laboratory data",
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.displayName", "Relevant diagnostic tests and/or laboratory data",
 			 "templateId.root", "2.16.840.1.113883.10.20.15.2.6",
 			 "constraints.validation.error", "TBResultsSectionTemplateId TBResultsSectionCode TBResultsSectionText TBResultsSectionTitle",
+			 "code.codeSystemName", "LOINC",
 			 "code.code", "30954-2",
 			 "constraints.validation.info", "TBResultsSectionTBResultOrganizer TBResultsSectionTBResultObservation"
 		   });																										
@@ -449,10 +471,14 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 		   source, 
 		   new String[] {
 			 "statusCode.code", "completed",
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "templateId.root", "2.16.840.1.113883.10.20.15.3.13",
-			 "constraints.validation.error", "TBResultObservationTemplateId TBResultObservationClassCode TBResultObservationStatusCode",
-			 "classCode", "OBS"
-		   });												
+			 "constraints.validation.error", "TBResultObservationTemplateId TBResultObservationClassCode TBResultObservationCode TBResultObservationStatusCode",
+			 "code.codeSystemName", "LOINC",
+			 "classCode", "OBS",
+			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
+			 "statusCode.codeSystemName", "ActStatus"
+		   });																
 	}
 
 } //TBPNPackageImpl

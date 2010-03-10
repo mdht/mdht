@@ -114,7 +114,7 @@ public class TuberculosisFollowUpProgressNoteOperations extends ClinicalDocument
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_TUBERCULOSIS_FOLLOW_UP_PROGRESS_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3')";
+	protected static final String VALIDATE_TUBERCULOSIS_FOLLOW_UP_PROGRESS_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateTuberculosisFollowUpProgressNoteTemplateId(TuberculosisFollowUpProgressNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Tuberculosis Follow Up Progress Note Template Id</em>}' invariant operation.
@@ -130,7 +130,7 @@ public class TuberculosisFollowUpProgressNoteOperations extends ClinicalDocument
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3')
 	 * @param tuberculosisFollowUpProgressNote The receiving '<em><b>Tuberculosis Follow Up Progress Note</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

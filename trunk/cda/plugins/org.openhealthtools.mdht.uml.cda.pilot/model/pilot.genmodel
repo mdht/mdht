@@ -54,6 +54,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultOrganizer/TBResultOrganizerTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultOrganizer/TBResultOrganizerTemplateId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultOrganizer/TBResultOrganizerCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultOrganizer/TBResultOrganizerCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultOrganizer/TBResultOrganizerCode/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultOrganizer/TBResultOrganizerTBResultObservation">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultOrganizer/TBResultOrganizerTBResultObservation/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultOrganizer/TBResultOrganizerTBResultObservation/context"/>
@@ -93,6 +97,10 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultObservation/TBResultObservationClassCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationClassCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationClassCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultObservation/TBResultObservationCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationCode/context"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TBResultObservation/TBResultObservationStatusCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TBResultObservation/TBResultObservationStatusCode/diagnostics"/>

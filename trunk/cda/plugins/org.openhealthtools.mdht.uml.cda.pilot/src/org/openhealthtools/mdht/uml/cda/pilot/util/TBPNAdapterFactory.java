@@ -17,7 +17,6 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
-import org.openhealthtools.mdht.uml.cda.pilot.*;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNPackage;
 import org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation;
 import org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer;
