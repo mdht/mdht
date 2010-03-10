@@ -4,7 +4,12 @@
     <packageImport xmi:id="_2Ce8sCTOEd-ZbpoADxtvhg">
       <importedPackage href="CodeSystems.uml#_KnCD4CFjEd-3s7f6mWX-3A"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qtDj4CvREd-YuK1P6utw_g" name="Lab Test Result Name (TB)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qtDj4CvREd-YuK1P6utw_g" name="Lab Test Result Name (TB)">
+      <ownedLiteral xmi:id="_PjYjsCvYEd--M_Sc3xIupg" name="640-3"/>
+      <ownedLiteral xmi:id="_XfEA0CvYEd--M_Sc3xIupg" name="645-2"/>
+      <ownedLiteral xmi:id="_bQ-zQCvYEd--M_Sc3xIupg" name="6655-5"/>
+      <ownedLiteral xmi:id="_hgozcCvYEd--M_Sc3xIupg" name="650-2"/>
+    </packagedElement>
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -15,4 +20,8 @@
   <term:ValueSetVersion xmi:id="_qtKRkCvREd-YuK1P6utw_g" identifier="2.16.840.1.114222.4.11.3205" source="Centers for Disease Control and Prevention (CDC)" url="http://phinvads.cdc.gov/vads/ViewValueSet.action?id=A0E75E17-176B-DE11-9B52-0015173D1785" definition="Tuberculosis lab test result name value set is based upon the Lab LOINC concepts that are defined in the CSTE standardized reporting definition for Tuberculosis." effectiveDate="20090722" binding="Dynamic" base_Enumeration="_qtDj4CvREd-YuK1P6utw_g">
     <codeSystem href="CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_Pji7wCvYEd--M_Sc3xIupg" conceptName="Acid fast Kiny Stn Gast" base_EnumerationLiteral="_PjYjsCvYEd--M_Sc3xIupg"/>
+  <term:ValueSetCode xmi:id="_XfEn4CvYEd--M_Sc3xIupg" conceptName="Acid fast Kiny Stn Spt" base_EnumerationLiteral="_XfEA0CvYEd--M_Sc3xIupg"/>
+  <term:ValueSetCode xmi:id="_bQ-zQSvYEd--M_Sc3xIupg" conceptName="Acid fast Kiny Stn Tiss" base_EnumerationLiteral="_bQ-zQCvYEd--M_Sc3xIupg"/>
+  <term:ValueSetCode xmi:id="_hgpagCvYEd--M_Sc3xIupg" conceptName="Acid fast Kiny Stn Ur" base_EnumerationLiteral="_hgozcCvYEd--M_Sc3xIupg"/>
 </xmi:XMI>
