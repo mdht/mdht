@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getImmunizationsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='ImmunizationsSectionTemplateId ImmunizationsSectionCode ImmunizationsSectionTitle ImmunizationsSectionText' templateId.root='2.16.840.1.113883.10.20.1.6' code.displayName='History of immunizations' code.code='11369-6' constraints.validation.warning='ImmunizationsSectionMedicationActivity ImmunizationsSectionSupplyActivity'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='ImmunizationsSectionTemplateId ImmunizationsSectionCode ImmunizationsSectionTitle ImmunizationsSectionText' templateId.root='2.16.840.1.113883.10.20.1.6' code.displayName='History of immunizations' code.codeSystem='2.16.840.1.113883.6.1' code.code='11369-6' constraints.validation.warning='ImmunizationsSectionMedicationActivity ImmunizationsSectionSupplyActivity'"
  * @generated
  */
 public interface ImmunizationsSection extends Section {

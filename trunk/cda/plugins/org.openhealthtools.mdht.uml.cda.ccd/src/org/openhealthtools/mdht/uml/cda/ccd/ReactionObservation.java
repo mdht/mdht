@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getReactionObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' constraints.validation.info='ReactionObservationSeverityObservation' constraints.validation.error='ReactionObservationTemplateId ReactionObservationClassCode ReactionObservationMoodCode ReactionObservationStatusCode' templateId.root='2.16.840.1.113883.10.20.1.54' statusCode.code='completed'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='OBS' statusCode.codeSystemName='ActStatus' constraints.validation.info='ReactionObservationSeverityObservation' statusCode.codeSystem='2.16.840.1.113883.5.14' constraints.validation.error='ReactionObservationTemplateId ReactionObservationClassCode ReactionObservationMoodCode ReactionObservationStatusCode' templateId.root='2.16.840.1.113883.10.20.1.54' statusCode.code='completed'"
  * @generated
  */
 public interface ReactionObservation extends Observation {
