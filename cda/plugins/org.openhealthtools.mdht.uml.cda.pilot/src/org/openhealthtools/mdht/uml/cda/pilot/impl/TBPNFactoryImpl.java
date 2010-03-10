@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.openhealthtools.mdht.uml.cda.pilot.*;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNFactory;
 import org.openhealthtools.mdht.uml.cda.pilot.TBPNPackage;
 import org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation;

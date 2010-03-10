@@ -148,11 +148,15 @@
   <CDA:Entry xmi:id="_4AAqAA0MEd-gR9nJK3sp7g" message="TBPN TB Results Section MAY contain [0..*] entry such that it, SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from), SHALL contain [1..1] TB Result Organizer (templateId: 2.16.840.1.113883.10.20.15.3.21)" severity="INFO" base_Association="_Ucv9daX0Ed6JRdOhEffuGA" typeCode="DRIV"/>
   <CDA:Entry xmi:id="_6JrFMA0MEd-gR9nJK3sp7g" message="TBPN TB Results Section MAY contain [0..*] entry such that it, SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from), SHALL contain [1..1] TB Result Observation (templateId: 2.16.840.1.113883.10.20.15.3.13)" severity="INFO" base_Association="_bg5NAAxnEd-gR9nJK3sp7g" typeCode="DRIV"/>
   <CDA:TextValue xmi:id="_xCH_8A0OEd-gR9nJK3sp7g" message="TBPN Tuberculosis Follow Up Progress Note SHALL contain [1..1] title" base_Property="_r7I4AA0OEd-gR9nJK3sp7g" value="Tuberculosis Follow Up Progress Note"/>
-  <CDA:ValueSetConstraint xmi:id="_oFQOkCfIEd-d5bLPJUHlDg" identifier="2.16.840.1.114222.4.11.3205" name="Lab Test Result Name (TB)" base_Property="_gGPLAAxoEd-gR9nJK3sp7g" message="TBPN TB Result Organizer SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) STATIC"/>
+  <CDA:ValueSetConstraint xmi:id="_oFQOkCfIEd-d5bLPJUHlDg" base_Property="_gGPLAAxoEd-gR9nJK3sp7g" message="TBPN TB Result Organizer SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) DYNAMIC">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/phin.uml#_qtKRkCvREd-YuK1P6utw_g"/>
+  </CDA:ValueSetConstraint>
   <CDA:CodeSystemConstraint xmi:id="_oFSDwCfIEd-d5bLPJUHlDg" code="30954-2" displayName="Relevant diagnostic tests and/or laboratory data" base_Property="_UvJMYAxnEd-gR9nJK3sp7g" message="TBPN TB Results Section SHALL contain [1..1] code/@code = &quot;30954-2&quot; Relevant diagnostic tests and/or laboratory data (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
-  <CDA:ValueSetConstraint xmi:id="_oFUgACfIEd-d5bLPJUHlDg" identifier="2.16.840.1.114222.4.11.3205" name="Lab Test Result Name (TB)" base_Property="_FZsh0AxmEd-gR9nJK3sp7g" message="TBPN TB Result Observation SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) STATIC"/>
+  <CDA:ValueSetConstraint xmi:id="_oFUgACfIEd-d5bLPJUHlDg" base_Property="_FZsh0AxmEd-gR9nJK3sp7g" message="TBPN TB Result Observation SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) DYNAMIC">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/phin.uml#_qtKRkCvREd-YuK1P6utw_g"/>
+  </CDA:ValueSetConstraint>
   <CDA:CodeSystemConstraint xmi:id="_oFVuICfIEd-d5bLPJUHlDg" code="completed" base_Property="_FZvlIAxmEd-gR9nJK3sp7g" message="TBPN TB Result Observation SHALL contain [1..1] statusCode/@code = &quot;completed&quot;  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>

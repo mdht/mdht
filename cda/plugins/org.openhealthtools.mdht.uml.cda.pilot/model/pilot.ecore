@@ -36,10 +36,10 @@
     </eOperations>
     <eOperations name="TuberculosisFollowUpProgressNoteTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3')"/>
+        <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3')"/>
+        <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -106,15 +106,39 @@
       <details key="documentation" value="The tuberculosis result organizer identifies an observation set, contained within the result organizer as a set of result observations. It contains information applicable to all of the contained result observations. It is particularly useful to group a number of tests, such as culture results, that are performed on a common specimen."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.15.3.21"/>
-      <details key="constraints.validation.error" value="TBResultOrganizerTemplateId TBResultOrganizerTBResultObservation"/>
+      <details key="constraints.validation.error" value="TBResultOrganizerTemplateId TBResultOrganizerCode TBResultOrganizerTBResultObservation"/>
+      <details key="code.codeSystemName" value="LOINC"/>
     </eAnnotations>
     <eOperations name="TBResultOrganizerTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.10.20.15.3.21')"/>
+        <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.3.21')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.10.20.15.3.21')"/>
+        <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.3.21')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="TBResultOrganizerCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.6.1')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -160,18 +184,20 @@
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="title.mixed" value="Relevant diagnostic tests and/or laboratory data"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="code.displayName" value="Relevant diagnostic tests and/or laboratory data"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.15.2.6"/>
       <details key="constraints.validation.error" value="TBResultsSectionTemplateId TBResultsSectionCode TBResultsSectionText TBResultsSectionTitle"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="30954-2"/>
       <details key="constraints.validation.info" value="TBResultsSectionTBResultOrganizer TBResultsSectionTBResultObservation"/>
     </eAnnotations>
     <eOperations name="TBResultsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.10.20.15.2.6')"/>
+        <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.2.6')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.10.20.15.2.6')"/>
+        <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.2.6')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -302,16 +328,20 @@
   <eClassifiers xsi:type="ecore:EClass" name="TBResultObservation" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//ResultObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="statusCode.code" value="completed"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.15.3.13"/>
-      <details key="constraints.validation.error" value="TBResultObservationTemplateId TBResultObservationClassCode TBResultObservationStatusCode"/>
+      <details key="constraints.validation.error" value="TBResultObservationTemplateId TBResultObservationClassCode TBResultObservationCode TBResultObservationStatusCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="classCode" value="OBS"/>
+      <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
+      <details key="statusCode.codeSystemName" value="ActStatus"/>
     </eAnnotations>
     <eOperations name="TBResultObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.hasTemplateId('2.16.840.1.113883.10.20.15.3.13')"/>
+        <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.3.13')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.hasTemplateId('2.16.840.1.113883.10.20.15.3.13')"/>
+        <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.3.13')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -334,6 +364,28 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.classCode=vocab::ActClassObservation::OBS"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="TBResultObservationCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.6.1')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
