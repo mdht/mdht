@@ -22,7 +22,7 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 /**
  * Selects an object if it is a UML Property where type is specialization of HL7 CD.
  */
-public class CodedAttributeFilter extends CTSFilter {
+public class CodedAttributeFilter extends TermFilter {
 
 	public boolean select(Object object) {
 		Element element = getElement(object);

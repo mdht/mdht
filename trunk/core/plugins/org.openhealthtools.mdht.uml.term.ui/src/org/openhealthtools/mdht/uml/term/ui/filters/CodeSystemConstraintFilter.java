@@ -21,7 +21,7 @@ import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
  * Selects an object if it is a UML Property with 
  * CodeSystemConstraint stereotype applied.
  */
-public class CodeSystemConstraintFilter extends CTSFilter {
+public class CodeSystemConstraintFilter extends TermFilter {
 
 	public boolean select(Object object) {
 		Element element = getElement(object);

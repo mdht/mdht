@@ -96,6 +96,8 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 	private boolean effectiveDateModified = false;
 	private Text releaseDateText;
 	private boolean releaseDateModified = false;
+	private Text definitionText;
+	private boolean definitionModified = false;
 
 	private CLabel codeSystemRefLabel;
 	private Button codeSystemRefButton;
@@ -127,6 +129,9 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 			if (releaseDateText == event.getSource()) {
 				releaseDateModified = true;
 			}
+			if (definitionText == event.getSource()) {
+				definitionModified = true;
+			}
 		}
 	};
 
@@ -155,7 +160,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 		if (!(idModified || nameModified || versionModified
 				|| fullNameModified || sourceModified || urlModified
 				|| effectiveDateModified || releaseDateModified
-				|| typeModified || bindingModified)) {
+				|| typeModified || bindingModified || definitionModified)) {
 			return;
 		}
 		
@@ -234,6 +239,13 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 						this.setLabel("Set ValueSet Release Date");
 						String value = releaseDateText.getText().trim();
 						valueSetVersion.setReleaseDate(value.length()>0 ? value : null);
+						
+					}
+					else if (definitionModified) {
+						definitionModified = false;
+						this.setLabel("Set ValueSet Definition");
+						String value = definitionText.getText().trim();
+						valueSetVersion.setDefinition(value.length()>0 ? value : null);
 						
 					}
 					else if (typeModified && valueSetType != null) {
@@ -393,6 +405,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
         gc.setFont(shell.getFont());
         Point point = gc.textExtent("");//$NON-NLS-1$
         int buttonHeight = point.y + 10;
+        int charHeight = point.y;
         gc.dispose();
         shell.dispose();
 
@@ -404,7 +417,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
         layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
         composite.setLayout(layout);
 
-        int numberOfRows = 6;
+        int numberOfRows = 10;
 		FormData data = null;
 
 		/* ------ CodeSystem reference ------ */
@@ -429,7 +442,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
         data = new FormData();
         data.left = new FormAttachment(0, 0);
         data.height = buttonHeight;
-		data.top = new FormAttachment(0,numberOfRows);
+//		data.top = new FormAttachment(0,numberOfRows);
         codeSystemRefButton.setLayoutData(data);
 
         data = new FormData();
@@ -500,7 +513,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 
 		data = new FormData();
 		data.left = new FormAttachment(sourceLabel, 0);
-		data.right = new FormAttachment(50, 0);
+		data.right = new FormAttachment(100, 0);
 		data.top = new FormAttachment(3,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		sourceText.setLayoutData(data);
 
@@ -509,14 +522,14 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 		CLabel urlLabel = getWidgetFactory()
 				.createCLabel(composite, "URL:"); //$NON-NLS-1$
 		data = new FormData();
-		data.left = new FormAttachment(sourceText, ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(sourceText, 0, SWT.CENTER);
+		data.left = new FormAttachment(0, 0);
+		data.top = new FormAttachment(urlText, 0, SWT.CENTER);
 		urlLabel.setLayoutData(data);
 
 		data = new FormData();
 		data.left = new FormAttachment(urlLabel, 0);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(3,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(4,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		urlText.setLayoutData(data);
 
 		/* ---- type combo ---- */
@@ -545,7 +558,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 
 		data = new FormData();
         data.left = new FormAttachment(typeLabel, 0);
-		data.top = new FormAttachment(4,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(5,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		typeCombo.setLayoutData(data);
 
 		/* ---- binding combo ---- */
@@ -574,7 +587,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 
 		data = new FormData();
         data.left = new FormAttachment(bindingLabel, 0);
-		data.top = new FormAttachment(4,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(5,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		bindingCombo.setLayoutData(data);
 
 		/* ------ Version field ------ */
@@ -589,7 +602,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(versionLabel, 0);
 		data.right = new FormAttachment(70, 0);
-		data.top = new FormAttachment(4,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(5,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		versionText.setLayoutData(data);
 
 		/* ------ Release Date field ------ */
@@ -604,7 +617,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(releaseDateLabel, 0);
 		data.right = new FormAttachment(25, 0);
-		data.top = new FormAttachment(5,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(6,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		releaseDateText.setLayoutData(data);
 
 		/* ------ Effective Date field ------ */
@@ -619,8 +632,29 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(effectiveDateLabel, 0);
 		data.right = new FormAttachment(50, 0);
-		data.top = new FormAttachment(5,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(6,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		effectiveDateText.setLayoutData(data);
+
+		/* ---- definition text ---- */
+		definitionText = getWidgetFactory().createText(composite, "", 
+				SWT.V_SCROLL | SWT.WRAP); //$NON-NLS-1$
+		CLabel definitionLabel = getWidgetFactory()
+				.createCLabel(composite, "Definition:"); //$NON-NLS-1$
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.top = new FormAttachment(releaseDateText, 0, SWT.BOTTOM);
+		definitionLabel.setLayoutData(data);
+
+		// 2 lines height allocated to this widget
+		data = new FormData();
+		data.left = new FormAttachment(definitionLabel, 0);
+		// if I set the width AND right, then I get proper wrapping for long text... whatever.
+		data.width = 300;
+		data.right = new FormAttachment(100, 0);
+		// if I set the top AND height, then I get vertical scroll within the tab page
+		data.top = new FormAttachment(releaseDateText, 0, SWT.BOTTOM);
+		data.height = charHeight * 4;
+		definitionText.setLayoutData(data);
 
 	}
 	
@@ -799,6 +833,20 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 		effectiveDateText.addKeyListener(keyListener);
 		effectiveDateText.addFocusListener(focusListener);
 
+		definitionText.removeModifyListener(modifyListener);
+		definitionText.removeKeyListener(keyListener);
+		definitionText.removeFocusListener(focusListener);
+		if (valueSetVersion != null) {
+			String definition = valueSetVersion.getDefinition();
+			definitionText.setText(definition!=null ? definition : "");
+		}
+		else {
+			definitionText.setText("");
+		}
+		definitionText.addModifyListener(modifyListener);
+		definitionText.addKeyListener(keyListener);
+		definitionText.addFocusListener(focusListener);
+
 		typeCombo.select(0);
 		if (valueSetVersion != null) {
 			ValueSetType valueSetType = valueSetVersion.getType();
@@ -831,6 +879,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 			versionText.setEnabled(false);
 			releaseDateText.setEnabled(false);
 			effectiveDateText.setEnabled(false);
+			definitionText.setEnabled(false);
 			typeCombo.setEnabled(false);
 			bindingCombo.setEnabled(false);
 		}
@@ -844,6 +893,7 @@ public class ValueSetVersionSection extends AbstractModelerPropertySection {
 			versionText.setEnabled(true);
 			releaseDateText.setEnabled(true);
 			effectiveDateText.setEnabled(true);
+			definitionText.setEnabled(true);
 			typeCombo.setEnabled(true);
 			bindingCombo.setEnabled(true);
 		}

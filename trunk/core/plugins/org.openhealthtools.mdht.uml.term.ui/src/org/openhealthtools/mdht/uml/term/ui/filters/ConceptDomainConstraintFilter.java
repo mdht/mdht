@@ -22,7 +22,7 @@ import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
  * Selects an object if it is a UML Property with 
  * ConceptDomainConstraint stereotype applied.
  */
-public class ConceptDomainConstraintFilter extends CTSFilter {
+public class ConceptDomainConstraintFilter extends TermFilter {
 
 	public boolean select(Object object) {
 		Element element = getElement(object);

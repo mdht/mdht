@@ -12,27 +12,27 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.filters;
 
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 /**
- * Filters UML elements in user interface.
+ * Selects an object if it is a UML EnumerationLiteral with 
+ * ValueSetCode stereotype applied.
  */
-public abstract class CTSFilter implements IFilter {
+public class ValueSetCodeFilter extends TermFilter {
 
-	protected Element getElement(Object object) {
-		Element element = null;
-
-		if (object instanceof IAdaptable) {
-			element = (Element) ((IAdaptable) object).getAdapter(Element.class);
-		} else {
-			if (object instanceof Element) {
-				element = (Element) object;
-			}
+	public boolean select(Object object) {
+		Element element = getElement(object);
+		
+		if (element instanceof EnumerationLiteral) {
+			Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
+					element, ITermProfileConstants.VALUE_SET_CODE);
+			return stereotype != null;
 		}
-
-		return element;
+		return false;
 	}
 
 }

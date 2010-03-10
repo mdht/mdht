@@ -12,27 +12,27 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.filters;
 
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Enumeration;
-import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
-import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 
 /**
- * Selects an object if it is a UML Enumeration with 
- * ValueSetVersion stereotype applied.
+ * Filters UML elements in user interface.
  */
-public class ValueSetVersionFilter extends TermFilter {
+public abstract class TermFilter implements IFilter {
 
-	public boolean select(Object object) {
-		Element element = getElement(object);
-		
-		if (element instanceof Enumeration) {
-			Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
-					element, ITermProfileConstants.VALUE_SET_VERSION);
-			return stereotype != null;
+	protected Element getElement(Object object) {
+		Element element = null;
+
+		if (object instanceof IAdaptable) {
+			element = (Element) ((IAdaptable) object).getAdapter(Element.class);
+		} else {
+			if (object instanceof Element) {
+				element = (Element) object;
+			}
 		}
-		return false;
+
+		return element;
 	}
 
 }

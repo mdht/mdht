@@ -247,7 +247,7 @@ public class CodeSystemVersionSection extends AbstractModelerPropertySection {
         layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
         composite.setLayout(layout);
 
-        int numberOfRows = 4;
+        int numberOfRows = 5;
 		FormData data = null;
 
 		/* ------ Name field ------ */
@@ -306,7 +306,7 @@ public class CodeSystemVersionSection extends AbstractModelerPropertySection {
 
 		data = new FormData();
 		data.left = new FormAttachment(sourceLabel, 0);
-		data.right = new FormAttachment(50, 0);
+		data.right = new FormAttachment(100, 0);
 		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		sourceText.setLayoutData(data);
 
@@ -315,14 +315,14 @@ public class CodeSystemVersionSection extends AbstractModelerPropertySection {
 		CLabel urlLabel = getWidgetFactory()
 				.createCLabel(composite, "URL:"); //$NON-NLS-1$
 		data = new FormData();
-		data.left = new FormAttachment(sourceText, ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(sourceText, 0, SWT.CENTER);
+		data.left = new FormAttachment(0, 0);
+		data.top = new FormAttachment(urlText, 0, SWT.CENTER);
 		urlLabel.setLayoutData(data);
 
 		data = new FormData();
 		data.left = new FormAttachment(urlLabel, 0);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(3,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		urlText.setLayoutData(data);
 
 		/* ------ Version field ------ */
@@ -337,7 +337,7 @@ public class CodeSystemVersionSection extends AbstractModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(versionLabel, 0);
 		data.right = new FormAttachment(25, 0);
-		data.top = new FormAttachment(3,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(4,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		versionText.setLayoutData(data);
 
 		/* ------ Release Date field ------ */
@@ -352,7 +352,7 @@ public class CodeSystemVersionSection extends AbstractModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(releaseDateLabel, 0);
 		data.right = new FormAttachment(50, 0);
-		data.top = new FormAttachment(3,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(4,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		releaseDateText.setLayoutData(data);
 
 		/* ------ Effective Date field ------ */
@@ -367,7 +367,7 @@ public class CodeSystemVersionSection extends AbstractModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(effectiveDateLabel, 0);
 		data.right = new FormAttachment(75, 0);
-		data.top = new FormAttachment(3,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(4,numberOfRows, ITabbedPropertyConstants.VSPACE);
 		effectiveDateText.setLayoutData(data);
 
 	}

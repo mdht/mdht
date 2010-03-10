@@ -22,7 +22,7 @@ import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
  * Selects an object if it is a UML Property with 
  * ValueSetConstraint stereotype applied.
  */
-public class ValueSetConstraintFilter extends CTSFilter {
+public class ValueSetConstraintFilter extends TermFilter {
 
 	public boolean select(Object object) {
 		Element element = getElement(object);

@@ -22,7 +22,7 @@ import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
  * Selects an object if it is a UML Enumeration with 
  * CodeSystemVersion stereotype applied.
  */
-public class CodeSystemVersionFilter extends CTSFilter {
+public class CodeSystemVersionFilter extends TermFilter {
 
 	public boolean select(Object object) {
 		Element element = getElement(object);
