@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML">
   <uml:Package xmi:id="_KnCD4CFjEd-3s7f6mWX-3A" name="CodeSystems">
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Nf68kCFjEd-3s7f6mWX-3A" name="CPT-4">
       <ownedComment xmi:id="_8sYNgCWtEd-iTYfpNb4PkQ">
