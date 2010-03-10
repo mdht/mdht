@@ -46,6 +46,11 @@
 	 	     id="property.section.ValueSetVersionSection"
              filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetVersionFilter">
 	      </propertySection>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetCodeSection" 
+	 	     id="property.section.ValueSetCodeSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetCodeFilter">
+	      </propertySection>
 	      
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ValidationSection" 
@@ -177,14 +182,43 @@
          </menu>
       </objectContribution>
    </extension>
-   
+     
    <!-- UML Package menu items -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution adaptable="true"
 			objectClass="org.eclipse.uml2.uml.Element"
-            id="mdht.objectContribution.uml.package">
+            id="mdht.objectContribution.uml.package.term">
          <visibility>
 			<objectClass name="org.eclipse.uml2.uml.Package" />
+			<!-- TODO and has Terminology profile applied -->
+         </visibility>
+         <action
+               label="%addValueSetVersion.label"
+               icon="icons/full/obj16/Enumeration.gif"
+               class="org.openhealthtools.mdht.uml.term.ui.actions.AddValueSetVersionAction"
+               menubarPath="mdht.addCDA/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addCDA.valueSetVersion">
+         </action>
+         <action
+               label="%addCodeSystemVersion.label"
+               icon="icons/full/obj16/Enumeration.gif"
+               class="org.openhealthtools.mdht.uml.term.ui.actions.AddCodeSystemVersionAction"
+               menubarPath="mdht.addCDA/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addCDA.codeSystemVersion">
+         </action>
+      </objectContribution>
+   </extension>
+         
+   <!-- UML Package menu items -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element"
+            id="mdht.objectContribution.uml.package.cda">
+         <visibility>
+			<objectClass name="org.eclipse.uml2.uml.Package" />
+			<!-- TODO and has CDA profile applied -->
          </visibility>
          <action
                label="%addCDATemplate.label"
@@ -193,6 +227,26 @@
                menubarPath="mdht.addCDA/classifierGroup"
                enablesFor="1"
                id="mdht.actions.addCDA.class">
+         </action>
+      </objectContribution>
+   </extension>
+       
+   <!-- UML Enumeration menu items -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element"
+            id="mdht.objectContribution.uml.package.term">
+         <visibility>
+            <objectClass name="org.eclipse.uml2.uml.Enumeration" />
+			<!-- TODO and has stereotype ValueSetVersion applied -->
+         </visibility>
+         <action
+               label="%addValueSetCode.label"
+               icon="icons/full/obj16/EnumerationLiteral.gif"
+               class="org.openhealthtools.mdht.uml.term.ui.actions.AddValueSetCodeAction"
+               menubarPath="mdht.addCDA/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addCDA.valueSetCode">
          </action>
       </objectContribution>
    </extension>
