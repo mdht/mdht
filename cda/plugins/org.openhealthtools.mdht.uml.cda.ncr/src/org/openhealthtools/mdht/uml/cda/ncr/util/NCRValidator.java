@@ -19,7 +19,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-import org.openhealthtools.mdht.uml.cda.ncr.*;
 import org.openhealthtools.mdht.uml.cda.ncr.AcuityDataSection;
 import org.openhealthtools.mdht.uml.cda.ncr.BirthWeight;
 import org.openhealthtools.mdht.uml.cda.ncr.EncountersSection;

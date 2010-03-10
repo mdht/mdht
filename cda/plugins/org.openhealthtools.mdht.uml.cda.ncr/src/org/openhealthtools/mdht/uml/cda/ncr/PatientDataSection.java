@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ncr.NCRPackage#getPatientDataSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='PATIENT DATA' code.displayName='Clinical Information' templateId.root='2.16.840.1.113883.10.20.17.2.4' constraints.validation.error='PatientDataSectionTemplateId PatientDataSectionCode PatientDataSectionText PatientDataSectionTitle' code.code='55188-7'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='PATIENT DATA' code.codeSystem='2.16.840.1.113883.6.1' code.displayName='Clinical Information' templateId.root='2.16.840.1.113883.10.20.17.2.4' constraints.validation.error='PatientDataSectionTemplateId PatientDataSectionCode PatientDataSectionText PatientDataSectionTitle' code.codeSystemName='LOINC' code.code='55188-7'"
  * @generated
  */
 public interface PatientDataSection extends Section {
@@ -32,11 +32,11 @@ public interface PatientDataSection extends Section {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.10.20.17.2.4')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.17.2.4')
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.hasTemplateId(\'2.16.840.1.113883.10.20.17.2.4\')'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = \'2.16.840.1.113883.10.20.17.2.4\')'"
 	 * @generated
 	 */
 	boolean validatePatientDataSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);

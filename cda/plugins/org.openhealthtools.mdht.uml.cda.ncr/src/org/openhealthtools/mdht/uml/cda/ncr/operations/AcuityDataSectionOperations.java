@@ -58,7 +58,7 @@ public class AcuityDataSectionOperations extends SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_ACUITY_DATA_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.17.2.3')";
+	protected static final String VALIDATE_ACUITY_DATA_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.17.2.3')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateAcuityDataSectionTemplateId(AcuityDataSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Acuity Data Section Template Id</em>}' invariant operation.
@@ -74,7 +74,7 @@ public class AcuityDataSectionOperations extends SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.10.20.17.2.3')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.17.2.3')
 	 * @param acuityDataSection The receiving '<em><b>Acuity Data Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
