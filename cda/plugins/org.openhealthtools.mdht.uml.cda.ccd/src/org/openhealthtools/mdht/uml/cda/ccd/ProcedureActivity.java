@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProcedureActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' statusCode.codeSystemName='ProcedureStatusCode' constraints.validation.error='ProcedureActivityTemplateId ProcedureActivityMoodCode ProcedureActivityId ProcedureActivityStatusCode ProcedureActivityCode' templateId.root='2.16.840.1.113883.10.20.1.29' statusCode.codeSystem='2.16.840.1.113883.1.11.20.15' statusCode.code='completed' statusCode.codeSystemVersion='20061017' constraints.validation.warning='ProcedureActivityEffectiveTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' statusCode.codeSystemName='ProcedureStatusCode' constraints.validation.error='ProcedureActivityTemplateId ProcedureActivityMoodCode ProcedureActivityId ProcedureActivityStatusCode ProcedureActivityCode' templateId.root='2.16.840.1.113883.10.20.1.29' statusCode.codeSystem='2.16.840.1.113883.1.11.20.15' statusCode.code='completed' constraints.validation.warning='ProcedureActivityEffectiveTime'"
  * @generated
  */
 public interface ProcedureActivity extends Act {

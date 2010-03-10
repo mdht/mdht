@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getSocialHistorySection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.15' constraints.validation.error='SocialHistorySectionTemplateId SocialHistorySectionCode' code.displayName='Social history' code.code='29762-2' constraints.validation.warning='SocialHistorySectionTitle'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.15' constraints.validation.error='SocialHistorySectionTemplateId SocialHistorySectionCode' code.displayName='Social history' code.codeSystem='2.16.840.1.113883.6.1' code.code='29762-2' constraints.validation.warning='SocialHistorySectionTitle'"
  * @generated
  */
 public interface SocialHistorySection extends Section {

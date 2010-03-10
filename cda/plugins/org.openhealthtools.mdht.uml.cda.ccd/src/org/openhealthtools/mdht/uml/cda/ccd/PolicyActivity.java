@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPolicyActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' constraints.validation.error='PolicyActivityTemplateId PolicyActivityClassCode PolicyActivityMoodCode PolicyActivityId PolicyActivityStatusCode' templateId.root='2.16.840.1.113883.10.20.1.26' statusCode.code='completed'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' statusCode.codeSystemName='ActStatus' constraints.validation.error='PolicyActivityTemplateId PolicyActivityClassCode PolicyActivityMoodCode PolicyActivityId PolicyActivityStatusCode' templateId.root='2.16.840.1.113883.10.20.1.26' statusCode.codeSystem='2.16.840.1.113883.5.14' statusCode.code='completed'"
  * @generated
  */
 public interface PolicyActivity extends Act {

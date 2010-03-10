@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPurposeActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' constraints.validation.error='PurposeActivityTemplateId PurposeActivityHasReason PurposeActivityReasonType PurposeActivityClassCode PurposeActivityMoodCode PurposeActivityCode PurposeActivityStatusCode' templateId.root='2.16.840.1.113883.10.20.1.30' code.displayName='Documentation procedure' statusCode.code='completed' code.code='23745001'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' classCode='ACT' statusCode.codeSystemName='ActStatus' code.codeSystemName='SNOMEDCT' constraints.validation.error='PurposeActivityTemplateId PurposeActivityHasReason PurposeActivityReasonType PurposeActivityClassCode PurposeActivityMoodCode PurposeActivityCode PurposeActivityStatusCode' templateId.root='2.16.840.1.113883.10.20.1.30' statusCode.codeSystem='2.16.840.1.113883.5.14' code.displayName='Documentation procedure' statusCode.code='completed' code.codeSystem='2.16.840.1.113883.6.96' code.code='23745001'"
  * @generated
  */
 public interface PurposeActivity extends Act {

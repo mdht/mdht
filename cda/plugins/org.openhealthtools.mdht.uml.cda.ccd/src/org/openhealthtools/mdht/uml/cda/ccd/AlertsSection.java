@@ -22,7 +22,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getAlertsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.2' constraints.validation.error='AlertsSectionTemplateId AlertsSectionCode AlertsSectionTitle AlertsSectionText' code.displayName='Allergies, adverse reactions, alerts' code.code='48765-2' constraints.validation.warning='AlertsSectionProblemAct'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' templateId.root='2.16.840.1.113883.10.20.1.2' constraints.validation.error='AlertsSectionTemplateId AlertsSectionCode AlertsSectionTitle AlertsSectionText' code.displayName='Allergies, adverse reactions, alerts' code.codeSystem='2.16.840.1.113883.6.1' code.code='48765-2' constraints.validation.warning='AlertsSectionProblemAct'"
  * @generated
  */
 public interface AlertsSection extends Section {
