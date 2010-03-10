@@ -113,7 +113,7 @@ public class TBResultOrganizerOperations extends ResultOrganizerOperations {
 	 */
 	protected static final String VALIDATE_TB_RESULT_ORGANIZER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and "+
 "let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in ("+
-"value.codeSystem = '2.16.840.1.113883.6.1')";
+"value.codeSystem = '2.16.840.1.113883.6.1' and (value.code = '640-3' or value.code = '645-2' or value.code = '6655-5' or value.code = '650-2'))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateTBResultOrganizerCode(TBResultOrganizer, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Result Organizer Code</em>}' invariant operation.
@@ -131,7 +131,7 @@ public class TBResultOrganizerOperations extends ResultOrganizerOperations {
 	 * <!-- begin-model-doc -->
 	 * not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and 
 	 * let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (
-	 * value.codeSystem = '2.16.840.1.113883.6.1')
+	 * value.codeSystem = '2.16.840.1.113883.6.1' and (value.code = '640-3' or value.code = '645-2' or value.code = '6655-5' or value.code = '650-2'))
 	 * @param tbResultOrganizer The receiving '<em><b>TB Result Organizer</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

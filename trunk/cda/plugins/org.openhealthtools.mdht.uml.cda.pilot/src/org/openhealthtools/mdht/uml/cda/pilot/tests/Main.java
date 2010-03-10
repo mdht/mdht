@@ -35,6 +35,8 @@ public class Main {
 		TBResultOrganizer organizer = TBPNFactory.eINSTANCE.createTBResultOrganizer().init();
 		TBResultObservation observation = TBPNFactory.eINSTANCE.createTBResultObservation().init();
 		
+		observation.getCode().setCode("645-2");
+		
 		clinicalDocument.addSection(section);
 		section.addOrganizer(organizer);
 		organizer.addObservation(observation);
