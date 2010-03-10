@@ -658,9 +658,11 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		  (neonatalICUEncounterActivityEClass, 
 		   source, 
 		   new String[] {
+			 "code.codeSystem", "2.16.840.1.113883.5.4",
 			 "templateId.root", "2.16.840.1.113883.10.20.17.3.15",
 			 "code.displayName", "Inpatient encounter",
 			 "constraints.validation.error", "NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId",
+			 "code.codeSystemName", "ActCode",
 			 "classCode", "ENC",
 			 "constraints.validation.warning", "NeonatalICUEncounterActivityEffectiveTime",
 			 "code.code", "IMP",
@@ -678,9 +680,11 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		   source, 
 		   new String[] {
 			 "title.mixed", "PATIENT DATA",
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "code.displayName", "Clinical Information",
 			 "templateId.root", "2.16.840.1.113883.10.20.17.2.4",
 			 "constraints.validation.error", "PatientDataSectionTemplateId PatientDataSectionCode PatientDataSectionText PatientDataSectionTitle",
+			 "code.codeSystemName", "LOINC",
 			 "code.code", "55188-7"
 		   });																		
 		addAnnotation
@@ -703,11 +707,15 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		   source, 
 		   new String[] {
 			 "statusCode.code", "completed",
+			 "code.codeSystem", "2.16.840.1.113883.6.96",
 			 "code.displayName", "Birth weight",
 			 "templateId.root", "2.16.840.1.113883.10.20.17.3.1",
 			 "constraints.validation.error", "BirthWeightTemplateId BirthWeightClassCode BirthWeightMoodCode BirthWeightCode BirthWeightStatusCode BirthWeightValue",
+			 "code.codeSystemName", "SNOMEDCT",
 			 "classCode", "OBS",
+			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "code.code", "47340003",
+			 "statusCode.codeSystemName", "ActStatus",
 			 "moodCode", "EVN",
 			 "statusCode.displayName", "Completed"
 		   });																										

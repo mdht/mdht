@@ -60,7 +60,7 @@ public class EncountersSectionOperations extends org.openhealthtools.mdht.uml.cd
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_NCR_ENCOUNTERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.17.2.2')";
+	protected static final String VALIDATE_NCR_ENCOUNTERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.17.2.2')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateNCREncountersSectionTemplateId(EncountersSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate NCR Encounters Section Template Id</em>}' invariant operation.
@@ -76,7 +76,7 @@ public class EncountersSectionOperations extends org.openhealthtools.mdht.uml.cd
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.10.20.17.2.2')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.17.2.2')
 	 * @param encountersSection The receiving '<em><b>Encounters Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

@@ -57,7 +57,7 @@ public class BirthWeightOperations extends ResultObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_BIRTH_WEIGHT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('2.16.840.1.113883.10.20.17.3.1')";
+	protected static final String VALIDATE_BIRTH_WEIGHT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.17.3.1')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateBirthWeightTemplateId(BirthWeight, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Birth Weight Template Id</em>}' invariant operation.
@@ -73,7 +73,7 @@ public class BirthWeightOperations extends ResultObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('2.16.840.1.113883.10.20.17.3.1')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.17.3.1')
 	 * @param birthWeight The receiving '<em><b>Birth Weight</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
