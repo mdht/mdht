@@ -44,10 +44,10 @@ public class DitaTransformer {
 
 		UMLSwitch<Object> transformPackage = 
 			new TransformPackage(transformerOptions);
-		UMLSwitch<Object> transformTemplate = 
-			new TransformTemplate(transformerOptions);
-		UMLSwitch<Object> transformTemplateRules = 
-			new TransformTemplateRules(transformerOptions);
+		UMLSwitch<Object> transformClass = 
+			new TransformClass(transformerOptions);
+		UMLSwitch<Object> transformClassProperties = 
+			new TransformClassProperties(transformerOptions);
 
 		try {
 			TreeIterator<EObject> iterator = EcoreUtil.getAllContents(
@@ -56,24 +56,25 @@ public class DitaTransformer {
 				EObject child = iterator.next();
 
 				transformPackage.doSwitch(child);
-				transformTemplate.doSwitch(child);
-				transformTemplateRules.doSwitch(child);
+				transformClass.doSwitch(child);
+				transformClassProperties.doSwitch(child);
 			}
 		}
 		catch (IndexOutOfBoundsException e) {
 			Logger.logException(e);
 		}
 		
-		writeMapFile("document", "Document Templates", transformerOptions.getDocumentList());
-		writeMapFile("section", "Section Templates", transformerOptions.getSectionList());
-		writeMapFile("clinicalstatement", "Clinical Statement Templates", transformerOptions.getClinicalStatementList());
+		writeMapFile("templates", "document", "Document Templates", transformerOptions.getDocumentList());
+		writeMapFile("templates", "section", "Section Templates", transformerOptions.getSectionList());
+		writeMapFile("templates", "clinicalstatement", "Clinical Statement Templates", transformerOptions.getClinicalStatementList());
+		writeMapFile("classes", "classes", "Classes", transformerOptions.getClassList());
 
 	}
 	
-	private void writeMapFile(String name, String title, List<String> fileNames) {
+	private void writeMapFile(String folder, String name, String title, List<String> fileNames) {
 		Collections.sort(fileNames);
 		
-		IPath filePath = transformerOptions.getOutputPath().append("templates")
+		IPath filePath = transformerOptions.getOutputPath().append(folder)
 				.addTrailingSeparator().append(name).addFileExtension("ditamap");
 		File file = filePath.toFile();
 		PrintWriter writer = null;
