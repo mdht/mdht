@@ -27,28 +27,30 @@ public class TransformTemplateRules extends TransformAbstract {
 	public Object caseClass(Class template) {
 		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(template,
 				ICDAProfileConstants.CDA_TEMPLATE);
-		if (hl7Template != null) {
-			IPath filePath = transformerOptions.getOutputPath().append("templates")
-					.addTrailingSeparator().append("generated").addTrailingSeparator().append(
-							"_"+template.getName()).addFileExtension("dita");
-			File file = filePath.toFile();
-			PrintWriter writer = null;
+		if (hl7Template == null) {
+			return null;
+		}
+		
+		IPath filePath = transformerOptions.getOutputPath().append("templates")
+				.addTrailingSeparator().append("generated").addTrailingSeparator().append(
+						"_"+template.getName()).addFileExtension("dita");
+		File file = filePath.toFile();
+		PrintWriter writer = null;
 
-			try {
-				file.createNewFile();
+		try {
+			file.createNewFile();
 
-				writer = new PrintWriter(file);
-				appendHeader(writer, template);
-				appendBody(writer, template);
+			writer = new PrintWriter(file);
+			appendHeader(writer, template);
+			appendBody(writer, template);
 
-			} catch (FileNotFoundException e) {
-				Logger.logException(e);
-			} catch (IOException e1) {
-				Logger.logException(e1);
-			} finally {
-				if (writer != null) {
-					writer.close();
-				}
+		} catch (FileNotFoundException e) {
+			Logger.logException(e);
+		} catch (IOException e1) {
+			Logger.logException(e1);
+		} finally {
+			if (writer != null) {
+				writer.close();
 			}
 		}
 

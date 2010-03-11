@@ -36,6 +36,7 @@ public class DitaTransformerOptions {
 	private List<String> documentList = new Vector<String>();
 	private List<String> sectionList = new Vector<String>();
 	private List<String> clinicalStatementList = new Vector<String>();
+	private List<String> classList = new Vector<String>();
 	
 	public DitaTransformerOptions() {
 		initializePreferences();
@@ -82,5 +83,9 @@ public class DitaTransformerOptions {
 	protected List<String> getClinicalStatementList() {
 		return clinicalStatementList;
 	}
-	
+
+	protected List<String> getClassList() {
+		return classList;
+	}
+
 }
