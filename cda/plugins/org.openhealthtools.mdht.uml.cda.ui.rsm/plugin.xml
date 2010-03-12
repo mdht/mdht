@@ -45,10 +45,21 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
        <propertySections contributorId="com.ibm.xtools.modeler.ui.properties">
           <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemVersionSection" 
+	 	     id="property.section.CodeSystemVersionSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemVersionFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetVersionSection" 
 	 	     id="property.section.ValueSetVersionSection"
              filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetVersionFilter">
 	      </propertySection>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetCodeSection" 
+	 	     id="property.section.ValueSetCodeSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetCodeFilter">
+	      </propertySection>
+	      
 	      
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ValidationSection" 
