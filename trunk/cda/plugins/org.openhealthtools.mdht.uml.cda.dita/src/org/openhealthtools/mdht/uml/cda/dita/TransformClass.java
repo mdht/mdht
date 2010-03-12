@@ -23,10 +23,7 @@ public class TransformClass extends TransformAbstract {
 
 	@Override
 	public Object caseClass(Class umlClass) {
-		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(umlClass,
-				ICDAProfileConstants.CDA_TEMPLATE);
-		
-		String pathFolder = (hl7Template != null) ? "templates" : "classes";
+		String pathFolder = "classes";
 		String fileName = umlClass.getName() + ".dita";
 		IPath filePath = transformerOptions.getOutputPath().append(pathFolder)
 				.addTrailingSeparator().append(umlClass.getName()).addFileExtension("dita");
@@ -51,7 +48,9 @@ public class TransformClass extends TransformAbstract {
 				}
 			}
 		}
-		
+
+		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(umlClass,
+				ICDAProfileConstants.CDA_TEMPLATE);
 		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
 		if (hl7Template != null && cdaClass != null) {
 			if ("ClinicalDocument".equals(cdaClass.getName()))

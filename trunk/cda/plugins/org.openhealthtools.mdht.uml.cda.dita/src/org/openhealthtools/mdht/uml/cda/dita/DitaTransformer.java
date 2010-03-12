@@ -64,9 +64,9 @@ public class DitaTransformer {
 			Logger.logException(e);
 		}
 		
-		writeMapFile("templates", "document", "Document Templates", transformerOptions.getDocumentList());
-		writeMapFile("templates", "section", "Section Templates", transformerOptions.getSectionList());
-		writeMapFile("templates", "clinicalstatement", "Clinical Statement Templates", transformerOptions.getClinicalStatementList());
+		writeMapFile("classes", "document", "Document Templates", transformerOptions.getDocumentList());
+		writeMapFile("classes", "section", "Section Templates", transformerOptions.getSectionList());
+		writeMapFile("classes", "clinicalstatement", "Clinical Statement Templates", transformerOptions.getClinicalStatementList());
 		writeMapFile("classes", "classes", "Classes", transformerOptions.getClassList());
 
 	}

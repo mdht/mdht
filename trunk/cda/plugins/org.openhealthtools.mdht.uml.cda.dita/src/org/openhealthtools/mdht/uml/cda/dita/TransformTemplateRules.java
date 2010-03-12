@@ -31,7 +31,7 @@ public class TransformTemplateRules extends TransformAbstract {
 			return null;
 		}
 		
-		IPath filePath = transformerOptions.getOutputPath().append("templates")
+		IPath filePath = transformerOptions.getOutputPath().append("classes")
 				.addTrailingSeparator().append("generated").addTrailingSeparator().append(
 						"_"+template.getName()).addFileExtension("dita");
 		File file = filePath.toFile();

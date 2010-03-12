@@ -769,13 +769,10 @@ public class CDAModelUtil {
 			href="../" + target.getName() + ".dita";
 		}
 		else {
-			Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(target,
-					ICDAProfileConstants.CDA_TEMPLATE);
-			String pathFolder = (hl7Template != null) ? "templates" : "classes";
-			
+			String pathFolder = "classes";
 			String prefix = "";
-			// http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda.doc/templates/Act.html
-			// http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda.ccd.doc/templates/ProblemAct.html
+			// http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda.doc/classes/Act.html
+			// http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda.ccd.doc/classes/ProblemAct.html
 			if (! CDA_PACKAGE_NAME.equals(target.getNearestPackage().getName())) {
 				prefix = getModelNamespacePrefix(target) + ".";
 			}

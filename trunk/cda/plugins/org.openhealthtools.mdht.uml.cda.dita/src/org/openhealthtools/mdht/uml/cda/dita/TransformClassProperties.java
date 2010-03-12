@@ -25,10 +25,7 @@ public class TransformClassProperties extends TransformAbstract {
 
 	@Override
 	public Object caseClass(Class umlClass) {
-		Stereotype hl7Template = CDAProfileUtil.getAppliedCDAStereotype(umlClass,
-				ICDAProfileConstants.CDA_TEMPLATE);
-
-		String pathFolder = (hl7Template != null) ? "templates" : "classes";
+		String pathFolder = "classes";
 		IPath filePath = transformerOptions.getOutputPath().append(pathFolder)
 				.addTrailingSeparator().append("generated").addTrailingSeparator().append(
 						"_"+umlClass.getName()).addFileExtension("dita");
