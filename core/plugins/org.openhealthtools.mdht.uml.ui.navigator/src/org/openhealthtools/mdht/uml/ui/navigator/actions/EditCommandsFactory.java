@@ -359,7 +359,7 @@ public class EditCommandsFactory implements IPropertyListener {
 	 * @since 2.2
 	 */
 	protected boolean removeAllReferencesOnDelete() {
-		return false;
+		return true;
 	}
 
 	public void dispose() {
