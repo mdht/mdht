@@ -30,7 +30,7 @@ public class TransformTemplate extends TransformAbstract {
 		}
 		
 		String fileName = template.getName() + ".dita";
-		IPath filePath = transformerOptions.getOutputPath().append("templates")
+		IPath filePath = transformerOptions.getOutputPath().append("classes")
 				.addTrailingSeparator().append(template.getName()).addFileExtension("dita");
 		File file = filePath.toFile();
 		PrintWriter writer = null;
