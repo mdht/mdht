@@ -19,7 +19,7 @@ public class CDAAnnotationProvider implements INotationProvider, IExecutableExte
 
 	public final static int CDA_CLASS_ANNOTATION = IHL7Appearance.DISP_TEMPLATE_ID;
 	public final static int CDA_ASSOCIATION_ANNOTATION = IHL7Appearance.DISP_VOCABULARY;
-	public final static int CDA_PROPERTY_ANNOTATION = IHL7Appearance.DISP_VOCABULARY | IHL7Appearance.DISP_UPDATE_MODE;
+	public final static int CDA_PROPERTY_ANNOTATION = IHL7Appearance.DISP_VOCABULARY | IHL7Appearance.DISP_TEMPLATE_CONSTRAINTS;
 
 	public static final String SEVERITY_ERROR = "ERROR";
 	public static final String SEVERITY_WARNING = "WARNING";

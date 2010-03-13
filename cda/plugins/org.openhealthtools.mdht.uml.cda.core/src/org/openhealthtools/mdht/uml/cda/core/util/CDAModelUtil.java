@@ -496,6 +496,8 @@ public class CDAModelUtil {
 		
 		Stereotype nullFlavorSpecification = CDAProfileUtil.getAppliedCDAStereotype(
 				property, ICDAProfileConstants.NULL_FLAVOR);
+		Stereotype textValue = CDAProfileUtil.getAppliedCDAStereotype(property, 
+				ICDAProfileConstants.TEXT_VALUE);
 
 		if (nullFlavorSpecification != null) {
 			String nullFlavor = getLiteralValue(property, nullFlavorSpecification, ICDAProfileConstants.NULL_FLAVOR_NULL_FLAVOR);
@@ -511,6 +513,13 @@ public class CDAModelUtil {
 				message.append(markup?"<i>":"");
 				message.append(nullFlavorLabel);
 				message.append(markup?"</i>":"");
+			}
+		}
+		if (textValue != null) {
+			String value = (String) property.getValue(textValue, ICDAProfileConstants.TEXT_VALUE_VALUE);
+
+			if (value != null && value.length() > 0) {
+				message.append(" = \"").append(value).append("\"");
 			}
 		}
 

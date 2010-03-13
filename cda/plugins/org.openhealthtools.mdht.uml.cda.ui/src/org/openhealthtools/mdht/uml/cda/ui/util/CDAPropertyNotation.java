@@ -139,7 +139,21 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 				buffer.append(vocab);
 			}
 		}
+		// other template constraints
+		if ((style & IHL7Appearance.DISP_TEMPLATE_CONSTRAINTS) != 0) {
+			String value = null;
+			Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.TEXT_VALUE);
+			if (stereotype != null) {
+				value = (String) property.getValue(stereotype, ICDAProfileConstants.TEXT_VALUE_VALUE);
+			}
 
+			if (value != null && value.length() > 0) {
+				if (buffer.length() > 0)
+					buffer.append(" ");
+				buffer.append(value);
+			}
+		}
+		
 		// fixedValue
 		if (property.isReadOnly()) {
 			if (buffer.length() > 0)

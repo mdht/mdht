@@ -44,6 +44,11 @@ public interface IHL7Appearance extends IUMLNotation {
 	 */
 	public final static int DISP_TEMPLATE_ID = 1 << 13;
 
+	/**
+	 * Style constant for template constraint display in labels.
+	 */
+	public final static int DISP_TEMPLATE_CONSTRAINTS = 1 << 14;
+
 	
 	/**
 	 * Default HL7 class display.
