@@ -778,15 +778,27 @@ public class CDAModelUtil {
 			href="../" + target.getName() + ".dita";
 		}
 		else {
+			//TODO get this from preference setting or parameter
+			String infocenterURL = "http://www.cdatools.org/infocenter";
+			
 			String pathFolder = "classes";
+			String basePackage = "";
 			String prefix = "";
 			// http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda.doc/classes/Act.html
 			// http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda.ccd.doc/classes/ProblemAct.html
+			
 			if (! CDA_PACKAGE_NAME.equals(target.getNearestPackage().getName())) {
-				prefix = getModelNamespacePrefix(target) + ".";
+				basePackage = getModelBasePackage(target);
+				prefix = getModelNamespacePrefix(target);
+			}
+			if (basePackage == null || basePackage.trim().length() == 0) {
+				basePackage = "org.openhealthtools.mdht.cda";
+			}
+			if (prefix != null && prefix.trim().length() > 0) {
+				prefix += ".";
 			}
 			
-			href = "http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda."
+			href = infocenterURL + "/topic/" + basePackage + "."
 				+ prefix + "doc/" + pathFolder + "/" + target.getName() + ".html";
 		}
 		return href;
@@ -851,6 +863,17 @@ public class CDAModelUtil {
 		}
 		
 		return prefix;
+	}
+
+	public static String getModelBasePackage(NamedElement element) {
+		String basePackage = null;
+		Package model = UMLUtil.getTopPackage(element);
+		Stereotype codegenSupport = CDAProfileUtil.getAppliedCDAStereotype(model, ICDAProfileConstants.CODEGEN_SUPPORT);
+		if (codegenSupport != null) {
+			basePackage = (String) model.getValue(codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_BASE_PACKAGE);
+		}
+		
+		return basePackage;
 	}
 
 	public static String getPrefixedSplitName(NamedElement element) {
