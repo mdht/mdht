@@ -792,7 +792,7 @@ public class CDAModelUtil {
 				prefix = getModelNamespacePrefix(target);
 			}
 			if (basePackage == null || basePackage.trim().length() == 0) {
-				basePackage = "org.openhealthtools.mdht.cda";
+				basePackage = "org.openhealthtools.mdht.uml.cda";
 			}
 			if (prefix != null && prefix.trim().length() > 0) {
 				prefix += ".";
