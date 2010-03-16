@@ -56,7 +56,7 @@ public class MyActivityOperations extends ProblemActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.hasTemplateId('1.2.3.4.2')";
+	protected static final String VALIDATE_MY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.2.3.4.2')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateMyActivityTemplateId(MyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Activity Template Id</em>}' invariant operation.
@@ -72,7 +72,7 @@ public class MyActivityOperations extends ProblemActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.hasTemplateId('1.2.3.4.2')
+	 * self.templateId->exists(id : datatypes::II | id.root = '1.2.3.4.2')
 	 * @param myActivity The receiving '<em><b>My Activity</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
