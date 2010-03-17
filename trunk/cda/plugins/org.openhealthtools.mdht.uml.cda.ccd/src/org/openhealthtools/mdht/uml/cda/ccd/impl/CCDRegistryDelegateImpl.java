@@ -9,25 +9,25 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity;
-import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDRegistryDelegate;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDRegistryDelegateOperations;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Procedure Activity</b></em>'.
+ * An implementation of the model object '<em><b>Registry Delegate</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ProcedureActivityImpl extends EObjectImpl implements ProcedureActivity {
+public class CCDRegistryDelegateImpl extends EObjectImpl implements CCDRegistryDelegate {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProcedureActivityImpl() {
+	protected CCDRegistryDelegateImpl() {
 		super();
 	}
 
@@ -38,7 +38,7 @@ public class ProcedureActivityImpl extends EObjectImpl implements ProcedureActiv
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CCDPackage.Literals.PROCEDURE_ACTIVITY;
+		return CCDPackage.Literals.CCD_REGISTRY_DELEGATE;
 	}
 
 	/**
@@ -46,8 +46,8 @@ public class ProcedureActivityImpl extends EObjectImpl implements ProcedureActiv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProcedureActivity init() {
-    		CDAUtil.init(this);
-    		return this;
+	public EClass getEClass(String templateId, Object context) {
+		return CCDRegistryDelegateOperations.getEClass(this, templateId, context);
 	}
-} //ProcedureActivityImpl
+
+} //CCDRegistryDelegateImpl

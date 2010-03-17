@@ -464,13 +464,13 @@ public interface CCDFactory extends EFactory {
 	AuthorizationActivity createAuthorizationActivity();
 
 	/**
-	 * Returns a new object of class '<em>Plan Of Care Activity</em>'.
+	 * Returns a new object of class '<em>Plan Of Care Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Plan Of Care Activity</em>'.
+	 * @return a new object of class '<em>Plan Of Care Act</em>'.
 	 * @generated
 	 */
-	PlanOfCareActivity createPlanOfCareActivity();
+	PlanOfCareAct createPlanOfCareAct();
 
 	/**
 	 * Returns a new object of class '<em>Procedure Activity</em>'.
@@ -525,6 +525,87 @@ public interface CCDFactory extends EFactory {
 	 * @generated
 	 */
 	AgeObservation createAgeObservation();
+
+	/**
+	 * Returns a new object of class '<em>Plan Of Care Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Plan Of Care Observation</em>'.
+	 * @generated
+	 */
+	PlanOfCareObservation createPlanOfCareObservation();
+
+	/**
+	 * Returns a new object of class '<em>Plan Of Care Encounter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Plan Of Care Encounter</em>'.
+	 * @generated
+	 */
+	PlanOfCareEncounter createPlanOfCareEncounter();
+
+	/**
+	 * Returns a new object of class '<em>Plan Of Care Procedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Plan Of Care Procedure</em>'.
+	 * @generated
+	 */
+	PlanOfCareProcedure createPlanOfCareProcedure();
+
+	/**
+	 * Returns a new object of class '<em>Plan Of Care Substance Administration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Plan Of Care Substance Administration</em>'.
+	 * @generated
+	 */
+	PlanOfCareSubstanceAdministration createPlanOfCareSubstanceAdministration();
+
+	/**
+	 * Returns a new object of class '<em>Plan Of Care Supply</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Plan Of Care Supply</em>'.
+	 * @generated
+	 */
+	PlanOfCareSupply createPlanOfCareSupply();
+
+	/**
+	 * Returns a new object of class '<em>Procedure Act</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Procedure Act</em>'.
+	 * @generated
+	 */
+	ProcedureAct createProcedureAct();
+
+	/**
+	 * Returns a new object of class '<em>Procedure Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Procedure Observation</em>'.
+	 * @generated
+	 */
+	ProcedureObservation createProcedureObservation();
+
+	/**
+	 * Returns a new object of class '<em>Procedure Procedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Procedure Procedure</em>'.
+	 * @generated
+	 */
+	ProcedureProcedure createProcedureProcedure();
+
+	/**
+	 * Returns a new object of class '<em>Registry Delegate</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Registry Delegate</em>'.
+	 * @generated
+	 */
+	CCDRegistryDelegate createCCDRegistryDelegate();
 
 	/**
 	 * Returns a new object of class '<em>Status Observation</em>'.

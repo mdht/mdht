@@ -23,6 +23,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPlugin;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDRegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.ccd.CauseOfDeathObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity;
@@ -45,15 +46,23 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction;
 import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareAct;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareEncounter;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareProcedure;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSupply;
 import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureProcedure;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
 import org.openhealthtools.mdht.uml.cda.ccd.ProductInstance;
@@ -1507,12 +1516,12 @@ public class CCDValidator extends EObjectValidator {
 	public static final int PROCEDURES_SECTION__PROCEDURES_SECTION_TITLE = 176;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedures Section Procedure Activity' of 'Procedures Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Contains Plan Of Care Activity' of 'Plan Of Care Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROCEDURES_SECTION__PROCEDURES_SECTION_PROCEDURE_ACTIVITY = 177;
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_CONTAINS_PLAN_OF_CARE_ACTIVITY = 177;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Template Id' of 'Plan Of Care Section'.
@@ -1539,12 +1548,60 @@ public class CCDValidator extends EObjectValidator {
 	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_TITLE = 180;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Activity' of 'Plan Of Care Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Text' of 'Plan Of Care Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACTIVITY = 181;
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_TEXT = 181;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Act' of 'Plan Of Care Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ACT = 182;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Encounter' of 'Plan Of Care Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_ENCOUNTER = 183;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Observation' of 'Plan Of Care Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_OBSERVATION = 184;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Procedure' of 'Plan Of Care Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_PROCEDURE = 185;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Substance Administration' of 'Plan Of Care Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION = 186;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Plan Of Care Supply' of 'Plan Of Care Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_PLAN_OF_CARE_SUPPLY = 187;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Template Id' of 'Vital Signs Section'.
@@ -1552,7 +1609,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEMPLATE_ID = 182;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEMPLATE_ID = 188;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Code' of 'Vital Signs Section'.
@@ -1560,7 +1617,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_CODE = 183;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_CODE = 189;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Title' of 'Vital Signs Section'.
@@ -1568,7 +1625,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TITLE = 184;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TITLE = 190;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Text' of 'Vital Signs Section'.
@@ -1576,7 +1633,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEXT = 185;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEXT = 191;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Vital Signs Organizer' of 'Vital Signs Section'.
@@ -1584,7 +1641,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_VITAL_SIGNS_ORGANIZER = 186;
+	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_VITAL_SIGNS_ORGANIZER = 192;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Equipment Section Template Id' of 'Medical Equipment Section'.
@@ -1592,7 +1649,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID = 187;
+	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID = 193;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Equipment Section Code' of 'Medical Equipment Section'.
@@ -1600,7 +1657,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_CODE = 188;
+	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_CODE = 194;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Equipment Section Title' of 'Medical Equipment Section'.
@@ -1608,7 +1665,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_TITLE = 189;
+	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_TITLE = 195;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Functional Status Section Template Id' of 'Functional Status Section'.
@@ -1616,7 +1673,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID = 190;
+	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID = 196;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Functional Status Section Code' of 'Functional Status Section'.
@@ -1624,7 +1681,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_CODE = 191;
+	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_CODE = 197;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Functional Status Section Title' of 'Functional Status Section'.
@@ -1632,7 +1689,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_TITLE = 192;
+	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_TITLE = 198;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Functional Status Section Problem Act' of 'Functional Status Section'.
@@ -1640,7 +1697,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_PROBLEM_ACT = 193;
+	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_PROBLEM_ACT = 199;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Functional Status Section Result Organizer' of 'Functional Status Section'.
@@ -1648,7 +1705,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_RESULT_ORGANIZER = 194;
+	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_RESULT_ORGANIZER = 200;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directives Section Template Id' of 'Advance Directives Section'.
@@ -1656,7 +1713,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 195;
+	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 201;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directives Section Code' of 'Advance Directives Section'.
@@ -1664,7 +1721,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_CODE = 196;
+	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_CODE = 202;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directives Section Title' of 'Advance Directives Section'.
@@ -1672,7 +1729,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_TITLE = 197;
+	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_TITLE = 203;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directives Section Advance Directive Observation' of 'Advance Directives Section'.
@@ -1680,7 +1737,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_ADVANCE_DIRECTIVE_OBSERVATION = 198;
+	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_ADVANCE_DIRECTIVE_OBSERVATION = 204;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Payers Section Template Id' of 'Payers Section'.
@@ -1688,7 +1745,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__PAYERS_SECTION_TEMPLATE_ID = 199;
+	public static final int PAYERS_SECTION__PAYERS_SECTION_TEMPLATE_ID = 205;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Payers Section Code' of 'Payers Section'.
@@ -1696,7 +1753,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__PAYERS_SECTION_CODE = 200;
+	public static final int PAYERS_SECTION__PAYERS_SECTION_CODE = 206;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Payers Section Title' of 'Payers Section'.
@@ -1704,7 +1761,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__PAYERS_SECTION_TITLE = 201;
+	public static final int PAYERS_SECTION__PAYERS_SECTION_TITLE = 207;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Section Template Id' of 'Purpose Section'.
@@ -1712,7 +1769,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_SECTION__PURPOSE_SECTION_TEMPLATE_ID = 202;
+	public static final int PURPOSE_SECTION__PURPOSE_SECTION_TEMPLATE_ID = 208;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Section Code' of 'Purpose Section'.
@@ -1720,7 +1777,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_SECTION__PURPOSE_SECTION_CODE = 203;
+	public static final int PURPOSE_SECTION__PURPOSE_SECTION_CODE = 209;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Section Title' of 'Purpose Section'.
@@ -1728,7 +1785,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_SECTION__PURPOSE_SECTION_TITLE = 204;
+	public static final int PURPOSE_SECTION__PURPOSE_SECTION_TITLE = 210;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Section Text' of 'Purpose Section'.
@@ -1736,7 +1793,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_SECTION__PURPOSE_SECTION_TEXT = 205;
+	public static final int PURPOSE_SECTION__PURPOSE_SECTION_TEXT = 211;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Section Purpose Activity' of 'Purpose Section'.
@@ -1744,7 +1801,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_SECTION__PURPOSE_SECTION_PURPOSE_ACTIVITY = 206;
+	public static final int PURPOSE_SECTION__PURPOSE_SECTION_PURPOSE_ACTIVITY = 212;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Has Reason' of 'Purpose Activity'.
@@ -1752,7 +1809,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_HAS_REASON = 207;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_HAS_REASON = 213;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Reason Type' of 'Purpose Activity'.
@@ -1760,7 +1817,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_REASON_TYPE = 208;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_REASON_TYPE = 214;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Template Id' of 'Purpose Activity'.
@@ -1768,7 +1825,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_TEMPLATE_ID = 209;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_TEMPLATE_ID = 215;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Class Code' of 'Purpose Activity'.
@@ -1776,7 +1833,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_CLASS_CODE = 210;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_CLASS_CODE = 216;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Mood Code' of 'Purpose Activity'.
@@ -1784,7 +1841,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_MOOD_CODE = 211;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_MOOD_CODE = 217;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Code' of 'Purpose Activity'.
@@ -1792,7 +1849,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_CODE = 212;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_CODE = 218;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Purpose Activity Status Code' of 'Purpose Activity'.
@@ -1800,7 +1857,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_STATUS_CODE = 213;
+	public static final int PURPOSE_ACTIVITY__PURPOSE_ACTIVITY_STATUS_CODE = 219;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Organizer Information Source' of 'Vital Signs Organizer'.
@@ -1808,7 +1865,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_INFORMATION_SOURCE = 214;
+	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_INFORMATION_SOURCE = 220;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Organizer Template Id' of 'Vital Signs Organizer'.
@@ -1816,7 +1873,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_TEMPLATE_ID = 215;
+	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_TEMPLATE_ID = 221;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Template Id' of 'Advance Directive Observation'.
@@ -1824,7 +1881,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID = 216;
+	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID = 222;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Class Code' of 'Advance Directive Observation'.
@@ -1832,7 +1889,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_CLASS_CODE = 217;
+	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_CLASS_CODE = 223;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Mood Code' of 'Advance Directive Observation'.
@@ -1840,7 +1897,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_MOOD_CODE = 218;
+	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_MOOD_CODE = 224;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Id' of 'Advance Directive Observation'.
@@ -1848,7 +1905,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_ID = 219;
+	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_ID = 225;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Status Code' of 'Advance Directive Observation'.
@@ -1856,7 +1913,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_STATUS_CODE = 220;
+	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_STATUS_CODE = 226;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Effective Time' of 'Advance Directive Observation'.
@@ -1864,7 +1921,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_EFFECTIVE_TIME = 221;
+	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_EFFECTIVE_TIME = 227;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Status Observation Template Id' of 'Advance Directive Status Observation'.
@@ -1872,7 +1929,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_STATUS_OBSERVATION__ADVANCE_DIRECTIVE_STATUS_OBSERVATION_TEMPLATE_ID = 222;
+	public static final int ADVANCE_DIRECTIVE_STATUS_OBSERVATION__ADVANCE_DIRECTIVE_STATUS_OBSERVATION_TEMPLATE_ID = 228;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Verification Template Id' of 'Advance Directive Verification'.
@@ -1880,7 +1937,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_VERIFICATION__ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID = 223;
+	public static final int ADVANCE_DIRECTIVE_VERIFICATION__ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID = 229;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Verification Type Code' of 'Advance Directive Verification'.
@@ -1888,7 +1945,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_VERIFICATION__ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE = 224;
+	public static final int ADVANCE_DIRECTIVE_VERIFICATION__ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE = 230;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Verification Time' of 'Advance Directive Verification'.
@@ -1896,7 +1953,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_VERIFICATION__ADVANCE_DIRECTIVE_VERIFICATION_TIME = 225;
+	public static final int ADVANCE_DIRECTIVE_VERIFICATION__ADVANCE_DIRECTIVE_VERIFICATION_TIME = 231;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Template Id' of 'Coverage Activity'.
@@ -1904,7 +1961,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_TEMPLATE_ID = 226;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_TEMPLATE_ID = 232;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Class Code' of 'Coverage Activity'.
@@ -1912,7 +1969,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_CLASS_CODE = 227;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_CLASS_CODE = 233;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Mood Code' of 'Coverage Activity'.
@@ -1920,7 +1977,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_MOOD_CODE = 228;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_MOOD_CODE = 234;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Id' of 'Coverage Activity'.
@@ -1928,7 +1985,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_ID = 229;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_ID = 235;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Status Code' of 'Coverage Activity'.
@@ -1936,7 +1993,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_STATUS_CODE = 230;
+	public static final int COVERAGE_ACTIVITY__COVERAGE_ACTIVITY_STATUS_CODE = 236;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Template Id' of 'Policy Activity'.
@@ -1944,7 +2001,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_TEMPLATE_ID = 231;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_TEMPLATE_ID = 237;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Class Code' of 'Policy Activity'.
@@ -1952,7 +2009,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_CLASS_CODE = 232;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_CLASS_CODE = 238;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Mood Code' of 'Policy Activity'.
@@ -1960,7 +2017,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_MOOD_CODE = 233;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_MOOD_CODE = 239;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Id' of 'Policy Activity'.
@@ -1968,7 +2025,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_ID = 234;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_ID = 240;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Status Code' of 'Policy Activity'.
@@ -1976,7 +2033,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_STATUS_CODE = 235;
+	public static final int POLICY_ACTIVITY__POLICY_ACTIVITY_STATUS_CODE = 241;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Authorization Activity Template Id' of 'Authorization Activity'.
@@ -1984,7 +2041,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AUTHORIZATION_ACTIVITY__AUTHORIZATION_ACTIVITY_TEMPLATE_ID = 236;
+	public static final int AUTHORIZATION_ACTIVITY__AUTHORIZATION_ACTIVITY_TEMPLATE_ID = 242;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Authorization Activity Class Code' of 'Authorization Activity'.
@@ -1992,7 +2049,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AUTHORIZATION_ACTIVITY__AUTHORIZATION_ACTIVITY_CLASS_CODE = 237;
+	public static final int AUTHORIZATION_ACTIVITY__AUTHORIZATION_ACTIVITY_CLASS_CODE = 243;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Authorization Activity Mood Code' of 'Authorization Activity'.
@@ -2000,7 +2057,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AUTHORIZATION_ACTIVITY__AUTHORIZATION_ACTIVITY_MOOD_CODE = 238;
+	public static final int AUTHORIZATION_ACTIVITY__AUTHORIZATION_ACTIVITY_MOOD_CODE = 244;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Authorization Activity Id' of 'Authorization Activity'.
@@ -2008,71 +2065,39 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AUTHORIZATION_ACTIVITY__AUTHORIZATION_ACTIVITY_ID = 239;
+	public static final int AUTHORIZATION_ACTIVITY__AUTHORIZATION_ACTIVITY_ID = 245;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Template Id' of 'Plan Of Care Activity'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Act Mood Code Value' of 'Plan Of Care Act'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY__PLAN_OF_CARE_ACTIVITY_TEMPLATE_ID = 240;
+	public static final int PLAN_OF_CARE_ACT__PLAN_OF_CARE_ACT_MOOD_CODE_VALUE = 246;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Activity Id' of 'Plan Of Care Activity'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Act Template Id' of 'Plan Of Care Act'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_ACTIVITY__PLAN_OF_CARE_ACTIVITY_ID = 241;
+	public static final int PLAN_OF_CARE_ACT__PLAN_OF_CARE_ACT_TEMPLATE_ID = 247;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Activity Template Id' of 'Procedure Activity'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Act Id' of 'Plan Of Care Act'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROCEDURE_ACTIVITY__PROCEDURE_ACTIVITY_TEMPLATE_ID = 242;
+	public static final int PLAN_OF_CARE_ACT__PLAN_OF_CARE_ACT_ID = 248;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Activity Mood Code' of 'Procedure Activity'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Act Mood Code' of 'Plan Of Care Act'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROCEDURE_ACTIVITY__PROCEDURE_ACTIVITY_MOOD_CODE = 243;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Activity Id' of 'Procedure Activity'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int PROCEDURE_ACTIVITY__PROCEDURE_ACTIVITY_ID = 244;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Activity Status Code' of 'Procedure Activity'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int PROCEDURE_ACTIVITY__PROCEDURE_ACTIVITY_STATUS_CODE = 245;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Activity Effective Time' of 'Procedure Activity'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int PROCEDURE_ACTIVITY__PROCEDURE_ACTIVITY_EFFECTIVE_TIME = 246;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Activity Code' of 'Procedure Activity'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int PROCEDURE_ACTIVITY__PROCEDURE_ACTIVITY_CODE = 247;
+	public static final int PLAN_OF_CARE_ACT__PLAN_OF_CARE_ACT_MOOD_CODE = 249;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Instruction Template Id' of 'Patient Instruction'.
@@ -2080,7 +2105,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_INSTRUCTION__PATIENT_INSTRUCTION_TEMPLATE_ID = 248;
+	public static final int PATIENT_INSTRUCTION__PATIENT_INSTRUCTION_TEMPLATE_ID = 250;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Instruction Mood Code' of 'Patient Instruction'.
@@ -2088,7 +2113,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_INSTRUCTION__PATIENT_INSTRUCTION_MOOD_CODE = 249;
+	public static final int PATIENT_INSTRUCTION__PATIENT_INSTRUCTION_MOOD_CODE = 251;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Fulfillment Instruction Template Id' of 'Fulfillment Instruction'.
@@ -2096,7 +2121,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FULFILLMENT_INSTRUCTION__FULFILLMENT_INSTRUCTION_TEMPLATE_ID = 250;
+	public static final int FULFILLMENT_INSTRUCTION__FULFILLMENT_INSTRUCTION_TEMPLATE_ID = 252;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Fulfillment Instruction Mood Code' of 'Fulfillment Instruction'.
@@ -2104,7 +2129,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FULFILLMENT_INSTRUCTION__FULFILLMENT_INSTRUCTION_MOOD_CODE = 251;
+	public static final int FULFILLMENT_INSTRUCTION__FULFILLMENT_INSTRUCTION_MOOD_CODE = 253;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Functional Status Observation Template Id' of 'Functional Status Observation'.
@@ -2112,7 +2137,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_OBSERVATION__FUNCTIONAL_STATUS_OBSERVATION_TEMPLATE_ID = 252;
+	public static final int FUNCTIONAL_STATUS_OBSERVATION__FUNCTIONAL_STATUS_OBSERVATION_TEMPLATE_ID = 254;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Product Instance Template Id' of 'Product Instance'.
@@ -2120,7 +2145,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PRODUCT_INSTANCE__PRODUCT_INSTANCE_TEMPLATE_ID = 253;
+	public static final int PRODUCT_INSTANCE__PRODUCT_INSTANCE_TEMPLATE_ID = 255;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Product Instance Class Code' of 'Product Instance'.
@@ -2128,7 +2153,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PRODUCT_INSTANCE__PRODUCT_INSTANCE_CLASS_CODE = 254;
+	public static final int PRODUCT_INSTANCE__PRODUCT_INSTANCE_CLASS_CODE = 256;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Age Observation Template Id' of 'Age Observation'.
@@ -2136,7 +2161,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AGE_OBSERVATION__AGE_OBSERVATION_TEMPLATE_ID = 255;
+	public static final int AGE_OBSERVATION__AGE_OBSERVATION_TEMPLATE_ID = 257;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Age Observation Class Code' of 'Age Observation'.
@@ -2144,7 +2169,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AGE_OBSERVATION__AGE_OBSERVATION_CLASS_CODE = 256;
+	public static final int AGE_OBSERVATION__AGE_OBSERVATION_CLASS_CODE = 258;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Age Observation Mood Code' of 'Age Observation'.
@@ -2152,7 +2177,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AGE_OBSERVATION__AGE_OBSERVATION_MOOD_CODE = 257;
+	public static final int AGE_OBSERVATION__AGE_OBSERVATION_MOOD_CODE = 259;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Age Observation Code' of 'Age Observation'.
@@ -2160,7 +2185,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AGE_OBSERVATION__AGE_OBSERVATION_CODE = 258;
+	public static final int AGE_OBSERVATION__AGE_OBSERVATION_CODE = 260;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Age Observation Status Code' of 'Age Observation'.
@@ -2168,7 +2193,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AGE_OBSERVATION__AGE_OBSERVATION_STATUS_CODE = 259;
+	public static final int AGE_OBSERVATION__AGE_OBSERVATION_STATUS_CODE = 261;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Age Observation Value' of 'Age Observation'.
@@ -2176,7 +2201,191 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int AGE_OBSERVATION__AGE_OBSERVATION_VALUE = 260;
+	public static final int AGE_OBSERVATION__AGE_OBSERVATION_VALUE = 262;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Observation Mood Code Value' of 'Plan Of Care Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_OBSERVATION__PLAN_OF_CARE_OBSERVATION_MOOD_CODE_VALUE = 263;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Observation Template Id' of 'Plan Of Care Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_OBSERVATION__PLAN_OF_CARE_OBSERVATION_TEMPLATE_ID = 264;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Observation Id' of 'Plan Of Care Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_OBSERVATION__PLAN_OF_CARE_OBSERVATION_ID = 265;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Observation Mood Code' of 'Plan Of Care Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_OBSERVATION__PLAN_OF_CARE_OBSERVATION_MOOD_CODE = 266;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Encounter Mood Code Value' of 'Plan Of Care Encounter'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_ENCOUNTER__PLAN_OF_CARE_ENCOUNTER_MOOD_CODE_VALUE = 267;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Encounter Template Id' of 'Plan Of Care Encounter'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_ENCOUNTER__PLAN_OF_CARE_ENCOUNTER_TEMPLATE_ID = 268;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Encounter Id' of 'Plan Of Care Encounter'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_ENCOUNTER__PLAN_OF_CARE_ENCOUNTER_ID = 269;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Encounter Mood Code' of 'Plan Of Care Encounter'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_ENCOUNTER__PLAN_OF_CARE_ENCOUNTER_MOOD_CODE = 270;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Procedure Mood Code Value' of 'Plan Of Care Procedure'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_PROCEDURE__PLAN_OF_CARE_PROCEDURE_MOOD_CODE_VALUE = 271;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Procedure Template Id' of 'Plan Of Care Procedure'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_PROCEDURE__PLAN_OF_CARE_PROCEDURE_TEMPLATE_ID = 272;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Procedure Id' of 'Plan Of Care Procedure'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_PROCEDURE__PLAN_OF_CARE_PROCEDURE_ID = 273;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Procedure Mood Code' of 'Plan Of Care Procedure'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_PROCEDURE__PLAN_OF_CARE_PROCEDURE_MOOD_CODE = 274;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Substance Administration Mood Code Value' of 'Plan Of Care Substance Administration'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION_MOOD_CODE_VALUE = 275;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Substance Administration Template Id' of 'Plan Of Care Substance Administration'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION_TEMPLATE_ID = 276;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Substance Administration Id' of 'Plan Of Care Substance Administration'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION_ID = 277;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Substance Administration Mood Code' of 'Plan Of Care Substance Administration'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION_MOOD_CODE = 278;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Supply Mood Code Value' of 'Plan Of Care Supply'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SUPPLY__PLAN_OF_CARE_SUPPLY_MOOD_CODE_VALUE = 279;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Supply Template Id' of 'Plan Of Care Supply'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SUPPLY__PLAN_OF_CARE_SUPPLY_TEMPLATE_ID = 280;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Supply Id' of 'Plan Of Care Supply'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SUPPLY__PLAN_OF_CARE_SUPPLY_ID = 281;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Supply Mood Code' of 'Plan Of Care Supply'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PLAN_OF_CARE_SUPPLY__PLAN_OF_CARE_SUPPLY_MOOD_CODE = 282;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Act Template Id' of 'Procedure Act'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROCEDURE_ACT__PROCEDURE_ACT_TEMPLATE_ID = 283;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Observation Template Id' of 'Procedure Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROCEDURE_OBSERVATION__PROCEDURE_OBSERVATION_TEMPLATE_ID = 284;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedure Procedure Template Id' of 'Procedure Procedure'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROCEDURE_PROCEDURE__PROCEDURE_PROCEDURE_TEMPLATE_ID = 285;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -2184,7 +2393,7 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 260;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 285;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -2301,6 +2510,8 @@ public class CCDValidator extends EObjectValidator {
 				return validateProduct((Product)value, diagnostics, context);
 			case CCDPackage.PROCEDURES_SECTION:
 				return validateProceduresSection((ProceduresSection)value, diagnostics, context);
+			case CCDPackage.PROCEDURE_ACTIVITY:
+				return validateProcedureActivity((ProcedureActivity)value, diagnostics, context);
 			case CCDPackage.PLAN_OF_CARE_SECTION:
 				return validatePlanOfCareSection((PlanOfCareSection)value, diagnostics, context);
 			case CCDPackage.VITAL_SIGNS_SECTION:
@@ -2331,10 +2542,8 @@ public class CCDValidator extends EObjectValidator {
 				return validatePolicyActivity((PolicyActivity)value, diagnostics, context);
 			case CCDPackage.AUTHORIZATION_ACTIVITY:
 				return validateAuthorizationActivity((AuthorizationActivity)value, diagnostics, context);
-			case CCDPackage.PLAN_OF_CARE_ACTIVITY:
-				return validatePlanOfCareActivity((PlanOfCareActivity)value, diagnostics, context);
-			case CCDPackage.PROCEDURE_ACTIVITY:
-				return validateProcedureActivity((ProcedureActivity)value, diagnostics, context);
+			case CCDPackage.PLAN_OF_CARE_ACT:
+				return validatePlanOfCareAct((PlanOfCareAct)value, diagnostics, context);
 			case CCDPackage.PATIENT_INSTRUCTION:
 				return validatePatientInstruction((PatientInstruction)value, diagnostics, context);
 			case CCDPackage.FULFILLMENT_INSTRUCTION:
@@ -2345,6 +2554,24 @@ public class CCDValidator extends EObjectValidator {
 				return validateProductInstance((ProductInstance)value, diagnostics, context);
 			case CCDPackage.AGE_OBSERVATION:
 				return validateAgeObservation((AgeObservation)value, diagnostics, context);
+			case CCDPackage.PLAN_OF_CARE_OBSERVATION:
+				return validatePlanOfCareObservation((PlanOfCareObservation)value, diagnostics, context);
+			case CCDPackage.PLAN_OF_CARE_ENCOUNTER:
+				return validatePlanOfCareEncounter((PlanOfCareEncounter)value, diagnostics, context);
+			case CCDPackage.PLAN_OF_CARE_PROCEDURE:
+				return validatePlanOfCareProcedure((PlanOfCareProcedure)value, diagnostics, context);
+			case CCDPackage.PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION:
+				return validatePlanOfCareSubstanceAdministration((PlanOfCareSubstanceAdministration)value, diagnostics, context);
+			case CCDPackage.PLAN_OF_CARE_SUPPLY:
+				return validatePlanOfCareSupply((PlanOfCareSupply)value, diagnostics, context);
+			case CCDPackage.PROCEDURE_ACT:
+				return validateProcedureAct((ProcedureAct)value, diagnostics, context);
+			case CCDPackage.PROCEDURE_OBSERVATION:
+				return validateProcedureObservation((ProcedureObservation)value, diagnostics, context);
+			case CCDPackage.PROCEDURE_PROCEDURE:
+				return validateProcedureProcedure((ProcedureProcedure)value, diagnostics, context);
+			case CCDPackage.CCD_REGISTRY_DELEGATE:
+				return validateCCDRegistryDelegate((CCDRegistryDelegate)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -4829,7 +5056,6 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateProceduresSection_validateProceduresSectionTemplateId(proceduresSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProceduresSection_validateProceduresSectionCode(proceduresSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProceduresSection_validateProceduresSectionTitle(proceduresSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProceduresSection_validateProceduresSectionProcedureActivity(proceduresSection, diagnostics, context);
 		return result;
 	}
 
@@ -4864,16 +5090,6 @@ public class CCDValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateProceduresSectionProcedureActivity constraint of '<em>Procedures Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProceduresSection_validateProceduresSectionProcedureActivity(ProceduresSection proceduresSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return proceduresSection.validateProceduresSectionProcedureActivity(diagnostics, context);
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4886,11 +5102,28 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionContainsPlanOfCareActivity(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionTemplateId(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionCode(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionTitle(planOfCareSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivity(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionText(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareAct(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareEncounter(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareObservation(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareProcedure(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareSubstanceAdministration(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareSupply(planOfCareSection, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSectionContainsPlanOfCareActivity constraint of '<em>Plan Of Care Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSection_validatePlanOfCareSectionContainsPlanOfCareActivity(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSection.validatePlanOfCareSectionContainsPlanOfCareActivity(diagnostics, context);
 	}
 
 	/**
@@ -4924,13 +5157,73 @@ public class CCDValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validatePlanOfCareSectionPlanOfCareActivity constraint of '<em>Plan Of Care Section</em>'.
+	 * Validates the validatePlanOfCareSectionText constraint of '<em>Plan Of Care Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivity(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return planOfCareSection.validatePlanOfCareSectionPlanOfCareActivity(diagnostics, context);
+	public boolean validatePlanOfCareSection_validatePlanOfCareSectionText(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSection.validatePlanOfCareSectionText(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSectionPlanOfCareAct constraint of '<em>Plan Of Care Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareAct(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSection.validatePlanOfCareSectionPlanOfCareAct(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSectionPlanOfCareEncounter constraint of '<em>Plan Of Care Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareEncounter(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSection.validatePlanOfCareSectionPlanOfCareEncounter(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSectionPlanOfCareObservation constraint of '<em>Plan Of Care Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareObservation(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSection.validatePlanOfCareSectionPlanOfCareObservation(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSectionPlanOfCareProcedure constraint of '<em>Plan Of Care Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareProcedure(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSection.validatePlanOfCareSectionPlanOfCareProcedure(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSectionPlanOfCareSubstanceAdministration constraint of '<em>Plan Of Care Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareSubstanceAdministration(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSection.validatePlanOfCareSectionPlanOfCareSubstanceAdministration(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSectionPlanOfCareSupply constraint of '<em>Plan Of Care Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareSupply(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSection.validatePlanOfCareSectionPlanOfCareSupply(diagnostics, context);
 	}
 
 	/**
@@ -5815,37 +6108,59 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePlanOfCareActivity(PlanOfCareActivity planOfCareActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		boolean result = validate_EveryMultiplicityConforms(planOfCareActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(planOfCareActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePlanOfCareActivity_validatePlanOfCareActivityTemplateId(planOfCareActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePlanOfCareActivity_validatePlanOfCareActivityId(planOfCareActivity, diagnostics, context);
+	public boolean validatePlanOfCareAct(PlanOfCareAct planOfCareAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(planOfCareAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(planOfCareAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareAct_validatePlanOfCareActMoodCodeValue(planOfCareAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareAct_validatePlanOfCareActTemplateId(planOfCareAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareAct_validatePlanOfCareActId(planOfCareAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareAct_validatePlanOfCareActMoodCode(planOfCareAct, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validatePlanOfCareActivityTemplateId constraint of '<em>Plan Of Care Activity</em>'.
+	 * Validates the validatePlanOfCareActMoodCodeValue constraint of '<em>Plan Of Care Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePlanOfCareActivity_validatePlanOfCareActivityTemplateId(PlanOfCareActivity planOfCareActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return planOfCareActivity.validatePlanOfCareActivityTemplateId(diagnostics, context);
+	public boolean validatePlanOfCareAct_validatePlanOfCareActMoodCodeValue(PlanOfCareAct planOfCareAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareAct.validatePlanOfCareActMoodCodeValue(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validatePlanOfCareActivityId constraint of '<em>Plan Of Care Activity</em>'.
+	 * Validates the validatePlanOfCareActTemplateId constraint of '<em>Plan Of Care Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePlanOfCareActivity_validatePlanOfCareActivityId(PlanOfCareActivity planOfCareActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return planOfCareActivity.validatePlanOfCareActivityId(diagnostics, context);
+	public boolean validatePlanOfCareAct_validatePlanOfCareActTemplateId(PlanOfCareAct planOfCareAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareAct.validatePlanOfCareActTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareActId constraint of '<em>Plan Of Care Act</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareAct_validatePlanOfCareActId(PlanOfCareAct planOfCareAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareAct.validatePlanOfCareActId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareActMoodCode constraint of '<em>Plan Of Care Act</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareAct_validatePlanOfCareActMoodCode(PlanOfCareAct planOfCareAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareAct.validatePlanOfCareActMoodCode(diagnostics, context);
 	}
 
 	/**
@@ -5854,80 +6169,7 @@ public class CCDValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateProcedureActivity(ProcedureActivity procedureActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		boolean result = validate_EveryMultiplicityConforms(procedureActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(procedureActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(procedureActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(procedureActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(procedureActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(procedureActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(procedureActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProcedureActivity_validateProcedureActivityTemplateId(procedureActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProcedureActivity_validateProcedureActivityMoodCode(procedureActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProcedureActivity_validateProcedureActivityId(procedureActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProcedureActivity_validateProcedureActivityStatusCode(procedureActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProcedureActivity_validateProcedureActivityEffectiveTime(procedureActivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProcedureActivity_validateProcedureActivityCode(procedureActivity, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the validateProcedureActivityTemplateId constraint of '<em>Procedure Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProcedureActivity_validateProcedureActivityTemplateId(ProcedureActivity procedureActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return procedureActivity.validateProcedureActivityTemplateId(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateProcedureActivityMoodCode constraint of '<em>Procedure Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProcedureActivity_validateProcedureActivityMoodCode(ProcedureActivity procedureActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return procedureActivity.validateProcedureActivityMoodCode(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateProcedureActivityId constraint of '<em>Procedure Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProcedureActivity_validateProcedureActivityId(ProcedureActivity procedureActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return procedureActivity.validateProcedureActivityId(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateProcedureActivityStatusCode constraint of '<em>Procedure Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProcedureActivity_validateProcedureActivityStatusCode(ProcedureActivity procedureActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return procedureActivity.validateProcedureActivityStatusCode(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateProcedureActivityEffectiveTime constraint of '<em>Procedure Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProcedureActivity_validateProcedureActivityEffectiveTime(ProcedureActivity procedureActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return procedureActivity.validateProcedureActivityEffectiveTime(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateProcedureActivityCode constraint of '<em>Procedure Activity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProcedureActivity_validateProcedureActivityCode(ProcedureActivity procedureActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return procedureActivity.validateProcedureActivityCode(diagnostics, context);
+		return validate_EveryDefaultConstraint(procedureActivity, diagnostics, context);
 	}
 
 	/**
@@ -6159,6 +6401,396 @@ public class CCDValidator extends EObjectValidator {
 	 */
 	public boolean validateAgeObservation_validateAgeObservationValue(AgeObservation ageObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ageObservation.validateAgeObservationValue(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareObservation(PlanOfCareObservation planOfCareObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(planOfCareObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(planOfCareObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareObservation_validatePlanOfCareObservationMoodCodeValue(planOfCareObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareObservation_validatePlanOfCareObservationTemplateId(planOfCareObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareObservation_validatePlanOfCareObservationId(planOfCareObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareObservation_validatePlanOfCareObservationMoodCode(planOfCareObservation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validatePlanOfCareObservationMoodCodeValue constraint of '<em>Plan Of Care Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareObservation_validatePlanOfCareObservationMoodCodeValue(PlanOfCareObservation planOfCareObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareObservation.validatePlanOfCareObservationMoodCodeValue(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareObservationTemplateId constraint of '<em>Plan Of Care Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareObservation_validatePlanOfCareObservationTemplateId(PlanOfCareObservation planOfCareObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareObservation.validatePlanOfCareObservationTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareObservationId constraint of '<em>Plan Of Care Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareObservation_validatePlanOfCareObservationId(PlanOfCareObservation planOfCareObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareObservation.validatePlanOfCareObservationId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareObservationMoodCode constraint of '<em>Plan Of Care Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareObservation_validatePlanOfCareObservationMoodCode(PlanOfCareObservation planOfCareObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareObservation.validatePlanOfCareObservationMoodCode(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareEncounter(PlanOfCareEncounter planOfCareEncounter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(planOfCareEncounter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareEncounter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareEncounter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareEncounter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareEncounter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareEncounter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(planOfCareEncounter, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareEncounter_validatePlanOfCareEncounterMoodCodeValue(planOfCareEncounter, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareEncounter_validatePlanOfCareEncounterTemplateId(planOfCareEncounter, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareEncounter_validatePlanOfCareEncounterId(planOfCareEncounter, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareEncounter_validatePlanOfCareEncounterMoodCode(planOfCareEncounter, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validatePlanOfCareEncounterMoodCodeValue constraint of '<em>Plan Of Care Encounter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareEncounter_validatePlanOfCareEncounterMoodCodeValue(PlanOfCareEncounter planOfCareEncounter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareEncounter.validatePlanOfCareEncounterMoodCodeValue(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareEncounterTemplateId constraint of '<em>Plan Of Care Encounter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareEncounter_validatePlanOfCareEncounterTemplateId(PlanOfCareEncounter planOfCareEncounter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareEncounter.validatePlanOfCareEncounterTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareEncounterId constraint of '<em>Plan Of Care Encounter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareEncounter_validatePlanOfCareEncounterId(PlanOfCareEncounter planOfCareEncounter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareEncounter.validatePlanOfCareEncounterId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareEncounterMoodCode constraint of '<em>Plan Of Care Encounter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareEncounter_validatePlanOfCareEncounterMoodCode(PlanOfCareEncounter planOfCareEncounter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareEncounter.validatePlanOfCareEncounterMoodCode(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareProcedure(PlanOfCareProcedure planOfCareProcedure, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(planOfCareProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(planOfCareProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareProcedure_validatePlanOfCareProcedureMoodCodeValue(planOfCareProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareProcedure_validatePlanOfCareProcedureTemplateId(planOfCareProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareProcedure_validatePlanOfCareProcedureId(planOfCareProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareProcedure_validatePlanOfCareProcedureMoodCode(planOfCareProcedure, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validatePlanOfCareProcedureMoodCodeValue constraint of '<em>Plan Of Care Procedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareProcedure_validatePlanOfCareProcedureMoodCodeValue(PlanOfCareProcedure planOfCareProcedure, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareProcedure.validatePlanOfCareProcedureMoodCodeValue(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareProcedureTemplateId constraint of '<em>Plan Of Care Procedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareProcedure_validatePlanOfCareProcedureTemplateId(PlanOfCareProcedure planOfCareProcedure, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareProcedure.validatePlanOfCareProcedureTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareProcedureId constraint of '<em>Plan Of Care Procedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareProcedure_validatePlanOfCareProcedureId(PlanOfCareProcedure planOfCareProcedure, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareProcedure.validatePlanOfCareProcedureId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareProcedureMoodCode constraint of '<em>Plan Of Care Procedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareProcedure_validatePlanOfCareProcedureMoodCode(PlanOfCareProcedure planOfCareProcedure, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareProcedure.validatePlanOfCareProcedureMoodCode(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSubstanceAdministration(PlanOfCareSubstanceAdministration planOfCareSubstanceAdministration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(planOfCareSubstanceAdministration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareSubstanceAdministration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareSubstanceAdministration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareSubstanceAdministration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareSubstanceAdministration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareSubstanceAdministration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(planOfCareSubstanceAdministration, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSubstanceAdministration_validatePlanOfCareSubstanceAdministrationMoodCodeValue(planOfCareSubstanceAdministration, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSubstanceAdministration_validatePlanOfCareSubstanceAdministrationTemplateId(planOfCareSubstanceAdministration, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSubstanceAdministration_validatePlanOfCareSubstanceAdministrationId(planOfCareSubstanceAdministration, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSubstanceAdministration_validatePlanOfCareSubstanceAdministrationMoodCode(planOfCareSubstanceAdministration, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSubstanceAdministrationMoodCodeValue constraint of '<em>Plan Of Care Substance Administration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSubstanceAdministration_validatePlanOfCareSubstanceAdministrationMoodCodeValue(PlanOfCareSubstanceAdministration planOfCareSubstanceAdministration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSubstanceAdministration.validatePlanOfCareSubstanceAdministrationMoodCodeValue(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSubstanceAdministrationTemplateId constraint of '<em>Plan Of Care Substance Administration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSubstanceAdministration_validatePlanOfCareSubstanceAdministrationTemplateId(PlanOfCareSubstanceAdministration planOfCareSubstanceAdministration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSubstanceAdministration.validatePlanOfCareSubstanceAdministrationTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSubstanceAdministrationId constraint of '<em>Plan Of Care Substance Administration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSubstanceAdministration_validatePlanOfCareSubstanceAdministrationId(PlanOfCareSubstanceAdministration planOfCareSubstanceAdministration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSubstanceAdministration.validatePlanOfCareSubstanceAdministrationId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSubstanceAdministrationMoodCode constraint of '<em>Plan Of Care Substance Administration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSubstanceAdministration_validatePlanOfCareSubstanceAdministrationMoodCode(PlanOfCareSubstanceAdministration planOfCareSubstanceAdministration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSubstanceAdministration.validatePlanOfCareSubstanceAdministrationMoodCode(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSupply(PlanOfCareSupply planOfCareSupply, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(planOfCareSupply, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(planOfCareSupply, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(planOfCareSupply, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(planOfCareSupply, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareSupply, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareSupply, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(planOfCareSupply, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSupply_validatePlanOfCareSupplyMoodCodeValue(planOfCareSupply, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSupply_validatePlanOfCareSupplyTemplateId(planOfCareSupply, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSupply_validatePlanOfCareSupplyId(planOfCareSupply, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSupply_validatePlanOfCareSupplyMoodCode(planOfCareSupply, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSupplyMoodCodeValue constraint of '<em>Plan Of Care Supply</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSupply_validatePlanOfCareSupplyMoodCodeValue(PlanOfCareSupply planOfCareSupply, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSupply.validatePlanOfCareSupplyMoodCodeValue(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSupplyTemplateId constraint of '<em>Plan Of Care Supply</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSupply_validatePlanOfCareSupplyTemplateId(PlanOfCareSupply planOfCareSupply, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSupply.validatePlanOfCareSupplyTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSupplyId constraint of '<em>Plan Of Care Supply</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSupply_validatePlanOfCareSupplyId(PlanOfCareSupply planOfCareSupply, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSupply.validatePlanOfCareSupplyId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePlanOfCareSupplyMoodCode constraint of '<em>Plan Of Care Supply</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareSupply_validatePlanOfCareSupplyMoodCode(PlanOfCareSupply planOfCareSupply, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSupply.validatePlanOfCareSupplyMoodCode(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProcedureAct(ProcedureAct procedureAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(procedureAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(procedureAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(procedureAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(procedureAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(procedureAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(procedureAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(procedureAct, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProcedureAct_validateProcedureActTemplateId(procedureAct, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateProcedureActTemplateId constraint of '<em>Procedure Act</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProcedureAct_validateProcedureActTemplateId(ProcedureAct procedureAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return procedureAct.validateProcedureActTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProcedureObservation(ProcedureObservation procedureObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(procedureObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(procedureObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(procedureObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(procedureObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(procedureObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(procedureObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(procedureObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProcedureObservation_validateProcedureObservationTemplateId(procedureObservation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateProcedureObservationTemplateId constraint of '<em>Procedure Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProcedureObservation_validateProcedureObservationTemplateId(ProcedureObservation procedureObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return procedureObservation.validateProcedureObservationTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProcedureProcedure(ProcedureProcedure procedureProcedure, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(procedureProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(procedureProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(procedureProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(procedureProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(procedureProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(procedureProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(procedureProcedure, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProcedureProcedure_validateProcedureProcedureTemplateId(procedureProcedure, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateProcedureProcedureTemplateId constraint of '<em>Procedure Procedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProcedureProcedure_validateProcedureProcedureTemplateId(ProcedureProcedure procedureProcedure, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return procedureProcedure.validateProcedureProcedureTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCCDRegistryDelegate(CCDRegistryDelegate ccdRegistryDelegate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(ccdRegistryDelegate, diagnostics, context);
 	}
 
 	/**
