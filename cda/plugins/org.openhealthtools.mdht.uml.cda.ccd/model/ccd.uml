@@ -187,7 +187,7 @@
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_AfkIQKRqEd6t_4WfM070fA" name="languageCode" visibility="private" aggregation="composite">
-        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AfkIQaRqEd6t_4WfM070fA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AfkIQqRqEd6t_4WfM070fA" value="1"/>
       </ownedAttribute>
@@ -1327,6 +1327,16 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | &#13;
     management, patient safety, and healthcare quality improvements, including widely accepted performance measures.&#13;
 &lt;/p&gt;</body>
       </ownedComment>
+      <ownedRule xmi:id="_DtRHQDHsEd-saqiXO4OYhQ" name="containsPlanOfCareActivity" constrainedElement="_o9nLAKPTEd6t_4WfM070fA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_DtRuUDHsEd-saqiXO4OYhQ">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>Contains one or more plan of care activities, represented with Act, Encounter, Observation, Procedure, SubstanceAdministration, or Supply.</body>
+          <body>not self.planOfCareAct-&gt;isEmpty() or not self.planOfCareEncounter-&gt;isEmpty()&#13;
+  or not self.planOfCareObservation-&gt;isEmpty() or not self.planOfCareProcedure-&gt;isEmpty()&#13;
+  or not self.planOfCareSubstanceAdministration-&gt;isEmpty() or not self.planOfCareSupply-&gt;isEmpty()</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_2Hub4KPTEd6t_4WfM070fA">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
       </generalization>
@@ -1336,9 +1346,35 @@ or (self.entryRelationship-&gt;exists(rel : cda::EntryRelationship | &#13;
       <ownedAttribute xmi:id="_2FKcUMJtEd6-XpBv2uxYrQ" name="title" visibility="private">
         <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg?datatypes/ST?"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_v8lfEMJuEd6-XpBv2uxYrQ" name="planOfCareActivity" visibility="private" type="_azWbgMJuEd6-XpBv2uxYrQ" association="_v8kQ8MJuEd6-XpBv2uxYrQ">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v8mGIMJuEd6-XpBv2uxYrQ" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v8lfEcJuEd6-XpBv2uxYrQ" value="1"/>
+      <ownedAttribute xmi:id="_NnywUDHkEd-saqiXO4OYhQ" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jvq8E8AEd6ohP_YEXs4Wg?cda/StrucDocText?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PeM4UDHkEd-saqiXO4OYhQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PeRJwDHkEd-saqiXO4OYhQ" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_vJtnoEAMEd6wZe6nFLrjsw?cda/Section/text?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_fi3nEDHqEd-saqiXO4OYhQ" name="planOfCareAct" visibility="private" type="_azWbgMJuEd6-XpBv2uxYrQ" association="_fizVoDHqEd-saqiXO4OYhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fjFpgDHqEd-saqiXO4OYhQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fjEbYDHqEd-saqiXO4OYhQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_gMucYDHqEd-saqiXO4OYhQ" name="planOfCareEncounter" visibility="private" type="_EGZnsDHmEd-saqiXO4OYhQ" association="_gMsnMDHqEd-saqiXO4OYhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gMvqgTHqEd-saqiXO4OYhQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gMvqgDHqEd-saqiXO4OYhQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_gpLu4DHqEd-saqiXO4OYhQ" name="planOfCareObservation" visibility="private" type="_7I79cDHlEd-saqiXO4OYhQ" association="_gpJSoDHqEd-saqiXO4OYhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gpM9ADHqEd-saqiXO4OYhQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gpMV8DHqEd-saqiXO4OYhQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_hHEkwDHqEd-saqiXO4OYhQ" name="planOfCareProcedure" visibility="private" type="_1z0WEDHpEd-saqiXO4OYhQ" association="_hHCvkDHqEd-saqiXO4OYhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hHFy4THqEd-saqiXO4OYhQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hHFy4DHqEd-saqiXO4OYhQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_hiq7oDHqEd-saqiXO4OYhQ" name="planOfCareSubstanceAdministration" visibility="private" type="_9Yav8DHpEd-saqiXO4OYhQ" association="_hipGcDHqEd-saqiXO4OYhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hirisDHqEd-saqiXO4OYhQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hiq7oTHqEd-saqiXO4OYhQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_iUbIsDHqEd-saqiXO4OYhQ" name="planOfCareSupply" visibility="private" type="_A9YrgDHqEd-saqiXO4OYhQ" association="_iUZTgDHqEd-saqiXO4OYhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iUbvwTHqEd-saqiXO4OYhQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iUbvwDHqEd-saqiXO4OYhQ"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_FT-joKPUEd6t_4WfM070fA" memberEnd="_FT_xwKPUEd6t_4WfM070fA _FUBm8KPUEd6t_4WfM070fA">
@@ -1826,7 +1862,15 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q0nxosJsEd6-XpBv2uxYrQ" value="1"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_azWbgMJuEd6-XpBv2uxYrQ" name="PlanOfCareActivity">
+    <packagedElement xmi:type="uml:Class" xmi:id="_azWbgMJuEd6-XpBv2uxYrQ" name="PlanOfCareAct">
+      <ownedRule xmi:id="_QLZmcDHtEd-saqiXO4OYhQ" name="moodCodeValue" constrainedElement="_tIW-oDHlEd-saqiXO4OYhQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_QLZmcTHtEd-saqiXO4OYhQ">
+          <language>OCL</language>
+          <body>self.moodCode = vocab::x_DocumentActMood::INT or self.moodCode = vocab::x_DocumentActMood::ARQ&#13;
+  or self.moodCode = vocab::x_DocumentActMood::PRMS or self.moodCode = vocab::x_DocumentActMood::PRP&#13;
+  or self.moodCode = vocab::x_DocumentActMood::RQO</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_fk4Q0MJuEd6-XpBv2uxYrQ">
         <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg?cda/Act?"/>
       </generalization>
@@ -1835,17 +1879,12 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_I6-5gcJzEd6-XpBv2uxYrQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_I6-5gsJzEd6-XpBv2uxYrQ" value="1"/>
       </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_v8kQ8MJuEd6-XpBv2uxYrQ" memberEnd="_v8lfEMJuEd6-XpBv2uxYrQ _v8mtMMJuEd6-XpBv2uxYrQ">
-      <ownedEnd xmi:id="_v8mtMMJuEd6-XpBv2uxYrQ" name="" visibility="private" type="_o9nLAKPTEd6t_4WfM070fA" association="_v8kQ8MJuEd6-XpBv2uxYrQ">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v8nUQcJuEd6-XpBv2uxYrQ" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v8nUQMJuEd6-XpBv2uxYrQ"/>
-      </ownedEnd>
+      <ownedAttribute xmi:id="_tIW-oDHlEd-saqiXO4OYhQ" name="moodCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOpkkDcEd6xYZuu1VKCVw?vocab/x_DocumentActMood?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_yWn-AEocEd6c3qsAxlFHaQ?cda/Act/moodCode?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_HDKxYMJ1Ed6-XpBv2uxYrQ" name="ProcedureActivity">
-      <generalization xmi:id="_NZRX0MJ1Ed6-XpBv2uxYrQ">
-        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg?cda/Act?"/>
-      </generalization>
       <ownedAttribute xmi:id="_nMZ-s8J1Ed6-XpBv2uxYrQ" name="moodCode" visibility="private" isReadOnly="true">
         <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yeW3UDcEd6xYZuu1VKCVw?vocab/ActMood?"/>
         <defaultValue xmi:type="uml:InstanceValue" xmi:id="_nMZ-tMJ1Ed6-XpBv2uxYrQ" name="EVN">
@@ -2021,6 +2060,174 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
     <packagedElement xmi:type="uml:Association" xmi:id="_LoyYIBtKEd-vGNAsDUJvgw" memberEnd="_LoxxEBtKEd-vGNAsDUJvgw _Loy_MBtKEd-vGNAsDUJvgw">
       <ownedEnd xmi:id="_Loy_MBtKEd-vGNAsDUJvgw" type="_CinbMHDPEd6eItyqb1FoWg" association="_LoyYIBtKEd-vGNAsDUJvgw"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_7I79cDHlEd-saqiXO4OYhQ" name="PlanOfCareObservation">
+      <ownedRule xmi:id="_PNzgUDHuEd-saqiXO4OYhQ" name="moodCodeValue" constrainedElement="_DWAvwDHqEd-saqiXO4OYhQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_PNzgUTHuEd-saqiXO4OYhQ">
+          <language>OCL</language>
+          <body>self.moodCode = vocab::x_ActMoodDocumentObservation::INT or self.moodCode = vocab::x_ActMoodDocumentObservation::GOL&#13;
+  or self.moodCode = vocab::x_ActMoodDocumentObservation::PRMS or self.moodCode = vocab::x_ActMoodDocumentObservation::PRP&#13;
+  or self.moodCode = vocab::x_ActMoodDocumentObservation::RQO</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_y_KSkDHoEd-saqiXO4OYhQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_7I79cjHlEd-saqiXO4OYhQ" name="id" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_drmG8DHrEd-saqiXO4OYhQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_drmG8THrEd-saqiXO4OYhQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_DWAvwDHqEd-saqiXO4OYhQ" name="moodCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOoCEDcEd6xYZuu1VKCVw?vocab/x_ActMoodDocumentObservation?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_BLZhcEo_Ed6c3qsAxlFHaQ?cda/Observation/moodCode?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EGZnsDHmEd-saqiXO4OYhQ" name="PlanOfCareEncounter">
+      <ownedRule xmi:id="_rXlD4DHtEd-saqiXO4OYhQ" name="moodCodeValue" constrainedElement="_F3vCcDHmEd-saqiXO4OYhQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_rXlq8DHtEd-saqiXO4OYhQ">
+          <language>OCL</language>
+          <body>self.moodCode = vocab::x_DocumentEncounterMood::INT or self.moodCode = vocab::x_DocumentEncounterMood::ARQ&#13;
+  or self.moodCode = vocab::x_DocumentEncounterMood::PRMS or self.moodCode = vocab::x_DocumentEncounterMood::PRP&#13;
+  or self.moodCode = vocab::x_DocumentEncounterMood::RQO</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_EGaOwDHmEd-saqiXO4OYhQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_AAXtEEbvEd6besF9iFIJkQ?cda/Encounter?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_F3ubYDHmEd-saqiXO4OYhQ" name="id" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cfrtcDHrEd-saqiXO4OYhQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cfsUgDHrEd-saqiXO4OYhQ" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_DKBLQEo0Ed6c3qsAxlFHaQ?cda/Encounter/id?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_F3vCcDHmEd-saqiXO4OYhQ" name="moodCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOpnUDcEd6xYZuu1VKCVw?vocab/x_DocumentEncounterMood?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_F3vCcTHmEd-saqiXO4OYhQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_F3vCcjHmEd-saqiXO4OYhQ" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_SaymoEo0Ed6c3qsAxlFHaQ?cda/Encounter/moodCode?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1z0WEDHpEd-saqiXO4OYhQ" name="PlanOfCareProcedure">
+      <ownedRule xmi:id="_v3_UADHtEd-saqiXO4OYhQ" name="moodCodeValue" constrainedElement="_3eAnADHpEd-saqiXO4OYhQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_v3_7EDHtEd-saqiXO4OYhQ">
+          <language>OCL</language>
+          <body>self.moodCode = vocab::x_DocumentProcedureMood::INT or self.moodCode = vocab::x_DocumentProcedureMood::ARQ&#13;
+  or self.moodCode = vocab::x_DocumentProcedureMood::PRMS or self.moodCode = vocab::x_DocumentProcedureMood::PRP&#13;
+  or self.moodCode = vocab::x_DocumentProcedureMood::RQO</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_1z09IDHpEd-saqiXO4OYhQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_-jiisEbuEd6besF9iFIJkQ?cda/Procedure?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_3d__8DHpEd-saqiXO4OYhQ" name="id" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eSSTgDHrEd-saqiXO4OYhQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eSS6kDHrEd-saqiXO4OYhQ" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_mIND0ErhEd6FXKclYGEDCw?cda/Procedure/id?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_3eAnADHpEd-saqiXO4OYhQ" name="moodCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOprUDcEd6xYZuu1VKCVw?vocab/x_DocumentProcedureMood?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_MIhZQEriEd6FXKclYGEDCw?cda/Procedure/moodCode?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_9Yav8DHpEd-saqiXO4OYhQ" name="PlanOfCareSubstanceAdministration">
+      <ownedRule xmi:id="_4p844DHtEd-saqiXO4OYhQ" name="moodCodeValue" constrainedElement="_-UyRkDHpEd-saqiXO4OYhQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_4p844THtEd-saqiXO4OYhQ">
+          <language>OCL</language>
+          <body>self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO&#13;
+  or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_9Yb-EDHpEd-saqiXO4OYhQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_nazskEbuEd6besF9iFIJkQ?cda/SubstanceAdministration?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_-UxqgDHpEd-saqiXO4OYhQ" name="id" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fG_G4DHrEd-saqiXO4OYhQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fG_G4THrEd-saqiXO4OYhQ" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_fBT4oErsEd6FXKclYGEDCw?cda/SubstanceAdministration/id?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_-UyRkDHpEd-saqiXO4OYhQ" name="moodCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOpxEDcEd6xYZuu1VKCVw?vocab/x_DocumentSubstanceMood?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bN2_sErtEd6FXKclYGEDCw?cda/SubstanceAdministration/moodCode?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_A9YrgDHqEd-saqiXO4OYhQ" name="PlanOfCareSupply">
+      <ownedRule xmi:id="_CMr98DHvEd-saqiXO4OYhQ" name="moodCodeValue" constrainedElement="_BpotgDHqEd-saqiXO4OYhQ">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_CMr98THvEd-saqiXO4OYhQ">
+          <language>OCL</language>
+          <body>self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO&#13;
+  or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_A9ZSkDHqEd-saqiXO4OYhQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_3gL0sEbuEd6besF9iFIJkQ?cda/Supply?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_BpoGcDHqEd-saqiXO4OYhQ" name="id" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fnZFQDHrEd-saqiXO4OYhQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fnZFQTHrEd-saqiXO4OYhQ" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_x1NnEErtEd6FXKclYGEDCw?cda/Supply/id?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_BpotgDHqEd-saqiXO4OYhQ" name="moodCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOpxEDcEd6xYZuu1VKCVw?vocab/x_DocumentSubstanceMood?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_U-F1UEruEd6FXKclYGEDCw?cda/Supply/moodCode?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_fizVoDHqEd-saqiXO4OYhQ" memberEnd="_fi3nEDHqEd-saqiXO4OYhQ _fjIFwDHqEd-saqiXO4OYhQ">
+      <ownedEnd xmi:id="_fjIFwDHqEd-saqiXO4OYhQ" name="" visibility="private" type="_o9nLAKPTEd6t_4WfM070fA" association="_fizVoDHqEd-saqiXO4OYhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fjLJETHqEd-saqiXO4OYhQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fjLJEDHqEd-saqiXO4OYhQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_gMsnMDHqEd-saqiXO4OYhQ" memberEnd="_gMucYDHqEd-saqiXO4OYhQ _gMwRkDHqEd-saqiXO4OYhQ">
+      <ownedEnd xmi:id="_gMwRkDHqEd-saqiXO4OYhQ" name="" visibility="private" type="_o9nLAKPTEd6t_4WfM070fA" association="_gMsnMDHqEd-saqiXO4OYhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gMw4oTHqEd-saqiXO4OYhQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gMw4oDHqEd-saqiXO4OYhQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_gpJSoDHqEd-saqiXO4OYhQ" memberEnd="_gpLu4DHqEd-saqiXO4OYhQ _gpOLIDHqEd-saqiXO4OYhQ">
+      <ownedEnd xmi:id="_gpOLIDHqEd-saqiXO4OYhQ" name="" visibility="private" type="_o9nLAKPTEd6t_4WfM070fA" association="_gpJSoDHqEd-saqiXO4OYhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gpOyMTHqEd-saqiXO4OYhQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gpOyMDHqEd-saqiXO4OYhQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_hHCvkDHqEd-saqiXO4OYhQ" memberEnd="_hHEkwDHqEd-saqiXO4OYhQ _hHHBADHqEd-saqiXO4OYhQ">
+      <ownedEnd xmi:id="_hHHBADHqEd-saqiXO4OYhQ" name="" visibility="private" type="_o9nLAKPTEd6t_4WfM070fA" association="_hHCvkDHqEd-saqiXO4OYhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hHI2MDHqEd-saqiXO4OYhQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hHIPIDHqEd-saqiXO4OYhQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_hipGcDHqEd-saqiXO4OYhQ" memberEnd="_hiq7oDHqEd-saqiXO4OYhQ _hisJwDHqEd-saqiXO4OYhQ">
+      <ownedEnd xmi:id="_hisJwDHqEd-saqiXO4OYhQ" name="" visibility="private" type="_o9nLAKPTEd6t_4WfM070fA" association="_hipGcDHqEd-saqiXO4OYhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hisw0THqEd-saqiXO4OYhQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hisw0DHqEd-saqiXO4OYhQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_iUZTgDHqEd-saqiXO4OYhQ" memberEnd="_iUbIsDHqEd-saqiXO4OYhQ _iUeMADHqEd-saqiXO4OYhQ">
+      <ownedEnd xmi:id="_iUeMADHqEd-saqiXO4OYhQ" name="" visibility="private" type="_o9nLAKPTEd6t_4WfM070fA" association="_iUZTgDHqEd-saqiXO4OYhQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iUezETHqEd-saqiXO4OYhQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iUezEDHqEd-saqiXO4OYhQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_to5TUDH6Ed-saqiXO4OYhQ" name="ProcedureAct">
+      <generalization xmi:id="_to7vkDH6Ed-saqiXO4OYhQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg?cda/Act?"/>
+      </generalization>
+      <generalization xmi:id="_Sv6pQDH7Ed-saqiXO4OYhQ" general="_HDKxYMJ1Ed6-XpBv2uxYrQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_3lHE0DH6Ed-saqiXO4OYhQ" name="ProcedureObservation">
+      <generalization xmi:id="_3lHr4DH6Ed-saqiXO4OYhQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
+      </generalization>
+      <generalization xmi:id="_TNWzMDH7Ed-saqiXO4OYhQ" general="_HDKxYMJ1Ed6-XpBv2uxYrQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6mhnYDH6Ed-saqiXO4OYhQ" name="ProcedureProcedure">
+      <generalization xmi:id="_6miOcDH6Ed-saqiXO4OYhQ">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda/model/cda.uml#_-jiisEbuEd6besF9iFIJkQ?cda/Procedure?"/>
+      </generalization>
+      <generalization xmi:id="_Tmd2wDH7Ed-saqiXO4OYhQ" general="_HDKxYMJ1Ed6-XpBv2uxYrQ"/>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -2167,11 +2374,9 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
   <CDA:PropertyValidation xmi:id="_q0o_w8JsEd6-XpBv2uxYrQ" message="CCD Authorization Activity SHALL contain [1..1] @classCode = &quot;ACT&quot;" base_Property="_q0oYsMJsEd6-XpBv2uxYrQ"/>
   <CDA:PropertyValidation xmi:id="_q0o_xcJsEd6-XpBv2uxYrQ" message="CCD Authorization Activity SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_q0o_wMJsEd6-XpBv2uxYrQ"/>
   <CDA:TextValue xmi:id="_2FLDYMJtEd6-XpBv2uxYrQ" message="CCD Plan Of Care Section SHALL contain [1..1] title" base_Property="_2FKcUMJtEd6-XpBv2uxYrQ"/>
-  <CDA:CDATemplate xmi:id="_iPutgMJuEd6-XpBv2uxYrQ" message="CCD Plan Of Care Activity SHALL contain the template identifier 2.16.840.1.113883.10.20.1.25" base_Class="_azWbgMJuEd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.25" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_3rWhkMJuEd6-XpBv2uxYrQ" message="CCD Plan Of Care Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Plan Of Care Activity (templateId: 2.16.840.1.113883.10.20.1.25)" base_Association="_v8kQ8MJuEd6-XpBv2uxYrQ"/>
-  <CDA:PropertyValidation xmi:id="_I6_gkMJzEd6-XpBv2uxYrQ" message="CCD Plan Of Care Activity SHALL contain [1..*] id" base_Property="_I6-5gMJzEd6-XpBv2uxYrQ"/>
-  <CDA:CDATemplate xmi:id="_OqVXEMJ1Ed6-XpBv2uxYrQ" message="CCD Procedure Activity SHALL contain the template identifier 2.16.840.1.113883.10.20.1.29" base_Class="_HDKxYMJ1Ed6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD"/>
-  <CDA:AssociationValidation xmi:id="_W_edEMJ1Ed6-XpBv2uxYrQ" message="CCD Procedures Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] Procedure Activity (templateId: 2.16.840.1.113883.10.20.1.29)" severity="WARNING" base_Association="_T9G4QMJ1Ed6-XpBv2uxYrQ"/>
+  <CDA:CDATemplate xmi:id="_iPutgMJuEd6-XpBv2uxYrQ" message="CCD Plan Of Care Act SHALL contain the template identifier 2.16.840.1.113883.10.20.1.25" base_Class="_azWbgMJuEd6-XpBv2uxYrQ" templateId="2.16.840.1.113883.10.20.1.25" assigningAuthorityName="CCD" contextDependent="true"/>
+  <CDA:PropertyValidation xmi:id="_I6_gkMJzEd6-XpBv2uxYrQ" message="CCD Plan Of Care Act SHALL contain [1..*] id" base_Property="_I6-5gMJzEd6-XpBv2uxYrQ"/>
+  <CDA:AssociationValidation xmi:id="_W_edEMJ1Ed6-XpBv2uxYrQ" message="CCD Procedures Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] Procedure Activity" severity="WARNING" base_Association="_T9G4QMJ1Ed6-XpBv2uxYrQ"/>
   <CDA:PropertyValidation xmi:id="_nMalwsJ1Ed6-XpBv2uxYrQ" message="CCD Procedure Activity SHOULD contain [0..1] effectiveTime" severity="WARNING" base_Property="_nMZ-sMJ1Ed6-XpBv2uxYrQ"/>
   <CDA:PropertyValidation xmi:id="_nMalw8J1Ed6-XpBv2uxYrQ" message="CCD Procedure Activity SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_nMZ-s8J1Ed6-XpBv2uxYrQ"/>
   <CDA:PropertyValidation xmi:id="_nMalxMJ1Ed6-XpBv2uxYrQ" message="CCD Procedure Activity SHALL contain [1..*] id" base_Property="_nMZ-tcJ1Ed6-XpBv2uxYrQ"/>
@@ -2305,7 +2510,7 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
   <CDA:CodeSystemConstraint xmi:id="_51cYECfbEd-4R4ealYN1gQ" code="34133-9" displayName="Summarization of episode note" base_Property="_Tb-kYKRpEd6t_4WfM070fA" message="CCD Continuity Of Care Document SHALL contain [1..1] code/@code = &quot;34133-9&quot; Summarization of episode note (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
     <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
-  <CDA:PropertyValidation xmi:id="_51e0UCfbEd-4R4ealYN1gQ" message="CCD Continuity Of Care Document SHALL contain [1..1] languageCode, where its data type is CE" base_Property="_AfkIQKRqEd6t_4WfM070fA"/>
+  <CDA:PropertyValidation xmi:id="_51e0UCfbEd-4R4ealYN1gQ" message="CCD Continuity Of Care Document SHALL contain [1..1] languageCode, where its data type is CS" base_Property="_AfkIQKRqEd6t_4WfM070fA"/>
   <CDA:CodeSystemConstraint xmi:id="_51gpgCfbEd-4R4ealYN1gQ" code="completed" base_Property="_9uv9sHu9Ed6jfbAJq2V82w" message="CCD Problem Observation SHALL contain [1..1] statusCode/@code = &quot;completed&quot;  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)">
     <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
@@ -2432,4 +2637,30 @@ or self.reference-&gt;exists(ref : cda::Reference | ref.typeCode = vocab::x_ActR
   <CDA:CodeSystemConstraint xmi:id="_53WckCfbEd-4R4ealYN1gQ" code="completed" base_Property="_U9IlcBZ1Ed-i6Lz80y5G5g" message="CCD Age Observation SHALL contain [0..1] statusCode/@code = &quot;completed&quot;  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)">
     <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
+  <CDA:PropertyValidation xmi:id="_SGBPIDHkEd-saqiXO4OYhQ" message="CCD Plan Of Care Section SHALL contain [1..1] text" base_Property="_NnywUDHkEd-saqiXO4OYhQ"/>
+  <CDA:PropertyValidation xmi:id="_vH_UEDHlEd-saqiXO4OYhQ" message="CCD Plan Of Care Act SHALL contain [1..1] @moodCode" base_Property="_tIW-oDHlEd-saqiXO4OYhQ"/>
+  <CDA:CDATemplate xmi:id="_vjW6EDHoEd-saqiXO4OYhQ" message="CCD Plan Of Care Observation SHALL contain the template identifier 2.16.840.1.113883.10.20.1.25" base_Class="_7I79cDHlEd-saqiXO4OYhQ" templateId="2.16.840.1.113883.10.20.1.25" assigningAuthorityName="" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_DLmsADHpEd-saqiXO4OYhQ" message="CCD Plan Of Care Encounter SHALL contain the template identifier 2.16.840.1.113883.10.20.1.25" base_Class="_EGZnsDHmEd-saqiXO4OYhQ" templateId="2.16.840.1.113883.10.20.1.25" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_SoR_8DHqEd-saqiXO4OYhQ" message="CCD Plan Of Care Procedure SHALL contain the template identifier 2.16.840.1.113883.10.20.1.25" base_Class="_1z0WEDHpEd-saqiXO4OYhQ" templateId="2.16.840.1.113883.10.20.1.25" assigningAuthorityName="" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_TShPwDHqEd-saqiXO4OYhQ" message="CCD Plan Of Care Substance Administration SHALL contain the template identifier 2.16.840.1.113883.10.20.1.25" base_Class="_9Yav8DHpEd-saqiXO4OYhQ" templateId="2.16.840.1.113883.10.20.1.25" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_UevyUDHqEd-saqiXO4OYhQ" message="CCD Plan Of Care Supply SHALL contain the template identifier 2.16.840.1.113883.10.20.1.25" base_Class="_A9YrgDHqEd-saqiXO4OYhQ" templateId="2.16.840.1.113883.10.20.1.25" contextDependent="true"/>
+  <CDA:AssociationValidation xmi:id="_hmP-oDHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Section SHALL contain [0..1] entry such that it, SHALL contain [1..1] Plan Of Care Act (templateId: 2.16.840.1.113883.10.20.1.25)" base_Association="_fizVoDHqEd-saqiXO4OYhQ"/>
+  <CDA:AssociationValidation xmi:id="_hmRMwDHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Section SHALL contain [0..1] entry such that it, SHALL contain [1..1] Plan Of Care Encounter (templateId: 2.16.840.1.113883.10.20.1.25)" base_Association="_gMsnMDHqEd-saqiXO4OYhQ"/>
+  <CDA:AssociationValidation xmi:id="_hmRz0DHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Section SHALL contain [0..1] entry such that it, SHALL contain [1..1] Plan Of Care Observation (templateId: 2.16.840.1.113883.10.20.1.25)" base_Association="_gpJSoDHqEd-saqiXO4OYhQ"/>
+  <CDA:AssociationValidation xmi:id="_hmTB8DHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Section SHALL contain [0..1] entry such that it, SHALL contain [1..1] Plan Of Care Procedure (templateId: 2.16.840.1.113883.10.20.1.25)" base_Association="_hHCvkDHqEd-saqiXO4OYhQ"/>
+  <CDA:AssociationValidation xmi:id="_hmUQEDHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Section SHALL contain [0..1] entry such that it, SHALL contain [1..1] Plan Of Care Substance Administration (templateId: 2.16.840.1.113883.10.20.1.25)" base_Association="_hipGcDHqEd-saqiXO4OYhQ"/>
+  <CDA:AssociationValidation xmi:id="_hmVeMDHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Section SHALL contain [0..1] entry such that it, SHALL contain [1..1] Plan Of Care Supply (templateId: 2.16.840.1.113883.10.20.1.25)" base_Association="_iUZTgDHqEd-saqiXO4OYhQ"/>
+  <CDA:PropertyValidation xmi:id="_hnmCcDHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Observation SHALL contain [1..*] id" base_Property="_7I79cjHlEd-saqiXO4OYhQ"/>
+  <CDA:PropertyValidation xmi:id="_hnnQkDHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Encounter SHALL contain [1..*] id" base_Property="_F3ubYDHmEd-saqiXO4OYhQ"/>
+  <CDA:PropertyValidation xmi:id="_hnoesDHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Procedure SHALL contain [1..*] id" base_Property="_3d__8DHpEd-saqiXO4OYhQ"/>
+  <CDA:PropertyValidation xmi:id="_hnps0DHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Substance Administration SHALL contain [1..*] id" base_Property="_-UxqgDHpEd-saqiXO4OYhQ"/>
+  <CDA:PropertyValidation xmi:id="_hnriADHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Supply SHALL contain [1..*] id" base_Property="_BpoGcDHqEd-saqiXO4OYhQ"/>
+  <CDA:PropertyValidation xmi:id="_plLkEDHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Encounter SHALL contain [1..1] @moodCode" base_Property="_F3vCcDHmEd-saqiXO4OYhQ"/>
+  <CDA:PropertyValidation xmi:id="_qJytADHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Observation SHALL contain [1..1] @moodCode" base_Property="_DWAvwDHqEd-saqiXO4OYhQ"/>
+  <CDA:PropertyValidation xmi:id="_rb08oDHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Procedure SHALL contain [1..1] @moodCode" base_Property="_3eAnADHpEd-saqiXO4OYhQ"/>
+  <CDA:PropertyValidation xmi:id="_r9I58DHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Substance Administration SHALL contain [1..1] @moodCode" base_Property="_-UyRkDHpEd-saqiXO4OYhQ"/>
+  <CDA:PropertyValidation xmi:id="_saxRIDHrEd-saqiXO4OYhQ" message="CCD Plan Of Care Supply SHALL contain [1..1] @moodCode" base_Property="_BpotgDHqEd-saqiXO4OYhQ"/>
+  <CDA:CDATemplate xmi:id="_KBTTUDH7Ed-saqiXO4OYhQ" message="CCD Procedure Act SHALL contain the template identifier 2.16.840.1.113883.10.20.1.29" base_Class="_to5TUDH6Ed-saqiXO4OYhQ" templateId="2.16.840.1.113883.10.20.1.29" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_Kd8MADH7Ed-saqiXO4OYhQ" message="CCD Procedure Observation SHALL contain the template identifier 2.16.840.1.113883.10.20.1.29" base_Class="_3lHE0DH6Ed-saqiXO4OYhQ" templateId="2.16.840.1.113883.10.20.1.29" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_K6Ac8DH7Ed-saqiXO4OYhQ" message="CCD Procedure Procedure SHALL contain the template identifier 2.16.840.1.113883.10.20.1.29" base_Class="_6mhnYDH6Ed-saqiXO4OYhQ" templateId="2.16.840.1.113883.10.20.1.29" contextDependent="true"/>
 </xmi:XMI>
