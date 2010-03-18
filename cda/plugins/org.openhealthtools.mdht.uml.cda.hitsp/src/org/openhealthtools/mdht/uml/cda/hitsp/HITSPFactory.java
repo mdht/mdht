@@ -323,6 +323,15 @@ public interface HITSPFactory extends EFactory {
 	MedicalEquipmentSection createMedicalEquipmentSection();
 
 	/**
+	 * Returns a new object of class '<em>Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Result</em>'.
+	 * @generated
+	 */
+	Result createResult();
+
+	/**
 	 * Returns a new object of class '<em>Condition Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

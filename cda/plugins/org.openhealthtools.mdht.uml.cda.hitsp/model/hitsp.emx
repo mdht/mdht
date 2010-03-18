@@ -815,7 +815,7 @@
           </children>
           <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_65BlC67GEd6_ioDelDcPPg" fontName="Segoe UI" showListVisibility="None" fillColor="15960971" showParent="Name" showStereotype="Label"/>
           <element xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.emx#_LriUcK4NEd6_ioDelDcPPg?ihe/VitalSignObservation?"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_65BlDK7GEd6_ioDelDcPPg" x="20922" y="8216"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_65BlDK7GEd6_ioDelDcPPg" x="20922" y="9167"/>
         </children>
         <children xmi:id="_65BlDa7GEd6_ioDelDcPPg">
           <children xmi:id="_65BlDq7GEd6_ioDelDcPPg" type="ImageCompartment">
@@ -951,7 +951,7 @@
             <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_f2Sska7IEd6_ioDelDcPPg"/>
           </children>
           <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_f2Q3Ya7IEd6_ioDelDcPPg" fontName="Segoe UI" showListVisibility="None" showParent="Name" showStereotype="Label"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f2Q3Yq7IEd6_ioDelDcPPg" x="21873" y="14582"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f2Q3Yq7IEd6_ioDelDcPPg" x="20922" y="15533"/>
         </children>
         <children xmi:id="_V8EQYK7OEd6_ioDelDcPPg" element="_hrcTgK7MEd6_ioDelDcPPg">
           <children xmi:id="_V8E3cK7OEd6_ioDelDcPPg" type="ImageCompartment">
@@ -962,19 +962,6 @@
           <children xmi:id="_V8FegK7OEd6_ioDelDcPPg" type="ValueSpecification"/>
           <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_V8EQYa7OEd6_ioDelDcPPg" fontName="Segoe UI" showListVisibility="None" fillColor="13356031" lineColor="8421631" showStereotype="Label"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V8EQYq7OEd6_ioDelDcPPg" x="3170" y="16801"/>
-        </children>
-        <children xmi:id="_tltJQK7QEd6_ioDelDcPPg" type="Note">
-          <children xmi:id="_tltwUK7QEd6_ioDelDcPPg" type="DiagramName">
-            <element xsi:nil="true"/>
-          </children>
-          <children xmi:id="_tltwUa7QEd6_ioDelDcPPg" type="Description">
-            <element xsi:nil="true"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_tltJQa7QEd6_ioDelDcPPg" fontName="Segoe UI" description="&lt;p>&#xD;&#xA;    Vital Sign code from HITSP/C80 Section 2.2.3.6.4 Vital Sign Result Type. &#xD;&#xA;&lt;/p>" fillColor="13369343" lineColor="6737151" lineWidth="1"/>
-          <styles xmi:type="notation:TextStyle" xmi:id="_tltJQq7QEd6_ioDelDcPPg"/>
-          <styles xmi:type="notation:LineTypeStyle" xmi:id="_tltJQ67QEd6_ioDelDcPPg"/>
-          <element xsi:nil="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tltJRK7QEd6_ioDelDcPPg" x="23458" y="17435" width="4336"/>
         </children>
         <children xmi:id="_aZsK4K7REd6_ioDelDcPPg" type="Note">
           <children xmi:id="_aZsx8K7REd6_ioDelDcPPg" type="DiagramName">
@@ -987,7 +974,7 @@
           <styles xmi:type="notation:TextStyle" xmi:id="_aZsK4q7REd6_ioDelDcPPg"/>
           <styles xmi:type="notation:LineTypeStyle" xmi:id="_aZsK467REd6_ioDelDcPPg"/>
           <element xsi:nil="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aZsK5K7REd6_ioDelDcPPg" x="24606" y="12329" width="3278"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aZsK5K7REd6_ioDelDcPPg" x="24606" y="13280" width="3278"/>
         </children>
         <children xmi:id="_F7d9wK7SEd6_ioDelDcPPg">
           <children xmi:id="_F7fL4K7SEd6_ioDelDcPPg" type="ImageCompartment">
@@ -1213,16 +1200,6 @@
           <element xmi:type="uml:Generalization" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.emx#_naMM0K4NEd6_ioDelDcPPg?ihe/SimpleObservation/%3CGeneralization%3E?"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_65BlxK7GEd6_ioDelDcPPg" points="[-3, -23, 27, 124]$[-20, -129, 10, 18]"/>
         </edges>
-        <edges xmi:id="_65Bly67GEd6_ioDelDcPPg" source="_65A-Ua7GEd6_ioDelDcPPg" target="_65BlDa7GEd6_ioDelDcPPg">
-          <children xmi:id="_65BlzK7GEd6_ioDelDcPPg" type="NameLabel">
-            <children xmi:id="_65Blza7GEd6_ioDelDcPPg" type="Stereotype"/>
-            <children xmi:id="_65Blzq7GEd6_ioDelDcPPg" type="Name"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_65Blz67GEd6_ioDelDcPPg" y="-186"/>
-          </children>
-          <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_65Bl0K7GEd6_ioDelDcPPg" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
-          <element xmi:type="uml:Dependency" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.emx#_n1OREK4PEd6_ioDelDcPPg?ihe/conforms%20to?"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_65Bl0a7GEd6_ioDelDcPPg" points="[27, -40, -116, 104]$[29, -145, -114, -1]"/>
-        </edges>
         <edges xmi:id="_65Bl0q7GEd6_ioDelDcPPg" source="_65BlNK7GEd6_ioDelDcPPg" target="_65A-Ia7GEd6_ioDelDcPPg">
           <children xmi:id="_65Bl067GEd6_ioDelDcPPg" type="NameLabel">
             <children xmi:id="_65Bl1K7GEd6_ioDelDcPPg" type="Stereotype"/>
@@ -1431,14 +1408,6 @@
           <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_V8GFka7OEd6_ioDelDcPPg" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
           <element xsi:nil="true"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_V8GFkq7OEd6_ioDelDcPPg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-        </edges>
-        <edges xmi:id="__lXz0K7QEd6_ioDelDcPPg" type="NoteAttachment" source="_tltJQK7QEd6_ioDelDcPPg" target="_f2Q3YK7IEd6_ioDelDcPPg">
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="__lYa4K7QEd6_ioDelDcPPg" lineWidth="1"/>
-          <styles xmi:type="notation:ArrowStyle" xmi:id="__lYa4a7QEd6_ioDelDcPPg"/>
-          <styles xmi:type="notation:LineTypeStyle" xmi:id="__lYa4q7QEd6_ioDelDcPPg"/>
-          <element xsi:nil="true"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__lYa467QEd6_ioDelDcPPg" points="[-5, -20, 58, 55]$[-12, -63, 51, 12]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__lZpAK7QEd6_ioDelDcPPg" id="(0.24400368,0.3571911)"/>
         </edges>
         <edges xmi:id="_ebmhIK7REd6_ioDelDcPPg" type="NoteAttachment" source="_aZsK4K7REd6_ioDelDcPPg" target="_65A-Ua7GEd6_ioDelDcPPg">
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_ebmhIa7REd6_ioDelDcPPg" lineWidth="1"/>
@@ -4044,6 +4013,9 @@
     <packageImport xmi:id="_S49LUIwJEd6B6JSUB00H7g">
       <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_XgMSwzxVEd6JwqSGecoePg?datatypes?"/>
     </packageImport>
+    <packageImport xmi:id="_Zkp_kDITEd-saqiXO4OYhQ">
+      <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_KnCD4CFjEd-3s7f6mWX-3A"/>
+    </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_vB4EUGEIEd6bFO5yxRh3Nw" name="AllergyDrugSensitivity">
       <eAnnotations xmi:id="_Uy2V4HrWEd68l9lQ-TLEBQ" source="uml2.alias">
         <details xmi:id="_Uy2V4XrWEd68l9lQ-TLEBQ" key="Allergies and Drug Sensitivities"/>
@@ -4467,6 +4439,24 @@ If the problem is known to be resolved, but the date of resolution is not known,
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-HrAcBvhEd-yI6xBTkJSNw"/>
       </ownedEnd>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oTzNMDIWEd-SYNRf-pkwtw" name="Result">
+      <generalization xmi:id="_oT1CYDIWEd-SYNRf-pkwtw">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.emx#_MQHZEHDAEd6eItyqb1FoWg?ccd/ResultObservation?"/>
+      </generalization>
+      <generalization xmi:id="_S1FzcDIXEd-SYNRf-pkwtw">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.emx#_dLvb0K4NEd6_ioDelDcPPg?ihe/SimpleObservation?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_ColIkDIXEd-SYNRf-pkwtw" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.emx#_H1HqAK6xEd6_ioDelDcPPg?ccd/ResultObservation/code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_CuLaQDIXEd-SYNRf-pkwtw" name="effectiveTime" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.emx#_QYeW4D5-Ed6cla2oXsPtlA?datatypes/IVL_TS?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CuLaQTIXEd-SYNRf-pkwtw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CuLaQjIXEd-SYNRf-pkwtw" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.emx#_5TTmYK6wEd6_ioDelDcPPg?ccd/ResultObservation/effectiveTime?"/>
+      </ownedAttribute>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -4559,8 +4549,14 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:EntryRelationship xmi:id="_k2HnMBviEd-yI6xBTkJSNw" message="HITSP Condition SHALL contain [1..*] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;SUBJ&quot; SUBJ (has subject), SHALL contain [1..1] Condition Entry" base_Association="_-HcW8BvhEd-yI6xBTkJSNw" typeCode="SUBJ"/>
   <CDA:PropertyValidation xmi:id="_lkLxoxvjEd-yI6xBTkJSNw" message="HITSP Condition Entry SHOULD contain [1..1] effectiveTime" severity="WARNING" base_Property="_lkLxoBvjEd-yI6xBTkJSNw"/>
   <Default:Documentation xmi:id="_tM_WEBvjEd-yI6xBTkJSNw" base_Comment="_tM2MIBvjEd-yI6xBTkJSNw"/>
-  <CDA:PropertyValidation xmi:id="_ozph0BvkEd-yI6xBTkJSNw" message="HITSP Vital Sign SHALL contain [1..1] code" base_Property="_K4Lk0K7REd6_ioDelDcPPg"/>
+  <CDA:PropertyValidation xmi:id="_ozph0BvkEd-yI6xBTkJSNw" message="HITSP Vital Sign SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.80.62 VitalSignResult STATIC 20081218" base_Property="_K4Lk0K7REd6_ioDelDcPPg"/>
   <CDA:AssociationValidation xmi:id="_ozqv8BvkEd-yI6xBTkJSNw" message="HITSP Problem List Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Condition (templateId: 2.16.840.1.113883.3.88.11.83.7)" base_Association="_4D4oIBvYEd-yI6xBTkJSNw"/>
-  <CDA:ValueSetConstraint xmi:id="_baveQCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.2" name="Problem Type Value Set" base_Property="_hjpbwBvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.2 Problem Type Value Set DYNAMIC"/>
-  <CDA:ValueSetConstraint xmi:id="_bayhkCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.4" name="Problem Value Set" base_Property="_hjsfEBvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] value, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.4 Problem Value Set DYNAMIC"/>
+  <CDA:ValueSetConstraint xmi:id="_baveQCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.2" name="Problem Type Value Set" base_Property="_hjpbwBvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.2 Problem Type Value Set STATIC"/>
+  <CDA:ValueSetConstraint xmi:id="_bayhkCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.4" name="Problem Value Set" base_Property="_hjsfEBvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] value, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.4 Problem Value Set STATIC"/>
+  <CDA:ValueSetConstraint xmi:id="_P-2i8DITEd-saqiXO4OYhQ" base_Property="_K4Lk0K7REd6_ioDelDcPPg">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_UvVE0TISEd-saqiXO4OYhQ"/>
+  </CDA:ValueSetConstraint>
+  <CDA:PropertyValidation xmi:id="_CuIW8DIXEd-SYNRf-pkwtw" message="CCD Result Observation SHALL contain [1..1] code" base_Property="_ColIkDIXEd-SYNRf-pkwtw"/>
+  <CDA:PropertyValidation xmi:id="_CuMBUDIXEd-SYNRf-pkwtw" message="CCD Result Observation SHOULD contain [1..1] effectiveTime" base_Property="_CuLaQDIXEd-SYNRf-pkwtw"/>
+  <CDA:CDATemplate xmi:id="_HDAsgDIXEd-SYNRf-pkwtw" base_Class="_oTzNMDIWEd-SYNRf-pkwtw" templateId="2.16.840.1.113883.3.88.11.83.15"/>
 </xmi:XMI>

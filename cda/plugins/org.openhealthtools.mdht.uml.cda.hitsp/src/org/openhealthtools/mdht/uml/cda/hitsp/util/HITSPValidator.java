@@ -44,6 +44,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.Result;
 import org.openhealthtools.mdht.uml.cda.hitsp.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
@@ -382,6 +383,30 @@ public class HITSPValidator extends EObjectValidator {
 	public static final int MEDICAL_EQUIPMENT_SECTION__HITSP_MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID = 39;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Template Id' of 'Result'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int RESULT__RESULT_TEMPLATE_ID = 40;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Code' of 'Result'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int RESULT__RESULT_CODE = 41;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Effective Time' of 'Result'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int RESULT__RESULT_EFFECTIVE_TIME = 42;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Condition Entry Effective Time' of 'Condition Entry'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -395,7 +420,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 39;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 42;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -521,6 +546,8 @@ public class HITSPValidator extends EObjectValidator {
 				return validateEncountersSection((EncountersSection)value, diagnostics, context);
 			case HITSPPackage.MEDICAL_EQUIPMENT_SECTION:
 				return validateMedicalEquipmentSection((MedicalEquipmentSection)value, diagnostics, context);
+			case HITSPPackage.RESULT:
+				return validateResult((Result)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -1038,7 +1065,6 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionTemplateId(surgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionCode(surgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionTitle(surgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionProcedureActivity(surgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateSurgeriesSection_validateSurgeriesSectionTemplateId(surgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateCodedSurgeriesSection_validateCodedSurgeriesSectionTemplateId(surgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSurgeriesSection_validateHITSPSurgeriesSectionTemplateId(surgeriesSection, diagnostics, context);
@@ -1489,10 +1515,17 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionContainsPlanOfCareActivity(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionTemplateId(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionCode(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionTitle(planOfCareSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivity(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionText(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareAct(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareEncounter(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareObservation(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareProcedure(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareSubstanceAdministration(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareSupply(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateCarePlanSection_validateCarePlanSectionTemplateId(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePlanOfCareSection_validateHITSPPlanOfCareSectionTemplateId(planOfCareSection, diagnostics, context);
 		return result;
@@ -1630,6 +1663,70 @@ public class HITSPValidator extends EObjectValidator {
 	 */
 	public boolean validateMedicalEquipmentSection_validateHITSPMedicalEquipmentSectionTemplateId(MedicalEquipmentSection medicalEquipmentSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return medicalEquipmentSection.validateHITSPMedicalEquipmentSectionTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateResult(Result result, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean theResult = validate_EveryMultiplicityConforms(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= validate_EveryDataValueConforms(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= validate_EveryReferenceIsContained(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= validate_EveryProxyResolves(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= validate_UniqueID(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= validate_EveryKeyUnique(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= validate_EveryMapEntryUnique(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationReferenceRangeRequired(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationNoObservationRangeCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationInformationSource(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationTemplateId(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationMoodCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationId(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationEffectiveTime(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationStatusCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationMethodCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationInterpretationCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationValue(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= iheValidator.validateSimpleObservation_validateSimpleObservationTemplateId(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= iheValidator.validateSimpleObservation_validateSimpleObservationId(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= iheValidator.validateSimpleObservation_validateSimpleObservationStatusCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= validateResult_validateResultTemplateId(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= validateResult_validateResultCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) result &= validateResult_validateResultEffectiveTime(result, diagnostics, context);
+		return theResult;
+	}
+
+	/**
+	 * Validates the validateResultTemplateId constraint of '<em>Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateResult_validateResultTemplateId(Result result, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return result.validateResultTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateResultCode constraint of '<em>Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateResult_validateResultCode(Result result, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return result.validateResultCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateResultEffectiveTime constraint of '<em>Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateResult_validateResultEffectiveTime(Result result, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return result.validateResultEffectiveTime(diagnostics, context);
 	}
 
 	/**

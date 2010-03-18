@@ -53,6 +53,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.Result;
 import org.openhealthtools.mdht.uml.cda.hitsp.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
@@ -72,6 +73,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
 
 /**
@@ -442,6 +444,15 @@ public class HITSPSwitch<T> {
 				if (result == null) result = caseSection(medicalEquipmentSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
+			}
+			case HITSPPackage.RESULT: {
+				Result result = (Result)theEObject;
+				T theResult = caseResult(result);
+				if (theResult == null) theResult = caseResultObservation(result);
+				if (theResult == null) theResult = caseSimpleObservation(result);
+				if (theResult == null) theResult = caseObservation(result);
+				if (theResult == null) theResult = defaultCase(theEObject);
+				return theResult;
 			}
 			default: return defaultCase(theEObject);
 		}
@@ -939,6 +950,21 @@ public class HITSPSwitch<T> {
 	 * @generated
 	 */
 	public T caseMedicalEquipmentSection(MedicalEquipmentSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Result</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResult(Result object) {
 		return null;
 	}
 
@@ -1824,6 +1850,21 @@ public class HITSPSwitch<T> {
 	 * @generated
 	 */
 	public T caseMedicalDevicesSection(MedicalDevicesSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Simple Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Simple Observation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSimpleObservation(SimpleObservation object) {
 		return null;
 	}
 

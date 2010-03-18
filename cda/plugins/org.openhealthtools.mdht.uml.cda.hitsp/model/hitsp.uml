@@ -10,6 +10,9 @@
     <packageImport xmi:id="_S49LUIwJEd6B6JSUB00H7g">
       <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg?datatypes?"/>
     </packageImport>
+    <packageImport xmi:id="_Zkp_kDITEd-saqiXO4OYhQ">
+      <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_KnCD4CFjEd-3s7f6mWX-3A"/>
+    </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_vB4EUGEIEd6bFO5yxRh3Nw" name="AllergyDrugSensitivity">
       <eAnnotations xmi:id="_Uy2V4HrWEd68l9lQ-TLEBQ" source="uml2.alias">
         <details xmi:id="_Uy2V4XrWEd68l9lQ-TLEBQ" key="Allergies and Drug Sensitivities"/>
@@ -434,6 +437,24 @@ If the problem is known to be resolved, but the date of resolution is not known,
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-HrAcBvhEd-yI6xBTkJSNw"/>
       </ownedEnd>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oTzNMDIWEd-SYNRf-pkwtw" name="Result">
+      <generalization xmi:id="_oT1CYDIWEd-SYNRf-pkwtw">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_MQHZEHDAEd6eItyqb1FoWg?ccd/ResultObservation?"/>
+      </generalization>
+      <generalization xmi:id="_S1FzcDIXEd-SYNRf-pkwtw">
+        <general xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_dLvb0K4NEd6_ioDelDcPPg?ihe/SimpleObservation?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_ColIkDIXEd-SYNRf-pkwtw" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_H1HqAK6xEd6_ioDelDcPPg?ccd/ResultObservation/code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_CuLaQDIXEd-SYNRf-pkwtw" name="effectiveTime" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA?datatypes/IVL_TS?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CuLaQTIXEd-SYNRf-pkwtw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CuLaQjIXEd-SYNRf-pkwtw" value="1"/>
+        <redefinedProperty href="platform:/resource/org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_5TTmYK6wEd6_ioDelDcPPg?ccd/ResultObservation/effectiveTime?"/>
+      </ownedAttribute>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -516,8 +537,14 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:EntryRelationship xmi:id="_k2HnMBviEd-yI6xBTkJSNw" message="HITSP Condition SHALL contain [1..*] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;SUBJ&quot; SUBJ (has subject), SHALL contain [1..1] Condition Entry" base_Association="_-HcW8BvhEd-yI6xBTkJSNw" typeCode="SUBJ"/>
   <CDA:PropertyValidation xmi:id="_lkLxoxvjEd-yI6xBTkJSNw" message="HITSP Condition Entry SHOULD contain [1..1] effectiveTime" severity="WARNING" base_Property="_lkLxoBvjEd-yI6xBTkJSNw"/>
   <Default:Documentation xmi:id="_tM_WEBvjEd-yI6xBTkJSNw" base_Comment="_tM2MIBvjEd-yI6xBTkJSNw"/>
-  <CDA:PropertyValidation xmi:id="_ozph0BvkEd-yI6xBTkJSNw" message="HITSP Vital Sign SHALL contain [1..1] code" base_Property="_K4Lk0K7REd6_ioDelDcPPg"/>
+  <CDA:PropertyValidation xmi:id="_ozph0BvkEd-yI6xBTkJSNw" message="HITSP Vital Sign SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.80.62 VitalSignResult STATIC 20081218" base_Property="_K4Lk0K7REd6_ioDelDcPPg"/>
   <CDA:AssociationValidation xmi:id="_ozqv8BvkEd-yI6xBTkJSNw" message="HITSP Problem List Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Condition (templateId: 2.16.840.1.113883.3.88.11.83.7)" base_Association="_4D4oIBvYEd-yI6xBTkJSNw"/>
-  <CDA:ValueSetConstraint xmi:id="_baveQCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.2" name="Problem Type Value Set" base_Property="_hjpbwBvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.2 Problem Type Value Set DYNAMIC"/>
-  <CDA:ValueSetConstraint xmi:id="_bayhkCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.4" name="Problem Value Set" base_Property="_hjsfEBvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] value, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.4 Problem Value Set DYNAMIC"/>
+  <CDA:ValueSetConstraint xmi:id="_baveQCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.2" name="Problem Type Value Set" base_Property="_hjpbwBvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.2 Problem Type Value Set STATIC"/>
+  <CDA:ValueSetConstraint xmi:id="_bayhkCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.4" name="Problem Value Set" base_Property="_hjsfEBvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] value, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.4 Problem Value Set STATIC"/>
+  <CDA:ValueSetConstraint xmi:id="_P-2i8DITEd-saqiXO4OYhQ" base_Property="_K4Lk0K7REd6_ioDelDcPPg">
+    <reference href="platform:/resource/org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_UvVE0TISEd-saqiXO4OYhQ"/>
+  </CDA:ValueSetConstraint>
+  <CDA:PropertyValidation xmi:id="_CuIW8DIXEd-SYNRf-pkwtw" message="CCD Result Observation SHALL contain [1..1] code" base_Property="_ColIkDIXEd-SYNRf-pkwtw"/>
+  <CDA:PropertyValidation xmi:id="_CuMBUDIXEd-SYNRf-pkwtw" message="CCD Result Observation SHOULD contain [1..1] effectiveTime" base_Property="_CuLaQDIXEd-SYNRf-pkwtw"/>
+  <CDA:CDATemplate xmi:id="_HDAsgDIXEd-SYNRf-pkwtw" base_Class="_oTzNMDIWEd-SYNRf-pkwtw" templateId="2.16.840.1.113883.3.88.11.83.15"/>
 </xmi:XMI>
