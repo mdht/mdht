@@ -28,6 +28,18 @@
       <ownedLiteral xmi:id="_les7kCvEEd-1GpmIcz-YjA" name="F"/>
       <ownedLiteral xmi:id="_mHn8wCvEEd-1GpmIcz-YjA" name="W"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_UvVE0DISEd-saqiXO4OYhQ" name="VitalSignResult">
+      <ownedLiteral xmi:id="_paKVIDISEd-saqiXO4OYhQ" name="9279-1"/>
+      <ownedLiteral xmi:id="_u_8R4DISEd-saqiXO4OYhQ" name="8867-4"/>
+      <ownedLiteral xmi:id="_w92wEDISEd-saqiXO4OYhQ" name="2710-2"/>
+      <ownedLiteral xmi:id="_zlx0kDISEd-saqiXO4OYhQ" name="8480-6"/>
+      <ownedLiteral xmi:id="_3JJNoDISEd-saqiXO4OYhQ" name="8462-4"/>
+      <ownedLiteral xmi:id="_6_M5MDISEd-saqiXO4OYhQ" name="8310-5"/>
+      <ownedLiteral xmi:id="_9y9aQDISEd-saqiXO4OYhQ" name="8302-2"/>
+      <ownedLiteral xmi:id="_A4lucDITEd-saqiXO4OYhQ" name="8306-3"/>
+      <ownedLiteral xmi:id="_EfEF4DITEd-saqiXO4OYhQ" name="8287-5"/>
+      <ownedLiteral xmi:id="_HBFWsDITEd-saqiXO4OYhQ" name="3141-9"/>
+    </packagedElement>
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -60,4 +72,17 @@
   <term:ValueSetCode xmi:id="_io_SsCvEEd-1GpmIcz-YjA" conceptName="Admitting" base_EnumerationLiteral="_io-roCvEEd-1GpmIcz-YjA"/>
   <term:ValueSetCode xmi:id="_les7kSvEEd-1GpmIcz-YjA" conceptName="Final" base_EnumerationLiteral="_les7kCvEEd-1GpmIcz-YjA"/>
   <term:ValueSetCode xmi:id="_mHoj0CvEEd-1GpmIcz-YjA" conceptName="Working" base_EnumerationLiteral="_mHn8wCvEEd-1GpmIcz-YjA"/>
+  <term:ValueSetVersion xmi:id="_UvVE0TISEd-saqiXO4OYhQ" identifier="2.16.840.1.113883.3.88.12.80.62" version="20081218" source="HITSP" definition="The Vital Sign Results has been limited by HITSP to the value set specified in this enumeration." effectiveDate="20081218" releaseDate="20081218" base_Enumeration="_UvVE0DISEd-saqiXO4OYhQ">
+    <codeSystem href="CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_paK8MDISEd-saqiXO4OYhQ" conceptName="Respiratory Rate" base_EnumerationLiteral="_paKVIDISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_u_8R4TISEd-saqiXO4OYhQ" conceptName="Heart Rate" base_EnumerationLiteral="_u_8R4DISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_w92wETISEd-saqiXO4OYhQ" conceptName="O2 % BldC Oximetry" base_EnumerationLiteral="_w92wEDISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_zlx0kTISEd-saqiXO4OYhQ" conceptName="BP Systolic" base_EnumerationLiteral="_zlx0kDISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_3JJNoTISEd-saqiXO4OYhQ" conceptName="BP Diastolic" base_EnumerationLiteral="_3JJNoDISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_6_NgQDISEd-saqiXO4OYhQ" conceptName="Body Temperature" base_EnumerationLiteral="_6_M5MDISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_9y-BUDISEd-saqiXO4OYhQ" conceptName="Height" base_EnumerationLiteral="_9y9aQDISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_A4mVgDITEd-saqiXO4OYhQ" conceptName="Height (Lying)" base_EnumerationLiteral="_A4lucDITEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_EfEF4TITEd-saqiXO4OYhQ" conceptName="Head Circumference" base_EnumerationLiteral="_EfEF4DITEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_HBFWsTITEd-saqiXO4OYhQ" conceptName="Weight Measured" base_EnumerationLiteral="_HBFWsDITEd-saqiXO4OYhQ"/>
 </xmi:XMI>
