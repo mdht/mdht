@@ -45,6 +45,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.Result;
 import org.openhealthtools.mdht.uml.cda.hitsp.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
@@ -290,6 +291,13 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * @generated
 	 */
 	private EClass medicalEquipmentSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass resultEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -680,6 +688,15 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getResult() {
+		return resultEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConditionEntry() {
 		return conditionEntryEClass;
 	}
@@ -779,6 +796,8 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		encountersSectionEClass = createEClass(ENCOUNTERS_SECTION);
 
 		medicalEquipmentSectionEClass = createEClass(MEDICAL_EQUIPMENT_SECTION);
+
+		resultEClass = createEClass(RESULT);
 	}
 
 	/**
@@ -848,6 +867,8 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		socialHistorySectionEClass.getESuperTypes().add(theIHEPackage.getSocialHistorySection());
 		encountersSectionEClass.getESuperTypes().add(theIHEPackage.getEncounterHistorySection());
 		medicalEquipmentSectionEClass.getESuperTypes().add(theIHEPackage.getMedicalDevicesSection());
+		resultEClass.getESuperTypes().add(theCCDPackage.getResultObservation());
+		resultEClass.getESuperTypes().add(theIHEPackage.getSimpleObservation());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(allergyDrugSensitivityEClass, AllergyDrugSensitivity.class, "AllergyDrugSensitivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1275,6 +1296,35 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(resultEClass, Result.class, "Result", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(resultEClass, ecorePackage.getEBoolean(), "validateResultTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resultEClass, ecorePackage.getEBoolean(), "validateResultCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(resultEClass, ecorePackage.getEBoolean(), "validateResultEffectiveTime", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -1354,8 +1404,10 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		  (vitalSignEClass, 
 		   source, 
 		   new String[] {
+			 "code.codeSystemName", "LOINC",
+			 "templateId.root", "2.16.840.1.113883.3.88.11.83.14",
 			 "constraints.validation.error", "VitalSignTemplateId VitalSignCode",
-			 "templateId.root", "2.16.840.1.113883.3.88.11.83.14"
+			 "code.codeSystem", "2.16.840.1.113883.6.1"
 		   });											
 		addAnnotation
 		  (payersSectionEClass, 
@@ -1531,7 +1583,14 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   new String[] {
 			 "constraints.validation.error", "HITSPMedicalEquipmentSectionTemplateId",
 			 "templateId.root", "2.16.840.1.113883.3.88.11.83.128"
-		   });				
+		   });						
+		addAnnotation
+		  (resultEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "2.16.840.1.113883.3.88.11.83.15",
+			 "constraints.validation.error", "ResultTemplateId ResultCode ResultEffectiveTime"
+		   });												
 	}
 
 	/**
@@ -1548,7 +1607,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   new String[] {
 			 "Allergies and Drug Sensitivities", null,
 			 "Allergy and Drug Sensitivity", null
-		   });																																																																																																																																																																																																																									
+		   });																																																																																																																																																																																																																																						
 	}
 
 	/**
@@ -1564,7 +1623,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																													
+		   });																																																																																																																																																																																																										
 	}
 
 } //HITSPPackageImpl
