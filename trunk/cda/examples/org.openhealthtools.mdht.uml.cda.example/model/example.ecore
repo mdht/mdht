@@ -8,8 +8,8 @@
       <details key="name" value="ClinicalDocument"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="MyDocumentTemplateId MyDocumentMySection"/>
       <details key="templateId.root" value="1.2.3.4"/>
+      <details key="constraints.validation.error" value="MyDocumentTemplateId MyDocumentMySection"/>
     </eAnnotations>
     <eOperations name="MyDocumentTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -61,17 +61,17 @@
       <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>CCD represents the ASTM CCR &amp;lt;Purpose&amp;gt; object as a relationship between two classes – the source&#xD;&#xA;    represents the act of creating a summary document, the target is the reason for creating the document, and the&#xD;&#xA;    relationship type is &quot;RSON&quot; (has reason). The target act may be an Observation, Procedure, or some other kind of act,&#xD;&#xA;    and it may represent an order, an event, etc.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="moodCode" value="EVN"/>
-      <details key="classCode" value="ACT"/>
-      <details key="statusCode.codeSystemName" value="ActStatus"/>
-      <details key="code.codeSystemName" value="SNOMED CT"/>
-      <details key="constraints.validation.error" value="MyActivityTemplateId MyActivityClassCode MyActivityMoodCode MyActivityCode MyActivityStatusCode"/>
-      <details key="templateId.root" value="1.2.3.4.2"/>
-      <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
-      <details key="code.displayName" value="Documentation procedure"/>
       <details key="statusCode.code" value="completed"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.6.96"/>
+      <details key="templateId.root" value="1.2.3.4.2"/>
+      <details key="code.displayName" value="Documentation procedure"/>
+      <details key="constraints.validation.error" value="MyActivityTemplateId MyActivityClassCode MyActivityMoodCode MyActivityCode MyActivityStatusCode"/>
+      <details key="code.codeSystemName" value="SNOMEDCT"/>
+      <details key="classCode" value="ACT"/>
       <details key="code.code" value="23745001"/>
+      <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
+      <details key="moodCode" value="EVN"/>
+      <details key="statusCode.codeSystemName" value="ActStatus"/>
     </eAnnotations>
     <eOperations name="MyActivityTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -189,13 +189,13 @@
       <details key="documentation" value="&lt;p align=&quot;left&quot;>&#xD;&#xA;    &lt;font size=&quot;2&quot;>Represents the specific reason for which the summarization was generated, such as in response to a&#xD;&#xA;    request.&lt;/font>&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    &lt;font size=&quot;2&quot;>The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific&#xD;&#xA;    purpose such as a transfer, referral, or patient request.&lt;/font>&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="code.codeSystemName" value="LOINC"/>
-      <details key="constraints.validation.error" value="MySectionTemplateId MySectionCode MySectionTitle"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.2.3.4.1"/>
       <details key="code.displayName" value="Summary purpose"/>
-      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
-      <details key="code.code" value="48764-5"/>
+      <details key="constraints.validation.error" value="MySectionTemplateId MySectionCode MySectionTitle"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="constraints.validation.warning" value="MySectionMyActivity"/>
+      <details key="code.code" value="48764-5"/>
     </eAnnotations>
     <eOperations name="MySectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">

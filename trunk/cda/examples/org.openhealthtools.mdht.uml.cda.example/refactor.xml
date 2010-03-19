@@ -48,10 +48,6 @@
 		</replace>
 
 		<move file="model" tofile="model">
-			<mapper type="glob" from="example*.emx" to="${packageName}*.emx" />
-		</move>
-
-		<move file="model" tofile="model">
 			<mapper type="glob" from="example*.uml" to="${packageName}*.uml" />
 		</move>
 

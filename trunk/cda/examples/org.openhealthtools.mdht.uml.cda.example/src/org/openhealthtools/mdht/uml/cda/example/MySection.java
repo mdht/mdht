@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.example.ExamplePackage#getMySection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystemName='LOINC' constraints.validation.error='MySectionTemplateId MySectionCode MySectionTitle' templateId.root='1.2.3.4.1' code.displayName='Summary purpose' code.codeSystem='2.16.840.1.113883.6.1' code.code='48764-5' constraints.validation.warning='MySectionMyActivity'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='1.2.3.4.1' code.displayName='Summary purpose' constraints.validation.error='MySectionTemplateId MySectionCode MySectionTitle' code.codeSystemName='LOINC' constraints.validation.warning='MySectionMyActivity' code.code='48764-5'"
  * @generated
  */
 public interface MySection extends Section {

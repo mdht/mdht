@@ -19,7 +19,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
  *
  * @see org.openhealthtools.mdht.uml.cda.example.ExamplePackage#getMyDocument()
  * @model extendedMetaData="name='ClinicalDocument'"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='MyDocumentTemplateId MyDocumentMySection' templateId.root='1.2.3.4'"
+ *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.2.3.4' constraints.validation.error='MyDocumentTemplateId MyDocumentMySection'"
  * @generated
  */
 public interface MyDocument extends ContinuityOfCareDocument {
