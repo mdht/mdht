@@ -1668,34 +1668,34 @@ public class HITSPValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateResult(Result result, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean theResult = validate_EveryMultiplicityConforms(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= validate_EveryDataValueConforms(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= validate_EveryReferenceIsContained(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= validate_EveryProxyResolves(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= validate_UniqueID(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= validate_EveryKeyUnique(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= validate_EveryMapEntryUnique(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationReferenceRangeRequired(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationNoObservationRangeCode(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationInformationSource(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationTemplateId(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationMoodCode(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationId(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationEffectiveTime(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationStatusCode(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationCode(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationMethodCode(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationInterpretationCode(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationValue(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= iheValidator.validateSimpleObservation_validateSimpleObservationTemplateId(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= iheValidator.validateSimpleObservation_validateSimpleObservationId(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= iheValidator.validateSimpleObservation_validateSimpleObservationStatusCode(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= validateResult_validateResultTemplateId(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= validateResult_validateResultCode(result, diagnostics, context);
-		if (theResult || diagnostics != null) result &= validateResult_validateResultEffectiveTime(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= validate_EveryDataValueConforms(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= validate_EveryReferenceIsContained(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= validate_EveryProxyResolves(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= validate_UniqueID(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= validate_EveryKeyUnique(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= validate_EveryMapEntryUnique(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= ccdValidator.validateResultObservation_validateResultObservationReferenceRangeRequired(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= ccdValidator.validateResultObservation_validateResultObservationNoObservationRangeCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= ccdValidator.validateResultObservation_validateResultObservationInformationSource(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= ccdValidator.validateResultObservation_validateResultObservationTemplateId(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= ccdValidator.validateResultObservation_validateResultObservationMoodCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= ccdValidator.validateResultObservation_validateResultObservationId(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= ccdValidator.validateResultObservation_validateResultObservationEffectiveTime(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= ccdValidator.validateResultObservation_validateResultObservationStatusCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= ccdValidator.validateResultObservation_validateResultObservationCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= ccdValidator.validateResultObservation_validateResultObservationMethodCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= ccdValidator.validateResultObservation_validateResultObservationInterpretationCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= ccdValidator.validateResultObservation_validateResultObservationValue(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= iheValidator.validateSimpleObservation_validateSimpleObservationTemplateId(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= iheValidator.validateSimpleObservation_validateSimpleObservationId(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= iheValidator.validateSimpleObservation_validateSimpleObservationStatusCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= validateResult_validateResultTemplateId(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= validateResult_validateResultCode(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= validateResult_validateResultEffectiveTime(result, diagnostics, context);
 		return theResult;
 	}
 
