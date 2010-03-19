@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:version="2.0" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
   <uml:Package xmi:id="_XgMSwzxVEd6JwqSGecoePg" name="datatypes">
-    
     <packageImport xmi:id="_XgMSxzxVEd6JwqSGecoePg">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
@@ -8,11 +8,11 @@
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packageImport xmi:id="_tJ87wEF_Ed6OL54Mnsamsg">
-      <importedPackage href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVbeUDcEd6xYZuu1VKCVw?vocab?"/>
+      <importedPackage href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yVbeUDcEd6xYZuu1VKCVw"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="__I8BwDxZEd6JwqSGecoePg" name="ANY" isAbstract="true">
       <ownedAttribute xmi:id="_AJn3IDxkEd6JwqSGecoePg" name="nullFlavor" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yyDSUDcEd6xYZuu1VKCVw?vocab/NullFlavor?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yyDSUDcEd6xYZuu1VKCVw?vocab/NullFlavor?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VJD-IDxnEd6JwqSGecoePg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VI6NIDxnEd6JwqSGecoePg"/>
       </ownedAttribute>
@@ -50,7 +50,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8LWIgD54Ed6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Zc_TED54Ed6cla2oXsPtlA" name="compression" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yemeEDcEd6xYZuu1VKCVw?vocab/CompressionAlgorithm?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yemeEDcEd6xYZuu1VKCVw?vocab/CompressionAlgorithm?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uhHAT54Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uhHAD54Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -60,7 +60,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9ctCsD54Ed6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_tLtgcD54Ed6cla2oXsPtlA" name="integrityCheckAlgorithm" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yx4IEDcEd6xYZuu1VKCVw?vocab/IntegrityCheckAlgorithm?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yx4IEDcEd6xYZuu1VKCVw?vocab/IntegrityCheckAlgorithm?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-FikUT54Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-FikUD54Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -173,163 +173,163 @@
       <ownedRule xmi:id="_Uki0wD_pEd6wZe6nFLrjsw" name="delimiter" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_Uki0wT_pEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.delimiter-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DEL)</body>
+          <body>self.delimiter->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DEL)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_G_9cID_uEd6wZe6nFLrjsw" name="country" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_HAHNID_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.country-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CNT)</body>
+          <body>self.country->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CNT)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_H6rX8D_uEd6wZe6nFLrjsw" name="state" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_H6rX8T_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.state-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STA)</body>
+          <body>self.state->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STA)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_JJDPkD_uEd6wZe6nFLrjsw" name="county" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_JJDPkT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.county-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CPA)</body>
+          <body>self.county->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CPA)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_J4JKMD_uEd6wZe6nFLrjsw" name="city" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_J4JKMT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.city-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CTY)</body>
+          <body>self.city->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CTY)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_KvRmgD_uEd6wZe6nFLrjsw" name="postalCode" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_KvbXgD_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.postalCode-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ZIP)</body>
+          <body>self.postalCode->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ZIP)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_LxSdID_uEd6wZe6nFLrjsw" name="streetAddressLine" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_LxSdIT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.streetAddressLine-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::SAL)</body>
+          <body>self.streetAddressLine->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::SAL)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_NfHQ4D_uEd6wZe6nFLrjsw" name="houseNumber" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_NfHQ4T_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.houseNumber-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNR)</body>
+          <body>self.houseNumber->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNR)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_OxNx8D_uEd6wZe6nFLrjsw" name="houseNumberNumeric" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_OxXi8D_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.houseNumberNumeric-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNN)</body>
+          <body>self.houseNumberNumeric->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNN)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_RG0XYD_uEd6wZe6nFLrjsw" name="direction" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_RG-IYD_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.direction-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DIR)</body>
+          <body>self.direction->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DIR)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_R9p4wD_uEd6wZe6nFLrjsw" name="streetName" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_R9p4wT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.streetName-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STR)</body>
+          <body>self.streetName->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STR)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_TFLhgD_uEd6wZe6nFLrjsw" name="streetNameBase" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_TFLhgT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.streetNameBase-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STB)</body>
+          <body>self.streetNameBase->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STB)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_UyQuYD_uEd6wZe6nFLrjsw" name="streetNameType" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_UyQuYT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.streetNameType-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STTYP)</body>
+          <body>self.streetNameType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STTYP)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_WQJBoD_uEd6wZe6nFLrjsw" name="additionalLocator" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_WQJBoT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.additionalLocator-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ADL)</body>
+          <body>self.additionalLocator->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ADL)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_ZdLlYD_uEd6wZe6nFLrjsw" name="unitID" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_ZdLlYT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.unitID-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNID)</body>
+          <body>self.unitID->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNID)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_acDocD_uEd6wZe6nFLrjsw" name="unitType" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_acDocT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.unitType-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNIT)</body>
+          <body>self.unitType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNIT)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_bOH-kD_uEd6wZe6nFLrjsw" name="careOf" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_bOH-kT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.careOf-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CAR)</body>
+          <body>self.careOf->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CAR)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_cNdUoD_uEd6wZe6nFLrjsw" name="censusTract" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_cNdUoT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.censusTract-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CEN)</body>
+          <body>self.censusTract->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CEN)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_dehT4D_uEd6wZe6nFLrjsw" name="deliveryAddressLine" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_dehT4T_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.deliveryAddressLine-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DAL)</body>
+          <body>self.deliveryAddressLine->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DAL)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_ehIAYD_uEd6wZe6nFLrjsw" name="deliveryInstallationType" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_ehIAYT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.deliveryInstallationType-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINST)</body>
+          <body>self.deliveryInstallationType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINST)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_gI1lED_uEd6wZe6nFLrjsw" name="deliveryInstallationArea" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_gI1lET_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.deliveryInstallationArea-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTA)</body>
+          <body>self.deliveryInstallationArea->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTA)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_iG50QD_uEd6wZe6nFLrjsw" name="deliveryInstallationQualifier" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_iG50QT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.deliveryInstallationQualifier-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTQ)</body>
+          <body>self.deliveryInstallationQualifier->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTQ)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_i6nJID_uEd6wZe6nFLrjsw" name="deliveryMode" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_i6nJIT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.deliveryMode-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMOD)</body>
+          <body>self.deliveryMode->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMOD)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_kJIxwD_uEd6wZe6nFLrjsw" name="deliveryModeIdentifier" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_kJIxwT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.deliveryModeIdentifier-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMODID)</body>
+          <body>self.deliveryModeIdentifier->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMODID)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_lUPS8D_uEd6wZe6nFLrjsw" name="buildingNumberSuffix" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_lUPS8T_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.buildingNumberSuffix-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNS)</body>
+          <body>self.buildingNumberSuffix->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNS)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_mPs1oD_uEd6wZe6nFLrjsw" name="postBox" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_mPs1oT_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.postBox-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::POB)</body>
+          <body>self.postBox->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::POB)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_nl07ED_uEd6wZe6nFLrjsw" name="precinct" constrainedElement="_v0zRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_nl07ET_uEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.precinct-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::PRE)</body>
+          <body>self.precinct->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::PRE)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_G5ptAD5zEd6cla2oXsPtlA" general="__I8BwDxZEd6JwqSGecoePg"/>
@@ -338,7 +338,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kCjYAD6CEd6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_qe2q4D5zEd6cla2oXsPtlA" name="use" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7Gd0DcEd6xYZuu1VKCVw?vocab/PostalAddressUse?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7Gd0DcEd6xYZuu1VKCVw?vocab/PostalAddressUse?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wvOtsT58Ed6cla2oXsPtlA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wvOtsD58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -643,36 +643,36 @@
       <ownedRule xmi:id="_1_D9YD_hEd6wZe6nFLrjsw" name="delimiter" constrainedElement="_wfRKoD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_1_NHUD_hEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.delimiter-&gt;forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::DEL)</body>
+          <body>self.delimiter->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::DEL)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_3ABrID_hEd6wZe6nFLrjsw" name="family" constrainedElement="_wfRKoD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_3ABrIT_hEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.family-&gt;forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::FAM)</body>
+          <body>self.family->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::FAM)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_3zvAAD_hEd6wZe6nFLrjsw" name="given" constrainedElement="_wfRKoD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_3zvAAT_hEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.given-&gt;forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::GIV)</body>
+          <body>self.given->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::GIV)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_4vCxsD_hEd6wZe6nFLrjsw" name="prefix" constrainedElement="_wfRKoD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_4vCxsT_hEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.prefix-&gt;forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::PFX)</body>
+          <body>self.prefix->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::PFX)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_5xWjQD_hEd6wZe6nFLrjsw" name="suffix" constrainedElement="_wfRKoD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_5xWjQT_hEd6wZe6nFLrjsw">
           <language>OCL</language>
-          <body>self.suffix-&gt;forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::SFX)</body>
+          <body>self.suffix->forAll(enxp : datatypes::ENXP | enxp.partType = vocab::EntityNamePartType::SFX)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_HfzHAD5zEd6cla2oXsPtlA" general="__I8BwDxZEd6JwqSGecoePg"/>
       <ownedAttribute xmi:id="_ruuXUD5zEd6cla2oXsPtlA" name="use" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoORUDcEd6xYZuu1VKCVw?vocab/EntityNameUse?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoORUDcEd6xYZuu1VKCVw?vocab/EntityNameUse?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_x2wWcT58Ed6cla2oXsPtlA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_x2wWcD58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -756,7 +756,7 @@
       <ownedRule xmi:id="_O0-J8EVnEd6QuJiOJFSRPQ" name="invariant" constrainedElement="_yQ9xwD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_O0-J8UVnEd6QuJiOJFSRPQ">
           <language>OCL</language>
-          <body>self.family-&gt;isEmpty() and self.given-&gt;isEmpty()</body>
+          <body>self.family->isEmpty() and self.given->isEmpty()</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_8X-eAD5yEd6cla2oXsPtlA" general="_wfRKoD5yEd6cla2oXsPtlA"/>
@@ -765,7 +765,7 @@
       <ownedRule xmi:id="_MQlXEEVmEd6QuJiOJFSRPQ" name="invariant" constrainedElement="_3VD9wD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_MQlXEUVmEd6QuJiOJFSRPQ">
           <language>OCL</language>
-          <body>self.delimiter-&gt;forAll(enxp : datatypes::ENXP | not enxp.qualifier-&gt;includes(vocab::EntityNamePartQualifier::LS)) and self.family-&gt;forAll(enxp : datatypes::ENXP | not enxp.qualifier-&gt;includes(vocab::EntityNamePartQualifier::LS)) and self.given-&gt;forAll(enxp : datatypes::ENXP | not enxp.qualifier-&gt;includes(vocab::EntityNamePartQualifier::LS)) and self.prefix-&gt;forAll(enxp : datatypes::ENXP | not enxp.qualifier-&gt;includes(vocab::EntityNamePartQualifier::LS)) and self.suffix-&gt;forAll(enxp : datatypes::ENXP | not enxp.qualifier-&gt;includes(vocab::EntityNamePartQualifier::LS))</body>
+          <body>self.delimiter->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.family->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.given->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.prefix->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS)) and self.suffix->forAll(enxp : datatypes::ENXP | not enxp.qualifier->includes(vocab::EntityNamePartQualifier::LS))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_9LYQ4D5yEd6cla2oXsPtlA" general="_wfRKoD5yEd6cla2oXsPtlA"/>
@@ -774,7 +774,7 @@
       <ownedRule xmi:id="_P0ccMEViEd6QuJiOJFSRPQ" name="invariant" constrainedElement="_6WoRUD5yEd6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_P0mNMEViEd6QuJiOJFSRPQ">
           <language>OCL</language>
-          <body>self.delimiter-&gt;isEmpty() and self.family-&gt;isEmpty() and self.given-&gt;isEmpty() and self.prefix-&gt;isEmpty() and self.suffix-&gt;isEmpty() and mixed-&gt;size() = 1</body>
+          <body>self.delimiter->isEmpty() and self.family->isEmpty() and self.given->isEmpty() and self.prefix->isEmpty() and self.suffix->isEmpty() and mixed->size() = 1</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_95ukoD5yEd6cla2oXsPtlA" general="_wfRKoD5yEd6cla2oXsPtlA"/>
@@ -782,7 +782,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_DHg4ID5zEd6cla2oXsPtlA" name="ADXP">
       <generalization xmi:id="_KMD48D5zEd6cla2oXsPtlA" general="_EaTNsDxaEd6JwqSGecoePg"/>
       <ownedAttribute xmi:id="_RMSacD5zEd6cla2oXsPtlA" name="partType" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yedpkDcEd6xYZuu1VKCVw?vocab/AddressPartType?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yedpkDcEd6xYZuu1VKCVw?vocab/AddressPartType?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s9h9sT58Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s9h9sD58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -790,12 +790,12 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_D7EcAD5zEd6cla2oXsPtlA" name="ENXP">
       <generalization xmi:id="_K1oaYD5zEd6cla2oXsPtlA" general="_EaTNsDxaEd6JwqSGecoePg"/>
       <ownedAttribute xmi:id="_Scv8wD5zEd6cla2oXsPtlA" name="partType" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoON0DcEd6xYZuu1VKCVw?vocab/EntityNamePartType?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoON0DcEd6xYZuu1VKCVw?vocab/EntityNamePartType?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tzLMQT58Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tzLMQD58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_tXoO0D5zEd6cla2oXsPtlA" name="qualifier" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoOKUDcEd6xYZuu1VKCVw?vocab/EntityNamePartQualifier?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoOKUDcEd6xYZuu1VKCVw?vocab/EntityNamePartQualifier?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NW_00T58Ed6cla2oXsPtlA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NW_00D58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -815,7 +815,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VjjX0D6CEd6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_5iTUkD52Ed6cla2oXsPtlA" name="use" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFEA0DcEd6xYZuu1VKCVw?vocab/TelecommunicationAddressUse?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFEA0DcEd6xYZuu1VKCVw?vocab/TelecommunicationAddressUse?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6Ew5sT58Ed6cla2oXsPtlA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6Ew5sD58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -971,12 +971,12 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_kSZ5QD5_Ed6cla2oXsPtlA" name="SXCM_TS">
       <generalization xmi:id="_lzkKAD5_Ed6cla2oXsPtlA" general="_4ysYYD59Ed6cla2oXsPtlA"/>
       <ownedAttribute xmi:id="_2C6tgD5_Ed6cla2oXsPtlA" name="operator" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DosmsT6AEd6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DosmsD6AEd6cla2oXsPtlA"/>
         <defaultValue xmi:type="uml:InstanceValue" xmi:id="_8nRg4Eo8Ed6c3qsAxlFHaQ" name="I">
-          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
-          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFACkDcEd6xYZuu1VKCVw?vocab/SetOperator/I?"/>
+          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFACkDcEd6xYZuu1VKCVw?vocab/SetOperator/I?"/>
         </defaultValue>
       </ownedAttribute>
     </packagedElement>
@@ -994,12 +994,12 @@
     <packagedElement xmi:type="uml:Class" xmi:id="__NRSwEo8Ed6c3qsAxlFHaQ" name="SXCM_INT">
       <generalization xmi:id="_Aw96IEo9Ed6c3qsAxlFHaQ" general="_co8uMD53Ed6cla2oXsPtlA"/>
       <ownedAttribute xmi:id="_Bo19UEo9Ed6c3qsAxlFHaQ" name="operator" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DVxZMUo9Ed6c3qsAxlFHaQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DVxZMEo9Ed6c3qsAxlFHaQ"/>
         <defaultValue xmi:type="uml:InstanceValue" xmi:id="_EAFhgEo9Ed6c3qsAxlFHaQ" name="I">
-          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
-          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFACkDcEd6xYZuu1VKCVw?vocab/SetOperator/I?"/>
+          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFACkDcEd6xYZuu1VKCVw?vocab/SetOperator/I?"/>
         </defaultValue>
       </ownedAttribute>
     </packagedElement>
@@ -1047,12 +1047,12 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_kkrQAErrEd6FXKclYGEDCw" name="SXCM_PQ">
       <generalization xmi:id="_me3EwErrEd6FXKclYGEDCw" general="_3mPzYD59Ed6cla2oXsPtlA"/>
       <ownedAttribute xmi:id="_nEao4ErrEd6FXKclYGEDCw" name="operator" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oFr4oUrrEd6FXKclYGEDCw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oFr4oErrEd6FXKclYGEDCw"/>
         <defaultValue xmi:type="uml:InstanceValue" xmi:id="_qWOX4ErrEd6FXKclYGEDCw" name="I">
-          <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
-          <instance xmi:type="uml:EnumerationLiteral" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFACkDcEd6xYZuu1VKCVw?vocab/SetOperator/I?"/>
+          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFACkDcEd6xYZuu1VKCVw?vocab/SetOperator/I?"/>
         </defaultValue>
       </ownedAttribute>
     </packagedElement>
@@ -1097,7 +1097,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J_uVAE-pEd6lBqYlbulQZA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_NWcZME-pEd6lBqYlbulQZA" name="alignment" visibility="private">
-        <type xmi:type="uml:Enumeration" href="platform:/resource/org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yejAEDcEd6xYZuu1VKCVw?vocab/CalendarCycle?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yejAEDcEd6xYZuu1VKCVw?vocab/CalendarCycle?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_O7BxYU-pEd6lBqYlbulQZA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_O7BxYE-pEd6lBqYlbulQZA"/>
       </ownedAttribute>
@@ -1116,8 +1116,6 @@
       </eAnnotations>
       <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
     </profileApplication>
-    
-    
     <profileApplication xmi:id="_dltfgDxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_dl2pcDxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>

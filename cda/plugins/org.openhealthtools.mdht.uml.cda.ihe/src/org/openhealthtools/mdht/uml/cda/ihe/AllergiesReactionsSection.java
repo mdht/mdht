@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getAllergiesReactionsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='AllergiesReactionsSectionTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.13'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.13' constraints.validation.error='AllergiesReactionsSectionTemplateId'"
  *        annotation="uml2.alias Allergies\040and\040Other\040Adverse\040Reactions\040Section='null'"
  * @generated
  */

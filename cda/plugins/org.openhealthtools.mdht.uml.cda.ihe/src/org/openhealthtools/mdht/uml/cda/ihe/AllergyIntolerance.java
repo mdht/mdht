@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getAllergyIntolerance()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='AllergyIntoleranceTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.6'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.6' constraints.validation.error='AllergyIntoleranceTemplateId'"
  *        annotation="uml2.alias Allergies\040and\040Intolerances='null'"
  * @generated
  */

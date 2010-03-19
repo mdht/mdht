@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getSocialHistorySection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='IHESocialHistorySectionTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.16'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.16' constraints.validation.error='IHESocialHistorySectionTemplateId'"
  * @generated
  */
 public interface SocialHistorySection extends org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection {

@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Participant2;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getAdvanceDirectiveVerification()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation typeCode='VRF' constraints.validation.error='AdvanceDirectiveVerificationTemplateId AdvanceDirectiveVerificationTypeCode' templateId.root='2.16.840.1.113883.10.20.1.58' constraints.validation.warning='AdvanceDirectiveVerificationTime'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.58' constraints.validation.error='AdvanceDirectiveVerificationTemplateId AdvanceDirectiveVerificationTypeCode' constraints.validation.warning='AdvanceDirectiveVerificationTime' typeCode='VRF'"
  * @generated
  */
 public interface AdvanceDirectiveVerification extends Participant2 {

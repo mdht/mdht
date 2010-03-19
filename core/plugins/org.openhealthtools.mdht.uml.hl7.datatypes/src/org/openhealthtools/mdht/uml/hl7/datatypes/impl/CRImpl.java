@@ -233,7 +233,7 @@ public class CRImpl extends ANYImpl implements CR {
 			case DatatypesPackage.CR__VALUE:
 				return getValue();
 			case DatatypesPackage.CR__INVERTED:
-				return isInverted() ? Boolean.TRUE : Boolean.FALSE;
+				return isInverted();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -253,7 +253,7 @@ public class CRImpl extends ANYImpl implements CR {
 				setValue((CD)newValue);
 				return;
 			case DatatypesPackage.CR__INVERTED:
-				setInverted(((Boolean)newValue).booleanValue());
+				setInverted((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

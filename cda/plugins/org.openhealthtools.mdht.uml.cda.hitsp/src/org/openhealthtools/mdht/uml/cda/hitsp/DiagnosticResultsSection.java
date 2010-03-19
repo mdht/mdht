@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getDiagnosticResultsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='DiagnosticResultsSectionTemplateId' templateId.root='2.16.840.1.113883.3.88.11.83.122'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.122' constraints.validation.error='DiagnosticResultsSectionTemplateId'"
  * @generated
  */
 public interface DiagnosticResultsSection extends CodedResultsSection {

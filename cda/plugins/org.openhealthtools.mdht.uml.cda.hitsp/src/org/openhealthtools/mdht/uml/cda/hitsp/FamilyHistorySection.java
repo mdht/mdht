@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getFamilyHistorySection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='HITSPFamilyHistorySectionTemplateId' templateId.root='2.16.840.1.113883.3.88.11.83.125'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.125' constraints.validation.error='HITSPFamilyHistorySectionTemplateId'"
  * @generated
  */
 public interface FamilyHistorySection extends FamilyMedicalHistorySection {

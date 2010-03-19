@@ -297,8 +297,8 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 				return createMedicationActivityAdapter();
 			}
 			@Override
-			public Adapter caseMedication_1(org.openhealthtools.mdht.uml.cda.ihe.Medication object) {
-				return createMedication_1Adapter();
+			public Adapter caseIHE_Medication(org.openhealthtools.mdht.uml.cda.ihe.Medication object) {
+				return createIHE_MedicationAdapter();
 			}
 			@Override
 			public Adapter caseProblemConcernEntry(ProblemConcernEntry object) {
@@ -337,16 +337,16 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 				return createMedicationSectionAdapter();
 			}
 			@Override
-			public Adapter caseMedicationsSection_1(org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection object) {
-				return createMedicationsSection_1Adapter();
+			public Adapter caseIHE_MedicationsSection(org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection object) {
+				return createIHE_MedicationsSectionAdapter();
 			}
 			@Override
-			public Adapter caseVitalSignsSection_1(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection object) {
-				return createVitalSignsSection_1Adapter();
+			public Adapter caseCCD_VitalSignsSection(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection object) {
+				return createCCD_VitalSignsSectionAdapter();
 			}
 			@Override
-			public Adapter caseVitalSignsSection_2(org.openhealthtools.mdht.uml.cda.ihe.VitalSignsSection object) {
-				return createVitalSignsSection_2Adapter();
+			public Adapter caseIHE_VitalSignsSection(org.openhealthtools.mdht.uml.cda.ihe.VitalSignsSection object) {
+				return createIHE_VitalSignsSectionAdapter();
 			}
 			@Override
 			public Adapter caseCodedVitalSignsSection(CodedVitalSignsSection object) {
@@ -361,152 +361,152 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 				return createVitalSignObservationAdapter();
 			}
 			@Override
-			public Adapter casePayersSection_1(org.openhealthtools.mdht.uml.cda.ccd.PayersSection object) {
-				return createPayersSection_1Adapter();
+			public Adapter caseCCD_PayersSection(org.openhealthtools.mdht.uml.cda.ccd.PayersSection object) {
+				return createCCD_PayersSectionAdapter();
 			}
 			@Override
-			public Adapter casePayersSection_2(org.openhealthtools.mdht.uml.cda.ihe.PayersSection object) {
-				return createPayersSection_2Adapter();
+			public Adapter caseIHE_PayersSection(org.openhealthtools.mdht.uml.cda.ihe.PayersSection object) {
+				return createIHE_PayersSectionAdapter();
 			}
 			@Override
 			public Adapter caseAlertsSection(AlertsSection object) {
 				return createAlertsSectionAdapter();
 			}
 			@Override
-			public Adapter caseAllergiesReactionsSection_1(org.openhealthtools.mdht.uml.cda.ihe.AllergiesReactionsSection object) {
-				return createAllergiesReactionsSection_1Adapter();
+			public Adapter caseIHE_AllergiesReactionsSection(org.openhealthtools.mdht.uml.cda.ihe.AllergiesReactionsSection object) {
+				return createIHE_AllergiesReactionsSectionAdapter();
 			}
 			@Override
-			public Adapter caseHistoryOfPastIllnessSection_1(org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection object) {
-				return createHistoryOfPastIllnessSection_1Adapter();
+			public Adapter caseIHE_HistoryOfPastIllnessSection(org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection object) {
+				return createIHE_HistoryOfPastIllnessSectionAdapter();
 			}
 			@Override
-			public Adapter caseChiefComplaintSection_1(org.openhealthtools.mdht.uml.cda.ihe.ChiefComplaintSection object) {
-				return createChiefComplaintSection_1Adapter();
+			public Adapter caseIHE_ChiefComplaintSection(org.openhealthtools.mdht.uml.cda.ihe.ChiefComplaintSection object) {
+				return createIHE_ChiefComplaintSectionAdapter();
 			}
 			@Override
-			public Adapter caseReasonForReferralSection_1(org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection object) {
-				return createReasonForReferralSection_1Adapter();
+			public Adapter caseIHE_ReasonForReferralSection(org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection object) {
+				return createIHE_ReasonForReferralSectionAdapter();
 			}
 			@Override
-			public Adapter caseHistoryOfPresentIllness_1(org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness object) {
-				return createHistoryOfPresentIllness_1Adapter();
+			public Adapter caseIHE_HistoryOfPresentIllness(org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness object) {
+				return createIHE_HistoryOfPresentIllnessAdapter();
 			}
 			@Override
 			public Adapter caseProceduresSection(ProceduresSection object) {
 				return createProceduresSectionAdapter();
 			}
 			@Override
-			public Adapter caseSurgeriesSection_1(org.openhealthtools.mdht.uml.cda.ihe.SurgeriesSection object) {
-				return createSurgeriesSection_1Adapter();
+			public Adapter caseIHE_SurgeriesSection(org.openhealthtools.mdht.uml.cda.ihe.SurgeriesSection object) {
+				return createIHE_SurgeriesSectionAdapter();
 			}
 			@Override
 			public Adapter caseCodedSurgeriesSection(CodedSurgeriesSection object) {
 				return createCodedSurgeriesSectionAdapter();
 			}
 			@Override
-			public Adapter caseFunctionalStatusSection_1(org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection object) {
-				return createFunctionalStatusSection_1Adapter();
+			public Adapter caseCCD_FunctionalStatusSection(org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection object) {
+				return createCCD_FunctionalStatusSectionAdapter();
 			}
 			@Override
-			public Adapter caseHospitalAdmissionDiagnosisSection_1(org.openhealthtools.mdht.uml.cda.ihe.HospitalAdmissionDiagnosisSection object) {
-				return createHospitalAdmissionDiagnosisSection_1Adapter();
+			public Adapter caseIHE_HospitalAdmissionDiagnosisSection(org.openhealthtools.mdht.uml.cda.ihe.HospitalAdmissionDiagnosisSection object) {
+				return createIHE_HospitalAdmissionDiagnosisSectionAdapter();
 			}
 			@Override
-			public Adapter caseDischargeDiagnosisSection_1(org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection object) {
-				return createDischargeDiagnosisSection_1Adapter();
+			public Adapter caseIHE_DischargeDiagnosisSection(org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection object) {
+				return createIHE_DischargeDiagnosisSectionAdapter();
 			}
 			@Override
-			public Adapter caseAdmissionMedicationHistorySection_1(org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection object) {
-				return createAdmissionMedicationHistorySection_1Adapter();
+			public Adapter caseIHE_AdmissionMedicationHistorySection(org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection object) {
+				return createIHE_AdmissionMedicationHistorySectionAdapter();
 			}
 			@Override
-			public Adapter caseHospitalDischargeMedicationsSection_1(org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection object) {
-				return createHospitalDischargeMedicationsSection_1Adapter();
+			public Adapter caseIHE_HospitalDischargeMedicationsSection(org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection object) {
+				return createIHE_HospitalDischargeMedicationsSectionAdapter();
 			}
 			@Override
-			public Adapter caseMedicationsAdministeredSection_1(org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection object) {
-				return createMedicationsAdministeredSection_1Adapter();
+			public Adapter caseIHE_MedicationsAdministeredSection(org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection object) {
+				return createIHE_MedicationsAdministeredSectionAdapter();
 			}
 			@Override
-			public Adapter caseAdvanceDirectivesSection_1(org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection object) {
-				return createAdvanceDirectivesSection_1Adapter();
+			public Adapter caseCCD_AdvanceDirectivesSection(org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection object) {
+				return createCCD_AdvanceDirectivesSectionAdapter();
 			}
 			@Override
-			public Adapter caseAdvanceDirectivesSection_2(org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection object) {
-				return createAdvanceDirectivesSection_2Adapter();
+			public Adapter caseIHE_AdvanceDirectivesSection(org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection object) {
+				return createIHE_AdvanceDirectivesSectionAdapter();
 			}
 			@Override
 			public Adapter caseCodedAdvanceDirectivesSection(CodedAdvanceDirectivesSection object) {
 				return createCodedAdvanceDirectivesSectionAdapter();
 			}
 			@Override
-			public Adapter caseImmunizationsSection_1(org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection object) {
-				return createImmunizationsSection_1Adapter();
+			public Adapter caseCCD_ImmunizationsSection(org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection object) {
+				return createCCD_ImmunizationsSectionAdapter();
 			}
 			@Override
-			public Adapter caseImmunizationsSection_2(org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection object) {
-				return createImmunizationsSection_2Adapter();
+			public Adapter caseIHE_ImmunizationsSection(org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection object) {
+				return createIHE_ImmunizationsSectionAdapter();
 			}
 			@Override
 			public Adapter casePhysicalExamNarrativeSection(PhysicalExamNarrativeSection object) {
 				return createPhysicalExamNarrativeSectionAdapter();
 			}
 			@Override
-			public Adapter casePhysicalExamSection_1(org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection object) {
-				return createPhysicalExamSection_1Adapter();
+			public Adapter caseIHE_PhysicalExamSection(org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection object) {
+				return createIHE_PhysicalExamSectionAdapter();
 			}
 			@Override
-			public Adapter caseReviewOfSystemsSection_1(org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection object) {
-				return createReviewOfSystemsSection_1Adapter();
+			public Adapter caseIHE_ReviewOfSystemsSection(org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection object) {
+				return createIHE_ReviewOfSystemsSectionAdapter();
 			}
 			@Override
-			public Adapter caseHospitalCourseSection_1(org.openhealthtools.mdht.uml.cda.ihe.HospitalCourseSection object) {
-				return createHospitalCourseSection_1Adapter();
+			public Adapter caseIHE_HospitalCourseSection(org.openhealthtools.mdht.uml.cda.ihe.HospitalCourseSection object) {
+				return createIHE_HospitalCourseSectionAdapter();
 			}
 			@Override
 			public Adapter caseCodedResultsSection(CodedResultsSection object) {
 				return createCodedResultsSectionAdapter();
 			}
 			@Override
-			public Adapter caseAssessmentAndPlanSection_1(org.openhealthtools.mdht.uml.cda.ihe.AssessmentAndPlanSection object) {
-				return createAssessmentAndPlanSection_1Adapter();
+			public Adapter caseIHE_AssessmentAndPlanSection(org.openhealthtools.mdht.uml.cda.ihe.AssessmentAndPlanSection object) {
+				return createIHE_AssessmentAndPlanSectionAdapter();
 			}
 			@Override
-			public Adapter casePlanOfCareSection_1(org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection object) {
-				return createPlanOfCareSection_1Adapter();
+			public Adapter caseCCD_PlanOfCareSection(org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection object) {
+				return createCCD_PlanOfCareSectionAdapter();
 			}
 			@Override
 			public Adapter caseCarePlanSection(CarePlanSection object) {
 				return createCarePlanSectionAdapter();
 			}
 			@Override
-			public Adapter caseFamilyHistorySection_1(org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection object) {
-				return createFamilyHistorySection_1Adapter();
+			public Adapter caseCCD_FamilyHistorySection(org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection object) {
+				return createCCD_FamilyHistorySectionAdapter();
 			}
 			@Override
 			public Adapter caseFamilyMedicalHistorySection(FamilyMedicalHistorySection object) {
 				return createFamilyMedicalHistorySectionAdapter();
 			}
 			@Override
-			public Adapter caseSocialHistorySection_1(org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection object) {
-				return createSocialHistorySection_1Adapter();
+			public Adapter caseCCD_SocialHistorySection(org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection object) {
+				return createCCD_SocialHistorySectionAdapter();
 			}
 			@Override
-			public Adapter caseSocialHistorySection_2(org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection object) {
-				return createSocialHistorySection_2Adapter();
+			public Adapter caseIHE_SocialHistorySection(org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection object) {
+				return createIHE_SocialHistorySectionAdapter();
 			}
 			@Override
-			public Adapter caseEncountersSection_1(org.openhealthtools.mdht.uml.cda.ccd.EncountersSection object) {
-				return createEncountersSection_1Adapter();
+			public Adapter caseCCD_EncountersSection(org.openhealthtools.mdht.uml.cda.ccd.EncountersSection object) {
+				return createCCD_EncountersSectionAdapter();
 			}
 			@Override
 			public Adapter caseEncounterHistorySection(EncounterHistorySection object) {
 				return createEncounterHistorySectionAdapter();
 			}
 			@Override
-			public Adapter caseMedicalEquipmentSection_1(org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection object) {
-				return createMedicalEquipmentSection_1Adapter();
+			public Adapter caseCCD_MedicalEquipmentSection(org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection object) {
+				return createCCD_MedicalEquipmentSectionAdapter();
 			}
 			@Override
 			public Adapter caseMedicalDevicesSection(MedicalDevicesSection object) {
@@ -1120,7 +1120,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.Medication
 	 * @generated
 	 */
-	public Adapter createMedication_1Adapter() {
+	public Adapter createIHE_MedicationAdapter() {
 		return null;
 	}
 
@@ -1163,34 +1163,6 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSectionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection <em>Vital Signs Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection
-	 * @generated
-	 */
-	public Adapter createVitalSignsSection_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignsSection <em>Vital Signs Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.VitalSignsSection
-	 * @generated
-	 */
-	public Adapter createVitalSignsSection_2Adapter() {
 		return null;
 	}
 
@@ -1260,7 +1232,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.PayersSection
 	 * @generated
 	 */
-	public Adapter createPayersSection_1Adapter() {
+	public Adapter createCCD_PayersSectionAdapter() {
 		return null;
 	}
 
@@ -1274,7 +1246,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.PayersSection
 	 * @generated
 	 */
-	public Adapter createPayersSection_2Adapter() {
+	public Adapter createIHE_PayersSectionAdapter() {
 		return null;
 	}
 
@@ -1302,7 +1274,63 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.AllergiesReactionsSection
 	 * @generated
 	 */
-	public Adapter createAllergiesReactionsSection_1Adapter() {
+	public Adapter createIHE_AllergiesReactionsSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection <em>History Of Past Illness Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection
+	 * @generated
+	 */
+	public Adapter createIHE_HistoryOfPastIllnessSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.ChiefComplaintSection <em>Chief Complaint Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ChiefComplaintSection
+	 * @generated
+	 */
+	public Adapter createIHE_ChiefComplaintSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection <em>Reason For Referral Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection
+	 * @generated
+	 */
+	public Adapter createIHE_ReasonForReferralSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness <em>History Of Present Illness</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness
+	 * @generated
+	 */
+	public Adapter createIHE_HistoryOfPresentIllnessAdapter() {
 		return null;
 	}
 
@@ -1335,62 +1363,6 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection <em>History Of Past Illness Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection
-	 * @generated
-	 */
-	public Adapter createHistoryOfPastIllnessSection_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.ChiefComplaintSection <em>Chief Complaint Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.ChiefComplaintSection
-	 * @generated
-	 */
-	public Adapter createChiefComplaintSection_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection <em>Reason For Referral Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection
-	 * @generated
-	 */
-	public Adapter createReasonForReferralSection_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness <em>History Of Present Illness</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPresentIllness
-	 * @generated
-	 */
-	public Adapter createHistoryOfPresentIllness_1Adapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection <em>Procedures Section</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1414,7 +1386,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.SurgeriesSection
 	 * @generated
 	 */
-	public Adapter createSurgeriesSection_1Adapter() {
+	public Adapter createIHE_SurgeriesSectionAdapter() {
 		return null;
 	}
 
@@ -1442,7 +1414,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection
 	 * @generated
 	 */
-	public Adapter createFunctionalStatusSection_1Adapter() {
+	public Adapter createCCD_FunctionalStatusSectionAdapter() {
 		return null;
 	}
 
@@ -1456,7 +1428,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.HospitalAdmissionDiagnosisSection
 	 * @generated
 	 */
-	public Adapter createHospitalAdmissionDiagnosisSection_1Adapter() {
+	public Adapter createIHE_HospitalAdmissionDiagnosisSectionAdapter() {
 		return null;
 	}
 
@@ -1470,7 +1442,77 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection
 	 * @generated
 	 */
-	public Adapter createDischargeDiagnosisSection_1Adapter() {
+	public Adapter createIHE_DischargeDiagnosisSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection <em>Admission Medication History Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection
+	 * @generated
+	 */
+	public Adapter createIHE_AdmissionMedicationHistorySectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection <em>Hospital Discharge Medications Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection
+	 * @generated
+	 */
+	public Adapter createIHE_HospitalDischargeMedicationsSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection <em>Medications Administered Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection
+	 * @generated
+	 */
+	public Adapter createIHE_MedicationsAdministeredSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection <em>Advance Directives Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection
+	 * @generated
+	 */
+	public Adapter createCCD_AdvanceDirectivesSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection <em>Advance Directives Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection
+	 * @generated
+	 */
+	public Adapter createIHE_AdvanceDirectivesSectionAdapter() {
 		return null;
 	}
 
@@ -1498,77 +1540,35 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection
 	 * @generated
 	 */
-	public Adapter createMedicationsSection_1Adapter() {
+	public Adapter createIHE_MedicationsSectionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection <em>Admission Medication History Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection <em>Vital Signs Section</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection
 	 * @generated
 	 */
-	public Adapter createAdmissionMedicationHistorySection_1Adapter() {
+	public Adapter createCCD_VitalSignsSectionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection <em>Hospital Discharge Medications Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignsSection <em>Vital Signs Section</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.VitalSignsSection
 	 * @generated
 	 */
-	public Adapter createHospitalDischargeMedicationsSection_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection <em>Medications Administered Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection
-	 * @generated
-	 */
-	public Adapter createMedicationsAdministeredSection_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection <em>Advance Directives Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection
-	 * @generated
-	 */
-	public Adapter createAdvanceDirectivesSection_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection <em>Advance Directives Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection
-	 * @generated
-	 */
-	public Adapter createAdvanceDirectivesSection_2Adapter() {
+	public Adapter createIHE_VitalSignsSectionAdapter() {
 		return null;
 	}
 
@@ -1596,7 +1596,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection
 	 * @generated
 	 */
-	public Adapter createImmunizationsSection_1Adapter() {
+	public Adapter createCCD_ImmunizationsSectionAdapter() {
 		return null;
 	}
 
@@ -1610,7 +1610,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection
 	 * @generated
 	 */
-	public Adapter createImmunizationsSection_2Adapter() {
+	public Adapter createIHE_ImmunizationsSectionAdapter() {
 		return null;
 	}
 
@@ -1638,7 +1638,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection
 	 * @generated
 	 */
-	public Adapter createPhysicalExamSection_1Adapter() {
+	public Adapter createIHE_PhysicalExamSectionAdapter() {
 		return null;
 	}
 
@@ -1652,7 +1652,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection
 	 * @generated
 	 */
-	public Adapter createReviewOfSystemsSection_1Adapter() {
+	public Adapter createIHE_ReviewOfSystemsSectionAdapter() {
 		return null;
 	}
 
@@ -1666,7 +1666,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.HospitalCourseSection
 	 * @generated
 	 */
-	public Adapter createHospitalCourseSection_1Adapter() {
+	public Adapter createIHE_HospitalCourseSectionAdapter() {
 		return null;
 	}
 
@@ -1694,7 +1694,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.AssessmentAndPlanSection
 	 * @generated
 	 */
-	public Adapter createAssessmentAndPlanSection_1Adapter() {
+	public Adapter createIHE_AssessmentAndPlanSectionAdapter() {
 		return null;
 	}
 
@@ -1708,7 +1708,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection
 	 * @generated
 	 */
-	public Adapter createPlanOfCareSection_1Adapter() {
+	public Adapter createCCD_PlanOfCareSectionAdapter() {
 		return null;
 	}
 
@@ -1736,7 +1736,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection
 	 * @generated
 	 */
-	public Adapter createFamilyHistorySection_1Adapter() {
+	public Adapter createCCD_FamilyHistorySectionAdapter() {
 		return null;
 	}
 
@@ -1764,7 +1764,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection
 	 * @generated
 	 */
-	public Adapter createSocialHistorySection_1Adapter() {
+	public Adapter createCCD_SocialHistorySectionAdapter() {
 		return null;
 	}
 
@@ -1778,7 +1778,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection
 	 * @generated
 	 */
-	public Adapter createSocialHistorySection_2Adapter() {
+	public Adapter createIHE_SocialHistorySectionAdapter() {
 		return null;
 	}
 
@@ -1792,7 +1792,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.EncountersSection
 	 * @generated
 	 */
-	public Adapter createEncountersSection_1Adapter() {
+	public Adapter createCCD_EncountersSectionAdapter() {
 		return null;
 	}
 
@@ -1820,7 +1820,7 @@ public class HITSPAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection
 	 * @generated
 	 */
-	public Adapter createMedicalEquipmentSection_1Adapter() {
+	public Adapter createCCD_MedicalEquipmentSectionAdapter() {
 		return null;
 	}
 

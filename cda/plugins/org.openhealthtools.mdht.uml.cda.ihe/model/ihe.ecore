@@ -8,8 +8,8 @@
       <details key="documentation" value="The immunizations section shall contain a narrative description of the immunizations administered to the patient in the&#xD;&#xA;past. It shall include entries for medication administration as described in the Entry Content Modules."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="IHEImmunizationsSectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+      <details key="constraints.validation.error" value="IHEImmunizationsSectionTemplateId"/>
     </eAnnotations>
     <eOperations name="IHEImmunizationsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -39,9 +39,11 @@
       <details key="documentation" value="The medications administered section shall contain a narrative description of the relevant medications administered to a&#xD;&#xA;patient during the course of an encounter. It shall include entries for medication administration as described in the Entry&#xD;&#xA;Content Module."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="MedicationsAdministeredSectionTemplateId MedicationsAdministeredSectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.21"/>
       <details key="code.displayName" value="MEDICATION ADMINISTERED"/>
+      <details key="constraints.validation.error" value="MedicationsAdministeredSectionTemplateId MedicationsAdministeredSectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="18610-6"/>
     </eAnnotations>
     <eOperations name="MedicationsAdministeredSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -91,8 +93,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConcernEntry" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//ProblemAct">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="ConcernEntryTemplateId ConcernEntryEffectiveTime"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+      <details key="constraints.validation.error" value="ConcernEntryTemplateId ConcernEntryEffectiveTime"/>
     </eAnnotations>
     <eOperations name="ConcernEntryTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -356,8 +358,8 @@
       <details key="documentation" value="This content module describes the general structure for a medication. All medication administration acts will be derived&#xD;&#xA;from this content module."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="MedicationTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+      <details key="constraints.validation.error" value="MedicationTemplateId"/>
     </eAnnotations>
     <eOperations name="MedicationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -387,8 +389,8 @@
       <details key="documentation" value="The medications section shall contain a description of the relevant medications for the patient, e.g. an ambulatory&#xD;&#xA;prescription list. It shall include entries for medications as described in the Entry Content Module."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="MedicationsSectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+      <details key="constraints.validation.error" value="MedicationsSectionTemplateId"/>
     </eAnnotations>
     <eOperations name="MedicationsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -418,8 +420,8 @@
       <details key="documentation" value="This entry is a specialization of the Concern&#xD;&#xA;Entry, wherein the subject of the concern is focused on an allergy or intolerance."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="AllergyIntoleranceConcernTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+      <details key="constraints.validation.error" value="AllergyIntoleranceConcernTemplateId"/>
     </eAnnotations>
     <eAnnotations source="uml2.alias">
       <details key="Allergy and Intolerance Concern"/>
@@ -449,8 +451,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AllergyIntolerance" eSuperTypes="#//ProblemEntry">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="AllergyIntoleranceTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+      <details key="constraints.validation.error" value="AllergyIntoleranceTemplateId"/>
     </eAnnotations>
     <eAnnotations source="uml2.alias">
       <details key="Allergies and Intolerances"/>
@@ -483,8 +485,8 @@
       <details key="documentation" value="The adverse and other adverse reactions section shall contain a narrative description of the substance intolerances and the&#xD;&#xA;associated adverse reactions suffered by the patient."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="AllergiesReactionsSectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+      <details key="constraints.validation.error" value="AllergiesReactionsSectionTemplateId"/>
     </eAnnotations>
     <eAnnotations source="uml2.alias">
       <details key="Allergies and Other Adverse Reactions Section"/>
@@ -545,8 +547,8 @@
       <details key="documentation" value="&lt;p>&#xD;&#xA;    This template identifier is used to identify medication administration events that require special processing to handle&#xD;&#xA;    tapered dosing. The parent template is 1.3.6.1.4.1.19376.1.5.3.1.4.7. A tapered dose is often used for certain&#xD;&#xA;    medications where abrupt termination of the medication can have negative consequences. Tapered dosages may be done by&#xD;&#xA;    adjusting the dose frequency, the dose amount, or both.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    When merely the dose frequency is adjusted, (e.g., Prednisone 5mg b.i.d. for three days, then 5mg. daily for three&#xD;&#xA;    days, and then 5mg every other day), then only one medication entry is needed, multiple frequency specifications&#xD;&#xA;    recorded in &amp;lt;effectiveTime&amp;gt; elements. When the dose varies (eg. Prednisone 15mg daily for three days, then 10 mg&#xD;&#xA;    daily for three days, the 5 mg daily for three days), subordinate medication entries should be created for each&#xD;&#xA;    distinct dosage.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="TaperedDoseTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.8"/>
+      <details key="constraints.validation.error" value="TaperedDoseTemplateId"/>
     </eAnnotations>
     <eOperations name="TaperedDoseTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -660,8 +662,8 @@
       <details key="documentation" value="&lt;p>&#xD;&#xA;    The vital signs section shall contain a narrative description of the measurement results of a patient's vital signs.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="IHEVitalSignsSectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.25"/>
+      <details key="constraints.validation.error" value="IHEVitalSignsSectionTemplateId"/>
     </eAnnotations>
     <eOperations name="IHEVitalSignsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -741,9 +743,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VitalSignObservation" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//ResultObservation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.info" value="VitalSignObservationInterpretationCode VitalSignObservationMethodCode VitalSignObservationTargetSiteCode"/>
-      <details key="constraints.validation.error" value="VitalSignObservationTemplateId VitalSignObservationCode VitalSignObservationValue"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+      <details key="constraints.validation.error" value="VitalSignObservationTemplateId VitalSignObservationCode VitalSignObservationValue"/>
+      <details key="code.codeSystemName" value="LOINC"/>
+      <details key="constraints.validation.info" value="VitalSignObservationInterpretationCode VitalSignObservationMethodCode VitalSignObservationTargetSiteCode"/>
     </eAnnotations>
     <eOperations name="VitalSignObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -883,9 +887,11 @@
       <details key="documentation" value="The simple observation entry is meant to be an abstract representation of many of the observations used in this&#xD;&#xA;specification. It can be made concrete by the specification of a few additional constraints, namely the vocabulary used for&#xD;&#xA;codes, and the value representation. A simple observation may also inherit constraints from other specifications (e.g.,&#xD;&#xA;ASTM/HL7 Continuity of Care Document)."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="statusCode.code" value="completed"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
       <details key="constraints.validation.error" value="SimpleObservationTemplateId SimpleObservationId SimpleObservationStatusCode"/>
-      <details key="statusCode.code" value="completed"/>
+      <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
+      <details key="statusCode.codeSystemName" value="ActStatus"/>
     </eAnnotations>
     <eOperations name="SimpleObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -956,11 +962,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VitalSignsOrganizer" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.ecore#//VitalSignsOrganizer">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
-      <details key="constraints.validation.error" value="IHEVitalSignsOrganizerTemplateId IHEVitalSignsOrganizerCode IHEVitalSignsOrganizerStatusCode IHEVitalSignsOrganizerEffectiveTime IHEVitalSignsOrganizerVitalSignObservation"/>
-      <details key="code.displayName" value="Vital signs"/>
       <details key="statusCode.code" value="completed"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.96"/>
+      <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
+      <details key="code.displayName" value="Vital signs"/>
+      <details key="constraints.validation.error" value="IHEVitalSignsOrganizerTemplateId IHEVitalSignsOrganizerCode IHEVitalSignsOrganizerStatusCode IHEVitalSignsOrganizerEffectiveTime IHEVitalSignsOrganizerVitalSignObservation"/>
+      <details key="code.codeSystemName" value="SNOMEDCT"/>
       <details key="code.code" value="46680005"/>
+      <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
+      <details key="statusCode.codeSystemName" value="ActStatus"/>
     </eAnnotations>
     <eOperations name="IHEVitalSignsOrganizerTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -1078,8 +1088,8 @@
       <details key="documentation" value="The Payers section contains data on the patient's payers, whether a 'third party' insurance, self-pay, other payer or&#xD;&#xA;guarantor, or some combination."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="IHEPayersSectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7"/>
+      <details key="constraints.validation.error" value="IHEPayersSectionTemplateId"/>
     </eAnnotations>
     <eOperations name="IHEPayersSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -1109,9 +1119,11 @@
       <details key="documentation" value="The History of Past Illness section shall contain a narrative description of the conditions the patient suffered in the&#xD;&#xA;past. It shall include entries for problems as described in the Entry Content Modules."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="HistoryOfPastIllnessSectionTemplateId HistoryOfPastIllnessSectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.8"/>
       <details key="code.displayName" value="HISTORY OF PAST ILLNESS"/>
+      <details key="constraints.validation.error" value="HistoryOfPastIllnessSectionTemplateId HistoryOfPastIllnessSectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="11348-0"/>
     </eAnnotations>
     <eOperations name="HistoryOfPastIllnessSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1164,9 +1176,11 @@
       <details key="documentation" value="This contains a narrative description of the patient's chief complaint."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="ChiefComplaintSectionTemplateId ChiefComplaintSectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1"/>
       <details key="code.displayName" value="CHIEF COMPLAINT"/>
+      <details key="constraints.validation.error" value="ChiefComplaintSectionTemplateId ChiefComplaintSectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="10154-3"/>
     </eAnnotations>
     <eOperations name="ChiefComplaintSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1219,9 +1233,11 @@
       <details key="documentation" value="The reason for referral section shall contain a narrative description of the reason that the patient is being referred."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="ReasonForReferralSectionTemplateId ReasonForReferralSectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.1"/>
       <details key="code.displayName" value="REASON FOR REFERRAL"/>
+      <details key="constraints.validation.error" value="ReasonForReferralSectionTemplateId ReasonForReferralSectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="42349-1"/>
     </eAnnotations>
     <eOperations name="ReasonForReferralSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1274,9 +1290,11 @@
       <details key="documentation" value="The history of present illness section shall contain a narrative description of the sequence of events preceding the&#xD;&#xA;patient's current complaints."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="HistoryOfPresentIllnessTemplateId HistoryOfPresentIllnessCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.4"/>
       <details key="code.displayName" value="HISTORY OF PRESENT ILLNESS"/>
+      <details key="constraints.validation.error" value="HistoryOfPresentIllnessTemplateId HistoryOfPresentIllnessCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="10164-2"/>
     </eAnnotations>
     <eOperations name="HistoryOfPresentIllnessTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1329,8 +1347,8 @@
       <details key="documentation" value="The list of surgeries section shall contain a narrative description of the diagnostic and therapeutic operative procedures&#xD;&#xA;and associated anesthetic techniques the patient received in the past."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="SurgeriesSectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+      <details key="constraints.validation.error" value="SurgeriesSectionTemplateId"/>
     </eAnnotations>
     <eOperations name="SurgeriesSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -1360,8 +1378,8 @@
       <details key="documentation" value="The list of surgeries section shall include entries for procedures and references to procedure reports when known as&#xD;&#xA;described in the Entry Content Modules."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="CodedSurgeriesSectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+      <details key="constraints.validation.error" value="CodedSurgeriesSectionTemplateId"/>
     </eAnnotations>
     <eOperations name="CodedSurgeriesSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -1391,9 +1409,11 @@
       <details key="documentation" value="The hospital admitting diagnosis section shall contain a narrative description of the primary reason for admission to a&#xD;&#xA;hospital facility. It shall include entries for observations as described in the Entry Content Modules."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="HospitalAdmissionDiagnosisSectionTemplateId HospitalAdmissionDiagnosisSectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.3"/>
       <details key="code.displayName" value="HOSPITAL ADMISSION DX"/>
+      <details key="constraints.validation.error" value="HospitalAdmissionDiagnosisSectionTemplateId HospitalAdmissionDiagnosisSectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="46241-6"/>
     </eAnnotations>
     <eOperations name="HospitalAdmissionDiagnosisSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1446,9 +1466,11 @@
       <details key="documentation" value="The discharge diagnosis section shall contain a narrative description of the conditions that need to be monitored after&#xD;&#xA;discharge from the hospital and those that were resolved during the hospital course. It shall include entries for patient&#xD;&#xA;conditions as described in the Entry Content Module."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="DischargeDiagnosisSectionTemplateId DischargeDiagnosisSectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.7"/>
       <details key="code.displayName" value="HOSPITAL DISCHARGE DX"/>
+      <details key="constraints.validation.error" value="DischargeDiagnosisSectionTemplateId DischargeDiagnosisSectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="11535-2"/>
     </eAnnotations>
     <eOperations name="DischargeDiagnosisSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1501,9 +1523,11 @@
       <details key="documentation" value="The admission medication history section shall contain a narrative description of the relevant medications administered to&#xD;&#xA;a patient prior to admission to a facility. It shall include entries for medication administration as described in the&#xD;&#xA;Entry Content Module."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="AdmissionMedicationHistorySectionTemplateId AdmissionMedicationHistorySectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.20"/>
       <details key="code.displayName" value="MEDICATIONS ON ADMISSION"/>
+      <details key="constraints.validation.error" value="AdmissionMedicationHistorySectionTemplateId AdmissionMedicationHistorySectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="42346-7"/>
     </eAnnotations>
     <eOperations name="AdmissionMedicationHistorySectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1557,9 +1581,11 @@
       <details key="documentation" value="The hospital discharge medications section shall contain a narrative description of the medications requested&#xD;&#xA;            (ordered) to be administered to the patient after discharge from the hospital. It shall include entries for&#xD;&#xA;            medication requests as described in the Entry Content Module."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="HospitalDischargeMedicationsSectionTemplateId HospitalDischargeMedicationsSectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.22"/>
       <details key="code.displayName" value="HOSPITAL DISCHARGE MEDICATIONS"/>
+      <details key="constraints.validation.error" value="HospitalDischargeMedicationsSectionTemplateId HospitalDischargeMedicationsSectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="10183-2"/>
     </eAnnotations>
     <eOperations name="HospitalDischargeMedicationsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1640,8 +1666,8 @@
       <details key="documentation" value="The advance directive section shall contain a narrative description of the list of documents that define the patient's&#xD;&#xA;expectations and requests for care along with the locations of the documents."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="IHEAdvanceDirectivesSectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.34"/>
+      <details key="constraints.validation.error" value="IHEAdvanceDirectivesSectionTemplateId"/>
     </eAnnotations>
     <eOperations name="IHEAdvanceDirectivesSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -1671,9 +1697,11 @@
       <details key="documentation" value="The physical exam section shall contain a narrative description of the patient's physical findings."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="PhysicalExamNarrativeSectionTemplateId PhysicalExamNarrativeSectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.24"/>
       <details key="code.displayName" value="PHYSICAL EXAMINATION"/>
+      <details key="constraints.validation.error" value="PhysicalExamNarrativeSectionTemplateId PhysicalExamNarrativeSectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="29545-1"/>
     </eAnnotations>
     <eOperations name="PhysicalExamNarrativeSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1726,8 +1754,8 @@
       <details key="documentation" value="The physical exam section shall contain only the required and optional subsections performed."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="PhysicalExamSectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.1.9.15"/>
+      <details key="constraints.validation.error" value="PhysicalExamSectionTemplateId"/>
     </eAnnotations>
     <eOperations name="PhysicalExamSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -1757,9 +1785,11 @@
       <details key="documentation" value="The review of systems section shall contain a narrative description of the responses the patient gave to a set of routine&#xD;&#xA;questions on the functions of each anatomic body system."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="ReviewOfSystemsSectionTemplateId ReviewOfSystemsSectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.18"/>
       <details key="code.displayName" value="REVIEW OF SYSTEMS"/>
+      <details key="constraints.validation.error" value="ReviewOfSystemsSectionTemplateId ReviewOfSystemsSectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="10187-3"/>
     </eAnnotations>
     <eOperations name="ReviewOfSystemsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1812,9 +1842,11 @@
       <details key="documentation" value="The hospital course section shall contain a narrative description of the sequence of events from admission to discharge in&#xD;&#xA;a hospital facility."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="HospitalCourseSectionTemplateId HospitalCourseSectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.5"/>
       <details key="code.displayName" value="HOSPITAL COURSE"/>
+      <details key="constraints.validation.error" value="HospitalCourseSectionTemplateId HospitalCourseSectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="8648-8"/>
     </eAnnotations>
     <eOperations name="HospitalCourseSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1867,9 +1899,11 @@
       <details key="documentation" value="The results section shall contain a narrative description of the relevant diagnostic procedures the patient received in the&#xD;&#xA;past. It shall include entries for procedures and references to procedure reports when known as described in the Entry&#xD;&#xA;Content Modules."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="CodedResultsSectionTemplateId CodedResultsSectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.28"/>
       <details key="code.displayName" value="STUDIES SUMMARY"/>
+      <details key="constraints.validation.error" value="CodedResultsSectionTemplateId CodedResultsSectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="30954-2"/>
     </eAnnotations>
     <eOperations name="CodedResultsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1922,9 +1956,11 @@
       <details key="documentation" value="The assessment and plan section shall contain a narrative description of the assessment of the patient condition and&#xD;&#xA;expectations for care including proposals, goals, and order requests for monitoring, tracking, or improving the condition&#xD;&#xA;of the patient."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="AssessmentAndPlanSectionTemplateId AssessmentAndPlanSectionCode"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.5"/>
       <details key="code.displayName" value="ASSESSMENT AND PLAN"/>
+      <details key="constraints.validation.error" value="AssessmentAndPlanSectionTemplateId AssessmentAndPlanSectionCode"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="51847-2"/>
     </eAnnotations>
     <eOperations name="AssessmentAndPlanSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -1977,8 +2013,8 @@
       <details key="documentation" value="The care plan section shall contain a narrative description of the expectations for care including proposals, goals, and&#xD;&#xA;order requests for monitoring, tracking, or improving the condition of the patient."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="CarePlanSectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.31"/>
+      <details key="constraints.validation.error" value="CarePlanSectionTemplateId"/>
     </eAnnotations>
     <eOperations name="CarePlanSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -2008,8 +2044,8 @@
       <details key="documentation" value="The family history section shall contain a narrative description of the genetic family members, to the extent that they are&#xD;&#xA;known, the diseases they suffered from, their ages at death, and other relevant genetic information."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="FamilyMedicalHistorySectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.14"/>
+      <details key="constraints.validation.error" value="FamilyMedicalHistorySectionTemplateId"/>
     </eAnnotations>
     <eOperations name="FamilyMedicalHistorySectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -2039,8 +2075,8 @@
       <details key="documentation" value="The social history section shall contain a narrative description of the person's beliefs, home life, community life, work&#xD;&#xA;life, hobbies, and risky habits."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="IHESocialHistorySectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.3.16"/>
+      <details key="constraints.validation.error" value="IHESocialHistorySectionTemplateId"/>
     </eAnnotations>
     <eOperations name="IHESocialHistorySectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -2070,8 +2106,8 @@
       <details key="documentation" value="&lt;p>&#xD;&#xA;    The encounter history section contains coded entries describing the patient history of encounters.&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="EncounterHistorySectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3"/>
+      <details key="constraints.validation.error" value="EncounterHistorySectionTemplateId"/>
     </eAnnotations>
     <eOperations name="EncounterHistorySectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -2101,8 +2137,8 @@
       <details key="documentation" value="The medical devices section contains narrative text describing the patient history of medical device use."/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="constraints.validation.error" value="MedicalDevicesSectionTemplateId"/>
       <details key="templateId.root" value="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+      <details key="constraints.validation.error" value="MedicalDevicesSectionTemplateId"/>
     </eAnnotations>
     <eOperations name="MedicalDevicesSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">

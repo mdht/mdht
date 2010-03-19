@@ -7,7 +7,9 @@
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
 import org.eclipse.emf.ecore.EClass;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDRegistryDelegate;
+import org.w3c.dom.Element;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,12 +38,40 @@ public class CCDRegistryDelegateOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  EClass getEClass(CCDRegistryDelegate ccdRegistryDelegate, String templateId, Object context) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EClass result = null;
+		if (context instanceof Element) {
+			Element element = (Element) context;
+			String localName = element.getLocalName();
+			if ("2.16.840.1.113883.10.20.1.25".equals(templateId)) {
+				// PlanOfCare
+				if ("act".equals(localName)) {
+					result = CCDPackage.Literals.PLAN_OF_CARE_ACT;
+				} else if ("encounter".equals(localName)) {
+					result = CCDPackage.Literals.PLAN_OF_CARE_ENCOUNTER;
+				} else if ("observation".equals(localName)) {
+					result = CCDPackage.Literals.PLAN_OF_CARE_OBSERVATION;
+				} else if ("procedure".equals(localName)) {
+					result = CCDPackage.Literals.PLAN_OF_CARE_PROCEDURE;
+				} else if ("substanceAdministration".equals(localName)) {
+					result = CCDPackage.Literals.PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION;
+				} else if ("supply".equals(localName)) {
+					result = CCDPackage.Literals.PLAN_OF_CARE_SUPPLY;
+				}
+			} else if ("2.16.840.1.113883.10.20.1.29".equals(templateId)) {
+				// ProcedureActivity
+				if ("act".equals(localName)) {
+					result = CCDPackage.Literals.PROCEDURE_ACT;
+				} else if ("observation".equals(localName)) {
+					result = CCDPackage.Literals.PROCEDURE_OBSERVATION;
+				} else if ("procedure".equals(localName)) {
+					result = CCDPackage.Literals.PROCEDURE_PROCEDURE;
+				}
+			}
+		}
+		return result;
 	}
 
 } // CCDRegistryDelegateOperations

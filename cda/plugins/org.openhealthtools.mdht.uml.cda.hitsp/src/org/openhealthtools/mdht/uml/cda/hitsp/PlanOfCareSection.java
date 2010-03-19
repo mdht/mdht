@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CarePlanSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getPlanOfCareSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='HITSPPlanOfCareSectionTemplateId' templateId.root='2.16.840.1.113883.3.88.11.83.124'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.124' constraints.validation.error='HITSPPlanOfCareSectionTemplateId'"
  * @generated
  */
 public interface PlanOfCareSection extends CarePlanSection {

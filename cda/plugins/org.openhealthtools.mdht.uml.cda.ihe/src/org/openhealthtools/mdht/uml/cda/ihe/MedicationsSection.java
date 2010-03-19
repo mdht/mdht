@@ -29,7 +29,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getMedicationsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='MedicationsSectionTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.19'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.19' constraints.validation.error='MedicationsSectionTemplateId'"
  * @generated
  */
 public interface MedicationsSection extends MedicationSection {

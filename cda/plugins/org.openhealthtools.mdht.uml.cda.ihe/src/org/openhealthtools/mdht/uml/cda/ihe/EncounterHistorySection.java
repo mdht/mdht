@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.EncountersSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getEncounterHistorySection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='EncounterHistorySectionTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3' constraints.validation.error='EncounterHistorySectionTemplateId'"
  * @generated
  */
 public interface EncounterHistorySection extends EncountersSection {

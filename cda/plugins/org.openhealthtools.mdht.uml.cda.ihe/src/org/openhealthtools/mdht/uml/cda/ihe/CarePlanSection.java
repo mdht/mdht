@@ -23,7 +23,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getCarePlanSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='CarePlanSectionTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.31'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.31' constraints.validation.error='CarePlanSectionTemplateId'"
  * @generated
  */
 public interface CarePlanSection extends PlanOfCareSection {
