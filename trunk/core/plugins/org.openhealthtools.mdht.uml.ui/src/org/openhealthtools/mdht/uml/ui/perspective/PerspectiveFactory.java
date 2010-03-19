@@ -24,6 +24,13 @@ import org.eclipse.ui.IPerspectiveFactory;
  * 
  */
 public class PerspectiveFactory implements IPerspectiveFactory {
+	
+	/*
+	 * ID_PROJECT_EXPLORER is defined in Eclipse 3.5 as part of IPageLayout but not defined
+	 * as part of IPageLayout in Eclipse 3.4
+	 * TODO Update to use IPageLayout for Eclipse 3.5 when we migrate
+	 */
+	 private static final String ID_PROJECT_EXPLORER = "org.eclipse.ui.navigator.ProjectExplorer"; 
 
 	/*
 	 * (non-Javadoc)
@@ -38,7 +45,7 @@ public class PerspectiveFactory implements IPerspectiveFactory {
 
 		// Top left.
 		IFolderLayout topLeft = layout.createFolder("topLeft", IPageLayout.LEFT, (float) 0.26, editorArea);
-		topLeft.addView(IPageLayout.ID_RES_NAV);
+		topLeft.addView(ID_PROJECT_EXPLORER);
 
 		// Bottom left.
 		IFolderLayout bottomLeft = layout.createFolder("bottomLeft", IPageLayout.BOTTOM, (float) 0.50, "topLeft");
