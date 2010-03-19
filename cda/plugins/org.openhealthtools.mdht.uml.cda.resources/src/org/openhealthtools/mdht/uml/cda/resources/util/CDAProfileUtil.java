@@ -52,6 +52,10 @@ public class CDAProfileUtil {
 	 */
 	public static Stereotype getAppliedCDAStereotype(Element element, String stereotypeName) {	
 		Stereotype stereotype = null;
+		if (element.eResource() == null) {
+			// this occurs when resource is unloaded or element was removed
+			return null;
+		}
 		Profile profile = getCDAProfile(element.eResource().getResourceSet());
 		if (profile != null) {
 			stereotype = profile.getOwnedStereotype(stereotypeName);
