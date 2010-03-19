@@ -6462,6 +6462,15 @@ public interface IHEPackage extends EPackage {
 	int SURGERIES_SECTION__MOOD_CODE = CCDPackage.PROCEDURES_SECTION__MOOD_CODE;
 
 	/**
+	 * The feature id for the '<em><b>Procedure Activity</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURGERIES_SECTION__PROCEDURE_ACTIVITY = CCDPackage.PROCEDURES_SECTION__PROCEDURE_ACTIVITY;
+
+	/**
 	 * The number of structural features of the '<em>Surgeries Section</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6641,6 +6650,15 @@ public interface IHEPackage extends EPackage {
 	 * @ordered
 	 */
 	int CODED_SURGERIES_SECTION__MOOD_CODE = SURGERIES_SECTION__MOOD_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Procedure Activity</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODED_SURGERIES_SECTION__PROCEDURE_ACTIVITY = SURGERIES_SECTION__PROCEDURE_ACTIVITY;
 
 	/**
 	 * The number of structural features of the '<em>Coded Surgeries Section</em>' class.

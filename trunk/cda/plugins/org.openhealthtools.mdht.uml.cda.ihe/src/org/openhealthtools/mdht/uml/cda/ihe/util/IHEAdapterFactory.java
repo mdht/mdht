@@ -328,8 +328,8 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createSectionAdapter();
 			}
 			@Override
-			public Adapter caseImmunizationsSection_1(org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection object) {
-				return createImmunizationsSection_1Adapter();
+			public Adapter caseCCD_ImmunizationsSection(org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection object) {
+				return createCCD_ImmunizationsSectionAdapter();
 			}
 			@Override
 			public Adapter caseAct(Act object) {
@@ -372,8 +372,8 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createAlertsSectionAdapter();
 			}
 			@Override
-			public Adapter caseVitalSignsSection_1(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection object) {
-				return createVitalSignsSection_1Adapter();
+			public Adapter caseCCD_VitalSignsSection(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection object) {
+				return createCCD_VitalSignsSectionAdapter();
 			}
 			@Override
 			public Adapter caseResultObservation(ResultObservation object) {
@@ -388,20 +388,20 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createResultOrganizerAdapter();
 			}
 			@Override
-			public Adapter caseVitalSignsOrganizer_1(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer object) {
-				return createVitalSignsOrganizer_1Adapter();
+			public Adapter caseCCD_VitalSignsOrganizer(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer object) {
+				return createCCD_VitalSignsOrganizerAdapter();
 			}
 			@Override
-			public Adapter casePayersSection_1(org.openhealthtools.mdht.uml.cda.ccd.PayersSection object) {
-				return createPayersSection_1Adapter();
+			public Adapter caseCCD_PayersSection(org.openhealthtools.mdht.uml.cda.ccd.PayersSection object) {
+				return createCCD_PayersSectionAdapter();
 			}
 			@Override
 			public Adapter caseProceduresSection(ProceduresSection object) {
 				return createProceduresSectionAdapter();
 			}
 			@Override
-			public Adapter caseAdvanceDirectivesSection_1(org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection object) {
-				return createAdvanceDirectivesSection_1Adapter();
+			public Adapter caseCCD_AdvanceDirectivesSection(org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection object) {
+				return createCCD_AdvanceDirectivesSectionAdapter();
 			}
 			@Override
 			public Adapter casePlanOfCareSection(PlanOfCareSection object) {
@@ -412,8 +412,8 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createFamilyHistorySectionAdapter();
 			}
 			@Override
-			public Adapter caseSocialHistorySection_1(org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection object) {
-				return createSocialHistorySection_1Adapter();
+			public Adapter caseCCD_SocialHistorySection(org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection object) {
+				return createCCD_SocialHistorySectionAdapter();
 			}
 			@Override
 			public Adapter caseEncountersSection(EncountersSection object) {
@@ -1153,7 +1153,7 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection
 	 * @generated
 	 */
-	public Adapter createImmunizationsSection_1Adapter() {
+	public Adapter createCCD_ImmunizationsSectionAdapter() {
 		return null;
 	}
 
@@ -1265,7 +1265,7 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection
 	 * @generated
 	 */
-	public Adapter createVitalSignsSection_1Adapter() {
+	public Adapter createCCD_VitalSignsSectionAdapter() {
 		return null;
 	}
 
@@ -1321,7 +1321,7 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer
 	 * @generated
 	 */
-	public Adapter createVitalSignsOrganizer_1Adapter() {
+	public Adapter createCCD_VitalSignsOrganizerAdapter() {
 		return null;
 	}
 
@@ -1335,7 +1335,7 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.PayersSection
 	 * @generated
 	 */
-	public Adapter createPayersSection_1Adapter() {
+	public Adapter createCCD_PayersSectionAdapter() {
 		return null;
 	}
 
@@ -1363,7 +1363,7 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection
 	 * @generated
 	 */
-	public Adapter createAdvanceDirectivesSection_1Adapter() {
+	public Adapter createCCD_AdvanceDirectivesSectionAdapter() {
 		return null;
 	}
 
@@ -1405,7 +1405,7 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection
 	 * @generated
 	 */
-	public Adapter createSocialHistorySection_1Adapter() {
+	public Adapter createCCD_SocialHistorySectionAdapter() {
 		return null;
 	}
 

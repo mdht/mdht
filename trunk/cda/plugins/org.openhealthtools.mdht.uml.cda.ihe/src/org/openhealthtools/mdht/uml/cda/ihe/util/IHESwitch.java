@@ -160,7 +160,7 @@ public class IHESwitch<T> {
 			case IHEPackage.IMMUNIZATIONS_SECTION: {
 				ImmunizationsSection immunizationsSection = (ImmunizationsSection)theEObject;
 				T result = caseImmunizationsSection(immunizationsSection);
-				if (result == null) result = caseImmunizationsSection_1(immunizationsSection);
+				if (result == null) result = caseCCD_ImmunizationsSection(immunizationsSection);
 				if (result == null) result = caseSection(immunizationsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -302,7 +302,7 @@ public class IHESwitch<T> {
 			case IHEPackage.VITAL_SIGNS_SECTION: {
 				VitalSignsSection vitalSignsSection = (VitalSignsSection)theEObject;
 				T result = caseVitalSignsSection(vitalSignsSection);
-				if (result == null) result = caseVitalSignsSection_1(vitalSignsSection);
+				if (result == null) result = caseCCD_VitalSignsSection(vitalSignsSection);
 				if (result == null) result = caseSection(vitalSignsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -311,7 +311,7 @@ public class IHESwitch<T> {
 				CodedVitalSignsSection codedVitalSignsSection = (CodedVitalSignsSection)theEObject;
 				T result = caseCodedVitalSignsSection(codedVitalSignsSection);
 				if (result == null) result = caseVitalSignsSection(codedVitalSignsSection);
-				if (result == null) result = caseVitalSignsSection_1(codedVitalSignsSection);
+				if (result == null) result = caseCCD_VitalSignsSection(codedVitalSignsSection);
 				if (result == null) result = caseSection(codedVitalSignsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -334,7 +334,7 @@ public class IHESwitch<T> {
 			case IHEPackage.VITAL_SIGNS_ORGANIZER: {
 				VitalSignsOrganizer vitalSignsOrganizer = (VitalSignsOrganizer)theEObject;
 				T result = caseVitalSignsOrganizer(vitalSignsOrganizer);
-				if (result == null) result = caseVitalSignsOrganizer_1(vitalSignsOrganizer);
+				if (result == null) result = caseCCD_VitalSignsOrganizer(vitalSignsOrganizer);
 				if (result == null) result = caseResultOrganizer(vitalSignsOrganizer);
 				if (result == null) result = caseOrganizer(vitalSignsOrganizer);
 				if (result == null) result = defaultCase(theEObject);
@@ -343,7 +343,7 @@ public class IHESwitch<T> {
 			case IHEPackage.PAYERS_SECTION: {
 				PayersSection payersSection = (PayersSection)theEObject;
 				T result = casePayersSection(payersSection);
-				if (result == null) result = casePayersSection_1(payersSection);
+				if (result == null) result = caseCCD_PayersSection(payersSection);
 				if (result == null) result = caseSection(payersSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -425,7 +425,7 @@ public class IHESwitch<T> {
 				CodedAdvanceDirectivesSection codedAdvanceDirectivesSection = (CodedAdvanceDirectivesSection)theEObject;
 				T result = caseCodedAdvanceDirectivesSection(codedAdvanceDirectivesSection);
 				if (result == null) result = caseAdvanceDirectivesSection(codedAdvanceDirectivesSection);
-				if (result == null) result = caseAdvanceDirectivesSection_1(codedAdvanceDirectivesSection);
+				if (result == null) result = caseCCD_AdvanceDirectivesSection(codedAdvanceDirectivesSection);
 				if (result == null) result = caseSection(codedAdvanceDirectivesSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -433,7 +433,7 @@ public class IHESwitch<T> {
 			case IHEPackage.ADVANCE_DIRECTIVES_SECTION: {
 				AdvanceDirectivesSection advanceDirectivesSection = (AdvanceDirectivesSection)theEObject;
 				T result = caseAdvanceDirectivesSection(advanceDirectivesSection);
-				if (result == null) result = caseAdvanceDirectivesSection_1(advanceDirectivesSection);
+				if (result == null) result = caseCCD_AdvanceDirectivesSection(advanceDirectivesSection);
 				if (result == null) result = caseSection(advanceDirectivesSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -500,7 +500,7 @@ public class IHESwitch<T> {
 			case IHEPackage.SOCIAL_HISTORY_SECTION: {
 				SocialHistorySection socialHistorySection = (SocialHistorySection)theEObject;
 				T result = caseSocialHistorySection(socialHistorySection);
-				if (result == null) result = caseSocialHistorySection_1(socialHistorySection);
+				if (result == null) result = caseCCD_SocialHistorySection(socialHistorySection);
 				if (result == null) result = caseSection(socialHistorySection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1286,7 +1286,7 @@ public class IHESwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseImmunizationsSection_1(org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection object) {
+	public T caseCCD_ImmunizationsSection(org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection object) {
 		return null;
 	}
 
@@ -1406,7 +1406,7 @@ public class IHESwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVitalSignsSection_1(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection object) {
+	public T caseCCD_VitalSignsSection(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection object) {
 		return null;
 	}
 
@@ -1466,7 +1466,7 @@ public class IHESwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVitalSignsOrganizer_1(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer object) {
+	public T caseCCD_VitalSignsOrganizer(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer object) {
 		return null;
 	}
 
@@ -1481,7 +1481,7 @@ public class IHESwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePayersSection_1(org.openhealthtools.mdht.uml.cda.ccd.PayersSection object) {
+	public T caseCCD_PayersSection(org.openhealthtools.mdht.uml.cda.ccd.PayersSection object) {
 		return null;
 	}
 
@@ -1511,7 +1511,7 @@ public class IHESwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAdvanceDirectivesSection_1(org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection object) {
+	public T caseCCD_AdvanceDirectivesSection(org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection object) {
 		return null;
 	}
 
@@ -1556,7 +1556,7 @@ public class IHESwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSocialHistorySection_1(org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection object) {
+	public T caseCCD_SocialHistorySection(org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection object) {
 		return null;
 	}
 
