@@ -102,7 +102,7 @@ public class RegionOfInterestValueImpl extends INTImpl implements RegionOfIntere
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.REGION_OF_INTEREST_VALUE__UNSORTED:
-				return isUnsorted() ? Boolean.TRUE : Boolean.FALSE;
+				return isUnsorted();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,7 +116,7 @@ public class RegionOfInterestValueImpl extends INTImpl implements RegionOfIntere
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CDAPackage.REGION_OF_INTEREST_VALUE__UNSORTED:
-				setUnsorted(((Boolean)newValue).booleanValue());
+				setUnsorted((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

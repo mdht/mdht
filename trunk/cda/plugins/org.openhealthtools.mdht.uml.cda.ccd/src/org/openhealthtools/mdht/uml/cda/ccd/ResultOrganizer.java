@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.Organizer;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getResultOrganizer()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='EVN' constraints.validation.error='ResultOrganizerTemplateId ResultOrganizerComponentElement ResultOrganizerInformationSource ResultOrganizerMoodCode ResultOrganizerId ResultOrganizerCode ResultOrganizerStatusCode ResultOrganizerResultObservation' templateId.root='2.16.840.1.113883.10.20.1.32'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.32' constraints.validation.error='ResultOrganizerTemplateId ResultOrganizerComponentElement ResultOrganizerInformationSource ResultOrganizerMoodCode ResultOrganizerId ResultOrganizerCode ResultOrganizerStatusCode ResultOrganizerResultObservation' moodCode='EVN'"
  * @generated
  */
 public interface ResultOrganizer extends Organizer {

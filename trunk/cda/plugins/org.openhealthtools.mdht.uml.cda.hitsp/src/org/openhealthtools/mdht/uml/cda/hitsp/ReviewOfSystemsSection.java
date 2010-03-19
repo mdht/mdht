@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getReviewOfSystemsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='HITSPReviewOfSystemsSectionTemplateId' templateId.root='2.16.840.1.113883.3.88.11.83.120'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.120' constraints.validation.error='HITSPReviewOfSystemsSectionTemplateId'"
  * @generated
  */
 public interface ReviewOfSystemsSection extends org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection {

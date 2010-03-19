@@ -23,7 +23,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getSurgeriesSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='SurgeriesSectionTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.11'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.11' constraints.validation.error='SurgeriesSectionTemplateId'"
  * @generated
  */
 public interface SurgeriesSection extends ProceduresSection {

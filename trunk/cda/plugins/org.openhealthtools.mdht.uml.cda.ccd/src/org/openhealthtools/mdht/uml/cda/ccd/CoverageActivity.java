@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getCoverageActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation moodCode='DEF' classCode='ACT' statusCode.codeSystemName='ActStatus' constraints.validation.error='CoverageActivityTemplateId CoverageActivityClassCode CoverageActivityMoodCode CoverageActivityId CoverageActivityStatusCode' templateId.root='2.16.840.1.113883.10.20.1.20' statusCode.codeSystem='2.16.840.1.113883.5.14' statusCode.code='completed'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' templateId.root='2.16.840.1.113883.10.20.1.20' constraints.validation.error='CoverageActivityTemplateId CoverageActivityClassCode CoverageActivityMoodCode CoverageActivityId CoverageActivityStatusCode' classCode='ACT' statusCode.codeSystem='2.16.840.1.113883.5.14' moodCode='DEF' statusCode.codeSystemName='ActStatus'"
  * @generated
  */
 public interface CoverageActivity extends Act {

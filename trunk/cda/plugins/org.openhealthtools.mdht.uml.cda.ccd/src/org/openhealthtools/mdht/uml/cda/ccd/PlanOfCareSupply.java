@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Supply;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPlanOfCareSupply()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' constraints.validation.error='PlanOfCareSupplyTemplateId PlanOfCareSupplyMoodCodeValue PlanOfCareSupplyId PlanOfCareSupplyMoodCode' templateId.root='2.16.840.1.113883.10.20.1.25'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' templateId.root='2.16.840.1.113883.10.20.1.25' constraints.validation.error='PlanOfCareSupplyTemplateId PlanOfCareSupplyMoodCodeValue PlanOfCareSupplyId PlanOfCareSupplyMoodCode'"
  * @generated
  */
 public interface PlanOfCareSupply extends Supply {

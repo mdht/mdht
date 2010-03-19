@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getAdmissionMedicationHistorySection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='HITSPAdmissionMedicationHistorySectionTemplateId' templateId.root='2.16.840.1.113883.3.88.11.83.113'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.113' constraints.validation.error='HITSPAdmissionMedicationHistorySectionTemplateId'"
  * @generated
  */
 public interface AdmissionMedicationHistorySection extends org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection {

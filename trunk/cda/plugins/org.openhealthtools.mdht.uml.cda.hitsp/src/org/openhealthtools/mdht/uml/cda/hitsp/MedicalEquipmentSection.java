@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getMedicalEquipmentSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='HITSPMedicalEquipmentSectionTemplateId' templateId.root='2.16.840.1.113883.3.88.11.83.128'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.128' constraints.validation.error='HITSPMedicalEquipmentSectionTemplateId'"
  * @generated
  */
 public interface MedicalEquipmentSection extends MedicalDevicesSection {

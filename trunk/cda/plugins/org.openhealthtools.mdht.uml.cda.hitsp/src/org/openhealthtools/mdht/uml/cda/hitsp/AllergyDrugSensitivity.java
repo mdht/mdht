@@ -31,7 +31,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getAllergyDrugSensitivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='AllergyDrugSensitivityTemplateId' templateId.root='2.16.840.1.113883.3.88.11.83.6'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.6' constraints.validation.error='AllergyDrugSensitivityTemplateId'"
  *        annotation="uml2.alias Allergies\040and\040Drug\040Sensitivities='null' Allergy\040and\040Drug\040Sensitivity='null'"
  * @generated
  */

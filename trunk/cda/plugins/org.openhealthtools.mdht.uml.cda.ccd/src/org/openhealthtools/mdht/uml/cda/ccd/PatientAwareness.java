@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Participant2;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPatientAwareness()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation typeCode='SBJ' templateId.root='2.16.840.1.113883.10.20.1.48' constraints.validation.error='PatientAwarenessTemplateId PatientAwarenessParticipantRoleId PatientAwarenessTypeCode PatientAwarenessAwarenessCode'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.48' constraints.validation.error='PatientAwarenessTemplateId PatientAwarenessParticipantRoleId PatientAwarenessTypeCode PatientAwarenessAwarenessCode' typeCode='SBJ'"
  * @generated
  */
 public interface PatientAwareness extends Participant2 {

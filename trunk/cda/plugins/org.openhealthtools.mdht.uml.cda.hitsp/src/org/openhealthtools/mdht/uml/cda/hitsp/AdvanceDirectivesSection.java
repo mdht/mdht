@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedAdvanceDirectivesSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getAdvanceDirectivesSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='HITSPAdvanceDirectivesSectionTemplateId' templateId.root='2.16.840.1.113883.3.88.11.83.116'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.116' constraints.validation.error='HITSPAdvanceDirectivesSectionTemplateId'"
  * @generated
  */
 public interface AdvanceDirectivesSection extends CodedAdvanceDirectivesSection {

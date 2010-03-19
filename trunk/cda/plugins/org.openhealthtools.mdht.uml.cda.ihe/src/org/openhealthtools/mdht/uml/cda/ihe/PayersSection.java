@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getPayersSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='IHEPayersSectionTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7' constraints.validation.error='IHEPayersSectionTemplateId'"
  * @generated
  */
 public interface PayersSection extends org.openhealthtools.mdht.uml.cda.ccd.PayersSection {

@@ -23,7 +23,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getHistoryOfPresentIllness()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='HistoryOfPresentIllnessTemplateId HistoryOfPresentIllnessCode' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.4' code.displayName='HISTORY OF PRESENT ILLNESS' code.code='10164-2'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.4' code.displayName='HISTORY OF PRESENT ILLNESS' constraints.validation.error='HistoryOfPresentIllnessTemplateId HistoryOfPresentIllnessCode' code.codeSystemName='LOINC' code.code='10164-2'"
  * @generated
  */
 public interface HistoryOfPresentIllness extends Section {

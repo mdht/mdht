@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getMedicationActivity()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.info='MedicationActivityMedicationSeriesNumberObservation MedicationActivityMedicationStatusObservation MedicationActivityPatientInstruction' constraints.validation.error='MedicationActivityTemplateId MedicationActivityMoodCode MedicationActivityId' templateId.root='2.16.840.1.113883.10.20.1.24' constraints.validation.warning='MedicationActivityStatusCode'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.1.24' constraints.validation.error='MedicationActivityTemplateId MedicationActivityMoodCode MedicationActivityId' constraints.validation.warning='MedicationActivityStatusCode' constraints.validation.info='MedicationActivityMedicationSeriesNumberObservation MedicationActivityMedicationStatusObservation MedicationActivityPatientInstruction'"
  * @generated
  */
 public interface MedicationActivity extends SubstanceAdministration {

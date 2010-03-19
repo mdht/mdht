@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getVitalSignsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation constraints.validation.error='IHEVitalSignsSectionTemplateId' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.25'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.25' constraints.validation.error='IHEVitalSignsSectionTemplateId'"
  * @generated
  */
 public interface VitalSignsSection extends org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection {

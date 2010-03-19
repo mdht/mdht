@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Procedure;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPlanOfCareProcedure()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' constraints.validation.error='PlanOfCareProcedureTemplateId PlanOfCareProcedureMoodCodeValue PlanOfCareProcedureId PlanOfCareProcedureMoodCode' templateId.root='2.16.840.1.113883.10.20.1.25'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' templateId.root='2.16.840.1.113883.10.20.1.25' constraints.validation.error='PlanOfCareProcedureTemplateId PlanOfCareProcedureMoodCodeValue PlanOfCareProcedureId PlanOfCareProcedureMoodCode'"
  * @generated
  */
 public interface PlanOfCareProcedure extends Procedure {

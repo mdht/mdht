@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Encounter;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPlanOfCareEncounter()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' constraints.validation.error='PlanOfCareEncounterTemplateId PlanOfCareEncounterMoodCodeValue PlanOfCareEncounterId PlanOfCareEncounterMoodCode' templateId.root='2.16.840.1.113883.10.20.1.25'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' templateId.root='2.16.840.1.113883.10.20.1.25' constraints.validation.error='PlanOfCareEncounterTemplateId PlanOfCareEncounterMoodCodeValue PlanOfCareEncounterId PlanOfCareEncounterMoodCode'"
  * @generated
  */
 public interface PlanOfCareEncounter extends Encounter {
