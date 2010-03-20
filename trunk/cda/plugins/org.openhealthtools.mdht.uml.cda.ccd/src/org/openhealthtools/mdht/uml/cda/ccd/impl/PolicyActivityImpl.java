@@ -95,6 +95,15 @@ public class PolicyActivityImpl extends ActImpl implements PolicyActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validatePolicyActivityAuthorizationActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PolicyActivityOperations.validatePolicyActivityAuthorizationActivity(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PolicyActivity init() {
     		CDAUtil.init(this);
     		return this;

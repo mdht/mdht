@@ -3424,6 +3424,15 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(payersSectionEClass, ecorePackage.getEBoolean(), "validatePayersSectionCoverageActivity", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(purposeSectionEClass, PurposeSection.class, "PurposeSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(purposeSectionEClass, ecorePackage.getEBoolean(), "validatePurposeSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -3699,6 +3708,24 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(coverageActivityEClass, ecorePackage.getEBoolean(), "validateCoverageActivityCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(coverageActivityEClass, ecorePackage.getEBoolean(), "validateCoverageActivityPolicyActivity", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(policyActivityEClass, PolicyActivity.class, "PolicyActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(policyActivityEClass, ecorePackage.getEBoolean(), "validatePolicyActivityTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -3738,6 +3765,15 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(policyActivityEClass, ecorePackage.getEBoolean(), "validatePolicyActivityStatusCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(policyActivityEClass, ecorePackage.getEBoolean(), "validatePolicyActivityAuthorizationActivity", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -4197,7 +4233,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									
 	}
 
 	/**
@@ -4653,12 +4689,13 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
-			 "code.displayName", "Payment sources",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.9",
+			 "code.displayName", "Payment sources",
 			 "constraints.validation.error", "PayersSectionTemplateId PayersSectionCode PayersSectionTitle",
 			 "code.codeSystemName", "LOINC",
+			 "constraints.validation.warning", "PayersSectionCoverageActivity",
 			 "code.code", "48768-6"
-		   });															
+		   });																			
 		addAnnotation
 		  (purposeSectionEClass, 
 		   source, 
@@ -4728,25 +4765,29 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "statusCode.code", "completed",
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "code.displayName", "Payment sources",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.20",
-			 "constraints.validation.error", "CoverageActivityTemplateId CoverageActivityClassCode CoverageActivityMoodCode CoverageActivityId CoverageActivityStatusCode",
+			 "constraints.validation.error", "CoverageActivityTemplateId CoverageActivityClassCode CoverageActivityMoodCode CoverageActivityId CoverageActivityStatusCode CoverageActivityCode CoverageActivityPolicyActivity",
+			 "code.codeSystemName", "LOINC",
 			 "classCode", "ACT",
+			 "code.code", "48768-6",
 			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "moodCode", "DEF",
-			 "statusCode.codeSystemName", "ActStatus"
-		   });																						
+			 "statusCode.codeSystemName", "ActStatus",
+			 "moodCode", "DEF"
+		   });																														
 		addAnnotation
 		  (policyActivityEClass, 
 		   source, 
 		   new String[] {
 			 "statusCode.code", "completed",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.26",
-			 "constraints.validation.error", "PolicyActivityTemplateId PolicyActivityClassCode PolicyActivityMoodCode PolicyActivityId PolicyActivityStatusCode",
+			 "constraints.validation.error", "PolicyActivityTemplateId PolicyActivityClassCode PolicyActivityMoodCode PolicyActivityId PolicyActivityStatusCode PolicyActivityAuthorizationActivity",
 			 "classCode", "ACT",
 			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "moodCode", "EVN",
-			 "statusCode.codeSystemName", "ActStatus"
-		   });																						
+			 "statusCode.codeSystemName", "ActStatus",
+			 "moodCode", "EVN"
+		   });																										
 		addAnnotation
 		  (authorizationActivityEClass, 
 		   source, 
