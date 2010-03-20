@@ -937,6 +937,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PayersSection/PayersSectionTitle/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PayersSection/PayersSectionTitle/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PayersSection/PayersSectionCoverageActivity">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PayersSection/PayersSectionCoverageActivity/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PayersSection/PayersSectionCoverageActivity/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PurposeSection">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PurposeSection/PurposeSectionTemplateId">
@@ -1067,6 +1071,14 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//CoverageActivity/CoverageActivityStatusCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//CoverageActivity/CoverageActivityStatusCode/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//CoverageActivity/CoverageActivityCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//CoverageActivity/CoverageActivityCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//CoverageActivity/CoverageActivityCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//CoverageActivity/CoverageActivityPolicyActivity">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//CoverageActivity/CoverageActivityPolicyActivity/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//CoverageActivity/CoverageActivityPolicyActivity/context"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PolicyActivity">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PolicyActivity/PolicyActivityTemplateId">
@@ -1088,6 +1100,10 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PolicyActivity/PolicyActivityStatusCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PolicyActivity/PolicyActivityStatusCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PolicyActivity/PolicyActivityStatusCode/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PolicyActivity/PolicyActivityAuthorizationActivity">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PolicyActivity/PolicyActivityAuthorizationActivity/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PolicyActivity/PolicyActivityAuthorizationActivity/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//AuthorizationActivity">

@@ -4941,10 +4941,11 @@
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
-      <details key="code.displayName" value="Payment sources"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.9"/>
+      <details key="code.displayName" value="Payment sources"/>
       <details key="constraints.validation.error" value="PayersSectionTemplateId PayersSectionCode PayersSectionTitle"/>
       <details key="code.codeSystemName" value="LOINC"/>
+      <details key="constraints.validation.warning" value="PayersSectionCoverageActivity"/>
       <details key="code.code" value="48768-6"/>
     </eAnnotations>
     <eOperations name="PayersSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -4997,6 +4998,28 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="not self.title.oclIsUndefined()"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="PayersSectionCoverageActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::CoverageActivity))"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::CoverageActivity))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5609,12 +5632,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="CoverageActivity" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Act">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="statusCode.code" value="completed"/>
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
+      <details key="code.displayName" value="Payment sources"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.20"/>
-      <details key="constraints.validation.error" value="CoverageActivityTemplateId CoverageActivityClassCode CoverageActivityMoodCode CoverageActivityId CoverageActivityStatusCode"/>
+      <details key="constraints.validation.error" value="CoverageActivityTemplateId CoverageActivityClassCode CoverageActivityMoodCode CoverageActivityId CoverageActivityStatusCode CoverageActivityCode CoverageActivityPolicyActivity"/>
+      <details key="code.codeSystemName" value="LOINC"/>
       <details key="classCode" value="ACT"/>
+      <details key="code.code" value="48768-6"/>
       <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
-      <details key="moodCode" value="DEF"/>
       <details key="statusCode.codeSystemName" value="ActStatus"/>
+      <details key="moodCode" value="DEF"/>
     </eAnnotations>
     <eOperations name="CoverageActivityTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -5726,16 +5753,60 @@
         </eGenericType>
       </eParameters>
     </eOperations>
+    <eOperations name="CoverageActivityCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '48768-6' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = self.code.oclAsType(datatypes::CD) in (&#xD;&#xA;value.code = '48768-6' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="CoverageActivityPolicyActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::PolicyActivity))"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::PolicyActivity))"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PolicyActivity" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Act">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="statusCode.code" value="completed"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.26"/>
-      <details key="constraints.validation.error" value="PolicyActivityTemplateId PolicyActivityClassCode PolicyActivityMoodCode PolicyActivityId PolicyActivityStatusCode"/>
+      <details key="constraints.validation.error" value="PolicyActivityTemplateId PolicyActivityClassCode PolicyActivityMoodCode PolicyActivityId PolicyActivityStatusCode PolicyActivityAuthorizationActivity"/>
       <details key="classCode" value="ACT"/>
       <details key="statusCode.codeSystem" value="2.16.840.1.113883.5.14"/>
-      <details key="moodCode" value="EVN"/>
       <details key="statusCode.codeSystemName" value="ActStatus"/>
+      <details key="moodCode" value="EVN"/>
     </eAnnotations>
     <eOperations name="PolicyActivityTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -5831,6 +5902,28 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and &#xD;&#xA;let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (&#xD;&#xA;value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="PolicyActivityAuthorizationActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::AuthorizationActivity) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::AuthorizationActivity) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -77,6 +77,15 @@ public class PayersSectionImpl extends SectionImpl implements PayersSection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validatePayersSectionCoverageActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PayersSectionOperations.validatePayersSectionCoverageActivity(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PayersSection init() {
     		CDAUtil.init(this);
     		return this;
