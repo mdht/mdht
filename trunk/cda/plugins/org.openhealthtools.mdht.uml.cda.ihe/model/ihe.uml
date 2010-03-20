@@ -16,7 +16,7 @@
 past. It shall include entries for medication administration as described in the Entry Content Modules.</body>
       </ownedComment>
       <generalization xmi:id="_cBTp4Mf0Ed6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_CinbMHDPEd6eItyqb1FoWg?ccd/ImmunizationsSection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_CinbMHDPEd6eItyqb1FoWg"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_quPDQMfyEd6VjLXh4DcWSg" name="MedicationsAdministeredSection">
@@ -26,25 +26,25 @@ patient during the course of an encounter. It shall include entries for medicati
 Content Module.</body>
       </ownedComment>
       <generalization xmi:id="_sg7v8MfyEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_W7HRQMimEd6NKIaf5H7MFg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="ConcernEntry">
       <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_GgvgUDxbEd6JwqSGecoePg?ccd/ProblemAct?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_GgvgUDxbEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_IC2EwIwGEd6B6JSUB00H7g" name="effectiveTime" visibility="private" aggregation="composite">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA?datatypes/IVL_TS?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IC2EwYwGEd6B6JSUB00H7g" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IC2EwowGEd6B6JSUB00H7g" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="MedicalDocument">
       <generalization xmi:id="_HGkB0GEIEd6bFO5yxRh3Nw">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_S9OzADxXEd6JwqSGecoePg?cda/ClinicalDocument?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_S9OzADxXEd6JwqSGecoePg"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_vz5koGGsEd6bFO5yxRh3Nw" name="ActiveProblemsSection">
@@ -52,7 +52,7 @@ Content Module.</body>
         <details xmi:id="_mlSHo3rUEd68l9lQ-TLEBQ" key="Active Problems Section"/>
       </eAnnotations>
       <generalization xmi:id="_ESh9QGGzEd6bFO5yxRh3Nw">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_vjPMEGaGEd6Hk_bPOfEjYA?ccd/ProblemSection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_vjPMEGaGEd6Hk_bPOfEjYA"/>
       </generalization>
       <ownedAttribute xmi:id="_w1ykwIwEEd6B6JSUB00H7g" name="problemConcernEntry" visibility="private" type="_wSnPAGaQEd6Hk_bPOfEjYA" association="_w1oMsIwEEd6B6JSUB00H7g">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_w2PQsYwEEd6B6JSUB00H7g" value="*"/>
@@ -74,13 +74,13 @@ Content Module.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_3ZiEwGdIEd6Hk_bPOfEjYA" name="ProblemEntry">
       <generalization xmi:id="_3ZiExWdIEd6Hk_bPOfEjYA">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_IjIO0DxbEd6JwqSGecoePg?ccd/ProblemObservation?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_IjIO0DxbEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_sKxfwIwHEd6B6JSUB00H7g" name="text" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg?datatypes/ED?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_slNZAIwHEd6B6JSUB00H7g" name="value" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_sFGZUHGfEd6bf47ZOcft4w" name="Medication">
@@ -89,7 +89,7 @@ Content Module.</body>
 from this content module.</body>
       </ownedComment>
       <generalization xmi:id="_zZRrcHq8Ed68l9lQ-TLEBQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_W6aMoHfTEd6ZeOKq_2_a9g?ccd/MedicationActivity?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_W6aMoHfTEd6ZeOKq_2_a9g"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_8YbB4HomEd6WAZ28-5wkSg" name="MedicationsSection">
@@ -98,7 +98,7 @@ from this content module.</body>
 prescription list. It shall include entries for medications as described in the Entry Content Module.</body>
       </ownedComment>
       <generalization xmi:id="_KxUI4Hq9Ed68l9lQ-TLEBQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_OvmR4HfUEd6ZeOKq_2_a9g?ccd/MedicationSection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_OvmR4HfUEd6ZeOKq_2_a9g"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_pOtQsHrDEd68l9lQ-TLEBQ" name="AllergyIntoleranceConcern">
@@ -126,7 +126,7 @@ Entry, wherein the subject of the concern is focused on an allergy or intoleranc
 associated adverse reactions suffered by the patient.</body>
       </ownedComment>
       <generalization xmi:id="_W-wesHrUEd68l9lQ-TLEBQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_PgsSAHrREd68l9lQ-TLEBQ?ccd/AlertsSection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_PgsSAHrREd68l9lQ-TLEBQ"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="__HPx4HySEd6FS-4xbA1fBQ" name="NormalDosing">
@@ -178,7 +178,7 @@ associated adverse reactions suffered by the patient.</body>
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_lkJAQK4EEd6_ioDelDcPPg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_GKpeMKPaEd6t_4WfM070fA?ccd/VitalSignsSection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_GKpeMKPaEd6t_4WfM070fA"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5k1R8K4FEd6_ioDelDcPPg" name="CodedVitalSignsSection">
@@ -193,26 +193,26 @@ associated adverse reactions suffered by the patient.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_LriUcK4NEd6_ioDelDcPPg" name="VitalSignObservation" clientDependency="_n1OREK4PEd6_ioDelDcPPg">
       <generalization xmi:id="_PU_HYK4NEd6_ioDelDcPPg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_MQHZEHDAEd6eItyqb1FoWg?ccd/ResultObservation?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_MQHZEHDAEd6eItyqb1FoWg"/>
       </generalization>
       <ownedAttribute xmi:id="_8nmwUK4OEd6_ioDelDcPPg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_R9GuQK4PEd6_ioDelDcPPg" name="value" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_3mPzYD59Ed6cla2oXsPtlA?datatypes/PQ?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_3mPzYD59Ed6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Lb-7oK60Ed6_ioDelDcPPg" name="interpretationCode" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iE8FgK60Ed6_ioDelDcPPg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iE7ecK60Ed6_ioDelDcPPg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Pwh6AK60Ed6_ioDelDcPPg" name="methodCode" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dHWKIa60Ed6_ioDelDcPPg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dHWKIK60Ed6_ioDelDcPPg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_RF7msK60Ed6_ioDelDcPPg" name="targetSiteCode" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ldOP8a60Ed6_ioDelDcPPg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ldOP8K60Ed6_ioDelDcPPg"/>
       </ownedAttribute>
@@ -225,39 +225,39 @@ codes, and the value representation. A simple observation may also inherit const
 ASTM/HL7 Continuity of Care Document).</body>
       </ownedComment>
       <generalization xmi:id="_naMM0K4NEd6_ioDelDcPPg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg?cda/Observation?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_bJyIQDxYEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_SDxzcK4OEd6_ioDelDcPPg" name="id" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg?datatypes/II?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SDxzca4OEd6_ioDelDcPPg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SDxzcq4OEd6_ioDelDcPPg" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_bO-XsK4OEd6_ioDelDcPPg" name="statusCode" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_n1OREK4PEd6_ioDelDcPPg" name="conforms to" supplier="_dLvb0K4NEd6_ioDelDcPPg" client="_LriUcK4NEd6_ioDelDcPPg"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_hVMdIK4QEd6_ioDelDcPPg" name="VitalSignsOrganizer">
       <generalization xmi:id="_j3GZMK4QEd6_ioDelDcPPg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_wN4O0K3zEd6_ioDelDcPPg?ccd/VitalSignsOrganizer?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_wN4O0K3zEd6_ioDelDcPPg"/>
       </generalization>
       <ownedAttribute xmi:id="_wV3xkK4REd6_ioDelDcPPg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_NhFHgK4SEd6_ioDelDcPPg" name="statusCode" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA?datatypes/CS?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_WBtEwK4SEd6_ioDelDcPPg" name="vitalSignObservation" visibility="private" type="_LriUcK4NEd6_ioDelDcPPg" association="_WBrPkK4SEd6_ioDelDcPPg">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WBtr0a4SEd6_ioDelDcPPg" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WBtr0K4SEd6_ioDelDcPPg" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_t6rFAK4SEd6_ioDelDcPPg" name="effectiveTime" visibility="private" aggregation="composite">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA?datatypes/IVL_TS?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_t6rFAa4SEd6_ioDelDcPPg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_t6rFAq4SEd6_ioDelDcPPg" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_IFpHoK4UEd6_ioDelDcPPg" name="author" visibility="private" association="_IFnScK4UEd6_ioDelDcPPg">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ChEisEcEEd6besF9iFIJkQ?cda/Author?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ChEisEcEEd6besF9iFIJkQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IFpusa4UEd6_ioDelDcPPg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IFpusK4UEd6_ioDelDcPPg" value="1"/>
       </ownedAttribute>
@@ -286,7 +286,7 @@ ASTM/HL7 Continuity of Care Document).</body>
 guarantor, or some combination.</body>
       </ownedComment>
       <generalization xmi:id="_1MYRYMfXEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_T79VIKPeEd6t_4WfM070fA?ccd/PayersSection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_T79VIKPeEd6t_4WfM070fA"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_QD0tkMfbEd6VjLXh4DcWSg" name="HistoryOfPastIllnessSection">
@@ -295,10 +295,10 @@ guarantor, or some combination.</body>
 past. It shall include entries for problems as described in the Entry Content Modules.</body>
       </ownedComment>
       <generalization xmi:id="_W5e90MfbEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_cQJ4wMilEd6NKIaf5H7MFg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_iVB-oMfcEd6VjLXh4DcWSg" name="ChiefComplaintSection">
@@ -306,10 +306,10 @@ past. It shall include entries for problems as described in the Entry Content Mo
         <body>This contains a narrative description of the patient's chief complaint.</body>
       </ownedComment>
       <generalization xmi:id="_rPXcYMfcEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_rBpXIMilEd6NKIaf5H7MFg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_XicJUMfdEd6VjLXh4DcWSg" name="ReasonForReferralSection">
@@ -317,10 +317,10 @@ past. It shall include entries for problems as described in the Entry Content Mo
         <body>The reason for referral section shall contain a narrative description of the reason that the patient is being referred.</body>
       </ownedComment>
       <generalization xmi:id="_f1I_UMfdEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_sBqCoMilEd6NKIaf5H7MFg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_jWj60MfhEd6VjLXh4DcWSg" name="HistoryOfPresentIllness">
@@ -329,10 +329,10 @@ past. It shall include entries for problems as described in the Entry Content Mo
 patient's current complaints.</body>
       </ownedComment>
       <generalization xmi:id="_nDBlgMfhEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_caQ3AMilEd6NKIaf5H7MFg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_jgutAMftEd6VjLXh4DcWSg" name="SurgeriesSection">
@@ -341,7 +341,7 @@ patient's current complaints.</body>
 and associated anesthetic techniques the patient received in the past.</body>
       </ownedComment>
       <generalization xmi:id="_tTPI4MftEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_p_LEwIjvEd66cKocspyVOg?ccd/ProceduresSection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_p_LEwIjvEd66cKocspyVOg"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_9fsJYMftEd6VjLXh4DcWSg" name="CodedSurgeriesSection">
@@ -357,10 +357,10 @@ described in the Entry Content Modules.</body>
 hospital facility. It shall include entries for observations as described in the Entry Content Modules.</body>
       </ownedComment>
       <generalization xmi:id="_U6294MfvEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_6XxMkMilEd6NKIaf5H7MFg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_3ov5QMfvEd6VjLXh4DcWSg" name="DischargeDiagnosisSection">
@@ -370,10 +370,10 @@ discharge from the hospital and those that were resolved during the hospital cou
 conditions as described in the Entry Content Module.</body>
       </ownedComment>
       <generalization xmi:id="_7mCOMMfvEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_7bQp4MilEd6NKIaf5H7MFg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_3Se44MfwEd6VjLXh4DcWSg" name="AdmissionMedicationHistorySection">
@@ -383,10 +383,10 @@ a patient prior to admission to a facility. It shall include entries for medicat
 Entry Content Module.</body>
       </ownedComment>
       <generalization xmi:id="_7iCCgMfwEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_JaVM0MimEd6NKIaf5H7MFg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_JAhygMfyEd6VjLXh4DcWSg" name="HospitalDischargeMedicationsSection">
@@ -396,10 +396,10 @@ Entry Content Module.</body>
             medication requests as described in the Entry Content Module.</body>
       </ownedComment>
       <generalization xmi:id="_S1iv0MfyEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_KLT90MimEd6NKIaf5H7MFg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_bSHeEMfzEd6VjLXh4DcWSg" name="CodedAdvanceDirectivesSection">
@@ -411,7 +411,7 @@ Entry Content Module.</body>
 expectations and requests for care along with the locations of the documents.</body>
       </ownedComment>
       <generalization xmi:id="_ovC9QMfzEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_NvRwcKPeEd6t_4WfM070fA?ccd/AdvanceDirectivesSection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_NvRwcKPeEd6t_4WfM070fA"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_IAGv8Mf1Ed6VjLXh4DcWSg" name="PhysicalExamNarrativeSection">
@@ -419,10 +419,10 @@ expectations and requests for care along with the locations of the documents.</b
         <body>The physical exam section shall contain a narrative description of the patient's physical findings.</body>
       </ownedComment>
       <generalization xmi:id="_QAS5oMf1Ed6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_YW7H8MimEd6NKIaf5H7MFg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_LGf5IMf1Ed6VjLXh4DcWSg" name="PhysicalExamSection">
@@ -437,10 +437,10 @@ expectations and requests for care along with the locations of the documents.</b
 questions on the functions of each anatomic body system.</body>
       </ownedComment>
       <generalization xmi:id="_At0tgMiXEd6mWrHPmrIIfQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_boHwwMiXEd6mWrHPmrIIfQ" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_DO0b4MidEd6mWrHPmrIIfQ" name="HospitalCourseSection">
@@ -449,10 +449,10 @@ questions on the functions of each anatomic body system.</body>
 a hospital facility.</body>
       </ownedComment>
       <generalization xmi:id="_g4z_kMidEd6mWrHPmrIIfQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_F3GswMidEd6mWrHPmrIIfQ" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_-OeSAMidEd6mWrHPmrIIfQ" name="CodedResultsSection">
@@ -462,10 +462,10 @@ past. It shall include entries for procedures and references to procedure report
 Content Modules.</body>
       </ownedComment>
       <generalization xmi:id="_EU3BcMieEd6mWrHPmrIIfQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_Jxx9IMieEd6mWrHPmrIIfQ" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_SNPREMifEd6mWrHPmrIIfQ" name="AssessmentAndPlanSection">
@@ -475,10 +475,10 @@ expectations for care including proposals, goals, and order requests for monitor
 of the patient.</body>
       </ownedComment>
       <generalization xmi:id="_YipT8MifEd6mWrHPmrIIfQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg?cda/Section?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
       </generalization>
       <ownedAttribute xmi:id="_eP81AMifEd6mWrHPmrIIfQ" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_BEcusMigEd6mWrHPmrIIfQ" name="CarePlanSection">
@@ -487,7 +487,7 @@ of the patient.</body>
 order requests for monitoring, tracking, or improving the condition of the patient.</body>
       </ownedComment>
       <generalization xmi:id="_DPCW8MigEd6mWrHPmrIIfQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_o9nLAKPTEd6t_4WfM070fA?ccd/PlanOfCareSection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_o9nLAKPTEd6t_4WfM070fA"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_kKnAIMigEd6mWrHPmrIIfQ" name="FamilyMedicalHistorySection">
@@ -496,7 +496,7 @@ order requests for monitoring, tracking, or improving the condition of the patie
 known, the diseases they suffered from, their ages at death, and other relevant genetic information.</body>
       </ownedComment>
       <generalization xmi:id="_nplocMigEd6mWrHPmrIIfQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_5ET7oGwWEd6q29qQGU-SBA?ccd/FamilyHistorySection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_5ET7oGwWEd6q29qQGU-SBA"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Kv5q4MihEd6mWrHPmrIIfQ" name="SocialHistorySection">
@@ -505,7 +505,7 @@ known, the diseases they suffered from, their ages at death, and other relevant 
 life, hobbies, and risky habits.</body>
       </ownedComment>
       <generalization xmi:id="_Nt9-gMihEd6mWrHPmrIIfQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_UOVM0HDAEd6eItyqb1FoWg?ccd/SocialHistorySection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_UOVM0HDAEd6eItyqb1FoWg"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_tY30kMiiEd6mWrHPmrIIfQ" name="EncounterHistorySection">
@@ -515,7 +515,7 @@ life, hobbies, and risky habits.</body>
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_vuzKIMiiEd6mWrHPmrIIfQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_rJDcIHDAEd6eItyqb1FoWg?ccd/EncountersSection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_rJDcIHDAEd6eItyqb1FoWg"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_tqabEMijEd6mWrHPmrIIfQ" name="MedicalDevicesSection">
@@ -523,8 +523,39 @@ life, hobbies, and risky habits.</body>
         <body>The medical devices section contains narrative text describing the patient history of medical device use.</body>
       </ownedComment>
       <generalization xmi:id="_w6Wh0MijEd6mWrHPmrIIfQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_5hfTYKPbEd6t_4WfM070fA?ccd/MedicalEquipmentSection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_5hfTYKPbEd6t_4WfM070fA"/>
       </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_-uU7kDOtEd-5f4Yngl7nkw" name="LanguageCommunication">
+      <generalization xmi:id="_-uU7kTOtEd-5f4Yngl7nkw">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_cHD44EcZEd6besF9iFIJkQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_fp-n0DOvEd-5f4Yngl7nkw" name="MedicalSummary">
+      <ownedRule xmi:id="_iiAk4DOvEd-5f4Yngl7nkw" name="MedicalSummaryProblemConcernEntry" constrainedElement="_fp-n0DOvEd-5f4Yngl7nkw"/>
+      <ownedRule xmi:id="_kVCowDOvEd-5f4Yngl7nkw" name="MedicalSummaryAllergyConcernEntry" constrainedElement="_fp-n0DOvEd-5f4Yngl7nkw"/>
+      <ownedRule xmi:id="_mjgEYDOvEd-5f4Yngl7nkw" name="MedicalSummaryMedications" constrainedElement="_fp-n0DOvEd-5f4Yngl7nkw"/>
+      <generalization xmi:id="_fp-n0TOvEd-5f4Yngl7nkw" general="_wDMM0GEHEd6bFO5yxRh3Nw"/>
+      <ownedAttribute xmi:id="_gIhlADOvEd-5f4Yngl7nkw" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gIhlATOvEd-5f4Yngl7nkw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gIhlAjOvEd-5f4Yngl7nkw" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jS4QEAIEd6wZe6nFLrjsw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yq8-YDOvEd-5f4Yngl7nkw" name="DischargeSummary">
+      <generalization xmi:id="_yq8-YTOvEd-5f4Yngl7nkw" general="_fp-n0DOvEd-5f4Yngl7nkw"/>
+      <ownedAttribute xmi:id="_zSSrMDOvEd-5f4Yngl7nkw" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zSSrMTOvEd-5f4Yngl7nkw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zSSrMjOvEd-5f4Yngl7nkw" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jS4QEAIEd6wZe6nFLrjsw"/>
+        <redefinedProperty href="#_gIhlADOvEd-5f4Yngl7nkw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_EmfW4DOwEd-5f4Yngl7nkw" name="activeProblemsSection" type="_vz5koGGsEd6bFO5yxRh3Nw" association="_EmpH4DOwEd-5f4Yngl7nkw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_EmpH4DOwEd-5f4Yngl7nkw" memberEnd="_EmfW4DOwEd-5f4Yngl7nkw _EmpH4TOwEd-5f4Yngl7nkw">
+      <ownedEnd xmi:id="_EmpH4TOwEd-5f4Yngl7nkw" type="_yq8-YDOvEd-5f4Yngl7nkw" association="_EmpH4DOwEd-5f4Yngl7nkw"/>
     </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -688,4 +719,19 @@ life, hobbies, and risky habits.</body>
   <CDA:CodeSystemConstraint xmi:id="_N0Ur4CfdEd-4R4ealYN1gQ" code="51847-2" displayName="ASSESSMENT AND PLAN" base_Property="_eP81AMifEd6mWrHPmrIIfQ" message="IHE Assessment And Plan Section SHALL contain [1..1] code/@code = &quot;51847-2&quot; ASSESSMENT AND PLAN (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC)">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
+  <CDA:CDATemplate xmi:id="_E5gEYDOuEd-5f4Yngl7nkw" message="IHE Language Communication SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.2.1" base_Class="_-uU7kDOtEd-5f4Yngl7nkw" templateId="1.3.6.1.4.1.19376.1.5.3.1.2.1" assigningAuthorityName="IHE PCC"/>
+  <CDA:CDATemplate xmi:id="_hhTyUDOuEd-5f4Yngl7nkw" message="IHE Medical Summary SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.1.2" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.2" assigningAuthorityName="IHE PCC"/>
+  <CDA:PropertyValidation xmi:id="_ic6e8DOuEd-5f4Yngl7nkw" message="IHE Medical Summary SHALL contain [1..1] code"/>
+  <CDA:CodeSystemConstraint xmi:id="_v8u6EDOuEd-5f4Yngl7nkw">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_g8FI4DOvEd-5f4Yngl7nkw" base_Property="_gIhlADOvEd-5f4Yngl7nkw" message="IHE Medical Summary SHALL contain [1..1] code (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CDATemplate xmi:id="_rRPl4DOvEd-5f4Yngl7nkw" message="IHE Medical Summary SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.1.2" base_Class="_fp-n0DOvEd-5f4Yngl7nkw" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.2" assigningAuthorityName="IHE PCC"/>
+  <CDA:CodeSystemConstraint xmi:id="_zSSrMzOvEd-5f4Yngl7nkw" base_Property="_zSSrMDOvEd-5f4Yngl7nkw" message="IHE Discharge Summary SHALL contain [1..1] code (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CDATemplate xmi:id="_2lStADOvEd-5f4Yngl7nkw" message="IHE Discharge Summary SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.1.4" base_Class="_yq8-YDOvEd-5f4Yngl7nkw" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.4" assigningAuthorityName="IHE PCC"/>
+  <CDA:AssociationValidation xmi:id="_GLhbADOwEd-5f4Yngl7nkw" message="IHE Discharge Summary SHALL contain [1..1] component such that it, SHALL contain [1..1] Active Problems Section (templateId: 1.3.6.1.4.1.19376.1.5.3.1.3.6)" base_Association="_EmpH4DOwEd-5f4Yngl7nkw"/>
 </xmi:XMI>

@@ -36,6 +36,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
@@ -46,8 +47,10 @@ import org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.LanguageCommunication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
+import org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.Medication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
@@ -711,12 +714,84 @@ public class IHEValidator extends EObjectValidator {
 	public static final int MEDICAL_DEVICES_SECTION__MEDICAL_DEVICES_SECTION_TEMPLATE_ID = 77;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Language Communication Template Id' of 'Language Communication'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int LANGUAGE_COMMUNICATION__IHE_LANGUAGE_COMMUNICATION_TEMPLATE_ID = 78;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Problem Concern Entry' of 'Medical Summary'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_PROBLEM_CONCERN_ENTRY = 79;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Allergy Concern Entry' of 'Medical Summary'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_ALLERGY_CONCERN_ENTRY = 80;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Medications' of 'Medical Summary'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_MEDICATIONS = 81;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Template Id' of 'Medical Summary'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_TEMPLATE_ID = 82;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Code' of 'Medical Summary'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MEDICAL_SUMMARY__MEDICAL_SUMMARY_CODE = 83;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Summary Template Id' of 'Discharge Summary'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_TEMPLATE_ID = 84;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Summary Code' of 'Discharge Summary'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_CODE = 85;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Summary Active Problems Section' of 'Discharge Summary'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_ACTIVE_PROBLEMS_SECTION = 86;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 77;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 86;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -857,6 +932,12 @@ public class IHEValidator extends EObjectValidator {
 				return validateEncounterHistorySection((EncounterHistorySection)value, diagnostics, context);
 			case IHEPackage.MEDICAL_DEVICES_SECTION:
 				return validateMedicalDevicesSection((MedicalDevicesSection)value, diagnostics, context);
+			case IHEPackage.LANGUAGE_COMMUNICATION:
+				return validateLanguageCommunication((LanguageCommunication)value, diagnostics, context);
+			case IHEPackage.MEDICAL_SUMMARY:
+				return validateMedicalSummary((MedicalSummary)value, diagnostics, context);
+			case IHEPackage.DISCHARGE_SUMMARY:
+				return validateDischargeSummary((DischargeSummary)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -1830,6 +1911,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionTemplateId(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionCode(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionTitle(payersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionCoverageActivity(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePayersSection_validateIHEPayersSectionTemplateId(payersSection, diagnostics, context);
 		return result;
 	}
@@ -2647,6 +2729,160 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateMedicalDevicesSection_validateMedicalDevicesSectionTemplateId(MedicalDevicesSection medicalDevicesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return medicalDevicesSection.validateMedicalDevicesSectionTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLanguageCommunication(LanguageCommunication languageCommunication, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(languageCommunication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(languageCommunication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(languageCommunication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(languageCommunication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(languageCommunication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(languageCommunication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(languageCommunication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLanguageCommunication_validateIHELanguageCommunicationTemplateId(languageCommunication, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateIHELanguageCommunicationTemplateId constraint of '<em>Language Communication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLanguageCommunication_validateIHELanguageCommunicationTemplateId(LanguageCommunication languageCommunication, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return languageCommunication.validateIHELanguageCommunicationTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicalSummary(MedicalSummary medicalSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalDocument_validateMedicalDocumentTemplateId(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryProblemConcernEntry(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryAllergyConcernEntry(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryMedications(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryTemplateId(medicalSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryCode(medicalSummary, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateMedicalSummaryProblemConcernEntry constraint of '<em>Medical Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicalSummary_validateMedicalSummaryProblemConcernEntry(MedicalSummary medicalSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicalSummary.validateMedicalSummaryProblemConcernEntry(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateMedicalSummaryAllergyConcernEntry constraint of '<em>Medical Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicalSummary_validateMedicalSummaryAllergyConcernEntry(MedicalSummary medicalSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicalSummary.validateMedicalSummaryAllergyConcernEntry(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateMedicalSummaryMedications constraint of '<em>Medical Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicalSummary_validateMedicalSummaryMedications(MedicalSummary medicalSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicalSummary.validateMedicalSummaryMedications(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateMedicalSummaryTemplateId constraint of '<em>Medical Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicalSummary_validateMedicalSummaryTemplateId(MedicalSummary medicalSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicalSummary.validateMedicalSummaryTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateMedicalSummaryCode constraint of '<em>Medical Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicalSummary_validateMedicalSummaryCode(MedicalSummary medicalSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicalSummary.validateMedicalSummaryCode(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDischargeSummary(DischargeSummary dischargeSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalDocument_validateMedicalDocumentTemplateId(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryProblemConcernEntry(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryAllergyConcernEntry(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryMedications(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryTemplateId(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryCode(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDischargeSummary_validateDischargeSummaryTemplateId(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDischargeSummary_validateDischargeSummaryCode(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDischargeSummary_validateDischargeSummaryActiveProblemsSection(dischargeSummary, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateDischargeSummaryTemplateId constraint of '<em>Discharge Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDischargeSummary_validateDischargeSummaryTemplateId(DischargeSummary dischargeSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return dischargeSummary.validateDischargeSummaryTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateDischargeSummaryCode constraint of '<em>Discharge Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDischargeSummary_validateDischargeSummaryCode(DischargeSummary dischargeSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return dischargeSummary.validateDischargeSummaryCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateDischargeSummaryActiveProblemsSection constraint of '<em>Discharge Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDischargeSummary_validateDischargeSummaryActiveProblemsSection(DischargeSummary dischargeSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return dischargeSummary.validateDischargeSummaryActiveProblemsSection(diagnostics, context);
 	}
 
 	/**

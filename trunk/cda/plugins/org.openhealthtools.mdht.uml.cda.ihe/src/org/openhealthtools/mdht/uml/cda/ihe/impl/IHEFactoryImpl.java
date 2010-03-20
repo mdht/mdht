@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
@@ -44,8 +45,10 @@ import org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.LanguageCommunication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
+import org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.Medication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
@@ -154,6 +157,9 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.SOCIAL_HISTORY_SECTION: return createSocialHistorySection();
 			case IHEPackage.ENCOUNTER_HISTORY_SECTION: return createEncounterHistorySection();
 			case IHEPackage.MEDICAL_DEVICES_SECTION: return createMedicalDevicesSection();
+			case IHEPackage.LANGUAGE_COMMUNICATION: return createLanguageCommunication();
+			case IHEPackage.MEDICAL_SUMMARY: return createMedicalSummary();
+			case IHEPackage.DISCHARGE_SUMMARY: return createDischargeSummary();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -607,6 +613,36 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public MedicalDevicesSection createMedicalDevicesSection() {
 		MedicalDevicesSectionImpl medicalDevicesSection = new MedicalDevicesSectionImpl();
 		return medicalDevicesSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LanguageCommunication createLanguageCommunication() {
+		LanguageCommunicationImpl languageCommunication = new LanguageCommunicationImpl();
+		return languageCommunication;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicalSummary createMedicalSummary() {
+		MedicalSummaryImpl medicalSummary = new MedicalSummaryImpl();
+		return medicalSummary;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DischargeSummary createDischargeSummary() {
+		DischargeSummaryImpl dischargeSummary = new DischargeSummaryImpl();
+		return dischargeSummary;
 	}
 
 	/**

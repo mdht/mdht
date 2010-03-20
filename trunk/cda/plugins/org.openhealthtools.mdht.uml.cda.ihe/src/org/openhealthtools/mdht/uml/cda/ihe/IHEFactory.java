@@ -437,6 +437,33 @@ public interface IHEFactory extends EFactory {
 	MedicalDevicesSection createMedicalDevicesSection();
 
 	/**
+	 * Returns a new object of class '<em>Language Communication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Language Communication</em>'.
+	 * @generated
+	 */
+	LanguageCommunication createLanguageCommunication();
+
+	/**
+	 * Returns a new object of class '<em>Medical Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medical Summary</em>'.
+	 * @generated
+	 */
+	MedicalSummary createMedicalSummary();
+
+	/**
+	 * Returns a new object of class '<em>Discharge Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Discharge Summary</em>'.
+	 * @generated
+	 */
+	DischargeSummary createDischargeSummary();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
