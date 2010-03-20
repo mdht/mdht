@@ -52,6 +52,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.HistoryOfPastIllnessSection;
@@ -61,8 +62,10 @@ import org.openhealthtools.mdht.uml.cda.ihe.HospitalCourseSection;
 import org.openhealthtools.mdht.uml.cda.ihe.HospitalDischargeMedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ihe.LanguageCommunication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDevicesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicalDocument;
+import org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.Medication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
@@ -518,6 +521,30 @@ public class IHESwitch<T> {
 				T result = caseMedicalDevicesSection(medicalDevicesSection);
 				if (result == null) result = caseMedicalEquipmentSection(medicalDevicesSection);
 				if (result == null) result = caseSection(medicalDevicesSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.LANGUAGE_COMMUNICATION: {
+				LanguageCommunication languageCommunication = (LanguageCommunication)theEObject;
+				T result = caseLanguageCommunication(languageCommunication);
+				if (result == null) result = caseCDA_LanguageCommunication(languageCommunication);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.MEDICAL_SUMMARY: {
+				MedicalSummary medicalSummary = (MedicalSummary)theEObject;
+				T result = caseMedicalSummary(medicalSummary);
+				if (result == null) result = caseMedicalDocument(medicalSummary);
+				if (result == null) result = caseClinicalDocument(medicalSummary);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.DISCHARGE_SUMMARY: {
+				DischargeSummary dischargeSummary = (DischargeSummary)theEObject;
+				T result = caseDischargeSummary(dischargeSummary);
+				if (result == null) result = caseMedicalSummary(dischargeSummary);
+				if (result == null) result = caseMedicalDocument(dischargeSummary);
+				if (result == null) result = caseClinicalDocument(dischargeSummary);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1216,6 +1243,51 @@ public class IHESwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Language Communication</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Language Communication</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLanguageCommunication(LanguageCommunication object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Medical Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Medical Summary</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMedicalSummary(MedicalSummary object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discharge Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discharge Summary</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDischargeSummary(DischargeSummary object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1587,6 +1659,21 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseMedicalEquipmentSection(MedicalEquipmentSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Language Communication</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Language Communication</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCDA_LanguageCommunication(org.openhealthtools.mdht.uml.cda.LanguageCommunication object) {
 		return null;
 	}
 
