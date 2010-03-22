@@ -49,6 +49,7 @@ import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.emf.workspace.ResourceUndoContext;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.swt.SWTException;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.Saveable;
@@ -505,10 +506,16 @@ implements ICommonContentProvider, IAdaptable {
 					if (!isDisposed() && !viewer.getControl().isDisposed()
 						&& !isNotifierDeleted(notification))
 					{
-						if (element instanceof Element)
-							viewer.refresh(new UMLDomainNavigatorItem((Element)element, null, treeContentProvider));
-						else
-							viewer.refresh(element);
+						try {
+							if (element instanceof Element)
+								viewer.refresh(new UMLDomainNavigatorItem((Element)element, null, treeContentProvider));
+							else
+								viewer.refresh(element);
+						}
+						catch(SWTException e) {
+							// ignore tree item widget disposed exception.  
+							// cannot find its source when some tree items are deleted
+						}
 					}
 
 				}
