@@ -236,9 +236,9 @@ public class ValidationSection extends AbstractModelerPropertySection {
 		severityCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY | SWT.BORDER);
 		severityCombo.setItems(new String[] {
 				"",
-				"Error",
-				"Warning",
-				"Info"
+				"SHALL",
+				"SHOULD",
+				"MAY"
 		});
 		severityCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
