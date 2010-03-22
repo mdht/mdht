@@ -871,7 +871,12 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 				treeViewerWithColumns.setExpandedElements(newExpandedElements);
 			}
 			treeViewerWithColumns.setSelection(selection, true);
-			//TODO need to set the TreeCursor row, so that Properties view is updated
+			
+			//set the TreeCursor row, so that Properties view is updated
+			TreeItem[] items = treeViewerWithColumns.getTree().getSelection();
+			if (items.length > 0) {
+				cursor.setSelection(items[0], 0);
+			}
 		}
 	}
 
