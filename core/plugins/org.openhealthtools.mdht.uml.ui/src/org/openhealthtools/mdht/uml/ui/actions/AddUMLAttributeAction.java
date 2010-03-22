@@ -23,11 +23,14 @@ import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IActionDelegate;
+import org.eclipse.ui.part.ISetSelectionTarget;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
@@ -54,17 +57,22 @@ public class AddUMLAttributeAction extends UML2AbstractAction {
 				IUndoableOperation operation = new AbstractEMFOperation(
 						editingDomain, UML2UIMessages.AddUMLAttribute_operation_title) {
 				    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				    	Property newProperty = null;
 						if (element instanceof Class) {
 							String name = getUniqueMemberName((Class)element, 
 									UML2UIMessages.AddUMLAttribute_default_name);
-							((Class)element).createOwnedAttribute(name, null);
+							newProperty = ((Class)element).createOwnedAttribute(name, null);
 						}
 						else if (element instanceof DataType) {
 							String name = getUniqueMemberName((DataType)element, 
 									UML2UIMessages.AddUMLAttribute_default_name);
-							((DataType)element).createOwnedAttribute(name, null);
+							newProperty = ((DataType)element).createOwnedAttribute(name, null);
 						}
 
+						if (newProperty != null && activePart instanceof ISetSelectionTarget) {
+							((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(newProperty));
+						}
+						
 				        return Status.OK_STATUS;
 				    }};
 
