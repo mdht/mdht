@@ -19,6 +19,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.SWTException;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.events.TreeEvent;
+import org.eclipse.swt.events.TreeListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
@@ -158,6 +160,7 @@ public class TreeCursor extends Canvas {
 	Tree tree;
 	TreeItem row = null;
 	TreeColumn column = null;
+	TreeListener treeListener;
 	Listener tableListener, resizeListener, disposeItemListener, disposeColumnListener;
 	Listener canvasListener;
 	
@@ -221,10 +224,23 @@ public TreeCursor(Tree parent, int style) {
 			}
 		}
 	};
+	
 	int[] events = new int[] {SWT.Dispose, SWT.FocusIn, SWT.FocusOut, SWT.KeyDown, SWT.Paint, SWT.Traverse};
 	for (int i = 0; i < events.length; i++) {
 		addListener(events[i], listener);
 	}
+
+	treeListener = new TreeListener() {
+		public void treeCollapsed(TreeEvent event) {
+			if (event.item instanceof TreeItem)
+				setSelection((TreeItem)event.item, 0);
+		}
+		public void treeExpanded(TreeEvent event) {
+			if (event.item instanceof TreeItem)
+				setSelection((TreeItem)event.item, 0);
+		}
+	};
+	tree.addTreeListener(treeListener);
 
 	tableListener = new Listener() {
 		public void handleEvent(Event event) {
@@ -653,6 +669,7 @@ void traverse(Event event) {
 	}
 	event.doit = true;
 }
+
 void setRowColumn(TreeItem row, TreeColumn column, boolean notify) {
 	if (this.row == row && this.column == column) {
 		return;
