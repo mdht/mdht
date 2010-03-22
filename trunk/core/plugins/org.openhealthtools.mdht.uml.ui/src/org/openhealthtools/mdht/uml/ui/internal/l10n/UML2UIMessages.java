@@ -72,6 +72,12 @@ public class UML2UIMessages extends NLS {
 	// Editors
 	// ==============================================================================
 
+	public static String _UI_FileConflict_label;
+	public static String _WARN_FileConflict;
+	public static String _UI_UMLEditorDiagnostic_marker;
+	public static String _UI_CreateModelError_message;
+
+	
 	public static String TableEditor_partName;
 
 	static {

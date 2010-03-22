@@ -13,9 +13,7 @@
 package org.openhealthtools.mdht.uml.common.ui.saveable;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.Collections;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -52,8 +50,7 @@ public class ModelDocument extends Saveable {
 
 		domainDirtyListener = new ResourceSetListenerImpl(NotificationFilter.NOT_TOUCH) {
 		        public void resourceSetChanged(ResourceSetChangeEvent event) {
-		        	for (Iterator iter = event.getNotifications().iterator(); iter.hasNext();) {
-						Notification notification = (Notification) iter.next();
+		        	for (Notification notification : event.getNotifications()) {
 						if (notification.getNotifier() instanceof EObject
 								&& resource == ((EObject)notification.getNotifier()).eResource()) {
 							dirty = true;
@@ -74,14 +71,23 @@ public class ModelDocument extends Saveable {
 	}
 
 	public void doSave(IProgressMonitor monitor) throws CoreException {
-//		System.out.println("Save ModelDocument: " + resource.getURI());
 		monitor.beginTask(Messages.ModelSave_task, 1);
 
 		// must set this before saving, because view updates are triggered by save 
 		dirty = false;
 		
-		saveResource(resource, monitor);
+		saveResource(monitor);
 		resource.setModified(false);
+		monitor.done();
+	}
+
+	public void doClose(IProgressMonitor monitor) throws CoreException {
+		monitor.beginTask(Messages.ModelClose_task, 1);
+
+		resource.setModified(false);
+		dirty = false;
+		
+		closeResource(monitor);
 		monitor.done();
 	}
 
@@ -110,6 +116,11 @@ public class ModelDocument extends Saveable {
 
 	public boolean isDirty() {
 		return dirty;
+	}
+	
+	/* package */ void setDirty(boolean dirty) {
+		this.dirty = dirty;
+		resource.setModified(dirty);
 	}
 
 	public IFile getFile() {
@@ -149,14 +160,21 @@ public class ModelDocument extends Saveable {
 		return null;
 	}
 
-	private void saveResource(final Resource savedResource, IProgressMonitor monitor) {
-		Map options = new HashMap();
+	private void saveResource(IProgressMonitor monitor) {
 		try {
-			savedResource.save(options);
+			ModelManager.getManager().getSavedResources().add(resource);
+			resource.save(Collections.EMPTY_MAP);
 			
 		} catch (IOException e) {
 			Logger.logException(e);
 		}
+	}
+
+	private void closeResource(IProgressMonitor monitor) {
+		// remove from changed resources, if present
+		ModelManager.getManager().getChangedResources().remove(resource);
+		
+		resource.unload();
 	}
 
 }

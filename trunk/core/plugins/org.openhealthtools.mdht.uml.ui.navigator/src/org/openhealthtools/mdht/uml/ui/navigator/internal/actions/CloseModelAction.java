@@ -106,9 +106,14 @@ public class CloseModelAction extends Action {
 						saveable.doSave(new NullProgressMonitor());
 					}
 				}
+
+				// if not canceled, the resource is closed
+				saveable.doClose(new NullProgressMonitor());
+				
+				return;
 			}
 
-			// if not canceled, the resource is unloaded
+			// if saveable not found, the resource is unloaded
 			resource.unload();
 			
 		} catch (Exception e) { 

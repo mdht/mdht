@@ -27,6 +27,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -105,15 +106,14 @@ implements ICommonContentProvider, IAdaptable {
 					|| event.getEventType() == OperationHistoryEvent.UNDONE
 					|| event.getEventType() == OperationHistoryEvent.REDONE) {
 
-				final Set affectedResources = ResourceUndoContext.getAffectedResources(
+				final Set<Resource> affectedResources = ResourceUndoContext.getAffectedResources(
 						event.getOperation());
 				
 				if (!affectedResources.isEmpty()) {
 //					final IUndoableOperation operation = event.getOperation();
 					
 					//TODO getResource() is null when object is deleted; how to setModified?
-					for (Iterator iter = affectedResources.iterator(); iter.hasNext();) {
-						Resource resource = (Resource) iter.next();
+					for (Resource resource : affectedResources) {
 						resource.setModified(true);
 
 						Saveable saveable = ModelManager.getManager().getModelDocument(resource);
@@ -122,47 +122,6 @@ implements ICommonContentProvider, IAdaptable {
 							viewer.refresh();
 						}
 					}
-	
-					Display.getDefault().syncExec(new Runnable() {
-						public void run() {
-							// Try to select the affected objects.
-							//
-							//TODO this should work, but it always returns false
-							//if (viewer.getControl().isFocusControl()) {
-//							if (CommonNavigator.class.isInstance(getViewSite().getPage().getActivePart())) {
-//								if (operation instanceof EMFCommandOperation) {
-//									Command command = ((EMFCommandOperation) operation).getCommand();
-//									
-//									if (command != null) {
-//										Collection affectedObjects = command.getAffectedObjects();
-//										getViewSite().getSelectionProvider().setSelection(
-//											new StructuredSelection(affectedObjects.toArray()));
-//									}
-//								}
-//								else {
-//									IUndoContext[] contexts = operation.getContexts();
-//									for (int i = 0; i < contexts.length; i++) {
-//										if (contexts[i] instanceof EMFUndoContext) {
-//											Collection affectedObjects = 
-//													((EMFUndoContext)contexts[i]).getAffectedObjects();
-//											viewer.update(affectedObjects.toArray(), null);
-//											getViewSite().getSelectionProvider().setSelection(
-//													new StructuredSelection(affectedObjects.toArray()));
-//
-//											//if ADD action, open in-place editor
-//											if (viewerTextEditor.canEdit()
-//													&& event.getEventType() == OperationHistoryEvent.DONE
-//													&& EMFUndoContext.ADD == ((EMFUndoContext)contexts[i]).getType()) 
-//											{
-//												viewerTextEditor.startEdit();
-//											}
-//											break;
-//										}
-//									}
-//								}
-//							}
-						}
-					});
 				}
 			}
 		}
@@ -174,8 +133,7 @@ implements ICommonContentProvider, IAdaptable {
 	private ResourceSetListener resourceLoadListener = new ResourceSetListenerImpl(
 			NotificationFilter.RESOURCE_LOADED.or(NotificationFilter.RESOURCE_UNLOADED)) {
         public void resourceSetChanged(ResourceSetChangeEvent event) {
-        	for (Iterator iter = event.getNotifications().iterator(); iter.hasNext();) {
-				final Notification notification = (Notification) iter.next();
+			for (Notification notification : event.getNotifications()) {
 				final Resource resource = (Resource) notification.getNotifier();
 				final ModelDocument saveable = ModelManager.getManager().getModelDocument(resource);
 		
@@ -185,7 +143,12 @@ implements ICommonContentProvider, IAdaptable {
 						public void run() {
 							
 							if (saveable != null) {
-								fireSaveablesOpened(new Saveable[] {saveable});
+								if (ModelManager.getManager().getChangedResources().contains(resource)) {
+									fireSaveablesDirtyChanged(new Saveable[] {saveable});
+								}
+								else {
+									fireSaveablesOpened(new Saveable[] {saveable});
+								}
 								
 								IFile file = saveable.getFile();
 								if (file != null) {
@@ -210,11 +173,15 @@ implements ICommonContentProvider, IAdaptable {
 				else if (NotificationFilter.RESOURCE_UNLOADED.matches(notification)) {
 					Display.getDefault().asyncExec(new Runnable() {
 						public void run() {
-							if (saveable != null)
-								fireSaveablesClosed(new Saveable[] {saveable});
+							if (saveable != null) {
+								if (!ModelManager.getManager().getChangedResources().contains(resource)) {
+									fireSaveablesClosed(new Saveable[] {saveable});
+								}
+							}
 							
-							if (!viewer.getControl().isDisposed())
+							if (!viewer.getControl().isDisposed()) {
 								viewer.refresh();
+							}
 						}
 					});
 				}
@@ -228,14 +195,14 @@ implements ICommonContentProvider, IAdaptable {
 		
 		if ((editingDomain instanceof AdapterFactoryEditingDomain)
 				&& ((AdapterFactoryEditingDomain)editingDomain).getResourceToReadOnlyMap() == null) {
-			((AdapterFactoryEditingDomain)editingDomain).setResourceToReadOnlyMap(new Hashtable());
+			((AdapterFactoryEditingDomain)editingDomain).setResourceToReadOnlyMap(new Hashtable<Resource, Boolean>());
 		}
 
 		ModelManager.getManager().manage(editingDomain);
 
 		// add support for .xmi files and legacy .uml2 files
 		ResourceSet resourceSet = editingDomain.getResourceSet();
-		Map extensionToFactoryMap = resourceSet.getResourceFactoryRegistry()
+		Map<String,Object> extensionToFactoryMap = resourceSet.getResourceFactoryRegistry()
 			.getExtensionToFactoryMap();
 		extensionToFactoryMap.put(UML22UMLResource.FILE_EXTENSION,
 			UML22UMLResource.Factory.INSTANCE);
@@ -261,12 +228,12 @@ implements ICommonContentProvider, IAdaptable {
 	}
 
 	protected ComposedAdapterFactory createAdapterFactory() {
-		List factories = new ArrayList();
+		List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		fillItemProviderFactories(factories);
 		return new ComposedAdapterFactory(factories);
 	}
 
-	protected void fillItemProviderFactories(List factories) {
+	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
 		factories.add(new NavigatorUMLItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
@@ -318,6 +285,8 @@ implements ICommonContentProvider, IAdaptable {
 
 	public void inputChanged(final Viewer viewer, Object oldInput, Object newInput) {
 		this.viewer = (StructuredViewer) viewer;
+
+		ModelManager.getManager().setShell(viewer.getControl().getShell());
 		
 		// gets rid of '+' expansion icons on all unopened model files
 		// only needed first time navigator is opened, but don't know where to put this...

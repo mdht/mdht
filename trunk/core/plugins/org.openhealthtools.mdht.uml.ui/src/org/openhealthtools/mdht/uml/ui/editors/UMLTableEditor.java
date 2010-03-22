@@ -12,7 +12,8 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.editors;
 
-import java.util.Iterator;
+import java.util.Hashtable;
+import java.util.Set;
 
 import org.eclipse.core.commands.operations.IOperationHistory;
 import org.eclipse.core.commands.operations.IOperationHistoryListener;
@@ -20,13 +21,13 @@ import org.eclipse.core.commands.operations.IUndoContext;
 import org.eclipse.core.commands.operations.OperationHistoryEvent;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
-import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.ListenerList;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.ui.ViewerPane;
@@ -49,6 +50,7 @@ import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
+import org.eclipse.emf.workspace.ResourceUndoContext;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
@@ -237,6 +239,11 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 					|| event.getEventType() == OperationHistoryEvent.UNDONE
 					|| event.getEventType() == OperationHistoryEvent.REDONE) {
 
+				Set<Resource> affectedResources = ResourceUndoContext.getAffectedResources(event.getOperation());
+				for (Resource resource : affectedResources) {
+					resource.setModified(true);
+				}
+
 				getSite().getShell().getDisplay().asyncExec(new Runnable() {
 					public void run() {
 						//TODO this fires even if change did not originate
@@ -265,19 +272,20 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			public void partActivated(IWorkbenchPart p) {
 				if (p instanceof ContentOutline) {
 //					if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
-//						getActionBarContributor().setActiveEditor(RequirementsEditor.this);
+//						getActionBarContributor().setActiveEditor(UMLTableEditor.this);
 //
 //						setCurrentViewer(contentOutlineViewer);
 //					}
 				}
 				else if (p instanceof PropertySheet) {
-//					if (((PropertySheet)p).getCurrentPage() == propertySheetPage) {
-//						getActionBarContributor().setActiveEditor(RequirementsEditor.this);
-//						handleActivate();
-//					}
+					if (((PropertySheet)p).getCurrentPage() == propertySheetPage) {
+						getActionBarContributor().setActiveEditor(UMLTableEditor.this);
+						handleActivate();
+					}
 				}
 				else if (p == UMLTableEditor.this) {
 					editCommandsFactory.setActivePart(UMLTableEditor.this);
+					handleActivate();
 				}
 			}
 			public void partBroughtToTop(IWorkbenchPart p) {
@@ -293,16 +301,77 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			}
 		};
 
+	/**
+	 * This listens for workspace changes.
+	 */
+	protected IResourceChangeListener resourceChangeListener = new IResourceChangeListener() {
+
+		public void resourceChanged(IResourceChangeEvent event) {
+			if (ModelManager.getManager().getChangedResources().contains(resource)) {
+				getSite().getShell().getDisplay().asyncExec(new Runnable() {
+
+					public void run() {
+						if (getSite().getPage().getActiveEditor() == UMLTableEditor.this) {
+							handleActivate();
+						}
+					}
+				});
+			}
+		}
+	};
+
+	/**
+	 * Handles activation of the editor or it's associated views.
+	 */
+	protected void handleActivate() {
+		// Recompute the read only state.
+		//
+		if ((editingDomain instanceof AdapterFactoryEditingDomain)
+				&& ((AdapterFactoryEditingDomain)editingDomain).getResourceToReadOnlyMap() != null) {
+			
+			((AdapterFactoryEditingDomain)editingDomain).getResourceToReadOnlyMap().clear();
+		}
+
+		if (ModelManager.getManager().getChangedResources().contains(resource)) {
+			handleChangedResources();
+		}
+	}
+
+	/**
+	 * Handles what to do with changed resources on activation.
+	 */
+	protected void handleChangedResources() {
+		if (!isDirty()) {
+			treeViewerWithColumns.refresh();
+			initialSelection = new StructuredSelection(resource.getContents().get(0));
+			getSite().getSelectionProvider().setSelection(initialSelection);
+
+			if (AdapterFactoryEditingDomain.isStale(getSite().getSelectionProvider().getSelection())) {
+				getSite().getSelectionProvider().setSelection(StructuredSelection.EMPTY);
+			}
+		}
+	}
+
 	public UMLTableEditor() {
 		super();
 
 		editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
 				IResourceConstants.EDITING_DOMAIN_ID);
-		
+
+		if ((editingDomain instanceof AdapterFactoryEditingDomain)
+				&& ((AdapterFactoryEditingDomain)editingDomain).getResourceToReadOnlyMap() == null) {
+			((AdapterFactoryEditingDomain)editingDomain).setResourceToReadOnlyMap(new Hashtable<Resource, Boolean>());
+		}
+
+		ModelManager.getManager().manage(editingDomain);
+
 		adapterFactory = new UML2ExtendedAdapterFactory();
 		myAdapterFactoryContentProvider = new AdapterFactoryContentProvider(adapterFactory);
 
 		getOperationHistory().addOperationHistoryListener(historyListener);
+
+		ResourcesPlugin.getWorkspace().addResourceChangeListener(
+			resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
 	}
 
 	/**
@@ -347,6 +416,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(
 					IResourceConstants.EDITING_DOMAIN_ID);
 		ModelManager.getManager().manage(editingDomain);
+		ModelManager.getManager().setShell(getSite().getShell());
 		
 		if (input instanceof IFileEditorInput) {
 			IFile file = ((IFileEditorInput)input).getFile();
@@ -364,19 +434,16 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 		}
 		
 		resourceLoadListener = new ResourceSetListenerImpl(
-				NotificationFilter.RESOURCE_LOADED.or(NotificationFilter.RESOURCE_UNLOADED)) {
+				NotificationFilter.RESOURCE_UNLOADED) {
 	        public void resourceSetChanged(ResourceSetChangeEvent event) {
 	        	// close this editor if its resource is unloaded
-	        	for (Iterator iter = event.getNotifications().iterator(); iter.hasNext();) {
-					final Notification notification = (Notification) iter.next();
+				for (Notification notification : event.getNotifications()) {
 					final Resource resource = (Resource) notification.getNotifier();
-					
-					if (NotificationFilter.RESOURCE_UNLOADED.matches(notification)) {
-			            String filePath = resource.getURI().toPlatformString(true);
-			            IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(filePath));
-			            if (workspaceResource instanceof IFile
-			            		&& ((IFileEditorInput)getEditorInput()).getFile().equals(workspaceResource))
-			            {
+
+					// skip changed files that are unloaded and reloaded
+					if (!ModelManager.getManager().getChangedResources().contains(resource)) {
+						if (resource.getURI().isPlatform()
+								&& UMLTableEditor.this.resource.getURI().equals(resource.getURI())) {
 							getSite().getShell().getDisplay().asyncExec(
 									new Runnable() {
 										public void run() {
@@ -384,7 +451,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 												UMLTableEditor.this, false);
 										}
 									});
-			            }
+						}
 					}
 	        	}
 	        }

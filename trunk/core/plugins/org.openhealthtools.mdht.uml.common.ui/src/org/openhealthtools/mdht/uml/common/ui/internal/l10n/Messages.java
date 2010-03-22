@@ -49,8 +49,14 @@ public class Messages extends NLS {
 	public static String PackageSelectionDialog_empty;
 
 	public static String ModelSave_task;
+	public static String ModelClose_task;
 	public static String FileSaveError;
 
+	public static String FileConflict_label;
+	public static String FileConflictWarning;
+	public static String UMLEditorDiagnostic_marker;
+	public static String CreateModelError_message;
+	
 	static {
 		// load message values from bundle file
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

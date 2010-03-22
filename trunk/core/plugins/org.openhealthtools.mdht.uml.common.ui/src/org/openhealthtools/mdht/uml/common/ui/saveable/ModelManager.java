@@ -12,14 +12,22 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.common.ui.saveable;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceChangeListener;
+import org.eclipse.core.resources.IResourceDelta;
+import org.eclipse.core.resources.IResourceDeltaVisitor;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.ListenerList;
-import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -30,9 +38,13 @@ import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.Saveable;
+import org.openhealthtools.mdht.uml.common.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.common.ui.internal.l10n.Messages;
 
 /**
  * Support for managing views and editors that implement ISaveablesSource.
@@ -43,17 +55,29 @@ public class ModelManager {
 
 	private ListenerList listeners = new ListenerList();
 
+	private Map<URI,ModelDocument> uriToDocumentMap = new HashMap<URI,ModelDocument>();
+
+	private Collection<Resource> changedResources = new ArrayList<Resource>();
+
+	private Collection<Resource> removedResources = new ArrayList<Resource>();
+
+	private Collection<Resource> savedResources = new ArrayList<Resource>();
+
+	private Shell shell;
+
 	public static ModelManager getManager() {
 		return Manager;
 	}
-
-	private Map uriToDocumentMap = new HashMap();
+	
+	private ModelManager() {
+		ResourcesPlugin.getWorkspace().addResourceChangeListener(
+				resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
+	}
 
 	private ResourceSetListener resourceLoadListener = new ResourceSetListenerImpl(
 			NotificationFilter.RESOURCE_LOADED.or(NotificationFilter.RESOURCE_UNLOADED)) {
         public void resourceSetChanged(ResourceSetChangeEvent event) {
-        	for (Iterator iter = event.getNotifications().iterator(); iter.hasNext();) {
-				Notification notification = (Notification) iter.next();
+			for (Notification notification : event.getNotifications()) {
 				Resource resource = (Resource) notification.getNotifier();
 				
 				if (NotificationFilter.RESOURCE_LOADED.matches(notification)
@@ -65,9 +89,10 @@ public class ModelManager {
 						(ModelDocument) uriToDocumentMap.get(resource.getURI());
 					if (modelDocument != null) {
 						// fire PRE_CLOSE
-						// test if cancelled
+						// test if canceled
 						
-						uriToDocumentMap.remove(resource.getURI());
+						// leave unloaded saveable in map for saveable lifecycle management
+//						uriToDocumentMap.remove(resource.getURI());
 
 						// fire POST_CLOSE
 					}
@@ -79,8 +104,7 @@ public class ModelManager {
     public void manage(TransactionalEditingDomain editingDomain) {
     	editingDomain.addResourceSetListener(resourceLoadListener);
 
-    	for (Iterator iterator = editingDomain.getResourceSet().getResources().iterator(); iterator.hasNext();) {
-			Resource resource = (Resource) iterator.next();
+		for (Resource resource : editingDomain.getResourceSet().getResources()) {
 			if (isManageable(resource)
 					&& uriToDocumentMap.get(resource.getURI()) == null) {
 				manage(resource);
@@ -105,16 +129,16 @@ public class ModelManager {
     }
     
     public ModelDocument manage(Resource resource) {
-		TransactionalEditingDomain editingDomain =  TransactionUtil.getEditingDomain(resource);
-		ModelDocument saveable = new ModelDocument(resource, editingDomain);
-		uriToDocumentMap.put(resource.getURI(), saveable);
+    	ModelDocument saveable = getModelDocument(resource);
+    	if (saveable == null) {
+			TransactionalEditingDomain editingDomain =  TransactionUtil.getEditingDomain(resource);
+			saveable = new ModelDocument(resource, editingDomain);
+			uriToDocumentMap.put(resource.getURI(), saveable);
+    	}
+    	
 		return saveable;
     }
     
-	/**
-	 * @param file
-	 * @return
-	 */
 	public EditingDomain getEditingDomain(IFile file) {
 		ModelDocument doc = getModelDocument(file);
 		if (doc != null)
@@ -123,10 +147,6 @@ public class ModelManager {
 		return null;
 	}
 
-	/**
-	 * @param resource
-	 * @return
-	 */
 	public ModelDocument getModelDocument(Resource resource) {
 		if (resource != null)
 			return (ModelDocument) uriToDocumentMap.get(resource.getURI());
@@ -134,19 +154,18 @@ public class ModelManager {
 			return null;
 	}
 
-	/**
-	 * @param file
-	 * @return
-	 */
+	public ModelDocument getModelDocument(URI uri) {
+		if (uri != null)
+			return (ModelDocument) uriToDocumentMap.get(uri);
+		else
+			return null;
+	}
+
 	public ModelDocument getModelDocument(IFile file) {
 		return (ModelDocument) uriToDocumentMap.get(
 				URI.createPlatformResourceURI(file.getFullPath().toString(), true));
 	}
 
-	/**
-	 * @param file
-	 * @return
-	 */
 	public Resource getResource(IFile file) {
 		ModelDocument saveable = (ModelDocument) uriToDocumentMap.get(
 				URI.createPlatformResourceURI(file.getFullPath().toString(), true));
@@ -181,16 +200,16 @@ public class ModelManager {
 		}
 	}
 
-	/**
-	 * @param model
-	 * @return
-	 */
-	public boolean isDirty(IFile file) {
-		EditingDomain domain = getEditingDomain(file);
-		if (domain == null)
-			return false;
-		BasicCommandStack stack = (BasicCommandStack) domain.getCommandStack();
-		return stack.isSaveNeeded();
+//	public boolean isDirty(IFile file) {
+//		EditingDomain domain = getEditingDomain(file);
+//		if (domain == null)
+//			return false;
+//		BasicCommandStack stack = (BasicCommandStack) domain.getCommandStack();
+//		return stack.isSaveNeeded();
+//	}
+
+	public boolean isDirty(Resource resource) {
+		return resource.isModified();
 	}
 
 	/**
@@ -198,7 +217,7 @@ public class ModelManager {
 	 *  
 	 * @return all open model documents
 	 */
-	public Collection getDocuments() {
+	public Collection<ModelDocument> getDocuments() {
 		return uriToDocumentMap.values();
 	}
 
@@ -208,10 +227,125 @@ public class ModelManager {
 	 * @return all open model documents
 	 */
 	public Saveable[] getSaveables() {
-		Collection saveables = uriToDocumentMap.values();
+		Collection<ModelDocument> saveables = uriToDocumentMap.values();
 		Saveable[] array = new Saveable[saveables.size()];
 		saveables.toArray(array);
 		return array;
+	}
+
+	public void setShell(Shell shell) {
+		this.shell = shell;
+	}
+	
+	public Collection<Resource> getRemovedResources() {
+		return removedResources;
+	}
+
+	public Collection<Resource> getChangedResources() {
+		return changedResources;
+	}
+
+	public Collection<Resource> getSavedResources() {
+		return savedResources;
+	}
+
+	/**
+	 * This listens for workspace changes.
+	 */
+	protected IResourceChangeListener resourceChangeListener = new IResourceChangeListener() {
+
+		public void resourceChanged(IResourceChangeEvent event) {
+			removedResources.clear();
+			changedResources.clear();
+			
+			IResourceDelta delta = event.getDelta();
+			try {
+				class ResourceDeltaVisitor
+						implements IResourceDeltaVisitor {
+
+					public boolean visit(IResourceDelta delta) {
+						if (delta.getResource().getType() == IResource.FILE) {
+							if (delta.getKind() == IResourceDelta.REMOVED
+									|| delta.getKind() == IResourceDelta.CHANGED
+									&& delta.getFlags() != IResourceDelta.MARKERS) {
+								ModelDocument modelDocument = getModelDocument(URI.createPlatformResourceURI(
+										delta.getFullPath().toString(), true));
+								Resource resource = modelDocument!=null ? modelDocument.getResource() : null;
+								if (resource != null) {
+									if (delta.getKind() == IResourceDelta.REMOVED) {
+										removedResources.add(resource);
+									} 
+									else if (!savedResources.remove(resource)) {
+										changedResources.add(resource);
+									}
+								}
+							}
+						}
+
+						return true;
+					}
+				}
+
+				final ResourceDeltaVisitor visitor = new ResourceDeltaVisitor();
+				delta.accept(visitor);
+
+				if (!removedResources.isEmpty() && shell != null) {
+					shell.getDisplay().asyncExec(new Runnable() {
+
+						public void run() {
+							for (Resource resource : removedResources) {
+								if (!isDirty(resource) || handleDirtyConflict(resource)) {
+									// unload
+									removedResources.remove(resource);
+									resource.unload();
+								}
+							}
+						}
+					});
+				}
+
+				if (!changedResources.isEmpty() && shell != null) {
+					shell.getDisplay().asyncExec(new Runnable() {
+
+						public void run() {
+							for (Resource resource : changedResources) {
+								// reload
+								if (!isDirty(resource) || handleDirtyConflict(resource)) {
+									resource.unload();
+									
+									try {
+										// must mark as clean before load, to trigger saveable lifecycle update when changed
+										ModelDocument modelDocument = getModelDocument(resource);
+										if (modelDocument != null) {
+											modelDocument.setDirty(false);
+										}
+										
+										resource.load(Collections.EMPTY_MAP);
+										
+									} catch (IOException exception) {
+//										if (!resourceToDiagnosticMap.containsKey(resource)) {
+//											resourceToDiagnosticMap.put(resource,
+//												analyzeResourceProblems(resource, exception));
+//										}
+									}
+								}
+							}
+						}
+					});
+				}
+			} catch (CoreException exception) {
+				Logger.logException(exception);
+			}
+		}
+	};
+
+	/**
+	 * Shows a dialog that asks if conflicting changes should be discarded.
+	 */
+	protected boolean handleDirtyConflict(Resource resource) {
+		return MessageDialog.openQuestion(shell,
+			Messages.FileConflict_label,
+			Messages.FileConflictWarning);
 	}
 
 }
