@@ -36,6 +36,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
@@ -422,6 +423,13 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	private EClass dischargeSummaryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass coverageEntryEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -942,6 +950,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCoverageEntry() {
+		return coverageEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public IHEFactory getIHEFactory() {
 		return (IHEFactory)getEFactoryInstance();
 	}
@@ -1062,6 +1079,8 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		medicalSummaryEClass = createEClass(MEDICAL_SUMMARY);
 
 		dischargeSummaryEClass = createEClass(DISCHARGE_SUMMARY);
+
+		coverageEntryEClass = createEClass(COVERAGE_ENTRY);
 	}
 
 	/**
@@ -1145,6 +1164,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		languageCommunicationEClass.getESuperTypes().add(theCDAPackage.getLanguageCommunication());
 		medicalSummaryEClass.getESuperTypes().add(this.getMedicalDocument());
 		dischargeSummaryEClass.getESuperTypes().add(this.getMedicalSummary());
+		coverageEntryEClass.getESuperTypes().add(theCCDPackage.getCoverageActivity());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(immunizationsSectionEClass, ImmunizationsSection.class, "ImmunizationsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1554,6 +1574,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		initEClass(payersSectionEClass, PayersSection.class, "PayersSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(payersSectionEClass, ecorePackage.getEBoolean(), "validateIHEPayersSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(payersSectionEClass, ecorePackage.getEBoolean(), "validateIHEPayersSectionCoverageEntry", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2019,6 +2048,17 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(coverageEntryEClass, CoverageEntry.class, "CoverageEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(coverageEntryEClass, ecorePackage.getEBoolean(), "validateCoverageEntryTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -2215,8 +2255,9 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7",
-			 "constraints.validation.error", "IHEPayersSectionTemplateId"
-		   });							
+			 "constraints.validation.error", "IHEPayersSectionTemplateId",
+			 "constraints.validation.warning", "IHEPayersSectionCoverageEntry"
+		   });											
 		addAnnotation
 		  (historyOfPastIllnessSectionEClass, 
 		   source, 
@@ -2445,7 +2486,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.1.2",
 			 "constraints.validation.error", "MedicalSummaryTemplateId MedicalSummaryProblemConcernEntry MedicalSummaryAllergyConcernEntry MedicalSummaryMedications MedicalSummaryCode",
 			 "code.codeSystemName", "LOINC"
-		   });																	
+		   });																							
 		addAnnotation
 		  (dischargeSummaryEClass, 
 		   source, 
@@ -2454,7 +2495,14 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.1.4",
 			 "constraints.validation.error", "DischargeSummaryTemplateId DischargeSummaryCode DischargeSummaryActiveProblemsSection",
 			 "code.codeSystemName", "LOINC"
-		   });												
+		   });														
+		addAnnotation
+		  (coverageEntryEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.17",
+			 "constraints.validation.error", "CoverageEntryTemplateId"
+		   });				
 	}
 
 	/**
@@ -2470,19 +2518,19 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																																							
+		   });																																																																																																																																																																																																																																																																																																																																																																																											
 		addAnnotation
 		  (medicalSummaryEClass, 
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																	
+		   });																							
 		addAnnotation
 		  (dischargeSummaryEClass, 
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });													
+		   });																		
 	}
 
 	/**
@@ -2522,7 +2570,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Allergies and Other Adverse Reactions Section", null
-		   });																																																																																																																																																																																																																																																																																																																																																
+		   });																																																																																																																																																																																																																																																																																																																																																															
 	}
 
 } //IHEPackageImpl

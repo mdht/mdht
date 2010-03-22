@@ -23,6 +23,7 @@ import org.openhealthtools.mdht.uml.cda.Organizer;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
@@ -35,6 +36,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
+import org.openhealthtools.mdht.uml.cda.ihe.*;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection;
@@ -339,6 +341,10 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createDischargeSummaryAdapter();
 			}
 			@Override
+			public Adapter caseCoverageEntry(CoverageEntry object) {
+				return createCoverageEntryAdapter();
+			}
+			@Override
 			public Adapter caseSection(Section object) {
 				return createSectionAdapter();
 			}
@@ -441,6 +447,10 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCDA_LanguageCommunication(org.openhealthtools.mdht.uml.cda.LanguageCommunication object) {
 				return createCDA_LanguageCommunicationAdapter();
+			}
+			@Override
+			public Adapter caseCoverageActivity(CoverageActivity object) {
+				return createCoverageActivityAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -1149,6 +1159,20 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry <em>Coverage Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry
+	 * @generated
+	 */
+	public Adapter createCoverageEntryAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.Act <em>Act</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1509,6 +1533,20 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCDA_LanguageCommunicationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity <em>Coverage Activity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity
+	 * @generated
+	 */
+	public Adapter createCoverageActivityAdapter() {
 		return null;
 	}
 
