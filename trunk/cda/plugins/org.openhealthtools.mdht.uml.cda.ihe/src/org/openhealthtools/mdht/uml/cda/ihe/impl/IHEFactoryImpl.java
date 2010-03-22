@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.openhealthtools.mdht.uml.cda.ihe.*;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection;
@@ -160,6 +161,7 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.LANGUAGE_COMMUNICATION: return createLanguageCommunication();
 			case IHEPackage.MEDICAL_SUMMARY: return createMedicalSummary();
 			case IHEPackage.DISCHARGE_SUMMARY: return createDischargeSummary();
+			case IHEPackage.COVERAGE_ENTRY: return createCoverageEntry();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -643,6 +645,16 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public DischargeSummary createDischargeSummary() {
 		DischargeSummaryImpl dischargeSummary = new DischargeSummaryImpl();
 		return dischargeSummary;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CoverageEntry createCoverageEntry() {
+		CoverageEntryImpl coverageEntry = new CoverageEntryImpl();
+		return coverageEntry;
 	}
 
 	/**

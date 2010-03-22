@@ -288,6 +288,10 @@ guarantor, or some combination.</body>
       <generalization xmi:id="_1MYRYMfXEd6VjLXh4DcWSg">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_T79VIKPeEd6t_4WfM070fA"/>
       </generalization>
+      <ownedAttribute xmi:id="_aw0UkDXgEd-gpLhSMS7jpQ" name="coverageEntry" type="_PMrjADXgEd-gpLhSMS7jpQ" association="_aw0UkTXgEd-gpLhSMS7jpQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6D1EgDXgEd-gpLhSMS7jpQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6D1EgTXgEd-gpLhSMS7jpQ" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_QD0tkMfbEd6VjLXh4DcWSg" name="HistoryOfPastIllnessSection">
       <ownedComment xmi:id="_fABAEMfbEd6VjLXh4DcWSg" annotatedElement="_QD0tkMfbEd6VjLXh4DcWSg">
@@ -532,9 +536,24 @@ life, hobbies, and risky habits.</body>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_fp-n0DOvEd-5f4Yngl7nkw" name="MedicalSummary">
-      <ownedRule xmi:id="_iiAk4DOvEd-5f4Yngl7nkw" name="MedicalSummaryProblemConcernEntry" constrainedElement="_fp-n0DOvEd-5f4Yngl7nkw"/>
-      <ownedRule xmi:id="_kVCowDOvEd-5f4Yngl7nkw" name="MedicalSummaryAllergyConcernEntry" constrainedElement="_fp-n0DOvEd-5f4Yngl7nkw"/>
-      <ownedRule xmi:id="_mjgEYDOvEd-5f4Yngl7nkw" name="MedicalSummaryMedications" constrainedElement="_fp-n0DOvEd-5f4Yngl7nkw"/>
+      <ownedRule xmi:id="_iiAk4DOvEd-5f4Yngl7nkw" name="MedicalSummaryProblemConcernEntry" constrainedElement="_fp-n0DOvEd-5f4Yngl7nkw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_d_T4kDXaEd-gpLhSMS7jpQ">
+          <language>OCL</language>
+          <body>self.getSections()->exists(sect : cda::Section | sect.getActs()->exists(act : cda::Act | act.oclIsKindOf(ccd::ProblemConcernEntry)))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_kVCowDOvEd-5f4Yngl7nkw" name="MedicalSummaryAllergyConcernEntry" constrainedElement="_fp-n0DOvEd-5f4Yngl7nkw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_I5oNYDXcEd-gpLhSMS7jpQ">
+          <language>OCL</language>
+          <body>self.getSections()->exists(sect : cda::Section | sect.getActs()->exists(act : cda::Act | act.oclIsKindOf(ihe::AllergyIntoleranceConcern)))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_mjgEYDOvEd-5f4Yngl7nkw" name="MedicalSummaryMedications" constrainedElement="_fp-n0DOvEd-5f4Yngl7nkw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_MtHGEDXcEd-gpLhSMS7jpQ">
+          <language>OCL</language>
+          <body>self.getSections()->exists(sect : cda::Section | sect.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.oclIsKindOf(ihe::Medication)))</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_fp-n0TOvEd-5f4Yngl7nkw" general="_wDMM0GEHEd6bFO5yxRh3Nw"/>
       <ownedAttribute xmi:id="_gIhlADOvEd-5f4Yngl7nkw" name="code" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
@@ -556,6 +575,14 @@ life, hobbies, and risky habits.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_EmpH4DOwEd-5f4Yngl7nkw" memberEnd="_EmfW4DOwEd-5f4Yngl7nkw _EmpH4TOwEd-5f4Yngl7nkw">
       <ownedEnd xmi:id="_EmpH4TOwEd-5f4Yngl7nkw" type="_yq8-YDOvEd-5f4Yngl7nkw" association="_EmpH4DOwEd-5f4Yngl7nkw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PMrjADXgEd-gpLhSMS7jpQ" name="CoverageEntry">
+      <generalization xmi:id="_PMrjATXgEd-gpLhSMS7jpQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_4A1mMMJqEd6-XpBv2uxYrQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_aw0UkTXgEd-gpLhSMS7jpQ" memberEnd="_aw0UkDXgEd-gpLhSMS7jpQ _aw0UkjXgEd-gpLhSMS7jpQ">
+      <ownedEnd xmi:id="_aw0UkjXgEd-gpLhSMS7jpQ" type="_ynU6sMfXEd6VjLXh4DcWSg" association="_aw0UkTXgEd-gpLhSMS7jpQ"/>
     </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -734,4 +761,12 @@ life, hobbies, and risky habits.</body>
   </CDA:CodeSystemConstraint>
   <CDA:CDATemplate xmi:id="_2lStADOvEd-5f4Yngl7nkw" message="IHE Discharge Summary SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.1.4" base_Class="_yq8-YDOvEd-5f4Yngl7nkw" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.4" assigningAuthorityName="IHE PCC"/>
   <CDA:AssociationValidation xmi:id="_GLhbADOwEd-5f4Yngl7nkw" message="IHE Discharge Summary SHALL contain [1..1] component such that it, SHALL contain [1..1] Active Problems Section (templateId: 1.3.6.1.4.1.19376.1.5.3.1.3.6)" base_Association="_EmpH4DOwEd-5f4Yngl7nkw"/>
+  <CDA:ConstraintValidation xmi:id="_JnaD8DXdEd-gpLhSMS7jpQ" message="IHE Medical Summary SHALL satisfy: self.getSections()->exists(sect : cda::Section | sect.getActs()->exists(act : cda::Act | act.oclIsKindOf(ccd::ProblemConcernEntry)))" base_Constraint="_iiAk4DOvEd-5f4Yngl7nkw"/>
+  <CDA:ConstraintValidation xmi:id="_LovpkDXdEd-gpLhSMS7jpQ" message="IHE Medical Summary SHALL satisfy: self.getSections()->exists(sect : cda::Section | sect.getActs()->exists(act : cda::Act | act.oclIsKindOf(ihe::AllergyIntoleranceConcern)))" base_Constraint="_kVCowDOvEd-5f4Yngl7nkw"/>
+  <CDA:ConstraintValidation xmi:id="_MFpoADXdEd-gpLhSMS7jpQ" message="IHE Medical Summary SHALL satisfy: self.getSections()->exists(sect : cda::Section | sect.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.oclIsKindOf(ihe::Medication)))" base_Constraint="_mjgEYDOvEd-5f4Yngl7nkw"/>
+  <CDA:CodeSystemConstraint xmi:id="_RPz4YTXgEd-gpLhSMS7jpQ" code="35525-4" displayName="Payment sources" message="IHE Coverage Entry SHALL contain [1..1] code/@code = &quot;48768-6&quot; Payment sources (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:AssociationValidation xmi:id="_b-54UDXgEd-gpLhSMS7jpQ" message="IHE Payers Section SHALL contain [1..1] entry such that it, SHALL contain [1..1] Coverage Entry" severity="WARNING" base_Association="_aw0UkTXgEd-gpLhSMS7jpQ"/>
+  <CDA:CDATemplate xmi:id="_gY1F8DXgEd-gpLhSMS7jpQ" message="IHE Coverage Entry SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.17" base_Class="_PMrjADXgEd-gpLhSMS7jpQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.17" assigningAuthorityName="IHE PCC"/>
 </xmi:XMI>

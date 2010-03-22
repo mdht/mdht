@@ -464,6 +464,15 @@ public interface IHEFactory extends EFactory {
 	DischargeSummary createDischargeSummary();
 
 	/**
+	 * Returns a new object of class '<em>Coverage Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Coverage Entry</em>'.
+	 * @generated
+	 */
+	CoverageEntry createCoverageEntry();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

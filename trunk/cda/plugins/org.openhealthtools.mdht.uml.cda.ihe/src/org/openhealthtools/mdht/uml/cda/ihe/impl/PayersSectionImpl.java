@@ -58,6 +58,15 @@ public class PayersSectionImpl extends org.openhealthtools.mdht.uml.cda.ccd.impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateIHEPayersSectionCoverageEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PayersSectionOperations.validateIHEPayersSectionCoverageEntry(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PayersSection init() {
     		CDAUtil.init(this);
     		return this;
