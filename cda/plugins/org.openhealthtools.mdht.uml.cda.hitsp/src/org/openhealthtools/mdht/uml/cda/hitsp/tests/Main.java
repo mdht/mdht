@@ -26,7 +26,7 @@ import org.openhealthtools.mdht.uml.cda.Organization;
 import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
@@ -159,7 +159,7 @@ public class Main {
 		effectiveTime.setHigh(TS_UNK);
 		problemEntry.setEffectiveTime(effectiveTime);
 		
-		ProblemHealthStatus healthStatus = CCDFactory.eINSTANCE.createProblemHealthStatus().init();
+		ProblemHealthStatusObservation healthStatus = CCDFactory.eINSTANCE.createProblemHealthStatusObservation().init();
 		problemEntry.addObservation(healthStatus);
 		CE healthStatusValue = DatatypesFactory.eINSTANCE.createCE("xyz", "2.16.840.1.113883.1.11.20.12",
 				"ProblemHealthStatusCode", null);

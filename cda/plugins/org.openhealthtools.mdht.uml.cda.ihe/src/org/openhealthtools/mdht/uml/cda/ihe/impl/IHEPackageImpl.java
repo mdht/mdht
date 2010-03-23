@@ -1119,11 +1119,11 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		medicationsAdministeredSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		concernEntryEClass.getESuperTypes().add(theCCDPackage.getProblemAct());
 		medicalDocumentEClass.getESuperTypes().add(theCDAPackage.getClinicalDocument());
-		activeProblemsSectionEClass.getESuperTypes().add(theCCDPackage.getProblemSection());
+		activeProblemsSectionEClass.getESuperTypes().add(theCCDPackage.getProblemsSection());
 		problemConcernEntryEClass.getESuperTypes().add(this.getConcernEntry());
 		problemEntryEClass.getESuperTypes().add(theCCDPackage.getProblemObservation());
 		medicationEClass.getESuperTypes().add(theCCDPackage.getMedicationActivity());
-		medicationsSectionEClass.getESuperTypes().add(theCCDPackage.getMedicationSection());
+		medicationsSectionEClass.getESuperTypes().add(theCCDPackage.getMedicationsSection());
 		allergyIntoleranceConcernEClass.getESuperTypes().add(this.getConcernEntry());
 		allergyIntoleranceEClass.getESuperTypes().add(this.getProblemEntry());
 		allergiesReactionsSectionEClass.getESuperTypes().add(theCCDPackage.getAlertsSection());
@@ -1311,7 +1311,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 
 		initEClass(medicationsSectionEClass, MedicationsSection.class, "MedicationsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(medicationsSectionEClass, ecorePackage.getEBoolean(), "validateMedicationsSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(medicationsSectionEClass, ecorePackage.getEBoolean(), "validateIHEMedicationsSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2144,7 +2144,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.3.19",
-			 "constraints.validation.error", "MedicationsSectionTemplateId"
+			 "constraints.validation.error", "IHEMedicationsSectionTemplateId"
 		   });							
 		addAnnotation
 		  (allergyIntoleranceConcernEClass, 

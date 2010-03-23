@@ -15,7 +15,6 @@ package org.openhealthtools.mdht.uml.cda.ihe;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,10 +28,10 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getMedicationsSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.19' constraints.validation.error='MedicationsSectionTemplateId'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.3.19' constraints.validation.error='IHEMedicationsSectionTemplateId'"
  * @generated
  */
-public interface MedicationsSection extends MedicationSection {
+public interface MedicationsSection extends org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -44,7 +43,7 @@ public interface MedicationsSection extends MedicationSection {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = \'1.3.6.1.4.1.19376.1.5.3.1.3.19\')'"
 	 * @generated
 	 */
-	boolean validateMedicationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateIHEMedicationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

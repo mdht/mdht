@@ -16,7 +16,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemSectionImpl;
+import org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemsSectionImpl;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ActiveProblemsSectionOperations;
@@ -31,7 +31,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class ActiveProblemsSectionImpl extends ProblemSectionImpl implements ActiveProblemsSection {
+public class ActiveProblemsSectionImpl extends ProblemsSectionImpl implements ActiveProblemsSection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
