@@ -110,8 +110,8 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemObservationProblemStatus(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemObservationOperations.validateProblemObservationProblemStatus(this, diagnostics, context);
+	public boolean validateProblemObservationProblemStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateProblemObservationProblemStatusObservation(this, diagnostics, context);
 	}
 
 	/**
@@ -119,8 +119,8 @@ public class ProblemObservationImpl extends ObservationImpl implements ProblemOb
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemObservationProblemHealthStatus(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemObservationOperations.validateProblemObservationProblemHealthStatus(this, diagnostics, context);
+	public boolean validateProblemObservationProblemHealthStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemObservationOperations.validateProblemObservationProblemHealthStatusObservation(this, diagnostics, context);
 	}
 
 	/**

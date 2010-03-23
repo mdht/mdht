@@ -37,10 +37,10 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="Condition">
       <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_wSnPAGaQEd6Hk_bPOfEjYA?ihe/ProblemConcernEntry?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_wSnPAGaQEd6Hk_bPOfEjYA"/>
       </generalization>
       <ownedAttribute xmi:id="_Kp7UYIwJEd6B6JSUB00H7g" name="text" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg?datatypes/ED?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_-HhPcBvhEd-yI6xBTkJSNw" name="conditionEntry" visibility="private" type="_c6bN4BvgEd-yI6xBTkJSNw" association="_-HcW8BvhEd-yI6xBTkJSNw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-Hlg4BvhEd-yI6xBTkJSNw" value="*"/>
@@ -81,10 +81,10 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_dobt4K7IEd6_ioDelDcPPg" name="VitalSign">
       <generalization xmi:id="_g9_UcK7IEd6_ioDelDcPPg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_LriUcK4NEd6_ioDelDcPPg?ihe/VitalSignObservation?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_LriUcK4NEd6_ioDelDcPPg"/>
       </generalization>
       <ownedAttribute xmi:id="_K4Lk0K7REd6_ioDelDcPPg" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg?datatypes/CE?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_DH404MfWEd6VjLXh4DcWSg" name="PayersSection">
@@ -119,7 +119,7 @@
 &lt;/p></body>
       </ownedComment>
       <generalization xmi:id="_epE8MMfaEd6VjLXh4DcWSg">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_vz5koGGsEd6bFO5yxRh3Nw?ihe/ActiveProblemsSection?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_vz5koGGsEd6bFO5yxRh3Nw"/>
       </generalization>
       <ownedAttribute xmi:id="_4EDnQBvYEd-yI6xBTkJSNw" name="condition" visibility="private" type="_GgvgUDxbEd6JwqSGecoePg" association="_4D4oIBvYEd-yI6xBTkJSNw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4EWiMBvYEd-yI6xBTkJSNw" value="*"/>
@@ -408,15 +408,15 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_c6bN4BvgEd-yI6xBTkJSNw" name="ConditionEntry">
       <generalization xmi:id="_fv2i4BvgEd-yI6xBTkJSNw">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_3ZiEwGdIEd6Hk_bPOfEjYA?ihe/ProblemEntry?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_3ZiEwGdIEd6Hk_bPOfEjYA"/>
       </generalization>
       <ownedAttribute xmi:id="_hjpbwBvgEd-yI6xBTkJSNw" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
-        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_f1n6wIhTEd6UrJD25cKDew?ccd/ProblemObservation/code?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_f1n6wIhTEd6UrJD25cKDew"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_hjsfEBvgEd-yI6xBTkJSNw" name="value" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
-        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_slNZAIwHEd6B6JSUB00H7g?ihe/ProblemEntry/value?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_slNZAIwHEd6B6JSUB00H7g"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_lkLxoBvjEd-yI6xBTkJSNw" name="effectiveTime" visibility="private" aggregation="composite">
         <ownedComment xmi:id="_tM2MIBvjEd-yI6xBTkJSNw" annotatedElement="_lkLxoBvjEd-yI6xBTkJSNw">
@@ -424,10 +424,10 @@
 &#xD;
 If the problem is known to be resolved, but the date of resolution is not known, then the &lt;high> element shall be present, and the nullFlavor attribute shall be set to 'UNK'. Therefore, the existence of an &lt;high> element within a problem does indicate that the problem has been resolved.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA?datatypes/IVL_TS?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lkLxoRvjEd-yI6xBTkJSNw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lkLxohvjEd-yI6xBTkJSNw" value="1"/>
-        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_t3kdcIhREd6UrJD25cKDew?ccd/ProblemObservation/effectiveTime?"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_t3kdcIhREd6UrJD25cKDew"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_-HcW8BvhEd-yI6xBTkJSNw" memberEnd="_-HhPcBvhEd-yI6xBTkJSNw _-HpLQBvhEd-yI6xBTkJSNw">
@@ -438,20 +438,20 @@ If the problem is known to be resolved, but the date of resolution is not known,
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_oTzNMDIWEd-SYNRf-pkwtw" name="Result">
       <generalization xmi:id="_oT1CYDIWEd-SYNRf-pkwtw">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_MQHZEHDAEd6eItyqb1FoWg?ccd/ResultObservation?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_MQHZEHDAEd6eItyqb1FoWg"/>
       </generalization>
       <generalization xmi:id="_S1FzcDIXEd-SYNRf-pkwtw">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_dLvb0K4NEd6_ioDelDcPPg?ihe/SimpleObservation?"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_dLvb0K4NEd6_ioDelDcPPg"/>
       </generalization>
       <ownedAttribute xmi:id="_ColIkDIXEd-SYNRf-pkwtw" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg?datatypes/CD?"/>
-        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_H1HqAK6xEd6_ioDelDcPPg?ccd/ResultObservation/code?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_H1HqAK6xEd6_ioDelDcPPg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_CuLaQDIXEd-SYNRf-pkwtw" name="effectiveTime" visibility="private" aggregation="composite">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA?datatypes/IVL_TS?"/>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CuLaQTIXEd-SYNRf-pkwtw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CuLaQjIXEd-SYNRf-pkwtw" value="1"/>
-        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_5TTmYK6wEd6_ioDelDcPPg?ccd/ResultObservation/effectiveTime?"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_5TTmYK6wEd6_ioDelDcPPg"/>
       </ownedAttribute>
     </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
@@ -541,7 +541,7 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:ValueSetConstraint xmi:id="_P-2i8DITEd-saqiXO4OYhQ" base_Property="_K4Lk0K7REd6_ioDelDcPPg">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_UvVE0TISEd-saqiXO4OYhQ"/>
   </CDA:ValueSetConstraint>
-  <CDA:PropertyValidation xmi:id="_CuIW8DIXEd-SYNRf-pkwtw" message="CCD Result Observation SHALL contain [1..1] code" base_Property="_ColIkDIXEd-SYNRf-pkwtw"/>
-  <CDA:PropertyValidation xmi:id="_CuMBUDIXEd-SYNRf-pkwtw" message="CCD Result Observation SHOULD contain [1..1] effectiveTime" base_Property="_CuLaQDIXEd-SYNRf-pkwtw"/>
-  <CDA:CDATemplate xmi:id="_HDAsgDIXEd-SYNRf-pkwtw" base_Class="_oTzNMDIWEd-SYNRf-pkwtw" templateId="2.16.840.1.113883.3.88.11.83.15"/>
+  <CDA:PropertyValidation xmi:id="_CuIW8DIXEd-SYNRf-pkwtw" message="HITSP Result SHALL contain [1..1] code" base_Property="_ColIkDIXEd-SYNRf-pkwtw"/>
+  <CDA:PropertyValidation xmi:id="_CuMBUDIXEd-SYNRf-pkwtw" message="HITSP Result SHALL contain [1..1] effectiveTime" base_Property="_CuLaQDIXEd-SYNRf-pkwtw"/>
+  <CDA:CDATemplate xmi:id="_HDAsgDIXEd-SYNRf-pkwtw" message="HITSP Result SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.15" base_Class="_oTzNMDIWEd-SYNRf-pkwtw" templateId="2.16.840.1.113883.3.88.11.83.15"/>
 </xmi:XMI>

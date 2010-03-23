@@ -40,9 +40,9 @@ import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
-import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction;
 import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
@@ -55,10 +55,10 @@ import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSupply;
 import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureObservation;
@@ -108,28 +108,28 @@ public class CCDValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.openhealthtools.mdht.uml.cda.ccd";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Section Template Id' of 'Medication Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medications Section Template Id' of 'Medications Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICATION_SECTION__MEDICATION_SECTION_TEMPLATE_ID = 1;
+	public static final int MEDICATIONS_SECTION__MEDICATIONS_SECTION_TEMPLATE_ID = 1;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Section Code' of 'Medication Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medications Section Code' of 'Medications Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICATION_SECTION__MEDICATION_SECTION_CODE = 2;
+	public static final int MEDICATIONS_SECTION__MEDICATIONS_SECTION_CODE = 2;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Section Title' of 'Medication Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medications Section Title' of 'Medications Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICATION_SECTION__MEDICATION_SECTION_TITLE = 3;
+	public static final int MEDICATIONS_SECTION__MEDICATIONS_SECTION_TITLE = 3;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Continuity Of Care Document Service Event Required' of 'Continuity Of Care Document'.
@@ -220,12 +220,12 @@ public class CCDValidator extends EObjectValidator {
 	public static final int CONTINUITY_OF_CARE_DOCUMENT__CONTINUITY_OF_CARE_DOCUMENT_LANGUAGE_CODE = 14;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Continuity Of Care Document Problem Section' of 'Continuity Of Care Document'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Continuity Of Care Document Problems Section' of 'Continuity Of Care Document'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONTINUITY_OF_CARE_DOCUMENT__CONTINUITY_OF_CARE_DOCUMENT_PROBLEM_SECTION = 15;
+	public static final int CONTINUITY_OF_CARE_DOCUMENT__CONTINUITY_OF_CARE_DOCUMENT_PROBLEMS_SECTION = 15;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Continuity Of Care Document Family History Section' of 'Continuity Of Care Document'.
@@ -252,12 +252,12 @@ public class CCDValidator extends EObjectValidator {
 	public static final int CONTINUITY_OF_CARE_DOCUMENT__CONTINUITY_OF_CARE_DOCUMENT_ALERTS_SECTION = 18;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Continuity Of Care Document Medication Section' of 'Continuity Of Care Document'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Continuity Of Care Document Medications Section' of 'Continuity Of Care Document'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONTINUITY_OF_CARE_DOCUMENT__CONTINUITY_OF_CARE_DOCUMENT_MEDICATION_SECTION = 19;
+	public static final int CONTINUITY_OF_CARE_DOCUMENT__CONTINUITY_OF_CARE_DOCUMENT_MEDICATIONS_SECTION = 19;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Continuity Of Care Document Results Section' of 'Continuity Of Care Document'.
@@ -492,20 +492,20 @@ public class CCDValidator extends EObjectValidator {
 	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_EFFECTIVE_TIME = 48;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Problem Status' of 'Problem Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Problem Status Observation' of 'Problem Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_PROBLEM_STATUS = 49;
+	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_PROBLEM_STATUS_OBSERVATION = 49;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Problem Health Status' of 'Problem Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Problem Health Status Observation' of 'Problem Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_PROBLEM_HEALTH_STATUS = 50;
+	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_PROBLEM_HEALTH_STATUS_OBSERVATION = 50;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Observation Age Observation' of 'Problem Observation'.
@@ -516,52 +516,52 @@ public class CCDValidator extends EObjectValidator {
 	public static final int PROBLEM_OBSERVATION__PROBLEM_OBSERVATION_AGE_OBSERVATION = 51;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Section Template Id' of 'Problem Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problems Section Template Id' of 'Problems Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_SECTION__PROBLEM_SECTION_TEMPLATE_ID = 52;
+	public static final int PROBLEMS_SECTION__PROBLEMS_SECTION_TEMPLATE_ID = 52;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Section Code' of 'Problem Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problems Section Code' of 'Problems Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_SECTION__PROBLEM_SECTION_CODE = 53;
+	public static final int PROBLEMS_SECTION__PROBLEMS_SECTION_CODE = 53;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Section Title' of 'Problem Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problems Section Title' of 'Problems Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_SECTION__PROBLEM_SECTION_TITLE = 54;
+	public static final int PROBLEMS_SECTION__PROBLEMS_SECTION_TITLE = 54;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Section Text' of 'Problem Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problems Section Text' of 'Problems Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_SECTION__PROBLEM_SECTION_TEXT = 55;
+	public static final int PROBLEMS_SECTION__PROBLEMS_SECTION_TEXT = 55;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Section Problem Act' of 'Problem Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problems Section Problem Act' of 'Problems Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_SECTION__PROBLEM_SECTION_PROBLEM_ACT = 56;
+	public static final int PROBLEMS_SECTION__PROBLEMS_SECTION_PROBLEM_ACT = 56;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Status Template Id' of 'Problem Status'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Status Observation Template Id' of 'Problem Status Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_STATUS__PROBLEM_STATUS_TEMPLATE_ID = 57;
+	public static final int PROBLEM_STATUS_OBSERVATION__PROBLEM_STATUS_OBSERVATION_TEMPLATE_ID = 57;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation No Additional Participants' of 'Status Observation'.
@@ -570,22 +570,6 @@ public class CCDValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public static final int STATUS_OBSERVATION__STATUS_OBSERVATION_NO_ADDITIONAL_PARTICIPANTS = 58;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Health Status Template Id' of 'Problem Health Status'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int PROBLEM_HEALTH_STATUS__PROBLEM_HEALTH_STATUS_TEMPLATE_ID = 65;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Health Status Code' of 'Problem Health Status'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int PROBLEM_HEALTH_STATUS__PROBLEM_HEALTH_STATUS_CODE = 66;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Episode Observation One Entry Relationship SUBJ' of 'Episode Observation'.
@@ -650,6 +634,22 @@ public class CCDValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public static final int STATUS_OBSERVATION__STATUS_OBSERVATION_VALUE = 64;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Health Status Observation Template Id' of 'Problem Health Status Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROBLEM_HEALTH_STATUS_OBSERVATION__PROBLEM_HEALTH_STATUS_OBSERVATION_TEMPLATE_ID = 65;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Health Status Observation Code' of 'Problem Health Status Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PROBLEM_HEALTH_STATUS_OBSERVATION__PROBLEM_HEALTH_STATUS_OBSERVATION_CODE = 66;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Episode Observation Template Id' of 'Episode Observation'.
@@ -2474,22 +2474,22 @@ public class CCDValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case CCDPackage.MEDICATION_SECTION:
-				return validateMedicationSection((MedicationSection)value, diagnostics, context);
+			case CCDPackage.MEDICATIONS_SECTION:
+				return validateMedicationsSection((MedicationsSection)value, diagnostics, context);
 			case CCDPackage.CONTINUITY_OF_CARE_DOCUMENT:
 				return validateContinuityOfCareDocument((ContinuityOfCareDocument)value, diagnostics, context);
 			case CCDPackage.PROBLEM_ACT:
 				return validateProblemAct((ProblemAct)value, diagnostics, context);
 			case CCDPackage.PROBLEM_OBSERVATION:
 				return validateProblemObservation((ProblemObservation)value, diagnostics, context);
-			case CCDPackage.PROBLEM_SECTION:
-				return validateProblemSection((ProblemSection)value, diagnostics, context);
-			case CCDPackage.PROBLEM_STATUS:
-				return validateProblemStatus((ProblemStatus)value, diagnostics, context);
+			case CCDPackage.PROBLEMS_SECTION:
+				return validateProblemsSection((ProblemsSection)value, diagnostics, context);
+			case CCDPackage.PROBLEM_STATUS_OBSERVATION:
+				return validateProblemStatusObservation((ProblemStatusObservation)value, diagnostics, context);
 			case CCDPackage.STATUS_OBSERVATION:
 				return validateStatusObservation((StatusObservation)value, diagnostics, context);
-			case CCDPackage.PROBLEM_HEALTH_STATUS:
-				return validateProblemHealthStatus((ProblemHealthStatus)value, diagnostics, context);
+			case CCDPackage.PROBLEM_HEALTH_STATUS_OBSERVATION:
+				return validateProblemHealthStatusObservation((ProblemHealthStatusObservation)value, diagnostics, context);
 			case CCDPackage.EPISODE_OBSERVATION:
 				return validateEpisodeObservation((EpisodeObservation)value, diagnostics, context);
 			case CCDPackage.PATIENT_AWARENESS:
@@ -2614,48 +2614,48 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationSection(MedicationSection medicationSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		boolean result = validate_EveryMultiplicityConforms(medicationSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicationSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicationSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicationSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(medicationSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicationSection_validateMedicationSectionTemplateId(medicationSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicationSection_validateMedicationSectionCode(medicationSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicationSection_validateMedicationSectionTitle(medicationSection, diagnostics, context);
+	public boolean validateMedicationsSection(MedicationsSection medicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicationsSection_validateMedicationsSectionTemplateId(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicationsSection_validateMedicationsSectionCode(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicationsSection_validateMedicationsSectionTitle(medicationsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateMedicationSectionTemplateId constraint of '<em>Medication Section</em>'.
+	 * Validates the validateMedicationsSectionTemplateId constraint of '<em>Medications Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationSection_validateMedicationSectionTemplateId(MedicationSection medicationSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return medicationSection.validateMedicationSectionTemplateId(diagnostics, context);
+	public boolean validateMedicationsSection_validateMedicationsSectionTemplateId(MedicationsSection medicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicationsSection.validateMedicationsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateMedicationSectionCode constraint of '<em>Medication Section</em>'.
+	 * Validates the validateMedicationsSectionCode constraint of '<em>Medications Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationSection_validateMedicationSectionCode(MedicationSection medicationSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return medicationSection.validateMedicationSectionCode(diagnostics, context);
+	public boolean validateMedicationsSection_validateMedicationsSectionCode(MedicationsSection medicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicationsSection.validateMedicationsSectionCode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateMedicationSectionTitle constraint of '<em>Medication Section</em>'.
+	 * Validates the validateMedicationsSectionTitle constraint of '<em>Medications Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationSection_validateMedicationSectionTitle(MedicationSection medicationSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return medicationSection.validateMedicationSectionTitle(diagnostics, context);
+	public boolean validateMedicationsSection_validateMedicationsSectionTitle(MedicationsSection medicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicationsSection.validateMedicationsSectionTitle(diagnostics, context);
 	}
 
 	/**
@@ -2682,11 +2682,11 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentTemplateId(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentCode(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentLanguageCode(continuityOfCareDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentProblemSection(continuityOfCareDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentProblemsSection(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentFamilyHistorySection(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentSocialHistorySection(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentAlertsSection(continuityOfCareDocument, diagnostics, context);
-		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentMedicationSection(continuityOfCareDocument, diagnostics, context);
+		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentMedicationsSection(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentResultsSection(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentProceduresSection(continuityOfCareDocument, diagnostics, context);
 		if (result || diagnostics != null) result &= validateContinuityOfCareDocument_validateContinuityOfCareDocumentEncountersSection(continuityOfCareDocument, diagnostics, context);
@@ -2812,13 +2812,13 @@ public class CCDValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateContinuityOfCareDocumentProblemSection constraint of '<em>Continuity Of Care Document</em>'.
+	 * Validates the validateContinuityOfCareDocumentProblemsSection constraint of '<em>Continuity Of Care Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateContinuityOfCareDocument_validateContinuityOfCareDocumentProblemSection(ContinuityOfCareDocument continuityOfCareDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return continuityOfCareDocument.validateContinuityOfCareDocumentProblemSection(diagnostics, context);
+	public boolean validateContinuityOfCareDocument_validateContinuityOfCareDocumentProblemsSection(ContinuityOfCareDocument continuityOfCareDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return continuityOfCareDocument.validateContinuityOfCareDocumentProblemsSection(diagnostics, context);
 	}
 
 	/**
@@ -2852,13 +2852,13 @@ public class CCDValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateContinuityOfCareDocumentMedicationSection constraint of '<em>Continuity Of Care Document</em>'.
+	 * Validates the validateContinuityOfCareDocumentMedicationsSection constraint of '<em>Continuity Of Care Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateContinuityOfCareDocument_validateContinuityOfCareDocumentMedicationSection(ContinuityOfCareDocument continuityOfCareDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return continuityOfCareDocument.validateContinuityOfCareDocumentMedicationSection(diagnostics, context);
+	public boolean validateContinuityOfCareDocument_validateContinuityOfCareDocumentMedicationsSection(ContinuityOfCareDocument continuityOfCareDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return continuityOfCareDocument.validateContinuityOfCareDocumentMedicationsSection(diagnostics, context);
 	}
 
 	/**
@@ -3138,8 +3138,8 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateProblemObservation_validateProblemObservationMoodCode(problemObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemObservation_validateProblemObservationStatusCode(problemObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemObservation_validateProblemObservationEffectiveTime(problemObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemObservation_validateProblemObservationProblemStatus(problemObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemObservation_validateProblemObservationProblemHealthStatus(problemObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemObservation_validateProblemObservationProblemStatusObservation(problemObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemObservation_validateProblemObservationProblemHealthStatusObservation(problemObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemObservation_validateProblemObservationAgeObservation(problemObservation, diagnostics, context);
 		return result;
 	}
@@ -3205,23 +3205,23 @@ public class CCDValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateProblemObservationProblemStatus constraint of '<em>Problem Observation</em>'.
+	 * Validates the validateProblemObservationProblemStatusObservation constraint of '<em>Problem Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemObservation_validateProblemObservationProblemStatus(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemObservation.validateProblemObservationProblemStatus(diagnostics, context);
+	public boolean validateProblemObservation_validateProblemObservationProblemStatusObservation(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemObservation.validateProblemObservationProblemStatusObservation(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateProblemObservationProblemHealthStatus constraint of '<em>Problem Observation</em>'.
+	 * Validates the validateProblemObservationProblemHealthStatusObservation constraint of '<em>Problem Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemObservation_validateProblemObservationProblemHealthStatus(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemObservation.validateProblemObservationProblemHealthStatus(diagnostics, context);
+	public boolean validateProblemObservation_validateProblemObservationProblemHealthStatusObservation(ProblemObservation problemObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemObservation.validateProblemObservationProblemHealthStatusObservation(diagnostics, context);
 	}
 
 	/**
@@ -3239,70 +3239,70 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemSection(ProblemSection problemSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		boolean result = validate_EveryMultiplicityConforms(problemSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(problemSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(problemSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(problemSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(problemSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemSection_validateProblemSectionTemplateId(problemSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemSection_validateProblemSectionCode(problemSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemSection_validateProblemSectionTitle(problemSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemSection_validateProblemSectionText(problemSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemSection_validateProblemSectionProblemAct(problemSection, diagnostics, context);
+	public boolean validateProblemsSection(ProblemsSection problemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(problemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(problemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(problemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(problemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(problemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemsSection_validateProblemsSectionTemplateId(problemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemsSection_validateProblemsSectionCode(problemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemsSection_validateProblemsSectionTitle(problemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemsSection_validateProblemsSectionText(problemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemsSection_validateProblemsSectionProblemAct(problemsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateProblemSectionTemplateId constraint of '<em>Problem Section</em>'.
+	 * Validates the validateProblemsSectionTemplateId constraint of '<em>Problems Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemSection_validateProblemSectionTemplateId(ProblemSection problemSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemSection.validateProblemSectionTemplateId(diagnostics, context);
+	public boolean validateProblemsSection_validateProblemsSectionTemplateId(ProblemsSection problemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemsSection.validateProblemsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateProblemSectionCode constraint of '<em>Problem Section</em>'.
+	 * Validates the validateProblemsSectionCode constraint of '<em>Problems Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemSection_validateProblemSectionCode(ProblemSection problemSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemSection.validateProblemSectionCode(diagnostics, context);
+	public boolean validateProblemsSection_validateProblemsSectionCode(ProblemsSection problemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemsSection.validateProblemsSectionCode(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateProblemSectionTitle constraint of '<em>Problem Section</em>'.
+	 * Validates the validateProblemsSectionTitle constraint of '<em>Problems Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemSection_validateProblemSectionTitle(ProblemSection problemSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemSection.validateProblemSectionTitle(diagnostics, context);
+	public boolean validateProblemsSection_validateProblemsSectionTitle(ProblemsSection problemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemsSection.validateProblemsSectionTitle(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateProblemSectionText constraint of '<em>Problem Section</em>'.
+	 * Validates the validateProblemsSectionText constraint of '<em>Problems Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemSection_validateProblemSectionText(ProblemSection problemSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemSection.validateProblemSectionText(diagnostics, context);
+	public boolean validateProblemsSection_validateProblemsSectionText(ProblemsSection problemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemsSection.validateProblemsSectionText(diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateProblemSectionProblemAct constraint of '<em>Problem Section</em>'.
+	 * Validates the validateProblemsSectionProblemAct constraint of '<em>Problems Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemSection_validateProblemSectionProblemAct(ProblemSection problemSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemSection.validateProblemSectionProblemAct(diagnostics, context);
+	public boolean validateProblemsSection_validateProblemsSectionProblemAct(ProblemsSection problemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemsSection.validateProblemsSectionProblemAct(diagnostics, context);
 	}
 
 	/**
@@ -3310,78 +3310,33 @@ public class CCDValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemStatus(ProblemStatus problemStatus, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		boolean result = validate_EveryMultiplicityConforms(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationNoAdditionalParticipants(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationTemplateId(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationClassCode(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationMoodCode(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationCode(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationStatusCode(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationValue(problemStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemStatus_validateProblemStatusTemplateId(problemStatus, diagnostics, context);
+	public boolean validateProblemStatusObservation(ProblemStatusObservation problemStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationNoAdditionalParticipants(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationTemplateId(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationClassCode(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationMoodCode(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationCode(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationStatusCode(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationValue(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemStatusObservation_validateProblemStatusObservationTemplateId(problemStatusObservation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateProblemStatusTemplateId constraint of '<em>Problem Status</em>'.
+	 * Validates the validateProblemStatusObservationTemplateId constraint of '<em>Problem Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemStatus_validateProblemStatusTemplateId(ProblemStatus problemStatus, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemStatus.validateProblemStatusTemplateId(diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProblemHealthStatus(ProblemHealthStatus problemHealthStatus, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		boolean result = validate_EveryMultiplicityConforms(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationNoAdditionalParticipants(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationTemplateId(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationClassCode(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationMoodCode(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationCode(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationStatusCode(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationValue(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemHealthStatus_validateProblemHealthStatusTemplateId(problemHealthStatus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemHealthStatus_validateProblemHealthStatusCode(problemHealthStatus, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the validateProblemHealthStatusTemplateId constraint of '<em>Problem Health Status</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProblemHealthStatus_validateProblemHealthStatusTemplateId(ProblemHealthStatus problemHealthStatus, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemHealthStatus.validateProblemHealthStatusTemplateId(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateProblemHealthStatusCode constraint of '<em>Problem Health Status</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProblemHealthStatus_validateProblemHealthStatusCode(ProblemHealthStatus problemHealthStatus, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemHealthStatus.validateProblemHealthStatusCode(diagnostics, context);
+	public boolean validateProblemStatusObservation_validateProblemStatusObservationTemplateId(ProblemStatusObservation problemStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemStatusObservation.validateProblemStatusObservationTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -3475,6 +3430,51 @@ public class CCDValidator extends EObjectValidator {
 	 */
 	public boolean validateStatusObservation_validateStatusObservationValue(StatusObservation statusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return statusObservation.validateStatusObservationValue(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProblemHealthStatusObservation(ProblemHealthStatusObservation problemHealthStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationNoAdditionalParticipants(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationTemplateId(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationClassCode(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationMoodCode(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationCode(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationStatusCode(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationValue(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemHealthStatusObservation_validateProblemHealthStatusObservationTemplateId(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemHealthStatusObservation_validateProblemHealthStatusObservationCode(problemHealthStatusObservation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateProblemHealthStatusObservationTemplateId constraint of '<em>Problem Health Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProblemHealthStatusObservation_validateProblemHealthStatusObservationTemplateId(ProblemHealthStatusObservation problemHealthStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemHealthStatusObservation.validateProblemHealthStatusObservationTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateProblemHealthStatusObservationCode constraint of '<em>Problem Health Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProblemHealthStatusObservation_validateProblemHealthStatusObservationCode(ProblemHealthStatusObservation problemHealthStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemHealthStatusObservation.validateProblemHealthStatusObservationCode(diagnostics, context);
 	}
 
 	/**

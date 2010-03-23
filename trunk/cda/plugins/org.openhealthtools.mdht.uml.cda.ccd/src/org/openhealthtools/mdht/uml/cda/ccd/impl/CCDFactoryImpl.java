@@ -45,9 +45,9 @@ import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
-import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction;
 import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
@@ -60,10 +60,10 @@ import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSupply;
 import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureObservation;
@@ -129,14 +129,14 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CCDPackage.MEDICATION_SECTION: return createMedicationSection();
+			case CCDPackage.MEDICATIONS_SECTION: return createMedicationsSection();
 			case CCDPackage.CONTINUITY_OF_CARE_DOCUMENT: return createContinuityOfCareDocument();
 			case CCDPackage.PROBLEM_ACT: return createProblemAct();
 			case CCDPackage.PROBLEM_OBSERVATION: return createProblemObservation();
-			case CCDPackage.PROBLEM_SECTION: return createProblemSection();
-			case CCDPackage.PROBLEM_STATUS: return createProblemStatus();
+			case CCDPackage.PROBLEMS_SECTION: return createProblemsSection();
+			case CCDPackage.PROBLEM_STATUS_OBSERVATION: return createProblemStatusObservation();
 			case CCDPackage.STATUS_OBSERVATION: return createStatusObservation();
-			case CCDPackage.PROBLEM_HEALTH_STATUS: return createProblemHealthStatus();
+			case CCDPackage.PROBLEM_HEALTH_STATUS_OBSERVATION: return createProblemHealthStatusObservation();
 			case CCDPackage.EPISODE_OBSERVATION: return createEpisodeObservation();
 			case CCDPackage.PATIENT_AWARENESS: return createPatientAwareness();
 			case CCDPackage.FAMILY_HISTORY_SECTION: return createFamilyHistorySection();
@@ -204,9 +204,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MedicationSection createMedicationSection() {
-		MedicationSectionImpl medicationSection = new MedicationSectionImpl();
-		return medicationSection;
+	public MedicationsSection createMedicationsSection() {
+		MedicationsSectionImpl medicationsSection = new MedicationsSectionImpl();
+		return medicationsSection;
 	}
 
 	/**
@@ -244,9 +244,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProblemSection createProblemSection() {
-		ProblemSectionImpl problemSection = new ProblemSectionImpl();
-		return problemSection;
+	public ProblemsSection createProblemsSection() {
+		ProblemsSectionImpl problemsSection = new ProblemsSectionImpl();
+		return problemsSection;
 	}
 
 	/**
@@ -254,19 +254,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProblemStatus createProblemStatus() {
-		ProblemStatusImpl problemStatus = new ProblemStatusImpl();
-		return problemStatus;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProblemHealthStatus createProblemHealthStatus() {
-		ProblemHealthStatusImpl problemHealthStatus = new ProblemHealthStatusImpl();
-		return problemHealthStatus;
+	public ProblemStatusObservation createProblemStatusObservation() {
+		ProblemStatusObservationImpl problemStatusObservation = new ProblemStatusObservationImpl();
+		return problemStatusObservation;
 	}
 
 	/**
@@ -847,6 +837,16 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public StatusObservation createStatusObservation() {
 		StatusObservationImpl statusObservation = new StatusObservationImpl();
 		return statusObservation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProblemHealthStatusObservation createProblemHealthStatusObservation() {
+		ProblemHealthStatusObservationImpl problemHealthStatusObservation = new ProblemHealthStatusObservationImpl();
+		return problemHealthStatusObservation;
 	}
 
 	/**

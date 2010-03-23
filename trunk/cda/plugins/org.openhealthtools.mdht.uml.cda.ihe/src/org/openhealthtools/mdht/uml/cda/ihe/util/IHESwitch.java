@@ -28,15 +28,13 @@ import org.openhealthtools.mdht.uml.cda.ccd.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
-import org.openhealthtools.mdht.uml.cda.ccd.MedicationSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
-import org.openhealthtools.mdht.uml.cda.ihe.*;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection;
@@ -53,6 +51,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterHistorySection;
@@ -195,7 +194,7 @@ public class IHESwitch<T> {
 			case IHEPackage.ACTIVE_PROBLEMS_SECTION: {
 				ActiveProblemsSection activeProblemsSection = (ActiveProblemsSection)theEObject;
 				T result = caseActiveProblemsSection(activeProblemsSection);
-				if (result == null) result = caseProblemSection(activeProblemsSection);
+				if (result == null) result = caseProblemsSection(activeProblemsSection);
 				if (result == null) result = caseSection(activeProblemsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -228,7 +227,7 @@ public class IHESwitch<T> {
 			case IHEPackage.MEDICATIONS_SECTION: {
 				MedicationsSection medicationsSection = (MedicationsSection)theEObject;
 				T result = caseMedicationsSection(medicationsSection);
-				if (result == null) result = caseMedicationSection(medicationsSection);
+				if (result == null) result = caseCCD_MedicationsSection(medicationsSection);
 				if (result == null) result = caseSection(medicationsSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1358,6 +1357,21 @@ public class IHESwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Problems Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Problems Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProblemsSection(ProblemsSection object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1384,21 +1398,6 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseCCD_ImmunizationsSection(org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Problem Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Problem Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProblemSection(ProblemSection object) {
 		return null;
 	}
 
@@ -1463,17 +1462,17 @@ public class IHESwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Medication Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Medications Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Medication Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Medications Section</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMedicationSection(MedicationSection object) {
+	public T caseCCD_MedicationsSection(org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection object) {
 		return null;
 	}
 

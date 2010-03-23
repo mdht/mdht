@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.uml.cda.ihe;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
  *        annotation="uml2.alias Active\040Problems\040Section='null'"
  * @generated
  */
-public interface ActiveProblemsSection extends ProblemSection {
+public interface ActiveProblemsSection extends ProblemsSection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

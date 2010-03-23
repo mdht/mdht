@@ -19,10 +19,10 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatus;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PurposeActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.PurposeSection;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
@@ -46,11 +46,11 @@ public class Main {
 		
 		ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct().init();
 		ProblemObservation problemObservation = CCDFactory.eINSTANCE.createProblemObservation().init();	
-		ProblemStatus problemStatus = CCDFactory.eINSTANCE.createProblemStatus().init();
-		ProblemHealthStatus problemHealthStatus = CCDFactory.eINSTANCE.createProblemHealthStatus().init();
+		ProblemStatusObservation problemStatus = CCDFactory.eINSTANCE.createProblemStatusObservation().init();
+		ProblemHealthStatusObservation problemHealthStatus = CCDFactory.eINSTANCE.createProblemHealthStatusObservation().init();
 		EpisodeObservation episodeObservation = CCDFactory.eINSTANCE.createEpisodeObservation().init();
 		
-		ProblemSection sect = CCDFactory.eINSTANCE.createProblemSection().init();
+		ProblemsSection sect = CCDFactory.eINSTANCE.createProblemsSection().init();
 		sect.addAct(problemAct);
 		problemAct.addObservation(problemObservation);
 		

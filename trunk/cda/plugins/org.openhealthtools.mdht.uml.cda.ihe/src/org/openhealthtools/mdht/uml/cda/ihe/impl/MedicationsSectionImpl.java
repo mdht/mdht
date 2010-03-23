@@ -16,7 +16,6 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.cda.ccd.impl.MedicationSectionImpl;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.MedicationsSectionOperations;
@@ -31,7 +30,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class MedicationsSectionImpl extends MedicationSectionImpl implements MedicationsSection {
+public class MedicationsSectionImpl extends org.openhealthtools.mdht.uml.cda.ccd.impl.MedicationsSectionImpl implements MedicationsSection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,8 +55,8 @@ public class MedicationsSectionImpl extends MedicationSectionImpl implements Med
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationsSectionOperations.validateMedicationsSectionTemplateId(this, diagnostics, context);
+	public boolean validateIHEMedicationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationsSectionOperations.validateIHEMedicationsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

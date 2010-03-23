@@ -32,13 +32,13 @@ public interface CCDFactory extends EFactory {
 	CCDFactory eINSTANCE = org.openhealthtools.mdht.uml.cda.ccd.impl.CCDFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Medication Section</em>'.
+	 * Returns a new object of class '<em>Medications Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Medication Section</em>'.
+	 * @return a new object of class '<em>Medications Section</em>'.
 	 * @generated
 	 */
-	MedicationSection createMedicationSection();
+	MedicationsSection createMedicationsSection();
 
 	/**
 	 * Returns a new object of class '<em>Continuity Of Care Document</em>'.
@@ -68,31 +68,22 @@ public interface CCDFactory extends EFactory {
 	ProblemObservation createProblemObservation();
 
 	/**
-	 * Returns a new object of class '<em>Problem Section</em>'.
+	 * Returns a new object of class '<em>Problems Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Problem Section</em>'.
+	 * @return a new object of class '<em>Problems Section</em>'.
 	 * @generated
 	 */
-	ProblemSection createProblemSection();
+	ProblemsSection createProblemsSection();
 
 	/**
-	 * Returns a new object of class '<em>Problem Status</em>'.
+	 * Returns a new object of class '<em>Problem Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Problem Status</em>'.
+	 * @return a new object of class '<em>Problem Status Observation</em>'.
 	 * @generated
 	 */
-	ProblemStatus createProblemStatus();
-
-	/**
-	 * Returns a new object of class '<em>Problem Health Status</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Problem Health Status</em>'.
-	 * @generated
-	 */
-	ProblemHealthStatus createProblemHealthStatus();
+	ProblemStatusObservation createProblemStatusObservation();
 
 	/**
 	 * Returns a new object of class '<em>Episode Observation</em>'.
@@ -615,6 +606,15 @@ public interface CCDFactory extends EFactory {
 	 * @generated
 	 */
 	StatusObservation createStatusObservation();
+
+	/**
+	 * Returns a new object of class '<em>Problem Health Status Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Problem Health Status Observation</em>'.
+	 * @generated
+	 */
+	ProblemHealthStatusObservation createProblemHealthStatusObservation();
 
 	/**
 	 * Returns the package supported by this factory.
