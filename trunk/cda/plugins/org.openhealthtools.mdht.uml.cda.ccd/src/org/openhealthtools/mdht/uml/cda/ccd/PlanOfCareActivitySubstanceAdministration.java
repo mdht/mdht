@@ -9,33 +9,32 @@ package org.openhealthtools.mdht.uml.cda.ccd;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.openhealthtools.mdht.uml.cda.Observation;
+import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Plan Of Care Observation</b></em>'.
+ * A representation of the model object '<em><b>Plan Of Care Activity Substance Administration</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPlanOfCareObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' templateId.root='2.16.840.1.113883.10.20.1.25' constraints.validation.error='PlanOfCareObservationTemplateId PlanOfCareObservationMoodCodeValue PlanOfCareObservationId PlanOfCareObservationMoodCode'"
+ * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPlanOfCareActivitySubstanceAdministration()
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' templateId.root='2.16.840.1.113883.10.20.1.25' constraints.validation.error='PlanOfCareActivitySubstanceAdministrationTemplateId PlanOfCareActivitySubstanceAdministrationMoodCodeValue PlanOfCareActivitySubstanceAdministrationId PlanOfCareActivitySubstanceAdministrationMoodCode'"
  * @generated
  */
-public interface PlanOfCareObservation extends Observation {
+public interface PlanOfCareActivitySubstanceAdministration extends SubstanceAdministration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.moodCode = vocab::x_ActMoodDocumentObservation::INT or self.moodCode = vocab::x_ActMoodDocumentObservation::GOL
-	 *   or self.moodCode = vocab::x_ActMoodDocumentObservation::PRMS or self.moodCode = vocab::x_ActMoodDocumentObservation::PRP
-	 *   or self.moodCode = vocab::x_ActMoodDocumentObservation::RQO
+	 * self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO
+	 *   or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode = vocab::x_ActMoodDocumentObservation::INT or self.moodCode = vocab::x_ActMoodDocumentObservation::GOL\r\n  or self.moodCode = vocab::x_ActMoodDocumentObservation::PRMS or self.moodCode = vocab::x_ActMoodDocumentObservation::PRP\r\n  or self.moodCode = vocab::x_ActMoodDocumentObservation::RQO'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO\r\n  or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareObservationMoodCodeValue(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareActivitySubstanceAdministrationMoodCodeValue(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -48,7 +47,7 @@ public interface PlanOfCareObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = \'2.16.840.1.113883.10.20.1.25\')'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareActivitySubstanceAdministrationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,7 +60,7 @@ public interface PlanOfCareObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.id->isEmpty()'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareObservationId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareActivitySubstanceAdministrationId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,12 +73,12 @@ public interface PlanOfCareObservation extends Observation {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.moodCode.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareObservationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareActivitySubstanceAdministrationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlanOfCareObservation init();
-} // PlanOfCareObservation
+	public PlanOfCareActivitySubstanceAdministration init();
+} // PlanOfCareActivitySubstanceAdministration

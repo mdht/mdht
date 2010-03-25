@@ -86,9 +86,9 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocumentLanguageCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocumentLanguageCode/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocumentProblemsSection">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocumentProblemsSection/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocumentProblemsSection/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocumentProblemSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocumentProblemSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocumentProblemSection/context"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocumentFamilyHistorySection">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ContinuityOfCareDocument/ContinuityOfCareDocumentFamilyHistorySection/diagnostics"/>
@@ -239,26 +239,26 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemObservation/ProblemObservationAgeObservation/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ProblemsSection">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProblemsSection/ProblemsSectionTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemsSection/ProblemsSectionTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemsSection/ProblemsSectionTemplateId/context"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ProblemSection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProblemSection/ProblemSectionTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemSection/ProblemSectionTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemSection/ProblemSectionTemplateId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProblemsSection/ProblemsSectionCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemsSection/ProblemsSectionCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemsSection/ProblemsSectionCode/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProblemSection/ProblemSectionCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemSection/ProblemSectionCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemSection/ProblemSectionCode/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProblemsSection/ProblemsSectionTitle">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemsSection/ProblemsSectionTitle/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemsSection/ProblemsSectionTitle/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProblemSection/ProblemSectionTitle">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemSection/ProblemSectionTitle/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemSection/ProblemSectionTitle/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProblemsSection/ProblemsSectionText">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemsSection/ProblemsSectionText/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemsSection/ProblemsSectionText/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProblemSection/ProblemSectionText">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemSection/ProblemSectionText/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemSection/ProblemSectionText/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProblemsSection/ProblemsSectionProblemAct">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemsSection/ProblemsSectionProblemAct/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemsSection/ProblemsSectionProblemAct/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProblemSection/ProblemSectionProblemAct">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemSection/ProblemSectionProblemAct/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProblemSection/ProblemSectionProblemAct/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ProblemStatusObservation">
@@ -823,29 +823,29 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionText/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionText/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareAct">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareAct/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareAct/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivityAct">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivityAct/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivityAct/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareEncounter">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareEncounter/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareEncounter/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivityEncounter">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivityEncounter/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivityEncounter/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareObservation">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareObservation/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareObservation/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivityObservation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivityObservation/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivityObservation/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareProcedure">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareProcedure/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareProcedure/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivityProcedure">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivityProcedure/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivityProcedure/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareSubstanceAdministration">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareSubstanceAdministration/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareSubstanceAdministration/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivitySubstanceAdministration">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivitySubstanceAdministration/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivitySubstanceAdministration/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareSupply">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareSupply/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareSupply/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivitySupply">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivitySupply/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionPlanOfCareActivitySupply/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//VitalSignsSection">
@@ -1124,22 +1124,22 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//AuthorizationActivity/AuthorizationActivityId/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareAct">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareAct/PlanOfCareActMoodCodeValue">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareAct/PlanOfCareActMoodCodeValue/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareAct/PlanOfCareActMoodCodeValue/context"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareActivityAct">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityAct/PlanOfCareActivityActMoodCodeValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityAct/PlanOfCareActivityActMoodCodeValue/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityAct/PlanOfCareActivityActMoodCodeValue/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareAct/PlanOfCareActTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareAct/PlanOfCareActTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareAct/PlanOfCareActTemplateId/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityAct/PlanOfCareActivityActTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityAct/PlanOfCareActivityActTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityAct/PlanOfCareActivityActTemplateId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareAct/PlanOfCareActId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareAct/PlanOfCareActId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareAct/PlanOfCareActId/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityAct/PlanOfCareActivityActId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityAct/PlanOfCareActivityActId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityAct/PlanOfCareActivityActId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareAct/PlanOfCareActMoodCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareAct/PlanOfCareActMoodCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareAct/PlanOfCareActMoodCode/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityAct/PlanOfCareActivityActMoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityAct/PlanOfCareActivityActMoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityAct/PlanOfCareActivityActMoodCode/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PatientInstruction">
@@ -1204,112 +1204,112 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//AgeObservation/AgeObservationValue/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareObservation">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareObservation/PlanOfCareObservationMoodCodeValue">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareObservation/PlanOfCareObservationMoodCodeValue/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareObservation/PlanOfCareObservationMoodCodeValue/context"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareActivityObservation">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityObservation/PlanOfCareActivityObservationMoodCodeValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityObservation/PlanOfCareActivityObservationMoodCodeValue/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityObservation/PlanOfCareActivityObservationMoodCodeValue/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareObservation/PlanOfCareObservationTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareObservation/PlanOfCareObservationTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareObservation/PlanOfCareObservationTemplateId/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityObservation/PlanOfCareActivityObservationTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityObservation/PlanOfCareActivityObservationTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityObservation/PlanOfCareActivityObservationTemplateId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareObservation/PlanOfCareObservationId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareObservation/PlanOfCareObservationId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareObservation/PlanOfCareObservationId/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityObservation/PlanOfCareActivityObservationId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityObservation/PlanOfCareActivityObservationId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityObservation/PlanOfCareActivityObservationId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareObservation/PlanOfCareObservationMoodCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareObservation/PlanOfCareObservationMoodCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareObservation/PlanOfCareObservationMoodCode/context"/>
-      </genOperations>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareEncounter">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareEncounter/PlanOfCareEncounterMoodCodeValue">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareEncounter/PlanOfCareEncounterMoodCodeValue/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareEncounter/PlanOfCareEncounterMoodCodeValue/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareEncounter/PlanOfCareEncounterTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareEncounter/PlanOfCareEncounterTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareEncounter/PlanOfCareEncounterTemplateId/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareEncounter/PlanOfCareEncounterId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareEncounter/PlanOfCareEncounterId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareEncounter/PlanOfCareEncounterId/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareEncounter/PlanOfCareEncounterMoodCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareEncounter/PlanOfCareEncounterMoodCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareEncounter/PlanOfCareEncounterMoodCode/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityObservation/PlanOfCareActivityObservationMoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityObservation/PlanOfCareActivityObservationMoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityObservation/PlanOfCareActivityObservationMoodCode/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareProcedure">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareProcedure/PlanOfCareProcedureMoodCodeValue">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareProcedure/PlanOfCareProcedureMoodCodeValue/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareProcedure/PlanOfCareProcedureMoodCodeValue/context"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareActivityEncounter">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityEncounter/PlanOfCareActivityEncounterMoodCodeValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityEncounter/PlanOfCareActivityEncounterMoodCodeValue/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityEncounter/PlanOfCareActivityEncounterMoodCodeValue/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareProcedure/PlanOfCareProcedureTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareProcedure/PlanOfCareProcedureTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareProcedure/PlanOfCareProcedureTemplateId/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityEncounter/PlanOfCareActivityEncounterTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityEncounter/PlanOfCareActivityEncounterTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityEncounter/PlanOfCareActivityEncounterTemplateId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareProcedure/PlanOfCareProcedureId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareProcedure/PlanOfCareProcedureId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareProcedure/PlanOfCareProcedureId/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityEncounter/PlanOfCareActivityEncounterId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityEncounter/PlanOfCareActivityEncounterId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityEncounter/PlanOfCareActivityEncounterId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareProcedure/PlanOfCareProcedureMoodCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareProcedure/PlanOfCareProcedureMoodCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareProcedure/PlanOfCareProcedureMoodCode/context"/>
-      </genOperations>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareSubstanceAdministration">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSubstanceAdministration/PlanOfCareSubstanceAdministrationMoodCodeValue">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSubstanceAdministration/PlanOfCareSubstanceAdministrationMoodCodeValue/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSubstanceAdministration/PlanOfCareSubstanceAdministrationMoodCodeValue/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSubstanceAdministration/PlanOfCareSubstanceAdministrationTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSubstanceAdministration/PlanOfCareSubstanceAdministrationTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSubstanceAdministration/PlanOfCareSubstanceAdministrationTemplateId/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSubstanceAdministration/PlanOfCareSubstanceAdministrationId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSubstanceAdministration/PlanOfCareSubstanceAdministrationId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSubstanceAdministration/PlanOfCareSubstanceAdministrationId/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSubstanceAdministration/PlanOfCareSubstanceAdministrationMoodCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSubstanceAdministration/PlanOfCareSubstanceAdministrationMoodCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSubstanceAdministration/PlanOfCareSubstanceAdministrationMoodCode/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityEncounter/PlanOfCareActivityEncounterMoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityEncounter/PlanOfCareActivityEncounterMoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityEncounter/PlanOfCareActivityEncounterMoodCode/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareSupply">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSupply/PlanOfCareSupplyMoodCodeValue">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSupply/PlanOfCareSupplyMoodCodeValue/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSupply/PlanOfCareSupplyMoodCodeValue/context"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareActivityProcedure">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityProcedure/PlanOfCareActivityProcedureMoodCodeValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityProcedure/PlanOfCareActivityProcedureMoodCodeValue/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityProcedure/PlanOfCareActivityProcedureMoodCodeValue/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSupply/PlanOfCareSupplyTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSupply/PlanOfCareSupplyTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSupply/PlanOfCareSupplyTemplateId/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityProcedure/PlanOfCareActivityProcedureTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityProcedure/PlanOfCareActivityProcedureTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityProcedure/PlanOfCareActivityProcedureTemplateId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSupply/PlanOfCareSupplyId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSupply/PlanOfCareSupplyId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSupply/PlanOfCareSupplyId/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityProcedure/PlanOfCareActivityProcedureId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityProcedure/PlanOfCareActivityProcedureId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityProcedure/PlanOfCareActivityProcedureId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSupply/PlanOfCareSupplyMoodCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSupply/PlanOfCareSupplyMoodCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSupply/PlanOfCareSupplyMoodCode/context"/>
-      </genOperations>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ProcedureAct">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProcedureAct/ProcedureActTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProcedureAct/ProcedureActTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProcedureAct/ProcedureActTemplateId/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivityProcedure/PlanOfCareActivityProcedureMoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityProcedure/PlanOfCareActivityProcedureMoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivityProcedure/PlanOfCareActivityProcedureMoodCode/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ProcedureObservation">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProcedureObservation/ProcedureObservationTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProcedureObservation/ProcedureObservationTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProcedureObservation/ProcedureObservationTemplateId/context"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareActivitySubstanceAdministration">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivitySubstanceAdministration/PlanOfCareActivitySubstanceAdministrationMoodCodeValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySubstanceAdministration/PlanOfCareActivitySubstanceAdministrationMoodCodeValue/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySubstanceAdministration/PlanOfCareActivitySubstanceAdministrationMoodCodeValue/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivitySubstanceAdministration/PlanOfCareActivitySubstanceAdministrationTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySubstanceAdministration/PlanOfCareActivitySubstanceAdministrationTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySubstanceAdministration/PlanOfCareActivitySubstanceAdministrationTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivitySubstanceAdministration/PlanOfCareActivitySubstanceAdministrationId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySubstanceAdministration/PlanOfCareActivitySubstanceAdministrationId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySubstanceAdministration/PlanOfCareActivitySubstanceAdministrationId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivitySubstanceAdministration/PlanOfCareActivitySubstanceAdministrationMoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySubstanceAdministration/PlanOfCareActivitySubstanceAdministrationMoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySubstanceAdministration/PlanOfCareActivitySubstanceAdministrationMoodCode/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ProcedureProcedure">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProcedureProcedure/ProcedureProcedureTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProcedureProcedure/ProcedureProcedureTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProcedureProcedure/ProcedureProcedureTemplateId/context"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareActivitySupply">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivitySupply/PlanOfCareActivitySupplyMoodCodeValue">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySupply/PlanOfCareActivitySupplyMoodCodeValue/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySupply/PlanOfCareActivitySupplyMoodCodeValue/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivitySupply/PlanOfCareActivitySupplyTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySupply/PlanOfCareActivitySupplyTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySupply/PlanOfCareActivitySupplyTemplateId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivitySupply/PlanOfCareActivitySupplyId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySupply/PlanOfCareActivitySupplyId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySupply/PlanOfCareActivitySupplyId/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareActivitySupply/PlanOfCareActivitySupplyMoodCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySupply/PlanOfCareActivitySupplyMoodCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareActivitySupply/PlanOfCareActivitySupplyMoodCode/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ProcedureActivityAct">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProcedureActivityAct/ProcedureActivityActTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProcedureActivityAct/ProcedureActivityActTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProcedureActivityAct/ProcedureActivityActTemplateId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ProcedureActivityObservation">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProcedureActivityObservation/ProcedureActivityObservationTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProcedureActivityObservation/ProcedureActivityObservationTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProcedureActivityObservation/ProcedureActivityObservationTemplateId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ProcedureActivityProcedure">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ProcedureActivityProcedure/ProcedureActivityProcedureTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProcedureActivityProcedure/ProcedureActivityProcedureTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ProcedureActivityProcedure/ProcedureActivityProcedureTemplateId/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//CCDRegistryDelegate"/>

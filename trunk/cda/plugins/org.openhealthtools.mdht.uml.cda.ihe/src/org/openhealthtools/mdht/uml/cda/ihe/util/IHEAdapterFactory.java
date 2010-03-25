@@ -31,7 +31,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
@@ -364,8 +364,8 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createClinicalDocumentAdapter();
 			}
 			@Override
-			public Adapter caseProblemsSection(ProblemsSection object) {
-				return createProblemsSectionAdapter();
+			public Adapter caseProblemSection(ProblemSection object) {
+				return createProblemSectionAdapter();
 			}
 			@Override
 			public Adapter caseObservation(Observation object) {
@@ -1214,16 +1214,16 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection <em>Problems Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemSection <em>Problem Section</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProblemSection
 	 * @generated
 	 */
-	public Adapter createProblemsSectionAdapter() {
+	public Adapter createProblemSectionAdapter() {
 		return null;
 	}
 

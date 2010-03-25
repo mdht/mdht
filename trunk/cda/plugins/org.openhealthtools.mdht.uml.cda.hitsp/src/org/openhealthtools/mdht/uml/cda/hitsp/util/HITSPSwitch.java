@@ -19,7 +19,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection;
@@ -198,7 +198,7 @@ public class HITSPSwitch<T> {
 				ProblemListSection problemListSection = (ProblemListSection)theEObject;
 				T result = caseProblemListSection(problemListSection);
 				if (result == null) result = caseActiveProblemsSection(problemListSection);
-				if (result == null) result = caseProblemsSection(problemListSection);
+				if (result == null) result = caseProblemSection(problemListSection);
 				if (result == null) result = caseSection(problemListSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1133,17 +1133,17 @@ public class HITSPSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Problems Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Problems Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Section</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProblemsSection(ProblemsSection object) {
+	public T caseProblemSection(ProblemSection object) {
 		return null;
 	}
 

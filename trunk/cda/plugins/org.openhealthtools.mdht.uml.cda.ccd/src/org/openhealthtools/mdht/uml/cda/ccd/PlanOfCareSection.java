@@ -33,7 +33,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPlanOfCareSection()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.1.10' code.displayName='Treatment plan' constraints.validation.error='PlanOfCareSectionTemplateId PlanOfCareSectionContainsPlanOfCareActivity PlanOfCareSectionCode PlanOfCareSectionTitle PlanOfCareSectionText PlanOfCareSectionPlanOfCareAct PlanOfCareSectionPlanOfCareEncounter PlanOfCareSectionPlanOfCareObservation PlanOfCareSectionPlanOfCareProcedure PlanOfCareSectionPlanOfCareSubstanceAdministration PlanOfCareSectionPlanOfCareSupply' code.codeSystemName='LOINC' code.code='18776-5'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.1.10' code.displayName='Treatment plan' constraints.validation.error='PlanOfCareSectionTemplateId PlanOfCareSectionContainsPlanOfCareActivity PlanOfCareSectionCode PlanOfCareSectionTitle PlanOfCareSectionText PlanOfCareSectionPlanOfCareActivityAct PlanOfCareSectionPlanOfCareActivityEncounter PlanOfCareSectionPlanOfCareActivityObservation PlanOfCareSectionPlanOfCareActivityProcedure PlanOfCareSectionPlanOfCareActivitySubstanceAdministration PlanOfCareSectionPlanOfCareActivitySupply' code.codeSystemName='LOINC' code.code='18776-5'"
  * @generated
  */
 public interface PlanOfCareSection extends Section {
@@ -110,79 +110,79 @@ public interface PlanOfCareSection extends Section {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->one(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PlanOfCareAct))
+	 * self.entry->one(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PlanOfCareActivityAct))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PlanOfCareAct))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PlanOfCareActivityAct))'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareSectionPlanOfCareAct(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareSectionPlanOfCareActivityAct(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->one(entry : cda::Entry | entry.encounter.oclIsKindOf(ccd::PlanOfCareEncounter))
+	 * self.entry->one(entry : cda::Entry | entry.encounter.oclIsKindOf(ccd::PlanOfCareActivityEncounter))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.encounter.oclIsKindOf(ccd::PlanOfCareEncounter))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.encounter.oclIsKindOf(ccd::PlanOfCareActivityEncounter))'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareSectionPlanOfCareEncounter(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareSectionPlanOfCareActivityEncounter(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->one(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::PlanOfCareObservation))
+	 * self.entry->one(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::PlanOfCareActivityObservation))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::PlanOfCareObservation))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::PlanOfCareActivityObservation))'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareSectionPlanOfCareObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareSectionPlanOfCareActivityObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->one(entry : cda::Entry | entry.procedure.oclIsKindOf(ccd::PlanOfCareProcedure))
+	 * self.entry->one(entry : cda::Entry | entry.procedure.oclIsKindOf(ccd::PlanOfCareActivityProcedure))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.procedure.oclIsKindOf(ccd::PlanOfCareProcedure))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.procedure.oclIsKindOf(ccd::PlanOfCareActivityProcedure))'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareSectionPlanOfCareProcedure(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareSectionPlanOfCareActivityProcedure(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ccd::PlanOfCareSubstanceAdministration))
+	 * self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ccd::PlanOfCareActivitySubstanceAdministration))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ccd::PlanOfCareSubstanceAdministration))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ccd::PlanOfCareActivitySubstanceAdministration))'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareSectionPlanOfCareSubstanceAdministration(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareSectionPlanOfCareActivitySubstanceAdministration(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->one(entry : cda::Entry | entry.supply.oclIsKindOf(ccd::PlanOfCareSupply))
+	 * self.entry->one(entry : cda::Entry | entry.supply.oclIsKindOf(ccd::PlanOfCareActivitySupply))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.supply.oclIsKindOf(ccd::PlanOfCareSupply))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.supply.oclIsKindOf(ccd::PlanOfCareActivitySupply))'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareSectionPlanOfCareSupply(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareSectionPlanOfCareActivitySupply(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

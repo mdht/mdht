@@ -959,7 +959,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__REALM_CODE = CCDPackage.PROBLEMS_SECTION__REALM_CODE;
+	int ACTIVE_PROBLEMS_SECTION__REALM_CODE = CCDPackage.PROBLEM_SECTION__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -968,7 +968,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__TYPE_ID = CCDPackage.PROBLEMS_SECTION__TYPE_ID;
+	int ACTIVE_PROBLEMS_SECTION__TYPE_ID = CCDPackage.PROBLEM_SECTION__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -977,7 +977,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__TEMPLATE_ID = CCDPackage.PROBLEMS_SECTION__TEMPLATE_ID;
+	int ACTIVE_PROBLEMS_SECTION__TEMPLATE_ID = CCDPackage.PROBLEM_SECTION__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -986,7 +986,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__ID = CCDPackage.PROBLEMS_SECTION__ID;
+	int ACTIVE_PROBLEMS_SECTION__ID = CCDPackage.PROBLEM_SECTION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -995,7 +995,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__CODE = CCDPackage.PROBLEMS_SECTION__CODE;
+	int ACTIVE_PROBLEMS_SECTION__CODE = CCDPackage.PROBLEM_SECTION__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' containment reference.
@@ -1004,7 +1004,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__TITLE = CCDPackage.PROBLEMS_SECTION__TITLE;
+	int ACTIVE_PROBLEMS_SECTION__TITLE = CCDPackage.PROBLEM_SECTION__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -1013,7 +1013,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__TEXT = CCDPackage.PROBLEMS_SECTION__TEXT;
+	int ACTIVE_PROBLEMS_SECTION__TEXT = CCDPackage.PROBLEM_SECTION__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
@@ -1022,7 +1022,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__CONFIDENTIALITY_CODE = CCDPackage.PROBLEMS_SECTION__CONFIDENTIALITY_CODE;
+	int ACTIVE_PROBLEMS_SECTION__CONFIDENTIALITY_CODE = CCDPackage.PROBLEM_SECTION__CONFIDENTIALITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -1031,7 +1031,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__LANGUAGE_CODE = CCDPackage.PROBLEMS_SECTION__LANGUAGE_CODE;
+	int ACTIVE_PROBLEMS_SECTION__LANGUAGE_CODE = CCDPackage.PROBLEM_SECTION__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -1040,7 +1040,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__SUBJECT = CCDPackage.PROBLEMS_SECTION__SUBJECT;
+	int ACTIVE_PROBLEMS_SECTION__SUBJECT = CCDPackage.PROBLEM_SECTION__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -1049,7 +1049,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__AUTHOR = CCDPackage.PROBLEMS_SECTION__AUTHOR;
+	int ACTIVE_PROBLEMS_SECTION__AUTHOR = CCDPackage.PROBLEM_SECTION__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -1058,7 +1058,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__INFORMANT = CCDPackage.PROBLEMS_SECTION__INFORMANT;
+	int ACTIVE_PROBLEMS_SECTION__INFORMANT = CCDPackage.PROBLEM_SECTION__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
@@ -1067,7 +1067,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__ENTRY = CCDPackage.PROBLEMS_SECTION__ENTRY;
+	int ACTIVE_PROBLEMS_SECTION__ENTRY = CCDPackage.PROBLEM_SECTION__ENTRY;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
@@ -1076,7 +1076,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__COMPONENT = CCDPackage.PROBLEMS_SECTION__COMPONENT;
+	int ACTIVE_PROBLEMS_SECTION__COMPONENT = CCDPackage.PROBLEM_SECTION__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
@@ -1085,7 +1085,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__SECTION_ID = CCDPackage.PROBLEMS_SECTION__SECTION_ID;
+	int ACTIVE_PROBLEMS_SECTION__SECTION_ID = CCDPackage.PROBLEM_SECTION__SECTION_ID;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1094,7 +1094,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__NULL_FLAVOR = CCDPackage.PROBLEMS_SECTION__NULL_FLAVOR;
+	int ACTIVE_PROBLEMS_SECTION__NULL_FLAVOR = CCDPackage.PROBLEM_SECTION__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1103,7 +1103,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__CLASS_CODE = CCDPackage.PROBLEMS_SECTION__CLASS_CODE;
+	int ACTIVE_PROBLEMS_SECTION__CLASS_CODE = CCDPackage.PROBLEM_SECTION__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -1112,7 +1112,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION__MOOD_CODE = CCDPackage.PROBLEMS_SECTION__MOOD_CODE;
+	int ACTIVE_PROBLEMS_SECTION__MOOD_CODE = CCDPackage.PROBLEM_SECTION__MOOD_CODE;
 
 	/**
 	 * The number of structural features of the '<em>Active Problems Section</em>' class.
@@ -1121,7 +1121,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVE_PROBLEMS_SECTION_FEATURE_COUNT = CCDPackage.PROBLEMS_SECTION_FEATURE_COUNT + 0;
+	int ACTIVE_PROBLEMS_SECTION_FEATURE_COUNT = CCDPackage.PROBLEM_SECTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ProblemConcernEntryImpl <em>Problem Concern Entry</em>}' class.

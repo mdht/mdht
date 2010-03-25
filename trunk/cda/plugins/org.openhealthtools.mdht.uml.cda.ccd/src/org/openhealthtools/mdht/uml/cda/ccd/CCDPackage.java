@@ -1052,14 +1052,14 @@ public interface CCDPackage extends EPackage {
 	int PROBLEM_OBSERVATION_FEATURE_COUNT = CDAPackage.OBSERVATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemsSectionImpl <em>Problems Section</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemSectionImpl <em>Problem Section</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemsSectionImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProblemsSection()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemSectionImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProblemSection()
 	 * @generated
 	 */
-	int PROBLEMS_SECTION = 4;
+	int PROBLEM_SECTION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -1068,7 +1068,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__REALM_CODE = CDAPackage.SECTION__REALM_CODE;
+	int PROBLEM_SECTION__REALM_CODE = CDAPackage.SECTION__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1077,7 +1077,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__TYPE_ID = CDAPackage.SECTION__TYPE_ID;
+	int PROBLEM_SECTION__TYPE_ID = CDAPackage.SECTION__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1086,7 +1086,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__TEMPLATE_ID = CDAPackage.SECTION__TEMPLATE_ID;
+	int PROBLEM_SECTION__TEMPLATE_ID = CDAPackage.SECTION__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -1095,7 +1095,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__ID = CDAPackage.SECTION__ID;
+	int PROBLEM_SECTION__ID = CDAPackage.SECTION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -1104,7 +1104,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__CODE = CDAPackage.SECTION__CODE;
+	int PROBLEM_SECTION__CODE = CDAPackage.SECTION__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' containment reference.
@@ -1113,7 +1113,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__TITLE = CDAPackage.SECTION__TITLE;
+	int PROBLEM_SECTION__TITLE = CDAPackage.SECTION__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -1122,7 +1122,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__TEXT = CDAPackage.SECTION__TEXT;
+	int PROBLEM_SECTION__TEXT = CDAPackage.SECTION__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
@@ -1131,7 +1131,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__CONFIDENTIALITY_CODE = CDAPackage.SECTION__CONFIDENTIALITY_CODE;
+	int PROBLEM_SECTION__CONFIDENTIALITY_CODE = CDAPackage.SECTION__CONFIDENTIALITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -1140,7 +1140,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__LANGUAGE_CODE = CDAPackage.SECTION__LANGUAGE_CODE;
+	int PROBLEM_SECTION__LANGUAGE_CODE = CDAPackage.SECTION__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -1149,7 +1149,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__SUBJECT = CDAPackage.SECTION__SUBJECT;
+	int PROBLEM_SECTION__SUBJECT = CDAPackage.SECTION__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -1158,7 +1158,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__AUTHOR = CDAPackage.SECTION__AUTHOR;
+	int PROBLEM_SECTION__AUTHOR = CDAPackage.SECTION__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -1167,7 +1167,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__INFORMANT = CDAPackage.SECTION__INFORMANT;
+	int PROBLEM_SECTION__INFORMANT = CDAPackage.SECTION__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
@@ -1176,7 +1176,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__ENTRY = CDAPackage.SECTION__ENTRY;
+	int PROBLEM_SECTION__ENTRY = CDAPackage.SECTION__ENTRY;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
@@ -1185,7 +1185,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__COMPONENT = CDAPackage.SECTION__COMPONENT;
+	int PROBLEM_SECTION__COMPONENT = CDAPackage.SECTION__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
@@ -1194,7 +1194,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__SECTION_ID = CDAPackage.SECTION__SECTION_ID;
+	int PROBLEM_SECTION__SECTION_ID = CDAPackage.SECTION__SECTION_ID;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1203,7 +1203,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__NULL_FLAVOR = CDAPackage.SECTION__NULL_FLAVOR;
+	int PROBLEM_SECTION__NULL_FLAVOR = CDAPackage.SECTION__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1212,7 +1212,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__CLASS_CODE = CDAPackage.SECTION__CLASS_CODE;
+	int PROBLEM_SECTION__CLASS_CODE = CDAPackage.SECTION__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -1221,16 +1221,16 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION__MOOD_CODE = CDAPackage.SECTION__MOOD_CODE;
+	int PROBLEM_SECTION__MOOD_CODE = CDAPackage.SECTION__MOOD_CODE;
 
 	/**
-	 * The number of structural features of the '<em>Problems Section</em>' class.
+	 * The number of structural features of the '<em>Problem Section</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROBLEMS_SECTION_FEATURE_COUNT = CDAPackage.SECTION_FEATURE_COUNT + 0;
+	int PROBLEM_SECTION_FEATURE_COUNT = CDAPackage.SECTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.EpisodeObservationImpl <em>Episode Observation</em>}' class.
@@ -8135,16 +8135,6 @@ public interface CCDPackage extends EPackage {
 	int AUTHORIZATION_ACTIVITY = 49;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActImpl <em>Plan Of Care Act</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareAct()
-	 * @generated
-	 */
-	int PLAN_OF_CARE_ACT = 50;
-
-	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityImpl <em>Procedure Activity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11053,13 +11043,23 @@ public interface CCDPackage extends EPackage {
 	int AUTHORIZATION_ACTIVITY_FEATURE_COUNT = CDAPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityActImpl <em>Plan Of Care Activity Act</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityActImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareActivityAct()
+	 * @generated
+	 */
+	int PLAN_OF_CARE_ACTIVITY_ACT = 50;
+
+	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__REALM_CODE = CDAPackage.ACT__REALM_CODE;
+	int PLAN_OF_CARE_ACTIVITY_ACT__REALM_CODE = CDAPackage.ACT__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -11068,7 +11068,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__TYPE_ID = CDAPackage.ACT__TYPE_ID;
+	int PLAN_OF_CARE_ACTIVITY_ACT__TYPE_ID = CDAPackage.ACT__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -11077,7 +11077,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__TEMPLATE_ID = CDAPackage.ACT__TEMPLATE_ID;
+	int PLAN_OF_CARE_ACTIVITY_ACT__TEMPLATE_ID = CDAPackage.ACT__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -11086,7 +11086,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__ID = CDAPackage.ACT__ID;
+	int PLAN_OF_CARE_ACTIVITY_ACT__ID = CDAPackage.ACT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -11095,7 +11095,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__CODE = CDAPackage.ACT__CODE;
+	int PLAN_OF_CARE_ACTIVITY_ACT__CODE = CDAPackage.ACT__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -11104,7 +11104,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__TEXT = CDAPackage.ACT__TEXT;
+	int PLAN_OF_CARE_ACTIVITY_ACT__TEXT = CDAPackage.ACT__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -11113,7 +11113,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__STATUS_CODE = CDAPackage.ACT__STATUS_CODE;
+	int PLAN_OF_CARE_ACTIVITY_ACT__STATUS_CODE = CDAPackage.ACT__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -11122,7 +11122,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__EFFECTIVE_TIME = CDAPackage.ACT__EFFECTIVE_TIME;
+	int PLAN_OF_CARE_ACTIVITY_ACT__EFFECTIVE_TIME = CDAPackage.ACT__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -11131,7 +11131,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__PRIORITY_CODE = CDAPackage.ACT__PRIORITY_CODE;
+	int PLAN_OF_CARE_ACTIVITY_ACT__PRIORITY_CODE = CDAPackage.ACT__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -11140,7 +11140,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__LANGUAGE_CODE = CDAPackage.ACT__LANGUAGE_CODE;
+	int PLAN_OF_CARE_ACTIVITY_ACT__LANGUAGE_CODE = CDAPackage.ACT__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -11149,7 +11149,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__SUBJECT = CDAPackage.ACT__SUBJECT;
+	int PLAN_OF_CARE_ACTIVITY_ACT__SUBJECT = CDAPackage.ACT__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -11158,7 +11158,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__SPECIMEN = CDAPackage.ACT__SPECIMEN;
+	int PLAN_OF_CARE_ACTIVITY_ACT__SPECIMEN = CDAPackage.ACT__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -11167,7 +11167,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__PERFORMER = CDAPackage.ACT__PERFORMER;
+	int PLAN_OF_CARE_ACTIVITY_ACT__PERFORMER = CDAPackage.ACT__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -11176,7 +11176,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__AUTHOR = CDAPackage.ACT__AUTHOR;
+	int PLAN_OF_CARE_ACTIVITY_ACT__AUTHOR = CDAPackage.ACT__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -11185,7 +11185,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__INFORMANT = CDAPackage.ACT__INFORMANT;
+	int PLAN_OF_CARE_ACTIVITY_ACT__INFORMANT = CDAPackage.ACT__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -11194,7 +11194,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__PARTICIPANT = CDAPackage.ACT__PARTICIPANT;
+	int PLAN_OF_CARE_ACTIVITY_ACT__PARTICIPANT = CDAPackage.ACT__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -11203,7 +11203,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__ENTRY_RELATIONSHIP = CDAPackage.ACT__ENTRY_RELATIONSHIP;
+	int PLAN_OF_CARE_ACTIVITY_ACT__ENTRY_RELATIONSHIP = CDAPackage.ACT__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -11212,7 +11212,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__REFERENCE = CDAPackage.ACT__REFERENCE;
+	int PLAN_OF_CARE_ACTIVITY_ACT__REFERENCE = CDAPackage.ACT__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -11221,7 +11221,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__PRECONDITION = CDAPackage.ACT__PRECONDITION;
+	int PLAN_OF_CARE_ACTIVITY_ACT__PRECONDITION = CDAPackage.ACT__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -11230,7 +11230,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__NULL_FLAVOR = CDAPackage.ACT__NULL_FLAVOR;
+	int PLAN_OF_CARE_ACTIVITY_ACT__NULL_FLAVOR = CDAPackage.ACT__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -11239,7 +11239,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__CLASS_CODE = CDAPackage.ACT__CLASS_CODE;
+	int PLAN_OF_CARE_ACTIVITY_ACT__CLASS_CODE = CDAPackage.ACT__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -11248,7 +11248,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__MOOD_CODE = CDAPackage.ACT__MOOD_CODE;
+	int PLAN_OF_CARE_ACTIVITY_ACT__MOOD_CODE = CDAPackage.ACT__MOOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -11257,16 +11257,16 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT__NEGATION_IND = CDAPackage.ACT__NEGATION_IND;
+	int PLAN_OF_CARE_ACTIVITY_ACT__NEGATION_IND = CDAPackage.ACT__NEGATION_IND;
 
 	/**
-	 * The number of structural features of the '<em>Plan Of Care Act</em>' class.
+	 * The number of structural features of the '<em>Plan Of Care Activity Act</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ACT_FEATURE_COUNT = CDAPackage.ACT_FEATURE_COUNT + 0;
+	int PLAN_OF_CARE_ACTIVITY_ACT_FEATURE_COUNT = CDAPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PatientInstructionImpl <em>Patient Instruction</em>}' class.
@@ -12426,14 +12426,14 @@ public interface CCDPackage extends EPackage {
 	int AGE_OBSERVATION_FEATURE_COUNT = CDAPackage.OBSERVATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareObservationImpl <em>Plan Of Care Observation</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityObservationImpl <em>Plan Of Care Activity Observation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareObservationImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareObservation()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityObservationImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareActivityObservation()
 	 * @generated
 	 */
-	int PLAN_OF_CARE_OBSERVATION = 56;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION = 56;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -12442,7 +12442,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__REALM_CODE = CDAPackage.OBSERVATION__REALM_CODE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__REALM_CODE = CDAPackage.OBSERVATION__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -12451,7 +12451,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__TYPE_ID = CDAPackage.OBSERVATION__TYPE_ID;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__TYPE_ID = CDAPackage.OBSERVATION__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -12460,7 +12460,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__TEMPLATE_ID = CDAPackage.OBSERVATION__TEMPLATE_ID;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__TEMPLATE_ID = CDAPackage.OBSERVATION__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -12469,7 +12469,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__ID = CDAPackage.OBSERVATION__ID;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__ID = CDAPackage.OBSERVATION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -12478,7 +12478,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__CODE = CDAPackage.OBSERVATION__CODE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__CODE = CDAPackage.OBSERVATION__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Derivation Expr</b></em>' containment reference.
@@ -12487,7 +12487,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__DERIVATION_EXPR = CDAPackage.OBSERVATION__DERIVATION_EXPR;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__DERIVATION_EXPR = CDAPackage.OBSERVATION__DERIVATION_EXPR;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -12496,7 +12496,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__TEXT = CDAPackage.OBSERVATION__TEXT;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__TEXT = CDAPackage.OBSERVATION__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -12505,7 +12505,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__STATUS_CODE = CDAPackage.OBSERVATION__STATUS_CODE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__STATUS_CODE = CDAPackage.OBSERVATION__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -12514,7 +12514,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__EFFECTIVE_TIME = CDAPackage.OBSERVATION__EFFECTIVE_TIME;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__EFFECTIVE_TIME = CDAPackage.OBSERVATION__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -12523,7 +12523,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__PRIORITY_CODE = CDAPackage.OBSERVATION__PRIORITY_CODE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__PRIORITY_CODE = CDAPackage.OBSERVATION__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Repeat Number</b></em>' containment reference.
@@ -12532,7 +12532,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__REPEAT_NUMBER = CDAPackage.OBSERVATION__REPEAT_NUMBER;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__REPEAT_NUMBER = CDAPackage.OBSERVATION__REPEAT_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -12541,7 +12541,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__LANGUAGE_CODE = CDAPackage.OBSERVATION__LANGUAGE_CODE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__LANGUAGE_CODE = CDAPackage.OBSERVATION__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -12550,7 +12550,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__VALUE = CDAPackage.OBSERVATION__VALUE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__VALUE = CDAPackage.OBSERVATION__VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Interpretation Code</b></em>' containment reference list.
@@ -12559,7 +12559,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__INTERPRETATION_CODE = CDAPackage.OBSERVATION__INTERPRETATION_CODE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__INTERPRETATION_CODE = CDAPackage.OBSERVATION__INTERPRETATION_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Method Code</b></em>' containment reference list.
@@ -12568,7 +12568,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__METHOD_CODE = CDAPackage.OBSERVATION__METHOD_CODE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__METHOD_CODE = CDAPackage.OBSERVATION__METHOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Target Site Code</b></em>' containment reference list.
@@ -12577,7 +12577,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__TARGET_SITE_CODE = CDAPackage.OBSERVATION__TARGET_SITE_CODE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__TARGET_SITE_CODE = CDAPackage.OBSERVATION__TARGET_SITE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -12586,7 +12586,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__SUBJECT = CDAPackage.OBSERVATION__SUBJECT;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__SUBJECT = CDAPackage.OBSERVATION__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -12595,7 +12595,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__SPECIMEN = CDAPackage.OBSERVATION__SPECIMEN;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__SPECIMEN = CDAPackage.OBSERVATION__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -12604,7 +12604,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__PERFORMER = CDAPackage.OBSERVATION__PERFORMER;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__PERFORMER = CDAPackage.OBSERVATION__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -12613,7 +12613,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__AUTHOR = CDAPackage.OBSERVATION__AUTHOR;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__AUTHOR = CDAPackage.OBSERVATION__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -12622,7 +12622,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__INFORMANT = CDAPackage.OBSERVATION__INFORMANT;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__INFORMANT = CDAPackage.OBSERVATION__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -12631,7 +12631,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__PARTICIPANT = CDAPackage.OBSERVATION__PARTICIPANT;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__PARTICIPANT = CDAPackage.OBSERVATION__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -12640,7 +12640,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__ENTRY_RELATIONSHIP = CDAPackage.OBSERVATION__ENTRY_RELATIONSHIP;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__ENTRY_RELATIONSHIP = CDAPackage.OBSERVATION__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -12649,7 +12649,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__REFERENCE = CDAPackage.OBSERVATION__REFERENCE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__REFERENCE = CDAPackage.OBSERVATION__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -12658,7 +12658,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__PRECONDITION = CDAPackage.OBSERVATION__PRECONDITION;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__PRECONDITION = CDAPackage.OBSERVATION__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Reference Range</b></em>' containment reference list.
@@ -12667,7 +12667,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__REFERENCE_RANGE = CDAPackage.OBSERVATION__REFERENCE_RANGE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__REFERENCE_RANGE = CDAPackage.OBSERVATION__REFERENCE_RANGE;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -12676,7 +12676,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__NULL_FLAVOR = CDAPackage.OBSERVATION__NULL_FLAVOR;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__NULL_FLAVOR = CDAPackage.OBSERVATION__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -12685,7 +12685,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__CLASS_CODE = CDAPackage.OBSERVATION__CLASS_CODE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__CLASS_CODE = CDAPackage.OBSERVATION__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -12694,7 +12694,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__MOOD_CODE = CDAPackage.OBSERVATION__MOOD_CODE;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__MOOD_CODE = CDAPackage.OBSERVATION__MOOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -12703,26 +12703,26 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION__NEGATION_IND = CDAPackage.OBSERVATION__NEGATION_IND;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION__NEGATION_IND = CDAPackage.OBSERVATION__NEGATION_IND;
 
 	/**
-	 * The number of structural features of the '<em>Plan Of Care Observation</em>' class.
+	 * The number of structural features of the '<em>Plan Of Care Activity Observation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_OBSERVATION_FEATURE_COUNT = CDAPackage.OBSERVATION_FEATURE_COUNT + 0;
+	int PLAN_OF_CARE_ACTIVITY_OBSERVATION_FEATURE_COUNT = CDAPackage.OBSERVATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareEncounterImpl <em>Plan Of Care Encounter</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityEncounterImpl <em>Plan Of Care Activity Encounter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareEncounterImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareEncounter()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityEncounterImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareActivityEncounter()
 	 * @generated
 	 */
-	int PLAN_OF_CARE_ENCOUNTER = 57;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER = 57;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -12731,7 +12731,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__REALM_CODE = CDAPackage.ENCOUNTER__REALM_CODE;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__REALM_CODE = CDAPackage.ENCOUNTER__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -12740,7 +12740,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__TYPE_ID = CDAPackage.ENCOUNTER__TYPE_ID;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__TYPE_ID = CDAPackage.ENCOUNTER__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -12749,7 +12749,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__TEMPLATE_ID = CDAPackage.ENCOUNTER__TEMPLATE_ID;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__TEMPLATE_ID = CDAPackage.ENCOUNTER__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -12758,7 +12758,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__ID = CDAPackage.ENCOUNTER__ID;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__ID = CDAPackage.ENCOUNTER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -12767,7 +12767,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__CODE = CDAPackage.ENCOUNTER__CODE;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__CODE = CDAPackage.ENCOUNTER__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -12776,7 +12776,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__TEXT = CDAPackage.ENCOUNTER__TEXT;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__TEXT = CDAPackage.ENCOUNTER__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -12785,7 +12785,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__STATUS_CODE = CDAPackage.ENCOUNTER__STATUS_CODE;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__STATUS_CODE = CDAPackage.ENCOUNTER__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -12794,7 +12794,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__EFFECTIVE_TIME = CDAPackage.ENCOUNTER__EFFECTIVE_TIME;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__EFFECTIVE_TIME = CDAPackage.ENCOUNTER__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' reference.
@@ -12803,7 +12803,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__PRIORITY_CODE = CDAPackage.ENCOUNTER__PRIORITY_CODE;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__PRIORITY_CODE = CDAPackage.ENCOUNTER__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -12812,7 +12812,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__SUBJECT = CDAPackage.ENCOUNTER__SUBJECT;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__SUBJECT = CDAPackage.ENCOUNTER__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -12821,7 +12821,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__SPECIMEN = CDAPackage.ENCOUNTER__SPECIMEN;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__SPECIMEN = CDAPackage.ENCOUNTER__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -12830,7 +12830,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__PERFORMER = CDAPackage.ENCOUNTER__PERFORMER;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__PERFORMER = CDAPackage.ENCOUNTER__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -12839,7 +12839,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__AUTHOR = CDAPackage.ENCOUNTER__AUTHOR;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__AUTHOR = CDAPackage.ENCOUNTER__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -12848,7 +12848,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__INFORMANT = CDAPackage.ENCOUNTER__INFORMANT;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__INFORMANT = CDAPackage.ENCOUNTER__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -12857,7 +12857,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__PARTICIPANT = CDAPackage.ENCOUNTER__PARTICIPANT;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__PARTICIPANT = CDAPackage.ENCOUNTER__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -12866,7 +12866,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__ENTRY_RELATIONSHIP = CDAPackage.ENCOUNTER__ENTRY_RELATIONSHIP;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__ENTRY_RELATIONSHIP = CDAPackage.ENCOUNTER__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -12875,7 +12875,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__REFERENCE = CDAPackage.ENCOUNTER__REFERENCE;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__REFERENCE = CDAPackage.ENCOUNTER__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -12884,7 +12884,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__PRECONDITION = CDAPackage.ENCOUNTER__PRECONDITION;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__PRECONDITION = CDAPackage.ENCOUNTER__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -12893,7 +12893,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__NULL_FLAVOR = CDAPackage.ENCOUNTER__NULL_FLAVOR;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__NULL_FLAVOR = CDAPackage.ENCOUNTER__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -12902,7 +12902,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__CLASS_CODE = CDAPackage.ENCOUNTER__CLASS_CODE;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__CLASS_CODE = CDAPackage.ENCOUNTER__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -12911,26 +12911,26 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER__MOOD_CODE = CDAPackage.ENCOUNTER__MOOD_CODE;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER__MOOD_CODE = CDAPackage.ENCOUNTER__MOOD_CODE;
 
 	/**
-	 * The number of structural features of the '<em>Plan Of Care Encounter</em>' class.
+	 * The number of structural features of the '<em>Plan Of Care Activity Encounter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_ENCOUNTER_FEATURE_COUNT = CDAPackage.ENCOUNTER_FEATURE_COUNT + 0;
+	int PLAN_OF_CARE_ACTIVITY_ENCOUNTER_FEATURE_COUNT = CDAPackage.ENCOUNTER_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareProcedureImpl <em>Plan Of Care Procedure</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityProcedureImpl <em>Plan Of Care Activity Procedure</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareProcedureImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareProcedure()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityProcedureImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareActivityProcedure()
 	 * @generated
 	 */
-	int PLAN_OF_CARE_PROCEDURE = 58;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE = 58;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -12939,7 +12939,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__REALM_CODE = CDAPackage.PROCEDURE__REALM_CODE;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__REALM_CODE = CDAPackage.PROCEDURE__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -12948,7 +12948,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__TYPE_ID = CDAPackage.PROCEDURE__TYPE_ID;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__TYPE_ID = CDAPackage.PROCEDURE__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -12957,7 +12957,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__TEMPLATE_ID = CDAPackage.PROCEDURE__TEMPLATE_ID;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__TEMPLATE_ID = CDAPackage.PROCEDURE__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -12966,7 +12966,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__ID = CDAPackage.PROCEDURE__ID;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__ID = CDAPackage.PROCEDURE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -12975,7 +12975,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__CODE = CDAPackage.PROCEDURE__CODE;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__CODE = CDAPackage.PROCEDURE__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -12984,7 +12984,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__TEXT = CDAPackage.PROCEDURE__TEXT;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__TEXT = CDAPackage.PROCEDURE__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -12993,7 +12993,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__STATUS_CODE = CDAPackage.PROCEDURE__STATUS_CODE;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__STATUS_CODE = CDAPackage.PROCEDURE__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -13002,7 +13002,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__EFFECTIVE_TIME = CDAPackage.PROCEDURE__EFFECTIVE_TIME;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__EFFECTIVE_TIME = CDAPackage.PROCEDURE__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -13011,7 +13011,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__PRIORITY_CODE = CDAPackage.PROCEDURE__PRIORITY_CODE;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__PRIORITY_CODE = CDAPackage.PROCEDURE__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -13020,7 +13020,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__LANGUAGE_CODE = CDAPackage.PROCEDURE__LANGUAGE_CODE;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__LANGUAGE_CODE = CDAPackage.PROCEDURE__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Method Code</b></em>' containment reference list.
@@ -13029,7 +13029,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__METHOD_CODE = CDAPackage.PROCEDURE__METHOD_CODE;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__METHOD_CODE = CDAPackage.PROCEDURE__METHOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Approach Site Code</b></em>' containment reference list.
@@ -13038,7 +13038,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__APPROACH_SITE_CODE = CDAPackage.PROCEDURE__APPROACH_SITE_CODE;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__APPROACH_SITE_CODE = CDAPackage.PROCEDURE__APPROACH_SITE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Target Site Code</b></em>' containment reference list.
@@ -13047,7 +13047,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__TARGET_SITE_CODE = CDAPackage.PROCEDURE__TARGET_SITE_CODE;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__TARGET_SITE_CODE = CDAPackage.PROCEDURE__TARGET_SITE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -13056,7 +13056,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__SUBJECT = CDAPackage.PROCEDURE__SUBJECT;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__SUBJECT = CDAPackage.PROCEDURE__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -13065,7 +13065,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__SPECIMEN = CDAPackage.PROCEDURE__SPECIMEN;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__SPECIMEN = CDAPackage.PROCEDURE__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -13074,7 +13074,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__PERFORMER = CDAPackage.PROCEDURE__PERFORMER;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__PERFORMER = CDAPackage.PROCEDURE__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -13083,7 +13083,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__AUTHOR = CDAPackage.PROCEDURE__AUTHOR;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__AUTHOR = CDAPackage.PROCEDURE__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -13092,7 +13092,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__INFORMANT = CDAPackage.PROCEDURE__INFORMANT;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__INFORMANT = CDAPackage.PROCEDURE__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -13101,7 +13101,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__PARTICIPANT = CDAPackage.PROCEDURE__PARTICIPANT;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__PARTICIPANT = CDAPackage.PROCEDURE__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -13110,7 +13110,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__ENTRY_RELATIONSHIP = CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__ENTRY_RELATIONSHIP = CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -13119,7 +13119,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__REFERENCE = CDAPackage.PROCEDURE__REFERENCE;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__REFERENCE = CDAPackage.PROCEDURE__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -13128,7 +13128,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__PRECONDITION = CDAPackage.PROCEDURE__PRECONDITION;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__PRECONDITION = CDAPackage.PROCEDURE__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -13137,7 +13137,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__NULL_FLAVOR = CDAPackage.PROCEDURE__NULL_FLAVOR;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__NULL_FLAVOR = CDAPackage.PROCEDURE__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -13146,7 +13146,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__CLASS_CODE = CDAPackage.PROCEDURE__CLASS_CODE;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__CLASS_CODE = CDAPackage.PROCEDURE__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -13155,7 +13155,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__MOOD_CODE = CDAPackage.PROCEDURE__MOOD_CODE;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__MOOD_CODE = CDAPackage.PROCEDURE__MOOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -13164,26 +13164,26 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE__NEGATION_IND = CDAPackage.PROCEDURE__NEGATION_IND;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE__NEGATION_IND = CDAPackage.PROCEDURE__NEGATION_IND;
 
 	/**
-	 * The number of structural features of the '<em>Plan Of Care Procedure</em>' class.
+	 * The number of structural features of the '<em>Plan Of Care Activity Procedure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_PROCEDURE_FEATURE_COUNT = CDAPackage.PROCEDURE_FEATURE_COUNT + 0;
+	int PLAN_OF_CARE_ACTIVITY_PROCEDURE_FEATURE_COUNT = CDAPackage.PROCEDURE_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareSubstanceAdministrationImpl <em>Plan Of Care Substance Administration</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivitySubstanceAdministrationImpl <em>Plan Of Care Activity Substance Administration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareSubstanceAdministrationImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareSubstanceAdministration()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivitySubstanceAdministrationImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareActivitySubstanceAdministration()
 	 * @generated
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION = 59;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION = 59;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -13192,7 +13192,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__REALM_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__REALM_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__REALM_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -13201,7 +13201,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__TYPE_ID = CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__TYPE_ID = CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -13210,7 +13210,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__TEMPLATE_ID = CDAPackage.SUBSTANCE_ADMINISTRATION__TEMPLATE_ID;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__TEMPLATE_ID = CDAPackage.SUBSTANCE_ADMINISTRATION__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -13219,7 +13219,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__ID = CDAPackage.SUBSTANCE_ADMINISTRATION__ID;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__ID = CDAPackage.SUBSTANCE_ADMINISTRATION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -13228,7 +13228,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -13237,7 +13237,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__TEXT = CDAPackage.SUBSTANCE_ADMINISTRATION__TEXT;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__TEXT = CDAPackage.SUBSTANCE_ADMINISTRATION__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -13246,7 +13246,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__STATUS_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__STATUS_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__STATUS_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference list.
@@ -13255,7 +13255,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME = CDAPackage.SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME = CDAPackage.SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -13264,7 +13264,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__PRIORITY_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__PRIORITY_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Repeat Number</b></em>' containment reference.
@@ -13273,7 +13273,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER = CDAPackage.SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER = CDAPackage.SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Route Code</b></em>' containment reference.
@@ -13282,7 +13282,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__ROUTE_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__ROUTE_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__ROUTE_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__ROUTE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Approach Site Code</b></em>' containment reference list.
@@ -13291,7 +13291,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Dose Quantity</b></em>' containment reference.
@@ -13300,7 +13300,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY = CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY = CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Rate Quantity</b></em>' containment reference.
@@ -13309,7 +13309,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__RATE_QUANTITY = CDAPackage.SUBSTANCE_ADMINISTRATION__RATE_QUANTITY;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__RATE_QUANTITY = CDAPackage.SUBSTANCE_ADMINISTRATION__RATE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Max Dose Quantity</b></em>' containment reference.
@@ -13318,7 +13318,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY = CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY = CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
@@ -13327,7 +13327,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -13336,7 +13336,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__SUBJECT = CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__SUBJECT = CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -13345,7 +13345,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__SPECIMEN = CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__SPECIMEN = CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Consumable</b></em>' containment reference.
@@ -13354,7 +13354,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__CONSUMABLE = CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__CONSUMABLE = CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -13363,7 +13363,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__PERFORMER = CDAPackage.SUBSTANCE_ADMINISTRATION__PERFORMER;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__PERFORMER = CDAPackage.SUBSTANCE_ADMINISTRATION__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -13372,7 +13372,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__AUTHOR = CDAPackage.SUBSTANCE_ADMINISTRATION__AUTHOR;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__AUTHOR = CDAPackage.SUBSTANCE_ADMINISTRATION__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -13381,7 +13381,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__INFORMANT = CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__INFORMANT = CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -13390,7 +13390,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__REFERENCE = CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__REFERENCE = CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -13399,7 +13399,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__PARTICIPANT = CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__PARTICIPANT = CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -13408,7 +13408,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP = CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP = CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -13417,7 +13417,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__PRECONDITION = CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__PRECONDITION = CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -13426,7 +13426,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__NULL_FLAVOR = CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__NULL_FLAVOR = CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -13435,7 +13435,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__CLASS_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__CLASS_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__CLASS_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -13444,7 +13444,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__MOOD_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__MOOD_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__MOOD_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__MOOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -13453,26 +13453,26 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION__NEGATION_IND = CDAPackage.SUBSTANCE_ADMINISTRATION__NEGATION_IND;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION__NEGATION_IND = CDAPackage.SUBSTANCE_ADMINISTRATION__NEGATION_IND;
 
 	/**
-	 * The number of structural features of the '<em>Plan Of Care Substance Administration</em>' class.
+	 * The number of structural features of the '<em>Plan Of Care Activity Substance Administration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION_FEATURE_COUNT = CDAPackage.SUBSTANCE_ADMINISTRATION_FEATURE_COUNT + 0;
+	int PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_FEATURE_COUNT = CDAPackage.SUBSTANCE_ADMINISTRATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareSupplyImpl <em>Plan Of Care Supply</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivitySupplyImpl <em>Plan Of Care Activity Supply</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareSupplyImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareSupply()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivitySupplyImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareActivitySupply()
 	 * @generated
 	 */
-	int PLAN_OF_CARE_SUPPLY = 60;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY = 60;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -13481,7 +13481,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__REALM_CODE = CDAPackage.SUPPLY__REALM_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__REALM_CODE = CDAPackage.SUPPLY__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -13490,7 +13490,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__TYPE_ID = CDAPackage.SUPPLY__TYPE_ID;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__TYPE_ID = CDAPackage.SUPPLY__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -13499,7 +13499,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__TEMPLATE_ID = CDAPackage.SUPPLY__TEMPLATE_ID;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__TEMPLATE_ID = CDAPackage.SUPPLY__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -13508,7 +13508,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__ID = CDAPackage.SUPPLY__ID;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__ID = CDAPackage.SUPPLY__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -13517,7 +13517,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__CODE = CDAPackage.SUPPLY__CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__CODE = CDAPackage.SUPPLY__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -13526,7 +13526,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__TEXT = CDAPackage.SUPPLY__TEXT;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__TEXT = CDAPackage.SUPPLY__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -13535,7 +13535,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__STATUS_CODE = CDAPackage.SUPPLY__STATUS_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__STATUS_CODE = CDAPackage.SUPPLY__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference list.
@@ -13544,7 +13544,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__EFFECTIVE_TIME = CDAPackage.SUPPLY__EFFECTIVE_TIME;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__EFFECTIVE_TIME = CDAPackage.SUPPLY__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference list.
@@ -13553,7 +13553,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__PRIORITY_CODE = CDAPackage.SUPPLY__PRIORITY_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__PRIORITY_CODE = CDAPackage.SUPPLY__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Repeat Number</b></em>' containment reference.
@@ -13562,7 +13562,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__REPEAT_NUMBER = CDAPackage.SUPPLY__REPEAT_NUMBER;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__REPEAT_NUMBER = CDAPackage.SUPPLY__REPEAT_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Independent Ind</b></em>' containment reference.
@@ -13571,7 +13571,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__INDEPENDENT_IND = CDAPackage.SUPPLY__INDEPENDENT_IND;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__INDEPENDENT_IND = CDAPackage.SUPPLY__INDEPENDENT_IND;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' containment reference.
@@ -13580,7 +13580,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__QUANTITY = CDAPackage.SUPPLY__QUANTITY;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__QUANTITY = CDAPackage.SUPPLY__QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Expected Use Time</b></em>' containment reference.
@@ -13589,7 +13589,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__EXPECTED_USE_TIME = CDAPackage.SUPPLY__EXPECTED_USE_TIME;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__EXPECTED_USE_TIME = CDAPackage.SUPPLY__EXPECTED_USE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -13598,7 +13598,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__SUBJECT = CDAPackage.SUPPLY__SUBJECT;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__SUBJECT = CDAPackage.SUPPLY__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -13607,7 +13607,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__SPECIMEN = CDAPackage.SUPPLY__SPECIMEN;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__SPECIMEN = CDAPackage.SUPPLY__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Product</b></em>' containment reference.
@@ -13616,7 +13616,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__PRODUCT = CDAPackage.SUPPLY__PRODUCT;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__PRODUCT = CDAPackage.SUPPLY__PRODUCT;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -13625,7 +13625,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__PERFORMER = CDAPackage.SUPPLY__PERFORMER;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__PERFORMER = CDAPackage.SUPPLY__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -13634,7 +13634,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__AUTHOR = CDAPackage.SUPPLY__AUTHOR;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__AUTHOR = CDAPackage.SUPPLY__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -13643,7 +13643,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__INFORMANT = CDAPackage.SUPPLY__INFORMANT;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__INFORMANT = CDAPackage.SUPPLY__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -13652,7 +13652,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__PARTICIPANT = CDAPackage.SUPPLY__PARTICIPANT;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__PARTICIPANT = CDAPackage.SUPPLY__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -13661,7 +13661,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__ENTRY_RELATIONSHIP = CDAPackage.SUPPLY__ENTRY_RELATIONSHIP;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__ENTRY_RELATIONSHIP = CDAPackage.SUPPLY__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -13670,7 +13670,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__REFERENCE = CDAPackage.SUPPLY__REFERENCE;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__REFERENCE = CDAPackage.SUPPLY__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -13679,7 +13679,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__PRECONDITION = CDAPackage.SUPPLY__PRECONDITION;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__PRECONDITION = CDAPackage.SUPPLY__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -13688,7 +13688,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__NULL_FLAVOR = CDAPackage.SUPPLY__NULL_FLAVOR;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__NULL_FLAVOR = CDAPackage.SUPPLY__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -13697,7 +13697,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__CLASS_CODE = CDAPackage.SUPPLY__CLASS_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__CLASS_CODE = CDAPackage.SUPPLY__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -13706,26 +13706,26 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY__MOOD_CODE = CDAPackage.SUPPLY__MOOD_CODE;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY__MOOD_CODE = CDAPackage.SUPPLY__MOOD_CODE;
 
 	/**
-	 * The number of structural features of the '<em>Plan Of Care Supply</em>' class.
+	 * The number of structural features of the '<em>Plan Of Care Activity Supply</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAN_OF_CARE_SUPPLY_FEATURE_COUNT = CDAPackage.SUPPLY_FEATURE_COUNT + 0;
+	int PLAN_OF_CARE_ACTIVITY_SUPPLY_FEATURE_COUNT = CDAPackage.SUPPLY_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActImpl <em>Procedure Act</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityActImpl <em>Procedure Activity Act</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProcedureAct()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityActImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProcedureActivityAct()
 	 * @generated
 	 */
-	int PROCEDURE_ACT = 61;
+	int PROCEDURE_ACTIVITY_ACT = 61;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -13734,7 +13734,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__REALM_CODE = CDAPackage.ACT__REALM_CODE;
+	int PROCEDURE_ACTIVITY_ACT__REALM_CODE = CDAPackage.ACT__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -13743,7 +13743,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__TYPE_ID = CDAPackage.ACT__TYPE_ID;
+	int PROCEDURE_ACTIVITY_ACT__TYPE_ID = CDAPackage.ACT__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -13752,7 +13752,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__TEMPLATE_ID = CDAPackage.ACT__TEMPLATE_ID;
+	int PROCEDURE_ACTIVITY_ACT__TEMPLATE_ID = CDAPackage.ACT__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -13761,7 +13761,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__ID = CDAPackage.ACT__ID;
+	int PROCEDURE_ACTIVITY_ACT__ID = CDAPackage.ACT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -13770,7 +13770,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__CODE = CDAPackage.ACT__CODE;
+	int PROCEDURE_ACTIVITY_ACT__CODE = CDAPackage.ACT__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -13779,7 +13779,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__TEXT = CDAPackage.ACT__TEXT;
+	int PROCEDURE_ACTIVITY_ACT__TEXT = CDAPackage.ACT__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -13788,7 +13788,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__STATUS_CODE = CDAPackage.ACT__STATUS_CODE;
+	int PROCEDURE_ACTIVITY_ACT__STATUS_CODE = CDAPackage.ACT__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -13797,7 +13797,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__EFFECTIVE_TIME = CDAPackage.ACT__EFFECTIVE_TIME;
+	int PROCEDURE_ACTIVITY_ACT__EFFECTIVE_TIME = CDAPackage.ACT__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -13806,7 +13806,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__PRIORITY_CODE = CDAPackage.ACT__PRIORITY_CODE;
+	int PROCEDURE_ACTIVITY_ACT__PRIORITY_CODE = CDAPackage.ACT__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -13815,7 +13815,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__LANGUAGE_CODE = CDAPackage.ACT__LANGUAGE_CODE;
+	int PROCEDURE_ACTIVITY_ACT__LANGUAGE_CODE = CDAPackage.ACT__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -13824,7 +13824,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__SUBJECT = CDAPackage.ACT__SUBJECT;
+	int PROCEDURE_ACTIVITY_ACT__SUBJECT = CDAPackage.ACT__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -13833,7 +13833,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__SPECIMEN = CDAPackage.ACT__SPECIMEN;
+	int PROCEDURE_ACTIVITY_ACT__SPECIMEN = CDAPackage.ACT__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -13842,7 +13842,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__PERFORMER = CDAPackage.ACT__PERFORMER;
+	int PROCEDURE_ACTIVITY_ACT__PERFORMER = CDAPackage.ACT__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -13851,7 +13851,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__AUTHOR = CDAPackage.ACT__AUTHOR;
+	int PROCEDURE_ACTIVITY_ACT__AUTHOR = CDAPackage.ACT__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -13860,7 +13860,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__INFORMANT = CDAPackage.ACT__INFORMANT;
+	int PROCEDURE_ACTIVITY_ACT__INFORMANT = CDAPackage.ACT__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -13869,7 +13869,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__PARTICIPANT = CDAPackage.ACT__PARTICIPANT;
+	int PROCEDURE_ACTIVITY_ACT__PARTICIPANT = CDAPackage.ACT__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -13878,7 +13878,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__ENTRY_RELATIONSHIP = CDAPackage.ACT__ENTRY_RELATIONSHIP;
+	int PROCEDURE_ACTIVITY_ACT__ENTRY_RELATIONSHIP = CDAPackage.ACT__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -13887,7 +13887,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__REFERENCE = CDAPackage.ACT__REFERENCE;
+	int PROCEDURE_ACTIVITY_ACT__REFERENCE = CDAPackage.ACT__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -13896,7 +13896,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__PRECONDITION = CDAPackage.ACT__PRECONDITION;
+	int PROCEDURE_ACTIVITY_ACT__PRECONDITION = CDAPackage.ACT__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -13905,7 +13905,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__NULL_FLAVOR = CDAPackage.ACT__NULL_FLAVOR;
+	int PROCEDURE_ACTIVITY_ACT__NULL_FLAVOR = CDAPackage.ACT__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -13914,7 +13914,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__CLASS_CODE = CDAPackage.ACT__CLASS_CODE;
+	int PROCEDURE_ACTIVITY_ACT__CLASS_CODE = CDAPackage.ACT__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -13923,7 +13923,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__MOOD_CODE = CDAPackage.ACT__MOOD_CODE;
+	int PROCEDURE_ACTIVITY_ACT__MOOD_CODE = CDAPackage.ACT__MOOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -13932,26 +13932,26 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT__NEGATION_IND = CDAPackage.ACT__NEGATION_IND;
+	int PROCEDURE_ACTIVITY_ACT__NEGATION_IND = CDAPackage.ACT__NEGATION_IND;
 
 	/**
-	 * The number of structural features of the '<em>Procedure Act</em>' class.
+	 * The number of structural features of the '<em>Procedure Activity Act</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_ACT_FEATURE_COUNT = CDAPackage.ACT_FEATURE_COUNT + 0;
+	int PROCEDURE_ACTIVITY_ACT_FEATURE_COUNT = CDAPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureObservationImpl <em>Procedure Observation</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityObservationImpl <em>Procedure Activity Observation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureObservationImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProcedureObservation()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityObservationImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProcedureActivityObservation()
 	 * @generated
 	 */
-	int PROCEDURE_OBSERVATION = 62;
+	int PROCEDURE_ACTIVITY_OBSERVATION = 62;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -13960,7 +13960,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__REALM_CODE = CDAPackage.OBSERVATION__REALM_CODE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__REALM_CODE = CDAPackage.OBSERVATION__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -13969,7 +13969,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__TYPE_ID = CDAPackage.OBSERVATION__TYPE_ID;
+	int PROCEDURE_ACTIVITY_OBSERVATION__TYPE_ID = CDAPackage.OBSERVATION__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -13978,7 +13978,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__TEMPLATE_ID = CDAPackage.OBSERVATION__TEMPLATE_ID;
+	int PROCEDURE_ACTIVITY_OBSERVATION__TEMPLATE_ID = CDAPackage.OBSERVATION__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -13987,7 +13987,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__ID = CDAPackage.OBSERVATION__ID;
+	int PROCEDURE_ACTIVITY_OBSERVATION__ID = CDAPackage.OBSERVATION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -13996,7 +13996,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__CODE = CDAPackage.OBSERVATION__CODE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__CODE = CDAPackage.OBSERVATION__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Derivation Expr</b></em>' containment reference.
@@ -14005,7 +14005,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__DERIVATION_EXPR = CDAPackage.OBSERVATION__DERIVATION_EXPR;
+	int PROCEDURE_ACTIVITY_OBSERVATION__DERIVATION_EXPR = CDAPackage.OBSERVATION__DERIVATION_EXPR;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -14014,7 +14014,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__TEXT = CDAPackage.OBSERVATION__TEXT;
+	int PROCEDURE_ACTIVITY_OBSERVATION__TEXT = CDAPackage.OBSERVATION__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -14023,7 +14023,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__STATUS_CODE = CDAPackage.OBSERVATION__STATUS_CODE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__STATUS_CODE = CDAPackage.OBSERVATION__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -14032,7 +14032,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__EFFECTIVE_TIME = CDAPackage.OBSERVATION__EFFECTIVE_TIME;
+	int PROCEDURE_ACTIVITY_OBSERVATION__EFFECTIVE_TIME = CDAPackage.OBSERVATION__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -14041,7 +14041,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__PRIORITY_CODE = CDAPackage.OBSERVATION__PRIORITY_CODE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__PRIORITY_CODE = CDAPackage.OBSERVATION__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Repeat Number</b></em>' containment reference.
@@ -14050,7 +14050,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__REPEAT_NUMBER = CDAPackage.OBSERVATION__REPEAT_NUMBER;
+	int PROCEDURE_ACTIVITY_OBSERVATION__REPEAT_NUMBER = CDAPackage.OBSERVATION__REPEAT_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -14059,7 +14059,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__LANGUAGE_CODE = CDAPackage.OBSERVATION__LANGUAGE_CODE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__LANGUAGE_CODE = CDAPackage.OBSERVATION__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -14068,7 +14068,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__VALUE = CDAPackage.OBSERVATION__VALUE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__VALUE = CDAPackage.OBSERVATION__VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Interpretation Code</b></em>' containment reference list.
@@ -14077,7 +14077,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__INTERPRETATION_CODE = CDAPackage.OBSERVATION__INTERPRETATION_CODE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__INTERPRETATION_CODE = CDAPackage.OBSERVATION__INTERPRETATION_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Method Code</b></em>' containment reference list.
@@ -14086,7 +14086,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__METHOD_CODE = CDAPackage.OBSERVATION__METHOD_CODE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__METHOD_CODE = CDAPackage.OBSERVATION__METHOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Target Site Code</b></em>' containment reference list.
@@ -14095,7 +14095,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__TARGET_SITE_CODE = CDAPackage.OBSERVATION__TARGET_SITE_CODE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__TARGET_SITE_CODE = CDAPackage.OBSERVATION__TARGET_SITE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -14104,7 +14104,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__SUBJECT = CDAPackage.OBSERVATION__SUBJECT;
+	int PROCEDURE_ACTIVITY_OBSERVATION__SUBJECT = CDAPackage.OBSERVATION__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -14113,7 +14113,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__SPECIMEN = CDAPackage.OBSERVATION__SPECIMEN;
+	int PROCEDURE_ACTIVITY_OBSERVATION__SPECIMEN = CDAPackage.OBSERVATION__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -14122,7 +14122,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__PERFORMER = CDAPackage.OBSERVATION__PERFORMER;
+	int PROCEDURE_ACTIVITY_OBSERVATION__PERFORMER = CDAPackage.OBSERVATION__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -14131,7 +14131,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__AUTHOR = CDAPackage.OBSERVATION__AUTHOR;
+	int PROCEDURE_ACTIVITY_OBSERVATION__AUTHOR = CDAPackage.OBSERVATION__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -14140,7 +14140,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__INFORMANT = CDAPackage.OBSERVATION__INFORMANT;
+	int PROCEDURE_ACTIVITY_OBSERVATION__INFORMANT = CDAPackage.OBSERVATION__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -14149,7 +14149,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__PARTICIPANT = CDAPackage.OBSERVATION__PARTICIPANT;
+	int PROCEDURE_ACTIVITY_OBSERVATION__PARTICIPANT = CDAPackage.OBSERVATION__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -14158,7 +14158,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__ENTRY_RELATIONSHIP = CDAPackage.OBSERVATION__ENTRY_RELATIONSHIP;
+	int PROCEDURE_ACTIVITY_OBSERVATION__ENTRY_RELATIONSHIP = CDAPackage.OBSERVATION__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -14167,7 +14167,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__REFERENCE = CDAPackage.OBSERVATION__REFERENCE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__REFERENCE = CDAPackage.OBSERVATION__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -14176,7 +14176,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__PRECONDITION = CDAPackage.OBSERVATION__PRECONDITION;
+	int PROCEDURE_ACTIVITY_OBSERVATION__PRECONDITION = CDAPackage.OBSERVATION__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Reference Range</b></em>' containment reference list.
@@ -14185,7 +14185,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__REFERENCE_RANGE = CDAPackage.OBSERVATION__REFERENCE_RANGE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__REFERENCE_RANGE = CDAPackage.OBSERVATION__REFERENCE_RANGE;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -14194,7 +14194,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__NULL_FLAVOR = CDAPackage.OBSERVATION__NULL_FLAVOR;
+	int PROCEDURE_ACTIVITY_OBSERVATION__NULL_FLAVOR = CDAPackage.OBSERVATION__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -14203,7 +14203,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__CLASS_CODE = CDAPackage.OBSERVATION__CLASS_CODE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__CLASS_CODE = CDAPackage.OBSERVATION__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -14212,7 +14212,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__MOOD_CODE = CDAPackage.OBSERVATION__MOOD_CODE;
+	int PROCEDURE_ACTIVITY_OBSERVATION__MOOD_CODE = CDAPackage.OBSERVATION__MOOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -14221,26 +14221,26 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION__NEGATION_IND = CDAPackage.OBSERVATION__NEGATION_IND;
+	int PROCEDURE_ACTIVITY_OBSERVATION__NEGATION_IND = CDAPackage.OBSERVATION__NEGATION_IND;
 
 	/**
-	 * The number of structural features of the '<em>Procedure Observation</em>' class.
+	 * The number of structural features of the '<em>Procedure Activity Observation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_OBSERVATION_FEATURE_COUNT = CDAPackage.OBSERVATION_FEATURE_COUNT + 0;
+	int PROCEDURE_ACTIVITY_OBSERVATION_FEATURE_COUNT = CDAPackage.OBSERVATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureProcedureImpl <em>Procedure Procedure</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityProcedureImpl <em>Procedure Activity Procedure</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureProcedureImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProcedureProcedure()
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityProcedureImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProcedureActivityProcedure()
 	 * @generated
 	 */
-	int PROCEDURE_PROCEDURE = 63;
+	int PROCEDURE_ACTIVITY_PROCEDURE = 63;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -14249,7 +14249,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__REALM_CODE = CDAPackage.PROCEDURE__REALM_CODE;
+	int PROCEDURE_ACTIVITY_PROCEDURE__REALM_CODE = CDAPackage.PROCEDURE__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -14258,7 +14258,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__TYPE_ID = CDAPackage.PROCEDURE__TYPE_ID;
+	int PROCEDURE_ACTIVITY_PROCEDURE__TYPE_ID = CDAPackage.PROCEDURE__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -14267,7 +14267,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__TEMPLATE_ID = CDAPackage.PROCEDURE__TEMPLATE_ID;
+	int PROCEDURE_ACTIVITY_PROCEDURE__TEMPLATE_ID = CDAPackage.PROCEDURE__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -14276,7 +14276,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__ID = CDAPackage.PROCEDURE__ID;
+	int PROCEDURE_ACTIVITY_PROCEDURE__ID = CDAPackage.PROCEDURE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -14285,7 +14285,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__CODE = CDAPackage.PROCEDURE__CODE;
+	int PROCEDURE_ACTIVITY_PROCEDURE__CODE = CDAPackage.PROCEDURE__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -14294,7 +14294,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__TEXT = CDAPackage.PROCEDURE__TEXT;
+	int PROCEDURE_ACTIVITY_PROCEDURE__TEXT = CDAPackage.PROCEDURE__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -14303,7 +14303,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__STATUS_CODE = CDAPackage.PROCEDURE__STATUS_CODE;
+	int PROCEDURE_ACTIVITY_PROCEDURE__STATUS_CODE = CDAPackage.PROCEDURE__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -14312,7 +14312,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__EFFECTIVE_TIME = CDAPackage.PROCEDURE__EFFECTIVE_TIME;
+	int PROCEDURE_ACTIVITY_PROCEDURE__EFFECTIVE_TIME = CDAPackage.PROCEDURE__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -14321,7 +14321,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__PRIORITY_CODE = CDAPackage.PROCEDURE__PRIORITY_CODE;
+	int PROCEDURE_ACTIVITY_PROCEDURE__PRIORITY_CODE = CDAPackage.PROCEDURE__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -14330,7 +14330,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__LANGUAGE_CODE = CDAPackage.PROCEDURE__LANGUAGE_CODE;
+	int PROCEDURE_ACTIVITY_PROCEDURE__LANGUAGE_CODE = CDAPackage.PROCEDURE__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Method Code</b></em>' containment reference list.
@@ -14339,7 +14339,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__METHOD_CODE = CDAPackage.PROCEDURE__METHOD_CODE;
+	int PROCEDURE_ACTIVITY_PROCEDURE__METHOD_CODE = CDAPackage.PROCEDURE__METHOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Approach Site Code</b></em>' containment reference list.
@@ -14348,7 +14348,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__APPROACH_SITE_CODE = CDAPackage.PROCEDURE__APPROACH_SITE_CODE;
+	int PROCEDURE_ACTIVITY_PROCEDURE__APPROACH_SITE_CODE = CDAPackage.PROCEDURE__APPROACH_SITE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Target Site Code</b></em>' containment reference list.
@@ -14357,7 +14357,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__TARGET_SITE_CODE = CDAPackage.PROCEDURE__TARGET_SITE_CODE;
+	int PROCEDURE_ACTIVITY_PROCEDURE__TARGET_SITE_CODE = CDAPackage.PROCEDURE__TARGET_SITE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -14366,7 +14366,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__SUBJECT = CDAPackage.PROCEDURE__SUBJECT;
+	int PROCEDURE_ACTIVITY_PROCEDURE__SUBJECT = CDAPackage.PROCEDURE__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -14375,7 +14375,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__SPECIMEN = CDAPackage.PROCEDURE__SPECIMEN;
+	int PROCEDURE_ACTIVITY_PROCEDURE__SPECIMEN = CDAPackage.PROCEDURE__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -14384,7 +14384,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__PERFORMER = CDAPackage.PROCEDURE__PERFORMER;
+	int PROCEDURE_ACTIVITY_PROCEDURE__PERFORMER = CDAPackage.PROCEDURE__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -14393,7 +14393,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__AUTHOR = CDAPackage.PROCEDURE__AUTHOR;
+	int PROCEDURE_ACTIVITY_PROCEDURE__AUTHOR = CDAPackage.PROCEDURE__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -14402,7 +14402,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__INFORMANT = CDAPackage.PROCEDURE__INFORMANT;
+	int PROCEDURE_ACTIVITY_PROCEDURE__INFORMANT = CDAPackage.PROCEDURE__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -14411,7 +14411,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__PARTICIPANT = CDAPackage.PROCEDURE__PARTICIPANT;
+	int PROCEDURE_ACTIVITY_PROCEDURE__PARTICIPANT = CDAPackage.PROCEDURE__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -14420,7 +14420,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__ENTRY_RELATIONSHIP = CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP;
+	int PROCEDURE_ACTIVITY_PROCEDURE__ENTRY_RELATIONSHIP = CDAPackage.PROCEDURE__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -14429,7 +14429,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__REFERENCE = CDAPackage.PROCEDURE__REFERENCE;
+	int PROCEDURE_ACTIVITY_PROCEDURE__REFERENCE = CDAPackage.PROCEDURE__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -14438,7 +14438,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__PRECONDITION = CDAPackage.PROCEDURE__PRECONDITION;
+	int PROCEDURE_ACTIVITY_PROCEDURE__PRECONDITION = CDAPackage.PROCEDURE__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -14447,7 +14447,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__NULL_FLAVOR = CDAPackage.PROCEDURE__NULL_FLAVOR;
+	int PROCEDURE_ACTIVITY_PROCEDURE__NULL_FLAVOR = CDAPackage.PROCEDURE__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -14456,7 +14456,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__CLASS_CODE = CDAPackage.PROCEDURE__CLASS_CODE;
+	int PROCEDURE_ACTIVITY_PROCEDURE__CLASS_CODE = CDAPackage.PROCEDURE__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -14465,7 +14465,7 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__MOOD_CODE = CDAPackage.PROCEDURE__MOOD_CODE;
+	int PROCEDURE_ACTIVITY_PROCEDURE__MOOD_CODE = CDAPackage.PROCEDURE__MOOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -14474,16 +14474,16 @@ public interface CCDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE__NEGATION_IND = CDAPackage.PROCEDURE__NEGATION_IND;
+	int PROCEDURE_ACTIVITY_PROCEDURE__NEGATION_IND = CDAPackage.PROCEDURE__NEGATION_IND;
 
 	/**
-	 * The number of structural features of the '<em>Procedure Procedure</em>' class.
+	 * The number of structural features of the '<em>Procedure Activity Procedure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCEDURE_PROCEDURE_FEATURE_COUNT = CDAPackage.PROCEDURE_FEATURE_COUNT + 0;
+	int PROCEDURE_ACTIVITY_PROCEDURE_FEATURE_COUNT = CDAPackage.PROCEDURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.CCDRegistryDelegateImpl <em>Registry Delegate</em>}' class.
@@ -14545,14 +14545,14 @@ public interface CCDPackage extends EPackage {
 	EClass getProblemObservation();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection <em>Problems Section</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemSection <em>Problem Section</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Problems Section</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection
+	 * @return the meta object for class '<em>Problem Section</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProblemSection
 	 * @generated
 	 */
-	EClass getProblemsSection();
+	EClass getProblemSection();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation <em>Problem Status Observation</em>}'.
@@ -14986,14 +14986,14 @@ public interface CCDPackage extends EPackage {
 	EClass getAuthorizationActivity();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareAct <em>Plan Of Care Act</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct <em>Plan Of Care Activity Act</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Plan Of Care Act</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareAct
+	 * @return the meta object for class '<em>Plan Of Care Activity Act</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct
 	 * @generated
 	 */
-	EClass getPlanOfCareAct();
+	EClass getPlanOfCareActivityAct();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity <em>Procedure Activity</em>}'.
@@ -15056,84 +15056,84 @@ public interface CCDPackage extends EPackage {
 	EClass getAgeObservation();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareObservation <em>Plan Of Care Observation</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation <em>Plan Of Care Activity Observation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Plan Of Care Observation</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareObservation
+	 * @return the meta object for class '<em>Plan Of Care Activity Observation</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation
 	 * @generated
 	 */
-	EClass getPlanOfCareObservation();
+	EClass getPlanOfCareActivityObservation();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareEncounter <em>Plan Of Care Encounter</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter <em>Plan Of Care Activity Encounter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Plan Of Care Encounter</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareEncounter
+	 * @return the meta object for class '<em>Plan Of Care Activity Encounter</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter
 	 * @generated
 	 */
-	EClass getPlanOfCareEncounter();
+	EClass getPlanOfCareActivityEncounter();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareProcedure <em>Plan Of Care Procedure</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure <em>Plan Of Care Activity Procedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Plan Of Care Procedure</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareProcedure
+	 * @return the meta object for class '<em>Plan Of Care Activity Procedure</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure
 	 * @generated
 	 */
-	EClass getPlanOfCareProcedure();
+	EClass getPlanOfCareActivityProcedure();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSubstanceAdministration <em>Plan Of Care Substance Administration</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySubstanceAdministration <em>Plan Of Care Activity Substance Administration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Plan Of Care Substance Administration</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSubstanceAdministration
+	 * @return the meta object for class '<em>Plan Of Care Activity Substance Administration</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySubstanceAdministration
 	 * @generated
 	 */
-	EClass getPlanOfCareSubstanceAdministration();
+	EClass getPlanOfCareActivitySubstanceAdministration();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSupply <em>Plan Of Care Supply</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply <em>Plan Of Care Activity Supply</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Plan Of Care Supply</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSupply
+	 * @return the meta object for class '<em>Plan Of Care Activity Supply</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply
 	 * @generated
 	 */
-	EClass getPlanOfCareSupply();
+	EClass getPlanOfCareActivitySupply();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureAct <em>Procedure Act</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct <em>Procedure Activity Act</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Procedure Act</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProcedureAct
+	 * @return the meta object for class '<em>Procedure Activity Act</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct
 	 * @generated
 	 */
-	EClass getProcedureAct();
+	EClass getProcedureActivityAct();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureObservation <em>Procedure Observation</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityObservation <em>Procedure Activity Observation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Procedure Observation</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProcedureObservation
+	 * @return the meta object for class '<em>Procedure Activity Observation</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityObservation
 	 * @generated
 	 */
-	EClass getProcedureObservation();
+	EClass getProcedureActivityObservation();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureProcedure <em>Procedure Procedure</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure <em>Procedure Activity Procedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Procedure Procedure</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProcedureProcedure
+	 * @return the meta object for class '<em>Procedure Activity Procedure</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure
 	 * @generated
 	 */
-	EClass getProcedureProcedure();
+	EClass getProcedureActivityProcedure();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ccd.CCDRegistryDelegate <em>Registry Delegate</em>}'.
@@ -15228,14 +15228,14 @@ public interface CCDPackage extends EPackage {
 		EClass PROBLEM_OBSERVATION = eINSTANCE.getProblemObservation();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemsSectionImpl <em>Problems Section</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemSectionImpl <em>Problem Section</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemsSectionImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProblemsSection()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemSectionImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProblemSection()
 		 * @generated
 		 */
-		EClass PROBLEMS_SECTION = eINSTANCE.getProblemsSection();
+		EClass PROBLEM_SECTION = eINSTANCE.getProblemSection();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProblemStatusObservationImpl <em>Problem Status Observation</em>}' class.
@@ -15666,14 +15666,14 @@ public interface CCDPackage extends EPackage {
 		EClass AUTHORIZATION_ACTIVITY = eINSTANCE.getAuthorizationActivity();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActImpl <em>Plan Of Care Act</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityActImpl <em>Plan Of Care Activity Act</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareAct()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityActImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareActivityAct()
 		 * @generated
 		 */
-		EClass PLAN_OF_CARE_ACT = eINSTANCE.getPlanOfCareAct();
+		EClass PLAN_OF_CARE_ACTIVITY_ACT = eINSTANCE.getPlanOfCareActivityAct();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityImpl <em>Procedure Activity</em>}' class.
@@ -15736,84 +15736,84 @@ public interface CCDPackage extends EPackage {
 		EClass AGE_OBSERVATION = eINSTANCE.getAgeObservation();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareObservationImpl <em>Plan Of Care Observation</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityObservationImpl <em>Plan Of Care Activity Observation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareObservationImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareObservation()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityObservationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareActivityObservation()
 		 * @generated
 		 */
-		EClass PLAN_OF_CARE_OBSERVATION = eINSTANCE.getPlanOfCareObservation();
+		EClass PLAN_OF_CARE_ACTIVITY_OBSERVATION = eINSTANCE.getPlanOfCareActivityObservation();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareEncounterImpl <em>Plan Of Care Encounter</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityEncounterImpl <em>Plan Of Care Activity Encounter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareEncounterImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareEncounter()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityEncounterImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareActivityEncounter()
 		 * @generated
 		 */
-		EClass PLAN_OF_CARE_ENCOUNTER = eINSTANCE.getPlanOfCareEncounter();
+		EClass PLAN_OF_CARE_ACTIVITY_ENCOUNTER = eINSTANCE.getPlanOfCareActivityEncounter();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareProcedureImpl <em>Plan Of Care Procedure</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityProcedureImpl <em>Plan Of Care Activity Procedure</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareProcedureImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareProcedure()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivityProcedureImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareActivityProcedure()
 		 * @generated
 		 */
-		EClass PLAN_OF_CARE_PROCEDURE = eINSTANCE.getPlanOfCareProcedure();
+		EClass PLAN_OF_CARE_ACTIVITY_PROCEDURE = eINSTANCE.getPlanOfCareActivityProcedure();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareSubstanceAdministrationImpl <em>Plan Of Care Substance Administration</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivitySubstanceAdministrationImpl <em>Plan Of Care Activity Substance Administration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareSubstanceAdministrationImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareSubstanceAdministration()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivitySubstanceAdministrationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareActivitySubstanceAdministration()
 		 * @generated
 		 */
-		EClass PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION = eINSTANCE.getPlanOfCareSubstanceAdministration();
+		EClass PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION = eINSTANCE.getPlanOfCareActivitySubstanceAdministration();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareSupplyImpl <em>Plan Of Care Supply</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivitySupplyImpl <em>Plan Of Care Activity Supply</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareSupplyImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareSupply()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.PlanOfCareActivitySupplyImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getPlanOfCareActivitySupply()
 		 * @generated
 		 */
-		EClass PLAN_OF_CARE_SUPPLY = eINSTANCE.getPlanOfCareSupply();
+		EClass PLAN_OF_CARE_ACTIVITY_SUPPLY = eINSTANCE.getPlanOfCareActivitySupply();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActImpl <em>Procedure Act</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityActImpl <em>Procedure Activity Act</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProcedureAct()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityActImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProcedureActivityAct()
 		 * @generated
 		 */
-		EClass PROCEDURE_ACT = eINSTANCE.getProcedureAct();
+		EClass PROCEDURE_ACTIVITY_ACT = eINSTANCE.getProcedureActivityAct();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureObservationImpl <em>Procedure Observation</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityObservationImpl <em>Procedure Activity Observation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureObservationImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProcedureObservation()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityObservationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProcedureActivityObservation()
 		 * @generated
 		 */
-		EClass PROCEDURE_OBSERVATION = eINSTANCE.getProcedureObservation();
+		EClass PROCEDURE_ACTIVITY_OBSERVATION = eINSTANCE.getProcedureActivityObservation();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureProcedureImpl <em>Procedure Procedure</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityProcedureImpl <em>Procedure Activity Procedure</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureProcedureImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProcedureProcedure()
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.ProcedureActivityProcedureImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ccd.impl.CCDPackageImpl#getProcedureActivityProcedure()
 		 * @generated
 		 */
-		EClass PROCEDURE_PROCEDURE = eINSTANCE.getProcedureProcedure();
+		EClass PROCEDURE_ACTIVITY_PROCEDURE = eINSTANCE.getProcedureActivityProcedure();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ccd.impl.CCDRegistryDelegateImpl <em>Registry Delegate</em>}' class.

@@ -1123,11 +1123,11 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(activeProblemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(activeProblemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(activeProblemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemsSection_validateProblemsSectionTemplateId(activeProblemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemsSection_validateProblemsSectionCode(activeProblemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemsSection_validateProblemsSectionTitle(activeProblemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemsSection_validateProblemsSectionText(activeProblemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateProblemsSection_validateProblemsSectionProblemAct(activeProblemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionTemplateId(activeProblemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionCode(activeProblemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionTitle(activeProblemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionText(activeProblemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionProblemAct(activeProblemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateActiveProblemsSection_validateActiveProblemsSectionTemplateId(activeProblemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateActiveProblemsSection_validateActiveProblemsSectionProblemConcernEntry(activeProblemsSection, diagnostics, context);
 		return result;
@@ -2621,12 +2621,12 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionCode(carePlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionTitle(carePlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionText(carePlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareAct(carePlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareEncounter(carePlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareObservation(carePlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareProcedure(carePlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareSubstanceAdministration(carePlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareSupply(carePlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivityAct(carePlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivityEncounter(carePlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivityObservation(carePlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivityProcedure(carePlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivitySubstanceAdministration(carePlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivitySupply(carePlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCarePlanSection_validateCarePlanSectionTemplateId(carePlanSection, diagnostics, context);
 		return result;
 	}

@@ -11,27 +11,27 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureProcedure;
-import org.openhealthtools.mdht.uml.cda.ccd.operations.ProcedureProcedureOperations;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.ProcedureActivityProcedureOperations;
 import org.openhealthtools.mdht.uml.cda.impl.ProcedureImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Procedure Procedure</b></em>'.
+ * An implementation of the model object '<em><b>Procedure Activity Procedure</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ProcedureProcedureImpl extends ProcedureImpl implements ProcedureProcedure {
+public class ProcedureActivityProcedureImpl extends ProcedureImpl implements ProcedureActivityProcedure {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProcedureProcedureImpl() {
+	protected ProcedureActivityProcedureImpl() {
 		super();
 	}
 
@@ -42,7 +42,7 @@ public class ProcedureProcedureImpl extends ProcedureImpl implements ProcedurePr
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CCDPackage.Literals.PROCEDURE_PROCEDURE;
+		return CCDPackage.Literals.PROCEDURE_ACTIVITY_PROCEDURE;
 	}
 
 	/**
@@ -50,8 +50,8 @@ public class ProcedureProcedureImpl extends ProcedureImpl implements ProcedurePr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProcedureProcedureTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProcedureProcedureOperations.validateProcedureProcedureTemplateId(this, diagnostics, context);
+	public boolean validateProcedureActivityProcedureTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureActivityProcedureOperations.validateProcedureActivityProcedureTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class ProcedureProcedureImpl extends ProcedureImpl implements ProcedurePr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProcedureProcedure init() {
+	public ProcedureActivityProcedure init() {
     		CDAUtil.init(this);
     		return this;
 	}
-} //ProcedureProcedureImpl
+} //ProcedureActivityProcedureImpl

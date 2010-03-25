@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemsSectionOperations;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemSectionOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
@@ -41,7 +41,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  *
  * @generated
  */
-public class ActiveProblemsSectionOperations extends ProblemsSectionOperations {
+public class ActiveProblemsSectionOperations extends ProblemSectionOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

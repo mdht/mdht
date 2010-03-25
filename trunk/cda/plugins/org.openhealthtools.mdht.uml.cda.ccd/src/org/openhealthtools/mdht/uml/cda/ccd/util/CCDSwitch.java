@@ -62,23 +62,23 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction;
 import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareAct;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareEncounter;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareProcedure;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSubstanceAdministration;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSupply;
 import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureProcedure;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
 import org.openhealthtools.mdht.uml.cda.ccd.ProductInstance;
@@ -198,10 +198,10 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.PROBLEMS_SECTION: {
-				ProblemsSection problemsSection = (ProblemsSection)theEObject;
-				T result = caseProblemsSection(problemsSection);
-				if (result == null) result = caseSection(problemsSection);
+			case CCDPackage.PROBLEM_SECTION: {
+				ProblemSection problemSection = (ProblemSection)theEObject;
+				T result = caseProblemSection(problemSection);
+				if (result == null) result = caseSection(problemSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -526,10 +526,10 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.PLAN_OF_CARE_ACT: {
-				PlanOfCareAct planOfCareAct = (PlanOfCareAct)theEObject;
-				T result = casePlanOfCareAct(planOfCareAct);
-				if (result == null) result = caseAct(planOfCareAct);
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY_ACT: {
+				PlanOfCareActivityAct planOfCareActivityAct = (PlanOfCareActivityAct)theEObject;
+				T result = casePlanOfCareActivityAct(planOfCareActivityAct);
+				if (result == null) result = caseAct(planOfCareActivityAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -569,62 +569,62 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.PLAN_OF_CARE_OBSERVATION: {
-				PlanOfCareObservation planOfCareObservation = (PlanOfCareObservation)theEObject;
-				T result = casePlanOfCareObservation(planOfCareObservation);
-				if (result == null) result = caseObservation(planOfCareObservation);
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY_OBSERVATION: {
+				PlanOfCareActivityObservation planOfCareActivityObservation = (PlanOfCareActivityObservation)theEObject;
+				T result = casePlanOfCareActivityObservation(planOfCareActivityObservation);
+				if (result == null) result = caseObservation(planOfCareActivityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.PLAN_OF_CARE_ENCOUNTER: {
-				PlanOfCareEncounter planOfCareEncounter = (PlanOfCareEncounter)theEObject;
-				T result = casePlanOfCareEncounter(planOfCareEncounter);
-				if (result == null) result = caseEncounter(planOfCareEncounter);
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY_ENCOUNTER: {
+				PlanOfCareActivityEncounter planOfCareActivityEncounter = (PlanOfCareActivityEncounter)theEObject;
+				T result = casePlanOfCareActivityEncounter(planOfCareActivityEncounter);
+				if (result == null) result = caseEncounter(planOfCareActivityEncounter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.PLAN_OF_CARE_PROCEDURE: {
-				PlanOfCareProcedure planOfCareProcedure = (PlanOfCareProcedure)theEObject;
-				T result = casePlanOfCareProcedure(planOfCareProcedure);
-				if (result == null) result = caseProcedure(planOfCareProcedure);
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY_PROCEDURE: {
+				PlanOfCareActivityProcedure planOfCareActivityProcedure = (PlanOfCareActivityProcedure)theEObject;
+				T result = casePlanOfCareActivityProcedure(planOfCareActivityProcedure);
+				if (result == null) result = caseProcedure(planOfCareActivityProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION: {
-				PlanOfCareSubstanceAdministration planOfCareSubstanceAdministration = (PlanOfCareSubstanceAdministration)theEObject;
-				T result = casePlanOfCareSubstanceAdministration(planOfCareSubstanceAdministration);
-				if (result == null) result = caseSubstanceAdministration(planOfCareSubstanceAdministration);
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION: {
+				PlanOfCareActivitySubstanceAdministration planOfCareActivitySubstanceAdministration = (PlanOfCareActivitySubstanceAdministration)theEObject;
+				T result = casePlanOfCareActivitySubstanceAdministration(planOfCareActivitySubstanceAdministration);
+				if (result == null) result = caseSubstanceAdministration(planOfCareActivitySubstanceAdministration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.PLAN_OF_CARE_SUPPLY: {
-				PlanOfCareSupply planOfCareSupply = (PlanOfCareSupply)theEObject;
-				T result = casePlanOfCareSupply(planOfCareSupply);
-				if (result == null) result = caseSupply(planOfCareSupply);
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY_SUPPLY: {
+				PlanOfCareActivitySupply planOfCareActivitySupply = (PlanOfCareActivitySupply)theEObject;
+				T result = casePlanOfCareActivitySupply(planOfCareActivitySupply);
+				if (result == null) result = caseSupply(planOfCareActivitySupply);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.PROCEDURE_ACT: {
-				ProcedureAct procedureAct = (ProcedureAct)theEObject;
-				T result = caseProcedureAct(procedureAct);
-				if (result == null) result = caseAct(procedureAct);
-				if (result == null) result = caseProcedureActivity(procedureAct);
+			case CCDPackage.PROCEDURE_ACTIVITY_ACT: {
+				ProcedureActivityAct procedureActivityAct = (ProcedureActivityAct)theEObject;
+				T result = caseProcedureActivityAct(procedureActivityAct);
+				if (result == null) result = caseAct(procedureActivityAct);
+				if (result == null) result = caseProcedureActivity(procedureActivityAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.PROCEDURE_OBSERVATION: {
-				ProcedureObservation procedureObservation = (ProcedureObservation)theEObject;
-				T result = caseProcedureObservation(procedureObservation);
-				if (result == null) result = caseObservation(procedureObservation);
-				if (result == null) result = caseProcedureActivity(procedureObservation);
+			case CCDPackage.PROCEDURE_ACTIVITY_OBSERVATION: {
+				ProcedureActivityObservation procedureActivityObservation = (ProcedureActivityObservation)theEObject;
+				T result = caseProcedureActivityObservation(procedureActivityObservation);
+				if (result == null) result = caseObservation(procedureActivityObservation);
+				if (result == null) result = caseProcedureActivity(procedureActivityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.PROCEDURE_PROCEDURE: {
-				ProcedureProcedure procedureProcedure = (ProcedureProcedure)theEObject;
-				T result = caseProcedureProcedure(procedureProcedure);
-				if (result == null) result = caseProcedure(procedureProcedure);
-				if (result == null) result = caseProcedureActivity(procedureProcedure);
+			case CCDPackage.PROCEDURE_ACTIVITY_PROCEDURE: {
+				ProcedureActivityProcedure procedureActivityProcedure = (ProcedureActivityProcedure)theEObject;
+				T result = caseProcedureActivityProcedure(procedureActivityProcedure);
+				if (result == null) result = caseProcedure(procedureActivityProcedure);
+				if (result == null) result = caseProcedureActivity(procedureActivityProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -700,17 +700,17 @@ public class CCDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Problems Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Problem Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Problems Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Problem Section</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProblemsSection(ProblemsSection object) {
+	public T caseProblemSection(ProblemSection object) {
 		return null;
 	}
 
@@ -1345,17 +1345,17 @@ public class CCDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Act</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Activity Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Act</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Activity Act</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePlanOfCareAct(PlanOfCareAct object) {
+	public T casePlanOfCareActivityAct(PlanOfCareActivityAct object) {
 		return null;
 	}
 
@@ -1450,122 +1450,122 @@ public class CCDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Observation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Activity Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Observation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Activity Observation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePlanOfCareObservation(PlanOfCareObservation object) {
+	public T casePlanOfCareActivityObservation(PlanOfCareActivityObservation object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Encounter</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Activity Encounter</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Encounter</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Activity Encounter</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePlanOfCareEncounter(PlanOfCareEncounter object) {
+	public T casePlanOfCareActivityEncounter(PlanOfCareActivityEncounter object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Procedure</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Activity Procedure</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Procedure</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Activity Procedure</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePlanOfCareProcedure(PlanOfCareProcedure object) {
+	public T casePlanOfCareActivityProcedure(PlanOfCareActivityProcedure object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Substance Administration</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Activity Substance Administration</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Substance Administration</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Activity Substance Administration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePlanOfCareSubstanceAdministration(PlanOfCareSubstanceAdministration object) {
+	public T casePlanOfCareActivitySubstanceAdministration(PlanOfCareActivitySubstanceAdministration object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Supply</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Activity Supply</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Supply</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Activity Supply</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePlanOfCareSupply(PlanOfCareSupply object) {
+	public T casePlanOfCareActivitySupply(PlanOfCareActivitySupply object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Procedure Act</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Procedure Activity Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Procedure Act</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Procedure Activity Act</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProcedureAct(ProcedureAct object) {
+	public T caseProcedureActivityAct(ProcedureActivityAct object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Procedure Observation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Procedure Activity Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Procedure Observation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Procedure Activity Observation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProcedureObservation(ProcedureObservation object) {
+	public T caseProcedureActivityObservation(ProcedureActivityObservation object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Procedure Procedure</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Procedure Activity Procedure</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Procedure Procedure</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Procedure Activity Procedure</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProcedureProcedure(ProcedureProcedure object) {
+	public T caseProcedureActivityProcedure(ProcedureActivityProcedure object) {
 		return null;
 	}
 

@@ -51,23 +51,23 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction;
 import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareAct;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareEncounter;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareProcedure;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSubstanceAdministration;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSupply;
 import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureProcedure;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
 import org.openhealthtools.mdht.uml.cda.ccd.ProductInstance;
@@ -133,7 +133,7 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.CONTINUITY_OF_CARE_DOCUMENT: return createContinuityOfCareDocument();
 			case CCDPackage.PROBLEM_ACT: return createProblemAct();
 			case CCDPackage.PROBLEM_OBSERVATION: return createProblemObservation();
-			case CCDPackage.PROBLEMS_SECTION: return createProblemsSection();
+			case CCDPackage.PROBLEM_SECTION: return createProblemSection();
 			case CCDPackage.PROBLEM_STATUS_OBSERVATION: return createProblemStatusObservation();
 			case CCDPackage.STATUS_OBSERVATION: return createStatusObservation();
 			case CCDPackage.PROBLEM_HEALTH_STATUS_OBSERVATION: return createProblemHealthStatusObservation();
@@ -179,20 +179,20 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.COVERAGE_ACTIVITY: return createCoverageActivity();
 			case CCDPackage.POLICY_ACTIVITY: return createPolicyActivity();
 			case CCDPackage.AUTHORIZATION_ACTIVITY: return createAuthorizationActivity();
-			case CCDPackage.PLAN_OF_CARE_ACT: return createPlanOfCareAct();
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY_ACT: return createPlanOfCareActivityAct();
 			case CCDPackage.PATIENT_INSTRUCTION: return createPatientInstruction();
 			case CCDPackage.FULFILLMENT_INSTRUCTION: return createFulfillmentInstruction();
 			case CCDPackage.FUNCTIONAL_STATUS_OBSERVATION: return createFunctionalStatusObservation();
 			case CCDPackage.PRODUCT_INSTANCE: return createProductInstance();
 			case CCDPackage.AGE_OBSERVATION: return createAgeObservation();
-			case CCDPackage.PLAN_OF_CARE_OBSERVATION: return createPlanOfCareObservation();
-			case CCDPackage.PLAN_OF_CARE_ENCOUNTER: return createPlanOfCareEncounter();
-			case CCDPackage.PLAN_OF_CARE_PROCEDURE: return createPlanOfCareProcedure();
-			case CCDPackage.PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION: return createPlanOfCareSubstanceAdministration();
-			case CCDPackage.PLAN_OF_CARE_SUPPLY: return createPlanOfCareSupply();
-			case CCDPackage.PROCEDURE_ACT: return createProcedureAct();
-			case CCDPackage.PROCEDURE_OBSERVATION: return createProcedureObservation();
-			case CCDPackage.PROCEDURE_PROCEDURE: return createProcedureProcedure();
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY_OBSERVATION: return createPlanOfCareActivityObservation();
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY_ENCOUNTER: return createPlanOfCareActivityEncounter();
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY_PROCEDURE: return createPlanOfCareActivityProcedure();
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION: return createPlanOfCareActivitySubstanceAdministration();
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY_SUPPLY: return createPlanOfCareActivitySupply();
+			case CCDPackage.PROCEDURE_ACTIVITY_ACT: return createProcedureActivityAct();
+			case CCDPackage.PROCEDURE_ACTIVITY_OBSERVATION: return createProcedureActivityObservation();
+			case CCDPackage.PROCEDURE_ACTIVITY_PROCEDURE: return createProcedureActivityProcedure();
 			case CCDPackage.CCD_REGISTRY_DELEGATE: return createCCDRegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -244,9 +244,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProblemsSection createProblemsSection() {
-		ProblemsSectionImpl problemsSection = new ProblemsSectionImpl();
-		return problemsSection;
+	public ProblemSection createProblemSection() {
+		ProblemSectionImpl problemSection = new ProblemSectionImpl();
+		return problemSection;
 	}
 
 	/**
@@ -674,9 +674,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlanOfCareAct createPlanOfCareAct() {
-		PlanOfCareActImpl planOfCareAct = new PlanOfCareActImpl();
-		return planOfCareAct;
+	public PlanOfCareActivityAct createPlanOfCareActivityAct() {
+		PlanOfCareActivityActImpl planOfCareActivityAct = new PlanOfCareActivityActImpl();
+		return planOfCareActivityAct;
 	}
 
 	/**
@@ -744,9 +744,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlanOfCareObservation createPlanOfCareObservation() {
-		PlanOfCareObservationImpl planOfCareObservation = new PlanOfCareObservationImpl();
-		return planOfCareObservation;
+	public PlanOfCareActivityObservation createPlanOfCareActivityObservation() {
+		PlanOfCareActivityObservationImpl planOfCareActivityObservation = new PlanOfCareActivityObservationImpl();
+		return planOfCareActivityObservation;
 	}
 
 	/**
@@ -754,9 +754,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlanOfCareEncounter createPlanOfCareEncounter() {
-		PlanOfCareEncounterImpl planOfCareEncounter = new PlanOfCareEncounterImpl();
-		return planOfCareEncounter;
+	public PlanOfCareActivityEncounter createPlanOfCareActivityEncounter() {
+		PlanOfCareActivityEncounterImpl planOfCareActivityEncounter = new PlanOfCareActivityEncounterImpl();
+		return planOfCareActivityEncounter;
 	}
 
 	/**
@@ -764,9 +764,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlanOfCareProcedure createPlanOfCareProcedure() {
-		PlanOfCareProcedureImpl planOfCareProcedure = new PlanOfCareProcedureImpl();
-		return planOfCareProcedure;
+	public PlanOfCareActivityProcedure createPlanOfCareActivityProcedure() {
+		PlanOfCareActivityProcedureImpl planOfCareActivityProcedure = new PlanOfCareActivityProcedureImpl();
+		return planOfCareActivityProcedure;
 	}
 
 	/**
@@ -774,9 +774,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlanOfCareSubstanceAdministration createPlanOfCareSubstanceAdministration() {
-		PlanOfCareSubstanceAdministrationImpl planOfCareSubstanceAdministration = new PlanOfCareSubstanceAdministrationImpl();
-		return planOfCareSubstanceAdministration;
+	public PlanOfCareActivitySubstanceAdministration createPlanOfCareActivitySubstanceAdministration() {
+		PlanOfCareActivitySubstanceAdministrationImpl planOfCareActivitySubstanceAdministration = new PlanOfCareActivitySubstanceAdministrationImpl();
+		return planOfCareActivitySubstanceAdministration;
 	}
 
 	/**
@@ -784,9 +784,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlanOfCareSupply createPlanOfCareSupply() {
-		PlanOfCareSupplyImpl planOfCareSupply = new PlanOfCareSupplyImpl();
-		return planOfCareSupply;
+	public PlanOfCareActivitySupply createPlanOfCareActivitySupply() {
+		PlanOfCareActivitySupplyImpl planOfCareActivitySupply = new PlanOfCareActivitySupplyImpl();
+		return planOfCareActivitySupply;
 	}
 
 	/**
@@ -794,9 +794,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProcedureAct createProcedureAct() {
-		ProcedureActImpl procedureAct = new ProcedureActImpl();
-		return procedureAct;
+	public ProcedureActivityAct createProcedureActivityAct() {
+		ProcedureActivityActImpl procedureActivityAct = new ProcedureActivityActImpl();
+		return procedureActivityAct;
 	}
 
 	/**
@@ -804,9 +804,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProcedureObservation createProcedureObservation() {
-		ProcedureObservationImpl procedureObservation = new ProcedureObservationImpl();
-		return procedureObservation;
+	public ProcedureActivityObservation createProcedureActivityObservation() {
+		ProcedureActivityObservationImpl procedureActivityObservation = new ProcedureActivityObservationImpl();
+		return procedureActivityObservation;
 	}
 
 	/**
@@ -814,9 +814,9 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProcedureProcedure createProcedureProcedure() {
-		ProcedureProcedureImpl procedureProcedure = new ProcedureProcedureImpl();
-		return procedureProcedure;
+	public ProcedureActivityProcedure createProcedureActivityProcedure() {
+		ProcedureActivityProcedureImpl procedureActivityProcedure = new ProcedureActivityProcedureImpl();
+		return procedureActivityProcedure;
 	}
 
 	/**

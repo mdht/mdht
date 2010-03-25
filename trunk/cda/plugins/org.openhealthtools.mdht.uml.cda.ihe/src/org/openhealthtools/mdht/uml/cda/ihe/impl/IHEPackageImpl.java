@@ -1119,7 +1119,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		medicationsAdministeredSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		concernEntryEClass.getESuperTypes().add(theCCDPackage.getProblemAct());
 		medicalDocumentEClass.getESuperTypes().add(theCDAPackage.getClinicalDocument());
-		activeProblemsSectionEClass.getESuperTypes().add(theCCDPackage.getProblemsSection());
+		activeProblemsSectionEClass.getESuperTypes().add(theCCDPackage.getProblemSection());
 		problemConcernEntryEClass.getESuperTypes().add(this.getConcernEntry());
 		problemEntryEClass.getESuperTypes().add(theCCDPackage.getProblemObservation());
 		medicationEClass.getESuperTypes().add(theCCDPackage.getMedicationActivity());
