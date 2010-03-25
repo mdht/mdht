@@ -191,10 +191,11 @@ associated adverse reactions suffered by the patient.</body>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wHEZMK4UEd6_ioDelDcPPg" value="1"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_LriUcK4NEd6_ioDelDcPPg" name="VitalSignObservation" clientDependency="_n1OREK4PEd6_ioDelDcPPg">
+    <packagedElement xmi:type="uml:Class" xmi:id="_LriUcK4NEd6_ioDelDcPPg" name="VitalSignObservation">
       <generalization xmi:id="_PU_HYK4NEd6_ioDelDcPPg">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_MQHZEHDAEd6eItyqb1FoWg"/>
       </generalization>
+      <generalization xmi:id="_pcbyQDhCEd-RGdSGlf-Kow" general="_dLvb0K4NEd6_ioDelDcPPg"/>
       <ownedAttribute xmi:id="_8nmwUK4OEd6_ioDelDcPPg" name="code" visibility="private">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
       </ownedAttribute>
@@ -236,7 +237,6 @@ ASTM/HL7 Continuity of Care Document).</body>
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Dependency" xmi:id="_n1OREK4PEd6_ioDelDcPPg" name="conforms to" supplier="_dLvb0K4NEd6_ioDelDcPPg" client="_LriUcK4NEd6_ioDelDcPPg"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_hVMdIK4QEd6_ioDelDcPPg" name="VitalSignsOrganizer">
       <generalization xmi:id="_j3GZMK4QEd6_ioDelDcPPg">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_wN4O0K3zEd6_ioDelDcPPg"/>

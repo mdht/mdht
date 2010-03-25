@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.impl.ResultObservationImpl;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
+import org.openhealthtools.mdht.uml.cda.ihe.operations.SimpleObservationOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.VitalSignObservationOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -43,6 +44,33 @@ public class VitalSignObservationImpl extends ResultObservationImpl implements V
 	@Override
 	protected EClass eStaticClass() {
 		return IHEPackage.Literals.VITAL_SIGN_OBSERVATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSimpleObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SimpleObservationOperations.validateSimpleObservationTemplateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSimpleObservationId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SimpleObservationOperations.validateSimpleObservationId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSimpleObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SimpleObservationOperations.validateSimpleObservationStatusCode(this, diagnostics, context);
 	}
 
 	/**
