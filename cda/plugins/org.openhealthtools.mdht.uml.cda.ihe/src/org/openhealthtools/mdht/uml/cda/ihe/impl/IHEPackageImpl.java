@@ -1135,6 +1135,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		vitalSignsSectionEClass.getESuperTypes().add(theCCDPackage.getVitalSignsSection());
 		codedVitalSignsSectionEClass.getESuperTypes().add(this.getVitalSignsSection());
 		vitalSignObservationEClass.getESuperTypes().add(theCCDPackage.getResultObservation());
+		vitalSignObservationEClass.getESuperTypes().add(this.getSimpleObservation());
 		simpleObservationEClass.getESuperTypes().add(theCDAPackage.getObservation());
 		vitalSignsOrganizerEClass.getESuperTypes().add(theCCDPackage.getVitalSignsOrganizer());
 		payersSectionEClass.getESuperTypes().add(theCCDPackage.getPayersSection());

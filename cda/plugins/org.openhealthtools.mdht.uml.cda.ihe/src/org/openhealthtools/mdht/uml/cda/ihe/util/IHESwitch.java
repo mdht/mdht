@@ -324,6 +324,7 @@ public class IHESwitch<T> {
 				VitalSignObservation vitalSignObservation = (VitalSignObservation)theEObject;
 				T result = caseVitalSignObservation(vitalSignObservation);
 				if (result == null) result = caseResultObservation(vitalSignObservation);
+				if (result == null) result = caseSimpleObservation(vitalSignObservation);
 				if (result == null) result = caseObservation(vitalSignObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

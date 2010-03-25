@@ -21,7 +21,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
  * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.13.2' constraints.validation.error='VitalSignObservationTemplateId VitalSignObservationCode VitalSignObservationValue' code.codeSystemName='LOINC' constraints.validation.info='VitalSignObservationInterpretationCode VitalSignObservationMethodCode VitalSignObservationTargetSiteCode'"
  * @generated
  */
-public interface VitalSignObservation extends ResultObservation {
+public interface VitalSignObservation extends ResultObservation, SimpleObservation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
