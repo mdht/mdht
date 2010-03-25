@@ -11,27 +11,27 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.operations.ProcedureObservationOperations;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.ProcedureActivityObservationOperations;
 import org.openhealthtools.mdht.uml.cda.impl.ObservationImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Procedure Observation</b></em>'.
+ * An implementation of the model object '<em><b>Procedure Activity Observation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ProcedureObservationImpl extends ObservationImpl implements ProcedureObservation {
+public class ProcedureActivityObservationImpl extends ObservationImpl implements ProcedureActivityObservation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProcedureObservationImpl() {
+	protected ProcedureActivityObservationImpl() {
 		super();
 	}
 
@@ -42,7 +42,7 @@ public class ProcedureObservationImpl extends ObservationImpl implements Procedu
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CCDPackage.Literals.PROCEDURE_OBSERVATION;
+		return CCDPackage.Literals.PROCEDURE_ACTIVITY_OBSERVATION;
 	}
 
 	/**
@@ -50,8 +50,8 @@ public class ProcedureObservationImpl extends ObservationImpl implements Procedu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProcedureObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProcedureObservationOperations.validateProcedureObservationTemplateId(this, diagnostics, context);
+	public boolean validateProcedureActivityObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureActivityObservationOperations.validateProcedureActivityObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class ProcedureObservationImpl extends ObservationImpl implements Procedu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProcedureObservation init() {
+	public ProcedureActivityObservation init() {
     		CDAUtil.init(this);
     		return this;
 	}
-} //ProcedureObservationImpl
+} //ProcedureActivityObservationImpl

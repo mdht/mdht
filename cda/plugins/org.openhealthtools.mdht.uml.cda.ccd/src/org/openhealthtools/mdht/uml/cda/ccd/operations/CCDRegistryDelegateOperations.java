@@ -48,26 +48,26 @@ public class CCDRegistryDelegateOperations {
 			if ("2.16.840.1.113883.10.20.1.25".equals(templateId)) {
 				// PlanOfCare
 				if ("act".equals(localName)) {
-					result = CCDPackage.Literals.PLAN_OF_CARE_ACT;
+					result = CCDPackage.Literals.PLAN_OF_CARE_ACTIVITY_ACT;
 				} else if ("encounter".equals(localName)) {
-					result = CCDPackage.Literals.PLAN_OF_CARE_ENCOUNTER;
+					result = CCDPackage.Literals.PLAN_OF_CARE_ACTIVITY_ENCOUNTER;
 				} else if ("observation".equals(localName)) {
-					result = CCDPackage.Literals.PLAN_OF_CARE_OBSERVATION;
+					result = CCDPackage.Literals.PLAN_OF_CARE_ACTIVITY_OBSERVATION;
 				} else if ("procedure".equals(localName)) {
-					result = CCDPackage.Literals.PLAN_OF_CARE_PROCEDURE;
+					result = CCDPackage.Literals.PLAN_OF_CARE_ACTIVITY_PROCEDURE;
 				} else if ("substanceAdministration".equals(localName)) {
-					result = CCDPackage.Literals.PLAN_OF_CARE_SUBSTANCE_ADMINISTRATION;
+					result = CCDPackage.Literals.PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION;
 				} else if ("supply".equals(localName)) {
-					result = CCDPackage.Literals.PLAN_OF_CARE_SUPPLY;
+					result = CCDPackage.Literals.PLAN_OF_CARE_ACTIVITY_SUPPLY;
 				}
 			} else if ("2.16.840.1.113883.10.20.1.29".equals(templateId)) {
 				// ProcedureActivity
 				if ("act".equals(localName)) {
-					result = CCDPackage.Literals.PROCEDURE_ACT;
+					result = CCDPackage.Literals.PROCEDURE_ACTIVITY_ACT;
 				} else if ("observation".equals(localName)) {
-					result = CCDPackage.Literals.PROCEDURE_OBSERVATION;
+					result = CCDPackage.Literals.PROCEDURE_ACTIVITY_OBSERVATION;
 				} else if ("procedure".equals(localName)) {
-					result = CCDPackage.Literals.PROCEDURE_PROCEDURE;
+					result = CCDPackage.Literals.PROCEDURE_ACTIVITY_PROCEDURE;
 				}
 			}
 		}

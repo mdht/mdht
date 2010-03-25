@@ -9,32 +9,33 @@ package org.openhealthtools.mdht.uml.cda.ccd;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.Encounter;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Plan Of Care Substance Administration</b></em>'.
+ * A representation of the model object '<em><b>Plan Of Care Activity Encounter</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPlanOfCareSubstanceAdministration()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' templateId.root='2.16.840.1.113883.10.20.1.25' constraints.validation.error='PlanOfCareSubstanceAdministrationTemplateId PlanOfCareSubstanceAdministrationMoodCodeValue PlanOfCareSubstanceAdministrationId PlanOfCareSubstanceAdministrationMoodCode'"
+ * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getPlanOfCareActivityEncounter()
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' templateId.root='2.16.840.1.113883.10.20.1.25' constraints.validation.error='PlanOfCareActivityEncounterTemplateId PlanOfCareActivityEncounterMoodCodeValue PlanOfCareActivityEncounterId PlanOfCareActivityEncounterMoodCode'"
  * @generated
  */
-public interface PlanOfCareSubstanceAdministration extends SubstanceAdministration {
+public interface PlanOfCareActivityEncounter extends Encounter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO
-	 *   or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP
+	 * self.moodCode = vocab::x_DocumentEncounterMood::INT or self.moodCode = vocab::x_DocumentEncounterMood::ARQ
+	 *   or self.moodCode = vocab::x_DocumentEncounterMood::PRMS or self.moodCode = vocab::x_DocumentEncounterMood::PRP
+	 *   or self.moodCode = vocab::x_DocumentEncounterMood::RQO
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO\r\n  or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.moodCode = vocab::x_DocumentEncounterMood::INT or self.moodCode = vocab::x_DocumentEncounterMood::ARQ\r\n  or self.moodCode = vocab::x_DocumentEncounterMood::PRMS or self.moodCode = vocab::x_DocumentEncounterMood::PRP\r\n  or self.moodCode = vocab::x_DocumentEncounterMood::RQO'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareSubstanceAdministrationMoodCodeValue(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareActivityEncounterMoodCodeValue(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,7 +48,7 @@ public interface PlanOfCareSubstanceAdministration extends SubstanceAdministrati
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = \'2.16.840.1.113883.10.20.1.25\')'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareSubstanceAdministrationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareActivityEncounterTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,7 +61,7 @@ public interface PlanOfCareSubstanceAdministration extends SubstanceAdministrati
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.id->isEmpty()'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareSubstanceAdministrationId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareActivityEncounterId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,12 +74,12 @@ public interface PlanOfCareSubstanceAdministration extends SubstanceAdministrati
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.moodCode.oclIsUndefined()'"
 	 * @generated
 	 */
-	boolean validatePlanOfCareSubstanceAdministrationMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validatePlanOfCareActivityEncounterMoodCode(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlanOfCareSubstanceAdministration init();
-} // PlanOfCareSubstanceAdministration
+	public PlanOfCareActivityEncounter init();
+} // PlanOfCareActivityEncounter

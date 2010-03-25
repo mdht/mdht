@@ -62,23 +62,23 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction;
 import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareAct;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareEncounter;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareProcedure;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSubstanceAdministration;
-import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSupply;
 import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureObservation;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureProcedure;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
 import org.openhealthtools.mdht.uml.cda.ccd.ProductInstance;
@@ -169,8 +169,8 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 				return createProblemObservationAdapter();
 			}
 			@Override
-			public Adapter caseProblemsSection(ProblemsSection object) {
-				return createProblemsSectionAdapter();
+			public Adapter caseProblemSection(ProblemSection object) {
+				return createProblemSectionAdapter();
 			}
 			@Override
 			public Adapter caseProblemStatusObservation(ProblemStatusObservation object) {
@@ -353,8 +353,8 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 				return createAuthorizationActivityAdapter();
 			}
 			@Override
-			public Adapter casePlanOfCareAct(PlanOfCareAct object) {
-				return createPlanOfCareActAdapter();
+			public Adapter casePlanOfCareActivityAct(PlanOfCareActivityAct object) {
+				return createPlanOfCareActivityActAdapter();
 			}
 			@Override
 			public Adapter casePatientInstruction(PatientInstruction object) {
@@ -377,36 +377,36 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 				return createAgeObservationAdapter();
 			}
 			@Override
-			public Adapter casePlanOfCareObservation(PlanOfCareObservation object) {
-				return createPlanOfCareObservationAdapter();
+			public Adapter casePlanOfCareActivityObservation(PlanOfCareActivityObservation object) {
+				return createPlanOfCareActivityObservationAdapter();
 			}
 			@Override
-			public Adapter casePlanOfCareEncounter(PlanOfCareEncounter object) {
-				return createPlanOfCareEncounterAdapter();
+			public Adapter casePlanOfCareActivityEncounter(PlanOfCareActivityEncounter object) {
+				return createPlanOfCareActivityEncounterAdapter();
 			}
 			@Override
-			public Adapter casePlanOfCareProcedure(PlanOfCareProcedure object) {
-				return createPlanOfCareProcedureAdapter();
+			public Adapter casePlanOfCareActivityProcedure(PlanOfCareActivityProcedure object) {
+				return createPlanOfCareActivityProcedureAdapter();
 			}
 			@Override
-			public Adapter casePlanOfCareSubstanceAdministration(PlanOfCareSubstanceAdministration object) {
-				return createPlanOfCareSubstanceAdministrationAdapter();
+			public Adapter casePlanOfCareActivitySubstanceAdministration(PlanOfCareActivitySubstanceAdministration object) {
+				return createPlanOfCareActivitySubstanceAdministrationAdapter();
 			}
 			@Override
-			public Adapter casePlanOfCareSupply(PlanOfCareSupply object) {
-				return createPlanOfCareSupplyAdapter();
+			public Adapter casePlanOfCareActivitySupply(PlanOfCareActivitySupply object) {
+				return createPlanOfCareActivitySupplyAdapter();
 			}
 			@Override
-			public Adapter caseProcedureAct(ProcedureAct object) {
-				return createProcedureActAdapter();
+			public Adapter caseProcedureActivityAct(ProcedureActivityAct object) {
+				return createProcedureActivityActAdapter();
 			}
 			@Override
-			public Adapter caseProcedureObservation(ProcedureObservation object) {
-				return createProcedureObservationAdapter();
+			public Adapter caseProcedureActivityObservation(ProcedureActivityObservation object) {
+				return createProcedureActivityObservationAdapter();
 			}
 			@Override
-			public Adapter caseProcedureProcedure(ProcedureProcedure object) {
-				return createProcedureProcedureAdapter();
+			public Adapter caseProcedureActivityProcedure(ProcedureActivityProcedure object) {
+				return createProcedureActivityProcedureAdapter();
 			}
 			@Override
 			public Adapter caseCCDRegistryDelegate(CCDRegistryDelegate object) {
@@ -541,16 +541,16 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection <em>Problems Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemSection <em>Problem Section</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProblemsSection
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProblemSection
 	 * @generated
 	 */
-	public Adapter createProblemsSectionAdapter() {
+	public Adapter createProblemSectionAdapter() {
 		return null;
 	}
 
@@ -1143,16 +1143,16 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareAct <em>Plan Of Care Act</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct <em>Plan Of Care Activity Act</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareAct
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct
 	 * @generated
 	 */
-	public Adapter createPlanOfCareActAdapter() {
+	public Adapter createPlanOfCareActivityActAdapter() {
 		return null;
 	}
 
@@ -1241,114 +1241,114 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareObservation <em>Plan Of Care Observation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation <em>Plan Of Care Activity Observation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareObservation
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation
 	 * @generated
 	 */
-	public Adapter createPlanOfCareObservationAdapter() {
+	public Adapter createPlanOfCareActivityObservationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareEncounter <em>Plan Of Care Encounter</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter <em>Plan Of Care Activity Encounter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareEncounter
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter
 	 * @generated
 	 */
-	public Adapter createPlanOfCareEncounterAdapter() {
+	public Adapter createPlanOfCareActivityEncounterAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareProcedure <em>Plan Of Care Procedure</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure <em>Plan Of Care Activity Procedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareProcedure
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure
 	 * @generated
 	 */
-	public Adapter createPlanOfCareProcedureAdapter() {
+	public Adapter createPlanOfCareActivityProcedureAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSubstanceAdministration <em>Plan Of Care Substance Administration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySubstanceAdministration <em>Plan Of Care Activity Substance Administration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSubstanceAdministration
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySubstanceAdministration
 	 * @generated
 	 */
-	public Adapter createPlanOfCareSubstanceAdministrationAdapter() {
+	public Adapter createPlanOfCareActivitySubstanceAdministrationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSupply <em>Plan Of Care Supply</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply <em>Plan Of Care Activity Supply</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSupply
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply
 	 * @generated
 	 */
-	public Adapter createPlanOfCareSupplyAdapter() {
+	public Adapter createPlanOfCareActivitySupplyAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureAct <em>Procedure Act</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct <em>Procedure Activity Act</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProcedureAct
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct
 	 * @generated
 	 */
-	public Adapter createProcedureActAdapter() {
+	public Adapter createProcedureActivityActAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureObservation <em>Procedure Observation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityObservation <em>Procedure Activity Observation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProcedureObservation
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityObservation
 	 * @generated
 	 */
-	public Adapter createProcedureObservationAdapter() {
+	public Adapter createProcedureActivityObservationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureProcedure <em>Procedure Procedure</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure <em>Procedure Activity Procedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProcedureProcedure
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure
 	 * @generated
 	 */
-	public Adapter createProcedureProcedureAdapter() {
+	public Adapter createProcedureActivityProcedureAdapter() {
 		return null;
 	}
 

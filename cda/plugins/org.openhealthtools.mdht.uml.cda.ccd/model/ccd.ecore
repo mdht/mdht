@@ -95,7 +95,7 @@
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1"/>
       <details key="constraints.validation.error" value="ContinuityOfCareDocumentTemplateId ContinuityOfCareDocumentServiceEventRequired ContinuityOfCareDocumentServiceEventClassCode ContinuityOfCareDocumentServiceEventEffectiveTime ContinuityOfCareDocumentNoTemplateIdExtension ContinuityOfCareDocumentOneOrTwoRecordTarget ContinuityOfCareDocumentHasAssignedAuthorNullFlavor ContinuityOfCareDocumentCode ContinuityOfCareDocumentLanguageCode"/>
       <details key="code.codeSystemName" value="LOINC"/>
-      <details key="constraints.validation.warning" value="ContinuityOfCareDocumentHasAssignedAuthor ContinuityOfCareDocumentProblemsSection ContinuityOfCareDocumentFamilyHistorySection ContinuityOfCareDocumentSocialHistorySection ContinuityOfCareDocumentAlertsSection ContinuityOfCareDocumentMedicationsSection ContinuityOfCareDocumentResultsSection ContinuityOfCareDocumentProceduresSection ContinuityOfCareDocumentEncountersSection ContinuityOfCareDocumentPlanOfCareSection ContinuityOfCareDocumentImmunizationsSection ContinuityOfCareDocumentVitalSignsSection ContinuityOfCareDocumentMedicalEquipmentSection ContinuityOfCareDocumentFunctionalStatusSection ContinuityOfCareDocumentAdvanceDirectivesSection ContinuityOfCareDocumentPayersSection"/>
+      <details key="constraints.validation.warning" value="ContinuityOfCareDocumentHasAssignedAuthor ContinuityOfCareDocumentProblemSection ContinuityOfCareDocumentFamilyHistorySection ContinuityOfCareDocumentSocialHistorySection ContinuityOfCareDocumentAlertsSection ContinuityOfCareDocumentMedicationsSection ContinuityOfCareDocumentResultsSection ContinuityOfCareDocumentProceduresSection ContinuityOfCareDocumentEncountersSection ContinuityOfCareDocumentPlanOfCareSection ContinuityOfCareDocumentImmunizationsSection ContinuityOfCareDocumentVitalSignsSection ContinuityOfCareDocumentMedicalEquipmentSection ContinuityOfCareDocumentFunctionalStatusSection ContinuityOfCareDocumentAdvanceDirectivesSection ContinuityOfCareDocumentPayersSection"/>
       <details key="code.code" value="34133-9"/>
       <details key="constraints.validation.info" value="ContinuityOfCareDocumentHasInformationRecipient ContinuityOfCareDocumentPurposeSection"/>
     </eAnnotations>
@@ -341,12 +341,12 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ContinuityOfCareDocumentProblemsSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ContinuityOfCareDocumentProblemSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::ProblemsSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::ProblemSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::ProblemsSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::ProblemSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1180,17 +1180,17 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProblemsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
+  <eClassifiers xsi:type="ecore:EClass" name="ProblemSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="code.displayName" value="Problem list"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.11"/>
-      <details key="constraints.validation.error" value="ProblemsSectionTemplateId ProblemsSectionCode ProblemsSectionTitle ProblemsSectionText"/>
+      <details key="constraints.validation.error" value="ProblemSectionTemplateId ProblemSectionCode ProblemSectionTitle ProblemSectionText"/>
       <details key="code.codeSystemName" value="LOINC"/>
-      <details key="constraints.validation.warning" value="ProblemsSectionProblemAct"/>
+      <details key="constraints.validation.warning" value="ProblemSectionProblemAct"/>
       <details key="code.code" value="11450-4"/>
     </eAnnotations>
-    <eOperations name="ProblemsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.11')"/>
       </eAnnotations>
@@ -1212,7 +1212,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ProblemsSectionCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemSectionCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11450-4' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
       </eAnnotations>
@@ -1234,7 +1234,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ProblemsSectionTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemSectionTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.title.oclIsUndefined()"/>
       </eAnnotations>
@@ -1256,7 +1256,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ProblemsSectionText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemSectionText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.text.oclIsUndefined()"/>
       </eAnnotations>
@@ -1278,7 +1278,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ProblemsSectionProblemAct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProblemSectionProblemAct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProblemAct))"/>
       </eAnnotations>
@@ -4263,7 +4263,7 @@
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.10"/>
       <details key="code.displayName" value="Treatment plan"/>
-      <details key="constraints.validation.error" value="PlanOfCareSectionTemplateId PlanOfCareSectionContainsPlanOfCareActivity PlanOfCareSectionCode PlanOfCareSectionTitle PlanOfCareSectionText PlanOfCareSectionPlanOfCareAct PlanOfCareSectionPlanOfCareEncounter PlanOfCareSectionPlanOfCareObservation PlanOfCareSectionPlanOfCareProcedure PlanOfCareSectionPlanOfCareSubstanceAdministration PlanOfCareSectionPlanOfCareSupply"/>
+      <details key="constraints.validation.error" value="PlanOfCareSectionTemplateId PlanOfCareSectionContainsPlanOfCareActivity PlanOfCareSectionCode PlanOfCareSectionTitle PlanOfCareSectionText PlanOfCareSectionPlanOfCareActivityAct PlanOfCareSectionPlanOfCareActivityEncounter PlanOfCareSectionPlanOfCareActivityObservation PlanOfCareSectionPlanOfCareActivityProcedure PlanOfCareSectionPlanOfCareActivitySubstanceAdministration PlanOfCareSectionPlanOfCareActivitySupply"/>
       <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="18776-5"/>
     </eAnnotations>
@@ -4377,12 +4377,12 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareSectionPlanOfCareAct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareSectionPlanOfCareActivityAct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->one(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PlanOfCareAct))"/>
+        <details key="body" value="self.entry->one(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PlanOfCareActivityAct))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PlanOfCareAct))"/>
+        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PlanOfCareActivityAct))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4399,12 +4399,12 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareSectionPlanOfCareEncounter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareSectionPlanOfCareActivityEncounter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->one(entry : cda::Entry | entry.encounter.oclIsKindOf(ccd::PlanOfCareEncounter))"/>
+        <details key="body" value="self.entry->one(entry : cda::Entry | entry.encounter.oclIsKindOf(ccd::PlanOfCareActivityEncounter))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.encounter.oclIsKindOf(ccd::PlanOfCareEncounter))"/>
+        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.encounter.oclIsKindOf(ccd::PlanOfCareActivityEncounter))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4421,12 +4421,12 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareSectionPlanOfCareObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareSectionPlanOfCareActivityObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->one(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::PlanOfCareObservation))"/>
+        <details key="body" value="self.entry->one(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::PlanOfCareActivityObservation))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::PlanOfCareObservation))"/>
+        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::PlanOfCareActivityObservation))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4443,12 +4443,12 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareSectionPlanOfCareProcedure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareSectionPlanOfCareActivityProcedure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->one(entry : cda::Entry | entry.procedure.oclIsKindOf(ccd::PlanOfCareProcedure))"/>
+        <details key="body" value="self.entry->one(entry : cda::Entry | entry.procedure.oclIsKindOf(ccd::PlanOfCareActivityProcedure))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.procedure.oclIsKindOf(ccd::PlanOfCareProcedure))"/>
+        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.procedure.oclIsKindOf(ccd::PlanOfCareActivityProcedure))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4465,12 +4465,13 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareSectionPlanOfCareSubstanceAdministration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareSectionPlanOfCareActivitySubstanceAdministration"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ccd::PlanOfCareSubstanceAdministration))"/>
+        <details key="body" value="self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ccd::PlanOfCareActivitySubstanceAdministration))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ccd::PlanOfCareSubstanceAdministration))"/>
+        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ccd::PlanOfCareActivitySubstanceAdministration))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4487,12 +4488,12 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareSectionPlanOfCareSupply" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareSectionPlanOfCareActivitySupply" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->one(entry : cda::Entry | entry.supply.oclIsKindOf(ccd::PlanOfCareSupply))"/>
+        <details key="body" value="self.entry->one(entry : cda::Entry | entry.supply.oclIsKindOf(ccd::PlanOfCareActivitySupply))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.supply.oclIsKindOf(ccd::PlanOfCareSupply))"/>
+        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.supply.oclIsKindOf(ccd::PlanOfCareActivitySupply))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6037,13 +6038,13 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareAct" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Act">
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivityAct" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Act">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.25"/>
-      <details key="constraints.validation.error" value="PlanOfCareActTemplateId PlanOfCareActMoodCodeValue PlanOfCareActId PlanOfCareActMoodCode"/>
+      <details key="constraints.validation.error" value="PlanOfCareActivityActTemplateId PlanOfCareActivityActMoodCodeValue PlanOfCareActivityActId PlanOfCareActivityActMoodCode"/>
     </eAnnotations>
-    <eOperations name="PlanOfCareActMoodCodeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityActMoodCodeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.moodCode = vocab::x_DocumentActMood::INT or self.moodCode = vocab::x_DocumentActMood::ARQ&#xD;&#xA;  or self.moodCode = vocab::x_DocumentActMood::PRMS or self.moodCode = vocab::x_DocumentActMood::PRP&#xD;&#xA;  or self.moodCode = vocab::x_DocumentActMood::RQO"/>
       </eAnnotations>
@@ -6065,7 +6066,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareActTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityActTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.25')"/>
       </eAnnotations>
@@ -6087,7 +6088,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareActId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityActId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.id->isEmpty()"/>
       </eAnnotations>
@@ -6109,7 +6110,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareActMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityActMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.moodCode.oclIsUndefined()"/>
       </eAnnotations>
@@ -6466,13 +6467,13 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareObservation" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Observation">
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivityObservation" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Observation">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.25"/>
-      <details key="constraints.validation.error" value="PlanOfCareObservationTemplateId PlanOfCareObservationMoodCodeValue PlanOfCareObservationId PlanOfCareObservationMoodCode"/>
+      <details key="constraints.validation.error" value="PlanOfCareActivityObservationTemplateId PlanOfCareActivityObservationMoodCodeValue PlanOfCareActivityObservationId PlanOfCareActivityObservationMoodCode"/>
     </eAnnotations>
-    <eOperations name="PlanOfCareObservationMoodCodeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityObservationMoodCodeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.moodCode = vocab::x_ActMoodDocumentObservation::INT or self.moodCode = vocab::x_ActMoodDocumentObservation::GOL&#xD;&#xA;  or self.moodCode = vocab::x_ActMoodDocumentObservation::PRMS or self.moodCode = vocab::x_ActMoodDocumentObservation::PRP&#xD;&#xA;  or self.moodCode = vocab::x_ActMoodDocumentObservation::RQO"/>
       </eAnnotations>
@@ -6494,7 +6495,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.25')"/>
       </eAnnotations>
@@ -6516,7 +6517,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareObservationId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityObservationId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.id->isEmpty()"/>
       </eAnnotations>
@@ -6538,7 +6539,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareObservationMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityObservationMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.moodCode.oclIsUndefined()"/>
       </eAnnotations>
@@ -6561,13 +6562,13 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareEncounter" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Encounter">
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivityEncounter" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Encounter">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.25"/>
-      <details key="constraints.validation.error" value="PlanOfCareEncounterTemplateId PlanOfCareEncounterMoodCodeValue PlanOfCareEncounterId PlanOfCareEncounterMoodCode"/>
+      <details key="constraints.validation.error" value="PlanOfCareActivityEncounterTemplateId PlanOfCareActivityEncounterMoodCodeValue PlanOfCareActivityEncounterId PlanOfCareActivityEncounterMoodCode"/>
     </eAnnotations>
-    <eOperations name="PlanOfCareEncounterMoodCodeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityEncounterMoodCodeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.moodCode = vocab::x_DocumentEncounterMood::INT or self.moodCode = vocab::x_DocumentEncounterMood::ARQ&#xD;&#xA;  or self.moodCode = vocab::x_DocumentEncounterMood::PRMS or self.moodCode = vocab::x_DocumentEncounterMood::PRP&#xD;&#xA;  or self.moodCode = vocab::x_DocumentEncounterMood::RQO"/>
       </eAnnotations>
@@ -6589,7 +6590,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareEncounterTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityEncounterTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.25')"/>
       </eAnnotations>
@@ -6611,7 +6612,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareEncounterId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityEncounterId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.id->isEmpty()"/>
       </eAnnotations>
@@ -6633,7 +6634,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareEncounterMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityEncounterMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.moodCode.oclIsUndefined()"/>
       </eAnnotations>
@@ -6656,13 +6657,13 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareProcedure" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Procedure">
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivityProcedure" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Procedure">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.25"/>
-      <details key="constraints.validation.error" value="PlanOfCareProcedureTemplateId PlanOfCareProcedureMoodCodeValue PlanOfCareProcedureId PlanOfCareProcedureMoodCode"/>
+      <details key="constraints.validation.error" value="PlanOfCareActivityProcedureTemplateId PlanOfCareActivityProcedureMoodCodeValue PlanOfCareActivityProcedureId PlanOfCareActivityProcedureMoodCode"/>
     </eAnnotations>
-    <eOperations name="PlanOfCareProcedureMoodCodeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityProcedureMoodCodeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.moodCode = vocab::x_DocumentProcedureMood::INT or self.moodCode = vocab::x_DocumentProcedureMood::ARQ&#xD;&#xA;  or self.moodCode = vocab::x_DocumentProcedureMood::PRMS or self.moodCode = vocab::x_DocumentProcedureMood::PRP&#xD;&#xA;  or self.moodCode = vocab::x_DocumentProcedureMood::RQO"/>
       </eAnnotations>
@@ -6684,7 +6685,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareProcedureTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityProcedureTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.25')"/>
       </eAnnotations>
@@ -6706,7 +6707,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareProcedureId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityProcedureId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.id->isEmpty()"/>
       </eAnnotations>
@@ -6728,7 +6729,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareProcedureMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivityProcedureMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.moodCode.oclIsUndefined()"/>
       </eAnnotations>
@@ -6751,13 +6752,14 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareSubstanceAdministration" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//SubstanceAdministration">
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivitySubstanceAdministration"
+      eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//SubstanceAdministration">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.25"/>
-      <details key="constraints.validation.error" value="PlanOfCareSubstanceAdministrationTemplateId PlanOfCareSubstanceAdministrationMoodCodeValue PlanOfCareSubstanceAdministrationId PlanOfCareSubstanceAdministrationMoodCode"/>
+      <details key="constraints.validation.error" value="PlanOfCareActivitySubstanceAdministrationTemplateId PlanOfCareActivitySubstanceAdministrationMoodCodeValue PlanOfCareActivitySubstanceAdministrationId PlanOfCareActivitySubstanceAdministrationMoodCode"/>
     </eAnnotations>
-    <eOperations name="PlanOfCareSubstanceAdministrationMoodCodeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivitySubstanceAdministrationMoodCodeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO&#xD;&#xA;  or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP"/>
       </eAnnotations>
@@ -6779,7 +6781,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareSubstanceAdministrationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivitySubstanceAdministrationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.25')"/>
       </eAnnotations>
@@ -6801,7 +6803,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareSubstanceAdministrationId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivitySubstanceAdministrationId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.id->isEmpty()"/>
       </eAnnotations>
@@ -6823,7 +6825,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareSubstanceAdministrationMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivitySubstanceAdministrationMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.moodCode.oclIsUndefined()"/>
       </eAnnotations>
@@ -6846,13 +6848,13 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareSupply" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Supply">
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivitySupply" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Supply">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.25"/>
-      <details key="constraints.validation.error" value="PlanOfCareSupplyTemplateId PlanOfCareSupplyMoodCodeValue PlanOfCareSupplyId PlanOfCareSupplyMoodCode"/>
+      <details key="constraints.validation.error" value="PlanOfCareActivitySupplyTemplateId PlanOfCareActivitySupplyMoodCodeValue PlanOfCareActivitySupplyId PlanOfCareActivitySupplyMoodCode"/>
     </eAnnotations>
-    <eOperations name="PlanOfCareSupplyMoodCodeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivitySupplyMoodCodeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.moodCode = vocab::x_DocumentSubstanceMood::INT or self.moodCode = vocab::x_DocumentSubstanceMood::RQO&#xD;&#xA;  or self.moodCode = vocab::x_DocumentSubstanceMood::PRMS or self.moodCode = vocab::x_DocumentSubstanceMood::PRP"/>
       </eAnnotations>
@@ -6874,7 +6876,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareSupplyTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivitySupplyTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.25')"/>
       </eAnnotations>
@@ -6896,7 +6898,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareSupplyId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivitySupplyId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.id->isEmpty()"/>
       </eAnnotations>
@@ -6918,7 +6920,7 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="PlanOfCareSupplyMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="PlanOfCareActivitySupplyMoodCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="not self.moodCode.oclIsUndefined()"/>
       </eAnnotations>
@@ -6941,13 +6943,13 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProcedureAct" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Act #//ProcedureActivity">
+  <eClassifiers xsi:type="ecore:EClass" name="ProcedureActivityAct" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Act #//ProcedureActivity">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.29"/>
-      <details key="constraints.validation.error" value="ProcedureActTemplateId"/>
+      <details key="constraints.validation.error" value="ProcedureActivityActTemplateId"/>
     </eAnnotations>
-    <eOperations name="ProcedureActTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProcedureActivityActTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.29')"/>
       </eAnnotations>
@@ -6970,13 +6972,13 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProcedureObservation" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Observation #//ProcedureActivity">
+  <eClassifiers xsi:type="ecore:EClass" name="ProcedureActivityObservation" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Observation #//ProcedureActivity">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.29"/>
-      <details key="constraints.validation.error" value="ProcedureObservationTemplateId"/>
+      <details key="constraints.validation.error" value="ProcedureActivityObservationTemplateId"/>
     </eAnnotations>
-    <eOperations name="ProcedureObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProcedureActivityObservationTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.29')"/>
       </eAnnotations>
@@ -6999,13 +7001,13 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProcedureProcedure" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Procedure #//ProcedureActivity">
+  <eClassifiers xsi:type="ecore:EClass" name="ProcedureActivityProcedure" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Procedure #//ProcedureActivity">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.29"/>
-      <details key="constraints.validation.error" value="ProcedureProcedureTemplateId"/>
+      <details key="constraints.validation.error" value="ProcedureActivityProcedureTemplateId"/>
     </eAnnotations>
-    <eOperations name="ProcedureProcedureTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ProcedureActivityProcedureTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.29')"/>
       </eAnnotations>

@@ -11,27 +11,27 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
-import org.openhealthtools.mdht.uml.cda.ccd.ProcedureAct;
-import org.openhealthtools.mdht.uml.cda.ccd.operations.ProcedureActOperations;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.ProcedureActivityActOperations;
 import org.openhealthtools.mdht.uml.cda.impl.ActImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Procedure Act</b></em>'.
+ * An implementation of the model object '<em><b>Procedure Activity Act</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ProcedureActImpl extends ActImpl implements ProcedureAct {
+public class ProcedureActivityActImpl extends ActImpl implements ProcedureActivityAct {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProcedureActImpl() {
+	protected ProcedureActivityActImpl() {
 		super();
 	}
 
@@ -42,7 +42,7 @@ public class ProcedureActImpl extends ActImpl implements ProcedureAct {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CCDPackage.Literals.PROCEDURE_ACT;
+		return CCDPackage.Literals.PROCEDURE_ACTIVITY_ACT;
 	}
 
 	/**
@@ -50,8 +50,8 @@ public class ProcedureActImpl extends ActImpl implements ProcedureAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProcedureActTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProcedureActOperations.validateProcedureActTemplateId(this, diagnostics, context);
+	public boolean validateProcedureActivityActTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureActivityActOperations.validateProcedureActivityActTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class ProcedureActImpl extends ActImpl implements ProcedureAct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProcedureAct init() {
+	public ProcedureActivityAct init() {
     		CDAUtil.init(this);
     		return this;
 	}
-} //ProcedureActImpl
+} //ProcedureActivityActImpl
