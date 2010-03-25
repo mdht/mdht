@@ -62,6 +62,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction;
 import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation;
@@ -426,6 +427,12 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY: {
+				PlanOfCareActivity planOfCareActivity = (PlanOfCareActivity)theEObject;
+				T result = casePlanOfCareActivity(planOfCareActivity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CCDPackage.VITAL_SIGNS_SECTION: {
 				VitalSignsSection vitalSignsSection = (VitalSignsSection)theEObject;
 				T result = caseVitalSignsSection(vitalSignsSection);
@@ -530,6 +537,7 @@ public class CCDSwitch<T> {
 				PlanOfCareActivityAct planOfCareActivityAct = (PlanOfCareActivityAct)theEObject;
 				T result = casePlanOfCareActivityAct(planOfCareActivityAct);
 				if (result == null) result = caseAct(planOfCareActivityAct);
+				if (result == null) result = casePlanOfCareActivity(planOfCareActivityAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -573,6 +581,7 @@ public class CCDSwitch<T> {
 				PlanOfCareActivityObservation planOfCareActivityObservation = (PlanOfCareActivityObservation)theEObject;
 				T result = casePlanOfCareActivityObservation(planOfCareActivityObservation);
 				if (result == null) result = caseObservation(planOfCareActivityObservation);
+				if (result == null) result = casePlanOfCareActivity(planOfCareActivityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -580,6 +589,7 @@ public class CCDSwitch<T> {
 				PlanOfCareActivityEncounter planOfCareActivityEncounter = (PlanOfCareActivityEncounter)theEObject;
 				T result = casePlanOfCareActivityEncounter(planOfCareActivityEncounter);
 				if (result == null) result = caseEncounter(planOfCareActivityEncounter);
+				if (result == null) result = casePlanOfCareActivity(planOfCareActivityEncounter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -587,6 +597,7 @@ public class CCDSwitch<T> {
 				PlanOfCareActivityProcedure planOfCareActivityProcedure = (PlanOfCareActivityProcedure)theEObject;
 				T result = casePlanOfCareActivityProcedure(planOfCareActivityProcedure);
 				if (result == null) result = caseProcedure(planOfCareActivityProcedure);
+				if (result == null) result = casePlanOfCareActivity(planOfCareActivityProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -594,6 +605,7 @@ public class CCDSwitch<T> {
 				PlanOfCareActivitySubstanceAdministration planOfCareActivitySubstanceAdministration = (PlanOfCareActivitySubstanceAdministration)theEObject;
 				T result = casePlanOfCareActivitySubstanceAdministration(planOfCareActivitySubstanceAdministration);
 				if (result == null) result = caseSubstanceAdministration(planOfCareActivitySubstanceAdministration);
+				if (result == null) result = casePlanOfCareActivity(planOfCareActivitySubstanceAdministration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -601,6 +613,7 @@ public class CCDSwitch<T> {
 				PlanOfCareActivitySupply planOfCareActivitySupply = (PlanOfCareActivitySupply)theEObject;
 				T result = casePlanOfCareActivitySupply(planOfCareActivitySupply);
 				if (result == null) result = caseSupply(planOfCareActivitySupply);
+				if (result == null) result = casePlanOfCareActivity(planOfCareActivitySupply);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1131,6 +1144,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T casePlanOfCareSection(PlanOfCareSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Plan Of Care Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Plan Of Care Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePlanOfCareActivity(PlanOfCareActivity object) {
 		return null;
 	}
 

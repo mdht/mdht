@@ -21,7 +21,7 @@ import org.openhealthtools.mdht.uml.cda.Procedure;
  * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' templateId.root='2.16.840.1.113883.10.20.1.25' constraints.validation.error='PlanOfCareActivityProcedureTemplateId PlanOfCareActivityProcedureMoodCodeValue PlanOfCareActivityProcedureId PlanOfCareActivityProcedureMoodCode'"
  * @generated
  */
-public interface PlanOfCareActivityProcedure extends Procedure {
+public interface PlanOfCareActivityProcedure extends Procedure, PlanOfCareActivity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

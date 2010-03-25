@@ -21,7 +21,7 @@ import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
  * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' templateId.root='2.16.840.1.113883.10.20.1.25' constraints.validation.error='PlanOfCareActivitySubstanceAdministrationTemplateId PlanOfCareActivitySubstanceAdministrationMoodCodeValue PlanOfCareActivitySubstanceAdministrationId PlanOfCareActivitySubstanceAdministrationMoodCode'"
  * @generated
  */
-public interface PlanOfCareActivitySubstanceAdministration extends SubstanceAdministration {
+public interface PlanOfCareActivitySubstanceAdministration extends SubstanceAdministration, PlanOfCareActivity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

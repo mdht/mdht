@@ -54,6 +54,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction;
 import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation;
@@ -326,6 +327,13 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * @generated
 	 */
 	private EClass planOfCareSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass planOfCareActivityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -935,6 +943,24 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPlanOfCareSection_PlanOfCareActivity() {
+		return (EReference)planOfCareSectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPlanOfCareActivity() {
+		return planOfCareActivityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVitalSignsSection() {
 		return vitalSignsSectionEClass;
 	}
@@ -1318,6 +1344,9 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		procedureActivityEClass = createEClass(PROCEDURE_ACTIVITY);
 
 		planOfCareSectionEClass = createEClass(PLAN_OF_CARE_SECTION);
+		createEReference(planOfCareSectionEClass, PLAN_OF_CARE_SECTION__PLAN_OF_CARE_ACTIVITY);
+
+		planOfCareActivityEClass = createEClass(PLAN_OF_CARE_ACTIVITY);
 
 		vitalSignsSectionEClass = createEClass(VITAL_SIGNS_SECTION);
 
@@ -1459,16 +1488,22 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		policyActivityEClass.getESuperTypes().add(theCDAPackage.getAct());
 		authorizationActivityEClass.getESuperTypes().add(theCDAPackage.getAct());
 		planOfCareActivityActEClass.getESuperTypes().add(theCDAPackage.getAct());
+		planOfCareActivityActEClass.getESuperTypes().add(this.getPlanOfCareActivity());
 		patientInstructionEClass.getESuperTypes().add(theCDAPackage.getAct());
 		fulfillmentInstructionEClass.getESuperTypes().add(theCDAPackage.getAct());
 		functionalStatusObservationEClass.getESuperTypes().add(this.getStatusObservation());
 		productInstanceEClass.getESuperTypes().add(theCDAPackage.getParticipantRole());
 		ageObservationEClass.getESuperTypes().add(theCDAPackage.getObservation());
 		planOfCareActivityObservationEClass.getESuperTypes().add(theCDAPackage.getObservation());
+		planOfCareActivityObservationEClass.getESuperTypes().add(this.getPlanOfCareActivity());
 		planOfCareActivityEncounterEClass.getESuperTypes().add(theCDAPackage.getEncounter());
+		planOfCareActivityEncounterEClass.getESuperTypes().add(this.getPlanOfCareActivity());
 		planOfCareActivityProcedureEClass.getESuperTypes().add(theCDAPackage.getProcedure());
+		planOfCareActivityProcedureEClass.getESuperTypes().add(this.getPlanOfCareActivity());
 		planOfCareActivitySubstanceAdministrationEClass.getESuperTypes().add(theCDAPackage.getSubstanceAdministration());
+		planOfCareActivitySubstanceAdministrationEClass.getESuperTypes().add(this.getPlanOfCareActivity());
 		planOfCareActivitySupplyEClass.getESuperTypes().add(theCDAPackage.getSupply());
+		planOfCareActivitySupplyEClass.getESuperTypes().add(this.getPlanOfCareActivity());
 		procedureActivityActEClass.getESuperTypes().add(theCDAPackage.getAct());
 		procedureActivityActEClass.getESuperTypes().add(this.getProcedureActivity());
 		procedureActivityObservationEClass.getESuperTypes().add(theCDAPackage.getObservation());
@@ -3134,6 +3169,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		initEClass(procedureActivityEClass, ProcedureActivity.class, "ProcedureActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(planOfCareSectionEClass, PlanOfCareSection.class, "PlanOfCareSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPlanOfCareSection_PlanOfCareActivity(), this.getPlanOfCareActivity(), null, "planOfCareActivity", null, 1, 1, PlanOfCareSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = addEOperation(planOfCareSectionEClass, ecorePackage.getEBoolean(), "validatePlanOfCareSectionContainsPlanOfCareActivity", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -3233,6 +3269,10 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(planOfCareSectionEClass, this.getPlanOfCareActivity(), "getPlanOfCareActivities", 1, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(planOfCareActivityEClass, PlanOfCareActivity.class, "PlanOfCareActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(vitalSignsSectionEClass, VitalSignsSection.class, "VitalSignsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4634,9 +4674,10 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.10",
 			 "code.displayName", "Treatment plan",
-			 "constraints.validation.error", "PlanOfCareSectionTemplateId PlanOfCareSectionContainsPlanOfCareActivity PlanOfCareSectionCode PlanOfCareSectionTitle PlanOfCareSectionText PlanOfCareSectionPlanOfCareActivityAct PlanOfCareSectionPlanOfCareActivityEncounter PlanOfCareSectionPlanOfCareActivityObservation PlanOfCareSectionPlanOfCareActivityProcedure PlanOfCareSectionPlanOfCareActivitySubstanceAdministration PlanOfCareSectionPlanOfCareActivitySupply",
+			 "constraints.validation.error", "PlanOfCareSectionTemplateId PlanOfCareSectionContainsPlanOfCareActivity PlanOfCareSectionCode PlanOfCareSectionTitle PlanOfCareSectionText",
 			 "code.codeSystemName", "LOINC",
-			 "code.code", "18776-5"
+			 "code.code", "18776-5",
+			 "constraints.validation.info", "PlanOfCareSectionPlanOfCareActivityAct PlanOfCareSectionPlanOfCareActivityEncounter PlanOfCareSectionPlanOfCareActivityObservation PlanOfCareSectionPlanOfCareActivityProcedure PlanOfCareSectionPlanOfCareActivitySubstanceAdministration PlanOfCareSectionPlanOfCareActivitySupply"
 		   });																																															
 		addAnnotation
 		  (vitalSignsSectionEClass, 

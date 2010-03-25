@@ -4263,9 +4263,10 @@
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.10"/>
       <details key="code.displayName" value="Treatment plan"/>
-      <details key="constraints.validation.error" value="PlanOfCareSectionTemplateId PlanOfCareSectionContainsPlanOfCareActivity PlanOfCareSectionCode PlanOfCareSectionTitle PlanOfCareSectionText PlanOfCareSectionPlanOfCareActivityAct PlanOfCareSectionPlanOfCareActivityEncounter PlanOfCareSectionPlanOfCareActivityObservation PlanOfCareSectionPlanOfCareActivityProcedure PlanOfCareSectionPlanOfCareActivitySubstanceAdministration PlanOfCareSectionPlanOfCareActivitySupply"/>
+      <details key="constraints.validation.error" value="PlanOfCareSectionTemplateId PlanOfCareSectionContainsPlanOfCareActivity PlanOfCareSectionCode PlanOfCareSectionTitle PlanOfCareSectionText"/>
       <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="18776-5"/>
+      <details key="constraints.validation.info" value="PlanOfCareSectionPlanOfCareActivityAct PlanOfCareSectionPlanOfCareActivityEncounter PlanOfCareSectionPlanOfCareActivityObservation PlanOfCareSectionPlanOfCareActivityProcedure PlanOfCareSectionPlanOfCareActivitySubstanceAdministration PlanOfCareSectionPlanOfCareActivitySupply"/>
     </eAnnotations>
     <eOperations name="PlanOfCareSectionContainsPlanOfCareActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -4510,7 +4511,12 @@
         </eGenericType>
       </eParameters>
     </eOperations>
+    <eOperations name="getPlanOfCareActivities" ordered="false" lowerBound="1" upperBound="-1"
+        eType="#//PlanOfCareActivity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="planOfCareActivity" ordered="false"
+        lowerBound="1" eType="#//PlanOfCareActivity"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivity"/>
   <eClassifiers xsi:type="ecore:EClass" name="VitalSignsSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="&lt;p>&#xD;&#xA;    This section contains current and historically relevant vital signs, such as blood pressure, heart rate,&#xD;&#xA;    respiratory rate, height, weight, body mass index, head circumference, crown-to-rump length, and pulse oximetry. The&#xD;&#xA;    section may contain all vital signs for the period of time being summarized, but at a minimum should include notable&#xD;&#xA;    vital signs such as the most recent, maximum and/or minimum, or both, baseline, or relevant trends.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>&#xD;&#xA;    Vital signs are represented like other results (as defined in &lt;b>&lt;i>Results&#xD;&#xA;    Section&lt;/i>&lt;/b>), but are aggregated into their own section in order to follow clinical&#xD;&#xA;    conventions.&#xD;&#xA;&lt;/p>"/>
@@ -6038,7 +6044,7 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivityAct" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Act">
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivityAct" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Act #//PlanOfCareActivity">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.25"/>
@@ -6467,7 +6473,7 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivityObservation" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Observation">
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivityObservation" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Observation #//PlanOfCareActivity">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.25"/>
@@ -6562,7 +6568,7 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivityEncounter" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Encounter">
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivityEncounter" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Encounter #//PlanOfCareActivity">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.25"/>
@@ -6657,7 +6663,7 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivityProcedure" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Procedure">
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivityProcedure" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Procedure #//PlanOfCareActivity">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.25"/>
@@ -6753,7 +6759,7 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivitySubstanceAdministration"
-      eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//SubstanceAdministration">
+      eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//SubstanceAdministration #//PlanOfCareActivity">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.25"/>
@@ -6848,7 +6854,7 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivitySupply" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Supply">
+  <eClassifiers xsi:type="ecore:EClass" name="PlanOfCareActivitySupply" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Supply #//PlanOfCareActivity">
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.25"/>
