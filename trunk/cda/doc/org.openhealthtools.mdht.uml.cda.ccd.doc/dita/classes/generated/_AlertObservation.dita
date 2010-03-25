@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Alert Observation - conformance rules</title>
+<shortdesc id="shortdesc">[Observation: templateId <tt>2.16.840.1.113883.10.20.1.18</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Observation</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.18"/>
+</prolog>
+<body>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Observation.html">CDA Observation</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+<li><b>SHALL</b> contain [0..1] <tt>effectiveTime</tt></li>
+<li><b>MAY</b> contain [0..*] <tt>value</tt>, which <b>MAY</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.4 AlertTypeCode STATIC 20061017, where its data type is CE</li>
+<li><b>MAY</b> contain [0..1] <tt>entryRelationship</tt> such that it<ol>
+<li><b>SHALL</b> contain [1..1] <xref href="../AlertStatusObservation.dita">Alert Status Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.39</tt>)</li></ol></li>
+<li><b>MAY</b> contain [1..*] <tt>entryRelationship</tt> such that it<ol>
+<li><b>SHALL</b> contain [1..1] @typeCode="MFST" <i>MFST (is manifestation of)</i></li>
+<li><b>SHALL</b> contain [1..1] <xref href="../ReactionObservation.dita">Reaction Observation</xref> (templateId: <tt>2.16.840.1.113883.10.20.1.54</tt>)</li></ol></li>
+<li><b>SHOULD</b> satisfy: The absence of known allergies SHOULD be represented in an alert observation by valuing Observation / value with 160244002 "No known allergies" 2.16.840.1.113883.6.96 SNOMED CT STATIC.</li>
+<li><b>SHALL</b> satisfy: An alert observation contains one or more sources of information.</li>
+<li><b>SHOULD</b> satisfy: An alert observation SHOULD contain at least one Observation / participant, representing the agent that is the cause of the allergy or adverse reaction. The value for participant / @typeCode in an agent participation SHALL be "CSM" "Consumable" 2.16.840.1.113883.5.90 ParticipationType STATIC.</li>
+<li><b>SHALL</b> satisfy: Contains exactly one participant / participantRole / playingEntity. The value for participant / participantRole / playingEntity / @classCode in an agent participation SHALL be "MMAT" "Manufactured material" 2.16.840.1.113883.5.41 EntityClass STATIC. Contains exactly one participant / participantRole / playingEntity / code.</li>
+<li><b>SHOULD</b> satisfy: The value for participant / participantRole / playingEntity / code in an agent participation SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations.</li>
+</ol>
+</body>
+</topic>

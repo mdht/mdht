@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Encounter Location</title>
+<shortdesc conref="generated/_EncounterLocation.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_EncounterLocation.dita#classId/prolog"></prolog>
+<body>
+<p>TODO: add class description</p>
+
+<ol conref="generated/_EncounterLocation.dita#classId/conformance">
+<li></li>
+</ol>
+<fig>
+<title>Encounter Location example</title>
+<codeblock>TODO: XML document snippet</codeblock>
+</fig>
+</body>
+</topic>

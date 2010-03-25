@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Medical Equipment Section</title>
+<shortdesc conref="generated/_MedicalEquipmentSection.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_MedicalEquipmentSection.dita#classId/prolog"></prolog>
+<body>
+<p>
+    The Medical Equipment section defines a patient's implanted and external medical devices and equipment
+    that their health status depends on, as well as any pertinent equipment or device history. This section is also used to
+    itemize any pertinent current or historical durable medical equipment (DME) used to help maintain the patient's health
+    status. All pertinent equipment relevant to the diagnosis, care, and treatment of a patient should be included.
+</p>
+
+<ol conref="generated/_MedicalEquipmentSection.dita#classId/conformance">
+<li></li>
+</ol>
+<fig>
+<title>Medical Equipment Section example</title>
+<codeblock>TODO: XML document snippet</codeblock>
+</fig>
+</body>
+</topic>

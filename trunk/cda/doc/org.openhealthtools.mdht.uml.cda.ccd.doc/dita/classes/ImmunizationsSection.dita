@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Immunizations Section</title>
+<shortdesc conref="generated/_ImmunizationsSection.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_ImmunizationsSection.dita#classId/prolog"></prolog>
+<body>
+<p>The Immunizations section defines a patient's current immunization status and pertinent immunization history. The primary use case for the Immunization section is to enable communication of a patient's immunization status. The section should include current immunization status, and may contain the entire immunization history that is relevant to the period of time being summarized.
+This section is optional, however it is strongly recommended that it be present in cases of pediatric care and in other cases when such information is available.</p>
+
+<ol conref="generated/_ImmunizationsSection.dita#classId/conformance">
+<li></li>
+</ol>
+<fig>
+<title>Immunizations Section example</title>
+<codeblock>TODO: XML document snippet</codeblock>
+</fig>
+</body>
+</topic>
