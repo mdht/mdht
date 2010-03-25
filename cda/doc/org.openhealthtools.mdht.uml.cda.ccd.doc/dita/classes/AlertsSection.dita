@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Alerts Section</title>
+<shortdesc conref="generated/_AlertsSection.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_AlertsSection.dita#classId/prolog"></prolog>
+<body>
+<p>This section is used to list and describe any allergies, adverse reactions, and alerts that are pertinent to the patient's current or past medical history. At a minimum, currently active and any relevant historical allergies and adverse reactions should be listed.</p>
+
+<ol conref="generated/_AlertsSection.dita#classId/conformance">
+<li></li>
+</ol>
+<fig>
+<title>Alerts Section example</title>
+<codeblock>TODO: XML document snippet</codeblock>
+</fig>
+</body>
+</topic>
