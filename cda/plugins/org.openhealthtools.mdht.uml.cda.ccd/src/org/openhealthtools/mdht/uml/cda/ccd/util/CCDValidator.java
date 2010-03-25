@@ -46,6 +46,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction;
 import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation;
@@ -2546,6 +2547,8 @@ public class CCDValidator extends EObjectValidator {
 				return validateProcedureActivity((ProcedureActivity)value, diagnostics, context);
 			case CCDPackage.PLAN_OF_CARE_SECTION:
 				return validatePlanOfCareSection((PlanOfCareSection)value, diagnostics, context);
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY:
+				return validatePlanOfCareActivity((PlanOfCareActivity)value, diagnostics, context);
 			case CCDPackage.VITAL_SIGNS_SECTION:
 				return validateVitalSignsSection((VitalSignsSection)value, diagnostics, context);
 			case CCDPackage.MEDICAL_EQUIPMENT_SECTION:
@@ -5256,6 +5259,15 @@ public class CCDValidator extends EObjectValidator {
 	 */
 	public boolean validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivitySupply(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return planOfCareSection.validatePlanOfCareSectionPlanOfCareActivitySupply(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlanOfCareActivity(PlanOfCareActivity planOfCareActivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(planOfCareActivity, diagnostics, context);
 	}
 
 	/**

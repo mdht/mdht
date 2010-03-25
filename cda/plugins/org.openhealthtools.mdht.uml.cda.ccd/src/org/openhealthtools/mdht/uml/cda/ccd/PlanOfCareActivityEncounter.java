@@ -21,7 +21,7 @@ import org.openhealthtools.mdht.uml.cda.Encounter;
  * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation contextDependent='true' templateId.root='2.16.840.1.113883.10.20.1.25' constraints.validation.error='PlanOfCareActivityEncounterTemplateId PlanOfCareActivityEncounterMoodCodeValue PlanOfCareActivityEncounterId PlanOfCareActivityEncounterMoodCode'"
  * @generated
  */
-public interface PlanOfCareActivityEncounter extends Encounter {
+public interface PlanOfCareActivityEncounter extends Encounter, PlanOfCareActivity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

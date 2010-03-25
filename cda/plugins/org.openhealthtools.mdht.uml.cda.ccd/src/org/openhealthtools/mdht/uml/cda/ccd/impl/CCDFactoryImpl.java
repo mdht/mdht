@@ -51,6 +51,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction;
 import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation;
@@ -165,6 +166,7 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.PROCEDURES_SECTION: return createProceduresSection();
 			case CCDPackage.PROCEDURE_ACTIVITY: return createProcedureActivity();
 			case CCDPackage.PLAN_OF_CARE_SECTION: return createPlanOfCareSection();
+			case CCDPackage.PLAN_OF_CARE_ACTIVITY: return createPlanOfCareActivity();
 			case CCDPackage.VITAL_SIGNS_SECTION: return createVitalSignsSection();
 			case CCDPackage.MEDICAL_EQUIPMENT_SECTION: return createMedicalEquipmentSection();
 			case CCDPackage.FUNCTIONAL_STATUS_SECTION: return createFunctionalStatusSection();
@@ -527,6 +529,16 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 	public PlanOfCareSection createPlanOfCareSection() {
 		PlanOfCareSectionImpl planOfCareSection = new PlanOfCareSectionImpl();
 		return planOfCareSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlanOfCareActivity createPlanOfCareActivity() {
+		PlanOfCareActivityImpl planOfCareActivity = new PlanOfCareActivityImpl();
+		return planOfCareActivity;
 	}
 
 	/**
