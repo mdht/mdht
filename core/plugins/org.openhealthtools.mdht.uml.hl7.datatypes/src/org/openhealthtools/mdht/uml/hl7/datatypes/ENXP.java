@@ -106,6 +106,7 @@ public interface ENXP extends ST {
 	 * @see #unsetQualifiers()
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getENXP_Qualifier()
 	 * @model unsettable="true" ordered="false"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
 	EList<EntityNamePartQualifier> getQualifiers();

@@ -338,7 +338,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kCjYAD6CEd6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_qe2q4D5zEd6cla2oXsPtlA" name="use" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7Gd0DcEd6xYZuu1VKCVw?vocab/PostalAddressUse?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__y7Gd0DcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wvOtsT58Ed6cla2oXsPtlA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wvOtsD58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -672,7 +672,7 @@
       </ownedRule>
       <generalization xmi:id="_HfzHAD5zEd6cla2oXsPtlA" general="__I8BwDxZEd6JwqSGecoePg"/>
       <ownedAttribute xmi:id="_ruuXUD5zEd6cla2oXsPtlA" name="use" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoORUDcEd6xYZuu1VKCVw?vocab/EntityNameUse?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoORUDcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_x2wWcT58Ed6cla2oXsPtlA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_x2wWcD58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -782,7 +782,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_DHg4ID5zEd6cla2oXsPtlA" name="ADXP">
       <generalization xmi:id="_KMD48D5zEd6cla2oXsPtlA" general="_EaTNsDxaEd6JwqSGecoePg"/>
       <ownedAttribute xmi:id="_RMSacD5zEd6cla2oXsPtlA" name="partType" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yedpkDcEd6xYZuu1VKCVw?vocab/AddressPartType?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yedpkDcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s9h9sT58Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s9h9sD58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -790,12 +790,12 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_D7EcAD5zEd6cla2oXsPtlA" name="ENXP">
       <generalization xmi:id="_K1oaYD5zEd6cla2oXsPtlA" general="_EaTNsDxaEd6JwqSGecoePg"/>
       <ownedAttribute xmi:id="_Scv8wD5zEd6cla2oXsPtlA" name="partType" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoON0DcEd6xYZuu1VKCVw?vocab/EntityNamePartType?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoON0DcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tzLMQT58Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tzLMQD58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_tXoO0D5zEd6cla2oXsPtlA" name="qualifier" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoOKUDcEd6xYZuu1VKCVw?vocab/EntityNamePartQualifier?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yoOKUDcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NW_00T58Ed6cla2oXsPtlA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NW_00D58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -1238,13 +1238,13 @@
   <Ecore:EClass xmi:id="_siaCMUVyEd6QuJiOJFSRPQ" base_Class="_3VD9wD5yEd6cla2oXsPtlA" xmlContentKind="Mixed"/>
   <Ecore:EClass xmi:id="_siaCMkVyEd6QuJiOJFSRPQ" base_Class="_6WoRUD5yEd6cla2oXsPtlA" xmlContentKind="Mixed"/>
   <Ecore:EClass xmi:id="_ZCGo8EogEd6c3qsAxlFHaQ" base_Class="_TwTVsD57Ed6cla2oXsPtlA" xmlContentKind="Mixed"/>
-  <Ecore:EAttribute xmi:id="_X9dxYHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_qe2q4D5zEd6cla2oXsPtlA"/>
+  <Ecore:EAttribute xmi:id="_X9dxYHrOEd648OeXdSIbLg" isUnsettable="true" xmlFeatureKind="Attribute" base_Property="_qe2q4D5zEd6cla2oXsPtlA"/>
   <Ecore:EAttribute xmi:id="_fOhkMHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_AJn3IDxkEd6JwqSGecoePg"/>
   <Ecore:EAttribute xmi:id="_iYlscHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_vrzYMD80Ed6uA6ElmbQH3Q"/>
   <Ecore:EAttribute xmi:id="_sDu8EHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_Zc_TED54Ed6cla2oXsPtlA"/>
   <Ecore:EAttribute xmi:id="_umAEgHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_tLtgcD54Ed6cla2oXsPtlA"/>
-  <Ecore:EAttribute xmi:id="_1W4icHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_ruuXUD5zEd6cla2oXsPtlA"/>
-  <Ecore:EAttribute xmi:id="_4hrqgHrOEd648OeXdSIbLg" isUnsettable="true" base_Property="_tXoO0D5zEd6cla2oXsPtlA"/>
+  <Ecore:EAttribute xmi:id="_1W4icHrOEd648OeXdSIbLg" isUnsettable="true" xmlFeatureKind="Attribute" base_Property="_ruuXUD5zEd6cla2oXsPtlA"/>
+  <Ecore:EAttribute xmi:id="_4hrqgHrOEd648OeXdSIbLg" isUnsettable="true" xmlFeatureKind="Attribute" base_Property="_tXoO0D5zEd6cla2oXsPtlA"/>
   <Ecore:EAttribute xmi:id="_Cfc7MHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_NWcZME-pEd6lBqYlbulQZA"/>
   <Ecore:EAttribute xmi:id="_Pkv9gHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_Bo19UEo9Ed6c3qsAxlFHaQ"/>
   <Ecore:EAttribute xmi:id="_RD-UkHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_nEao4ErrEd6FXKclYGEDCw"/>

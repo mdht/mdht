@@ -60,6 +60,7 @@ public interface EN extends ANY {
 	 * @see #unsetUses()
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getEN_Use()
 	 * @model unsettable="true" ordered="false"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
 	EList<EntityNameUse> getUses();

@@ -2865,6 +2865,12 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 			 "namespace", "urn:hl7-org:v3"
 		   });		
 		addAnnotation
+		  (getAD_Use(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute"
+		   });		
+		addAnnotation
 		  (getAD_Delimiter(), 
 		   source, 
 		   new String[] {
@@ -3105,6 +3111,12 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 			 "kind", "mixed"
 		   });																						
 		addAnnotation
+		  (getEN_Use(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute"
+		   });		
+		addAnnotation
 		  (getEN_ValidTime(), 
 		   source, 
 		   new String[] {
@@ -3197,6 +3209,12 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		   source, 
 		   new String[] {
 			 "kind", "mixed"
+		   });		
+		addAnnotation
+		  (getENXP_Qualifier(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute"
 		   });		
 		addAnnotation
 		  (onEClass, 
