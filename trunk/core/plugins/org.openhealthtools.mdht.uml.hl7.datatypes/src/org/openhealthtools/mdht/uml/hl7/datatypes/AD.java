@@ -100,6 +100,7 @@ public interface AD extends ANY {
 	 * @see #unsetUses()
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getAD_Use()
 	 * @model unsettable="true" ordered="false"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
 	EList<PostalAddressUse> getUses();
