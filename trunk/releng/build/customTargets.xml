@@ -62,11 +62,11 @@
 		</ant>
 
 
-		<ant antfile="${genericTargets}" target="${target}">
+	<!--	<ant antfile="${genericTargets}" target="${target}">
 			<property name="type" value="feature" />
 			<property name="id" value="org.openhealthtools.mdht.uml.papyrus" />
 		</ant>
-
+-->
 
 		
 
@@ -79,7 +79,7 @@
 			<property name="id" value="org.openhealthtools.mdht.uml.cda" />
 		</ant>
 
-		<ant antfile="${genericTargets}" target="${target}">
+<!--		<ant antfile="${genericTargets}" target="${target}">
 			<property name="type" value="feature" />
 			<property name="id" value="org.openhealthtools.mdht.uml.cda.rsm" />
 		</ant>
@@ -89,7 +89,8 @@
 			<property name="type" value="feature" />
 			<property name="id" value="org.openhealthtools.mdht.uml.cda.papyrus" />
 		</ant> 
-
+-->
+	
 
 </target>
 
@@ -100,6 +101,13 @@
 			<property name="id" value="org.openhealthtools.mdht.uml.cda.models" />
 		</ant>
 
+	<!-- Do not need to have assemble target - This feature for the most part is generated -->
+<!--	<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.models.source" />
+	</ant>
+-->
+		
 </target>
 
 
@@ -193,7 +201,11 @@
 	<target name="assemble.org.openhealthtools.mdht.uml.cda.models">
 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
 	</target>
-
+	
+<!--	<target name="assemble.org.openhealthtools.mdht.uml.cda.models.source">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+	</target>
+-->
 	<target name="assemble.org.openhealthtools.mdht.uml.cda.rsm">
 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
 	</target>
@@ -240,6 +252,11 @@
 <!-- Steps to do after fetching the build elements -->
 <!-- ===================================================================== -->
 <target name="postFetch">
+<!-- Fetch source feature -->
+<svn javahl="false" username="seanmuir" password="oht2009">
+			<export srcurl="${cdasrcfeature.URL}" revision="${cdasrcfeature.revision}" destpath="${buildDirectory}/features/org.openhealthtools.mdht.uml.cda.models.source" force="true" />
+		</svn>
+
 </target>
 
 <!-- ===================================================================== -->
@@ -252,6 +269,7 @@
 <!-- Steps to do after generating the build scripts. -->
 <!-- ===================================================================== -->
 <target name="postGenerate">
+
 </target>
 
 
@@ -259,6 +277,8 @@
 <!-- Steps to do before running the build.xmls for the elements being built. -->
 <!-- ===================================================================== -->
 <target name="preProcess">
+<!-- Fetch source feature -->
+	
 </target>
 
 <!-- ===================================================================== -->
@@ -272,6 +292,7 @@
 <!-- Steps to do before running assemble. -->
 <!-- ===================================================================== -->
 <target name="preAssemble">
+
 </target>
 
 <!-- ===================================================================== -->
