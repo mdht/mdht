@@ -47,6 +47,9 @@ plugin@org.openhealthtools.mdht.uml.hl7.datatypes=SVN,trunk,https://mdht.project
 
 plugin@org.openhealthtools.mdht.uml.hl7.vocab=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.vocab
 
+!***************  OHT CDA MODELs FEATURE  ********************************************** 
+feature@org.openhealthtools.mdht.uml.cda.models.source=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.models.source-feature
+
 
 !***************  OHT CDA FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda-feature
