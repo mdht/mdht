@@ -70,7 +70,11 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="use" ordered="false" upperBound="-1"
         eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//TelecommunicationAddressUse"
-        unsettable="true"/>
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="URL" abstract="true" eSuperTypes="#//ANY">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"

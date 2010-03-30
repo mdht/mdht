@@ -66,6 +66,7 @@ public interface TEL extends URL {
 	 * @see #unsetUses()
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getTEL_Use()
 	 * @model unsettable="true" ordered="false"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
 	EList<TelecommunicationAddressUse> getUses();
