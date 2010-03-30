@@ -131,12 +131,18 @@ public class CDAUtil {
 			handleDefaults(clinicalDocument);
 		}
 		
-		DocumentRoot root = CDAFactory.eINSTANCE.createDocumentRoot();
-		root.setClinicalDocument(clinicalDocument);
-		root.getXMLNSPrefixMap().put("", CDAPackage.eNS_URI);
+		CDAResource resource = (CDAResource) clinicalDocument.eResource();
 		
-		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
-		resource.getContents().add(root);
+		if (resource == null) {
+			resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
+	
+			DocumentRoot root = CDAFactory.eINSTANCE.createDocumentRoot();
+			root.setClinicalDocument(clinicalDocument);
+			root.getXMLNSPrefixMap().put("", CDAPackage.eNS_URI);
+			
+			resource.getContents().add(root);
+		}
+		
 		return resource;
 	}
 	
