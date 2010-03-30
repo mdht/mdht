@@ -222,8 +222,8 @@
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_tL5C4BTdEd-6K-YJpbwRmQ">
           <language>Analysis</language>
           <language>OCL</language>
-          <body>In Problems Section, a Problem Act SHOULD contain a Problem Observation.</body>
-          <body>self.getSection().oclIsKindOf(ccd::ProblemsSection) implies self.getObservations()&#xD;&#xA;   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))</body>
+          <body>In Problem Section, a Problem Act SHOULD contain a Problem Observation.</body>
+          <body>self.getSection().oclIsKindOf(ccd::ProblemSection) implies self.getObservations()&#xD;&#xA;   ->exists(obs : cda::Observation | obs.oclIsKindOf(ccd::ProblemObservation))</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_hVw60Bg9Ed-PS-Y_2ABBMQ" name="containsAlertObservation" constrainedElement="_GgvgUDxbEd6JwqSGecoePg">
