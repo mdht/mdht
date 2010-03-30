@@ -332,6 +332,42 @@ public interface HITSPFactory extends EFactory {
 	Result createResult();
 
 	/**
+	 * Returns a new object of class '<em>Language Spoken</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Language Spoken</em>'.
+	 * @generated
+	 */
+	LanguageSpoken createLanguageSpoken();
+
+	/**
+	 * Returns a new object of class '<em>Insurance Provider</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Insurance Provider</em>'.
+	 * @generated
+	 */
+	InsuranceProvider createInsuranceProvider();
+
+	/**
+	 * Returns a new object of class '<em>Healthcare Provider</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Healthcare Provider</em>'.
+	 * @generated
+	 */
+	HealthcareProvider createHealthcareProvider();
+
+	/**
+	 * Returns a new object of class '<em>Immunization</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Immunization</em>'.
+	 * @generated
+	 */
+	Immunization createImmunization();
+
+	/**
 	 * Returns a new object of class '<em>Condition Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

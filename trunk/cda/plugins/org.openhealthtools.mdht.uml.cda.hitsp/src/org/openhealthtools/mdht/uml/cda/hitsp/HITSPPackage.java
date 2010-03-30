@@ -6053,6 +6053,15 @@ public interface HITSPPackage extends EPackage {
 	int PLAN_OF_CARE_SECTION__MOOD_CODE = IHEPackage.CARE_PLAN_SECTION__MOOD_CODE;
 
 	/**
+	 * The feature id for the '<em><b>Plan Of Care Activity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_ACTIVITY = IHEPackage.CARE_PLAN_SECTION__PLAN_OF_CARE_ACTIVITY;
+
+	/**
 	 * The number of structural features of the '<em>Plan Of Care Section</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7037,6 +7046,705 @@ public interface HITSPPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.LanguageSpokenImpl <em>Language Spoken</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.LanguageSpokenImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getLanguageSpoken()
+	 * @generated
+	 */
+	int LANGUAGE_SPOKEN = 35;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_SPOKEN__REALM_CODE = IHEPackage.LANGUAGE_COMMUNICATION__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_SPOKEN__TYPE_ID = IHEPackage.LANGUAGE_COMMUNICATION__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_SPOKEN__TEMPLATE_ID = IHEPackage.LANGUAGE_COMMUNICATION__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_SPOKEN__LANGUAGE_CODE = IHEPackage.LANGUAGE_COMMUNICATION__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mode Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_SPOKEN__MODE_CODE = IHEPackage.LANGUAGE_COMMUNICATION__MODE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Proficiency Level Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_SPOKEN__PROFICIENCY_LEVEL_CODE = IHEPackage.LANGUAGE_COMMUNICATION__PROFICIENCY_LEVEL_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Preference Ind</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_SPOKEN__PREFERENCE_IND = IHEPackage.LANGUAGE_COMMUNICATION__PREFERENCE_IND;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_SPOKEN__NULL_FLAVOR = IHEPackage.LANGUAGE_COMMUNICATION__NULL_FLAVOR;
+
+	/**
+	 * The number of structural features of the '<em>Language Spoken</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_SPOKEN_FEATURE_COUNT = IHEPackage.LANGUAGE_COMMUNICATION_FEATURE_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.InsuranceProviderImpl <em>Insurance Provider</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.InsuranceProviderImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getInsuranceProvider()
+	 * @generated
+	 */
+	int INSURANCE_PROVIDER = 36;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__REALM_CODE = IHEPackage.COVERAGE_ENTRY__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__TYPE_ID = IHEPackage.COVERAGE_ENTRY__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__TEMPLATE_ID = IHEPackage.COVERAGE_ENTRY__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__ID = IHEPackage.COVERAGE_ENTRY__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__CODE = IHEPackage.COVERAGE_ENTRY__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__TEXT = IHEPackage.COVERAGE_ENTRY__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__STATUS_CODE = IHEPackage.COVERAGE_ENTRY__STATUS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__EFFECTIVE_TIME = IHEPackage.COVERAGE_ENTRY__EFFECTIVE_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__PRIORITY_CODE = IHEPackage.COVERAGE_ENTRY__PRIORITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__LANGUAGE_CODE = IHEPackage.COVERAGE_ENTRY__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__SUBJECT = IHEPackage.COVERAGE_ENTRY__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__SPECIMEN = IHEPackage.COVERAGE_ENTRY__SPECIMEN;
+
+	/**
+	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__PERFORMER = IHEPackage.COVERAGE_ENTRY__PERFORMER;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__AUTHOR = IHEPackage.COVERAGE_ENTRY__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__INFORMANT = IHEPackage.COVERAGE_ENTRY__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__PARTICIPANT = IHEPackage.COVERAGE_ENTRY__PARTICIPANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__ENTRY_RELATIONSHIP = IHEPackage.COVERAGE_ENTRY__ENTRY_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__REFERENCE = IHEPackage.COVERAGE_ENTRY__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__PRECONDITION = IHEPackage.COVERAGE_ENTRY__PRECONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__NULL_FLAVOR = IHEPackage.COVERAGE_ENTRY__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__CLASS_CODE = IHEPackage.COVERAGE_ENTRY__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__MOOD_CODE = IHEPackage.COVERAGE_ENTRY__MOOD_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER__NEGATION_IND = IHEPackage.COVERAGE_ENTRY__NEGATION_IND;
+
+	/**
+	 * The number of structural features of the '<em>Insurance Provider</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSURANCE_PROVIDER_FEATURE_COUNT = IHEPackage.COVERAGE_ENTRY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.HealthcareProviderImpl <em>Healthcare Provider</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HealthcareProviderImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getHealthcareProvider()
+	 * @generated
+	 */
+	int HEALTHCARE_PROVIDER = 37;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTHCARE_PROVIDER__REALM_CODE = IHEPackage.HEALTHCARE_PROVIDERS_PHARMACIES__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTHCARE_PROVIDER__TYPE_ID = IHEPackage.HEALTHCARE_PROVIDERS_PHARMACIES__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTHCARE_PROVIDER__TEMPLATE_ID = IHEPackage.HEALTHCARE_PROVIDERS_PHARMACIES__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Function Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTHCARE_PROVIDER__FUNCTION_CODE = IHEPackage.HEALTHCARE_PROVIDERS_PHARMACIES__FUNCTION_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTHCARE_PROVIDER__TIME = IHEPackage.HEALTHCARE_PROVIDERS_PHARMACIES__TIME;
+
+	/**
+	 * The feature id for the '<em><b>Assigned Entity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTHCARE_PROVIDER__ASSIGNED_ENTITY = IHEPackage.HEALTHCARE_PROVIDERS_PHARMACIES__ASSIGNED_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTHCARE_PROVIDER__NULL_FLAVOR = IHEPackage.HEALTHCARE_PROVIDERS_PHARMACIES__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Type Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTHCARE_PROVIDER__TYPE_CODE = IHEPackage.HEALTHCARE_PROVIDERS_PHARMACIES__TYPE_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Healthcare Provider</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEALTHCARE_PROVIDER_FEATURE_COUNT = IHEPackage.HEALTHCARE_PROVIDERS_PHARMACIES_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.ImmunizationImpl <em>Immunization</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.ImmunizationImpl
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getImmunization()
+	 * @generated
+	 */
+	int IMMUNIZATION = 38;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__REALM_CODE = IHEPackage.IMMUNIZATION__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__TYPE_ID = IHEPackage.IMMUNIZATION__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__TEMPLATE_ID = IHEPackage.IMMUNIZATION__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__ID = IHEPackage.IMMUNIZATION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__CODE = IHEPackage.IMMUNIZATION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__TEXT = IHEPackage.IMMUNIZATION__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__STATUS_CODE = IHEPackage.IMMUNIZATION__STATUS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__EFFECTIVE_TIME = IHEPackage.IMMUNIZATION__EFFECTIVE_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__PRIORITY_CODE = IHEPackage.IMMUNIZATION__PRIORITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Repeat Number</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__REPEAT_NUMBER = IHEPackage.IMMUNIZATION__REPEAT_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Route Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__ROUTE_CODE = IHEPackage.IMMUNIZATION__ROUTE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Approach Site Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__APPROACH_SITE_CODE = IHEPackage.IMMUNIZATION__APPROACH_SITE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Dose Quantity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__DOSE_QUANTITY = IHEPackage.IMMUNIZATION__DOSE_QUANTITY;
+
+	/**
+	 * The feature id for the '<em><b>Rate Quantity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__RATE_QUANTITY = IHEPackage.IMMUNIZATION__RATE_QUANTITY;
+
+	/**
+	 * The feature id for the '<em><b>Max Dose Quantity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__MAX_DOSE_QUANTITY = IHEPackage.IMMUNIZATION__MAX_DOSE_QUANTITY;
+
+	/**
+	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__ADMINISTRATION_UNIT_CODE = IHEPackage.IMMUNIZATION__ADMINISTRATION_UNIT_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__SUBJECT = IHEPackage.IMMUNIZATION__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__SPECIMEN = IHEPackage.IMMUNIZATION__SPECIMEN;
+
+	/**
+	 * The feature id for the '<em><b>Consumable</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__CONSUMABLE = IHEPackage.IMMUNIZATION__CONSUMABLE;
+
+	/**
+	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__PERFORMER = IHEPackage.IMMUNIZATION__PERFORMER;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__AUTHOR = IHEPackage.IMMUNIZATION__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__INFORMANT = IHEPackage.IMMUNIZATION__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__REFERENCE = IHEPackage.IMMUNIZATION__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__PARTICIPANT = IHEPackage.IMMUNIZATION__PARTICIPANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__ENTRY_RELATIONSHIP = IHEPackage.IMMUNIZATION__ENTRY_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__PRECONDITION = IHEPackage.IMMUNIZATION__PRECONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__NULL_FLAVOR = IHEPackage.IMMUNIZATION__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__CLASS_CODE = IHEPackage.IMMUNIZATION__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__MOOD_CODE = IHEPackage.IMMUNIZATION__MOOD_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION__NEGATION_IND = IHEPackage.IMMUNIZATION__NEGATION_IND;
+
+	/**
+	 * The number of structural features of the '<em>Immunization</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMMUNIZATION_FEATURE_COUNT = IHEPackage.IMMUNIZATION_FEATURE_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity <em>Allergy Drug Sensitivity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7375,6 +8083,46 @@ public interface HITSPPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getResult();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.LanguageSpoken <em>Language Spoken</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Language Spoken</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.LanguageSpoken
+	 * @generated
+	 */
+	EClass getLanguageSpoken();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider <em>Insurance Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Insurance Provider</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider
+	 * @generated
+	 */
+	EClass getInsuranceProvider();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.HealthcareProvider <em>Healthcare Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Healthcare Provider</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.HealthcareProvider
+	 * @generated
+	 */
+	EClass getHealthcareProvider();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.Immunization <em>Immunization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Immunization</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.hitsp.Immunization
+	 * @generated
+	 */
+	EClass getImmunization();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry <em>Condition Entry</em>}'.
@@ -7747,6 +8495,46 @@ public interface HITSPPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RESULT = eINSTANCE.getResult();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.LanguageSpokenImpl <em>Language Spoken</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.LanguageSpokenImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getLanguageSpoken()
+		 * @generated
+		 */
+		EClass LANGUAGE_SPOKEN = eINSTANCE.getLanguageSpoken();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.InsuranceProviderImpl <em>Insurance Provider</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.InsuranceProviderImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getInsuranceProvider()
+		 * @generated
+		 */
+		EClass INSURANCE_PROVIDER = eINSTANCE.getInsuranceProvider();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.HealthcareProviderImpl <em>Healthcare Provider</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HealthcareProviderImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getHealthcareProvider()
+		 * @generated
+		 */
+		EClass HEALTHCARE_PROVIDER = eINSTANCE.getHealthcareProvider();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.ImmunizationImpl <em>Immunization</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.ImmunizationImpl
+		 * @see org.openhealthtools.mdht.uml.cda.hitsp.impl.HITSPPackageImpl#getImmunization()
+		 * @generated
+		 */
+		EClass IMMUNIZATION = eINSTANCE.getImmunization();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.hitsp.impl.ConditionEntryImpl <em>Condition Entry</em>}' class.

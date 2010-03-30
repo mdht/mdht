@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.openhealthtools.mdht.uml.cda.hitsp.*;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
@@ -128,6 +129,10 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.ENCOUNTERS_SECTION: return createEncountersSection();
 			case HITSPPackage.MEDICAL_EQUIPMENT_SECTION: return createMedicalEquipmentSection();
 			case HITSPPackage.RESULT: return createResult();
+			case HITSPPackage.LANGUAGE_SPOKEN: return createLanguageSpoken();
+			case HITSPPackage.INSURANCE_PROVIDER: return createInsuranceProvider();
+			case HITSPPackage.HEALTHCARE_PROVIDER: return createHealthcareProvider();
+			case HITSPPackage.IMMUNIZATION: return createImmunization();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -471,6 +476,46 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 	public Result createResult() {
 		ResultImpl result = new ResultImpl();
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LanguageSpoken createLanguageSpoken() {
+		LanguageSpokenImpl languageSpoken = new LanguageSpokenImpl();
+		return languageSpoken;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InsuranceProvider createInsuranceProvider() {
+		InsuranceProviderImpl insuranceProvider = new InsuranceProviderImpl();
+		return insuranceProvider;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HealthcareProvider createHealthcareProvider() {
+		HealthcareProviderImpl healthcareProvider = new HealthcareProviderImpl();
+		return healthcareProvider;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Immunization createImmunization() {
+		ImmunizationImpl immunization = new ImmunizationImpl();
+		return immunization;
 	}
 
 	/**
