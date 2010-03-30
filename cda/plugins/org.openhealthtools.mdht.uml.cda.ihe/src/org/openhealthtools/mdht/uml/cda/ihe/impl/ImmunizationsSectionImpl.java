@@ -58,6 +58,15 @@ public class ImmunizationsSectionImpl extends org.openhealthtools.mdht.uml.cda.c
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateIHEImmunizationsSectionImmunization(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ImmunizationsSectionOperations.validateIHEImmunizationsSectionImmunization(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ImmunizationsSection init() {
     		CDAUtil.init(this);
     		return this;

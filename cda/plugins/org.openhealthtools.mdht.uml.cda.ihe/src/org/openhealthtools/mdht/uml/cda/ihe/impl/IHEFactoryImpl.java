@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.openhealthtools.mdht.uml.cda.ihe.*;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdmissionMedicationHistorySection;
 import org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectivesSection;
@@ -162,6 +163,14 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.MEDICAL_SUMMARY: return createMedicalSummary();
 			case IHEPackage.DISCHARGE_SUMMARY: return createDischargeSummary();
 			case IHEPackage.COVERAGE_ENTRY: return createCoverageEntry();
+			case IHEPackage.HEALTHCARE_PROVIDERS_PHARMACIES: return createHealthcareProvidersPharmacies();
+			case IHEPackage.IMMUNIZATION: return createImmunization();
+			case IHEPackage.OBSERVATION_REQUEST_ENTRY: return createObservationRequestEntry();
+			case IHEPackage.PRODUCT_ENTRY: return createProductEntry();
+			case IHEPackage.PROCEDURE_ENTRY: return createProcedureEntry();
+			case IHEPackage.PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE: return createProcedureEntryProcedureActivityProcedure();
+			case IHEPackage.PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE: return createProcedureEntryPlanOfCareActivityProcedure();
+			case IHEPackage.IHE_REGISTRY_DELEGATE: return createIHERegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -655,6 +664,86 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public CoverageEntry createCoverageEntry() {
 		CoverageEntryImpl coverageEntry = new CoverageEntryImpl();
 		return coverageEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HealthcareProvidersPharmacies createHealthcareProvidersPharmacies() {
+		HealthcareProvidersPharmaciesImpl healthcareProvidersPharmacies = new HealthcareProvidersPharmaciesImpl();
+		return healthcareProvidersPharmacies;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Immunization createImmunization() {
+		ImmunizationImpl immunization = new ImmunizationImpl();
+		return immunization;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ObservationRequestEntry createObservationRequestEntry() {
+		ObservationRequestEntryImpl observationRequestEntry = new ObservationRequestEntryImpl();
+		return observationRequestEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductEntry createProductEntry() {
+		ProductEntryImpl productEntry = new ProductEntryImpl();
+		return productEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProcedureEntry createProcedureEntry() {
+		ProcedureEntryImpl procedureEntry = new ProcedureEntryImpl();
+		return procedureEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProcedureEntryProcedureActivityProcedure createProcedureEntryProcedureActivityProcedure() {
+		ProcedureEntryProcedureActivityProcedureImpl procedureEntryProcedureActivityProcedure = new ProcedureEntryProcedureActivityProcedureImpl();
+		return procedureEntryProcedureActivityProcedure;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProcedureEntryPlanOfCareActivityProcedure createProcedureEntryPlanOfCareActivityProcedure() {
+		ProcedureEntryPlanOfCareActivityProcedureImpl procedureEntryPlanOfCareActivityProcedure = new ProcedureEntryPlanOfCareActivityProcedureImpl();
+		return procedureEntryPlanOfCareActivityProcedure;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IHERegistryDelegate createIHERegistryDelegate() {
+		IHERegistryDelegateImpl iheRegistryDelegate = new IHERegistryDelegateImpl();
+		return iheRegistryDelegate;
 	}
 
 	/**

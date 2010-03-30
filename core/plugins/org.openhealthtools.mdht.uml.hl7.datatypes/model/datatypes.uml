@@ -12,7 +12,7 @@
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="__I8BwDxZEd6JwqSGecoePg" name="ANY" isAbstract="true">
       <ownedAttribute xmi:id="_AJn3IDxkEd6JwqSGecoePg" name="nullFlavor" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yyDSUDcEd6xYZuu1VKCVw?vocab/NullFlavor?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yyDSUDcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VJD-IDxnEd6JwqSGecoePg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VI6NIDxnEd6JwqSGecoePg"/>
       </ownedAttribute>
@@ -50,7 +50,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8LWIgD54Ed6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Zc_TED54Ed6cla2oXsPtlA" name="compression" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yemeEDcEd6xYZuu1VKCVw?vocab/CompressionAlgorithm?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yemeEDcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uhHAT54Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uhHAD54Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -60,7 +60,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9ctCsD54Ed6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_tLtgcD54Ed6cla2oXsPtlA" name="integrityCheckAlgorithm" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yx4IEDcEd6xYZuu1VKCVw?vocab/IntegrityCheckAlgorithm?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yx4IEDcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-FikUT54Ed6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-FikUD54Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -815,7 +815,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VjjX0D6CEd6cla2oXsPtlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_5iTUkD52Ed6cla2oXsPtlA" name="use" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFEA0DcEd6xYZuu1VKCVw?vocab/TelecommunicationAddressUse?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFEA0DcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6Ew5sT58Ed6cla2oXsPtlA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6Ew5sD58Ed6cla2oXsPtlA"/>
       </ownedAttribute>
@@ -971,12 +971,12 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_kSZ5QD5_Ed6cla2oXsPtlA" name="SXCM_TS">
       <generalization xmi:id="_lzkKAD5_Ed6cla2oXsPtlA" general="_4ysYYD59Ed6cla2oXsPtlA"/>
       <ownedAttribute xmi:id="_2C6tgD5_Ed6cla2oXsPtlA" name="operator" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DosmsT6AEd6cla2oXsPtlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DosmsD6AEd6cla2oXsPtlA"/>
         <defaultValue xmi:type="uml:InstanceValue" xmi:id="_8nRg4Eo8Ed6c3qsAxlFHaQ" name="I">
-          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
-          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFACkDcEd6xYZuu1VKCVw?vocab/SetOperator/I?"/>
+          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFACkDcEd6xYZuu1VKCVw"/>
         </defaultValue>
       </ownedAttribute>
     </packagedElement>
@@ -994,12 +994,12 @@
     <packagedElement xmi:type="uml:Class" xmi:id="__NRSwEo8Ed6c3qsAxlFHaQ" name="SXCM_INT">
       <generalization xmi:id="_Aw96IEo9Ed6c3qsAxlFHaQ" general="_co8uMD53Ed6cla2oXsPtlA"/>
       <ownedAttribute xmi:id="_Bo19UEo9Ed6c3qsAxlFHaQ" name="operator" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DVxZMUo9Ed6c3qsAxlFHaQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DVxZMEo9Ed6c3qsAxlFHaQ"/>
         <defaultValue xmi:type="uml:InstanceValue" xmi:id="_EAFhgEo9Ed6c3qsAxlFHaQ" name="I">
-          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
-          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFACkDcEd6xYZuu1VKCVw?vocab/SetOperator/I?"/>
+          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFACkDcEd6xYZuu1VKCVw"/>
         </defaultValue>
       </ownedAttribute>
     </packagedElement>
@@ -1047,12 +1047,12 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_kkrQAErrEd6FXKclYGEDCw" name="SXCM_PQ">
       <generalization xmi:id="_me3EwErrEd6FXKclYGEDCw" general="_3mPzYD59Ed6cla2oXsPtlA"/>
       <ownedAttribute xmi:id="_nEao4ErrEd6FXKclYGEDCw" name="operator" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oFr4oUrrEd6FXKclYGEDCw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oFr4oErrEd6FXKclYGEDCw"/>
         <defaultValue xmi:type="uml:InstanceValue" xmi:id="_qWOX4ErrEd6FXKclYGEDCw" name="I">
-          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw?vocab/SetOperator?"/>
-          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFACkDcEd6xYZuu1VKCVw?vocab/SetOperator/I?"/>
+          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFABkDcEd6xYZuu1VKCVw"/>
+          <instance xmi:type="uml:EnumerationLiteral" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zFACkDcEd6xYZuu1VKCVw"/>
         </defaultValue>
       </ownedAttribute>
     </packagedElement>
@@ -1097,7 +1097,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J_uVAE-pEd6lBqYlbulQZA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_NWcZME-pEd6lBqYlbulQZA" name="alignment" visibility="private">
-        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yejAEDcEd6xYZuu1VKCVw?vocab/CalendarCycle?"/>
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yejAEDcEd6xYZuu1VKCVw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_O7BxYU-pEd6lBqYlbulQZA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_O7BxYE-pEd6lBqYlbulQZA"/>
       </ownedAttribute>

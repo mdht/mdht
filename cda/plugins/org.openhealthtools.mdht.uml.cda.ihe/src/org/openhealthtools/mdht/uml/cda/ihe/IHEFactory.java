@@ -473,6 +473,78 @@ public interface IHEFactory extends EFactory {
 	CoverageEntry createCoverageEntry();
 
 	/**
+	 * Returns a new object of class '<em>Healthcare Providers Pharmacies</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Healthcare Providers Pharmacies</em>'.
+	 * @generated
+	 */
+	HealthcareProvidersPharmacies createHealthcareProvidersPharmacies();
+
+	/**
+	 * Returns a new object of class '<em>Immunization</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Immunization</em>'.
+	 * @generated
+	 */
+	Immunization createImmunization();
+
+	/**
+	 * Returns a new object of class '<em>Observation Request Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Observation Request Entry</em>'.
+	 * @generated
+	 */
+	ObservationRequestEntry createObservationRequestEntry();
+
+	/**
+	 * Returns a new object of class '<em>Product Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Product Entry</em>'.
+	 * @generated
+	 */
+	ProductEntry createProductEntry();
+
+	/**
+	 * Returns a new object of class '<em>Procedure Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Procedure Entry</em>'.
+	 * @generated
+	 */
+	ProcedureEntry createProcedureEntry();
+
+	/**
+	 * Returns a new object of class '<em>Procedure Entry Procedure Activity Procedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Procedure Entry Procedure Activity Procedure</em>'.
+	 * @generated
+	 */
+	ProcedureEntryProcedureActivityProcedure createProcedureEntryProcedureActivityProcedure();
+
+	/**
+	 * Returns a new object of class '<em>Procedure Entry Plan Of Care Activity Procedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Procedure Entry Plan Of Care Activity Procedure</em>'.
+	 * @generated
+	 */
+	ProcedureEntryPlanOfCareActivityProcedure createProcedureEntryPlanOfCareActivityProcedure();
+
+	/**
+	 * Returns a new object of class '<em>Registry Delegate</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Registry Delegate</em>'.
+	 * @generated
+	 */
+	IHERegistryDelegate createIHERegistryDelegate();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
