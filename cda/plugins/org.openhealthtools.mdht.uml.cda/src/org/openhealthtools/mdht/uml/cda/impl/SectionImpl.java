@@ -243,6 +243,15 @@ public class SectionImpl extends EObjectImpl implements Section {
 	protected String sectionId = SECTION_ID_EDEFAULT;
 
 	/**
+	 * This is true if the Section Id attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean sectionIdESet;
+
+	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -781,8 +790,33 @@ public class SectionImpl extends EObjectImpl implements Section {
 	public void setSectionId(String newSectionId) {
 		String oldSectionId = sectionId;
 		sectionId = newSectionId;
+		boolean oldSectionIdESet = sectionIdESet;
+		sectionIdESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SECTION__SECTION_ID, oldSectionId, sectionId));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SECTION__SECTION_ID, oldSectionId, sectionId, !oldSectionIdESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetSectionId() {
+		String oldSectionId = sectionId;
+		boolean oldSectionIdESet = sectionIdESet;
+		sectionId = SECTION_ID_EDEFAULT;
+		sectionIdESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SECTION__SECTION_ID, oldSectionId, SECTION_ID_EDEFAULT, oldSectionIdESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetSectionId() {
+		return sectionIdESet;
 	}
 
 	/**
@@ -1441,7 +1475,7 @@ public class SectionImpl extends EObjectImpl implements Section {
 				getComponents().clear();
 				return;
 			case CDAPackage.SECTION__SECTION_ID:
-				setSectionId(SECTION_ID_EDEFAULT);
+				unsetSectionId();
 				return;
 			case CDAPackage.SECTION__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -1493,7 +1527,7 @@ public class SectionImpl extends EObjectImpl implements Section {
 			case CDAPackage.SECTION__COMPONENT:
 				return components != null && !components.isEmpty();
 			case CDAPackage.SECTION__SECTION_ID:
-				return SECTION_ID_EDEFAULT == null ? sectionId != null : !SECTION_ID_EDEFAULT.equals(sectionId);
+				return isSetSectionId();
 			case CDAPackage.SECTION__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.SECTION__CLASS_CODE:
@@ -1515,7 +1549,7 @@ public class SectionImpl extends EObjectImpl implements Section {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (sectionId: ");
-		result.append(sectionId);
+		if (sectionIdESet) result.append(sectionId); else result.append("<unset>");
 		result.append(", nullFlavor: ");
 		if (nullFlavorESet) result.append(nullFlavor); else result.append("<unset>");
 		result.append(", classCode: ");

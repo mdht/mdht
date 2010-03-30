@@ -294,6 +294,15 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	protected Boolean contextConductionInd = CONTEXT_CONDUCTION_IND_EDEFAULT;
 
 	/**
+	 * This is true if the Context Conduction Ind attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean contextConductionIndESet;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -961,8 +970,33 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 	public void setContextConductionInd(Boolean newContextConductionInd) {
 		Boolean oldContextConductionInd = contextConductionInd;
 		contextConductionInd = newContextConductionInd;
+		boolean oldContextConductionIndESet = contextConductionIndESet;
+		contextConductionIndESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__CONTEXT_CONDUCTION_IND, oldContextConductionInd, contextConductionInd));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.COMPONENT4__CONTEXT_CONDUCTION_IND, oldContextConductionInd, contextConductionInd, !oldContextConductionIndESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetContextConductionInd() {
+		Boolean oldContextConductionInd = contextConductionInd;
+		boolean oldContextConductionIndESet = contextConductionIndESet;
+		contextConductionInd = CONTEXT_CONDUCTION_IND_EDEFAULT;
+		contextConductionIndESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.COMPONENT4__CONTEXT_CONDUCTION_IND, oldContextConductionInd, CONTEXT_CONDUCTION_IND_EDEFAULT, oldContextConductionIndESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetContextConductionInd() {
+		return contextConductionIndESet;
 	}
 
 	/**
@@ -1183,7 +1217,7 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 				unsetTypeCode();
 				return;
 			case CDAPackage.COMPONENT4__CONTEXT_CONDUCTION_IND:
-				setContextConductionInd(CONTEXT_CONDUCTION_IND_EDEFAULT);
+				unsetContextConductionInd();
 				return;
 		}
 		super.eUnset(featureID);
@@ -1230,7 +1264,7 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 			case CDAPackage.COMPONENT4__TYPE_CODE:
 				return isSetTypeCode();
 			case CDAPackage.COMPONENT4__CONTEXT_CONDUCTION_IND:
-				return CONTEXT_CONDUCTION_IND_EDEFAULT == null ? contextConductionInd != null : !CONTEXT_CONDUCTION_IND_EDEFAULT.equals(contextConductionInd);
+				return isSetContextConductionInd();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1250,7 +1284,7 @@ public class Component4Impl extends EObjectImpl implements Component4 {
 		result.append(", typeCode: ");
 		if (typeCodeESet) result.append(typeCode); else result.append("<unset>");
 		result.append(", contextConductionInd: ");
-		result.append(contextConductionInd);
+		if (contextConductionIndESet) result.append(contextConductionInd); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

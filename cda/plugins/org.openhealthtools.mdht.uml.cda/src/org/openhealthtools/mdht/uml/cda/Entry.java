@@ -480,9 +480,11 @@ public interface Entry extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Context Conduction Ind</em>' attribute.
+	 * @see #isSetContextConductionInd()
+	 * @see #unsetContextConductionInd()
 	 * @see #setContextConductionInd(Boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntry_ContextConductionInd()
-	 * @model default="true" ordered="false"
+	 * @model default="true" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	Boolean getContextConductionInd();
@@ -492,10 +494,35 @@ public interface Entry extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Context Conduction Ind</em>' attribute.
+	 * @see #isSetContextConductionInd()
+	 * @see #unsetContextConductionInd()
 	 * @see #getContextConductionInd()
 	 * @generated
 	 */
 	void setContextConductionInd(Boolean value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Entry#getContextConductionInd <em>Context Conduction Ind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetContextConductionInd()
+	 * @see #getContextConductionInd()
+	 * @see #setContextConductionInd(Boolean)
+	 * @generated
+	 */
+	void unsetContextConductionInd();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Entry#getContextConductionInd <em>Context Conduction Ind</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Context Conduction Ind</em>' attribute is set.
+	 * @see #unsetContextConductionInd()
+	 * @see #getContextConductionInd()
+	 * @see #setContextConductionInd(Boolean)
+	 * @generated
+	 */
+	boolean isSetContextConductionInd();
 
 	/**
 	 * <!-- begin-user-doc -->
