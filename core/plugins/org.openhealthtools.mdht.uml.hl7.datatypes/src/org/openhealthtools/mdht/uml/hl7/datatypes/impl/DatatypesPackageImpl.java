@@ -2829,6 +2829,12 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 			 "namespace", "urn:hl7-org:v3"
 		   });		
 		addAnnotation
+		  (getTEL_Use(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute"
+		   });		
+		addAnnotation
 		  (stEClass, 
 		   source, 
 		   new String[] {

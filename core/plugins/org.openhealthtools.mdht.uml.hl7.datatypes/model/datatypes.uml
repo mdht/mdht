@@ -1249,7 +1249,7 @@
   <Ecore:EAttribute xmi:id="_Pkv9gHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_Bo19UEo9Ed6c3qsAxlFHaQ"/>
   <Ecore:EAttribute xmi:id="_RD-UkHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_nEao4ErrEd6FXKclYGEDCw"/>
   <Ecore:EAttribute xmi:id="_SX3lYHrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_2C6tgD5_Ed6cla2oXsPtlA"/>
-  <Ecore:EAttribute xmi:id="_WFr68HrPEd648OeXdSIbLg" isUnsettable="true" base_Property="_5iTUkD52Ed6cla2oXsPtlA"/>
+  <Ecore:EAttribute xmi:id="_WFr68HrPEd648OeXdSIbLg" isUnsettable="true" xmlFeatureKind="Attribute" base_Property="_5iTUkD52Ed6cla2oXsPtlA"/>
   <Ecore:EReference xmi:id="_K2E2EJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_g4yxwD6CEd6cla2oXsPtlA"/>
   <Ecore:EReference xmi:id="_RZ1eAJ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="_TgJEsD55Ed6cla2oXsPtlA"/>
   <Ecore:EReference xmi:id="_RZ1eAZ75Ed6BCKDGgDgllw" xmlNamespace="urn:hl7-org:v3" base_Property="__CseMD56Ed6cla2oXsPtlA"/>
