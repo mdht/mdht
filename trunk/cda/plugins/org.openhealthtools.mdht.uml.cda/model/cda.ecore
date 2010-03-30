@@ -2528,7 +2528,7 @@
         defaultValueLiteral="COMP" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextConductionInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        defaultValueLiteral="true"/>
+        defaultValueLiteral="true" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NonXMLBody">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -2668,7 +2668,7 @@
         defaultValueLiteral="COMP" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextConductionInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        defaultValueLiteral="true"/>
+        defaultValueLiteral="true" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Section">
     <eOperations name="addAct" ordered="false" lowerBound="1">
@@ -2997,7 +2997,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sectionId" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="name" value="ID"/>
         <details key="kind" value="attribute"/>
@@ -3292,7 +3292,7 @@
         defaultValueLiteral="COMP" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextConductionInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        defaultValueLiteral="true"/>
+        defaultValueLiteral="true" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Act">
     <eOperations name="addAct" ordered="false" lowerBound="1">
@@ -3640,7 +3640,8 @@
         lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentActMood"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="negationInd" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specimen">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -4185,12 +4186,14 @@
         lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActRelationshipEntryRelationship"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inversionInd" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextConductionInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        defaultValueLiteral="true"/>
+        defaultValueLiteral="true" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="negationInd" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Encounter">
     <eOperations name="addAct" ordered="false" lowerBound="1">
@@ -5302,7 +5305,8 @@
         lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_ActMoodDocumentObservation"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="negationInd" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReferenceRange">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -6154,7 +6158,7 @@
         defaultValueLiteral="COMP" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextConductionInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        defaultValueLiteral="true"/>
+        defaultValueLiteral="true" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Procedure">
     <eOperations name="addAct" ordered="false" lowerBound="1">
@@ -6522,7 +6526,8 @@
         lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentProcedureMood"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="negationInd" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RegionOfInterest">
     <eOperations name="addAct" ordered="false" lowerBound="1">
@@ -7246,7 +7251,8 @@
         lowerBound="1" eType="ecore:EEnum ../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.ecore#//x_DocumentSubstanceMood"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="negationInd" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Consumable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
@@ -7891,7 +7897,7 @@
         defaultValueLiteral="COMP" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextConductionInd" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        defaultValueLiteral="true"/>
+        defaultValueLiteral="true" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentRoot">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">

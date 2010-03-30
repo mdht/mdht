@@ -538,9 +538,11 @@ public interface EntryRelationship extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inversion Ind</em>' attribute.
+	 * @see #isSetInversionInd()
+	 * @see #unsetInversionInd()
 	 * @see #setInversionInd(Boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_InversionInd()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	Boolean getInversionInd();
@@ -550,10 +552,35 @@ public interface EntryRelationship extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Inversion Ind</em>' attribute.
+	 * @see #isSetInversionInd()
+	 * @see #unsetInversionInd()
 	 * @see #getInversionInd()
 	 * @generated
 	 */
 	void setInversionInd(Boolean value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.EntryRelationship#getInversionInd <em>Inversion Ind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetInversionInd()
+	 * @see #getInversionInd()
+	 * @see #setInversionInd(Boolean)
+	 * @generated
+	 */
+	void unsetInversionInd();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.EntryRelationship#getInversionInd <em>Inversion Ind</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Inversion Ind</em>' attribute is set.
+	 * @see #unsetInversionInd()
+	 * @see #getInversionInd()
+	 * @see #setInversionInd(Boolean)
+	 * @generated
+	 */
+	boolean isSetInversionInd();
 
 	/**
 	 * Returns the value of the '<em><b>Context Conduction Ind</b></em>' attribute.
@@ -565,9 +592,11 @@ public interface EntryRelationship extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Context Conduction Ind</em>' attribute.
+	 * @see #isSetContextConductionInd()
+	 * @see #unsetContextConductionInd()
 	 * @see #setContextConductionInd(Boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_ContextConductionInd()
-	 * @model default="true" ordered="false"
+	 * @model default="true" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	Boolean getContextConductionInd();
@@ -577,10 +606,35 @@ public interface EntryRelationship extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Context Conduction Ind</em>' attribute.
+	 * @see #isSetContextConductionInd()
+	 * @see #unsetContextConductionInd()
 	 * @see #getContextConductionInd()
 	 * @generated
 	 */
 	void setContextConductionInd(Boolean value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.EntryRelationship#getContextConductionInd <em>Context Conduction Ind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetContextConductionInd()
+	 * @see #getContextConductionInd()
+	 * @see #setContextConductionInd(Boolean)
+	 * @generated
+	 */
+	void unsetContextConductionInd();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.EntryRelationship#getContextConductionInd <em>Context Conduction Ind</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Context Conduction Ind</em>' attribute is set.
+	 * @see #unsetContextConductionInd()
+	 * @see #getContextConductionInd()
+	 * @see #setContextConductionInd(Boolean)
+	 * @generated
+	 */
+	boolean isSetContextConductionInd();
 
 	/**
 	 * Returns the value of the '<em><b>Negation Ind</b></em>' attribute.
@@ -591,9 +645,11 @@ public interface EntryRelationship extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Negation Ind</em>' attribute.
+	 * @see #isSetNegationInd()
+	 * @see #unsetNegationInd()
 	 * @see #setNegationInd(Boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEntryRelationship_NegationInd()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	Boolean getNegationInd();
@@ -603,10 +659,35 @@ public interface EntryRelationship extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Negation Ind</em>' attribute.
+	 * @see #isSetNegationInd()
+	 * @see #unsetNegationInd()
 	 * @see #getNegationInd()
 	 * @generated
 	 */
 	void setNegationInd(Boolean value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.EntryRelationship#getNegationInd <em>Negation Ind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNegationInd()
+	 * @see #getNegationInd()
+	 * @see #setNegationInd(Boolean)
+	 * @generated
+	 */
+	void unsetNegationInd();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.EntryRelationship#getNegationInd <em>Negation Ind</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Negation Ind</em>' attribute is set.
+	 * @see #unsetNegationInd()
+	 * @see #getNegationInd()
+	 * @see #setNegationInd(Boolean)
+	 * @generated
+	 */
+	boolean isSetNegationInd();
 
 	/**
 	 * <!-- begin-user-doc -->

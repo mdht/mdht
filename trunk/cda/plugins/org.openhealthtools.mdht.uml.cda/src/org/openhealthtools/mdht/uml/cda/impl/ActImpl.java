@@ -390,6 +390,15 @@ public class ActImpl extends EObjectImpl implements Act {
 	protected Boolean negationInd = NEGATION_IND_EDEFAULT;
 
 	/**
+	 * This is true if the Negation Ind attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean negationIndESet;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1039,8 +1048,33 @@ public class ActImpl extends EObjectImpl implements Act {
 	public void setNegationInd(Boolean newNegationInd) {
 		Boolean oldNegationInd = negationInd;
 		negationInd = newNegationInd;
+		boolean oldNegationIndESet = negationIndESet;
+		negationIndESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT__NEGATION_IND, oldNegationInd, negationInd));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT__NEGATION_IND, oldNegationInd, negationInd, !oldNegationIndESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetNegationInd() {
+		Boolean oldNegationInd = negationInd;
+		boolean oldNegationIndESet = negationIndESet;
+		negationInd = NEGATION_IND_EDEFAULT;
+		negationIndESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ACT__NEGATION_IND, oldNegationInd, NEGATION_IND_EDEFAULT, oldNegationIndESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetNegationInd() {
+		return negationIndESet;
 	}
 
 	/**
@@ -1598,7 +1632,7 @@ public class ActImpl extends EObjectImpl implements Act {
 				unsetMoodCode();
 				return;
 			case CDAPackage.ACT__NEGATION_IND:
-				setNegationInd(NEGATION_IND_EDEFAULT);
+				unsetNegationInd();
 				return;
 		}
 		super.eUnset(featureID);
@@ -1657,7 +1691,7 @@ public class ActImpl extends EObjectImpl implements Act {
 			case CDAPackage.ACT__MOOD_CODE:
 				return isSetMoodCode();
 			case CDAPackage.ACT__NEGATION_IND:
-				return NEGATION_IND_EDEFAULT == null ? negationInd != null : !NEGATION_IND_EDEFAULT.equals(negationInd);
+				return isSetNegationInd();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1679,7 +1713,7 @@ public class ActImpl extends EObjectImpl implements Act {
 		result.append(", moodCode: ");
 		if (moodCodeESet) result.append(moodCode); else result.append("<unset>");
 		result.append(", negationInd: ");
-		result.append(negationInd);
+		if (negationIndESet) result.append(negationInd); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

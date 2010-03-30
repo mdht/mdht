@@ -383,9 +383,11 @@ public interface Section extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Section Id</em>' attribute.
+	 * @see #isSetSectionId()
+	 * @see #unsetSectionId()
 	 * @see #setSectionId(String)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSection_SectionId()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 *        extendedMetaData="name='ID' kind='attribute'"
 	 * @generated
 	 */
@@ -396,10 +398,35 @@ public interface Section extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Section Id</em>' attribute.
+	 * @see #isSetSectionId()
+	 * @see #unsetSectionId()
 	 * @see #getSectionId()
 	 * @generated
 	 */
 	void setSectionId(String value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Section#getSectionId <em>Section Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetSectionId()
+	 * @see #getSectionId()
+	 * @see #setSectionId(String)
+	 * @generated
+	 */
+	void unsetSectionId();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Section#getSectionId <em>Section Id</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Section Id</em>' attribute is set.
+	 * @see #unsetSectionId()
+	 * @see #getSectionId()
+	 * @see #setSectionId(String)
+	 * @generated
+	 */
+	boolean isSetSectionId();
 
 	/**
 	 * Returns the value of the '<em><b>Null Flavor</b></em>' attribute.

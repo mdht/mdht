@@ -792,9 +792,11 @@ public interface Observation extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Negation Ind</em>' attribute.
+	 * @see #isSetNegationInd()
+	 * @see #unsetNegationInd()
 	 * @see #setNegationInd(Boolean)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getObservation_NegationInd()
-	 * @model ordered="false"
+	 * @model unsettable="true" ordered="false"
 	 * @generated
 	 */
 	Boolean getNegationInd();
@@ -804,10 +806,35 @@ public interface Observation extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Negation Ind</em>' attribute.
+	 * @see #isSetNegationInd()
+	 * @see #unsetNegationInd()
 	 * @see #getNegationInd()
 	 * @generated
 	 */
 	void setNegationInd(Boolean value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.cda.Observation#getNegationInd <em>Negation Ind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetNegationInd()
+	 * @see #getNegationInd()
+	 * @see #setNegationInd(Boolean)
+	 * @generated
+	 */
+	void unsetNegationInd();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.cda.Observation#getNegationInd <em>Negation Ind</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Negation Ind</em>' attribute is set.
+	 * @see #unsetNegationInd()
+	 * @see #getNegationInd()
+	 * @see #setNegationInd(Boolean)
+	 * @generated
+	 */
+	boolean isSetNegationInd();
 
 	/**
 	 * <!-- begin-user-doc -->

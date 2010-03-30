@@ -270,6 +270,15 @@ public class EntryImpl extends EObjectImpl implements Entry {
 	protected Boolean contextConductionInd = CONTEXT_CONDUCTION_IND_EDEFAULT;
 
 	/**
+	 * This is true if the Context Conduction Ind attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean contextConductionIndESet;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -851,8 +860,33 @@ public class EntryImpl extends EObjectImpl implements Entry {
 	public void setContextConductionInd(Boolean newContextConductionInd) {
 		Boolean oldContextConductionInd = contextConductionInd;
 		contextConductionInd = newContextConductionInd;
+		boolean oldContextConductionIndESet = contextConductionIndESet;
+		contextConductionIndESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND, oldContextConductionInd, contextConductionInd));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND, oldContextConductionInd, contextConductionInd, !oldContextConductionIndESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetContextConductionInd() {
+		Boolean oldContextConductionInd = contextConductionInd;
+		boolean oldContextConductionIndESet = contextConductionIndESet;
+		contextConductionInd = CONTEXT_CONDUCTION_IND_EDEFAULT;
+		contextConductionIndESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND, oldContextConductionInd, CONTEXT_CONDUCTION_IND_EDEFAULT, oldContextConductionIndESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetContextConductionInd() {
+		return contextConductionIndESet;
 	}
 
 	/**
@@ -1053,7 +1087,7 @@ public class EntryImpl extends EObjectImpl implements Entry {
 				unsetTypeCode();
 				return;
 			case CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND:
-				setContextConductionInd(CONTEXT_CONDUCTION_IND_EDEFAULT);
+				unsetContextConductionInd();
 				return;
 		}
 		super.eUnset(featureID);
@@ -1096,7 +1130,7 @@ public class EntryImpl extends EObjectImpl implements Entry {
 			case CDAPackage.ENTRY__TYPE_CODE:
 				return isSetTypeCode();
 			case CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND:
-				return CONTEXT_CONDUCTION_IND_EDEFAULT == null ? contextConductionInd != null : !CONTEXT_CONDUCTION_IND_EDEFAULT.equals(contextConductionInd);
+				return isSetContextConductionInd();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1116,7 +1150,7 @@ public class EntryImpl extends EObjectImpl implements Entry {
 		result.append(", typeCode: ");
 		if (typeCodeESet) result.append(typeCode); else result.append("<unset>");
 		result.append(", contextConductionInd: ");
-		result.append(contextConductionInd);
+		if (contextConductionIndESet) result.append(contextConductionInd); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

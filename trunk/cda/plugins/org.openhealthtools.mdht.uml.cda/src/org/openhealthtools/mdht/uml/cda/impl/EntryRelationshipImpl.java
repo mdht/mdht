@@ -296,6 +296,15 @@ public class EntryRelationshipImpl extends EObjectImpl implements EntryRelations
 	protected Boolean inversionInd = INVERSION_IND_EDEFAULT;
 
 	/**
+	 * This is true if the Inversion Ind attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean inversionIndESet;
+
+	/**
 	 * The default value of the '{@link #getContextConductionInd() <em>Context Conduction Ind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -316,6 +325,15 @@ public class EntryRelationshipImpl extends EObjectImpl implements EntryRelations
 	protected Boolean contextConductionInd = CONTEXT_CONDUCTION_IND_EDEFAULT;
 
 	/**
+	 * This is true if the Context Conduction Ind attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean contextConductionIndESet;
+
+	/**
 	 * The default value of the '{@link #getNegationInd() <em>Negation Ind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -334,6 +352,15 @@ public class EntryRelationshipImpl extends EObjectImpl implements EntryRelations
 	 * @ordered
 	 */
 	protected Boolean negationInd = NEGATION_IND_EDEFAULT;
+
+	/**
+	 * This is true if the Negation Ind attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean negationIndESet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1003,8 +1030,33 @@ public class EntryRelationshipImpl extends EObjectImpl implements EntryRelations
 	public void setInversionInd(Boolean newInversionInd) {
 		Boolean oldInversionInd = inversionInd;
 		inversionInd = newInversionInd;
+		boolean oldInversionIndESet = inversionIndESet;
+		inversionIndESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY_RELATIONSHIP__INVERSION_IND, oldInversionInd, inversionInd));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY_RELATIONSHIP__INVERSION_IND, oldInversionInd, inversionInd, !oldInversionIndESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetInversionInd() {
+		Boolean oldInversionInd = inversionInd;
+		boolean oldInversionIndESet = inversionIndESet;
+		inversionInd = INVERSION_IND_EDEFAULT;
+		inversionIndESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTRY_RELATIONSHIP__INVERSION_IND, oldInversionInd, INVERSION_IND_EDEFAULT, oldInversionIndESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetInversionInd() {
+		return inversionIndESet;
 	}
 
 	/**
@@ -1024,8 +1076,33 @@ public class EntryRelationshipImpl extends EObjectImpl implements EntryRelations
 	public void setContextConductionInd(Boolean newContextConductionInd) {
 		Boolean oldContextConductionInd = contextConductionInd;
 		contextConductionInd = newContextConductionInd;
+		boolean oldContextConductionIndESet = contextConductionIndESet;
+		contextConductionIndESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY_RELATIONSHIP__CONTEXT_CONDUCTION_IND, oldContextConductionInd, contextConductionInd));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY_RELATIONSHIP__CONTEXT_CONDUCTION_IND, oldContextConductionInd, contextConductionInd, !oldContextConductionIndESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetContextConductionInd() {
+		Boolean oldContextConductionInd = contextConductionInd;
+		boolean oldContextConductionIndESet = contextConductionIndESet;
+		contextConductionInd = CONTEXT_CONDUCTION_IND_EDEFAULT;
+		contextConductionIndESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTRY_RELATIONSHIP__CONTEXT_CONDUCTION_IND, oldContextConductionInd, CONTEXT_CONDUCTION_IND_EDEFAULT, oldContextConductionIndESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetContextConductionInd() {
+		return contextConductionIndESet;
 	}
 
 	/**
@@ -1045,8 +1122,33 @@ public class EntryRelationshipImpl extends EObjectImpl implements EntryRelations
 	public void setNegationInd(Boolean newNegationInd) {
 		Boolean oldNegationInd = negationInd;
 		negationInd = newNegationInd;
+		boolean oldNegationIndESet = negationIndESet;
+		negationIndESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY_RELATIONSHIP__NEGATION_IND, oldNegationInd, negationInd));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY_RELATIONSHIP__NEGATION_IND, oldNegationInd, negationInd, !oldNegationIndESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetNegationInd() {
+		Boolean oldNegationInd = negationInd;
+		boolean oldNegationIndESet = negationIndESet;
+		negationInd = NEGATION_IND_EDEFAULT;
+		negationIndESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTRY_RELATIONSHIP__NEGATION_IND, oldNegationInd, NEGATION_IND_EDEFAULT, oldNegationIndESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetNegationInd() {
+		return negationIndESet;
 	}
 
 	/**
@@ -1277,13 +1379,13 @@ public class EntryRelationshipImpl extends EObjectImpl implements EntryRelations
 				unsetTypeCode();
 				return;
 			case CDAPackage.ENTRY_RELATIONSHIP__INVERSION_IND:
-				setInversionInd(INVERSION_IND_EDEFAULT);
+				unsetInversionInd();
 				return;
 			case CDAPackage.ENTRY_RELATIONSHIP__CONTEXT_CONDUCTION_IND:
-				setContextConductionInd(CONTEXT_CONDUCTION_IND_EDEFAULT);
+				unsetContextConductionInd();
 				return;
 			case CDAPackage.ENTRY_RELATIONSHIP__NEGATION_IND:
-				setNegationInd(NEGATION_IND_EDEFAULT);
+				unsetNegationInd();
 				return;
 		}
 		super.eUnset(featureID);
@@ -1330,11 +1432,11 @@ public class EntryRelationshipImpl extends EObjectImpl implements EntryRelations
 			case CDAPackage.ENTRY_RELATIONSHIP__TYPE_CODE:
 				return isSetTypeCode();
 			case CDAPackage.ENTRY_RELATIONSHIP__INVERSION_IND:
-				return INVERSION_IND_EDEFAULT == null ? inversionInd != null : !INVERSION_IND_EDEFAULT.equals(inversionInd);
+				return isSetInversionInd();
 			case CDAPackage.ENTRY_RELATIONSHIP__CONTEXT_CONDUCTION_IND:
-				return CONTEXT_CONDUCTION_IND_EDEFAULT == null ? contextConductionInd != null : !CONTEXT_CONDUCTION_IND_EDEFAULT.equals(contextConductionInd);
+				return isSetContextConductionInd();
 			case CDAPackage.ENTRY_RELATIONSHIP__NEGATION_IND:
-				return NEGATION_IND_EDEFAULT == null ? negationInd != null : !NEGATION_IND_EDEFAULT.equals(negationInd);
+				return isSetNegationInd();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1354,11 +1456,11 @@ public class EntryRelationshipImpl extends EObjectImpl implements EntryRelations
 		result.append(", typeCode: ");
 		if (typeCodeESet) result.append(typeCode); else result.append("<unset>");
 		result.append(", inversionInd: ");
-		result.append(inversionInd);
+		if (inversionIndESet) result.append(inversionInd); else result.append("<unset>");
 		result.append(", contextConductionInd: ");
-		result.append(contextConductionInd);
+		if (contextConductionIndESet) result.append(contextConductionInd); else result.append("<unset>");
 		result.append(", negationInd: ");
-		result.append(negationInd);
+		if (negationIndESet) result.append(negationInd); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}
