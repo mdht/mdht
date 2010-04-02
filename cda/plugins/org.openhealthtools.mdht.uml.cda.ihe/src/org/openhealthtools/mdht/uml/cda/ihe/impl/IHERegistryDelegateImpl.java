@@ -7,12 +7,9 @@
 package org.openhealthtools.mdht.uml.cda.ihe.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.IHERegistryDelegateOperations;
 
 /**

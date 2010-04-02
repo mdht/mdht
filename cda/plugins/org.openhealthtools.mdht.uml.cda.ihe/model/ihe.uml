@@ -18,7 +18,10 @@ past. It shall include entries for medication administration as described in the
       <generalization xmi:id="_cBTp4Mf0Ed6VjLXh4DcWSg">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_CinbMHDPEd6eItyqb1FoWg"/>
       </generalization>
-      <ownedAttribute xmi:id="_4X18YDuJEd-B8KE6Jx0UNQ" name="immunization" type="_aFDTUDuJEd-B8KE6Jx0UNQ" association="_4X18YTuJEd-B8KE6Jx0UNQ"/>
+      <ownedAttribute xmi:id="_4X18YDuJEd-B8KE6Jx0UNQ" name="immunization" type="_aFDTUDuJEd-B8KE6Jx0UNQ" association="_4X18YTuJEd-B8KE6Jx0UNQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__UfPED6iEd-kMOWzheIlHA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__UfPET6iEd-kMOWzheIlHA" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_quPDQMfyEd6VjLXh4DcWSg" name="MedicationsAdministeredSection">
       <ownedComment xmi:id="_FLRiwMfzEd6VjLXh4DcWSg" annotatedElement="_quPDQMfyEd6VjLXh4DcWSg">
@@ -592,7 +595,7 @@ life, hobbies, and risky habits.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_aFDTUDuJEd-B8KE6Jx0UNQ" name="Immunization">
       <generalization xmi:id="_aFDTUTuJEd-B8KE6Jx0UNQ">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_nazskEbuEd6besF9iFIJkQ"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_W6aMoHfTEd6ZeOKq_2_a9g"/>
       </generalization>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_4X18YTuJEd-B8KE6Jx0UNQ" memberEnd="_4X18YDuJEd-B8KE6Jx0UNQ _4X18YjuJEd-B8KE6Jx0UNQ">

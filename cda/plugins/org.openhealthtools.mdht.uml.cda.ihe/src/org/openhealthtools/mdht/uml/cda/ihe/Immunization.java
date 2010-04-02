@@ -9,8 +9,7 @@ package org.openhealthtools.mdht.uml.cda.ihe;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
-import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
  * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.12' constraints.validation.error='ImmunizationTemplateId'"
  * @generated
  */
-public interface Immunization extends SubstanceAdministration {
+public interface Immunization extends MedicationActivity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

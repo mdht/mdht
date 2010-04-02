@@ -107,15 +107,6 @@ public class PlanOfCareSectionImpl extends SectionImpl implements PlanOfCareSect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePlanOfCareSectionContainsPlanOfCareActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PlanOfCareSectionOperations.validatePlanOfCareSectionContainsPlanOfCareActivity(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validatePlanOfCareSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return PlanOfCareSectionOperations.validatePlanOfCareSectionTemplateId(this, diagnostics, context);
 	}

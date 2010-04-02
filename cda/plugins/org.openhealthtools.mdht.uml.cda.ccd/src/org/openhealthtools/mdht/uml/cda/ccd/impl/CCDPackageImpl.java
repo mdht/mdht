@@ -3171,15 +3171,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		initEClass(planOfCareSectionEClass, PlanOfCareSection.class, "PlanOfCareSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPlanOfCareSection_PlanOfCareActivity(), this.getPlanOfCareActivity(), null, "planOfCareActivity", null, 1, 1, PlanOfCareSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		op = addEOperation(planOfCareSectionEClass, ecorePackage.getEBoolean(), "validatePlanOfCareSectionContainsPlanOfCareActivity", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(planOfCareSectionEClass, ecorePackage.getEBoolean(), "validatePlanOfCareSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -4273,7 +4264,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																					
 	}
 
 	/**
@@ -4674,11 +4665,11 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.10",
 			 "code.displayName", "Treatment plan",
-			 "constraints.validation.error", "PlanOfCareSectionTemplateId PlanOfCareSectionContainsPlanOfCareActivity PlanOfCareSectionCode PlanOfCareSectionTitle PlanOfCareSectionText",
+			 "constraints.validation.error", "PlanOfCareSectionTemplateId PlanOfCareSectionCode PlanOfCareSectionTitle PlanOfCareSectionText",
 			 "code.codeSystemName", "LOINC",
 			 "code.code", "18776-5",
 			 "constraints.validation.info", "PlanOfCareSectionPlanOfCareActivityAct PlanOfCareSectionPlanOfCareActivityEncounter PlanOfCareSectionPlanOfCareActivityObservation PlanOfCareSectionPlanOfCareActivityProcedure PlanOfCareSectionPlanOfCareActivitySubstanceAdministration PlanOfCareSectionPlanOfCareActivitySupply"
-		   });																																															
+		   });																																											
 		addAnnotation
 		  (vitalSignsSectionEClass, 
 		   source, 

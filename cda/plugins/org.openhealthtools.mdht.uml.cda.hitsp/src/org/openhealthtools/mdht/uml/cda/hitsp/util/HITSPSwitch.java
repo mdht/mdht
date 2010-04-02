@@ -489,6 +489,7 @@ public class HITSPSwitch<T> {
 				Immunization immunization = (Immunization)theEObject;
 				T result = caseImmunization(immunization);
 				if (result == null) result = caseIHE_Immunization(immunization);
+				if (result == null) result = caseMedicationActivity(immunization);
 				if (result == null) result = caseSubstanceAdministration(immunization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

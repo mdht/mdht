@@ -10764,7 +10764,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__REALM_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__REALM_CODE;
+	int IMMUNIZATION__REALM_CODE = CCDPackage.MEDICATION_ACTIVITY__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -10773,7 +10773,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__TYPE_ID = CDAPackage.SUBSTANCE_ADMINISTRATION__TYPE_ID;
+	int IMMUNIZATION__TYPE_ID = CCDPackage.MEDICATION_ACTIVITY__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -10782,7 +10782,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__TEMPLATE_ID = CDAPackage.SUBSTANCE_ADMINISTRATION__TEMPLATE_ID;
+	int IMMUNIZATION__TEMPLATE_ID = CCDPackage.MEDICATION_ACTIVITY__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -10791,7 +10791,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__ID = CDAPackage.SUBSTANCE_ADMINISTRATION__ID;
+	int IMMUNIZATION__ID = CCDPackage.MEDICATION_ACTIVITY__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -10800,7 +10800,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__CODE;
+	int IMMUNIZATION__CODE = CCDPackage.MEDICATION_ACTIVITY__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -10809,7 +10809,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__TEXT = CDAPackage.SUBSTANCE_ADMINISTRATION__TEXT;
+	int IMMUNIZATION__TEXT = CCDPackage.MEDICATION_ACTIVITY__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -10818,7 +10818,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__STATUS_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__STATUS_CODE;
+	int IMMUNIZATION__STATUS_CODE = CCDPackage.MEDICATION_ACTIVITY__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference list.
@@ -10827,7 +10827,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__EFFECTIVE_TIME = CDAPackage.SUBSTANCE_ADMINISTRATION__EFFECTIVE_TIME;
+	int IMMUNIZATION__EFFECTIVE_TIME = CCDPackage.MEDICATION_ACTIVITY__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -10836,7 +10836,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__PRIORITY_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__PRIORITY_CODE;
+	int IMMUNIZATION__PRIORITY_CODE = CCDPackage.MEDICATION_ACTIVITY__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Repeat Number</b></em>' containment reference.
@@ -10845,7 +10845,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__REPEAT_NUMBER = CDAPackage.SUBSTANCE_ADMINISTRATION__REPEAT_NUMBER;
+	int IMMUNIZATION__REPEAT_NUMBER = CCDPackage.MEDICATION_ACTIVITY__REPEAT_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Route Code</b></em>' containment reference.
@@ -10854,7 +10854,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__ROUTE_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__ROUTE_CODE;
+	int IMMUNIZATION__ROUTE_CODE = CCDPackage.MEDICATION_ACTIVITY__ROUTE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Approach Site Code</b></em>' containment reference list.
@@ -10863,7 +10863,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__APPROACH_SITE_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__APPROACH_SITE_CODE;
+	int IMMUNIZATION__APPROACH_SITE_CODE = CCDPackage.MEDICATION_ACTIVITY__APPROACH_SITE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Dose Quantity</b></em>' containment reference.
@@ -10872,7 +10872,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__DOSE_QUANTITY = CDAPackage.SUBSTANCE_ADMINISTRATION__DOSE_QUANTITY;
+	int IMMUNIZATION__DOSE_QUANTITY = CCDPackage.MEDICATION_ACTIVITY__DOSE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Rate Quantity</b></em>' containment reference.
@@ -10881,7 +10881,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__RATE_QUANTITY = CDAPackage.SUBSTANCE_ADMINISTRATION__RATE_QUANTITY;
+	int IMMUNIZATION__RATE_QUANTITY = CCDPackage.MEDICATION_ACTIVITY__RATE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Max Dose Quantity</b></em>' containment reference.
@@ -10890,7 +10890,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__MAX_DOSE_QUANTITY = CDAPackage.SUBSTANCE_ADMINISTRATION__MAX_DOSE_QUANTITY;
+	int IMMUNIZATION__MAX_DOSE_QUANTITY = CCDPackage.MEDICATION_ACTIVITY__MAX_DOSE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
@@ -10899,7 +10899,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__ADMINISTRATION_UNIT_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__ADMINISTRATION_UNIT_CODE;
+	int IMMUNIZATION__ADMINISTRATION_UNIT_CODE = CCDPackage.MEDICATION_ACTIVITY__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -10908,7 +10908,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__SUBJECT = CDAPackage.SUBSTANCE_ADMINISTRATION__SUBJECT;
+	int IMMUNIZATION__SUBJECT = CCDPackage.MEDICATION_ACTIVITY__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -10917,7 +10917,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__SPECIMEN = CDAPackage.SUBSTANCE_ADMINISTRATION__SPECIMEN;
+	int IMMUNIZATION__SPECIMEN = CCDPackage.MEDICATION_ACTIVITY__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Consumable</b></em>' containment reference.
@@ -10926,7 +10926,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__CONSUMABLE = CDAPackage.SUBSTANCE_ADMINISTRATION__CONSUMABLE;
+	int IMMUNIZATION__CONSUMABLE = CCDPackage.MEDICATION_ACTIVITY__CONSUMABLE;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -10935,7 +10935,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__PERFORMER = CDAPackage.SUBSTANCE_ADMINISTRATION__PERFORMER;
+	int IMMUNIZATION__PERFORMER = CCDPackage.MEDICATION_ACTIVITY__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -10944,7 +10944,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__AUTHOR = CDAPackage.SUBSTANCE_ADMINISTRATION__AUTHOR;
+	int IMMUNIZATION__AUTHOR = CCDPackage.MEDICATION_ACTIVITY__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -10953,7 +10953,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__INFORMANT = CDAPackage.SUBSTANCE_ADMINISTRATION__INFORMANT;
+	int IMMUNIZATION__INFORMANT = CCDPackage.MEDICATION_ACTIVITY__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -10962,7 +10962,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__REFERENCE = CDAPackage.SUBSTANCE_ADMINISTRATION__REFERENCE;
+	int IMMUNIZATION__REFERENCE = CCDPackage.MEDICATION_ACTIVITY__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -10971,7 +10971,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__PARTICIPANT = CDAPackage.SUBSTANCE_ADMINISTRATION__PARTICIPANT;
+	int IMMUNIZATION__PARTICIPANT = CCDPackage.MEDICATION_ACTIVITY__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -10980,7 +10980,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__ENTRY_RELATIONSHIP = CDAPackage.SUBSTANCE_ADMINISTRATION__ENTRY_RELATIONSHIP;
+	int IMMUNIZATION__ENTRY_RELATIONSHIP = CCDPackage.MEDICATION_ACTIVITY__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -10989,7 +10989,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__PRECONDITION = CDAPackage.SUBSTANCE_ADMINISTRATION__PRECONDITION;
+	int IMMUNIZATION__PRECONDITION = CCDPackage.MEDICATION_ACTIVITY__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -10998,7 +10998,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__NULL_FLAVOR = CDAPackage.SUBSTANCE_ADMINISTRATION__NULL_FLAVOR;
+	int IMMUNIZATION__NULL_FLAVOR = CCDPackage.MEDICATION_ACTIVITY__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -11007,7 +11007,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__CLASS_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__CLASS_CODE;
+	int IMMUNIZATION__CLASS_CODE = CCDPackage.MEDICATION_ACTIVITY__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -11016,7 +11016,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__MOOD_CODE = CDAPackage.SUBSTANCE_ADMINISTRATION__MOOD_CODE;
+	int IMMUNIZATION__MOOD_CODE = CCDPackage.MEDICATION_ACTIVITY__MOOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -11025,7 +11025,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION__NEGATION_IND = CDAPackage.SUBSTANCE_ADMINISTRATION__NEGATION_IND;
+	int IMMUNIZATION__NEGATION_IND = CCDPackage.MEDICATION_ACTIVITY__NEGATION_IND;
 
 	/**
 	 * The number of structural features of the '<em>Immunization</em>' class.
@@ -11034,7 +11034,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMMUNIZATION_FEATURE_COUNT = CDAPackage.SUBSTANCE_ADMINISTRATION_FEATURE_COUNT + 0;
+	int IMMUNIZATION_FEATURE_COUNT = CCDPackage.MEDICATION_ACTIVITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ObservationRequestEntryImpl <em>Observation Request Entry</em>}' class.

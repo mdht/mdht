@@ -109,7 +109,7 @@ public class ImmunizationsSectionOperations extends org.openhealthtools.mdht.uml
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_IHE_IMMUNIZATIONS_SECTION_IMMUNIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ihe::Immunization))";
+	protected static final String VALIDATE_IHE_IMMUNIZATIONS_SECTION_IMMUNIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ihe::Immunization))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateIHEImmunizationsSectionImmunization(ImmunizationsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Immunizations Section Immunization</em>}' invariant operation.
@@ -125,7 +125,7 @@ public class ImmunizationsSectionOperations extends org.openhealthtools.mdht.uml
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ihe::Immunization))
+	 * self.entry->exists(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ihe::Immunization))
 	 * @param immunizationsSection The receiving '<em><b>Immunizations Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

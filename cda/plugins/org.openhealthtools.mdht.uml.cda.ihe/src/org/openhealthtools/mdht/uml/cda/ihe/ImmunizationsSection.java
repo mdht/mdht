@@ -44,11 +44,11 @@ public interface ImmunizationsSection extends org.openhealthtools.mdht.uml.cda.c
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ihe::Immunization))
+	 * self.entry->exists(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ihe::Immunization))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ihe::Immunization))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ihe::Immunization))'"
 	 * @generated
 	 */
 	boolean validateIHEImmunizationsSectionImmunization(DiagnosticChain diagnostics, Map<Object, Object> context);

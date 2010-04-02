@@ -4263,33 +4263,11 @@
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.10"/>
       <details key="code.displayName" value="Treatment plan"/>
-      <details key="constraints.validation.error" value="PlanOfCareSectionTemplateId PlanOfCareSectionContainsPlanOfCareActivity PlanOfCareSectionCode PlanOfCareSectionTitle PlanOfCareSectionText"/>
+      <details key="constraints.validation.error" value="PlanOfCareSectionTemplateId PlanOfCareSectionCode PlanOfCareSectionTitle PlanOfCareSectionText"/>
       <details key="code.codeSystemName" value="LOINC"/>
       <details key="code.code" value="18776-5"/>
       <details key="constraints.validation.info" value="PlanOfCareSectionPlanOfCareActivityAct PlanOfCareSectionPlanOfCareActivityEncounter PlanOfCareSectionPlanOfCareActivityObservation PlanOfCareSectionPlanOfCareActivityProcedure PlanOfCareSectionPlanOfCareActivitySubstanceAdministration PlanOfCareSectionPlanOfCareActivitySupply"/>
     </eAnnotations>
-    <eOperations name="PlanOfCareSectionContainsPlanOfCareActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.planOfCareAct->isEmpty() or not self.planOfCareEncounter->isEmpty()&#xD;&#xA;  or not self.planOfCareObservation->isEmpty() or not self.planOfCareProcedure->isEmpty()&#xD;&#xA;  or not self.planOfCareSubstanceAdministration->isEmpty() or not self.planOfCareSupply->isEmpty()"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.planOfCareAct->isEmpty() or not self.planOfCareEncounter->isEmpty()&#xD;&#xA;  or not self.planOfCareObservation->isEmpty() or not self.planOfCareProcedure->isEmpty()&#xD;&#xA;  or not self.planOfCareSubstanceAdministration->isEmpty() or not self.planOfCareSupply->isEmpty()"/>
-      </eAnnotations>
-      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-        </eAnnotations>
-      </eParameters>
-      <eParameters name="context">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The cache of context-specific information."/>
-        </eAnnotations>
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-        </eGenericType>
-      </eParameters>
-    </eOperations>
     <eOperations name="PlanOfCareSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.10')"/>
