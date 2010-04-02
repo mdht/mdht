@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Result Organizer</title>
+<shortdesc conref="generated/_ResultOrganizer.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_ResultOrganizer.dita#classId/prolog"></prolog>
+<body>
+<p>
+    The result organizer identifies an observation set, contained with the result organizer
+    as a set of result observations. It contains information applicable to all of the contained result
+    observations.
+</p>
+<p>
+    Results in ASTM CCR and CCD are structured similarly to the HL7 Version 2 ORU Observation message, where
+    there is an outer result organizer (templateId 2.16.840.1.113883.10.20.1.32), analogous to the HL7 Version 2 OBR
+    Observation Result Segment, which contains one or more result observations (templateId 2.16.840.1.113883.10.20.1.31),
+    analogous to the HL7 Version 2 OBX Observation/Result Segment.
+</p>
+
+<ol conref="generated/_ResultOrganizer.dita#classId/conformance">
+<li></li>
+</ol>
+<fig>
+<title>Result Organizer example</title>
+<codeblock>TODO: XML document snippet</codeblock>
+</fig>
+</body>
+</topic>

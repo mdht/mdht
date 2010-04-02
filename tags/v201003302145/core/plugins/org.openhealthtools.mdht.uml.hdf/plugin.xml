@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+  Copyright (c) 2006, 2008 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson (XMLmodeling.com) - initial API and implementation
+      
+  $Id$
+-->
+
+<plugin>
+<!--
+Declare contributed profiles and libraries.
+-->
+  <extension
+        id="HL7Libraries"
+        name="HL7 Libraries"
+        point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+     <pathmap
+           name="HL7_LIBRARIES"
+           path="libraries"
+           plugin="org.openhealthtools.mdht.uml.hdf"/>
+  </extension>
+  <extension
+        id="HL7Profiles"
+        name="HL7 Profiles"
+        point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+     <pathmap
+           name="HL7_PROFILES"
+           path="profiles"
+           plugin="org.openhealthtools.mdht.uml.hdf"/>
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.uri_mapping">
+    <mapping
+       source="pathmap://HL7_LIBRARIES/"
+       target="libraries/">
+    </mapping>
+  </extension>
+  <extension
+     point="org.eclipse.emf.ecore.uri_mapping">
+    <mapping
+       source="pathmap://HL7_PROFILES/"
+       target="profiles/">
+    </mapping>
+  </extension>
+
+<!--
+  <extension point="org.eclipse.uml2.uml.dynamic_package">
+    <profile uri="http:///schemas/HDF/_Me1-sE7sEd6xS7RZu469GA/10" 
+    	location="pathmap://HL7_PROFILES/HDF.profile.uml#_XQSZwERPEdyoutEhWTC49A"/>
+    <profile uri="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" 
+    	location="pathmap://HL7_PROFILES/RIM.profile.uml#_alQUkajjEdy4G806Cj-KBg"/>
+  </extension>
+-->
+</plugin>

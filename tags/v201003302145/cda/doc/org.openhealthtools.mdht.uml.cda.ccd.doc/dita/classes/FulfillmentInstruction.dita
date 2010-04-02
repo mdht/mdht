@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Fulfillment Instruction</title>
+<shortdesc conref="generated/_FulfillmentInstruction.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_FulfillmentInstruction.dita#classId/prolog"></prolog>
+<body>
+<p>
+    Fulfillment instructions are additional information provided to the dispensing party (e.g. "label in
+    spanish").
+</p>
+
+<ol conref="generated/_FulfillmentInstruction.dita#classId/conformance">
+<li></li>
+</ol>
+<fig>
+<title>Fulfillment Instruction example</title>
+<codeblock>TODO: XML document snippet</codeblock>
+</fig>
+</body>
+</topic>

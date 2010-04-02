@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<concept id="concept_08A10EA8D5F04579946FF3AA54723876"> 
+  <title>Other general constraints</title> 
+  <shortdesc>Specify other constraints that cannot be expressed as basic
+	 attribute and association constraints.
+  </shortdesc> 
+  <conbody> 
+	 <p>Your objective should be to get all constraints in a formalized
+		representation that is automatically generated into application code. The
+		majority of template constraints may be expressed as UML attributes and
+		associations, as described in other sections of this guide. However, a few
+		constraints require more complex expressions. Our recommendation is to create a
+		UML Constraint and to:
+	 </p> 
+	 <ol id="ol_21EFC810A539413ABFD344032D54C908">
+		<li id="li_0143B840224D4BE39C71E25A8BA4464B">Add an 
+		  <i>Analysis</i> language body that provides a human-readable
+		  description, and
+		</li>
+		<li id="li_8D8AA80A92374B9192F36E4C2CC7A80F">Add an 
+		  <i>OCL</i> language body that is a formal executable representation
+		  based on the CDA object model.
+		</li>
+	 </ol>
+	 <p>When an implementation guide is published from this model, the 
+		<i>Analysis</i> text is included in the document, whereas the 
+		<i>OCL</i> expression is used when generating Java code from the model.
+	 </p>
+  </conbody>
+</concept>

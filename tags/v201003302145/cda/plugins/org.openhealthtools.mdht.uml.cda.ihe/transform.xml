@@ -1,0 +1,15 @@
+<project name="CDA Model Transformation"  basedir="." default="all">
+
+	<property name="cdaPluginPath" location="${basedir}/../org.openhealthtools.mdht.uml.cda"/>
+	<property name="modelName" value="ihe"/>
+	
+	<macrodef name="convertEcorePaths">
+		<attribute name="filePath"/>
+		
+		<sequential>
+			<replace file="@{filePath}" token="/ccd.uml" value="/ccd_Ecore.uml"/>
+		</sequential>
+	</macrodef>
+	
+	<import file="${cdaPluginPath}/transform-common.xml"/>
+</project>

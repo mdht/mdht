@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<concept id="concept_DFF2E746B15045979B11C6D19D25D0E2"> 
+  <title>Association constraints</title> 
+  <shortdesc>Describes constraints on relationships between two template
+	 classes, e.g. that a Section template is required to contain a particular
+	 templated Observation. 
+  </shortdesc> 
+  <conbody> 
+	 <p>Most CDA classes are derived from the RIM Act, so associations between
+		templates (i.e. CDA classes that have been restricted via template
+		specifications) must be connected using an ActRelationship. In our CDA modeling
+		tools, the association is represented directly between two template classes and
+		later implementation transformations will add the necessary ActRelationship
+		intermediary. 
+	 </p>
+	 <p>As part of defining the template association, a typeCode may be added as
+		a restriction constraint, which will be used to generate the complete
+		ActRelationship implementation. The CDA Tools do not yet support all types of
+		act relationships in the CDA R2 base model; these are currently included:
+	 </p> 
+	 <ul id="ul_C9DEF8218384479197D2BBDB4CCCCA32">
+		<li id="li_4F7A7A68688E4BA5BEFF27CA1066D8EE">ClinicalDocument to Section
+		  (component)
+		</li>
+		<li id="li_622D2875B68248D48B438081579C0B87">Section to ClinicalStatement
+		  (entry)
+		</li>
+		<li id="li_450782C123DD47BA8F30336066D31CB5">ClinicalStatement to
+		  ClinicalStatement (actRelationship)
+		</li>
+	 </ul>
+  </conbody>
+</concept>

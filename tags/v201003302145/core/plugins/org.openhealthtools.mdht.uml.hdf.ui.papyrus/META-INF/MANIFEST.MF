@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus UI Extensions                     
+Bundle-SymbolicName: org.openhealthtools.mdht.uml.hdf.ui.papyrus;singleton:=true
+Bundle-Version: 0.7.0.qualifier
+Bundle-Activator: org.openhealthtools.mdht.hdf.uml.ui.papyrus.Activator
+Bundle-Vendor: XML Modeling
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.uml2.uml,
+ org.openhealthtools.mdht.uml.hdf.ui,
+ org.eclipse.papyrus.extensionpoints.uml2;resolution:=optional;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: org.eclipse.emf.transaction,
+ org.eclipse.emf.transaction.util,
+ org.eclipse.emf.workspace,
+ org.eclipse.gmf.runtime.common.ui.services.parser,
+ org.eclipse.gmf.runtime.notation
+
+
+

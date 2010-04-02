@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.openhealthtools.mdht.uml.hdf.ui.rsm;singleton:=true
+Bundle-Version: 0.7.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.uml2.uml,
+ org.openhealthtools.mdht.uml.hdf.ui,
+ com.ibm.xtools.modeler.ui
+Bundle-Activator: org.openhealthtools.mdht.uml.hdf.ui.rsm.internal.Activator

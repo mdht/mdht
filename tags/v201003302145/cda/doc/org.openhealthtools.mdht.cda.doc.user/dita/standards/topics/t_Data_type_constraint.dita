@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_07DC624F41FE4DE8B5219B2C1033C860"> 
+  <title>Data type constraint</title> 
+  <shortdesc>Constrain the data type of a template attribute to be more
+	 restrictive than the same attribute in its parent class. 
+  </shortdesc> 
+  <taskbody> 
+	 <steps id="steps_8AF096AC5C2E447BA8CD7D2007DADAFF"> 
+		<step id="step_A663808F78B9419288DF1BA16FE05FB9"> 
+		  <cmd>Select the table row for the attribute you want to constrain. 
+		  </cmd> 
+		</step> 
+		<step id="step_3EE7CC39545D4FE7A98F394F043854B6"> 
+		  <cmd>Select the Type table cell in that row using the mouse or by
+			 navigating with the keyboard arrow keys. 
+		  </cmd> 
+		</step> 
+		<step id="step_31376F053C254A3BA328EC01097F1249"> 
+		  <cmd>Either double-click in that cell or press Enter to open a type
+			 selection dialog. 
+		  </cmd> 
+		</step> 
+	 </steps> 
+	 <result id="result_78E3C195EBD142F3829A68A2D45131B7">In this example, we
+		are restricting the BirthHeadCircumference 
+		<tt>value</tt> data type from ANY to PQ. We expect to add more selection
+		guidance in future milestones; for now, you are responsible for selecting an
+		appropriate type restriction. In the future, model validation will also verify
+		model integrity, including template constraints.<image
+		id="image_19AB684907314AD3B6B9EBE819A2AB2E"
+		href="../images/TableTypeConstraint.png" placement="break"></image> 
+	 </result> 
+  </taskbody> 
+  <related-links> 
+	 <link format="dita" type="concept" scope="local"
+	  href="c_Severity_and_message.dita#concept_AEA4AFEB0B7749ACB785A68FBBCCAD7E"><?xm-replace_text Severity and message?>
+	 </link> 
+  </related-links>
+</task>

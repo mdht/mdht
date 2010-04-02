@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Medication Series Number Observation</title>
+<shortdesc conref="generated/_MedicationSeriesNumberObservation.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_MedicationSeriesNumberObservation.dita#classId/prolog"></prolog>
+<body>
+<p>
+    The medication series number observation can be used to indicate which in a series of administrations a
+    particular administration represents (e.g. "hepatitis B vaccine number 2 was administered on Feb 07, 2004).
+</p>
+
+<ol conref="generated/_MedicationSeriesNumberObservation.dita#classId/conformance">
+<li></li>
+</ol>
+<fig>
+<title>Medication Series Number Observation example</title>
+<codeblock>TODO: XML document snippet</codeblock>
+</fig>
+</body>
+</topic>

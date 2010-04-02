@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Advance Directive Verification - conformance rules</title>
+<shortdesc id="shortdesc">[Participant2: templateId <tt>2.16.840.1.113883.10.20.1.58</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Participant2</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.58"/>
+</prolog>
+<body>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Participant2.html">CDA Participant2</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>@typeCode</tt> = "VRF"</li>
+<li><b>SHOULD</b> contain [0..1] <tt>time</tt>, where its data type is TS</li>
+</ol>
+</body>
+</topic>

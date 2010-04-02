@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Encounters Activity - conformance rules</title>
+<shortdesc id="shortdesc">[Encounter: templateId <tt>2.16.840.1.113883.10.20.1.21</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Encounter</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.21"/>
+</prolog>
+<body>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Encounter.html">CDA Encounter</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "ENC"</li>
+<li><b>SHALL</b> contain [1..1] <tt>@moodCode</tt> = "EVN"</li>
+<li><b>SHALL</b> contain [1..*] <tt>id</tt></li>
+<li><b>SHOULD</b> contain [1..1] <tt>code</tt>, which <b>SHOULD</b> be selected from ValueSet 2.16.840.1.113883.1.11.13955 EncounterCode STATIC</li>
+<li><b>MAY</b> contain [0..1] <tt>effectiveTime</tt></li>
+</ol>
+</body>
+</topic>

@@ -1,0 +1,102 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package org.openhealthtools.mdht.uml.cda.ccd.impl;
+
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.ecore.EClass;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.SupplyActivityOperations;
+import org.openhealthtools.mdht.uml.cda.impl.SupplyImpl;
+import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Supply Activity</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
+public class SupplyActivityImpl extends SupplyImpl implements SupplyActivity {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SupplyActivityImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return CCDPackage.Literals.SUPPLY_ACTIVITY;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupplyActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityTemplateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupplyActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupplyActivityStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityStatusCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupplyActivityMedicationStatusObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityMedicationStatusObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupplyActivityFulfillmentInstruction(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SupplyActivityOperations.validateSupplyActivityFulfillmentInstruction(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SupplyActivity init() {
+    		CDAUtil.init(this);
+    		return this;
+	}
+} //SupplyActivityImpl

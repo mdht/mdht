@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+
+<!--
+ Copyright (c) 2010 David A Carlson, IBM Corporation
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+ 	 David A Carlson (XMLmodeling.com) - initial API and implementation
+     IBM Corporation
+-->
+
+<plugin>
+   <extension point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            uri="http://www.openhealthtools.org/mdht/schemas/term/1"
+            location="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q">
+      </profile>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package 
+         uri="http://www.openhealthtools.org/mdht/schemas/term/1" 
+         class="org.openhealthtools.mdht.uml.term.core.profile.TermPackage"
+         genModel="profiles/Terminology.profile.genmodel" /> 
+   </extension>
+
+   <extension
+         id="TermProfiles"
+         name="Terminology Profiles"
+         point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+      <pathmap
+            name="MDHT_TERM_PROFILES"
+            path="profiles"
+            plugin="org.openhealthtools.mdht.uml.term.core"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://MDHT_TERM_PROFILES/"
+            target="profiles/">
+      </mapping>
+   </extension>
+  
+</plugin>

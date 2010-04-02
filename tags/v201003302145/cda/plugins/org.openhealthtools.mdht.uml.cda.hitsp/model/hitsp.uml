@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
+  <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="hitsp">
+    <packageImport xmi:id="_-xRsgDxVEd6JwqSGecoePg">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ii81kjxVEd6JwqSGecoePg"/>
+    </packageImport>
+    <packageImport xmi:id="_8zZJ4GD8Ed6bFO5yxRh3Nw">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_qQyD8jxVEd6JwqSGecoePg"/>
+    </packageImport>
+    <packageImport xmi:id="_S49LUIwJEd6B6JSUB00H7g">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_XgMSwzxVEd6JwqSGecoePg"/>
+    </packageImport>
+    <packageImport xmi:id="_Zkp_kDITEd-saqiXO4OYhQ">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_KnCD4CFjEd-3s7f6mWX-3A"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vB4EUGEIEd6bFO5yxRh3Nw" name="AllergyDrugSensitivity">
+      <eAnnotations xmi:id="_Uy2V4HrWEd68l9lQ-TLEBQ" source="uml2.alias">
+        <details xmi:id="_Uy2V4XrWEd68l9lQ-TLEBQ" key="Allergies and Drug Sensitivities"/>
+      </eAnnotations>
+      <eAnnotations xmi:id="_Xmce4HrWEd68l9lQ-TLEBQ" source="uml2.alias">
+        <details xmi:id="_Xmce4XrWEd68l9lQ-TLEBQ" key="Allergy and Drug Sensitivity"/>
+      </eAnnotations>
+      <ownedComment xmi:id="_aq5R4HrXEd68l9lQ-TLEBQ" annotatedElement="_vB4EUGEIEd6bFO5yxRh3Nw">
+        <body>&lt;p>&#xD;
+    This module contains the allergy or intolerance conditions and the associated adverse reactions suffered&#xD;
+    by the patient. See the HL7 Continuity of Care Document Section 3.8 for constraints applicable to this module. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_hsBnwHrWEd68l9lQ-TLEBQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_pOtQsHrDEd68l9lQ-TLEBQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_IjIO0DxbEd6JwqSGecoePg" name="Medication">
+      <generalization xmi:id="_w0bkkHrGEd68l9lQ-TLEBQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_sFGZUHGfEd6bf47ZOcft4w"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GgvgUDxbEd6JwqSGecoePg" name="Condition">
+      <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_wSnPAGaQEd6Hk_bPOfEjYA"/>
+      </generalization>
+      <ownedAttribute xmi:id="_Kp7UYIwJEd6B6JSUB00H7g" name="text" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_-HhPcBvhEd-yI6xBTkJSNw" name="conditionEntry" visibility="private" type="_c6bN4BvgEd-yI6xBTkJSNw" association="_-HcW8BvhEd-yI6xBTkJSNw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-Hlg4BvhEd-yI6xBTkJSNw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-Hk50BvhEd-yI6xBTkJSNw" value="1"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_wzkWAGdLEd6Hk_bPOfEjYA" name="createConditionEntry">
+        <ownedParameter xmi:id="_zxKvkGdLEd6Hk_bPOfEjYA" name="return" type="_c6bN4BvgEd-yI6xBTkJSNw" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="PatientSummary">
+      <generalization xmi:id="_0EOJQKRmEd6t_4WfM070fA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_S9OzADxXEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedOperation xmi:id="_C1Qp0GG6Ed6bFO5yxRh3Nw" name="createProblemListSection">
+        <ownedParameter xmi:id="_vMia4GdYEd6Hk_bPOfEjYA" name="Parameter1" type="_cPtREMfaEd6VjLXh4DcWSg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FdooAHopEd6WAZ28-5wkSg" name="createMedicationsSection">
+        <ownedParameter xmi:id="_H3ai0HopEd6WAZ28-5wkSg" name="Parameter1" type="_WI3zsMfwEd6VjLXh4DcWSg" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_L9yGgK7HEd6_ioDelDcPPg" name="VitalSignsSection">
+      <ownedComment xmi:id="_EGGjEMf2Ed6VjLXh4DcWSg" annotatedElement="_L9yGgK7HEd6_ioDelDcPPg">
+        <body>&lt;p>&#xD;
+    The Vital Signs Section contains information documenting the patient vital signs. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <ownedRule xmi:id="_hrcTgK7MEd6_ioDelDcPPg" name="vitalSigns" constrainedElement="_L9yGgK7HEd6_ioDelDcPPg">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_hrc6kK7MEd6_ioDelDcPPg">
+          <language>OCL</language>
+          <language>Analysis</language>
+          <body>self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::VitalSignsOrganizer) and&#xD;&#xA;entry.organizer.component.observation->exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))</body>
+          <body>Contains entries conforming to the Vital Sign module.</body>
+        </specification>
+      </ownedRule>
+      <generalization xmi:id="_VeaIMK7HEd6_ioDelDcPPg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_5k1R8K4FEd6_ioDelDcPPg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dobt4K7IEd6_ioDelDcPPg" name="VitalSign">
+      <generalization xmi:id="_g9_UcK7IEd6_ioDelDcPPg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_LriUcK4NEd6_ioDelDcPPg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_K4Lk0K7REd6_ioDelDcPPg" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_DH404MfWEd6VjLXh4DcWSg" name="PayersSection">
+      <ownedComment xmi:id="_KrHD0MfYEd6VjLXh4DcWSg" annotatedElement="_DH404MfWEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Payers Section contains data on the patient's payers, whether a 'third party' insurance, self-pay,&#xD;
+    other payer or guarantor, or some combination. At a minimum, the patient's pertinent current payment sources should be&#xD;
+    listed. If no payment sources are supplied, the reason shall be supplied as free text in the narrative block (e.g., Not&#xD;
+    Insured, Payer Unknown, Medicare Pending, et cetera). &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_1sbqcMfXEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_ynU6sMfXEd6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_VGnj8MfZEd6VjLXh4DcWSg" name="AllergiesReactionsSection">
+      <ownedComment xmi:id="_J4LgIMfaEd6VjLXh4DcWSg" annotatedElement="_VGnj8MfZEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Allergies and Other Adverse Reactions Section contains data on the substance intolerances and the&#xD;
+    associated adverse reactions suffered by the patient. At a minimum, currently active and any relevant historical&#xD;
+    allergies and adverse reactions shall be listed. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_Xue-EMfZEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_O7-UAHrUEd68l9lQ-TLEBQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cPtREMfaEd6VjLXh4DcWSg" name="ProblemListSection">
+      <ownedComment xmi:id="_mOi4wMfaEd6VjLXh4DcWSg" annotatedElement="_cPtREMfaEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Problem List Section contains data on the problems currently being monitored for the patient. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_epE8MMfaEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_vz5koGGsEd6bFO5yxRh3Nw"/>
+      </generalization>
+      <ownedAttribute xmi:id="_4EDnQBvYEd-yI6xBTkJSNw" name="condition" visibility="private" type="_GgvgUDxbEd6JwqSGecoePg" association="_4D4oIBvYEd-yI6xBTkJSNw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4EWiMBvYEd-yI6xBTkJSNw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4EV7IBvYEd-yI6xBTkJSNw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lSC-0MfbEd6VjLXh4DcWSg" name="HistoryOfPastIllnessSection">
+      <ownedComment xmi:id="_rhcgUMfbEd6VjLXh4DcWSg" annotatedElement="_lSC-0MfbEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The History of Past Illness Section contains data about problems the patient suffered in the&#xD;
+    past. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_nhstQMfbEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_QD0tkMfbEd6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_9ugRMMfcEd6VjLXh4DcWSg" name="ChiefComplaintSection">
+      <ownedComment xmi:id="_EHhBsMfdEd6VjLXh4DcWSg" annotatedElement="_9ugRMMfcEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Chief Complaint Section contains information about the patient's chief complaint. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="__87QkMfcEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_iVB-oMfcEd6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bX2UoMfdEd6VjLXh4DcWSg" name="ReasonForReferralSection">
+      <ownedComment xmi:id="_vA-QUMfdEd6VjLXh4DcWSg" annotatedElement="_bX2UoMfdEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Reason for Referral Section contains information about the reason that the patient is being&#xD;
+    referred. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_eIhFcMfdEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_XicJUMfdEd6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_w51SkMfhEd6VjLXh4DcWSg" name="HistoryOfPresentIllness">
+      <ownedComment xmi:id="__Y1SwMfhEd6VjLXh4DcWSg" annotatedElement="_w51SkMfhEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The History of Present Illness Section contains information about the sequence of events preceding the&#xD;
+    patient's current complaints. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_yYzyAMfhEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_jWj60MfhEd6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_OCM5cMfuEd6VjLXh4DcWSg" name="SurgeriesSection">
+      <generalization xmi:id="_UcKsMMfuEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_9fsJYMftEd6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_m5tlkMfuEd6VjLXh4DcWSg" name="FunctionalStatusSection">
+      <ownedComment xmi:id="_z7tcQMfuEd6VjLXh4DcWSg" annotatedElement="_m5tlkMfuEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Functional Status Section provides information about the capability of the patient to perform acts&#xD;
+    of daily living. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_pp-twMfuEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_GoctIKPdEd6t_4WfM070fA"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eg314MfvEd6VjLXh4DcWSg" name="HospitalAdmissionDiagnosisSection">
+      <ownedComment xmi:id="_rzF54MfvEd6VjLXh4DcWSg" annotatedElement="_eg314MfvEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Hospital Admitting Diagnosis Section contains information about the primary reason for admission to&#xD;
+    a hospital facility. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_m79y4MfvEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_MvxLwMfvEd6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CEsTsMfwEd6VjLXh4DcWSg" name="DischargeDiagnosisSection">
+      <ownedComment xmi:id="_NRLaQMfwEd6VjLXh4DcWSg" annotatedElement="_CEsTsMfwEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Discharge Diagnosis Section contains information about the conditions identified during the hospital&#xD;
+    stay that either need to be monitored after discharge from the hospital and/or where resolved during the hospital&#xD;
+    course. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_HTsIIMfwEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_3ov5QMfvEd6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_WI3zsMfwEd6VjLXh4DcWSg" name="MedicationsSection">
+      <ownedComment xmi:id="_iNKE8MfwEd6VjLXh4DcWSg" annotatedElement="_WI3zsMfwEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Medications Section contains information about the relevant medications for the patient. At a&#xD;
+    minimum, the currently active medications should be listed. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_Y4PkAMfwEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_8YbB4HomEd6WAZ28-5wkSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CoUvwMfxEd6VjLXh4DcWSg" name="AdmissionMedicationHistorySection">
+      <ownedComment xmi:id="_NKd40MfxEd6VjLXh4DcWSg" annotatedElement="_CoUvwMfxEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Admission Medication Section contains information about the relevant medications of a patient prior&#xD;
+    to admission to a facility. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_IMdGsMfxEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_3Se44MfwEd6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_OORpwMfyEd6VjLXh4DcWSg" name="HospitalDischargeMedicationsSection">
+      <ownedComment xmi:id="_cuSWkMfyEd6VjLXh4DcWSg" annotatedElement="_OORpwMfyEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Hospital Discharge Medications Section contains information about the relevant medications of the&#xD;
+    medications ordered for the patient for use after discharge from the hospital. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_TYzN4MfyEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_JAhygMfyEd6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_u9U54MfyEd6VjLXh4DcWSg" name="MedicationsAdministeredSection">
+      <ownedComment xmi:id="_HScqoMfzEd6VjLXh4DcWSg" annotatedElement="_u9U54MfyEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Medications Administered Section contains information about the relevant medications administered to&#xD;
+    a patient during the course of an encounter. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_-RLecMfyEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_quPDQMfyEd6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uIr7cMfzEd6VjLXh4DcWSg" name="AdvanceDirectivesSection">
+      <ownedComment xmi:id="_5aSLgMfzEd6VjLXh4DcWSg" annotatedElement="_uIr7cMfzEd6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Advance Directives Section contains information that defines the patient's expectations and requests&#xD;
+    for care along with the locations of the documents. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_wzIIcMfzEd6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_bSHeEMfzEd6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_gHDXQMf0Ed6VjLXh4DcWSg" name="ImmunizationsSection">
+      <ownedComment xmi:id="_m9ylkMf0Ed6VjLXh4DcWSg" annotatedElement="_gHDXQMf0Ed6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Immunizations Section contains information describing the immunizations administered to the&#xD;
+    patient. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_iBayMMf0Ed6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_ZEjk4Mf0Ed6VjLXh4DcWSg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_y3IF0DuJEd-B8KE6Jx0UNQ" name="immunization" type="_qkWXUDuJEd-B8KE6Jx0UNQ" association="_y3IF0TuJEd-B8KE6Jx0UNQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0OAZMDuJEd-B8KE6Jx0UNQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0OAZMTuJEd-B8KE6Jx0UNQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XaZ6wMf1Ed6VjLXh4DcWSg" name="PhysicalExamSection">
+      <ownedComment xmi:id="_pXr_sMf1Ed6VjLXh4DcWSg" annotatedElement="_XaZ6wMf1Ed6VjLXh4DcWSg">
+        <body>&lt;p>&#xD;
+    The Physical Examination Section contains information describing the physical findings. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_Yda28Mf1Ed6VjLXh4DcWSg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_LGf5IMf1Ed6VjLXh4DcWSg"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GuZI0MiXEd6mWrHPmrIIfQ" name="ReviewOfSystemsSection">
+      <ownedComment xmi:id="_BxC2UMidEd6mWrHPmrIIfQ" annotatedElement="_GuZI0MiXEd6mWrHPmrIIfQ">
+        <body>&lt;p>&#xD;
+    The Review of Systems Section contains information describing patient responses to questions about the&#xD;
+    function of various body systems. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_H4oHUMiXEd6mWrHPmrIIfQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_6fSusMiWEd6mWrHPmrIIfQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_J1pl8MidEd6mWrHPmrIIfQ" name="HospitalCourseSection">
+      <ownedComment xmi:id="_qTMPUMidEd6mWrHPmrIIfQ" annotatedElement="_J1pl8MidEd6mWrHPmrIIfQ">
+        <body>&lt;p>&#xD;
+    The Hospital Course Section contains information about of the sequence of events from admission to&#xD;
+    discharge in a hospital facility. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_LTgrEMidEd6mWrHPmrIIfQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_DO0b4MidEd6mWrHPmrIIfQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_P3GVkMieEd6mWrHPmrIIfQ" name="DiagnosticResultsSection">
+      <ownedComment xmi:id="_YY5XgMieEd6mWrHPmrIIfQ" annotatedElement="_P3GVkMieEd6mWrHPmrIIfQ">
+        <body>&lt;p>&#xD;
+    The Diagnostic Results Section contains information about the results from diagnostic procedures the&#xD;
+    patient received. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_RNzp0MieEd6mWrHPmrIIfQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_-OeSAMidEd6mWrHPmrIIfQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ml82oMifEd6mWrHPmrIIfQ" name="AssessmentAndPlanSection">
+      <ownedComment xmi:id="_yaHoQMifEd6mWrHPmrIIfQ" annotatedElement="_ml82oMifEd6mWrHPmrIIfQ">
+        <body>&lt;p>&#xD;
+    The Assessment and Plan Section contains information about the assessment of the patient's condition and&#xD;
+    expectations for care including proposals, goals, and order requests for monitoring, tracking, or improving the&#xD;
+    condition of the patient. &#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    An assessment and plan section varies from the plan of care section defined later in that it includes a&#xD;
+    physician assessment of the patient condition. &#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    &lt;b>NOTE &lt;/b>:&#xD;
+    The assessments described in this section are physician assessments of the patient's current condition, and do not&#xD;
+    include assessments of functional status, or other assessments typically used in nursing. In Implementation Guides&#xD;
+    currently selected, when both the assessment and plan are documented, they are included together in a single section&#xD;
+    documenting both. When the physician assessment is not present, only the plan of care section appears. There are no&#xD;
+    cases where a physician assessment is provided without a plan.   &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_n1jdUMifEd6mWrHPmrIIfQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_SNPREMifEd6mWrHPmrIIfQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_SydBgMigEd6mWrHPmrIIfQ" name="PlanOfCareSection">
+      <ownedComment xmi:id="_h3l0oMigEd6mWrHPmrIIfQ" annotatedElement="_SydBgMigEd6mWrHPmrIIfQ">
+        <body>&lt;p>&#xD;
+    The Plan of Care Section contains information about the expectations for care to be provided including&#xD;
+    proposed interventions and goals for improving the condition of the patient. &#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    A plan of care section varies from the assessment and plan section defined above in that it does not&#xD;
+    include a physician assessment of the patient condition. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_U9euoMigEd6mWrHPmrIIfQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_BEcusMigEd6mWrHPmrIIfQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4Mh2UMigEd6mWrHPmrIIfQ" name="FamilyHistorySection">
+      <ownedComment xmi:id="__W9csMigEd6mWrHPmrIIfQ" annotatedElement="_4Mh2UMigEd6mWrHPmrIIfQ">
+        <body>&lt;p>&#xD;
+    The Family History Section contains information about the genetic family members, to the extent that&#xD;
+    they are known, the diseases they suffered from, their ages at death, and other relevant genetic information. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_7ThccMigEd6mWrHPmrIIfQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_kKnAIMigEd6mWrHPmrIIfQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_-ujjcMihEd6mWrHPmrIIfQ" name="SocialHistorySection">
+      <ownedComment xmi:id="_Gu8hcMiiEd6mWrHPmrIIfQ" annotatedElement="_-ujjcMihEd6mWrHPmrIIfQ">
+        <body>&lt;p>&#xD;
+    The Social History Section contains information about the person's beliefs, home life, community life,&#xD;
+    work life, hobbies, and risky habits. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_BW7T4MiiEd6mWrHPmrIIfQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_Kv5q4MihEd6mWrHPmrIIfQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_F4b6wMijEd6mWrHPmrIIfQ" name="EncountersSection">
+      <ownedComment xmi:id="_R7eO0MijEd6mWrHPmrIIfQ" annotatedElement="_F4b6wMijEd6mWrHPmrIIfQ">
+        <body>&lt;p>&#xD;
+    The Encounter Section contains information describing the patient history of encounters. At a minimum,&#xD;
+    current and pertinent historical encounters should be included; a full encounter history may be included. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_KMB24MijEd6mWrHPmrIIfQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_tY30kMiiEd6mWrHPmrIIfQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_d9cy8MijEd6mWrHPmrIIfQ" name="MedicalEquipmentSection">
+      <ownedComment xmi:id="_kMSTwMijEd6mWrHPmrIIfQ" annotatedElement="_d9cy8MijEd6mWrHPmrIIfQ">
+        <body>&lt;p>&#xD;
+    The Medical Equipment section contains information describing a patient's implanted and external medical&#xD;
+    devices and equipment that their health status depends on, as well as any pertinent equipment or device history. &#xD;
+&lt;/p></body>
+      </ownedComment>
+      <generalization xmi:id="_gF0NoMijEd6mWrHPmrIIfQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_tqabEMijEd6mWrHPmrIIfQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_4D4oIBvYEd-yI6xBTkJSNw" memberEnd="_4EDnQBvYEd-yI6xBTkJSNw _4EZlgBvYEd-yI6xBTkJSNw">
+      <ownedEnd xmi:id="_4EZlgBvYEd-yI6xBTkJSNw" name="" visibility="private" type="_cPtREMfaEd6VjLXh4DcWSg" association="_4D4oIBvYEd-yI6xBTkJSNw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4EfsIRvYEd-yI6xBTkJSNw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4EfsIBvYEd-yI6xBTkJSNw"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_c6bN4BvgEd-yI6xBTkJSNw" name="ConditionEntry">
+      <generalization xmi:id="_fv2i4BvgEd-yI6xBTkJSNw">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_3ZiEwGdIEd6Hk_bPOfEjYA"/>
+      </generalization>
+      <ownedAttribute xmi:id="_hjpbwBvgEd-yI6xBTkJSNw" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_f1n6wIhTEd6UrJD25cKDew"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_hjsfEBvgEd-yI6xBTkJSNw" name="value" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_slNZAIwHEd6B6JSUB00H7g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lkLxoBvjEd-yI6xBTkJSNw" name="effectiveTime" visibility="private" aggregation="composite">
+        <ownedComment xmi:id="_tM2MIBvjEd-yI6xBTkJSNw" annotatedElement="_lkLxoBvjEd-yI6xBTkJSNw">
+          <body>The problem date constraints include the onset and resolution dates for the problem. The onset date shall be recorded in the &lt;low> element of the &lt;effectiveTime> element when known. The resolution data shall be recorded in the &lt;high> element of the &lt;effectiveTime> element when known. These dates represent the clinically effective time span over which the problem existed.&#xD;
+&#xD;
+If the problem is known to be resolved, but the date of resolution is not known, then the &lt;high> element shall be present, and the nullFlavor attribute shall be set to 'UNK'. Therefore, the existence of an &lt;high> element within a problem does indicate that the problem has been resolved.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lkLxoRvjEd-yI6xBTkJSNw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lkLxohvjEd-yI6xBTkJSNw" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_t3kdcIhREd6UrJD25cKDew"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_-HcW8BvhEd-yI6xBTkJSNw" memberEnd="_-HhPcBvhEd-yI6xBTkJSNw _-HpLQBvhEd-yI6xBTkJSNw">
+      <ownedEnd xmi:id="_-HpLQBvhEd-yI6xBTkJSNw" name="" visibility="private" type="_GgvgUDxbEd6JwqSGecoePg" association="_-HcW8BvhEd-yI6xBTkJSNw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-HrAcRvhEd-yI6xBTkJSNw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-HrAcBvhEd-yI6xBTkJSNw"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oTzNMDIWEd-SYNRf-pkwtw" name="Result">
+      <generalization xmi:id="_oT1CYDIWEd-SYNRf-pkwtw">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_MQHZEHDAEd6eItyqb1FoWg"/>
+      </generalization>
+      <generalization xmi:id="_S1FzcDIXEd-SYNRf-pkwtw">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_dLvb0K4NEd6_ioDelDcPPg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_ColIkDIXEd-SYNRf-pkwtw" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_H1HqAK6xEd6_ioDelDcPPg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_CuLaQDIXEd-SYNRf-pkwtw" name="effectiveTime" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_QYeW4D5-Ed6cla2oXsPtlA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CuLaQTIXEd-SYNRf-pkwtw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CuLaQjIXEd-SYNRf-pkwtw" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_5TTmYK6wEd6_ioDelDcPPg"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_MdoNoDuEEd-B8KE6Jx0UNQ" name="LanguageSpoken">
+      <generalization xmi:id="_Md7IkDuEEd-B8KE6Jx0UNQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_-uU7kDOtEd-5f4Yngl7nkw"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZNaLkDuHEd-B8KE6Jx0UNQ" name="InsuranceProvider">
+      <generalization xmi:id="_ZNaLkTuHEd-B8KE6Jx0UNQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_PMrjADXgEd-gpLhSMS7jpQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pOKSYDuHEd-B8KE6Jx0UNQ" name="HealthcareProvider">
+      <generalization xmi:id="_pOUDYDuHEd-B8KE6Jx0UNQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_4hu_kDuGEd-B8KE6Jx0UNQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_qkWXUDuJEd-B8KE6Jx0UNQ" name="Immunization">
+      <generalization xmi:id="_qkWXUTuJEd-B8KE6Jx0UNQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_aFDTUDuJEd-B8KE6Jx0UNQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_y3IF0TuJEd-B8KE6Jx0UNQ" memberEnd="_y3IF0DuJEd-B8KE6Jx0UNQ _y3IF0juJEd-B8KE6Jx0UNQ">
+      <ownedEnd xmi:id="_y3IF0juJEd-B8KE6Jx0UNQ" type="_gHDXQMf0Ed6VjLXh4DcWSg" association="_y3IF0TuJEd-B8KE6Jx0UNQ"/>
+    </packagedElement>
+    <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
+      <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_aMu68IwJEd6B6JSUB00H7g">
+      <eAnnotations xmi:id="_aMviAIwJEd6B6JSUB00H7g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/cda/4#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+  </uml:Package>
+  <CDA:CDATemplate xmi:id="_t9ej4HcIEd6ZeOKq_2_a9g" message="HITSP Allergy Drug Sensitivity SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.6" base_Class="_vB4EUGEIEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.83.6" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_uxtdMHcIEd6ZeOKq_2_a9g" message="HITSP Condition SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.7" base_Class="_GgvgUDxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.7" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_vuEXwHcIEd6ZeOKq_2_a9g" message="HITSP Medication SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.8" base_Class="_IjIO0DxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.8" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_wcI-sHcIEd6ZeOKq_2_a9g" message="HITSP Patient Summary SHALL contain the template identifier 2.16.840.1.113883.3.88.11.32.1" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.32.1" assigningAuthorityName="HITSP C32"/>
+  <Default:Documentation xmi:id="_aq9jUHrXEd68l9lQ-TLEBQ" base_Comment="_aq5R4HrXEd68l9lQ-TLEBQ"/>
+  <CDA:CodegenSupport xmi:id="_lVjhYJyPEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" packageName="hitsp" prefix="HITSP" base_Namespace="_qQyD8jxVEd6JwqSGecoePg"/>
+  <CDA:PropertyValidation xmi:id="_JvJwoJyQEd6BO7rW3XxHIA" message="HITSP Condition SHALL contain [1..1] text" base_Property="_Kp7UYIwJEd6B6JSUB00H7g"/>
+  <CDA:CDATemplate xmi:id="_jNa14K7HEd6_ioDelDcPPg" message="HITSP Vital Signs Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.119" base_Class="_L9yGgK7HEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.119" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_j4cTYK7IEd6_ioDelDcPPg" message="HITSP Vital Sign SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.14" base_Class="_dobt4K7IEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.14" assigningAuthorityName="HITSP"/>
+  <CDA:ConstraintValidation xmi:id="_AKv5IK7OEd6_ioDelDcPPg" message="HITSP Vital Signs Section SHALL satisfy: Contains entries conforming to the Vital Sign module." base_Constraint="_hrcTgK7MEd6_ioDelDcPPg"/>
+  <CDA:CDATemplate xmi:id="_8Urw0MfXEd6VjLXh4DcWSg" message="HITSP Payers Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.101" base_Class="_DH404MfWEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.101" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_KrKuMMfYEd6VjLXh4DcWSg" base_Comment="_KrHD0MfYEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_Ymm44MfZEd6VjLXh4DcWSg" message="HITSP Allergies Reactions Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.102" base_Class="_VGnj8MfZEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.102" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_J4PxkMfaEd6VjLXh4DcWSg" base_Comment="_J4LgIMfaEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_f6v_cMfaEd6VjLXh4DcWSg" message="HITSP Problem List Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.103" base_Class="_cPtREMfaEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.103" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_mOnKMMfaEd6VjLXh4DcWSg" base_Comment="_mOi4wMfaEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_oW-vcMfbEd6VjLXh4DcWSg" message="HITSP History Of Past Illness Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.104" base_Class="_lSC-0MfbEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.104" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_rhe8kMfbEd6VjLXh4DcWSg" base_Comment="_rhcgUMfbEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_AxgIIMfdEd6VjLXh4DcWSg" message="HITSP Chief Complaint Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.105" base_Class="_9ugRMMfcEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.105" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_EHkFAMfdEd6VjLXh4DcWSg" base_Comment="_EHhBsMfdEd6VjLXh4DcWSg"/>
+  <Default:Documentation xmi:id="_vBBToMfdEd6VjLXh4DcWSg" base_Comment="_vA-QUMfdEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_xMUGgMfdEd6VjLXh4DcWSg" message="HITSP Reason For Referral Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.106" base_Class="_bX2UoMfdEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.106" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_4p-OEMfhEd6VjLXh4DcWSg" message="HITSP History Of Present Illness SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.107" base_Class="_w51SkMfhEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.107" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="__Y49IMfhEd6VjLXh4DcWSg" base_Comment="__Y1SwMfhEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_VedPoMfuEd6VjLXh4DcWSg" message="HITSP Surgeries Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.108" base_Class="_OCM5cMfuEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.108" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_qi550MfuEd6VjLXh4DcWSg" message="HITSP Functional Status Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.109" base_Class="_m5tlkMfuEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.109" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_z7wfkMfuEd6VjLXh4DcWSg" base_Comment="_z7tcQMfuEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_oA9sEMfvEd6VjLXh4DcWSg" message="HITSP Hospital Admission Diagnosis Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.110" base_Class="_eg314MfvEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.110" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_rzJkQMfvEd6VjLXh4DcWSg" base_Comment="_rzF54MfvEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_JyDoAMfwEd6VjLXh4DcWSg" message="HITSP Discharge Diagnosis Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.111" base_Class="_CEsTsMfwEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.111" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_NROdkMfwEd6VjLXh4DcWSg" base_Comment="_NRLaQMfwEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_dtEk8MfwEd6VjLXh4DcWSg" message="HITSP Medications Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.112" base_Class="_WI3zsMfwEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.112" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_iNMhMMfwEd6VjLXh4DcWSg" base_Comment="_iNKE8MfwEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_Jms3IMfxEd6VjLXh4DcWSg" message="HITSP Admission Medication History Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.113" base_Class="_CoUvwMfxEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.113" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_NKgVEMfxEd6VjLXh4DcWSg" base_Comment="_NKd40MfxEd6VjLXh4DcWSg"/>
+  <Default:Documentation xmi:id="_cuVZ4MfyEd6VjLXh4DcWSg" base_Comment="_cuSWkMfyEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_exNQkMfyEd6VjLXh4DcWSg" message="HITSP Hospital Discharge Medications Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.114" base_Class="_OORpwMfyEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.114" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_HSgVAMfzEd6VjLXh4DcWSg" base_Comment="_HScqoMfzEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_JaSg4MfzEd6VjLXh4DcWSg" message="HITSP Medications Administered Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.115" base_Class="_u9U54MfyEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.115" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_x0oowMfzEd6VjLXh4DcWSg" message="HITSP Advance Directives Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.116" base_Class="_uIr7cMfzEd6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.116" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_5aWc8MfzEd6VjLXh4DcWSg" base_Comment="_5aSLgMfzEd6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_johS4Mf0Ed6VjLXh4DcWSg" message="HITSP Immunizations Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.117" base_Class="_gHDXQMf0Ed6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.117" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_m91o4Mf0Ed6VjLXh4DcWSg" base_Comment="_m9ylkMf0Ed6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_mV4bkMf1Ed6VjLXh4DcWSg" message="HITSP Physical Exam Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.118" base_Class="_XaZ6wMf1Ed6VjLXh4DcWSg" templateId="2.16.840.1.113883.3.88.11.83.118" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_pXub8Mf1Ed6VjLXh4DcWSg" base_Comment="_pXr_sMf1Ed6VjLXh4DcWSg"/>
+  <Default:Documentation xmi:id="_EGI_UMf2Ed6VjLXh4DcWSg" base_Comment="_EGGjEMf2Ed6VjLXh4DcWSg"/>
+  <CDA:CDATemplate xmi:id="_Mkc9QMiXEd6mWrHPmrIIfQ" message="HITSP Review Of Systems Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.120" base_Class="_GuZI0MiXEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.120" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_BxF5oMidEd6mWrHPmrIIfQ" base_Comment="_BxC2UMidEd6mWrHPmrIIfQ"/>
+  <CDA:CDATemplate xmi:id="_imN8kMidEd6mWrHPmrIIfQ" message="HITSP Hospital Course Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.121" base_Class="_J1pl8MidEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.121" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_qTRH0MidEd6mWrHPmrIIfQ" base_Comment="_qTMPUMidEd6mWrHPmrIIfQ"/>
+  <CDA:CDATemplate xmi:id="_VbEUcMieEd6mWrHPmrIIfQ" message="HITSP Diagnostic Results Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.122" base_Class="_P3GVkMieEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.122" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_YY7zwMieEd6mWrHPmrIIfQ" base_Comment="_YY5XgMieEd6mWrHPmrIIfQ"/>
+  <CDA:CDATemplate xmi:id="_ryd-0MifEd6mWrHPmrIIfQ" message="HITSP Assessment And Plan Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.123" base_Class="_ml82oMifEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.123" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_yaKrkMifEd6mWrHPmrIIfQ" base_Comment="_yaHoQMifEd6mWrHPmrIIfQ"/>
+  <CDA:CDATemplate xmi:id="_XUbX4MigEd6mWrHPmrIIfQ" message="HITSP Plan Of Care Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.124" base_Class="_SydBgMigEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.124" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_h3o38MigEd6mWrHPmrIIfQ" base_Comment="_h3l0oMigEd6mWrHPmrIIfQ"/>
+  <CDA:CDATemplate xmi:id="_8IgjsMigEd6mWrHPmrIIfQ" message="HITSP Family History Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.125" base_Class="_4Mh2UMigEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.125" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="__W_48MigEd6mWrHPmrIIfQ" base_Comment="__W9csMigEd6mWrHPmrIIfQ"/>
+  <CDA:CDATemplate xmi:id="_CY01wMiiEd6mWrHPmrIIfQ" message="HITSP Social History Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.126" base_Class="_-ujjcMihEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.126" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_Gu-9sMiiEd6mWrHPmrIIfQ" base_Comment="_Gu8hcMiiEd6mWrHPmrIIfQ"/>
+  <CDA:CDATemplate xmi:id="_Ld8KsMijEd6mWrHPmrIIfQ" message="HITSP Encounters Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.127" base_Class="_F4b6wMijEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.127" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_R7grEMijEd6mWrHPmrIIfQ" base_Comment="_R7eO0MijEd6mWrHPmrIIfQ"/>
+  <CDA:CDATemplate xmi:id="_hOYYMMijEd6mWrHPmrIIfQ" message="HITSP Medical Equipment Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.128" base_Class="_d9cy8MijEd6mWrHPmrIIfQ" templateId="2.16.840.1.113883.3.88.11.83.128" assigningAuthorityName="HITSP C83"/>
+  <Default:Documentation xmi:id="_kMVXEMijEd6mWrHPmrIIfQ" base_Comment="_kMSTwMijEd6mWrHPmrIIfQ"/>
+  <CDA:EntryRelationship xmi:id="_k2HnMBviEd-yI6xBTkJSNw" message="HITSP Condition SHALL contain [1..*] entryRelationship such that it, SHALL contain [1..1] @typeCode=&quot;SUBJ&quot; SUBJ (has subject), SHALL contain [1..1] Condition Entry" base_Association="_-HcW8BvhEd-yI6xBTkJSNw" typeCode="SUBJ"/>
+  <CDA:PropertyValidation xmi:id="_lkLxoxvjEd-yI6xBTkJSNw" message="HITSP Condition Entry SHOULD contain [1..1] effectiveTime" severity="WARNING" base_Property="_lkLxoBvjEd-yI6xBTkJSNw"/>
+  <Default:Documentation xmi:id="_tM_WEBvjEd-yI6xBTkJSNw" base_Comment="_tM2MIBvjEd-yI6xBTkJSNw"/>
+  <CDA:PropertyValidation xmi:id="_ozph0BvkEd-yI6xBTkJSNw" message="HITSP Vital Sign SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.80.62 VitalSignResult STATIC 20081218" base_Property="_K4Lk0K7REd6_ioDelDcPPg"/>
+  <CDA:AssociationValidation xmi:id="_ozqv8BvkEd-yI6xBTkJSNw" message="HITSP Problem List Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Condition (templateId: 2.16.840.1.113883.3.88.11.83.7)" base_Association="_4D4oIBvYEd-yI6xBTkJSNw"/>
+  <CDA:ValueSetConstraint xmi:id="_baveQCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.2" name="Problem Type Value Set" base_Property="_hjpbwBvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.2 Problem Type Value Set STATIC"/>
+  <CDA:ValueSetConstraint xmi:id="_bayhkCfdEd-4R4ealYN1gQ" identifier="2.16.840.1.113883.3.88.12.3221.7.4" name="Problem Value Set" base_Property="_hjsfEBvgEd-yI6xBTkJSNw" message="HITSP Condition Entry SHALL contain [1..1] value, which SHALL be selected from ValueSet 2.16.840.1.113883.3.88.12.3221.7.4 Problem Value Set STATIC"/>
+  <CDA:ValueSetConstraint xmi:id="_P-2i8DITEd-saqiXO4OYhQ" base_Property="_K4Lk0K7REd6_ioDelDcPPg">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_UvVE0TISEd-saqiXO4OYhQ"/>
+  </CDA:ValueSetConstraint>
+  <CDA:PropertyValidation xmi:id="_CuIW8DIXEd-SYNRf-pkwtw" message="HITSP Result SHALL contain [1..1] code" base_Property="_ColIkDIXEd-SYNRf-pkwtw"/>
+  <CDA:PropertyValidation xmi:id="_CuMBUDIXEd-SYNRf-pkwtw" message="HITSP Result SHALL contain [1..1] effectiveTime" base_Property="_CuLaQDIXEd-SYNRf-pkwtw"/>
+  <CDA:CDATemplate xmi:id="_HDAsgDIXEd-SYNRf-pkwtw" message="HITSP Result SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.15" base_Class="_oTzNMDIWEd-SYNRf-pkwtw" templateId="2.16.840.1.113883.3.88.11.83.15"/>
+  <CDA:CDATemplate xmi:id="_SV4acDuEEd-B8KE6Jx0UNQ" message="HITSP Language Spoken SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.2" base_Class="_MdoNoDuEEd-B8KE6Jx0UNQ" templateId="2.16.840.1.113883.3.88.11.83.2" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_hNtqADuHEd-B8KE6Jx0UNQ" message="HITSP Insurance Provider SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.5" base_Class="_ZNaLkDuHEd-B8KE6Jx0UNQ" templateId="2.16.840.1.113883.3.88.11.83.5" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_t1Wf8DuHEd-B8KE6Jx0UNQ" message="HITSP Healthcare Provider SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.4" base_Class="_pOKSYDuHEd-B8KE6Jx0UNQ" templateId="2.16.840.1.113883.3.88.11.83.4" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_s4UlEDuJEd-B8KE6Jx0UNQ" message="HITSP Immunization SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.13" base_Class="_qkWXUDuJEd-B8KE6Jx0UNQ" templateId="2.16.840.1.113883.3.88.11.83.13" assigningAuthorityName="HITSP C83"/>
+  <CDA:AssociationValidation xmi:id="_0qncsDuJEd-B8KE6Jx0UNQ" message="HITSP Immunizations Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Immunization (templateId: 2.16.840.1.113883.3.88.11.83.13)" base_Association="_y3IF0TuJEd-B8KE6Jx0UNQ"/>
+</xmi:XMI>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <uml:Package xmi:id="_KnCD4CFjEd-3s7f6mWX-3A" name="CodeSystems">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_Nf68kCFjEd-3s7f6mWX-3A" name="CPT-4">
+      <ownedComment xmi:id="_8sYNgCWtEd-iTYfpNb4PkQ">
+        <body>A uniform coding system used primarily to identify medical services and procedures furnished by physicians and other healthcare professionals. For more information visit www.ama-assn.org</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_QlLMkCF_Ed-M3adQxwHq4g" name="AdministrativeGenderCode">
+      <ownedComment xmi:id="_WorXcCWuEd-iTYfpNb4PkQ">
+        <body>The gender of a person used for administrative purposes (as opposed to clinical gender)</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1MYRsCWrEd-iTYfpNb4PkQ" name="LOINC">
+      <ownedComment xmi:id="_ZxvsECWsEd-iTYfpNb4PkQ">
+        <body>A database of universal identifiers for laboratory and other clinical observations. The laboratory portion of the LOINC&amp;reg; database contains the usual categories of chemistry, hematology, serology, microbiology (including parasitology and virology), and toxicology; as well as categories for drugs and the cell counts typically reported on a complete blood count or a cerebrospinal fluid cell count. Antibiotic susceptibilities are a separate category. The clinical portion of the LOINC&amp;reg; database includes entries for vital signs, hemodynamics, intake/output, EKG, obstetric ultrasound, cardiac echo, urologic imaging, gastroendoscopic procedures, pulmonary ventilator management, selected survey instruments, and other clinical observations. For more information visit www.loinc.org</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_vA9b0CWsEd-iTYfpNb4PkQ" name="SNOMEDCT">
+      <ownedComment xmi:id="_aX6ewCWtEd-iTYfpNb4PkQ">
+        <body>SNOMED CT&amp;reg; consists of a technical design, core content architecture, and Core content. SNOMED CT&amp;reg; Core content includes the technical specification of SNOMED CT&amp;reg; and fully integrated multi-specialty clinical content. The Core content also includes a concepts table, description table, relationships table, history table, ICD-9-CM mapping, and Technical Reference Guide. Additionally, SNOMED CT&amp;reg; provides a framework to manage language dialects, clinically relevant subsets, qualifiers and extensions, as well as concepts and terms unique to particular organizations or localities. For more information visit www.ihtsdo.com</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_cEr3sCWvEd-iTYfpNb4PkQ" name="ActStatus">
+      <ownedComment xmi:id="_N4vg8CWwEd-iTYfpNb4PkQ">
+        <body>Contains the names (codes) for each of the states in the state-machine of the RIM Act class.</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1tuooCYWEd-iTYfpNb4PkQ" name="ActCode">
+      <ownedComment xmi:id="_B-44QCYXEd-iTYfpNb4PkQ">
+        <body>A code specifying the particular kind of Act that the Act-instance represents within its class.</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_0lacACvEEd-1GpmIcz-YjA" name="DiagnosisType">
+      <ownedComment xmi:id="_-jB7sCvEEd-1GpmIcz-YjA">
+        <body>The type of diagnosis.</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_CK6BUCvFEd-1GpmIcz-YjA" name="DiagnosisPriority">
+      <ownedComment xmi:id="_G_tNECvFEd-1GpmIcz-YjA">
+        <body>The number that identifies the significance or priority of the diagnosis code.</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_0seJcCvIEd-1GpmIcz-YjA" name="ResultStatus">
+      <ownedComment xmi:id="_4sebMCvIEd-1GpmIcz-YjA">
+        <body>The status of results for an order.</body>
+      </ownedComment>
+    </packagedElement>
+    <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
+      <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+  </uml:Package>
+  <term:CodeSystemVersion xmi:id="_KsN1ICF_Ed-M3adQxwHq4g" identifier="2.16.840.1.113883.6.12" version="2009" fullName="Current Procedural Terminology (CPT) Fourth Edition (CPT-4)" source="American Medical Association (AMA)" url="https://catalog.ama-assn.org/Catalog/cpt/cpt_home.jsp" base_Enumeration="_Nf68kCFjEd-3s7f6mWX-3A"/>
+  <term:CodeSystemVersion xmi:id="_VXEOQCF_Ed-M3adQxwHq4g" identifier="2.16.840.1.113883.5.1" version="V3NE08" source="Health Level Seven (HL7)" url="http://www.hl7.org/memonly/downloads/v3edition.cfm#V32008" base_Enumeration="_QlLMkCF_Ed-M3adQxwHq4g"/>
+  <term:CodeSystemVersion xmi:id="_3-cwsCWrEd-iTYfpNb4PkQ" identifier="2.16.840.1.113883.6.1" version="2.26" fullName="Logical Observation Identifiers Names and Codes (LOINC)" source="Regenstrief Institute, Inc" url="http://loinc.org" base_Enumeration="_1MYRsCWrEd-iTYfpNb4PkQ"/>
+  <term:CodeSystemVersion xmi:id="_ya6aMCWsEd-iTYfpNb4PkQ" identifier="2.16.840.1.113883.6.96" version="20080731" fullName="International Health Terminology Standards Development Organisation (IHTSDO) Systematized Nomenclature of Medicine Clinical Terms (SNOMED CT)" source="National Library of Medicine – UMLS" url="http://www.nlm.nih.gov/research/umls/Snomed/snomed_main.html" base_Enumeration="_vA9b0CWsEd-iTYfpNb4PkQ"/>
+  <term:CodeSystemVersion xmi:id="_e8ZEoCWvEd-iTYfpNb4PkQ" identifier="2.16.840.1.113883.5.14" version="V3NE08" source="Health Level Seven (HL7)" url="http://www.hl7.org/memonly/downloads/v3edition.cfm#V32008" base_Enumeration="_cEr3sCWvEd-iTYfpNb4PkQ"/>
+  <term:CodeSystemVersion xmi:id="_4AnRQCYWEd-iTYfpNb4PkQ" identifier="2.16.840.1.113883.5.4" version="V3NE08" source="Health Level Seven (HL7)" url="http://www.hl7.org/memonly/downloads/v3edition.cfm#V32008" base_Enumeration="_1tuooCYWEd-iTYfpNb4PkQ"/>
+  <term:CodeSystemVersion xmi:id="_0lbDECvEEd-1GpmIcz-YjA" identifier="2.16.840.1.113883.12.52" version="2.5.1" source="Health Level Seven (HL7)" url="http://www.hl7.org/Memonly/downloads/Standards_Messaging_v251/HL7_Messaging_v251_PDF.zip" base_Enumeration="_0lacACvEEd-1GpmIcz-YjA"/>
+  <term:CodeSystemVersion xmi:id="_CK6oYCvFEd-1GpmIcz-YjA" identifier="2.16.840.1.113883.12.359" version="2.5.1" source="Health Level Seven (HL7)" url="http://www.hl7.org/Memonly/downloads/Standards_Messaging_v251/HL7_Messaging_v251_PDF.zip" base_Enumeration="_CK6BUCvFEd-1GpmIcz-YjA"/>
+  <term:CodeSystemVersion xmi:id="_0shz0CvIEd-1GpmIcz-YjA" identifier="2.16.840.1.113883.12.123" version="2.5.1" source="Health Level Seven (HL7)" url="http://www.hl7.org/Memonly/downloads/Standards_Messaging_v251/HL7_Messaging_v251_PDF.zip" base_Enumeration="_0seJcCvIEd-1GpmIcz-YjA"/>
+</xmi:XMI>

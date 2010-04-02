@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Family History Organizer - conformance rules</title>
+<shortdesc id="shortdesc">[Organizer: templateId <tt>2.16.840.1.113883.10.20.1.23</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Organizer</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.23"/>
+</prolog>
+<body>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/Organizer.html">CDA Organizer</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>statusCode</tt><tt>/@code</tt> = "completed"  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)</li>
+</ol>
+</body>
+</topic>

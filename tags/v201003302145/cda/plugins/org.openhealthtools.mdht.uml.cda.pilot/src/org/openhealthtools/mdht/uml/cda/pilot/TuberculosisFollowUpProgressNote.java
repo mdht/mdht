@@ -1,0 +1,85 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package org.openhealthtools.mdht.uml.cda.pilot;
+
+import java.util.Map;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Tuberculosis Follow Up Progress Note</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see org.openhealthtools.mdht.uml.cda.pilot.TBPNPackage#getTuberculosisFollowUpProgressNote()
+ * @model extendedMetaData="name='ClinicalDocument'"
+ *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='Tuberculosis Follow Up Progress Note' templateId.root='2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3' constraints.validation.error='TuberculosisFollowUpProgressNoteTemplateId TuberculosisFollowUpProgressNotePatientNames TuberculosisFollowUpProgressNoteTitle TuberculosisFollowUpProgressNoteTBResultsSection'"
+ * @generated
+ */
+public interface TuberculosisFollowUpProgressNote extends ClinicalDocument {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.recordTarget.patientRole.patient.name->exists(
+	 *    name : datatypes::PN | not name.given->isEmpty() and not name.family->isEmpty())
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.recordTarget.patientRole.patient.name->exists(\r\n   name : datatypes::PN | not name.given->isEmpty() and not name.family->isEmpty())'"
+	 * @generated
+	 */
+	boolean validateTuberculosisFollowUpProgressNotePatientNames(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3')
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = \'2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3\')'"
+	 * @generated
+	 */
+	boolean validateTuberculosisFollowUpProgressNoteTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * not self.title.oclIsUndefined() and self.title.getText() = 'Tuberculosis Follow Up Progress Note'
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.title.oclIsUndefined() and self.title.getText() = \'Tuberculosis Follow Up Progress Note\''"
+	 * @generated
+	 */
+	boolean validateTuberculosisFollowUpProgressNoteTitle(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getSections()->one(section : cda::Section | section.oclIsKindOf(pilot::TBResultsSection))
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->one(section : cda::Section | section.oclIsKindOf(pilot::TBResultsSection))'"
+	 * @generated
+	 */
+	boolean validateTuberculosisFollowUpProgressNoteTBResultsSection(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TuberculosisFollowUpProgressNote init();
+} // TuberculosisFollowUpProgressNote
