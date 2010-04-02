@@ -11,19 +11,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.ocl.ParserException;
-
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
+import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationActivityOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPlugin;
 import org.openhealthtools.mdht.uml.cda.ihe.Immunization;
-
 import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
-
-import org.openhealthtools.mdht.uml.cda.operations.SubstanceAdministrationOperations;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +34,7 @@ import org.openhealthtools.mdht.uml.cda.operations.SubstanceAdministrationOperat
  *
  * @generated
  */
-public class ImmunizationOperations extends SubstanceAdministrationOperations {
+public class ImmunizationOperations extends MedicationActivityOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.ihe.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
+import org.openhealthtools.mdht.uml.cda.ccd.impl.MedicationActivityImpl;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
 import org.openhealthtools.mdht.uml.cda.ihe.Immunization;
-
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ImmunizationOperations;
-
-import org.openhealthtools.mdht.uml.cda.impl.SubstanceAdministrationImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -30,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class ImmunizationImpl extends SubstanceAdministrationImpl implements Immunization {
+public class ImmunizationImpl extends MedicationActivityImpl implements Immunization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

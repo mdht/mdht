@@ -1319,7 +1319,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		dischargeSummaryEClass.getESuperTypes().add(this.getMedicalSummary());
 		coverageEntryEClass.getESuperTypes().add(theCCDPackage.getCoverageActivity());
 		healthcareProvidersPharmaciesEClass.getESuperTypes().add(theCDAPackage.getPerformer1());
-		immunizationEClass.getESuperTypes().add(theCDAPackage.getSubstanceAdministration());
+		immunizationEClass.getESuperTypes().add(theCCDPackage.getMedicationActivity());
 		observationRequestEntryEClass.getESuperTypes().add(theCCDPackage.getPlanOfCareActivityObservation());
 		productEntryEClass.getESuperTypes().add(theCCDPackage.getProduct());
 		procedureEntryProcedureActivityProcedureEClass.getESuperTypes().add(theCCDPackage.getProcedureActivityProcedure());

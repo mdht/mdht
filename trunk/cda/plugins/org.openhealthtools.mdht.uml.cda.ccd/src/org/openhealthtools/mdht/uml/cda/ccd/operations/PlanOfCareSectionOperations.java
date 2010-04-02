@@ -30,7 +30,6 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#validatePlanOfCareSectionContainsPlanOfCareActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Contains Plan Of Care Activity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#validatePlanOfCareSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#validatePlanOfCareSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#validatePlanOfCareSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Title</em>}</li>
@@ -55,67 +54,6 @@ public class PlanOfCareSectionOperations extends SectionOperations {
 	 */
 	protected PlanOfCareSectionOperations() {
 		super();
-	}
-
-	/**
-	 * The cached OCL expression body for the '{@link #validatePlanOfCareSectionContainsPlanOfCareActivity(PlanOfCareSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Contains Plan Of Care Activity</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validatePlanOfCareSectionContainsPlanOfCareActivity(PlanOfCareSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALIDATE_PLAN_OF_CARE_SECTION_CONTAINS_PLAN_OF_CARE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.planOfCareAct->isEmpty() or not self.planOfCareEncounter->isEmpty()"+
-"  or not self.planOfCareObservation->isEmpty() or not self.planOfCareProcedure->isEmpty()"+
-"  or not self.planOfCareSubstanceAdministration->isEmpty() or not self.planOfCareSupply->isEmpty()";
-
-	/**
-	 * The cached OCL invariant for the '{@link #validatePlanOfCareSectionContainsPlanOfCareActivity(PlanOfCareSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Contains Plan Of Care Activity</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validatePlanOfCareSectionContainsPlanOfCareActivity(PlanOfCareSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint VALIDATE_PLAN_OF_CARE_SECTION_CONTAINS_PLAN_OF_CARE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * not self.planOfCareAct->isEmpty() or not self.planOfCareEncounter->isEmpty()
-	 *   or not self.planOfCareObservation->isEmpty() or not self.planOfCareProcedure->isEmpty()
-	 *   or not self.planOfCareSubstanceAdministration->isEmpty() or not self.planOfCareSupply->isEmpty()
-	 * @param planOfCareSection The receiving '<em><b>Plan Of Care Section</b></em>' model object.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
-	public static  boolean validatePlanOfCareSectionContainsPlanOfCareActivity(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_PLAN_OF_CARE_SECTION_CONTAINS_PLAN_OF_CARE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CCDPackage.Literals.PLAN_OF_CARE_SECTION);
-			try {
-				VALIDATE_PLAN_OF_CARE_SECTION_CONTAINS_PLAN_OF_CARE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PLAN_OF_CARE_SECTION_CONTAINS_PLAN_OF_CARE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		if (!EOCL_ENV.createQuery(VALIDATE_PLAN_OF_CARE_SECTION_CONTAINS_PLAN_OF_CARE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(planOfCareSection)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 CCDValidator.DIAGNOSTIC_SOURCE,
-						 CCDValidator.PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_CONTAINS_PLAN_OF_CARE_ACTIVITY,
-						 CCDPlugin.INSTANCE.getString("PlanOfCareSectionContainsPlanOfCareActivity"),
-						 new Object [] { planOfCareSection }));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**

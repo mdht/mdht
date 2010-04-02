@@ -805,10 +805,6 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//PlanOfCareSection">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference ccd.ecore#//PlanOfCareSection/planOfCareActivity"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionContainsPlanOfCareActivity">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionContainsPlanOfCareActivity/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionContainsPlanOfCareActivity/context"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//PlanOfCareSection/PlanOfCareSectionTemplateId/context"/>
