@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -183,15 +184,11 @@ public class CDALoadImpl extends XMLLoadImpl {
 	
 	private List<String> getPath(Element element) {
 	    LinkedList<String> result = new LinkedList<String>();
-	    result.add(element.getLocalName());
+        result.addFirst(element.getLocalName());
 	    Node parent = element.getParentNode();
 	    while (parent instanceof Element) {
 	        Element e = (Element) parent;
-	        if ("ClinicalDocument".equals(e.getLocalName())) {
-	        	result.addFirst("clinicalDocument");
-	        } else {
-	        	result.addFirst(e.getLocalName());
-	        }
+	        result.addFirst(e.getLocalName());
 	        parent = e.getParentNode();
 	    }
 	    return result;
@@ -201,7 +198,7 @@ public class CDALoadImpl extends XMLLoadImpl {
 	    EClass eClass = CDAPackage.Literals.DOCUMENT_ROOT;
 	    List<String> path = getPath(element);
 	    for (String component : path) {
-	        EStructuralFeature feature = eClass.getEStructuralFeature(component);
+	        EStructuralFeature feature = getEStructuralFeature(eClass, component);
 	        if (feature instanceof EReference) {
 	            eClass = (EClass) feature.getEType();
 	        } else {
@@ -211,6 +208,15 @@ public class CDALoadImpl extends XMLLoadImpl {
 	    return eClass;
 	}
 	
+	private EStructuralFeature getEStructuralFeature(EClass eClass, String name) {
+		for (EStructuralFeature feature : eClass.getEAllStructuralFeatures()) {
+			if (name.equals(getName(feature))) {
+				return feature;
+			}
+		}
+		return null;
+	}
+	
 	private boolean conformsTo(EClass eClass, EClass type) {
 		if (eClass == null || type == null) {
 			return false;
@@ -218,11 +224,11 @@ public class CDALoadImpl extends XMLLoadImpl {
 		return type.isSuperTypeOf(eClass);
 	}
 	
-	private String getName(EClass eClass) {
-		String result = EcoreUtil.getAnnotation(eClass, ExtendedMetaData.ANNOTATION_URI, "name");
+	private String getName(ENamedElement eNamedElement) {
+		String result = EcoreUtil.getAnnotation(eNamedElement, ExtendedMetaData.ANNOTATION_URI, "name");
 		if (result != null) {
 			return result;
 		}
-		return eClass.getName();
+		return eNamedElement.getName();
 	}
 }
