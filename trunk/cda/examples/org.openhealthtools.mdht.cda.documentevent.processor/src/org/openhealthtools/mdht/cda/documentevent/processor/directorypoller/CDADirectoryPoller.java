@@ -64,7 +64,7 @@ public class CDADirectoryPoller {
 		public void run() {
 			FilenameFilter xmlFilter = new FilenameFilter() {
 				public boolean accept(File dir, String name) {
-					return name.endsWith(".cda");
+					return name.endsWith(".xml");
 				}
 			};
 
@@ -138,20 +138,20 @@ public class CDADirectoryPoller {
 						boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 							@Override
 							public void handleError(Diagnostic diagnostic) {
-								// System.out.println("ERROR: " +
-								// diagnostic.getMessage());
+								 System.out.println("ERROR: " +
+								 diagnostic.getMessage());
 							}
 
 							@Override
 							public void handleWarning(Diagnostic diagnostic) {
-								// System.out.println("WARNING: " +
-								// diagnostic.getMessage());
+								 System.out.println("WARNING: " +
+								 diagnostic.getMessage());
 							}
 
 							@Override
 							public void handleInfo(Diagnostic diagnostic) {
-								// System.out.println("INFO: " +
-								// diagnostic.getMessage());
+								 System.out.println("INFO: " +
+								 diagnostic.getMessage());
 							}
 						});
 
