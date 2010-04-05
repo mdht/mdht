@@ -447,9 +447,12 @@ Description: IHE PCC - Labor and Delivery Record - Labor and Delivery Admission 
 		
 		HITSPPackage.eINSTANCE.eClass();
 
+		CDADocumentEventRegistry.registerCDADocumentEventProcessor(
+				CCDPackage.eINSTANCE.getContinuityOfCareDocument(),new NISTDocumentEventProcessor("ccd"));
+
 		
 		CDADocumentEventRegistry.registerCDADocumentEventProcessor(
-				CDAPackage.eINSTANCE.getClinicalDocument(),new NISTDocumentEventProcessor("ccd"));
+				HITSPPackage.eINSTANCE.getPatientSummary()  ,new NISTDocumentEventProcessor("c32_v2_5"));
 
 		Timer timer = new Timer();
 		timer.schedule(new CDADirectoryPollingTask(args[0], Integer
