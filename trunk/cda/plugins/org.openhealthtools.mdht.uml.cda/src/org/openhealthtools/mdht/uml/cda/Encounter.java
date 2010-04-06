@@ -248,27 +248,27 @@ public interface Encounter extends EObject {
 	void setEffectiveTime(IVL_TS value);
 
 	/**
-	 * Returns the value of the '<em><b>Priority Code</b></em>' reference.
+	 * Returns the value of the '<em><b>Priority Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Priority Code</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Priority Code</em>' reference.
+	 * @return the value of the '<em>Priority Code</em>' containment reference.
 	 * @see #setPriorityCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getEncounter_PriorityCode()
-	 * @model ordered="false"
+	 * @model containment="true" ordered="false"
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
 	CE getPriorityCode();
 
 	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.Encounter#getPriorityCode <em>Priority Code</em>}' reference.
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.Encounter#getPriorityCode <em>Priority Code</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Priority Code</em>' reference.
+	 * @param value the new value of the '<em>Priority Code</em>' containment reference.
 	 * @see #getPriorityCode()
 	 * @generated
 	 */

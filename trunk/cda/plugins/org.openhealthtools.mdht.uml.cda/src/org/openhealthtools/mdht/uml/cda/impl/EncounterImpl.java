@@ -171,7 +171,7 @@ public class EncounterImpl extends EObjectImpl implements Encounter {
 	protected IVL_TS effectiveTime;
 
 	/**
-	 * The cached value of the '{@link #getPriorityCode() <em>Priority Code</em>}' reference.
+	 * The cached value of the '{@link #getPriorityCode() <em>Priority Code</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPriorityCode()
@@ -633,14 +633,6 @@ public class EncounterImpl extends EObjectImpl implements Encounter {
 	 * @generated
 	 */
 	public CE getPriorityCode() {
-		if (priorityCode != null && priorityCode.eIsProxy()) {
-			InternalEObject oldPriorityCode = (InternalEObject)priorityCode;
-			priorityCode = (CE)eResolveProxy(oldPriorityCode);
-			if (priorityCode != oldPriorityCode) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDAPackage.ENCOUNTER__PRIORITY_CODE, oldPriorityCode, priorityCode));
-			}
-		}
 		return priorityCode;
 	}
 
@@ -649,8 +641,14 @@ public class EncounterImpl extends EObjectImpl implements Encounter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CE basicGetPriorityCode() {
-		return priorityCode;
+	public NotificationChain basicSetPriorityCode(CE newPriorityCode, NotificationChain msgs) {
+		CE oldPriorityCode = priorityCode;
+		priorityCode = newPriorityCode;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__PRIORITY_CODE, oldPriorityCode, newPriorityCode);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -659,10 +657,17 @@ public class EncounterImpl extends EObjectImpl implements Encounter {
 	 * @generated
 	 */
 	public void setPriorityCode(CE newPriorityCode) {
-		CE oldPriorityCode = priorityCode;
-		priorityCode = newPriorityCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__PRIORITY_CODE, oldPriorityCode, priorityCode));
+		if (newPriorityCode != priorityCode) {
+			NotificationChain msgs = null;
+			if (priorityCode != null)
+				msgs = ((InternalEObject)priorityCode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__PRIORITY_CODE, null, msgs);
+			if (newPriorityCode != null)
+				msgs = ((InternalEObject)newPriorityCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ENCOUNTER__PRIORITY_CODE, null, msgs);
+			msgs = basicSetPriorityCode(newPriorityCode, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENCOUNTER__PRIORITY_CODE, newPriorityCode, newPriorityCode));
 	}
 
 	/**
@@ -1245,6 +1250,8 @@ public class EncounterImpl extends EObjectImpl implements Encounter {
 				return basicSetStatusCode(null, msgs);
 			case CDAPackage.ENCOUNTER__EFFECTIVE_TIME:
 				return basicSetEffectiveTime(null, msgs);
+			case CDAPackage.ENCOUNTER__PRIORITY_CODE:
+				return basicSetPriorityCode(null, msgs);
 			case CDAPackage.ENCOUNTER__SUBJECT:
 				return basicSetSubject(null, msgs);
 			case CDAPackage.ENCOUNTER__SPECIMEN:
@@ -1292,8 +1299,7 @@ public class EncounterImpl extends EObjectImpl implements Encounter {
 			case CDAPackage.ENCOUNTER__EFFECTIVE_TIME:
 				return getEffectiveTime();
 			case CDAPackage.ENCOUNTER__PRIORITY_CODE:
-				if (resolve) return getPriorityCode();
-				return basicGetPriorityCode();
+				return getPriorityCode();
 			case CDAPackage.ENCOUNTER__SUBJECT:
 				return getSubject();
 			case CDAPackage.ENCOUNTER__SPECIMEN:

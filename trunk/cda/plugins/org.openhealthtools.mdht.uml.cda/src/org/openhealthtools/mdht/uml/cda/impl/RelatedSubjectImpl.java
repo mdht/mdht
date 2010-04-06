@@ -48,7 +48,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubject;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getAddrs <em>Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getTelecoms <em>Telecom</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getSubjectPerson <em>Subject Person</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedSubjectImpl#getClassCode <em>Class Code</em>}</li>
  * </ul>
@@ -118,14 +118,14 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	protected EList<TEL> telecoms;
 
 	/**
-	 * The cached value of the '{@link #getSubjectPerson() <em>Subject Person</em>}' containment reference.
+	 * The cached value of the '{@link #getSubject() <em>Subject</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSubjectPerson()
+	 * @see #getSubject()
 	 * @generated
 	 * @ordered
 	 */
-	protected SubjectPerson subjectPerson;
+	protected SubjectPerson subject;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -343,8 +343,8 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SubjectPerson getSubjectPerson() {
-		return subjectPerson;
+	public SubjectPerson getSubject() {
+		return subject;
 	}
 
 	/**
@@ -352,11 +352,11 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSubjectPerson(SubjectPerson newSubjectPerson, NotificationChain msgs) {
-		SubjectPerson oldSubjectPerson = subjectPerson;
-		subjectPerson = newSubjectPerson;
+	public NotificationChain basicSetSubject(SubjectPerson newSubject, NotificationChain msgs) {
+		SubjectPerson oldSubject = subject;
+		subject = newSubject;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON, oldSubjectPerson, newSubjectPerson);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_SUBJECT__SUBJECT, oldSubject, newSubject);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -367,18 +367,18 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSubjectPerson(SubjectPerson newSubjectPerson) {
-		if (newSubjectPerson != subjectPerson) {
+	public void setSubject(SubjectPerson newSubject) {
+		if (newSubject != subject) {
 			NotificationChain msgs = null;
-			if (subjectPerson != null)
-				msgs = ((InternalEObject)subjectPerson).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON, null, msgs);
-			if (newSubjectPerson != null)
-				msgs = ((InternalEObject)newSubjectPerson).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON, null, msgs);
-			msgs = basicSetSubjectPerson(newSubjectPerson, msgs);
+			if (subject != null)
+				msgs = ((InternalEObject)subject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.RELATED_SUBJECT__SUBJECT, null, msgs);
+			if (newSubject != null)
+				msgs = ((InternalEObject)newSubject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.RELATED_SUBJECT__SUBJECT, null, msgs);
+			msgs = basicSetSubject(newSubject, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON, newSubjectPerson, newSubjectPerson));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_SUBJECT__SUBJECT, newSubject, newSubject));
 	}
 
 	/**
@@ -493,8 +493,8 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 				return ((InternalEList<?>)getAddrs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.RELATED_SUBJECT__TELECOM:
 				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
-			case CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON:
-				return basicSetSubjectPerson(null, msgs);
+			case CDAPackage.RELATED_SUBJECT__SUBJECT:
+				return basicSetSubject(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -519,8 +519,8 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 				return getAddrs();
 			case CDAPackage.RELATED_SUBJECT__TELECOM:
 				return getTelecoms();
-			case CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON:
-				return getSubjectPerson();
+			case CDAPackage.RELATED_SUBJECT__SUBJECT:
+				return getSubject();
 			case CDAPackage.RELATED_SUBJECT__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.RELATED_SUBJECT__CLASS_CODE:
@@ -560,8 +560,8 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 				getTelecoms().clear();
 				getTelecoms().addAll((Collection<? extends TEL>)newValue);
 				return;
-			case CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON:
-				setSubjectPerson((SubjectPerson)newValue);
+			case CDAPackage.RELATED_SUBJECT__SUBJECT:
+				setSubject((SubjectPerson)newValue);
 				return;
 			case CDAPackage.RELATED_SUBJECT__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
@@ -599,8 +599,8 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 			case CDAPackage.RELATED_SUBJECT__TELECOM:
 				getTelecoms().clear();
 				return;
-			case CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON:
-				setSubjectPerson((SubjectPerson)null);
+			case CDAPackage.RELATED_SUBJECT__SUBJECT:
+				setSubject((SubjectPerson)null);
 				return;
 			case CDAPackage.RELATED_SUBJECT__NULL_FLAVOR:
 				unsetNullFlavor();
@@ -632,8 +632,8 @@ public class RelatedSubjectImpl extends EObjectImpl implements RelatedSubject {
 				return addrs != null && !addrs.isEmpty();
 			case CDAPackage.RELATED_SUBJECT__TELECOM:
 				return telecoms != null && !telecoms.isEmpty();
-			case CDAPackage.RELATED_SUBJECT__SUBJECT_PERSON:
-				return subjectPerson != null;
+			case CDAPackage.RELATED_SUBJECT__SUBJECT:
+				return subject != null;
 			case CDAPackage.RELATED_SUBJECT__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.RELATED_SUBJECT__CLASS_CODE:

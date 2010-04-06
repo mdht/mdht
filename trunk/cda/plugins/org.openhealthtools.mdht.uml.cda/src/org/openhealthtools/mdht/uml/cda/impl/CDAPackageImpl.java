@@ -5551,7 +5551,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRelatedSubject_SubjectPerson() {
+	public EReference getRelatedSubject_Subject() {
         return (EReference)getRelatedSubject().getEStructuralFeatures().get(6);
 	}
 
