@@ -2879,7 +2879,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subjectPerson" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subject" ordered="false"
         eType="#//SubjectPerson" containment="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="namespace" value="##targetNamespace"/>
@@ -3923,7 +3923,8 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="priorityCode" ordered="false"
-        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CE">
+        eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CE"
+        containment="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>

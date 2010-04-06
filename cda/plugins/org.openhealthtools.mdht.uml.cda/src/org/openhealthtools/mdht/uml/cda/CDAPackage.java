@@ -5258,13 +5258,13 @@ public interface CDAPackage extends EPackage {
 	int RELATED_SUBJECT__TELECOM = 5;
 
 	/**
-	 * The feature id for the '<em><b>Subject Person</b></em>' containment reference.
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_SUBJECT__SUBJECT_PERSON = 6;
+	int RELATED_SUBJECT__SUBJECT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -6828,7 +6828,7 @@ public interface CDAPackage extends EPackage {
 	int ENCOUNTER__EFFECTIVE_TIME = 7;
 
 	/**
-	 * The feature id for the '<em><b>Priority Code</b></em>' reference.
+	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -15916,15 +15916,15 @@ public interface CDAPackage extends EPackage {
 	EReference getRelatedSubject_Telecom();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getSubjectPerson <em>Subject Person</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getSubject <em>Subject</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Subject Person</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.RelatedSubject#getSubjectPerson()
+	 * @return the meta object for the containment reference '<em>Subject</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.RelatedSubject#getSubject()
 	 * @see #getRelatedSubject()
 	 * @generated
 	 */
-	EReference getRelatedSubject_SubjectPerson();
+	EReference getRelatedSubject_Subject();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getNullFlavor <em>Null Flavor</em>}'.
@@ -17663,10 +17663,10 @@ public interface CDAPackage extends EPackage {
 	EReference getEncounter_EffectiveTime();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.openhealthtools.mdht.uml.cda.Encounter#getPriorityCode <em>Priority Code</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.Encounter#getPriorityCode <em>Priority Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Priority Code</em>'.
+	 * @return the meta object for the containment reference '<em>Priority Code</em>'.
 	 * @see org.openhealthtools.mdht.uml.cda.Encounter#getPriorityCode()
 	 * @see #getEncounter()
 	 * @generated
@@ -25777,12 +25777,12 @@ public interface CDAPackage extends EPackage {
 		EReference RELATED_SUBJECT__TELECOM = eINSTANCE.getRelatedSubject_Telecom();
 
 		/**
-		 * The meta object literal for the '<em><b>Subject Person</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Subject</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RELATED_SUBJECT__SUBJECT_PERSON = eINSTANCE.getRelatedSubject_SubjectPerson();
+		EReference RELATED_SUBJECT__SUBJECT = eINSTANCE.getRelatedSubject_Subject();
 
 		/**
 		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
@@ -27083,7 +27083,7 @@ public interface CDAPackage extends EPackage {
 		EReference ENCOUNTER__EFFECTIVE_TIME = eINSTANCE.getEncounter_EffectiveTime();
 
 		/**
-		 * The meta object literal for the '<em><b>Priority Code</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Priority Code</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

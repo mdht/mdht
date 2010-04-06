@@ -36,7 +36,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubject;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getAddrs <em>Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getTelecoms <em>Telecom</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getSubjectPerson <em>Subject Person</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getClassCode <em>Class Code</em>}</li>
  * </ul>
@@ -170,31 +170,31 @@ public interface RelatedSubject extends EObject {
 	EList<TEL> getTelecoms();
 
 	/**
-	 * Returns the value of the '<em><b>Subject Person</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Subject</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Subject Person</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Subject</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subject Person</em>' containment reference.
-	 * @see #setSubjectPerson(SubjectPerson)
-	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRelatedSubject_SubjectPerson()
+	 * @return the value of the '<em>Subject</em>' containment reference.
+	 * @see #setSubject(SubjectPerson)
+	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getRelatedSubject_Subject()
 	 * @model containment="true" ordered="false"
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
-	SubjectPerson getSubjectPerson();
+	SubjectPerson getSubject();
 
 	/**
-	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getSubjectPerson <em>Subject Person</em>}' containment reference.
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.RelatedSubject#getSubject <em>Subject</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Subject Person</em>' containment reference.
-	 * @see #getSubjectPerson()
+	 * @param value the new value of the '<em>Subject</em>' containment reference.
+	 * @see #getSubject()
 	 * @generated
 	 */
-	void setSubjectPerson(SubjectPerson value);
+	void setSubject(SubjectPerson value);
 
 	/**
 	 * Returns the value of the '<em><b>Null Flavor</b></em>' attribute.

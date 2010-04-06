@@ -4241,7 +4241,7 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NdipgUo0Ed6c3qsAxlFHaQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NdipgEo0Ed6c3qsAxlFHaQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_OtQk8Eo0Ed6c3qsAxlFHaQ" name="priorityCode" visibility="private">
+      <ownedAttribute xmi:id="_OtQk8Eo0Ed6c3qsAxlFHaQ" name="priorityCode" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PqzLQUo0Ed6c3qsAxlFHaQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PqzLQEo0Ed6c3qsAxlFHaQ"/>
@@ -8003,7 +8003,7 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dDNb8UrmEd6FXKclYGEDCw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dDNb8ErmEd6FXKclYGEDCw"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_Tn_qUUoYEd6c3qsAxlFHaQ" name="subjectPerson" visibility="private" type="_r19lQEcaEd6besF9iFIJkQ" aggregation="composite" association="_Tn_qUEoYEd6c3qsAxlFHaQ">
+      <ownedAttribute xmi:id="_Tn_qUUoYEd6c3qsAxlFHaQ" name="subject" visibility="private" type="_r19lQEcaEd6besF9iFIJkQ" aggregation="composite" association="_Tn_qUEoYEd6c3qsAxlFHaQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tn_qU0oYEd6c3qsAxlFHaQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Tn_qUkoYEd6c3qsAxlFHaQ"/>
       </ownedAttribute>
