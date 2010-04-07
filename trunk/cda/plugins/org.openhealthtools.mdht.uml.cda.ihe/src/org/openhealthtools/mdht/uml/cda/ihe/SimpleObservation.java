@@ -26,7 +26,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getSimpleObservation()
  * @model abstract="true"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.13' constraints.validation.error='SimpleObservationTemplateId SimpleObservationId SimpleObservationStatusCode' statusCode.codeSystem='2.16.840.1.113883.5.14' statusCode.codeSystemName='ActStatus'"
+ *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.13' constraints.validation.error='SimpleObservationTemplateId SimpleObservationId SimpleObservationStatusCode'"
  * @generated
  */
 public interface SimpleObservation extends Observation {
@@ -62,11 +62,11 @@ public interface SimpleObservation extends Observation {
 	 * <!-- begin-model-doc -->
 	 * not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and 
 	 * let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (
-	 * value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')
+	 * value.code = 'completed')
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\' and value.codeSystem = \'2.16.840.1.113883.5.14\')'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\')'"
 	 * @generated
 	 */
 	boolean validateSimpleObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);

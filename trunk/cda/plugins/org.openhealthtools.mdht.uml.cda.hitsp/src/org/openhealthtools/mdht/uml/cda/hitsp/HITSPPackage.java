@@ -3650,15 +3650,6 @@ public interface HITSPPackage extends EPackage {
 	int SURGERIES_SECTION__MOOD_CODE = IHEPackage.CODED_SURGERIES_SECTION__MOOD_CODE;
 
 	/**
-	 * The feature id for the '<em><b>Procedure Activity</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SURGERIES_SECTION__PROCEDURE_ACTIVITY = IHEPackage.CODED_SURGERIES_SECTION__PROCEDURE_ACTIVITY;
-
-	/**
 	 * The number of structural features of the '<em>Surgeries Section</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6051,15 +6042,6 @@ public interface HITSPPackage extends EPackage {
 	 * @ordered
 	 */
 	int PLAN_OF_CARE_SECTION__MOOD_CODE = IHEPackage.CARE_PLAN_SECTION__MOOD_CODE;
-
-	/**
-	 * The feature id for the '<em><b>Plan Of Care Activity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_ACTIVITY = IHEPackage.CARE_PLAN_SECTION__PLAN_OF_CARE_ACTIVITY;
 
 	/**
 	 * The number of structural features of the '<em>Plan Of Care Section</em>' class.

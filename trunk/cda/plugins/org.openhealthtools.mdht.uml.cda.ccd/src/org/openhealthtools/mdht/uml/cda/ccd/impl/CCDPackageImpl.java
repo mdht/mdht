@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -925,26 +924,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProceduresSection_ProcedureActivity() {
-		return (EReference)proceduresSectionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getPlanOfCareSection() {
 		return planOfCareSectionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPlanOfCareSection_PlanOfCareActivity() {
-		return (EReference)planOfCareSectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1339,12 +1320,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		productEClass = createEClass(PRODUCT);
 
 		proceduresSectionEClass = createEClass(PROCEDURES_SECTION);
-		createEReference(proceduresSectionEClass, PROCEDURES_SECTION__PROCEDURE_ACTIVITY);
-
-		procedureActivityEClass = createEClass(PROCEDURE_ACTIVITY);
 
 		planOfCareSectionEClass = createEClass(PLAN_OF_CARE_SECTION);
-		createEReference(planOfCareSectionEClass, PLAN_OF_CARE_SECTION__PLAN_OF_CARE_ACTIVITY);
 
 		planOfCareActivityEClass = createEClass(PLAN_OF_CARE_ACTIVITY);
 
@@ -1377,6 +1354,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		authorizationActivityEClass = createEClass(AUTHORIZATION_ACTIVITY);
 
 		planOfCareActivityActEClass = createEClass(PLAN_OF_CARE_ACTIVITY_ACT);
+
+		procedureActivityEClass = createEClass(PROCEDURE_ACTIVITY);
 
 		patientInstructionEClass = createEClass(PATIENT_INSTRUCTION);
 
@@ -3137,7 +3116,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(proceduresSectionEClass, ProceduresSection.class, "ProceduresSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProceduresSection_ProcedureActivity(), this.getProcedureActivity(), null, "procedureActivity", null, 1, -1, ProceduresSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = addEOperation(proceduresSectionEClass, ecorePackage.getEBoolean(), "validateProceduresSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -3166,10 +3144,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(procedureActivityEClass, ProcedureActivity.class, "ProcedureActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(planOfCareSectionEClass, PlanOfCareSection.class, "PlanOfCareSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPlanOfCareSection_PlanOfCareActivity(), this.getPlanOfCareActivity(), null, "planOfCareActivity", null, 1, 1, PlanOfCareSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = addEOperation(planOfCareSectionEClass, ecorePackage.getEBoolean(), "validatePlanOfCareSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -3889,6 +3864,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(procedureActivityEClass, ProcedureActivity.class, "ProcedureActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(patientInstructionEClass, PatientInstruction.class, "PatientInstruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(patientInstructionEClass, ecorePackage.getEBoolean(), "validatePatientInstructionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -4326,10 +4303,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "constraints.validation.error", "ProblemObservationTemplateId ProblemObservationInformationSource ProblemObservationMoodCode ProblemObservationStatusCode",
 			 "classCode", "OBS",
 			 "constraints.validation.warning", "ProblemObservationEffectiveTime",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "constraints.validation.info", "ProblemObservationContainsPatientAwareness ProblemObservationProblemStatusObservation ProblemObservationProblemHealthStatusObservation ProblemObservationAgeObservation",
-			 "moodCode", "EVN",
-			 "statusCode.codeSystemName", "ActStatus"
+			 "moodCode", "EVN"
 		   });																																						
 		addAnnotation
 		  (problemSectionEClass, 
@@ -4361,9 +4336,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "constraints.validation.error", "StatusObservationTemplateId StatusObservationNoAdditionalParticipants StatusObservationClassCode StatusObservationMoodCode StatusObservationCode StatusObservationStatusCode StatusObservationValue",
 			 "code.codeSystemName", "LOINC",
 			 "classCode", "OBS",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "code.code", "33999-4",
-			 "statusCode.codeSystemName", "ActStatus",
 			 "moodCode", "EVN"
 		   });																														
 		addAnnotation
@@ -4385,16 +4358,14 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "code.codeSystem", "2.16.840.1.113883.5.4",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.41",
 			 "constraints.validation.error", "EpisodeObservationTemplateId EpisodeObservationOneEntryRelationshipSUBJ EpisodeObservationClassCode EpisodeObservationMoodCode EpisodeObservationStatusCode",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "code.code", "ASSERTION",
 			 "constraints.validation.info", "EpisodeObservationExistsEntryRelationshipSAS",
-			 "statusCode.codeSystemName", "ActStatus",
 			 "value.displayName", "Clinical finding",
 			 "statusCode.code", "completed",
 			 "value.code", "404684003",
 			 "code.codeSystemName", "ActCode",
-			 "classCode", "OBS",
 			 "constraints.validation.warning", "EpisodeObservationCode EpisodeObservationValue",
+			 "classCode", "OBS",
 			 "moodCode", "EVN",
 			 "value.codeSystem", "2.16.840.1.113883.6.96"
 		   });																																		
@@ -4423,9 +4394,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   new String[] {
 			 "statusCode.code", "completed",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.22",
-			 "constraints.validation.error", "FamilyHistoryObservationTemplateId FamilyHistoryObservationId FamilyHistoryObservationStatusCode",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "statusCode.codeSystemName", "ActStatus"
+			 "constraints.validation.error", "FamilyHistoryObservationTemplateId FamilyHistoryObservationId FamilyHistoryObservationStatusCode"
 		   });														
 		addAnnotation
 		  (familyHistoryOrganizerEClass, 
@@ -4433,9 +4402,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   new String[] {
 			 "statusCode.code", "completed",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.23",
-			 "constraints.validation.error", "FamilyHistoryOrganizerTemplateId FamilyHistoryOrganizerStatusCode",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "statusCode.codeSystemName", "ActStatus"
+			 "constraints.validation.error", "FamilyHistoryOrganizerTemplateId FamilyHistoryOrganizerStatusCode"
 		   });											
 		addAnnotation
 		  (resultOrganizerEClass, 
@@ -4544,8 +4511,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.18",
 			 "constraints.validation.error", "AlertObservationTemplateId AlertObservationInformationSource AlertObservationPlayingEntityRequired AlertObservationMoodCode AlertObservationStatusCode AlertObservationEffectiveTime",
 			 "constraints.validation.warning", "AlertObservationAgentRepresentation",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "statusCode.codeSystemName", "ActStatus",
 			 "moodCode", "EVN",
 			 "constraints.validation.info", "AlertObservationAlertStatusObservation AlertObservationReactionObservation"
 		   });																																						
@@ -4557,9 +4522,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.54",
 			 "constraints.validation.error", "ReactionObservationTemplateId ReactionObservationClassCode ReactionObservationMoodCode ReactionObservationStatusCode",
 			 "classCode", "OBS",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "constraints.validation.info", "ReactionObservationSeverityObservation",
-			 "statusCode.codeSystemName", "ActStatus",
 			 "moodCode", "EVN"
 		   });																						
 		addAnnotation
@@ -4573,9 +4536,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "constraints.validation.error", "SeverityObservationTemplateId SeverityObservationClassCode SeverityObservationMoodCode SeverityObservationCode SeverityObservationStatusCode SeverityObservationValue",
 			 "code.codeSystemName", "ActCode",
 			 "classCode", "OBS",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "code.code", "SEV",
-			 "statusCode.codeSystemName", "ActStatus",
 			 "moodCode", "EVN"
 		   });																										
 		addAnnotation
@@ -4649,15 +4610,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "constraints.validation.error", "ProceduresSectionTemplateId ProceduresSectionCode ProceduresSectionTitle",
 			 "code.codeSystemName", "LOINC",
 			 "code.code", "47519-4"
-		   });														
-		addAnnotation
-		  (procedureActivityEClass, 
-		   source, 
-		   new String[] {
-			 "statusCode.code", "completed",
-			 "statusCode.codeSystem", "2.16.840.1.113883.1.11.20.15",
-			 "statusCode.codeSystemName", "ProcedureStatusCode"
-		   });			
+		   });															
 		addAnnotation
 		  (planOfCareSectionEClass, 
 		   source, 
@@ -4752,9 +4705,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "code.codeSystemName", "SNOMEDCT",
 			 "classCode", "ACT",
 			 "code.code", "23745001",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "moodCode", "EVN",
-			 "statusCode.codeSystemName", "ActStatus"
+			 "moodCode", "EVN"
 		   });																														
 		addAnnotation
 		  (vitalSignsOrganizerEClass, 
@@ -4772,8 +4723,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "constraints.validation.error", "AdvanceDirectiveObservationTemplateId AdvanceDirectiveObservationClassCode AdvanceDirectiveObservationMoodCode AdvanceDirectiveObservationId AdvanceDirectiveObservationStatusCode",
 			 "constraints.validation.warning", "AdvanceDirectiveObservationEffectiveTime",
 			 "classCode", "OBS",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "statusCode.codeSystemName", "ActStatus",
 			 "moodCode", "EVN"
 		   });																										
 		addAnnotation
@@ -4804,8 +4753,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "code.codeSystemName", "LOINC",
 			 "classCode", "ACT",
 			 "code.code", "48768-6",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "statusCode.codeSystemName", "ActStatus",
 			 "moodCode", "DEF"
 		   });																														
 		addAnnotation
@@ -4816,8 +4763,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.26",
 			 "constraints.validation.error", "PolicyActivityTemplateId PolicyActivityClassCode PolicyActivityMoodCode PolicyActivityId PolicyActivityStatusCode PolicyActivityAuthorizationActivity",
 			 "classCode", "ACT",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "statusCode.codeSystemName", "ActStatus",
 			 "moodCode", "EVN"
 		   });																										
 		addAnnotation
@@ -4836,7 +4781,13 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "contextDependent", "true",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.25",
 			 "constraints.validation.error", "PlanOfCareActivityActTemplateId PlanOfCareActivityActMoodCodeValue PlanOfCareActivityActId PlanOfCareActivityActMoodCode"
-		   });																			
+		   });																		
+		addAnnotation
+		  (procedureActivityEClass, 
+		   source, 
+		   new String[] {
+			 "statusCode.code", "completed"
+		   });			
 		addAnnotation
 		  (patientInstructionEClass, 
 		   source, 
@@ -4879,9 +4830,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "constraints.validation.error", "AgeObservationTemplateId AgeObservationClassCode AgeObservationMoodCode AgeObservationCode AgeObservationStatusCode AgeObservationValue",
 			 "code.codeSystemName", "SNOMEDCT",
 			 "classCode", "OBS",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "code.code", "397659008",
-			 "statusCode.codeSystemName", "ActStatus",
 			 "moodCode", "EVN"
 		   });																										
 		addAnnotation

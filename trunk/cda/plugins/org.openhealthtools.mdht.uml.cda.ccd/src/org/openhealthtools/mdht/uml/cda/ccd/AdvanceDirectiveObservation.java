@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getAdvanceDirectiveObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' templateId.root='2.16.840.1.113883.10.20.1.17' constraints.validation.error='AdvanceDirectiveObservationTemplateId AdvanceDirectiveObservationClassCode AdvanceDirectiveObservationMoodCode AdvanceDirectiveObservationId AdvanceDirectiveObservationStatusCode' constraints.validation.warning='AdvanceDirectiveObservationEffectiveTime' classCode='OBS' statusCode.codeSystem='2.16.840.1.113883.5.14' statusCode.codeSystemName='ActStatus' moodCode='EVN'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' templateId.root='2.16.840.1.113883.10.20.1.17' constraints.validation.error='AdvanceDirectiveObservationTemplateId AdvanceDirectiveObservationClassCode AdvanceDirectiveObservationMoodCode AdvanceDirectiveObservationId AdvanceDirectiveObservationStatusCode' constraints.validation.warning='AdvanceDirectiveObservationEffectiveTime' classCode='OBS' moodCode='EVN'"
  * @generated
  */
 public interface AdvanceDirectiveObservation extends Observation {
@@ -80,11 +80,11 @@ public interface AdvanceDirectiveObservation extends Observation {
 	 * <!-- begin-model-doc -->
 	 * not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and 
 	 * let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (
-	 * value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')
+	 * value.code = 'completed')
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\' and value.codeSystem = \'2.16.840.1.113883.5.14\')'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\')'"
 	 * @generated
 	 */
 	boolean validateAdvanceDirectiveObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);

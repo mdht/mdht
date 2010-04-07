@@ -290,10 +290,6 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 				return createProceduresSectionAdapter();
 			}
 			@Override
-			public Adapter caseProcedureActivity(ProcedureActivity object) {
-				return createProcedureActivityAdapter();
-			}
-			@Override
 			public Adapter casePlanOfCareSection(PlanOfCareSection object) {
 				return createPlanOfCareSectionAdapter();
 			}
@@ -360,6 +356,10 @@ public class CCDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePlanOfCareActivityAct(PlanOfCareActivityAct object) {
 				return createPlanOfCareActivityActAdapter();
+			}
+			@Override
+			public Adapter caseProcedureActivity(ProcedureActivity object) {
+				return createProcedureActivityAdapter();
 			}
 			@Override
 			public Adapter casePatientInstruction(PatientInstruction object) {

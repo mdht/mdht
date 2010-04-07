@@ -2535,8 +2535,6 @@ public class CCDValidator extends EObjectValidator {
 				return validateProduct((Product)value, diagnostics, context);
 			case CCDPackage.PROCEDURES_SECTION:
 				return validateProceduresSection((ProceduresSection)value, diagnostics, context);
-			case CCDPackage.PROCEDURE_ACTIVITY:
-				return validateProcedureActivity((ProcedureActivity)value, diagnostics, context);
 			case CCDPackage.PLAN_OF_CARE_SECTION:
 				return validatePlanOfCareSection((PlanOfCareSection)value, diagnostics, context);
 			case CCDPackage.PLAN_OF_CARE_ACTIVITY:
@@ -2571,6 +2569,8 @@ public class CCDValidator extends EObjectValidator {
 				return validateAuthorizationActivity((AuthorizationActivity)value, diagnostics, context);
 			case CCDPackage.PLAN_OF_CARE_ACTIVITY_ACT:
 				return validatePlanOfCareActivityAct((PlanOfCareActivityAct)value, diagnostics, context);
+			case CCDPackage.PROCEDURE_ACTIVITY:
+				return validateProcedureActivity((ProcedureActivity)value, diagnostics, context);
 			case CCDPackage.PATIENT_INSTRUCTION:
 				return validatePatientInstruction((PatientInstruction)value, diagnostics, context);
 			case CCDPackage.FULFILLMENT_INSTRUCTION:

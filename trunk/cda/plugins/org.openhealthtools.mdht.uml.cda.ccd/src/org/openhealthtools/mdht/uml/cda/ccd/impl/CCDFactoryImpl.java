@@ -164,7 +164,6 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.ENCOUNTER_LOCATION: return createEncounterLocation();
 			case CCDPackage.PRODUCT: return createProduct();
 			case CCDPackage.PROCEDURES_SECTION: return createProceduresSection();
-			case CCDPackage.PROCEDURE_ACTIVITY: return createProcedureActivity();
 			case CCDPackage.PLAN_OF_CARE_SECTION: return createPlanOfCareSection();
 			case CCDPackage.PLAN_OF_CARE_ACTIVITY: return createPlanOfCareActivity();
 			case CCDPackage.VITAL_SIGNS_SECTION: return createVitalSignsSection();
@@ -182,6 +181,7 @@ public class CCDFactoryImpl extends EFactoryImpl implements CCDFactory {
 			case CCDPackage.POLICY_ACTIVITY: return createPolicyActivity();
 			case CCDPackage.AUTHORIZATION_ACTIVITY: return createAuthorizationActivity();
 			case CCDPackage.PLAN_OF_CARE_ACTIVITY_ACT: return createPlanOfCareActivityAct();
+			case CCDPackage.PROCEDURE_ACTIVITY: return createProcedureActivity();
 			case CCDPackage.PATIENT_INSTRUCTION: return createPatientInstruction();
 			case CCDPackage.FULFILLMENT_INSTRUCTION: return createFulfillmentInstruction();
 			case CCDPackage.FUNCTIONAL_STATUS_OBSERVATION: return createFunctionalStatusObservation();

@@ -2479,9 +2479,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   new String[] {
 			 "statusCode.code", "completed",
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.13",
-			 "constraints.validation.error", "SimpleObservationTemplateId SimpleObservationId SimpleObservationStatusCode",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "statusCode.codeSystemName", "ActStatus"
+			 "constraints.validation.error", "SimpleObservationTemplateId SimpleObservationId SimpleObservationStatusCode"
 		   });														
 		addAnnotation
 		  (vitalSignsOrganizerEClass, 
@@ -2493,9 +2491,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 			 "code.displayName", "Vital signs",
 			 "constraints.validation.error", "IHEVitalSignsOrganizerTemplateId IHEVitalSignsOrganizerCode IHEVitalSignsOrganizerStatusCode IHEVitalSignsOrganizerEffectiveTime IHEVitalSignsOrganizerVitalSignObservation",
 			 "code.codeSystemName", "SNOMEDCT",
-			 "code.code", "46680005",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
-			 "statusCode.codeSystemName", "ActStatus"
+			 "code.code", "46680005"
 		   });																							
 		addAnnotation
 		  (payersSectionEClass, 

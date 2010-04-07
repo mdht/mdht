@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getStatusObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' code.codeSystem='2.16.840.1.113883.6.1' code.displayName='Status' templateId.root='2.16.840.1.113883.10.20.1.57' constraints.validation.error='StatusObservationTemplateId StatusObservationNoAdditionalParticipants StatusObservationClassCode StatusObservationMoodCode StatusObservationCode StatusObservationStatusCode StatusObservationValue' code.codeSystemName='LOINC' classCode='OBS' statusCode.codeSystem='2.16.840.1.113883.5.14' code.code='33999-4' statusCode.codeSystemName='ActStatus' moodCode='EVN'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' code.codeSystem='2.16.840.1.113883.6.1' code.displayName='Status' templateId.root='2.16.840.1.113883.10.20.1.57' constraints.validation.error='StatusObservationTemplateId StatusObservationNoAdditionalParticipants StatusObservationClassCode StatusObservationMoodCode StatusObservationCode StatusObservationStatusCode StatusObservationValue' code.codeSystemName='LOINC' classCode='OBS' code.code='33999-4' moodCode='EVN'"
  * @generated
  */
 public interface StatusObservation extends Observation {
@@ -95,11 +95,11 @@ public interface StatusObservation extends Observation {
 	 * <!-- begin-model-doc -->
 	 * not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and 
 	 * let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (
-	 * value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')
+	 * value.code = 'completed')
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\' and value.codeSystem = \'2.16.840.1.113883.5.14\')'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and \r\nlet value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (\r\nvalue.code = \'completed\')'"
 	 * @generated
 	 */
 	boolean validateStatusObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context);

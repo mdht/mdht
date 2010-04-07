@@ -291,7 +291,7 @@ public class AgeObservationOperations extends ObservationOperations {
 	 */
 	protected static final String VALIDATE_AGE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.statusCode.oclIsKindOf(datatypes::CS) and "+
 "let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in ("+
-"value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')";
+"value.code = 'completed')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateAgeObservationStatusCode(AgeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Status Code</em>}' invariant operation.
@@ -309,7 +309,7 @@ public class AgeObservationOperations extends ObservationOperations {
 	 * <!-- begin-model-doc -->
 	 * self.statusCode.oclIsKindOf(datatypes::CS) and 
 	 * let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (
-	 * value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')
+	 * value.code = 'completed')
 	 * @param ageObservation The receiving '<em><b>Age Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
