@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,10 +7,15 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     John T.E. Timm (IBM Corporation) - added CS type check
  *    
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 
@@ -42,7 +47,8 @@ public class CodeSystemConstraintUtil {
 			body.append("'");
 			needsAnd = true;
 		}
-		if (id != null && id.length() > 0) {
+		
+		if (id != null && id.length() > 0 && !isCSType(property)) {
 			if (needsAnd) {
 				body.append(" and ");
 			}
@@ -56,7 +62,7 @@ public class CodeSystemConstraintUtil {
 		 * Only add this constraint if codeSystem is not specified.
 		 */
 		if ((id == null || id.length() == 0)
-				&& name != null && name.length() > 0) {
+				&& name != null && name.length() > 0 && !isCSType(property)) {
 			if (needsAnd) {
 				body.append(" and ");
 			}
@@ -76,5 +82,19 @@ public class CodeSystemConstraintUtil {
 //		}
 		
 		return body.toString();
+	}
+	
+	public static boolean isCSType(Property property) {
+		Classifier type = (Classifier) property.getType();
+		if (type != null) {
+			List<Classifier> allTypes = new ArrayList<Classifier>(type.allParents());
+			allTypes.add(0, type);
+			for (Classifier classifier : allTypes) {
+				if ("datatypes::CS".equals(classifier.getQualifiedName())) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }
