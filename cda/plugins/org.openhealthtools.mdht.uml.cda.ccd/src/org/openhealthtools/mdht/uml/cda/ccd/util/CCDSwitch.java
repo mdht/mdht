@@ -414,12 +414,6 @@ public class CCDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CCDPackage.PROCEDURE_ACTIVITY: {
-				ProcedureActivity procedureActivity = (ProcedureActivity)theEObject;
-				T result = caseProcedureActivity(procedureActivity);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CCDPackage.PLAN_OF_CARE_SECTION: {
 				PlanOfCareSection planOfCareSection = (PlanOfCareSection)theEObject;
 				T result = casePlanOfCareSection(planOfCareSection);
@@ -538,6 +532,12 @@ public class CCDSwitch<T> {
 				T result = casePlanOfCareActivityAct(planOfCareActivityAct);
 				if (result == null) result = caseAct(planOfCareActivityAct);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityAct);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CCDPackage.PROCEDURE_ACTIVITY: {
+				ProcedureActivity procedureActivity = (ProcedureActivity)theEObject;
+				T result = caseProcedureActivity(procedureActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

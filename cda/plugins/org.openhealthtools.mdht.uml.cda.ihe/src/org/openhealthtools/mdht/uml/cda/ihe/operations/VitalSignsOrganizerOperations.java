@@ -175,7 +175,7 @@ public class VitalSignsOrganizerOperations extends org.openhealthtools.mdht.uml.
 	 */
 	protected static final String VALIDATE_IHE_VITAL_SIGNS_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and "+
 "let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in ("+
-"value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')";
+"value.code = 'completed')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateIHEVitalSignsOrganizerStatusCode(VitalSignsOrganizer, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Vital Signs Organizer Status Code</em>}' invariant operation.
@@ -193,7 +193,7 @@ public class VitalSignsOrganizerOperations extends org.openhealthtools.mdht.uml.
 	 * <!-- begin-model-doc -->
 	 * not self.statusCode.oclIsUndefined() and self.statusCode.oclIsKindOf(datatypes::CS) and 
 	 * let value : datatypes::CS = self.statusCode.oclAsType(datatypes::CS) in (
-	 * value.code = 'completed' and value.codeSystem = '2.16.840.1.113883.5.14')
+	 * value.code = 'completed')
 	 * @param vitalSignsOrganizer The receiving '<em><b>Vital Signs Organizer</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

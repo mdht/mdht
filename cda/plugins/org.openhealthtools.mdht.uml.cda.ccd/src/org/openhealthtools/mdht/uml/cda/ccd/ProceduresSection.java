@@ -9,7 +9,6 @@ package org.openhealthtools.mdht.uml.cda.ccd;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.cda.Section;
 
 /**
@@ -25,34 +24,12 @@ import org.openhealthtools.mdht.uml.cda.Section;
  * </p>
  * <!-- end-model-doc -->
  *
- * <p>
- * The following features are supported:
- * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#getProcedureActivities <em>Procedure Activity</em>}</li>
- * </ul>
- * </p>
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProceduresSection()
  * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' code.displayName='History of procedures' templateId.root='2.16.840.1.113883.10.20.1.12' constraints.validation.error='ProceduresSectionTemplateId ProceduresSectionCode ProceduresSectionTitle' code.codeSystemName='LOINC' code.code='47519-4'"
  * @generated
  */
 public interface ProceduresSection extends Section {
-	/**
-	 * Returns the value of the '<em><b>Procedure Activity</b></em>' reference list.
-	 * The list contents are of type {@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivity}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Procedure Activity</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Procedure Activity</em>' reference list.
-	 * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getProceduresSection_ProcedureActivity()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	EList<ProcedureActivity> getProcedureActivities();
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
