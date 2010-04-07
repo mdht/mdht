@@ -68,7 +68,7 @@ public interface Patient extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_RealmCode()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='realmCode' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<CS> getRealmCodes();
@@ -85,7 +85,7 @@ public interface Patient extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_TypeId()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='typeId' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -112,7 +112,7 @@ public interface Patient extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_TemplateId()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='templateId' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<II> getTemplateIds();
@@ -129,7 +129,7 @@ public interface Patient extends EObject {
 	 * @see #setId(II)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_Id()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='id' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	II getId();
@@ -156,7 +156,7 @@ public interface Patient extends EObject {
 	 * @return the value of the '<em>Name</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_Name()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='name' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<PN> getNames();
@@ -173,7 +173,7 @@ public interface Patient extends EObject {
 	 * @see #setAdministrativeGenderCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_AdministrativeGenderCode()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='administrativeGenderCode' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	CE getAdministrativeGenderCode();
@@ -200,7 +200,7 @@ public interface Patient extends EObject {
 	 * @see #setBirthTime(TS)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_BirthTime()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='birthTime' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	TS getBirthTime();
@@ -227,7 +227,7 @@ public interface Patient extends EObject {
 	 * @see #setMaritalStatusCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_MaritalStatusCode()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='maritalStatusCode' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	CE getMaritalStatusCode();
@@ -254,7 +254,7 @@ public interface Patient extends EObject {
 	 * @see #setReligiousAffiliationCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_ReligiousAffiliationCode()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='religiousAffiliationCode' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	CE getReligiousAffiliationCode();
@@ -281,7 +281,7 @@ public interface Patient extends EObject {
 	 * @see #setRaceCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_RaceCode()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='raceCode' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	CE getRaceCode();
@@ -308,7 +308,7 @@ public interface Patient extends EObject {
 	 * @see #setEthnicGroupCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_EthnicGroupCode()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='ethnicGroupCode' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	CE getEthnicGroupCode();
@@ -335,7 +335,7 @@ public interface Patient extends EObject {
 	 * @return the value of the '<em>Guardian</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_Guardian()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='guardian' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<Guardian> getGuardians();
@@ -352,7 +352,7 @@ public interface Patient extends EObject {
 	 * @see #setBirthplace(Birthplace)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_Birthplace()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='birthplace' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	Birthplace getBirthplace();
@@ -379,7 +379,7 @@ public interface Patient extends EObject {
 	 * @return the value of the '<em>Language Communication</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_LanguageCommunication()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='languageCommunication' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<LanguageCommunication> getLanguageCommunications();
@@ -400,6 +400,7 @@ public interface Patient extends EObject {
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_NullFlavor()
 	 * @model unsettable="true" ordered="false"
+	 *        extendedMetaData="name='nullFlavor' kind='attribute'"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -457,6 +458,7 @@ public interface Patient extends EObject {
 	 * @see #setClassCode(EntityClass)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_ClassCode()
 	 * @model default="PSN" unsettable="true" ordered="false"
+	 *        extendedMetaData="name='classCode' kind='attribute'"
 	 * @generated
 	 */
 	EntityClass getClassCode();
@@ -514,6 +516,7 @@ public interface Patient extends EObject {
 	 * @see #setDeterminerCode(EntityDeterminer)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_DeterminerCode()
 	 * @model default="INSTANCE" unsettable="true" ordered="false"
+	 *        extendedMetaData="name='determinerCode' kind='attribute'"
 	 * @generated
 	 */
 	EntityDeterminer getDeterminerCode();
