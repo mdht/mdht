@@ -36,7 +36,9 @@ public class CDARegistry {
 		load();
 	}
 	
-	private void load() {
+	public void load() {
+		classes.clear();
+		delegates.clear();
 		for (String key : EPackage.Registry.INSTANCE.keySet()) {
 			EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(key);
 			for (EClassifier eClassifier : ePackage.getEClassifiers()) {
