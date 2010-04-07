@@ -54,7 +54,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	}
 	
 	public void removeModelElement(Element element) {
-		if (!isRemoved(element)) {
+		if (element != null && !isRemoved(element)) {
 			transformerOptions.getDeletedElementList().add(element);
 		}
 	}
