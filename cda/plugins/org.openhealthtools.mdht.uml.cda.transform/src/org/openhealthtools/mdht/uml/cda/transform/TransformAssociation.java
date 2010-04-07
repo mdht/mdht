@@ -52,6 +52,8 @@ public class TransformAssociation extends TransformAbstract {
 		}
 		
 		if (sourceClass == null || targetClass == null || sourceProperty == null) {
+			removeModelElement(sourceProperty);
+			removeModelElement(association);
 			return null;
 		}
 
@@ -59,6 +61,8 @@ public class TransformAssociation extends TransformAbstract {
 		Class cdaTargetClass = getCDAClass(targetClass);
 		
 		if (cdaSourceClass == null || cdaTargetClass == null) {
+			removeModelElement(sourceProperty);
+			removeModelElement(association);
 			return null;
 		}
 		
