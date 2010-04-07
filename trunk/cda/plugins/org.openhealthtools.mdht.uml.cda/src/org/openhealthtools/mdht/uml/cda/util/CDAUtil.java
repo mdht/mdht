@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.Diagnostician;
@@ -50,12 +51,18 @@ import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.DocumentRoot;
 import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.internal.registry.CDARegistry;
 import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResource;
 import org.w3c.dom.Document;
 
 public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
+	
+	public static void registerPackage(EPackage ePackage) {
+		ePackage.eClass();
+		CDARegistry.INSTANCE.load();
+	}
 	
 	public static ClinicalDocument load(InputStream in) throws Exception {
 		return load(in, null);
@@ -130,19 +137,14 @@ public class CDAUtil {
 		if (defaults) {
 			handleDefaults(clinicalDocument);
 		}
-		
 		CDAResource resource = (CDAResource) clinicalDocument.eResource();
-		
 		if (resource == null) {
 			resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
-	
 			DocumentRoot root = CDAFactory.eINSTANCE.createDocumentRoot();
 			root.setClinicalDocument(clinicalDocument);
 			root.getXMLNSPrefixMap().put("", CDAPackage.eNS_URI);
-			
 			resource.getContents().add(root);
 		}
-		
 		return resource;
 	}
 	
