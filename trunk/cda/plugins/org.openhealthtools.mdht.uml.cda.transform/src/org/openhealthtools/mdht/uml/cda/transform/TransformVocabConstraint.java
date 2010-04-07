@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     John T.E. Timm (IBM Corporation) - added CS type check
  *     
  * $Id$
  *******************************************************************************/
@@ -110,20 +111,24 @@ public class TransformVocabConstraint extends TransformAbstract {
 		}
 
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(property.getClass_());
-		if (codeSystem != null) {
-			annotationsUtil.setAnnotation(property.getName()+".codeSystem", codeSystem);
-		}
-		if (codeSystemName != null) {
-			annotationsUtil.setAnnotation(property.getName()+".codeSystemName", codeSystemName);
-		}
-		if (codeSystemVersion != null) {
-			annotationsUtil.setAnnotation(property.getName()+".codeSystemVersion", codeSystemVersion);
-		}
+		
 		if (code != null) {
 			annotationsUtil.setAnnotation(property.getName()+".code", code);
 		}
-		if (displayName != null) {
-			annotationsUtil.setAnnotation(property.getName()+".displayName", displayName);
+		
+		if (!CodeSystemConstraintUtil.isCSType(property)) {
+			if (codeSystem != null) {
+				annotationsUtil.setAnnotation(property.getName()+".codeSystem", codeSystem);
+			}
+			if (codeSystemName != null) {
+				annotationsUtil.setAnnotation(property.getName()+".codeSystemName", codeSystemName);
+			}
+			if (codeSystemVersion != null) {
+				annotationsUtil.setAnnotation(property.getName()+".codeSystemVersion", codeSystemVersion);
+			}
+			if (displayName != null) {
+				annotationsUtil.setAnnotation(property.getName()+".displayName", displayName);
+			}
 		}
 		
 		annotationsUtil.saveAnnotations();
