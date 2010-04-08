@@ -171,10 +171,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	
 	protected void addOCLConstraint(Property property, StringBuffer body, String constraintName) {
 		if (constraintName == null) {
-//			String constraintName = property.getClass_().getName() + "_" + property.getName();
-//			constraintName = property.getClass_().getName() + "_" + property.getName();
-//			constraintName = property.getClass_().getName() + property.getName().substring(0, 1).toUpperCase() + property.getName().substring(1);
-			constraintName = createConstraintName(property.getClass_(), property.getName().substring(0, 1).toUpperCase() + property.getName().substring(1));
+			constraintName = createConstraintName(property);
 		}
 		
 		if (property.getClass_().getOwnedRule(constraintName) != null) {
@@ -196,6 +193,26 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		expression.getBodies().add(body.toString());
 
 		addValidationSupport(property, constraintName);
+	}
+	
+	protected String createInheritedConstraintName(Property property) {
+		String constraintName = null;
+		if (SEVERITY_ERROR.equals(getValidationSeverity(property))) {
+			Property inheritedProperty = CDAModelUtil.getInheritedProperty(property);
+			if (CDAModelUtil.getTemplateId(inheritedProperty.getClass_()) != null) {
+				constraintName = createInheritedConstraintName(inheritedProperty);
+//				System.out.println("inheritedConstraintName for " + property.getQualifiedName() + " = " + constraintName);
+			}
+		}
+		
+		if (constraintName == null) {
+			constraintName = createConstraintName(property);
+		}
+		return constraintName;
+	}
+	
+	protected String createConstraintName(Property property) {
+		return createConstraintName(property.getClass_(), property.getName().substring(0, 1).toUpperCase() + property.getName().substring(1));
 	}
 	
 	protected String createConstraintName(Class umlClass, String suffix) {
