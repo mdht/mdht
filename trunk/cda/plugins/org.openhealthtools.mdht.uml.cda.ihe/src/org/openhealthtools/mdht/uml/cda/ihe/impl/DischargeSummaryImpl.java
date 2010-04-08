@@ -58,8 +58,8 @@ public class DischargeSummaryImpl extends MedicalSummaryImpl implements Discharg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDischargeSummaryCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DischargeSummaryOperations.validateDischargeSummaryCode(this, diagnostics, context);
+	public boolean validateDischargeSummaryActiveProblemsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return DischargeSummaryOperations.validateDischargeSummaryActiveProblemsSection(this, diagnostics, context);
 	}
 
 	/**
@@ -67,8 +67,9 @@ public class DischargeSummaryImpl extends MedicalSummaryImpl implements Discharg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDischargeSummaryActiveProblemsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DischargeSummaryOperations.validateDischargeSummaryActiveProblemsSection(this, diagnostics, context);
+	@Override
+	public boolean validateMedicalSummaryCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return DischargeSummaryOperations.validateMedicalSummaryCode(this, diagnostics, context);
 	}
 
 	/**

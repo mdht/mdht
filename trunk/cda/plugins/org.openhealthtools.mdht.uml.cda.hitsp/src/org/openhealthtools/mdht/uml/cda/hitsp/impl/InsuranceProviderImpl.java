@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.InsuranceProviderOperations;
-
 import org.openhealthtools.mdht.uml.cda.ihe.impl.CoverageEntryImpl;
-
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**

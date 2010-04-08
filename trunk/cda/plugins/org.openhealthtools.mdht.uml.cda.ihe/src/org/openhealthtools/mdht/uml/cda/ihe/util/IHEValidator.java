@@ -14,6 +14,7 @@ package org.openhealthtools.mdht.uml.cda.ihe.util;
 
 import java.util.Map;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
@@ -332,20 +333,12 @@ public class IHEValidator extends EObjectValidator {
 	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_TEMPLATE_ID = 28;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Code' of 'Vital Sign Observation'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_CODE = 29;
-
-	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Value' of 'Vital Sign Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_VALUE = 30;
+	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_VALUE = 29;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Interpretation Code' of 'Vital Sign Observation'.
@@ -353,7 +346,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_INTERPRETATION_CODE = 31;
+	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_INTERPRETATION_CODE = 30;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Method Code' of 'Vital Sign Observation'.
@@ -361,7 +354,7 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_METHOD_CODE = 32;
+	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_METHOD_CODE = 31;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Observation Target Site Code' of 'Vital Sign Observation'.
@@ -369,7 +362,15 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_TARGET_SITE_CODE = 33;
+	public static final int VITAL_SIGN_OBSERVATION__VITAL_SIGN_OBSERVATION_TARGET_SITE_CODE = 32;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Code' of 'Vital Sign Observation'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGN_OBSERVATION__RESULT_OBSERVATION_CODE = 33;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Simple Observation Template Id' of 'Simple Observation'.
@@ -404,28 +405,12 @@ public class IHEValidator extends EObjectValidator {
 	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_TEMPLATE_ID = 37;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Code' of 'Vital Signs Organizer'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_CODE = 38;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Status Code' of 'Vital Signs Organizer'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_STATUS_CODE = 39;
-
-	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Effective Time' of 'Vital Signs Organizer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_EFFECTIVE_TIME = 40;
+	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_EFFECTIVE_TIME = 38;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Vital Signs Organizer Vital Sign Observation' of 'Vital Signs Organizer'.
@@ -433,7 +418,23 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_VITAL_SIGN_OBSERVATION = 41;
+	public static final int VITAL_SIGNS_ORGANIZER__IHE_VITAL_SIGNS_ORGANIZER_VITAL_SIGN_OBSERVATION = 39;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Code' of 'Vital Signs Organizer'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGNS_ORGANIZER__RESULT_ORGANIZER_CODE = 40;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Status Code' of 'Vital Signs Organizer'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VITAL_SIGNS_ORGANIZER__RESULT_ORGANIZER_STATUS_CODE = 41;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate IHE Payers Section Template Id' of 'Payers Section'.
@@ -796,20 +797,20 @@ public class IHEValidator extends EObjectValidator {
 	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_TEMPLATE_ID = 86;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Summary Code' of 'Discharge Summary'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_CODE = 87;
-
-	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Summary Active Problems Section' of 'Discharge Summary'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_ACTIVE_PROBLEMS_SECTION = 88;
+	public static final int DISCHARGE_SUMMARY__DISCHARGE_SUMMARY_ACTIVE_PROBLEMS_SECTION = 87;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Summary Code' of 'Discharge Summary'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int DISCHARGE_SUMMARY__MEDICAL_SUMMARY_CODE = 88;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Entry Template Id' of 'Coverage Entry'.
@@ -1812,7 +1813,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationId(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationEffectiveTime(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationStatusCode(vitalSignObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationCode(vitalSignObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignObservation_validateResultObservationCode(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationMethodCode(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationInterpretationCode(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationValue(vitalSignObservation, diagnostics, context);
@@ -1820,7 +1821,6 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateSimpleObservation_validateSimpleObservationId(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSimpleObservation_validateSimpleObservationStatusCode(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationTemplateId(vitalSignObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationCode(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationValue(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationInterpretationCode(vitalSignObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignObservation_validateVitalSignObservationMethodCode(vitalSignObservation, diagnostics, context);
@@ -1836,16 +1836,6 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateVitalSignObservation_validateVitalSignObservationTemplateId(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return vitalSignObservation.validateVitalSignObservationTemplateId(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateVitalSignObservationCode constraint of '<em>Vital Sign Observation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateVitalSignObservation_validateVitalSignObservationCode(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignObservation.validateVitalSignObservationCode(diagnostics, context);
 	}
 
 	/**
@@ -1886,6 +1876,35 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateVitalSignObservation_validateVitalSignObservationTargetSiteCode(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return vitalSignObservation.validateVitalSignObservationTargetSiteCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateResultObservationCode constraint of '<em>Vital Sign Observation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignObservation_validateResultObservationCode(VitalSignObservation vitalSignObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateResultObservationCode", getObjectLabel(vitalSignObservation, context) },
+						 new Object[] { vitalSignObservation },
+						 context));
+			}
+			return false;
+		}
+		return ccdValidator.validateResultObservation_validateResultObservationCode(vitalSignObservation, diagnostics, context);
 	}
 
 	/**
@@ -1955,14 +1974,12 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerMoodCode(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerId(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerCode(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerStatusCode(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateResultOrganizerCode(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateResultOrganizerStatusCode(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerResultObservation(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsOrganizer_validateVitalSignsOrganizerInformationSource(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsOrganizer_validateVitalSignsOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerCode(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerStatusCode(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerEffectiveTime(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerVitalSignObservation(vitalSignsOrganizer, diagnostics, context);
 		return result;
@@ -1976,26 +1993,6 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerTemplateId(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return vitalSignsOrganizer.validateIHEVitalSignsOrganizerTemplateId(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateIHEVitalSignsOrganizerCode constraint of '<em>Vital Signs Organizer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignsOrganizer.validateIHEVitalSignsOrganizerCode(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateIHEVitalSignsOrganizerStatusCode constraint of '<em>Vital Signs Organizer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerStatusCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignsOrganizer.validateIHEVitalSignsOrganizerStatusCode(diagnostics, context);
 	}
 
 	/**
@@ -2016,6 +2013,64 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateVitalSignsOrganizer_validateIHEVitalSignsOrganizerVitalSignObservation(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return vitalSignsOrganizer.validateIHEVitalSignsOrganizerVitalSignObservation(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateResultOrganizerCode constraint of '<em>Vital Signs Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignsOrganizer_validateResultOrganizerCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateResultOrganizerCode", getObjectLabel(vitalSignsOrganizer, context) },
+						 new Object[] { vitalSignsOrganizer },
+						 context));
+			}
+			return false;
+		}
+		return ccdValidator.validateResultOrganizer_validateResultOrganizerCode(vitalSignsOrganizer, diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateResultOrganizerStatusCode constraint of '<em>Vital Signs Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVitalSignsOrganizer_validateResultOrganizerStatusCode(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateResultOrganizerStatusCode", getObjectLabel(vitalSignsOrganizer, context) },
+						 new Object[] { vitalSignsOrganizer },
+						 context));
+			}
+			return false;
+		}
+		return ccdValidator.validateResultOrganizer_validateResultOrganizerStatusCode(vitalSignsOrganizer, diagnostics, context);
 	}
 
 	/**
@@ -2981,9 +3036,8 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryAllergyConcernEntry(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryMedications(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryTemplateId(dischargeSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicalSummary_validateMedicalSummaryCode(dischargeSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDischargeSummary_validateMedicalSummaryCode(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDischargeSummary_validateDischargeSummaryTemplateId(dischargeSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDischargeSummary_validateDischargeSummaryCode(dischargeSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDischargeSummary_validateDischargeSummaryActiveProblemsSection(dischargeSummary, diagnostics, context);
 		return result;
 	}
@@ -2999,16 +3053,6 @@ public class IHEValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateDischargeSummaryCode constraint of '<em>Discharge Summary</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDischargeSummary_validateDischargeSummaryCode(DischargeSummary dischargeSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return dischargeSummary.validateDischargeSummaryCode(diagnostics, context);
-	}
-
-	/**
 	 * Validates the validateDischargeSummaryActiveProblemsSection constraint of '<em>Discharge Summary</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3016,6 +3060,35 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateDischargeSummary_validateDischargeSummaryActiveProblemsSection(DischargeSummary dischargeSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return dischargeSummary.validateDischargeSummaryActiveProblemsSection(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateMedicalSummaryCode constraint of '<em>Discharge Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDischargeSummary_validateMedicalSummaryCode(DischargeSummary dischargeSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateMedicalSummaryCode", getObjectLabel(dischargeSummary, context) },
+						 new Object[] { dischargeSummary },
+						 context));
+			}
+			return false;
+		}
+		return validateMedicalSummary_validateMedicalSummaryCode(dischargeSummary, diagnostics, context);
 	}
 
 	/**

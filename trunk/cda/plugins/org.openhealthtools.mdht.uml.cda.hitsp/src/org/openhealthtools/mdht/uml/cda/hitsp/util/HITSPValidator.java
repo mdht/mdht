@@ -8,12 +8,12 @@ package org.openhealthtools.mdht.uml.cda.hitsp.util;
 
 import java.util.Map;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
-import org.openhealthtools.mdht.uml.cda.hitsp.*;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
@@ -29,12 +29,16 @@ import org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPlugin;
+import org.openhealthtools.mdht.uml.cda.hitsp.HealthcareProvider;
 import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPresentIllness;
 import org.openhealthtools.mdht.uml.cda.hitsp.HospitalAdmissionDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HospitalCourseSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HospitalDischargeMedicationsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.Immunization;
 import org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider;
+import org.openhealthtools.mdht.uml.cda.hitsp.LanguageSpoken;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsAdministeredSection;
@@ -152,12 +156,12 @@ public class HITSPValidator extends EObjectValidator {
 	public static final int VITAL_SIGN__VITAL_SIGN_TEMPLATE_ID = 13;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Code' of 'Vital Sign'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Code' of 'Vital Sign'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN__VITAL_SIGN_CODE = 14;
+	public static final int VITAL_SIGN__RESULT_OBSERVATION_CODE = 14;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Payers Section Template Id' of 'Payers Section'.
@@ -838,7 +842,7 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationId(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationEffectiveTime(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationStatusCode(vitalSign, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationCode(vitalSign, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSign_validateResultObservationCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationMethodCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationInterpretationCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationValue(vitalSign, diagnostics, context);
@@ -846,13 +850,11 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= iheValidator.validateSimpleObservation_validateSimpleObservationId(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateSimpleObservation_validateSimpleObservationStatusCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationTemplateId(vitalSign, diagnostics, context);
-		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationValue(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationInterpretationCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationMethodCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationTargetSiteCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSign_validateVitalSignTemplateId(vitalSign, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSign_validateVitalSignCode(vitalSign, diagnostics, context);
 		return result;
 	}
 
@@ -867,13 +869,32 @@ public class HITSPValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateVitalSignCode constraint of '<em>Vital Sign</em>'.
+	 * Validates the validateResultObservationCode constraint of '<em>Vital Sign</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSign_validateVitalSignCode(VitalSign vitalSign, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSign.validateVitalSignCode(diagnostics, context);
+	public boolean validateVitalSign_validateResultObservationCode(VitalSign vitalSign, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateResultObservationCode", getObjectLabel(vitalSign, context) },
+						 new Object[] { vitalSign },
+						 context));
+			}
+			return false;
+		}
+		return iheValidator.validateVitalSignObservation_validateResultObservationCode(vitalSign, diagnostics, context);
 	}
 
 	/**

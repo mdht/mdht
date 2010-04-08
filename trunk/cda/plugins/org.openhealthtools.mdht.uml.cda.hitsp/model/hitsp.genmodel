@@ -103,10 +103,6 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//VitalSign/VitalSignTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//VitalSign/VitalSignTemplateId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//VitalSign/VitalSignCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//VitalSign/VitalSignCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//VitalSign/VitalSignCode/context"/>
-      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//PayersSection">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//PayersSection/HITSPPayersSectionTemplateId">

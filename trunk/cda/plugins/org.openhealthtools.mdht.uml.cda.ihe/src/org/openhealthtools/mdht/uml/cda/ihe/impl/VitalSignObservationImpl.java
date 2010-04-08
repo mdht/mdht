@@ -87,15 +87,6 @@ public class VitalSignObservationImpl extends ResultObservationImpl implements V
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignObservationOperations.validateVitalSignObservationCode(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateVitalSignObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return VitalSignObservationOperations.validateVitalSignObservationValue(this, diagnostics, context);
 	}
@@ -125,6 +116,16 @@ public class VitalSignObservationImpl extends ResultObservationImpl implements V
 	 */
 	public boolean validateVitalSignObservationTargetSiteCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return VitalSignObservationOperations.validateVitalSignObservationTargetSiteCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validateResultObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignObservationOperations.validateResultObservationCode(this, diagnostics, context);
 	}
 
 	/**

@@ -2093,15 +2093,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(problemHealthStatusObservationEClass, ecorePackage.getEBoolean(), "validateProblemHealthStatusObservationCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(episodeObservationEClass, EpisodeObservation.class, "EpisodeObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(episodeObservationEClass, ecorePackage.getEBoolean(), "validateEpisodeObservationOneEntryRelationshipSUBJ", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -4226,6 +4217,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		createAnnotationAnnotations();
 		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
 		createExtendedMetaDataAnnotations();
+		// duplicates
+		createDuplicatesAnnotations();
 	}
 
 	/**
@@ -4241,7 +4234,22 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																					
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		
+	}
+
+	/**
+	 * Initializes the annotations for <b>duplicates</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createDuplicatesAnnotations() {
+		String source = "duplicates";																																																																																																																																																																																																																																																																													
+		addAnnotation
+		  (problemHealthStatusObservationEClass, 
+		   source, 
+		   new String[] {
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						
 	}
 
 	/**
@@ -4346,10 +4354,10 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.51",
 			 "code.displayName", "Health status",
-			 "constraints.validation.error", "ProblemHealthStatusObservationTemplateId ProblemHealthStatusObservationCode",
+			 "constraints.validation.error", "ProblemHealthStatusObservationTemplateId StatusObservationCode",
 			 "code.codeSystemName", "LOINC",
 			 "code.code", "11323-3"
-		   });										
+		   });							
 		addAnnotation
 		  (episodeObservationEClass, 
 		   source, 
