@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
@@ -174,12 +175,15 @@ public class TransformVocabConstraint extends TransformAbstract {
 
 		if (body.length() > 0) {
 			body.append(")");
-			addOCLConstraint(property, body);
+			
+			// if redefining parent template constraint, use parent constraint name to override
+			String constraintName = createInheritedConstraintName(property);
+			addOCLConstraint(property, body, constraintName);
 		}
 	}
 
 	private StringBuffer getValueExpression(Property property) {
-		Property cdaProperty = getCDAProperty(property);
+		Property cdaProperty = CDAModelUtil.getCDAProperty(property);
 		if (cdaProperty == null) {
 			String message = "Cannot find CDA property for: " + property.getQualifiedName();
 			Logger.log(Logger.ERROR, message);
