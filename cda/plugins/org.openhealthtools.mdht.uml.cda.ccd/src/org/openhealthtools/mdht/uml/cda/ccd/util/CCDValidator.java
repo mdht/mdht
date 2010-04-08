@@ -8,6 +8,7 @@ package org.openhealthtools.mdht.uml.cda.ccd.util;
 
 import java.util.Map;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
@@ -645,12 +646,12 @@ public class CCDValidator extends EObjectValidator {
 	public static final int PROBLEM_HEALTH_STATUS_OBSERVATION__PROBLEM_HEALTH_STATUS_OBSERVATION_TEMPLATE_ID = 65;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Health Status Observation Code' of 'Problem Health Status Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation Code' of 'Problem Health Status Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_HEALTH_STATUS_OBSERVATION__PROBLEM_HEALTH_STATUS_OBSERVATION_CODE = 66;
+	public static final int PROBLEM_HEALTH_STATUS_OBSERVATION__STATUS_OBSERVATION_CODE = 66;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Episode Observation Template Id' of 'Episode Observation'.
@@ -3444,11 +3445,10 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationTemplateId(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationClassCode(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationMoodCode(problemHealthStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationCode(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemHealthStatusObservation_validateStatusObservationCode(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationStatusCode(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationValue(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemHealthStatusObservation_validateProblemHealthStatusObservationTemplateId(problemHealthStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemHealthStatusObservation_validateProblemHealthStatusObservationCode(problemHealthStatusObservation, diagnostics, context);
 		return result;
 	}
 
@@ -3463,13 +3463,32 @@ public class CCDValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateProblemHealthStatusObservationCode constraint of '<em>Problem Health Status Observation</em>'.
+	 * Validates the validateStatusObservationCode constraint of '<em>Problem Health Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemHealthStatusObservation_validateProblemHealthStatusObservationCode(ProblemHealthStatusObservation problemHealthStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemHealthStatusObservation.validateProblemHealthStatusObservationCode(diagnostics, context);
+	public boolean validateProblemHealthStatusObservation_validateStatusObservationCode(ProblemHealthStatusObservation problemHealthStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateStatusObservationCode", getObjectLabel(problemHealthStatusObservation, context) },
+						 new Object[] { problemHealthStatusObservation },
+						 context));
+			}
+			return false;
+		}
+		return validateStatusObservation_validateStatusObservationCode(problemHealthStatusObservation, diagnostics, context);
 	}
 
 	/**
