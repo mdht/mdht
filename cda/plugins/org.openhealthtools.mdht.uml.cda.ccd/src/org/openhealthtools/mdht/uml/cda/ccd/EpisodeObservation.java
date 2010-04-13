@@ -28,11 +28,11 @@ public interface EpisodeObservation extends Observation {
 	 * <!-- begin-model-doc -->
 	 * self.entryRelationship->one(entry : cda::EntryRelationship | 
 	 *   entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and
-	 *   (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))
+	 *   ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entry : cda::EntryRelationship | \r\n  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and\r\n  (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entry : cda::EntryRelationship | \r\n  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and\r\n  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))'"
 	 * @generated
 	 */
 	boolean validateEpisodeObservationOneEntryRelationshipSUBJ(DiagnosticChain diagnostics, Map<Object, Object> context);

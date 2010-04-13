@@ -61,7 +61,7 @@ public class EpisodeObservationOperations extends ObservationOperations {
 	 */
 	protected static final String VALIDATE_EPISODE_OBSERVATION_ONE_ENTRY_RELATIONSHIP_SUBJ__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entry : cda::EntryRelationship | "+
 "  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and"+
-"  (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))";
+"  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateEpisodeObservationOneEntryRelationshipSUBJ(EpisodeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Episode Observation One Entry Relationship SUBJ</em>}' invariant operation.
@@ -79,7 +79,7 @@ public class EpisodeObservationOperations extends ObservationOperations {
 	 * <!-- begin-model-doc -->
 	 * self.entryRelationship->one(entry : cda::EntryRelationship | 
 	 *   entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and
-	 *   (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))
+	 *   ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))
 	 * @param episodeObservation The receiving '<em><b>Episode Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
