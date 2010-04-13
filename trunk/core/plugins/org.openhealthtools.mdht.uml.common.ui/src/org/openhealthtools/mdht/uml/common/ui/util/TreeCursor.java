@@ -38,7 +38,7 @@ import org.eclipse.swt.widgets.TypedListener;
 import org.eclipse.swt.widgets.Widget;
 
 /**
- * Modified from org.eclipse.swt.custom.TreeCursor for use in a table.
+ * Modified from org.eclipse.swt.custom.TableCursor for use in a tree.
  * 
  * A TreeCursor provides a way for the user to navigate around Tree columns
  * using the keyboard.  It also provides a mechanism for selecting an
@@ -164,6 +164,9 @@ public class TreeCursor extends Canvas {
 	Listener tableListener, resizeListener, disposeItemListener, disposeColumnListener;
 	Listener canvasListener;
 	
+	// workaround for problem with row selection
+	private boolean ignoreMouseDown = false;
+	
 	// By default, invert the list selection colors
 	static final int BACKGROUND = SWT.COLOR_LIST_SELECTION_TEXT;
 	static final int FOREGROUND = SWT.COLOR_LIST_SELECTION;
@@ -232,12 +235,31 @@ public TreeCursor(Tree parent, int style) {
 
 	treeListener = new TreeListener() {
 		public void treeCollapsed(TreeEvent event) {
-			if (event.item instanceof TreeItem)
+			if (event.item instanceof TreeItem) {
+				// fix bug where mouse down row selection conflicts with new expand/collapse row selection
+				ignoreMouseDown = true;
 				setSelection((TreeItem)event.item, 0);
+
+				// the current row bounds are only available AFTER treeCollapsed() had finished
+				// need async event to cause resize AFTER tree has collapsed/expanded
+				tree.getDisplay().asyncExec(new Runnable() {
+					public void run() {			
+						_resize();
+					}
+				});
+			}
 		}
 		public void treeExpanded(TreeEvent event) {
-			if (event.item instanceof TreeItem)
+			if (event.item instanceof TreeItem) {
+				ignoreMouseDown = true;
 				setSelection((TreeItem)event.item, 0);
+				
+				tree.getDisplay().asyncExec(new Runnable() {
+					public void run() {					
+						_resize();
+					}
+				});
+			}
 		}
 	};
 	tree.addTreeListener(treeListener);
@@ -246,7 +268,11 @@ public TreeCursor(Tree parent, int style) {
 		public void handleEvent(Event event) {
 			switch (event.type) {
 				case SWT.MouseDown :
-					tableMouseDown(event);
+					if (ignoreMouseDown) {
+						ignoreMouseDown = false;
+					}
+					else
+						tableMouseDown(event);
 					break;
 				case SWT.FocusIn :
 					tableFocusIn(event);
@@ -357,7 +383,7 @@ void dispose(Event event) {
 }
 
 public TreePath getTreePath(TreeItem item) {
-	LinkedList segments = new LinkedList();
+	LinkedList<Object> segments = new LinkedList<Object>();
 	while(item!=null) {
 		Object segment = item.getData();
 		Assert.isNotNull(segment);

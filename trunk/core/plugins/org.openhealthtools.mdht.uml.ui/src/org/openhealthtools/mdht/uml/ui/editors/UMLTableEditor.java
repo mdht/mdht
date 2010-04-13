@@ -874,7 +874,7 @@ implements IEditingDomainProvider, IMenuListener, ISelectionChangedListener,
 			
 			//set the TreeCursor row, so that Properties view is updated
 			TreeItem[] items = treeViewerWithColumns.getTree().getSelection();
-			if (items.length > 0) {
+			if (cursor != null && items.length > 0) {
 				cursor.setSelection(items[0], 0);
 			}
 		}
