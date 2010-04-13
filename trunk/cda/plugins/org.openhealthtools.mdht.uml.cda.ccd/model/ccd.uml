@@ -396,7 +396,7 @@
           <language>Analysis</language>
           <language>OCL</language>
           <body>Contains exactly one entryRelationship whose typeCode is 'SUBJ'. This is used to link the episode observation to the target problem act or social history observation.</body>
-          <body>self.entryRelationship->one(entry : cda::EntryRelationship | &#xD;&#xA;  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and&#xD;&#xA;  (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))</body>
+          <body>self.entryRelationship->one(entry : cda::EntryRelationship | &#xD;&#xA;  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and&#xD;&#xA;  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_3OelQBWlEd-6K-YJpbwRmQ" name="existsEntryRelationshipSAS" constrainedElement="_AwcXkGaKEd6Hk_bPOfEjYA">
