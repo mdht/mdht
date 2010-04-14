@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     John T.E. Timm (IBM Corporation) - added isEntry
  *     
  * $Id$
  *******************************************************************************/
@@ -131,6 +132,10 @@ public class CDAModelUtil {
 
 	public static boolean isOrganizer(Type templateClass) {
 		return isCDAType(templateClass, "Organizer");
+	}
+	
+	public static boolean isEntry(Type templateClass) {
+		return isCDAType(templateClass, "Entry");
 	}
 	
 	public static boolean isClinicalStatement(Type templateClass) {
