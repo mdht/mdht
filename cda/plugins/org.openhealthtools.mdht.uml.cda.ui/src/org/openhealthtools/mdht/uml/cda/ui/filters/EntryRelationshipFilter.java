@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     John T.E. Timm (IBM Corporation) - added check for Organizer
  *     
  * $Id$
  *******************************************************************************/
@@ -42,7 +43,7 @@ public class EntryRelationshipFilter extends CDAFilter {
 				srcType = property.getType();
 		}
 		
-		return CDAModelUtil.isClinicalStatement(srcType) && CDAModelUtil.isClinicalStatement(targetType);
+		return CDAModelUtil.isClinicalStatement(srcType) && CDAModelUtil.isClinicalStatement(targetType) && !CDAModelUtil.isOrganizer(srcType);
 	}
 
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,8 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     John T.E. Timm (IBM Corporation) - removed Section as a possible target
+ *     		added Entry as possible target
  *     
  * $Id$
  *******************************************************************************/
@@ -42,8 +44,9 @@ public class EntryFilter extends CDAFilter {
 				srcType = property.getType();
 		}
 		
-		return CDAModelUtil.isSection(srcType) && 
-			(CDAModelUtil.isSection(targetType) || CDAModelUtil.isClinicalStatement(targetType));
+//		return CDAModelUtil.isSection(srcType) && 
+//			(CDAModelUtil.isSection(targetType) || CDAModelUtil.isClinicalStatement(targetType));
+		return CDAModelUtil.isSection(srcType) && (CDAModelUtil.isClinicalStatement(targetType) || CDAModelUtil.isEntry(targetType));
 	}
 
 }

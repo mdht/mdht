@@ -91,7 +91,8 @@ public class TransformAssociation extends TransformAbstract {
 		} else {
 			String associationEnd = null;
 			String variableDeclaration = null;
-			if (CDAModelUtil.isSection(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass)) {
+//			if (CDAModelUtil.isSection(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass)) {
+			if (CDAModelUtil.isSection(sourceClass) && (CDAModelUtil.isClinicalStatement(targetClass) || CDAModelUtil.isEntry(targetClass))) {
 				associationEnd = "entry";
 				variableDeclaration = "entry : cda::Entry";
 			} else if (CDAModelUtil.isOrganizer(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass)) {
@@ -114,13 +115,24 @@ public class TransformAssociation extends TransformAbstract {
 			body.append((sourceProperty.getUpper() == 1) ? "one(" : "exists(");
 			body.append(variableDeclaration);
 			body.append(" | " + associationEnd);
-			if (!"Entry".equals(cdaTargetName)) {
+//			if (!"Entry".equals(cdaTargetName)) {
+			if (!CDAModelUtil.isEntry(targetClass)) {
 				body.append("." + cdaTargetLowerName);
 			}
 			body.append(".oclIsKindOf(" + targetQName + ")");
 			
-			String stereotypeName = CDAModelUtil.isSection(sourceClass) ? ICDAProfileConstants.ENTRY : ICDAProfileConstants.ENTRY_RELATIONSHIP;
-			stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, stereotypeName);
+//			String stereotypeName = CDAModelUtil.isSection(sourceClass) ? ICDAProfileConstants.ENTRY : ICDAProfileConstants.ENTRY_RELATIONSHIP;
+//			stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, stereotypeName);
+			if (CDAModelUtil.isSection(sourceClass) && (CDAModelUtil.isClinicalStatement(targetClass) || CDAModelUtil.isEntry(targetClass))) {
+				// Section -> Entry, Section -> clinicalStatement (entry)
+				stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY);
+			} else if (CDAModelUtil.isClinicalStatement(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass) && !CDAModelUtil.isOrganizer(sourceClass)) {
+				// clinicalStatement (not Organizer) -> clinicalStatement (entryRelationship)
+				stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
+			} else {
+				stereotype = null;
+			}
+			
 			if (stereotype != null) {
 				Object value = association.getValue(stereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
 				String typeCode = null;
