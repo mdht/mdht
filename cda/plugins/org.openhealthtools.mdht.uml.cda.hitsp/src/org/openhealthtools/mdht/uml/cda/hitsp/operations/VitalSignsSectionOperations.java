@@ -53,8 +53,7 @@ public class VitalSignsSectionOperations extends CodedVitalSignsSectionOperation
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::VitalSignsOrganizer) and"+
-"entry.organizer.component.observation->exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))";
+	protected static final String VALIDATE_HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::VitalSignsOrganizer) and entry.organizer.component.observation->exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateHITSPVitalSignsSectionVitalSigns(VitalSignsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Vital Signs Section Vital Signs</em>}' invariant operation.
@@ -70,8 +69,7 @@ public class VitalSignsSectionOperations extends CodedVitalSignsSectionOperation
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::VitalSignsOrganizer) and
-	 * entry.organizer.component.observation->exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))
+	 * self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ihe::VitalSignsOrganizer) and entry.organizer.component.observation->exists(obs : cda::Observation | obs.oclIsKindOf(hitsp::VitalSign)))
 	 * @param vitalSignsSection The receiving '<em><b>Vital Signs Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

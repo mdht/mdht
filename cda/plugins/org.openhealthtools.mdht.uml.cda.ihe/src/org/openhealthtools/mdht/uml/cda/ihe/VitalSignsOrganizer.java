@@ -51,11 +51,11 @@ public interface VitalSignsOrganizer extends org.openhealthtools.mdht.uml.cda.cc
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ihe::VitalSignObservation) and component.typeCode = vocab::x_ActRelationshipEntryRelationship::COMP)
+	 * self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ihe::VitalSignObservation))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ihe::VitalSignObservation) and component.typeCode = vocab::x_ActRelationshipEntryRelationship::COMP)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ihe::VitalSignObservation))'"
 	 * @generated
 	 */
 	boolean validateIHEVitalSignsOrganizerVitalSignObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
