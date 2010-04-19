@@ -59,6 +59,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CodedSurgeriesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
+import org.openhealthtools.mdht.uml.cda.ihe.Comment;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
 import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
@@ -631,6 +632,13 @@ public class IHESwitch<T> {
 				if (result == null) result = caseProcedureEntry(procedureEntryPlanOfCareActivityProcedure);
 				if (result == null) result = caseProcedure(procedureEntryPlanOfCareActivityProcedure);
 				if (result == null) result = casePlanOfCareActivity(procedureEntryPlanOfCareActivityProcedure);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.COMMENT: {
+				Comment comment = (Comment)theEObject;
+				T result = caseComment(comment);
+				if (result == null) result = caseAct(comment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1497,6 +1505,21 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseProcedureEntryPlanOfCareActivityProcedure(ProcedureEntryPlanOfCareActivityProcedure object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComment(Comment object) {
 		return null;
 	}
 

@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CodedSurgeriesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
+import org.openhealthtools.mdht.uml.cda.ihe.Comment;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
 import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
@@ -869,12 +870,52 @@ public class IHEValidator extends EObjectValidator {
 	public static final int PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE__PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE_TEMPLATE_ID = 95;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Template Id' of 'Comment'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int COMMENT__COMMENT_TEMPLATE_ID = 96;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Class Code' of 'Comment'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int COMMENT__COMMENT_CLASS_CODE = 97;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Code' of 'Comment'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int COMMENT__COMMENT_CODE = 98;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Status Code' of 'Comment'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int COMMENT__COMMENT_STATUS_CODE = 99;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Text' of 'Comment'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int COMMENT__COMMENT_TEXT = 100;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 95;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 100;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1046,6 +1087,8 @@ public class IHEValidator extends EObjectValidator {
 				return validateProcedureEntryProcedureActivityProcedure((ProcedureEntryProcedureActivityProcedure)value, diagnostics, context);
 			case IHEPackage.PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE:
 				return validateProcedureEntryPlanOfCareActivityProcedure((ProcedureEntryPlanOfCareActivityProcedure)value, diagnostics, context);
+			case IHEPackage.COMMENT:
+				return validateComment((Comment)value, diagnostics, context);
 			case IHEPackage.IHE_REGISTRY_DELEGATE:
 				return validateIHERegistryDelegate((IHERegistryDelegate)value, diagnostics, context);
 			default:
@@ -3312,6 +3355,77 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateProcedureEntryPlanOfCareActivityProcedure_validateProcedureEntryPlanOfCareActivityProcedureTemplateId(ProcedureEntryPlanOfCareActivityProcedure procedureEntryPlanOfCareActivityProcedure, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return procedureEntryPlanOfCareActivityProcedure.validateProcedureEntryPlanOfCareActivityProcedureTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComment(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComment_validateCommentTemplateId(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComment_validateCommentClassCode(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComment_validateCommentCode(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComment_validateCommentStatusCode(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComment_validateCommentText(comment, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateCommentTemplateId constraint of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComment_validateCommentTemplateId(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return comment.validateCommentTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateCommentClassCode constraint of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComment_validateCommentClassCode(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return comment.validateCommentClassCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateCommentCode constraint of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComment_validateCommentCode(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return comment.validateCommentCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateCommentStatusCode constraint of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComment_validateCommentStatusCode(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return comment.validateCommentStatusCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateCommentText constraint of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComment_validateCommentText(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return comment.validateCommentText(diagnostics, context);
 	}
 
 	/**
