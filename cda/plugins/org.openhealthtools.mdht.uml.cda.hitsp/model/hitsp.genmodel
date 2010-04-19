@@ -69,6 +69,22 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//PatientSummary/PatientSummaryTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//PatientSummary/PatientSummaryTemplateId/context"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//PatientSummary/PatientSummaryAdvanceDirectivesSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//PatientSummary/PatientSummaryAdvanceDirectivesSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//PatientSummary/PatientSummaryAdvanceDirectivesSection/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//PatientSummary/PatientSummaryAllergiesReactionsSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//PatientSummary/PatientSummaryAllergiesReactionsSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//PatientSummary/PatientSummaryAllergiesReactionsSection/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//PatientSummary/PatientSummaryProblemListSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//PatientSummary/PatientSummaryProblemListSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//PatientSummary/PatientSummaryProblemListSection/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//PatientSummary/PatientSummaryEncountersSection">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//PatientSummary/PatientSummaryEncountersSection/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//PatientSummary/PatientSummaryEncountersSection/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//PatientSummary/createProblemListSection"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//PatientSummary/createMedicationsSection"/>
     </genClasses>
@@ -294,6 +310,12 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Immunization/HITSPImmunizationTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Immunization/HITSPImmunizationTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Immunization/HITSPImmunizationTemplateId/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//Comment">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="hitsp.ecore#//Comment/HITSPCommentTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Comment/HITSPCommentTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Comment/HITSPCommentTemplateId/context"/>
       </genOperations>
     </genClasses>
   </genPackages>

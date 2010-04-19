@@ -17,6 +17,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.Comment;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
@@ -136,6 +137,7 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.INSURANCE_PROVIDER: return createInsuranceProvider();
 			case HITSPPackage.HEALTHCARE_PROVIDER: return createHealthcareProvider();
 			case HITSPPackage.IMMUNIZATION: return createImmunization();
+			case HITSPPackage.COMMENT: return createComment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -519,6 +521,16 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 	public Immunization createImmunization() {
 		ImmunizationImpl immunization = new ImmunizationImpl();
 		return immunization;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Comment createComment() {
+		CommentImpl comment = new CommentImpl();
+		return comment;
 	}
 
 	/**

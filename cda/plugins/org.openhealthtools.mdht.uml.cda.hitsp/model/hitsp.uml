@@ -52,8 +52,29 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="PatientSummary">
       <generalization xmi:id="_0EOJQKRmEd6t_4WfM070fA">
-        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_S9OzADxXEd6JwqSGecoePg"/>
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_fp-n0DOvEd-5f4Yngl7nkw"/>
       </generalization>
+      <generalization xmi:id="_na8Y0EmfEd-v4PAJSUtbvQ">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_Ze7UsGESEd69D7zx7EkLMA"/>
+      </generalization>
+      <ownedAttribute xmi:id="_r6G7UEvaEd-GNbUQBie2ig" name="advanceDirectivesSection" type="_uIr7cMfzEd6VjLXh4DcWSg" association="_r6JXkEvaEd-GNbUQBie2ig">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tHXYoEvaEd-GNbUQBie2ig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tHX_sEvaEd-GNbUQBie2ig"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_gv8TgEvbEd-GNbUQBie2ig" name="allergiesReactionsSection" type="_VGnj8MfZEd6VjLXh4DcWSg" association="_gv9hoEvbEd-GNbUQBie2ig">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hc9KgEvbEd-GNbUQBie2ig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hc9KgUvbEd-GNbUQBie2ig"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_RWQsYEveEd-GNbUQBie2ig" name="comment" type="_B973gEveEd-GNbUQBie2ig" association="_RWRTcEveEd-GNbUQBie2ig">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SXRdcEveEd-GNbUQBie2ig" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SXRdcUveEd-GNbUQBie2ig"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_RnrXEEvfEd-GNbUQBie2ig" name="problemListSection" type="_cPtREMfaEd6VjLXh4DcWSg" association="_RnrXEkvfEd-GNbUQBie2ig">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RnrXEUvfEd-GNbUQBie2ig"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZxFGIEvqEd-GNbUQBie2ig" name="encountersSection" type="_F4b6wMijEd6mWrHPmrIIfQ" association="_ZxFGIkvqEd-GNbUQBie2ig">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZxFGIUvqEd-GNbUQBie2ig"/>
+      </ownedAttribute>
       <ownedOperation xmi:id="_C1Qp0GG6Ed6bFO5yxRh3Nw" name="createProblemListSection">
         <ownedParameter xmi:id="_vMia4GdYEd6Hk_bPOfEjYA" name="Parameter1" type="_cPtREMfaEd6VjLXh4DcWSg" direction="return"/>
       </ownedOperation>
@@ -481,6 +502,37 @@ If the problem is known to be resolved, but the date of resolution is not known,
     <packagedElement xmi:type="uml:Association" xmi:id="_y3IF0TuJEd-B8KE6Jx0UNQ" memberEnd="_y3IF0DuJEd-B8KE6Jx0UNQ _y3IF0juJEd-B8KE6Jx0UNQ">
       <ownedEnd xmi:id="_y3IF0juJEd-B8KE6Jx0UNQ" type="_gHDXQMf0Ed6VjLXh4DcWSg" association="_y3IF0TuJEd-B8KE6Jx0UNQ"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_r6JXkEvaEd-GNbUQBie2ig" memberEnd="_r6G7UEvaEd-GNbUQBie2ig _r6J-oEvaEd-GNbUQBie2ig">
+      <ownedEnd xmi:id="_r6J-oEvaEd-GNbUQBie2ig" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_r6JXkEvaEd-GNbUQBie2ig"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_gv9hoEvbEd-GNbUQBie2ig" memberEnd="_gv8TgEvbEd-GNbUQBie2ig _gv-IsEvbEd-GNbUQBie2ig">
+      <ownedEnd xmi:id="_gv-IsEvbEd-GNbUQBie2ig" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_gv9hoEvbEd-GNbUQBie2ig"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B973gEveEd-GNbUQBie2ig" name="Comment">
+      <ownedComment xmi:id="_Hk3OUEvfEd-GNbUQBie2ig">
+        <body>This module contains a comment to be supplied for any other entry Content Modules.</body>
+      </ownedComment>
+      <generalization xmi:id="_B973gUveEd-GNbUQBie2ig">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_R_uVkEvdEd-GNbUQBie2ig"/>
+      </generalization>
+      <ownedAttribute xmi:id="_fboEkEveEd-GNbUQBie2ig" name="author" association="_fboroEveEd-GNbUQBie2ig">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_ChEisEcEEd6besF9iFIJkQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_g5AokEveEd-GNbUQBie2ig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g5AokUveEd-GNbUQBie2ig" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_RWRTcEveEd-GNbUQBie2ig" memberEnd="_RWQsYEveEd-GNbUQBie2ig _RWRTcUveEd-GNbUQBie2ig">
+      <ownedEnd xmi:id="_RWRTcUveEd-GNbUQBie2ig" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_RWRTcEveEd-GNbUQBie2ig"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_fboroEveEd-GNbUQBie2ig" memberEnd="_fboEkEveEd-GNbUQBie2ig _fboroUveEd-GNbUQBie2ig">
+      <ownedEnd xmi:id="_fboroUveEd-GNbUQBie2ig" type="_B973gEveEd-GNbUQBie2ig" association="_fboroEveEd-GNbUQBie2ig"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_RnrXEkvfEd-GNbUQBie2ig" memberEnd="_RnrXEEvfEd-GNbUQBie2ig _RnrXE0vfEd-GNbUQBie2ig">
+      <ownedEnd xmi:id="_RnrXE0vfEd-GNbUQBie2ig" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_RnrXEkvfEd-GNbUQBie2ig"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ZxFGIkvqEd-GNbUQBie2ig" memberEnd="_ZxFGIEvqEd-GNbUQBie2ig _ZxFGI0vqEd-GNbUQBie2ig">
+      <ownedEnd xmi:id="_ZxFGI0vqEd-GNbUQBie2ig" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_ZxFGIkvqEd-GNbUQBie2ig"/>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -576,4 +628,23 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:CDATemplate xmi:id="_t1Wf8DuHEd-B8KE6Jx0UNQ" message="HITSP Healthcare Provider SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.4" base_Class="_pOKSYDuHEd-B8KE6Jx0UNQ" templateId="2.16.840.1.113883.3.88.11.83.4" assigningAuthorityName="HITSP C83"/>
   <CDA:CDATemplate xmi:id="_s4UlEDuJEd-B8KE6Jx0UNQ" message="HITSP Immunization SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.13" base_Class="_qkWXUDuJEd-B8KE6Jx0UNQ" templateId="2.16.840.1.113883.3.88.11.83.13" assigningAuthorityName="HITSP C83"/>
   <CDA:AssociationValidation xmi:id="_0qncsDuJEd-B8KE6Jx0UNQ" message="HITSP Immunizations Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Immunization (templateId: 2.16.840.1.113883.3.88.11.83.13)" base_Association="_y3IF0TuJEd-B8KE6Jx0UNQ"/>
+  <CDA:AssociationValidation xmi:id="_uX7ooEvaEd-GNbUQBie2ig" message="HITSP Patient Summary MAY contain [0..1] component such that it, SHALL contain [1..1] Advance Directives Section (templateId: 2.16.840.1.113883.3.88.11.83.116)" severity="INFO" base_Association="_r6JXkEvaEd-GNbUQBie2ig">
+    <ruleId>C32-[CT1-1]</ruleId>
+  </CDA:AssociationValidation>
+  <CDA:AssociationValidation xmi:id="_iXEpYEvbEd-GNbUQBie2ig" message="HITSP Patient Summary MAY contain [0..1] component such that it, SHALL contain [1..1] Allergies Reactions Section (templateId: 2.16.840.1.113883.3.88.11.83.102)" severity="INFO" base_Association="_gv9hoEvbEd-GNbUQBie2ig">
+    <ruleId>C32-[CT1-2]</ruleId>
+  </CDA:AssociationValidation>
+  <CDA:CDATemplate xmi:id="_MUro4EveEd-GNbUQBie2ig" message="HITSP Comment SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.11" base_Class="_B973gEveEd-GNbUQBie2ig" templateId="2.16.840.1.113883.3.88.11.83.11"/>
+  <CDA:AssociationValidation xmi:id="_Sxvy8EveEd-GNbUQBie2ig" message="HITSP Patient Summary MAY contain [0..*] component such that it, SHALL contain [1..1] Comment (templateId: 2.16.840.1.113883.3.88.11.83.11)" severity="INFO" base_Association="_RWRTcEveEd-GNbUQBie2ig">
+    <ruleId>C32-[CT1-3]</ruleId>
+  </CDA:AssociationValidation>
+  <CDA:AssociationValidation xmi:id="_mzGocEveEd-GNbUQBie2ig" message="HITSP Comment SHALL contain [1..1] entryRelationship such that it, SHALL contain [1..1] CDA Author" base_Association="_fboroEveEd-GNbUQBie2ig">
+    <ruleId>C83-[DE-10-CDA-4]</ruleId>
+  </CDA:AssociationValidation>
+  <CDA:AssociationValidation xmi:id="_Sgq0kEvfEd-GNbUQBie2ig" message="HITSP Patient Summary MAY contain [0..1] component such that it, SHALL contain [1..1] Problem List Section (templateId: 2.16.840.1.113883.3.88.11.83.103)" severity="INFO" base_Association="_RnrXEkvfEd-GNbUQBie2ig">
+    <ruleId>C32-[CT1-4]</ruleId>
+  </CDA:AssociationValidation>
+  <CDA:AssociationValidation xmi:id="_dL8DcEvqEd-GNbUQBie2ig" message="HITSP Patient Summary MAY contain [0..1] component such that it, SHALL contain [1..1] Encounters Section (templateId: 2.16.840.1.113883.3.88.11.83.127)" severity="INFO" base_Association="_ZxFGIkvqEd-GNbUQBie2ig">
+    <ruleId>C32-[CT1-5]</ruleId>
+  </CDA:AssociationValidation>
 </xmi:XMI>
