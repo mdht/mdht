@@ -543,7 +543,7 @@ life, hobbies, and risky habits.</body>
       <ownedRule xmi:id="_iiAk4DOvEd-5f4Yngl7nkw" name="MedicalSummaryProblemConcernEntry" constrainedElement="_fp-n0DOvEd-5f4Yngl7nkw">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_d_T4kDXaEd-gpLhSMS7jpQ">
           <language>OCL</language>
-          <body>self.getSections()->exists(sect : cda::Section | sect.getActs()->exists(act : cda::Act | act.oclIsKindOf(ccd::ProblemConcernEntry)))</body>
+          <body>self.getSections()->exists(sect : cda::Section | sect.getActs()->exists(act : cda::Act | act.oclIsKindOf(ihe::ProblemConcernEntry)))</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_kVCowDOvEd-5f4Yngl7nkw" name="MedicalSummaryAllergyConcernEntry" constrainedElement="_fp-n0DOvEd-5f4Yngl7nkw">
@@ -623,6 +623,37 @@ life, hobbies, and risky habits.</body>
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_1z0WEDHpEd-saqiXO4OYhQ"/>
       </generalization>
       <generalization xmi:id="_cRXgQDuREd-3heHR3GH1ew" general="_uP4tkDuMEd-B8KE6Jx0UNQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_R_uVkEvdEd-GNbUQBie2ig" name="Comment">
+      <generalization xmi:id="_R_vjsEvdEd-GNbUQBie2ig">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_fwrkAEvdEd-GNbUQBie2ig" name="classCode" visibility="private" isReadOnly="true">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOntkDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_1DWqEEbnEd6besF9iFIJkQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_j0GWIEvdEd-GNbUQBie2ig" value="ACT"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_fwsLEEvdEd-GNbUQBie2ig" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_HUTHQEocEd6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_fwsLEUvdEd-GNbUQBie2ig" name="moodCode" visibility="private">
+        <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOpkkDcEd6xYZuu1VKCVw"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_yWn-AEocEd6c3qsAxlFHaQ"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_lD6YMEvdEd-GNbUQBie2ig" value="EVN"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_fwsLEkvdEd-GNbUQBie2ig" name="statusCode" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fwsLE0vdEd-GNbUQBie2ig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fwsLFEvdEd-GNbUQBie2ig"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_Q0j8kEocEd6c3qsAxlFHaQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_fwsyIEvdEd-GNbUQBie2ig" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fwsyIUvdEd-GNbUQBie2ig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fwsyIkvdEd-GNbUQBie2ig"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_Njf0cEocEd6c3qsAxlFHaQ"/>
+      </ownedAttribute>
     </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -810,11 +841,20 @@ life, hobbies, and risky habits.</body>
   <CDA:CDATemplate xmi:id="_gY1F8DXgEd-gpLhSMS7jpQ" message="IHE Coverage Entry SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.17" base_Class="_PMrjADXgEd-gpLhSMS7jpQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.17" assigningAuthorityName="IHE PCC"/>
   <CDA:CDATemplate xmi:id="_71B8UDuGEd-B8KE6Jx0UNQ" message="IHE Healthcare Providers Pharmacies SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.2.3" base_Class="_4hu_kDuGEd-B8KE6Jx0UNQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.2.3" assigningAuthorityName="IHE PCC"/>
   <CDA:CDATemplate xmi:id="_cNip0DuJEd-B8KE6Jx0UNQ" message="IHE Immunization SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.12" base_Class="_aFDTUDuJEd-B8KE6Jx0UNQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.12" assigningAuthorityName="IHE PCC"/>
-  <CDA:AssociationValidation xmi:id="_5GCfIDuJEd-B8KE6Jx0UNQ" message="IHE Immunizations Section SHALL contain [1..1] entry such that it, SHALL contain [1..1] Immunization (templateId: 1.3.6.1.4.1.19376.1.5.3.1.4.12)" base_Association="_4X18YTuJEd-B8KE6Jx0UNQ"/>
+  <CDA:AssociationValidation xmi:id="_5GCfIDuJEd-B8KE6Jx0UNQ" message="IHE Immunizations Section SHALL contain [1..*] entry such that it, SHALL contain [1..1] Immunization (templateId: 1.3.6.1.4.1.19376.1.5.3.1.4.12)" base_Association="_4X18YTuJEd-B8KE6Jx0UNQ"/>
   <CDA:CDATemplate xmi:id="_UqB_oDuKEd-B8KE6Jx0UNQ" message="IHE Observation Request Entry SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.1.20.3.1" base_Class="_Q-mPsDuKEd-B8KE6Jx0UNQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.20.3.1" assigningAuthorityName="IHE PCC"/>
   <CDA:CDATemplate xmi:id="_lhFxcDuMEd-B8KE6Jx0UNQ" message="IHE Product Entry SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.7.2" base_Class="_jZMQ0DuMEd-B8KE6Jx0UNQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.7.2" assigningAuthorityName="IHE PCC"/>
   <CDA:CDATemplate xmi:id="_ATWdkDuOEd-B8KE6Jx0UNQ" message="IHE Procedure Entry Plan Of Care Activity Procedure SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.19" base_Class="_9xEuEDuNEd-B8KE6Jx0UNQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE PCC" contextDependent="true"/>
   <CDA:CDATemplate xmi:id="_BfzCkDuOEd-B8KE6Jx0UNQ" message="IHE Procedure Entry Procedure Activity Procedure SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.19" base_Class="_6yfdEDuNEd-B8KE6Jx0UNQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE PCC" contextDependent="true"/>
   <CDA:PropertyValidation xmi:id="_4QskAEfpEd-tAZgP8Ejb0A" base_Property="_WBtEwK4SEd6_ioDelDcPPg"/>
   <CDA:AssociationValidation xmi:id="_5Mv8kEfpEd-tAZgP8Ejb0A" message="IHE Vital Signs Organizer SHALL contain [1..*] component such that it, SHALL contain [1..1] Vital Sign Observation (templateId: 1.3.6.1.4.1.19376.1.5.3.1.4.13.2)" base_Association="_WBrPkK4SEd6_ioDelDcPPg"/>
+  <CDA:CDATemplate xmi:id="_hGs7wEvdEd-GNbUQBie2ig" message="IHE Comment SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.2" base_Class="_R_uVkEvdEd-GNbUQBie2ig" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+  <CDA:CodeSystemConstraint xmi:id="_nGpE8EvdEd-GNbUQBie2ig" code="completed" base_Property="_fwsLEkvdEd-GNbUQBie2ig" message="IHE Comment SHALL contain [0..1] statusCode/@code = &quot;completed&quot;  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:CodeSystemConstraint xmi:id="_z1WMMEvdEd-GNbUQBie2ig" code="48767-8" displayName="Annotation Comment" base_Property="_fwsLEEvdEd-GNbUQBie2ig" message="IHE Comment SHALL contain [1..1] code/@code = &quot;48767-8&quot; Annotation Comment (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:TextValue xmi:id="_5LqJkEvdEd-GNbUQBie2ig" message="IHE Comment SHALL contain [0..1] text" base_Property="_fwsyIEvdEd-GNbUQBie2ig"/>
+  <CDA:PropertyValidation xmi:id="_gd-mgEvrEd-GNbUQBie2ig" message="IHE Comment SHALL contain [1..1] @classCode = &quot;ACT&quot;" base_Property="_fwrkAEvdEd-GNbUQBie2ig"/>
 </xmi:XMI>
