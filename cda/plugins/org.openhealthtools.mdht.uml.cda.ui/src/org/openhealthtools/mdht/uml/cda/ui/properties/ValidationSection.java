@@ -13,6 +13,8 @@
 package org.openhealthtools.mdht.uml.cda.ui.properties;
 
 
+import java.util.StringTokenizer;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -62,6 +64,7 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.filters.CodedAttributeFilter;
@@ -77,6 +80,8 @@ public class ValidationSection extends AbstractModelerPropertySection {
 
 	private CCombo severityCombo;
 	private boolean severityModified = false;
+	private Text ruleIdText;
+	private boolean ruleIdModified = false;
 	private Text messageText;
 	private boolean messageModified = false;
 
@@ -84,6 +89,9 @@ public class ValidationSection extends AbstractModelerPropertySection {
 		public void modifyText(final ModifyEvent event) {
 			if (messageText == event.getSource()) {
 				messageModified = true;
+			}
+			if (ruleIdText == event.getSource()) {
+				ruleIdModified = true;
 			}
 		}
 	};
@@ -110,7 +118,7 @@ public class ValidationSection extends AbstractModelerPropertySection {
 	};
 	
 	private void modifyFields() {
-		if (!(messageModified || severityModified)) {
+		if (!(messageModified || ruleIdModified || severityModified)) {
 			return;
 		}
 		
@@ -150,6 +158,19 @@ public class ValidationSection extends AbstractModelerPropertySection {
 									.get(severityCombo.getSelectionIndex() - 1);
 								namedElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY, literal);
 							}
+						}
+					}
+					else if (ruleIdModified) {
+						ruleIdModified = false;
+						this.setLabel("Set Validation Rule ID");
+
+						Validation validation = (Validation) namedElement.getStereotypeApplication(stereotype);
+						validation.getRuleId().clear();
+						
+						String value = ruleIdText.getText().trim();
+						StringTokenizer tokenizer = new StringTokenizer(value, ",; ");
+						while (tokenizer.hasMoreTokens()) {
+							validation.getRuleId().add(tokenizer.nextToken());
 						}
 					}
 					else if (messageModified) {
@@ -263,6 +284,21 @@ public class ValidationSection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(0,4);
 		severityCombo.setLayoutData(data);
 
+		/* ---- Rule Id text ---- */
+		ruleIdText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
+		CLabel ruleIdLabel = getWidgetFactory()
+				.createCLabel(composite, "Rule ID(s):"); //$NON-NLS-1$
+		data = new FormData();
+		data.left = new FormAttachment(severityCombo, ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(severityCombo, 0, SWT.CENTER);
+		ruleIdLabel.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(ruleIdLabel, 0);
+		data.width = 300;
+		data.top = new FormAttachment(severityCombo, 0, SWT.CENTER);
+		ruleIdText.setLayoutData(data);
+
 		/* ---- message text ---- */
 		messageText = getWidgetFactory().createText(composite, "", 
 				SWT.V_SCROLL | SWT.WRAP); //$NON-NLS-1$
@@ -348,6 +384,30 @@ public class ValidationSection extends AbstractModelerPropertySection {
 		messageText.addModifyListener(modifyListener);
 		messageText.addKeyListener(keyListener);
 		messageText.addFocusListener(focusListener);
+
+		ruleIdText.removeModifyListener(modifyListener);
+		ruleIdText.removeKeyListener(keyListener);
+		ruleIdText.removeFocusListener(focusListener);
+		Object ruleIds = null;
+		if (stereotype != null) {
+			ruleIds = namedElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_RULE_ID);
+		}
+		if (ruleIds != null) {
+			StringBuffer ruleIdDisplay = new StringBuffer();
+			Validation validation = (Validation) namedElement.getStereotypeApplication(stereotype);
+			for (String ruleId : validation.getRuleId()) {
+				if (ruleIdDisplay.length() > 0)
+					ruleIdDisplay.append(", ");
+				ruleIdDisplay.append(ruleId);
+			}
+			ruleIdText.setText(ruleIdDisplay.toString());
+		}
+		else {
+			ruleIdText.setText("");
+		}
+		ruleIdText.addModifyListener(modifyListener);
+		ruleIdText.addKeyListener(keyListener);
+		ruleIdText.addFocusListener(focusListener);
 
 		severityCombo.select(0);
 		if (stereotype != null) {
