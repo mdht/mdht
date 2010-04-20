@@ -59,15 +59,6 @@ public class TBResultsSectionImpl extends ResultsSectionImpl implements TBResult
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTBResultsSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return TBResultsSectionOperations.validateTBResultsSectionCode(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateTBResultsSectionText(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return TBResultsSectionOperations.validateTBResultsSectionText(this, diagnostics, context);
 	}
@@ -97,6 +88,16 @@ public class TBResultsSectionImpl extends ResultsSectionImpl implements TBResult
 	 */
 	public boolean validateTBResultsSectionTBResultObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return TBResultsSectionOperations.validateTBResultsSectionTBResultObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validateResultsSectionCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return TBResultsSectionOperations.validateResultsSectionCode(this, diagnostics, context);
 	}
 
 	/**

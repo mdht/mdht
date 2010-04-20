@@ -68,8 +68,9 @@ public class TBResultObservationImpl extends ResultObservationImpl implements TB
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTBResultObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return TBResultObservationOperations.validateTBResultObservationCode(this, diagnostics, context);
+	@Override
+	public boolean validateResultObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return TBResultObservationOperations.validateResultObservationCode(this, diagnostics, context);
 	}
 
 	/**
@@ -77,8 +78,9 @@ public class TBResultObservationImpl extends ResultObservationImpl implements TB
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTBResultObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return TBResultObservationOperations.validateTBResultObservationStatusCode(this, diagnostics, context);
+	@Override
+	public boolean validateResultObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return TBResultObservationOperations.validateResultObservationStatusCode(this, diagnostics, context);
 	}
 
 	/**

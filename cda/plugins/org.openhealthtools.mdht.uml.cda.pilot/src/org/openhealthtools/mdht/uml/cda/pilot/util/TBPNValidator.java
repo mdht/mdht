@@ -8,6 +8,7 @@ package org.openhealthtools.mdht.uml.cda.pilot.util;
 
 import java.util.Map;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
@@ -87,20 +88,20 @@ public class TBPNValidator extends EObjectValidator {
 	public static final int TB_RESULT_ORGANIZER__TB_RESULT_ORGANIZER_TEMPLATE_ID = 5;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Result Organizer Code' of 'TB Result Organizer'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int TB_RESULT_ORGANIZER__TB_RESULT_ORGANIZER_CODE = 6;
-
-	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Result Organizer TB Result Observation' of 'TB Result Organizer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULT_ORGANIZER__TB_RESULT_ORGANIZER_TB_RESULT_OBSERVATION = 7;
+	public static final int TB_RESULT_ORGANIZER__TB_RESULT_ORGANIZER_TB_RESULT_OBSERVATION = 6;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Code' of 'TB Result Organizer'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int TB_RESULT_ORGANIZER__RESULT_ORGANIZER_CODE = 7;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Results Section Template Id' of 'TB Results Section'.
@@ -111,20 +112,12 @@ public class TBPNValidator extends EObjectValidator {
 	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TEMPLATE_ID = 8;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Results Section Code' of 'TB Results Section'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_CODE = 9;
-
-	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Results Section Text' of 'TB Results Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TEXT = 10;
+	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TEXT = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Results Section Title' of 'TB Results Section'.
@@ -132,7 +125,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TITLE = 11;
+	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TITLE = 10;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Results Section TB Result Organizer' of 'TB Results Section'.
@@ -140,7 +133,7 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TB_RESULT_ORGANIZER = 12;
+	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TB_RESULT_ORGANIZER = 11;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Results Section TB Result Observation' of 'TB Results Section'.
@@ -148,7 +141,15 @@ public class TBPNValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TB_RESULT_OBSERVATION = 13;
+	public static final int TB_RESULTS_SECTION__TB_RESULTS_SECTION_TB_RESULT_OBSERVATION = 12;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Results Section Code' of 'TB Results Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int TB_RESULTS_SECTION__RESULTS_SECTION_CODE = 13;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Result Observation Template Id' of 'TB Result Observation'.
@@ -167,20 +168,20 @@ public class TBPNValidator extends EObjectValidator {
 	public static final int TB_RESULT_OBSERVATION__TB_RESULT_OBSERVATION_CLASS_CODE = 15;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Result Observation Code' of 'TB Result Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Code' of 'TB Result Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULT_OBSERVATION__TB_RESULT_OBSERVATION_CODE = 16;
+	public static final int TB_RESULT_OBSERVATION__RESULT_OBSERVATION_CODE = 16;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate TB Result Observation Status Code' of 'TB Result Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Status Code' of 'TB Result Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TB_RESULT_OBSERVATION__TB_RESULT_OBSERVATION_STATUS_CODE = 17;
+	public static final int TB_RESULT_OBSERVATION__RESULT_OBSERVATION_STATUS_CODE = 17;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -328,11 +329,10 @@ public class TBPNValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerTemplateId(tbResultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerMoodCode(tbResultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerId(tbResultOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerCode(tbResultOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTBResultOrganizer_validateResultOrganizerCode(tbResultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerStatusCode(tbResultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultOrganizer_validateResultOrganizerResultObservation(tbResultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTBResultOrganizer_validateTBResultOrganizerTemplateId(tbResultOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTBResultOrganizer_validateTBResultOrganizerCode(tbResultOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTBResultOrganizer_validateTBResultOrganizerTBResultObservation(tbResultOrganizer, diagnostics, context);
 		return result;
 	}
@@ -348,16 +348,6 @@ public class TBPNValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateTBResultOrganizerCode constraint of '<em>TB Result Organizer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTBResultOrganizer_validateTBResultOrganizerCode(TBResultOrganizer tbResultOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return tbResultOrganizer.validateTBResultOrganizerCode(diagnostics, context);
-	}
-
-	/**
 	 * Validates the validateTBResultOrganizerTBResultObservation constraint of '<em>TB Result Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -365,6 +355,35 @@ public class TBPNValidator extends EObjectValidator {
 	 */
 	public boolean validateTBResultOrganizer_validateTBResultOrganizerTBResultObservation(TBResultOrganizer tbResultOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return tbResultOrganizer.validateTBResultOrganizerTBResultObservation(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateResultOrganizerCode constraint of '<em>TB Result Organizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTBResultOrganizer_validateResultOrganizerCode(TBResultOrganizer tbResultOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateResultOrganizerCode", getObjectLabel(tbResultOrganizer, context) },
+						 new Object[] { tbResultOrganizer },
+						 context));
+			}
+			return false;
+		}
+		return ccdValidator.validateResultOrganizer_validateResultOrganizerCode(tbResultOrganizer, diagnostics, context);
 	}
 
 	/**
@@ -381,12 +400,11 @@ public class TBPNValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultsSection_validateResultsSectionTemplateId(tbResultsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultsSection_validateResultsSectionCode(tbResultsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTBResultsSection_validateResultsSectionCode(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultsSection_validateResultsSectionTitle(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultsSection_validateResultsSectionText(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultsSection_validateResultsSectionResultOrganizer(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTBResultsSection_validateTBResultsSectionTemplateId(tbResultsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTBResultsSection_validateTBResultsSectionCode(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTBResultsSection_validateTBResultsSectionText(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTBResultsSection_validateTBResultsSectionTitle(tbResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTBResultsSection_validateTBResultsSectionTBResultOrganizer(tbResultsSection, diagnostics, context);
@@ -402,16 +420,6 @@ public class TBPNValidator extends EObjectValidator {
 	 */
 	public boolean validateTBResultsSection_validateTBResultsSectionTemplateId(TBResultsSection tbResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return tbResultsSection.validateTBResultsSectionTemplateId(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateTBResultsSectionCode constraint of '<em>TB Results Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTBResultsSection_validateTBResultsSectionCode(TBResultsSection tbResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return tbResultsSection.validateTBResultsSectionCode(diagnostics, context);
 	}
 
 	/**
@@ -455,6 +463,35 @@ public class TBPNValidator extends EObjectValidator {
 	}
 
 	/**
+	 * Validates the validateResultsSectionCode constraint of '<em>TB Results Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTBResultsSection_validateResultsSectionCode(TBResultsSection tbResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateResultsSectionCode", getObjectLabel(tbResultsSection, context) },
+						 new Object[] { tbResultsSection },
+						 context));
+			}
+			return false;
+		}
+		return ccdValidator.validateResultsSection_validateResultsSectionCode(tbResultsSection, diagnostics, context);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -474,15 +511,13 @@ public class TBPNValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationMoodCode(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationId(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationEffectiveTime(tbResultObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationStatusCode(tbResultObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationCode(tbResultObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTBResultObservation_validateResultObservationStatusCode(tbResultObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTBResultObservation_validateResultObservationCode(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationMethodCode(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationInterpretationCode(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationValue(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTBResultObservation_validateTBResultObservationTemplateId(tbResultObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTBResultObservation_validateTBResultObservationClassCode(tbResultObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTBResultObservation_validateTBResultObservationCode(tbResultObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTBResultObservation_validateTBResultObservationStatusCode(tbResultObservation, diagnostics, context);
 		return result;
 	}
 
@@ -507,23 +542,61 @@ public class TBPNValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateTBResultObservationCode constraint of '<em>TB Result Observation</em>'.
+	 * Validates the validateResultObservationCode constraint of '<em>TB Result Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTBResultObservation_validateTBResultObservationCode(TBResultObservation tbResultObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return tbResultObservation.validateTBResultObservationCode(diagnostics, context);
+	public boolean validateTBResultObservation_validateResultObservationCode(TBResultObservation tbResultObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateResultObservationCode", getObjectLabel(tbResultObservation, context) },
+						 new Object[] { tbResultObservation },
+						 context));
+			}
+			return false;
+		}
+		return ccdValidator.validateResultObservation_validateResultObservationCode(tbResultObservation, diagnostics, context);
 	}
 
 	/**
-	 * Validates the validateTBResultObservationStatusCode constraint of '<em>TB Result Observation</em>'.
+	 * Validates the validateResultObservationStatusCode constraint of '<em>TB Result Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTBResultObservation_validateTBResultObservationStatusCode(TBResultObservation tbResultObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return tbResultObservation.validateTBResultObservationStatusCode(diagnostics, context);
+	public boolean validateTBResultObservation_validateResultObservationStatusCode(TBResultObservation tbResultObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateResultObservationStatusCode", getObjectLabel(tbResultObservation, context) },
+						 new Object[] { tbResultObservation },
+						 context));
+			}
+			return false;
+		}
+		return ccdValidator.validateResultObservation_validateResultObservationStatusCode(tbResultObservation, diagnostics, context);
 	}
 
 	/**
