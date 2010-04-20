@@ -73,6 +73,7 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 							property.setName(propertyName);
 							source.getOwnedAttributes().add(property);
 							property.setType(target);
+							property.setLower(0);
 							property.setAggregation(AggregationKind.NONE_LITERAL);
 
 							Association association = (Association) source.getNearestPackage()
