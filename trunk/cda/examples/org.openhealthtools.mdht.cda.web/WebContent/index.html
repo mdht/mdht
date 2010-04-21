@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="mdht.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MDHT Model Driven Health Tools</title>
+</head>
+<body>
+<table width="100%" cellspacing="0" cellpadding="5">
+     <tr>
+          <td id="header" style="width: 602"><img src="oht_logo.png" alt="Open Health Tools logo" style="width: 602 height :   140 hspace :   0 vspace :   0 border :   0" /></td>
+          <td>
+          <h1 style="text-align: center">MDHT - Model Driven Health Tools Logo Here</h1>
+          </td>
+     </tr>
+     <tr>
+          <td colspan="2">
+          <h1 style="text-align: center">MDHT Clinical Document Architecture (CDA) Document Validation Services</h1>
+          </td>
+     </tr>
+     <tr>
+          <td colspan="2">
+          <p style="font-size: 150%">The site provides validation services for CDA documents using the MDHT CDA Tooling solution and the complete source code is available on
+          the MDHT Subversion. The web page uses a web service to provide XML validation content which is then rendered using XSLT. There are currently two displays of validation
+          results, Tree and Table View.</p>
+          </td>
+     </tr>
+     <tr>
+          <td>&nbsp;</td>
+     </tr>
+     <tr>
+          <td>&nbsp;</td>
+     </tr>
+     <tr>
+          <td colspan="2">
+          <h2 style="text-align: center">Try MDHT CDA Diagnostics Tree Here</h2>
+          </td>
+     </tr>
+
+
+
+     <tr>
+          <td colspan="2">
+          <form action="MDHTTreeView.jsp" enctype="multipart/form-data" method="post">
+          <table align="center" border="2" width="40%">
+               <tr>
+                    <td>CDA Document</td>
+                    <td><input type="file" name="file1" /></td>
+               </tr>
+               <tr>
+                <td>CDA Diagnostic Level</td>
+                    <td><select name="filter">                          
+    			            <option value="1">All Diagnostics</option>
+                            <option value="2">Only Error and Warnings Diagnostics</option>
+                            <option value="3">Only Error Diagnostics</option>    			            
+                    </select></td>
+               </tr>
+               <tr>
+                    <td colspan="2" ><div align="right"><input type="submit" value="Validate" /></div></td>
+               </tr>
+          </table>
+          </form>
+          </td>
+     </tr>
+
+
+     <tr>
+          <td>&nbsp;</td>
+     </tr>
+     <tr>
+          <td>&nbsp;</td>
+     </tr>
+     <tr>
+          <td colspan="2">
+          <h2 style="text-align: center">Try MDHT CDA Diagnostics Table Here</h2>
+          </td>
+     </tr>
+     
+     
+     
+     
+     
+     <tr>
+          <td colspan="2">
+          <form action="MDHTWS.jsp" enctype="multipart/form-data" method="post">
+          <table align="center" border="2" width="40%">
+               <tr>
+                    <td>CDA Document</td>
+                    <td><input type="file" name="file1" /></td>
+               </tr>
+               <tr>
+                <td>CDA Diagnostic Level</td>
+                    <td><select name="filter">
+                         <option value="1">All Diagnostics</option>
+                         <option value="2">Only Error and Warnings Diagnostics</option>
+                         <option value="3">Only Error Diagnostics</option>
+                    </select></td>
+               </tr>
+               <tr>
+                    <td colspan="2" ><div align="right"><input type="submit" value="Validate" /></div></td>
+               </tr>
+          </table>
+          </form>
+          </td>
+     </tr>
+     <tr>
+          <td>&nbsp;</td>
+     </tr>
+     <tr>
+          <td>&nbsp;</td>
+     </tr>
+     <tr>
+          <td colspan="2">See also NIST Diagnostics using Table and Tree View <a href="NISTCDAValidation.html" >Here</a></td>
+     </tr>
+</table>
+</body>
+</html>

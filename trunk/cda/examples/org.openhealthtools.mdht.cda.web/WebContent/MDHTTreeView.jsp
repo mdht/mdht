@@ -167,7 +167,7 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
 
 %>
 
-<title>File Upload Example</title>
+<title>MDHT CDA Diagnostics</title>
 
 
 
@@ -212,104 +212,115 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
 
 
 
-	<%
+<%
 
 
-	if (ServletFileUpload.isMultipartContent(request)){
-	
-  		ServletFileUpload servletFileUpload = new ServletFileUpload(new DiskFileItemFactory());
+     if (ServletFileUpload.isMultipartContent(request)){
+     
+          ServletFileUpload servletFileUpload = new ServletFileUpload(new DiskFileItemFactory());
   
-  		List fileItemsList = servletFileUpload.parseRequest(request);
-
-  		Iterator it = fileItemsList.iterator();
-  
-  		while (it.hasNext()){
-	  
-    		FileItem fileItemTemp = (FileItem)it.next();
+          List fileItemsList = servletFileUpload.parseRequest(request);
+          
+          Iterator it = fileItemsList.iterator();
+          
+          String filterValue="3";
+          
+          FileItem cdaFile=null; 
+          
+          while (it.hasNext()){
+            
+          FileItem fileItem = (FileItem)it.next();
     
-    		
-    		try {
-    			
-    			CDAPackage.eINSTANCE.eClass();
-    			CCDPackage.eINSTANCE.eClass();
-    			HITSPPackage.eINSTANCE.eClass();
-    			IHEPackage.eINSTANCE.eClass();
+          if (fileItem.isFormField())
+          {
+           filterValue = fileItem.getString(); 
+          }
 
-    			            InputStream in = new ByteArrayInputStream(fileItemTemp.getString().getBytes());
-    			            ClinicalDocument clinicalDocument = CDAUtil.load(in, null);
-    			            
-    			            
-    			            
-    			            
-    						DocumentBuilderFactory factory;
-    						DocumentBuilder docBuilder;
+           if (!fileItem.isFormField()) {
+                cdaFile = fileItem;
+           }
+          
+          }
+          
+        
+  
+          
+          try {
+               
+               CDAPackage.eINSTANCE.eClass();
+               CCDPackage.eINSTANCE.eClass();
+               HITSPPackage.eINSTANCE.eClass();
+               IHEPackage.eINSTANCE.eClass();
 
-    						factory = DocumentBuilderFactory.newInstance();
+                           InputStream in = new ByteArrayInputStream(cdaFile.getString().getBytes());
+                           ClinicalDocument clinicalDocument = CDAUtil.load(in, null);
+                           
 
-    						docBuilder = factory.newDocumentBuilder();
+                           final int filterlevel = Integer.parseInt(filterValue);                                                 
+                            
+                              DocumentBuilderFactory factory;
+                              DocumentBuilder docBuilder;
 
-    						// Create blank DOM Document
-    						final Document doc = docBuilder.newDocument();
-    						
-    						// create the root element
-    						final Element root = doc.createElement("validateDocumentResponse");
-    						
-    						root.setAttributeNS("namespaceURI","qualifiedname","value");
+                              factory = DocumentBuilderFactory.newInstance();
 
-    						final Element returnElement = doc.createElement("return");
+                              docBuilder = factory.newDocumentBuilder();
 
-    						root.appendChild(returnElement);
+                              // Create blank DOM Document
+                              final Document doc = docBuilder.newDocument();
 
-    						// all it to the xml tree
-    						doc.appendChild(root);
+                              // create the root element
+                              final Element root = doc.createElement("validateDocumentResponse");
 
-    						boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
+                              final Element returnElement = doc.createElement("return");
 
-    							
-    							public void handleError(Diagnostic diagnostic) {
-    								pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
-    							}
+                              root.appendChild(returnElement);
 
-    							
-    							public void handleWarning(Diagnostic diagnostic) {
-    								pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
-    							}
+                              // all it to the xml tree
+                              doc.appendChild(root);
 
-    							
-    							public void handleInfo(Diagnostic diagnostic) {
-    								pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
+                              boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 
-    							}
+                                   
+                                   public void handleError(Diagnostic diagnostic) {                                       
+                                        pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
+                                   }
 
-    						});
-    						
-    						
-    					
-	    Source source = new DOMSource(root);
+                                   
+                                   public void handleWarning(Diagnostic diagnostic) {
+                                    if (filterlevel<=2) {
+                                        pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
+                                    }
+                                   }
+
+                                   
+                                   public void handleInfo(Diagnostic diagnostic) {
+                                        if (filterlevel==1) {
+                                        pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
+                                        }
+
+                                   }
+
+                              });
+                              
+                              
+
+         Source source = new DOMSource(root);
             StringWriter stringWriter = new StringWriter();
             Result result = new StreamResult(stringWriter);
             TransformerFactory tfactory = TransformerFactory.newInstance();
             Transformer transformer = tfactory.newTransformer();
             transformer.transform(source, result);
-    					
-	
-    						 request.setAttribute("MDHTXML",stringWriter.getBuffer().toString());
+                         
+     
+                               request.setAttribute("MDHTXML",stringWriter.getBuffer().toString());
 
-    					} catch (UnsupportedEncodingException e) {
-    			            e.printStackTrace();
-    			        }
-    			
-    		
+                         } catch (UnsupportedEncodingException e) {
+                           e.printStackTrace();
+                       }
 
-
-	  
-	 
-	 
-
-				
-    	}
- 	}
-%> <xsl:apply nameXml="MDHTXML" xsl="MDHTTree.xsl" />
+     }
+%> 
+ <xsl:apply nameXml="MDHTXML" xsl="MDHTTree.xsl" />
 
 
 
@@ -347,7 +358,6 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
 
 
 
-
 <!------------------------------------------------------------->
  <!-- IMPORTANT NOTICE:                                       -->
  <!-- Removing the following link will prevent this script    -->
@@ -358,7 +368,23 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
  <!-- to remove the link, see the online FAQ for instructions -->
  <!-- on how to obtain a version without the link.            -->
  <!------------------------------------------------------------->
- <DIV style="position:absolute; top:0; left:0;"><TABLE border=0><TR><TD><FONT size=-2><A style="font-size:7pt;text-decoration:none;color:silver" href="http://www.treemenu.net/" target=_blank>Javascript Tree Menu</A></FONT></TD></TR></TABLE></DIV>
+ <DIV style="position:absolute; top:0; left:0;"><TABLE border=0>
+ 
+ 
+      <tr>
+          <td id="header" style="width: 602"><img src="oht_logo.png" alt="Open Health Tools logo" style="width: 602 height :   140 hspace :   0 vspace :   0 border :   0" /></td>
+          <td>
+          <h1 style="text-align: center">MDHT - Model Driven Health Tools Logo Here</h1>
+          </td>
+     </tr>
+     <tr>
+          <td colspan="2">
+          <h1 style="text-align: center">MDHT Clinical Document Architecture (CDA) Document Validation Services</h1>
+          </td>
+     </tr>
+ 
+ 
+ <TR><TD><FONT size=-2><A style="font-size:7pt;text-decoration:none;color:silver" href="http://www.treemenu.net/" target=_blank>Javascript Tree Menu</A></FONT></TD></TR></TABLE></DIV>
 
   <!-- Build the browser's objects and display default view  -->
   <!-- of the tree.                                          -->
