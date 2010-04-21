@@ -171,12 +171,10 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
 }
 
 %>
-<title>File Upload Example</title>
+<title>MDHT CDA Diagnostics</title>
 </head>
 
 <body>
-<h1>Data Received at the Server</h1>
-<hr />
 <p>
 <%
 
@@ -186,13 +184,30 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
   		ServletFileUpload servletFileUpload = new ServletFileUpload(new DiskFileItemFactory());
   
   		List fileItemsList = servletFileUpload.parseRequest(request);
-
+          
   		Iterator it = fileItemsList.iterator();
-  
+          
+  		String filterValue="3";
+          
+  		FileItem cdaFile=null; 
+  		
   		while (it.hasNext()){
-	  
-    		FileItem fileItemTemp = (FileItem)it.next();
+  		  
+    		FileItem fileItem = (FileItem)it.next();
     
+          if (fileItem.isFormField())
+          {
+           filterValue = fileItem.getString(); 
+          }
+
+    		 if (!fileItem.isFormField()) {
+                cdaFile = fileItem;
+           }
+          
+  		}
+  		
+        
+  
     		
     		try {
     			
@@ -201,12 +216,12 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
     			HITSPPackage.eINSTANCE.eClass();
     			IHEPackage.eINSTANCE.eClass();
 
-    			            InputStream in = new ByteArrayInputStream(fileItemTemp.getString().getBytes());
+    			            InputStream in = new ByteArrayInputStream(cdaFile.getString().getBytes());
     			            ClinicalDocument clinicalDocument = CDAUtil.load(in, null);
     			            
-    			            
-    			            
-    			            
+
+    			            final int filterlevel = Integer.parseInt(filterValue);                                                 
+                            
     						DocumentBuilderFactory factory;
     						DocumentBuilder docBuilder;
 
@@ -230,18 +245,22 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
     						boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 
     							
-    							public void handleError(Diagnostic diagnostic) {
+    							public void handleError(Diagnostic diagnostic) {                                       
     								pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
     							}
 
     							
     							public void handleWarning(Diagnostic diagnostic) {
+                                    if (filterlevel<=2) {
     								pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
+                                    }
     							}
 
     							
     							public void handleInfo(Diagnostic diagnostic) {
+                                        if (filterlevel==1) {
     								pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
+                                        }
 
     							}
 
@@ -262,16 +281,7 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
     					} catch (UnsupportedEncodingException e) {
     			            e.printStackTrace();
     			        }
-    			
-    		
 
-
-	  
-	 
-	 
-
-				
-    	}
  	}
 %> 
 
