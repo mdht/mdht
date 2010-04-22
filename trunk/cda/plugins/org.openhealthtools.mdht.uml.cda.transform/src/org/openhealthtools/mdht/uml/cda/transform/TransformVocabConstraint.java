@@ -241,7 +241,7 @@ public class TransformVocabConstraint extends TransformAbstract {
 			}
 
 			body.append(selfName);
-			body.append("->forAll(element | element.oclIsKindOf(" + templateTypeQName + ") and ");
+			body.append("->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(" + templateTypeQName + ") and ");
 			body.append(LF);
 			
 			body.append("let value : " + templateTypeQName);
