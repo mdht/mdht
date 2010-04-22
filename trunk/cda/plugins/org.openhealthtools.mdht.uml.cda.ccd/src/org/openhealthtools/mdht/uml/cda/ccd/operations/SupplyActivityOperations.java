@@ -227,7 +227,7 @@ public class SupplyActivityOperations extends SupplyOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))";
+	protected static final String VALIDATE_SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateSupplyActivityMedicationStatusObservation(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Medication Status Observation</em>}' invariant operation.
@@ -243,7 +243,7 @@ public class SupplyActivityOperations extends SupplyOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))
+	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))
 	 * @param supplyActivity The receiving '<em><b>Supply Activity</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -284,7 +284,7 @@ public class SupplyActivityOperations extends SupplyOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)";
+	protected static final String VALIDATE_SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateSupplyActivityFulfillmentInstruction(SupplyActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Fulfillment Instruction</em>}' invariant operation.
@@ -300,7 +300,7 @@ public class SupplyActivityOperations extends SupplyOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)
+	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)
 	 * @param supplyActivity The receiving '<em><b>Supply Activity</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

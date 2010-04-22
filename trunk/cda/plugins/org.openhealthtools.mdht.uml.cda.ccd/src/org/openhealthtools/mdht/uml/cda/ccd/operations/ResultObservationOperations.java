@@ -178,6 +178,8 @@ public class ResultObservationOperations extends ObservationOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_RESULT_OBSERVATION_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.informant->isEmpty() "+
+"or not self.getSection().informant->isEmpty()"+
+"or not self.getClinicalDocument().informant->isEmpty()"+
 "or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)"+
 "or (self.entryRelationship->exists(rel : cda::EntryRelationship | "+
 "   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR"+
@@ -198,6 +200,8 @@ public class ResultObservationOperations extends ObservationOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * not self.informant->isEmpty() 
+	 * or not self.getSection().informant->isEmpty()
+	 * or not self.getClinicalDocument().informant->isEmpty()
 	 * or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
 	 * or (self.entryRelationship->exists(rel : cda::EntryRelationship | 
 	 *    rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR

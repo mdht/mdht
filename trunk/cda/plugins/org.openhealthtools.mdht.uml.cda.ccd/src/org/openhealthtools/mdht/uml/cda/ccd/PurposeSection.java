@@ -91,11 +91,11 @@ public interface PurposeSection extends Section {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PurposeActivity))
+	 * self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::PurposeActivity))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PurposeActivity))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::PurposeActivity))'"
 	 * @generated
 	 */
 	boolean validatePurposeSectionPurposeActivity(DiagnosticChain diagnostics, Map<Object, Object> context);

@@ -474,7 +474,7 @@ public class EpisodeObservationOperations extends ObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_EPISODE_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CD) and "+
+	protected static final String VALIDATE_EPISODE_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.value->size() = 1 and self.value->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(datatypes::CD) and "+
 "let value : datatypes::CD = element.oclAsType(datatypes::CD) in "+
 "value.code = '404684003' and value.codeSystem = '2.16.840.1.113883.6.96')";
 
@@ -492,7 +492,7 @@ public class EpisodeObservationOperations extends ObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CD) and 
+	 * self.value->size() = 1 and self.value->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(datatypes::CD) and 
 	 * let value : datatypes::CD = element.oclAsType(datatypes::CD) in 
 	 * value.code = '404684003' and value.codeSystem = '2.16.840.1.113883.6.96')
 	 * @param episodeObservation The receiving '<em><b>Episode Observation</b></em>' model object.

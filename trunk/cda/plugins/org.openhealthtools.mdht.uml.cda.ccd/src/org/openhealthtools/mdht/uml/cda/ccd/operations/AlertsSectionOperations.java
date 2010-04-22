@@ -288,7 +288,7 @@ public class AlertsSectionOperations extends SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_ALERTS_SECTION_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProblemAct))";
+	protected static final String VALIDATE_ALERTS_SECTION_PROBLEM_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateAlertsSectionProblemAct(AlertsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Problem Act</em>}' invariant operation.
@@ -304,7 +304,7 @@ public class AlertsSectionOperations extends SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProblemAct))
+	 * self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct))
 	 * @param alertsSection The receiving '<em><b>Alerts Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

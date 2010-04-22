@@ -117,6 +117,8 @@ public class ResultOrganizerOperations extends OrganizerOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_RESULT_ORGANIZER_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.informant->isEmpty() "+
+"or not self.getSection().informant->isEmpty()"+
+"or not self.getClinicalDocument().informant->isEmpty()"+
 "or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)";
 
 	/**
@@ -134,6 +136,8 @@ public class ResultOrganizerOperations extends OrganizerOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * not self.informant->isEmpty() 
+	 * or not self.getSection().informant->isEmpty()
+	 * or not self.getClinicalDocument().informant->isEmpty()
 	 * or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
 	 * @param resultOrganizer The receiving '<em><b>Result Organizer</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
@@ -460,7 +464,7 @@ public class ResultOrganizerOperations extends OrganizerOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_RESULT_ORGANIZER_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ccd::ResultObservation))";
+	protected static final String VALIDATE_RESULT_ORGANIZER_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.component->exists(component : cda::Component4 | not component.observation.oclIsUndefined() and component.observation.oclIsKindOf(ccd::ResultObservation))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateResultOrganizerResultObservation(ResultOrganizer, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Result Observation</em>}' invariant operation.
@@ -476,7 +480,7 @@ public class ResultOrganizerOperations extends OrganizerOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ccd::ResultObservation))
+	 * self.component->exists(component : cda::Component4 | not component.observation.oclIsUndefined() and component.observation.oclIsKindOf(ccd::ResultObservation))
 	 * @param resultOrganizer The receiving '<em><b>Result Organizer</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

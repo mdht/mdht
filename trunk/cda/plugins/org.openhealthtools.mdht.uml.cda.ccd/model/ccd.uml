@@ -284,7 +284,7 @@
           <language>Analysis</language>
           <language>OCL</language>
           <body>Contains one or more sources of information.</body>
-          <body>not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))</body>
+          <body>not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_vL9Y4BZsEd-kKd2N285_Sw" name="containsPatientAwareness" constrainedElement="_IjIO0DxbEd6JwqSGecoePg">
@@ -555,7 +555,7 @@
           <language>Analysis</language>
           <language>OCL</language>
           <body>Contains one or more sources of information.</body>
-          <body>not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</body>
+          <body>not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_hZltMHDAEd6eItyqb1FoWg">
@@ -629,7 +629,7 @@
           <language>Analysis</language>
           <language>OCL</language>
           <body>Contains one or more sources of information.</body>
-          <body>not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))</body>
+          <body>not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_eOylIHDAEd6eItyqb1FoWg">
@@ -904,7 +904,7 @@ This section is optional, however it is strongly recommended that it be present 
           <language>Analysis</language>
           <language>OCL</language>
           <body>An alert observation contains one or more sources of information.</body>
-          <body>not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))</body>
+          <body>not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_byigoBW9Ed-6K-YJpbwRmQ" name="agentRepresentation" constrainedElement="_qV72IHrREd68l9lQ-TLEBQ">
@@ -1642,7 +1642,7 @@ This section is optional, however it is strongly recommended that it be present 
           <language>Analysis</language>
           <language>OCL</language>
           <body>Contains one or more sources of information.</body>
-          <body>not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</body>
+          <body>not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_1CKdMK3zEd6_ioDelDcPPg" general="_Ht_RsHDAEd6eItyqb1FoWg"/>
