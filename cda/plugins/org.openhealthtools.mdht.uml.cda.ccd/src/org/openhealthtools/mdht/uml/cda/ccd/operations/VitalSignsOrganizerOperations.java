@@ -53,6 +53,8 @@ public class VitalSignsOrganizerOperations extends ResultOrganizerOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_VITAL_SIGNS_ORGANIZER_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.informant->isEmpty() "+
+"or not self.getSection().informant->isEmpty()"+
+"or not self.getClinicalDocument().informant->isEmpty()"+
 "or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)";
 
 	/**
@@ -70,6 +72,8 @@ public class VitalSignsOrganizerOperations extends ResultOrganizerOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * not self.informant->isEmpty() 
+	 * or not self.getSection().informant->isEmpty()
+	 * or not self.getClinicalDocument().informant->isEmpty()
 	 * or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
 	 * @param vitalSignsOrganizer The receiving '<em><b>Vital Signs Organizer</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.

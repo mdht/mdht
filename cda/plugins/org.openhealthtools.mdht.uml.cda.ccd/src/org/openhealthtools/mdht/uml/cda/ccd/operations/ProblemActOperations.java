@@ -698,7 +698,7 @@ public class ProblemActOperations extends ActOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_PROBLEM_ACT_EPISODE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::EpisodeObservation))";
+	protected static final String VALIDATE_PROBLEM_ACT_EPISODE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::EpisodeObservation))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateProblemActEpisodeObservation(ProblemAct, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Episode Observation</em>}' invariant operation.
@@ -714,7 +714,7 @@ public class ProblemActOperations extends ActOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::EpisodeObservation))
+	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::EpisodeObservation))
 	 * @param problemAct The receiving '<em><b>Problem Act</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

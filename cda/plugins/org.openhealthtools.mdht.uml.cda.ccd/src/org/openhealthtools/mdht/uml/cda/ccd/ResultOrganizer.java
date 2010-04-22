@@ -54,11 +54,13 @@ public interface ResultOrganizer extends Organizer {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * not self.informant->isEmpty() 
+	 * or not self.getSection().informant->isEmpty()
+	 * or not self.getClinicalDocument().informant->isEmpty()
 	 * or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.informant->isEmpty() \r\nor self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.informant->isEmpty() \r\nor not self.getSection().informant->isEmpty()\r\nor not self.getClinicalDocument().informant->isEmpty()\r\nor self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)'"
 	 * @generated
 	 */
 	boolean validateResultOrganizerInformationSource(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -132,11 +134,11 @@ public interface ResultOrganizer extends Organizer {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ccd::ResultObservation))
+	 * self.component->exists(component : cda::Component4 | not component.observation.oclIsUndefined() and component.observation.oclIsKindOf(ccd::ResultObservation))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ccd::ResultObservation))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.component->exists(component : cda::Component4 | not component.observation.oclIsUndefined() and component.observation.oclIsKindOf(ccd::ResultObservation))'"
 	 * @generated
 	 */
 	boolean validateResultOrganizerResultObservation(DiagnosticChain diagnostics, Map<Object, Object> context);

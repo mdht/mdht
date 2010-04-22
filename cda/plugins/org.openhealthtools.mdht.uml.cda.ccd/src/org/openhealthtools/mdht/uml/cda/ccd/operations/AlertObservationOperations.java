@@ -61,6 +61,8 @@ public class AlertObservationOperations extends ObservationOperations {
 	 * @ordered
 	 */
 	protected static final String VALIDATE_ALERT_OBSERVATION_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.informant->isEmpty() "+
+"or not self.getSection().informant->isEmpty()"+
+"or not self.getClinicalDocument().informant->isEmpty()"+
 "or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)"+
 "or (self.entryRelationship->exists(rel : cda::EntryRelationship | "+
 "   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR"+
@@ -81,6 +83,8 @@ public class AlertObservationOperations extends ObservationOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * not self.informant->isEmpty() 
+	 * or not self.getSection().informant->isEmpty()
+	 * or not self.getClinicalDocument().informant->isEmpty()
 	 * or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)
 	 * or (self.entryRelationship->exists(rel : cda::EntryRelationship | 
 	 *    rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR
@@ -473,7 +477,7 @@ public class AlertObservationOperations extends ObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_ALERT_OBSERVATION_ALERT_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::AlertStatusObservation))";
+	protected static final String VALIDATE_ALERT_OBSERVATION_ALERT_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::AlertStatusObservation))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateAlertObservationAlertStatusObservation(AlertObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Alert Status Observation</em>}' invariant operation.
@@ -489,7 +493,7 @@ public class AlertObservationOperations extends ObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::AlertStatusObservation))
+	 * self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::AlertStatusObservation))
 	 * @param alertObservation The receiving '<em><b>Alert Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -530,7 +534,7 @@ public class AlertObservationOperations extends ObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_ALERT_OBSERVATION_REACTION_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ReactionObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::MFST)";
+	protected static final String VALIDATE_ALERT_OBSERVATION_REACTION_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::ReactionObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::MFST)";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateAlertObservationReactionObservation(AlertObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Reaction Observation</em>}' invariant operation.
@@ -546,7 +550,7 @@ public class AlertObservationOperations extends ObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ReactionObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::MFST)
+	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::ReactionObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::MFST)
 	 * @param alertObservation The receiving '<em><b>Alert Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

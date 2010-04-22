@@ -343,10 +343,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentProblemSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::ProblemSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProblemSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::ProblemSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProblemSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -365,10 +365,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentFamilyHistorySection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::FamilyHistorySection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::FamilyHistorySection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::FamilyHistorySection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::FamilyHistorySection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -387,10 +387,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentSocialHistorySection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::SocialHistorySection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::SocialHistorySection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::SocialHistorySection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::SocialHistorySection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -409,10 +409,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentAlertsSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::AlertsSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::AlertsSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::AlertsSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::AlertsSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -431,10 +431,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentMedicationsSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::MedicationsSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::MedicationsSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::MedicationsSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::MedicationsSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -453,10 +453,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentResultsSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::ResultsSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ResultsSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::ResultsSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ResultsSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -475,10 +475,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentProceduresSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::ProceduresSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProceduresSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::ProceduresSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ProceduresSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -497,10 +497,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentEncountersSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::EncountersSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::EncountersSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::EncountersSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::EncountersSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -519,10 +519,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentPlanOfCareSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::PlanOfCareSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::PlanOfCareSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::PlanOfCareSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::PlanOfCareSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -541,10 +541,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentImmunizationsSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::ImmunizationsSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ImmunizationsSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::ImmunizationsSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::ImmunizationsSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -563,10 +563,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentVitalSignsSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::VitalSignsSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::VitalSignsSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::VitalSignsSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::VitalSignsSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -585,10 +585,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentMedicalEquipmentSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::MedicalEquipmentSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::MedicalEquipmentSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::MedicalEquipmentSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::MedicalEquipmentSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -607,10 +607,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentFunctionalStatusSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::FunctionalStatusSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::FunctionalStatusSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::FunctionalStatusSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::FunctionalStatusSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -629,10 +629,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentAdvanceDirectivesSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::AdvanceDirectivesSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::AdvanceDirectivesSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::AdvanceDirectivesSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::AdvanceDirectivesSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -651,10 +651,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentPayersSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::PayersSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::PayersSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::PayersSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::PayersSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -673,10 +673,10 @@
     </eOperations>
     <eOperations name="ContinuityOfCareDocumentPurposeSection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::PurposeSection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::PurposeSection))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | section.oclIsKindOf(ccd::PurposeSection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ccd::PurposeSection))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -948,10 +948,10 @@
     </eOperations>
     <eOperations name="ProblemActEpisodeObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::EpisodeObservation))"/>
+        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::EpisodeObservation))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::EpisodeObservation))"/>
+        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::EpisodeObservation))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -981,10 +981,10 @@
     </eAnnotations>
     <eOperations name="ProblemObservationInformationSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
+        <details key="body" value="not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
+        <details key="documentation" value="not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1113,10 +1113,10 @@
     </eOperations>
     <eOperations name="ProblemObservationProblemStatusObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemStatusObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
+        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::ProblemStatusObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemStatusObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
+        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::ProblemStatusObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1135,10 +1135,10 @@
     </eOperations>
     <eOperations name="ProblemObservationProblemHealthStatusObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemHealthStatusObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
+        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::ProblemHealthStatusObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ProblemHealthStatusObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
+        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::ProblemHealthStatusObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1157,10 +1157,10 @@
     </eOperations>
     <eOperations name="ProblemObservationAgeObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::AgeObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"/>
+        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::AgeObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::AgeObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"/>
+        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::AgeObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1278,10 +1278,10 @@
     </eOperations>
     <eOperations name="ProblemSectionProblemAct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProblemAct))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProblemAct))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1724,10 +1724,10 @@
     </eOperations>
     <eOperations name="EpisodeObservationValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = element.oclAsType(datatypes::CD) in &#xD;&#xA;value.code = '404684003' and value.codeSystem = '2.16.840.1.113883.6.96')"/>
+        <details key="body" value="self.value->size() = 1 and self.value->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = element.oclAsType(datatypes::CD) in &#xD;&#xA;value.code = '404684003' and value.codeSystem = '2.16.840.1.113883.6.96')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = element.oclAsType(datatypes::CD) in &#xD;&#xA;value.code = '404684003' and value.codeSystem = '2.16.840.1.113883.6.96')"/>
+        <details key="documentation" value="self.value->size() = 1 and self.value->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(datatypes::CD) and &#xD;&#xA;let value : datatypes::CD = element.oclAsType(datatypes::CD) in &#xD;&#xA;value.code = '404684003' and value.codeSystem = '2.16.840.1.113883.6.96')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2076,10 +2076,10 @@
     </eOperations>
     <eOperations name="ResultOrganizerInformationSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)"/>
+        <details key="body" value="not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)"/>
+        <details key="documentation" value="not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2208,10 +2208,10 @@
     </eOperations>
     <eOperations name="ResultOrganizerResultObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ccd::ResultObservation))"/>
+        <details key="body" value="self.component->exists(component : cda::Component4 | not component.observation.oclIsUndefined() and component.observation.oclIsKindOf(ccd::ResultObservation))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.component->exists(component : cda::Component4 | component.observation.oclIsKindOf(ccd::ResultObservation))"/>
+        <details key="documentation" value="self.component->exists(component : cda::Component4 | not component.observation.oclIsUndefined() and component.observation.oclIsKindOf(ccd::ResultObservation))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2283,10 +2283,10 @@
     </eOperations>
     <eOperations name="ResultObservationInformationSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
+        <details key="body" value="not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
+        <details key="documentation" value="not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2789,10 +2789,10 @@
     </eOperations>
     <eOperations name="ImmunizationsSectionMedicationActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ccd::MedicationActivity))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.substanceAdministration.oclIsUndefined() and entry.substanceAdministration.oclIsKindOf(ccd::MedicationActivity))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ccd::MedicationActivity))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.substanceAdministration.oclIsUndefined() and entry.substanceAdministration.oclIsKindOf(ccd::MedicationActivity))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2811,10 +2811,10 @@
     </eOperations>
     <eOperations name="ImmunizationsSectionSupplyActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.supply.oclIsKindOf(ccd::SupplyActivity))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.supply.oclIsUndefined() and entry.supply.oclIsKindOf(ccd::SupplyActivity))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.supply.oclIsKindOf(ccd::SupplyActivity))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.supply.oclIsUndefined() and entry.supply.oclIsKindOf(ccd::SupplyActivity))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3007,10 +3007,10 @@
     </eOperations>
     <eOperations name="MedicationActivityMedicationSeriesNumberObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::MedicationSeriesNumberObservation))"/>
+        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::MedicationSeriesNumberObservation))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::MedicationSeriesNumberObservation))"/>
+        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::MedicationSeriesNumberObservation))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3029,10 +3029,10 @@
     </eOperations>
     <eOperations name="MedicationActivityMedicationStatusObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))"/>
+        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))"/>
+        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3051,10 +3051,10 @@
     </eOperations>
     <eOperations name="MedicationActivityPatientInstruction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::PatientInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"/>
+        <details key="body" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::PatientInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::PatientInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"/>
+        <details key="documentation" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::PatientInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3146,10 +3146,10 @@
     </eOperations>
     <eOperations name="SupplyActivityMedicationStatusObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))"/>
+        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))"/>
+        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::MedicationStatusObservation))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3168,10 +3168,10 @@
     </eOperations>
     <eOperations name="SupplyActivityFulfillmentInstruction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"/>
+        <details key="body" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"/>
+        <details key="documentation" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::FulfillmentInstruction) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3292,10 +3292,10 @@
     </eOperations>
     <eOperations name="AlertsSectionProblemAct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProblemAct))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProblemAct))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3324,10 +3324,10 @@
     </eAnnotations>
     <eOperations name="AlertObservationInformationSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
+        <details key="body" value="not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
+        <details key="documentation" value="not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)&#xD;&#xA;or (self.entryRelationship->exists(rel : cda::EntryRelationship | &#xD;&#xA;   rel.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR&#xD;&#xA;   and rel.observation.code.code = '48766-0'))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3478,10 +3478,10 @@
     </eOperations>
     <eOperations name="AlertObservationAlertStatusObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::AlertStatusObservation))"/>
+        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::AlertStatusObservation))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::AlertStatusObservation))"/>
+        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::AlertStatusObservation))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3500,10 +3500,10 @@
     </eOperations>
     <eOperations name="AlertObservationReactionObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ReactionObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::MFST)"/>
+        <details key="body" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::ReactionObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::MFST)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::ReactionObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::MFST)"/>
+        <details key="documentation" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::ReactionObservation) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::MFST)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3620,10 +3620,10 @@
     </eOperations>
     <eOperations name="ReactionObservationSeverityObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::SeverityObservation))"/>
+        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::SeverityObservation))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.observation.oclIsKindOf(ccd::SeverityObservation))"/>
+        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ccd::SeverityObservation))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3945,10 +3945,10 @@
     </eOperations>
     <eOperations name="ResultsSectionResultOrganizer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ccd::ResultOrganizer))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.organizer.oclIsUndefined() and entry.organizer.oclIsKindOf(ccd::ResultOrganizer))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ccd::ResultOrganizer))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.organizer.oclIsUndefined() and entry.organizer.oclIsKindOf(ccd::ResultOrganizer))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4336,10 +4336,10 @@
     </eOperations>
     <eOperations name="PlanOfCareSectionPlanOfCareActivityAct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->one(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PlanOfCareActivityAct))"/>
+        <details key="body" value="self.entry->one(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::PlanOfCareActivityAct))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PlanOfCareActivityAct))"/>
+        <details key="documentation" value="self.entry->one(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::PlanOfCareActivityAct))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4358,10 +4358,10 @@
     </eOperations>
     <eOperations name="PlanOfCareSectionPlanOfCareActivityEncounter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->one(entry : cda::Entry | entry.encounter.oclIsKindOf(ccd::PlanOfCareActivityEncounter))"/>
+        <details key="body" value="self.entry->one(entry : cda::Entry | not entry.encounter.oclIsUndefined() and entry.encounter.oclIsKindOf(ccd::PlanOfCareActivityEncounter))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.encounter.oclIsKindOf(ccd::PlanOfCareActivityEncounter))"/>
+        <details key="documentation" value="self.entry->one(entry : cda::Entry | not entry.encounter.oclIsUndefined() and entry.encounter.oclIsKindOf(ccd::PlanOfCareActivityEncounter))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4380,10 +4380,10 @@
     </eOperations>
     <eOperations name="PlanOfCareSectionPlanOfCareActivityObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->one(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::PlanOfCareActivityObservation))"/>
+        <details key="body" value="self.entry->one(entry : cda::Entry | not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::PlanOfCareActivityObservation))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::PlanOfCareActivityObservation))"/>
+        <details key="documentation" value="self.entry->one(entry : cda::Entry | not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::PlanOfCareActivityObservation))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4402,10 +4402,10 @@
     </eOperations>
     <eOperations name="PlanOfCareSectionPlanOfCareActivityProcedure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->one(entry : cda::Entry | entry.procedure.oclIsKindOf(ccd::PlanOfCareActivityProcedure))"/>
+        <details key="body" value="self.entry->one(entry : cda::Entry | not entry.procedure.oclIsUndefined() and entry.procedure.oclIsKindOf(ccd::PlanOfCareActivityProcedure))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.procedure.oclIsKindOf(ccd::PlanOfCareActivityProcedure))"/>
+        <details key="documentation" value="self.entry->one(entry : cda::Entry | not entry.procedure.oclIsUndefined() and entry.procedure.oclIsKindOf(ccd::PlanOfCareActivityProcedure))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4425,10 +4425,10 @@
     <eOperations name="PlanOfCareSectionPlanOfCareActivitySubstanceAdministration"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ccd::PlanOfCareActivitySubstanceAdministration))"/>
+        <details key="body" value="self.entry->one(entry : cda::Entry | not entry.substanceAdministration.oclIsUndefined() and entry.substanceAdministration.oclIsKindOf(ccd::PlanOfCareActivitySubstanceAdministration))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.substanceAdministration.oclIsKindOf(ccd::PlanOfCareActivitySubstanceAdministration))"/>
+        <details key="documentation" value="self.entry->one(entry : cda::Entry | not entry.substanceAdministration.oclIsUndefined() and entry.substanceAdministration.oclIsKindOf(ccd::PlanOfCareActivitySubstanceAdministration))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4447,10 +4447,10 @@
     </eOperations>
     <eOperations name="PlanOfCareSectionPlanOfCareActivitySupply" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->one(entry : cda::Entry | entry.supply.oclIsKindOf(ccd::PlanOfCareActivitySupply))"/>
+        <details key="body" value="self.entry->one(entry : cda::Entry | not entry.supply.oclIsUndefined() and entry.supply.oclIsKindOf(ccd::PlanOfCareActivitySupply))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->one(entry : cda::Entry | entry.supply.oclIsKindOf(ccd::PlanOfCareActivitySupply))"/>
+        <details key="documentation" value="self.entry->one(entry : cda::Entry | not entry.supply.oclIsUndefined() and entry.supply.oclIsKindOf(ccd::PlanOfCareActivitySupply))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4574,10 +4574,10 @@
     </eOperations>
     <eOperations name="VitalSignsSectionVitalSignsOrganizer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ccd::VitalSignsOrganizer))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.organizer.oclIsUndefined() and entry.organizer.oclIsKindOf(ccd::VitalSignsOrganizer))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ccd::VitalSignsOrganizer))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.organizer.oclIsUndefined() and entry.organizer.oclIsKindOf(ccd::VitalSignsOrganizer))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4755,10 +4755,10 @@
     </eOperations>
     <eOperations name="FunctionalStatusSectionProblemAct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProblemAct))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::ProblemAct))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4777,10 +4777,10 @@
     </eOperations>
     <eOperations name="FunctionalStatusSectionResultOrganizer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ccd::ResultOrganizer))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.organizer.oclIsUndefined() and entry.organizer.oclIsKindOf(ccd::ResultOrganizer))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(ccd::ResultOrganizer))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.organizer.oclIsUndefined() and entry.organizer.oclIsKindOf(ccd::ResultOrganizer))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4875,10 +4875,10 @@
     </eOperations>
     <eOperations name="AdvanceDirectivesSectionAdvanceDirectiveObservation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::AdvanceDirectiveObservation))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::AdvanceDirectiveObservation))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(ccd::AdvanceDirectiveObservation))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::AdvanceDirectiveObservation))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4977,10 +4977,10 @@
     </eOperations>
     <eOperations name="PayersSectionCoverageActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::CoverageActivity))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::CoverageActivity))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::CoverageActivity))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::CoverageActivity))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5101,10 +5101,10 @@
     </eOperations>
     <eOperations name="PurposeSectionPurposeActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PurposeActivity))"/>
+        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::PurposeActivity))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PurposeActivity))"/>
+        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::PurposeActivity))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5299,10 +5299,10 @@
     </eAnnotations>
     <eOperations name="VitalSignsOrganizerInformationSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)"/>
+        <details key="body" value="not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.informant->isEmpty() &#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)"/>
+        <details key="documentation" value="not self.informant->isEmpty() &#xD;&#xA;or not self.getSection().informant->isEmpty()&#xD;&#xA;or not self.getClinicalDocument().informant->isEmpty()&#xD;&#xA;or self.reference->exists(ref : cda::Reference | ref.typeCode = vocab::x_ActRelationshipExternalReference::XCRPT)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5732,10 +5732,10 @@
     </eOperations>
     <eOperations name="CoverageActivityPolicyActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::PolicyActivity))"/>
+        <details key="body" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::PolicyActivity))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::PolicyActivity))"/>
+        <details key="documentation" value="self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::PolicyActivity))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5873,10 +5873,10 @@
     </eOperations>
     <eOperations name="PolicyActivityAuthorizationActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::AuthorizationActivity) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
+        <details key="body" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::AuthorizationActivity) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | entryRelationship.act.oclIsKindOf(ccd::AuthorizationActivity) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
+        <details key="documentation" value="self.entryRelationship->one(entryRelationship : cda::EntryRelationship | not entryRelationship.act.oclIsUndefined() and entryRelationship.act.oclIsKindOf(ccd::AuthorizationActivity) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::REFR)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

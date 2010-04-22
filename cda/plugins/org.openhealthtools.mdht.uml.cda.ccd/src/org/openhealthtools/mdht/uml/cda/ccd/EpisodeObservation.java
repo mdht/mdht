@@ -125,13 +125,13 @@ public interface EpisodeObservation extends Observation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CD) and 
+	 * self.value->size() = 1 and self.value->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(datatypes::CD) and 
 	 * let value : datatypes::CD = element.oclAsType(datatypes::CD) in 
 	 * value.code = '404684003' and value.codeSystem = '2.16.840.1.113883.6.96')
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.value->size() = 1 and self.value->forAll(element | element.oclIsKindOf(datatypes::CD) and \r\nlet value : datatypes::CD = element.oclAsType(datatypes::CD) in \r\nvalue.code = \'404684003\' and value.codeSystem = \'2.16.840.1.113883.6.96\')'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.value->size() = 1 and self.value->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(datatypes::CD) and \r\nlet value : datatypes::CD = element.oclAsType(datatypes::CD) in \r\nvalue.code = \'404684003\' and value.codeSystem = \'2.16.840.1.113883.6.96\')'"
 	 * @generated
 	 */
 	boolean validateEpisodeObservationValue(DiagnosticChain diagnostics, Map<Object, Object> context);

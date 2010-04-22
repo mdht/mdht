@@ -13,7 +13,9 @@
 package org.openhealthtools.mdht.uml.cda.ccd.tests;
 
 import org.eclipse.emf.common.util.Diagnostic;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Informant12;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
@@ -25,6 +27,9 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.PurposeActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.PurposeSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
@@ -32,6 +37,11 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
 public class Main {
 	public static void main(String[] args) throws Exception {	
 		ContinuityOfCareDocument doc = CCDFactory.eINSTANCE.createContinuityOfCareDocument().init();
+		
+		Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
+		AssignedEntity assignedEntity = CDAFactory.eINSTANCE.createAssignedEntity();
+		informant.setAssignedEntity(assignedEntity);
+		doc.getInformants().add(informant);
 		
 		PurposeSection purposeSection = CCDFactory.eINSTANCE.createPurposeSection().init();
 		doc.addSection(purposeSection);
@@ -50,15 +60,21 @@ public class Main {
 		ProblemHealthStatusObservation problemHealthStatus = CCDFactory.eINSTANCE.createProblemHealthStatusObservation().init();
 		EpisodeObservation episodeObservation = CCDFactory.eINSTANCE.createEpisodeObservation().init();
 		
-		ProblemSection sect = CCDFactory.eINSTANCE.createProblemSection().init();
-		sect.addAct(problemAct);
+		ProblemSection problemSection = CCDFactory.eINSTANCE.createProblemSection().init();
+		doc.addSection(problemSection);
+		problemSection.addAct(problemAct);
 		problemAct.addObservation(problemObservation);
 		
-		sect.addObservation(problemStatus);
-		sect.addObservation(problemHealthStatus);
-		sect.addObservation(episodeObservation);
-		
-		doc.addSection(sect);
+		problemSection.addObservation(problemStatus);
+		problemSection.addObservation(problemHealthStatus);
+		problemSection.addObservation(episodeObservation);
+
+		ResultsSection resultsSection = CCDFactory.eINSTANCE.createResultsSection().init();
+		doc.addSection(resultsSection);
+		ResultOrganizer resultOrganizer = CCDFactory.eINSTANCE.createResultOrganizer().init();
+		resultsSection.addOrganizer(resultOrganizer);
+		ResultObservation resultObservation = CCDFactory.eINSTANCE.createResultObservation().init();
+		resultOrganizer.addObservation(resultObservation);
 
 		CDAUtil.save(doc, System.out);
 		

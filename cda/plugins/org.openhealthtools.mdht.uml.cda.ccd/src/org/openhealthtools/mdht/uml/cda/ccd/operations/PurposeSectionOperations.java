@@ -288,7 +288,7 @@ public class PurposeSectionOperations extends SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PurposeActivity))";
+	protected static final String VALIDATE_PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::PurposeActivity))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validatePurposeSectionPurposeActivity(PurposeSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Purpose Activity</em>}' invariant operation.
@@ -304,7 +304,7 @@ public class PurposeSectionOperations extends SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->exists(entry : cda::Entry | entry.act.oclIsKindOf(ccd::PurposeActivity))
+	 * self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::PurposeActivity))
 	 * @param purposeSection The receiving '<em><b>Purpose Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
