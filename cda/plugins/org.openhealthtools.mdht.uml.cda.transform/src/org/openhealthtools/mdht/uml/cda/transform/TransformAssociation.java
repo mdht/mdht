@@ -87,7 +87,7 @@ public class TransformAssociation extends TransformAbstract {
 			// ClinicalDocument -> Section || Section -> Section
 			body.append("self.getSections()->");
 			body.append((sourceProperty.getUpper() == 1) ? "one(" : "exists(");
-			body.append("section : cda::Section | section.oclIsKindOf(" + targetQName + "))");
+			body.append("section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(" + targetQName + "))");
 		} else {
 			String associationEnd = null;
 			String variableDeclaration = null;
@@ -114,15 +114,15 @@ public class TransformAssociation extends TransformAbstract {
 			body.append("self." + associationEnd + "->");
 			body.append((sourceProperty.getUpper() == 1) ? "one(" : "exists(");
 			body.append(variableDeclaration);
-			body.append(" | " + associationEnd);
-//			if (!"Entry".equals(cdaTargetName)) {
-			if (!CDAModelUtil.isEntry(targetClass)) {
-				body.append("." + cdaTargetLowerName);
-			}
-			body.append(".oclIsKindOf(" + targetQName + ")");
+			body.append(" | ");
 			
-//			String stereotypeName = CDAModelUtil.isSection(sourceClass) ? ICDAProfileConstants.ENTRY : ICDAProfileConstants.ENTRY_RELATIONSHIP;
-//			stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, stereotypeName);
+			String reference = associationEnd;
+			if (!CDAModelUtil.isEntry(targetClass)) {
+				reference += "." + cdaTargetLowerName;
+			}
+			body.append("not " + reference + ".oclIsUndefined() and ");
+			body.append(reference + ".oclIsKindOf(" + targetQName + ")");
+			
 			if (CDAModelUtil.isSection(sourceClass) && (CDAModelUtil.isClinicalStatement(targetClass) || CDAModelUtil.isEntry(targetClass))) {
 				// Section -> Entry, Section -> clinicalStatement (entry)
 				stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY);
