@@ -7,11 +7,8 @@
 package org.openhealthtools.mdht.uml.cda.core.profile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
 
@@ -142,7 +139,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 			case CDAPackage.TEXT_VALUE__VALUE:
 				return getValue();
 			case CDAPackage.TEXT_VALUE__IGNORE_CASE:
-				return isIgnoreCase() ? Boolean.TRUE : Boolean.FALSE;
+				return isIgnoreCase();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,7 +156,7 @@ public class TextValueImpl extends PropertyValidationImpl implements TextValue {
 				setValue((String)newValue);
 				return;
 			case CDAPackage.TEXT_VALUE__IGNORE_CASE:
-				setIgnoreCase(((Boolean)newValue).booleanValue());
+				setIgnoreCase((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

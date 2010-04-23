@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 
 /**
@@ -923,13 +922,49 @@ public interface CDAPackage extends EPackage {
 	int CONFORMS_TO = 13;
 
 	/**
+	 * The feature id for the '<em><b>Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMS_TO__MESSAGE = VALIDATION__MESSAGE;
+
+	/**
+	 * The feature id for the '<em><b>Severity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMS_TO__SEVERITY = VALIDATION__SEVERITY;
+
+	/**
+	 * The feature id for the '<em><b>Rule Id</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMS_TO__RULE_ID = VALIDATION__RULE_ID;
+
+	/**
 	 * The feature id for the '<em><b>Base Generalization</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMS_TO__BASE_GENERALIZATION = 0;
+	int CONFORMS_TO__BASE_GENERALIZATION = VALIDATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Requires Parent Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORMS_TO__REQUIRES_PARENT_ID = VALIDATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Conforms To</em>' class.
@@ -938,7 +973,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFORMS_TO_FEATURE_COUNT = 1;
+	int CONFORMS_TO_FEATURE_COUNT = VALIDATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl <em>Concept Domain Constraint</em>}' class.
@@ -1783,6 +1818,17 @@ public interface CDAPackage extends EPackage {
 	EReference getConformsTo_Base_Generalization();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#isRequiresParentId <em>Requires Parent Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Requires Parent Id</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#isRequiresParentId()
+	 * @see #getConformsTo()
+	 * @generated
+	 */
+	EAttribute getConformsTo_RequiresParentId();
+
+	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConceptDomainConstraint <em>Concept Domain Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2269,6 +2315,14 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONFORMS_TO__BASE_GENERALIZATION = eINSTANCE.getConformsTo_Base_Generalization();
+
+		/**
+		 * The meta object literal for the '<em><b>Requires Parent Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONFORMS_TO__REQUIRES_PARENT_ID = eINSTANCE.getConformsTo_RequiresParentId();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConceptDomainConstraintImpl <em>Concept Domain Constraint</em>}' class.

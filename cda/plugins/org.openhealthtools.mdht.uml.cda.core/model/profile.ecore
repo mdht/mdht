@@ -126,9 +126,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Constraint" ordered="false"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConformsTo">
+  <eClassifiers xsi:type="ecore:EClass" name="ConformsTo" eSuperTypes="#//Validation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Generalization" ordered="false"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Generalization"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresParentId" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConceptDomainConstraint" eSuperTypes="platform:/plugin/org.openhealthtools.mdht.uml.term.core/model/profile.ecore#//ConceptDomainConstraint #//Validation"/>
   <eClassifiers xsi:type="ecore:EClass" name="CodeSystemConstraint" eSuperTypes="platform:/plugin/org.openhealthtools.mdht.uml.term.core/model/profile.ecore#//CodeSystemConstraint #//Validation"/>

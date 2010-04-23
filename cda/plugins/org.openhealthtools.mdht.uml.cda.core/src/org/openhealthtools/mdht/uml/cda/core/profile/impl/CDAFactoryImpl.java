@@ -10,12 +10,30 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.openhealthtools.mdht.uml.cda.core.profile.*;
+import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
+import org.openhealthtools.mdht.uml.cda.core.profile.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
+import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
+import org.openhealthtools.mdht.uml.cda.core.profile.ClassValidation;
+import org.openhealthtools.mdht.uml.cda.core.profile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport;
+import org.openhealthtools.mdht.uml.cda.core.profile.ConceptDomainConstraint;
+import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
+import org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation;
+import org.openhealthtools.mdht.uml.cda.core.profile.Entry;
+import org.openhealthtools.mdht.uml.cda.core.profile.EntryKind;
+import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
+import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor;
+import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavorKind;
+import org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation;
+import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
+import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
+import org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport;
+import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
 
 /**
  * <!-- begin-user-doc -->

@@ -10,8 +10,24 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
-import org.openhealthtools.mdht.uml.cda.core.profile.*;
+import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
+import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
+import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
+import org.openhealthtools.mdht.uml.cda.core.profile.ClassValidation;
+import org.openhealthtools.mdht.uml.cda.core.profile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport;
+import org.openhealthtools.mdht.uml.cda.core.profile.ConceptDomainConstraint;
+import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
+import org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation;
+import org.openhealthtools.mdht.uml.cda.core.profile.Entry;
+import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor;
+import org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation;
+import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
+import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
+import org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport;
+import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
 
 /**
  * <!-- begin-user-doc -->
@@ -184,13 +200,14 @@ public class CDASwitch<T> {
 			case CDAPackage.CONFORMS_TO: {
 				ConformsTo conformsTo = (ConformsTo)theEObject;
 				T result = caseConformsTo(conformsTo);
+				if (result == null) result = caseValidation(conformsTo);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.CONCEPT_DOMAIN_CONSTRAINT: {
 				ConceptDomainConstraint conceptDomainConstraint = (ConceptDomainConstraint)theEObject;
 				T result = caseConceptDomainConstraint(conceptDomainConstraint);
-				if (result == null) result = caseConceptDomainConstraint_1(conceptDomainConstraint);
+				if (result == null) result = caseTerm_ConceptDomainConstraint(conceptDomainConstraint);
 				if (result == null) result = caseValidation(conceptDomainConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -198,7 +215,7 @@ public class CDASwitch<T> {
 			case CDAPackage.CODE_SYSTEM_CONSTRAINT: {
 				CodeSystemConstraint codeSystemConstraint = (CodeSystemConstraint)theEObject;
 				T result = caseCodeSystemConstraint(codeSystemConstraint);
-				if (result == null) result = caseCodeSystemConstraint_1(codeSystemConstraint);
+				if (result == null) result = caseTerm_CodeSystemConstraint(codeSystemConstraint);
 				if (result == null) result = caseValidation(codeSystemConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -206,7 +223,7 @@ public class CDASwitch<T> {
 			case CDAPackage.VALUE_SET_CONSTRAINT: {
 				ValueSetConstraint valueSetConstraint = (ValueSetConstraint)theEObject;
 				T result = caseValueSetConstraint(valueSetConstraint);
-				if (result == null) result = caseValueSetConstraint_1(valueSetConstraint);
+				if (result == null) result = caseTerm_ValueSetConstraint(valueSetConstraint);
 				if (result == null) result = caseValidation(valueSetConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -481,7 +498,7 @@ public class CDASwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConceptDomainConstraint_1(org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint object) {
+	public T caseTerm_ConceptDomainConstraint(org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint object) {
 		return null;
 	}
 
@@ -496,7 +513,7 @@ public class CDASwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCodeSystemConstraint_1(org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint object) {
+	public T caseTerm_CodeSystemConstraint(org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint object) {
 		return null;
 	}
 
@@ -511,7 +528,7 @@ public class CDASwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseValueSetConstraint_1(org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint object) {
+	public T caseTerm_ValueSetConstraint(org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint object) {
 		return null;
 	}
 

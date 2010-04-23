@@ -16,13 +16,13 @@
             <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_l1U9vKFdEd6NOYTVzzK9uw" name="base_Association" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Association"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Association"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_l1U9vqFdEd6NOYTVzzK9uw" name="base_Class" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Class"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_l1U9wKFdEd6NOYTVzzK9uw" name="base_Property" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Property"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EEnum" xmi:id="_l1U9wqFdEd6NOYTVzzK9uw" name="EntryKind">
@@ -37,7 +37,7 @@
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_l1U9y6FdEd6NOYTVzzK9uw" name="AssociationValidation" eSuperTypes="_l1U90KFdEd6NOYTVzzK9uw">
           <eAnnotations xmi:id="_l1U9zKFdEd6NOYTVzzK9uw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_A3ULgJmWEd6OiP9GTesZug"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_l1U9zaFdEd6NOYTVzzK9uw" name="base_Association" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Association"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Association"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_l1U90KFdEd6NOYTVzzK9uw" name="Validation" abstract="true">
@@ -82,19 +82,19 @@
             <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_l1U986FdEd6NOYTVzzK9uw" name="base_Package" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Package"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Package"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_l1U99aFdEd6NOYTVzzK9uw" name="PropertyValidation" eSuperTypes="_l1U90KFdEd6NOYTVzzK9uw">
           <eAnnotations xmi:id="_l1U99qFdEd6NOYTVzzK9uw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_x6N6EJmVEd6OiP9GTesZug"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_l1U996FdEd6NOYTVzzK9uw" name="base_Property" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Property"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_l1U9-qFdEd6NOYTVzzK9uw" name="ClassValidation" eSuperTypes="_l1U90KFdEd6NOYTVzzK9uw">
           <eAnnotations xmi:id="_l1U9-6FdEd6NOYTVzzK9uw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_X5yBkJmWEd6OiP9GTesZug"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_l1U9_KFdEd6NOYTVzzK9uw" name="base_Class" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Class"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_l1U9_6FdEd6NOYTVzzK9uw" name="VocabSpecification" eSuperTypes="_l1U99aFdEd6NOYTVzzK9uw">
@@ -153,7 +153,7 @@
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_l1Vky6FdEd6NOYTVzzK9uw" name="ConstraintValidation" eSuperTypes="_l1U90KFdEd6NOYTVzzK9uw">
           <eAnnotations xmi:id="_l1VkzKFdEd6NOYTVzzK9uw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_4AuRwKFKEd6NOYTVzzK9uw"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_l1VkzaFdEd6NOYTVzzK9uw" name="base_Constraint" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Constraint"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Constraint"/>
           </eStructuralFeatures>
         </eClassifiers>
       </contents>
@@ -171,13 +171,13 @@
             <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_an7-DZmjEd6OiP9GTesZug" name="base_Association" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Association"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Association"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_an7-D5mjEd6OiP9GTesZug" name="base_Class" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Class"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_an7-EZmjEd6OiP9GTesZug" name="base_Property" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Property"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EEnum" xmi:id="_an7-E5mjEd6OiP9GTesZug" name="EntryKind">
@@ -192,7 +192,7 @@
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_an7-HJmjEd6OiP9GTesZug" name="AssociationValidation" eSuperTypes="_an7-IZmjEd6OiP9GTesZug">
           <eAnnotations xmi:id="_an7-HZmjEd6OiP9GTesZug" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_A3ULgJmWEd6OiP9GTesZug"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_an7-HpmjEd6OiP9GTesZug" name="base_Association" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Association"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Association"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_an7-IZmjEd6OiP9GTesZug" name="Validation" abstract="true">
@@ -237,19 +237,19 @@
             <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_an7-RJmjEd6OiP9GTesZug" name="base_Package" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Package"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Package"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_an7-RpmjEd6OiP9GTesZug" name="PropertyValidation" eSuperTypes="_an7-IZmjEd6OiP9GTesZug">
           <eAnnotations xmi:id="_an7-R5mjEd6OiP9GTesZug" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_x6N6EJmVEd6OiP9GTesZug"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_an7-SJmjEd6OiP9GTesZug" name="base_Property" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Property"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_an7-S5mjEd6OiP9GTesZug" name="ClassValidation" eSuperTypes="_an7-IZmjEd6OiP9GTesZug">
           <eAnnotations xmi:id="_an7-TJmjEd6OiP9GTesZug" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_X5yBkJmWEd6OiP9GTesZug"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_an7-TZmjEd6OiP9GTesZug" name="base_Class" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Class"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_an7-UJmjEd6OiP9GTesZug" name="VocabSpecification" eSuperTypes="_an7-RpmjEd6OiP9GTesZug">
@@ -320,13 +320,13 @@
             <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_cjWgLYwhEd6Y4K3S_JksBA" name="base_Association" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Association"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Association"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_cjWgL4whEd6Y4K3S_JksBA" name="base_Class" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Class"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_cjWgMYwhEd6Y4K3S_JksBA" name="base_Property" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Property"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EEnum" xmi:id="_cjWgM4whEd6Y4K3S_JksBA" name="EntryKind">
@@ -338,7 +338,7 @@
           <eAnnotations xmi:id="_cjWgOIwhEd6Y4K3S_JksBA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_XQ5OcItlEd62gOH5lQcXHw"/>
           <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_cjWgOYwhEd6Y4K3S_JksBA" name="typeCode" ordered="false" lowerBound="1" eType="_cjWgM4whEd6Y4K3S_JksBA"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_cjWgO4whEd6Y4K3S_JksBA" name="base_Association" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Association"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Association"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EEnum" xmi:id="_cjWgPYwhEd6Y4K3S_JksBA" name="EntryRelationshipKind">
@@ -358,7 +358,7 @@
           <eAnnotations xmi:id="_cjWgSowhEd6Y4K3S_JksBA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_aXOtQItlEd62gOH5lQcXHw"/>
           <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_cjWgS4whEd6Y4K3S_JksBA" name="typeCode" ordered="false" lowerBound="1" eType="_cjWgPYwhEd6Y4K3S_JksBA"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_cjWgTYwhEd6Y4K3S_JksBA" name="base_Association" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Association"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Association"/>
           </eStructuralFeatures>
         </eClassifiers>
       </contents>
@@ -376,13 +376,13 @@
             <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_uMwWbYEWEd6H8o-hO3-B4Q" name="base_Association" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Association"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Association"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_uMwWb4EWEd6H8o-hO3-B4Q" name="base_Class" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Class"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_uMwWcYEWEd6H8o-hO3-B4Q" name="base_Property" ordered="false" lowerBound="1">
-            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/2.1.0/UML#//Property"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
           </eStructuralFeatures>
         </eClassifiers>
       </contents>
@@ -622,8 +622,14 @@
       <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_EsNF4aFLEd6NOYTVzzK9uw" name="extension_ConstraintValidation" type="_4AuRwKFKEd6NOYTVzzK9uw" aggregation="composite" association="_EsNF4KFLEd6NOYTVzzK9uw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_J7oLAB10Ed-N4c96fT7fpQ" name="ConformsTo">
+      <generalization xmi:id="_N_QkQE5jEd-Lg-A7dBRVbg" general="_e_WLgJmVEd6OiP9GTesZug"/>
       <ownedAttribute xmi:id="_UybVcB10Ed-N4c96fT7fpQ" name="base_Generalization" association="_UyauYB10Ed-N4c96fT7fpQ">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Generalization"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_e-XwwE5jEd-4ecWC1FvfLA" name="requiresParentId">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_is7tME5jEd-4ecWC1FvfLA"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_mQn2YE5jEd-4ecWC1FvfLA" value="false"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Extension" xmi:id="_UyauYB10Ed-N4c96fT7fpQ" name="Generalization_ConformsTo" memberEnd="_UyauYR10Ed-N4c96fT7fpQ _UybVcB10Ed-N4c96fT7fpQ">

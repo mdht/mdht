@@ -7,7 +7,6 @@
 package org.openhealthtools.mdht.uml.cda.core.profile;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
 
