@@ -79,6 +79,7 @@ public interface ICDAProfileConstants {
 	 * ConformsTo Stereotype
 	 */
 	public static final String CONFORMS_TO = "ConformsTo";
+	public static final String CONFORMS_TO_REQUIRES_PARENT_ID = "requiresParentId";
 	
 	/*
 	 * Codegen Support Stereotype and Properties
