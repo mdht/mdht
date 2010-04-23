@@ -29,6 +29,12 @@ public class TransformConstraint extends TransformAbstract {
 	}
 	
 	public Object caseConstraint(Constraint constraint) {
+		// ignore generated templateId constraints
+		if (constraint.getName() == null
+				|| constraint.getName().endsWith("TemplateId")) {
+			return null;
+		}
+		
 		// remove all spec languages other than the first OCL expression
 		ValueSpecification spec = constraint.getSpecification();
 		if (spec instanceof OpaqueExpression) {
