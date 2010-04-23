@@ -9,15 +9,10 @@ package org.openhealthtools.mdht.uml.cda.core.profile.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;

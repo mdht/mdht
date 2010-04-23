@@ -8,12 +8,26 @@ package org.openhealthtools.mdht.uml.cda.core.profile.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.openhealthtools.mdht.uml.cda.core.profile.*;
+import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
+import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
+import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
+import org.openhealthtools.mdht.uml.cda.core.profile.ClassValidation;
+import org.openhealthtools.mdht.uml.cda.core.profile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.cda.core.profile.CodegenSupport;
+import org.openhealthtools.mdht.uml.cda.core.profile.ConceptDomainConstraint;
+import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
+import org.openhealthtools.mdht.uml.cda.core.profile.ConstraintValidation;
+import org.openhealthtools.mdht.uml.cda.core.profile.Entry;
+import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.core.profile.NullFlavor;
+import org.openhealthtools.mdht.uml.cda.core.profile.PropertyValidation;
+import org.openhealthtools.mdht.uml.cda.core.profile.TextValue;
+import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
+import org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport;
+import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
+import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
 
 /**
  * <!-- begin-user-doc -->
@@ -140,16 +154,16 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 				return createValueSetConstraintAdapter();
 			}
 			@Override
-			public Adapter caseConceptDomainConstraint_1(org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint object) {
-				return createConceptDomainConstraint_1Adapter();
+			public Adapter caseTerm_ConceptDomainConstraint(org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint object) {
+				return createTerm_ConceptDomainConstraintAdapter();
 			}
 			@Override
-			public Adapter caseCodeSystemConstraint_1(org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint object) {
-				return createCodeSystemConstraint_1Adapter();
+			public Adapter caseTerm_CodeSystemConstraint(org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint object) {
+				return createTerm_CodeSystemConstraintAdapter();
 			}
 			@Override
-			public Adapter caseValueSetConstraint_1(org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint object) {
-				return createValueSetConstraint_1Adapter();
+			public Adapter caseTerm_ValueSetConstraint(org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint object) {
+				return createTerm_ValueSetConstraintAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -419,7 +433,7 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ConceptDomainConstraint
 	 * @generated
 	 */
-	public Adapter createConceptDomainConstraint_1Adapter() {
+	public Adapter createTerm_ConceptDomainConstraintAdapter() {
 		return null;
 	}
 
@@ -433,7 +447,7 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint
 	 * @generated
 	 */
-	public Adapter createCodeSystemConstraint_1Adapter() {
+	public Adapter createTerm_CodeSystemConstraintAdapter() {
 		return null;
 	}
 
@@ -447,7 +461,7 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint
 	 * @generated
 	 */
-	public Adapter createValueSetConstraint_1Adapter() {
+	public Adapter createTerm_ValueSetConstraintAdapter() {
 		return null;
 	}
 

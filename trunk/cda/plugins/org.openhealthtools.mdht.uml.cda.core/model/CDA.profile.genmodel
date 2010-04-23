@@ -129,6 +129,7 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ConformsTo">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ConformsTo/base_Generalization"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ConformsTo/requiresParentId"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ConceptDomainConstraint"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//CodeSystemConstraint"/>

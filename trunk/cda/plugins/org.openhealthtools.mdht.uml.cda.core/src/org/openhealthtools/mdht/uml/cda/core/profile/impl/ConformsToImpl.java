@@ -7,15 +7,10 @@
 package org.openhealthtools.mdht.uml.cda.core.profile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.uml2.uml.Generalization;
-
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
 
@@ -27,12 +22,13 @@ import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConformsToImpl#getBase_Generalization <em>Base Generalization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.impl.ConformsToImpl#isRequiresParentId <em>Requires Parent Id</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ConformsToImpl extends EObjectImpl implements ConformsTo {
+public class ConformsToImpl extends ValidationImpl implements ConformsTo {
 	/**
 	 * The cached value of the '{@link #getBase_Generalization() <em>Base Generalization</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -42,6 +38,25 @@ public class ConformsToImpl extends EObjectImpl implements ConformsTo {
 	 * @ordered
 	 */
 	protected Generalization base_Generalization;
+
+	/**
+	 * The default value of the '{@link #isRequiresParentId() <em>Requires Parent Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRequiresParentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean REQUIRES_PARENT_ID_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isRequiresParentId() <em>Requires Parent Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRequiresParentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean requiresParentId = REQUIRES_PARENT_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,12 +120,35 @@ public class ConformsToImpl extends EObjectImpl implements ConformsTo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isRequiresParentId() {
+		return requiresParentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiresParentId(boolean newRequiresParentId) {
+		boolean oldRequiresParentId = requiresParentId;
+		requiresParentId = newRequiresParentId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONFORMS_TO__REQUIRES_PARENT_ID, oldRequiresParentId, requiresParentId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDAPackage.CONFORMS_TO__BASE_GENERALIZATION:
 				if (resolve) return getBase_Generalization();
 				return basicGetBase_Generalization();
+			case CDAPackage.CONFORMS_TO__REQUIRES_PARENT_ID:
+				return isRequiresParentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -125,6 +163,9 @@ public class ConformsToImpl extends EObjectImpl implements ConformsTo {
 		switch (featureID) {
 			case CDAPackage.CONFORMS_TO__BASE_GENERALIZATION:
 				setBase_Generalization((Generalization)newValue);
+				return;
+			case CDAPackage.CONFORMS_TO__REQUIRES_PARENT_ID:
+				setRequiresParentId((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -141,6 +182,9 @@ public class ConformsToImpl extends EObjectImpl implements ConformsTo {
 			case CDAPackage.CONFORMS_TO__BASE_GENERALIZATION:
 				setBase_Generalization((Generalization)null);
 				return;
+			case CDAPackage.CONFORMS_TO__REQUIRES_PARENT_ID:
+				setRequiresParentId(REQUIRES_PARENT_ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -155,8 +199,26 @@ public class ConformsToImpl extends EObjectImpl implements ConformsTo {
 		switch (featureID) {
 			case CDAPackage.CONFORMS_TO__BASE_GENERALIZATION:
 				return base_Generalization != null;
+			case CDAPackage.CONFORMS_TO__REQUIRES_PARENT_ID:
+				return requiresParentId != REQUIRES_PARENT_ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (requiresParentId: ");
+		result.append(requiresParentId);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ConformsToImpl

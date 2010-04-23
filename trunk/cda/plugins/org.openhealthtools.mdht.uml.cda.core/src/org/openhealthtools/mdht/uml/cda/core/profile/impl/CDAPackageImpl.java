@@ -11,11 +11,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.uml2.uml.UMLPackage;
-
 import org.openhealthtools.mdht.uml.cda.core.profile.AssociationValidation;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
@@ -39,7 +36,6 @@ import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.cda.core.profile.ValidationSupport;
 import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
-
 import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
 
 /**
@@ -223,20 +219,10 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	private static boolean isInited = false;
 
 	/**
-	 * Creates, registers, and initializes the <b>Package</b> for this
-	 * model, and for any others upon which it depends.  Simple
-	 * dependencies are satisfied by calling this method on all
-	 * dependent packages before doing anything else.  This method drives
-	 * initialization for interdependent packages directly, in parallel
-	 * with this package, itself.
-	 * <p>Of this package and its interdependencies, all packages which
-	 * have not yet been registered by their URI values are first created
-	 * and registered.  The packages are then initialized in two steps:
-	 * meta-model objects for all of the packages are created before any
-	 * are initialized, since one package's meta-model objects may refer to
-	 * those of another.
-	 * <p>Invocation of this method will not affect any packages that have
-	 * already been initialized.
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 * 
+	 * <p>This method is used to initialize {@link CDAPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
@@ -248,7 +234,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		if (isInited) return (CDAPackage)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI);
 
 		// Obtain or create and register package
-		CDAPackageImpl theCDAPackage = (CDAPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(eNS_URI) instanceof CDAPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(eNS_URI) : new CDAPackageImpl());
+		CDAPackageImpl theCDAPackage = (CDAPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CDAPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CDAPackageImpl());
 
 		isInited = true;
 
@@ -264,6 +250,9 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		// Mark meta-data to indicate it can't be changed
 		theCDAPackage.freeze();
 
+  
+		// Update the registry and return the package
+		EPackage.Registry.INSTANCE.put(CDAPackage.eNS_URI, theCDAPackage);
 		return theCDAPackage;
 	}
 
@@ -686,6 +675,15 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getConformsTo_RequiresParentId() {
+		return (EAttribute)conformsToEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConceptDomainConstraint() {
 		return conceptDomainConstraintEClass;
 	}
@@ -831,6 +829,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		conformsToEClass = createEClass(CONFORMS_TO);
 		createEReference(conformsToEClass, CONFORMS_TO__BASE_GENERALIZATION);
+		createEAttribute(conformsToEClass, CONFORMS_TO__REQUIRES_PARENT_ID);
 
 		conceptDomainConstraintEClass = createEClass(CONCEPT_DOMAIN_CONSTRAINT);
 
@@ -887,6 +886,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		textValueEClass.getESuperTypes().add(this.getPropertyValidation());
 		cdaTemplateEClass.getESuperTypes().add(this.getClassValidation());
 		constraintValidationEClass.getESuperTypes().add(this.getValidation());
+		conformsToEClass.getESuperTypes().add(this.getValidation());
 		conceptDomainConstraintEClass.getESuperTypes().add(theTermPackage.getConceptDomainConstraint());
 		conceptDomainConstraintEClass.getESuperTypes().add(this.getValidation());
 		codeSystemConstraintEClass.getESuperTypes().add(theTermPackage.getCodeSystemConstraint());
@@ -954,6 +954,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 
 		initEClass(conformsToEClass, ConformsTo.class, "ConformsTo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConformsTo_Base_Generalization(), theUMLPackage.getGeneralization(), null, "base_Generalization", null, 1, 1, ConformsTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConformsTo_RequiresParentId(), ecorePackage.getEBoolean(), "requiresParentId", "false", 0, 1, ConformsTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(conceptDomainConstraintEClass, ConceptDomainConstraint.class, "ConceptDomainConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

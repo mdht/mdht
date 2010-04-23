@@ -6,8 +6,6 @@
  */
 package org.openhealthtools.mdht.uml.cda.core.profile;
 
-import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Generalization;
 
 /**
@@ -19,6 +17,7 @@ import org.eclipse.uml2.uml.Generalization;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#getBase_Generalization <em>Base Generalization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#isRequiresParentId <em>Requires Parent Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,7 +25,7 @@ import org.eclipse.uml2.uml.Generalization;
  * @model
  * @generated
  */
-public interface ConformsTo extends EObject {
+public interface ConformsTo extends Validation {
 	/**
 	 * Returns the value of the '<em><b>Base Generalization</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -52,5 +51,32 @@ public interface ConformsTo extends EObject {
 	 * @generated
 	 */
 	void setBase_Generalization(Generalization value);
+
+	/**
+	 * Returns the value of the '<em><b>Requires Parent Id</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Requires Parent Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requires Parent Id</em>' attribute.
+	 * @see #setRequiresParentId(boolean)
+	 * @see org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage#getConformsTo_RequiresParentId()
+	 * @model default="false" ordered="false"
+	 * @generated
+	 */
+	boolean isRequiresParentId();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo#isRequiresParentId <em>Requires Parent Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Requires Parent Id</em>' attribute.
+	 * @see #isRequiresParentId()
+	 * @generated
+	 */
+	void setRequiresParentId(boolean value);
 
 } // ConformsTo

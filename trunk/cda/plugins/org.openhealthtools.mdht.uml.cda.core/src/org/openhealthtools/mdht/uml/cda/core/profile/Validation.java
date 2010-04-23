@@ -7,7 +7,6 @@
 package org.openhealthtools.mdht.uml.cda.core.profile;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

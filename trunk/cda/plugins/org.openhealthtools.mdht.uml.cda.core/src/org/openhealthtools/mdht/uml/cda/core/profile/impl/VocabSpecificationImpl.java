@@ -7,11 +7,8 @@
 package org.openhealthtools.mdht.uml.cda.core.profile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.core.profile.VocabSpecification;
 

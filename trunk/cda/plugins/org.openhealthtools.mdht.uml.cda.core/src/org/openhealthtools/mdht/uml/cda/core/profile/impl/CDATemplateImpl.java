@@ -7,11 +7,8 @@
 package org.openhealthtools.mdht.uml.cda.core.profile.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.openhealthtools.mdht.uml.cda.core.profile.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.core.profile.CDATemplate;
 
@@ -186,7 +183,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 			case CDAPackage.CDA_TEMPLATE__ASSIGNING_AUTHORITY_NAME:
 				return getAssigningAuthorityName();
 			case CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT:
-				return isContextDependent() ? Boolean.TRUE : Boolean.FALSE;
+				return isContextDependent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,7 +203,7 @@ public class CDATemplateImpl extends ClassValidationImpl implements CDATemplate 
 				setAssigningAuthorityName((String)newValue);
 				return;
 			case CDAPackage.CDA_TEMPLATE__CONTEXT_DEPENDENT:
-				setContextDependent(((Boolean)newValue).booleanValue());
+				setContextDependent((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
