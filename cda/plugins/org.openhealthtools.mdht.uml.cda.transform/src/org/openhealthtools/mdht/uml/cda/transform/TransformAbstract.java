@@ -19,6 +19,7 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
@@ -26,6 +27,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
@@ -207,6 +209,43 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		
 		if (constraintName == null) {
 			constraintName = createConstraintName(property);
+		}
+		return constraintName;
+	}
+
+	protected String createTemplateConstraintName(Class template) {
+		String constraintName = null;
+		Generalization generalization = null;
+		String severity = null;
+		boolean requiresParentId = false;
+		
+		if (template.getGeneralizations().size() > 0) {
+			// use the first generalization, assuming it is used for implementation class extension
+			generalization = template.getGeneralizations().get(0);
+			severity = getValidationSeverity(generalization);
+			severity = severity == null ? SEVERITY_ERROR : severity;
+		}
+		
+		// if general class is a template and conformsTo is ERROR severity
+		if (SEVERITY_ERROR.equals(severity)
+				&& CDAModelUtil.getTemplateId((Class)generalization.getGeneral()) != null) {
+			Stereotype stereotype = CDAProfileUtil.applyCDAStereotype(generalization, ICDAProfileConstants.CONFORMS_TO);
+			if (stereotype != null) {
+				ConformsTo conformsTo = (ConformsTo)generalization.getStereotypeApplication(stereotype);
+				requiresParentId = conformsTo.isRequiresParentId();
+			}
+
+			if (!requiresParentId) {
+				// use constraint name of parent class
+				constraintName = createTemplateConstraintName((Class)generalization.getGeneral());
+			}
+			else {
+				System.out.println("requiresParentId: " + template.getQualifiedName() + " = " + constraintName);
+			}
+		}
+		
+		if (constraintName == null) {
+			constraintName = createConstraintName(template, "TemplateId");
 		}
 		return constraintName;
 	}
