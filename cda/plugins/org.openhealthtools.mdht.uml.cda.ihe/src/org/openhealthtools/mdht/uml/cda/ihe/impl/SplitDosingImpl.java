@@ -49,8 +49,9 @@ public class SplitDosingImpl extends MedicationImpl implements SplitDosing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSplitDosingTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SplitDosingOperations.validateSplitDosingTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateMedicationActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SplitDosingOperations.validateMedicationActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**

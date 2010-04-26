@@ -50,8 +50,9 @@ public class PlanOfCareSectionImpl extends CarePlanSectionImpl implements PlanOf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHITSPPlanOfCareSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PlanOfCareSectionOperations.validateHITSPPlanOfCareSectionTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validatePlanOfCareSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PlanOfCareSectionOperations.validatePlanOfCareSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

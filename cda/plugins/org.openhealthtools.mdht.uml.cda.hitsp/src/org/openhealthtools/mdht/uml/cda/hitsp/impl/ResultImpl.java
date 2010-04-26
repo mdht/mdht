@@ -78,15 +78,6 @@ public class ResultImpl extends ResultObservationImpl implements Result {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateResultTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ResultOperations.validateResultTemplateId(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateResultCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ResultOperations.validateResultCode(this, diagnostics, context);
 	}
@@ -98,6 +89,16 @@ public class ResultImpl extends ResultObservationImpl implements Result {
 	 */
 	public boolean validateResultEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ResultOperations.validateResultEffectiveTime(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validateResultObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ResultOperations.validateResultObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**

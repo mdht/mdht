@@ -50,8 +50,9 @@ public class CoverageEntryImpl extends CoverageActivityImpl implements CoverageE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCoverageEntryTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CoverageEntryOperations.validateCoverageEntryTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateCoverageActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CoverageEntryOperations.validateCoverageActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**

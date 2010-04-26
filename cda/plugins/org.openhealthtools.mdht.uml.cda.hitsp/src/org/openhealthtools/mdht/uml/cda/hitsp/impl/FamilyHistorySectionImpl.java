@@ -50,8 +50,9 @@ public class FamilyHistorySectionImpl extends FamilyMedicalHistorySectionImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHITSPFamilyHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FamilyHistorySectionOperations.validateHITSPFamilyHistorySectionTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateFamilyHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FamilyHistorySectionOperations.validateFamilyHistorySectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

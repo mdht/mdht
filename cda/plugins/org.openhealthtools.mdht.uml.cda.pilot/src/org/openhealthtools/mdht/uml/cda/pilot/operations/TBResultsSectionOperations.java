@@ -28,11 +28,11 @@ import org.openhealthtools.mdht.uml.cda.pilot.util.TBPNValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#validateTBResultsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#validateTBResultsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#validateTBResultsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#validateTBResultsSectionTBResultOrganizer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section TB Result Organizer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#validateTBResultsSectionTBResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section TB Result Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#validateResultsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Results Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultsSection#validateResultsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Results Section Code</em>}</li>
  * </ul>
  * </p>
@@ -47,63 +47,6 @@ public class TBResultsSectionOperations extends ResultsSectionOperations {
 	 */
 	protected TBResultsSectionOperations() {
 		super();
-	}
-
-	/**
-	 * The cached OCL expression body for the '{@link #validateTBResultsSectionTemplateId(TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section Template Id</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateTBResultsSectionTemplateId(TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALIDATE_TB_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.2.6')";
-
-	/**
-	 * The cached OCL invariant for the '{@link #validateTBResultsSectionTemplateId(TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section Template Id</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateTBResultsSectionTemplateId(TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint VALIDATE_TB_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.2.6')
-	 * @param tbResultsSection The receiving '<em><b>TB Results Section</b></em>' model object.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
-	public static  boolean validateTBResultsSectionTemplateId(TBResultsSection tbResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_TB_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(TBPNPackage.Literals.TB_RESULTS_SECTION);
-			try {
-				VALIDATE_TB_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_TB_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		if (!EOCL_ENV.createQuery(VALIDATE_TB_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(tbResultsSection)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 TBPNValidator.DIAGNOSTIC_SOURCE,
-						 TBPNValidator.TB_RESULTS_SECTION__TB_RESULTS_SECTION_TEMPLATE_ID,
-						 PilotPlugin.INSTANCE.getString("TBResultsSectionTemplateId"),
-						 new Object [] { tbResultsSection }));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -228,7 +171,7 @@ public class TBResultsSectionOperations extends ResultsSectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_TB_RESULTS_SECTION_TB_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(pilot::TBResultOrganizer) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)";
+	protected static final String VALIDATE_TB_RESULTS_SECTION_TB_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | not entry.organizer.oclIsUndefined() and entry.organizer.oclIsKindOf(pilot::TBResultOrganizer) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateTBResultsSectionTBResultOrganizer(TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section TB Result Organizer</em>}' invariant operation.
@@ -244,7 +187,7 @@ public class TBResultsSectionOperations extends ResultsSectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->exists(entry : cda::Entry | entry.organizer.oclIsKindOf(pilot::TBResultOrganizer) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)
+	 * self.entry->exists(entry : cda::Entry | not entry.organizer.oclIsUndefined() and entry.organizer.oclIsKindOf(pilot::TBResultOrganizer) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)
 	 * @param tbResultsSection The receiving '<em><b>TB Results Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -285,7 +228,7 @@ public class TBResultsSectionOperations extends ResultsSectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_TB_RESULTS_SECTION_TB_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(pilot::TBResultObservation) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)";
+	protected static final String VALIDATE_TB_RESULTS_SECTION_TB_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entry->exists(entry : cda::Entry | not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(pilot::TBResultObservation) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateTBResultsSectionTBResultObservation(TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Results Section TB Result Observation</em>}' invariant operation.
@@ -301,7 +244,7 @@ public class TBResultsSectionOperations extends ResultsSectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entry->exists(entry : cda::Entry | entry.observation.oclIsKindOf(pilot::TBResultObservation) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)
+	 * self.entry->exists(entry : cda::Entry | not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(pilot::TBResultObservation) and entry.typeCode = vocab::x_ActRelationshipEntry::DRIV)
 	 * @param tbResultsSection The receiving '<em><b>TB Results Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -327,6 +270,63 @@ public class TBResultsSectionOperations extends ResultsSectionOperations {
 						 TBPNValidator.DIAGNOSTIC_SOURCE,
 						 TBPNValidator.TB_RESULTS_SECTION__TB_RESULTS_SECTION_TB_RESULT_OBSERVATION,
 						 PilotPlugin.INSTANCE.getString("TBResultsSectionTBResultObservation"),
+						 new Object [] { tbResultsSection }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateResultsSectionTemplateId(TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Results Section Template Id</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateResultsSectionTemplateId(TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.2.6')";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateResultsSectionTemplateId(TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Results Section Template Id</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateResultsSectionTemplateId(TBResultsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.2.6')
+	 * @param tbResultsSection The receiving '<em><b>TB Results Section</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateResultsSectionTemplateId(TBResultsSection tbResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(TBPNPackage.Literals.TB_RESULTS_SECTION);
+			try {
+				VALIDATE_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(tbResultsSection)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 TBPNValidator.DIAGNOSTIC_SOURCE,
+						 TBPNValidator.TB_RESULTS_SECTION__RESULTS_SECTION_TEMPLATE_ID,
+						 PilotPlugin.INSTANCE.getString("ResultsSectionTemplateId"),
 						 new Object [] { tbResultsSection }));
 			}
 			return false;

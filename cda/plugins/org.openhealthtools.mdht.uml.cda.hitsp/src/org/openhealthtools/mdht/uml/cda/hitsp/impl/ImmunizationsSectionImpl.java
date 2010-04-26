@@ -49,8 +49,8 @@ public class ImmunizationsSectionImpl extends org.openhealthtools.mdht.uml.cda.i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHITSPImmunizationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ImmunizationsSectionOperations.validateHITSPImmunizationsSectionTemplateId(this, diagnostics, context);
+	public boolean validateHITSPImmunizationsSectionImmunization(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ImmunizationsSectionOperations.validateHITSPImmunizationsSectionImmunization(this, diagnostics, context);
 	}
 
 	/**
@@ -58,8 +58,9 @@ public class ImmunizationsSectionImpl extends org.openhealthtools.mdht.uml.cda.i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHITSPImmunizationsSectionImmunization(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ImmunizationsSectionOperations.validateHITSPImmunizationsSectionImmunization(this, diagnostics, context);
+	@Override
+	public boolean validateImmunizationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ImmunizationsSectionOperations.validateImmunizationsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

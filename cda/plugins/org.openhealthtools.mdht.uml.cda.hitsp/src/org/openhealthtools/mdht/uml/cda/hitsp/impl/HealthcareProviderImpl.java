@@ -50,8 +50,9 @@ public class HealthcareProviderImpl extends HealthcareProvidersPharmaciesImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHealthcareProviderTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HealthcareProviderOperations.validateHealthcareProviderTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateHealthcareProvidersPharmaciesTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HealthcareProviderOperations.validateHealthcareProvidersPharmaciesTemplateId(this, diagnostics, context);
 	}
 
 	/**

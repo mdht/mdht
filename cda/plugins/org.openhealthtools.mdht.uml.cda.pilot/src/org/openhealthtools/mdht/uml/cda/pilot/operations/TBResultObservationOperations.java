@@ -28,8 +28,8 @@ import org.openhealthtools.mdht.uml.cda.pilot.util.TBPNValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation#validateTBResultObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Result Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation#validateTBResultObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Result Observation Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation#validateResultObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation#validateResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation#validateResultObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Status Code</em>}</li>
  * </ul>
@@ -45,63 +45,6 @@ public class TBResultObservationOperations extends ResultObservationOperations {
 	 */
 	protected TBResultObservationOperations() {
 		super();
-	}
-
-	/**
-	 * The cached OCL expression body for the '{@link #validateTBResultObservationTemplateId(TBResultObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Result Observation Template Id</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateTBResultObservationTemplateId(TBResultObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALIDATE_TB_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.3.13')";
-
-	/**
-	 * The cached OCL invariant for the '{@link #validateTBResultObservationTemplateId(TBResultObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate TB Result Observation Template Id</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateTBResultObservationTemplateId(TBResultObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint VALIDATE_TB_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.3.13')
-	 * @param tbResultObservation The receiving '<em><b>TB Result Observation</b></em>' model object.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
-	public static  boolean validateTBResultObservationTemplateId(TBResultObservation tbResultObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_TB_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(TBPNPackage.Literals.TB_RESULT_OBSERVATION);
-			try {
-				VALIDATE_TB_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_TB_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		if (!EOCL_ENV.createQuery(VALIDATE_TB_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(tbResultObservation)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 TBPNValidator.DIAGNOSTIC_SOURCE,
-						 TBPNValidator.TB_RESULT_OBSERVATION__TB_RESULT_OBSERVATION_TEMPLATE_ID,
-						 PilotPlugin.INSTANCE.getString("TBResultObservationTemplateId"),
-						 new Object [] { tbResultObservation }));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -154,6 +97,63 @@ public class TBResultObservationOperations extends ResultObservationOperations {
 						 TBPNValidator.DIAGNOSTIC_SOURCE,
 						 TBPNValidator.TB_RESULT_OBSERVATION__TB_RESULT_OBSERVATION_CLASS_CODE,
 						 PilotPlugin.INSTANCE.getString("TBResultObservationClassCode"),
+						 new Object [] { tbResultObservation }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateResultObservationTemplateId(TBResultObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Template Id</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateResultObservationTemplateId(TBResultObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.3.13')";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateResultObservationTemplateId(TBResultObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Template Id</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateResultObservationTemplateId(TBResultObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.3.13')
+	 * @param tbResultObservation The receiving '<em><b>TB Result Observation</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateResultObservationTemplateId(TBResultObservation tbResultObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(TBPNPackage.Literals.TB_RESULT_OBSERVATION);
+			try {
+				VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(tbResultObservation)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 TBPNValidator.DIAGNOSTIC_SOURCE,
+						 TBPNValidator.TB_RESULT_OBSERVATION__RESULT_OBSERVATION_TEMPLATE_ID,
+						 PilotPlugin.INSTANCE.getString("ResultObservationTemplateId"),
 						 new Object [] { tbResultObservation }));
 			}
 			return false;

@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.util.CCDValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveStatusObservation#validateAdvanceDirectiveStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Status Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveStatusObservation#validateStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,24 +44,24 @@ public class AdvanceDirectiveStatusObservationOperations extends StatusObservati
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateAdvanceDirectiveStatusObservationTemplateId(AdvanceDirectiveStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Status Observation Template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateStatusObservationTemplateId(AdvanceDirectiveStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateAdvanceDirectiveStatusObservationTemplateId(AdvanceDirectiveStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateStatusObservationTemplateId(AdvanceDirectiveStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_ADVANCE_DIRECTIVE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.37')";
+	protected static final String VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.37')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateAdvanceDirectiveStatusObservationTemplateId(AdvanceDirectiveStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Status Observation Template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateStatusObservationTemplateId(AdvanceDirectiveStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateAdvanceDirectiveStatusObservationTemplateId(AdvanceDirectiveStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateStatusObservationTemplateId(AdvanceDirectiveStatusObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_ADVANCE_DIRECTIVE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,25 +74,25 @@ public class AdvanceDirectiveStatusObservationOperations extends StatusObservati
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateAdvanceDirectiveStatusObservationTemplateId(AdvanceDirectiveStatusObservation advanceDirectiveStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_ADVANCE_DIRECTIVE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateStatusObservationTemplateId(AdvanceDirectiveStatusObservation advanceDirectiveStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CCDPackage.Literals.ADVANCE_DIRECTIVE_STATUS_OBSERVATION);
 			try {
-				VALIDATE_ADVANCE_DIRECTIVE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ADVANCE_DIRECTIVE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_ADVANCE_DIRECTIVE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(advanceDirectiveStatusObservation)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(advanceDirectiveStatusObservation)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
-						 CCDValidator.ADVANCE_DIRECTIVE_STATUS_OBSERVATION__ADVANCE_DIRECTIVE_STATUS_OBSERVATION_TEMPLATE_ID,
-						 CCDPlugin.INSTANCE.getString("AdvanceDirectiveStatusObservationTemplateId"),
+						 CCDValidator.ADVANCE_DIRECTIVE_STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID,
+						 CCDPlugin.INSTANCE.getString("StatusObservationTemplateId"),
 						 new Object [] { advanceDirectiveStatusObservation }));
 			}
 			return false;

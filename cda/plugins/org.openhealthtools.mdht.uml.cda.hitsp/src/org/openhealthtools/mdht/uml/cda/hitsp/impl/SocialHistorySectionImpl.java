@@ -49,8 +49,9 @@ public class SocialHistorySectionImpl extends org.openhealthtools.mdht.uml.cda.i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHITSPSocialHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SocialHistorySectionOperations.validateHITSPSocialHistorySectionTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateSocialHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SocialHistorySectionOperations.validateSocialHistorySectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

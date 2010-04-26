@@ -33,7 +33,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern#validateAllergyIntoleranceConcernTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Concern Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern#validateProblemActTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,24 +50,24 @@ public class AllergyIntoleranceConcernOperations extends ConcernEntryOperations 
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateAllergyIntoleranceConcernTemplateId(AllergyIntoleranceConcern, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Concern Template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateProblemActTemplateId(AllergyIntoleranceConcern, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateAllergyIntoleranceConcernTemplateId(AllergyIntoleranceConcern, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemActTemplateId(AllergyIntoleranceConcern, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.4.5.3')";
+	protected static final String VALIDATE_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.4.5.3')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateAllergyIntoleranceConcernTemplateId(AllergyIntoleranceConcern, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Concern Template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateProblemActTemplateId(AllergyIntoleranceConcern, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Act Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateAllergyIntoleranceConcernTemplateId(AllergyIntoleranceConcern, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateProblemActTemplateId(AllergyIntoleranceConcern, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,25 +80,25 @@ public class AllergyIntoleranceConcernOperations extends ConcernEntryOperations 
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateAllergyIntoleranceConcernTemplateId(AllergyIntoleranceConcern allergyIntoleranceConcern, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateProblemActTemplateId(AllergyIntoleranceConcern allergyIntoleranceConcern, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.ALLERGY_INTOLERANCE_CONCERN);
 			try {
-				VALIDATE_ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(allergyIntoleranceConcern)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(allergyIntoleranceConcern)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
-						 IHEValidator.ALLERGY_INTOLERANCE_CONCERN__ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("AllergyIntoleranceConcernTemplateId"),
+						 IHEValidator.ALLERGY_INTOLERANCE_CONCERN__PROBLEM_ACT_TEMPLATE_ID,
+						 IHEPlugin.INSTANCE.getString("ProblemActTemplateId"),
 						 new Object [] { allergyIntoleranceConcern }));
 			}
 			return false;

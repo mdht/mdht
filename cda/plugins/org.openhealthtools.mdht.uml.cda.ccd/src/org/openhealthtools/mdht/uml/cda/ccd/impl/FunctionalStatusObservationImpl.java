@@ -49,8 +49,9 @@ public class FunctionalStatusObservationImpl extends StatusObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFunctionalStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FunctionalStatusObservationOperations.validateFunctionalStatusObservationTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FunctionalStatusObservationOperations.validateStatusObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**

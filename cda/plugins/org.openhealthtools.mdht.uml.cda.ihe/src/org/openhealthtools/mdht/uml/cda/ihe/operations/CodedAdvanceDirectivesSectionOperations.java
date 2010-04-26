@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedAdvanceDirectivesSection#validateCodedAdvanceDirectivesSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Advance Directives Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedAdvanceDirectivesSection#validateAdvanceDirectivesSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,24 +44,24 @@ public class CodedAdvanceDirectivesSectionOperations extends AdvanceDirectivesSe
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateCodedAdvanceDirectivesSectionTemplateId(CodedAdvanceDirectivesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Advance Directives Section Template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateAdvanceDirectivesSectionTemplateId(CodedAdvanceDirectivesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateCodedAdvanceDirectivesSectionTemplateId(CodedAdvanceDirectivesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAdvanceDirectivesSectionTemplateId(CodedAdvanceDirectivesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_CODED_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.3.35')";
+	protected static final String VALIDATE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.3.35')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateCodedAdvanceDirectivesSectionTemplateId(CodedAdvanceDirectivesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Advance Directives Section Template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateAdvanceDirectivesSectionTemplateId(CodedAdvanceDirectivesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateCodedAdvanceDirectivesSectionTemplateId(CodedAdvanceDirectivesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateAdvanceDirectivesSectionTemplateId(CodedAdvanceDirectivesSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_CODED_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,25 +74,25 @@ public class CodedAdvanceDirectivesSectionOperations extends AdvanceDirectivesSe
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateCodedAdvanceDirectivesSectionTemplateId(CodedAdvanceDirectivesSection codedAdvanceDirectivesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_CODED_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateAdvanceDirectivesSectionTemplateId(CodedAdvanceDirectivesSection codedAdvanceDirectivesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.CODED_ADVANCE_DIRECTIVES_SECTION);
 			try {
-				VALIDATE_CODED_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CODED_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_CODED_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(codedAdvanceDirectivesSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(codedAdvanceDirectivesSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
-						 IHEValidator.CODED_ADVANCE_DIRECTIVES_SECTION__CODED_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("CodedAdvanceDirectivesSectionTemplateId"),
+						 IHEValidator.CODED_ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID,
+						 IHEPlugin.INSTANCE.getString("AdvanceDirectivesSectionTemplateId"),
 						 new Object [] { codedAdvanceDirectivesSection }));
 			}
 			return false;

@@ -49,8 +49,9 @@ public class NormalDosingImpl extends MedicationImpl implements NormalDosing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateNormalDosingTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return NormalDosingOperations.validateNormalDosingTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateMedicationActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return NormalDosingOperations.validateMedicationActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**

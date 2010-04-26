@@ -49,8 +49,9 @@ public class ChiefComplaintSectionImpl extends org.openhealthtools.mdht.uml.cda.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHITSPChiefComplaintSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ChiefComplaintSectionOperations.validateHITSPChiefComplaintSectionTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateChiefComplaintSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ChiefComplaintSectionOperations.validateChiefComplaintSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

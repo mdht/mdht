@@ -49,8 +49,9 @@ public class ReviewOfSystemsSectionImpl extends org.openhealthtools.mdht.uml.cda
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHITSPReviewOfSystemsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ReviewOfSystemsSectionOperations.validateHITSPReviewOfSystemsSectionTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateReviewOfSystemsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReviewOfSystemsSectionOperations.validateReviewOfSystemsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

@@ -55,8 +55,9 @@ public class MedicationsSectionImpl extends org.openhealthtools.mdht.uml.cda.ccd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateIHEMedicationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationsSectionOperations.validateIHEMedicationsSectionTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateMedicationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationsSectionOperations.validateMedicationsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

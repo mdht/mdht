@@ -49,8 +49,9 @@ public class MedicationStatusObservationImpl extends StatusObservationImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationStatusObservationOperations.validateMedicationStatusObservationTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationStatusObservationOperations.validateStatusObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**

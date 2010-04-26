@@ -49,8 +49,9 @@ public class AllergiesReactionsSectionImpl extends org.openhealthtools.mdht.uml.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHITSPAllergiesReactionsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AllergiesReactionsSectionOperations.validateHITSPAllergiesReactionsSectionTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateAlertsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AllergiesReactionsSectionOperations.validateAlertsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

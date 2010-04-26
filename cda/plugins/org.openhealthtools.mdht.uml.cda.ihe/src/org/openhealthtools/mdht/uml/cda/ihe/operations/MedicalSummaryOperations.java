@@ -30,8 +30,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryProblemConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Problem Concern Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryAllergyConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Allergy Concern Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryMedications(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Medications</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalSummaryCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary#validateMedicalDocumentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Document Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -219,63 +219,6 @@ public class MedicalSummaryOperations extends MedicalDocumentOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateMedicalSummaryTemplateId(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Template Id</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateMedicalSummaryTemplateId(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.1.2')";
-
-	/**
-	 * The cached OCL invariant for the '{@link #validateMedicalSummaryTemplateId(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Template Id</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateMedicalSummaryTemplateId(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.1.2')
-	 * @param medicalSummary The receiving '<em><b>Medical Summary</b></em>' model object.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
-	public static  boolean validateMedicalSummaryTemplateId(MedicalSummary medicalSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(IHEPackage.Literals.MEDICAL_SUMMARY);
-			try {
-				VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		if (!EOCL_ENV.createQuery(VALIDATE_MEDICAL_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicalSummary)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 IHEValidator.DIAGNOSTIC_SOURCE,
-						 IHEValidator.MEDICAL_SUMMARY__MEDICAL_SUMMARY_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("MedicalSummaryTemplateId"),
-						 new Object [] { medicalSummary }));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
 	 * The cached OCL expression body for the '{@link #validateMedicalSummaryCode(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Summary Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -329,6 +272,63 @@ public class MedicalSummaryOperations extends MedicalDocumentOperations {
 						 IHEValidator.DIAGNOSTIC_SOURCE,
 						 IHEValidator.MEDICAL_SUMMARY__MEDICAL_SUMMARY_CODE,
 						 IHEPlugin.INSTANCE.getString("MedicalSummaryCode"),
+						 new Object [] { medicalSummary }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateMedicalDocumentTemplateId(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Document Template Id</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateMedicalDocumentTemplateId(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.1.2')";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateMedicalDocumentTemplateId(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Document Template Id</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateMedicalDocumentTemplateId(MedicalSummary, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.1.2')
+	 * @param medicalSummary The receiving '<em><b>Medical Summary</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateMedicalDocumentTemplateId(MedicalSummary medicalSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(IHEPackage.Literals.MEDICAL_SUMMARY);
+			try {
+				VALIDATE_MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_MEDICAL_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(medicalSummary)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 IHEValidator.DIAGNOSTIC_SOURCE,
+						 IHEValidator.MEDICAL_SUMMARY__MEDICAL_DOCUMENT_TEMPLATE_ID,
+						 IHEPlugin.INSTANCE.getString("MedicalDocumentTemplateId"),
 						 new Object [] { medicalSummary }));
 			}
 			return false;
