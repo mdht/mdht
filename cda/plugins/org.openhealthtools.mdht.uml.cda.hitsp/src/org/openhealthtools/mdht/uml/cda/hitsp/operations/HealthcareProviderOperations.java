@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.operations.HealthcareProvidersPharma
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HealthcareProvider#validateHealthcareProvidersPharmaciesTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Healthcare Providers Pharmacies Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HealthcareProvider#validateHealthcareProviderTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Healthcare Provider Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,24 +45,24 @@ public class HealthcareProviderOperations extends HealthcareProvidersPharmaciesO
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateHealthcareProvidersPharmaciesTemplateId(HealthcareProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Healthcare Providers Pharmacies Template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateHealthcareProviderTemplateId(HealthcareProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Healthcare Provider Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateHealthcareProvidersPharmaciesTemplateId(HealthcareProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateHealthcareProviderTemplateId(HealthcareProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.4')";
+	protected static final String VALIDATE_HEALTHCARE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.4')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateHealthcareProvidersPharmaciesTemplateId(HealthcareProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Healthcare Providers Pharmacies Template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateHealthcareProviderTemplateId(HealthcareProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Healthcare Provider Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateHealthcareProvidersPharmaciesTemplateId(HealthcareProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateHealthcareProviderTemplateId(HealthcareProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_HEALTHCARE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,25 +75,25 @@ public class HealthcareProviderOperations extends HealthcareProvidersPharmaciesO
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateHealthcareProvidersPharmaciesTemplateId(HealthcareProvider healthcareProvider, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateHealthcareProviderTemplateId(HealthcareProvider healthcareProvider, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_HEALTHCARE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(HITSPPackage.Literals.HEALTHCARE_PROVIDER);
 			try {
-				VALIDATE_HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_HEALTHCARE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_HEALTHCARE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(healthcareProvider)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_HEALTHCARE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(healthcareProvider)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HITSPValidator.DIAGNOSTIC_SOURCE,
-						 HITSPValidator.HEALTHCARE_PROVIDER__HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID,
-						 HITSPPlugin.INSTANCE.getString("HealthcareProvidersPharmaciesTemplateId"),
+						 HITSPValidator.HEALTHCARE_PROVIDER__HEALTHCARE_PROVIDER_TEMPLATE_ID,
+						 HITSPPlugin.INSTANCE.getString("HealthcareProviderTemplateId"),
 						 new Object [] { healthcareProvider }));
 			}
 			return false;

@@ -49,9 +49,8 @@ public class HospitalCourseSectionImpl extends org.openhealthtools.mdht.uml.cda.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateHospitalCourseSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HospitalCourseSectionOperations.validateHospitalCourseSectionTemplateId(this, diagnostics, context);
+	public boolean validateHITSPHospitalCourseSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HospitalCourseSectionOperations.validateHITSPHospitalCourseSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

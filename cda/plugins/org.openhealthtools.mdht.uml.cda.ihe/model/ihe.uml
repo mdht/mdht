@@ -831,7 +831,7 @@ life, hobbies, and risky habits.</body>
   </CDA:CodeSystemConstraint>
   <CDA:CDATemplate xmi:id="_2lStADOvEd-5f4Yngl7nkw" message="IHE Discharge Summary SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.1.4" base_Class="_yq8-YDOvEd-5f4Yngl7nkw" templateId="1.3.6.1.4.1.19376.1.5.3.1.1.4" assigningAuthorityName="IHE PCC"/>
   <CDA:AssociationValidation xmi:id="_GLhbADOwEd-5f4Yngl7nkw" message="IHE Discharge Summary SHALL contain [1..1] component such that it, SHALL contain [1..1] Active Problems Section (templateId: 1.3.6.1.4.1.19376.1.5.3.1.3.6)" base_Association="_EmpH4DOwEd-5f4Yngl7nkw"/>
-  <CDA:ConstraintValidation xmi:id="_JnaD8DXdEd-gpLhSMS7jpQ" message="IHE Medical Summary SHALL satisfy: self.getSections()->exists(sect : cda::Section | sect.getActs()->exists(act : cda::Act | act.oclIsKindOf(ccd::ProblemConcernEntry)))" base_Constraint="_iiAk4DOvEd-5f4Yngl7nkw"/>
+  <CDA:ConstraintValidation xmi:id="_JnaD8DXdEd-gpLhSMS7jpQ" message="IHE Medical Summary SHALL satisfy: self.getSections()->exists(sect : cda::Section | sect.getActs()->exists(act : cda::Act | act.oclIsKindOf(ihe::ProblemConcernEntry)))" base_Constraint="_iiAk4DOvEd-5f4Yngl7nkw"/>
   <CDA:ConstraintValidation xmi:id="_LovpkDXdEd-gpLhSMS7jpQ" message="IHE Medical Summary SHALL satisfy: self.getSections()->exists(sect : cda::Section | sect.getActs()->exists(act : cda::Act | act.oclIsKindOf(ihe::AllergyIntoleranceConcern)))" base_Constraint="_kVCowDOvEd-5f4Yngl7nkw"/>
   <CDA:ConstraintValidation xmi:id="_MFpoADXdEd-gpLhSMS7jpQ" message="IHE Medical Summary SHALL satisfy: self.getSections()->exists(sect : cda::Section | sect.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.oclIsKindOf(ihe::Medication)))" base_Constraint="_mjgEYDOvEd-5f4Yngl7nkw"/>
   <CDA:CodeSystemConstraint xmi:id="_RPz4YTXgEd-gpLhSMS7jpQ" code="35525-4" displayName="Payment sources" message="IHE Coverage Entry SHALL contain [1..1] code/@code = &quot;48768-6&quot; Payment sources (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
@@ -857,4 +857,43 @@ life, hobbies, and risky habits.</body>
   </CDA:CodeSystemConstraint>
   <CDA:TextValue xmi:id="_5LqJkEvdEd-GNbUQBie2ig" message="IHE Comment SHALL contain [0..1] text" base_Property="_fwsyIEvdEd-GNbUQBie2ig"/>
   <CDA:PropertyValidation xmi:id="_gd-mgEvrEd-GNbUQBie2ig" message="IHE Comment SHALL contain [1..1] @classCode = &quot;ACT&quot;" base_Property="_fwrkAEvdEd-GNbUQBie2ig"/>
+  <CDA:ConformsTo xmi:id="_6waP4FF6Ed-Lud-5SYZhMw" base_Generalization="_cBTp4Mf0Ed6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wcFEFF6Ed-Lud-5SYZhMw" base_Generalization="_H4qVgDxbEd6JwqSGecoePg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wcsIFF6Ed-Lud-5SYZhMw" base_Generalization="_ESh9QGGzEd6bFO5yxRh3Nw" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wcsIVF6Ed-Lud-5SYZhMw" base_Generalization="_wSnPBWaQEd6Hk_bPOfEjYA" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wdTMFF6Ed-Lud-5SYZhMw" base_Generalization="_3ZiExWdIEd6Hk_bPOfEjYA" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wd6QFF6Ed-Lud-5SYZhMw" base_Generalization="_zZRrcHq8Ed68l9lQ-TLEBQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wehUFF6Ed-Lud-5SYZhMw" base_Generalization="_KxUI4Hq9Ed68l9lQ-TLEBQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wfIYFF6Ed-Lud-5SYZhMw" base_Generalization="_F7xSEHrEEd68l9lQ-TLEBQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wfvcFF6Ed-Lud-5SYZhMw" base_Generalization="_kdkngHrEEd68l9lQ-TLEBQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wgWgFF6Ed-Lud-5SYZhMw" base_Generalization="_W-wesHrUEd68l9lQ-TLEBQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wg9kFF6Ed-Lud-5SYZhMw" base_Generalization="_CsEjgHyTEd6FS-4xbA1fBQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6whkoFF6Ed-Lud-5SYZhMw" base_Generalization="_OCqBQXyTEd6FS-4xbA1fBQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wiLsFF6Ed-Lud-5SYZhMw" base_Generalization="_OY9BYXyTEd6FS-4xbA1fBQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wiywFF6Ed-Lud-5SYZhMw" base_Generalization="_OeXF0XyTEd6FS-4xbA1fBQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wjZ0FF6Ed-Lud-5SYZhMw" base_Generalization="_QDIEMXyTEd6FS-4xbA1fBQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wkA4FF6Ed-Lud-5SYZhMw" base_Generalization="_lkJAQK4EEd6_ioDelDcPPg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wkn8FF6Ed-Lud-5SYZhMw" base_Generalization="_8EJ0EK4FEd6_ioDelDcPPg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wkn8VF6Ed-Lud-5SYZhMw" base_Generalization="_PU_HYK4NEd6_ioDelDcPPg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wlPAFF6Ed-Lud-5SYZhMw" base_Generalization="_pcbyQDhCEd-RGdSGlf-Kow" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wmdIFF6Ed-Lud-5SYZhMw" base_Generalization="_j3GZMK4QEd6_ioDelDcPPg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wnEMFF6Ed-Lud-5SYZhMw" base_Generalization="_1MYRYMfXEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wnrQFF6Ed-Lud-5SYZhMw" base_Generalization="_tTPI4MftEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6woSUFF6Ed-Lud-5SYZhMw" base_Generalization="_CZnswMfuEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wo5YFF6Ed-Lud-5SYZhMw" base_Generalization="_pXLUQMfzEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wpgcFF6Ed-Lud-5SYZhMw" base_Generalization="_ovC9QMfzEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wqHgFF6Ed-Lud-5SYZhMw" base_Generalization="_Qnv7MMf1Ed6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wqukFF6Ed-Lud-5SYZhMw" base_Generalization="_DPCW8MigEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wrVoFF6Ed-Lud-5SYZhMw" base_Generalization="_nplocMigEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wr8sFF6Ed-Lud-5SYZhMw" base_Generalization="_Nt9-gMihEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wsjwFF6Ed-Lud-5SYZhMw" base_Generalization="_vuzKIMiiEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wtK0FF6Ed-Lud-5SYZhMw" base_Generalization="_w6Wh0MijEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wtx4FF6Ed-Lud-5SYZhMw" base_Generalization="_fp-n0TOvEd-5f4Yngl7nkw" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wuY8FF6Ed-Lud-5SYZhMw" base_Generalization="_yq8-YTOvEd-5f4Yngl7nkw" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wvAAFF6Ed-Lud-5SYZhMw" base_Generalization="_PMrjATXgEd-gpLhSMS7jpQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wvnEFF6Ed-Lud-5SYZhMw" base_Generalization="_aFDTUTuJEd-B8KE6Jx0UNQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wvnEVF6Ed-Lud-5SYZhMw" base_Generalization="_Q-mPsTuKEd-B8KE6Jx0UNQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wwOIFF6Ed-Lud-5SYZhMw" base_Generalization="_jZMQ0TuMEd-B8KE6Jx0UNQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6ww1MFF6Ed-Lud-5SYZhMw" base_Generalization="_6yfdETuNEd-B8KE6Jx0UNQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_6wxcQFF6Ed-Lud-5SYZhMw" base_Generalization="_9xEuETuNEd-B8KE6Jx0UNQ" requiresParentId="true"/>
 </xmi:XMI>

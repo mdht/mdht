@@ -50,8 +50,8 @@ public class ProblemListSectionImpl extends ActiveProblemsSectionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemListSectionCondition(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemListSectionOperations.validateProblemListSectionCondition(this, diagnostics, context);
+	public boolean validateProblemListSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemListSectionOperations.validateProblemListSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -59,9 +59,8 @@ public class ProblemListSectionImpl extends ActiveProblemsSectionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateProblemSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemListSectionOperations.validateProblemSectionTemplateId(this, diagnostics, context);
+	public boolean validateProblemListSectionCondition(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemListSectionOperations.validateProblemListSectionCondition(this, diagnostics, context);
 	}
 
 	/**

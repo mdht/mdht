@@ -56,8 +56,8 @@ public class ActiveProblemsSectionImpl extends ProblemSectionImpl implements Act
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateActiveProblemsSectionProblemConcernEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ActiveProblemsSectionOperations.validateActiveProblemsSectionProblemConcernEntry(this, diagnostics, context);
+	public boolean validateActiveProblemsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ActiveProblemsSectionOperations.validateActiveProblemsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -65,9 +65,8 @@ public class ActiveProblemsSectionImpl extends ProblemSectionImpl implements Act
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateProblemSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ActiveProblemsSectionOperations.validateProblemSectionTemplateId(this, diagnostics, context);
+	public boolean validateActiveProblemsSectionProblemConcernEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ActiveProblemsSectionOperations.validateActiveProblemsSectionProblemConcernEntry(this, diagnostics, context);
 	}
 
 	/**

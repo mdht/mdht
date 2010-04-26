@@ -85,20 +85,20 @@ public class HITSPValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.openhealthtools.mdht.uml.cda.hitsp";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Act Template Id' of 'Allergy Drug Sensitivity'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Allergy Drug Sensitivity Template Id' of 'Allergy Drug Sensitivity'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ALLERGY_DRUG_SENSITIVITY__PROBLEM_ACT_TEMPLATE_ID = 1;
+	public static final int ALLERGY_DRUG_SENSITIVITY__ALLERGY_DRUG_SENSITIVITY_TEMPLATE_ID = 1;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Activity Template Id' of 'Medication'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Medication Template Id' of 'Medication'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICATION__MEDICATION_ACTIVITY_TEMPLATE_ID = 2;
+	public static final int MEDICATION__HITSP_MEDICATION_TEMPLATE_ID = 2;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Condition Template Id' of 'Condition'.
@@ -130,7 +130,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_ADVANCE_DIRECTIVES_SECTION = 7;
+	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_ADVANCE_DIRECTIVES_SECTION = 8;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Summary Allergies Reactions Section' of 'Patient Summary'.
@@ -138,7 +138,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_ALLERGIES_REACTIONS_SECTION = 8;
+	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_ALLERGIES_REACTIONS_SECTION = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Summary Problem List Section' of 'Patient Summary'.
@@ -146,7 +146,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_PROBLEM_LIST_SECTION = 9;
+	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_PROBLEM_LIST_SECTION = 10;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Summary Encounters Section' of 'Patient Summary'.
@@ -154,7 +154,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_ENCOUNTERS_SECTION = 10;
+	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_ENCOUNTERS_SECTION = 11;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Summary Immunizations Section' of 'Patient Summary'.
@@ -162,7 +162,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_IMMUNIZATIONS_SECTION = 11;
+	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_IMMUNIZATIONS_SECTION = 12;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Summary Payers Section' of 'Patient Summary'.
@@ -170,7 +170,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_PAYERS_SECTION = 12;
+	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_PAYERS_SECTION = 13;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Summary Medications Section' of 'Patient Summary'.
@@ -178,15 +178,15 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_MEDICATIONS_SECTION = 13;
+	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_MEDICATIONS_SECTION = 14;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Document Template Id' of 'Patient Summary'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem List Section Template Id' of 'Problem List Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PATIENT_SUMMARY__MEDICAL_DOCUMENT_TEMPLATE_ID = 14;
+	public static final int PROBLEM_LIST_SECTION__PROBLEM_LIST_SECTION_TEMPLATE_ID = 15;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Vital Signs Section Vital Signs' of 'Vital Signs Section'.
@@ -197,20 +197,20 @@ public class HITSPValidator extends EObjectValidator {
 	public static final int VITAL_SIGNS_SECTION__HITSP_VITAL_SIGNS_SECTION_VITAL_SIGNS = 18;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Section Template Id' of 'Vital Signs Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Vital Signs Section Template Id' of 'Vital Signs Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_SECTION__VITAL_SIGNS_SECTION_TEMPLATE_ID = 19;
+	public static final int VITAL_SIGNS_SECTION__HITSP_VITAL_SIGNS_SECTION_TEMPLATE_ID = 19;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Template Id' of 'Vital Sign'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Sign Template Id' of 'Vital Sign'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGN__RESULT_OBSERVATION_TEMPLATE_ID = 20;
+	public static final int VITAL_SIGN__VITAL_SIGN_TEMPLATE_ID = 20;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Code' of 'Vital Sign'.
@@ -221,116 +221,124 @@ public class HITSPValidator extends EObjectValidator {
 	public static final int VITAL_SIGN__RESULT_OBSERVATION_CODE = 21;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Payers Section Template Id' of 'Payers Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Payers Section Template Id' of 'Payers Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PAYERS_SECTION__PAYERS_SECTION_TEMPLATE_ID = 22;
+	public static final int PAYERS_SECTION__HITSP_PAYERS_SECTION_TEMPLATE_ID = 22;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Alerts Section Template Id' of 'Allergies Reactions Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Allergies Reactions Section Template Id' of 'Allergies Reactions Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ALLERGIES_REACTIONS_SECTION__ALERTS_SECTION_TEMPLATE_ID = 23;
+	public static final int ALLERGIES_REACTIONS_SECTION__HITSP_ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID = 23;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History Of Past Illness Section Template Id' of 'History Of Past Illness Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP History Of Past Illness Section Template Id' of 'History Of Past Illness Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_OF_PAST_ILLNESS_SECTION__HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID = 24;
+	public static final int HISTORY_OF_PAST_ILLNESS_SECTION__HITSP_HISTORY_OF_PAST_ILLNESS_SECTION_TEMPLATE_ID = 24;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Chief Complaint Section Template Id' of 'Chief Complaint Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Chief Complaint Section Template Id' of 'Chief Complaint Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CHIEF_COMPLAINT_SECTION__CHIEF_COMPLAINT_SECTION_TEMPLATE_ID = 25;
+	public static final int CHIEF_COMPLAINT_SECTION__HITSP_CHIEF_COMPLAINT_SECTION_TEMPLATE_ID = 25;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Reason For Referral Section Template Id' of 'Reason For Referral Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Reason For Referral Section Template Id' of 'Reason For Referral Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REASON_FOR_REFERRAL_SECTION__REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID = 26;
+	public static final int REASON_FOR_REFERRAL_SECTION__HITSP_REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID = 26;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History Of Present Illness Template Id' of 'History Of Present Illness'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP History Of Present Illness Template Id' of 'History Of Present Illness'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_OF_PRESENT_ILLNESS__HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID = 27;
+	public static final int HISTORY_OF_PRESENT_ILLNESS__HITSP_HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID = 27;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Procedures Section Template Id' of 'Surgeries Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Surgeries Section Template Id' of 'Surgeries Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SURGERIES_SECTION__PROCEDURES_SECTION_TEMPLATE_ID = 28;
+	public static final int SURGERIES_SECTION__HITSP_SURGERIES_SECTION_TEMPLATE_ID = 28;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Functional Status Section Template Id' of 'Functional Status Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Functional Status Section Template Id' of 'Functional Status Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_SECTION__FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID = 29;
+	public static final int FUNCTIONAL_STATUS_SECTION__HITSP_FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID = 29;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Admission Diagnosis Section Template Id' of 'Hospital Admission Diagnosis Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Hospital Admission Diagnosis Section Template Id' of 'Hospital Admission Diagnosis Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID = 30;
+	public static final int HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__HITSP_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_TEMPLATE_ID = 30;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Discharge Diagnosis Section Template Id' of 'Discharge Diagnosis Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Discharge Diagnosis Section Template Id' of 'Discharge Diagnosis Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DISCHARGE_DIAGNOSIS_SECTION__DISCHARGE_DIAGNOSIS_SECTION_TEMPLATE_ID = 31;
+	public static final int DISCHARGE_DIAGNOSIS_SECTION__HITSP_DISCHARGE_DIAGNOSIS_SECTION_TEMPLATE_ID = 31;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Admission Medication History Section Template Id' of 'Admission Medication History Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Admission Medication History Section Template Id' of 'Admission Medication History Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADMISSION_MEDICATION_HISTORY_SECTION__ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID = 32;
+	public static final int ADMISSION_MEDICATION_HISTORY_SECTION__HITSP_ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID = 32;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Discharge Medications Section Template Id' of 'Hospital Discharge Medications Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Hospital Discharge Medications Section Template Id' of 'Hospital Discharge Medications Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_TEMPLATE_ID = 33;
+	public static final int HOSPITAL_DISCHARGE_MEDICATIONS_SECTION__HITSP_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_TEMPLATE_ID = 33;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medications Administered Section Template Id' of 'Medications Administered Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Medications Administered Section Template Id' of 'Medications Administered Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICATIONS_ADMINISTERED_SECTION__MEDICATIONS_ADMINISTERED_SECTION_TEMPLATE_ID = 34;
+	public static final int MEDICATIONS_ADMINISTERED_SECTION__HITSP_MEDICATIONS_ADMINISTERED_SECTION_TEMPLATE_ID = 34;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directives Section Template Id' of 'Advance Directives Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Advance Directives Section Template Id' of 'Advance Directives Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVES_SECTION__ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 35;
+	public static final int ADVANCE_DIRECTIVES_SECTION__HITSP_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID = 35;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Immunizations Section Template Id' of 'Immunizations Section'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int IMMUNIZATIONS_SECTION__HITSP_IMMUNIZATIONS_SECTION_TEMPLATE_ID = 36;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem List Section Condition' of 'Problem List Section'.
@@ -338,23 +346,15 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_LIST_SECTION__PROBLEM_LIST_SECTION_CONDITION = 15;
+	public static final int PROBLEM_LIST_SECTION__PROBLEM_LIST_SECTION_CONDITION = 16;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Section Template Id' of 'Problem List Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Medications Section Template Id' of 'Medications Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_LIST_SECTION__PROBLEM_SECTION_TEMPLATE_ID = 16;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medications Section Template Id' of 'Medications Section'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int MEDICATIONS_SECTION__MEDICATIONS_SECTION_TEMPLATE_ID = 17;
+	public static final int MEDICATIONS_SECTION__HITSP_MEDICATIONS_SECTION_TEMPLATE_ID = 17;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Immunizations Section Immunization' of 'Immunizations Section'.
@@ -362,95 +362,95 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IMMUNIZATIONS_SECTION__HITSP_IMMUNIZATIONS_SECTION_IMMUNIZATION = 36;
+	public static final int IMMUNIZATIONS_SECTION__HITSP_IMMUNIZATIONS_SECTION_IMMUNIZATION = 37;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Immunizations Section Template Id' of 'Immunizations Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Physical Exam Section Template Id' of 'Physical Exam Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IMMUNIZATIONS_SECTION__IMMUNIZATIONS_SECTION_TEMPLATE_ID = 37;
+	public static final int PHYSICAL_EXAM_SECTION__HITSP_PHYSICAL_EXAM_SECTION_TEMPLATE_ID = 38;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Physical Exam Narrative Section Template Id' of 'Physical Exam Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Review Of Systems Section Template Id' of 'Review Of Systems Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PHYSICAL_EXAM_SECTION__PHYSICAL_EXAM_NARRATIVE_SECTION_TEMPLATE_ID = 38;
+	public static final int REVIEW_OF_SYSTEMS_SECTION__HITSP_REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID = 39;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Review Of Systems Section Template Id' of 'Review Of Systems Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Hospital Course Section Template Id' of 'Hospital Course Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REVIEW_OF_SYSTEMS_SECTION__REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID = 39;
+	public static final int HOSPITAL_COURSE_SECTION__HITSP_HOSPITAL_COURSE_SECTION_TEMPLATE_ID = 40;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Hospital Course Section Template Id' of 'Hospital Course Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Diagnostic Results Section Template Id' of 'Diagnostic Results Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HOSPITAL_COURSE_SECTION__HOSPITAL_COURSE_SECTION_TEMPLATE_ID = 40;
+	public static final int DIAGNOSTIC_RESULTS_SECTION__DIAGNOSTIC_RESULTS_SECTION_TEMPLATE_ID = 41;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coded Results Section Template Id' of 'Diagnostic Results Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Assessment And Plan Section Template Id' of 'Assessment And Plan Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DIAGNOSTIC_RESULTS_SECTION__CODED_RESULTS_SECTION_TEMPLATE_ID = 41;
+	public static final int ASSESSMENT_AND_PLAN_SECTION__HITSP_ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID = 42;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assessment And Plan Section Template Id' of 'Assessment And Plan Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Plan Of Care Section Template Id' of 'Plan Of Care Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ASSESSMENT_AND_PLAN_SECTION__ASSESSMENT_AND_PLAN_SECTION_TEMPLATE_ID = 42;
+	public static final int PLAN_OF_CARE_SECTION__HITSP_PLAN_OF_CARE_SECTION_TEMPLATE_ID = 43;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Plan Of Care Section Template Id' of 'Plan Of Care Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Family History Section Template Id' of 'Family History Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PLAN_OF_CARE_SECTION__PLAN_OF_CARE_SECTION_TEMPLATE_ID = 43;
+	public static final int FAMILY_HISTORY_SECTION__HITSP_FAMILY_HISTORY_SECTION_TEMPLATE_ID = 44;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Family History Section Template Id' of 'Family History Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Social History Section Template Id' of 'Social History Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FAMILY_HISTORY_SECTION__FAMILY_HISTORY_SECTION_TEMPLATE_ID = 44;
+	public static final int SOCIAL_HISTORY_SECTION__HITSP_SOCIAL_HISTORY_SECTION_TEMPLATE_ID = 45;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Social History Section Template Id' of 'Social History Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Encounters Section Template Id' of 'Encounters Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SOCIAL_HISTORY_SECTION__SOCIAL_HISTORY_SECTION_TEMPLATE_ID = 45;
+	public static final int ENCOUNTERS_SECTION__HITSP_ENCOUNTERS_SECTION_TEMPLATE_ID = 46;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounters Section Template Id' of 'Encounters Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Medical Equipment Section Template Id' of 'Medical Equipment Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENCOUNTERS_SECTION__ENCOUNTERS_SECTION_TEMPLATE_ID = 46;
+	public static final int MEDICAL_EQUIPMENT_SECTION__HITSP_MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID = 47;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medical Equipment Section Template Id' of 'Medical Equipment Section'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Template Id' of 'Result'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICAL_EQUIPMENT_SECTION__MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID = 47;
+	public static final int RESULT__RESULT_TEMPLATE_ID = 48;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Code' of 'Result'.
@@ -458,7 +458,7 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT__RESULT_CODE = 48;
+	public static final int RESULT__RESULT_CODE = 49;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Effective Time' of 'Result'.
@@ -466,55 +466,47 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT__RESULT_EFFECTIVE_TIME = 49;
+	public static final int RESULT__RESULT_EFFECTIVE_TIME = 50;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Observation Template Id' of 'Result'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Language Spoken Template Id' of 'Language Spoken'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESULT__RESULT_OBSERVATION_TEMPLATE_ID = 50;
+	public static final int LANGUAGE_SPOKEN__LANGUAGE_SPOKEN_TEMPLATE_ID = 51;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Language Communication Template Id' of 'Language Spoken'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Insurance Provider Template Id' of 'Insurance Provider'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LANGUAGE_SPOKEN__LANGUAGE_COMMUNICATION_TEMPLATE_ID = 51;
+	public static final int INSURANCE_PROVIDER__INSURANCE_PROVIDER_TEMPLATE_ID = 52;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Coverage Activity Template Id' of 'Insurance Provider'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Healthcare Provider Template Id' of 'Healthcare Provider'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int INSURANCE_PROVIDER__COVERAGE_ACTIVITY_TEMPLATE_ID = 52;
+	public static final int HEALTHCARE_PROVIDER__HEALTHCARE_PROVIDER_TEMPLATE_ID = 53;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Healthcare Providers Pharmacies Template Id' of 'Healthcare Provider'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Immunization Template Id' of 'Immunization'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HEALTHCARE_PROVIDER__HEALTHCARE_PROVIDERS_PHARMACIES_TEMPLATE_ID = 53;
+	public static final int IMMUNIZATION__HITSP_IMMUNIZATION_TEMPLATE_ID = 54;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Activity Template Id' of 'Immunization'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate HITSP Comment Template Id' of 'Comment'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IMMUNIZATION__MEDICATION_ACTIVITY_TEMPLATE_ID = 54;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Comment Template Id' of 'Comment'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int COMMENT__COMMENT_TEMPLATE_ID = 55;
+	public static final int COMMENT__HITSP_COMMENT_TEMPLATE_ID = 55;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Condition Entry Effective Time' of 'Condition Entry'.
@@ -523,6 +515,14 @@ public class HITSPValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public static final int CONDITION_ENTRY__CONDITION_ENTRY_EFFECTIVE_TIME = 6;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Summary Template Id' of 'Patient Summary'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PATIENT_SUMMARY__PATIENT_SUMMARY_TEMPLATE_ID = 7;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -691,44 +691,28 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsProblemObservation(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsAlertObservation(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsPatientAwareness(allergyDrugSensitivity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAllergyDrugSensitivity_validateProblemActTemplateId(allergyDrugSensitivity, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActTemplateId(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActClassCode(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEffectiveTime(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEpisodeObservation(allergyDrugSensitivity, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_validateConcernEntryTemplateId(allergyDrugSensitivity, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_validateConcernEntryEffectiveTime(allergyDrugSensitivity, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateAllergyIntoleranceConcern_validateAllergyIntoleranceConcernTemplateId(allergyDrugSensitivity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAllergyDrugSensitivity_validateAllergyDrugSensitivityTemplateId(allergyDrugSensitivity, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateProblemActTemplateId constraint of '<em>Allergy Drug Sensitivity</em>'.
+	 * Validates the validateAllergyDrugSensitivityTemplateId constraint of '<em>Allergy Drug Sensitivity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAllergyDrugSensitivity_validateProblemActTemplateId(AllergyDrugSensitivity allergyDrugSensitivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateProblemActTemplateId", getObjectLabel(allergyDrugSensitivity, context) },
-						 new Object[] { allergyDrugSensitivity },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateAllergyIntoleranceConcern_validateProblemActTemplateId(allergyDrugSensitivity, diagnostics, context);
+	public boolean validateAllergyDrugSensitivity_validateAllergyDrugSensitivityTemplateId(AllergyDrugSensitivity allergyDrugSensitivity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return allergyDrugSensitivity.validateAllergyDrugSensitivityTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -745,42 +729,25 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(medication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedication_validateMedicationActivityTemplateId(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(medication, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateMedication_validateMedicationTemplateId(medication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateHITSPMedicationTemplateId(medication, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateMedicationActivityTemplateId constraint of '<em>Medication</em>'.
+	 * Validates the validateHITSPMedicationTemplateId constraint of '<em>Medication</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedication_validateMedicationActivityTemplateId(Medication medication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateMedicationActivityTemplateId", getObjectLabel(medication, context) },
-						 new Object[] { medication },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateMedication_validateMedicationActivityTemplateId(medication, diagnostics, context);
+	public boolean validateMedication_validateHITSPMedicationTemplateId(Medication medication, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medication.validateHITSPMedicationTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -801,14 +768,16 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsProblemObservation(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsAlertObservation(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActContainsPatientAwareness(condition, diagnostics, context);
-		if (result || diagnostics != null) result &= iheValidator.validateProblemConcernEntry_validateProblemActTemplateId(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActTemplateId(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActClassCode(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActMoodCode(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActId(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActCodeNullFlavor(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEffectiveTime(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemAct_validateProblemActEpisodeObservation(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_validateConcernEntryTemplateId(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateConcernEntry_validateConcernEntryEffectiveTime(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateProblemConcernEntry_validateProblemConcernEntryTemplateId(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateProblemConcernEntry_validateProblemConcernEntryProblemEntry(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCondition_validateConditionTemplateId(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCondition_validateConditionText(condition, diagnostics, context);
@@ -886,11 +855,13 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentAdvanceDirectivesSection(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentPayersSection(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateContinuityOfCareDocument_validateContinuityOfCareDocumentPurposeSection(patientSummary, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePatientSummary_validateMedicalDocumentTemplateId(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateMedicalDocument_validateMedicalDocumentTemplateId(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateMedicalSummary_validateMedicalSummaryProblemConcernEntry(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateMedicalSummary_validateMedicalSummaryAllergyConcernEntry(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateMedicalSummary_validateMedicalSummaryMedications(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateMedicalSummary_validateMedicalSummaryTemplateId(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateMedicalSummary_validateMedicalSummaryCode(patientSummary, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePatientSummary_validatePatientSummaryTemplateId(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePatientSummary_validatePatientSummaryAdvanceDirectivesSection(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePatientSummary_validatePatientSummaryAllergiesReactionsSection(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePatientSummary_validatePatientSummaryProblemListSection(patientSummary, diagnostics, context);
@@ -899,6 +870,16 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validatePatientSummary_validatePatientSummaryPayersSection(patientSummary, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePatientSummary_validatePatientSummaryMedicationsSection(patientSummary, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the validatePatientSummaryTemplateId constraint of '<em>Patient Summary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePatientSummary_validatePatientSummaryTemplateId(PatientSummary patientSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return patientSummary.validatePatientSummaryTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -972,35 +953,6 @@ public class HITSPValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateMedicalDocumentTemplateId constraint of '<em>Patient Summary</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePatientSummary_validateMedicalDocumentTemplateId(PatientSummary patientSummary, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateMedicalDocumentTemplateId", getObjectLabel(patientSummary, context) },
-						 new Object[] { patientSummary },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateMedicalSummary_validateMedicalDocumentTemplateId(patientSummary, diagnostics, context);
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1013,13 +965,16 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vitalSignsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsSection_validateVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionCode(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionTitle(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionText(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateVitalSignsSection_validateVitalSignsSectionVitalSignsOrganizer(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateVitalSignsSection_validateIHEVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateCodedVitalSignsSection_validateCodedVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateCodedVitalSignsSection_validateCodedVitalSignsSectionVitalSignsOrganizer(vitalSignsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignsSection_validateHITSPVitalSignsSectionVitalSigns(vitalSignsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsSection_validateHITSPVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
 		return result;
 	}
 
@@ -1034,32 +989,13 @@ public class HITSPValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateVitalSignsSectionTemplateId constraint of '<em>Vital Signs Section</em>'.
+	 * Validates the validateHITSPVitalSignsSectionTemplateId constraint of '<em>Vital Signs Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignsSection_validateVitalSignsSectionTemplateId(VitalSignsSection vitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateVitalSignsSectionTemplateId", getObjectLabel(vitalSignsSection, context) },
-						 new Object[] { vitalSignsSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateCodedVitalSignsSection_validateVitalSignsSectionTemplateId(vitalSignsSection, diagnostics, context);
+	public boolean validateVitalSignsSection_validateHITSPVitalSignsSectionTemplateId(VitalSignsSection vitalSignsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSignsSection.validateHITSPVitalSignsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1078,7 +1014,7 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationReferenceRangeRequired(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationNoObservationRangeCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationInformationSource(vitalSign, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSign_validateResultObservationTemplateId(vitalSign, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationTemplateId(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationMoodCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationId(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateResultObservation_validateResultObservationEffectiveTime(vitalSign, diagnostics, context);
@@ -1090,40 +1026,23 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= iheValidator.validateSimpleObservation_validateSimpleObservationTemplateId(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateSimpleObservation_validateSimpleObservationId(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateSimpleObservation_validateSimpleObservationStatusCode(vitalSign, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationTemplateId(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationValue(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationInterpretationCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationMethodCode(vitalSign, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateVitalSignObservation_validateVitalSignObservationTargetSiteCode(vitalSign, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSign_validateVitalSignTemplateId(vitalSign, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateResultObservationTemplateId constraint of '<em>Vital Sign</em>'.
+	 * Validates the validateVitalSignTemplateId constraint of '<em>Vital Sign</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSign_validateResultObservationTemplateId(VitalSign vitalSign, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateResultObservationTemplateId", getObjectLabel(vitalSign, context) },
-						 new Object[] { vitalSign },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateVitalSignObservation_validateResultObservationTemplateId(vitalSign, diagnostics, context);
+	public boolean validateVitalSign_validateVitalSignTemplateId(VitalSign vitalSign, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vitalSign.validateVitalSignTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1168,41 +1087,24 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(payersSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePayersSection_validatePayersSectionTemplateId(payersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionTemplateId(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionCode(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionTitle(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionCoverageActivity(payersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validatePayersSection_validateIHEPayersSectionTemplateId(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validatePayersSection_validateIHEPayersSectionCoverageEntry(payersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePayersSection_validateHITSPPayersSectionTemplateId(payersSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validatePayersSectionTemplateId constraint of '<em>Payers Section</em>'.
+	 * Validates the validateHITSPPayersSectionTemplateId constraint of '<em>Payers Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePayersSection_validatePayersSectionTemplateId(PayersSection payersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validatePayersSectionTemplateId", getObjectLabel(payersSection, context) },
-						 new Object[] { payersSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validatePayersSection_validatePayersSectionTemplateId(payersSection, diagnostics, context);
+	public boolean validatePayersSection_validateHITSPPayersSectionTemplateId(PayersSection payersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return payersSection.validateHITSPPayersSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1218,41 +1120,24 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(allergiesReactionsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(allergiesReactionsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(allergiesReactionsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAllergiesReactionsSection_validateAlertsSectionTemplateId(allergiesReactionsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionTemplateId(allergiesReactionsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionCode(allergiesReactionsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionTitle(allergiesReactionsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionText(allergiesReactionsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateAlertsSection_validateAlertsSectionProblemAct(allergiesReactionsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateAllergiesReactionsSection_validateAllergiesReactionsSectionTemplateId(allergiesReactionsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAllergiesReactionsSection_validateHITSPAllergiesReactionsSectionTemplateId(allergiesReactionsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateAlertsSectionTemplateId constraint of '<em>Allergies Reactions Section</em>'.
+	 * Validates the validateHITSPAllergiesReactionsSectionTemplateId constraint of '<em>Allergies Reactions Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAllergiesReactionsSection_validateAlertsSectionTemplateId(AllergiesReactionsSection allergiesReactionsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateAlertsSectionTemplateId", getObjectLabel(allergiesReactionsSection, context) },
-						 new Object[] { allergiesReactionsSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateAllergiesReactionsSection_validateAlertsSectionTemplateId(allergiesReactionsSection, diagnostics, context);
+	public boolean validateAllergiesReactionsSection_validateHITSPAllergiesReactionsSectionTemplateId(AllergiesReactionsSection allergiesReactionsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return allergiesReactionsSection.validateHITSPAllergiesReactionsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1268,14 +1153,26 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(problemListSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemListSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemListSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemListSection_validateProblemSectionTemplateId(problemListSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionTemplateId(problemListSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionCode(problemListSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionTitle(problemListSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionText(problemListSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemSection_validateProblemSectionProblemAct(problemListSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateActiveProblemsSection_validateActiveProblemsSectionTemplateId(problemListSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateActiveProblemsSection_validateActiveProblemsSectionProblemConcernEntry(problemListSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemListSection_validateProblemListSectionTemplateId(problemListSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemListSection_validateProblemListSectionCondition(problemListSection, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the validateProblemListSectionTemplateId constraint of '<em>Problem List Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProblemListSection_validateProblemListSectionTemplateId(ProblemListSection problemListSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return problemListSection.validateProblemListSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1286,35 +1183,6 @@ public class HITSPValidator extends EObjectValidator {
 	 */
 	public boolean validateProblemListSection_validateProblemListSectionCondition(ProblemListSection problemListSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return problemListSection.validateProblemListSectionCondition(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateProblemSectionTemplateId constraint of '<em>Problem List Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProblemListSection_validateProblemSectionTemplateId(ProblemListSection problemListSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateProblemSectionTemplateId", getObjectLabel(problemListSection, context) },
-						 new Object[] { problemListSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateActiveProblemsSection_validateProblemSectionTemplateId(problemListSection, diagnostics, context);
 	}
 
 	/**
@@ -1330,38 +1198,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(historyOfPastIllnessSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(historyOfPastIllnessSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(historyOfPastIllnessSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHistoryOfPastIllnessSection_validateHistoryOfPastIllnessSectionTemplateId(historyOfPastIllnessSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateHistoryOfPastIllnessSection_validateHistoryOfPastIllnessSectionTemplateId(historyOfPastIllnessSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateHistoryOfPastIllnessSection_validateHistoryOfPastIllnessSectionCode(historyOfPastIllnessSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHistoryOfPastIllnessSection_validateHITSPHistoryOfPastIllnessSectionTemplateId(historyOfPastIllnessSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateHistoryOfPastIllnessSectionTemplateId constraint of '<em>History Of Past Illness Section</em>'.
+	 * Validates the validateHITSPHistoryOfPastIllnessSectionTemplateId constraint of '<em>History Of Past Illness Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHistoryOfPastIllnessSection_validateHistoryOfPastIllnessSectionTemplateId(HistoryOfPastIllnessSection historyOfPastIllnessSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateHistoryOfPastIllnessSectionTemplateId", getObjectLabel(historyOfPastIllnessSection, context) },
-						 new Object[] { historyOfPastIllnessSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateHistoryOfPastIllnessSection_validateHistoryOfPastIllnessSectionTemplateId(historyOfPastIllnessSection, diagnostics, context);
+	public boolean validateHistoryOfPastIllnessSection_validateHITSPHistoryOfPastIllnessSectionTemplateId(HistoryOfPastIllnessSection historyOfPastIllnessSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return historyOfPastIllnessSection.validateHITSPHistoryOfPastIllnessSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1377,38 +1227,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(chiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(chiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(chiefComplaintSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateChiefComplaintSection_validateChiefComplaintSectionTemplateId(chiefComplaintSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateChiefComplaintSection_validateChiefComplaintSectionTemplateId(chiefComplaintSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateChiefComplaintSection_validateChiefComplaintSectionCode(chiefComplaintSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateChiefComplaintSection_validateHITSPChiefComplaintSectionTemplateId(chiefComplaintSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateChiefComplaintSectionTemplateId constraint of '<em>Chief Complaint Section</em>'.
+	 * Validates the validateHITSPChiefComplaintSectionTemplateId constraint of '<em>Chief Complaint Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateChiefComplaintSection_validateChiefComplaintSectionTemplateId(ChiefComplaintSection chiefComplaintSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateChiefComplaintSectionTemplateId", getObjectLabel(chiefComplaintSection, context) },
-						 new Object[] { chiefComplaintSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateChiefComplaintSection_validateChiefComplaintSectionTemplateId(chiefComplaintSection, diagnostics, context);
+	public boolean validateChiefComplaintSection_validateHITSPChiefComplaintSectionTemplateId(ChiefComplaintSection chiefComplaintSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return chiefComplaintSection.validateHITSPChiefComplaintSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1424,38 +1256,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(reasonForReferralSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reasonForReferralSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reasonForReferralSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateReasonForReferralSection_validateReasonForReferralSectionTemplateId(reasonForReferralSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateReasonForReferralSection_validateReasonForReferralSectionTemplateId(reasonForReferralSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateReasonForReferralSection_validateReasonForReferralSectionCode(reasonForReferralSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateReasonForReferralSection_validateHITSPReasonForReferralSectionTemplateId(reasonForReferralSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateReasonForReferralSectionTemplateId constraint of '<em>Reason For Referral Section</em>'.
+	 * Validates the validateHITSPReasonForReferralSectionTemplateId constraint of '<em>Reason For Referral Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateReasonForReferralSection_validateReasonForReferralSectionTemplateId(ReasonForReferralSection reasonForReferralSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateReasonForReferralSectionTemplateId", getObjectLabel(reasonForReferralSection, context) },
-						 new Object[] { reasonForReferralSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateReasonForReferralSection_validateReasonForReferralSectionTemplateId(reasonForReferralSection, diagnostics, context);
+	public boolean validateReasonForReferralSection_validateHITSPReasonForReferralSectionTemplateId(ReasonForReferralSection reasonForReferralSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return reasonForReferralSection.validateHITSPReasonForReferralSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1471,38 +1285,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(historyOfPresentIllness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(historyOfPresentIllness, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(historyOfPresentIllness, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHistoryOfPresentIllness_validateHistoryOfPresentIllnessTemplateId(historyOfPresentIllness, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateHistoryOfPresentIllness_validateHistoryOfPresentIllnessTemplateId(historyOfPresentIllness, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateHistoryOfPresentIllness_validateHistoryOfPresentIllnessCode(historyOfPresentIllness, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHistoryOfPresentIllness_validateHITSPHistoryOfPresentIllnessTemplateId(historyOfPresentIllness, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateHistoryOfPresentIllnessTemplateId constraint of '<em>History Of Present Illness</em>'.
+	 * Validates the validateHITSPHistoryOfPresentIllnessTemplateId constraint of '<em>History Of Present Illness</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHistoryOfPresentIllness_validateHistoryOfPresentIllnessTemplateId(HistoryOfPresentIllness historyOfPresentIllness, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateHistoryOfPresentIllnessTemplateId", getObjectLabel(historyOfPresentIllness, context) },
-						 new Object[] { historyOfPresentIllness },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateHistoryOfPresentIllness_validateHistoryOfPresentIllnessTemplateId(historyOfPresentIllness, diagnostics, context);
+	public boolean validateHistoryOfPresentIllness_validateHITSPHistoryOfPresentIllnessTemplateId(HistoryOfPresentIllness historyOfPresentIllness, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return historyOfPresentIllness.validateHITSPHistoryOfPresentIllnessTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1518,39 +1314,23 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(surgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(surgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(surgeriesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSurgeriesSection_validateProceduresSectionTemplateId(surgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionTemplateId(surgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionCode(surgeriesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProceduresSection_validateProceduresSectionTitle(surgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateSurgeriesSection_validateSurgeriesSectionTemplateId(surgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateCodedSurgeriesSection_validateCodedSurgeriesSectionTemplateId(surgeriesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSurgeriesSection_validateHITSPSurgeriesSectionTemplateId(surgeriesSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateProceduresSectionTemplateId constraint of '<em>Surgeries Section</em>'.
+	 * Validates the validateHITSPSurgeriesSectionTemplateId constraint of '<em>Surgeries Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSurgeriesSection_validateProceduresSectionTemplateId(SurgeriesSection surgeriesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateProceduresSectionTemplateId", getObjectLabel(surgeriesSection, context) },
-						 new Object[] { surgeriesSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateCodedSurgeriesSection_validateProceduresSectionTemplateId(surgeriesSection, diagnostics, context);
+	public boolean validateSurgeriesSection_validateHITSPSurgeriesSectionTemplateId(SurgeriesSection surgeriesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return surgeriesSection.validateHITSPSurgeriesSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1566,41 +1346,23 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(functionalStatusSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateFunctionalStatusSection_validateFunctionalStatusSectionTemplateId(functionalStatusSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateFunctionalStatusSection_validateFunctionalStatusSectionTemplateId(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateFunctionalStatusSection_validateFunctionalStatusSectionCode(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateFunctionalStatusSection_validateFunctionalStatusSectionTitle(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateFunctionalStatusSection_validateFunctionalStatusSectionProblemAct(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateFunctionalStatusSection_validateFunctionalStatusSectionResultOrganizer(functionalStatusSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateFunctionalStatusSection_validateHITSPFunctionalStatusSectionTemplateId(functionalStatusSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateFunctionalStatusSectionTemplateId constraint of '<em>Functional Status Section</em>'.
+	 * Validates the validateHITSPFunctionalStatusSectionTemplateId constraint of '<em>Functional Status Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFunctionalStatusSection_validateFunctionalStatusSectionTemplateId(FunctionalStatusSection functionalStatusSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateFunctionalStatusSectionTemplateId", getObjectLabel(functionalStatusSection, context) },
-						 new Object[] { functionalStatusSection },
-						 context));
-			}
-			return false;
-		}
-		return ccdValidator.validateFunctionalStatusSection_validateFunctionalStatusSectionTemplateId(functionalStatusSection, diagnostics, context);
+	public boolean validateFunctionalStatusSection_validateHITSPFunctionalStatusSectionTemplateId(FunctionalStatusSection functionalStatusSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return functionalStatusSection.validateHITSPFunctionalStatusSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1616,38 +1378,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(hospitalAdmissionDiagnosisSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hospitalAdmissionDiagnosisSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hospitalAdmissionDiagnosisSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHospitalAdmissionDiagnosisSection_validateHospitalAdmissionDiagnosisSectionTemplateId(hospitalAdmissionDiagnosisSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateHospitalAdmissionDiagnosisSection_validateHospitalAdmissionDiagnosisSectionTemplateId(hospitalAdmissionDiagnosisSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateHospitalAdmissionDiagnosisSection_validateHospitalAdmissionDiagnosisSectionCode(hospitalAdmissionDiagnosisSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHospitalAdmissionDiagnosisSection_validateHITSPHospitalAdmissionDiagnosisSectionTemplateId(hospitalAdmissionDiagnosisSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateHospitalAdmissionDiagnosisSectionTemplateId constraint of '<em>Hospital Admission Diagnosis Section</em>'.
+	 * Validates the validateHITSPHospitalAdmissionDiagnosisSectionTemplateId constraint of '<em>Hospital Admission Diagnosis Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHospitalAdmissionDiagnosisSection_validateHospitalAdmissionDiagnosisSectionTemplateId(HospitalAdmissionDiagnosisSection hospitalAdmissionDiagnosisSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateHospitalAdmissionDiagnosisSectionTemplateId", getObjectLabel(hospitalAdmissionDiagnosisSection, context) },
-						 new Object[] { hospitalAdmissionDiagnosisSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateHospitalAdmissionDiagnosisSection_validateHospitalAdmissionDiagnosisSectionTemplateId(hospitalAdmissionDiagnosisSection, diagnostics, context);
+	public boolean validateHospitalAdmissionDiagnosisSection_validateHITSPHospitalAdmissionDiagnosisSectionTemplateId(HospitalAdmissionDiagnosisSection hospitalAdmissionDiagnosisSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return hospitalAdmissionDiagnosisSection.validateHITSPHospitalAdmissionDiagnosisSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1663,38 +1407,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(dischargeDiagnosisSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dischargeDiagnosisSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dischargeDiagnosisSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDischargeDiagnosisSection_validateDischargeDiagnosisSectionTemplateId(dischargeDiagnosisSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateDischargeDiagnosisSection_validateDischargeDiagnosisSectionTemplateId(dischargeDiagnosisSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateDischargeDiagnosisSection_validateDischargeDiagnosisSectionCode(dischargeDiagnosisSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDischargeDiagnosisSection_validateHITSPDischargeDiagnosisSectionTemplateId(dischargeDiagnosisSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateDischargeDiagnosisSectionTemplateId constraint of '<em>Discharge Diagnosis Section</em>'.
+	 * Validates the validateHITSPDischargeDiagnosisSectionTemplateId constraint of '<em>Discharge Diagnosis Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDischargeDiagnosisSection_validateDischargeDiagnosisSectionTemplateId(DischargeDiagnosisSection dischargeDiagnosisSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateDischargeDiagnosisSectionTemplateId", getObjectLabel(dischargeDiagnosisSection, context) },
-						 new Object[] { dischargeDiagnosisSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateDischargeDiagnosisSection_validateDischargeDiagnosisSectionTemplateId(dischargeDiagnosisSection, diagnostics, context);
+	public boolean validateDischargeDiagnosisSection_validateHITSPDischargeDiagnosisSectionTemplateId(DischargeDiagnosisSection dischargeDiagnosisSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return dischargeDiagnosisSection.validateHITSPDischargeDiagnosisSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1710,39 +1436,22 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(medicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicationsSection_validateMedicationsSectionTemplateId(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationsSection_validateMedicationsSectionTemplateId(medicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationsSection_validateMedicationsSectionCode(medicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationsSection_validateMedicationsSectionTitle(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateMedicationsSection_validateIHEMedicationsSectionTemplateId(medicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicationsSection_validateHITSPMedicationsSectionTemplateId(medicationsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateMedicationsSectionTemplateId constraint of '<em>Medications Section</em>'.
+	 * Validates the validateHITSPMedicationsSectionTemplateId constraint of '<em>Medications Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationsSection_validateMedicationsSectionTemplateId(MedicationsSection medicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateMedicationsSectionTemplateId", getObjectLabel(medicationsSection, context) },
-						 new Object[] { medicationsSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateMedicationsSection_validateMedicationsSectionTemplateId(medicationsSection, diagnostics, context);
+	public boolean validateMedicationsSection_validateHITSPMedicationsSectionTemplateId(MedicationsSection medicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicationsSection.validateHITSPMedicationsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1758,38 +1467,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(admissionMedicationHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(admissionMedicationHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(admissionMedicationHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAdmissionMedicationHistorySection_validateAdmissionMedicationHistorySectionTemplateId(admissionMedicationHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateAdmissionMedicationHistorySection_validateAdmissionMedicationHistorySectionTemplateId(admissionMedicationHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateAdmissionMedicationHistorySection_validateAdmissionMedicationHistorySectionCode(admissionMedicationHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAdmissionMedicationHistorySection_validateHITSPAdmissionMedicationHistorySectionTemplateId(admissionMedicationHistorySection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateAdmissionMedicationHistorySectionTemplateId constraint of '<em>Admission Medication History Section</em>'.
+	 * Validates the validateHITSPAdmissionMedicationHistorySectionTemplateId constraint of '<em>Admission Medication History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAdmissionMedicationHistorySection_validateAdmissionMedicationHistorySectionTemplateId(AdmissionMedicationHistorySection admissionMedicationHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateAdmissionMedicationHistorySectionTemplateId", getObjectLabel(admissionMedicationHistorySection, context) },
-						 new Object[] { admissionMedicationHistorySection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateAdmissionMedicationHistorySection_validateAdmissionMedicationHistorySectionTemplateId(admissionMedicationHistorySection, diagnostics, context);
+	public boolean validateAdmissionMedicationHistorySection_validateHITSPAdmissionMedicationHistorySectionTemplateId(AdmissionMedicationHistorySection admissionMedicationHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return admissionMedicationHistorySection.validateHITSPAdmissionMedicationHistorySectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1805,38 +1496,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(hospitalDischargeMedicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hospitalDischargeMedicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hospitalDischargeMedicationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHospitalDischargeMedicationsSection_validateHospitalDischargeMedicationsSectionTemplateId(hospitalDischargeMedicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateHospitalDischargeMedicationsSection_validateHospitalDischargeMedicationsSectionTemplateId(hospitalDischargeMedicationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateHospitalDischargeMedicationsSection_validateHospitalDischargeMedicationsSectionCode(hospitalDischargeMedicationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHospitalDischargeMedicationsSection_validateHITSPHospitalDischargeMedicationsSectionTemplateId(hospitalDischargeMedicationsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateHospitalDischargeMedicationsSectionTemplateId constraint of '<em>Hospital Discharge Medications Section</em>'.
+	 * Validates the validateHITSPHospitalDischargeMedicationsSectionTemplateId constraint of '<em>Hospital Discharge Medications Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHospitalDischargeMedicationsSection_validateHospitalDischargeMedicationsSectionTemplateId(HospitalDischargeMedicationsSection hospitalDischargeMedicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateHospitalDischargeMedicationsSectionTemplateId", getObjectLabel(hospitalDischargeMedicationsSection, context) },
-						 new Object[] { hospitalDischargeMedicationsSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateHospitalDischargeMedicationsSection_validateHospitalDischargeMedicationsSectionTemplateId(hospitalDischargeMedicationsSection, diagnostics, context);
+	public boolean validateHospitalDischargeMedicationsSection_validateHITSPHospitalDischargeMedicationsSectionTemplateId(HospitalDischargeMedicationsSection hospitalDischargeMedicationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return hospitalDischargeMedicationsSection.validateHITSPHospitalDischargeMedicationsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1852,38 +1525,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(medicationsAdministeredSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationsAdministeredSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationsAdministeredSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicationsAdministeredSection_validateMedicationsAdministeredSectionTemplateId(medicationsAdministeredSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateMedicationsAdministeredSection_validateMedicationsAdministeredSectionTemplateId(medicationsAdministeredSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateMedicationsAdministeredSection_validateMedicationsAdministeredSectionCode(medicationsAdministeredSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicationsAdministeredSection_validateHITSPMedicationsAdministeredSectionTemplateId(medicationsAdministeredSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateMedicationsAdministeredSectionTemplateId constraint of '<em>Medications Administered Section</em>'.
+	 * Validates the validateHITSPMedicationsAdministeredSectionTemplateId constraint of '<em>Medications Administered Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationsAdministeredSection_validateMedicationsAdministeredSectionTemplateId(MedicationsAdministeredSection medicationsAdministeredSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateMedicationsAdministeredSectionTemplateId", getObjectLabel(medicationsAdministeredSection, context) },
-						 new Object[] { medicationsAdministeredSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateMedicationsAdministeredSection_validateMedicationsAdministeredSectionTemplateId(medicationsAdministeredSection, diagnostics, context);
+	public boolean validateMedicationsAdministeredSection_validateHITSPMedicationsAdministeredSectionTemplateId(MedicationsAdministeredSection medicationsAdministeredSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicationsAdministeredSection.validateHITSPMedicationsAdministeredSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1899,40 +1554,24 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(advanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(advanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(advanceDirectivesSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionTemplateId(advanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionTemplateId(advanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionCode(advanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionTitle(advanceDirectivesSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionAdvanceDirectiveObservation(advanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateAdvanceDirectivesSection_validateIHEAdvanceDirectivesSectionTemplateId(advanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateCodedAdvanceDirectivesSection_validateCodedAdvanceDirectivesSectionTemplateId(advanceDirectivesSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAdvanceDirectivesSection_validateHITSPAdvanceDirectivesSectionTemplateId(advanceDirectivesSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateAdvanceDirectivesSectionTemplateId constraint of '<em>Advance Directives Section</em>'.
+	 * Validates the validateHITSPAdvanceDirectivesSectionTemplateId constraint of '<em>Advance Directives Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAdvanceDirectivesSection_validateAdvanceDirectivesSectionTemplateId(AdvanceDirectivesSection advanceDirectivesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateAdvanceDirectivesSectionTemplateId", getObjectLabel(advanceDirectivesSection, context) },
-						 new Object[] { advanceDirectivesSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateCodedAdvanceDirectivesSection_validateAdvanceDirectivesSectionTemplateId(advanceDirectivesSection, diagnostics, context);
+	public boolean validateAdvanceDirectivesSection_validateHITSPAdvanceDirectivesSectionTemplateId(AdvanceDirectivesSection advanceDirectivesSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return advanceDirectivesSection.validateHITSPAdvanceDirectivesSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1948,15 +1587,27 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(immunizationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateImmunizationsSection_validateImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionCode(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionTitle(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionText(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionMedicationActivity(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionSupplyActivity(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateImmunizationsSection_validateIHEImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateImmunizationsSection_validateIHEImmunizationsSectionImmunization(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateImmunizationsSection_validateHITSPImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateImmunizationsSection_validateHITSPImmunizationsSectionImmunization(immunizationsSection, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the validateHITSPImmunizationsSectionTemplateId constraint of '<em>Immunizations Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateImmunizationsSection_validateHITSPImmunizationsSectionTemplateId(ImmunizationsSection immunizationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return immunizationsSection.validateHITSPImmunizationsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1967,35 +1618,6 @@ public class HITSPValidator extends EObjectValidator {
 	 */
 	public boolean validateImmunizationsSection_validateHITSPImmunizationsSectionImmunization(ImmunizationsSection immunizationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return immunizationsSection.validateHITSPImmunizationsSectionImmunization(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateImmunizationsSectionTemplateId constraint of '<em>Immunizations Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateImmunizationsSection_validateImmunizationsSectionTemplateId(ImmunizationsSection immunizationsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateImmunizationsSectionTemplateId", getObjectLabel(immunizationsSection, context) },
-						 new Object[] { immunizationsSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateImmunizationsSection_validateImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
 	}
 
 	/**
@@ -2011,38 +1633,21 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(physicalExamSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(physicalExamSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(physicalExamSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePhysicalExamSection_validatePhysicalExamNarrativeSectionTemplateId(physicalExamSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validatePhysicalExamNarrativeSection_validatePhysicalExamNarrativeSectionTemplateId(physicalExamSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validatePhysicalExamNarrativeSection_validatePhysicalExamNarrativeSectionCode(physicalExamSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validatePhysicalExamSection_validatePhysicalExamSectionTemplateId(physicalExamSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePhysicalExamSection_validateHITSPPhysicalExamSectionTemplateId(physicalExamSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validatePhysicalExamNarrativeSectionTemplateId constraint of '<em>Physical Exam Section</em>'.
+	 * Validates the validateHITSPPhysicalExamSectionTemplateId constraint of '<em>Physical Exam Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePhysicalExamSection_validatePhysicalExamNarrativeSectionTemplateId(PhysicalExamSection physicalExamSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validatePhysicalExamNarrativeSectionTemplateId", getObjectLabel(physicalExamSection, context) },
-						 new Object[] { physicalExamSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validatePhysicalExamSection_validatePhysicalExamNarrativeSectionTemplateId(physicalExamSection, diagnostics, context);
+	public boolean validatePhysicalExamSection_validateHITSPPhysicalExamSectionTemplateId(PhysicalExamSection physicalExamSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return physicalExamSection.validateHITSPPhysicalExamSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2058,38 +1663,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(reviewOfSystemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reviewOfSystemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reviewOfSystemsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateReviewOfSystemsSection_validateReviewOfSystemsSectionTemplateId(reviewOfSystemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateReviewOfSystemsSection_validateReviewOfSystemsSectionTemplateId(reviewOfSystemsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateReviewOfSystemsSection_validateReviewOfSystemsSectionCode(reviewOfSystemsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateReviewOfSystemsSection_validateHITSPReviewOfSystemsSectionTemplateId(reviewOfSystemsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateReviewOfSystemsSectionTemplateId constraint of '<em>Review Of Systems Section</em>'.
+	 * Validates the validateHITSPReviewOfSystemsSectionTemplateId constraint of '<em>Review Of Systems Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateReviewOfSystemsSection_validateReviewOfSystemsSectionTemplateId(ReviewOfSystemsSection reviewOfSystemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateReviewOfSystemsSectionTemplateId", getObjectLabel(reviewOfSystemsSection, context) },
-						 new Object[] { reviewOfSystemsSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateReviewOfSystemsSection_validateReviewOfSystemsSectionTemplateId(reviewOfSystemsSection, diagnostics, context);
+	public boolean validateReviewOfSystemsSection_validateHITSPReviewOfSystemsSectionTemplateId(ReviewOfSystemsSection reviewOfSystemsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return reviewOfSystemsSection.validateHITSPReviewOfSystemsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2105,38 +1692,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(hospitalCourseSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hospitalCourseSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hospitalCourseSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHospitalCourseSection_validateHospitalCourseSectionTemplateId(hospitalCourseSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateHospitalCourseSection_validateHospitalCourseSectionTemplateId(hospitalCourseSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateHospitalCourseSection_validateHospitalCourseSectionCode(hospitalCourseSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHospitalCourseSection_validateHITSPHospitalCourseSectionTemplateId(hospitalCourseSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateHospitalCourseSectionTemplateId constraint of '<em>Hospital Course Section</em>'.
+	 * Validates the validateHITSPHospitalCourseSectionTemplateId constraint of '<em>Hospital Course Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHospitalCourseSection_validateHospitalCourseSectionTemplateId(HospitalCourseSection hospitalCourseSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateHospitalCourseSectionTemplateId", getObjectLabel(hospitalCourseSection, context) },
-						 new Object[] { hospitalCourseSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateHospitalCourseSection_validateHospitalCourseSectionTemplateId(hospitalCourseSection, diagnostics, context);
+	public boolean validateHospitalCourseSection_validateHITSPHospitalCourseSectionTemplateId(HospitalCourseSection hospitalCourseSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return hospitalCourseSection.validateHITSPHospitalCourseSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2152,38 +1721,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(diagnosticResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(diagnosticResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(diagnosticResultsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiagnosticResultsSection_validateCodedResultsSectionTemplateId(diagnosticResultsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateCodedResultsSection_validateCodedResultsSectionTemplateId(diagnosticResultsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateCodedResultsSection_validateCodedResultsSectionCode(diagnosticResultsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiagnosticResultsSection_validateDiagnosticResultsSectionTemplateId(diagnosticResultsSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateCodedResultsSectionTemplateId constraint of '<em>Diagnostic Results Section</em>'.
+	 * Validates the validateDiagnosticResultsSectionTemplateId constraint of '<em>Diagnostic Results Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDiagnosticResultsSection_validateCodedResultsSectionTemplateId(DiagnosticResultsSection diagnosticResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateCodedResultsSectionTemplateId", getObjectLabel(diagnosticResultsSection, context) },
-						 new Object[] { diagnosticResultsSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateCodedResultsSection_validateCodedResultsSectionTemplateId(diagnosticResultsSection, diagnostics, context);
+	public boolean validateDiagnosticResultsSection_validateDiagnosticResultsSectionTemplateId(DiagnosticResultsSection diagnosticResultsSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return diagnosticResultsSection.validateDiagnosticResultsSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2199,38 +1750,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(assessmentAndPlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assessmentAndPlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assessmentAndPlanSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssessmentAndPlanSection_validateAssessmentAndPlanSectionTemplateId(assessmentAndPlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateAssessmentAndPlanSection_validateAssessmentAndPlanSectionTemplateId(assessmentAndPlanSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateAssessmentAndPlanSection_validateAssessmentAndPlanSectionCode(assessmentAndPlanSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssessmentAndPlanSection_validateHITSPAssessmentAndPlanSectionTemplateId(assessmentAndPlanSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateAssessmentAndPlanSectionTemplateId constraint of '<em>Assessment And Plan Section</em>'.
+	 * Validates the validateHITSPAssessmentAndPlanSectionTemplateId constraint of '<em>Assessment And Plan Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAssessmentAndPlanSection_validateAssessmentAndPlanSectionTemplateId(AssessmentAndPlanSection assessmentAndPlanSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateAssessmentAndPlanSectionTemplateId", getObjectLabel(assessmentAndPlanSection, context) },
-						 new Object[] { assessmentAndPlanSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateAssessmentAndPlanSection_validateAssessmentAndPlanSectionTemplateId(assessmentAndPlanSection, diagnostics, context);
+	public boolean validateAssessmentAndPlanSection_validateHITSPAssessmentAndPlanSectionTemplateId(AssessmentAndPlanSection assessmentAndPlanSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return assessmentAndPlanSection.validateHITSPAssessmentAndPlanSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2246,7 +1779,7 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(planOfCareSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePlanOfCareSection_validatePlanOfCareSectionTemplateId(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionTemplateId(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionCode(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionTitle(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionText(planOfCareSection, diagnostics, context);
@@ -2256,36 +1789,19 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivityProcedure(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivitySubstanceAdministration(planOfCareSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePlanOfCareSection_validatePlanOfCareSectionPlanOfCareActivitySupply(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateCarePlanSection_validateCarePlanSectionTemplateId(planOfCareSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlanOfCareSection_validateHITSPPlanOfCareSectionTemplateId(planOfCareSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validatePlanOfCareSectionTemplateId constraint of '<em>Plan Of Care Section</em>'.
+	 * Validates the validateHITSPPlanOfCareSectionTemplateId constraint of '<em>Plan Of Care Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePlanOfCareSection_validatePlanOfCareSectionTemplateId(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validatePlanOfCareSectionTemplateId", getObjectLabel(planOfCareSection, context) },
-						 new Object[] { planOfCareSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateCarePlanSection_validatePlanOfCareSectionTemplateId(planOfCareSection, diagnostics, context);
+	public boolean validatePlanOfCareSection_validateHITSPPlanOfCareSectionTemplateId(PlanOfCareSection planOfCareSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return planOfCareSection.validateHITSPPlanOfCareSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2301,39 +1817,22 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(familyHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(familyHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(familyHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateFamilyHistorySection_validateFamilyHistorySectionTemplateId(familyHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateFamilyHistorySection_validateFamilyHistorySectionTemplateId(familyHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateFamilyHistorySection_validateFamilyHistorySectionCode(familyHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateFamilyHistorySection_validateFamilyHistorySectionTitle(familyHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateFamilyMedicalHistorySection_validateFamilyMedicalHistorySectionTemplateId(familyHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateFamilyHistorySection_validateHITSPFamilyHistorySectionTemplateId(familyHistorySection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateFamilyHistorySectionTemplateId constraint of '<em>Family History Section</em>'.
+	 * Validates the validateHITSPFamilyHistorySectionTemplateId constraint of '<em>Family History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFamilyHistorySection_validateFamilyHistorySectionTemplateId(FamilyHistorySection familyHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateFamilyHistorySectionTemplateId", getObjectLabel(familyHistorySection, context) },
-						 new Object[] { familyHistorySection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateFamilyMedicalHistorySection_validateFamilyHistorySectionTemplateId(familyHistorySection, diagnostics, context);
+	public boolean validateFamilyHistorySection_validateHITSPFamilyHistorySectionTemplateId(FamilyHistorySection familyHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return familyHistorySection.validateHITSPFamilyHistorySectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2349,39 +1848,22 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(socialHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(socialHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(socialHistorySection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSocialHistorySection_validateSocialHistorySectionTemplateId(socialHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateSocialHistorySection_validateSocialHistorySectionTemplateId(socialHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateSocialHistorySection_validateSocialHistorySectionCode(socialHistorySection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateSocialHistorySection_validateSocialHistorySectionTitle(socialHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateSocialHistorySection_validateIHESocialHistorySectionTemplateId(socialHistorySection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSocialHistorySection_validateHITSPSocialHistorySectionTemplateId(socialHistorySection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateSocialHistorySectionTemplateId constraint of '<em>Social History Section</em>'.
+	 * Validates the validateHITSPSocialHistorySectionTemplateId constraint of '<em>Social History Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSocialHistorySection_validateSocialHistorySectionTemplateId(SocialHistorySection socialHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateSocialHistorySectionTemplateId", getObjectLabel(socialHistorySection, context) },
-						 new Object[] { socialHistorySection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateSocialHistorySection_validateSocialHistorySectionTemplateId(socialHistorySection, diagnostics, context);
+	public boolean validateSocialHistorySection_validateHITSPSocialHistorySectionTemplateId(SocialHistorySection socialHistorySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return socialHistorySection.validateHITSPSocialHistorySectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2397,39 +1879,22 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(encountersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(encountersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(encountersSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEncountersSection_validateEncountersSectionTemplateId(encountersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_validateEncountersSectionTemplateId(encountersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_validateEncountersSectionCode(encountersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateEncountersSection_validateEncountersSectionTitle(encountersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateEncounterHistorySection_validateEncounterHistorySectionTemplateId(encountersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEncountersSection_validateHITSPEncountersSectionTemplateId(encountersSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateEncountersSectionTemplateId constraint of '<em>Encounters Section</em>'.
+	 * Validates the validateHITSPEncountersSectionTemplateId constraint of '<em>Encounters Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEncountersSection_validateEncountersSectionTemplateId(EncountersSection encountersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateEncountersSectionTemplateId", getObjectLabel(encountersSection, context) },
-						 new Object[] { encountersSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateEncounterHistorySection_validateEncountersSectionTemplateId(encountersSection, diagnostics, context);
+	public boolean validateEncountersSection_validateHITSPEncountersSectionTemplateId(EncountersSection encountersSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return encountersSection.validateHITSPEncountersSectionTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2445,45 +1910,28 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(medicalEquipmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicalEquipmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicalEquipmentSection, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicalEquipmentSection_validateMedicalEquipmentSectionTemplateId(medicalEquipmentSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicalEquipmentSection_validateMedicalEquipmentSectionTemplateId(medicalEquipmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicalEquipmentSection_validateMedicalEquipmentSectionCode(medicalEquipmentSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicalEquipmentSection_validateMedicalEquipmentSectionTitle(medicalEquipmentSection, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateMedicalDevicesSection_validateMedicalDevicesSectionTemplateId(medicalEquipmentSection, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicalEquipmentSection_validateHITSPMedicalEquipmentSectionTemplateId(medicalEquipmentSection, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateMedicalEquipmentSectionTemplateId constraint of '<em>Medical Equipment Section</em>'.
+	 * Validates the validateHITSPMedicalEquipmentSectionTemplateId constraint of '<em>Medical Equipment Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicalEquipmentSection_validateMedicalEquipmentSectionTemplateId(MedicalEquipmentSection medicalEquipmentSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateMedicalEquipmentSectionTemplateId", getObjectLabel(medicalEquipmentSection, context) },
-						 new Object[] { medicalEquipmentSection },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateMedicalDevicesSection_validateMedicalEquipmentSectionTemplateId(medicalEquipmentSection, diagnostics, context);
+	public boolean validateMedicalEquipmentSection_validateHITSPMedicalEquipmentSectionTemplateId(MedicalEquipmentSection medicalEquipmentSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return medicalEquipmentSection.validateHITSPMedicalEquipmentSectionTemplateId(diagnostics, context);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateResult(Result result, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean theResult = validate_EveryMultiplicityConforms(result, diagnostics, context);
@@ -2508,10 +1956,20 @@ public class HITSPValidator extends EObjectValidator {
 		if (theResult || diagnostics != null) theResult &= iheValidator.validateSimpleObservation_validateSimpleObservationTemplateId(result, diagnostics, context);
 		if (theResult || diagnostics != null) theResult &= iheValidator.validateSimpleObservation_validateSimpleObservationId(result, diagnostics, context);
 		if (theResult || diagnostics != null) theResult &= iheValidator.validateSimpleObservation_validateSimpleObservationStatusCode(result, diagnostics, context);
-//		if (theResult || diagnostics != null) theResult &= validateResult_validateResultTemplateId(result, diagnostics, context);
+		if (theResult || diagnostics != null) theResult &= validateResult_validateResultTemplateId(result, diagnostics, context);
 		if (theResult || diagnostics != null) theResult &= validateResult_validateResultCode(result, diagnostics, context);
 		if (theResult || diagnostics != null) theResult &= validateResult_validateResultEffectiveTime(result, diagnostics, context);
 		return theResult;
+	}
+
+	/**
+	 * Validates the validateResultTemplateId constraint of '<em>Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateResult_validateResultTemplateId(Result result, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return result.validateResultTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2535,35 +1993,6 @@ public class HITSPValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateResultObservationTemplateId constraint of '<em>Result</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateResult_validateResultObservationTemplateId(Result result, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateResultObservationTemplateId", getObjectLabel(result, context) },
-						 new Object[] { result },
-						 context));
-			}
-			return false;
-		}
-		return ccdValidator.validateResultObservation_validateResultObservationTemplateId(result, diagnostics, context);
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2577,18 +2006,18 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(languageSpoken, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(languageSpoken, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateLanguageCommunication_validateIHELanguageCommunicationTemplateId(languageSpoken, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLanguageSpoken_validateLanguageCommunicationTemplateId(languageSpoken, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLanguageSpoken_validateLanguageSpokenTemplateId(languageSpoken, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateLanguageCommunicationTemplateId constraint of '<em>Language Spoken</em>'.
+	 * Validates the validateLanguageSpokenTemplateId constraint of '<em>Language Spoken</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateLanguageSpoken_validateLanguageCommunicationTemplateId(LanguageSpoken languageSpoken, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return languageSpoken.validateLanguageCommunicationTemplateId(diagnostics, context);
+	public boolean validateLanguageSpoken_validateLanguageSpokenTemplateId(LanguageSpoken languageSpoken, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return languageSpoken.validateLanguageSpokenTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2604,43 +2033,26 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(insuranceProvider, diagnostics, context);
-		if (result || diagnostics != null) result &= validateInsuranceProvider_validateCoverageActivityTemplateId(insuranceProvider, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityTemplateId(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityClassCode(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityMoodCode(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityId(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityStatusCode(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityCode(insuranceProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityPolicyActivity(insuranceProvider, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateCoverageEntry_validateCoverageEntryTemplateId(insuranceProvider, diagnostics, context);
+		if (result || diagnostics != null) result &= validateInsuranceProvider_validateInsuranceProviderTemplateId(insuranceProvider, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateCoverageActivityTemplateId constraint of '<em>Insurance Provider</em>'.
+	 * Validates the validateInsuranceProviderTemplateId constraint of '<em>Insurance Provider</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateInsuranceProvider_validateCoverageActivityTemplateId(InsuranceProvider insuranceProvider, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateCoverageActivityTemplateId", getObjectLabel(insuranceProvider, context) },
-						 new Object[] { insuranceProvider },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateCoverageEntry_validateCoverageActivityTemplateId(insuranceProvider, diagnostics, context);
+	public boolean validateInsuranceProvider_validateInsuranceProviderTemplateId(InsuranceProvider insuranceProvider, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return insuranceProvider.validateInsuranceProviderTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2656,37 +2068,19 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(healthcareProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(healthcareProvider, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(healthcareProvider, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHealthcareProvider_validateHealthcareProvidersPharmaciesTemplateId(healthcareProvider, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateHealthcareProvidersPharmacies_validateHealthcareProvidersPharmaciesTemplateId(healthcareProvider, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHealthcareProvider_validateHealthcareProviderTemplateId(healthcareProvider, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateHealthcareProvidersPharmaciesTemplateId constraint of '<em>Healthcare Provider</em>'.
+	 * Validates the validateHealthcareProviderTemplateId constraint of '<em>Healthcare Provider</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHealthcareProvider_validateHealthcareProvidersPharmaciesTemplateId(HealthcareProvider healthcareProvider, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateHealthcareProvidersPharmaciesTemplateId", getObjectLabel(healthcareProvider, context) },
-						 new Object[] { healthcareProvider },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateHealthcareProvidersPharmacies_validateHealthcareProvidersPharmaciesTemplateId(healthcareProvider, diagnostics, context);
+	public boolean validateHealthcareProvider_validateHealthcareProviderTemplateId(HealthcareProvider healthcareProvider, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return healthcareProvider.validateHealthcareProviderTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2703,42 +2097,25 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(immunization, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(immunization, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(immunization, diagnostics, context);
-		if (result || diagnostics != null) result &= validateImmunization_validateMedicationActivityTemplateId(immunization, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(immunization, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(immunization, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(immunization, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(immunization, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(immunization, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(immunization, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateImmunization_validateImmunizationTemplateId(immunization, diagnostics, context);
+		if (result || diagnostics != null) result &= validateImmunization_validateHITSPImmunizationTemplateId(immunization, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateMedicationActivityTemplateId constraint of '<em>Immunization</em>'.
+	 * Validates the validateHITSPImmunizationTemplateId constraint of '<em>Immunization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateImmunization_validateMedicationActivityTemplateId(Immunization immunization, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateMedicationActivityTemplateId", getObjectLabel(immunization, context) },
-						 new Object[] { immunization },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateImmunization_validateMedicationActivityTemplateId(immunization, diagnostics, context);
+	public boolean validateImmunization_validateHITSPImmunizationTemplateId(Immunization immunization, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return immunization.validateHITSPImmunizationTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2754,41 +2131,23 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(comment, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(comment, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(comment, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComment_validateCommentTemplateId(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateComment_validateCommentTemplateId(comment, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateComment_validateCommentClassCode(comment, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateComment_validateCommentCode(comment, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateComment_validateCommentStatusCode(comment, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateComment_validateCommentText(comment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComment_validateHITSPCommentTemplateId(comment, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateCommentTemplateId constraint of '<em>Comment</em>'.
+	 * Validates the validateHITSPCommentTemplateId constraint of '<em>Comment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComment_validateCommentTemplateId(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validateCommentTemplateId", getObjectLabel(comment, context) },
-						 new Object[] { comment },
-						 context));
-			}
-			return false;
-		}
-		return iheValidator.validateComment_validateCommentTemplateId(comment, diagnostics, context);
+	public boolean validateComment_validateHITSPCommentTemplateId(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return comment.validateHITSPCommentTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -2806,13 +2165,14 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationInformationSource(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationContainsPatientAwareness(conditionEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= iheValidator.validateProblemEntry_validateProblemObservationTemplateId(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationTemplateId(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationMoodCode(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationStatusCode(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationEffectiveTime(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationProblemStatusObservation(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationProblemHealthStatusObservation(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateProblemObservation_validateProblemObservationAgeObservation(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateProblemEntry_validateProblemEntryTemplateId(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateProblemEntry_validateProblemEntryText(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateProblemEntry_validateProblemEntryValue(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConditionEntry_validateConditionEntryEffectiveTime(conditionEntry, diagnostics, context);

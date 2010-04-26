@@ -49,9 +49,8 @@ public class DischargeDiagnosisSectionImpl extends org.openhealthtools.mdht.uml.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateDischargeDiagnosisSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DischargeDiagnosisSectionOperations.validateDischargeDiagnosisSectionTemplateId(this, diagnostics, context);
+	public boolean validateHITSPDischargeDiagnosisSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return DischargeDiagnosisSectionOperations.validateHITSPDischargeDiagnosisSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

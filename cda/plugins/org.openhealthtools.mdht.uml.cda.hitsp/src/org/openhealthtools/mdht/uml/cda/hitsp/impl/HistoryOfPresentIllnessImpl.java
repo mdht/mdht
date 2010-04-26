@@ -49,9 +49,8 @@ public class HistoryOfPresentIllnessImpl extends org.openhealthtools.mdht.uml.cd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateHistoryOfPresentIllnessTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessTemplateId(this, diagnostics, context);
+	public boolean validateHITSPHistoryOfPresentIllnessTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryOfPresentIllnessOperations.validateHITSPHistoryOfPresentIllnessTemplateId(this, diagnostics, context);
 	}
 
 	/**

@@ -49,9 +49,8 @@ public class ConditionalDosingImpl extends MedicationImpl implements Conditional
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateMedicationActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ConditionalDosingOperations.validateMedicationActivityTemplateId(this, diagnostics, context);
+	public boolean validateConditionalDosingTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionalDosingOperations.validateConditionalDosingTemplateId(this, diagnostics, context);
 	}
 
 	/**

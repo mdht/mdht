@@ -50,9 +50,8 @@ public class MedicalDevicesSectionImpl extends MedicalEquipmentSectionImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateMedicalEquipmentSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicalDevicesSectionOperations.validateMedicalEquipmentSectionTemplateId(this, diagnostics, context);
+	public boolean validateMedicalDevicesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicalDevicesSectionOperations.validateMedicalDevicesSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

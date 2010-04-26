@@ -22,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PatientSummaryOperations;
+import org.openhealthtools.mdht.uml.cda.ihe.operations.MedicalDocumentOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.MedicalSummaryOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
@@ -60,7 +61,7 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 * @generated
 	 */
 	public boolean validateMedicalDocumentTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PatientSummaryOperations.validateMedicalDocumentTemplateId(this, diagnostics, context);
+		return MedicalDocumentOperations.validateMedicalDocumentTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -95,8 +96,26 @@ public class PatientSummaryImpl extends ContinuityOfCareDocumentImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateMedicalSummaryTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicalSummaryOperations.validateMedicalSummaryTemplateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateMedicalSummaryCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return MedicalSummaryOperations.validateMedicalSummaryCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePatientSummaryTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientSummaryOperations.validatePatientSummaryTemplateId(this, diagnostics, context);
 	}
 
 	/**

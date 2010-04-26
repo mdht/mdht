@@ -50,9 +50,8 @@ public class ProcedureEntryProcedureActivityProcedureImpl extends ProcedureActiv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateProcedureActivityProcedureTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureActivityProcedureTemplateId(this, diagnostics, context);
+	public boolean validateProcedureEntryProcedureActivityProcedureTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureEntryProcedureActivityProcedureTemplateId(this, diagnostics, context);
 	}
 
 	/**

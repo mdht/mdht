@@ -50,9 +50,8 @@ public class DiagnosticResultsSectionImpl extends CodedResultsSectionImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateCodedResultsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return DiagnosticResultsSectionOperations.validateCodedResultsSectionTemplateId(this, diagnostics, context);
+	public boolean validateDiagnosticResultsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return DiagnosticResultsSectionOperations.validateDiagnosticResultsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

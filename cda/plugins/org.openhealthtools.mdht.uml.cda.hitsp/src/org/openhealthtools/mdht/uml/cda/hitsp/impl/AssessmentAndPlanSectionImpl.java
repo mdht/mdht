@@ -49,9 +49,8 @@ public class AssessmentAndPlanSectionImpl extends org.openhealthtools.mdht.uml.c
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateAssessmentAndPlanSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AssessmentAndPlanSectionOperations.validateAssessmentAndPlanSectionTemplateId(this, diagnostics, context);
+	public boolean validateHITSPAssessmentAndPlanSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AssessmentAndPlanSectionOperations.validateHITSPAssessmentAndPlanSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

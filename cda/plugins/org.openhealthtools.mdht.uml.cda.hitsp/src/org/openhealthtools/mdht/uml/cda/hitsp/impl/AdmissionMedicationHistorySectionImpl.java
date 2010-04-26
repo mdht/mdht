@@ -49,9 +49,8 @@ public class AdmissionMedicationHistorySectionImpl extends org.openhealthtools.m
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateAdmissionMedicationHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdmissionMedicationHistorySectionOperations.validateAdmissionMedicationHistorySectionTemplateId(this, diagnostics, context);
+	public boolean validateHITSPAdmissionMedicationHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdmissionMedicationHistorySectionOperations.validateHITSPAdmissionMedicationHistorySectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

@@ -689,26 +689,66 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:AssociationValidation xmi:id="_dL8DcEvqEd-GNbUQBie2ig" message="HITSP Patient Summary MAY contain [0..1] component such that it, SHALL contain [1..1] Encounters Section (templateId: 2.16.840.1.113883.3.88.11.83.127)" severity="INFO" base_Association="_ZxFGIkvqEd-GNbUQBie2ig">
     <ruleId>C32-[CT1-5]</ruleId>
   </CDA:AssociationValidation>
-  <CDA:ConstraintValidation xmi:id="_ngc3kEyXEd-GNbUQBie2ig" severity="INFO" base_Constraint="_mYOrQEyXEd-GNbUQBie2ig">
+  <CDA:ConstraintValidation xmi:id="_ngc3kEyXEd-GNbUQBie2ig" message="HITSP Patient Summary MAY satisfy: Contains 0..* HealthcareProvider in cda:documentationOf/cda:serviceEvent/cda:performer" severity="INFO" base_Constraint="_mYOrQEyXEd-GNbUQBie2ig">
     <ruleId>C32-[CT1-6]</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_LarqQEyYEd-GNbUQBie2ig" base_Constraint="_JDwPIEyYEd-GNbUQBie2ig">
+  <CDA:ConstraintValidation xmi:id="_LarqQEyYEd-GNbUQBie2ig" message="HITSP Patient Summary SHALL satisfy: Contains 0..* InformationSource in ancestor-or-self::./cda:author[1]" base_Constraint="_JDwPIEyYEd-GNbUQBie2ig">
     <ruleId>C32-[CT1-8]</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:AssociationValidation xmi:id="_t5Y6IEyYEd-GNbUQBie2ig" severity="INFO" base_Association="_r7jUckyYEd-GNbUQBie2ig">
+  <CDA:AssociationValidation xmi:id="_t5Y6IEyYEd-GNbUQBie2ig" message="HITSP Patient Summary MAY contain [0..1] component such that it, SHALL contain [1..1] Payers Section (templateId: 2.16.840.1.113883.3.88.11.83.101)" severity="INFO" base_Association="_r7jUckyYEd-GNbUQBie2ig">
     <ruleId>C32-[CT1-9]</ruleId>
   </CDA:AssociationValidation>
-  <CDA:ConstraintValidation xmi:id="_URhSoEyZEd-GNbUQBie2ig" severity="WARNING" base_Constraint="_HFtYoEyZEd-GNbUQBie2ig">
+  <CDA:ConstraintValidation xmi:id="_URhSoEyZEd-GNbUQBie2ig" message="HITSP Patient Summary SHOULD satisfy: Contains 0..* LanguageSpoken in cda:recordTarget/cda:patientRole/cda:patient/cda:languageCommunication" severity="WARNING" base_Constraint="_HFtYoEyZEd-GNbUQBie2ig">
     <ruleId>C32-[CT1-10]</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:AssociationValidation xmi:id="_KH8lIEyaEd-GNbUQBie2ig" severity="INFO" base_Association="_JO-80kyaEd-GNbUQBie2ig">
+  <CDA:AssociationValidation xmi:id="_KH8lIEyaEd-GNbUQBie2ig" message="HITSP Patient Summary MAY contain [0..1] component such that it, SHALL contain [1..1] Medications Section (templateId: 2.16.840.1.113883.3.88.11.83.112)" severity="INFO" base_Association="_JO-80kyaEd-GNbUQBie2ig">
     <ruleId>C32-[CT1-11]</ruleId>
   </CDA:AssociationValidation>
-  <CDA:ConstraintValidation xmi:id="_l3J3IEyaEd-GNbUQBie2ig" base_Constraint="_kctSYEyaEd-GNbUQBie2ig">
+  <CDA:ConstraintValidation xmi:id="_l3J3IEyaEd-GNbUQBie2ig" message="HITSP Patient Summary SHALL satisfy: Contains 1..1 Person Information in cda:recordTarget/cda:patientRole" base_Constraint="_kctSYEyaEd-GNbUQBie2ig">
     <ruleId>C32-[CT1-12]</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:AssociationValidation xmi:id="_z9yaoEyaEd-GNbUQBie2ig" severity="INFO" base_Association="_AEKd8UyYEd-GNbUQBie2ig">
+  <CDA:AssociationValidation xmi:id="_z9yaoEyaEd-GNbUQBie2ig" message="HITSP Patient Summary MAY contain [0..1] component such that it, SHALL contain [1..1] Immunizations Section (templateId: 2.16.840.1.113883.3.88.11.83.117)" severity="INFO" base_Association="_AEKd8UyYEd-GNbUQBie2ig">
     <ruleId>C32-[CT1-7]</ruleId>
   </CDA:AssociationValidation>
   <CDA:ConformsTo xmi:id="_Sqad0E79Ed-qMv3VdH3jrA" base_Generalization="_H4qVgDxbEd6JwqSGecoePg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGFsEFF6Ed-Lud-5SYZhMw" base_Generalization="_hsBnwHrWEd68l9lQ-TLEBQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGIvYFF6Ed-Lud-5SYZhMw" base_Generalization="_w0bkkHrGEd68l9lQ-TLEBQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGJ9gFF6Ed-Lud-5SYZhMw" base_Generalization="_0EOJQKRmEd6t_4WfM070fA" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGJ9gVF6Ed-Lud-5SYZhMw" base_Generalization="_na8Y0EmfEd-v4PAJSUtbvQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGKkkFF6Ed-Lud-5SYZhMw" base_Generalization="_VeaIMK7HEd6_ioDelDcPPg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGLLoFF6Ed-Lud-5SYZhMw" base_Generalization="_g9_UcK7IEd6_ioDelDcPPg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGLysFF6Ed-Lud-5SYZhMw" base_Generalization="_1sbqcMfXEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGMZwFF6Ed-Lud-5SYZhMw" base_Generalization="_Xue-EMfZEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGNA0FF6Ed-Lud-5SYZhMw" base_Generalization="_epE8MMfaEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGNA0VF6Ed-Lud-5SYZhMw" base_Generalization="_nhstQMfbEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGNn4FF6Ed-Lud-5SYZhMw" base_Generalization="__87QkMfcEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGOO8FF6Ed-Lud-5SYZhMw" base_Generalization="_eIhFcMfdEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGO2AFF6Ed-Lud-5SYZhMw" base_Generalization="_yYzyAMfhEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGPdEFF6Ed-Lud-5SYZhMw" base_Generalization="_UcKsMMfuEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGPdEVF6Ed-Lud-5SYZhMw" base_Generalization="_pp-twMfuEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGQEIFF6Ed-Lud-5SYZhMw" base_Generalization="_m79y4MfvEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGQrMFF6Ed-Lud-5SYZhMw" base_Generalization="_HTsIIMfwEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGRSQFF6Ed-Lud-5SYZhMw" base_Generalization="_Y4PkAMfwEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGRSQVF6Ed-Lud-5SYZhMw" base_Generalization="_IMdGsMfxEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGR5UFF6Ed-Lud-5SYZhMw" base_Generalization="_TYzN4MfyEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGSgYFF6Ed-Lud-5SYZhMw" base_Generalization="_-RLecMfyEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGTHcFF6Ed-Lud-5SYZhMw" base_Generalization="_wzIIcMfzEd6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGTugFF6Ed-Lud-5SYZhMw" base_Generalization="_iBayMMf0Ed6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGTugVF6Ed-Lud-5SYZhMw" base_Generalization="_Yda28Mf1Ed6VjLXh4DcWSg" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGUVkFF6Ed-Lud-5SYZhMw" base_Generalization="_H4oHUMiXEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGU8oFF6Ed-Lud-5SYZhMw" base_Generalization="_LTgrEMidEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGVjsFF6Ed-Lud-5SYZhMw" base_Generalization="_RNzp0MieEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGVjsVF6Ed-Lud-5SYZhMw" base_Generalization="_n1jdUMifEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGWKwFF6Ed-Lud-5SYZhMw" base_Generalization="_U9euoMigEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGWx0FF6Ed-Lud-5SYZhMw" base_Generalization="_7ThccMigEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGXY4FF6Ed-Lud-5SYZhMw" base_Generalization="_BW7T4MiiEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGXY4VF6Ed-Lud-5SYZhMw" base_Generalization="_KMB24MijEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGX_8FF6Ed-Lud-5SYZhMw" base_Generalization="_gF0NoMijEd6mWrHPmrIIfQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGZOEFF6Ed-Lud-5SYZhMw" base_Generalization="_oT1CYDIWEd-SYNRf-pkwtw" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGZOEVF6Ed-Lud-5SYZhMw" base_Generalization="_S1FzcDIXEd-SYNRf-pkwtw" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGZ1IFF6Ed-Lud-5SYZhMw" base_Generalization="_Md7IkDuEEd-B8KE6Jx0UNQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGacMFF6Ed-Lud-5SYZhMw" base_Generalization="_ZNaLkTuHEd-B8KE6Jx0UNQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGbDQFF6Ed-Lud-5SYZhMw" base_Generalization="_pOUDYDuHEd-B8KE6Jx0UNQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGbqUFF6Ed-Lud-5SYZhMw" base_Generalization="_qkWXUTuJEd-B8KE6Jx0UNQ" requiresParentId="true"/>
+  <CDA:ConformsTo xmi:id="_rGbqUVF6Ed-Lud-5SYZhMw" base_Generalization="_B973gUveEd-GNbUQBie2ig" requiresParentId="true"/>
 </xmi:XMI>

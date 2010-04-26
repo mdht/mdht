@@ -49,9 +49,8 @@ public class HospitalDischargeMedicationsSectionImpl extends org.openhealthtools
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateHospitalDischargeMedicationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HospitalDischargeMedicationsSectionOperations.validateHospitalDischargeMedicationsSectionTemplateId(this, diagnostics, context);
+	public boolean validateHITSPHospitalDischargeMedicationsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HospitalDischargeMedicationsSectionOperations.validateHITSPHospitalDischargeMedicationsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**
