@@ -4480,10 +4480,10 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   new String[] {
 			 "statusCode.code", "completed",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.18",
-			 "constraints.validation.error", "AlertObservationTemplateId AlertObservationInformationSource AlertObservationPlayingEntityRequired AlertObservationMoodCode AlertObservationStatusCode AlertObservationEffectiveTime",
+			 "constraints.validation.error", "AlertObservationTemplateId AlertObservationInformationSource AlertObservationPlayingEntityRequired AlertObservationMoodCode AlertObservationStatusCode",
 			 "constraints.validation.warning", "AlertObservationAgentRepresentation",
-			 "moodCode", "EVN",
-			 "constraints.validation.info", "AlertObservationAlertStatusObservation AlertObservationReactionObservation"
+			 "constraints.validation.info", "AlertObservationEffectiveTime AlertObservationAlertStatusObservation AlertObservationReactionObservation",
+			 "moodCode", "EVN"
 		   });																																						
 		addAnnotation
 		  (reactionObservationEClass, 

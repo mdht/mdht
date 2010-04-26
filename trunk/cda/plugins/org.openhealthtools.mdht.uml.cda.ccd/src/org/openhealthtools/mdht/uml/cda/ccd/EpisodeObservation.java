@@ -28,11 +28,13 @@ public interface EpisodeObservation extends Observation {
 	 * <!-- begin-model-doc -->
 	 * self.entryRelationship->one(entry : cda::EntryRelationship | 
 	 *   entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and
-	 *   ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))
+	 *   (not entry.act.oclIsUndefined() or not entry.observation.oclIsUndefined()))
+	 * -- Cannot test for target type without resolving id reference (see HL7 CCD sample document)
+	 * --  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entry : cda::EntryRelationship | \r\n  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and\r\n  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entry : cda::EntryRelationship | \r\n  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and\r\n  (not entry.act.oclIsUndefined() or not entry.observation.oclIsUndefined()))\r\n-- Cannot test for target type without resolving id reference (see HL7 CCD sample document)\r\n--  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))'"
 	 * @generated
 	 */
 	boolean validateEpisodeObservationOneEntryRelationshipSUBJ(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -43,11 +45,13 @@ public interface EpisodeObservation extends Observation {
 	 * <!-- begin-model-doc -->
 	 * self.entryRelationship->exists(entry : cda::EntryRelationship | 
 	 *   entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SAS and
-	 *   (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))
+	 *   (not entry.act.oclIsUndefined() or not entry.observation.oclIsUndefined()))
+	 * -- Cannot test for target type without resolving id reference (see HL7 CCD sample document)
+	 * --  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entry : cda::EntryRelationship | \r\n  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SAS and\r\n  (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->exists(entry : cda::EntryRelationship | \r\n  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SAS and\r\n  (not entry.act.oclIsUndefined() or not entry.observation.oclIsUndefined()))\r\n-- Cannot test for target type without resolving id reference (see HL7 CCD sample document)\r\n--  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))'"
 	 * @generated
 	 */
 	boolean validateEpisodeObservationExistsEntryRelationshipSAS(DiagnosticChain diagnostics, Map<Object, Object> context);
