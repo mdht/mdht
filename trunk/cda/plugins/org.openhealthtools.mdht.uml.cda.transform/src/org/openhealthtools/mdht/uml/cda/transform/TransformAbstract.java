@@ -239,9 +239,9 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 				// use constraint name of parent class
 				constraintName = createTemplateConstraintName((Class)generalization.getGeneral());
 			}
-			else {
-				System.out.println("requiresParentId: " + template.getQualifiedName() + " = " + constraintName);
-			}
+//			else {
+//				System.out.println("requiresParentId: " + template.getQualifiedName() + " = " + constraintName);
+//			}
 		}
 		
 		if (constraintName == null) {
