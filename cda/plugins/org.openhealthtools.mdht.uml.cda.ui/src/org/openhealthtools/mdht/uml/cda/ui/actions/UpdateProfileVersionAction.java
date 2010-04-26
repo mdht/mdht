@@ -73,7 +73,7 @@ public class UpdateProfileVersionAction implements IObjectActionDelegate {
 					editingDomain, "Update CDA Profile") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
-					TreeIterator iterator = EcoreUtil.getAllContents(
+					TreeIterator<Object> iterator = EcoreUtil.getAllContents(
 							Collections.singletonList(namedElement));
 					
 					while (iterator != null && iterator.hasNext()) {
