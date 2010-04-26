@@ -396,7 +396,7 @@
           <language>Analysis</language>
           <language>OCL</language>
           <body>Contains exactly one entryRelationship whose typeCode is 'SUBJ'. This is used to link the episode observation to the target problem act or social history observation.</body>
-          <body>self.entryRelationship->one(entry : cda::EntryRelationship | &#xD;&#xA;  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and&#xD;&#xA;  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))</body>
+          <body>self.entryRelationship->one(entry : cda::EntryRelationship | &#xD;&#xA;  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and&#xD;&#xA;  (not entry.act.oclIsUndefined() or not entry.observation.oclIsUndefined()))&#xD;&#xA;-- Cannot test for target type without resolving id reference (see HL7 CCD sample document)&#xD;&#xA;--  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_3OelQBWlEd-6K-YJpbwRmQ" name="existsEntryRelationshipSAS" constrainedElement="_AwcXkGaKEd6Hk_bPOfEjYA">
@@ -404,7 +404,7 @@
           <language>Analysis</language>
           <language>OCL</language>
           <body>Contain one or more entryRelationship whose typeCode is 'SAS'. The target of the entryRelationship SHALL be a problem act or social history observation. This is used to represent the temporal sequence of episodes.</body>
-          <body>self.entryRelationship->exists(entry : cda::EntryRelationship | &#xD;&#xA;  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SAS and&#xD;&#xA;  (entry.act.oclIsKindOf(ccd::ProblemAct) or entry.observation.oclIsKindOf(ccd::SocialHistoryObservation)))</body>
+          <body>self.entryRelationship->exists(entry : cda::EntryRelationship | &#xD;&#xA;  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SAS and&#xD;&#xA;  (not entry.act.oclIsUndefined() or not entry.observation.oclIsUndefined()))&#xD;&#xA;-- Cannot test for target type without resolving id reference (see HL7 CCD sample document)&#xD;&#xA;--  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_AwcXk2aKEd6Hk_bPOfEjYA">
@@ -2411,7 +2411,7 @@ This section is optional, however it is strongly recommended that it be present 
   <CDA:PropertyValidation xmi:id="_AxkJUBTbEd-6K-YJpbwRmQ" message="CCD Alerts Section SHALL contain [1..1] text" base_Property="_AD_RoBTbEd-6K-YJpbwRmQ"/>
   <CDA:ConstraintValidation xmi:id="_lNJ8oBTbEd-6K-YJpbwRmQ" message="CCD Alerts Section SHALL satisfy: The absence of known allergies, adverse reactions or alerts SHALL be explicitly asserted." base_Constraint="_P7PeMBTbEd-6K-YJpbwRmQ"/>
   <CDA:AssociationValidation xmi:id="_BgWFcBTcEd-6K-YJpbwRmQ" message="CCD Alerts Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] Problem Act (templateId: 2.16.840.1.113883.10.20.1.27)" severity="WARNING" base_Association="_5QGGgBTbEd-6K-YJpbwRmQ"/>
-  <CDA:ConstraintValidation xmi:id="_vCq-UBTdEd-6K-YJpbwRmQ" message="CCD Problem Act SHOULD satisfy: In Problems Section, a Problem Act SHOULD contain a Problem Observation." severity="WARNING" base_Constraint="_tL4b0BTdEd-6K-YJpbwRmQ"/>
+  <CDA:ConstraintValidation xmi:id="_vCq-UBTdEd-6K-YJpbwRmQ" message="CCD Problem Act SHOULD satisfy: In Problem Section, a Problem Act SHOULD contain a Problem Observation." severity="WARNING" base_Constraint="_tL4b0BTdEd-6K-YJpbwRmQ"/>
   <CDA:ConstraintValidation xmi:id="_T98lABTjEd-6K-YJpbwRmQ" message="CCD Problem Act MAY satisfy: A problem act MAY reference a problem observation, alert observation (see section Alerts) or other clinical statement that is the subject of concern, by setting the value for &quot;Act / entryRelationship / @typeCode&quot; to be &quot;SUBJ&quot; 2.16.840.1.113883.5.1002 ActRelationshipType STATIC." severity="INFO" base_Constraint="_BSMQgBTjEd-6K-YJpbwRmQ"/>
   <CDA:ConstraintValidation xmi:id="_hpjAEBToEd-6K-YJpbwRmQ" message="CCD Problem Act SHOULD satisfy: The target of a problem act with Act / entryRelationship / @typeCode=&quot;SUBJ&quot; SHOULD be a problem observation (in the Problem section) or alert observation (in the Alert section), but MAY be some other clinical statement." severity="WARNING" base_Constraint="_fIRWIBToEd-6K-YJpbwRmQ"/>
   <CDA_1:ConstraintValidation xmi:id="_5vwDsBTrEd-6K-YJpbwRmQ" message="CCD Problem Observation MAY satisfy: The value for entryRelationship / @typeCode in a problem observation MAY be &quot;SUBJ&quot; &quot;Subject&quot; 2.16.840.1.113883.5.1002 ActRelationshipType STATIC to reference an age observation." severity="INFO"/>
@@ -2441,7 +2441,7 @@ This section is optional, however it is strongly recommended that it be present 
   <CDA:PropertyValidation xmi:id="_7GIPoBXOEd-6K-YJpbwRmQ" message="CCD Reaction Observation SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_3K_20BXOEd-6K-YJpbwRmQ"/>
   <CDA:PropertyValidation xmi:id="_KJqgQBXPEd-6K-YJpbwRmQ" message="CCD Severity Observation SHALL contain [1..1] @classCode = &quot;OBS&quot;" base_Property="_HpTcUBXPEd-6K-YJpbwRmQ"/>
   <CDA:PropertyValidation xmi:id="_MICRcBXPEd-6K-YJpbwRmQ" message="CCD Severity Observation SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_HpUDYBXPEd-6K-YJpbwRmQ"/>
-  <CDA:PropertyValidation xmi:id="__f8oMBXREd-6K-YJpbwRmQ" message="CCD Alert Observation SHALL contain [0..1] effectiveTime" base_Property="_UKs-0BW4Ed-6K-YJpbwRmQ"/>
+  <CDA:PropertyValidation xmi:id="__f8oMBXREd-6K-YJpbwRmQ" message="CCD Alert Observation MAY contain [0..1] effectiveTime" severity="INFO" base_Property="_UKs-0BW4Ed-6K-YJpbwRmQ"/>
   <CDA:ConstraintValidation xmi:id="_a8sfsBZrEd-kKd2N285_Sw" message="CCD Problem Act MAY satisfy: Contains exactly one Patient Awareness" severity="INFO" base_Constraint="_WdDEkBZrEd-kKd2N285_Sw"/>
   <CDA:ConstraintValidation xmi:id="_vMC4cBZsEd-kKd2N285_Sw" message="CCD Problem Observation MAY satisfy: Contains exactly one Patient Awareness" severity="INFO" base_Constraint="_vL9Y4BZsEd-kKd2N285_Sw"/>
   <CDA:CDATemplate xmi:id="_YVLfUBZ1Ed-i6Lz80y5G5g" message="CCD Age Observation SHALL contain the template identifier 2.16.840.1.113883.10.20.1.38" base_Class="_S7rEABZ1Ed-i6Lz80y5G5g" templateId="2.16.840.1.113883.10.20.1.38" assigningAuthorityName="CCD"/>

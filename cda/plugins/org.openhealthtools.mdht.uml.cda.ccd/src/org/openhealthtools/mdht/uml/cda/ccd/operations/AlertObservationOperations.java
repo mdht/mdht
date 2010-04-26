@@ -458,7 +458,7 @@ public class AlertObservationOperations extends ObservationOperations {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
-						(Diagnostic.ERROR,
+						(Diagnostic.INFO,
 						 CCDValidator.DIAGNOSTIC_SOURCE,
 						 CCDValidator.ALERT_OBSERVATION__ALERT_OBSERVATION_EFFECTIVE_TIME,
 						 CCDPlugin.INSTANCE.getString("AlertObservationEffectiveTime"),

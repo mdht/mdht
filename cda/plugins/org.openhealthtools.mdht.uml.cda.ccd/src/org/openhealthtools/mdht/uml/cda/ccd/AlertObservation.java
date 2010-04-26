@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.Observation;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.ccd.CCDPackage#getAlertObservation()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' templateId.root='2.16.840.1.113883.10.20.1.18' constraints.validation.error='AlertObservationTemplateId AlertObservationInformationSource AlertObservationPlayingEntityRequired AlertObservationMoodCode AlertObservationStatusCode AlertObservationEffectiveTime' constraints.validation.warning='AlertObservationAgentRepresentation' moodCode='EVN' constraints.validation.info='AlertObservationAlertStatusObservation AlertObservationReactionObservation'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation statusCode.code='completed' templateId.root='2.16.840.1.113883.10.20.1.18' constraints.validation.error='AlertObservationTemplateId AlertObservationInformationSource AlertObservationPlayingEntityRequired AlertObservationMoodCode AlertObservationStatusCode' constraints.validation.warning='AlertObservationAgentRepresentation' constraints.validation.info='AlertObservationEffectiveTime AlertObservationAlertStatusObservation AlertObservationReactionObservation' moodCode='EVN'"
  * @generated
  */
 public interface AlertObservation extends Observation {
