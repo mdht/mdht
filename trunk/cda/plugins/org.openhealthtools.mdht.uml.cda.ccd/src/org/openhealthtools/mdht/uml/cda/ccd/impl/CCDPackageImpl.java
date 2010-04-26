@@ -2008,15 +2008,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 
 		initEClass(problemStatusObservationEClass, ProblemStatusObservation.class, "ProblemStatusObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(problemStatusObservationEClass, ecorePackage.getEBoolean(), "validateProblemStatusObservationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(statusObservationEClass, StatusObservation.class, "StatusObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(statusObservationEClass, ecorePackage.getEBoolean(), "validateStatusObservationNoAdditionalParticipants", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2083,15 +2074,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(problemHealthStatusObservationEClass, ProblemHealthStatusObservation.class, "ProblemHealthStatusObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(problemHealthStatusObservationEClass, ecorePackage.getEBoolean(), "validateProblemHealthStatusObservationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(episodeObservationEClass, EpisodeObservation.class, "EpisodeObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2968,25 +2950,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 
 		initEClass(alertStatusObservationEClass, AlertStatusObservation.class, "AlertStatusObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(alertStatusObservationEClass, ecorePackage.getEBoolean(), "validateAlertStatusObservationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(causeOfDeathObservationEClass, CauseOfDeathObservation.class, "CauseOfDeathObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(causeOfDeathObservationEClass, ecorePackage.getEBoolean(), "validateCauseOfDeathObservationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(resultsSectionEClass, ResultsSection.class, "ResultsSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3074,15 +3038,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(medicationStatusObservationEClass, MedicationStatusObservation.class, "MedicationStatusObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(medicationStatusObservationEClass, ecorePackage.getEBoolean(), "validateMedicationStatusObservationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(encounterLocationEClass, EncounterLocation.class, "EncounterLocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3553,15 +3508,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(vitalSignsOrganizerEClass, ecorePackage.getEBoolean(), "validateVitalSignsOrganizerTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(advanceDirectiveObservationEClass, AdvanceDirectiveObservation.class, "AdvanceDirectiveObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(advanceDirectiveObservationEClass, ecorePackage.getEBoolean(), "validateAdvanceDirectiveObservationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -3619,15 +3565,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(advanceDirectiveStatusObservationEClass, AdvanceDirectiveStatusObservation.class, "AdvanceDirectiveStatusObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(advanceDirectiveStatusObservationEClass, ecorePackage.getEBoolean(), "validateAdvanceDirectiveStatusObservationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(advanceDirectiveVerificationEClass, AdvanceDirectiveVerification.class, "AdvanceDirectiveVerification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3898,15 +3835,6 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(functionalStatusObservationEClass, FunctionalStatusObservation.class, "FunctionalStatusObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(functionalStatusObservationEClass, ecorePackage.getEBoolean(), "validateFunctionalStatusObservationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productInstanceEClass, ProductInstance.class, "ProductInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4234,7 +4162,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		
+		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									
 	}
 
 	/**
@@ -4244,12 +4172,47 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																																																																																																																																																																																																																																																													
+		String source = "duplicates";																																																																																																																																																																																																																																											
+		addAnnotation
+		  (problemStatusObservationEClass, 
+		   source, 
+		   new String[] {
+		   });																																
 		addAnnotation
 		  (problemHealthStatusObservationEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						
+		   });																																																																																																																																																																																																																																																																																																																																																																																																															
+		addAnnotation
+		  (alertStatusObservationEClass, 
+		   source, 
+		   new String[] {
+		   });			
+		addAnnotation
+		  (causeOfDeathObservationEClass, 
+		   source, 
+		   new String[] {
+		   });																																											
+		addAnnotation
+		  (medicationStatusObservationEClass, 
+		   source, 
+		   new String[] {
+		   });																																																																																																																																																																																																																						
+		addAnnotation
+		  (vitalSignsOrganizerEClass, 
+		   source, 
+		   new String[] {
+		   });																																
+		addAnnotation
+		  (advanceDirectiveStatusObservationEClass, 
+		   source, 
+		   new String[] {
+		   });																																																																																																																													
+		addAnnotation
+		  (functionalStatusObservationEClass, 
+		   source, 
+		   new String[] {
+		   });																																																																																																																																						
 	}
 
 	/**
@@ -4331,8 +4294,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.50",
-			 "constraints.validation.error", "ProblemStatusObservationTemplateId"
-		   });						
+			 "constraints.validation.error", "StatusObservationTemplateId"
+		   });			
 		addAnnotation
 		  (statusObservationEClass, 
 		   source, 
@@ -4354,10 +4317,10 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
 			 "templateId.root", "2.16.840.1.113883.10.20.1.51",
 			 "code.displayName", "Health status",
-			 "constraints.validation.error", "ProblemHealthStatusObservationTemplateId StatusObservationCode",
+			 "constraints.validation.error", "StatusObservationTemplateId StatusObservationCode",
 			 "code.codeSystemName", "LOINC",
 			 "code.code", "11323-3"
-		   });							
+		   });			
 		addAnnotation
 		  (episodeObservationEClass, 
 		   source, 
@@ -4552,15 +4515,15 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.39",
-			 "constraints.validation.error", "AlertStatusObservationTemplateId"
-		   });						
+			 "constraints.validation.error", "StatusObservationTemplateId"
+		   });			
 		addAnnotation
 		  (causeOfDeathObservationEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.42",
-			 "constraints.validation.error", "CauseOfDeathObservationTemplateId"
-		   });							
+			 "constraints.validation.error", "FamilyHistoryObservationTemplateId"
+		   });				
 		addAnnotation
 		  (resultsSectionEClass, 
 		   source, 
@@ -4591,8 +4554,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.47",
-			 "constraints.validation.error", "MedicationStatusObservationTemplateId"
-		   });						
+			 "constraints.validation.error", "StatusObservationTemplateId"
+		   });			
 		addAnnotation
 		  (encounterLocationEClass, 
 		   source, 
@@ -4720,8 +4683,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.35",
-			 "constraints.validation.error", "VitalSignsOrganizerTemplateId VitalSignsOrganizerInformationSource"
-		   });										
+			 "constraints.validation.error", "ResultOrganizerTemplateId VitalSignsOrganizerInformationSource"
+		   });							
 		addAnnotation
 		  (advanceDirectiveObservationEClass, 
 		   source, 
@@ -4738,8 +4701,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.37",
-			 "constraints.validation.error", "AdvanceDirectiveStatusObservationTemplateId"
-		   });						
+			 "constraints.validation.error", "StatusObservationTemplateId"
+		   });			
 		addAnnotation
 		  (advanceDirectiveVerificationEClass, 
 		   source, 
@@ -4817,8 +4780,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.1.44",
-			 "constraints.validation.error", "FunctionalStatusObservationTemplateId"
-		   });						
+			 "constraints.validation.error", "StatusObservationTemplateId"
+		   });			
 		addAnnotation
 		  (productInstanceEClass, 
 		   source, 

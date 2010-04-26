@@ -558,12 +558,12 @@ public class CCDValidator extends EObjectValidator {
 	public static final int PROBLEM_SECTION__PROBLEM_SECTION_PROBLEM_ACT = 56;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Status Observation Template Id' of 'Problem Status Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation Template Id' of 'Problem Status Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_STATUS_OBSERVATION__PROBLEM_STATUS_OBSERVATION_TEMPLATE_ID = 57;
+	public static final int PROBLEM_STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID = 57;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation No Additional Participants' of 'Status Observation'.
@@ -638,12 +638,12 @@ public class CCDValidator extends EObjectValidator {
 	public static final int STATUS_OBSERVATION__STATUS_OBSERVATION_VALUE = 64;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Problem Health Status Observation Template Id' of 'Problem Health Status Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation Template Id' of 'Problem Health Status Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int PROBLEM_HEALTH_STATUS_OBSERVATION__PROBLEM_HEALTH_STATUS_OBSERVATION_TEMPLATE_ID = 65;
+	public static final int PROBLEM_HEALTH_STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID = 65;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation Code' of 'Problem Health Status Observation'.
@@ -1382,20 +1382,20 @@ public class CCDValidator extends EObjectValidator {
 	public static final int SEVERITY_OBSERVATION__SEVERITY_OBSERVATION_VALUE = 159;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Alert Status Observation Template Id' of 'Alert Status Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation Template Id' of 'Alert Status Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ALERT_STATUS_OBSERVATION__ALERT_STATUS_OBSERVATION_TEMPLATE_ID = 160;
+	public static final int ALERT_STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID = 160;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Cause Of Death Observation Template Id' of 'Cause Of Death Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Family History Observation Template Id' of 'Cause Of Death Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CAUSE_OF_DEATH_OBSERVATION__CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID = 161;
+	public static final int CAUSE_OF_DEATH_OBSERVATION__FAMILY_HISTORY_OBSERVATION_TEMPLATE_ID = 161;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Results Section Template Id' of 'Results Section'.
@@ -1470,12 +1470,12 @@ public class CCDValidator extends EObjectValidator {
 	public static final int MEDICATION_SERIES_NUMBER_OBSERVATION__MEDICATION_SERIES_NUMBER_OBSERVATION_VALUE = 170;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Medication Status Observation Template Id' of 'Medication Status Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation Template Id' of 'Medication Status Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEDICATION_STATUS_OBSERVATION__MEDICATION_STATUS_OBSERVATION_TEMPLATE_ID = 171;
+	public static final int MEDICATION_STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID = 171;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Encounter Location Template Id' of 'Encounter Location'.
@@ -1870,12 +1870,12 @@ public class CCDValidator extends EObjectValidator {
 	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_INFORMATION_SOURCE = 220;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Vital Signs Organizer Template Id' of 'Vital Signs Organizer'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Result Organizer Template Id' of 'Vital Signs Organizer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VITAL_SIGNS_ORGANIZER__VITAL_SIGNS_ORGANIZER_TEMPLATE_ID = 221;
+	public static final int VITAL_SIGNS_ORGANIZER__RESULT_ORGANIZER_TEMPLATE_ID = 221;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Observation Template Id' of 'Advance Directive Observation'.
@@ -1926,12 +1926,12 @@ public class CCDValidator extends EObjectValidator {
 	public static final int ADVANCE_DIRECTIVE_OBSERVATION__ADVANCE_DIRECTIVE_OBSERVATION_EFFECTIVE_TIME = 227;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Status Observation Template Id' of 'Advance Directive Status Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation Template Id' of 'Advance Directive Status Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ADVANCE_DIRECTIVE_STATUS_OBSERVATION__ADVANCE_DIRECTIVE_STATUS_OBSERVATION_TEMPLATE_ID = 228;
+	public static final int ADVANCE_DIRECTIVE_STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID = 228;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Advance Directive Verification Template Id' of 'Advance Directive Verification'.
@@ -2158,12 +2158,12 @@ public class CCDValidator extends EObjectValidator {
 	public static final int FULFILLMENT_INSTRUCTION__FULFILLMENT_INSTRUCTION_MOOD_CODE = 256;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Functional Status Observation Template Id' of 'Functional Status Observation'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Status Observation Template Id' of 'Functional Status Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FUNCTIONAL_STATUS_OBSERVATION__FUNCTIONAL_STATUS_OBSERVATION_TEMPLATE_ID = 257;
+	public static final int FUNCTIONAL_STATUS_OBSERVATION__STATUS_OBSERVATION_TEMPLATE_ID = 257;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Product Instance Template Id' of 'Product Instance'.
@@ -3315,24 +3315,42 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationNoAdditionalParticipants(problemStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationTemplateId(problemStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemStatusObservation_validateStatusObservationTemplateId(problemStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationClassCode(problemStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationMoodCode(problemStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationCode(problemStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationStatusCode(problemStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationValue(problemStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemStatusObservation_validateProblemStatusObservationTemplateId(problemStatusObservation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateProblemStatusObservationTemplateId constraint of '<em>Problem Status Observation</em>'.
+	 * Validates the validateStatusObservationTemplateId constraint of '<em>Problem Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemStatusObservation_validateProblemStatusObservationTemplateId(ProblemStatusObservation problemStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemStatusObservation.validateProblemStatusObservationTemplateId(diagnostics, context);
+	public boolean validateProblemStatusObservation_validateStatusObservationTemplateId(ProblemStatusObservation problemStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateStatusObservationTemplateId", getObjectLabel(problemStatusObservation, context) },
+						 new Object[] { problemStatusObservation },
+						 context));
+			}
+			return false;
+		}
+		return validateStatusObservation_validateStatusObservationTemplateId(problemStatusObservation, diagnostics, context);
 	}
 
 	/**
@@ -3442,24 +3460,42 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationNoAdditionalParticipants(problemHealthStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationTemplateId(problemHealthStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProblemHealthStatusObservation_validateStatusObservationTemplateId(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationClassCode(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationMoodCode(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProblemHealthStatusObservation_validateStatusObservationCode(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationStatusCode(problemHealthStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationValue(problemHealthStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProblemHealthStatusObservation_validateProblemHealthStatusObservationTemplateId(problemHealthStatusObservation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateProblemHealthStatusObservationTemplateId constraint of '<em>Problem Health Status Observation</em>'.
+	 * Validates the validateStatusObservationTemplateId constraint of '<em>Problem Health Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemHealthStatusObservation_validateProblemHealthStatusObservationTemplateId(ProblemHealthStatusObservation problemHealthStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return problemHealthStatusObservation.validateProblemHealthStatusObservationTemplateId(diagnostics, context);
+	public boolean validateProblemHealthStatusObservation_validateStatusObservationTemplateId(ProblemHealthStatusObservation problemHealthStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateStatusObservationTemplateId", getObjectLabel(problemHealthStatusObservation, context) },
+						 new Object[] { problemHealthStatusObservation },
+						 context));
+			}
+			return false;
+		}
+		return validateStatusObservation_validateStatusObservationTemplateId(problemHealthStatusObservation, diagnostics, context);
 	}
 
 	/**
@@ -4816,24 +4852,42 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(alertStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(alertStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationNoAdditionalParticipants(alertStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationTemplateId(alertStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAlertStatusObservation_validateStatusObservationTemplateId(alertStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationClassCode(alertStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationMoodCode(alertStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationCode(alertStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationStatusCode(alertStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationValue(alertStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAlertStatusObservation_validateAlertStatusObservationTemplateId(alertStatusObservation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateAlertStatusObservationTemplateId constraint of '<em>Alert Status Observation</em>'.
+	 * Validates the validateStatusObservationTemplateId constraint of '<em>Alert Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAlertStatusObservation_validateAlertStatusObservationTemplateId(AlertStatusObservation alertStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return alertStatusObservation.validateAlertStatusObservationTemplateId(diagnostics, context);
+	public boolean validateAlertStatusObservation_validateStatusObservationTemplateId(AlertStatusObservation alertStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateStatusObservationTemplateId", getObjectLabel(alertStatusObservation, context) },
+						 new Object[] { alertStatusObservation },
+						 context));
+			}
+			return false;
+		}
+		return validateStatusObservation_validateStatusObservationTemplateId(alertStatusObservation, diagnostics, context);
 	}
 
 	/**
@@ -4849,21 +4903,39 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(causeOfDeathObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(causeOfDeathObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(causeOfDeathObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateFamilyHistoryObservation_validateFamilyHistoryObservationTemplateId(causeOfDeathObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCauseOfDeathObservation_validateFamilyHistoryObservationTemplateId(causeOfDeathObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateFamilyHistoryObservation_validateFamilyHistoryObservationId(causeOfDeathObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateFamilyHistoryObservation_validateFamilyHistoryObservationStatusCode(causeOfDeathObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCauseOfDeathObservation_validateCauseOfDeathObservationTemplateId(causeOfDeathObservation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateCauseOfDeathObservationTemplateId constraint of '<em>Cause Of Death Observation</em>'.
+	 * Validates the validateFamilyHistoryObservationTemplateId constraint of '<em>Cause Of Death Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCauseOfDeathObservation_validateCauseOfDeathObservationTemplateId(CauseOfDeathObservation causeOfDeathObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return causeOfDeathObservation.validateCauseOfDeathObservationTemplateId(diagnostics, context);
+	public boolean validateCauseOfDeathObservation_validateFamilyHistoryObservationTemplateId(CauseOfDeathObservation causeOfDeathObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateFamilyHistoryObservationTemplateId", getObjectLabel(causeOfDeathObservation, context) },
+						 new Object[] { causeOfDeathObservation },
+						 context));
+			}
+			return false;
+		}
+		return validateFamilyHistoryObservation_validateFamilyHistoryObservationTemplateId(causeOfDeathObservation, diagnostics, context);
 	}
 
 	/**
@@ -5011,24 +5083,42 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationNoAdditionalParticipants(medicationStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationTemplateId(medicationStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedicationStatusObservation_validateStatusObservationTemplateId(medicationStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationClassCode(medicationStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationMoodCode(medicationStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationCode(medicationStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationStatusCode(medicationStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationValue(medicationStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedicationStatusObservation_validateMedicationStatusObservationTemplateId(medicationStatusObservation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateMedicationStatusObservationTemplateId constraint of '<em>Medication Status Observation</em>'.
+	 * Validates the validateStatusObservationTemplateId constraint of '<em>Medication Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMedicationStatusObservation_validateMedicationStatusObservationTemplateId(MedicationStatusObservation medicationStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return medicationStatusObservation.validateMedicationStatusObservationTemplateId(diagnostics, context);
+	public boolean validateMedicationStatusObservation_validateStatusObservationTemplateId(MedicationStatusObservation medicationStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateStatusObservationTemplateId", getObjectLabel(medicationStatusObservation, context) },
+						 new Object[] { medicationStatusObservation },
+						 context));
+			}
+			return false;
+		}
+		return validateStatusObservation_validateStatusObservationTemplateId(medicationStatusObservation, diagnostics, context);
 	}
 
 	/**
@@ -5760,14 +5850,13 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateResultOrganizer_validateResultOrganizerComponentElement(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateResultOrganizer_validateResultOrganizerInformationSource(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateResultOrganizer_validateResultOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateResultOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateResultOrganizer_validateResultOrganizerMoodCode(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateResultOrganizer_validateResultOrganizerId(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateResultOrganizer_validateResultOrganizerCode(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateResultOrganizer_validateResultOrganizerStatusCode(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateResultOrganizer_validateResultOrganizerResultObservation(vitalSignsOrganizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateVitalSignsOrganizerInformationSource(vitalSignsOrganizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVitalSignsOrganizer_validateVitalSignsOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
 		return result;
 	}
 
@@ -5782,13 +5871,32 @@ public class CCDValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateVitalSignsOrganizerTemplateId constraint of '<em>Vital Signs Organizer</em>'.
+	 * Validates the validateResultOrganizerTemplateId constraint of '<em>Vital Signs Organizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVitalSignsOrganizer_validateVitalSignsOrganizerTemplateId(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vitalSignsOrganizer.validateVitalSignsOrganizerTemplateId(diagnostics, context);
+	public boolean validateVitalSignsOrganizer_validateResultOrganizerTemplateId(VitalSignsOrganizer vitalSignsOrganizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateResultOrganizerTemplateId", getObjectLabel(vitalSignsOrganizer, context) },
+						 new Object[] { vitalSignsOrganizer },
+						 context));
+			}
+			return false;
+		}
+		return validateResultOrganizer_validateResultOrganizerTemplateId(vitalSignsOrganizer, diagnostics, context);
 	}
 
 	/**
@@ -5887,24 +5995,42 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(advanceDirectiveStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(advanceDirectiveStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationNoAdditionalParticipants(advanceDirectiveStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationTemplateId(advanceDirectiveStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAdvanceDirectiveStatusObservation_validateStatusObservationTemplateId(advanceDirectiveStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationClassCode(advanceDirectiveStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationMoodCode(advanceDirectiveStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationCode(advanceDirectiveStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationStatusCode(advanceDirectiveStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationValue(advanceDirectiveStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAdvanceDirectiveStatusObservation_validateAdvanceDirectiveStatusObservationTemplateId(advanceDirectiveStatusObservation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateAdvanceDirectiveStatusObservationTemplateId constraint of '<em>Advance Directive Status Observation</em>'.
+	 * Validates the validateStatusObservationTemplateId constraint of '<em>Advance Directive Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAdvanceDirectiveStatusObservation_validateAdvanceDirectiveStatusObservationTemplateId(AdvanceDirectiveStatusObservation advanceDirectiveStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return advanceDirectiveStatusObservation.validateAdvanceDirectiveStatusObservationTemplateId(diagnostics, context);
+	public boolean validateAdvanceDirectiveStatusObservation_validateStatusObservationTemplateId(AdvanceDirectiveStatusObservation advanceDirectiveStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateStatusObservationTemplateId", getObjectLabel(advanceDirectiveStatusObservation, context) },
+						 new Object[] { advanceDirectiveStatusObservation },
+						 context));
+			}
+			return false;
+		}
+		return validateStatusObservation_validateStatusObservationTemplateId(advanceDirectiveStatusObservation, diagnostics, context);
 	}
 
 	/**
@@ -6350,24 +6476,42 @@ public class CCDValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(functionalStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(functionalStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationNoAdditionalParticipants(functionalStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationTemplateId(functionalStatusObservation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateFunctionalStatusObservation_validateStatusObservationTemplateId(functionalStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationClassCode(functionalStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationMoodCode(functionalStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationCode(functionalStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationStatusCode(functionalStatusObservation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatusObservation_validateStatusObservationValue(functionalStatusObservation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateFunctionalStatusObservation_validateFunctionalStatusObservationTemplateId(functionalStatusObservation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateFunctionalStatusObservationTemplateId constraint of '<em>Functional Status Observation</em>'.
+	 * Validates the validateStatusObservationTemplateId constraint of '<em>Functional Status Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFunctionalStatusObservation_validateFunctionalStatusObservationTemplateId(FunctionalStatusObservation functionalStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return functionalStatusObservation.validateFunctionalStatusObservationTemplateId(diagnostics, context);
+	public boolean validateFunctionalStatusObservation_validateStatusObservationTemplateId(FunctionalStatusObservation functionalStatusObservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validateStatusObservationTemplateId", getObjectLabel(functionalStatusObservation, context) },
+						 new Object[] { functionalStatusObservation },
+						 context));
+			}
+			return false;
+		}
+		return validateStatusObservation_validateStatusObservationTemplateId(functionalStatusObservation, diagnostics, context);
 	}
 
 	/**

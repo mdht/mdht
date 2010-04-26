@@ -49,8 +49,9 @@ public class PhysicalExamSectionImpl extends org.openhealthtools.mdht.uml.cda.ih
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHITSPPhysicalExamSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PhysicalExamSectionOperations.validateHITSPPhysicalExamSectionTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validatePhysicalExamNarrativeSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PhysicalExamSectionOperations.validatePhysicalExamNarrativeSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

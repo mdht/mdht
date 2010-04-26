@@ -49,8 +49,9 @@ public class PayersSectionImpl extends org.openhealthtools.mdht.uml.cda.ihe.impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHITSPPayersSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PayersSectionOperations.validateHITSPPayersSectionTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validatePayersSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PayersSectionOperations.validatePayersSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

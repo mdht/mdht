@@ -49,8 +49,8 @@ public class PayersSectionImpl extends org.openhealthtools.mdht.uml.cda.ccd.impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateIHEPayersSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PayersSectionOperations.validateIHEPayersSectionTemplateId(this, diagnostics, context);
+	public boolean validateIHEPayersSectionCoverageEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PayersSectionOperations.validateIHEPayersSectionCoverageEntry(this, diagnostics, context);
 	}
 
 	/**
@@ -58,8 +58,9 @@ public class PayersSectionImpl extends org.openhealthtools.mdht.uml.cda.ccd.impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateIHEPayersSectionCoverageEntry(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PayersSectionOperations.validateIHEPayersSectionCoverageEntry(this, diagnostics, context);
+	@Override
+	public boolean validatePayersSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PayersSectionOperations.validatePayersSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

@@ -50,8 +50,9 @@ public class SurgeriesSectionImpl extends ProceduresSectionImpl implements Surge
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSurgeriesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SurgeriesSectionOperations.validateSurgeriesSectionTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateProceduresSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SurgeriesSectionOperations.validateProceduresSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

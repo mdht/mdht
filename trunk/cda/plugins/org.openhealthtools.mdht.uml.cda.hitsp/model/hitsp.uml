@@ -51,6 +51,30 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wDMM0GEHEd6bFO5yxRh3Nw" name="PatientSummary">
+      <ownedRule xmi:id="_mYOrQEyXEd-GNbUQBie2ig" name="healthcareProvider" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_uUy5MEyXEd-GNbUQBie2ig">
+          <language>Analysis</language>
+          <body>Contains 0..* HealthcareProvider in cda:documentationOf/cda:serviceEvent/cda:performer</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_JDwPIEyYEd-GNbUQBie2ig" name="informationSource" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_QUYkIEyYEd-GNbUQBie2ig">
+          <language>Analysis</language>
+          <body>Contains 0..* InformationSource in ancestor-or-self::./cda:author[1]</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_HFtYoEyZEd-GNbUQBie2ig" name="languageSpoken" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_LnHHQEyZEd-GNbUQBie2ig">
+          <language>Analysis</language>
+          <body>Contains 0..* LanguageSpoken in cda:recordTarget/cda:patientRole/cda:patient/cda:languageCommunication</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_kctSYEyaEd-GNbUQBie2ig" name="personInformation" constrainedElement="_wDMM0GEHEd6bFO5yxRh3Nw">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_pKOKYEyaEd-GNbUQBie2ig">
+          <language>Analysis</language>
+          <body>Contains 1..1 Person Information in cda:recordTarget/cda:patientRole</body>
+        </specification>
+      </ownedRule>
       <generalization xmi:id="_0EOJQKRmEd6t_4WfM070fA">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_fp-n0DOvEd-5f4Yngl7nkw"/>
       </generalization>
@@ -74,6 +98,15 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_ZxFGIEvqEd-GNbUQBie2ig" name="encountersSection" type="_F4b6wMijEd6mWrHPmrIIfQ" association="_ZxFGIkvqEd-GNbUQBie2ig">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZxFGIUvqEd-GNbUQBie2ig"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_AEJ24EyYEd-GNbUQBie2ig" name="immunizationsSection" type="_gHDXQMf0Ed6VjLXh4DcWSg" association="_AEKd8UyYEd-GNbUQBie2ig">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AEKd8EyYEd-GNbUQBie2ig"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_r7jUcEyYEd-GNbUQBie2ig" name="payersSection" type="_DH404MfWEd6VjLXh4DcWSg" association="_r7jUckyYEd-GNbUQBie2ig">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r7jUcUyYEd-GNbUQBie2ig"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_JO-80EyaEd-GNbUQBie2ig" name="medicationsSection" type="_WI3zsMfwEd6VjLXh4DcWSg" association="_JO-80kyaEd-GNbUQBie2ig">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JO-80UyaEd-GNbUQBie2ig"/>
       </ownedAttribute>
       <ownedOperation xmi:id="_C1Qp0GG6Ed6bFO5yxRh3Nw" name="createProblemListSection">
         <ownedParameter xmi:id="_vMia4GdYEd6Hk_bPOfEjYA" name="Parameter1" type="_cPtREMfaEd6VjLXh4DcWSg" direction="return"/>
@@ -533,6 +566,15 @@ If the problem is known to be resolved, but the date of resolution is not known,
     <packagedElement xmi:type="uml:Association" xmi:id="_ZxFGIkvqEd-GNbUQBie2ig" memberEnd="_ZxFGIEvqEd-GNbUQBie2ig _ZxFGI0vqEd-GNbUQBie2ig">
       <ownedEnd xmi:id="_ZxFGI0vqEd-GNbUQBie2ig" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_ZxFGIkvqEd-GNbUQBie2ig"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AEKd8UyYEd-GNbUQBie2ig" memberEnd="_AEJ24EyYEd-GNbUQBie2ig _AEKd8kyYEd-GNbUQBie2ig">
+      <ownedEnd xmi:id="_AEKd8kyYEd-GNbUQBie2ig" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_AEKd8UyYEd-GNbUQBie2ig"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_r7jUckyYEd-GNbUQBie2ig" memberEnd="_r7jUcEyYEd-GNbUQBie2ig _r7j7gEyYEd-GNbUQBie2ig">
+      <ownedEnd xmi:id="_r7j7gEyYEd-GNbUQBie2ig" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_r7jUckyYEd-GNbUQBie2ig"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_JO-80kyaEd-GNbUQBie2ig" memberEnd="_JO-80EyaEd-GNbUQBie2ig _JO_j4EyaEd-GNbUQBie2ig">
+      <ownedEnd xmi:id="_JO_j4EyaEd-GNbUQBie2ig" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_JO-80kyaEd-GNbUQBie2ig"/>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -647,4 +689,26 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:AssociationValidation xmi:id="_dL8DcEvqEd-GNbUQBie2ig" message="HITSP Patient Summary MAY contain [0..1] component such that it, SHALL contain [1..1] Encounters Section (templateId: 2.16.840.1.113883.3.88.11.83.127)" severity="INFO" base_Association="_ZxFGIkvqEd-GNbUQBie2ig">
     <ruleId>C32-[CT1-5]</ruleId>
   </CDA:AssociationValidation>
+  <CDA:ConstraintValidation xmi:id="_ngc3kEyXEd-GNbUQBie2ig" severity="INFO" base_Constraint="_mYOrQEyXEd-GNbUQBie2ig">
+    <ruleId>C32-[CT1-6]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_LarqQEyYEd-GNbUQBie2ig" base_Constraint="_JDwPIEyYEd-GNbUQBie2ig">
+    <ruleId>C32-[CT1-8]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:AssociationValidation xmi:id="_t5Y6IEyYEd-GNbUQBie2ig" severity="INFO" base_Association="_r7jUckyYEd-GNbUQBie2ig">
+    <ruleId>C32-[CT1-9]</ruleId>
+  </CDA:AssociationValidation>
+  <CDA:ConstraintValidation xmi:id="_URhSoEyZEd-GNbUQBie2ig" severity="WARNING" base_Constraint="_HFtYoEyZEd-GNbUQBie2ig">
+    <ruleId>C32-[CT1-10]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:AssociationValidation xmi:id="_KH8lIEyaEd-GNbUQBie2ig" severity="INFO" base_Association="_JO-80kyaEd-GNbUQBie2ig">
+    <ruleId>C32-[CT1-11]</ruleId>
+  </CDA:AssociationValidation>
+  <CDA:ConstraintValidation xmi:id="_l3J3IEyaEd-GNbUQBie2ig" base_Constraint="_kctSYEyaEd-GNbUQBie2ig">
+    <ruleId>C32-[CT1-12]</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:AssociationValidation xmi:id="_z9yaoEyaEd-GNbUQBie2ig" severity="INFO" base_Association="_AEKd8UyYEd-GNbUQBie2ig">
+    <ruleId>C32-[CT1-7]</ruleId>
+  </CDA:AssociationValidation>
+  <CDA:ConformsTo xmi:id="_Sqad0E79Ed-qMv3VdH3jrA" base_Generalization="_H4qVgDxbEd6JwqSGecoePg" requiresParentId="true"/>
 </xmi:XMI>

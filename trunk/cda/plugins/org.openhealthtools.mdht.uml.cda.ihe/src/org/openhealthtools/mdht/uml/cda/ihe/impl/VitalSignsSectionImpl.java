@@ -49,8 +49,9 @@ public class VitalSignsSectionImpl extends org.openhealthtools.mdht.uml.cda.ccd.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateIHEVitalSignsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return VitalSignsSectionOperations.validateIHEVitalSignsSectionTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateVitalSignsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VitalSignsSectionOperations.validateVitalSignsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

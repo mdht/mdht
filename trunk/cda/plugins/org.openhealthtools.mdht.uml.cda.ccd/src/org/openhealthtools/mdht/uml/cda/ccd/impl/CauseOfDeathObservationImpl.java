@@ -49,8 +49,9 @@ public class CauseOfDeathObservationImpl extends FamilyHistoryObservationImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCauseOfDeathObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CauseOfDeathObservationOperations.validateCauseOfDeathObservationTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateFamilyHistoryObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CauseOfDeathObservationOperations.validateFamilyHistoryObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**

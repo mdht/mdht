@@ -50,8 +50,9 @@ public class ObservationRequestEntryImpl extends PlanOfCareActivityObservationIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateObservationRequestEntryTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ObservationRequestEntryOperations.validateObservationRequestEntryTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validatePlanOfCareActivityObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ObservationRequestEntryOperations.validatePlanOfCareActivityObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**

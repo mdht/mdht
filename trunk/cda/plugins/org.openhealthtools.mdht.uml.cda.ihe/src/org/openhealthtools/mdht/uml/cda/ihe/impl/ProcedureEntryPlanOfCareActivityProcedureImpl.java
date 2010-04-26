@@ -50,8 +50,9 @@ public class ProcedureEntryPlanOfCareActivityProcedureImpl extends PlanOfCareAct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProcedureEntryPlanOfCareActivityProcedureTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProcedureEntryPlanOfCareActivityProcedureOperations.validateProcedureEntryPlanOfCareActivityProcedureTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validatePlanOfCareActivityProcedureTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProcedureEntryPlanOfCareActivityProcedureOperations.validatePlanOfCareActivityProcedureTemplateId(this, diagnostics, context);
 	}
 
 	/**

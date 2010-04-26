@@ -50,8 +50,9 @@ public class ImmunizationImpl extends MedicationActivityImpl implements Immuniza
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateImmunizationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ImmunizationOperations.validateImmunizationTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateMedicationActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ImmunizationOperations.validateMedicationActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**

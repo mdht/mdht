@@ -49,8 +49,9 @@ public class AdvanceDirectiveStatusObservationImpl extends StatusObservationImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAdvanceDirectiveStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectiveStatusObservationOperations.validateAdvanceDirectiveStatusObservationTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdvanceDirectiveStatusObservationOperations.validateStatusObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**

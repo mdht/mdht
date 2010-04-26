@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CarePlanSection#validateCarePlanSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Care Plan Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CarePlanSection#validatePlanOfCareSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,24 +45,24 @@ public class CarePlanSectionOperations extends PlanOfCareSectionOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateCarePlanSectionTemplateId(CarePlanSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Care Plan Section Template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validatePlanOfCareSectionTemplateId(CarePlanSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateCarePlanSectionTemplateId(CarePlanSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePlanOfCareSectionTemplateId(CarePlanSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_CARE_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.3.31')";
+	protected static final String VALIDATE_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.3.31')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateCarePlanSectionTemplateId(CarePlanSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Care Plan Section Template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validatePlanOfCareSectionTemplateId(CarePlanSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateCarePlanSectionTemplateId(CarePlanSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validatePlanOfCareSectionTemplateId(CarePlanSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_CARE_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,25 +75,25 @@ public class CarePlanSectionOperations extends PlanOfCareSectionOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateCarePlanSectionTemplateId(CarePlanSection carePlanSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_CARE_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validatePlanOfCareSectionTemplateId(CarePlanSection carePlanSection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.CARE_PLAN_SECTION);
 			try {
-				VALIDATE_CARE_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CARE_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_CARE_PLAN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(carePlanSection)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(carePlanSection)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
-						 IHEValidator.CARE_PLAN_SECTION__CARE_PLAN_SECTION_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("CarePlanSectionTemplateId"),
+						 IHEValidator.CARE_PLAN_SECTION__PLAN_OF_CARE_SECTION_TEMPLATE_ID,
+						 IHEPlugin.INSTANCE.getString("PlanOfCareSectionTemplateId"),
 						 new Object [] { carePlanSection }));
 			}
 			return false;

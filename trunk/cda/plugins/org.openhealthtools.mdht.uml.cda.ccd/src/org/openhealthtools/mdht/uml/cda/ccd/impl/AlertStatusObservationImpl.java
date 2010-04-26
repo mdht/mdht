@@ -49,8 +49,9 @@ public class AlertStatusObservationImpl extends StatusObservationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAlertStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AlertStatusObservationOperations.validateAlertStatusObservationTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AlertStatusObservationOperations.validateStatusObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**

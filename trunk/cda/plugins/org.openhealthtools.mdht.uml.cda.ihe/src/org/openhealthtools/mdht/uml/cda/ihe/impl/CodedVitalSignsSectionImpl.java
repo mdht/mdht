@@ -49,8 +49,8 @@ public class CodedVitalSignsSectionImpl extends VitalSignsSectionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCodedVitalSignsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CodedVitalSignsSectionOperations.validateCodedVitalSignsSectionTemplateId(this, diagnostics, context);
+	public boolean validateCodedVitalSignsSectionVitalSignsOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CodedVitalSignsSectionOperations.validateCodedVitalSignsSectionVitalSignsOrganizer(this, diagnostics, context);
 	}
 
 	/**
@@ -58,8 +58,9 @@ public class CodedVitalSignsSectionImpl extends VitalSignsSectionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCodedVitalSignsSectionVitalSignsOrganizer(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CodedVitalSignsSectionOperations.validateCodedVitalSignsSectionVitalSignsOrganizer(this, diagnostics, context);
+	@Override
+	public boolean validateVitalSignsSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CodedVitalSignsSectionOperations.validateVitalSignsSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

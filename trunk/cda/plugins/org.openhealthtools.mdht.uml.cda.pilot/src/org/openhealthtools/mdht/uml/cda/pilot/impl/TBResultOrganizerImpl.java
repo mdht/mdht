@@ -50,8 +50,8 @@ public class TBResultOrganizerImpl extends ResultOrganizerImpl implements TBResu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTBResultOrganizerTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return TBResultOrganizerOperations.validateTBResultOrganizerTemplateId(this, diagnostics, context);
+	public boolean validateTBResultOrganizerTBResultObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return TBResultOrganizerOperations.validateTBResultOrganizerTBResultObservation(this, diagnostics, context);
 	}
 
 	/**
@@ -59,8 +59,9 @@ public class TBResultOrganizerImpl extends ResultOrganizerImpl implements TBResu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTBResultOrganizerTBResultObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return TBResultOrganizerOperations.validateTBResultOrganizerTBResultObservation(this, diagnostics, context);
+	@Override
+	public boolean validateResultOrganizerTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return TBResultOrganizerOperations.validateResultOrganizerTemplateId(this, diagnostics, context);
 	}
 
 	/**

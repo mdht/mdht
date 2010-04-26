@@ -49,8 +49,9 @@ public class HistoryOfPastIllnessSectionImpl extends org.openhealthtools.mdht.um
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHITSPHistoryOfPastIllnessSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HistoryOfPastIllnessSectionOperations.validateHITSPHistoryOfPastIllnessSectionTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateHistoryOfPastIllnessSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryOfPastIllnessSectionOperations.validateHistoryOfPastIllnessSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

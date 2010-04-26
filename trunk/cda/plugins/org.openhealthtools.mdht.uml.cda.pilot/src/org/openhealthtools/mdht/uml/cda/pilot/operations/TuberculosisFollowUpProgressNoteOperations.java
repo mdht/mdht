@@ -228,7 +228,7 @@ public class TuberculosisFollowUpProgressNoteOperations extends ClinicalDocument
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_TUBERCULOSIS_FOLLOW_UP_PROGRESS_NOTE_TB_RESULTS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSections()->one(section : cda::Section | section.oclIsKindOf(pilot::TBResultsSection))";
+	protected static final String VALIDATE_TUBERCULOSIS_FOLLOW_UP_PROGRESS_NOTE_TB_RESULTS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(pilot::TBResultsSection))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateTuberculosisFollowUpProgressNoteTBResultsSection(TuberculosisFollowUpProgressNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Tuberculosis Follow Up Progress Note TB Results Section</em>}' invariant operation.
@@ -244,7 +244,7 @@ public class TuberculosisFollowUpProgressNoteOperations extends ClinicalDocument
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSections()->one(section : cda::Section | section.oclIsKindOf(pilot::TBResultsSection))
+	 * self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(pilot::TBResultsSection))
 	 * @param tuberculosisFollowUpProgressNote The receiving '<em><b>Tuberculosis Follow Up Progress Note</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

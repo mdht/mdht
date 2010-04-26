@@ -49,8 +49,9 @@ public class ProblemStatusObservationImpl extends StatusObservationImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProblemStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProblemStatusObservationOperations.validateProblemStatusObservationTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateStatusObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProblemStatusObservationOperations.validateStatusObservationTemplateId(this, diagnostics, context);
 	}
 
 	/**

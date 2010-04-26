@@ -50,8 +50,8 @@ public class LanguageSpokenImpl extends LanguageCommunicationImpl implements Lan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateLanguageSpokenTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return LanguageSpokenOperations.validateLanguageSpokenTemplateId(this, diagnostics, context);
+	public boolean validateLanguageCommunicationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return LanguageSpokenOperations.validateLanguageCommunicationTemplateId(this, diagnostics, context);
 	}
 
 	/**
