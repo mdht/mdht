@@ -55,9 +55,8 @@ public class AllergyIntoleranceConcernImpl extends ConcernEntryImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateProblemActTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AllergyIntoleranceConcernOperations.validateProblemActTemplateId(this, diagnostics, context);
+	public boolean validateAllergyIntoleranceConcernTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AllergyIntoleranceConcernOperations.validateAllergyIntoleranceConcernTemplateId(this, diagnostics, context);
 	}
 
 	/**

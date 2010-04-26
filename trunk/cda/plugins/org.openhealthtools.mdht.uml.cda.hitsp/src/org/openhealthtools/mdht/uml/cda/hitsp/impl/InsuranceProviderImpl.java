@@ -50,9 +50,8 @@ public class InsuranceProviderImpl extends CoverageEntryImpl implements Insuranc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateCoverageActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return InsuranceProviderOperations.validateCoverageActivityTemplateId(this, diagnostics, context);
+	public boolean validateInsuranceProviderTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return InsuranceProviderOperations.validateInsuranceProviderTemplateId(this, diagnostics, context);
 	}
 
 	/**

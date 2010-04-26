@@ -18,7 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.LanguageCommunication;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage#getLanguageSpoken()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.2' constraints.validation.error='LanguageCommunicationTemplateId'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.3.88.11.83.2' constraints.validation.error='LanguageSpokenTemplateId'"
  * @generated
  */
 public interface LanguageSpoken extends LanguageCommunication {
@@ -33,7 +33,7 @@ public interface LanguageSpoken extends LanguageCommunication {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = \'2.16.840.1.113883.3.88.11.83.2\')'"
 	 * @generated
 	 */
-	boolean validateLanguageCommunicationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateLanguageSpokenTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->

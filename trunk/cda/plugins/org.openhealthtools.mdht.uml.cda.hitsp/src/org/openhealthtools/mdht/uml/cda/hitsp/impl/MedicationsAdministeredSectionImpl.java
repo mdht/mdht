@@ -49,9 +49,8 @@ public class MedicationsAdministeredSectionImpl extends org.openhealthtools.mdht
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateMedicationsAdministeredSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return MedicationsAdministeredSectionOperations.validateMedicationsAdministeredSectionTemplateId(this, diagnostics, context);
+	public boolean validateHITSPMedicationsAdministeredSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return MedicationsAdministeredSectionOperations.validateHITSPMedicationsAdministeredSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

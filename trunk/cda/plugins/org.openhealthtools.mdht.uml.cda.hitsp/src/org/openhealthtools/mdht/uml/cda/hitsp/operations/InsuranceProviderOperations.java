@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.operations.CoverageEntryOperations;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider#validateCoverageActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider#validateInsuranceProviderTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Insurance Provider Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,24 +45,24 @@ public class InsuranceProviderOperations extends CoverageEntryOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateCoverageActivityTemplateId(InsuranceProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateInsuranceProviderTemplateId(InsuranceProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Insurance Provider Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateCoverageActivityTemplateId(InsuranceProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateInsuranceProviderTemplateId(InsuranceProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_COVERAGE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.5')";
+	protected static final String VALIDATE_INSURANCE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.3.88.11.83.5')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateCoverageActivityTemplateId(InsuranceProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateInsuranceProviderTemplateId(InsuranceProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Insurance Provider Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateCoverageActivityTemplateId(InsuranceProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateInsuranceProviderTemplateId(InsuranceProvider, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_COVERAGE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_INSURANCE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,25 +75,25 @@ public class InsuranceProviderOperations extends CoverageEntryOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateCoverageActivityTemplateId(InsuranceProvider insuranceProvider, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_COVERAGE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateInsuranceProviderTemplateId(InsuranceProvider insuranceProvider, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_INSURANCE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(HITSPPackage.Literals.INSURANCE_PROVIDER);
 			try {
-				VALIDATE_COVERAGE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_COVERAGE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_INSURANCE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_INSURANCE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_COVERAGE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(insuranceProvider)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_INSURANCE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(insuranceProvider)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HITSPValidator.DIAGNOSTIC_SOURCE,
-						 HITSPValidator.INSURANCE_PROVIDER__COVERAGE_ACTIVITY_TEMPLATE_ID,
-						 HITSPPlugin.INSTANCE.getString("CoverageActivityTemplateId"),
+						 HITSPValidator.INSURANCE_PROVIDER__INSURANCE_PROVIDER_TEMPLATE_ID,
+						 HITSPPlugin.INSTANCE.getString("InsuranceProviderTemplateId"),
 						 new Object [] { insuranceProvider }));
 			}
 			return false;

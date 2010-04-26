@@ -49,9 +49,8 @@ public class ReasonForReferralSectionImpl extends org.openhealthtools.mdht.uml.c
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateReasonForReferralSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ReasonForReferralSectionOperations.validateReasonForReferralSectionTemplateId(this, diagnostics, context);
+	public boolean validateHITSPReasonForReferralSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ReasonForReferralSectionOperations.validateHITSPReasonForReferralSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

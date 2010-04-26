@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.util.IHEValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry#validatePlanOfCareActivityObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry#validateObservationRequestEntryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Observation Request Entry Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,24 +45,24 @@ public class ObservationRequestEntryOperations extends PlanOfCareActivityObserva
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validatePlanOfCareActivityObservationTemplateId(ObservationRequestEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Observation Template Id</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateObservationRequestEntryTemplateId(ObservationRequestEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Observation Request Entry Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validatePlanOfCareActivityObservationTemplateId(ObservationRequestEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateObservationRequestEntryTemplateId(ObservationRequestEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_PLAN_OF_CARE_ACTIVITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.1.20.3.1')";
+	protected static final String VALIDATE_OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '1.3.6.1.4.1.19376.1.5.3.1.1.20.3.1')";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validatePlanOfCareActivityObservationTemplateId(ObservationRequestEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Observation Template Id</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateObservationRequestEntryTemplateId(ObservationRequestEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Observation Request Entry Template Id</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validatePlanOfCareActivityObservationTemplateId(ObservationRequestEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateObservationRequestEntryTemplateId(ObservationRequestEntry, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_PLAN_OF_CARE_ACTIVITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,25 +75,25 @@ public class ObservationRequestEntryOperations extends PlanOfCareActivityObserva
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validatePlanOfCareActivityObservationTemplateId(ObservationRequestEntry observationRequestEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_PLAN_OF_CARE_ACTIVITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateObservationRequestEntryTemplateId(ObservationRequestEntry observationRequestEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(IHEPackage.Literals.OBSERVATION_REQUEST_ENTRY);
 			try {
-				VALIDATE_PLAN_OF_CARE_ACTIVITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_PLAN_OF_CARE_ACTIVITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_PLAN_OF_CARE_ACTIVITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(observationRequestEntry)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(observationRequestEntry)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 IHEValidator.DIAGNOSTIC_SOURCE,
-						 IHEValidator.OBSERVATION_REQUEST_ENTRY__PLAN_OF_CARE_ACTIVITY_OBSERVATION_TEMPLATE_ID,
-						 IHEPlugin.INSTANCE.getString("PlanOfCareActivityObservationTemplateId"),
+						 IHEValidator.OBSERVATION_REQUEST_ENTRY__OBSERVATION_REQUEST_ENTRY_TEMPLATE_ID,
+						 IHEPlugin.INSTANCE.getString("ObservationRequestEntryTemplateId"),
 						 new Object [] { observationRequestEntry }));
 			}
 			return false;

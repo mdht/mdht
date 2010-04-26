@@ -55,9 +55,8 @@ public class AllergyIntoleranceImpl extends ProblemEntryImpl implements AllergyI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateProblemObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AllergyIntoleranceOperations.validateProblemObservationTemplateId(this, diagnostics, context);
+	public boolean validateAllergyIntoleranceTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AllergyIntoleranceOperations.validateAllergyIntoleranceTemplateId(this, diagnostics, context);
 	}
 
 	/**

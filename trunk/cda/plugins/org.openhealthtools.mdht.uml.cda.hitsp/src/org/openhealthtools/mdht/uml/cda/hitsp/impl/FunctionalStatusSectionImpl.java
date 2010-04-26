@@ -49,9 +49,8 @@ public class FunctionalStatusSectionImpl extends org.openhealthtools.mdht.uml.cd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateFunctionalStatusSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return FunctionalStatusSectionOperations.validateFunctionalStatusSectionTemplateId(this, diagnostics, context);
+	public boolean validateHITSPFunctionalStatusSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return FunctionalStatusSectionOperations.validateHITSPFunctionalStatusSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

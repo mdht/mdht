@@ -50,9 +50,8 @@ public class EncounterHistorySectionImpl extends EncountersSectionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateEncountersSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncounterHistorySectionOperations.validateEncountersSectionTemplateId(this, diagnostics, context);
+	public boolean validateEncounterHistorySectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncounterHistorySectionOperations.validateEncounterHistorySectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

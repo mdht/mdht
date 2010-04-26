@@ -49,9 +49,8 @@ public class PhysicalExamSectionImpl extends PhysicalExamNarrativeSectionImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validatePhysicalExamNarrativeSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PhysicalExamSectionOperations.validatePhysicalExamNarrativeSectionTemplateId(this, diagnostics, context);
+	public boolean validatePhysicalExamSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PhysicalExamSectionOperations.validatePhysicalExamSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

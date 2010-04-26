@@ -49,9 +49,8 @@ public class CombinationMedicationImpl extends MedicationImpl implements Combina
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateMedicationActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return CombinationMedicationOperations.validateMedicationActivityTemplateId(this, diagnostics, context);
+	public boolean validateCombinationMedicationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return CombinationMedicationOperations.validateCombinationMedicationTemplateId(this, diagnostics, context);
 	}
 
 	/**

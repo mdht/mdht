@@ -56,8 +56,8 @@ public class ConcernEntryImpl extends ProblemActImpl implements ConcernEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConcernEntryEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ConcernEntryOperations.validateConcernEntryEffectiveTime(this, diagnostics, context);
+	public boolean validateConcernEntryTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConcernEntryOperations.validateConcernEntryTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -65,9 +65,8 @@ public class ConcernEntryImpl extends ProblemActImpl implements ConcernEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateProblemActTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ConcernEntryOperations.validateProblemActTemplateId(this, diagnostics, context);
+	public boolean validateConcernEntryEffectiveTime(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConcernEntryOperations.validateConcernEntryEffectiveTime(this, diagnostics, context);
 	}
 
 	/**

@@ -50,9 +50,8 @@ public class AdvanceDirectivesSectionImpl extends CodedAdvanceDirectivesSectionI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateAdvanceDirectivesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionTemplateId(this, diagnostics, context);
+	public boolean validateHITSPAdvanceDirectivesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdvanceDirectivesSectionOperations.validateHITSPAdvanceDirectivesSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

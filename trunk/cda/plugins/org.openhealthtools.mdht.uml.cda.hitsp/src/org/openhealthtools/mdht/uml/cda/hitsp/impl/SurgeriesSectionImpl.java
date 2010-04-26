@@ -50,9 +50,8 @@ public class SurgeriesSectionImpl extends CodedSurgeriesSectionImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateProceduresSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SurgeriesSectionOperations.validateProceduresSectionTemplateId(this, diagnostics, context);
+	public boolean validateHITSPSurgeriesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return SurgeriesSectionOperations.validateHITSPSurgeriesSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

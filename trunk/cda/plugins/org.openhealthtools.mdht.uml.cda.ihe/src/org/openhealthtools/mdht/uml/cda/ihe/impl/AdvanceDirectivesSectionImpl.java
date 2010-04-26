@@ -49,9 +49,8 @@ public class AdvanceDirectivesSectionImpl extends org.openhealthtools.mdht.uml.c
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateAdvanceDirectivesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionTemplateId(this, diagnostics, context);
+	public boolean validateIHEAdvanceDirectivesSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return AdvanceDirectivesSectionOperations.validateIHEAdvanceDirectivesSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

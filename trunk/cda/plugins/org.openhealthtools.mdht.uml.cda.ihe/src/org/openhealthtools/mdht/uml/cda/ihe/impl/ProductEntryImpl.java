@@ -50,9 +50,8 @@ public class ProductEntryImpl extends ProductImpl implements ProductEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean validateProductTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ProductEntryOperations.validateProductTemplateId(this, diagnostics, context);
+	public boolean validateProductEntryTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ProductEntryOperations.validateProductEntryTemplateId(this, diagnostics, context);
 	}
 
 	/**
