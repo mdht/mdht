@@ -377,6 +377,60 @@ public interface HITSPFactory extends EFactory {
 	Comment createComment();
 
 	/**
+	 * Returns a new object of class '<em>Medication Normal Dose</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Normal Dose</em>'.
+	 * @generated
+	 */
+	MedicationNormalDose createMedicationNormalDose();
+
+	/**
+	 * Returns a new object of class '<em>Medication Split Dose</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Split Dose</em>'.
+	 * @generated
+	 */
+	MedicationSplitDose createMedicationSplitDose();
+
+	/**
+	 * Returns a new object of class '<em>Medication Tapered Dose</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Tapered Dose</em>'.
+	 * @generated
+	 */
+	MedicationTaperedDose createMedicationTaperedDose();
+
+	/**
+	 * Returns a new object of class '<em>Medication Conditional Dose</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Conditional Dose</em>'.
+	 * @generated
+	 */
+	MedicationConditionalDose createMedicationConditionalDose();
+
+	/**
+	 * Returns a new object of class '<em>Medication Combination Medication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Medication Combination Medication</em>'.
+	 * @generated
+	 */
+	MedicationCombinationMedication createMedicationCombinationMedication();
+
+	/**
+	 * Returns a new object of class '<em>Registry Delegate</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Registry Delegate</em>'.
+	 * @generated
+	 */
+	HITSPRegistryDelegate createHITSPRegistryDelegate();
+
+	/**
 	 * Returns a new object of class '<em>Condition Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

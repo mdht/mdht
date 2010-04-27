@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
@@ -29,6 +30,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPRegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.hitsp.HealthcareProvider;
 import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPresentIllness;
@@ -41,6 +43,11 @@ import org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider;
 import org.openhealthtools.mdht.uml.cda.hitsp.LanguageSpoken;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationCombinationMedication;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationConditionalDose;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationNormalDose;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationSplitDose;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationTaperedDose;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
@@ -337,6 +344,48 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * @generated
 	 */
 	private EClass commentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass medicationNormalDoseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass medicationSplitDoseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass medicationTaperedDoseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass medicationConditionalDoseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass medicationCombinationMedicationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass hitspRegistryDelegateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -774,6 +823,60 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMedicationNormalDose() {
+		return medicationNormalDoseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMedicationSplitDose() {
+		return medicationSplitDoseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMedicationTaperedDose() {
+		return medicationTaperedDoseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMedicationConditionalDose() {
+		return medicationConditionalDoseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMedicationCombinationMedication() {
+		return medicationCombinationMedicationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getHITSPRegistryDelegate() {
+		return hitspRegistryDelegateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConditionEntry() {
 		return conditionEntryEClass;
 	}
@@ -885,6 +988,18 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		immunizationEClass = createEClass(IMMUNIZATION);
 
 		commentEClass = createEClass(COMMENT);
+
+		medicationNormalDoseEClass = createEClass(MEDICATION_NORMAL_DOSE);
+
+		medicationSplitDoseEClass = createEClass(MEDICATION_SPLIT_DOSE);
+
+		medicationTaperedDoseEClass = createEClass(MEDICATION_TAPERED_DOSE);
+
+		medicationConditionalDoseEClass = createEClass(MEDICATION_CONDITIONAL_DOSE);
+
+		medicationCombinationMedicationEClass = createEClass(MEDICATION_COMBINATION_MEDICATION);
+
+		hitspRegistryDelegateEClass = createEClass(HITSP_REGISTRY_DELEGATE);
 	}
 
 	/**
@@ -913,6 +1028,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		// Obtain other dependent packages
 		IHEPackage theIHEPackage = (IHEPackage)EPackage.Registry.INSTANCE.getEPackage(IHEPackage.eNS_URI);
 		CCDPackage theCCDPackage = (CCDPackage)EPackage.Registry.INSTANCE.getEPackage(CCDPackage.eNS_URI);
+		CDAPackage theCDAPackage = (CDAPackage)EPackage.Registry.INSTANCE.getEPackage(CDAPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -961,6 +1077,17 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		healthcareProviderEClass.getESuperTypes().add(theIHEPackage.getHealthcareProvidersPharmacies());
 		immunizationEClass.getESuperTypes().add(theIHEPackage.getImmunization());
 		commentEClass.getESuperTypes().add(theIHEPackage.getComment());
+		medicationNormalDoseEClass.getESuperTypes().add(this.getMedication());
+		medicationNormalDoseEClass.getESuperTypes().add(theIHEPackage.getNormalDose());
+		medicationSplitDoseEClass.getESuperTypes().add(this.getMedication());
+		medicationSplitDoseEClass.getESuperTypes().add(theIHEPackage.getSplitDose());
+		medicationTaperedDoseEClass.getESuperTypes().add(this.getMedication());
+		medicationTaperedDoseEClass.getESuperTypes().add(theIHEPackage.getTaperedDose());
+		medicationConditionalDoseEClass.getESuperTypes().add(theIHEPackage.getConditionalDose());
+		medicationConditionalDoseEClass.getESuperTypes().add(this.getMedication());
+		medicationCombinationMedicationEClass.getESuperTypes().add(theIHEPackage.getCombinationMedication());
+		medicationCombinationMedicationEClass.getESuperTypes().add(this.getMedication());
+		hitspRegistryDelegateEClass.getESuperTypes().add(theCDAPackage.getRegistryDelegate());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(allergyDrugSensitivityEClass, AllergyDrugSensitivity.class, "AllergyDrugSensitivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1535,6 +1662,18 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(medicationNormalDoseEClass, MedicationNormalDose.class, "MedicationNormalDose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(medicationSplitDoseEClass, MedicationSplitDose.class, "MedicationSplitDose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(medicationTaperedDoseEClass, MedicationTaperedDose.class, "MedicationTaperedDose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(medicationConditionalDoseEClass, MedicationConditionalDose.class, "MedicationConditionalDose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(medicationCombinationMedicationEClass, MedicationCombinationMedication.class, "MedicationCombinationMedication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(hitspRegistryDelegateEClass, HITSPRegistryDelegate.class, "HITSPRegistryDelegate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -1556,7 +1695,13 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * @generated
 	 */
 	protected void createAnnotationAnnotations() {
-		String source = "http://www.openhealthtools.org/mdht/uml/cda/annotation";			
+		String source = "http://www.openhealthtools.org/mdht/uml/cda/annotation";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "registryDelegate", "HITSPRegistryDelegate"
+		   });			
 		addAnnotation
 		  (allergyDrugSensitivityEClass, 
 		   source, 
@@ -1568,6 +1713,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		  (medicationEClass, 
 		   source, 
 		   new String[] {
+			 "contextDependent", "true",
 			 "templateId.root", "2.16.840.1.113883.3.88.11.83.8",
 			 "constraints.validation.error", "HITSPMedicationTemplateId"
 		   });						
@@ -1848,7 +1994,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * @generated
 	 */
 	protected void createUml2Annotations() {
-		String source = "uml2.alias";				
+		String source = "uml2.alias";					
 		addAnnotation
 		  (allergyDrugSensitivityEClass, 
 		   source, 
@@ -1865,7 +2011,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																																
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																																	
 		addAnnotation
 		  (patientSummaryEClass, 
 		   source, 
@@ -1881,7 +2027,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																																																																													
+		String source = "duplicates";																																																																																														
 		addAnnotation
 		  (vitalSignEClass, 
 		   source, 

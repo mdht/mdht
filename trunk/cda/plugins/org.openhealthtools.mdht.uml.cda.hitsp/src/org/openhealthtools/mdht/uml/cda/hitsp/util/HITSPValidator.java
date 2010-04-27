@@ -30,6 +30,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPlugin;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPRegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.hitsp.HealthcareProvider;
 import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPresentIllness;
@@ -42,6 +43,11 @@ import org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider;
 import org.openhealthtools.mdht.uml.cda.hitsp.LanguageSpoken;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationCombinationMedication;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationConditionalDose;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationNormalDose;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationSplitDose;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationTaperedDose;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
@@ -668,6 +674,18 @@ public class HITSPValidator extends EObjectValidator {
 				return validateImmunization((Immunization)value, diagnostics, context);
 			case HITSPPackage.COMMENT:
 				return validateComment((Comment)value, diagnostics, context);
+			case HITSPPackage.MEDICATION_NORMAL_DOSE:
+				return validateMedicationNormalDose((MedicationNormalDose)value, diagnostics, context);
+			case HITSPPackage.MEDICATION_SPLIT_DOSE:
+				return validateMedicationSplitDose((MedicationSplitDose)value, diagnostics, context);
+			case HITSPPackage.MEDICATION_TAPERED_DOSE:
+				return validateMedicationTaperedDose((MedicationTaperedDose)value, diagnostics, context);
+			case HITSPPackage.MEDICATION_CONDITIONAL_DOSE:
+				return validateMedicationConditionalDose((MedicationConditionalDose)value, diagnostics, context);
+			case HITSPPackage.MEDICATION_COMBINATION_MEDICATION:
+				return validateMedicationCombinationMedication((MedicationCombinationMedication)value, diagnostics, context);
+			case HITSPPackage.HITSP_REGISTRY_DELEGATE:
+				return validateHITSPRegistryDelegate((HITSPRegistryDelegate)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -2148,6 +2166,145 @@ public class HITSPValidator extends EObjectValidator {
 	 */
 	public boolean validateComment_validateHITSPCommentTemplateId(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return comment.validateHITSPCommentTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicationNormalDose(MedicationNormalDose medicationNormalDose, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateMedication_validateMedicationTemplateId(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateHITSPMedicationTemplateId(medicationNormalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateNormalDose_validateNormalDoseTemplateId(medicationNormalDose, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicationSplitDose(MedicationSplitDose medicationSplitDose, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateMedication_validateMedicationTemplateId(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateHITSPMedicationTemplateId(medicationSplitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateSplitDose_validateSplitDoseTemplateId(medicationSplitDose, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicationTaperedDose(MedicationTaperedDose medicationTaperedDose, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateMedication_validateMedicationTemplateId(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateHITSPMedicationTemplateId(medicationTaperedDose, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateTaperedDose_validateTaperedDoseTemplateId(medicationTaperedDose, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicationConditionalDose(MedicationConditionalDose medicationConditionalDose, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateMedication_validateMedicationTemplateId(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateConditionalDose_validateConditionalDoseTemplateId(medicationConditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateHITSPMedicationTemplateId(medicationConditionalDose, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMedicationCombinationMedication(MedicationCombinationMedication medicationCombinationMedication, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateMedication_validateMedicationTemplateId(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= iheValidator.validateCombinationMedication_validateCombinationMedicationTemplateId(medicationCombinationMedication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateHITSPMedicationTemplateId(medicationCombinationMedication, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHITSPRegistryDelegate(HITSPRegistryDelegate hitspRegistryDelegate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(hitspRegistryDelegate, diagnostics, context);
 	}
 
 	/**
