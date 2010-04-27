@@ -330,5 +330,11 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="hitsp.ecore#//Comment/HITSPCommentTemplateId/context"/>
       </genOperations>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//MedicationNormalDose"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//MedicationSplitDose"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//MedicationTaperedDose"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//MedicationConditionalDose"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//MedicationCombinationMedication"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="hitsp.ecore#//HITSPRegistryDelegate"/>
   </genPackages>
 </genmodel:GenModel>

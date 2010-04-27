@@ -575,6 +575,36 @@ If the problem is known to be resolved, but the date of resolution is not known,
     <packagedElement xmi:type="uml:Association" xmi:id="_JO-80kyaEd-GNbUQBie2ig" memberEnd="_JO-80EyaEd-GNbUQBie2ig _JO_j4EyaEd-GNbUQBie2ig">
       <ownedEnd xmi:id="_JO_j4EyaEd-GNbUQBie2ig" type="_wDMM0GEHEd6bFO5yxRh3Nw" association="_JO-80kyaEd-GNbUQBie2ig"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_K3zLIFI0Ed-4TsxSz4jnfg" name="MedicationNormalDose">
+      <generalization xmi:id="_K3zLIVI0Ed-4TsxSz4jnfg" general="_IjIO0DxbEd6JwqSGecoePg"/>
+      <generalization xmi:id="_sf-boFI0Ed-4TsxSz4jnfg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#__HPx4HySEd6FS-4xbA1fBQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_OUVjcFI0Ed-4TsxSz4jnfg" name="MedicationSplitDose">
+      <generalization xmi:id="_OUVjcVI0Ed-4TsxSz4jnfg" general="_IjIO0DxbEd6JwqSGecoePg"/>
+      <generalization xmi:id="_wT6AQFI0Ed-4TsxSz4jnfg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_OY9BYHyTEd6FS-4xbA1fBQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RuVlIFI0Ed-4TsxSz4jnfg" name="MedicationTaperedDose">
+      <generalization xmi:id="_RuVlIVI0Ed-4TsxSz4jnfg" general="_IjIO0DxbEd6JwqSGecoePg"/>
+      <generalization xmi:id="_zsa0MFI0Ed-4TsxSz4jnfg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_OCqBQHyTEd6FS-4xbA1fBQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_WXndYFI0Ed-4TsxSz4jnfg" name="MedicationConditionalDose">
+      <generalization xmi:id="_WXndYVI0Ed-4TsxSz4jnfg" general="_IjIO0DxbEd6JwqSGecoePg"/>
+      <generalization xmi:id="_jYvKUFI0Ed-4TsxSz4jnfg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_OeXF0HyTEd6FS-4xbA1fBQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cNo1kFI0Ed-4TsxSz4jnfg" name="MedicationCombinationMedication">
+      <generalization xmi:id="_cNo1kVI0Ed-4TsxSz4jnfg" general="_IjIO0DxbEd6JwqSGecoePg"/>
+      <generalization xmi:id="_dsjqoFI0Ed-4TsxSz4jnfg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_QDIEMHyTEd6FS-4xbA1fBQ"/>
+      </generalization>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -590,7 +620,7 @@ If the problem is known to be resolved, but the date of resolution is not known,
   </uml:Package>
   <CDA:CDATemplate xmi:id="_t9ej4HcIEd6ZeOKq_2_a9g" message="HITSP Allergy Drug Sensitivity SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.6" base_Class="_vB4EUGEIEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.83.6" assigningAuthorityName="HITSP C83"/>
   <CDA:CDATemplate xmi:id="_uxtdMHcIEd6ZeOKq_2_a9g" message="HITSP Condition SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.7" base_Class="_GgvgUDxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.7" assigningAuthorityName="HITSP C83"/>
-  <CDA:CDATemplate xmi:id="_vuEXwHcIEd6ZeOKq_2_a9g" message="HITSP Medication SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.8" base_Class="_IjIO0DxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.8" assigningAuthorityName="HITSP C83"/>
+  <CDA:CDATemplate xmi:id="_vuEXwHcIEd6ZeOKq_2_a9g" message="HITSP Medication SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.8" base_Class="_IjIO0DxbEd6JwqSGecoePg" templateId="2.16.840.1.113883.3.88.11.83.8" assigningAuthorityName="HITSP C83" contextDependent="true"/>
   <CDA:CDATemplate xmi:id="_wcI-sHcIEd6ZeOKq_2_a9g" message="HITSP Patient Summary SHALL contain the template identifier 2.16.840.1.113883.3.88.11.32.1" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.32.1" assigningAuthorityName="HITSP C32"/>
   <Default:Documentation xmi:id="_aq9jUHrXEd68l9lQ-TLEBQ" base_Comment="_aq5R4HrXEd68l9lQ-TLEBQ"/>
   <CDA:CodegenSupport xmi:id="_lVjhYJyPEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" packageName="hitsp" prefix="HITSP" base_Namespace="_qQyD8jxVEd6JwqSGecoePg"/>

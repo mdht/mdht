@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPRegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.hitsp.HealthcareProvider;
 import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPresentIllness;
@@ -39,6 +40,11 @@ import org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider;
 import org.openhealthtools.mdht.uml.cda.hitsp.LanguageSpoken;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationCombinationMedication;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationConditionalDose;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationNormalDose;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationSplitDose;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationTaperedDose;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
@@ -138,6 +144,12 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 			case HITSPPackage.HEALTHCARE_PROVIDER: return createHealthcareProvider();
 			case HITSPPackage.IMMUNIZATION: return createImmunization();
 			case HITSPPackage.COMMENT: return createComment();
+			case HITSPPackage.MEDICATION_NORMAL_DOSE: return createMedicationNormalDose();
+			case HITSPPackage.MEDICATION_SPLIT_DOSE: return createMedicationSplitDose();
+			case HITSPPackage.MEDICATION_TAPERED_DOSE: return createMedicationTaperedDose();
+			case HITSPPackage.MEDICATION_CONDITIONAL_DOSE: return createMedicationConditionalDose();
+			case HITSPPackage.MEDICATION_COMBINATION_MEDICATION: return createMedicationCombinationMedication();
+			case HITSPPackage.HITSP_REGISTRY_DELEGATE: return createHITSPRegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -531,6 +543,66 @@ public class HITSPFactoryImpl extends EFactoryImpl implements HITSPFactory {
 	public Comment createComment() {
 		CommentImpl comment = new CommentImpl();
 		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationNormalDose createMedicationNormalDose() {
+		MedicationNormalDoseImpl medicationNormalDose = new MedicationNormalDoseImpl();
+		return medicationNormalDose;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationSplitDose createMedicationSplitDose() {
+		MedicationSplitDoseImpl medicationSplitDose = new MedicationSplitDoseImpl();
+		return medicationSplitDose;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationTaperedDose createMedicationTaperedDose() {
+		MedicationTaperedDoseImpl medicationTaperedDose = new MedicationTaperedDoseImpl();
+		return medicationTaperedDose;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationConditionalDose createMedicationConditionalDose() {
+		MedicationConditionalDoseImpl medicationConditionalDose = new MedicationConditionalDoseImpl();
+		return medicationConditionalDose;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MedicationCombinationMedication createMedicationCombinationMedication() {
+		MedicationCombinationMedicationImpl medicationCombinationMedication = new MedicationCombinationMedicationImpl();
+		return medicationCombinationMedication;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HITSPRegistryDelegate createHITSPRegistryDelegate() {
+		HITSPRegistryDelegateImpl hitspRegistryDelegate = new HITSPRegistryDelegateImpl();
+		return hitspRegistryDelegate;
 	}
 
 	/**
