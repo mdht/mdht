@@ -655,6 +655,11 @@ life, hobbies, and risky habits.</body>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_Njf0cEocEd6c3qsAxlFHaQ"/>
       </ownedAttribute>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8M5ZwFIvEd-4TsxSz4jnfg" name="PayerEntry">
+      <generalization xmi:id="_8M5ZwVIvEd-4TsxSz4jnfg">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_6M-toMJqEd6-XpBv2uxYrQ"/>
+      </generalization>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -896,4 +901,5 @@ life, hobbies, and risky habits.</body>
   <CDA:ConformsTo xmi:id="_6wwOIFF6Ed-Lud-5SYZhMw" base_Generalization="_jZMQ0TuMEd-B8KE6Jx0UNQ" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_6ww1MFF6Ed-Lud-5SYZhMw" base_Generalization="_6yfdETuNEd-B8KE6Jx0UNQ" requiresParentId="true"/>
   <CDA:ConformsTo xmi:id="_6wxcQFF6Ed-Lud-5SYZhMw" base_Generalization="_9xEuETuNEd-B8KE6Jx0UNQ" requiresParentId="true"/>
+  <CDA:CDATemplate xmi:id="_AvxIAFIwEd-4TsxSz4jnfg" message="IHE Payer Entry SHALL contain the template identifier 1.3.6.1.4.1.19376.1.5.3.1.4.18" base_Class="_8M5ZwFIvEd-4TsxSz4jnfg" templateId="1.3.6.1.4.1.19376.1.5.3.1.4.18" assigningAuthorityName="IHE PCC"/>
 </xmi:XMI>

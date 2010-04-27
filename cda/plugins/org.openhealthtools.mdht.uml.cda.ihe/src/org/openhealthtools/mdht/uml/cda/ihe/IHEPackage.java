@@ -12150,6 +12150,232 @@ public interface IHEPackage extends EPackage {
 	int COMMENT_FEATURE_COUNT = CDAPackage.ACT_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.PayerEntryImpl <em>Payer Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.PayerEntryImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getPayerEntry()
+	 * @generated
+	 */
+	int PAYER_ENTRY = 58;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__REALM_CODE = CCDPackage.POLICY_ACTIVITY__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__TYPE_ID = CCDPackage.POLICY_ACTIVITY__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__TEMPLATE_ID = CCDPackage.POLICY_ACTIVITY__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__ID = CCDPackage.POLICY_ACTIVITY__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__CODE = CCDPackage.POLICY_ACTIVITY__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__TEXT = CCDPackage.POLICY_ACTIVITY__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__STATUS_CODE = CCDPackage.POLICY_ACTIVITY__STATUS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__EFFECTIVE_TIME = CCDPackage.POLICY_ACTIVITY__EFFECTIVE_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__PRIORITY_CODE = CCDPackage.POLICY_ACTIVITY__PRIORITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__LANGUAGE_CODE = CCDPackage.POLICY_ACTIVITY__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__SUBJECT = CCDPackage.POLICY_ACTIVITY__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__SPECIMEN = CCDPackage.POLICY_ACTIVITY__SPECIMEN;
+
+	/**
+	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__PERFORMER = CCDPackage.POLICY_ACTIVITY__PERFORMER;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__AUTHOR = CCDPackage.POLICY_ACTIVITY__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__INFORMANT = CCDPackage.POLICY_ACTIVITY__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__PARTICIPANT = CCDPackage.POLICY_ACTIVITY__PARTICIPANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__ENTRY_RELATIONSHIP = CCDPackage.POLICY_ACTIVITY__ENTRY_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__REFERENCE = CCDPackage.POLICY_ACTIVITY__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__PRECONDITION = CCDPackage.POLICY_ACTIVITY__PRECONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__NULL_FLAVOR = CCDPackage.POLICY_ACTIVITY__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__CLASS_CODE = CCDPackage.POLICY_ACTIVITY__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__MOOD_CODE = CCDPackage.POLICY_ACTIVITY__MOOD_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY__NEGATION_IND = CCDPackage.POLICY_ACTIVITY__NEGATION_IND;
+
+	/**
+	 * The number of structural features of the '<em>Payer Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYER_ENTRY_FEATURE_COUNT = CCDPackage.POLICY_ACTIVITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.IHERegistryDelegateImpl <em>Registry Delegate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12157,7 +12383,7 @@ public interface IHEPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getIHERegistryDelegate()
 	 * @generated
 	 */
-	int IHE_REGISTRY_DELEGATE = 58;
+	int IHE_REGISTRY_DELEGATE = 59;
 
 	/**
 	 * The number of structural features of the '<em>Registry Delegate</em>' class.
@@ -12748,6 +12974,16 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComment();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.PayerEntry <em>Payer Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Payer Entry</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.PayerEntry
+	 * @generated
+	 */
+	EClass getPayerEntry();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate <em>Registry Delegate</em>}'.
@@ -13360,6 +13596,16 @@ public interface IHEPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMMENT = eINSTANCE.getComment();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.PayerEntryImpl <em>Payer Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.PayerEntryImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getPayerEntry()
+		 * @generated
+		 */
+		EClass PAYER_ENTRY = eINSTANCE.getPayerEntry();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.IHERegistryDelegateImpl <em>Registry Delegate</em>}' class.

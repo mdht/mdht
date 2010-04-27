@@ -36,6 +36,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
@@ -86,6 +87,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.PayerEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection;
@@ -395,6 +397,10 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createCommentAdapter();
 			}
 			@Override
+			public Adapter casePayerEntry(PayerEntry object) {
+				return createPayerEntryAdapter();
+			}
+			@Override
 			public Adapter caseIHERegistryDelegate(IHERegistryDelegate object) {
 				return createIHERegistryDelegateAdapter();
 			}
@@ -541,6 +547,10 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePlanOfCareActivityProcedure(PlanOfCareActivityProcedure object) {
 				return createPlanOfCareActivityProcedureAdapter();
+			}
+			@Override
+			public Adapter casePolicyActivity(PolicyActivity object) {
+				return createPolicyActivityAdapter();
 			}
 			@Override
 			public Adapter caseRegistryDelegate(RegistryDelegate object) {
@@ -1379,6 +1389,20 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.PayerEntry <em>Payer Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.PayerEntry
+	 * @generated
+	 */
+	public Adapter createPayerEntryAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.IHERegistryDelegate <em>Registry Delegate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1893,6 +1917,20 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPlanOfCareActivityProcedureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity <em>Policy Activity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity
+	 * @generated
+	 */
+	public Adapter createPolicyActivityAdapter() {
 		return null;
 	}
 

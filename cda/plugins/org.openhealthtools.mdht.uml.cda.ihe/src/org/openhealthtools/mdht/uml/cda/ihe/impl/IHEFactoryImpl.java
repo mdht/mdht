@@ -59,6 +59,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.PayerEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection;
@@ -179,6 +180,7 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE: return createProcedureEntryProcedureActivityProcedure();
 			case IHEPackage.PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE: return createProcedureEntryPlanOfCareActivityProcedure();
 			case IHEPackage.COMMENT: return createComment();
+			case IHEPackage.PAYER_ENTRY: return createPayerEntry();
 			case IHEPackage.IHE_REGISTRY_DELEGATE: return createIHERegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -753,6 +755,16 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	public Comment createComment() {
 		CommentImpl comment = new CommentImpl();
 		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PayerEntry createPayerEntry() {
+		PayerEntryImpl payerEntry = new PayerEntryImpl();
+		return payerEntry;
 	}
 
 	/**

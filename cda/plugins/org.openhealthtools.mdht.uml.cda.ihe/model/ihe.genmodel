@@ -530,6 +530,7 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//Comment/CommentText/context"/>
       </genOperations>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//PayerEntry"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//IHERegistryDelegate"/>
   </genPackages>
 </genmodel:GenModel>

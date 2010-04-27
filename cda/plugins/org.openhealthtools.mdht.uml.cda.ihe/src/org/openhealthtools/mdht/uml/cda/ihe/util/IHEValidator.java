@@ -62,6 +62,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.PayerEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection;
@@ -910,12 +911,20 @@ public class IHEValidator extends EObjectValidator {
 	public static final int COMMENT__COMMENT_TEXT = 100;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Policy Activity Template Id' of 'Payer Entry'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PAYER_ENTRY__POLICY_ACTIVITY_TEMPLATE_ID = 101;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 100;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 101;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1089,6 +1098,8 @@ public class IHEValidator extends EObjectValidator {
 				return validateProcedureEntryPlanOfCareActivityProcedure((ProcedureEntryPlanOfCareActivityProcedure)value, diagnostics, context);
 			case IHEPackage.COMMENT:
 				return validateComment((Comment)value, diagnostics, context);
+			case IHEPackage.PAYER_ENTRY:
+				return validatePayerEntry((PayerEntry)value, diagnostics, context);
 			case IHEPackage.IHE_REGISTRY_DELEGATE:
 				return validateIHERegistryDelegate((IHERegistryDelegate)value, diagnostics, context);
 			default:
@@ -3425,6 +3436,57 @@ public class IHEValidator extends EObjectValidator {
 	 */
 	public boolean validateComment_validateCommentText(Comment comment, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return comment.validateCommentText(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePayerEntry(PayerEntry payerEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePayerEntry_validatePolicyActivityTemplateId(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityClassCode(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityMoodCode(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityId(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityStatusCode(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityAuthorizationActivity(payerEntry, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validatePolicyActivityTemplateId constraint of '<em>Payer Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePayerEntry_validatePolicyActivityTemplateId(PayerEntry payerEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "validatePolicyActivityTemplateId", getObjectLabel(payerEntry, context) },
+						 new Object[] { payerEntry },
+						 context));
+			}
+			return false;
+		}
+		return ccdValidator.validatePolicyActivity_validatePolicyActivityTemplateId(payerEntry, diagnostics, context);
 	}
 
 	/**
