@@ -2809,14 +2809,14 @@ public interface IHEPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.NormalDosingImpl <em>Normal Dosing</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.NormalDoseImpl <em>Normal Dose</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.NormalDosingImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getNormalDosing()
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.NormalDoseImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getNormalDose()
 	 * @generated
 	 */
-	int NORMAL_DOSING = 12;
+	int NORMAL_DOSE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -2825,7 +2825,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__REALM_CODE = MEDICATION__REALM_CODE;
+	int NORMAL_DOSE__REALM_CODE = MEDICATION__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -2834,7 +2834,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__TYPE_ID = MEDICATION__TYPE_ID;
+	int NORMAL_DOSE__TYPE_ID = MEDICATION__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -2843,7 +2843,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__TEMPLATE_ID = MEDICATION__TEMPLATE_ID;
+	int NORMAL_DOSE__TEMPLATE_ID = MEDICATION__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -2852,7 +2852,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__ID = MEDICATION__ID;
+	int NORMAL_DOSE__ID = MEDICATION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -2861,7 +2861,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__CODE = MEDICATION__CODE;
+	int NORMAL_DOSE__CODE = MEDICATION__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -2870,7 +2870,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__TEXT = MEDICATION__TEXT;
+	int NORMAL_DOSE__TEXT = MEDICATION__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -2879,7 +2879,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__STATUS_CODE = MEDICATION__STATUS_CODE;
+	int NORMAL_DOSE__STATUS_CODE = MEDICATION__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference list.
@@ -2888,7 +2888,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__EFFECTIVE_TIME = MEDICATION__EFFECTIVE_TIME;
+	int NORMAL_DOSE__EFFECTIVE_TIME = MEDICATION__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -2897,7 +2897,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__PRIORITY_CODE = MEDICATION__PRIORITY_CODE;
+	int NORMAL_DOSE__PRIORITY_CODE = MEDICATION__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Repeat Number</b></em>' containment reference.
@@ -2906,7 +2906,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__REPEAT_NUMBER = MEDICATION__REPEAT_NUMBER;
+	int NORMAL_DOSE__REPEAT_NUMBER = MEDICATION__REPEAT_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Route Code</b></em>' containment reference.
@@ -2915,7 +2915,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__ROUTE_CODE = MEDICATION__ROUTE_CODE;
+	int NORMAL_DOSE__ROUTE_CODE = MEDICATION__ROUTE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Approach Site Code</b></em>' containment reference list.
@@ -2924,7 +2924,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__APPROACH_SITE_CODE = MEDICATION__APPROACH_SITE_CODE;
+	int NORMAL_DOSE__APPROACH_SITE_CODE = MEDICATION__APPROACH_SITE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Dose Quantity</b></em>' containment reference.
@@ -2933,7 +2933,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__DOSE_QUANTITY = MEDICATION__DOSE_QUANTITY;
+	int NORMAL_DOSE__DOSE_QUANTITY = MEDICATION__DOSE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Rate Quantity</b></em>' containment reference.
@@ -2942,7 +2942,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__RATE_QUANTITY = MEDICATION__RATE_QUANTITY;
+	int NORMAL_DOSE__RATE_QUANTITY = MEDICATION__RATE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Max Dose Quantity</b></em>' containment reference.
@@ -2951,7 +2951,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__MAX_DOSE_QUANTITY = MEDICATION__MAX_DOSE_QUANTITY;
+	int NORMAL_DOSE__MAX_DOSE_QUANTITY = MEDICATION__MAX_DOSE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
@@ -2960,7 +2960,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__ADMINISTRATION_UNIT_CODE = MEDICATION__ADMINISTRATION_UNIT_CODE;
+	int NORMAL_DOSE__ADMINISTRATION_UNIT_CODE = MEDICATION__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -2969,7 +2969,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__SUBJECT = MEDICATION__SUBJECT;
+	int NORMAL_DOSE__SUBJECT = MEDICATION__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -2978,7 +2978,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__SPECIMEN = MEDICATION__SPECIMEN;
+	int NORMAL_DOSE__SPECIMEN = MEDICATION__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Consumable</b></em>' containment reference.
@@ -2987,7 +2987,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__CONSUMABLE = MEDICATION__CONSUMABLE;
+	int NORMAL_DOSE__CONSUMABLE = MEDICATION__CONSUMABLE;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -2996,7 +2996,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__PERFORMER = MEDICATION__PERFORMER;
+	int NORMAL_DOSE__PERFORMER = MEDICATION__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -3005,7 +3005,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__AUTHOR = MEDICATION__AUTHOR;
+	int NORMAL_DOSE__AUTHOR = MEDICATION__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -3014,7 +3014,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__INFORMANT = MEDICATION__INFORMANT;
+	int NORMAL_DOSE__INFORMANT = MEDICATION__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -3023,7 +3023,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__REFERENCE = MEDICATION__REFERENCE;
+	int NORMAL_DOSE__REFERENCE = MEDICATION__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -3032,7 +3032,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__PARTICIPANT = MEDICATION__PARTICIPANT;
+	int NORMAL_DOSE__PARTICIPANT = MEDICATION__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -3041,7 +3041,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__ENTRY_RELATIONSHIP = MEDICATION__ENTRY_RELATIONSHIP;
+	int NORMAL_DOSE__ENTRY_RELATIONSHIP = MEDICATION__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -3050,7 +3050,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__PRECONDITION = MEDICATION__PRECONDITION;
+	int NORMAL_DOSE__PRECONDITION = MEDICATION__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3059,7 +3059,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__NULL_FLAVOR = MEDICATION__NULL_FLAVOR;
+	int NORMAL_DOSE__NULL_FLAVOR = MEDICATION__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -3068,7 +3068,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__CLASS_CODE = MEDICATION__CLASS_CODE;
+	int NORMAL_DOSE__CLASS_CODE = MEDICATION__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -3077,7 +3077,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__MOOD_CODE = MEDICATION__MOOD_CODE;
+	int NORMAL_DOSE__MOOD_CODE = MEDICATION__MOOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -3086,16 +3086,16 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING__NEGATION_IND = MEDICATION__NEGATION_IND;
+	int NORMAL_DOSE__NEGATION_IND = MEDICATION__NEGATION_IND;
 
 	/**
-	 * The number of structural features of the '<em>Normal Dosing</em>' class.
+	 * The number of structural features of the '<em>Normal Dose</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DOSING_FEATURE_COUNT = MEDICATION_FEATURE_COUNT + 0;
+	int NORMAL_DOSE_FEATURE_COUNT = MEDICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.TaperedDoseImpl <em>Tapered Dose</em>}' class.
@@ -3387,14 +3387,14 @@ public interface IHEPackage extends EPackage {
 	int TAPERED_DOSE_FEATURE_COUNT = MEDICATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.SplitDosingImpl <em>Split Dosing</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.SplitDoseImpl <em>Split Dose</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.SplitDosingImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getSplitDosing()
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.SplitDoseImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getSplitDose()
 	 * @generated
 	 */
-	int SPLIT_DOSING = 14;
+	int SPLIT_DOSE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3403,7 +3403,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__REALM_CODE = MEDICATION__REALM_CODE;
+	int SPLIT_DOSE__REALM_CODE = MEDICATION__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3412,7 +3412,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__TYPE_ID = MEDICATION__TYPE_ID;
+	int SPLIT_DOSE__TYPE_ID = MEDICATION__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3421,7 +3421,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__TEMPLATE_ID = MEDICATION__TEMPLATE_ID;
+	int SPLIT_DOSE__TEMPLATE_ID = MEDICATION__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -3430,7 +3430,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__ID = MEDICATION__ID;
+	int SPLIT_DOSE__ID = MEDICATION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -3439,7 +3439,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__CODE = MEDICATION__CODE;
+	int SPLIT_DOSE__CODE = MEDICATION__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -3448,7 +3448,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__TEXT = MEDICATION__TEXT;
+	int SPLIT_DOSE__TEXT = MEDICATION__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -3457,7 +3457,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__STATUS_CODE = MEDICATION__STATUS_CODE;
+	int SPLIT_DOSE__STATUS_CODE = MEDICATION__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference list.
@@ -3466,7 +3466,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__EFFECTIVE_TIME = MEDICATION__EFFECTIVE_TIME;
+	int SPLIT_DOSE__EFFECTIVE_TIME = MEDICATION__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -3475,7 +3475,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__PRIORITY_CODE = MEDICATION__PRIORITY_CODE;
+	int SPLIT_DOSE__PRIORITY_CODE = MEDICATION__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Repeat Number</b></em>' containment reference.
@@ -3484,7 +3484,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__REPEAT_NUMBER = MEDICATION__REPEAT_NUMBER;
+	int SPLIT_DOSE__REPEAT_NUMBER = MEDICATION__REPEAT_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Route Code</b></em>' containment reference.
@@ -3493,7 +3493,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__ROUTE_CODE = MEDICATION__ROUTE_CODE;
+	int SPLIT_DOSE__ROUTE_CODE = MEDICATION__ROUTE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Approach Site Code</b></em>' containment reference list.
@@ -3502,7 +3502,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__APPROACH_SITE_CODE = MEDICATION__APPROACH_SITE_CODE;
+	int SPLIT_DOSE__APPROACH_SITE_CODE = MEDICATION__APPROACH_SITE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Dose Quantity</b></em>' containment reference.
@@ -3511,7 +3511,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__DOSE_QUANTITY = MEDICATION__DOSE_QUANTITY;
+	int SPLIT_DOSE__DOSE_QUANTITY = MEDICATION__DOSE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Rate Quantity</b></em>' containment reference.
@@ -3520,7 +3520,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__RATE_QUANTITY = MEDICATION__RATE_QUANTITY;
+	int SPLIT_DOSE__RATE_QUANTITY = MEDICATION__RATE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Max Dose Quantity</b></em>' containment reference.
@@ -3529,7 +3529,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__MAX_DOSE_QUANTITY = MEDICATION__MAX_DOSE_QUANTITY;
+	int SPLIT_DOSE__MAX_DOSE_QUANTITY = MEDICATION__MAX_DOSE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
@@ -3538,7 +3538,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__ADMINISTRATION_UNIT_CODE = MEDICATION__ADMINISTRATION_UNIT_CODE;
+	int SPLIT_DOSE__ADMINISTRATION_UNIT_CODE = MEDICATION__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -3547,7 +3547,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__SUBJECT = MEDICATION__SUBJECT;
+	int SPLIT_DOSE__SUBJECT = MEDICATION__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -3556,7 +3556,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__SPECIMEN = MEDICATION__SPECIMEN;
+	int SPLIT_DOSE__SPECIMEN = MEDICATION__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Consumable</b></em>' containment reference.
@@ -3565,7 +3565,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__CONSUMABLE = MEDICATION__CONSUMABLE;
+	int SPLIT_DOSE__CONSUMABLE = MEDICATION__CONSUMABLE;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -3574,7 +3574,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__PERFORMER = MEDICATION__PERFORMER;
+	int SPLIT_DOSE__PERFORMER = MEDICATION__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -3583,7 +3583,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__AUTHOR = MEDICATION__AUTHOR;
+	int SPLIT_DOSE__AUTHOR = MEDICATION__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -3592,7 +3592,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__INFORMANT = MEDICATION__INFORMANT;
+	int SPLIT_DOSE__INFORMANT = MEDICATION__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -3601,7 +3601,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__REFERENCE = MEDICATION__REFERENCE;
+	int SPLIT_DOSE__REFERENCE = MEDICATION__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -3610,7 +3610,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__PARTICIPANT = MEDICATION__PARTICIPANT;
+	int SPLIT_DOSE__PARTICIPANT = MEDICATION__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -3619,7 +3619,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__ENTRY_RELATIONSHIP = MEDICATION__ENTRY_RELATIONSHIP;
+	int SPLIT_DOSE__ENTRY_RELATIONSHIP = MEDICATION__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -3628,7 +3628,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__PRECONDITION = MEDICATION__PRECONDITION;
+	int SPLIT_DOSE__PRECONDITION = MEDICATION__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3637,7 +3637,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__NULL_FLAVOR = MEDICATION__NULL_FLAVOR;
+	int SPLIT_DOSE__NULL_FLAVOR = MEDICATION__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -3646,7 +3646,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__CLASS_CODE = MEDICATION__CLASS_CODE;
+	int SPLIT_DOSE__CLASS_CODE = MEDICATION__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -3655,7 +3655,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__MOOD_CODE = MEDICATION__MOOD_CODE;
+	int SPLIT_DOSE__MOOD_CODE = MEDICATION__MOOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -3664,26 +3664,26 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING__NEGATION_IND = MEDICATION__NEGATION_IND;
+	int SPLIT_DOSE__NEGATION_IND = MEDICATION__NEGATION_IND;
 
 	/**
-	 * The number of structural features of the '<em>Split Dosing</em>' class.
+	 * The number of structural features of the '<em>Split Dose</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPLIT_DOSING_FEATURE_COUNT = MEDICATION_FEATURE_COUNT + 0;
+	int SPLIT_DOSE_FEATURE_COUNT = MEDICATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ConditionalDosingImpl <em>Conditional Dosing</em>}' class.
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ConditionalDoseImpl <em>Conditional Dose</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.ConditionalDosingImpl
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getConditionalDosing()
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.ConditionalDoseImpl
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getConditionalDose()
 	 * @generated
 	 */
-	int CONDITIONAL_DOSING = 15;
+	int CONDITIONAL_DOSE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3692,7 +3692,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__REALM_CODE = MEDICATION__REALM_CODE;
+	int CONDITIONAL_DOSE__REALM_CODE = MEDICATION__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -3701,7 +3701,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__TYPE_ID = MEDICATION__TYPE_ID;
+	int CONDITIONAL_DOSE__TYPE_ID = MEDICATION__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -3710,7 +3710,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__TEMPLATE_ID = MEDICATION__TEMPLATE_ID;
+	int CONDITIONAL_DOSE__TEMPLATE_ID = MEDICATION__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference list.
@@ -3719,7 +3719,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__ID = MEDICATION__ID;
+	int CONDITIONAL_DOSE__ID = MEDICATION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -3728,7 +3728,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__CODE = MEDICATION__CODE;
+	int CONDITIONAL_DOSE__CODE = MEDICATION__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -3737,7 +3737,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__TEXT = MEDICATION__TEXT;
+	int CONDITIONAL_DOSE__TEXT = MEDICATION__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Status Code</b></em>' containment reference.
@@ -3746,7 +3746,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__STATUS_CODE = MEDICATION__STATUS_CODE;
+	int CONDITIONAL_DOSE__STATUS_CODE = MEDICATION__STATUS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference list.
@@ -3755,7 +3755,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__EFFECTIVE_TIME = MEDICATION__EFFECTIVE_TIME;
+	int CONDITIONAL_DOSE__EFFECTIVE_TIME = MEDICATION__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
@@ -3764,7 +3764,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__PRIORITY_CODE = MEDICATION__PRIORITY_CODE;
+	int CONDITIONAL_DOSE__PRIORITY_CODE = MEDICATION__PRIORITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Repeat Number</b></em>' containment reference.
@@ -3773,7 +3773,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__REPEAT_NUMBER = MEDICATION__REPEAT_NUMBER;
+	int CONDITIONAL_DOSE__REPEAT_NUMBER = MEDICATION__REPEAT_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Route Code</b></em>' containment reference.
@@ -3782,7 +3782,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__ROUTE_CODE = MEDICATION__ROUTE_CODE;
+	int CONDITIONAL_DOSE__ROUTE_CODE = MEDICATION__ROUTE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Approach Site Code</b></em>' containment reference list.
@@ -3791,7 +3791,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__APPROACH_SITE_CODE = MEDICATION__APPROACH_SITE_CODE;
+	int CONDITIONAL_DOSE__APPROACH_SITE_CODE = MEDICATION__APPROACH_SITE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Dose Quantity</b></em>' containment reference.
@@ -3800,7 +3800,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__DOSE_QUANTITY = MEDICATION__DOSE_QUANTITY;
+	int CONDITIONAL_DOSE__DOSE_QUANTITY = MEDICATION__DOSE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Rate Quantity</b></em>' containment reference.
@@ -3809,7 +3809,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__RATE_QUANTITY = MEDICATION__RATE_QUANTITY;
+	int CONDITIONAL_DOSE__RATE_QUANTITY = MEDICATION__RATE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Max Dose Quantity</b></em>' containment reference.
@@ -3818,7 +3818,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__MAX_DOSE_QUANTITY = MEDICATION__MAX_DOSE_QUANTITY;
+	int CONDITIONAL_DOSE__MAX_DOSE_QUANTITY = MEDICATION__MAX_DOSE_QUANTITY;
 
 	/**
 	 * The feature id for the '<em><b>Administration Unit Code</b></em>' containment reference.
@@ -3827,7 +3827,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__ADMINISTRATION_UNIT_CODE = MEDICATION__ADMINISTRATION_UNIT_CODE;
+	int CONDITIONAL_DOSE__ADMINISTRATION_UNIT_CODE = MEDICATION__ADMINISTRATION_UNIT_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
@@ -3836,7 +3836,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__SUBJECT = MEDICATION__SUBJECT;
+	int CONDITIONAL_DOSE__SUBJECT = MEDICATION__SUBJECT;
 
 	/**
 	 * The feature id for the '<em><b>Specimen</b></em>' containment reference list.
@@ -3845,7 +3845,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__SPECIMEN = MEDICATION__SPECIMEN;
+	int CONDITIONAL_DOSE__SPECIMEN = MEDICATION__SPECIMEN;
 
 	/**
 	 * The feature id for the '<em><b>Consumable</b></em>' containment reference.
@@ -3854,7 +3854,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__CONSUMABLE = MEDICATION__CONSUMABLE;
+	int CONDITIONAL_DOSE__CONSUMABLE = MEDICATION__CONSUMABLE;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' containment reference list.
@@ -3863,7 +3863,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__PERFORMER = MEDICATION__PERFORMER;
+	int CONDITIONAL_DOSE__PERFORMER = MEDICATION__PERFORMER;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -3872,7 +3872,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__AUTHOR = MEDICATION__AUTHOR;
+	int CONDITIONAL_DOSE__AUTHOR = MEDICATION__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -3881,7 +3881,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__INFORMANT = MEDICATION__INFORMANT;
+	int CONDITIONAL_DOSE__INFORMANT = MEDICATION__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
@@ -3890,7 +3890,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__REFERENCE = MEDICATION__REFERENCE;
+	int CONDITIONAL_DOSE__REFERENCE = MEDICATION__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -3899,7 +3899,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__PARTICIPANT = MEDICATION__PARTICIPANT;
+	int CONDITIONAL_DOSE__PARTICIPANT = MEDICATION__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>Entry Relationship</b></em>' containment reference list.
@@ -3908,7 +3908,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__ENTRY_RELATIONSHIP = MEDICATION__ENTRY_RELATIONSHIP;
+	int CONDITIONAL_DOSE__ENTRY_RELATIONSHIP = MEDICATION__ENTRY_RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
@@ -3917,7 +3917,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__PRECONDITION = MEDICATION__PRECONDITION;
+	int CONDITIONAL_DOSE__PRECONDITION = MEDICATION__PRECONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3926,7 +3926,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__NULL_FLAVOR = MEDICATION__NULL_FLAVOR;
+	int CONDITIONAL_DOSE__NULL_FLAVOR = MEDICATION__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -3935,7 +3935,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__CLASS_CODE = MEDICATION__CLASS_CODE;
+	int CONDITIONAL_DOSE__CLASS_CODE = MEDICATION__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -3944,7 +3944,7 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__MOOD_CODE = MEDICATION__MOOD_CODE;
+	int CONDITIONAL_DOSE__MOOD_CODE = MEDICATION__MOOD_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Negation Ind</b></em>' attribute.
@@ -3953,16 +3953,16 @@ public interface IHEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING__NEGATION_IND = MEDICATION__NEGATION_IND;
+	int CONDITIONAL_DOSE__NEGATION_IND = MEDICATION__NEGATION_IND;
 
 	/**
-	 * The number of structural features of the '<em>Conditional Dosing</em>' class.
+	 * The number of structural features of the '<em>Conditional Dose</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_DOSING_FEATURE_COUNT = MEDICATION_FEATURE_COUNT + 0;
+	int CONDITIONAL_DOSE_FEATURE_COUNT = MEDICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.CombinationMedicationImpl <em>Combination Medication</em>}' class.
@@ -12290,14 +12290,14 @@ public interface IHEPackage extends EPackage {
 	EClass getAllergiesReactionsSection();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.NormalDosing <em>Normal Dosing</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.NormalDose <em>Normal Dose</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Normal Dosing</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.NormalDosing
+	 * @return the meta object for class '<em>Normal Dose</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.NormalDose
 	 * @generated
 	 */
-	EClass getNormalDosing();
+	EClass getNormalDose();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.TaperedDose <em>Tapered Dose</em>}'.
@@ -12310,24 +12310,24 @@ public interface IHEPackage extends EPackage {
 	EClass getTaperedDose();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.SplitDosing <em>Split Dosing</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.SplitDose <em>Split Dose</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Split Dosing</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.SplitDosing
+	 * @return the meta object for class '<em>Split Dose</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.SplitDose
 	 * @generated
 	 */
-	EClass getSplitDosing();
+	EClass getSplitDose();
 
 	/**
-	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing <em>Conditional Dosing</em>}'.
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.ConditionalDose <em>Conditional Dose</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Conditional Dosing</em>'.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing
+	 * @return the meta object for class '<em>Conditional Dose</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ConditionalDose
 	 * @generated
 	 */
-	EClass getConditionalDosing();
+	EClass getConditionalDose();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication <em>Combination Medication</em>}'.
@@ -12902,14 +12902,14 @@ public interface IHEPackage extends EPackage {
 		EClass ALLERGIES_REACTIONS_SECTION = eINSTANCE.getAllergiesReactionsSection();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.NormalDosingImpl <em>Normal Dosing</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.NormalDoseImpl <em>Normal Dose</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.NormalDosingImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getNormalDosing()
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.NormalDoseImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getNormalDose()
 		 * @generated
 		 */
-		EClass NORMAL_DOSING = eINSTANCE.getNormalDosing();
+		EClass NORMAL_DOSE = eINSTANCE.getNormalDose();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.TaperedDoseImpl <em>Tapered Dose</em>}' class.
@@ -12922,24 +12922,24 @@ public interface IHEPackage extends EPackage {
 		EClass TAPERED_DOSE = eINSTANCE.getTaperedDose();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.SplitDosingImpl <em>Split Dosing</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.SplitDoseImpl <em>Split Dose</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.SplitDosingImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getSplitDosing()
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.SplitDoseImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getSplitDose()
 		 * @generated
 		 */
-		EClass SPLIT_DOSING = eINSTANCE.getSplitDosing();
+		EClass SPLIT_DOSE = eINSTANCE.getSplitDose();
 
 		/**
-		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ConditionalDosingImpl <em>Conditional Dosing</em>}' class.
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.ConditionalDoseImpl <em>Conditional Dose</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.ConditionalDosingImpl
-		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getConditionalDosing()
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.ConditionalDoseImpl
+		 * @see org.openhealthtools.mdht.uml.cda.ihe.impl.IHEPackageImpl#getConditionalDose()
 		 * @generated
 		 */
-		EClass CONDITIONAL_DOSING = eINSTANCE.getConditionalDosing();
+		EClass CONDITIONAL_DOSE = eINSTANCE.getConditionalDose();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.ihe.impl.CombinationMedicationImpl <em>Combination Medication</em>}' class.

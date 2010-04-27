@@ -36,7 +36,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.Comment;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
-import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
@@ -60,7 +60,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.Medication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
-import org.openhealthtools.mdht.uml.cda.ihe.NormalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
@@ -75,7 +75,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
-import org.openhealthtools.mdht.uml.cda.ihe.SplitDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
 import org.openhealthtools.mdht.uml.cda.ihe.SurgeriesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
@@ -179,7 +179,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass normalDosingEClass = null;
+	private EClass normalDoseEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,14 +193,14 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass splitDosingEClass = null;
+	private EClass splitDoseEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass conditionalDosingEClass = null;
+	private EClass conditionalDoseEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -689,8 +689,8 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getNormalDosing() {
-		return normalDosingEClass;
+	public EClass getNormalDose() {
+		return normalDoseEClass;
 	}
 
 	/**
@@ -707,8 +707,8 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSplitDosing() {
-		return splitDosingEClass;
+	public EClass getSplitDose() {
+		return splitDoseEClass;
 	}
 
 	/**
@@ -716,8 +716,8 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getConditionalDosing() {
-		return conditionalDosingEClass;
+	public EClass getConditionalDose() {
+		return conditionalDoseEClass;
 	}
 
 	/**
@@ -1159,13 +1159,13 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 
 		allergiesReactionsSectionEClass = createEClass(ALLERGIES_REACTIONS_SECTION);
 
-		normalDosingEClass = createEClass(NORMAL_DOSING);
+		normalDoseEClass = createEClass(NORMAL_DOSE);
 
 		taperedDoseEClass = createEClass(TAPERED_DOSE);
 
-		splitDosingEClass = createEClass(SPLIT_DOSING);
+		splitDoseEClass = createEClass(SPLIT_DOSE);
 
-		conditionalDosingEClass = createEClass(CONDITIONAL_DOSING);
+		conditionalDoseEClass = createEClass(CONDITIONAL_DOSE);
 
 		combinationMedicationEClass = createEClass(COMBINATION_MEDICATION);
 
@@ -1298,10 +1298,10 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		allergyIntoleranceConcernEClass.getESuperTypes().add(this.getConcernEntry());
 		allergyIntoleranceEClass.getESuperTypes().add(this.getProblemEntry());
 		allergiesReactionsSectionEClass.getESuperTypes().add(theCCDPackage.getAlertsSection());
-		normalDosingEClass.getESuperTypes().add(this.getMedication());
+		normalDoseEClass.getESuperTypes().add(this.getMedication());
 		taperedDoseEClass.getESuperTypes().add(this.getMedication());
-		splitDosingEClass.getESuperTypes().add(this.getMedication());
-		conditionalDosingEClass.getESuperTypes().add(this.getMedication());
+		splitDoseEClass.getESuperTypes().add(this.getMedication());
+		conditionalDoseEClass.getESuperTypes().add(this.getMedication());
 		combinationMedicationEClass.getESuperTypes().add(this.getMedication());
 		vitalSignsSectionEClass.getESuperTypes().add(theCCDPackage.getVitalSignsSection());
 		codedVitalSignsSectionEClass.getESuperTypes().add(this.getVitalSignsSection());
@@ -1544,9 +1544,9 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(normalDosingEClass, NormalDosing.class, "NormalDosing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(normalDoseEClass, NormalDose.class, "NormalDose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(normalDosingEClass, ecorePackage.getEBoolean(), "validateNormalDosingTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(normalDoseEClass, ecorePackage.getEBoolean(), "validateNormalDoseTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1566,9 +1566,9 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(splitDosingEClass, SplitDosing.class, "SplitDosing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(splitDoseEClass, SplitDose.class, "SplitDose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(splitDosingEClass, ecorePackage.getEBoolean(), "validateSplitDosingTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(splitDoseEClass, ecorePackage.getEBoolean(), "validateSplitDoseTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1577,9 +1577,9 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(conditionalDosingEClass, ConditionalDosing.class, "ConditionalDosing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(conditionalDoseEClass, ConditionalDose.class, "ConditionalDose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(conditionalDosingEClass, ecorePackage.getEBoolean(), "validateConditionalDosingTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(conditionalDoseEClass, ecorePackage.getEBoolean(), "validateConditionalDoseTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2448,11 +2448,11 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 			 "constraints.validation.error", "AllergiesReactionsSectionTemplateId"
 		   });							
 		addAnnotation
-		  (normalDosingEClass, 
+		  (normalDoseEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.7.1",
-			 "constraints.validation.error", "NormalDosingTemplateId"
+			 "constraints.validation.error", "NormalDoseTemplateId"
 		   });							
 		addAnnotation
 		  (taperedDoseEClass, 
@@ -2462,18 +2462,18 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 			 "constraints.validation.error", "TaperedDoseTemplateId"
 		   });						
 		addAnnotation
-		  (splitDosingEClass, 
+		  (splitDoseEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.9",
-			 "constraints.validation.error", "SplitDosingTemplateId"
+			 "constraints.validation.error", "SplitDoseTemplateId"
 		   });						
 		addAnnotation
-		  (conditionalDosingEClass, 
+		  (conditionalDoseEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.10",
-			 "constraints.validation.error", "ConditionalDosingTemplateId"
+			 "constraints.validation.error", "ConditionalDoseTemplateId"
 		   });						
 		addAnnotation
 		  (combinationMedicationEClass, 

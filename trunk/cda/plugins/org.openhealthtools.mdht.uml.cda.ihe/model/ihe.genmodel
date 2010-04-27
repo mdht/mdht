@@ -131,10 +131,10 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//AllergiesReactionsSection/AllergiesReactionsSectionTemplateId/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//NormalDosing">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//NormalDosing/NormalDosingTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//NormalDosing/NormalDosingTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//NormalDosing/NormalDosingTemplateId/context"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//NormalDose">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//NormalDose/NormalDoseTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//NormalDose/NormalDoseTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//NormalDose/NormalDoseTemplateId/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//TaperedDose">
@@ -143,16 +143,16 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//TaperedDose/TaperedDoseTemplateId/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//SplitDosing">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//SplitDosing/SplitDosingTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//SplitDosing/SplitDosingTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//SplitDosing/SplitDosingTemplateId/context"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//SplitDose">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//SplitDose/SplitDoseTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//SplitDose/SplitDoseTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//SplitDose/SplitDoseTemplateId/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ConditionalDosing">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ConditionalDosing/ConditionalDosingTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ConditionalDosing/ConditionalDosingTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ConditionalDosing/ConditionalDosingTemplateId/context"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//ConditionalDose">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ihe.ecore#//ConditionalDose/ConditionalDoseTemplateId">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ConditionalDose/ConditionalDoseTemplateId/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ihe.ecore#//ConditionalDose/ConditionalDoseTemplateId/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ihe.ecore#//CombinationMedication">

@@ -10,18 +10,17 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 
-
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Conditional Dosing</b></em>'.
+ * A representation of the model object '<em><b>Conditional Dose</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getConditionalDosing()
- * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.10' constraints.validation.error='ConditionalDosingTemplateId'"
+ * @see org.openhealthtools.mdht.uml.cda.ihe.IHEPackage#getConditionalDose()
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='1.3.6.1.4.1.19376.1.5.3.1.4.10' constraints.validation.error='ConditionalDoseTemplateId'"
  * @generated
  */
-public interface ConditionalDosing extends Medication {
+public interface ConditionalDose extends Medication {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -33,12 +32,12 @@ public interface ConditionalDosing extends Medication {
 	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = \'1.3.6.1.4.1.19376.1.5.3.1.4.10\')'"
 	 * @generated
 	 */
-	boolean validateConditionalDosingTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateConditionalDoseTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConditionalDosing init();
-} // ConditionalDosing
+	public ConditionalDose init();
+} // ConditionalDose

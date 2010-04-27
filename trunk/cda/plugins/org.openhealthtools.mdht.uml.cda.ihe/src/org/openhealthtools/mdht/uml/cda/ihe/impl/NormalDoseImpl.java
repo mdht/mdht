@@ -11,26 +11,26 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-import org.openhealthtools.mdht.uml.cda.ihe.SplitDosing;
-import org.openhealthtools.mdht.uml.cda.ihe.operations.SplitDosingOperations;
+import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
+import org.openhealthtools.mdht.uml.cda.ihe.operations.NormalDoseOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Split Dosing</b></em>'.
+ * An implementation of the model object '<em><b>Normal Dose</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class SplitDosingImpl extends MedicationImpl implements SplitDosing {
+public class NormalDoseImpl extends MedicationImpl implements NormalDose {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SplitDosingImpl() {
+	protected NormalDoseImpl() {
 		super();
 	}
 
@@ -41,7 +41,7 @@ public class SplitDosingImpl extends MedicationImpl implements SplitDosing {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return IHEPackage.Literals.SPLIT_DOSING;
+		return IHEPackage.Literals.NORMAL_DOSE;
 	}
 
 	/**
@@ -49,8 +49,8 @@ public class SplitDosingImpl extends MedicationImpl implements SplitDosing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSplitDosingTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return SplitDosingOperations.validateSplitDosingTemplateId(this, diagnostics, context);
+	public boolean validateNormalDoseTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return NormalDoseOperations.validateNormalDoseTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -58,8 +58,8 @@ public class SplitDosingImpl extends MedicationImpl implements SplitDosing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SplitDosing init() {
+	public NormalDose init() {
     		CDAUtil.init(this);
     		return this;
 	}
-} //SplitDosingImpl
+} //NormalDoseImpl

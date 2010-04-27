@@ -140,13 +140,13 @@ public interface IHEFactory extends EFactory {
 	AllergiesReactionsSection createAllergiesReactionsSection();
 
 	/**
-	 * Returns a new object of class '<em>Normal Dosing</em>'.
+	 * Returns a new object of class '<em>Normal Dose</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Normal Dosing</em>'.
+	 * @return a new object of class '<em>Normal Dose</em>'.
 	 * @generated
 	 */
-	NormalDosing createNormalDosing();
+	NormalDose createNormalDose();
 
 	/**
 	 * Returns a new object of class '<em>Tapered Dose</em>'.
@@ -158,22 +158,22 @@ public interface IHEFactory extends EFactory {
 	TaperedDose createTaperedDose();
 
 	/**
-	 * Returns a new object of class '<em>Split Dosing</em>'.
+	 * Returns a new object of class '<em>Split Dose</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Split Dosing</em>'.
+	 * @return a new object of class '<em>Split Dose</em>'.
 	 * @generated
 	 */
-	SplitDosing createSplitDosing();
+	SplitDose createSplitDose();
 
 	/**
-	 * Returns a new object of class '<em>Conditional Dosing</em>'.
+	 * Returns a new object of class '<em>Conditional Dose</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Conditional Dosing</em>'.
+	 * @return a new object of class '<em>Conditional Dose</em>'.
 	 * @generated
 	 */
-	ConditionalDosing createConditionalDosing();
+	ConditionalDose createConditionalDose();
 
 	/**
 	 * Returns a new object of class '<em>Combination Medication</em>'.

@@ -10,27 +10,27 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
-import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEPackage;
-import org.openhealthtools.mdht.uml.cda.ihe.operations.ConditionalDosingOperations;
+import org.openhealthtools.mdht.uml.cda.ihe.operations.ConditionalDoseOperations;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Conditional Dosing</b></em>'.
+ * An implementation of the model object '<em><b>Conditional Dose</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ConditionalDosingImpl extends MedicationImpl implements ConditionalDosing {
+public class ConditionalDoseImpl extends MedicationImpl implements ConditionalDose {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConditionalDosingImpl() {
+	protected ConditionalDoseImpl() {
 		super();
 	}
 
@@ -41,7 +41,7 @@ public class ConditionalDosingImpl extends MedicationImpl implements Conditional
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return IHEPackage.Literals.CONDITIONAL_DOSING;
+		return IHEPackage.Literals.CONDITIONAL_DOSE;
 	}
 
 	/**
@@ -49,8 +49,8 @@ public class ConditionalDosingImpl extends MedicationImpl implements Conditional
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConditionalDosingTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ConditionalDosingOperations.validateConditionalDosingTemplateId(this, diagnostics, context);
+	public boolean validateConditionalDoseTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionalDoseOperations.validateConditionalDoseTemplateId(this, diagnostics, context);
 	}
 
 	/**
@@ -58,8 +58,8 @@ public class ConditionalDosingImpl extends MedicationImpl implements Conditional
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConditionalDosing init() {
+	public ConditionalDose init() {
     		CDAUtil.init(this);
     		return this;
 	}
-} //ConditionalDosingImpl
+} //ConditionalDoseImpl
