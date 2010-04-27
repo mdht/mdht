@@ -42,7 +42,7 @@ public class HITSPRegistryDelegateOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public static  EClass getEClass(HITSPRegistryDelegate hitspRegistryDelegate, String templateId, Object context) {
 		EClass result = null;

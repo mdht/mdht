@@ -59,6 +59,15 @@ public class ConditionEntryImpl extends ProblemEntryImpl implements ConditionEnt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateConditionEntryText(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConditionEntryOperations.validateConditionEntryText(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ConditionEntry init() {
     		CDAUtil.init(this);
     		return this;

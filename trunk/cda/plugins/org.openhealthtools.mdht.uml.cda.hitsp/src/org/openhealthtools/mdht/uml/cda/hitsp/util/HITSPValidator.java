@@ -115,20 +115,12 @@ public class HITSPValidator extends EObjectValidator {
 	public static final int CONDITION__CONDITION_TEMPLATE_ID = 3;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Condition Text' of 'Condition'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Condition Problem Entry' of 'Condition'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONDITION__CONDITION_TEXT = 4;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Condition Condition Entry' of 'Condition'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int CONDITION__CONDITION_CONDITION_ENTRY = 5;
+	public static final int CONDITION__CONDITION_PROBLEM_ENTRY = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Summary Advance Directives Section' of 'Patient Summary'.
@@ -520,7 +512,15 @@ public class HITSPValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONDITION_ENTRY__CONDITION_ENTRY_EFFECTIVE_TIME = 6;
+	public static final int CONDITION_ENTRY__CONDITION_ENTRY_EFFECTIVE_TIME = 5;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Condition Entry Text' of 'Condition Entry'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONDITION_ENTRY__CONDITION_ENTRY_TEXT = 6;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Patient Summary Template Id' of 'Patient Summary'.
@@ -798,8 +798,7 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= iheValidator.validateProblemConcernEntry_validateProblemConcernEntryTemplateId(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateProblemConcernEntry_validateProblemConcernEntryProblemEntry(condition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCondition_validateConditionTemplateId(condition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCondition_validateConditionText(condition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCondition_validateConditionConditionEntry(condition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCondition_validateConditionProblemEntry(condition, diagnostics, context);
 		return result;
 	}
 
@@ -814,23 +813,13 @@ public class HITSPValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateConditionText constraint of '<em>Condition</em>'.
+	 * Validates the validateConditionProblemEntry constraint of '<em>Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCondition_validateConditionText(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return condition.validateConditionText(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateConditionConditionEntry constraint of '<em>Condition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCondition_validateConditionConditionEntry(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return condition.validateConditionConditionEntry(diagnostics, context);
+	public boolean validateCondition_validateConditionProblemEntry(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return condition.validateConditionProblemEntry(diagnostics, context);
 	}
 
 	/**
@@ -2333,6 +2322,7 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= iheValidator.validateProblemEntry_validateProblemEntryText(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateProblemEntry_validateProblemEntryValue(conditionEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConditionEntry_validateConditionEntryEffectiveTime(conditionEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConditionEntry_validateConditionEntryText(conditionEntry, diagnostics, context);
 		return result;
 	}
 
@@ -2344,6 +2334,16 @@ public class HITSPValidator extends EObjectValidator {
 	 */
 	public boolean validateConditionEntry_validateConditionEntryEffectiveTime(ConditionEntry conditionEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return conditionEntry.validateConditionEntryEffectiveTime(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateConditionEntryText constraint of '<em>Condition Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConditionEntry_validateConditionEntryText(ConditionEntry conditionEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return conditionEntry.validateConditionEntryText(diagnostics, context);
 	}
 
 	/**
