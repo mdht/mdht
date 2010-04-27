@@ -12,9 +12,13 @@
  */
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.OpaqueExpression;
@@ -57,10 +61,23 @@ public class TransformAssociation extends TransformAbstract {
 			return null;
 		}
 
+		// support target class without templateId by using its superclass template
+		List<Classifier> parents = new ArrayList<Classifier>(targetClass.getGenerals());
+		while (!parents.isEmpty() && CDAModelUtil.getTemplateId(targetClass) == null) {
+			if (parents.get(0) instanceof Class)
+				targetClass = (Class) parents.remove(0);
+		}
+		
 		Class cdaSourceClass = getCDAClass(sourceClass);
 		Class cdaTargetClass = getCDAClass(targetClass);
 		
-		if (cdaSourceClass == null || cdaTargetClass == null) {
+		// do not include associations to target class that is not a template
+		if (cdaSourceClass == null || cdaTargetClass == null
+				|| CDAModelUtil.getTemplateId(targetClass) == null) {
+			String message = "Unsupported association: " + sourceClass.getQualifiedName() 
+								+ " -> " + sourceProperty.getType().getQualifiedName();
+			Logger.log(Logger.ERROR, message);
+
 			removeModelElement(sourceProperty);
 			removeModelElement(association);
 			return null;
