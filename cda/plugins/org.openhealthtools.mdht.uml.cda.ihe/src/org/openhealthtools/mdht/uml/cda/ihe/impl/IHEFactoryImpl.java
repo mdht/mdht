@@ -33,7 +33,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.Comment;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
-import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
@@ -57,7 +57,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.Medication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
-import org.openhealthtools.mdht.uml.cda.ihe.NormalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
@@ -71,7 +71,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProductEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
-import org.openhealthtools.mdht.uml.cda.ihe.SplitDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
 import org.openhealthtools.mdht.uml.cda.ihe.SurgeriesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
@@ -134,10 +134,10 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 			case IHEPackage.ALLERGY_INTOLERANCE_CONCERN: return createAllergyIntoleranceConcern();
 			case IHEPackage.ALLERGY_INTOLERANCE: return createAllergyIntolerance();
 			case IHEPackage.ALLERGIES_REACTIONS_SECTION: return createAllergiesReactionsSection();
-			case IHEPackage.NORMAL_DOSING: return createNormalDosing();
+			case IHEPackage.NORMAL_DOSE: return createNormalDose();
 			case IHEPackage.TAPERED_DOSE: return createTaperedDose();
-			case IHEPackage.SPLIT_DOSING: return createSplitDosing();
-			case IHEPackage.CONDITIONAL_DOSING: return createConditionalDosing();
+			case IHEPackage.SPLIT_DOSE: return createSplitDose();
+			case IHEPackage.CONDITIONAL_DOSE: return createConditionalDose();
 			case IHEPackage.COMBINATION_MEDICATION: return createCombinationMedication();
 			case IHEPackage.VITAL_SIGNS_SECTION: return createVitalSignsSection();
 			case IHEPackage.CODED_VITAL_SIGNS_SECTION: return createCodedVitalSignsSection();
@@ -310,9 +310,9 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NormalDosing createNormalDosing() {
-		NormalDosingImpl normalDosing = new NormalDosingImpl();
-		return normalDosing;
+	public NormalDose createNormalDose() {
+		NormalDoseImpl normalDose = new NormalDoseImpl();
+		return normalDose;
 	}
 
 	/**
@@ -330,9 +330,9 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SplitDosing createSplitDosing() {
-		SplitDosingImpl splitDosing = new SplitDosingImpl();
-		return splitDosing;
+	public SplitDose createSplitDose() {
+		SplitDoseImpl splitDose = new SplitDoseImpl();
+		return splitDose;
 	}
 
 	/**
@@ -340,9 +340,9 @@ public class IHEFactoryImpl extends EFactoryImpl implements IHEFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConditionalDosing createConditionalDosing() {
-		ConditionalDosingImpl conditionalDosing = new ConditionalDosingImpl();
-		return conditionalDosing;
+	public ConditionalDose createConditionalDose() {
+		ConditionalDoseImpl conditionalDose = new ConditionalDoseImpl();
+		return conditionalDose;
 	}
 
 	/**

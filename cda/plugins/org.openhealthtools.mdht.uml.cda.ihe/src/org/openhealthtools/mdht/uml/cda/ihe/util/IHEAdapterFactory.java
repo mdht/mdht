@@ -61,7 +61,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.Comment;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
-import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
@@ -84,7 +84,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.Medication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
-import org.openhealthtools.mdht.uml.cda.ihe.NormalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
@@ -99,7 +99,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
-import org.openhealthtools.mdht.uml.cda.ihe.SplitDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
 import org.openhealthtools.mdht.uml.cda.ihe.SurgeriesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
@@ -211,20 +211,20 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 				return createAllergiesReactionsSectionAdapter();
 			}
 			@Override
-			public Adapter caseNormalDosing(NormalDosing object) {
-				return createNormalDosingAdapter();
+			public Adapter caseNormalDose(NormalDose object) {
+				return createNormalDoseAdapter();
 			}
 			@Override
 			public Adapter caseTaperedDose(TaperedDose object) {
 				return createTaperedDoseAdapter();
 			}
 			@Override
-			public Adapter caseSplitDosing(SplitDosing object) {
-				return createSplitDosingAdapter();
+			public Adapter caseSplitDose(SplitDose object) {
+				return createSplitDoseAdapter();
 			}
 			@Override
-			public Adapter caseConditionalDosing(ConditionalDosing object) {
-				return createConditionalDosingAdapter();
+			public Adapter caseConditionalDose(ConditionalDose object) {
+				return createConditionalDoseAdapter();
 			}
 			@Override
 			public Adapter caseCombinationMedication(CombinationMedication object) {
@@ -735,16 +735,16 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.NormalDosing <em>Normal Dosing</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.NormalDose <em>Normal Dose</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.NormalDosing
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.NormalDose
 	 * @generated
 	 */
-	public Adapter createNormalDosingAdapter() {
+	public Adapter createNormalDoseAdapter() {
 		return null;
 	}
 
@@ -763,30 +763,30 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.SplitDosing <em>Split Dosing</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.SplitDose <em>Split Dose</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.SplitDosing
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.SplitDose
 	 * @generated
 	 */
-	public Adapter createSplitDosingAdapter() {
+	public Adapter createSplitDoseAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing <em>Conditional Dosing</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ihe.ConditionalDose <em>Conditional Dose</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing
+	 * @see org.openhealthtools.mdht.uml.cda.ihe.ConditionalDose
 	 * @generated
 	 */
-	public Adapter createConditionalDosingAdapter() {
+	public Adapter createConditionalDoseAdapter() {
 		return null;
 	}
 

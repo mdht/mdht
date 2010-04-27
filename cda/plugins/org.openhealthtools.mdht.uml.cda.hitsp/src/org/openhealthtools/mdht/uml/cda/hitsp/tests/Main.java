@@ -34,7 +34,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
-import org.openhealthtools.mdht.uml.cda.ihe.NormalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
@@ -177,7 +177,7 @@ public class Main {
 		MedicationsSection section = IHEFactory.eINSTANCE.createMedicationsSection().init();
 		section.setTitle(DatatypesFactory.eINSTANCE.createST("Medications"));
 
-		NormalDosing meds = IHEFactory.eINSTANCE.createNormalDosing().init();	
+		NormalDose meds = IHEFactory.eINSTANCE.createNormalDose().init();	
 		section.addSubstanceAdministration(meds);
 		II id = DatatypesFactory.eINSTANCE.createII("cdbd33f0-6cde-11db-9fe1-0800200c9a66");
 		meds.getIds().add(id);

@@ -36,7 +36,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.CombinationMedication;
 import org.openhealthtools.mdht.uml.cda.ihe.Comment;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
-import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.ConditionalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
@@ -60,7 +60,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicalSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.Medication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
-import org.openhealthtools.mdht.uml.cda.ihe.NormalDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
@@ -75,7 +75,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.ihe.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.SocialHistorySection;
-import org.openhealthtools.mdht.uml.cda.ihe.SplitDosing;
+import org.openhealthtools.mdht.uml.cda.ihe.SplitDose;
 import org.openhealthtools.mdht.uml.cda.ihe.SurgeriesSection;
 import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
@@ -262,12 +262,12 @@ public class IHEValidator extends EObjectValidator {
 	public static final int ALLERGIES_REACTIONS_SECTION__ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID = 19;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Normal Dosing Template Id' of 'Normal Dosing'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Normal Dose Template Id' of 'Normal Dose'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NORMAL_DOSING__NORMAL_DOSING_TEMPLATE_ID = 20;
+	public static final int NORMAL_DOSE__NORMAL_DOSE_TEMPLATE_ID = 20;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Tapered Dose Template Id' of 'Tapered Dose'.
@@ -278,20 +278,20 @@ public class IHEValidator extends EObjectValidator {
 	public static final int TAPERED_DOSE__TAPERED_DOSE_TEMPLATE_ID = 21;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Split Dosing Template Id' of 'Split Dosing'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Split Dose Template Id' of 'Split Dose'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SPLIT_DOSING__SPLIT_DOSING_TEMPLATE_ID = 22;
+	public static final int SPLIT_DOSE__SPLIT_DOSE_TEMPLATE_ID = 22;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Conditional Dosing Template Id' of 'Conditional Dosing'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Conditional Dose Template Id' of 'Conditional Dose'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONDITIONAL_DOSING__CONDITIONAL_DOSING_TEMPLATE_ID = 23;
+	public static final int CONDITIONAL_DOSE__CONDITIONAL_DOSE_TEMPLATE_ID = 23;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Combination Medication Template Id' of 'Combination Medication'.
@@ -997,14 +997,14 @@ public class IHEValidator extends EObjectValidator {
 				return validateAllergyIntolerance((AllergyIntolerance)value, diagnostics, context);
 			case IHEPackage.ALLERGIES_REACTIONS_SECTION:
 				return validateAllergiesReactionsSection((AllergiesReactionsSection)value, diagnostics, context);
-			case IHEPackage.NORMAL_DOSING:
-				return validateNormalDosing((NormalDosing)value, diagnostics, context);
+			case IHEPackage.NORMAL_DOSE:
+				return validateNormalDose((NormalDose)value, diagnostics, context);
 			case IHEPackage.TAPERED_DOSE:
 				return validateTaperedDose((TaperedDose)value, diagnostics, context);
-			case IHEPackage.SPLIT_DOSING:
-				return validateSplitDosing((SplitDosing)value, diagnostics, context);
-			case IHEPackage.CONDITIONAL_DOSING:
-				return validateConditionalDosing((ConditionalDosing)value, diagnostics, context);
+			case IHEPackage.SPLIT_DOSE:
+				return validateSplitDose((SplitDose)value, diagnostics, context);
+			case IHEPackage.CONDITIONAL_DOSE:
+				return validateConditionalDose((ConditionalDose)value, diagnostics, context);
 			case IHEPackage.COMBINATION_MEDICATION:
 				return validateCombinationMedication((CombinationMedication)value, diagnostics, context);
 			case IHEPackage.VITAL_SIGNS_SECTION:
@@ -1589,34 +1589,34 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateNormalDosing(NormalDosing normalDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		boolean result = validate_EveryMultiplicityConforms(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(normalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNormalDosing_validateNormalDosingTemplateId(normalDosing, diagnostics, context);
+	public boolean validateNormalDose(NormalDose normalDose, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(normalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNormalDose_validateNormalDoseTemplateId(normalDose, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateNormalDosingTemplateId constraint of '<em>Normal Dosing</em>'.
+	 * Validates the validateNormalDoseTemplateId constraint of '<em>Normal Dose</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateNormalDosing_validateNormalDosingTemplateId(NormalDosing normalDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return normalDosing.validateNormalDosingTemplateId(diagnostics, context);
+	public boolean validateNormalDose_validateNormalDoseTemplateId(NormalDose normalDose, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return normalDose.validateNormalDoseTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1659,34 +1659,34 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSplitDosing(SplitDosing splitDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		boolean result = validate_EveryMultiplicityConforms(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(splitDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSplitDosing_validateSplitDosingTemplateId(splitDosing, diagnostics, context);
+	public boolean validateSplitDose(SplitDose splitDose, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(splitDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSplitDose_validateSplitDoseTemplateId(splitDose, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateSplitDosingTemplateId constraint of '<em>Split Dosing</em>'.
+	 * Validates the validateSplitDoseTemplateId constraint of '<em>Split Dose</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSplitDosing_validateSplitDosingTemplateId(SplitDosing splitDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return splitDosing.validateSplitDosingTemplateId(diagnostics, context);
+	public boolean validateSplitDose_validateSplitDoseTemplateId(SplitDose splitDose, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return splitDose.validateSplitDoseTemplateId(diagnostics, context);
 	}
 
 	/**
@@ -1694,34 +1694,34 @@ public class IHEValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConditionalDosing(ConditionalDosing conditionalDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		boolean result = validate_EveryMultiplicityConforms(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(conditionalDosing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConditionalDosing_validateConditionalDosingTemplateId(conditionalDosing, diagnostics, context);
+	public boolean validateConditionalDose(ConditionalDose conditionalDose, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMoodCode(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityTemplateId(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityId(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityStatusCode(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationSeriesNumberObservation(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityMedicationStatusObservation(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateMedicationActivity_validateMedicationActivityPatientInstruction(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMedication_validateMedicationTemplateId(conditionalDose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConditionalDose_validateConditionalDoseTemplateId(conditionalDose, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the validateConditionalDosingTemplateId constraint of '<em>Conditional Dosing</em>'.
+	 * Validates the validateConditionalDoseTemplateId constraint of '<em>Conditional Dose</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConditionalDosing_validateConditionalDosingTemplateId(ConditionalDosing conditionalDosing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return conditionalDosing.validateConditionalDosingTemplateId(diagnostics, context);
+	public boolean validateConditionalDose_validateConditionalDoseTemplateId(ConditionalDose conditionalDose, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return conditionalDose.validateConditionalDoseTemplateId(diagnostics, context);
 	}
 
 	/**
