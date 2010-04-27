@@ -62,6 +62,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.PayerEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection;
@@ -495,6 +496,13 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	private EClass commentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass payerEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1103,6 +1111,15 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPayerEntry() {
+		return payerEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIHERegistryDelegate() {
 		return iheRegistryDelegateEClass;
 	}
@@ -1251,6 +1268,8 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 
 		commentEClass = createEClass(COMMENT);
 
+		payerEntryEClass = createEClass(PAYER_ENTRY);
+
 		iheRegistryDelegateEClass = createEClass(IHE_REGISTRY_DELEGATE);
 	}
 
@@ -1346,6 +1365,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		procedureEntryPlanOfCareActivityProcedureEClass.getESuperTypes().add(theCCDPackage.getPlanOfCareActivityProcedure());
 		procedureEntryPlanOfCareActivityProcedureEClass.getESuperTypes().add(this.getProcedureEntry());
 		commentEClass.getESuperTypes().add(theCDAPackage.getAct());
+		payerEntryEClass.getESuperTypes().add(theCCDPackage.getPolicyActivity());
 		iheRegistryDelegateEClass.getESuperTypes().add(theCDAPackage.getRegistryDelegate());
 
 		// Initialize classes and features; add operations and parameters
@@ -2329,6 +2349,8 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(payerEntryEClass, PayerEntry.class, "PayerEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(iheRegistryDelegateEClass, IHERegistryDelegate.class, "IHERegistryDelegate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
@@ -2836,7 +2858,14 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 			 "classCode", "ACT",
 			 "code.code", "48767-8",
 			 "moodCode", "EVN"
-		   });																				
+		   });																						
+		addAnnotation
+		  (payerEntryEClass, 
+		   source, 
+		   new String[] {
+			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.18",
+			 "constraints.validation.error", "PolicyActivityTemplateId"
+		   });	
 	}
 
 	/**
@@ -2864,7 +2893,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																																		
+		   });																																																																				
 	}
 
 	/**
@@ -2904,7 +2933,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Allergies and Other Adverse Reactions Section", null
-		   });																																																																																																																																																																																																																																																																																																																																																																																																					
+		   });																																																																																																																																																																																																																																																																																																																																																																																																							
 	}
 
 	/**
@@ -2929,7 +2958,12 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (dischargeSummaryEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																
+		   });																																																																			
+		addAnnotation
+		  (payerEntryEClass, 
+		   source, 
+		   new String[] {
+		   });
 	}
 
 } //IHEPackageImpl

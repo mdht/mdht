@@ -36,6 +36,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
@@ -86,6 +87,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.ObservationRequestEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.PayerEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.PayersSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamNarrativeSection;
 import org.openhealthtools.mdht.uml.cda.ihe.PhysicalExamSection;
@@ -639,6 +641,14 @@ public class IHESwitch<T> {
 				Comment comment = (Comment)theEObject;
 				T result = caseComment(comment);
 				if (result == null) result = caseAct(comment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IHEPackage.PAYER_ENTRY: {
+				PayerEntry payerEntry = (PayerEntry)theEObject;
+				T result = casePayerEntry(payerEntry);
+				if (result == null) result = casePolicyActivity(payerEntry);
+				if (result == null) result = caseAct(payerEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1524,6 +1534,21 @@ public class IHESwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Payer Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Payer Entry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePayerEntry(PayerEntry object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -2075,6 +2100,21 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T casePlanOfCareActivityProcedure(PlanOfCareActivityProcedure object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Policy Activity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Policy Activity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePolicyActivity(PolicyActivity object) {
 		return null;
 	}
 

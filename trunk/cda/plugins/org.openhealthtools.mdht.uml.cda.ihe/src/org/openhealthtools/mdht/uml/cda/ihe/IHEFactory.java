@@ -545,6 +545,15 @@ public interface IHEFactory extends EFactory {
 	Comment createComment();
 
 	/**
+	 * Returns a new object of class '<em>Payer Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Payer Entry</em>'.
+	 * @generated
+	 */
+	PayerEntry createPayerEntry();
+
+	/**
 	 * Returns a new object of class '<em>Registry Delegate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
