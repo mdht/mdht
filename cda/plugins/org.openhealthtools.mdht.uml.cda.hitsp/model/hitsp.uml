@@ -39,9 +39,6 @@
       <generalization xmi:id="_H4qVgDxbEd6JwqSGecoePg">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_wSnPAGaQEd6Hk_bPOfEjYA"/>
       </generalization>
-      <ownedAttribute xmi:id="_Kp7UYIwJEd6B6JSUB00H7g" name="text" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_-HhPcBvhEd-yI6xBTkJSNw" name="conditionEntry" visibility="private" type="_c6bN4BvgEd-yI6xBTkJSNw" association="_-HcW8BvhEd-yI6xBTkJSNw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-Hlg4BvhEd-yI6xBTkJSNw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-Hk50BvhEd-yI6xBTkJSNw" value="1"/>
@@ -468,14 +465,6 @@
       <generalization xmi:id="_fv2i4BvgEd-yI6xBTkJSNw">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_3ZiEwGdIEd6Hk_bPOfEjYA"/>
       </generalization>
-      <ownedAttribute xmi:id="_hjpbwBvgEd-yI6xBTkJSNw" name="code" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
-        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_f1n6wIhTEd6UrJD25cKDew"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_hjsfEBvgEd-yI6xBTkJSNw" name="value" visibility="private">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
-        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_slNZAIwHEd6B6JSUB00H7g"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_lkLxoBvjEd-yI6xBTkJSNw" name="effectiveTime" visibility="private" aggregation="composite">
         <ownedComment xmi:id="_tM2MIBvjEd-yI6xBTkJSNw" annotatedElement="_lkLxoBvjEd-yI6xBTkJSNw">
           <body>The problem date constraints include the onset and resolution dates for the problem. The onset date shall be recorded in the &lt;low> element of the &lt;effectiveTime> element when known. The resolution data shall be recorded in the &lt;high> element of the &lt;effectiveTime> element when known. These dates represent the clinically effective time span over which the problem existed.&#xD;
@@ -486,6 +475,17 @@ If the problem is known to be resolved, but the date of resolution is not known,
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lkLxoRvjEd-yI6xBTkJSNw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lkLxohvjEd-yI6xBTkJSNw" value="1"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_t3kdcIhREd6UrJD25cKDew"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_hjpbwBvgEd-yI6xBTkJSNw" name="code" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_f1n6wIhTEd6UrJD25cKDew"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Kp7UYIwJEd6B6JSUB00H7g" name="text" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_hjsfEBvgEd-yI6xBTkJSNw" name="value" visibility="private">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_slNZAIwHEd6B6JSUB00H7g"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_-HcW8BvhEd-yI6xBTkJSNw" memberEnd="_-HhPcBvhEd-yI6xBTkJSNw _-HpLQBvhEd-yI6xBTkJSNw">
@@ -624,7 +624,7 @@ If the problem is known to be resolved, but the date of resolution is not known,
   <CDA:CDATemplate xmi:id="_wcI-sHcIEd6ZeOKq_2_a9g" message="HITSP Patient Summary SHALL contain the template identifier 2.16.840.1.113883.3.88.11.32.1" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="2.16.840.1.113883.3.88.11.32.1" assigningAuthorityName="HITSP C32"/>
   <Default:Documentation xmi:id="_aq9jUHrXEd68l9lQ-TLEBQ" base_Comment="_aq5R4HrXEd68l9lQ-TLEBQ"/>
   <CDA:CodegenSupport xmi:id="_lVjhYJyPEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="hitsp" nsURI="http://www.openhealthtools.org/mdht/uml/cda/hitsp" packageName="hitsp" prefix="HITSP" base_Namespace="_qQyD8jxVEd6JwqSGecoePg"/>
-  <CDA:PropertyValidation xmi:id="_JvJwoJyQEd6BO7rW3XxHIA" message="HITSP Condition SHALL contain [1..1] text" base_Property="_Kp7UYIwJEd6B6JSUB00H7g"/>
+  <CDA:PropertyValidation xmi:id="_JvJwoJyQEd6BO7rW3XxHIA" message="HITSP Condition Entry SHALL contain [1..1] text" base_Property="_Kp7UYIwJEd6B6JSUB00H7g"/>
   <CDA:CDATemplate xmi:id="_jNa14K7HEd6_ioDelDcPPg" message="HITSP Vital Signs Section SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.119" base_Class="_L9yGgK7HEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.119" assigningAuthorityName="HITSP C83"/>
   <CDA:CDATemplate xmi:id="_j4cTYK7IEd6_ioDelDcPPg" message="HITSP Vital Sign SHALL contain the template identifier 2.16.840.1.113883.3.88.11.83.14" base_Class="_dobt4K7IEd6_ioDelDcPPg" templateId="2.16.840.1.113883.3.88.11.83.14" assigningAuthorityName="HITSP"/>
   <CDA:ConstraintValidation xmi:id="_AKv5IK7OEd6_ioDelDcPPg" message="HITSP Vital Signs Section SHALL satisfy: Contains entries conforming to the Vital Sign module." base_Constraint="_hrcTgK7MEd6_ioDelDcPPg"/>

@@ -40,8 +40,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionConditionEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Condition Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#createConditionEntry() <em>Create Condition Entry</em>}</li>
  * </ul>
  * </p>
@@ -116,112 +115,55 @@ public class ConditionOperations extends ProblemConcernEntryOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateConditionText(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Text</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateConditionProblemEntry(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Problem Entry</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateConditionText(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateConditionProblemEntry(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.text.oclIsUndefined()";
+	protected static final String VALIDATE_CONDITION_PROBLEM_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ihe::ProblemEntry) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateConditionText(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Text</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateConditionProblemEntry(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Problem Entry</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateConditionText(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateConditionProblemEntry(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CONDITION_PROBLEM_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * not self.text.oclIsUndefined()
+	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(ihe::ProblemEntry) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)
 	 * @param condition The receiving '<em><b>Condition</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateConditionText(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateConditionProblemEntry(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CONDITION_PROBLEM_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(HITSPPackage.Literals.CONDITION);
 			try {
-				VALIDATE_CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CONDITION_PROBLEM_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONDITION_PROBLEM_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_CONDITION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(condition)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CONDITION_PROBLEM_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(condition)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 HITSPValidator.DIAGNOSTIC_SOURCE,
-						 HITSPValidator.CONDITION__CONDITION_TEXT,
-						 HITSPPlugin.INSTANCE.getString("ConditionText"),
-						 new Object [] { condition }));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * The cached OCL expression body for the '{@link #validateConditionConditionEntry(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Condition Entry</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateConditionConditionEntry(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALIDATE_CONDITION_CONDITION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(hitsp::ConditionEntry) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)";
-
-	/**
-	 * The cached OCL invariant for the '{@link #validateConditionConditionEntry(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Condition Entry</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateConditionConditionEntry(Condition, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint VALIDATE_CONDITION_CONDITION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->exists(entryRelationship : cda::EntryRelationship | not entryRelationship.observation.oclIsUndefined() and entryRelationship.observation.oclIsKindOf(hitsp::ConditionEntry) and entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)
-	 * @param condition The receiving '<em><b>Condition</b></em>' model object.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
-	public static  boolean validateConditionConditionEntry(Condition condition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_CONDITION_CONDITION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(HITSPPackage.Literals.CONDITION);
-			try {
-				VALIDATE_CONDITION_CONDITION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONDITION_CONDITION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		if (!EOCL_ENV.createQuery(VALIDATE_CONDITION_CONDITION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(condition)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 HITSPValidator.DIAGNOSTIC_SOURCE,
-						 HITSPValidator.CONDITION__CONDITION_CONDITION_ENTRY,
-						 HITSPPlugin.INSTANCE.getString("ConditionConditionEntry"),
+						 HITSPValidator.CONDITION__CONDITION_PROBLEM_ENTRY,
+						 HITSPPlugin.INSTANCE.getString("ConditionProblemEntry"),
 						 new Object [] { condition }));
 			}
 			return false;
