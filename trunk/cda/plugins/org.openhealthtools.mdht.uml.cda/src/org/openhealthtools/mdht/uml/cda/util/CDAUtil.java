@@ -472,15 +472,33 @@ public class CDAUtil {
 	}
 	
 	public static List<Section> getSections(ClinicalDocument clinicalDocument, Filter<Section> filter) {
-		List<Section> sections = new ArrayList<Section>();
+		return getSections(clinicalDocument, Section.class, filter);
+	}
+	
+	// get sections that conform to clazz
+	public static <T> List<T> getSections(ClinicalDocument clinicalDocument, Class<T> clazz) {
+		return getSections(clinicalDocument, clazz, new Filter<T>() {
+			public boolean accept(T section) {
+				return true;
+			}
+		});
+	}
+	
+	// get sections that conform to clazz and are accepted by filter
+	public static <T> List<T> getSections(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+		List<T> sections = new ArrayList<T>();
 		for (Section section : getAllSections(clinicalDocument)) {
-			if (filter.accept(section)) {
-				sections.add(section);
+			if (clazz.isInstance(section)) {
+				T sect = clazz.cast(section);
+				if (filter.accept(sect)) {
+					sections.add(sect);
+				}
 			}
 		}
 		return sections;
 	}
 	
+	// get all sections in the document
 	public static List<Section> getAllSections(ClinicalDocument clinicalDocument) {
 		List<Section> allSections = new ArrayList<Section>();
 		Component2 component2 = clinicalDocument.getComponent();
@@ -499,207 +517,99 @@ public class CDAUtil {
 	}
 	
 	public static List<Act> getActs(ClinicalDocument clinicalDocument, Filter<Act> filter) {
-		List<Act> acts = new ArrayList<Act>();
-		for (Act act : getAllActs(clinicalDocument)) {
-			if (filter.accept(act)) {
-				acts.add(act);
-			}
-		}
-		return acts;
+		return getClinicalStatements(clinicalDocument, Act.class, filter);
 	}
 	
 	public static List<Act> getAllActs(ClinicalDocument clinicalDocument) {
-		List<Act> allActs = new ArrayList<Act>();
-		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
-			if (clinicalStatement instanceof Act) {
-				allActs.add((Act) clinicalStatement);
-			}
-		}
-		return allActs;
+		return getClinicalStatements(clinicalDocument, Act.class);
 	}
 	
 	public static List<Encounter> getEncounters(ClinicalDocument clinicalDocument, Filter<Encounter> filter) {
-		List<Encounter> encounters = new ArrayList<Encounter>();
-		for (Encounter encounter : getAllEncounters(clinicalDocument)) {
-			if (filter.accept(encounter)) {
-				encounters.add(encounter);
-			}
-		}
-		return encounters;
+		return getClinicalStatements(clinicalDocument, Encounter.class, filter);
 	}
 	
 	public static List<Encounter> getAllEncounters(ClinicalDocument clinicalDocument) {
-		List<Encounter> allEncounters = new ArrayList<Encounter>();
-		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
-			if (clinicalStatement instanceof Encounter) {
-				allEncounters.add((Encounter) clinicalStatement);
-			}
-		}
-		return allEncounters;
+		return getClinicalStatements(clinicalDocument, Encounter.class);
 	}
 	
 	public static List<Observation> getObservations(ClinicalDocument clinicalDocument, Filter<Observation> filter) {
-		List<Observation> observations = new ArrayList<Observation>();
-		for (Observation observation : getAllObservations(clinicalDocument)) {
-			if (filter.accept(observation)) {
-				observations.add(observation);
-			}
-		}
-		return observations;
+		return getClinicalStatements(clinicalDocument, Observation.class, filter);
 	}
 	
 	public static List<Observation> getAllObservations(ClinicalDocument clinicalDocument) {
-		List<Observation> allObservations = new ArrayList<Observation>();
-		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
-			if (clinicalStatement instanceof Observation) {
-				allObservations.add((Observation) clinicalStatement);
-			}
-		}
-		return allObservations;
+		return getClinicalStatements(clinicalDocument, Observation.class);
 	}
 	
 	public static List<ObservationMedia> getObservationMedia(ClinicalDocument clinicalDocument, Filter<ObservationMedia> filter) {
-		List<ObservationMedia> observationMedia = new ArrayList<ObservationMedia>();
-		for (ObservationMedia media : getAllObservationMedia(clinicalDocument)) {
-			if (filter.accept(media)) {
-				observationMedia.add(media);
-			}
-		}
-		return observationMedia;
+		return getClinicalStatements(clinicalDocument, ObservationMedia.class, filter);
 	}
 	
 	public static List<ObservationMedia> getAllObservationMedia(ClinicalDocument clinicalDocument) {
-		List<ObservationMedia> allObservationMedia = new ArrayList<ObservationMedia>();
-		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
-			if (clinicalStatement instanceof ObservationMedia) {
-				allObservationMedia.add((ObservationMedia) clinicalStatement);
-			}
-		}
-		return allObservationMedia;
+		return getClinicalStatements(clinicalDocument, ObservationMedia.class);
 	}
 	
 	public static List<Organizer> getOrganizers(ClinicalDocument clinicalDocument, Filter<Organizer> filter) {
-		List<Organizer> organizers = new ArrayList<Organizer>();
-		for (Organizer organizer : getAllOrganizers(clinicalDocument)) {
-			if (filter.accept(organizer)) {
-				organizers.add(organizer);
-			}
-		}
-		return organizers;
+		return getClinicalStatements(clinicalDocument, Organizer.class, filter);
 	}
 	
 	public static List<Organizer> getAllOrganizers(ClinicalDocument clinicalDocument) {
-		List<Organizer> allOrganizers = new ArrayList<Organizer>();
-		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
-			if (clinicalStatement instanceof Organizer) {
-				allOrganizers.add((Organizer) clinicalStatement);
-			}
-		}
-		return allOrganizers;
+		return getClinicalStatements(clinicalDocument, Organizer.class);
 	}
 	
 	public static List<Procedure> getProcedures(ClinicalDocument clinicalDocument, Filter<Procedure> filter) {
-		List<Procedure> procedures = new ArrayList<Procedure>();
-		for (Procedure procedure : getAllProcedures(clinicalDocument)) {
-			if (filter.accept(procedure)) {
-				procedures.add(procedure);
-			}
-		}	
-		return procedures;
+		return getClinicalStatements(clinicalDocument, Procedure.class, filter);
 	}
 	
 	public static List<Procedure> getAllProcedures(ClinicalDocument clinicalDocument) {
-		List<Procedure> allProcedures = new ArrayList<Procedure>();
-		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
-			if (clinicalStatement instanceof Procedure) {
-				allProcedures.add((Procedure) clinicalStatement);
-			}
-		}
-		return allProcedures;
+		return getClinicalStatements(clinicalDocument, Procedure.class);
 	}
 	
 	public static List<RegionOfInterest> getRegionsOfInterest(ClinicalDocument clinicalDocument, Filter<RegionOfInterest> filter) {
-		List<RegionOfInterest> regionsOfInterest = new ArrayList<RegionOfInterest>();
-		for (RegionOfInterest regionOfInterest : getAllRegionsOfInterest(clinicalDocument)) {
-			if (filter.accept(regionOfInterest)) {
-				regionsOfInterest.add(regionOfInterest);
-			}
-		}
-		return regionsOfInterest;
+		return getClinicalStatements(clinicalDocument, RegionOfInterest.class, filter);
 	}
 
 	public static List<RegionOfInterest> getAllRegionsOfInterest(ClinicalDocument clinicalDocument) {
-		List<RegionOfInterest> allRegionsOfInterest = new ArrayList<RegionOfInterest>();
-		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
-			if (clinicalStatement instanceof RegionOfInterest) {
-				allRegionsOfInterest.add((RegionOfInterest) clinicalStatement);
-			}
-		}
-		return allRegionsOfInterest;
+		return getClinicalStatements(clinicalDocument, RegionOfInterest.class);
 	}
 	
 	public static List<SubstanceAdministration> getSubstranceAdministration(ClinicalDocument clinicalDocument, Filter<SubstanceAdministration> filter) {
-		List<SubstanceAdministration> substanceAdministrations = new ArrayList<SubstanceAdministration>();
-		for (SubstanceAdministration substanceAdministration : getAllSubstanceAdministrations(clinicalDocument)) {
-			if (filter.accept(substanceAdministration)) {
-				substanceAdministrations.add(substanceAdministration);
-			}
-		}
-		return substanceAdministrations;
+		return getClinicalStatements(clinicalDocument, SubstanceAdministration.class, filter);
 	}
 	
 	public static List<SubstanceAdministration> getAllSubstanceAdministrations(ClinicalDocument clinicalDocument) {
-		List<SubstanceAdministration> allSubstanceAdministrations = new ArrayList<SubstanceAdministration>();
-		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
-			if (clinicalStatement instanceof SubstanceAdministration) {
-				allSubstanceAdministrations.add((SubstanceAdministration) clinicalStatement);
-			}
-		}
-		return allSubstanceAdministrations;
+		return getClinicalStatements(clinicalDocument, SubstanceAdministration.class);
 	}
 	
 	public static List<Supply> getSupplies(ClinicalDocument clinicalDocument, Filter<Supply> filter) {
-		List<Supply> supplies = new ArrayList<Supply>();
-		for (Supply supply : getAllSupplies(clinicalDocument)) {
-			if (filter.accept(supply)) {
-				supplies.add(supply);
-			}
-		}
-		return supplies;
+		return getClinicalStatements(clinicalDocument, Supply.class, filter);
 	}
 	
 	public static List<Supply> getAllSupplies(ClinicalDocument clinicalDocument) {
-		List<Supply> allSupplies = new ArrayList<Supply>();
-		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
-			if (clinicalStatement instanceof Supply) {
-				allSupplies.add((Supply) clinicalStatement);
-			}
-		}
-		return allSupplies;
-	}
-	
-	private static List<Section> getAllSections(Section section) {
-		List<Section> allSections = new ArrayList<Section>();
-		Stack<Section> stack = new Stack<Section>();
-		stack.push(section);	// root
-		while (!stack.isEmpty()) {
-			Section sect = stack.pop();
-			allSections.add(sect);	// visit
-			for (Component5 component : sect.getComponents()) {	// process successors
-				Section child = component.getSection();
-				if (child != null) {
-					stack.push(child);
-				}
-			}
-		}
-		return allSections;
+		return getClinicalStatements(clinicalDocument, Supply.class);
 	}
 	
 	public static List<EObject> getClinicalStatements(ClinicalDocument clinicalDocument, Filter<EObject> filter) {
-		List<EObject> clinicalStatements = new ArrayList<EObject>();
+		return getClinicalStatements(clinicalDocument, EObject.class, filter);
+	}
+	
+	// get clinical statements that conform to clazz
+	public static <T> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz) {
+		return getClinicalStatements(clinicalDocument, clazz, new Filter<T>() {
+			public boolean accept(T clinicalStatement) {
+				return true;
+			}
+		});
+	}
+	
+	// get clinical statements that conform to clazz and are accepted by filter
+	public static <T> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+		List<T> clinicalStatements = new ArrayList<T>();
 		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
-			if (filter.accept(clinicalStatement)) {
-				clinicalStatements.add(clinicalStatement);
+			if (clazz.isInstance(clinicalStatement)) {
+				T stmt = clazz.cast(clinicalStatement);
+				if (filter.accept(stmt)) {
+					clinicalStatements.add(stmt);
+				}
 			}
 		}
 		return clinicalStatements;
@@ -870,6 +780,23 @@ public class CDAUtil {
 			return component.getSupply();
 		}
 		return null;
+	}
+	
+	private static List<Section> getAllSections(Section section) {
+		List<Section> allSections = new ArrayList<Section>();
+		Stack<Section> stack = new Stack<Section>();
+		stack.push(section);	// root
+		while (!stack.isEmpty()) {
+			Section sect = stack.pop();
+			allSections.add(sect);	// visit
+			for (Component5 component : sect.getComponents()) {	// process successors
+				Section child = component.getSection();
+				if (child != null) {
+					stack.push(child);
+				}
+			}
+		}
+		return allSections;
 	}
 	// END: Experimental Query/Filter operations
 }
