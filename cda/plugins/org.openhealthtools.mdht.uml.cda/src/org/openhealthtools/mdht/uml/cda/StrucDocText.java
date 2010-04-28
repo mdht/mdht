@@ -83,4 +83,12 @@ public interface StrucDocText extends EObject {
 	 */
 	String getText();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" idRequired="true" idOrdered="false"
+	 * @generated
+	 */
+	String getText(String id);
+
 } // StrucDocText

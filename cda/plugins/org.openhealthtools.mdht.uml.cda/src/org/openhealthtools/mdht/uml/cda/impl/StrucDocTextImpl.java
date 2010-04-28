@@ -111,6 +111,15 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getText(String id) {
+		return StrucDocTextOperations.getText(this, id);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {

@@ -9336,6 +9336,14 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_WhBYgFMaEd-2TbpPFpgxXA" name="getText" isQuery="true">
+        <ownedParameter xmi:id="_XmUMoFMaEd-2TbpPFpgxXA" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_Z64QQFMaEd-2TbpPFpgxXA" name="Parameter1" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_KsXeQJ7qEd6BCKDGgDgllw" name="DocumentRoot">
       <ownedAttribute xmi:id="_esYP8J7qEd6BCKDGgDgllw" name="mixed" visibility="private" isOrdered="true" isUnique="false">
