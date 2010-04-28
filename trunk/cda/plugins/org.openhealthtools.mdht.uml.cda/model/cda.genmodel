@@ -1033,6 +1033,9 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//StrucDocText/addText/text"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//StrucDocText/getText"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//StrucDocText/getText.1">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//StrucDocText/getText.1/id"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Subject">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
