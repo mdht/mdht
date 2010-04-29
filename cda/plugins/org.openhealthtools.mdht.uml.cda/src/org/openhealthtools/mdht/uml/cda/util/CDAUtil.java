@@ -76,16 +76,16 @@ import org.w3c.dom.Document;
 public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
-	
+
 	public static void registerPackage(EPackage ePackage) {
 		ePackage.eClass();
 		CDARegistry.INSTANCE.load();
 	}
-	
+
 	public static ClinicalDocument load(InputStream in) throws Exception {
 		return load(in, null);
 	}
-	
+
 	public static ClinicalDocument load(InputStream in, LoadHandler handler) throws Exception {
 		CDAPackage.eINSTANCE.eClass();
 		DocumentBuilder builder = newDocumentBuilder();
@@ -98,13 +98,13 @@ public class CDAUtil {
 		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
 		return root.getClinicalDocument();
 	}
-	
+
 	private static DocumentBuilder newDocumentBuilder() throws Exception {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setNamespaceAware(true);
 		return factory.newDocumentBuilder();
 	}
-	
+
 	private static void processResource(XMLResource resource, LoadHandler handler) {
 		Map<EObject, AnyType> extMap = resource.getEObjectToExtensionMap();
 		for (EObject key : extMap.keySet()) {
@@ -112,7 +112,7 @@ public class CDAUtil {
 			handleUnknownData(key, value, handler);
 		}
 	}
-	
+
 	private static void handleUnknownData(EObject object, AnyType unknownData, LoadHandler handler) {
 		handleUnknownFeatures(object, unknownData.getMixed(), handler);
 		handleUnknownFeatures(object, unknownData.getAnyAttribute(), handler);
@@ -128,24 +128,24 @@ public class CDAUtil {
 			}
 		}
 	}
-	
+
 	public interface LoadHandler {
 		public boolean handleUnknownFeature(EObject owner, EStructuralFeature feature, Object value);
 	}
-	
+
 	public static void save(ClinicalDocument clinicalDocument, OutputStream out) throws Exception {
 		save(clinicalDocument, out, true);
 	}
-	
+
 	public static void save(ClinicalDocument clinicalDocument, OutputStream out, boolean defaults) throws Exception {
 		CDAResource resource = prepare(clinicalDocument, defaults);
 		resource.save(out, null);
 	}
-	
+
 	public static void save(ClinicalDocument clinicalDocument, Writer writer) throws Exception {
 		save(clinicalDocument, writer, true);
 	}
-	
+
 	public static void save(ClinicalDocument clinicalDocument, Writer writer, boolean defaults) throws Exception {
 		CDAResource resource = prepare(clinicalDocument, defaults);
 		resource.save(writer, null);
@@ -165,7 +165,7 @@ public class CDAUtil {
 		}
 		return resource;
 	}
-	
+
 	// iterative breadth-first traversal using queue
 	@SuppressWarnings("unchecked")
 	private static void handleDefaults(EObject root) {
@@ -196,15 +196,15 @@ public class CDAUtil {
 			}
 		}
 	}
-	
+
 	public static boolean validate(ClinicalDocument clinicalDocument) {
 		return validate(clinicalDocument, null);
 	}
-	
+
 	public static boolean validate(ClinicalDocument clinicalDocument, ValidationHandler handler) {
 		return validate(clinicalDocument, handler, true);
 	}
-	
+
 	public static boolean validate(ClinicalDocument clinicalDocument, ValidationHandler handler, boolean defaults) {
 		if (defaults) {
 			handleDefaults(clinicalDocument);
@@ -215,7 +215,7 @@ public class CDAUtil {
 		}
 		return diagnostic.getSeverity() != Diagnostic.ERROR;
 	}
-	
+
 	// iterative breadth-first traversal of diagnostic tree using queue
 	private static void processDiagnostic(Diagnostic diagnostic, ValidationHandler handler) {
 		Queue<Diagnostic> queue = new LinkedList<Diagnostic>();
@@ -228,7 +228,7 @@ public class CDAUtil {
 			}
 		}
 	}
-	
+
 	private static void handleDiagnostic(Diagnostic diagnostic, ValidationHandler handler) {
 		switch (diagnostic.getSeverity()) {
 		case Diagnostic.ERROR:
@@ -242,7 +242,7 @@ public class CDAUtil {
 			break;
 		}
 	}
-	
+
 	public interface ValidationHandler {
 		public void handleError(Diagnostic diagnostic);
 		public void handleWarning(Diagnostic diagnostic);
@@ -256,7 +256,7 @@ public class CDAUtil {
 		}
 		return (ClinicalDocument) object;
 	}
-	
+
 	// walk up the containment tree until we reach a Section or we run out of containers
 	public static Section getSection(EObject object) {
 		while (object != null & !(object instanceof Section)) {
@@ -264,7 +264,7 @@ public class CDAUtil {
 		}
 		return (Section) object;
 	}
-	
+
 	// annotation processing to populate runtime instance
 	public static void init(EObject eObject) {
 		List<EClass> classes = new ArrayList<EClass>(eObject.eClass().getEAllSuperTypes());
@@ -276,7 +276,7 @@ public class CDAUtil {
 			}
 		}
 	}
-	
+
 	private static void init(EObject eObject, Map<String, String> details) {
 		List<String> created = new ArrayList<String>();
 		for (String key : details.keySet()) {
@@ -293,12 +293,12 @@ public class CDAUtil {
 			} catch (Exception e) {}
 		}
 	}
-	
+
 	// BEGIN: Path Expression Support
 	public static <T> T create(EObject root, String path) {
 		return create(root, path, null);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static <T> T create(EObject root, String path, EClass eClass) {
 		EObject current = root;
@@ -335,117 +335,117 @@ public class CDAUtil {
 	@SuppressWarnings("unchecked")
 	public static void set(EObject root, String path, Object value) {
 		String last = path.substring(path.lastIndexOf("/") + 1);
-	    EObject target = path.equals(last) ? root : (EObject) get(root, path.substring(0, path.lastIndexOf("/")));
-        if (target != null) {
-        	String name = null;
-        	Integer index = null;
-        	Matcher matcher = COMPONENT_PATTERN.matcher(last);
-        	if (matcher.matches()) {
-        		name = matcher.group(1);
-        		if (matcher.group(3) != null) {
-        			index = Integer.valueOf(matcher.group(3)) - 1;
-        		}
-	            EStructuralFeature feature = target.eClass().getEStructuralFeature(name);
-	            if (feature != null && value != null) {
-	                if (FeatureMapUtil.isFeatureMap(feature) && value instanceof String) {
-	                    FeatureMap featureMap = (FeatureMap) target.eGet(feature);
-	                    FeatureMapUtil.addText(featureMap, (String) value);
-	                } else {
-	    	            if (feature instanceof EAttribute) {
-	    	                EDataType type = (EDataType) feature.getEType();
-	    	                if (value instanceof String && !type.isInstance(value)) {
-	    	                    value = EcoreUtil.createFromString(type, (String) value);
-	    	                }
-	    	            }
-	                	if (feature.isMany()) {
-		                    List<Object> list = (List<Object>) target.eGet(feature);
-		                    if (index != null) {
-		                    	if (index >= 0 && index < list.size()) {
-		                    		list.set(index, value);
-		                    	}
-		                    } else {
-		                    	list.add(value);
-		                    }
-		                } else {
-		                    target.eSet(feature, value);
-		                }
-	                }
-	            }
-        	}
-        }
+		EObject target = path.equals(last) ? root : (EObject) get(root, path.substring(0, path.lastIndexOf("/")));
+		if (target != null) {
+			String name = null;
+			Integer index = null;
+			Matcher matcher = COMPONENT_PATTERN.matcher(last);
+			if (matcher.matches()) {
+				name = matcher.group(1);
+				if (matcher.group(3) != null) {
+					index = Integer.valueOf(matcher.group(3)) - 1;
+				}
+				EStructuralFeature feature = target.eClass().getEStructuralFeature(name);
+				if (feature != null && value != null) {
+					if (FeatureMapUtil.isFeatureMap(feature) && value instanceof String) {
+						FeatureMap featureMap = (FeatureMap) target.eGet(feature);
+						FeatureMapUtil.addText(featureMap, (String) value);
+					} else {
+						if (feature instanceof EAttribute) {
+							EDataType type = (EDataType) feature.getEType();
+							if (value instanceof String && !type.isInstance(value)) {
+								value = EcoreUtil.createFromString(type, (String) value);
+							}
+						}
+						if (feature.isMany()) {
+							List<Object> list = (List<Object>) target.eGet(feature);
+							if (index != null) {
+								if (index >= 0 && index < list.size()) {
+									list.set(index, value);
+								}
+							} else {
+								list.add(value);
+							}
+						} else {
+							target.eSet(feature, value);
+						}
+					}
+				}
+			}
+		}
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static <T> T get(EObject root, String path) {
-	    Object result = null;
-	    EObject current = root;
-	    String[] components = path.split("/");
-	    for (String component : components) {
-	        if (current != null) {
-	        	String name = null;
-	        	Integer index = null;
-	        	Matcher matcher = COMPONENT_PATTERN.matcher(component);
-	        	if (matcher.matches()) {
-	        		name = matcher.group(1);
-	        		if (matcher.group(3) != null) {
-	        			index = Integer.valueOf(matcher.group(3)) - 1;
-	        		}
-		            EStructuralFeature feature = current.eClass().getEStructuralFeature(name);
-		            if (feature != null) {
-		            	if (feature.isMany()) {
-		            		List<Object> list = (List<Object>) current.eGet(feature);
-		            		if (index == null) {
-		            			index = list.size() - 1;
-		            		}
-		            		result = (index >= 0 && index < list.size()) ? list.get(index) : null;
-		            	} else {
-		            		result = current.eGet(feature);
-		            	}
-		            	if (feature instanceof EReference) {
-		            		current = (EObject) result;
-		            	}
-		            } else {
-		            	result = current = null;
-		            }
-	        	}
-	        }
-	    }
-	    return (T) result;
+		Object result = null;
+		EObject current = root;
+		String[] components = path.split("/");
+		for (String component : components) {
+			if (current != null) {
+				String name = null;
+				Integer index = null;
+				Matcher matcher = COMPONENT_PATTERN.matcher(component);
+				if (matcher.matches()) {
+					name = matcher.group(1);
+					if (matcher.group(3) != null) {
+						index = Integer.valueOf(matcher.group(3)) - 1;
+					}
+					EStructuralFeature feature = current.eClass().getEStructuralFeature(name);
+					if (feature != null) {
+						if (feature.isMany()) {
+							List<Object> list = (List<Object>) current.eGet(feature);
+							if (index == null) {
+								index = list.size() - 1;
+							}
+							result = (index >= 0 && index < list.size()) ? list.get(index) : null;
+						} else {
+							result = current.eGet(feature);
+						}
+						if (feature instanceof EReference) {
+							current = (EObject) result;
+						}
+					} else {
+						result = current = null;
+					}
+				}
+			}
+		}
+		return (T) result;
 	}
 
 	public static boolean isSet(EObject root, String path) {
-	    return get(root, path) != null;
+		return get(root, path) != null;
 	}
 
 	@SuppressWarnings("unchecked")
 	public static void unset(EObject root, String path) {
-	    String last = path.substring(path.lastIndexOf("/") + 1);
-	    EObject target = path.equals(last) ? root : (EObject) get(root, path.substring(0, path.lastIndexOf("/")));
-	    if (target != null) {
-    		String name = null;
-    		Integer index = null;
-	    	Matcher matcher = COMPONENT_PATTERN.matcher(last);
-	    	if (matcher.matches()) {
-	    		name = matcher.group(1);
-	    		if (matcher.group(3) != null) {
-	    			index = Integer.valueOf(matcher.group(3)) - 1;
-	    		}
-		        EStructuralFeature feature = target.eClass().getEStructuralFeature(name);
-		        if (feature != null) {
-		        	if (feature.isMany() && index != null) {
-		        		List<Object> list = (List<Object>) target.eGet(feature);
-		        		if (index >= 0 && index < list.size()) {
-		        			list.remove(index);
-		        		}
-		        	} else {
-		        		target.eUnset(feature);
-		        	}
-		        }
-	    	}
-	    }
+		String last = path.substring(path.lastIndexOf("/") + 1);
+		EObject target = path.equals(last) ? root : (EObject) get(root, path.substring(0, path.lastIndexOf("/")));
+		if (target != null) {
+			String name = null;
+			Integer index = null;
+			Matcher matcher = COMPONENT_PATTERN.matcher(last);
+			if (matcher.matches()) {
+				name = matcher.group(1);
+				if (matcher.group(3) != null) {
+					index = Integer.valueOf(matcher.group(3)) - 1;
+				}
+				EStructuralFeature feature = target.eClass().getEStructuralFeature(name);
+				if (feature != null) {
+					if (feature.isMany() && index != null) {
+						List<Object> list = (List<Object>) target.eGet(feature);
+						if (index >= 0 && index < list.size()) {
+							list.remove(index);
+						}
+					} else {
+						target.eUnset(feature);
+					}
+				}
+			}
+		}
 	}
 	// END: Path Expression Support
-	
+
 	// BEGIN: OCL Support
 	private static final OCL ocl = OCL.newInstance();
 
@@ -465,16 +465,16 @@ public class CDAUtil {
 		return query.check(eObject);
 	}
 	// END: OCL Support
-	
+
 	// BEGIN: Experimental Query/Filter operations
 	public interface Filter<T> {
 		public boolean accept(T item);
 	}
-	
+
 	public static List<Section> getSections(ClinicalDocument clinicalDocument, Filter<Section> filter) {
 		return getSections(clinicalDocument, Section.class, filter);
 	}
-	
+
 	// get sections that conform to clazz
 	public static <T> List<T> getSections(ClinicalDocument clinicalDocument, Class<T> clazz) {
 		return getSections(clinicalDocument, clazz, new Filter<T>() {
@@ -483,7 +483,7 @@ public class CDAUtil {
 			}
 		});
 	}
-	
+
 	// get sections that conform to clazz and are accepted by filter
 	public static <T> List<T> getSections(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
 		List<T> sections = new ArrayList<T>();
@@ -497,7 +497,7 @@ public class CDAUtil {
 		}
 		return sections;
 	}
-	
+
 	// get all sections in the document
 	public static List<Section> getAllSections(ClinicalDocument clinicalDocument) {
 		List<Section> allSections = new ArrayList<Section>();
@@ -515,55 +515,55 @@ public class CDAUtil {
 		}
 		return allSections;
 	}
-	
+
 	public static List<Act> getActs(ClinicalDocument clinicalDocument, Filter<Act> filter) {
 		return getClinicalStatements(clinicalDocument, Act.class, filter);
 	}
-	
+
 	public static List<Act> getAllActs(ClinicalDocument clinicalDocument) {
 		return getClinicalStatements(clinicalDocument, Act.class);
 	}
-	
+
 	public static List<Encounter> getEncounters(ClinicalDocument clinicalDocument, Filter<Encounter> filter) {
 		return getClinicalStatements(clinicalDocument, Encounter.class, filter);
 	}
-	
+
 	public static List<Encounter> getAllEncounters(ClinicalDocument clinicalDocument) {
 		return getClinicalStatements(clinicalDocument, Encounter.class);
 	}
-	
+
 	public static List<Observation> getObservations(ClinicalDocument clinicalDocument, Filter<Observation> filter) {
 		return getClinicalStatements(clinicalDocument, Observation.class, filter);
 	}
-	
+
 	public static List<Observation> getAllObservations(ClinicalDocument clinicalDocument) {
 		return getClinicalStatements(clinicalDocument, Observation.class);
 	}
-	
+
 	public static List<ObservationMedia> getObservationMedia(ClinicalDocument clinicalDocument, Filter<ObservationMedia> filter) {
 		return getClinicalStatements(clinicalDocument, ObservationMedia.class, filter);
 	}
-	
+
 	public static List<ObservationMedia> getAllObservationMedia(ClinicalDocument clinicalDocument) {
 		return getClinicalStatements(clinicalDocument, ObservationMedia.class);
 	}
-	
+
 	public static List<Organizer> getOrganizers(ClinicalDocument clinicalDocument, Filter<Organizer> filter) {
 		return getClinicalStatements(clinicalDocument, Organizer.class, filter);
 	}
-	
+
 	public static List<Organizer> getAllOrganizers(ClinicalDocument clinicalDocument) {
 		return getClinicalStatements(clinicalDocument, Organizer.class);
 	}
-	
+
 	public static List<Procedure> getProcedures(ClinicalDocument clinicalDocument, Filter<Procedure> filter) {
 		return getClinicalStatements(clinicalDocument, Procedure.class, filter);
 	}
-	
+
 	public static List<Procedure> getAllProcedures(ClinicalDocument clinicalDocument) {
 		return getClinicalStatements(clinicalDocument, Procedure.class);
 	}
-	
+
 	public static List<RegionOfInterest> getRegionsOfInterest(ClinicalDocument clinicalDocument, Filter<RegionOfInterest> filter) {
 		return getClinicalStatements(clinicalDocument, RegionOfInterest.class, filter);
 	}
@@ -571,27 +571,27 @@ public class CDAUtil {
 	public static List<RegionOfInterest> getAllRegionsOfInterest(ClinicalDocument clinicalDocument) {
 		return getClinicalStatements(clinicalDocument, RegionOfInterest.class);
 	}
-	
+
 	public static List<SubstanceAdministration> getSubstranceAdministration(ClinicalDocument clinicalDocument, Filter<SubstanceAdministration> filter) {
 		return getClinicalStatements(clinicalDocument, SubstanceAdministration.class, filter);
 	}
-	
+
 	public static List<SubstanceAdministration> getAllSubstanceAdministrations(ClinicalDocument clinicalDocument) {
 		return getClinicalStatements(clinicalDocument, SubstanceAdministration.class);
 	}
-	
+
 	public static List<Supply> getSupplies(ClinicalDocument clinicalDocument, Filter<Supply> filter) {
 		return getClinicalStatements(clinicalDocument, Supply.class, filter);
 	}
-	
+
 	public static List<Supply> getAllSupplies(ClinicalDocument clinicalDocument) {
 		return getClinicalStatements(clinicalDocument, Supply.class);
 	}
-	
+
 	public static List<EObject> getClinicalStatements(ClinicalDocument clinicalDocument, Filter<EObject> filter) {
 		return getClinicalStatements(clinicalDocument, EObject.class, filter);
 	}
-	
+
 	// get clinical statements that conform to clazz
 	public static <T> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz) {
 		return getClinicalStatements(clinicalDocument, clazz, new Filter<T>() {
@@ -600,7 +600,7 @@ public class CDAUtil {
 			}
 		});
 	}
-	
+
 	// get clinical statements that conform to clazz and are accepted by filter
 	public static <T> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
 		List<T> clinicalStatements = new ArrayList<T>();
@@ -614,7 +614,7 @@ public class CDAUtil {
 		}
 		return clinicalStatements;
 	}
-	
+
 	public static List<EObject> getAllClinicalStatements(ClinicalDocument clinicalDocument) {
 		List<EObject> allClinicalStatements = new ArrayList<EObject>();
 		for (Section section : getAllSections(clinicalDocument)) {
@@ -622,7 +622,7 @@ public class CDAUtil {
 		}
 		return allClinicalStatements;
 	}
-	
+
 	private static List<EObject> getAllClinicalStatements(Section section) {
 		List<EObject> allClinicalStatements = new ArrayList<EObject>();
 		for (Entry entry : section.getEntries()) {
@@ -719,7 +719,7 @@ public class CDAUtil {
 		}
 		return null;
 	}
-	
+
 	private static EObject getClinicalStatement(EntryRelationship entryRelationship) {
 		if (entryRelationship.getAct() != null) {
 			return entryRelationship.getAct();
@@ -781,7 +781,7 @@ public class CDAUtil {
 		}
 		return null;
 	}
-	
+
 	private static List<Section> getAllSections(Section section) {
 		List<Section> allSections = new ArrayList<Section>();
 		Stack<Section> stack = new Stack<Section>();
