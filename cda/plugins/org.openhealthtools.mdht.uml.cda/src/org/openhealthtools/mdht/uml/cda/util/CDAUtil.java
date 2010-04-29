@@ -467,32 +467,53 @@ public class CDAUtil {
 	// END: OCL Support
 
 	// BEGIN: Experimental Query/Filter operations
-	public interface Filter<T> {
+	public interface Filter<T extends EObject> {
 		public boolean accept(T item);
 	}
-
-	public static List<Section> getSections(ClinicalDocument clinicalDocument, Filter<Section> filter) {
-		return getSections(clinicalDocument, Section.class, filter);
+	
+	public static class OCLFilter<T extends EObject> implements Filter<T> {
+		protected String body = null;
+		
+		public OCLFilter(String body) {
+			this.body = body;
+		}
+		
+		public boolean accept(T item) {
+			boolean result = false;
+			try {
+				result = check(item, body);
+			} catch (Exception e) {}
+			return result;
+		}
+	}
+	
+	public static <T extends Section> T getSection(ClinicalDocument clinicalDocument, Class<T> clazz) {
+		List<T> sections = getSections(clinicalDocument, clazz);
+		return !sections.isEmpty() ? sections.get(0) : null;
+	}
+	
+	public static <T extends Section> T getSection(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+		List<T> sections = getSections(clinicalDocument, clazz, filter);
+		return !sections.isEmpty() ? sections.get(0) : null;
 	}
 
 	// get sections that conform to clazz
-	public static <T> List<T> getSections(ClinicalDocument clinicalDocument, Class<T> clazz) {
-		return getSections(clinicalDocument, clazz, new Filter<T>() {
-			public boolean accept(T section) {
-				return true;
-			}
-		});
-	}
-
-	// get sections that conform to clazz and are accepted by filter
-	public static <T> List<T> getSections(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+	public static <T extends Section> List<T> getSections(ClinicalDocument clinicalDocument, Class<T> clazz) {
 		List<T> sections = new ArrayList<T>();
 		for (Section section : getAllSections(clinicalDocument)) {
 			if (clazz.isInstance(section)) {
-				T sect = clazz.cast(section);
-				if (filter.accept(sect)) {
-					sections.add(sect);
-				}
+				sections.add(clazz.cast(section));
+			}
+		}
+		return sections;
+	}
+
+	// get sections that conform to clazz and are accepted by filter
+	public static <T extends Section> List<T> getSections(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+		List<T> sections = new ArrayList<T>();
+		for (T section : getSections(clinicalDocument, clazz)) {
+			if (filter.accept(section)) {
+				sections.add(section);
 			}
 		}
 		return sections;
@@ -508,139 +529,90 @@ public class CDAUtil {
 				for (Component3 component3 : structuredBody.getComponents()) {
 					Section section = component3.getSection();
 					if (section != null) {
-						allSections.addAll(getAllSections(section));
+						allSections.addAll(getSections(section));
 					}
 				}
 			}
 		}
 		return allSections;
 	}
-
-	public static List<Act> getActs(ClinicalDocument clinicalDocument, Filter<Act> filter) {
-		return getClinicalStatements(clinicalDocument, Act.class, filter);
+	
+	private static List<Section> getSections(Section section) {
+		List<Section> sections = new ArrayList<Section>();
+		Stack<Section> stack = new Stack<Section>();
+		stack.push(section);	// root
+		while (!stack.isEmpty()) {
+			Section sect = stack.pop();
+			sections.add(sect);	// visit
+			for (Component5 component : sect.getComponents()) {	// process successors
+				Section child = component.getSection();
+				if (child != null) {
+					stack.push(child);
+				}
+			}
+		}
+		return sections;
 	}
-
-	public static List<Act> getAllActs(ClinicalDocument clinicalDocument) {
-		return getClinicalStatements(clinicalDocument, Act.class);
+	
+	public static <T extends EObject> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz) {
+		List<T> clinicalStatements = getClinicalStatements(clinicalDocument, clazz);
+		return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
 	}
-
-	public static List<Encounter> getEncounters(ClinicalDocument clinicalDocument, Filter<Encounter> filter) {
-		return getClinicalStatements(clinicalDocument, Encounter.class, filter);
-	}
-
-	public static List<Encounter> getAllEncounters(ClinicalDocument clinicalDocument) {
-		return getClinicalStatements(clinicalDocument, Encounter.class);
-	}
-
-	public static List<Observation> getObservations(ClinicalDocument clinicalDocument, Filter<Observation> filter) {
-		return getClinicalStatements(clinicalDocument, Observation.class, filter);
-	}
-
-	public static List<Observation> getAllObservations(ClinicalDocument clinicalDocument) {
-		return getClinicalStatements(clinicalDocument, Observation.class);
-	}
-
-	public static List<ObservationMedia> getObservationMedia(ClinicalDocument clinicalDocument, Filter<ObservationMedia> filter) {
-		return getClinicalStatements(clinicalDocument, ObservationMedia.class, filter);
-	}
-
-	public static List<ObservationMedia> getAllObservationMedia(ClinicalDocument clinicalDocument) {
-		return getClinicalStatements(clinicalDocument, ObservationMedia.class);
-	}
-
-	public static List<Organizer> getOrganizers(ClinicalDocument clinicalDocument, Filter<Organizer> filter) {
-		return getClinicalStatements(clinicalDocument, Organizer.class, filter);
-	}
-
-	public static List<Organizer> getAllOrganizers(ClinicalDocument clinicalDocument) {
-		return getClinicalStatements(clinicalDocument, Organizer.class);
-	}
-
-	public static List<Procedure> getProcedures(ClinicalDocument clinicalDocument, Filter<Procedure> filter) {
-		return getClinicalStatements(clinicalDocument, Procedure.class, filter);
-	}
-
-	public static List<Procedure> getAllProcedures(ClinicalDocument clinicalDocument) {
-		return getClinicalStatements(clinicalDocument, Procedure.class);
-	}
-
-	public static List<RegionOfInterest> getRegionsOfInterest(ClinicalDocument clinicalDocument, Filter<RegionOfInterest> filter) {
-		return getClinicalStatements(clinicalDocument, RegionOfInterest.class, filter);
-	}
-
-	public static List<RegionOfInterest> getAllRegionsOfInterest(ClinicalDocument clinicalDocument) {
-		return getClinicalStatements(clinicalDocument, RegionOfInterest.class);
-	}
-
-	public static List<SubstanceAdministration> getSubstranceAdministration(ClinicalDocument clinicalDocument, Filter<SubstanceAdministration> filter) {
-		return getClinicalStatements(clinicalDocument, SubstanceAdministration.class, filter);
-	}
-
-	public static List<SubstanceAdministration> getAllSubstanceAdministrations(ClinicalDocument clinicalDocument) {
-		return getClinicalStatements(clinicalDocument, SubstanceAdministration.class);
-	}
-
-	public static List<Supply> getSupplies(ClinicalDocument clinicalDocument, Filter<Supply> filter) {
-		return getClinicalStatements(clinicalDocument, Supply.class, filter);
-	}
-
-	public static List<Supply> getAllSupplies(ClinicalDocument clinicalDocument) {
-		return getClinicalStatements(clinicalDocument, Supply.class);
-	}
-
-	public static List<EObject> getClinicalStatements(ClinicalDocument clinicalDocument, Filter<EObject> filter) {
-		return getClinicalStatements(clinicalDocument, EObject.class, filter);
+	
+	public static <T extends EObject> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+		List<T> clinicalStatements = getClinicalStatements(clinicalDocument, clazz, filter);
+		return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
 	}
 
 	// get clinical statements that conform to clazz
-	public static <T> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz) {
-		return getClinicalStatements(clinicalDocument, clazz, new Filter<T>() {
-			public boolean accept(T clinicalStatement) {
-				return true;
-			}
-		});
-	}
-
-	// get clinical statements that conform to clazz and are accepted by filter
-	public static <T> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+	public static <T extends EObject> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz) {
 		List<T> clinicalStatements = new ArrayList<T>();
 		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
 			if (clazz.isInstance(clinicalStatement)) {
-				T stmt = clazz.cast(clinicalStatement);
-				if (filter.accept(stmt)) {
-					clinicalStatements.add(stmt);
-				}
+				clinicalStatements.add(clazz.cast(clinicalStatement));
 			}
 		}
 		return clinicalStatements;
 	}
 
+	// get clinical statements that conform to clazz and are accepted by filter
+	public static <T extends EObject> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+		List<T> clinicalStatements = new ArrayList<T>();
+		for (T clinicalStatement : getClinicalStatements(clinicalDocument, clazz)) {
+			if (filter.accept(clinicalStatement)) {
+				clinicalStatements.add(clinicalStatement);
+			}
+		}
+		return clinicalStatements;
+	}
+
+	// get all clinical statements in the document
 	public static List<EObject> getAllClinicalStatements(ClinicalDocument clinicalDocument) {
 		List<EObject> allClinicalStatements = new ArrayList<EObject>();
 		for (Section section : getAllSections(clinicalDocument)) {
-			allClinicalStatements.addAll(getAllClinicalStatements(section));
+			allClinicalStatements.addAll(getClinicalStatements(section));
 		}
 		return allClinicalStatements;
 	}
 
-	private static List<EObject> getAllClinicalStatements(Section section) {
-		List<EObject> allClinicalStatements = new ArrayList<EObject>();
+	private static List<EObject> getClinicalStatements(Section section) {
+		List<EObject> clinicalStatements = new ArrayList<EObject>();
 		for (Entry entry : section.getEntries()) {
 			EObject clinicalStatement = getClinicalStatement(entry);
 			if (clinicalStatement != null) {
-				allClinicalStatements.addAll(getAllClinicalStatements(clinicalStatement));
+				clinicalStatements.addAll(getClinicalStatements(clinicalStatement));
 			}
 		}
-		return allClinicalStatements;
+		return clinicalStatements;
 	}
 
-	private static List<EObject> getAllClinicalStatements(EObject clinicalStatement) {
-		List<EObject> allClinicalStatements = new ArrayList<EObject>();
+	private static List<EObject> getClinicalStatements(EObject clinicalStatement) {
+		List<EObject> clinicalStatements = new ArrayList<EObject>();
 		Stack<EObject> stack = new Stack<EObject>();
 		stack.push(clinicalStatement);	// root
 		while (!stack.isEmpty()) {
 			EObject stmt = stack.pop();
-			allClinicalStatements.add(stmt);	// visit
+			clinicalStatements.add(stmt);	// visit
 			if (stmt instanceof Organizer) {
 				Organizer organizer = (Organizer) stmt;
 				for (Component4 component : organizer.getComponents()) {	// process successors
@@ -658,7 +630,7 @@ public class CDAUtil {
 				}
 			}
 		}
-		return allClinicalStatements;
+		return clinicalStatements;
 	}
 
 	private static List<EntryRelationship> getEntryRelationships(EObject clinicalStatement) {
@@ -780,23 +752,6 @@ public class CDAUtil {
 			return component.getSupply();
 		}
 		return null;
-	}
-
-	private static List<Section> getAllSections(Section section) {
-		List<Section> allSections = new ArrayList<Section>();
-		Stack<Section> stack = new Stack<Section>();
-		stack.push(section);	// root
-		while (!stack.isEmpty()) {
-			Section sect = stack.pop();
-			allSections.add(sect);	// visit
-			for (Component5 component : sect.getComponents()) {	// process successors
-				Section child = component.getSection();
-				if (child != null) {
-					stack.push(child);
-				}
-			}
-		}
-		return allSections;
 	}
 	// END: Experimental Query/Filter operations
 }
