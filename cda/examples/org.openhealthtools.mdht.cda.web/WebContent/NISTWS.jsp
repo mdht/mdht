@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<%@taglib uri="http://jakarta.apache.org/taglibs/xsl-1.0" prefix="xsl" %>
-
+<%@taglib uri="http://jakarta.apache.org/taglibs/xsl-1.0" prefix="xsl"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
 <%@ page
-	
-import="org.apache.commons.fileupload.*, 
+     import="org.apache.commons.fileupload.*, 
 org.apache.commons.fileupload.servlet.ServletFileUpload, 
 org.apache.commons.fileupload.disk.DiskFileItemFactory, 
 org.apache.commons.io.*, 
@@ -43,12 +39,9 @@ org.apache.axis2.addressing.EndpointReference,
 org.apache.axis2.client.ServiceClient,
 org.xml.sax.SAXException"%>
 
-<title>File Upload Example</title>
 </head>
-
 <body>
-<h1>Data Received at the Server</h1>
-<hr />
+
 <p>
 <%
 
@@ -62,71 +55,84 @@ OMFactory factory = null;
 OMNamespace namespace = null;
 
 
-		wsTarget = new EndpointReference(
-				"http://xreg2.nist.gov:8080/ws/services/ValidationWebService");
+          wsTarget = new EndpointReference(
+                    "http://xreg2.nist.gov:8080/ws/services/ValidationWebService");
 
-	options = new org.apache.axis2.client.Options();
-	options.setTo(wsTarget);
-	options
-			.setTransportInProtocol(Constants.TRANSPORT_HTTP);
-	// options.setTransportInProtocol(Constants.TRANSPORT_JMS);
-	serviceClient = new ServiceClient();
-	serviceClient.setOptions(options);
-	factory = OMAbstractFactory.getOMFactory();
-	namespace = factory.createOMNamespace(
-			"http://validation.hitsp.nist.gov", "nns");
-
-
+     options = new org.apache.axis2.client.Options();
+     options.setTo(wsTarget);
+     options
+               .setTransportInProtocol(Constants.TRANSPORT_HTTP);
+     // options.setTransportInProtocol(Constants.TRANSPORT_JMS);
+     serviceClient = new ServiceClient();
+     serviceClient.setOptions(options);
+     factory = OMAbstractFactory.getOMFactory();
+     namespace = factory.createOMNamespace(
+               "http://validation.hitsp.nist.gov", "nns");
 
 
 
 
 
 
-	if (ServletFileUpload.isMultipartContent(request)){
-	
-  		ServletFileUpload servletFileUpload = new ServletFileUpload(new DiskFileItemFactory());
+
+
+     if (ServletFileUpload.isMultipartContent(request)){
+     
+          ServletFileUpload servletFileUpload = new ServletFileUpload(new DiskFileItemFactory());
   
-  		List fileItemsList = servletFileUpload.parseRequest(request);
+          List fileItemsList = servletFileUpload.parseRequest(request);
 
-  		Iterator it = fileItemsList.iterator();
+          Iterator it = fileItemsList.iterator();
+          
+          
+       String filterValue="3";
+      
+      FileItem cdaFile=null; 
+      
+      while (it.hasNext()){
+        
+      FileItem fileItem = (FileItem)it.next();
+
+      if (fileItem.isFormField())
+      {
+       filterValue = fileItem.getString(); 
+      }
+
+       if (!fileItem.isFormField()) {
+            cdaFile = fileItem;
+       }
+      
+      }
+      
   
-  		while (it.hasNext()){
-	  
-    		FileItem fileItemTemp = (FileItem)it.next();
     
 
 
 
-	OMElement method = factory.createOMElement(
-			"validateDocument", namespace);
-	OMElement specification = factory.createOMElement(
-			"specificationId", namespace);
-	OMElement document = factory.createOMElement(
-			"document", namespace);
+     OMElement method = factory.createOMElement(
+               "validateDocument", namespace);
+     OMElement specification = factory.createOMElement(
+               "specificationId", namespace);
+     OMElement document = factory.createOMElement(
+               "document", namespace);
 
-	specification.addChild(factory.createOMText(
-			specification, "ccd"));
-	String xml = fileItemTemp.getString();
-	document.addChild(factory.createOMText(document, xml));
-	method.addChild(specification);
-	method.addChild(document);
-	OMElement result = serviceClient.sendReceive(method);
-	
-	
-	  ;
-	  
-	  request.setAttribute("NISTXML",result.toStringWithConsume());
-	 
+     specification.addChild(factory.createOMText(
+               specification, "ccd"));
+     String xml = cdaFile.getString("UTF8");
+     document.addChild(factory.createOMText(document, xml));
+     method.addChild(specification);
+     method.addChild(document);
+     OMElement result = serviceClient.sendReceive(method);
+     
+     
+       ;
+       
+       request.setAttribute("NISTXML",result.toStringWithConsume());
+      
 
-				
-    	}
- 	}
-%>
-
- 
-<xsl:apply nameXml="NISTXML" xsl="NIST.xsl" />
-
-</p>
+                    
+     
+     }
+%> <xsl:apply nameXml="NISTXML" xsl="NIST.xsl" /></p>
 </body>
 </html>
