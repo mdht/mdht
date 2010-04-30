@@ -19,7 +19,7 @@ import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
  *
  * @see org.openhealthtools.mdht.uml.cda.pilot.TBPNPackage#getTuberculosisFollowUpProgressNote()
  * @model extendedMetaData="name='ClinicalDocument'"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation title.mixed='Tuberculosis Follow Up Progress Note' templateId.root='2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3' constraints.validation.error='TuberculosisFollowUpProgressNoteTemplateId TuberculosisFollowUpProgressNotePatientNames TuberculosisFollowUpProgressNoteTitle TuberculosisFollowUpProgressNoteTBResultsSection'"
+ *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3' constraints.validation.error='TuberculosisFollowUpProgressNoteTemplateId TuberculosisFollowUpProgressNotePatientNames TuberculosisFollowUpProgressNoteTBResultsSection'"
  * @generated
  */
 public interface TuberculosisFollowUpProgressNote extends ClinicalDocument {
@@ -49,19 +49,6 @@ public interface TuberculosisFollowUpProgressNote extends ClinicalDocument {
 	 * @generated
 	 */
 	boolean validateTuberculosisFollowUpProgressNoteTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * not self.title.oclIsUndefined() and self.title.getText() = 'Tuberculosis Follow Up Progress Note'
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.title.oclIsUndefined() and self.title.getText() = \'Tuberculosis Follow Up Progress Note\''"
-	 * @generated
-	 */
-	boolean validateTuberculosisFollowUpProgressNoteTitle(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
