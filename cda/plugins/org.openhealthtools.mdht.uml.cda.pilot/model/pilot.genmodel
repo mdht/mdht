@@ -40,10 +40,6 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTemplateId/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTitle">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTitle/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTitle/context"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTBResultsSection">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTBResultsSection/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="pilot.ecore#//TuberculosisFollowUpProgressNote/TuberculosisFollowUpProgressNoteTBResultsSection/context"/>

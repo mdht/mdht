@@ -23,12 +23,6 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v0rX06X0Ed6JRdOhEffuGA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v0rX0qX0Ed6JRdOhEffuGA" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_r7I4AA0OEd-gR9nJK3sp7g" name="title" visibility="private" aggregation="composite">
-        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_EaTNsDxaEd6JwqSGecoePg"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tdjF8A0OEd-gR9nJK3sp7g" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tdjF8Q0OEd-gR9nJK3sp7g" value="1"/>
-        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_Bn1soEAJEd6wZe6nFLrjsw"/>
-      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ucv9YKX0Ed6JRdOhEffuGA" name="TBResultOrganizer">
       <ownedComment xmi:id="_Ucv9YaX0Ed6JRdOhEffuGA" annotatedElement="_Ucv9YKX0Ed6JRdOhEffuGA">
@@ -41,7 +35,7 @@
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_VKl7EDxaEd6JwqSGecoePg"/>
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_UbVD8K6uEd6_ioDelDcPPg"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_i8BFUAxoEd-gR9nJK3sp7g" name="tBResultObservation" type="_DQh14AxmEd-gR9nJK3sp7g" association="_i8BFUQxoEd-gR9nJK3sp7g"/>
+      <ownedAttribute xmi:id="_i8BFUAxoEd-gR9nJK3sp7g" name="tbResultObservation" type="_DQh14AxmEd-gR9nJK3sp7g" association="_i8BFUQxoEd-gR9nJK3sp7g"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Ucv9baX0Ed6JRdOhEffuGA" name="TBResultsSection">
       <ownedComment xmi:id="_Ucv9bqX0Ed6JRdOhEffuGA" annotatedElement="_Ucv9baX0Ed6JRdOhEffuGA">
@@ -147,7 +141,7 @@
   <CDA:PropertyValidation xmi:id="_apnb8A0FEd-gR9nJK3sp7g" message="TBPN TB Result Observation SHALL contain [1..1] @classCode = &quot;OBS&quot;" base_Property="_Kd5ioA0CEd-gR9nJK3sp7g"/>
   <CDA:Entry xmi:id="_4AAqAA0MEd-gR9nJK3sp7g" message="TBPN TB Results Section MAY contain [0..*] entry such that it, SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from), SHALL contain [1..1] TB Result Organizer (templateId: 2.16.840.1.113883.10.20.15.3.21)" severity="INFO" base_Association="_Ucv9daX0Ed6JRdOhEffuGA" typeCode="DRIV"/>
   <CDA:Entry xmi:id="_6JrFMA0MEd-gR9nJK3sp7g" message="TBPN TB Results Section MAY contain [0..*] entry such that it, SHALL contain [1..1] @typeCode=&quot;DRIV&quot; DRIV (is derived from), SHALL contain [1..1] TB Result Observation (templateId: 2.16.840.1.113883.10.20.15.3.13)" severity="INFO" base_Association="_bg5NAAxnEd-gR9nJK3sp7g" typeCode="DRIV"/>
-  <CDA:TextValue xmi:id="_xCH_8A0OEd-gR9nJK3sp7g" message="TBPN Tuberculosis Follow Up Progress Note SHALL contain [1..1] title = &quot;Tuberculosis Follow Up Progress Note&quot;" base_Property="_r7I4AA0OEd-gR9nJK3sp7g" value="Tuberculosis Follow Up Progress Note"/>
+  <CDA:TextValue xmi:id="_xCH_8A0OEd-gR9nJK3sp7g" message="TBPN Tuberculosis Follow Up Progress Note SHALL contain [1..1] title = &quot;Tuberculosis Follow Up Progress Note&quot;" value="Tuberculosis Follow Up Progress Note"/>
   <CDA:ValueSetConstraint xmi:id="_oFQOkCfIEd-d5bLPJUHlDg" base_Property="_gGPLAAxoEd-gR9nJK3sp7g" message="TBPN TB Result Organizer SHALL contain [1..1] code, which SHALL be selected from ValueSet 2.16.840.1.114222.4.11.3205 Lab Test Result Name (TB) DYNAMIC">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/phin.uml#_qtKRkCvREd-YuK1P6utw_g"/>
   </CDA:ValueSetConstraint>

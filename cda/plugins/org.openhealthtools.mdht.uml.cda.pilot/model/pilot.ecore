@@ -8,9 +8,8 @@
       <details key="name" value="ClinicalDocument"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
-      <details key="title.mixed" value="Tuberculosis Follow Up Progress Note"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3"/>
-      <details key="constraints.validation.error" value="TuberculosisFollowUpProgressNoteTemplateId TuberculosisFollowUpProgressNotePatientNames TuberculosisFollowUpProgressNoteTitle TuberculosisFollowUpProgressNoteTBResultsSection"/>
+      <details key="constraints.validation.error" value="TuberculosisFollowUpProgressNoteTemplateId TuberculosisFollowUpProgressNotePatientNames TuberculosisFollowUpProgressNoteTBResultsSection"/>
     </eAnnotations>
     <eOperations name="TuberculosisFollowUpProgressNotePatientNames" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -40,28 +39,6 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3')"/>
-      </eAnnotations>
-      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-        </eAnnotations>
-      </eParameters>
-      <eParameters name="context">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The cache of context-specific information."/>
-        </eAnnotations>
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-        </eGenericType>
-      </eParameters>
-    </eOperations>
-    <eOperations name="TuberculosisFollowUpProgressNoteTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="not self.title.oclIsUndefined() and self.title.getText() = 'Tuberculosis Follow Up Progress Note'"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="not self.title.oclIsUndefined() and self.title.getText() = 'Tuberculosis Follow Up Progress Note'"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -68,15 +68,6 @@ public class TuberculosisFollowUpProgressNoteImpl extends ClinicalDocumentImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTuberculosisFollowUpProgressNoteTitle(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return TuberculosisFollowUpProgressNoteOperations.validateTuberculosisFollowUpProgressNoteTitle(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateTuberculosisFollowUpProgressNoteTBResultsSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return TuberculosisFollowUpProgressNoteOperations.validateTuberculosisFollowUpProgressNoteTBResultsSection(this, diagnostics, context);
 	}

@@ -261,15 +261,6 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(tuberculosisFollowUpProgressNoteEClass, ecorePackage.getEBoolean(), "validateTuberculosisFollowUpProgressNoteTitle", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(tuberculosisFollowUpProgressNoteEClass, ecorePackage.getEBoolean(), "validateTuberculosisFollowUpProgressNoteTBResultsSection", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -364,7 +355,7 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 		   source, 
 		   new String[] {
 			 "name", "ClinicalDocument"
-		   });																																																	
+		   });																																													
 	}
 
 	/**
@@ -379,10 +370,9 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 		  (tuberculosisFollowUpProgressNoteEClass, 
 		   source, 
 		   new String[] {
-			 "title.mixed", "Tuberculosis Follow Up Progress Note",
 			 "templateId.root", "2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3",
-			 "constraints.validation.error", "TuberculosisFollowUpProgressNoteTemplateId TuberculosisFollowUpProgressNotePatientNames TuberculosisFollowUpProgressNoteTitle TuberculosisFollowUpProgressNoteTBResultsSection"
-		   });																			
+			 "constraints.validation.error", "TuberculosisFollowUpProgressNoteTemplateId TuberculosisFollowUpProgressNotePatientNames TuberculosisFollowUpProgressNoteTBResultsSection"
+		   });															
 		addAnnotation
 		  (tbResultOrganizerEClass, 
 		   source, 
@@ -425,7 +415,7 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																						
+		String source = "duplicates";																		
 		addAnnotation
 		  (tbResultOrganizerEClass, 
 		   source, 
