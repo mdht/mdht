@@ -135,9 +135,24 @@ OMNamespace namespace = null;
 
   		Iterator it = fileItemsList.iterator();
   
-  		while (it.hasNext()){
-	  
-    		FileItem fileItemTemp = (FileItem)it.next();
+	  String filterValue="3";
+      
+      FileItem cdaFile=null; 
+      
+      while (it.hasNext()){
+        
+      FileItem fileItem = (FileItem)it.next();
+
+      if (fileItem.isFormField())
+      {
+       filterValue = fileItem.getString(); 
+      }
+
+       if (!fileItem.isFormField()) {
+            cdaFile = fileItem;
+       }
+      
+      }
     
 
 
@@ -151,7 +166,7 @@ OMNamespace namespace = null;
 
 	specification.addChild(factory.createOMText(
 			specification, "ccd"));
-	String xml = fileItemTemp.getString();
+	String xml = cdaFile.getString();
 	document.addChild(factory.createOMText(document, xml));
 	method.addChild(specification);
 	method.addChild(document);
@@ -164,7 +179,7 @@ OMNamespace namespace = null;
 	 
 
 				
-    	}
+    	
  	}
 %>
 

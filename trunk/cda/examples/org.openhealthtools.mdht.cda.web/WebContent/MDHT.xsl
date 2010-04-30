@@ -9,9 +9,7 @@
 				
 				   <tr>
           <td id="header" style="width: 602"><img src="oht_logo.png" alt="Open Health Tools logo" style="width: 602 height :   140 hspace :   0 vspace :   0 border :   0" /></td>
-          <td>
-          <h1 style="text-align: center">MDHT - Model Driven Health Tools Logo Here</h1>
-          </td>
+ 		<td id="header" style="width: 602"><img src="CDAToolsLogo.png" alt="CDA Tools Logo" style="width: 602 height :   140 hspace :   0 vspace :   0 border :   0" /></td>   
      </tr>
      <tr>
           <td colspan="2">
@@ -22,6 +20,33 @@
 
 					<tr bgcolor="#6495ED">
 						<th colspan="4">Diagnostics For CDA Document xxx</th>
+					</tr>
+					
+					<tr>
+					<td colspan="4">
+
+<table width="60%" border="1" align="center">
+
+<tr>
+<td align="center">Total</td><td align="center">Errors</td><td align="center">Warnings</td><td align="center">Information</td>
+</tr>
+
+<tr>
+<td align="center"><xsl:value-of select="count(//validateDocumentResponse/return/issue)"/></td>
+<td align="center"><xsl:value-of select="count(//validateDocumentResponse/return/issue/severity[contains(.,'error')])"/></td>
+<td align="center"><xsl:value-of select="count(//validateDocumentResponse/return/issue/severity[contains(.,'warning')])"/></td>
+<td align="center"><xsl:value-of select="count(//validateDocumentResponse/return/issue/severity[contains(.,'information')])"/></td>
+</tr>
+
+</table>
+					
+
+	
+ 
+
+				
+					</td>
+					
 					</tr>
 					<xsl:variable name="unique-list"
 						select="//validateDocumentResponse/return/issue/context[not(.=following::context)]" />
@@ -59,6 +84,9 @@
 							</td>
 						</tr>
 					</xsl:for-each>
+
+					<td colspan="2"> <a href="index.html" >Back to MDHT CDA Diagnostics</a></td>
+
 				</table>
 			</body>
 		</html>
@@ -69,8 +97,20 @@
 		<xsl:for-each
 			select="//validateDocumentResponse/return/issue[context=$messagecontext]">
 			<tr>
+
+
+
    <xsl:if test="position() mod 2 != 1">
     <xsl:attribute  name="style">background-color:#C6E2FF</xsl:attribute>
+  </xsl:if>
+  
+  <xsl:if test="contains(./severity,'error')">
+  <xsl:attribute  name="style">color:red</xsl:attribute>
+
+ <xsl:if test="position() mod 2 != 1">
+    <xsl:attribute  name="style">background-color:#C6E2FF;color:red</xsl:attribute>
+  </xsl:if>
+
   </xsl:if>
 
 				<td style="vertical-align: top" width="20%">

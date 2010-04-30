@@ -5,8 +5,59 @@
 	<xsl:template match="/">
 		<html>
 			<body>
-				<h2>NIST Validations</h2>
-				<table border="1">
+				
+
+				<table border="0">
+				
+				   <tr>
+          <td id="header" style="width: 602"><img src="oht_logo.png" alt="Open Health Tools logo" style="width: 602 height :   140 hspace :   0 vspace :   0 border :   0" /></td>
+  <td id="header" style="width: 602"><img src="CDAToolsLogo.png" alt="CDA Tools Logo" style="width: 602 height :   140 hspace :   0 vspace :   0 border :   0" /></td>     </tr>
+ 
+     <tr>
+          <td colspan="2">
+          <h1 style="text-align: center">MDHT Clinical Document Architecture (CDA) Document Validation Services</h1>
+          </td>
+     </tr>
+
+
+	
+
+<tr>
+<td>
+<h2>NIST Validations</h2>
+</td>
+</tr>
+ 
+ 					<tr>
+					<td colspan="4">
+
+<table width="60%" border="1" align="center">
+
+<tr>
+<td align="center">Total</td><td align="center">Errors</td><td align="center">Warnings</td><td align="center">Information</td>
+</tr>
+
+<tr>
+<td align="center"><xsl:value-of select="count(//ns:validateDocumentResponse/ns:return/ax21:issue)"/></td>
+<td align="center"><xsl:value-of select="count(//ns:validateDocumentResponse/ns:return/ax21:issue/ax21:severity[contains(.,'error')])"/></td>
+<td align="center"><xsl:value-of select="count(//ns:validateDocumentResponse/ns:return/ax21:issue/ax21:severity[contains(.,'warning')])"/></td>
+<td align="center"><xsl:value-of select="count(//ns:validateDocumentResponse/ns:return/ax21:issue/ax21:severity[contains(.,'information')])"/></td>
+</tr>
+
+</table>
+					
+
+	
+ 
+
+				
+					</td>
+					
+					</tr>
+ 
+				
+				
+				
 					<tr bgcolor="lightblue">
 						<th>Context</th>
 						<th>Message</th>
@@ -27,6 +78,7 @@
 							</td>
 						</tr>
 					</xsl:for-each>
+					<td colspan="2"> <a href="NISTCDAValidation.html" >Back to NIST CDA Diagnostics</a></td>
 				</table>
 			</body>
 		</html>

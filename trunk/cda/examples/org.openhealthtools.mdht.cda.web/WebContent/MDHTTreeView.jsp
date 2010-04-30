@@ -8,70 +8,38 @@
 <head>
 
 <%@ page
-import="org.apache.commons.fileupload.*, 
-org.apache.commons.fileupload.servlet.ServletFileUpload, 
-org.apache.commons.fileupload.disk.DiskFileItemFactory, 
-org.apache.commons.io.*, 
-org.apache.commons.io.*, 
-java.util.*, 
-java.io.File, 
+import="
+gov.nist.hitsp.validation.*,
 java.io.*,
 java.lang.Exception,
-gov.nist.hitsp.validation.WSIndividualValidationResult,
-gov.nist.hitsp.validation.WSValidationResults,
-java.io.ByteArrayOutputStream,
-java.io.File,
-java.io.FileInputStream,
-java.io.FileNotFoundException,
-java.io.FilenameFilter,
-java.io.IOException,
-java.io.InputStream,
-java.util.ArrayList,
-java.util.Collections,
-java.util.HashMap,
-java.util.List,
-java.util.Timer,
-java.util.TimerTask,
-javax.xml.parsers.ParserConfigurationException,
-org.apache.axiom.om.OMAbstractFactory,
-org.apache.axiom.om.OMElement,
-org.apache.axiom.om.OMFactory,
-org.apache.axiom.om.OMNamespace,
-org.apache.axis2.AxisFault,
-org.apache.axis2.Constants,
-org.apache.axis2.addressing.EndpointReference,
-org.apache.axis2.client.ServiceClient,
-org.xml.sax.SAXException,
+java.util.*, 
+javax.xml.parsers.*,
+javax.xml.transform.dom.*,
+javax.xml.transform.*,
+javax.xml.transform.stream.*,
+javax.xml.transform.stream.StreamResult,
+javax.xml.transform.*,
+javax.xml.transform.Result,
+org.apache.axiom.om.*,
+org.apache.axis2.addressing.*,
+org.apache.axis2.*,
+org.apache.axis2.client.*,
+org.apache.commons.fileupload.*, 
+org.apache.commons.fileupload.disk.*, 
+org.apache.commons.fileupload.servlet.*, 
+org.apache.commons.io.*, 
 org.eclipse.emf.*,
 org.eclipse.emf.common.*,
 org.eclipse.emf.common.util.*,
 org.eclipse.emf.ecore.*,
 org.openhealthtools.mdht.*,
 org.openhealthtools.mdht.uml.cda.*,
+org.openhealthtools.mdht.uml.cda.ccd.*,
+org.openhealthtools.mdht.uml.cda.hitsp.*,
+org.openhealthtools.mdht.uml.cda.ihe.*,
 org.openhealthtools.mdht.uml.cda.util.*,
-org.w3c.dom.Document,
-org.w3c.dom.Element,
-org.xml.sax.SAXException,
-
-javax.xml.parsers.DocumentBuilder,
-javax.xml.parsers.DocumentBuilderFactory,
-javax.xml.parsers.ParserConfigurationException,
-javax.xml.transform.Result,
-javax.xml.transform.Source,
-javax.xml.transform.Transformer,
-javax.xml.transform.TransformerFactory,
-javax.xml.transform.dom.DOMSource,
-javax.xml.transform.stream.StreamResult,
-
-org.openhealthtools.mdht.uml.cda.CDAPackage,
-org.openhealthtools.mdht.uml.cda.ClinicalDocument,
-org.openhealthtools.mdht.uml.cda.DocumentRoot,
-org.openhealthtools.mdht.uml.cda.ccd.CCDPackage,
-org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage,
-org.openhealthtools.mdht.uml.cda.ihe.IHEPackage,
-org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler
-
-
+org.w3c.dom.*,
+org.xml.sax.SAXException
 "
 %>
 
@@ -251,8 +219,8 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
                CCDPackage.eINSTANCE.eClass();
                HITSPPackage.eINSTANCE.eClass();
                IHEPackage.eINSTANCE.eClass();
-
-                           InputStream in = new ByteArrayInputStream(cdaFile.getString().getBytes());
+               
+               InputStream in = new ByteArrayInputStream(cdaFile.getString("UTF8").getBytes("UTF8"));
                            ClinicalDocument clinicalDocument = CDAUtil.load(in, null);
                            
 
@@ -368,7 +336,7 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
  <!-- to remove the link, see the online FAQ for instructions -->
  <!-- on how to obtain a version without the link.            -->
  <!------------------------------------------------------------->
- <DIV style="position:absolute; top:0; left:0;"><TABLE border=0>
+ <DIV style="position:absolute;  left:0;"><TABLE border=0>
  
  
       <tr>

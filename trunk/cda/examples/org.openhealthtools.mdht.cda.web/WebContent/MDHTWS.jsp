@@ -216,7 +216,7 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
     			HITSPPackage.eINSTANCE.eClass();
     			IHEPackage.eINSTANCE.eClass();
 
-    			            InputStream in = new ByteArrayInputStream(cdaFile.getString().getBytes());
+    			            InputStream in = new ByteArrayInputStream(cdaFile.getString("UTF8").getBytes("UTF8"));
     			            ClinicalDocument clinicalDocument = CDAUtil.load(in, null);
     			            
 
