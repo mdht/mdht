@@ -467,7 +467,7 @@ public class CDAUtil {
 	// END: OCL Support
 
 	// BEGIN: Experimental Query/Filter operations
-	public interface Filter<T extends EObject> {
+	public interface Filter<T> {
 		public boolean accept(T item);
 	}
 	
