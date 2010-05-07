@@ -13,6 +13,9 @@
 package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.eclipse.core.runtime.IPath;
@@ -20,6 +23,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.uml2.uml.Package;
+import org.openhealthtools.mdht.uml.cda.ant.types.EPackageClass;
 import org.openhealthtools.mdht.uml.cda.dita.DitaTransformer;
 import org.openhealthtools.mdht.uml.cda.dita.DitaTransformerOptions;
 
@@ -32,6 +36,7 @@ public class TransformToDita extends CDAModelingSubTask {
     /* attributes of this Ant task */
 	private String ditaFilePath = null;
 	private Boolean includeVocabularyConstraints = null;
+	private List<EPackageClass> ePackageClasses = new ArrayList<EPackageClass>();
 
 	/* child elements of this Ant task */
 //	private List<ModelElement> elements = new ArrayList<ModelElement>();
@@ -97,6 +102,9 @@ public class TransformToDita extends CDAModelingSubTask {
     	if (includeVocabularyConstraints != null) {
     		options.setIncludeVocabularyConstraints(includeVocabularyConstraints);
     	}
+    	for (EPackageClass ePackage : ePackageClasses) {
+			options.addEPackage(ePackage.getQname());
+		}
 
     	DitaTransformer transformer = new DitaTransformer(options);
     	transformer.transformElement(umlModel);
@@ -114,9 +122,11 @@ public class TransformToDita extends CDAModelingSubTask {
 		includeVocabularyConstraints = new Boolean(include);
 	}
 
-
 	// ANT task child elements
 	// --------------------------------------------------
 	
+    public void addEPackageClass(EPackageClass ePackageClass) {
+    	ePackageClasses.add(ePackageClass);
+    }
     
 }
