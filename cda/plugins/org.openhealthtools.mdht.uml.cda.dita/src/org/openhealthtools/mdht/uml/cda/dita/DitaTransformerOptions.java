@@ -17,6 +17,7 @@ import java.util.Vector;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Preferences;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.uml2.uml.Element;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Activator;
 
@@ -29,6 +30,7 @@ public class DitaTransformerOptions {
 	
 	private IPath outputPath;
 	private boolean includeVocabularyConstraints;
+	private List<EPackage> ePackages = new Vector<EPackage>();
 	
 	// use Vector for a thread-safe synchronized List
 	private List<Element> deletedElementList = new Vector<Element>();
@@ -86,6 +88,23 @@ public class DitaTransformerOptions {
 
 	protected List<String> getClassList() {
 		return classList;
+	}
+
+	public List<EPackage> getEPackages() {
+		return ePackages;
+	}
+	
+	public void setEPackages(List<EPackage> packages) {
+		this.ePackages = packages;
+	}
+
+	public void addEPackage(Class<EPackage> ePackageClass) {
+		try {
+			EPackage ePackage = (EPackage)ePackageClass.getField("eINSTANCE").get(null);
+			ePackages.add(ePackage);
+		} catch (Exception e) {
+			// ignore, leave as null
+		}
 	}
 
 }
