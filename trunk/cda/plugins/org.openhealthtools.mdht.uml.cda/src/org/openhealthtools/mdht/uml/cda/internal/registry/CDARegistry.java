@@ -29,29 +29,24 @@ public class CDARegistry {
 	private static final String TEMPLATE_ID_ROOT = "templateId.root";
 	private static final String CONTEXT_DEPENDENT = "contextDependent";
 	private static final String REGISTRY_DELEGATE = "registryDelegate";
-	
+
 	private CDARegistry() {
 		classes = new HashMap<String, EClass>();
 		delegates = new HashMap<EClass, RegistryDelegate>();
 		load();
 	}
-	
-	public synchronized void load() {
-	
 
+	public synchronized void load() {
 		classes.clear();
 		delegates.clear();
-		
 		/*
-		 * EPackage.Registry.INSTANCE.keySet() does not support multithreaded
+		 * EPackage.Registry.INSTANCE.keySet() does not support multi-threaded
 		 * iterations in a for loop and causes an exception. We create a local
 		 * copy of the key set to iterate over
 		 */
-
-		Object[] keys = EPackage.Registry.INSTANCE.keySet().toArray();
-
-		for (Object key : keys) {
-			EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage((String) key);
+		EPackage.Registry registry = EPackage.Registry.INSTANCE;
+		for (String key : registry.keySet().toArray(new String[registry.size()])) {
+			EPackage ePackage = registry.getEPackage(key);
 			for (EClassifier eClassifier : ePackage.getEClassifiers()) {
 				String templateId = EcoreUtil.getAnnotation(eClassifier, CDA_ANNOTATION_SOURCE, TEMPLATE_ID_ROOT);
 				if (templateId != null) {
@@ -69,9 +64,8 @@ public class CDARegistry {
 				}
 			}
 		}
-	
 	}
-	
+
 	public synchronized EClass getEClass(String templateId, Object context) {
 		EClass eClass = classes.get(templateId);
 		if (delegates.containsKey(eClass)) {
