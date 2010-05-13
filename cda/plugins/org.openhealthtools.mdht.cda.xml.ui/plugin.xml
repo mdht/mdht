@@ -3,77 +3,39 @@
 
 <!--
 /*******************************************************************************
- * Copyright (c) 2010 Sean Muir
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     Sean Muir (JKM Software) - initial API and implementation
- *     
- * $Id$
- *******************************************************************************/
- -->
- 
+* Copyright (c) 2010 Sean Muir * All rights reserved. This program and
+the accompanying materials * are made available under the terms of the
+Eclipse Public License v1.0 * which accompanies this distribution, and
+is available at * http://www.eclipse.org/legal/epl-v10.html * *
+Contributors: * Sean Muir (JKM Software) - initial API and
+implementation * * $Id$
+*******************************************************************************/
+-->
+
 <plugin>
-   
-  <extension id="xml" name="CDA Validator" point="org.eclipse.wst.validation.validatorV2">
 
-      <validator
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type base-type="org.eclipse.core.runtime.xml"
+			describer="org.openhealthtools.mdht.cda.xml.CDAContentHandler"
+			file-extensions="xml" id="org.openhealthtools.mdht.cda" name="Clinical Document Architecture (CDA)"
+			priority="normal">
+		</content-type>
+	</extension>
 
-            build="false"
-
-            class="org.openhealthtools.mdht.cda.xml.Validator"
-
-            manual="true" >
-
-         <include>
-
-            <rules>
-
-               <contentType id="org.eclipse.core.runtime.xml"></contentType>
-
-               <contentType id="org.eclipse.wst.xml.core.xmlsource"></contentType>
-
-               <contentType id="org.eclipse.wst.xml.core.xslsource"></contentType>
-
-               <contentType id="org.eclipse.jst.jsp.core.tldsource"></contentType>
-
-               <fileext
-
-                     caseSensitive="false"
-
-                     ext="xml">
-
-               </fileext>
-
-            </rules>
-
-         </include>
-
-         <exclude>
-
-            <rules>
-
-                        <projectNature id="org.eclipse.jst.j2ee.ejb.EJBNature"/>
-
-                        <projectNature id="org.eclipse.jst.j2ee.EARNature"/>
-
-                  <file caseSensitive="true" name=".project" type="file"/>
-
-                  <file caseSensitive="true" name=".classpath" type="file"/>
-
-                  <file caseSensitive="true" name=".settings"  type="folder"/>
-
-            </rules>
-
-         </exclude>
-
-      </validator>
-
-   </extension>
-
-   
+	<extension id="xml" name="CDA Validator" point="org.eclipse.wst.validation.validatorV2">
+		<validator build="false" class="org.openhealthtools.mdht.cda.xml.Validator" markerId="org.openhealthtools.mdht.cda.xml.validationMarker" manual="true">
+			<include>
+				<rules>
+					<contentType id="org.openhealthtools.mdht.cda"></contentType>
+					<fileext caseSensitive="false" ext="xml" />
+				</rules>
+			</include>
+		</validator>
+	</extension>
+	
+	<extension id="org.openhealthtools.mdht.cda.xml.validationMarker" name="CDA Validation" point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.wst.validation.problemmarker" />
+		<persistent value="false" />
+	</extension>
 
 </plugin>
