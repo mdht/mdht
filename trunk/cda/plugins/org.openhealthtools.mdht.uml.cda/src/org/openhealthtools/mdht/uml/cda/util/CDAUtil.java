@@ -72,6 +72,7 @@ import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.internal.registry.CDARegistry;
 import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResource;
 import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
 
 public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
@@ -81,15 +82,45 @@ public class CDAUtil {
 		ePackage.eClass();
 		CDARegistry.INSTANCE.load();
 	}
+	
+	/*
+	 * Series of load methods used to read from input stream and source and
+	 * create corresponding ClinicalDocument based on clinical documents
+	 * registered
+	 */
 
+	/*
+	 * Load from Java IO
+	 */
 	public static ClinicalDocument load(InputStream in) throws Exception {
 		return load(in, null);
+	}
+	/*
+	 * Load from SAX XML
+	 */
+	public static ClinicalDocument load(InputSource is) throws Exception {
+		return load(is, null);
 	}
 
 	public static ClinicalDocument load(InputStream in, LoadHandler handler) throws Exception {
 		CDAPackage.eINSTANCE.eClass();
 		DocumentBuilder builder = newDocumentBuilder();
 		Document doc = builder.parse(in);
+		return load(doc,handler);
+	}
+	
+	public static ClinicalDocument load(InputSource is, LoadHandler handler) throws Exception {
+		CDAPackage.eINSTANCE.eClass();
+		DocumentBuilder builder = newDocumentBuilder();
+		Document doc = builder.parse(is);
+		return load(doc,handler);
+	}
+
+	/*
+	 * Create Clincial Document using XML DOM
+	 */
+	private static ClinicalDocument load(Document doc,LoadHandler handler) throws Exception
+	{
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.load(doc, null);
 		if (handler != null) {
@@ -97,14 +128,16 @@ public class CDAUtil {
 		}
 		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
 		return root.getClinicalDocument();
+		
 	}
-
+	
 	private static DocumentBuilder newDocumentBuilder() throws Exception {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setNamespaceAware(true);
 		return factory.newDocumentBuilder();
 	}
 
+	
 	private static void processResource(XMLResource resource, LoadHandler handler) {
 		Map<EObject, AnyType> extMap = resource.getEObjectToExtensionMap();
 		for (EObject key : extMap.keySet()) {
