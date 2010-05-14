@@ -111,7 +111,7 @@ public class Validator extends AbstractNestedValidator {
 
 		final String cdauri = uri;
 
-		DatatypesPackage.eINSTANCE.eClass();
+//		DatatypesPackage.eINSTANCE.eClass();
 //
 //		org.openhealthtools.mdht.uml.hl7.datatypes.PN pn = DatatypesFactory.eINSTANCE.createPN();
 
