@@ -36,7 +36,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.Diagnostician;
@@ -69,7 +68,6 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.StructuredBody;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
-import org.openhealthtools.mdht.uml.cda.internal.registry.CDARegistry;
 import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResource;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
@@ -78,49 +76,27 @@ public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
 
-	public static void registerPackage(EPackage ePackage) {
-		ePackage.eClass();
-		CDARegistry.INSTANCE.load();
-	}
-	
-	/*
-	 * Series of load methods used to read from input stream and source and
-	 * create corresponding ClinicalDocument based on clinical documents
-	 * registered
-	 */
-
-	/*
-	 * Load from Java IO
-	 */
 	public static ClinicalDocument load(InputStream in) throws Exception {
 		return load(in, null);
 	}
-	/*
-	 * Load from SAX XML
-	 */
+
 	public static ClinicalDocument load(InputSource is) throws Exception {
 		return load(is, null);
 	}
 
 	public static ClinicalDocument load(InputStream in, LoadHandler handler) throws Exception {
-		CDAPackage.eINSTANCE.eClass();
 		DocumentBuilder builder = newDocumentBuilder();
 		Document doc = builder.parse(in);
 		return load(doc,handler);
 	}
-	
+
 	public static ClinicalDocument load(InputSource is, LoadHandler handler) throws Exception {
-		CDAPackage.eINSTANCE.eClass();
 		DocumentBuilder builder = newDocumentBuilder();
 		Document doc = builder.parse(is);
 		return load(doc,handler);
 	}
 
-	/*
-	 * Create Clincial Document using XML DOM
-	 */
-	private static ClinicalDocument load(Document doc,LoadHandler handler) throws Exception
-	{
+	private static ClinicalDocument load(Document doc, LoadHandler handler) throws Exception {
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.load(doc, null);
 		if (handler != null) {
@@ -128,16 +104,14 @@ public class CDAUtil {
 		}
 		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
 		return root.getClinicalDocument();
-		
 	}
-	
+
 	private static DocumentBuilder newDocumentBuilder() throws Exception {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setNamespaceAware(true);
 		return factory.newDocumentBuilder();
 	}
 
-	
 	private static void processResource(XMLResource resource, LoadHandler handler) {
 		Map<EObject, AnyType> extMap = resource.getEObjectToExtensionMap();
 		for (EObject key : extMap.keySet()) {
@@ -503,14 +477,14 @@ public class CDAUtil {
 	public interface Filter<T> {
 		public boolean accept(T item);
 	}
-	
+
 	public static class OCLFilter<T extends EObject> implements Filter<T> {
 		protected String body = null;
-		
+
 		public OCLFilter(String body) {
 			this.body = body;
 		}
-		
+
 		public boolean accept(T item) {
 			boolean result = false;
 			try {
@@ -519,12 +493,12 @@ public class CDAUtil {
 			return result;
 		}
 	}
-	
+
 	public static <T extends Section> T getSection(ClinicalDocument clinicalDocument, Class<T> clazz) {
 		List<T> sections = getSections(clinicalDocument, clazz);
 		return !sections.isEmpty() ? sections.get(0) : null;
 	}
-	
+
 	public static <T extends Section> T getSection(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
 		List<T> sections = getSections(clinicalDocument, clazz, filter);
 		return !sections.isEmpty() ? sections.get(0) : null;
@@ -569,7 +543,7 @@ public class CDAUtil {
 		}
 		return allSections;
 	}
-	
+
 	private static List<Section> getSections(Section section) {
 		List<Section> sections = new ArrayList<Section>();
 		Stack<Section> stack = new Stack<Section>();
@@ -586,12 +560,12 @@ public class CDAUtil {
 		}
 		return sections;
 	}
-	
+
 	public static <T extends EObject> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz) {
 		List<T> clinicalStatements = getClinicalStatements(clinicalDocument, clazz);
 		return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
 	}
-	
+
 	public static <T extends EObject> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
 		List<T> clinicalStatements = getClinicalStatements(clinicalDocument, clazz, filter);
 		return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
