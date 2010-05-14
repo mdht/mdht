@@ -37,8 +37,9 @@ public class CDARegistry {
 	}
 
 	private void load() {
-		for (String key : EPackage.Registry.INSTANCE.keySet()) {
-			EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(key);
+		EPackage.Registry registry = EPackage.Registry.INSTANCE;
+		for (String key : registry.keySet().toArray(new String[registry.size()])) {
+			EPackage ePackage = registry.getEPackage(key);
 			for (EClassifier eClassifier : ePackage.getEClassifiers()) {
 				String templateId = EcoreUtil.getAnnotation(eClassifier, CDA_ANNOTATION_SOURCE, TEMPLATE_ID_ROOT);
 				if (templateId != null) {
