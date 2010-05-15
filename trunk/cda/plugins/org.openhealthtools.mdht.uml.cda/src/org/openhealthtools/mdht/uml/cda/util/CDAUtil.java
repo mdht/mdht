@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.Diagnostician;
@@ -97,6 +98,7 @@ public class CDAUtil {
 	}
 
 	private static ClinicalDocument load(Document doc, LoadHandler handler) throws Exception {
+		CDAPackage.eINSTANCE.eClass(); 	// static package registration
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.load(doc, null);
 		if (handler != null) {
@@ -169,6 +171,17 @@ public class CDAUtil {
 			root.setClinicalDocument(clinicalDocument);
 			root.getXMLNSPrefixMap().put("", CDAPackage.eNS_URI);
 			resource.getContents().add(root);
+		} else {
+			// resource exists from load, clean up XMLNS Prefix Map
+			DocumentRoot root = (DocumentRoot) resource.getContents().get(0);	
+			Iterator<Map.Entry<String, String>> iterator = root.getXMLNSPrefixMap().iterator();
+			while (iterator.hasNext()) {
+				Map.Entry<String, String> entry = iterator.next();
+				if (EPackage.Registry.INSTANCE.keySet().contains(entry.getValue()) 
+						&& !CDAPackage.eNS_URI.equals(entry.getValue())) {
+					iterator.remove();
+				}
+			}
 		}
 		return resource;
 	}
