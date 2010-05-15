@@ -98,7 +98,7 @@ public class CDAUtil {
 	}
 
 	private static ClinicalDocument load(Document doc, LoadHandler handler) throws Exception {
-		CDAPackage.eINSTANCE.eClass(); 	// static package registration
+		CDAPackage.eINSTANCE.eClass();
 		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
 		resource.load(doc, null);
 		if (handler != null) {
@@ -172,7 +172,6 @@ public class CDAUtil {
 			root.getXMLNSPrefixMap().put("", CDAPackage.eNS_URI);
 			resource.getContents().add(root);
 		} else {
-			// resource exists from load, clean up XMLNS Prefix Map
 			DocumentRoot root = (DocumentRoot) resource.getContents().get(0);	
 			Iterator<Map.Entry<String, String>> iterator = root.getXMLNSPrefixMap().iterator();
 			while (iterator.hasNext()) {
