@@ -171,7 +171,8 @@ public class CDAUtil {
 			root.getXMLNSPrefixMap().put("", CDAPackage.eNS_URI);
 			resource.getContents().add(root);
 		} else {
-			DocumentRoot root = (DocumentRoot) resource.getContents().get(0);	
+//			DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
+			DocumentRoot root = (DocumentRoot) clinicalDocument.eContainer();
 			Iterator<Map.Entry<String, String>> iterator = root.getXMLNSPrefixMap().entrySet().iterator();
 			while (iterator.hasNext()) {
 				Map.Entry<String, String> entry = iterator.next();
