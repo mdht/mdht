@@ -773,4 +773,14 @@ public class CDAUtil {
 		return null;
 	}
 	// END: Experimental Query/Filter operations
+	
+	public static void loadPackages()
+	{
+		CDAPackageLoader.loadPackages();
+	}
+	
+	public static void loadPackages(String location)
+	{
+		CDAPackageLoader.loadPackages(location);
+	}
 }
