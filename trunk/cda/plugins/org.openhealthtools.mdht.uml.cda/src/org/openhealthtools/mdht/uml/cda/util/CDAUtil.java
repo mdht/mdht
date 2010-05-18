@@ -774,13 +774,11 @@ public class CDAUtil {
 	}
 	// END: Experimental Query/Filter operations
 	
-	public static void loadPackages()
-	{
+	public static void loadPackages() {
 		CDAPackageLoader.loadPackages();
 	}
-	
-	public static void loadPackages(String location)
-	{
+
+	public static void loadPackages(String location) {
 		CDAPackageLoader.loadPackages(location);
 	}
 }
