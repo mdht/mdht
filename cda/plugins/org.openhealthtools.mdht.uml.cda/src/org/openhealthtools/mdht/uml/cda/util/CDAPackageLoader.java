@@ -41,6 +41,12 @@ import org.xml.sax.SAXException;
  */
 public class CDAPackageLoader {
 
+	
+	private static boolean packagesLoaded = false;
+
+	public static boolean isPackagesLoaded() {
+		return packagesLoaded;
+	}
 
 	/**
 	 * loadCDAPackagesFormClassPath will use the java class path and attempt to
@@ -48,24 +54,28 @@ public class CDAPackageLoader {
 	 */
 	protected static final void loadPackages() {
 
-		final String PATH_SEPARATOR = System.getProperty("path.separator");
+		if (!packagesLoaded) {
+			final String PATH_SEPARATOR = System.getProperty("path.separator");
 
-		final String JAVA_CLASSPATH = System.getProperty("java.class.path");
+			final String JAVA_CLASSPATH = System.getProperty("java.class.path");
 
-		StringTokenizer st = new StringTokenizer(JAVA_CLASSPATH, PATH_SEPARATOR);
+			StringTokenizer st = new StringTokenizer(JAVA_CLASSPATH, PATH_SEPARATOR);
 
-		while (st.hasMoreTokens()) {
-			String path = st.nextToken();
-			if (path.endsWith(".jar") || (path.endsWith(".zip"))) {
-				try {
-					processModelPlugin(new ZipFile(path));
-				} catch (Exception e) {
-					e.printStackTrace();
-					// If there is an issue loading the plugin jar - we let
-					// normal processing continue
+			while (st.hasMoreTokens()) {
+				String path = st.nextToken();
+				if (path.endsWith(".jar") || (path.endsWith(".zip"))) {
+					try {
+						processModelPlugin(new ZipFile(path));
+					} catch (Exception e) {
+						e.printStackTrace();
+						// If there is an issue loading the plugin jar - we let
+						// normal processing continue
+					}
 				}
 			}
+			packagesLoaded = true;
 		}
+		
 		return;
 	}
 
@@ -77,20 +87,23 @@ public class CDAPackageLoader {
 	 */
 	protected static final void loadPackages(String dir) {
 
-		File directory = new File(dir);
+		if (!packagesLoaded) {
+			File directory = new File(dir);
 
-		File[] files = directory.listFiles();
+			File[] files = directory.listFiles();
 
-		for (int i = 0; i < files.length; i++) {
-			if (files[i].getName().toLowerCase().endsWith(".jar") && files[i].exists()) {
-				try {
-					processModelPlugin(new ZipFile(files[i]));
-				} catch (Exception e) {
-					e.printStackTrace();
-					// If there is an issue loading the plugin jar - we let
-					// normal processing continue
+			for (int i = 0; i < files.length; i++) {
+				if (files[i].getName().toLowerCase().endsWith(".jar") && files[i].exists()) {
+					try {
+						processModelPlugin(new ZipFile(files[i]));
+					} catch (Exception e) {
+						e.printStackTrace();
+						// If there is an issue loading the plugin jar - we let
+						// normal processing continue
+					}
 				}
 			}
+			packagesLoaded = true;
 		}
 		return;
 	}
