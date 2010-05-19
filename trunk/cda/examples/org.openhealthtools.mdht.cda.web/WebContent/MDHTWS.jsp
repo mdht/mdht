@@ -67,9 +67,6 @@ javax.xml.transform.stream.StreamResult,
 org.openhealthtools.mdht.uml.cda.CDAPackage,
 org.openhealthtools.mdht.uml.cda.ClinicalDocument,
 org.openhealthtools.mdht.uml.cda.DocumentRoot,
-org.openhealthtools.mdht.uml.cda.ccd.CCDPackage,
-org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage,
-org.openhealthtools.mdht.uml.cda.ihe.IHEPackage,
 org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler
 
 
@@ -211,10 +208,10 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
     		
     		try {
     			
-    			CDAPackage.eINSTANCE.eClass();
-    			CCDPackage.eINSTANCE.eClass();
-    			HITSPPackage.eINSTANCE.eClass();
-    			IHEPackage.eINSTANCE.eClass();
+				
+    						CDAUtil.loadPackages(getServletConfig().getServletContext().getRealPath("WEB-INF/lib"));
+    			
+    		
 
     			            InputStream in = new ByteArrayInputStream(cdaFile.getString("UTF8").getBytes("UTF8"));
     			            ClinicalDocument clinicalDocument = CDAUtil.load(in, null);
