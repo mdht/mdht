@@ -506,25 +506,110 @@ public class CDAUtil {
 		}
 	}
 
-	public static <T extends Section> T getSection(ClinicalDocument clinicalDocument, Class<T> clazz) {
-		List<T> sections = getSections(clinicalDocument, clazz);
-		return !sections.isEmpty() ? sections.get(0) : null;
+	public static class Query {
+		private ClinicalDocument clinicalDocument = null;
+		private List<Section> allSections = null;
+		private List<EObject> allClinicalStatements = null;
+
+		public Query(ClinicalDocument clinicalDocument) {
+			this.clinicalDocument = clinicalDocument;
+		}
+
+		// get first section that conforms to clazz and is accepted by filter
+		public <T extends Section> T getSection(Class<T> clazz, Filter<T> filter) {
+			List<T> sections = getSections(clazz, filter);
+			return !sections.isEmpty() ? sections.get(0) : null;
+		}
+
+		// get first section that conforms to clazz
+		public <T extends Section> T getSection(Class<T> clazz) {
+			List<T> sections = getSections(clazz);
+			return !sections.isEmpty() ? sections.get(0) : null;
+		}
+
+		// get sections that conform to clazz and are accepted by filter
+		public <T extends Section> List<T> getSections(Class<T> clazz, Filter<T> filter) {
+			List<T> sections = new ArrayList<T>();
+			for (T section : getSections(clazz)) {
+				if (filter.accept(section)) {
+					sections.add(section);
+				}
+			}
+			return sections;
+		}
+
+		// get sections that conform to clazz
+		public <T extends Section> List<T> getSections(Class<T> clazz) {
+			List<T> sections = new ArrayList<T>();
+			for (Section section : getAllSections()) {
+				if (clazz.isInstance(section)) {
+					sections.add(clazz.cast(section));
+				}
+			}
+			return sections;
+		}
+
+		// get all sections in the document (closure)
+		public List<Section> getAllSections() {
+			if (allSections == null) {
+				allSections = CDAUtil.getAllSections(clinicalDocument);
+			}
+			return allSections;
+		}
+
+		// get first clinical statement that conform to clazz and is accepted by filter
+		public <T extends EObject> T getClinicalStatement(Class<T> clazz, Filter<T> filter) {
+			List<T> clinicalStatements = getClinicalStatements(clazz, filter);
+			return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
+		}
+
+		// get first clinical statement that conform to clazz
+		public <T extends EObject> T getClinicalStatement(Class<T> clazz) {
+			List<T> clinicalStatements = getClinicalStatements(clazz);
+			return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
+		}
+
+		// get clinical statements that conform to clazz and are accepted by filter
+		public <T extends EObject> List<T> getClinicalStatements(Class<T> clazz, Filter<T> filter) {
+			List<T> clinicalStatements = new ArrayList<T>();
+			for (T clinicalStatement : getClinicalStatements(clazz)) {
+				if (filter.accept(clinicalStatement)) {
+					clinicalStatements.add(clinicalStatement);
+				}
+			}
+			return clinicalStatements;
+		}
+
+		// get clinical statements that conform to clazz
+		public <T extends EObject> List<T> getClinicalStatements(Class<T> clazz) {
+			List<T> clinicalStatements = new ArrayList<T>();
+			for (EObject clinicalStatement : getAllClinicalStatements()) {
+				if (clazz.isInstance(clinicalStatement)) {
+					clinicalStatements.add(clazz.cast(clinicalStatement));
+				}
+			}
+			return clinicalStatements;
+		}
+
+		// get all clinical statements in the document (closure)
+		public List<EObject> getAllClinicalStatements() {
+			if (allClinicalStatements == null) {
+				allClinicalStatements = CDAUtil.getAllClinicalStatements(clinicalDocument);
+			}
+			return allClinicalStatements;
+		}
 	}
 
+	// get first section that conforms to clazz and is accepted by filter
 	public static <T extends Section> T getSection(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
 		List<T> sections = getSections(clinicalDocument, clazz, filter);
 		return !sections.isEmpty() ? sections.get(0) : null;
 	}
 
-	// get sections that conform to clazz
-	public static <T extends Section> List<T> getSections(ClinicalDocument clinicalDocument, Class<T> clazz) {
-		List<T> sections = new ArrayList<T>();
-		for (Section section : getAllSections(clinicalDocument)) {
-			if (clazz.isInstance(section)) {
-				sections.add(clazz.cast(section));
-			}
-		}
-		return sections;
+	// get first section that conforms to clazz
+	public static <T extends Section> T getSection(ClinicalDocument clinicalDocument, Class<T> clazz) {
+		List<T> sections = getSections(clinicalDocument, clazz);
+		return !sections.isEmpty() ? sections.get(0) : null;
 	}
 
 	// get sections that conform to clazz and are accepted by filter
@@ -538,7 +623,18 @@ public class CDAUtil {
 		return sections;
 	}
 
-	// get all sections in the document
+	// get sections that conform to clazz
+	public static <T extends Section> List<T> getSections(ClinicalDocument clinicalDocument, Class<T> clazz) {
+		List<T> sections = new ArrayList<T>();
+		for (Section section : getAllSections(clinicalDocument)) {
+			if (clazz.isInstance(section)) {
+				sections.add(clazz.cast(section));
+			}
+		}
+		return sections;
+	}
+
+	// get all sections in the document (closure)
 	public static List<Section> getAllSections(ClinicalDocument clinicalDocument) {
 		List<Section> allSections = new ArrayList<Section>();
 		Component2 component2 = clinicalDocument.getComponent();
@@ -573,25 +669,16 @@ public class CDAUtil {
 		return sections;
 	}
 
-	public static <T extends EObject> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz) {
-		List<T> clinicalStatements = getClinicalStatements(clinicalDocument, clazz);
-		return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
-	}
-
+	// get first clinical statement that conforms to clazz and is accepted by filter
 	public static <T extends EObject> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
 		List<T> clinicalStatements = getClinicalStatements(clinicalDocument, clazz, filter);
 		return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
 	}
 
-	// get clinical statements that conform to clazz
-	public static <T extends EObject> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz) {
-		List<T> clinicalStatements = new ArrayList<T>();
-		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
-			if (clazz.isInstance(clinicalStatement)) {
-				clinicalStatements.add(clazz.cast(clinicalStatement));
-			}
-		}
-		return clinicalStatements;
+	// get first clinical statement that conforms to clazz
+	public static <T extends EObject> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz) {
+		List<T> clinicalStatements = getClinicalStatements(clinicalDocument, clazz);
+		return !clinicalStatements.isEmpty() ? clinicalStatements.get(0) : null;
 	}
 
 	// get clinical statements that conform to clazz and are accepted by filter
@@ -605,7 +692,18 @@ public class CDAUtil {
 		return clinicalStatements;
 	}
 
-	// get all clinical statements in the document
+	// get clinical statements that conform to clazz
+	public static <T extends EObject> List<T> getClinicalStatements(ClinicalDocument clinicalDocument, Class<T> clazz) {
+		List<T> clinicalStatements = new ArrayList<T>();
+		for (EObject clinicalStatement : getAllClinicalStatements(clinicalDocument)) {
+			if (clazz.isInstance(clinicalStatement)) {
+				clinicalStatements.add(clazz.cast(clinicalStatement));
+			}
+		}
+		return clinicalStatements;
+	}
+
+	// get all clinical statements in the document (closure)
 	public static List<EObject> getAllClinicalStatements(ClinicalDocument clinicalDocument) {
 		List<EObject> allClinicalStatements = new ArrayList<EObject>();
 		for (Section section : getAllSections(clinicalDocument)) {
