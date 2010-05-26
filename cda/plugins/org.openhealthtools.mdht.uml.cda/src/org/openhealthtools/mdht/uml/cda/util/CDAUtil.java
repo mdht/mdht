@@ -510,6 +510,7 @@ public class CDAUtil {
 		private ClinicalDocument clinicalDocument = null;
 		private List<Section> allSections = null;
 		private List<EObject> allClinicalStatements = null;
+		private List<EObject> allEObjects = null;
 
 		public Query(ClinicalDocument clinicalDocument) {
 			this.clinicalDocument = clinicalDocument;
@@ -597,6 +598,48 @@ public class CDAUtil {
 				allClinicalStatements = CDAUtil.getAllClinicalStatements(clinicalDocument);
 			}
 			return allClinicalStatements;
+		}
+		
+		// get first object that conforms to clazz and is accepted by filter
+		public <T extends EObject> T getEObject(Class<T> clazz, Filter<T> filter) {
+			List<T> eObjects = getEObjects(clazz, filter);
+			return !eObjects.isEmpty() ? eObjects.get(0) : null;
+		}
+
+		// get first object that conforms to clazz
+		public <T extends EObject> T getEObject(Class<T> clazz) {
+			List<T> eObjects = getEObjects(clazz);
+			return !eObjects.isEmpty() ? eObjects.get(0) : null;
+		}
+
+		// get objects that conform to clazz and are accepted by filter
+		public <T extends EObject> List<T> getEObjects(Class<T> clazz, Filter<T> filter) {
+			List<T> eObjects = new ArrayList<T>();
+			for (T eObject : getEObjects(clazz)) {
+				if (filter.accept(eObject)) {
+					eObjects.add(eObject);
+				}
+			}
+			return eObjects;
+		}
+
+		// get objects that conform to clazz
+		public <T extends EObject> List<T> getEObjects(Class<T> clazz) {
+			List<T> eObjects = new ArrayList<T>();
+			for (EObject eObject : getAllEObjects()) {
+				if (clazz.isInstance(eObject)) {
+					eObjects.add(clazz.cast(eObject));
+				}
+			}
+			return eObjects;
+		}
+
+		// get all objects in the document (closure)
+		public List<EObject> getAllEObjects() {
+			if (allEObjects == null) {
+				allEObjects = CDAUtil.getAllEObjects(clinicalDocument);
+			}
+			return allEObjects;
 		}
 	}
 
@@ -869,6 +912,55 @@ public class CDAUtil {
 			return component.getSupply();
 		}
 		return null;
+	}
+	
+	// get first object that conforms to clazz and is accepted by filter
+	public static <T extends EObject> T getEObject(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+		List<T> eObjects = getEObjects(clinicalDocument, clazz, filter);
+		return !eObjects.isEmpty() ? eObjects.get(0) : null;
+	}
+
+	// get first object that conforms to clazz
+	public static <T extends EObject> T getEObject(ClinicalDocument clinicalDocument, Class<T> clazz) {
+		List<T> eObjects = getEObjects(clinicalDocument, clazz);
+		return !eObjects.isEmpty() ? eObjects.get(0) : null;
+	}
+
+	// get objects that conform to clazz and are accepted by filter
+	public static <T extends EObject> List<T> getEObjects(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
+		List<T> eObjects = new ArrayList<T>();
+		for (T eObject : getEObjects(clinicalDocument, clazz)) {
+			if (filter.accept(eObject)) {
+				eObjects.add(eObject);
+			}
+		}
+		return eObjects;
+	}
+
+	// get objects that conform to clazz
+	public static <T extends EObject> List<T> getEObjects(ClinicalDocument clinicalDocument, Class<T> clazz) {
+		List<T> eObjects = new ArrayList<T>();
+		for (EObject eObject : getAllEObjects(clinicalDocument)) {
+			if (clazz.isInstance(eObject)) {
+				eObjects.add(clazz.cast(eObject));
+			}
+		}
+		return eObjects;
+	}
+
+	// get all objects in the document (closure)
+	public static List<EObject> getAllEObjects(ClinicalDocument clinicalDocument) {
+		List<EObject> allEObjects = new ArrayList<EObject>();
+		Stack<EObject> stack = new Stack<EObject>();
+		stack.push(clinicalDocument);	// root
+		while (!stack.isEmpty()) {
+			EObject eObject = stack.pop();
+			allEObjects.add(eObject);	// visit
+			for (EObject child : eObject.eContents()) {	// process successors
+				stack.push(child);
+			}
+		}
+		return allEObjects;
 	}
 	// END: Experimental Query/Filter operations
 	
