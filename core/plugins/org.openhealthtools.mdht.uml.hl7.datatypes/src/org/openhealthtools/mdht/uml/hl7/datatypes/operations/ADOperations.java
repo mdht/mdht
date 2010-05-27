@@ -1661,6 +1661,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDelimiter(AD ad, String delimiter) {
+		if (delimiter == null) {
+			throw new IllegalArgumentException("delimiter is null");
+		}
 		ad.getDelimiters().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DEL, delimiter));
 		return ad;
 	}
@@ -1671,6 +1674,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addCountry(AD ad, String country) {
+		if (country == null) {
+			throw new IllegalArgumentException("country is null");
+		}
 		ad.getCountries().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CNT, country));
 		return ad;
 	}
@@ -1681,6 +1687,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addState(AD ad, String state) {
+		if (state == null) {
+			throw new IllegalArgumentException("state is null");
+		}
 		ad.getStates().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STA, state));
 		return ad;
 	}
@@ -1691,6 +1700,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addCounty(AD ad, String county) {
+		if (county == null) {
+			throw new IllegalArgumentException("county is null");
+		}
 		ad.getCounties().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CPA, county));
 		return ad;
 	}
@@ -1701,6 +1713,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addCity(AD ad, String city) {
+		if (city == null) {
+			throw new IllegalArgumentException("city is null");
+		}
 		ad.getCities().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CTY, city));
 		return ad;
 	}
@@ -1711,6 +1726,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addPostalCode(AD ad, String postalCode) {
+		if (postalCode == null) {
+			throw new IllegalArgumentException("postalCode is null");
+		}
 		ad.getPostalCodes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.ZIP, postalCode));
 		return ad;
 	}
@@ -1721,6 +1739,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addStreetAddressLine(AD ad, String streetAddressLine) {
+		if (streetAddressLine == null) {
+			throw new IllegalArgumentException("streetAddressLine is null");
+		}
 		ad.getStreetAddressLines().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.SAL, streetAddressLine));
 		return ad;
 	}
@@ -1731,6 +1752,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addHouseNumber(AD ad, String houseNumber) {
+		if (houseNumber == null) {
+			throw new IllegalArgumentException("houseNumber is null");
+		}
 		ad.getHouseNumbers().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.BNR, houseNumber));
 		return ad;
 	}
@@ -1741,6 +1765,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addHouseNumberNumeric(AD ad, String houseNumberNumeric) {
+		if (houseNumberNumeric == null) {
+			throw new IllegalArgumentException("houseNumberNumeric is null");
+		}
 		ad.getHouseNumberNumerics().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.BNN, houseNumberNumeric));
 		return ad;
 	}
@@ -1751,6 +1778,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDirection(AD ad, String direction) {
+		if (direction == null) {
+			throw new IllegalArgumentException("direction is null");
+		}
 		ad.getDirections().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DIR, direction));
 		return ad;
 	}
@@ -1761,6 +1791,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addStreetName(AD ad, String streetName) {
+		if (streetName == null) {
+			throw new IllegalArgumentException("streetName is null");
+		}
 		ad.getStreetNames().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STR, streetName));
 		return ad;
 	}
@@ -1771,6 +1804,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addStreetNameBase(AD ad, String streetNameBase) {
+		if (streetNameBase == null) {
+			throw new IllegalArgumentException("streetNameBase is null");
+		}
 		ad.getStreetNameBases().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STB, streetNameBase));
 		return ad;
 	}
@@ -1781,6 +1817,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addStreetNameType(AD ad, String streetNameType) {
+		if (streetNameType == null) {
+			throw new IllegalArgumentException("streetNameType is null");
+		}
 		ad.getStreetNameTypes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STTYP, streetNameType));
 		return ad;
 	}
@@ -1791,6 +1830,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addAdditionalLocator(AD ad, String additionalLocator) {
+		if (additionalLocator == null) {
+			throw new IllegalArgumentException("additionalLocator is null");
+		}
 		ad.getAdditionalLocators().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.ADL, additionalLocator));
 		return ad;
 	}
@@ -1801,6 +1843,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addUnitID(AD ad, String unitID) {
+		if (unitID == null) {
+			throw new IllegalArgumentException("unitID is null");
+		}
 		ad.getUnitIDs().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.UNID, unitID));
 		return ad;
 	}
@@ -1811,6 +1856,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addUnitType(AD ad, String unitType) {
+		if (unitType == null) {
+			throw new IllegalArgumentException("unitType is null");
+		}
 		ad.getUnitTypes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.UNIT, unitType));
 		return ad;
 	}
@@ -1821,6 +1869,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addCareOf(AD ad, String careOf) {
+		if (careOf == null) {
+			throw new IllegalArgumentException("careOf is null");
+		}
 		ad.getCareOfs().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CAR, careOf));
 		return ad;
 	}
@@ -1831,6 +1882,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addCensusTract(AD ad, String censusTract) {
+		if (censusTract == null) {
+			throw new IllegalArgumentException("censusTract is null");
+		}
 		ad.getCensusTracts().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CEN, censusTract));
 		return ad;
 	}
@@ -1841,6 +1895,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDeliveryAddressLine(AD ad, String deliveryAddressLine) {
+		if (deliveryAddressLine == null) {
+			throw new IllegalArgumentException("deliveryAddressLine is null");
+		}
 		ad.getDeliveryAddressLines().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DAL, deliveryAddressLine));
 		return ad;
 	}
@@ -1851,6 +1908,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDeliveryInstallationType(AD ad, String deliveryInstallationType) {
+		if (deliveryInstallationType == null) {
+			throw new IllegalArgumentException("deliveryInstallationType is null");
+		}
 		ad.getDeliveryInstallationTypes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DINST, deliveryInstallationType));
 		return ad;
 	}
@@ -1861,6 +1921,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDeliveryInstallationArea(AD ad, String deliveryInstallationArea) {
+		if (deliveryInstallationArea == null) {
+			throw new IllegalArgumentException("deliveryInstallationArea is null");
+		}
 		ad.getDeliveryInstallationAreas().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DINSTA, deliveryInstallationArea));
 		return ad;
 	}
@@ -1871,6 +1934,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDeliveryInstallationQualifier(AD ad, String deliveryInstallationQualifier) {
+		if (deliveryInstallationQualifier == null) {
+			throw new IllegalArgumentException("deliveryInstallationQualifier is null");
+		}
 		ad.getDeliveryInstallationQualifiers().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DINSTQ, deliveryInstallationQualifier));
 		return ad;
 	}
@@ -1881,6 +1947,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDeliveryMode(AD ad, String deliveryMode) {
+		if (deliveryMode == null) {
+			throw new IllegalArgumentException("deliveryMode is null");
+		}
 		ad.getDeliveryModes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DMOD, deliveryMode));
 		return ad;
 	}
@@ -1891,6 +1960,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addDeliveryModeIdentifier(AD ad, String deliveryModeIdentifier) {
+		if (deliveryModeIdentifier == null) {
+			throw new IllegalArgumentException("deliveryModeIdentifier is null");
+		}
 		ad.getDeliveryModeIdentifiers().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.DMODID, deliveryModeIdentifier));
 		return ad;
 	}
@@ -1901,6 +1973,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addBuildingNumberSuffix(AD ad, String buildingNumberSuffix) {
+		if (buildingNumberSuffix == null) {
+			throw new IllegalArgumentException("buildingNumberSuffix is null");
+		}
 		ad.getBuildingNumberSuffixes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.BNS, buildingNumberSuffix));
 		return ad;
 	}
@@ -1911,6 +1986,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addPostBox(AD ad, String postBox) {
+		if (postBox == null) {
+			throw new IllegalArgumentException("postBox is null");
+		}
 		ad.getPostBoxes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.POB, postBox));
 		return ad;
 	}
@@ -1921,6 +1999,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addPrecinct(AD ad, String precinct) {
+		if (precinct == null) {
+			throw new IllegalArgumentException("precinct is null");
+		}
 		ad.getPrecincts().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.PRE, precinct));
 		return ad;
 	}
@@ -1931,6 +2012,9 @@ public class ADOperations {
 	 * @generated NOT
 	 */
 	public static  AD addText(AD ad, String text) {
+		if (text == null) {
+			throw new IllegalArgumentException("text is null");
+		}
 		FeatureMapUtil.addText(ad.getMixed(), text);
 		return ad;
 	}
