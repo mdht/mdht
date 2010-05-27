@@ -310,7 +310,7 @@
       <ownedComment xmi:id="_PssdsGhSEd-ilOLYnIx0jA">
         <body>The Physical Examination section includes direct observations made by the clinician.&#xD;
 The examination may include the use of simple instruments and may also describe&#xD;
-simple maneuvers performed directly on the patient’s body. This section only includes&#xD;
+simple maneuvers performed directly on the patient's body. This section only includes&#xD;
 observations made by the examining clinician using inspection, palpation, auscultation,&#xD;
 and percussion; it does not include laboratory or imaging findings. The exam may be&#xD;
 limited to pertinent body systems based on the patient's chief complaint or it may&#xD;
@@ -359,7 +359,7 @@ Examination Subsections.</body>
       <ownedComment xmi:id="_YPkLUGjOEd-tUpkWYQgJlQ">
         <body>This section describes the past medical history for the patient. It may contain&#xD;
 information about past procedures or other illnesses that might have a bearing on the&#xD;
-patient’s current illness. Since past medical history can include past surgical history&#xD;
+patient's current illness. Since past medical history can include past surgical history&#xD;
 and other procedures, the Procedure History section may be included under the Past&#xD;
 Medical History section or it may stand alone as its own section. By the same token,&#xD;
 problems can be recorded in a standalone Problems section or in a nested Problems&#xD;
