@@ -46,6 +46,11 @@
         <body>The status of results for an order.</body>
       </ownedComment>
     </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_ywcy0Gg7Ed-ilOLYnIx0jA" name="RoleCode">
+      <ownedComment xmi:id="_EE4vEGg8Ed-ilOLYnIx0jA">
+        <body>Specific classification codes for further qualifying RoleClass codes.</body>
+      </ownedComment>
+    </packagedElement>
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -62,4 +67,5 @@
   <term:CodeSystemVersion xmi:id="_0lbDECvEEd-1GpmIcz-YjA" identifier="2.16.840.1.113883.12.52" version="2.5.1" source="Health Level Seven (HL7)" url="http://www.hl7.org/Memonly/downloads/Standards_Messaging_v251/HL7_Messaging_v251_PDF.zip" base_Enumeration="_0lacACvEEd-1GpmIcz-YjA"/>
   <term:CodeSystemVersion xmi:id="_CK6oYCvFEd-1GpmIcz-YjA" identifier="2.16.840.1.113883.12.359" version="2.5.1" source="Health Level Seven (HL7)" url="http://www.hl7.org/Memonly/downloads/Standards_Messaging_v251/HL7_Messaging_v251_PDF.zip" base_Enumeration="_CK6BUCvFEd-1GpmIcz-YjA"/>
   <term:CodeSystemVersion xmi:id="_0shz0CvIEd-1GpmIcz-YjA" identifier="2.16.840.1.113883.12.123" version="2.5.1" source="Health Level Seven (HL7)" url="http://www.hl7.org/Memonly/downloads/Standards_Messaging_v251/HL7_Messaging_v251_PDF.zip" base_Enumeration="_0seJcCvIEd-1GpmIcz-YjA"/>
+  <term:CodeSystemVersion xmi:id="_ywdZ4Gg7Ed-ilOLYnIx0jA" identifier="2.16.840.1.113883.5.111" version="V3NE08" source="Health Level Seven (HL7)" url="http://www.hl7.org/memonly/downloads/v3edition.cfm#V32008" base_Enumeration="_ywcy0Gg7Ed-ilOLYnIx0jA"/>
 </xmi:XMI>
