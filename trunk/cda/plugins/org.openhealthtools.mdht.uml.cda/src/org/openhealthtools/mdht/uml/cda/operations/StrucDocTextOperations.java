@@ -48,6 +48,9 @@ public class StrucDocTextOperations {
 	 * @generated NOT
 	 */
 	public static  void addText(StrucDocText strucDocText, String text) {
+		if (text == null) {
+			throw new IllegalArgumentException("text is null");
+		}
 		FeatureMapUtil.addText(strucDocText.getMixed(), text);
 	}
 

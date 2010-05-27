@@ -47,6 +47,9 @@ public class EDOperations {
 	 * @generated NOT
 	 */
 	public static  ED addText(ED ed, String text) {
+		if (text == null) {
+			throw new IllegalArgumentException("text is null");
+		}
 		FeatureMapUtil.addText(ed.getMixed(), text);
 		return ed;
 	}

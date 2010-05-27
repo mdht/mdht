@@ -363,6 +363,9 @@ public class ENOperations {
 	 * @generated NOT
 	 */
 	public static  EN addDelimiter(EN en, String delimiter) {
+		if (delimiter == null) {
+			throw new IllegalArgumentException("delimiter is null");
+		}
 		en.getDelimiters().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.DEL, delimiter));
 		return en;
 	}
@@ -373,6 +376,9 @@ public class ENOperations {
 	 * @generated NOT
 	 */
 	public static  EN addFamily(EN en, String family) {
+		if (family == null) {
+			throw new IllegalArgumentException("family is null");
+		}
 		en.getFamilies().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.FAM, family));
 		return en;
 	}
@@ -383,6 +389,9 @@ public class ENOperations {
 	 * @generated NOT
 	 */
 	public static  EN addGiven(EN en, String given) {
+		if (given == null) {
+			throw new IllegalArgumentException("given is null");
+		}
 		en.getGivens().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.GIV, given));
 		return en;
 	}
@@ -393,6 +402,9 @@ public class ENOperations {
 	 * @generated NOT
 	 */
 	public static  EN addPrefix(EN en, String prefix) {
+		if (prefix == null) {
+			throw new IllegalArgumentException("prefix is null");
+		}
 		en.getPrefixes().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.PFX, prefix));
 		return en;
 	}
@@ -403,6 +415,9 @@ public class ENOperations {
 	 * @generated NOT
 	 */
 	public static  EN addSuffix(EN en, String suffix) {
+		if (suffix == null) {
+			throw new IllegalArgumentException("suffix is null");
+		}
 		en.getSuffixes().add(DatatypesFactory.eINSTANCE.createENXP(EntityNamePartType.SFX, suffix));
 		return en;
 	}
@@ -413,6 +428,9 @@ public class ENOperations {
 	 * @generated NOT
 	 */
 	public static  EN addText(EN en, String text) {
+		if (text == null) {
+			throw new IllegalArgumentException("text is null");
+		}
 		FeatureMapUtil.addText(en.getMixed(), text);
 		return en;
 	}
