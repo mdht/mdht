@@ -49,6 +49,8 @@ plugin@org.openhealthtools.mdht.uml.hl7.vocab=SVN,trunk,https://mdht.projects.op
 
 plugin@org.openhealthtools.mdht.cda.xml.ui=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.cda.xml.ui
 
+plugin@org.openhealthtools.mdht.uml.cda.cdt=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.cdt
+
 !***************  MDHT Feature for CDA Runtime for Application Development - Source Code  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda.models.source=SVN,trunk,https://mdht.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.models.source-feature
 
