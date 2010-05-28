@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.util.CDTValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#validateConsultationNotePhysicalExaminationSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Physical Examination Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#validateConsultationNoteProblemSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Problem Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#validateConsultationNoteProceduresSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Procedures Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#validateConsultationNotePastMedicalHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Past Medical History Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#validateConsultationNotePastMedicalHistorySectionConsult(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Past Medical History Section Consult</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#validateConsultationNoteImmunizationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Immunizations Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#validateConsultationNoteMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Medications Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote#validateConsultationNoteAlertsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Alerts Section</em>}</li>
@@ -68,7 +68,7 @@ public class ConsultationNoteOperations extends GeneralHeaderConstraintsOperatio
 	 * @ordered
 	 */
 	protected static final String VALIDATE_CONSULTATION_NOTE_REFERRAL_OR_VISIT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForReferralSection))"+
-"   xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))";
+"   xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSectionConsult))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateConsultationNoteReferralOrVisit(ConsultationNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Referral Or Visit</em>}' invariant operation.
@@ -85,7 +85,7 @@ public class ConsultationNoteOperations extends GeneralHeaderConstraintsOperatio
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForReferralSection))
-	 *    xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))
+	 *    xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSectionConsult))
 	 * @param consultationNote The receiving '<em><b>Consultation Note</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -386,55 +386,55 @@ public class ConsultationNoteOperations extends GeneralHeaderConstraintsOperatio
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateConsultationNotePastMedicalHistorySection(ConsultationNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Past Medical History Section</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateConsultationNotePastMedicalHistorySectionConsult(ConsultationNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Past Medical History Section Consult</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateConsultationNotePastMedicalHistorySection(ConsultationNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateConsultationNotePastMedicalHistorySectionConsult(ConsultationNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySection))";
+	protected static final String VALIDATE_CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION_CONSULT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySectionConsult))";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateConsultationNotePastMedicalHistorySection(ConsultationNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Past Medical History Section</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateConsultationNotePastMedicalHistorySectionConsult(ConsultationNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Past Medical History Section Consult</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #validateConsultationNotePastMedicalHistorySection(ConsultationNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see #validateConsultationNotePastMedicalHistorySectionConsult(ConsultationNote, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static Constraint VALIDATE_CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION_CONSULT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySection))
+	 * self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySectionConsult))
 	 * @param consultationNote The receiving '<em><b>Consultation Note</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateConsultationNotePastMedicalHistorySection(ConsultationNote consultationNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+	public static  boolean validateConsultationNotePastMedicalHistorySectionConsult(ConsultationNote consultationNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION_CONSULT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(CDTPackage.Literals.CONSULTATION_NOTE);
 			try {
-				VALIDATE_CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+				VALIDATE_CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION_CONSULT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION_CONSULT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
 			}
 			catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(consultationNote)) {
+		if (!EOCL_ENV.createQuery(VALIDATE_CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION_CONSULT__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(consultationNote)) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.INFO,
 						 CDTValidator.DIAGNOSTIC_SOURCE,
-						 CDTValidator.CONSULTATION_NOTE__CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION,
-						 CDTPlugin.INSTANCE.getString("ConsultationNotePastMedicalHistorySection"),
+						 CDTValidator.CONSULTATION_NOTE__CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION_CONSULT,
+						 CDTPlugin.INSTANCE.getString("ConsultationNotePastMedicalHistorySectionConsult"),
 						 new Object [] { consultationNote }));
 			}
 			return false;

@@ -116,6 +116,15 @@ public interface CDTFactory extends EFactory {
 	HistoryOfPresentIllness createHistoryOfPresentIllness();
 
 	/**
+	 * Returns a new object of class '<em>Past Medical History Section Consult</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Past Medical History Section Consult</em>'.
+	 * @generated
+	 */
+	PastMedicalHistorySectionConsult createPastMedicalHistorySectionConsult();
+
+	/**
 	 * Returns a new object of class '<em>Level One Conformance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

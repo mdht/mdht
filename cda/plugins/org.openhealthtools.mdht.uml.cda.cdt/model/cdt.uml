@@ -83,7 +83,7 @@
           <language>Analysis</language>
           <language>OCL</language>
           <body>When Assessment Section is included, then Plan Section must also be included and there SHALL NOT be a combined Assessment + Plan section.</body>
-          <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))</body>
+          <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_M4MncGjvEd-tUpkWYQgJlQ" name="bothPlanAndAssessment" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
@@ -91,7 +91,7 @@
           <language>Analysis</language>
           <language>OCL</language>
           <body>When Plan Section is included, then Assessment Section must also be included and there SHALL NOT be a combined Assessment + Plan section.</body>
-          <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))</body>
+          <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_XkPTYGjvEd-tUpkWYQgJlQ" name="combinedPlanAndAssessment" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
@@ -107,7 +107,7 @@
           <language>Analysis</language>
           <language>OCL</language>
           <body>Either combined Reason for Visit and Chief Complaint section is included, or separate Reason for Visit section and Chief Complaint section included, but not both combined and separate sections.</body>
-          <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))&#xD;&#xA;   xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisit))&#xD;&#xA;      and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaint)))</body>
+          <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))&#xD;&#xA;   xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))&#xD;&#xA;      and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSection)))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_XtmggWeLEd-ilOLYnIx0jA" general="_MwGRIGeLEd-ilOLYnIx0jA"/>
@@ -203,7 +203,7 @@
           <language>Analysis</language>
           <language>OCL</language>
           <body>A Consultation Note contains either ReasonForReferral or ReasonForVisit, but not both.</body>
-          <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForReferralSection))&#xD;&#xA;   xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))</body>
+          <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForReferralSection))&#xD;&#xA;   xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSectionConsult))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_f4_0oGeLEd-ilOLYnIx0jA" general="_MwGRIGeLEd-ilOLYnIx0jA"/>
@@ -229,7 +229,7 @@
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ccd/model/ccd.uml#_p_LEwIjvEd66cKocspyVOg"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IYDyAWjMEd-tUpkWYQgJlQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="__c9F8GjQEd-tUpkWYQgJlQ" name="pastMedicalHistorySection" type="_KSTmQGjOEd-tUpkWYQgJlQ" association="__c9tAWjQEd-tUpkWYQgJlQ">
+      <ownedAttribute xmi:id="__c9F8GjQEd-tUpkWYQgJlQ" name="pastMedicalHistorySection" type="_z2nc0GoAEd-d2MaU_RNQsA" association="__c9tAWjQEd-tUpkWYQgJlQ">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__c9tAGjQEd-tUpkWYQgJlQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_jBJ-QGjREd-tUpkWYQgJlQ" name="immunizationsSection" association="_jBKlUWjREd-tUpkWYQgJlQ">
@@ -364,7 +364,7 @@ and other procedures, the Procedure History section may be included under the Pa
 Medical History section or it may stand alone as its own section. By the same token,&#xD;
 problems can be recorded in a standalone Problems section or in a nested Problems&#xD;
 section. Wherever used, procedures and problems should conform to the CCD template&#xD;
-for CDA entries cited in the Problems section.</body>
+for CDA entries cited in the respective sections.</body>
       </ownedComment>
       <ownedRule xmi:id="_DnthEGjPEd-tUpkWYQgJlQ" name="clinicalStatements" constrainedElement="_KSTmQGjOEd-tUpkWYQgJlQ">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_JQ2T0GjPEd-tUpkWYQgJlQ">
@@ -736,6 +736,33 @@ such information is available.</body>
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.uml#_jWj60MfhEd6VjLXh4DcWSg"/>
       </generalization>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_z2nc0GoAEd-d2MaU_RNQsA" name="PastMedicalHistorySectionConsult">
+      <ownedComment xmi:id="_z2nc0WoAEd-d2MaU_RNQsA">
+        <body>This section describes the past medical history for the patient. It may contain&#xD;
+information about past procedures or other illnesses that might have a bearing on the&#xD;
+patient's current illness. Since past medical history can include past surgical history&#xD;
+and other procedures, the Procedure History section may be included under the Past&#xD;
+Medical History section or it may stand alone as its own section. By the same token,&#xD;
+problems can be recorded in a standalone Problems section or in a nested Problems&#xD;
+section. Wherever used, procedures and problems should conform to the CCD template&#xD;
+for CDA entries cited in the respective sections.</body>
+      </ownedComment>
+      <generalization xmi:id="_z2nc1GoAEd-d2MaU_RNQsA">
+        <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_qIf_wDxXEd6JwqSGecoePg"/>
+      </generalization>
+      <ownedAttribute xmi:id="_z2nc1WoAEd-d2MaU_RNQsA" name="code" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_z2nc1moAEd-d2MaU_RNQsA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_z2nc12oAEd-d2MaU_RNQsA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_9lgCcErmEd6FXKclYGEDCw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_z2nc2GoAEd-d2MaU_RNQsA" name="text" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_0jvq8E8AEd6ohP_YEXs4Wg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_z2nc2WoAEd-d2MaU_RNQsA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_z2nc2moAEd-d2MaU_RNQsA" value="1"/>
+        <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_vJtnoEAMEd6wZe6nFLrjsw"/>
+      </ownedAttribute>
+    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -834,7 +861,7 @@ such information is available.</body>
   </CDA:CodeSystemConstraint>
   <CDA:ConstraintValidation xmi:id="_F5OQsGjPEd-tUpkWYQgJlQ" message="CDT Past Medical History Section SHOULD satisfy: Contains clinical statements." severity="WARNING" base_Constraint="_DnthEGjPEd-tUpkWYQgJlQ"/>
   <CDA:PropertyValidation xmi:id="_qYV5IGjPEd-tUpkWYQgJlQ" message="CDT Past Medical History Section SHALL contain [1..1] text" base_Property="_xfohYGjOEd-tUpkWYQgJlQ"/>
-  <CDA:AssociationValidation xmi:id="_AyANUGjREd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] Past Medical History Section (templateId: 2.16.840.1.113883.10.20.2.9)" severity="INFO" base_Association="__c9tAWjQEd-tUpkWYQgJlQ">
+  <CDA:AssociationValidation xmi:id="_AyANUGjREd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] Past Medical History Section Consult (templateId: 2.16.840.1.113883.10.20.4.9)" severity="INFO" base_Association="__c9tAWjQEd-tUpkWYQgJlQ">
     <ruleId>CONF-CO-34</ruleId>
   </CDA:AssociationValidation>
   <CDA:AssociationValidation xmi:id="_pExGgGjREd-tUpkWYQgJlQ" message="CDT Consultation Note MAY contain [0..1] component such that it, SHALL contain [1..1] CCD Immunizations Section (templateId: 2.16.840.1.113883.10.20.1.6)" severity="INFO" base_Association="_jBKlUWjREd-tUpkWYQgJlQ">
@@ -987,4 +1014,9 @@ such information is available.</body>
   <CDA:PropertyValidation xmi:id="_4HHbkGmmEd-lxvPE33eETg" message="CDT General Header Constraints SHALL contain [1..1] languageCode" base_Property="_pwwfoGkaEd-lxvPE33eETg"/>
   <CDA:PropertyValidation xmi:id="_B5zdoGmnEd-lxvPE33eETg" message="CDT General Header Constraints SHALL contain [1..1] code" base_Property="_LByJgGkdEd-lxvPE33eETg"/>
   <CDA:PropertyValidation xmi:id="_C4SfIGmnEd-lxvPE33eETg" message="CDT General Header Constraints SHALL contain [1..1] confidentialityCode" base_Property="_pwbIcGkaEd-lxvPE33eETg"/>
+  <CDA:CDATemplate xmi:id="_4ACwUGoAEd-d2MaU_RNQsA" message="CDT Past Medical History Section Consult SHALL contain the template identifier 2.16.840.1.113883.10.20.4.9" base_Class="_z2nc0GoAEd-d2MaU_RNQsA" templateId="2.16.840.1.113883.10.20.4.9"/>
+  <CDA:CodeSystemConstraint xmi:id="_FvTVoGoBEd-d2MaU_RNQsA" code="11348-0" displayName="HISTORY OF PAST ILLNESS" base_Property="_z2nc1WoAEd-d2MaU_RNQsA" message="CDT Past Medical History Section Consult SHALL contain [1..1] code/@code = &quot;11348-0&quot; HISTORY OF PAST ILLNESS (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
+    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </CDA:CodeSystemConstraint>
+  <CDA:PropertyValidation xmi:id="_SxHmIGoBEd-d2MaU_RNQsA" message="CDT Past Medical History Section Consult SHALL contain [1..1] text" base_Property="_z2nc2GoAEd-d2MaU_RNQsA"/>
 </xmi:XMI>

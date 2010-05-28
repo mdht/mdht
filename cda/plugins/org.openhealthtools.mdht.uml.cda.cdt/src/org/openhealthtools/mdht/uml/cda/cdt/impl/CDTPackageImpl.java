@@ -30,6 +30,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.LevelOneConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelThreeConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelTwoConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PlanSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForReferralSection;
@@ -117,6 +118,13 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 	 * @generated
 	 */
 	private EClass historyOfPresentIllnessEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pastMedicalHistorySectionConsultEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -370,6 +378,15 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPastMedicalHistorySectionConsult() {
+		return pastMedicalHistorySectionConsultEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLevelOneConformance() {
 		return levelOneConformanceEClass;
 	}
@@ -543,6 +560,8 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 
 		historyOfPresentIllnessEClass = createEClass(HISTORY_OF_PRESENT_ILLNESS);
 
+		pastMedicalHistorySectionConsultEClass = createEClass(PAST_MEDICAL_HISTORY_SECTION_CONSULT);
+
 		cdtRegistryDelegateEClass = createEClass(CDT_REGISTRY_DELEGATE);
 	}
 
@@ -600,6 +619,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		chiefComplaintSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		reasonForVisitAndChiefComplaintSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		historyOfPresentIllnessEClass.getESuperTypes().add(theIHEPackage.getHistoryOfPresentIllness());
+		pastMedicalHistorySectionConsultEClass.getESuperTypes().add(theCDAPackage.getSection());
 		cdtRegistryDelegateEClass.getESuperTypes().add(theCDAPackage.getRegistryDelegate());
 
 		// Initialize classes and features; add operations and parameters
@@ -897,7 +917,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(consultationNoteEClass, ecorePackage.getEBoolean(), "validateConsultationNotePastMedicalHistorySection", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(consultationNoteEClass, ecorePackage.getEBoolean(), "validateConsultationNotePastMedicalHistorySectionConsult", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1338,6 +1358,35 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 
 		initEClass(historyOfPresentIllnessEClass, HistoryOfPresentIllness.class, "HistoryOfPresentIllness", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(pastMedicalHistorySectionConsultEClass, PastMedicalHistorySectionConsult.class, "PastMedicalHistorySectionConsult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(pastMedicalHistorySectionConsultEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionConsultTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(pastMedicalHistorySectionConsultEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionConsultCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(pastMedicalHistorySectionConsultEClass, ecorePackage.getEBoolean(), "validatePastMedicalHistorySectionConsultText", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(cdtRegistryDelegateEClass, CDTRegistryDelegate.class, "CDTRegistryDelegate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
@@ -1346,56 +1395,8 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		// Create annotations
 		// http://www.openhealthtools.org/mdht/uml/cda/annotation
 		createAnnotationAnnotations();
-		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
-		createExtendedMetaDataAnnotations();
 		// duplicates
 		createDuplicatesAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";			
-		addAnnotation
-		  (generalHeaderConstraintsEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });																																							
-		addAnnotation
-		  (historyAndPhysicalEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });																																																																												
-		addAnnotation
-		  (consultationNoteEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });																																																																																		
-		addAnnotation
-		  (levelOneConformanceEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });							
-		addAnnotation
-		  (levelTwoConformanceEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });							
-		addAnnotation
-		  (levelThreeConformanceEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });																																																																																																																																	
 	}
 
 	/**
@@ -1411,7 +1412,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		   source, 
 		   new String[] {
 			 "registryDelegate", "CDTRegistryDelegate"
-		   });			
+		   });		
 		addAnnotation
 		  (generalHeaderConstraintsEClass, 
 		   source, 
@@ -1419,7 +1420,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 			 "templateId.root", "2.16.840.1.113883.10.20.3",
 			 "constraints.validation.error", "GeneralHeaderConstraintsTemplateId GeneralHeaderConstraintsCode GeneralHeaderConstraintsConfidentialityCode GeneralHeaderConstraintsEffectiveTime GeneralHeaderConstraintsId GeneralHeaderConstraintsLanguageCode GeneralHeaderConstraintsRealmCode GeneralHeaderConstraintsTitle GeneralHeaderConstraintsTypeId",
 			 "realmCode.code", "US"
-		   });																																							
+		   });																																						
 		addAnnotation
 		  (historyAndPhysicalEClass, 
 		   source, 
@@ -1429,7 +1430,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 			 "constraints.validation.error", "GeneralHeaderConstraintsTemplateId HistoryAndPhysicalBothAssessmentAndPlan HistoryAndPhysicalBothPlanAndAssessment HistoryAndPhysicalCombinedPlanAndAssessment HistoryAndPhysicalReasonForVisitAndChiefComplaint GeneralHeaderConstraintsCode HistoryAndPhysicalHistoryOfPresentIllness HistoryAndPhysicalPastMedicalHistorySection HistoryAndPhysicalMedicationsSection HistoryAndPhysicalAlertsSection HistoryAndPhysicalSocialHistorySection HistoryAndPhysicalFamilyHistorySection HistoryAndPhysicalReviewOfSystemsSection HistoryAndPhysicalPhysicalExaminationSection HistoryAndPhysicalVitalSignsSection HistoryAndPhysicalGeneralStatusSection HistoryAndPhysicalResultsSection",
 			 "code.codeSystemName", "LOINC",
 			 "constraints.validation.info", "HistoryAndPhysicalProblemSection HistoryAndPhysicalProceduresSection HistoryAndPhysicalImmunizationsSection"
-		   });																																																																												
+		   });																																																																											
 		addAnnotation
 		  (consultationNoteEClass, 
 		   source, 
@@ -1438,7 +1439,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 			 "templateId.root", "2.16.840.1.113883.10.20.4",
 			 "constraints.validation.error", "GeneralHeaderConstraintsTemplateId ConsultationNoteReferralOrVisit GeneralHeaderConstraintsCode ConsultationNoteHistoryOfPresentIllness ConsultationNotePhysicalExaminationSection",
 			 "code.codeSystemName", "LOINC",
-			 "constraints.validation.info", "ConsultationNoteProblemSection ConsultationNoteProceduresSection ConsultationNotePastMedicalHistorySection ConsultationNoteImmunizationsSection ConsultationNoteMedicationsSection ConsultationNoteAlertsSection ConsultationNoteSocialHistorySection ConsultationNoteFamilyHistorySection ConsultationNoteReviewOfSystemsSection ConsultationNoteVitalSignsSection ConsultationNoteGeneralStatusSection ConsultationNoteResultsSection"
+			 "constraints.validation.info", "ConsultationNoteProblemSection ConsultationNoteProceduresSection ConsultationNotePastMedicalHistorySectionConsult ConsultationNoteImmunizationsSection ConsultationNoteMedicationsSection ConsultationNoteAlertsSection ConsultationNoteSocialHistorySection ConsultationNoteFamilyHistorySection ConsultationNoteReviewOfSystemsSection ConsultationNoteVitalSignsSection ConsultationNoteGeneralStatusSection ConsultationNoteResultsSection"
 		   });																																																															
 		addAnnotation
 		  (reasonForReferralSectionEClass, 
@@ -1463,21 +1464,21 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 			 "constraints.validation.error", "ReasonForVisitSectionConsultTemplateId ReasonForVisitSectionConsultCode",
 			 "code.codeSystemName", "LOINC",
 			 "code.code", "29299-5"
-		   });											
+		   });										
 		addAnnotation
 		  (levelOneConformanceEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.10",
 			 "constraints.validation.error", "LevelOneConformanceTemplateId"
-		   });							
+		   });						
 		addAnnotation
 		  (levelTwoConformanceEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.20",
 			 "constraints.validation.error", "LevelTwoConformanceTemplateId"
-		   });							
+		   });						
 		addAnnotation
 		  (levelThreeConformanceEClass, 
 		   source, 
@@ -1619,7 +1620,18 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 			 "constraints.validation.error", "ReasonForVisitAndChiefComplaintSectionTemplateId ReasonForVisitAndChiefComplaintSectionCode",
 			 "code.codeSystemName", "LOINC",
 			 "code.code", "46239-0"
-		   });								
+		   });										
+		addAnnotation
+		  (pastMedicalHistorySectionConsultEClass, 
+		   source, 
+		   new String[] {
+			 "code.codeSystem", "2.16.840.1.113883.6.1",
+			 "code.displayName", "HISTORY OF PAST ILLNESS",
+			 "templateId.root", "2.16.840.1.113883.10.20.4.9",
+			 "constraints.validation.error", "PastMedicalHistorySectionConsultTemplateId PastMedicalHistorySectionConsultCode PastMedicalHistorySectionConsultText",
+			 "code.codeSystemName", "LOINC",
+			 "code.code", "11348-0"
+		   });												
 	}
 
 	/**
@@ -1629,17 +1641,17 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																											
+		String source = "duplicates";																																									
 		addAnnotation
 		  (historyAndPhysicalEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																												
+		   });																																																																											
 		addAnnotation
 		  (consultationNoteEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																																																																																																																																																																												
+		   });																																																																																																																																																																																																																																						
 	}
 
 } //CDTPackageImpl

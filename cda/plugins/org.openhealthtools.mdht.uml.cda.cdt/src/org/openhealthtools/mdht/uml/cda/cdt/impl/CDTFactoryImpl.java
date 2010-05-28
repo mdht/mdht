@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.LevelOneConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelThreeConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelTwoConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PlanSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForReferralSection;
@@ -101,6 +102,7 @@ public class CDTFactoryImpl extends EFactoryImpl implements CDTFactory {
 			case CDTPackage.CHIEF_COMPLAINT_SECTION: return createChiefComplaintSection();
 			case CDTPackage.REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION: return createReasonForVisitAndChiefComplaintSection();
 			case CDTPackage.HISTORY_OF_PRESENT_ILLNESS: return createHistoryOfPresentIllness();
+			case CDTPackage.PAST_MEDICAL_HISTORY_SECTION_CONSULT: return createPastMedicalHistorySectionConsult();
 			case CDTPackage.CDT_REGISTRY_DELEGATE: return createCDTRegistryDelegate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -205,6 +207,16 @@ public class CDTFactoryImpl extends EFactoryImpl implements CDTFactory {
 	public HistoryOfPresentIllness createHistoryOfPresentIllness() {
 		HistoryOfPresentIllnessImpl historyOfPresentIllness = new HistoryOfPresentIllnessImpl();
 		return historyOfPresentIllness;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PastMedicalHistorySectionConsult createPastMedicalHistorySectionConsult() {
+		PastMedicalHistorySectionConsultImpl pastMedicalHistorySectionConsult = new PastMedicalHistorySectionConsultImpl();
+		return pastMedicalHistorySectionConsult;
 	}
 
 	/**

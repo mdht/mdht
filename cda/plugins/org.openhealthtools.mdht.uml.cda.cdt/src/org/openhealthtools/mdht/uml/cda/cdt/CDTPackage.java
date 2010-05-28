@@ -4512,6 +4512,187 @@ public interface CDTPackage extends EPackage {
 	int HISTORY_OF_PRESENT_ILLNESS_FEATURE_COUNT = IHEPackage.HISTORY_OF_PRESENT_ILLNESS_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.cdt.impl.PastMedicalHistorySectionConsultImpl <em>Past Medical History Section Consult</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.cdt.impl.PastMedicalHistorySectionConsultImpl
+	 * @see org.openhealthtools.mdht.uml.cda.cdt.impl.CDTPackageImpl#getPastMedicalHistorySectionConsult()
+	 * @generated
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT = 21;
+
+	/**
+	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__REALM_CODE = CDAPackage.SECTION__REALM_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__TYPE_ID = CDAPackage.SECTION__TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__TEMPLATE_ID = CDAPackage.SECTION__TEMPLATE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__ID = CDAPackage.SECTION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__CODE = CDAPackage.SECTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__TITLE = CDAPackage.SECTION__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__TEXT = CDAPackage.SECTION__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__CONFIDENTIALITY_CODE = CDAPackage.SECTION__CONFIDENTIALITY_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__LANGUAGE_CODE = CDAPackage.SECTION__LANGUAGE_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Subject</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__SUBJECT = CDAPackage.SECTION__SUBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__AUTHOR = CDAPackage.SECTION__AUTHOR;
+
+	/**
+	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__INFORMANT = CDAPackage.SECTION__INFORMANT;
+
+	/**
+	 * The feature id for the '<em><b>Entry</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__ENTRY = CDAPackage.SECTION__ENTRY;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__COMPONENT = CDAPackage.SECTION__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Section Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__SECTION_ID = CDAPackage.SECTION__SECTION_ID;
+
+	/**
+	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__NULL_FLAVOR = CDAPackage.SECTION__NULL_FLAVOR;
+
+	/**
+	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__CLASS_CODE = CDAPackage.SECTION__CLASS_CODE;
+
+	/**
+	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT__MOOD_CODE = CDAPackage.SECTION__MOOD_CODE;
+
+	/**
+	 * The number of structural features of the '<em>Past Medical History Section Consult</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAST_MEDICAL_HISTORY_SECTION_CONSULT_FEATURE_COUNT = CDAPackage.SECTION_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.cdt.impl.CDTRegistryDelegateImpl <em>Registry Delegate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4519,7 +4700,7 @@ public interface CDTPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.cdt.impl.CDTPackageImpl#getCDTRegistryDelegate()
 	 * @generated
 	 */
-	int CDT_REGISTRY_DELEGATE = 21;
+	int CDT_REGISTRY_DELEGATE = 22;
 
 	/**
 	 * The number of structural features of the '<em>Registry Delegate</em>' class.
@@ -4630,6 +4811,16 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getHistoryOfPresentIllness();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult <em>Past Medical History Section Consult</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Past Medical History Section Consult</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult
+	 * @generated
+	 */
+	EClass getPastMedicalHistorySectionConsult();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.cdt.LevelOneConformance <em>Level One Conformance</em>}'.
@@ -4872,6 +5063,16 @@ public interface CDTPackage extends EPackage {
 		 * @generated
 		 */
 		EClass HISTORY_OF_PRESENT_ILLNESS = eINSTANCE.getHistoryOfPresentIllness();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.cdt.impl.PastMedicalHistorySectionConsultImpl <em>Past Medical History Section Consult</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.cdt.impl.PastMedicalHistorySectionConsultImpl
+		 * @see org.openhealthtools.mdht.uml.cda.cdt.impl.CDTPackageImpl#getPastMedicalHistorySectionConsult()
+		 * @generated
+		 */
+		EClass PAST_MEDICAL_HISTORY_SECTION_CONSULT = eINSTANCE.getPastMedicalHistorySectionConsult();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.cdt.impl.LevelOneConformanceImpl <em>Level One Conformance</em>}' class.

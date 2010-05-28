@@ -7,9 +7,6 @@
     <details key="registryDelegate" value="CDTRegistryDelegate"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralHeaderConstraints" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//ClinicalDocument">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="ClinicalDocument"/>
-    </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.3"/>
       <details key="constraints.validation.error" value="GeneralHeaderConstraintsTemplateId GeneralHeaderConstraintsCode GeneralHeaderConstraintsConfidentialityCode GeneralHeaderConstraintsEffectiveTime GeneralHeaderConstraintsId GeneralHeaderConstraintsLanguageCode GeneralHeaderConstraintsRealmCode GeneralHeaderConstraintsTitle GeneralHeaderConstraintsTypeId"/>
@@ -215,9 +212,6 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HistoryAndPhysical" eSuperTypes="#//GeneralHeaderConstraints">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="ClinicalDocument"/>
-    </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.2"/>
@@ -276,10 +270,10 @@
     </eAnnotations>
     <eOperations name="HistoryAndPhysicalBothAssessmentAndPlan" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))"/>
+        <details key="body" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))"/>
+        <details key="documentation" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -298,10 +292,10 @@
     </eOperations>
     <eOperations name="HistoryAndPhysicalBothPlanAndAssessment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))"/>
+        <details key="body" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))"/>
+        <details key="documentation" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -342,10 +336,10 @@
     </eOperations>
     <eOperations name="HistoryAndPhysicalReasonForVisitAndChiefComplaint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))&#xD;&#xA;   xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisit))&#xD;&#xA;      and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaint)))"/>
+        <details key="body" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))&#xD;&#xA;   xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))&#xD;&#xA;      and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSection)))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))&#xD;&#xA;   xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisit))&#xD;&#xA;      and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaint)))"/>
+        <details key="documentation" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))&#xD;&#xA;   xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))&#xD;&#xA;      and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSection)))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -672,15 +666,12 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConsultationNote" eSuperTypes="#//GeneralHeaderConstraints">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="ClinicalDocument"/>
-    </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
       <details key="templateId.root" value="2.16.840.1.113883.10.20.4"/>
       <details key="constraints.validation.error" value="GeneralHeaderConstraintsTemplateId ConsultationNoteReferralOrVisit GeneralHeaderConstraintsCode ConsultationNoteHistoryOfPresentIllness ConsultationNotePhysicalExaminationSection"/>
       <details key="code.codeSystemName" value="LOINC"/>
-      <details key="constraints.validation.info" value="ConsultationNoteProblemSection ConsultationNoteProceduresSection ConsultationNotePastMedicalHistorySection ConsultationNoteImmunizationsSection ConsultationNoteMedicationsSection ConsultationNoteAlertsSection ConsultationNoteSocialHistorySection ConsultationNoteFamilyHistorySection ConsultationNoteReviewOfSystemsSection ConsultationNoteVitalSignsSection ConsultationNoteGeneralStatusSection ConsultationNoteResultsSection"/>
+      <details key="constraints.validation.info" value="ConsultationNoteProblemSection ConsultationNoteProceduresSection ConsultationNotePastMedicalHistorySectionConsult ConsultationNoteImmunizationsSection ConsultationNoteMedicationsSection ConsultationNoteAlertsSection ConsultationNoteSocialHistorySection ConsultationNoteFamilyHistorySection ConsultationNoteReviewOfSystemsSection ConsultationNoteVitalSignsSection ConsultationNoteGeneralStatusSection ConsultationNoteResultsSection"/>
     </eAnnotations>
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="GeneralHeaderConstraintsTemplateId"
@@ -733,10 +724,10 @@
     </eAnnotations>
     <eOperations name="ConsultationNoteReferralOrVisit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForReferralSection))&#xD;&#xA;   xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))"/>
+        <details key="body" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForReferralSection))&#xD;&#xA;   xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSectionConsult))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForReferralSection))&#xD;&#xA;   xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))"/>
+        <details key="documentation" value="self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForReferralSection))&#xD;&#xA;   xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSectionConsult))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -841,12 +832,12 @@
         </eGenericType>
       </eParameters>
     </eOperations>
-    <eOperations name="ConsultationNotePastMedicalHistorySection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+    <eOperations name="ConsultationNotePastMedicalHistorySectionConsult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySection))"/>
+        <details key="body" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySectionConsult))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySection))"/>
+        <details key="documentation" value="self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySectionConsult))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1173,9 +1164,6 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LevelOneConformance" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//ClinicalDocument">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="ClinicalDocument"/>
-    </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.10"/>
       <details key="constraints.validation.error" value="LevelOneConformanceTemplateId"/>
@@ -1204,9 +1192,6 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LevelTwoConformance" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//ClinicalDocument">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="ClinicalDocument"/>
-    </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.20"/>
       <details key="constraints.validation.error" value="LevelTwoConformanceTemplateId"/>
@@ -1235,9 +1220,6 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LevelThreeConformance" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//ClinicalDocument">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="ClinicalDocument"/>
-    </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.30"/>
       <details key="constraints.validation.error" value="LevelThreeConformanceTemplateId"/>
@@ -2006,5 +1988,81 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HistoryOfPresentIllness" eSuperTypes="../../org.openhealthtools.mdht.uml.cda.ihe/model/ihe.ecore#//HistoryOfPresentIllness"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PastMedicalHistorySectionConsult" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
+    <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
+      <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
+      <details key="code.displayName" value="HISTORY OF PAST ILLNESS"/>
+      <details key="templateId.root" value="2.16.840.1.113883.10.20.4.9"/>
+      <details key="constraints.validation.error" value="PastMedicalHistorySectionConsultTemplateId PastMedicalHistorySectionConsultCode PastMedicalHistorySectionConsultText"/>
+      <details key="code.codeSystemName" value="LOINC"/>
+      <details key="code.code" value="11348-0"/>
+    </eAnnotations>
+    <eOperations name="PastMedicalHistorySectionConsultTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.4.9')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.4.9')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="PastMedicalHistorySectionConsultCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11348-0' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="not self.code.oclIsUndefined() and self.code.oclIsKindOf(datatypes::CE) and &#xD;&#xA;let value : datatypes::CE = self.code.oclAsType(datatypes::CE) in (&#xD;&#xA;value.code = '11348-0' and value.codeSystem = '2.16.840.1.113883.6.1')"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="PastMedicalHistorySectionConsultText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="not self.text.oclIsUndefined()"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="not self.text.oclIsUndefined()"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CDTRegistryDelegate" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//RegistryDelegate"/>
 </ecore:EPackage>

@@ -261,7 +261,10 @@
 			<!-- Optional Sections -->
 			<component>
 				<section>
+					<!-- 
 					<templateId root="2.16.840.1.113883.10.20.1.114"/>
+					 -->
+					<templateId root="2.16.840.1.113883.10.20.1.11"/>
 					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" displayName="PROBLEMS"/>
 					<title>PROBLEMS</title>
 					<text>Negative.</text>
@@ -436,8 +439,7 @@
 					</text>
 				</section>
 			</component>
-		</structuredBody>
-	</component>
+			
 			<component>
 				<section>
 					<templateId root="2.16.840.1.113883.10.20.2.7"/>
@@ -457,4 +459,6 @@
 					</text>
 				</section>
 			</component>
+		</structuredBody>
+	</component>
 </ClinicalDocument>

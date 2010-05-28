@@ -18,8 +18,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.cdt.CDTPackage#getHistoryAndPhysical()
- * @model extendedMetaData="name='ClinicalDocument'"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2' constraints.validation.error='GeneralHeaderConstraintsTemplateId HistoryAndPhysicalBothAssessmentAndPlan HistoryAndPhysicalBothPlanAndAssessment HistoryAndPhysicalCombinedPlanAndAssessment HistoryAndPhysicalReasonForVisitAndChiefComplaint GeneralHeaderConstraintsCode HistoryAndPhysicalHistoryOfPresentIllness HistoryAndPhysicalPastMedicalHistorySection HistoryAndPhysicalMedicationsSection HistoryAndPhysicalAlertsSection HistoryAndPhysicalSocialHistorySection HistoryAndPhysicalFamilyHistorySection HistoryAndPhysicalReviewOfSystemsSection HistoryAndPhysicalPhysicalExaminationSection HistoryAndPhysicalVitalSignsSection HistoryAndPhysicalGeneralStatusSection HistoryAndPhysicalResultsSection' code.codeSystemName='LOINC' constraints.validation.info='HistoryAndPhysicalProblemSection HistoryAndPhysicalProceduresSection HistoryAndPhysicalImmunizationsSection'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.2' constraints.validation.error='GeneralHeaderConstraintsTemplateId HistoryAndPhysicalBothAssessmentAndPlan HistoryAndPhysicalBothPlanAndAssessment HistoryAndPhysicalCombinedPlanAndAssessment HistoryAndPhysicalReasonForVisitAndChiefComplaint GeneralHeaderConstraintsCode HistoryAndPhysicalHistoryOfPresentIllness HistoryAndPhysicalPastMedicalHistorySection HistoryAndPhysicalMedicationsSection HistoryAndPhysicalAlertsSection HistoryAndPhysicalSocialHistorySection HistoryAndPhysicalFamilyHistorySection HistoryAndPhysicalReviewOfSystemsSection HistoryAndPhysicalPhysicalExaminationSection HistoryAndPhysicalVitalSignsSection HistoryAndPhysicalGeneralStatusSection HistoryAndPhysicalResultsSection' code.codeSystemName='LOINC' constraints.validation.info='HistoryAndPhysicalProblemSection HistoryAndPhysicalProceduresSection HistoryAndPhysicalImmunizationsSection'"
  * @generated
  */
 public interface HistoryAndPhysical extends GeneralHeaderConstraints {
@@ -29,11 +28,11 @@ public interface HistoryAndPhysical extends GeneralHeaderConstraints {
 	 * <!-- begin-model-doc -->
 	 * self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))
 	 *    implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))
-	 *       and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))
+	 *       and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))\r\n   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))\r\n      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))\r\n   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))\r\n      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))'"
 	 * @generated
 	 */
 	boolean validateHistoryAndPhysicalBothAssessmentAndPlan(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -44,11 +43,11 @@ public interface HistoryAndPhysical extends GeneralHeaderConstraints {
 	 * <!-- begin-model-doc -->
 	 * self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))
 	 *    implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))
-	 *       and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))
+	 *       and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))\r\n   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))\r\n      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))\r\n   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))\r\n      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))'"
 	 * @generated
 	 */
 	boolean validateHistoryAndPhysicalBothPlanAndAssessment(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -73,12 +72,12 @@ public interface HistoryAndPhysical extends GeneralHeaderConstraints {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))
-	 *    xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisit))
-	 *       and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaint)))
+	 *    xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))
+	 *       and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSection)))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))\r\n   xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisit))\r\n      and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaint)))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))\r\n   xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))\r\n      and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSection)))'"
 	 * @generated
 	 */
 	boolean validateHistoryAndPhysicalReasonForVisitAndChiefComplaint(DiagnosticChain diagnostics, Map<Object, Object> context);

@@ -18,8 +18,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.cdt.CDTPackage#getConsultationNote()
- * @model extendedMetaData="name='ClinicalDocument'"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.4' constraints.validation.error='GeneralHeaderConstraintsTemplateId ConsultationNoteReferralOrVisit GeneralHeaderConstraintsCode ConsultationNoteHistoryOfPresentIllness ConsultationNotePhysicalExaminationSection' code.codeSystemName='LOINC' constraints.validation.info='ConsultationNoteProblemSection ConsultationNoteProceduresSection ConsultationNotePastMedicalHistorySection ConsultationNoteImmunizationsSection ConsultationNoteMedicationsSection ConsultationNoteAlertsSection ConsultationNoteSocialHistorySection ConsultationNoteFamilyHistorySection ConsultationNoteReviewOfSystemsSection ConsultationNoteVitalSignsSection ConsultationNoteGeneralStatusSection ConsultationNoteResultsSection'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation code.codeSystem='2.16.840.1.113883.6.1' templateId.root='2.16.840.1.113883.10.20.4' constraints.validation.error='GeneralHeaderConstraintsTemplateId ConsultationNoteReferralOrVisit GeneralHeaderConstraintsCode ConsultationNoteHistoryOfPresentIllness ConsultationNotePhysicalExaminationSection' code.codeSystemName='LOINC' constraints.validation.info='ConsultationNoteProblemSection ConsultationNoteProceduresSection ConsultationNotePastMedicalHistorySectionConsult ConsultationNoteImmunizationsSection ConsultationNoteMedicationsSection ConsultationNoteAlertsSection ConsultationNoteSocialHistorySection ConsultationNoteFamilyHistorySection ConsultationNoteReviewOfSystemsSection ConsultationNoteVitalSignsSection ConsultationNoteGeneralStatusSection ConsultationNoteResultsSection'"
  * @generated
  */
 public interface ConsultationNote extends GeneralHeaderConstraints {
@@ -28,11 +27,11 @@ public interface ConsultationNote extends GeneralHeaderConstraints {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForReferralSection))
-	 *    xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))
+	 *    xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSectionConsult))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForReferralSection))\r\n   xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForReferralSection))\r\n   xor self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSectionConsult))'"
 	 * @generated
 	 */
 	boolean validateConsultationNoteReferralOrVisit(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -93,14 +92,14 @@ public interface ConsultationNote extends GeneralHeaderConstraints {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySection))
+	 * self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySectionConsult))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySection))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PastMedicalHistorySectionConsult))'"
 	 * @generated
 	 */
-	boolean validateConsultationNotePastMedicalHistorySection(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean validateConsultationNotePastMedicalHistorySectionConsult(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * <!-- begin-user-doc -->
