@@ -22,6 +22,7 @@ public class TransformClinicalDocument extends TransformAbstract {
 	}
 	
 	public Object caseClass(Class umlClass) {
+		/*
 		Class cdaClass = getCDAClass(umlClass);
 		if (cdaClass != null && "ClinicalDocument".equals(cdaClass.getName())) {
 			Stereotype eClass = EcoreTransformUtil.getEcoreStereotype(umlClass, UMLUtil.STEREOTYPE__E_CLASS);
@@ -30,6 +31,7 @@ public class TransformClinicalDocument extends TransformAbstract {
 			}
 			umlClass.setValue(eClass, UMLUtil.TAG_DEFINITION__XML_NAME, "ClinicalDocument");
 		}
+		*/
 		return umlClass;
 	}
 }
