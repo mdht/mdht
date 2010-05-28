@@ -4143,26 +4143,8 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 		// Create annotations
 		// http://www.openhealthtools.org/mdht/uml/cda/annotation
 		createAnnotationAnnotations();
-		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
-		createExtendedMetaDataAnnotations();
 		// duplicates
 		createDuplicatesAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																	
-		addAnnotation
-		  (continuityOfCareDocumentEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									
 	}
 
 	/**
@@ -4172,7 +4154,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																																																																																																																																																																																																																											
+		String source = "duplicates";																																																																																																																																																																																																																																										
 		addAnnotation
 		  (problemStatusObservationEClass, 
 		   source, 
@@ -4239,7 +4221,7 @@ public class CCDPackageImpl extends EPackageImpl implements CCDPackage {
 			 "constraints.validation.error", "MedicationsSectionTemplateId MedicationsSectionCode MedicationsSectionTitle",
 			 "code.codeSystemName", "LOINC",
 			 "code.code", "10160-0"
-		   });															
+		   });														
 		addAnnotation
 		  (continuityOfCareDocumentEClass, 
 		   source, 

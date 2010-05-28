@@ -55,15 +55,6 @@ public class EncountersSectionImpl extends org.openhealthtools.mdht.uml.cda.ccd.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateNCREncountersSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return EncountersSectionOperations.validateNCREncountersSectionTemplateId(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateNCREncountersSectionText(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return EncountersSectionOperations.validateNCREncountersSectionText(this, diagnostics, context);
 	}
@@ -84,6 +75,16 @@ public class EncountersSectionImpl extends org.openhealthtools.mdht.uml.cda.ccd.
 	 */
 	public boolean validateNCREncountersSectionNeonatalICUEncounterActivity(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return EncountersSectionOperations.validateNCREncountersSectionNeonatalICUEncounterActivity(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validateEncountersSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return EncountersSectionOperations.validateEncountersSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

@@ -55,15 +55,6 @@ public class PatientDataSectionNCRImpl extends PatientDataSectionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePatientDataSectionNCRTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return PatientDataSectionNCROperations.validatePatientDataSectionNCRTemplateId(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validatePatientDataSectionNCREncountersSection(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return PatientDataSectionNCROperations.validatePatientDataSectionNCREncountersSection(this, diagnostics, context);
 	}
@@ -84,6 +75,16 @@ public class PatientDataSectionNCRImpl extends PatientDataSectionImpl implements
 	 */
 	public boolean validatePatientDataSectionNCRBirthWeight(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return PatientDataSectionNCROperations.validatePatientDataSectionNCRBirthWeight(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validatePatientDataSectionTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return PatientDataSectionNCROperations.validatePatientDataSectionTemplateId(this, diagnostics, context);
 	}
 
 	/**

@@ -437,7 +437,7 @@ public interface NCRPackage extends EPackage {
 	int NEONATAL_ICU_ENCOUNTER_ACTIVITY__EFFECTIVE_TIME = CCDPackage.ENCOUNTERS_ACTIVITY__EFFECTIVE_TIME;
 
 	/**
-	 * The feature id for the '<em><b>Priority Code</b></em>' reference.
+	 * The feature id for the '<em><b>Priority Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

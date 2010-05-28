@@ -2359,8 +2359,6 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		// Create annotations
 		// http://www.openhealthtools.org/mdht/uml/cda/annotation
 		createAnnotationAnnotations();
-		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
-		createExtendedMetaDataAnnotations();
 		// uml2.alias
 		createUml2Annotations();
 		// duplicates
@@ -2405,7 +2403,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   new String[] {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.4.5.1",
 			 "constraints.validation.error", "ConcernEntryTemplateId ConcernEntryEffectiveTime"
-		   });											
+		   });										
 		addAnnotation
 		  (medicalDocumentEClass, 
 		   source, 
@@ -2775,7 +2773,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   new String[] {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.2.1",
 			 "constraints.validation.error", "IHELanguageCommunicationTemplateId"
-		   });							
+		   });						
 		addAnnotation
 		  (medicalSummaryEClass, 
 		   source, 
@@ -2784,7 +2782,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 			 "templateId.root", "1.3.6.1.4.1.19376.1.5.3.1.1.2",
 			 "constraints.validation.error", "MedicalSummaryTemplateId MedicalSummaryProblemConcernEntry MedicalSummaryAllergyConcernEntry MedicalSummaryMedications MedicalSummaryCode",
 			 "code.codeSystemName", "LOINC"
-		   });																							
+		   });																						
 		addAnnotation
 		  (dischargeSummaryEClass, 
 		   source, 
@@ -2869,41 +2867,13 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	}
 
 	/**
-	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																																
-		addAnnotation
-		  (medicalDocumentEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																																																																																																																																	
-		addAnnotation
-		  (medicalSummaryEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });																							
-		addAnnotation
-		  (dischargeSummaryEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });																																																																				
-	}
-
-	/**
 	 * Initializes the annotations for <b>uml2.alias</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void createUml2Annotations() {
-		String source = "uml2.alias";																																							
+		String source = "uml2.alias";																																						
 		addAnnotation
 		  (activeProblemsSectionEClass, 
 		   source, 
@@ -2933,7 +2903,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		   source, 
 		   new String[] {
 			 "Allergies and Other Adverse Reactions Section", null
-		   });																																																																																																																																																																																																																																																																																																																																																																																																							
+		   });																																																																																																																																																																																																																																																																																																																																																																																																					
 	}
 
 	/**
@@ -2943,7 +2913,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																																																																																																																																			
+		String source = "duplicates";																																																																																																																																																		
 		addAnnotation
 		  (vitalSignObservationEClass, 
 		   source, 
@@ -2953,7 +2923,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage {
 		  (vitalSignsOrganizerEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																																																																																																																																																																																																		
+		   });																																																																																																																																																																																																																																																
 		addAnnotation
 		  (dischargeSummaryEClass, 
 		   source, 

@@ -4,9 +4,6 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pilot"
     nsURI="http://www.openhealthtools.org/mdht/uml/cda/pilot" nsPrefix="pilot">
   <eClassifiers xsi:type="ecore:EClass" name="TuberculosisFollowUpProgressNote" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//ClinicalDocument">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="ClinicalDocument"/>
-    </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="templateId.root" value="2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3"/>
       <details key="constraints.validation.error" value="TuberculosisFollowUpProgressNoteTemplateId TuberculosisFollowUpProgressNotePatientNames TuberculosisFollowUpProgressNoteTBResultsSection"/>

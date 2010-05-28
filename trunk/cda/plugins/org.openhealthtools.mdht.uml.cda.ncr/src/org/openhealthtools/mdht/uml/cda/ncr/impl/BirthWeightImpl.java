@@ -56,15 +56,6 @@ public class BirthWeightImpl extends ResultObservationImpl implements BirthWeigh
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateBirthWeightTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return BirthWeightOperations.validateBirthWeightTemplateId(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateBirthWeightClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return BirthWeightOperations.validateBirthWeightClassCode(this, diagnostics, context);
 	}
@@ -83,26 +74,38 @@ public class BirthWeightImpl extends ResultObservationImpl implements BirthWeigh
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateBirthWeightCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return BirthWeightOperations.validateBirthWeightCode(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateBirthWeightStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return BirthWeightOperations.validateBirthWeightStatusCode(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateBirthWeightValue(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return BirthWeightOperations.validateBirthWeightValue(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validateResultObservationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return BirthWeightOperations.validateResultObservationTemplateId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validateResultObservationCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return BirthWeightOperations.validateResultObservationCode(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validateResultObservationStatusCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return BirthWeightOperations.validateResultObservationStatusCode(this, diagnostics, context);
 	}
 
 	/**
