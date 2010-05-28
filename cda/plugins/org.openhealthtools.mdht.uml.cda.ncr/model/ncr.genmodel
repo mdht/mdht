@@ -46,10 +46,6 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityLocation/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityLocation/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityTemplateId/context"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityClassCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityClassCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityClassCode/context"/>
@@ -58,9 +54,9 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityMoodCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityMoodCode/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityCode/context"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//NeonatalICUEncounterActivity/EncountersActivityCode">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/EncountersActivityCode/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/EncountersActivityCode/context"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityEffectiveTime">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICUEncounterActivity/NeonatalICUEncounterActivityEffectiveTime/diagnostics"/>
@@ -72,10 +68,6 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ncr.ecore#//PatientDataSectionNCR">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//PatientDataSectionNCR/PatientDataSectionNCRTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//PatientDataSectionNCR/PatientDataSectionNCRTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//PatientDataSectionNCR/PatientDataSectionNCRTemplateId/context"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//PatientDataSectionNCR/PatientDataSectionNCREncountersSection">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//PatientDataSectionNCR/PatientDataSectionNCREncountersSection/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//PatientDataSectionNCR/PatientDataSectionNCREncountersSection/context"/>
@@ -108,10 +100,6 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ncr.ecore#//EncountersSection">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//EncountersSection/NCREncountersSectionTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//EncountersSection/NCREncountersSectionTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//EncountersSection/NCREncountersSectionTemplateId/context"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//EncountersSection/NCREncountersSectionText">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//EncountersSection/NCREncountersSectionText/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//EncountersSection/NCREncountersSectionText/context"/>
@@ -132,10 +120,6 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ncr.ecore#//BirthWeight">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//BirthWeight/BirthWeightTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//BirthWeight/BirthWeightTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//BirthWeight/BirthWeightTemplateId/context"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//BirthWeight/BirthWeightClassCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//BirthWeight/BirthWeightClassCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//BirthWeight/BirthWeightClassCode/context"/>
@@ -144,24 +128,12 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//BirthWeight/BirthWeightMoodCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//BirthWeight/BirthWeightMoodCode/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//BirthWeight/BirthWeightCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//BirthWeight/BirthWeightCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//BirthWeight/BirthWeightCode/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//BirthWeight/BirthWeightStatusCode">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//BirthWeight/BirthWeightStatusCode/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//BirthWeight/BirthWeightStatusCode/context"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//BirthWeight/BirthWeightValue">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//BirthWeight/BirthWeightValue/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//BirthWeight/BirthWeightValue/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ncr.ecore#//NeonatalICULocation">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//NeonatalICULocation/NeonatalICULocationTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICULocation/NeonatalICULocationTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICULocation/NeonatalICULocationTemplateId/context"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ncr.ecore#//NeonatalICULocation/NeonatalICULocationTypeCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICULocation/NeonatalICULocationTypeCode/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ncr.ecore#//NeonatalICULocation/NeonatalICULocationTypeCode/context"/>

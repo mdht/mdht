@@ -34,8 +34,8 @@ import org.openhealthtools.mdht.uml.cda.ncr.util.NCRValidator;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation#validateNeonatalICULocationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Location Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation#validateNeonatalICULocationTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Location Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ncr.NeonatalICULocation#validateEncounterLocationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Location Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,63 +49,6 @@ public class NeonatalICULocationOperations extends EncounterLocationOperations {
 	 */
 	protected NeonatalICULocationOperations() {
 		super();
-	}
-
-	/**
-	 * The cached OCL expression body for the '{@link #validateNeonatalICULocationTemplateId(NeonatalICULocation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Location Template Id</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateNeonatalICULocationTemplateId(NeonatalICULocation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALIDATE_NEONATAL_ICU_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.17.3.14')";
-
-	/**
-	 * The cached OCL invariant for the '{@link #validateNeonatalICULocationTemplateId(NeonatalICULocation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal ICU Location Template Id</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #validateNeonatalICULocationTemplateId(NeonatalICULocation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static Constraint VALIDATE_NEONATAL_ICU_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.17.3.14')
-	 * @param neonatalICULocation The receiving '<em><b>Neonatal ICU Location</b></em>' model object.
-	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
-	 * @param context The cache of context-specific information.
-	 * <!-- end-model-doc -->
-	 * @generated
-	 */
-	public static  boolean validateNeonatalICULocationTemplateId(NeonatalICULocation neonatalICULocation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_NEONATAL_ICU_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(NCRPackage.Literals.NEONATAL_ICU_LOCATION);
-			try {
-				VALIDATE_NEONATAL_ICU_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_NEONATAL_ICU_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
-			}
-		}
-		if (!EOCL_ENV.createQuery(VALIDATE_NEONATAL_ICU_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(neonatalICULocation)) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 NCRValidator.DIAGNOSTIC_SOURCE,
-						 NCRValidator.NEONATAL_ICU_LOCATION__NEONATAL_ICU_LOCATION_TEMPLATE_ID,
-						 NCRPlugin.INSTANCE.getString("NeonatalICULocationTemplateId"),
-						 new Object [] { neonatalICULocation }));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -158,6 +101,63 @@ public class NeonatalICULocationOperations extends EncounterLocationOperations {
 						 NCRValidator.DIAGNOSTIC_SOURCE,
 						 NCRValidator.NEONATAL_ICU_LOCATION__NEONATAL_ICU_LOCATION_TYPE_CODE,
 						 NCRPlugin.INSTANCE.getString("NeonatalICULocationTypeCode"),
+						 new Object [] { neonatalICULocation }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #validateEncounterLocationTemplateId(NeonatalICULocation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Location Template Id</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateEncounterLocationTemplateId(NeonatalICULocation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_ENCOUNTER_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.17.3.14')";
+
+	/**
+	 * The cached OCL invariant for the '{@link #validateEncounterLocationTemplateId(NeonatalICULocation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Location Template Id</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateEncounterLocationTemplateId(NeonatalICULocation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static Constraint VALIDATE_ENCOUNTER_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.17.3.14')
+	 * @param neonatalICULocation The receiving '<em><b>Neonatal ICU Location</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static  boolean validateEncounterLocationTemplateId(NeonatalICULocation neonatalICULocation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (VALIDATE_ENCOUNTER_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setContext(NCRPackage.Literals.NEONATAL_ICU_LOCATION);
+			try {
+				VALIDATE_ENCOUNTER_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_ENCOUNTER_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
+			}
+			catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		if (!EOCL_ENV.createQuery(VALIDATE_ENCOUNTER_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(neonatalICULocation)) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 NCRValidator.DIAGNOSTIC_SOURCE,
+						 NCRValidator.NEONATAL_ICU_LOCATION__ENCOUNTER_LOCATION_TEMPLATE_ID,
+						 NCRPlugin.INSTANCE.getString("EncounterLocationTemplateId"),
 						 new Object [] { neonatalICULocation }));
 			}
 			return false;

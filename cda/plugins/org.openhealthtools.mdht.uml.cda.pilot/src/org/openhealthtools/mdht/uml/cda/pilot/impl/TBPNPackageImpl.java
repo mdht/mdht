@@ -334,28 +334,10 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
-		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
-		createExtendedMetaDataAnnotations();
 		// http://www.openhealthtools.org/mdht/uml/cda/annotation
 		createAnnotationAnnotations();
 		// duplicates
 		createDuplicatesAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";		
-		addAnnotation
-		  (tuberculosisFollowUpProgressNoteEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });																																													
 	}
 
 	/**
@@ -365,7 +347,7 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 	 * @generated
 	 */
 	protected void createAnnotationAnnotations() {
-		String source = "http://www.openhealthtools.org/mdht/uml/cda/annotation";			
+		String source = "http://www.openhealthtools.org/mdht/uml/cda/annotation";		
 		addAnnotation
 		  (tuberculosisFollowUpProgressNoteEClass, 
 		   source, 
@@ -415,7 +397,7 @@ public class TBPNPackageImpl extends EPackageImpl implements TBPNPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																		
+		String source = "duplicates";																	
 		addAnnotation
 		  (tbResultOrganizerEClass, 
 		   source, 

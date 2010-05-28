@@ -358,15 +358,6 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(neonatalICUEncounterActivityEClass, ecorePackage.getEBoolean(), "validateNeonatalICUEncounterActivityTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(neonatalICUEncounterActivityEClass, ecorePackage.getEBoolean(), "validateNeonatalICUEncounterActivityClassCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -385,7 +376,7 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(neonatalICUEncounterActivityEClass, ecorePackage.getEBoolean(), "validateNeonatalICUEncounterActivityCode", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(neonatalICUEncounterActivityEClass, ecorePackage.getEBoolean(), "validateEncountersActivityCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -413,15 +404,6 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(patientDataSectionNCREClass, PatientDataSectionNCR.class, "PatientDataSectionNCR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(patientDataSectionNCREClass, ecorePackage.getEBoolean(), "validatePatientDataSectionNCRTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(patientDataSectionNCREClass, ecorePackage.getEBoolean(), "validatePatientDataSectionNCREncountersSection", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -490,15 +472,6 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 
 		initEClass(encountersSectionEClass, EncountersSection.class, "EncountersSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(encountersSectionEClass, ecorePackage.getEBoolean(), "validateNCREncountersSectionTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(encountersSectionEClass, ecorePackage.getEBoolean(), "validateNCREncountersSectionText", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -539,15 +512,6 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 
 		initEClass(birthWeightEClass, BirthWeight.class, "BirthWeight", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(birthWeightEClass, ecorePackage.getEBoolean(), "validateBirthWeightTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(birthWeightEClass, ecorePackage.getEBoolean(), "validateBirthWeightClassCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -558,24 +522,6 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(birthWeightEClass, ecorePackage.getEBoolean(), "validateBirthWeightMoodCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(birthWeightEClass, ecorePackage.getEBoolean(), "validateBirthWeightCode", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(birthWeightEClass, ecorePackage.getEBoolean(), "validateBirthWeightStatusCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -595,15 +541,6 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 
 		initEClass(neonatalICULocationEClass, NeonatalICULocation.class, "NeonatalICULocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(neonatalICULocationEClass, ecorePackage.getEBoolean(), "validateNeonatalICULocationTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(neonatalICULocationEClass, ecorePackage.getEBoolean(), "validateNeonatalICULocationTypeCode", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -617,26 +554,10 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
-		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
-		createExtendedMetaDataAnnotations();
 		// http://www.openhealthtools.org/mdht/uml/cda/annotation
 		createAnnotationAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";		
-		addAnnotation
-		  (neonatalCareReportEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });																																																																																																																																		
+		// duplicates
+		createDuplicatesAnnotations();
 	}
 
 	/**
@@ -646,7 +567,7 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 	 * @generated
 	 */
 	protected void createAnnotationAnnotations() {
-		String source = "http://www.openhealthtools.org/mdht/uml/cda/annotation";			
+		String source = "http://www.openhealthtools.org/mdht/uml/cda/annotation";		
 		addAnnotation
 		  (neonatalCareReportEClass, 
 		   source, 
@@ -661,20 +582,20 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 			 "code.codeSystem", "2.16.840.1.113883.5.4",
 			 "templateId.root", "2.16.840.1.113883.10.20.17.3.15",
 			 "code.displayName", "Inpatient encounter",
-			 "constraints.validation.error", "NeonatalICUEncounterActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode NeonatalICUEncounterActivityCode NeonatalICUEncounterActivityId",
+			 "constraints.validation.error", "EncountersActivityTemplateId NeonatalICUEncounterActivityLocation NeonatalICUEncounterActivityClassCode NeonatalICUEncounterActivityMoodCode EncountersActivityCode NeonatalICUEncounterActivityId",
 			 "code.codeSystemName", "ActCode",
 			 "classCode", "ENC",
 			 "constraints.validation.warning", "NeonatalICUEncounterActivityEffectiveTime",
 			 "code.code", "IMP",
 			 "moodCode", "EVN"
-		   });																															
+		   });																												
 		addAnnotation
 		  (patientDataSectionNCREClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.17.2.5",
-			 "constraints.validation.error", "PatientDataSectionNCRTemplateId PatientDataSectionNCREncountersSection PatientDataSectionNCRAcuityDataSection PatientDataSectionNCRBirthWeight"
-		   });																		
+			 "constraints.validation.error", "PatientDataSectionTemplateId PatientDataSectionNCREncountersSection PatientDataSectionNCRAcuityDataSection PatientDataSectionNCRBirthWeight"
+		   });															
 		addAnnotation
 		  (patientDataSectionEClass, 
 		   source, 
@@ -693,8 +614,8 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 		   new String[] {
 			 "title.mixed", "Encounters",
 			 "templateId.root", "2.16.840.1.113883.10.20.17.2.2",
-			 "constraints.validation.error", "NCREncountersSectionTemplateId NCREncountersSectionText NCREncountersSectionTitle NCREncountersSectionNeonatalICUEncounterActivity"
-		   });																		
+			 "constraints.validation.error", "EncountersSectionTemplateId NCREncountersSectionText NCREncountersSectionTitle NCREncountersSectionNeonatalICUEncounterActivity"
+		   });															
 		addAnnotation
 		  (acuityDataSectionEClass, 
 		   source, 
@@ -710,23 +631,55 @@ public class NCRPackageImpl extends EPackageImpl implements NCRPackage {
 			 "code.codeSystem", "2.16.840.1.113883.6.96",
 			 "code.displayName", "Birth weight",
 			 "templateId.root", "2.16.840.1.113883.10.20.17.3.1",
-			 "constraints.validation.error", "BirthWeightTemplateId BirthWeightClassCode BirthWeightMoodCode BirthWeightCode BirthWeightStatusCode BirthWeightValue",
+			 "constraints.validation.error", "ResultObservationTemplateId BirthWeightClassCode BirthWeightMoodCode ResultObservationCode ResultObservationStatusCode BirthWeightValue",
 			 "code.codeSystemName", "SNOMEDCT",
 			 "classCode", "OBS",
-			 "statusCode.codeSystem", "2.16.840.1.113883.5.14",
 			 "code.code", "47340003",
-			 "statusCode.codeSystemName", "ActStatus",
-			 "moodCode", "EVN",
-			 "statusCode.displayName", "Completed"
-		   });																										
+			 "moodCode", "EVN"
+		   });															
 		addAnnotation
 		  (neonatalICULocationEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.17.3.14",
-			 "constraints.validation.error", "NeonatalICULocationTemplateId NeonatalICULocationTypeCode",
+			 "constraints.validation.error", "EncounterLocationTemplateId NeonatalICULocationTypeCode",
 			 "typeCode", "LOC"
-		   });								
+		   });					
+	}
+
+	/**
+	 * Initializes the annotations for <b>duplicates</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createDuplicatesAnnotations() {
+		String source = "duplicates";													
+		addAnnotation
+		  (neonatalICUEncounterActivityEClass, 
+		   source, 
+		   new String[] {
+		   });																												
+		addAnnotation
+		  (patientDataSectionNCREClass, 
+		   source, 
+		   new String[] {
+		   });																																
+		addAnnotation
+		  (encountersSectionEClass, 
+		   source, 
+		   new String[] {
+		   });																				
+		addAnnotation
+		  (birthWeightEClass, 
+		   source, 
+		   new String[] {
+		   });															
+		addAnnotation
+		  (neonatalICULocationEClass, 
+		   source, 
+		   new String[] {
+		   });				
 	}
 
 } //NCRPackageImpl

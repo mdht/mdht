@@ -56,8 +56,8 @@ public class NeonatalICULocationImpl extends EncounterLocationImpl implements Ne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateNeonatalICULocationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return NeonatalICULocationOperations.validateNeonatalICULocationTemplateId(this, diagnostics, context);
+	public boolean validateNeonatalICULocationTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return NeonatalICULocationOperations.validateNeonatalICULocationTypeCode(this, diagnostics, context);
 	}
 
 	/**
@@ -65,8 +65,9 @@ public class NeonatalICULocationImpl extends EncounterLocationImpl implements Ne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateNeonatalICULocationTypeCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return NeonatalICULocationOperations.validateNeonatalICULocationTypeCode(this, diagnostics, context);
+	@Override
+	public boolean validateEncounterLocationTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return NeonatalICULocationOperations.validateEncounterLocationTemplateId(this, diagnostics, context);
 	}
 
 	/**

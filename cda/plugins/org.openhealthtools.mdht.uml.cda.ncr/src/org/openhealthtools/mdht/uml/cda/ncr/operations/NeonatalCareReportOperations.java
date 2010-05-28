@@ -116,7 +116,7 @@ public class NeonatalCareReportOperations extends ClinicalDocumentOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_NEONATAL_CARE_REPORT_PATIENT_DATA_SECTION_NCR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::PatientDataSectionNCR))";
+	protected static final String VALIDATE_NEONATAL_CARE_REPORT_PATIENT_DATA_SECTION_NCR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ncr::PatientDataSectionNCR))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateNeonatalCareReportPatientDataSectionNCR(NeonatalCareReport, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neonatal Care Report Patient Data Section NCR</em>}' invariant operation.
@@ -132,7 +132,7 @@ public class NeonatalCareReportOperations extends ClinicalDocumentOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.getSections()->one(section : cda::Section | section.oclIsKindOf(ncr::PatientDataSectionNCR))
+	 * self.getSections()->one(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(ncr::PatientDataSectionNCR))
 	 * @param neonatalCareReport The receiving '<em><b>Neonatal Care Report</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

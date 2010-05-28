@@ -65,15 +65,6 @@ public class NeonatalICUEncounterActivityImpl extends EncountersActivityImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateNeonatalICUEncounterActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return NeonatalICUEncounterActivityOperations.validateNeonatalICUEncounterActivityTemplateId(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateNeonatalICUEncounterActivityClassCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return NeonatalICUEncounterActivityOperations.validateNeonatalICUEncounterActivityClassCode(this, diagnostics, context);
 	}
@@ -92,8 +83,8 @@ public class NeonatalICUEncounterActivityImpl extends EncountersActivityImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateNeonatalICUEncounterActivityCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return NeonatalICUEncounterActivityOperations.validateNeonatalICUEncounterActivityCode(this, diagnostics, context);
+	public boolean validateEncountersActivityCode(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return NeonatalICUEncounterActivityOperations.validateEncountersActivityCode(this, diagnostics, context);
 	}
 
 	/**
@@ -112,6 +103,16 @@ public class NeonatalICUEncounterActivityImpl extends EncountersActivityImpl imp
 	 */
 	public boolean validateNeonatalICUEncounterActivityId(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return NeonatalICUEncounterActivityOperations.validateNeonatalICUEncounterActivityId(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validateEncountersActivityTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return NeonatalICUEncounterActivityOperations.validateEncountersActivityTemplateId(this, diagnostics, context);
 	}
 
 	/**

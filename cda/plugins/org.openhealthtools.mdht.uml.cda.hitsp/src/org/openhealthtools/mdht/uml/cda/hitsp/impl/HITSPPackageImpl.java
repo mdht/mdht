@@ -1682,8 +1682,6 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		createAnnotationAnnotations();
 		// uml2.alias
 		createUml2Annotations();
-		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
-		createExtendedMetaDataAnnotations();
 		// duplicates
 		createDuplicatesAnnotations();
 	}
@@ -1730,7 +1728,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   new String[] {
 			 "constraints.validation.error", "ConditionEntryText",
 			 "constraints.validation.warning", "ConditionEntryEffectiveTime"
-		   });											
+		   });										
 		addAnnotation
 		  (patientSummaryEClass, 
 		   source, 
@@ -2002,23 +2000,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 		   new String[] {
 			 "Allergies and Drug Sensitivities", null,
 			 "Allergy and Drug Sensitivity", null
-		   });																																																																																																																																																																																																																																																																																												
-	}
-
-	/**
-	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";																																	
-		addAnnotation
-		  (patientSummaryEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ClinicalDocument"
-		   });																																																																																																																																																																																																																																																																
+		   });																																																																																																																																																																																																																																																																																											
 	}
 
 	/**
@@ -2028,7 +2010,7 @@ public class HITSPPackageImpl extends EPackageImpl implements HITSPPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																																																																														
+		String source = "duplicates";																																																																																													
 		addAnnotation
 		  (vitalSignEClass, 
 		   source, 
