@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.LevelOneConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelThreeConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelTwoConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PlanSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForReferralSection;
@@ -263,6 +264,13 @@ public class CDTSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CDTPackage.PAST_MEDICAL_HISTORY_SECTION_CONSULT: {
+				PastMedicalHistorySectionConsult pastMedicalHistorySectionConsult = (PastMedicalHistorySectionConsult)theEObject;
+				T result = casePastMedicalHistorySectionConsult(pastMedicalHistorySectionConsult);
+				if (result == null) result = caseSection(pastMedicalHistorySectionConsult);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CDTPackage.CDT_REGISTRY_DELEGATE: {
 				CDTRegistryDelegate cdtRegistryDelegate = (CDTRegistryDelegate)theEObject;
 				T result = caseCDTRegistryDelegate(cdtRegistryDelegate);
@@ -421,6 +429,21 @@ public class CDTSwitch<T> {
 	 * @generated
 	 */
 	public T caseHistoryOfPresentIllness(HistoryOfPresentIllness object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Past Medical History Section Consult</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Past Medical History Section Consult</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePastMedicalHistorySectionConsult(PastMedicalHistorySectionConsult object) {
 		return null;
 	}
 

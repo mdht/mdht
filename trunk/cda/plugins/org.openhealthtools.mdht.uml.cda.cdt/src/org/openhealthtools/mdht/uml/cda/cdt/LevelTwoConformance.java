@@ -18,8 +18,7 @@ import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
  *
  *
  * @see org.openhealthtools.mdht.uml.cda.cdt.CDTPackage#getLevelTwoConformance()
- * @model extendedMetaData="name='ClinicalDocument'"
- *        annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.20' constraints.validation.error='LevelTwoConformanceTemplateId'"
+ * @model annotation="http://www.openhealthtools.org/mdht/uml/cda/annotation templateId.root='2.16.840.1.113883.10.20.20' constraints.validation.error='LevelTwoConformanceTemplateId'"
  * @generated
  */
 public interface LevelTwoConformance extends ClinicalDocument {

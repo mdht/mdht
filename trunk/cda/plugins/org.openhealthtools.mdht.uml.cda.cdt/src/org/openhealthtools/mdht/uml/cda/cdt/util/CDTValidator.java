@@ -30,6 +30,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.LevelOneConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelThreeConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelTwoConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PlanSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForReferralSection;
@@ -347,12 +348,12 @@ public class CDTValidator extends EObjectValidator {
 	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_PROCEDURES_SECTION = 34;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Past Medical History Section' of 'Consultation Note'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Past Medical History Section Consult' of 'Consultation Note'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION = 35;
+	public static final int CONSULTATION_NOTE__CONSULTATION_NOTE_PAST_MEDICAL_HISTORY_SECTION_CONSULT = 35;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Consultation Note Immunizations Section' of 'Consultation Note'.
@@ -521,6 +522,30 @@ public class CDTValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public static final int REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION__REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION_CODE = 81;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Consult Template Id' of 'Past Medical History Section Consult'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PAST_MEDICAL_HISTORY_SECTION_CONSULT__PAST_MEDICAL_HISTORY_SECTION_CONSULT_TEMPLATE_ID = 82;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Consult Code' of 'Past Medical History Section Consult'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PAST_MEDICAL_HISTORY_SECTION_CONSULT__PAST_MEDICAL_HISTORY_SECTION_CONSULT_CODE = 83;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Past Medical History Section Consult Text' of 'Past Medical History Section Consult'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int PAST_MEDICAL_HISTORY_SECTION_CONSULT__PAST_MEDICAL_HISTORY_SECTION_CONSULT_TEXT = 84;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Level One Conformance Template Id' of 'Level One Conformance'.
@@ -720,7 +745,7 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 81;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 84;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -820,6 +845,8 @@ public class CDTValidator extends EObjectValidator {
 				return validateReasonForVisitAndChiefComplaintSection((ReasonForVisitAndChiefComplaintSection)value, diagnostics, context);
 			case CDTPackage.HISTORY_OF_PRESENT_ILLNESS:
 				return validateHistoryOfPresentIllness((HistoryOfPresentIllness)value, diagnostics, context);
+			case CDTPackage.PAST_MEDICAL_HISTORY_SECTION_CONSULT:
+				return validatePastMedicalHistorySectionConsult((PastMedicalHistorySectionConsult)value, diagnostics, context);
 			case CDTPackage.CDT_REGISTRY_DELEGATE:
 				return validateCDTRegistryDelegate((CDTRegistryDelegate)value, diagnostics, context);
 			default:
@@ -1250,7 +1277,7 @@ public class CDTValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateConsultationNote_validateConsultationNotePhysicalExaminationSection(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConsultationNote_validateConsultationNoteProblemSection(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConsultationNote_validateConsultationNoteProceduresSection(consultationNote, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConsultationNote_validateConsultationNotePastMedicalHistorySection(consultationNote, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConsultationNote_validateConsultationNotePastMedicalHistorySectionConsult(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConsultationNote_validateConsultationNoteImmunizationsSection(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConsultationNote_validateConsultationNoteMedicationsSection(consultationNote, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConsultationNote_validateConsultationNoteAlertsSection(consultationNote, diagnostics, context);
@@ -1343,13 +1370,13 @@ public class CDTValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateConsultationNotePastMedicalHistorySection constraint of '<em>Consultation Note</em>'.
+	 * Validates the validateConsultationNotePastMedicalHistorySectionConsult constraint of '<em>Consultation Note</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConsultationNote_validateConsultationNotePastMedicalHistorySection(ConsultationNote consultationNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return consultationNote.validateConsultationNotePastMedicalHistorySection(diagnostics, context);
+	public boolean validateConsultationNote_validateConsultationNotePastMedicalHistorySectionConsult(ConsultationNote consultationNote, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return consultationNote.validateConsultationNotePastMedicalHistorySectionConsult(diagnostics, context);
 	}
 
 	/**
@@ -1704,6 +1731,55 @@ public class CDTValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= iheValidator.validateHistoryOfPresentIllness_validateHistoryOfPresentIllnessTemplateId(historyOfPresentIllness, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateHistoryOfPresentIllness_validateHistoryOfPresentIllnessCode(historyOfPresentIllness, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePastMedicalHistorySectionConsult(PastMedicalHistorySectionConsult pastMedicalHistorySectionConsult, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validate_EveryMultiplicityConforms(pastMedicalHistorySectionConsult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(pastMedicalHistorySectionConsult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(pastMedicalHistorySectionConsult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(pastMedicalHistorySectionConsult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(pastMedicalHistorySectionConsult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(pastMedicalHistorySectionConsult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(pastMedicalHistorySectionConsult, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePastMedicalHistorySectionConsult_validatePastMedicalHistorySectionConsultTemplateId(pastMedicalHistorySectionConsult, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePastMedicalHistorySectionConsult_validatePastMedicalHistorySectionConsultCode(pastMedicalHistorySectionConsult, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePastMedicalHistorySectionConsult_validatePastMedicalHistorySectionConsultText(pastMedicalHistorySectionConsult, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validatePastMedicalHistorySectionConsultTemplateId constraint of '<em>Past Medical History Section Consult</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePastMedicalHistorySectionConsult_validatePastMedicalHistorySectionConsultTemplateId(PastMedicalHistorySectionConsult pastMedicalHistorySectionConsult, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return pastMedicalHistorySectionConsult.validatePastMedicalHistorySectionConsultTemplateId(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePastMedicalHistorySectionConsultCode constraint of '<em>Past Medical History Section Consult</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePastMedicalHistorySectionConsult_validatePastMedicalHistorySectionConsultCode(PastMedicalHistorySectionConsult pastMedicalHistorySectionConsult, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return pastMedicalHistorySectionConsult.validatePastMedicalHistorySectionConsultCode(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validatePastMedicalHistorySectionConsultText constraint of '<em>Past Medical History Section Consult</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePastMedicalHistorySectionConsult_validatePastMedicalHistorySectionConsultText(PastMedicalHistorySectionConsult pastMedicalHistorySectionConsult, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return pastMedicalHistorySectionConsult.validatePastMedicalHistorySectionConsultText(diagnostics, context);
 	}
 
 	/**

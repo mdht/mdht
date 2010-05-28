@@ -72,7 +72,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	 */
 	protected static final String VALIDATE_HISTORY_AND_PHYSICAL_BOTH_ASSESSMENT_AND_PLAN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))"+
 "   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))"+
-"      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))";
+"      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateHistoryAndPhysicalBothAssessmentAndPlan(HistoryAndPhysical, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Both Assessment And Plan</em>}' invariant operation.
@@ -90,7 +90,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	 * <!-- begin-model-doc -->
 	 * self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))
 	 *    implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))
-	 *       and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))
+	 *       and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))
 	 * @param historyAndPhysical The receiving '<em><b>History And Physical</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -133,7 +133,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	 */
 	protected static final String VALIDATE_HISTORY_AND_PHYSICAL_BOTH_PLAN_AND_ASSESSMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))"+
 "   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))"+
-"      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))";
+"      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateHistoryAndPhysicalBothPlanAndAssessment(HistoryAndPhysical, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Both Plan And Assessment</em>}' invariant operation.
@@ -151,7 +151,7 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	 * <!-- begin-model-doc -->
 	 * self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))
 	 *    implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))
-	 *       and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessentAndPlanSection)))
+	 *       and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))
 	 * @param historyAndPhysical The receiving '<em><b>History And Physical</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
@@ -254,8 +254,8 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	 * @ordered
 	 */
 	protected static final String VALIDATE_HISTORY_AND_PHYSICAL_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))"+
-"   xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisit))"+
-"      and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaint)))";
+"   xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))"+
+"      and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSection)))";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateHistoryAndPhysicalReasonForVisitAndChiefComplaint(HistoryAndPhysical, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Reason For Visit And Chief Complaint</em>}' invariant operation.
@@ -272,8 +272,8 @@ public class HistoryAndPhysicalOperations extends GeneralHeaderConstraintsOperat
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))
-	 *    xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisit))
-	 *       and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaint)))
+	 *    xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))
+	 *       and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSection)))
 	 * @param historyAndPhysical The receiving '<em><b>History And Physical</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

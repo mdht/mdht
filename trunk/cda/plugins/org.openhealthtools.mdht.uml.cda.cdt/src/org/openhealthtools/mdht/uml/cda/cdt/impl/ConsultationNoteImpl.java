@@ -104,8 +104,8 @@ public class ConsultationNoteImpl extends GeneralHeaderConstraintsImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConsultationNotePastMedicalHistorySection(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ConsultationNoteOperations.validateConsultationNotePastMedicalHistorySection(this, diagnostics, context);
+	public boolean validateConsultationNotePastMedicalHistorySectionConsult(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ConsultationNoteOperations.validateConsultationNotePastMedicalHistorySectionConsult(this, diagnostics, context);
 	}
 
 	/**

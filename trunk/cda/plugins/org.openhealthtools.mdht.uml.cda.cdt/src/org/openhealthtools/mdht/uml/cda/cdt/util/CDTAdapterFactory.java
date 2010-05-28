@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.LevelOneConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelThreeConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelTwoConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
 import org.openhealthtools.mdht.uml.cda.cdt.PlanSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReasonForReferralSection;
@@ -177,6 +178,10 @@ public class CDTAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseHistoryOfPresentIllness(HistoryOfPresentIllness object) {
 				return createHistoryOfPresentIllnessAdapter();
+			}
+			@Override
+			public Adapter casePastMedicalHistorySectionConsult(PastMedicalHistorySectionConsult object) {
+				return createPastMedicalHistorySectionConsultAdapter();
 			}
 			@Override
 			public Adapter caseCDTRegistryDelegate(CDTRegistryDelegate object) {
@@ -359,6 +364,20 @@ public class CDTAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createHistoryOfPresentIllnessAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult <em>Past Medical History Section Consult</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult
+	 * @generated
+	 */
+	public Adapter createPastMedicalHistorySectionConsultAdapter() {
 		return null;
 	}
 
