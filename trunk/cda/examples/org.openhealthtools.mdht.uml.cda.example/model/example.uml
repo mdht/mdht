@@ -96,13 +96,13 @@
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
   </uml:Package>
-  <CDA:CDATemplate xmi:id="_1dDy4JmOEd6T5tg3G_f09Q" message="Example My Document SHALL contain the template identifier 1.2.3.4" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="1.2.3.4" assigningAuthorityName="Example"/>
+  <CDA:CDATemplate xmi:id="_1dDy4JmOEd6T5tg3G_f09Q" message="Example My Document SHALL contain the template identifier 1.2.3.4" base_Class="_wDMM0GEHEd6bFO5yxRh3Nw" templateId="1.2.3.4"/>
   <CDA:CodegenSupport xmi:id="_THvvwJmzEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="example" nsURI="http://www.openhealthtools.org/mdht/uml/cda/example" packageName="example" prefix="Example" base_Namespace="_qQyD8jxVEd6JwqSGecoePg"/>
-  <CDA:CDATemplate xmi:id="_Uc5uYKX0Ed6JRdOhEffuGA" message="Example My Activity SHALL contain the template identifier 1.2.3.4.2" base_Class="_Ucv9YKX0Ed6JRdOhEffuGA" templateId="1.2.3.4.2" assigningAuthorityName="Example"/>
+  <CDA:CDATemplate xmi:id="_Uc5uYKX0Ed6JRdOhEffuGA" message="Example My Activity SHALL contain the template identifier 1.2.3.4.2" base_Class="_Ucv9YKX0Ed6JRdOhEffuGA" templateId="1.2.3.4.2"/>
   <Default:Documentation xmi:id="_Uc5uYaX0Ed6JRdOhEffuGA" base_Comment="_Ucv9YaX0Ed6JRdOhEffuGA"/>
   <CDA:PropertyValidation xmi:id="_Uc5uZKX0Ed6JRdOhEffuGA" message="Example My Activity SHALL contain [1..1] @classCode = &quot;ACT&quot;" base_Property="_Ucv9Z6X0Ed6JRdOhEffuGA"/>
   <CDA:PropertyValidation xmi:id="_Uc5uZaX0Ed6JRdOhEffuGA" message="Example My Activity SHALL contain [1..1] @moodCode = &quot;EVN&quot;" base_Property="_Ucv9aaX0Ed6JRdOhEffuGA"/>
-  <CDA:CDATemplate xmi:id="_Uc5uaaX0Ed6JRdOhEffuGA" message="Example My Section SHALL contain the template identifier 1.2.3.4.1" base_Class="_Ucv9baX0Ed6JRdOhEffuGA" templateId="1.2.3.4.1" assigningAuthorityName="Example"/>
+  <CDA:CDATemplate xmi:id="_Uc5uaaX0Ed6JRdOhEffuGA" message="Example My Section SHALL contain the template identifier 1.2.3.4.1" base_Class="_Ucv9baX0Ed6JRdOhEffuGA" templateId="1.2.3.4.1"/>
   <Default:Documentation xmi:id="_Uc5uaqX0Ed6JRdOhEffuGA" base_Comment="_Ucv9bqX0Ed6JRdOhEffuGA"/>
   <CDA:AssociationValidation xmi:id="_vvhgIKX2Ed6JRdOhEffuGA" message="Example My Document SHALL contain [1..1] component such that it, SHALL contain [1..1] My Section (templateId: 1.2.3.4.1)" base_Association="_v0rX0KX0Ed6JRdOhEffuGA"/>
   <CDA:Entry xmi:id="_auV_cK0UEd6_kOk8Ilc2Dw" message="Example My Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] @typeCode=&quot;COMP&quot; COMP (component), SHALL contain [1..1] My Activity (templateId: 1.2.3.4.2)" severity="WARNING" base_Association="_Ucv9daX0Ed6JRdOhEffuGA"/>
