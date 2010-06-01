@@ -12,9 +12,11 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -115,23 +117,31 @@ public class PluginPropertiesUtil {
 	}
 	
 	public void save() {
-		// for testing
-//		try {
-//			properties.store(System.out, "updated properties");
-//		} catch (IOException e) {
-//			Logger.logException(e);
-//		}
+		String header = copyFileHeader();
 		
 		FileOutputStream out = null;
 		try {
-			// append to existing file
-			out = new FileOutputStream(pluginProperties.getLocation().toFile(), true);
-			PrintStream printStream = new PrintStream(out);
+			List<String> propertyKeys = new ArrayList<String>();
 			
-			Collections.sort(newProperties);
-			for (String key : newProperties) {
-				String value = (String) properties.get(key);
-				printStream.println(key + " = " + value);
+			// append only new keys
+//			out = new FileOutputStream(pluginProperties.getLocation().toFile(), true);
+//			propertyKeys.addAll(newProperties);
+			
+			// append all new keys after last #
+			out = new FileOutputStream(pluginProperties.getLocation().toFile(), false);
+			PrintStream printStream = new PrintStream(out);
+			printStream.print(header);
+			
+			for (Object key : properties.keySet()) {
+				propertyKeys.add(key.toString());
+			}
+			
+			Collections.sort(propertyKeys);
+			for (String key : propertyKeys) {
+				if (!"pluginName".equals(key) && !"providerName".equals(key)) {
+					String value = (String) properties.get(key);
+					printStream.println(key + " = " + value);
+				}
 			}
 			
 		} catch (FileNotFoundException e) {
@@ -153,5 +163,33 @@ public class PluginPropertiesUtil {
 		} catch (CoreException e) {
 			Logger.logException(e);
 		}
+	}
+	
+	private String copyFileHeader() {
+		StringBuffer header = new StringBuffer();
+		BufferedReader reader = null;
+		
+		try {
+			reader = new BufferedReader(new FileReader(pluginProperties.getLocation().toFile()));
+			while (reader.ready()) {
+				String line = reader.readLine();
+				header.append(line).append("\n");
+				if (line.startsWith("# Constraint messages")) {
+					break;
+				}
+			}
+			
+		} catch (Exception e) {
+			// ignore and allow save to create a new file
+		} finally {
+			if (reader != null)
+				try {
+					reader.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+		}
+		
+		return header.toString();
 	}
 }
