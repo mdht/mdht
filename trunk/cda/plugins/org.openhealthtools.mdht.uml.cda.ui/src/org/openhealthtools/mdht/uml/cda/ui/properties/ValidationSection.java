@@ -67,7 +67,6 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
-import org.openhealthtools.mdht.uml.cda.ui.filters.CodedAttributeFilter;
 import org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 
@@ -219,9 +218,10 @@ public class ValidationSection extends AbstractModelerPropertySection {
 				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.CONSTRAINT_VALIDATION);
 			}
 			else if (element instanceof Property) {
-				if (new CodedAttributeFilter().select(element))
-					stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.VOCAB_SPECIFICATION);
-				else if (new TextAttributeFilter().select(element))
+//				if (new CodedAttributeFilter().select(element))
+//					stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.VOCAB_SPECIFICATION);
+//				else 
+				if (new TextAttributeFilter().select(element))
 					stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.TEXT_VALUE);
 				else
 					stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.PROPERTY_VALIDATION);
