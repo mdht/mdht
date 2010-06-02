@@ -117,25 +117,24 @@ public class PluginPropertiesUtil {
 	}
 	
 	public void save() {
-		String header = copyFileHeader();
-		
 		FileOutputStream out = null;
+		List<String> propertyKeys = new ArrayList<String>();
+		
 		try {
-			List<String> propertyKeys = new ArrayList<String>();
-			
 			// append only new keys
-//			out = new FileOutputStream(pluginProperties.getLocation().toFile(), true);
-//			propertyKeys.addAll(newProperties);
+			out = new FileOutputStream(pluginProperties.getLocation().toFile(), true);
+			propertyKeys.addAll(newProperties);
 			
-			// append all new keys after last #
-			out = new FileOutputStream(pluginProperties.getLocation().toFile(), false);
+			// append all keys after comment tag
+//			out = new FileOutputStream(pluginProperties.getLocation().toFile(), false);
+//			String header = copyFileHeader();
+//			printStream.print(header);
+//			
+//			for (Object key : properties.keySet()) {
+//				propertyKeys.add(key.toString());
+//			}
+
 			PrintStream printStream = new PrintStream(out);
-			printStream.print(header);
-			
-			for (Object key : properties.keySet()) {
-				propertyKeys.add(key.toString());
-			}
-			
 			Collections.sort(propertyKeys);
 			for (String key : propertyKeys) {
 				if (!"pluginName".equals(key) && !"providerName".equals(key)) {
