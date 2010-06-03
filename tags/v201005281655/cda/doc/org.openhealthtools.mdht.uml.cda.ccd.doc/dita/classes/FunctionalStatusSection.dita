@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Functional Status Section</title>
+<shortdesc conref="generated/_FunctionalStatusSection.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_FunctionalStatusSection.dita#classId/prolog"></prolog>
+<body>
+<p>
+    <i>Functional Status</i> describes the patient's status of normal functioning at the time the Care Record
+    was created. Functional statuses include information regarding the patient relative to:
+</p>
+
+    <ul><li>Ambulatory ability</li>
+       <li>Mental status or competency</li>
+        <li>Activities of Daily Living (ADLs), including bathing, dressing, feeding, grooming</li>
+        <li>Home / living situation having an effect on the health status of the patient</li>
+        <li>Ability to care for self</li>
+        <li>Social activity, including issues with social cognition, participation with
+        friends and acquaintances other than family members</li>
+       <li>Occupation activity, including activities partly or directly related to working, housework or volunteering, family
+        and home responsibilities or activities related to home and family</li>
+      <li>Communication ability, including issues with speech, writing or cognition required for communication</li>
+       <li> Perception, including sight, hearing, taste, skin sensation, kinesthetic sense, proprioception, or
+        balance</li>
+</ul>
+<p>
+    Any
+    deviation from normal function that the patient displays and is recorded in the record should be included. Of
+    particular interest are those limitations that would in any way interfere with self care or the medical therapeutic
+    process. In addition, an improvement, any change in or noting that the patient has normal functioning status is also
+    valid for inclusion.
+</p>
+
+<ol conref="generated/_FunctionalStatusSection.dita#classId/conformance">
+<li></li>
+</ol>
+<fig>
+<title>Functional Status Section example</title>
+<codeblock>TODO: XML document snippet</codeblock>
+</fig>
+</body>
+</topic>

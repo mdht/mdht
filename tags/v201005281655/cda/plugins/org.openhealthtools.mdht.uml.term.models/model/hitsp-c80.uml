@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <uml:Package xmi:id="_KnCD4CFjEd-3s7f6mWX-3A" name="c80">
+    <packageImport xmi:id="_2Ce8sCTOEd-ZbpoADxtvhg">
+      <importedPackage href="CodeSystems.uml#_KnCD4CFjEd-3s7f6mWX-3A"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_P4DRkCFjEd-3s7f6mWX-3A" name="AdministrativeGender">
+      <ownedLiteral xmi:id="_QRRNYCFkEd-3s7f6mWX-3A" name="F"/>
+      <ownedLiteral xmi:id="_SCZMwCFkEd-3s7f6mWX-3A" name="M"/>
+      <ownedLiteral xmi:id="_TPOMQCFkEd-3s7f6mWX-3A" name="UN">
+        <ownedComment xmi:id="_kmQwkCFkEd-3s7f6mWX-3A">
+          <body>The gender of a person could not be uniquely defined as male or female, such as hermaphrodite.</body>
+        </ownedComment>
+      </ownedLiteral>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1-coUCvAEd-LFp1hgdmc1w" name="Problem"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_RS-wgCvBEd-LFp1hgdmc1w" name="ProblemType">
+      <ownedLiteral xmi:id="_pjn0cCvCEd-1GpmIcz-YjA" name="404684003"/>
+      <ownedLiteral xmi:id="_zhBRsCvCEd-1GpmIcz-YjA" name="418799008"/>
+      <ownedLiteral xmi:id="_3_avoCvCEd-1GpmIcz-YjA" name="55607006"/>
+      <ownedLiteral xmi:id="_9XWdoCvCEd-1GpmIcz-YjA" name="409586006"/>
+      <ownedLiteral xmi:id="_BfOR8CvDEd-1GpmIcz-YjA" name="64572001"/>
+      <ownedLiteral xmi:id="_Fo9HcCvDEd-1GpmIcz-YjA" name="282291009"/>
+      <ownedLiteral xmi:id="_KNVRkCvDEd-1GpmIcz-YjA" name="248536006"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_RJjnYCvEEd-1GpmIcz-YjA" name="DiagnosisType">
+      <ownedLiteral xmi:id="_io-roCvEEd-1GpmIcz-YjA" name="A"/>
+      <ownedLiteral xmi:id="_les7kCvEEd-1GpmIcz-YjA" name="F"/>
+      <ownedLiteral xmi:id="_mHn8wCvEEd-1GpmIcz-YjA" name="W"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_UvVE0DISEd-saqiXO4OYhQ" name="VitalSignResult">
+      <ownedLiteral xmi:id="_paKVIDISEd-saqiXO4OYhQ" name="9279-1"/>
+      <ownedLiteral xmi:id="_u_8R4DISEd-saqiXO4OYhQ" name="8867-4"/>
+      <ownedLiteral xmi:id="_w92wEDISEd-saqiXO4OYhQ" name="2710-2"/>
+      <ownedLiteral xmi:id="_zlx0kDISEd-saqiXO4OYhQ" name="8480-6"/>
+      <ownedLiteral xmi:id="_3JJNoDISEd-saqiXO4OYhQ" name="8462-4"/>
+      <ownedLiteral xmi:id="_6_M5MDISEd-saqiXO4OYhQ" name="8310-5"/>
+      <ownedLiteral xmi:id="_9y9aQDISEd-saqiXO4OYhQ" name="8302-2"/>
+      <ownedLiteral xmi:id="_A4lucDITEd-saqiXO4OYhQ" name="8306-3"/>
+      <ownedLiteral xmi:id="_EfEF4DITEd-saqiXO4OYhQ" name="8287-5"/>
+      <ownedLiteral xmi:id="_HBFWsDITEd-saqiXO4OYhQ" name="3141-9"/>
+    </packagedElement>
+    <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
+      <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+  </uml:Package>
+  <term:ValueSetVersion xmi:id="_MxITMCF_Ed-M3adQxwHq4g" identifier="2.16.840.1.113883.1.11.1" version="20081218" source="HITSP" effectiveDate="20081218" releaseDate="20081218" base_Enumeration="_P4DRkCFjEd-3s7f6mWX-3A">
+    <codeSystem href="CodeSystems.uml#_VXEOQCF_Ed-M3adQxwHq4g"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_k7flcCF_Ed-M3adQxwHq4g" conceptName="Female" base_EnumerationLiteral="_QRRNYCFkEd-3s7f6mWX-3A"/>
+  <term:ValueSetCode xmi:id="_yR6L0CMSEd-O_ZXtK8biUg" conceptName="Male" base_EnumerationLiteral="_SCZMwCFkEd-3s7f6mWX-3A"/>
+  <term:ValueSetCode xmi:id="_0gXncCMSEd-O_ZXtK8biUg" conceptName="Undifferentiated" base_EnumerationLiteral="_TPOMQCFkEd-3s7f6mWX-3A"/>
+  <term:ValueSetVersion xmi:id="_1-lLMCvAEd-LFp1hgdmc1w" identifier="2.16.840.1.113883.3.88.12.3221.7.4" version="20081203" source="Veterans Administration/Kaiser Permanente (VA/KP)" url="http://evs.nci.nih.gov/ftp1/FDA/ProblemList/" definition="See VA/KP Problem List Subset of SNOMED CT&amp;reg;&#xD;&#xA;This describes the problem. Diagnosis/Problem List is broadly defined as a series of brief statements that catalog a patient’s medical, nursing, dental, social, preventative and psychiatric events and issues that are relevant to that patient’s healthcare (e.g., signs, symptoms, and defined conditions)." revisionDate="20090331" binding="Dynamic" base_Enumeration="_1-coUCvAEd-LFp1hgdmc1w">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_RS_-oCvBEd-LFp1hgdmc1w" identifier="2.16.840.1.113883.3.88.12.3221.7.2" version="20081218" source="HITSP" definition="The SNOMED CT has been limited by HITSP to the value set in this enumeration. This indicates the level of medical judgment used to determine the existence of a problem." effectiveDate="20081218" releaseDate="20081218" base_Enumeration="_RS-wgCvBEd-LFp1hgdmc1w">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_pmxPECvCEd-1GpmIcz-YjA" conceptName="Clinical finding (finding)" usageNote="Finding" base_EnumerationLiteral="_pjn0cCvCEd-1GpmIcz-YjA"/>
+  <term:ValueSetCode xmi:id="_zhB4wCvCEd-1GpmIcz-YjA" conceptName="Finding reported by subject or history provider (finding)" usageNote="Symptom" base_EnumerationLiteral="_zhBRsCvCEd-1GpmIcz-YjA"/>
+  <term:ValueSetCode xmi:id="_3_avoSvCEd-1GpmIcz-YjA" conceptName="Problem (finding)" usageNote="Problem" base_EnumerationLiteral="_3_avoCvCEd-1GpmIcz-YjA"/>
+  <term:ValueSetCode xmi:id="_9XXEsCvCEd-1GpmIcz-YjA" conceptName="Complaint (finding)" usageNote="Complaint" base_EnumerationLiteral="_9XWdoCvCEd-1GpmIcz-YjA"/>
+  <term:ValueSetCode xmi:id="_BfO5ACvDEd-1GpmIcz-YjA" conceptName="Disease (disorder)" usageNote="Condition" base_EnumerationLiteral="_BfOR8CvDEd-1GpmIcz-YjA"/>
+  <term:ValueSetCode xmi:id="_Fo-VkCvDEd-1GpmIcz-YjA" conceptName="Diagnosis interpretation (observable entity)" usageNote="Diagnosis" base_EnumerationLiteral="_Fo9HcCvDEd-1GpmIcz-YjA"/>
+  <term:ValueSetCode xmi:id="_KNVRkSvDEd-1GpmIcz-YjA" conceptName="Finding of functional performance and activity (finding)" usageNote="Functional limitation" base_EnumerationLiteral="_KNVRkCvDEd-1GpmIcz-YjA"/>
+  <term:ValueSetVersion xmi:id="_RJk1gCvEEd-1GpmIcz-YjA" identifier="2.16.840.1.113883.3.88.12.80.3" version="2.5.1" source="Health Level Seven (HL7) Version 2.5.1 – HL7 Table 0052 in Appendix A" url="http://www.hl7.org/Memonly/downloads/Standards_Messaging_v251/HL7_Messaging_v251_PDF.zip" definition="See HL7 Table 0052 in Appendix A of HL7 2.5.1" base_Enumeration="_RJjnYCvEEd-1GpmIcz-YjA">
+    <codeSystem href="CodeSystems.uml#_0lbDECvEEd-1GpmIcz-YjA"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_io_SsCvEEd-1GpmIcz-YjA" conceptName="Admitting" base_EnumerationLiteral="_io-roCvEEd-1GpmIcz-YjA"/>
+  <term:ValueSetCode xmi:id="_les7kSvEEd-1GpmIcz-YjA" conceptName="Final" base_EnumerationLiteral="_les7kCvEEd-1GpmIcz-YjA"/>
+  <term:ValueSetCode xmi:id="_mHoj0CvEEd-1GpmIcz-YjA" conceptName="Working" base_EnumerationLiteral="_mHn8wCvEEd-1GpmIcz-YjA"/>
+  <term:ValueSetVersion xmi:id="_UvVE0TISEd-saqiXO4OYhQ" identifier="2.16.840.1.113883.3.88.12.80.62" version="20081218" source="HITSP" definition="The Vital Sign Results has been limited by HITSP to the value set specified in this enumeration." effectiveDate="20081218" releaseDate="20081218" base_Enumeration="_UvVE0DISEd-saqiXO4OYhQ">
+    <codeSystem href="CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_paK8MDISEd-saqiXO4OYhQ" conceptName="Respiratory Rate" base_EnumerationLiteral="_paKVIDISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_u_8R4TISEd-saqiXO4OYhQ" conceptName="Heart Rate" base_EnumerationLiteral="_u_8R4DISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_w92wETISEd-saqiXO4OYhQ" conceptName="O2 % BldC Oximetry" base_EnumerationLiteral="_w92wEDISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_zlx0kTISEd-saqiXO4OYhQ" conceptName="BP Systolic" base_EnumerationLiteral="_zlx0kDISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_3JJNoTISEd-saqiXO4OYhQ" conceptName="BP Diastolic" base_EnumerationLiteral="_3JJNoDISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_6_NgQDISEd-saqiXO4OYhQ" conceptName="Body Temperature" base_EnumerationLiteral="_6_M5MDISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_9y-BUDISEd-saqiXO4OYhQ" conceptName="Height" base_EnumerationLiteral="_9y9aQDISEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_A4mVgDITEd-saqiXO4OYhQ" conceptName="Height (Lying)" base_EnumerationLiteral="_A4lucDITEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_EfEF4TITEd-saqiXO4OYhQ" conceptName="Head Circumference" base_EnumerationLiteral="_EfEF4DITEd-saqiXO4OYhQ"/>
+  <term:ValueSetCode xmi:id="_HBFWsTITEd-saqiXO4OYhQ" conceptName="Weight Measured" base_EnumerationLiteral="_HBFWsDITEd-saqiXO4OYhQ"/>
+</xmi:XMI>

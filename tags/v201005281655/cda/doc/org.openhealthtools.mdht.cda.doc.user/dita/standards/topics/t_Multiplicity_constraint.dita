@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<task id="task_C9E3071C31E6456BADC84A531052BA27"> 
+  <title>Multiplicity constraint</title> 
+  <shortdesc>Constrain the multiplicity of a template attribute to be more
+	 restrictive than the same attribute in its parent class. 
+  </shortdesc> 
+  <taskbody> 
+	 <prereq id="prereq_93BBD6CA197149B5B2F02A10938C5D0C"> 
+		<p>You can only constrain an attribute with a multiplicity that is more
+		  restrictive than its parent CDA class or template. For example, you can
+		  constraint 
+		  <tt>0..1</tt> to be 
+		  <tt>1..1</tt>, but you cannot change 
+		  <tt>1..1</tt> to be 
+		  <tt>0..1</tt>. 
+		</p> 
+	 </prereq> 
+	 <steps id="steps_8A3393403C3844A9AE11FDE082B1BE53"> 
+		<step id="step_A663808F78B9419288DF1BA16FE05FB9"> 
+		  <cmd>Select the table row for the attribute you want to constrain. 
+		  </cmd> 
+		</step> 
+		<step id="step_3EE7CC39545D4FE7A98F394F043854B6"> 
+		  <cmd>Select the Multiplicity table cell in that row using the mouse or
+			 by navigating with the keyboard arrow keys. 
+		  </cmd> 
+		</step> 
+		<step id="step_31376F053C254A3BA328EC01097F1249"> 
+		  <cmd>Either double-click in that cell or press Enter to show a list of
+			 multiplicity options, or type into the cell for other specialized constraints,
+			 e.g. 
+			 <tt>1..2</tt><image id="image_CF579EB0C4934EC392AFD72A62B79436"
+			 href="../images/TableMultiplicityConstraint.png" placement="break"></image> 
+		  </cmd> 
+		</step> 
+	 </steps> 
+  </taskbody>
+  <related-links>
+	 <link format="dita" type="concept" scope="local"
+	  href="c_Severity_and_message.dita#concept_AEA4AFEB0B7749ACB785A68FBBCCAD7E"><?xm-replace_text Severity and message?>
+	 </link>
+  </related-links>
+</task>

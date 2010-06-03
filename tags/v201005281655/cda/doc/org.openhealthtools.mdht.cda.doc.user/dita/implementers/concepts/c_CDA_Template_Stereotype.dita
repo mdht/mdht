@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="cdatemplateconcept" xml:lang="en-us">
+<title>CDA Template Stereotype</title>
+<conbody><p>The CDA Template stereotype is applied to the UML Class model element and is used to capture information about the template including the template id.</p></conbody>
+</concept>

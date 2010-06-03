@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Created with XMetaL (http://www.xmetal.com) -->
+<concept id="concept_EF47DCEF772A45E9BD77B9090CB009DB"> 
+  <title>Using the MDHT UML Editor</title> 
+  <shortdesc>Describes using the MDHT UML Editor to review the HL7 Continuity
+	 of Care (CCD) template model. 
+  </shortdesc> 
+  <conbody> 
+	 <p>Let's start with an example of using the MDHT UML Editor to browse the
+		HL7 Continuity of Care (CCD) template model. This is intended to be an 
+		<i>easy</i> UML editor, so not every aspect of UML is visible or
+		editable, but we attempted to make all characteristics important to CDA
+		template design easily accessible. We have more enhancements planned, but
+		please let us know what would make it easier to use! 
+	 </p> 
+	 <ul id="ul_9455F60A889C4A309AB293393A2FD2DD"> 
+		<li id="li_7BE2B5D2088741AEB226942F198D3377">Select a model element in
+		  either the Project Explorer navigator or in the UML Table Editor. The detailed
+		  properties of that element are shown in the Properties view. The properties are
+		  split into several tabs, one of which displays extended metadata that is
+		  specific to CDA template models. 
+		</li> 
+	 </ul> 
+	 <image placement="inline" align="left"
+	 id="image_9DE1304F9B9D493281A7119C848DE93F"
+	 href="../images/TableEditorProjectExplorer.png"></image> 
+	 <image placement="break" id="image_737594C0E82E434A88B5E6008CF6AC74"
+	 href="../images/TableEditorProperties.png"></image>
+	 <p>The Annotations table column shows a summary of HL7 metadata that is
+		applied to a model element using UML stereotypes. Using the MDHT UML Editor,
+		you don't need to know the details of how UML stereotypes are used. The CDA
+		Tools properties tab displays entry fields for values that are appropriate for
+		the selected model element. In the example below, a code system constraint is
+		assigned to the 'code' attribute, and a severity of Warning (a.k.a. SHOULD) is
+		specified along with a message to be displayed when CDA documents are validated
+		that don't satisfy this constraint. The severity level is shown as a graphical
+		icon in the Annotation column.
+	 </p> 
+	 <image placement="break" id="image_6ED814CECF65438E9176AF15AA63C839"
+	 href="../images/TableEditorFull.png"></image> 
+	 <p>Many of the model element properties may be edited within the table
+		cells. To activate editing (if allowable), either double-click on a cell or
+		press the Enter key (NOTE: the table row must be selected/highlighted 
+		<i>before</i> editing a cell within that row). In the example shown
+		below, a class attribute's multiplicity is edited using a pull-down list.
+		Values shown in the Annotations column are a summary of more advanced HL7
+		metadata; these may be modified using the CDA Tools tab in the Properties view.
+		
+	 </p> 
+	 <image href="../images/TableEditorMultiplicity.png"
+	  id="image_9B7678F2618943EAA2F61783E66B1EFC"/> 
+	 <p>The data type of a class attribute may be modified in either the table
+		cell or using the General tab in the Properties view. The attribute type is
+		selected using a dialog that allows searching for any model element in one of
+		the 
+		<i>currently open model(s)</i>. If several models are open
+		simultaneously, then classes from all models are included in the dialog list.
+		You can quickly narrow the selection by typing the first few characters of the
+		class name you are searching for. 
+	 </p> 
+  </conbody>
+</concept>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Purpose Section</title>
+<shortdesc conref="generated/_PurposeSection.dita#classId/shortdesc"></shortdesc>
+<prolog conref="generated/_PurposeSection.dita#classId/prolog"></prolog>
+<body>
+<p>
+    Represents the specific reason for which the summarization was generated, such as in response to a
+    request.
+</p>
+<p>
+    The general use case does not require a purpose. Purpose should be utilized when the CCD has a specific
+    purpose such as a transfer, referral, or patient request.
+</p>
+
+<ol conref="generated/_PurposeSection.dita#classId/conformance">
+<li></li>
+</ol>
+<fig>
+<title>Purpose Section example</title>
+<codeblock>TODO: XML document snippet</codeblock>
+</fig>
+</body>
+</topic>

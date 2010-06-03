@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel" modelDirectory="/org.openhealthtools.mdht.uml.term.core/src"
+    modelPluginID="org.openhealthtools.mdht.uml.term.core" modelName="Terminology"
+    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
+    <details key="UNION_PROPERTIES" value="REPORT"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
+    <details key="DUPLICATE_FEATURES" value="DISCARD"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="OPERATION_BODIES" value="IGNORE"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+  </genAnnotations>
+  <foreignModel>../profiles/Terminology.profile.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Term" basePackage="org.openhealthtools.mdht.uml.term.core"
+      disposableProviderFactory="true" ecorePackage="profile.ecore#/">
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="profile.ecore#//BindingKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//BindingKind/Static"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//BindingKind/Dynamic"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="profile.ecore#//ValueSetType">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//ValueSetType/Extensional"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//ValueSetType/Intensional"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="profile.ecore#//StatusKind">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//StatusKind/Active"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="profile.ecore#//StatusKind/Inactive"/>
+    </genEnums>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//CD">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference profile.ecore#//CD/qualifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference profile.ecore#//CD/translation"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CD/code"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CD/codeSystem"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CD/codeSystemName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CD/codeSystemVersion"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CD/displayName"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//CR">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference profile.ecore#//CR/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference profile.ecore#//CR/value"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CR/inverted"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ConceptDomainConstraint">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ConceptDomainConstraint/reference"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ConceptDomainConstraint/identifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ConceptDomainConstraint/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ConceptDomainConstraint/base_Property"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ConceptDomain">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ConceptDomain/identifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ConceptDomain/fullName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ConceptDomain/status"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ConceptDomain/statusDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ConceptDomain/base_Class"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//CodeSystemConstraint">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//CodeSystemConstraint/reference"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemConstraint/identifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemConstraint/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemConstraint/version"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemConstraint/binding"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemConstraint/code"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemConstraint/displayName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//CodeSystemConstraint/qualifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//CodeSystemConstraint/base_Property"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//CodeSystemVersion">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemVersion/identifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemVersion/version"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemVersion/fullName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemVersion/source"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemVersion/url"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemVersion/effectiveDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemVersion/releaseDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemVersion/status"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//CodeSystemVersion/statusDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//CodeSystemVersion/base_Enumeration"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ValueSetConstraint">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetConstraint/reference"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetConstraint/identifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetConstraint/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetConstraint/version"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetConstraint/binding"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetConstraint/base_Property"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ValueSetVersion">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/identifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/version"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/fullName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/source"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/url"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/definition"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/effectiveDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/expirationDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/releaseDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/revisionDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/status"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/statusDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/type"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetVersion/binding"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetVersion/codeSystem"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetVersion/base_Enumeration"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ValueSetCode">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetCode/conceptName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetCode/usageNote"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetCode/codeSystem"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetCode/base_EnumerationLiteral"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ValueSetContextBinding">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSetContextBinding/effectiveDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetContextBinding/conceptDomain"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetContextBinding/valueSet"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetContextBinding/usageContext"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetContextBinding/base_Class"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//UsageContext">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//UsageContext/identifier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//UsageContext/status"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//UsageContext/statusDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//UsageContext/base_Class"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

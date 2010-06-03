@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Product Instance - conformance rules</title>
+<shortdesc id="shortdesc">[ParticipantRole: templateId <tt>2.16.840.1.113883.10.20.1.52</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>ParticipantRole</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.52"/>
+</prolog>
+<body>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ParticipantRole.html">CDA Participant Role</xref></li>
+<li><b>SHALL</b> contain [1..1] <tt>@classCode</tt> = "MANU"</li>
+</ol>
+</body>
+</topic>

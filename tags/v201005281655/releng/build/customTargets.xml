@@ -1,0 +1,329 @@
+<project name="Build specific targets and properties" default="noDefault" >
+
+	<property name="basews" value="win32" />
+	<property name="baseos" value="win32" />
+	<property name="basearch" value="x86" />
+	<property name="basenl" value="en_US" />
+
+	<path id="ant.classpath">
+		<fileset dir="${ANT_HOME}/lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<!-- Subversion Ant Task Definition -->
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="ant.classpath" />
+	<!-- <typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="svn.classpath" /> --> 
+
+	<!-- Code Coverage (EMMA) Ant Task Definition -->
+	<taskdef resource="emma_ant.properties" classpathref="ant.classpath" />
+
+	<!-- JUnit Ant Task Definition -->
+	<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpathref="ant.classpath" />
+
+	<!-- Conditional Support (ie <if> )  Ant Task Definitions -->
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="ant.classpath" />
+
+
+
+<!-- ===================================================================== -->
+<!-- Run a given ${target} on all elements being built -->
+<!-- Add on <ant> task for each top level element being built. -->
+<!-- ===================================================================== -->
+
+<target name="MDHT">
+
+		<!--- Temporary Feature Target for XML Modeling Feature -->
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="net.sourceforge.xmlmodeling.uml.xsd" />
+		</ant>
+
+
+		
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml" />
+		</ant>
+</target>
+
+
+<target name="RIM">
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.hdf" />
+		</ant>
+
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.rsm" />
+		</ant>
+
+
+	<!--	<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.papyrus" />
+		</ant>
+-->
+
+		
+
+</target>
+
+
+<target name="CDA">
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda" />
+		</ant>
+
+<!--		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.rsm" />
+		</ant>
+
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.papyrus" />
+		</ant> 
+-->
+	
+
+</target>
+
+<target name="CDAMODELS">
+
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.models" />
+		</ant>
+
+	<!-- Do not need to have assemble target - This feature for the most part is generated -->
+<!--	<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht.uml.cda.models.source" />
+	</ant>
+-->
+		
+</target>
+
+
+
+
+<target name="allElements">
+	
+		<!--
+	<ant antfile="${genericTargets}" target="${target}" >
+		<property name="type" value="<feature | plugin | fragment>" />
+		<property name="id" value="<element.id>" />
+	</ant>
+	-->
+
+	<!--  Target Build Logic
+		Targets are RIM, CDA, CDAMODEL
+		Default is to build all
+		Did not use ant "depends" to prevent multiple invocations resulting in multiple plugin version being built, SWM
+         -->
+
+	<if>
+		<equals arg1="${mdhtcomponent}" arg2="RIM" />
+	<then>
+		<echo message="Building RIM" />
+		<antcall target="MDHT" />
+		<antcall target="RIM" />
+	</then>
+		<else>
+			<if>
+				<equals arg1="${mdhtcomponent}" arg2="CDA" />
+			<then>
+				<echo message="Building CDA" />
+				<antcall target="MDHT" />
+				<antcall target="CDA" />
+			</then>
+				<else>
+					<if>
+						<equals arg1="${mdhtcomponent}" arg2="CDAMODELS" />
+					<then>
+						<echo message="Building CDA Models" />
+						<antcall target="MDHT" />
+						<antcall target="CDA" />
+						<antcall target="CDAMODELS" />
+					</then>
+						<else>
+							<echo message="Bulding All" />
+							<antcall target="MDHT" />
+							<antcall target="RIM" />
+							<antcall target="CDA" />
+							<antcall target="CDAMODELS" />
+						</else>
+					</if>
+				</else>
+			</if>
+		</else>
+	</if>
+
+</target>
+
+<!-- ===================================================================== -->
+<!-- Targets to assemble the built elements for particular configurations  -->
+<!-- These generally call the generated assemble scripts (named in -->
+<!-- ${assembleScriptName}) but may also add pre and post processing -->
+<!-- Add one target for each root element and each configuration -->
+<!-- ===================================================================== -->
+
+<target name="assemble.net.sourceforge.xmlmodeling.uml.xsd">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.hdf">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.papyrus">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.rsm">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda.models">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+	</target>
+	
+<!--	<target name="assemble.org.openhealthtools.mdht.uml.cda.models.source">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+	</target>
+-->
+	<target name="assemble.org.openhealthtools.mdht.uml.cda.rsm">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht.uml.cda.papyrus">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}"/>
+	</target>
+<!-- ===================================================================== -->
+<!-- Check out map files from correct repository -->
+<!-- Replace values for cvsRoot, package and mapVersionTag as desired. -->
+<!-- ===================================================================== -->
+<target name="getMapFiles"  unless="skipMaps">
+
+
+
+<echo message="getMapFiles ${buildDirectory}" />
+
+		<property name="mapsCheckoutTag" value="HEAD" />
+		<svn javahl="false" username="seanmuir" password="oht2009">
+			<export srcurl="${maps.URL}" revision="${maps.revision}" destpath="${buildDirectory}/maps" force="true" />
+		</svn>
+	</target>
+
+	
+<!-- ===================================================================== -->
+<!-- Steps to do before setup -->
+<!-- ===================================================================== -->
+<target name="preSetup">
+</target>
+
+<!-- ===================================================================== -->
+<!-- Steps to do after setup but before starting the build proper -->
+<!-- ===================================================================== -->
+<target name="postSetup">
+</target>
+
+<!-- ===================================================================== -->
+<!-- Steps to do before fetching the build elements -->
+<!-- ===================================================================== -->
+<target name="preFetch">
+</target>
+
+<!-- ===================================================================== -->
+<!-- Steps to do after fetching the build elements -->
+<!-- ===================================================================== -->
+<target name="postFetch">
+<!-- Fetch source feature -->
+<svn javahl="false" username="seanmuir" password="oht2009">
+			<export srcurl="${cdasrcfeature.URL}" revision="${cdasrcfeature.revision}" destpath="${buildDirectory}/features/org.openhealthtools.mdht.uml.cda.models.source" force="true" />
+		</svn>
+
+</target>
+
+<!-- ===================================================================== -->
+<!-- Steps to do before generating the build scripts. -->
+<!-- ===================================================================== -->
+<target name="preGenerate">
+</target>
+
+<!-- ===================================================================== -->
+<!-- Steps to do after generating the build scripts. -->
+<!-- ===================================================================== -->
+<target name="postGenerate">
+
+</target>
+
+
+<!-- ===================================================================== -->
+<!-- Steps to do before running the build.xmls for the elements being built. -->
+<!-- ===================================================================== -->
+<target name="preProcess">
+<!-- Fetch source feature -->
+	
+</target>
+
+<!-- ===================================================================== -->
+<!-- Steps to do after running the build.xmls for the elements being built. -->
+<!-- ===================================================================== -->
+<target name="postProcess">
+</target>
+
+
+<!-- ===================================================================== -->
+<!-- Steps to do before running assemble. -->
+<!-- ===================================================================== -->
+<target name="preAssemble">
+
+</target>
+
+<!-- ===================================================================== -->
+<!-- Steps to do after  running assemble. -->
+<!-- ===================================================================== -->
+<target name="postAssemble">
+</target>
+
+<!-- ===================================================================== -->
+<!-- Steps to do after the build is done. -->
+<!-- ===================================================================== -->
+<target name="postBuild">
+</target>
+
+<!-- ===================================================================== -->
+<!-- Steps to do to test the build results -->
+<!-- ===================================================================== -->
+<target name="test">
+</target>
+
+<!-- ===================================================================== -->
+<!-- Steps to do to publish the build results -->
+<!-- ===================================================================== -->
+<target name="publish">
+</target>
+
+<!-- ===================================================================== -->
+<!-- Default target                                                        -->
+<!-- ===================================================================== -->
+<target name="noDefault">
+	<echo message="You must specify a target when invoking this file" />
+</target>
+
+</project>

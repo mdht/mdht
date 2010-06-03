@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Product - conformance rules</title>
+<shortdesc id="shortdesc">[ManufacturedProduct: templateId <tt>2.16.840.1.113883.10.20.1.53</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>ManufacturedProduct</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.53"/>
+</prolog>
+<body>
+<ol id="conformance">
+<li>Conforms to <xref format="html" href="http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.uml.cda.doc/classes/ManufacturedProduct.html">CDA Manufactured Product</xref></li>
+</ol>
+</body>
+</topic>

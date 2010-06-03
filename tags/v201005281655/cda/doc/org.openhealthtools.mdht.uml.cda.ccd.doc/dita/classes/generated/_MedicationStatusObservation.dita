@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Medication Status Observation - conformance rules</title>
+<shortdesc id="shortdesc">[Observation: templateId <tt>2.16.840.1.113883.10.20.1.47</tt>]</shortdesc>
+<prolog id="prolog">
+<metadata><category>Observation</category></metadata>
+<resourceid id="2.16.840.1.113883.10.20.1.47"/>
+</prolog>
+<body>
+<ol id="conformance">
+<li>Conforms to <xref href="../StatusObservation.dita">Status Observation</xref> template (templateId: <tt>2.16.840.1.113883.10.20.1.57</tt>)</li>
+<li><b>SHALL</b> contain [1..1] <tt>value</tt>, which <b>SHALL</b> be selected from ValueSet 2.16.840.1.113883.1.11.20.7 MedicationStatusCode STATIC 20061017</li>
+</ol>
+</body>
+</topic>

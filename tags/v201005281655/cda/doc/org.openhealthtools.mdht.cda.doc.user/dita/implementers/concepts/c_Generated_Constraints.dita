@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="generatedconstraintsconcept" xml:lang="en-us">
+<title>Generated OCL Constraints</title>
+<conbody><p>One of the primary purposes for creating a template model is to express constraints on the CDA model in an intuitive, structural way. The model-to-model transformation uses this logical representation to generate OCL constraints reducing the burdern on the developer to hand code OCL expressions.</p></conbody>
+</concept>
