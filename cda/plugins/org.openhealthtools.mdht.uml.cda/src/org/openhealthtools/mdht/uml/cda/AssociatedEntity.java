@@ -121,7 +121,7 @@ public interface AssociatedEntity extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssociatedEntity_Id()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 *        extendedMetaData="namespace='##targetNamespace'"
 	 * @generated
 	 */
