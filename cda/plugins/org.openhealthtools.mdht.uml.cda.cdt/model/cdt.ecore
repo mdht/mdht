@@ -1660,7 +1660,7 @@
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
-      <details key="templateId.root" value="2.1.6.840.1.113883.10.20.2.7"/>
+      <details key="templateId.root" value="2.16.840.1.113883.10.20.2.7"/>
       <details key="code.displayName" value="Assessment"/>
       <details key="constraints.validation.error" value="AssessmentSectionTemplateId AssessmentSectionCode"/>
       <details key="code.codeSystemName" value="LOINC"/>
@@ -1668,10 +1668,10 @@
     </eAnnotations>
     <eOperations name="AssessmentSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.1.6.840.1.113883.10.20.2.7')"/>
+        <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.7')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = '2.1.6.840.1.113883.10.20.2.7')"/>
+        <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.7')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1715,7 +1715,7 @@
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
-      <details key="templateId.root" value="2.1.6.840.1.113883.10.20.2.7"/>
+      <details key="templateId.root" value="2.16.840.1.113883.10.20.2.7"/>
       <details key="code.displayName" value="Plan"/>
       <details key="constraints.validation.error" value="PlanSectionTemplateId PlanSectionCode"/>
       <details key="code.codeSystemName" value="LOINC"/>
@@ -1723,10 +1723,10 @@
     </eAnnotations>
     <eOperations name="PlanSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.1.6.840.1.113883.10.20.2.7')"/>
+        <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.7')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = '2.1.6.840.1.113883.10.20.2.7')"/>
+        <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.7')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1770,7 +1770,7 @@
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="contextDependent" value="true"/>
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
-      <details key="templateId.root" value="2.1.6.840.1.113883.10.20.2.7"/>
+      <details key="templateId.root" value="2.16.840.1.113883.10.20.2.7"/>
       <details key="code.displayName" value="Assessment + Plan"/>
       <details key="constraints.validation.error" value="AssessmentAndPlanSectionTemplateId AssessmentAndPlanSectionCode"/>
       <details key="code.codeSystemName" value="LOINC"/>
@@ -1778,10 +1778,10 @@
     </eAnnotations>
     <eOperations name="AssessmentAndPlanSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.1.6.840.1.113883.10.20.2.7')"/>
+        <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.7')"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = '2.1.6.840.1.113883.10.20.2.7')"/>
+        <details key="documentation" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.7')"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

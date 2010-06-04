@@ -45,12 +45,32 @@ public class CDTRegistryDelegateOperations {
 		EClass result = null;
 		if (context instanceof Element) {
 			Element element = (Element) context;
-			if ("2.16.840.1.113883.10.20.4.8".equals(templateId)) {
+			if ("2.16.840.1.113883.10.20.2.7".equals(templateId)) {
+				String code = getCode(element);
+				if ("51848-0".equals(code)) {
+					result = CDTPackage.Literals.ASSESSMENT_SECTION;
+				} else if ("18776-5".equals(code)) {
+					result = CDTPackage.Literals.PLAN_SECTION;
+				} else if ("51847-2".equals(code)) {
+					result = CDTPackage.Literals.ASSESSMENT_AND_PLAN_SECTION;
+				}
+			}
+			else if ("2.16.840.1.113883.10.20.2.8".equals(templateId)) {
+				String code = getCode(element);
+				if ("29299-5".equals(code)) {
+					result = CDTPackage.Literals.REASON_FOR_VISIT_SECTION;
+				} else if ("10154-3".equals(code)) {
+					result = CDTPackage.Literals.CHIEF_COMPLAINT_SECTION;
+				} else if ("46239-0".equals(code)) {
+					result = CDTPackage.Literals.REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION;
+				}
+			}
+			else if ("2.16.840.1.113883.10.20.4.8".equals(templateId)) {
 				String code = getCode(element);
 				if ("42349-1".equals(code)) {
 					result = CDTPackage.Literals.REASON_FOR_REFERRAL_SECTION;
 				} else if ("29299-5".equals(code)) {
-					result = CDTPackage.Literals.REASON_FOR_VISIT_SECTION;
+					result = CDTPackage.Literals.REASON_FOR_VISIT_SECTION_CONSULT;
 				}
 			}
 		}
