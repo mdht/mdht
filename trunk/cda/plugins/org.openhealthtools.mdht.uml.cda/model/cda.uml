@@ -5206,8 +5206,8 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_8KBf0EoeEd6c3qsAxlFHaQ" name="id" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9Ha8MUoeEd6c3qsAxlFHaQ" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9Ha8MEoeEd6c3qsAxlFHaQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iiDagG_vEd-NxfUd9-n7Bg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iiNLgG_vEd-NxfUd9-n7Bg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_9XNrsEoeEd6c3qsAxlFHaQ" name="code" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_Z1EGIDxaEd6JwqSGecoePg"/>
