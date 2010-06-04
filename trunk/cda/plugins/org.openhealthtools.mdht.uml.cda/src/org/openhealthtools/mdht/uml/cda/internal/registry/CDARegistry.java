@@ -39,23 +39,25 @@ public class CDARegistry {
 	private void load() {
 		EPackage.Registry registry = EPackage.Registry.INSTANCE;
 		for (String key : registry.keySet().toArray(new String[registry.size()])) {
-			EPackage ePackage = registry.getEPackage(key);
-			for (EClassifier eClassifier : ePackage.getEClassifiers()) {
-				String templateId = EcoreUtil.getAnnotation(eClassifier, CDA_ANNOTATION_SOURCE, TEMPLATE_ID_ROOT);
-				if (templateId != null) {
-					String contextDependent = EcoreUtil.getAnnotation(eClassifier, CDA_ANNOTATION_SOURCE, CONTEXT_DEPENDENT);
-					if ("true".equals(contextDependent)) {
-						String registryDelegate = EcoreUtil.getAnnotation(ePackage, CDA_ANNOTATION_SOURCE, REGISTRY_DELEGATE);
-						EClass eClass = (EClass) ePackage.getEClassifier(registryDelegate);
-						classes.put(templateId, eClass);
-						if (!delegates.containsKey(eClass)) {
-							delegates.put(eClass, (RegistryDelegate) EcoreUtil.create(eClass));
+			try {
+				EPackage ePackage = registry.getEPackage(key);
+				for (EClassifier eClassifier : ePackage.getEClassifiers()) {
+					String templateId = EcoreUtil.getAnnotation(eClassifier, CDA_ANNOTATION_SOURCE, TEMPLATE_ID_ROOT);
+					if (templateId != null) {
+						String contextDependent = EcoreUtil.getAnnotation(eClassifier, CDA_ANNOTATION_SOURCE, CONTEXT_DEPENDENT);
+						if ("true".equals(contextDependent)) {
+							String registryDelegate = EcoreUtil.getAnnotation(ePackage, CDA_ANNOTATION_SOURCE, REGISTRY_DELEGATE);
+							EClass eClass = (EClass) ePackage.getEClassifier(registryDelegate);
+							classes.put(templateId, eClass);
+							if (!delegates.containsKey(eClass)) {
+								delegates.put(eClass, (RegistryDelegate) EcoreUtil.create(eClass));
+							}
+						} else {
+							classes.put(templateId, (EClass) eClassifier);
 						}
-					} else {
-						classes.put(templateId, (EClass) eClassifier);
 					}
 				}
-			}
+			} catch (Exception e) {}
 		}
 	}
 
