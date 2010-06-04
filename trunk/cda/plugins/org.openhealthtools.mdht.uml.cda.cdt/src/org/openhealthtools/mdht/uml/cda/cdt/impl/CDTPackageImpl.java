@@ -1555,7 +1555,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		   new String[] {
 			 "contextDependent", "true",
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
-			 "templateId.root", "2.1.6.840.1.113883.10.20.2.7",
+			 "templateId.root", "2.16.840.1.113883.10.20.2.7",
 			 "code.displayName", "Assessment",
 			 "constraints.validation.error", "AssessmentSectionTemplateId AssessmentSectionCode",
 			 "code.codeSystemName", "LOINC",
@@ -1567,7 +1567,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		   new String[] {
 			 "contextDependent", "true",
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
-			 "templateId.root", "2.1.6.840.1.113883.10.20.2.7",
+			 "templateId.root", "2.16.840.1.113883.10.20.2.7",
 			 "code.displayName", "Plan",
 			 "constraints.validation.error", "PlanSectionTemplateId PlanSectionCode",
 			 "code.codeSystemName", "LOINC",
@@ -1579,7 +1579,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		   new String[] {
 			 "contextDependent", "true",
 			 "code.codeSystem", "2.16.840.1.113883.6.1",
-			 "templateId.root", "2.1.6.840.1.113883.10.20.2.7",
+			 "templateId.root", "2.16.840.1.113883.10.20.2.7",
 			 "code.displayName", "Assessment + Plan",
 			 "constraints.validation.error", "AssessmentAndPlanSectionTemplateId AssessmentAndPlanSectionCode",
 			 "code.codeSystemName", "LOINC",

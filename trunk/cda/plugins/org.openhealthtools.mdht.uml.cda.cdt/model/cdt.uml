@@ -912,13 +912,13 @@ for CDA entries cited in the respective sections.</body>
   <CDA:AssociationValidation xmi:id="_O24T8GjqEd-tUpkWYQgJlQ" message="CDT Vital Signs Section SHOULD contain [0..1] entry such that it, SHALL contain [1..1] CCD Vital Signs Organizer (templateId: 2.16.840.1.113883.10.20.1.35)" severity="WARNING" base_Association="_Nq_IkGjqEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-87</ruleId>
   </CDA:AssociationValidation>
-  <CDA:CDATemplate xmi:id="_MY_DQGjsEd-tUpkWYQgJlQ" message="CDT Assessment Section SHALL contain the template identifier 2.1.6.840.1.113883.10.20.2.7" base_Class="_IvsBUGjsEd-tUpkWYQgJlQ" templateId="2.1.6.840.1.113883.10.20.2.7" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_MY_DQGjsEd-tUpkWYQgJlQ" message="CDT Assessment Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.7" base_Class="_IvsBUGjsEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.7" contextDependent="true"/>
   <CDA:CodeSystemConstraint xmi:id="_MuHlwGjsEd-tUpkWYQgJlQ" code="51848-0" displayName="Assessment" base_Property="_JfaOEGjsEd-tUpkWYQgJlQ" message="CDT Assessment Section SHALL contain [1..1] code/@code = &quot;51848-0&quot; Assessment (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-91</ruleId>
   </CDA:CodeSystemConstraint>
-  <CDA:CDATemplate xmi:id="_drcCgGjsEd-tUpkWYQgJlQ" message="CDT Plan Section SHALL contain the template identifier 2.1.6.840.1.113883.10.20.2.7" base_Class="_a1dT4GjsEd-tUpkWYQgJlQ" templateId="2.1.6.840.1.113883.10.20.2.7" contextDependent="true"/>
-  <CDA:CDATemplate xmi:id="_k8mjAGjsEd-tUpkWYQgJlQ" message="CDT Assessment And Plan Section SHALL contain the template identifier 2.1.6.840.1.113883.10.20.2.7" base_Class="_ikbxwGjsEd-tUpkWYQgJlQ" templateId="2.1.6.840.1.113883.10.20.2.7" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_drcCgGjsEd-tUpkWYQgJlQ" message="CDT Plan Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.7" base_Class="_a1dT4GjsEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.7" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_k8mjAGjsEd-tUpkWYQgJlQ" message="CDT Assessment And Plan Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.7" base_Class="_ikbxwGjsEd-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.7" contextDependent="true"/>
   <CDA:CodeSystemConstraint xmi:id="_qsbzoGjsEd-tUpkWYQgJlQ" code="18776-5" displayName="Plan" base_Property="_bT0q4GjsEd-tUpkWYQgJlQ" message="CDT Plan Section SHALL contain [1..1] code/@code = &quot;18776-5&quot; Plan (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-91</ruleId>

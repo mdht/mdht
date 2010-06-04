@@ -53,7 +53,7 @@ public class AssessmentSectionOperations extends SectionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_ASSESSMENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.1.6.840.1.113883.10.20.2.7')";
+	protected static final String VALIDATE_ASSESSMENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.7')";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateAssessmentSectionTemplateId(AssessmentSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment Section Template Id</em>}' invariant operation.
@@ -69,7 +69,7 @@ public class AssessmentSectionOperations extends SectionOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.templateId->exists(id : datatypes::II | id.root = '2.1.6.840.1.113883.10.20.2.7')
+	 * self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.2.7')
 	 * @param assessmentSection The receiving '<em><b>Assessment Section</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
