@@ -102,7 +102,7 @@ public class TransformAssociation extends TransformAbstract {
 		if ((CDAModelUtil.isClinicalDocument(sourceClass) || CDAModelUtil.isSection(sourceClass))
 				&& CDAModelUtil.isSection(targetClass)) {
 			// ClinicalDocument -> Section || Section -> Section
-			body.append("self.getSections()->");
+			body.append("self.getAllSections()->");
 			body.append((sourceProperty.getUpper() == 1) ? "one(" : "exists(");
 			body.append("section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(" + targetQName + "))");
 		} else {
