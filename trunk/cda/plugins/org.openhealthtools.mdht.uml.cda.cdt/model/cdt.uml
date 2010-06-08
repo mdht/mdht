@@ -78,28 +78,20 @@
           <body>If pre-coordinated document type codes are used, values used in&#xD;&#xA;encompassingEncounter/location/healthCareFacility/code SHALL NOT conflict with&#xD;&#xA;ClinicalDocument/code.</body>
         </specification>
       </ownedRule>
-      <ownedRule xmi:id="_Fu6GAGjuEd-tUpkWYQgJlQ" name="bothAssessmentAndPlan" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_Qz3oQGjuEd-tUpkWYQgJlQ">
-          <language>Analysis</language>
-          <language>OCL</language>
-          <body>When Assessment Section is included, then Plan Section must also be included and there SHALL NOT be a combined Assessment + Plan section.</body>
-          <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))</body>
-        </specification>
-      </ownedRule>
-      <ownedRule xmi:id="_M4MncGjvEd-tUpkWYQgJlQ" name="bothPlanAndAssessment" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
-        <specification xmi:type="uml:OpaqueExpression" xmi:id="_M4MncWjvEd-tUpkWYQgJlQ">
-          <language>Analysis</language>
-          <language>OCL</language>
-          <body>When Plan Section is included, then Assessment Section must also be included and there SHALL NOT be a combined Assessment + Plan section.</body>
-          <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;   implies (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection)))</body>
-        </specification>
-      </ownedRule>
-      <ownedRule xmi:id="_XkPTYGjvEd-tUpkWYQgJlQ" name="combinedPlanAndAssessment" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+      <ownedRule xmi:id="_XkPTYGjvEd-tUpkWYQgJlQ" name="assessmentAndPlan" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_XkPTYWjvEd-tUpkWYQgJlQ">
           <language>Analysis</language>
           <language>OCL</language>
-          <body>When combined Assessment + Plan section is included, then there SHALL NOT be separate Assessment section or Plan section included.</body>
-          <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection))&#xD;&#xA;   implies (not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;      and not self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection)))</body>
+          <body>Either combined Assessment + Plan section is included, or separate Assessment section and Plan section included, but not both combined and separate sections.</body>
+          <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentAndPlanSection))&#xD;&#xA;   xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection))&#xD;&#xA;      and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection)))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_d7dDAHKFEd-yJfEpFEwdpw" name="bothAssessmentAndPlan" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_d7dDAXKFEd-yJfEpFEwdpw">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>When Assessment section or Plan section is included, then both sections SHALL be included.</body>
+          <body>let assessmentExists : Boolean = self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::AssessmentSection)) in&#xD;&#xA;  let planExists : Boolean = self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::PlanSection))&#xD;&#xA;    in (assessmentExists or planExists) implies (assessmentExists and planExists)</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_8uY8MGj3Ed-tUpkWYQgJlQ" name="reasonForVisitAndChiefComplaint" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
@@ -108,6 +100,14 @@
           <language>OCL</language>
           <body>Either combined Reason for Visit and Chief Complaint section is included, or separate Reason for Visit section and Chief Complaint section included, but not both combined and separate sections.</body>
           <body>self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitAndChiefComplaintSection))&#xD;&#xA;   xor (self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection))&#xD;&#xA;      and self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSection)))</body>
+        </specification>
+      </ownedRule>
+      <ownedRule xmi:id="_PuJ2AHBEEd-yJfEpFEwdpw" name="bothReasonForVisitAndChiefComplaint" constrainedElement="_XtmggGeLEd-ilOLYnIx0jA">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_PuJ2AXBEEd-yJfEpFEwdpw">
+          <language>Analysis</language>
+          <language>OCL</language>
+          <body>When Reason for Visit section or Chief Complaint section is included, then both sections SHALL be included.</body>
+          <body>let reasonExists : Boolean = self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ReasonForVisitSection)) in&#xD;&#xA;  let complaintExists : Boolean = self.getSections()->exists(section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(cdt::ChiefComplaintSection))&#xD;&#xA;    in (reasonExists or complaintExists) implies (reasonExists and complaintExists)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_XtmggWeLEd-ilOLYnIx0jA" general="_MwGRIGeLEd-ilOLYnIx0jA"/>
@@ -927,18 +927,20 @@ for CDA entries cited in the respective sections.</body>
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-92</ruleId>
   </CDA:CodeSystemConstraint>
-  <CDA:ConstraintValidation xmi:id="_dLfFMGjuEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL satisfy: When Assessment Section is included, then Plan Section must also be included and there SHALL NOT be a combined Assessment + Plan section." base_Constraint="_Fu6GAGjuEd-tUpkWYQgJlQ">
+  <CDA:ConstraintValidation xmi:id="_dLfFMGjuEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL satisfy: When Assessment Section is included, then Plan Section must also be included and there SHALL NOT be a combined Assessment + Plan section.">
     <ruleId>CONF-HP-91</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_w20x8GjvEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL satisfy: When combined Assessment + Plan section is included, then there SHALL NOT be separate Assessment section or Plan section included." base_Constraint="_XkPTYGjvEd-tUpkWYQgJlQ">
+  <CDA:ConstraintValidation xmi:id="_w20x8GjvEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL satisfy: Either combined Assessment + Plan section is included, or separate Assessment section and Plan section included, but not both combined and separate sections." base_Constraint="_XkPTYGjvEd-tUpkWYQgJlQ">
     <ruleId>CONF-HP-92</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_xVaycGjvEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL satisfy: When Plan Section is included, then Assessment Section must also be included and there SHALL NOT be a combined Assessment + Plan section." base_Constraint="_M4MncGjvEd-tUpkWYQgJlQ">
+  <CDA:ConstraintValidation xmi:id="_xVaycGjvEd-tUpkWYQgJlQ" message="CDT History And Physical SHALL satisfy: When Plan Section is included, then Assessment Section must also be included and there SHALL NOT be a combined Assessment + Plan section.">
     <ruleId>CONF-HP-91</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:CDATemplate xmi:id="_l8hY0Gj1Ed-tUpkWYQgJlQ" message="CDT Reason For Visit Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.8" base_Class="_iwL_sGj1Ed-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.8" contextDependent="true"/>
-  <CDA:CDATemplate xmi:id="_qRZHUGj1Ed-tUpkWYQgJlQ" message="CDT Chief Complaint Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.8" base_Class="_o-ulkGj1Ed-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.8" contextDependent="true"/>
-  <CDA:CDATemplate xmi:id="_wOKnwGj1Ed-tUpkWYQgJlQ" message="CDT Reason For Visit And Chief Complaint Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.8" base_Class="_vEmXoGj1Ed-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.8" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_l8hY0Gj1Ed-tUpkWYQgJlQ" message="CDT Reason For Visit Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.8" base_Class="_iwL_sGj1Ed-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.8" assigningAuthorityName="CONF-HP-73" contextDependent="true"/>
+  <CDA:CDATemplate xmi:id="_qRZHUGj1Ed-tUpkWYQgJlQ" message="CDT Chief Complaint Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.8" base_Class="_o-ulkGj1Ed-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.8" contextDependent="true">
+    <ruleId>CONF-HP-73</ruleId>
+  </CDA:CDATemplate>
+  <CDA:CDATemplate xmi:id="_wOKnwGj1Ed-tUpkWYQgJlQ" message="CDT Reason For Visit And Chief Complaint Section SHALL contain the template identifier 2.16.840.1.113883.10.20.2.8" base_Class="_vEmXoGj1Ed-tUpkWYQgJlQ" templateId="2.16.840.1.113883.10.20.2.8" assigningAuthorityName="CONF-HP-73" contextDependent="true"/>
   <CDA:CodeSystemConstraint xmi:id="_4mtnEGj1Ed-tUpkWYQgJlQ" code="10154-3" displayName="Chief complaint" base_Property="_phuk8Gj1Ed-tUpkWYQgJlQ" message="CDT Chief Complaint Section SHALL contain [1..1] code/@code = &quot;10154-3&quot; Chief complaint (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
     <ruleId>CONF-HP-74</ruleId>
@@ -1019,4 +1021,13 @@ for CDA entries cited in the respective sections.</body>
     <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
   </CDA:CodeSystemConstraint>
   <CDA:PropertyValidation xmi:id="_SxHmIGoBEd-d2MaU_RNQsA" message="CDT Past Medical History Section Consult SHALL contain [1..1] text" base_Property="_z2nc2GoAEd-d2MaU_RNQsA"/>
+  <CDA:ConstraintValidation xmi:id="_ZaWrAHBDEd-yJfEpFEwdpw" message="CDT History And Physical SHALL satisfy: Either combined Reason for Visit and Chief Complaint section is included, or separate Reason for Visit section and Chief Complaint section included, but not both combined and separate sections." base_Constraint="_8uY8MGj3Ed-tUpkWYQgJlQ">
+    <ruleId>CONF-HP-75</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_0xODkHBFEd-yJfEpFEwdpw" message="CDT History And Physical SHALL satisfy: When Reason for Visit section or Chief Complaint section is included, then both sections SHALL be included." base_Constraint="_PuJ2AHBEEd-yJfEpFEwdpw">
+    <ruleId>CONF-HP-74</ruleId>
+  </CDA:ConstraintValidation>
+  <CDA:ConstraintValidation xmi:id="_0UyKkHKHEd-yJfEpFEwdpw" message="CDT History And Physical SHALL satisfy: When Assessment section or Plan section is included, then both sections SHALL be included." base_Constraint="_d7dDAHKFEd-yJfEpFEwdpw">
+    <ruleId>CONF-HP-91</ruleId>
+  </CDA:ConstraintValidation>
 </xmi:XMI>

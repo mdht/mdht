@@ -70,21 +70,21 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//HistoryAndPhysical">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalAssessmentAndPlan">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalAssessmentAndPlan/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalAssessmentAndPlan/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalBothAssessmentAndPlan">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalBothAssessmentAndPlan/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalBothAssessmentAndPlan/context"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalBothPlanAndAssessment">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalBothPlanAndAssessment/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalBothPlanAndAssessment/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalCombinedPlanAndAssessment">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalCombinedPlanAndAssessment/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalCombinedPlanAndAssessment/context"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalReasonForVisitAndChiefComplaint">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalReasonForVisitAndChiefComplaint/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalReasonForVisitAndChiefComplaint/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalBothReasonForVisitAndChiefComplaint">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalBothReasonForVisitAndChiefComplaint/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalBothReasonForVisitAndChiefComplaint/context"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalHistoryOfPresentIllness">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//HistoryAndPhysical/HistoryAndPhysicalHistoryOfPresentIllness/diagnostics"/>

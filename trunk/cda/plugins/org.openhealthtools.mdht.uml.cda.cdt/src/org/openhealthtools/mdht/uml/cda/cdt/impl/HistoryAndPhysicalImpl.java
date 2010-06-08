@@ -49,6 +49,15 @@ public class HistoryAndPhysicalImpl extends GeneralHeaderConstraintsImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateHistoryAndPhysicalAssessmentAndPlan(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryAndPhysicalOperations.validateHistoryAndPhysicalAssessmentAndPlan(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateHistoryAndPhysicalBothAssessmentAndPlan(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return HistoryAndPhysicalOperations.validateHistoryAndPhysicalBothAssessmentAndPlan(this, diagnostics, context);
 	}
@@ -58,26 +67,17 @@ public class HistoryAndPhysicalImpl extends GeneralHeaderConstraintsImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHistoryAndPhysicalBothPlanAndAssessment(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HistoryAndPhysicalOperations.validateHistoryAndPhysicalBothPlanAndAssessment(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHistoryAndPhysicalCombinedPlanAndAssessment(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return HistoryAndPhysicalOperations.validateHistoryAndPhysicalCombinedPlanAndAssessment(this, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateHistoryAndPhysicalReasonForVisitAndChiefComplaint(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return HistoryAndPhysicalOperations.validateHistoryAndPhysicalReasonForVisitAndChiefComplaint(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHistoryAndPhysicalBothReasonForVisitAndChiefComplaint(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return HistoryAndPhysicalOperations.validateHistoryAndPhysicalBothReasonForVisitAndChiefComplaint(this, diagnostics, context);
 	}
 
 	/**
