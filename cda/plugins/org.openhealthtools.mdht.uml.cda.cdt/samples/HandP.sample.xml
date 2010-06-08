@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="CDA.xsl"?>
-<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ClinicalDocument xmlns="urn:hl7-org:v3" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
 	<!-- Note that some versions of the CDA.xsl stylesheet do not differentiate sections and nested sections; if that is the case, a PHYSICAL EXAMINATION will appear empty when in fact, it contains nested sections. For updated versions of the stylesheet, see the HL7 wiki, http://wiki.hl7.org/index.php?title=Structured_Documents_TC --> 
 	<!--
 ********************************************************
@@ -647,6 +649,42 @@
 					</text>
 				</section>
 			</component>
+<!-- 
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.2.7"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="51848-0" displayName="ASSESSMENT"/>
+					<title>ASSESSMENT</title>
+					<text>
+						<list listType="ordered">
+							<item>Recurrent GI bleed of unknown etiology; hypotension perhaps secondary to this but as likely secondary to polypharmacy.</item>
+							<item>Acute on chronic anemia secondary to #1.</item>
+							<item>Azotemia, acute renal failure with volume loss secondary to #1.</item>
+							<item>Hyperkalemia secondary to #3 and on ACE and K+ supplement.</item>
+							<item>Other chronic diagnoses as noted above, currently stable: ? hx adrenal insufficiency.</item>
+							<item>I discussed the patient with Dr. Olaf who will see him in the AM. There is no plan at this point for repeat endoscopy. If the patient .... .... ....</item>
+						</list>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.2.7"/>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="18776-5" displayName="PLAN"/>
+					<title>PLAN</title>
+					<text>
+						<list listType="ordered">
+							<item>Recurrent GI bleed of unknown etiology; hypotension perhaps secondary to this but as likely secondary to polypharmacy.</item>
+							<item>Acute on chronic anemia secondary to #1.</item>
+							<item>Azotemia, acute renal failure with volume loss secondary to #1.</item>
+							<item>Hyperkalemia secondary to #3 and on ACE and K+ supplement.</item>
+							<item>Other chronic diagnoses as noted above, currently stable: ? hx adrenal insufficiency.</item>
+							<item>I discussed the patient with Dr. Olaf who will see him in the AM. There is no plan at this point for repeat endoscopy. If the patient .... .... ....</item>
+						</list>
+					</text>
+				</section>
+			</component>
+-->
 			<!-- Optional Sections -->
 			<!--
 <component>

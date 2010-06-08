@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="CDA.xsl"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="urn:hl7-org:v3 ../../HL7/CCD/CDASchemas/cda/Schemas/CDA.xsd"
+	xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd"
 	xmlns="urn:hl7-org:v3">
 	<!-- Note that some versions of the CDA.xsl stylesheet do not differentiate sections and nested sections; if that is the case, the PHYSICAL EXAMINATION section of this document will appear empty when in fact, it contains nested sections. For updated versions of the stylesheet, see the HL7 wiki, http://wiki.hl7.org/index.php?title=Structured_Documents_TC --> 
 	<!--

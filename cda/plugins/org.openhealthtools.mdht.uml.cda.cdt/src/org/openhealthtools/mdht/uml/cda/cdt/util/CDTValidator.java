@@ -140,28 +140,20 @@ public class CDTValidator extends EObjectValidator {
 	public static final int GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_TYPE_ID = 9;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Assessment And Plan' of 'History And Physical'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_ASSESSMENT_AND_PLAN = 10;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Both Assessment And Plan' of 'History And Physical'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_BOTH_ASSESSMENT_AND_PLAN = 10;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Both Plan And Assessment' of 'History And Physical'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_BOTH_PLAN_AND_ASSESSMENT = 11;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Combined Plan And Assessment' of 'History And Physical'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_COMBINED_PLAN_AND_ASSESSMENT = 12;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_BOTH_ASSESSMENT_AND_PLAN = 11;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Reason For Visit And Chief Complaint' of 'History And Physical'.
@@ -169,7 +161,15 @@ public class CDTValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT = 13;
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT = 12;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate History And Physical Both Reason For Visit And Chief Complaint' of 'History And Physical'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int HISTORY_AND_PHYSICAL__HISTORY_AND_PHYSICAL_BOTH_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT = 13;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate General Header Constraints Code' of 'History And Physical'.
@@ -991,10 +991,10 @@ public class CDTValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsRealmCode(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTitle(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGeneralHeaderConstraints_validateGeneralHeaderConstraintsTypeId(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHistoryAndPhysical_validateHistoryAndPhysicalAssessmentAndPlan(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHistoryAndPhysical_validateHistoryAndPhysicalBothAssessmentAndPlan(historyAndPhysical, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHistoryAndPhysical_validateHistoryAndPhysicalBothPlanAndAssessment(historyAndPhysical, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHistoryAndPhysical_validateHistoryAndPhysicalCombinedPlanAndAssessment(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHistoryAndPhysical_validateHistoryAndPhysicalReasonForVisitAndChiefComplaint(historyAndPhysical, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHistoryAndPhysical_validateHistoryAndPhysicalBothReasonForVisitAndChiefComplaint(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHistoryAndPhysical_validateHistoryAndPhysicalHistoryOfPresentIllness(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHistoryAndPhysical_validateHistoryAndPhysicalPastMedicalHistorySection(historyAndPhysical, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHistoryAndPhysical_validateHistoryAndPhysicalMedicationsSection(historyAndPhysical, diagnostics, context);
@@ -1013,6 +1013,16 @@ public class CDTValidator extends EObjectValidator {
 	}
 
 	/**
+	 * Validates the validateHistoryAndPhysicalAssessmentAndPlan constraint of '<em>History And Physical</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHistoryAndPhysical_validateHistoryAndPhysicalAssessmentAndPlan(HistoryAndPhysical historyAndPhysical, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return historyAndPhysical.validateHistoryAndPhysicalAssessmentAndPlan(diagnostics, context);
+	}
+
+	/**
 	 * Validates the validateHistoryAndPhysicalBothAssessmentAndPlan constraint of '<em>History And Physical</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1023,26 +1033,6 @@ public class CDTValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validateHistoryAndPhysicalBothPlanAndAssessment constraint of '<em>History And Physical</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHistoryAndPhysical_validateHistoryAndPhysicalBothPlanAndAssessment(HistoryAndPhysical historyAndPhysical, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return historyAndPhysical.validateHistoryAndPhysicalBothPlanAndAssessment(diagnostics, context);
-	}
-
-	/**
-	 * Validates the validateHistoryAndPhysicalCombinedPlanAndAssessment constraint of '<em>History And Physical</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHistoryAndPhysical_validateHistoryAndPhysicalCombinedPlanAndAssessment(HistoryAndPhysical historyAndPhysical, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return historyAndPhysical.validateHistoryAndPhysicalCombinedPlanAndAssessment(diagnostics, context);
-	}
-
-	/**
 	 * Validates the validateHistoryAndPhysicalReasonForVisitAndChiefComplaint constraint of '<em>History And Physical</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1050,6 +1040,16 @@ public class CDTValidator extends EObjectValidator {
 	 */
 	public boolean validateHistoryAndPhysical_validateHistoryAndPhysicalReasonForVisitAndChiefComplaint(HistoryAndPhysical historyAndPhysical, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return historyAndPhysical.validateHistoryAndPhysicalReasonForVisitAndChiefComplaint(diagnostics, context);
+	}
+
+	/**
+	 * Validates the validateHistoryAndPhysicalBothReasonForVisitAndChiefComplaint constraint of '<em>History And Physical</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHistoryAndPhysical_validateHistoryAndPhysicalBothReasonForVisitAndChiefComplaint(HistoryAndPhysical historyAndPhysical, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return historyAndPhysical.validateHistoryAndPhysicalBothReasonForVisitAndChiefComplaint(diagnostics, context);
 	}
 
 	/**
