@@ -904,6 +904,14 @@ public interface ClinicalDocument extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model kind="operation" unique="false" ordered="false"
+	 * @generated
+	 */
+	EList<Section> getAllSections();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
 	 * <!-- end-model-doc -->

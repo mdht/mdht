@@ -1452,6 +1452,15 @@ public class ClinicalDocumentImpl extends EObjectImpl implements ClinicalDocumen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Section> getAllSections() {
+		return ClinicalDocumentOperations.getAllSections(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean hasCode(String code, String codeSystem, String codeSystemName) {
 		return ClinicalDocumentOperations.hasCode(this, code, codeSystem, codeSystemName);
 	}

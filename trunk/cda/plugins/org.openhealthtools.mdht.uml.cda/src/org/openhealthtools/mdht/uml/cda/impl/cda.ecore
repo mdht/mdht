@@ -19,6 +19,8 @@
         eType="#//PatientRole"/>
     <eOperations name="getSections" ordered="false" unique="false" upperBound="-1"
         eType="#//Section"/>
+    <eOperations name="getAllSections" ordered="false" unique="false" upperBound="-1"
+        eType="#//Section"/>
     <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="code" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="codeSystem" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
