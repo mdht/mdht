@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -31,6 +32,7 @@ import org.openhealthtools.mdht.uml.cda.PatientRole;
 import org.openhealthtools.mdht.uml.cda.RecordTarget;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.StructuredBody;
+import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,6 +48,7 @@ import org.openhealthtools.mdht.uml.cda.StructuredBody;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getPatients() <em>Get Patients</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getPatientRoles() <em>Get Patient Roles</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getSections() <em>Get Sections</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#getAllSections() <em>Get All Sections</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#hasCode(java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#hasSectionTemplate(java.lang.String) <em>Has Section Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalDocument#hasTemplateId(java.lang.String) <em>Has Template Id</em>}</li>
@@ -245,6 +248,16 @@ public class ClinicalDocumentOperations {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static  EList<Section> getAllSections(ClinicalDocument clinicalDocument) {
+		List<Section> sections = CDAUtil.getAllSections(clinicalDocument);
+		return new BasicEList.UnmodifiableEList<Section>(sections.size(), sections.toArray());
+	}
+
+	/**
 	 * The cached OCL expression body for the '{@link #hasCode(ClinicalDocument, java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -275,7 +288,7 @@ public class ClinicalDocumentOperations {
 	public static  boolean hasCode(ClinicalDocument clinicalDocument, String code, String codeSystem, String codeSystemName) {
 		if (HAS_CODE__STRING_STRING_STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_DOCUMENT, CDAPackage.Literals.CLINICAL_DOCUMENT.getEAllOperations().get(6));
+			helper.setOperationContext(CDAPackage.Literals.CLINICAL_DOCUMENT, CDAPackage.Literals.CLINICAL_DOCUMENT.getEAllOperations().get(7));
 			try {
 				HAS_CODE__STRING_STRING_STRING__EOCL_QRY = helper.createQuery(HAS_CODE__STRING_STRING_STRING__EOCL_EXP);
 			}
@@ -322,7 +335,7 @@ public class ClinicalDocumentOperations {
 	public static  boolean hasSectionTemplate(ClinicalDocument clinicalDocument, String templateId) {
 		if (HAS_SECTION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_DOCUMENT, CDAPackage.Literals.CLINICAL_DOCUMENT.getEAllOperations().get(7));
+			helper.setOperationContext(CDAPackage.Literals.CLINICAL_DOCUMENT, CDAPackage.Literals.CLINICAL_DOCUMENT.getEAllOperations().get(8));
 			try {
 				HAS_SECTION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SECTION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -367,7 +380,7 @@ public class ClinicalDocumentOperations {
 	public static  boolean hasTemplateId(ClinicalDocument clinicalDocument, String templateId) {
 		if (HAS_TEMPLATE_ID__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.CLINICAL_DOCUMENT, CDAPackage.Literals.CLINICAL_DOCUMENT.getEAllOperations().get(8));
+			helper.setOperationContext(CDAPackage.Literals.CLINICAL_DOCUMENT, CDAPackage.Literals.CLINICAL_DOCUMENT.getEAllOperations().get(9));
 			try {
 				HAS_TEMPLATE_ID__STRING__EOCL_QRY = helper.createQuery(HAS_TEMPLATE_ID__STRING__EOCL_EXP);
 			}

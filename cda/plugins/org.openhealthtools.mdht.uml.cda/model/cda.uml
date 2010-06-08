@@ -194,6 +194,12 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0abHQVwvEd6ZEsfifJz_3w"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_J7JBAHMiEd-9_cvcE5QEwg" name="getAllSections" isQuery="true">
+        <ownedParameter xmi:id="_J7JBA3MiEd-9_cvcE5QEwg" name="Parameter1" type="_qIf_wDxXEd6JwqSGecoePg" isUnique="false" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J7JBBHMiEd-9_cvcE5QEwg" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J7JBBXMiEd-9_cvcE5QEwg"/>
+        </ownedParameter>
+      </ownedOperation>
       <ownedOperation xmi:id="_7yAmwFxZEd6ZEsfifJz_3w" name="hasCode" isQuery="true" bodyCondition="_M0oaQFxaEd6ZEsfifJz_3w">
         <ownedRule xmi:id="_M0oaQFxaEd6ZEsfifJz_3w" name="body" constrainedElement="_7yAmwFxZEd6ZEsfifJz_3w">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_M0oaQVxaEd6ZEsfifJz_3w">

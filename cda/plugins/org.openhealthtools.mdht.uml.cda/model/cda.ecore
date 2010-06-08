@@ -40,6 +40,8 @@
         <details key="body" value="if self.component.structuredBody.oclIsUndefined() then Bag{} else self.component.structuredBody.component.section endif"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="getAllSections" ordered="false" unique="false" upperBound="-1"
+        eType="#//Section"/>
     <eOperations name="hasCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName"/>

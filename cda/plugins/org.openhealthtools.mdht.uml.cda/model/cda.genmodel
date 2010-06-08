@@ -98,6 +98,7 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/getPatients"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/getPatientRoles"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/getSections"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/getAllSections"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalDocument/hasCode">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalDocument/hasCode/code"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalDocument/hasCode/codeSystem"/>
