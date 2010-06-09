@@ -169,6 +169,7 @@ public class CDAUtil {
 			DocumentRoot root = CDAFactory.eINSTANCE.createDocumentRoot();
 			root.setClinicalDocument(clinicalDocument);
 			root.getXMLNSPrefixMap().put("", CDAPackage.eNS_URI);
+			root.getXSISchemaLocation().put(CDAPackage.eNS_URI, "CDA.xsd");
 			resource.getContents().add(root);
 		} else {
 //			DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
