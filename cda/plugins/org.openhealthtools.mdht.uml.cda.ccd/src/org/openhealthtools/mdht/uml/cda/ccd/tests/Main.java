@@ -12,9 +12,12 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.tests;
 
+import java.io.FileInputStream;
+
 import org.eclipse.emf.common.util.Diagnostic;
 import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Informant12;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
@@ -76,9 +79,19 @@ public class Main {
 		ResultObservation resultObservation = CCDFactory.eINSTANCE.createResultObservation().init();
 		resultOrganizer.addObservation(resultObservation);
 
+		System.out.println("***** Generate CCD *****");
 		CDAUtil.save(doc, System.out);
-		
-		CDAUtil.validate(doc, new BasicValidationHandler() {
+
+		System.out.println("\n\n***** Validate generated CCD *****");
+		validate(doc);
+
+		System.out.println("\n***** Validate sample CCD *****");
+		ClinicalDocument sampleCCD = CDAUtil.load(new FileInputStream("samples/SampleCCDDocument.xml"));
+		validate(sampleCCD);
+	}
+
+	private static void validate(ClinicalDocument clinicalDocument) throws Exception {
+		boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 			@Override
 			public void handleError(Diagnostic diagnostic) {
 				System.out.println("ERROR: " + diagnostic.getMessage());
@@ -87,10 +100,16 @@ public class Main {
 			public void handleWarning(Diagnostic diagnostic) {
 				System.out.println("WARNING: " + diagnostic.getMessage());
 			}
-			@Override
-			public void handleInfo(Diagnostic diagnostic) {
-				System.out.println("INFO: " + diagnostic.getMessage());
-			}
+//			@Override
+//			public void handleInfo(Diagnostic diagnostic) {
+//				System.out.println("INFO: " + diagnostic.getMessage());
+//			}
 		});
+		
+		if (valid) {
+			System.out.println("Document is valid");
+		} else {
+			System.out.println("Document is invalid");
+		}
 	}
 }
