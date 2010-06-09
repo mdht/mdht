@@ -98,16 +98,26 @@ public class Main {
 		name.addGiven("Bob").addFamily("Dolin").addSuffix("MD");
 		assignedPerson.getNames().add(name);
 		
+		System.out.println("***** Constructed example *****");
 		CDAUtil.save(doc, System.out);
-		
-		ClinicalDocument clinicalDocument = CDAUtil.load(new FileInputStream("resources/SampleCDADocument.xml"));
+		System.out.println();
+
+		ClinicalDocument clinicalDocument = CDAUtil.load(new FileInputStream("samples/SampleCDADocument.xml"));
+
+		System.out.println("\n***** Reserialization of sample *****");
 		System.out.println(clinicalDocument);
 		CDAUtil.save(clinicalDocument, System.out);
-		
+		System.out.println();
+
+		System.out.println("\n***** Sample validation results *****");
 		boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
 			@Override
 			public void handleError(Diagnostic diagnostic) {
 				System.out.println("ERROR: " + diagnostic.getMessage());
+			}
+			@Override
+			public void handleWarning(Diagnostic diagnostic) {
+				System.out.println("WARNING: " + diagnostic.getMessage());
 			}
 		});
 		
