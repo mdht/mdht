@@ -10365,9 +10365,10 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		}
 	}
 	
+	/*
 	@Override
 	public Resource createResource(String uri) {
 		return super.createResource("CDA.xsd");
 	}
-	
+	*/
 } //CDAPackageImpl
