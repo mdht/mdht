@@ -18,4 +18,31 @@
       		 class="org.openhealthtools.mdht.uml.term.ui.util.TermAnnotationProvider"/>
    </extension>
    
+   
+      <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            id="org.openhealthtools.mdht.uml.term.ui.import"
+             nameFilter="*.uml"
+            >
+         <menu
+               label="OHT Model Tools"
+               path="additions"
+               id="org.openhealthtools.mdht.uml.term.ui.import.menu">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Import from PHIN VADS"
+               class="org.openhealthtools.mdht.uml.term.ui.actions.ImportTerminologyAction"
+               menubarPath="org.openhealthtools.mdht.uml.term.ui.import.menu/group1"
+               enablesFor="1"
+               id="org.openhealthtools.mdht.uml.term.ui.import">
+         </action>
+      </objectContribution>
+   </extension>
+   
+   
 </plugin>
