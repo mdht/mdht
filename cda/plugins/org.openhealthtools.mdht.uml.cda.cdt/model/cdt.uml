@@ -12,7 +12,7 @@
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_MwGRIGeLEd-ilOLYnIx0jA" name="GeneralHeaderConstraints">
       <ownedComment xmi:id="_QrycIHMnEd-9_cvcE5QEwg">
-        <body>This section describes constraints that apply to the H&amp;P Note and to other types of CDA&#xD;
+        <body>This section describes constraints that apply to the H and P Note and to other types of CDA&#xD;
 documents defined for general exchange. The template defined here should be reused&#xD;
 wherever these general header constraints are applied.</body>
       </ownedComment>
