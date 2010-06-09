@@ -46,6 +46,7 @@ public class Main {
 
 		System.out.println("***** Generate Consultation Note *****");
 		save(consultationNote);
+		System.out.println("\n\n***** Validate generated Consultation Note *****");
 		validate(consultationNote);
 
 		System.out.println("\n***** Validate sample H & P *****");
