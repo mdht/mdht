@@ -1348,7 +1348,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__REALM_CODE = CDAPackage.CLINICAL_DOCUMENT__REALM_CODE;
+	int LEVEL_ONE_CONFORMANCE__REALM_CODE = GENERAL_HEADER_CONSTRAINTS__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1357,7 +1357,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__TYPE_ID = CDAPackage.CLINICAL_DOCUMENT__TYPE_ID;
+	int LEVEL_ONE_CONFORMANCE__TYPE_ID = GENERAL_HEADER_CONSTRAINTS__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1366,7 +1366,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__TEMPLATE_ID = CDAPackage.CLINICAL_DOCUMENT__TEMPLATE_ID;
+	int LEVEL_ONE_CONFORMANCE__TEMPLATE_ID = GENERAL_HEADER_CONSTRAINTS__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -1375,7 +1375,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__ID = CDAPackage.CLINICAL_DOCUMENT__ID;
+	int LEVEL_ONE_CONFORMANCE__ID = GENERAL_HEADER_CONSTRAINTS__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -1384,7 +1384,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__CODE = CDAPackage.CLINICAL_DOCUMENT__CODE;
+	int LEVEL_ONE_CONFORMANCE__CODE = GENERAL_HEADER_CONSTRAINTS__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' containment reference.
@@ -1393,7 +1393,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__TITLE = CDAPackage.CLINICAL_DOCUMENT__TITLE;
+	int LEVEL_ONE_CONFORMANCE__TITLE = GENERAL_HEADER_CONSTRAINTS__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -1402,7 +1402,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__EFFECTIVE_TIME = CDAPackage.CLINICAL_DOCUMENT__EFFECTIVE_TIME;
+	int LEVEL_ONE_CONFORMANCE__EFFECTIVE_TIME = GENERAL_HEADER_CONSTRAINTS__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
@@ -1411,7 +1411,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__CONFIDENTIALITY_CODE = CDAPackage.CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE;
+	int LEVEL_ONE_CONFORMANCE__CONFIDENTIALITY_CODE = GENERAL_HEADER_CONSTRAINTS__CONFIDENTIALITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -1420,7 +1420,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__LANGUAGE_CODE = CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE;
+	int LEVEL_ONE_CONFORMANCE__LANGUAGE_CODE = GENERAL_HEADER_CONSTRAINTS__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Set Id</b></em>' containment reference.
@@ -1429,7 +1429,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__SET_ID = CDAPackage.CLINICAL_DOCUMENT__SET_ID;
+	int LEVEL_ONE_CONFORMANCE__SET_ID = GENERAL_HEADER_CONSTRAINTS__SET_ID;
 
 	/**
 	 * The feature id for the '<em><b>Version Number</b></em>' containment reference.
@@ -1438,7 +1438,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__VERSION_NUMBER = CDAPackage.CLINICAL_DOCUMENT__VERSION_NUMBER;
+	int LEVEL_ONE_CONFORMANCE__VERSION_NUMBER = GENERAL_HEADER_CONSTRAINTS__VERSION_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Copy Time</b></em>' containment reference.
@@ -1447,7 +1447,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__COPY_TIME = CDAPackage.CLINICAL_DOCUMENT__COPY_TIME;
+	int LEVEL_ONE_CONFORMANCE__COPY_TIME = GENERAL_HEADER_CONSTRAINTS__COPY_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Record Target</b></em>' containment reference list.
@@ -1456,7 +1456,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__RECORD_TARGET = CDAPackage.CLINICAL_DOCUMENT__RECORD_TARGET;
+	int LEVEL_ONE_CONFORMANCE__RECORD_TARGET = GENERAL_HEADER_CONSTRAINTS__RECORD_TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -1465,7 +1465,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__AUTHOR = CDAPackage.CLINICAL_DOCUMENT__AUTHOR;
+	int LEVEL_ONE_CONFORMANCE__AUTHOR = GENERAL_HEADER_CONSTRAINTS__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Data Enterer</b></em>' containment reference.
@@ -1474,7 +1474,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__DATA_ENTERER = CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER;
+	int LEVEL_ONE_CONFORMANCE__DATA_ENTERER = GENERAL_HEADER_CONSTRAINTS__DATA_ENTERER;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -1483,7 +1483,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__INFORMANT = CDAPackage.CLINICAL_DOCUMENT__INFORMANT;
+	int LEVEL_ONE_CONFORMANCE__INFORMANT = GENERAL_HEADER_CONSTRAINTS__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Custodian</b></em>' containment reference.
@@ -1492,7 +1492,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__CUSTODIAN = CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN;
+	int LEVEL_ONE_CONFORMANCE__CUSTODIAN = GENERAL_HEADER_CONSTRAINTS__CUSTODIAN;
 
 	/**
 	 * The feature id for the '<em><b>Information Recipient</b></em>' containment reference list.
@@ -1501,7 +1501,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__INFORMATION_RECIPIENT = CDAPackage.CLINICAL_DOCUMENT__INFORMATION_RECIPIENT;
+	int LEVEL_ONE_CONFORMANCE__INFORMATION_RECIPIENT = GENERAL_HEADER_CONSTRAINTS__INFORMATION_RECIPIENT;
 
 	/**
 	 * The feature id for the '<em><b>Legal Authenticator</b></em>' containment reference.
@@ -1510,7 +1510,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__LEGAL_AUTHENTICATOR = CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR;
+	int LEVEL_ONE_CONFORMANCE__LEGAL_AUTHENTICATOR = GENERAL_HEADER_CONSTRAINTS__LEGAL_AUTHENTICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Authenticator</b></em>' containment reference list.
@@ -1519,7 +1519,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__AUTHENTICATOR = CDAPackage.CLINICAL_DOCUMENT__AUTHENTICATOR;
+	int LEVEL_ONE_CONFORMANCE__AUTHENTICATOR = GENERAL_HEADER_CONSTRAINTS__AUTHENTICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -1528,7 +1528,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__PARTICIPANT = CDAPackage.CLINICAL_DOCUMENT__PARTICIPANT;
+	int LEVEL_ONE_CONFORMANCE__PARTICIPANT = GENERAL_HEADER_CONSTRAINTS__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>In Fulfillment Of</b></em>' containment reference list.
@@ -1537,7 +1537,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__IN_FULFILLMENT_OF = CDAPackage.CLINICAL_DOCUMENT__IN_FULFILLMENT_OF;
+	int LEVEL_ONE_CONFORMANCE__IN_FULFILLMENT_OF = GENERAL_HEADER_CONSTRAINTS__IN_FULFILLMENT_OF;
 
 	/**
 	 * The feature id for the '<em><b>Documentation Of</b></em>' containment reference list.
@@ -1546,7 +1546,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__DOCUMENTATION_OF = CDAPackage.CLINICAL_DOCUMENT__DOCUMENTATION_OF;
+	int LEVEL_ONE_CONFORMANCE__DOCUMENTATION_OF = GENERAL_HEADER_CONSTRAINTS__DOCUMENTATION_OF;
 
 	/**
 	 * The feature id for the '<em><b>Related Document</b></em>' containment reference list.
@@ -1555,7 +1555,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__RELATED_DOCUMENT = CDAPackage.CLINICAL_DOCUMENT__RELATED_DOCUMENT;
+	int LEVEL_ONE_CONFORMANCE__RELATED_DOCUMENT = GENERAL_HEADER_CONSTRAINTS__RELATED_DOCUMENT;
 
 	/**
 	 * The feature id for the '<em><b>Authorization</b></em>' containment reference list.
@@ -1564,7 +1564,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__AUTHORIZATION = CDAPackage.CLINICAL_DOCUMENT__AUTHORIZATION;
+	int LEVEL_ONE_CONFORMANCE__AUTHORIZATION = GENERAL_HEADER_CONSTRAINTS__AUTHORIZATION;
 
 	/**
 	 * The feature id for the '<em><b>Component Of</b></em>' containment reference.
@@ -1573,7 +1573,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__COMPONENT_OF = CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF;
+	int LEVEL_ONE_CONFORMANCE__COMPONENT_OF = GENERAL_HEADER_CONSTRAINTS__COMPONENT_OF;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference.
@@ -1582,7 +1582,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__COMPONENT = CDAPackage.CLINICAL_DOCUMENT__COMPONENT;
+	int LEVEL_ONE_CONFORMANCE__COMPONENT = GENERAL_HEADER_CONSTRAINTS__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1591,7 +1591,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__NULL_FLAVOR = CDAPackage.CLINICAL_DOCUMENT__NULL_FLAVOR;
+	int LEVEL_ONE_CONFORMANCE__NULL_FLAVOR = GENERAL_HEADER_CONSTRAINTS__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1600,7 +1600,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__CLASS_CODE = CDAPackage.CLINICAL_DOCUMENT__CLASS_CODE;
+	int LEVEL_ONE_CONFORMANCE__CLASS_CODE = GENERAL_HEADER_CONSTRAINTS__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -1609,7 +1609,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE__MOOD_CODE = CDAPackage.CLINICAL_DOCUMENT__MOOD_CODE;
+	int LEVEL_ONE_CONFORMANCE__MOOD_CODE = GENERAL_HEADER_CONSTRAINTS__MOOD_CODE;
 
 	/**
 	 * The number of structural features of the '<em>Level One Conformance</em>' class.
@@ -1618,7 +1618,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_ONE_CONFORMANCE_FEATURE_COUNT = CDAPackage.CLINICAL_DOCUMENT_FEATURE_COUNT + 0;
+	int LEVEL_ONE_CONFORMANCE_FEATURE_COUNT = GENERAL_HEADER_CONSTRAINTS_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.cdt.impl.LevelTwoConformanceImpl <em>Level Two Conformance</em>}' class.
@@ -1637,7 +1637,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__REALM_CODE = CDAPackage.CLINICAL_DOCUMENT__REALM_CODE;
+	int LEVEL_TWO_CONFORMANCE__REALM_CODE = LEVEL_ONE_CONFORMANCE__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1646,7 +1646,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__TYPE_ID = CDAPackage.CLINICAL_DOCUMENT__TYPE_ID;
+	int LEVEL_TWO_CONFORMANCE__TYPE_ID = LEVEL_ONE_CONFORMANCE__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1655,7 +1655,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__TEMPLATE_ID = CDAPackage.CLINICAL_DOCUMENT__TEMPLATE_ID;
+	int LEVEL_TWO_CONFORMANCE__TEMPLATE_ID = LEVEL_ONE_CONFORMANCE__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -1664,7 +1664,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__ID = CDAPackage.CLINICAL_DOCUMENT__ID;
+	int LEVEL_TWO_CONFORMANCE__ID = LEVEL_ONE_CONFORMANCE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -1673,7 +1673,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__CODE = CDAPackage.CLINICAL_DOCUMENT__CODE;
+	int LEVEL_TWO_CONFORMANCE__CODE = LEVEL_ONE_CONFORMANCE__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' containment reference.
@@ -1682,7 +1682,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__TITLE = CDAPackage.CLINICAL_DOCUMENT__TITLE;
+	int LEVEL_TWO_CONFORMANCE__TITLE = LEVEL_ONE_CONFORMANCE__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -1691,7 +1691,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__EFFECTIVE_TIME = CDAPackage.CLINICAL_DOCUMENT__EFFECTIVE_TIME;
+	int LEVEL_TWO_CONFORMANCE__EFFECTIVE_TIME = LEVEL_ONE_CONFORMANCE__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
@@ -1700,7 +1700,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__CONFIDENTIALITY_CODE = CDAPackage.CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE;
+	int LEVEL_TWO_CONFORMANCE__CONFIDENTIALITY_CODE = LEVEL_ONE_CONFORMANCE__CONFIDENTIALITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -1709,7 +1709,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__LANGUAGE_CODE = CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE;
+	int LEVEL_TWO_CONFORMANCE__LANGUAGE_CODE = LEVEL_ONE_CONFORMANCE__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Set Id</b></em>' containment reference.
@@ -1718,7 +1718,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__SET_ID = CDAPackage.CLINICAL_DOCUMENT__SET_ID;
+	int LEVEL_TWO_CONFORMANCE__SET_ID = LEVEL_ONE_CONFORMANCE__SET_ID;
 
 	/**
 	 * The feature id for the '<em><b>Version Number</b></em>' containment reference.
@@ -1727,7 +1727,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__VERSION_NUMBER = CDAPackage.CLINICAL_DOCUMENT__VERSION_NUMBER;
+	int LEVEL_TWO_CONFORMANCE__VERSION_NUMBER = LEVEL_ONE_CONFORMANCE__VERSION_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Copy Time</b></em>' containment reference.
@@ -1736,7 +1736,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__COPY_TIME = CDAPackage.CLINICAL_DOCUMENT__COPY_TIME;
+	int LEVEL_TWO_CONFORMANCE__COPY_TIME = LEVEL_ONE_CONFORMANCE__COPY_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Record Target</b></em>' containment reference list.
@@ -1745,7 +1745,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__RECORD_TARGET = CDAPackage.CLINICAL_DOCUMENT__RECORD_TARGET;
+	int LEVEL_TWO_CONFORMANCE__RECORD_TARGET = LEVEL_ONE_CONFORMANCE__RECORD_TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -1754,7 +1754,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__AUTHOR = CDAPackage.CLINICAL_DOCUMENT__AUTHOR;
+	int LEVEL_TWO_CONFORMANCE__AUTHOR = LEVEL_ONE_CONFORMANCE__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Data Enterer</b></em>' containment reference.
@@ -1763,7 +1763,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__DATA_ENTERER = CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER;
+	int LEVEL_TWO_CONFORMANCE__DATA_ENTERER = LEVEL_ONE_CONFORMANCE__DATA_ENTERER;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -1772,7 +1772,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__INFORMANT = CDAPackage.CLINICAL_DOCUMENT__INFORMANT;
+	int LEVEL_TWO_CONFORMANCE__INFORMANT = LEVEL_ONE_CONFORMANCE__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Custodian</b></em>' containment reference.
@@ -1781,7 +1781,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__CUSTODIAN = CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN;
+	int LEVEL_TWO_CONFORMANCE__CUSTODIAN = LEVEL_ONE_CONFORMANCE__CUSTODIAN;
 
 	/**
 	 * The feature id for the '<em><b>Information Recipient</b></em>' containment reference list.
@@ -1790,7 +1790,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__INFORMATION_RECIPIENT = CDAPackage.CLINICAL_DOCUMENT__INFORMATION_RECIPIENT;
+	int LEVEL_TWO_CONFORMANCE__INFORMATION_RECIPIENT = LEVEL_ONE_CONFORMANCE__INFORMATION_RECIPIENT;
 
 	/**
 	 * The feature id for the '<em><b>Legal Authenticator</b></em>' containment reference.
@@ -1799,7 +1799,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__LEGAL_AUTHENTICATOR = CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR;
+	int LEVEL_TWO_CONFORMANCE__LEGAL_AUTHENTICATOR = LEVEL_ONE_CONFORMANCE__LEGAL_AUTHENTICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Authenticator</b></em>' containment reference list.
@@ -1808,7 +1808,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__AUTHENTICATOR = CDAPackage.CLINICAL_DOCUMENT__AUTHENTICATOR;
+	int LEVEL_TWO_CONFORMANCE__AUTHENTICATOR = LEVEL_ONE_CONFORMANCE__AUTHENTICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -1817,7 +1817,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__PARTICIPANT = CDAPackage.CLINICAL_DOCUMENT__PARTICIPANT;
+	int LEVEL_TWO_CONFORMANCE__PARTICIPANT = LEVEL_ONE_CONFORMANCE__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>In Fulfillment Of</b></em>' containment reference list.
@@ -1826,7 +1826,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__IN_FULFILLMENT_OF = CDAPackage.CLINICAL_DOCUMENT__IN_FULFILLMENT_OF;
+	int LEVEL_TWO_CONFORMANCE__IN_FULFILLMENT_OF = LEVEL_ONE_CONFORMANCE__IN_FULFILLMENT_OF;
 
 	/**
 	 * The feature id for the '<em><b>Documentation Of</b></em>' containment reference list.
@@ -1835,7 +1835,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__DOCUMENTATION_OF = CDAPackage.CLINICAL_DOCUMENT__DOCUMENTATION_OF;
+	int LEVEL_TWO_CONFORMANCE__DOCUMENTATION_OF = LEVEL_ONE_CONFORMANCE__DOCUMENTATION_OF;
 
 	/**
 	 * The feature id for the '<em><b>Related Document</b></em>' containment reference list.
@@ -1844,7 +1844,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__RELATED_DOCUMENT = CDAPackage.CLINICAL_DOCUMENT__RELATED_DOCUMENT;
+	int LEVEL_TWO_CONFORMANCE__RELATED_DOCUMENT = LEVEL_ONE_CONFORMANCE__RELATED_DOCUMENT;
 
 	/**
 	 * The feature id for the '<em><b>Authorization</b></em>' containment reference list.
@@ -1853,7 +1853,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__AUTHORIZATION = CDAPackage.CLINICAL_DOCUMENT__AUTHORIZATION;
+	int LEVEL_TWO_CONFORMANCE__AUTHORIZATION = LEVEL_ONE_CONFORMANCE__AUTHORIZATION;
 
 	/**
 	 * The feature id for the '<em><b>Component Of</b></em>' containment reference.
@@ -1862,7 +1862,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__COMPONENT_OF = CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF;
+	int LEVEL_TWO_CONFORMANCE__COMPONENT_OF = LEVEL_ONE_CONFORMANCE__COMPONENT_OF;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference.
@@ -1871,7 +1871,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__COMPONENT = CDAPackage.CLINICAL_DOCUMENT__COMPONENT;
+	int LEVEL_TWO_CONFORMANCE__COMPONENT = LEVEL_ONE_CONFORMANCE__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -1880,7 +1880,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__NULL_FLAVOR = CDAPackage.CLINICAL_DOCUMENT__NULL_FLAVOR;
+	int LEVEL_TWO_CONFORMANCE__NULL_FLAVOR = LEVEL_ONE_CONFORMANCE__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -1889,7 +1889,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__CLASS_CODE = CDAPackage.CLINICAL_DOCUMENT__CLASS_CODE;
+	int LEVEL_TWO_CONFORMANCE__CLASS_CODE = LEVEL_ONE_CONFORMANCE__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -1898,7 +1898,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE__MOOD_CODE = CDAPackage.CLINICAL_DOCUMENT__MOOD_CODE;
+	int LEVEL_TWO_CONFORMANCE__MOOD_CODE = LEVEL_ONE_CONFORMANCE__MOOD_CODE;
 
 	/**
 	 * The number of structural features of the '<em>Level Two Conformance</em>' class.
@@ -1907,7 +1907,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_TWO_CONFORMANCE_FEATURE_COUNT = CDAPackage.CLINICAL_DOCUMENT_FEATURE_COUNT + 0;
+	int LEVEL_TWO_CONFORMANCE_FEATURE_COUNT = LEVEL_ONE_CONFORMANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -1916,7 +1916,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__REALM_CODE = CDAPackage.CLINICAL_DOCUMENT__REALM_CODE;
+	int LEVEL_THREE_CONFORMANCE__REALM_CODE = LEVEL_TWO_CONFORMANCE__REALM_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Type Id</b></em>' containment reference.
@@ -1925,7 +1925,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__TYPE_ID = CDAPackage.CLINICAL_DOCUMENT__TYPE_ID;
+	int LEVEL_THREE_CONFORMANCE__TYPE_ID = LEVEL_TWO_CONFORMANCE__TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Template Id</b></em>' containment reference list.
@@ -1934,7 +1934,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__TEMPLATE_ID = CDAPackage.CLINICAL_DOCUMENT__TEMPLATE_ID;
+	int LEVEL_THREE_CONFORMANCE__TEMPLATE_ID = LEVEL_TWO_CONFORMANCE__TEMPLATE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -1943,7 +1943,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__ID = CDAPackage.CLINICAL_DOCUMENT__ID;
+	int LEVEL_THREE_CONFORMANCE__ID = LEVEL_TWO_CONFORMANCE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' containment reference.
@@ -1952,7 +1952,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__CODE = CDAPackage.CLINICAL_DOCUMENT__CODE;
+	int LEVEL_THREE_CONFORMANCE__CODE = LEVEL_TWO_CONFORMANCE__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' containment reference.
@@ -1961,7 +1961,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__TITLE = CDAPackage.CLINICAL_DOCUMENT__TITLE;
+	int LEVEL_THREE_CONFORMANCE__TITLE = LEVEL_TWO_CONFORMANCE__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Effective Time</b></em>' containment reference.
@@ -1970,7 +1970,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__EFFECTIVE_TIME = CDAPackage.CLINICAL_DOCUMENT__EFFECTIVE_TIME;
+	int LEVEL_THREE_CONFORMANCE__EFFECTIVE_TIME = LEVEL_TWO_CONFORMANCE__EFFECTIVE_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Confidentiality Code</b></em>' containment reference.
@@ -1979,7 +1979,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__CONFIDENTIALITY_CODE = CDAPackage.CLINICAL_DOCUMENT__CONFIDENTIALITY_CODE;
+	int LEVEL_THREE_CONFORMANCE__CONFIDENTIALITY_CODE = LEVEL_TWO_CONFORMANCE__CONFIDENTIALITY_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Language Code</b></em>' containment reference.
@@ -1988,7 +1988,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__LANGUAGE_CODE = CDAPackage.CLINICAL_DOCUMENT__LANGUAGE_CODE;
+	int LEVEL_THREE_CONFORMANCE__LANGUAGE_CODE = LEVEL_TWO_CONFORMANCE__LANGUAGE_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Set Id</b></em>' containment reference.
@@ -1997,7 +1997,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__SET_ID = CDAPackage.CLINICAL_DOCUMENT__SET_ID;
+	int LEVEL_THREE_CONFORMANCE__SET_ID = LEVEL_TWO_CONFORMANCE__SET_ID;
 
 	/**
 	 * The feature id for the '<em><b>Version Number</b></em>' containment reference.
@@ -2006,7 +2006,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__VERSION_NUMBER = CDAPackage.CLINICAL_DOCUMENT__VERSION_NUMBER;
+	int LEVEL_THREE_CONFORMANCE__VERSION_NUMBER = LEVEL_TWO_CONFORMANCE__VERSION_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Copy Time</b></em>' containment reference.
@@ -2015,7 +2015,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__COPY_TIME = CDAPackage.CLINICAL_DOCUMENT__COPY_TIME;
+	int LEVEL_THREE_CONFORMANCE__COPY_TIME = LEVEL_TWO_CONFORMANCE__COPY_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Record Target</b></em>' containment reference list.
@@ -2024,7 +2024,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__RECORD_TARGET = CDAPackage.CLINICAL_DOCUMENT__RECORD_TARGET;
+	int LEVEL_THREE_CONFORMANCE__RECORD_TARGET = LEVEL_TWO_CONFORMANCE__RECORD_TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
@@ -2033,7 +2033,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__AUTHOR = CDAPackage.CLINICAL_DOCUMENT__AUTHOR;
+	int LEVEL_THREE_CONFORMANCE__AUTHOR = LEVEL_TWO_CONFORMANCE__AUTHOR;
 
 	/**
 	 * The feature id for the '<em><b>Data Enterer</b></em>' containment reference.
@@ -2042,7 +2042,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__DATA_ENTERER = CDAPackage.CLINICAL_DOCUMENT__DATA_ENTERER;
+	int LEVEL_THREE_CONFORMANCE__DATA_ENTERER = LEVEL_TWO_CONFORMANCE__DATA_ENTERER;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -2051,7 +2051,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__INFORMANT = CDAPackage.CLINICAL_DOCUMENT__INFORMANT;
+	int LEVEL_THREE_CONFORMANCE__INFORMANT = LEVEL_TWO_CONFORMANCE__INFORMANT;
 
 	/**
 	 * The feature id for the '<em><b>Custodian</b></em>' containment reference.
@@ -2060,7 +2060,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__CUSTODIAN = CDAPackage.CLINICAL_DOCUMENT__CUSTODIAN;
+	int LEVEL_THREE_CONFORMANCE__CUSTODIAN = LEVEL_TWO_CONFORMANCE__CUSTODIAN;
 
 	/**
 	 * The feature id for the '<em><b>Information Recipient</b></em>' containment reference list.
@@ -2069,7 +2069,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__INFORMATION_RECIPIENT = CDAPackage.CLINICAL_DOCUMENT__INFORMATION_RECIPIENT;
+	int LEVEL_THREE_CONFORMANCE__INFORMATION_RECIPIENT = LEVEL_TWO_CONFORMANCE__INFORMATION_RECIPIENT;
 
 	/**
 	 * The feature id for the '<em><b>Legal Authenticator</b></em>' containment reference.
@@ -2078,7 +2078,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__LEGAL_AUTHENTICATOR = CDAPackage.CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR;
+	int LEVEL_THREE_CONFORMANCE__LEGAL_AUTHENTICATOR = LEVEL_TWO_CONFORMANCE__LEGAL_AUTHENTICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Authenticator</b></em>' containment reference list.
@@ -2087,7 +2087,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__AUTHENTICATOR = CDAPackage.CLINICAL_DOCUMENT__AUTHENTICATOR;
+	int LEVEL_THREE_CONFORMANCE__AUTHENTICATOR = LEVEL_TWO_CONFORMANCE__AUTHENTICATOR;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -2096,7 +2096,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__PARTICIPANT = CDAPackage.CLINICAL_DOCUMENT__PARTICIPANT;
+	int LEVEL_THREE_CONFORMANCE__PARTICIPANT = LEVEL_TWO_CONFORMANCE__PARTICIPANT;
 
 	/**
 	 * The feature id for the '<em><b>In Fulfillment Of</b></em>' containment reference list.
@@ -2105,7 +2105,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__IN_FULFILLMENT_OF = CDAPackage.CLINICAL_DOCUMENT__IN_FULFILLMENT_OF;
+	int LEVEL_THREE_CONFORMANCE__IN_FULFILLMENT_OF = LEVEL_TWO_CONFORMANCE__IN_FULFILLMENT_OF;
 
 	/**
 	 * The feature id for the '<em><b>Documentation Of</b></em>' containment reference list.
@@ -2114,7 +2114,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__DOCUMENTATION_OF = CDAPackage.CLINICAL_DOCUMENT__DOCUMENTATION_OF;
+	int LEVEL_THREE_CONFORMANCE__DOCUMENTATION_OF = LEVEL_TWO_CONFORMANCE__DOCUMENTATION_OF;
 
 	/**
 	 * The feature id for the '<em><b>Related Document</b></em>' containment reference list.
@@ -2123,7 +2123,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__RELATED_DOCUMENT = CDAPackage.CLINICAL_DOCUMENT__RELATED_DOCUMENT;
+	int LEVEL_THREE_CONFORMANCE__RELATED_DOCUMENT = LEVEL_TWO_CONFORMANCE__RELATED_DOCUMENT;
 
 	/**
 	 * The feature id for the '<em><b>Authorization</b></em>' containment reference list.
@@ -2132,7 +2132,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__AUTHORIZATION = CDAPackage.CLINICAL_DOCUMENT__AUTHORIZATION;
+	int LEVEL_THREE_CONFORMANCE__AUTHORIZATION = LEVEL_TWO_CONFORMANCE__AUTHORIZATION;
 
 	/**
 	 * The feature id for the '<em><b>Component Of</b></em>' containment reference.
@@ -2141,7 +2141,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__COMPONENT_OF = CDAPackage.CLINICAL_DOCUMENT__COMPONENT_OF;
+	int LEVEL_THREE_CONFORMANCE__COMPONENT_OF = LEVEL_TWO_CONFORMANCE__COMPONENT_OF;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference.
@@ -2150,7 +2150,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__COMPONENT = CDAPackage.CLINICAL_DOCUMENT__COMPONENT;
+	int LEVEL_THREE_CONFORMANCE__COMPONENT = LEVEL_TWO_CONFORMANCE__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2159,7 +2159,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__NULL_FLAVOR = CDAPackage.CLINICAL_DOCUMENT__NULL_FLAVOR;
+	int LEVEL_THREE_CONFORMANCE__NULL_FLAVOR = LEVEL_TWO_CONFORMANCE__NULL_FLAVOR;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -2168,7 +2168,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__CLASS_CODE = CDAPackage.CLINICAL_DOCUMENT__CLASS_CODE;
+	int LEVEL_THREE_CONFORMANCE__CLASS_CODE = LEVEL_TWO_CONFORMANCE__CLASS_CODE;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -2177,7 +2177,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE__MOOD_CODE = CDAPackage.CLINICAL_DOCUMENT__MOOD_CODE;
+	int LEVEL_THREE_CONFORMANCE__MOOD_CODE = LEVEL_TWO_CONFORMANCE__MOOD_CODE;
 
 	/**
 	 * The number of structural features of the '<em>Level Three Conformance</em>' class.
@@ -2186,7 +2186,7 @@ public interface CDTPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEVEL_THREE_CONFORMANCE_FEATURE_COUNT = CDAPackage.CLINICAL_DOCUMENT_FEATURE_COUNT + 0;
+	int LEVEL_THREE_CONFORMANCE_FEATURE_COUNT = LEVEL_TWO_CONFORMANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.cdt.impl.PhysicalExaminationSectionImpl <em>Physical Examination Section</em>}' class.

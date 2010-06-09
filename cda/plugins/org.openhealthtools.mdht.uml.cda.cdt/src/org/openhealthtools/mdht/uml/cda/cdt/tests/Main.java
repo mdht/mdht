@@ -23,6 +23,7 @@ import org.openhealthtools.mdht.uml.cda.cdt.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
@@ -33,6 +34,9 @@ public class Main {
 		consultationNote.setEffectiveTime(DatatypesFactory.eINSTANCE.createTS("20070303171504+0500"));
 		consultationNote.setId(DatatypesFactory.eINSTANCE.createII(UUID.randomUUID().toString(), "999021"));
 		consultationNote.setConfidentialityCode(DatatypesFactory.eINSTANCE.createCE("N", "2.16.840.1.113883.5.25"));
+		INT one = DatatypesFactory.eINSTANCE.createINT();
+		one.setValue(1);
+		consultationNote.setVersionNumber(one);
 
 //		ReasonForVisitSectionConsult visitSection = CDTFactory.eINSTANCE.createReasonForVisitSectionConsult().init();
 //		consultationNote.addSection(visitSection);

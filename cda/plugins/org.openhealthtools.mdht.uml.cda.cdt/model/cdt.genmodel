@@ -32,6 +32,22 @@
   <genPackages xsi:type="genmodel:GenPackage" prefix="CDT" basePackage="org.openhealthtools.mdht.uml.cda"
       disposableProviderFactory="true" ecorePackage="cdt.ecore#/" operationsPackage="org.openhealthtools.mdht.uml.cda.cdt.operations">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//GeneralHeaderConstraints">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTypeIdExtension">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTypeIdExtension/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTypeIdExtension/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsSetIdAndVersionNumber">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsSetIdAndVersionNumber/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsSetIdAndVersionNumber/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsSetIdAndIdAreUnique">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsSetIdAndIdAreUnique/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsSetIdAndIdAreUnique/context"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsCopyTimeNotPresent">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsCopyTimeNotPresent/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsCopyTimeNotPresent/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//GeneralHeaderConstraints/GeneralHeaderConstraintsTemplateId/context"/>
@@ -225,24 +241,9 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//ReasonForVisitSectionConsult/ReasonForVisitSectionConsultCode/context"/>
       </genOperations>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//LevelOneConformance">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//LevelOneConformance/LevelOneConformanceTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//LevelOneConformance/LevelOneConformanceTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//LevelOneConformance/LevelOneConformanceTemplateId/context"/>
-      </genOperations>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//LevelTwoConformance">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//LevelTwoConformance/LevelTwoConformanceTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//LevelTwoConformance/LevelTwoConformanceTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//LevelTwoConformance/LevelTwoConformanceTemplateId/context"/>
-      </genOperations>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//LevelThreeConformance">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//LevelThreeConformance/LevelThreeConformanceTemplateId">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//LevelThreeConformance/LevelThreeConformanceTemplateId/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//LevelThreeConformance/LevelThreeConformanceTemplateId/context"/>
-      </genOperations>
-    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//LevelOneConformance"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//LevelTwoConformance"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//LevelThreeConformance"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cdt.ecore#//PhysicalExaminationSection">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cdt.ecore#//PhysicalExaminationSection/PhysicalExaminationSectionTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cdt.ecore#//PhysicalExaminationSection/PhysicalExaminationSectionTemplateId/diagnostics"/>

@@ -153,6 +153,7 @@ public class CDTSwitch<T> {
 			case CDTPackage.LEVEL_ONE_CONFORMANCE: {
 				LevelOneConformance levelOneConformance = (LevelOneConformance)theEObject;
 				T result = caseLevelOneConformance(levelOneConformance);
+				if (result == null) result = caseGeneralHeaderConstraints(levelOneConformance);
 				if (result == null) result = caseClinicalDocument(levelOneConformance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -160,6 +161,8 @@ public class CDTSwitch<T> {
 			case CDTPackage.LEVEL_TWO_CONFORMANCE: {
 				LevelTwoConformance levelTwoConformance = (LevelTwoConformance)theEObject;
 				T result = caseLevelTwoConformance(levelTwoConformance);
+				if (result == null) result = caseLevelOneConformance(levelTwoConformance);
+				if (result == null) result = caseGeneralHeaderConstraints(levelTwoConformance);
 				if (result == null) result = caseClinicalDocument(levelTwoConformance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -167,6 +170,9 @@ public class CDTSwitch<T> {
 			case CDTPackage.LEVEL_THREE_CONFORMANCE: {
 				LevelThreeConformance levelThreeConformance = (LevelThreeConformance)theEObject;
 				T result = caseLevelThreeConformance(levelThreeConformance);
+				if (result == null) result = caseLevelTwoConformance(levelThreeConformance);
+				if (result == null) result = caseLevelOneConformance(levelThreeConformance);
+				if (result == null) result = caseGeneralHeaderConstraints(levelThreeConformance);
 				if (result == null) result = caseClinicalDocument(levelThreeConformance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
