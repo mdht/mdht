@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTPackage;
 import org.openhealthtools.mdht.uml.cda.cdt.LevelThreeConformance;
 import org.openhealthtools.mdht.uml.cda.cdt.operations.LevelThreeConformanceOperations;
-import org.openhealthtools.mdht.uml.cda.impl.ClinicalDocumentImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
@@ -25,7 +24,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *
  * @generated
  */
-public class LevelThreeConformanceImpl extends ClinicalDocumentImpl implements LevelThreeConformance {
+public class LevelThreeConformanceImpl extends LevelTwoConformanceImpl implements LevelThreeConformance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -50,8 +49,9 @@ public class LevelThreeConformanceImpl extends ClinicalDocumentImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateLevelThreeConformanceTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return LevelThreeConformanceOperations.validateLevelThreeConformanceTemplateId(this, diagnostics, context);
+	@Override
+	public boolean validateGeneralHeaderConstraintsTemplateId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return LevelThreeConformanceOperations.validateGeneralHeaderConstraintsTemplateId(this, diagnostics, context);
 	}
 
 	/**

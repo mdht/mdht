@@ -603,9 +603,9 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		consultationNoteEClass.getESuperTypes().add(this.getGeneralHeaderConstraints());
 		reasonForReferralSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		reasonForVisitSectionConsultEClass.getESuperTypes().add(theCDAPackage.getSection());
-		levelOneConformanceEClass.getESuperTypes().add(theCDAPackage.getClinicalDocument());
-		levelTwoConformanceEClass.getESuperTypes().add(theCDAPackage.getClinicalDocument());
-		levelThreeConformanceEClass.getESuperTypes().add(theCDAPackage.getClinicalDocument());
+		levelOneConformanceEClass.getESuperTypes().add(this.getGeneralHeaderConstraints());
+		levelTwoConformanceEClass.getESuperTypes().add(this.getLevelOneConformance());
+		levelThreeConformanceEClass.getESuperTypes().add(this.getLevelTwoConformance());
 		physicalExaminationSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		pastMedicalHistorySectionEClass.getESuperTypes().add(theCDAPackage.getSection());
 		reviewOfSystemsSectionEClass.getESuperTypes().add(theCDAPackage.getSection());
@@ -625,10 +625,46 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(generalHeaderConstraintsEClass, GeneralHeaderConstraints.class, "GeneralHeaderConstraints", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(generalHeaderConstraintsEClass, ecorePackage.getEBoolean(), "validateGeneralHeaderConstraintsTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(generalHeaderConstraintsEClass, ecorePackage.getEBoolean(), "validateGeneralHeaderConstraintsTypeIdExtension", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(generalHeaderConstraintsEClass, ecorePackage.getEBoolean(), "validateGeneralHeaderConstraintsSetIdAndVersionNumber", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(generalHeaderConstraintsEClass, ecorePackage.getEBoolean(), "validateGeneralHeaderConstraintsSetIdAndIdAreUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(generalHeaderConstraintsEClass, ecorePackage.getEBoolean(), "validateGeneralHeaderConstraintsCopyTimeNotPresent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(generalHeaderConstraintsEClass, ecorePackage.getEBoolean(), "validateGeneralHeaderConstraintsTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
@@ -1049,36 +1085,9 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 
 		initEClass(levelOneConformanceEClass, LevelOneConformance.class, "LevelOneConformance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(levelOneConformanceEClass, ecorePackage.getEBoolean(), "validateLevelOneConformanceTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(levelTwoConformanceEClass, LevelTwoConformance.class, "LevelTwoConformance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(levelTwoConformanceEClass, ecorePackage.getEBoolean(), "validateLevelTwoConformanceTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(levelThreeConformanceEClass, LevelThreeConformance.class, "LevelThreeConformance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(levelThreeConformanceEClass, ecorePackage.getEBoolean(), "validateLevelThreeConformanceTemplateId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(physicalExaminationSectionEClass, PhysicalExaminationSection.class, "PhysicalExaminationSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1418,9 +1427,9 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.3",
-			 "constraints.validation.error", "GeneralHeaderConstraintsTemplateId GeneralHeaderConstraintsCode GeneralHeaderConstraintsConfidentialityCode GeneralHeaderConstraintsEffectiveTime GeneralHeaderConstraintsId GeneralHeaderConstraintsLanguageCode GeneralHeaderConstraintsRealmCode GeneralHeaderConstraintsTitle GeneralHeaderConstraintsTypeId",
+			 "constraints.validation.error", "GeneralHeaderConstraintsTemplateId GeneralHeaderConstraintsTypeIdExtension GeneralHeaderConstraintsSetIdAndVersionNumber GeneralHeaderConstraintsSetIdAndIdAreUnique GeneralHeaderConstraintsCopyTimeNotPresent GeneralHeaderConstraintsCode GeneralHeaderConstraintsConfidentialityCode GeneralHeaderConstraintsEffectiveTime GeneralHeaderConstraintsId GeneralHeaderConstraintsLanguageCode GeneralHeaderConstraintsRealmCode GeneralHeaderConstraintsTitle GeneralHeaderConstraintsTypeId",
 			 "realmCode.code", "US"
-		   });																																						
+		   });																																																						
 		addAnnotation
 		  (historyAndPhysicalEClass, 
 		   source, 
@@ -1470,22 +1479,22 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.10",
-			 "constraints.validation.error", "LevelOneConformanceTemplateId"
-		   });						
+			 "constraints.validation.error", "GeneralHeaderConstraintsTemplateId"
+		   });			
 		addAnnotation
 		  (levelTwoConformanceEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.20",
-			 "constraints.validation.error", "LevelTwoConformanceTemplateId"
-		   });						
+			 "constraints.validation.error", "GeneralHeaderConstraintsTemplateId"
+		   });			
 		addAnnotation
 		  (levelThreeConformanceEClass, 
 		   source, 
 		   new String[] {
 			 "templateId.root", "2.16.840.1.113883.10.20.30",
-			 "constraints.validation.error", "LevelThreeConformanceTemplateId"
-		   });						
+			 "constraints.validation.error", "GeneralHeaderConstraintsTemplateId"
+		   });			
 		addAnnotation
 		  (physicalExaminationSectionEClass, 
 		   source, 
@@ -1641,7 +1650,7 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 	 * @generated
 	 */
 	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";																																									
+		String source = "duplicates";																																																									
 		addAnnotation
 		  (historyAndPhysicalEClass, 
 		   source, 
@@ -1651,7 +1660,22 @@ public class CDTPackageImpl extends EPackageImpl implements CDTPackage {
 		  (consultationNoteEClass, 
 		   source, 
 		   new String[] {
-		   });																																																																																																																																																																																																																																						
+		   });																																																																																	
+		addAnnotation
+		  (levelOneConformanceEClass, 
+		   source, 
+		   new String[] {
+		   });			
+		addAnnotation
+		  (levelTwoConformanceEClass, 
+		   source, 
+		   new String[] {
+		   });			
+		addAnnotation
+		  (levelThreeConformanceEClass, 
+		   source, 
+		   new String[] {
+		   });																																																																																																																																									
 	}
 
 } //CDTPackageImpl
