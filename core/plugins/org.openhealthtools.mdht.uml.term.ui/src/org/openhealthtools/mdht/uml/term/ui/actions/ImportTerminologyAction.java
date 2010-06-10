@@ -185,6 +185,7 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 	int valueSetsUpdated;
 	int codesCreated;
 	int codesUpdated;
+	int valueSetsAboveMaxCode;
 
 	private String popCleanValue(String values[], int index) {
 
@@ -208,6 +209,9 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 		valueSetsUpdated = 0;
 		codesCreated = 0;
 		codesUpdated = 0;
+		
+		valueSetsAboveMaxCode=0;
+		
 
 		resourceSet = new ResourceSetImpl();
 		resourceSet.getLoadOptions().put(XMIResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
@@ -364,9 +368,9 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 						lineCtr++;
 
-						if (lineCtr > MAXCODES) {
-							break;
-						}
+//						if (lineCtr >= MAXCODES) {
+//							break;
+//						}
 
 					} // end while
 
@@ -437,6 +441,9 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 					}
 
 					monitor.worked(1);
+				} else
+				{
+					valueSetsAboveMaxCode++;
 				}
 
 			}
@@ -594,6 +601,10 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 				final TableItem valueSetsUpdatedItem = new TableItem(table, SWT.NONE);
 				valueSetsUpdatedItem.setText(new String[] { "Value Sets Updated", String.valueOf(valueSetsUpdated) });
+				
+				
+				final TableItem valueSetsAboveMax= new TableItem(table, SWT.NONE);
+				valueSetsAboveMax.setText(new String[] { "Value Sets Codes to Large", String.valueOf(valueSetsAboveMaxCode) });
 
 				final TableItem codeSystemsCreatedItem = new TableItem(table, SWT.NONE);
 				codeSystemsCreatedItem.setText(new String[] { "New Code Systems Defined", String.valueOf(codeSystemsCreated) });
