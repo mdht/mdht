@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.hitsp.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.junit4;bundle-version="4.0.0",
+ org.openhealthtools.mdht.uml.cda.hitsp,
+ org.openhealthtools.mdht.uml.cda.ihe.test,
+ org.openhealthtools.mdht.uml.cda.ccd.test,
+ org.openhealthtools.mdht.uml.cda.test
