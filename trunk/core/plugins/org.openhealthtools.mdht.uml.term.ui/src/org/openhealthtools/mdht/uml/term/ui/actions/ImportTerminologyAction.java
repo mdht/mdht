@@ -192,7 +192,7 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 		if (index < values.length) {
 			if (values[index] != null) {
-				result = values[index].replaceAll("[^a-zA-Z0-9]", "");
+				result = values[index].replaceAll("[^a-zA-Z0-9]", " ");
 			}
 		}
 
@@ -330,7 +330,7 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 							} else {
 								valueSet = UMLFactory.eINSTANCE.createEnumeration();
 								umlPackage.getOwnedTypes().add(valueSet);
-								Stereotype s = TermProfileUtil.applyStereotype(valueSet, ITermProfileConstants.VALUE_SET_VERSION);
+								TermProfileUtil.applyStereotype(valueSet, ITermProfileConstants.VALUE_SET_VERSION);
 								valueSetsCreated++;
 							}
 
