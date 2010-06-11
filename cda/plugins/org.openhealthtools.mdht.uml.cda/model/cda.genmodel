@@ -1786,6 +1786,10 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/hasTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Observation/hasTemplateId/templateId"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Observation/getEntryRelationshipTargets">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Observation/getEntryRelationshipTargets/typeCode"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Observation/getEntryRelationshipTargets/targetClass"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//ReferenceRange">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
