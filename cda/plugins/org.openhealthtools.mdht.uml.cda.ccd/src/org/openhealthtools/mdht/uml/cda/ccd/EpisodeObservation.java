@@ -26,15 +26,12 @@ public interface EpisodeObservation extends Observation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->one(entry : cda::EntryRelationship | 
-	 *   entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and
-	 *   (not entry.act.oclIsUndefined() or not entry.observation.oclIsUndefined()))
-	 * -- Cannot test for target type without resolving id reference (see HL7 CCD sample document)
-	 * --  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))
+	 * self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, ccd::ProblemAct)->size() = 1
+	 *   or self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, ccd::SocialHistoryObservation)->size() = 1
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->one(entry : cda::EntryRelationship | \r\n  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ and\r\n  (not entry.act.oclIsUndefined() or not entry.observation.oclIsUndefined()))\r\n-- Cannot test for target type without resolving id reference (see HL7 CCD sample document)\r\n--  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, ccd::ProblemAct)->size() = 1\r\n  or self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, ccd::SocialHistoryObservation)->size() = 1'"
 	 * @generated
 	 */
 	boolean validateEpisodeObservationOneEntryRelationshipSUBJ(DiagnosticChain diagnostics, Map<Object, Object> context);
