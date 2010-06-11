@@ -72,6 +72,7 @@ import org.openhealthtools.mdht.uml.cda.StructuredBody;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResource;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
@@ -716,35 +717,6 @@ public class CDAUtil {
 		return sections;
 	}
 
-	public static  EList<EObject> getEntryRelationshipTargets(EObject source, x_ActRelationshipEntryRelationship typeCode, EClass targetClass) {
-		if (targetClass == null) {
-			return new BasicEList.UnmodifiableEList<EObject>(0, new Object[0]);
-		}
-
-		// test children
-		List<EntryRelationship> relationships = new ArrayList<EntryRelationship>();
-		for (EntryRelationship rel : CDAUtil.getEntryRelationships(source)) {
-			boolean typeCodeMatch = typeCode==null ? true : typeCode.equals(rel.getTypeCode());
-			EObject target = CDAUtil.getClinicalStatement(rel);
-			if (Boolean.FALSE == rel.getInversionInd() && typeCodeMatch
-					&& target != null && targetClass.equals(target.eClass())) {
-				relationships.add(rel);
-			}
-		}
-		
-		// test container with inversionInd="true"
-		if (source.eContainer() instanceof EntryRelationship) {
-			EntryRelationship rel = (EntryRelationship) source.eContainer();
-			boolean typeCodeMatch = typeCode==null ? true : typeCode.equals(rel.getTypeCode());
-			if (Boolean.TRUE == rel.getInversionInd() && typeCodeMatch
-					&& targetClass.equals(rel.eContainer().eClass())) {
-				relationships.add(rel);
-			}
-		}
-		
-		return new BasicEList.UnmodifiableEList<EObject>(relationships.size(), relationships.toArray());
-	}
-
 	// get first clinical statement that conforms to clazz and is accepted by filter
 	public static <T extends EObject> T getClinicalStatement(ClinicalDocument clinicalDocument, Class<T> clazz, Filter<T> filter) {
 		List<T> clinicalStatements = getClinicalStatements(clinicalDocument, clazz, filter);
@@ -786,6 +758,99 @@ public class CDAUtil {
 			allClinicalStatements.addAll(getClinicalStatements(section));
 		}
 		return allClinicalStatements;
+	}
+
+	/**
+	 * 
+	 * @param source a Clinical Statement
+	 * @param typeCode If typeCode is null, then all relationships are matched.
+	 * @param targetClass EClass of relationship target, cannot be null.
+	 * @return list of Clinical Statements
+	 */
+	public static  EList<EObject> getEntryRelationshipTargets(EObject source, x_ActRelationshipEntryRelationship typeCode, EClass targetClass) {
+		if (targetClass == null) {
+			return new BasicEList.UnmodifiableEList<EObject>(0, new Object[0]);
+		}
+
+		// test children
+		List<EntryRelationship> relationships = new ArrayList<EntryRelationship>();
+		for (EntryRelationship rel : CDAUtil.getEntryRelationships(source)) {
+			boolean typeCodeMatch = typeCode==null ? true : typeCode.equals(rel.getTypeCode());
+			EObject target = CDAUtil.getClinicalStatement(rel);
+			if (target != null && isReference(target)) {
+				// resolve 'id' referenced elements
+				EObject element = resolveReference(target);
+				if (element != null)
+					target = element;
+			}
+			if ((Boolean.FALSE == rel.getInversionInd() || null == rel.getInversionInd())
+					&& typeCodeMatch
+					&& target != null && targetClass.equals(target.eClass())) {
+				relationships.add(rel);
+			}
+		}
+		
+		// test container with inversionInd="true"
+		if (source.eContainer() instanceof EntryRelationship) {
+			EntryRelationship rel = (EntryRelationship) source.eContainer();
+			boolean typeCodeMatch = typeCode==null ? true : typeCode.equals(rel.getTypeCode());
+			if (Boolean.TRUE == rel.getInversionInd() && typeCodeMatch
+					&& targetClass.equals(rel.eContainer().eClass())) {
+				relationships.add(rel);
+			}
+		}
+		
+		return new BasicEList.UnmodifiableEList<EObject>(relationships.size(), relationships.toArray());
+	}
+	
+	/**
+	 * A CDA element may be reference if it has an 'id' child, but no 'templateId'.
+	 */
+	public static boolean isReference(EObject element) {
+		EObject id = get(element, "id");
+		EObject templateId = get(element, "templateId");
+		
+		return templateId == null && id instanceof II && ((II)id).getRoot() != null;
+	}
+	
+	/**
+	 * Return the referenced element, or null if 'element' argument is not a reference
+	 * or referenced id is not found. Referenced object must conform to 'element' type.
+	 */
+	public static EObject resolveReference(EObject element) {
+		if (!isReference(element)) {
+			return null;
+		}
+		final II id = (II) get(element, "id");
+		
+		ClinicalDocument clinicalDocument = null;
+		EObject container = element;
+		while (clinicalDocument == null && container != null) {
+			if (container instanceof ClinicalDocument)
+				clinicalDocument = (ClinicalDocument)container;
+			else
+				container = container.eContainer();
+		}
+
+		EObject target = null;
+		if (clinicalDocument != null) {
+			Query query = new Query(clinicalDocument);
+			target = query.getEObject(EObject.class, new Filter<EObject>() {
+	
+				public boolean accept(EObject item) {
+					EObject itemId = get(item, "id");
+					EObject templateId = get(item, "templateId");
+	
+					if (itemId instanceof II && templateId != null &&
+							id.getRoot().equals(((II)itemId).getRoot())) {
+						return true;
+					}
+					return false;
+				}
+			});
+		}
+		
+		return target;
 	}
 
 	private static List<EObject> getClinicalStatements(Section section) {
