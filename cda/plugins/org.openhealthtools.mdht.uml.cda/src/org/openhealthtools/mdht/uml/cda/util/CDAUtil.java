@@ -842,7 +842,7 @@ public class CDAUtil {
 					EObject templateId = get(item, "templateId");
 	
 					if (itemId instanceof II && templateId != null &&
-							id.getRoot().equals(((II)itemId).getRoot())) {
+							isEqual(id, (II)itemId)) {
 						return true;
 					}
 					return false;
@@ -851,6 +851,24 @@ public class CDAUtil {
 		}
 		
 		return target;
+	}
+	
+	private static boolean isEqual(II id1, II id2) {
+		if (id1 == null && id2 == null) {
+			return true;
+		}
+		else if (id1 == null || id2 == null) {
+			return false;
+		}
+		
+		String id1Root = id1.getRoot();
+		String id1Ext = id1.getExtension();
+		String id2Root = id2.getRoot();
+		String id2Ext = id2.getExtension();
+		
+		return id1Root != null && id1Root.equals(id2Root)
+			&& (id1Ext == null && id2Ext == null)
+				|| (id1Ext != null && id1Ext.equals(id2Ext));
 	}
 
 	private static List<EObject> getClinicalStatements(Section section) {
