@@ -118,11 +118,8 @@ public class EpisodeObservationOperations extends ObservationOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_EPISODE_OBSERVATION_EXISTS_ENTRY_RELATIONSHIP_SAS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.entryRelationship->exists(entry : cda::EntryRelationship | "+
-"  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SAS and"+
-"  (not entry.act.oclIsUndefined() or not entry.observation.oclIsUndefined()))"+
-"-- Cannot test for target type without resolving id reference (see HL7 CCD sample document)"+
-"--  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))";
+	protected static final String VALIDATE_EPISODE_OBSERVATION_EXISTS_ENTRY_RELATIONSHIP_SAS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::ProblemAct)->size() >0"+
+"  or self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::SocialHistoryObservation)->size() > 0";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateEpisodeObservationExistsEntryRelationshipSAS(EpisodeObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Episode Observation Exists Entry Relationship SAS</em>}' invariant operation.
@@ -138,11 +135,8 @@ public class EpisodeObservationOperations extends ObservationOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->exists(entry : cda::EntryRelationship | 
-	 *   entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SAS and
-	 *   (not entry.act.oclIsUndefined() or not entry.observation.oclIsUndefined()))
-	 * -- Cannot test for target type without resolving id reference (see HL7 CCD sample document)
-	 * --  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))
+	 * self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::ProblemAct)->size() >0
+	 *   or self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::SocialHistoryObservation)->size() > 0
 	 * @param episodeObservation The receiving '<em><b>Episode Observation</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.

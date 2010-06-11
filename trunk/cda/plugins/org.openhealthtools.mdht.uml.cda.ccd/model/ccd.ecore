@@ -1593,10 +1593,10 @@
     </eOperations>
     <eOperations name="EpisodeObservationExistsEntryRelationshipSAS" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->exists(entry : cda::EntryRelationship | &#xD;&#xA;  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SAS and&#xD;&#xA;  (not entry.act.oclIsUndefined() or not entry.observation.oclIsUndefined()))&#xD;&#xA;-- Cannot test for target type without resolving id reference (see HL7 CCD sample document)&#xD;&#xA;--  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))"/>
+        <details key="body" value="self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::ProblemAct)->size() >0&#xD;&#xA;  or self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::SocialHistoryObservation)->size() > 0"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->exists(entry : cda::EntryRelationship | &#xD;&#xA;  entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SAS and&#xD;&#xA;  (not entry.act.oclIsUndefined() or not entry.observation.oclIsUndefined()))&#xD;&#xA;-- Cannot test for target type without resolving id reference (see HL7 CCD sample document)&#xD;&#xA;--  ((not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct)) or (not entry.observation.oclIsUndefined() and entry.observation.oclIsKindOf(ccd::SocialHistoryObservation))))"/>
+        <details key="documentation" value="self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::ProblemAct)->size() >0&#xD;&#xA;  or self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SAS, ccd::SocialHistoryObservation)->size() > 0"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
