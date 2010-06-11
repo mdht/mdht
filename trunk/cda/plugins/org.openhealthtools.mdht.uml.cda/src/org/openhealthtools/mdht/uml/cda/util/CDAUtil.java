@@ -29,7 +29,9 @@ import java.util.regex.Pattern;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
@@ -70,6 +72,7 @@ import org.openhealthtools.mdht.uml.cda.StructuredBody;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResource;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
@@ -711,6 +714,35 @@ public class CDAUtil {
 			}
 		}
 		return sections;
+	}
+
+	public static  EList<EObject> getEntryRelationshipTargets(EObject source, x_ActRelationshipEntryRelationship typeCode, EClass targetClass) {
+		if (targetClass == null) {
+			return new BasicEList.UnmodifiableEList<EObject>(0, new Object[0]);
+		}
+
+		// test children
+		List<EntryRelationship> relationships = new ArrayList<EntryRelationship>();
+		for (EntryRelationship rel : CDAUtil.getEntryRelationships(source)) {
+			boolean typeCodeMatch = typeCode==null ? true : typeCode.equals(rel.getTypeCode());
+			EObject target = CDAUtil.getClinicalStatement(rel);
+			if (Boolean.FALSE == rel.getInversionInd() && typeCodeMatch
+					&& target != null && targetClass.equals(target.eClass())) {
+				relationships.add(rel);
+			}
+		}
+		
+		// test container with inversionInd="true"
+		if (source.eContainer() instanceof EntryRelationship) {
+			EntryRelationship rel = (EntryRelationship) source.eContainer();
+			boolean typeCodeMatch = typeCode==null ? true : typeCode.equals(rel.getTypeCode());
+			if (Boolean.TRUE == rel.getInversionInd() && typeCodeMatch
+					&& targetClass.equals(rel.eContainer().eClass())) {
+				relationships.add(rel);
+			}
+		}
+		
+		return new BasicEList.UnmodifiableEList<EObject>(relationships.size(), relationships.toArray());
 	}
 
 	// get first clinical statement that conforms to clazz and is accepted by filter
