@@ -21,6 +21,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -35,7 +37,25 @@ import org.apache.axis2.client.ServiceClient;
 import org.apache.xerces.parsers.SAXParser;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.jface.dialogs.InputDialog;
+import org.eclipse.jface.window.Window;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Dialog;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.MessageBox;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.wst.validation.ValidationResult;
 import org.eclipse.wst.validation.ValidationState;
 import org.eclipse.wst.validation.internal.provisional.core.IMessage;
@@ -60,16 +80,49 @@ public class NISTValidator extends AbstractNestedValidator {
 		ServiceClient serviceClient = null;
 		OMFactory factory = null;
 		OMNamespace namespace = null;
-		String specification;
 
-		public void getSpecificationList() throws ParserConfigurationException, IOException, SAXException {
-			OMElement method = factory.createOMElement("getAvailableValidations", namespace);
-			OMElement result = serviceClient.sendReceive(method);
-			WSSpecification[] results = WSSpecification.processMultiple(result, "return");
-			for (int i = 0; i < results.length; i++) {
-				WSSpecification docType = results[i];
-				System.out.println(docType.toString());
+		ArrayList<String> specificationIDs = new ArrayList<String>();
+
+		ArrayList<String> specificationNames = new ArrayList<String>();
+
+		int getSelected(String specificationId) {
+			return specificationIDs.indexOf(specificationId);
+		}
+
+		public ArrayList<String> getSpecificationNames() {
+
+			try {
+				if (specificationNames.isEmpty()) {
+					if (wsTarget == null) {
+
+						init(null);
+					}
+					OMElement method = factory.createOMElement("getAvailableValidations", namespace);
+					OMElement result = serviceClient.sendReceive(method);
+					WSSpecification[] results = WSSpecification.processMultiple(result, "return");
+
+					for (int i = 0; i < results.length; i++) {
+						WSSpecification docType = results[i];
+						specificationIDs.add(docType.getSpecificationId());
+						specificationNames.add(docType.getName());
+					}
+
+				}
+			} catch (AxisFault e) {
+
 			}
+
+			return specificationNames;
+
+		}
+
+		String getSpecificationID(int index) {
+			if (index < specificationIDs.size()) {
+				return specificationIDs.get(index);
+			} else {
+				return "UNKNOWN SPECIFICATION";
+			}
+
 		}
 
 		public String convertStreamToString(InputStream is) throws IOException {
@@ -98,12 +151,11 @@ public class NISTValidator extends AbstractNestedValidator {
 			}
 		}
 
-		public NISTDocumentEventProcessor(String specification) {
+		public NISTDocumentEventProcessor() {
 			super();
-			this.specification = specification;
 		}
 
-		public void init(String target) throws AxisFault {
+		private void init(String target) throws AxisFault {
 			if (target != null)
 				wsTarget = new EndpointReference(target);
 			else
@@ -120,6 +172,11 @@ public class NISTValidator extends AbstractNestedValidator {
 		}
 
 		public WSIndividualValidationResult[] validate(InputStream is, String specificationId) throws ParserConfigurationException, IOException, SAXException {
+
+			if (wsTarget == null) {
+				init(null);
+			}
+
 			OMElement method = factory.createOMElement("validateDocument", namespace);
 			OMElement specification = factory.createOMElement("specificationId", namespace);
 			OMElement document = factory.createOMElement("document", namespace);
@@ -145,8 +202,6 @@ public class NISTValidator extends AbstractNestedValidator {
 	}
 
 	private static final String NIST_CDA_VALIDATOR_CONTEXT = "org.openhealthtools.mdht.cda.xml.nist.validatorContext"; //$NON-NLS-1$
-
-	// protected int indicateNoGrammar = 0;
 
 	/**
 	 * 
@@ -182,22 +237,131 @@ public class NISTValidator extends AbstractNestedValidator {
 
 	}
 
+	String specification = null;
+
+	NISTDocumentEventProcessor nist = new NISTDocumentEventProcessor();
 
 	public ValidationReport validate(String uri, InputStream inputstream, NestedValidatorContext context, ValidationResult result)
 
 	{
-
-
 		final CDAValidationReport valreport = new CDAValidationReport(uri);
 
 		final String cdauri = uri;
 
-		DatatypesPackage.eINSTANCE.eClass();
-
 		try {
+
+			nist.init(null);
+
+			Display.getDefault().syncExec(new Runnable() {
+
+				public void run() {
+
+					final Shell shell = new Shell(Display.getCurrent().getActiveShell(), SWT.TITLE | SWT.BORDER | SWT.APPLICATION_MODAL);
+
+					shell.setText("NIST CDA Specification Definition");
+
+					shell.setLayout(new GridLayout(4, false));
+
+					GridData gridData = new GridData();
+
+					gridData.grabExcessHorizontalSpace = true;
+
+					gridData.grabExcessVerticalSpace = true;
+
+					gridData.horizontalAlignment = SWT.CENTER;
+
+					gridData.verticalAlignment = SWT.TOP;
+
+					gridData.minimumHeight = 800;
+
+					gridData.minimumWidth = 800;
+
+					shell.setLayoutData(gridData);
+
+					final Combo combo = new Combo(shell, SWT.DROP_DOWN | SWT.READ_ONLY);
+
+					for (String name : nist.getSpecificationNames()) {
+						combo.add(name);
+					}
+
+					combo.select(nist.getSelected(specification));
+					
+					specification = null;
+
+					gridData = new GridData();
+
+					gridData.grabExcessHorizontalSpace = true;
+
+					gridData.grabExcessVerticalSpace = true;
+
+					gridData.horizontalSpan = 4;
+
+					gridData.horizontalAlignment = SWT.LEFT;
+
+					combo.setLayoutData(gridData);
+
+					gridData = new GridData();
+
+					gridData.grabExcessHorizontalSpace = true;
+
+					gridData.grabExcessVerticalSpace = true;
+
+					gridData.horizontalAlignment = SWT.CENTER;
+
+					final Button buttonOK = new Button(shell, SWT.PUSH);
+					buttonOK.setText("Ok");
+					buttonOK.setLayoutData(gridData);
+
+					gridData = new GridData();
+
+					gridData.grabExcessHorizontalSpace = true;
+
+					gridData.grabExcessVerticalSpace = true;
+
+					gridData.horizontalAlignment = SWT.RIGHT;
+
+					Button buttonCancel = new Button(shell, SWT.PUSH);
+					buttonCancel.setText("Cancel");
+					buttonCancel.setLayoutData(gridData);
+
+					buttonOK.addListener(SWT.Selection, new Listener() {
+						public void handleEvent(Event event) {
+
+							if (combo.getSelectionIndex() > 0) {
+								specification = nist.getSpecificationID(combo.getSelectionIndex());
+							}
+
+							shell.dispose();
+						}
+					});
+
+					buttonCancel.addListener(SWT.Selection, new Listener() {
+						public void handleEvent(Event event) {
+							shell.dispose();
+						}
+					});
+
+					shell.addListener(SWT.Traverse, new Listener() {
+						public void handleEvent(Event event) {
+							if (event.detail == SWT.TRAVERSE_ESCAPE)
+								event.doit = false;
+						}
+					});
+					shell.pack();
+					shell.open();
+
+					Display display = Display.getCurrent();
+					while (!shell.isDisposed()) {
+						if (!display.readAndDispatch())
+							display.sleep();
+					}
+
+				}
+			});
+
 			URI hl7ModelURI = URI.createURI(uri);
 
-			if (hl7ModelURI.isFile()) {
+			if (specification!=null && hl7ModelURI.isFile()) {
 
 				InputSource inputSource = new InputSource(hl7ModelURI.path());
 
@@ -211,14 +375,9 @@ public class NISTValidator extends AbstractNestedValidator {
 
 				parser.parse(hl7ModelURI.path());
 
-
-				NISTDocumentEventProcessor nist = new NISTDocumentEventProcessor("c32_v2_5");
-
-				nist.init(null);
-
 				InputStream is = new FileInputStream(hl7ModelURI.path());
 
-				WSIndividualValidationResult[] validationResults = nist.validate(is, "c32_v2_5");
+				WSIndividualValidationResult[] validationResults = nist.validate(is, specification);
 
 				for (WSIndividualValidationResult validationResult : validationResults) {
 
@@ -242,15 +401,19 @@ public class NISTValidator extends AbstractNestedValidator {
 
 					}
 
-
 				}
 
+			} else
+			{
+				valreport.addWarning("Validation Service Request Cancelled", 0, 0, cdauri);
 			}
 
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
 
+		
+		
 		return valreport;
 
 	}
