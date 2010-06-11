@@ -17,6 +17,33 @@
       [Enter License Description here.]
    </license>
 
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.util.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.ccd.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="false"
+         unpack="false"/>
+   <plugin
+         id="org.openhealthtools.mdht.uml.cda.ccd.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="false"
+         unpack="false"/>
+
+
+
+
+
    <plugin
          id="org.openhealthtools.mdht.uml.common.test"
          download-size="0"
