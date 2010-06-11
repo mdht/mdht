@@ -18,6 +18,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -59,6 +60,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -1581,6 +1583,15 @@ public class ObservationImpl extends EObjectImpl implements Observation {
 	 */
 	public boolean hasTemplateId(String templateId) {
 		return ObservationOperations.hasTemplateId(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EObject> getEntryRelationshipTargets(x_ActRelationshipEntryRelationship typeCode, Object targetClass) {
+		return ObservationOperations.getEntryRelationshipTargets(this, typeCode, targetClass);
 	}
 
 	/**

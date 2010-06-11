@@ -26,6 +26,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -1163,5 +1164,13 @@ public interface Observation extends EObject {
 	 * @generated
 	 */
 	boolean hasTemplateId(String templateId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false" typeCodeRequired="true" typeCodeOrdered="false" targetClassRequired="true" targetClassOrdered="false"
+	 * @generated
+	 */
+	EList<EObject> getEntryRelationshipTargets(x_ActRelationshipEntryRelationship typeCode, Object targetClass);
 
 } // Observation

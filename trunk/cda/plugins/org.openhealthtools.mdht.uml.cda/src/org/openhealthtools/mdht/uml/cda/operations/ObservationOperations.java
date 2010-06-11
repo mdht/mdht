@@ -16,7 +16,9 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.OCL;
@@ -36,6 +38,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,6 +79,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Observation#hasSubstanceAdministrationTemplate(java.lang.String) <em>Has Substance Administration Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Observation#hasSupplyTemplate(java.lang.String) <em>Has Supply Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Observation#hasTemplateId(java.lang.String) <em>Has Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Observation#getEntryRelationshipTargets(org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship, java.lang.Object) <em>Get Entry Relationship Targets</em>}</li>
  * </ul>
  * </p>
  *
@@ -1137,6 +1141,18 @@ public class ObservationOperations {
 		EvaluationEnvironment<?, ?, ?, ?, ?> environment = query.getEvaluationEnvironment();
 		environment.add("templateId", templateId);
 		return ((Boolean) query.evaluate(observation)).booleanValue();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static  EList<EObject> getEntryRelationshipTargets(Observation observation, x_ActRelationshipEntryRelationship typeCode, Object targetClass) {
+		if (!(targetClass instanceof EClass))
+			throw new IllegalArgumentException("targetClass must be an EClass");
+			
+		return CDAUtil.getEntryRelationshipTargets(observation, typeCode, (EClass)targetClass);
 	}
 
 } // ObservationOperations
