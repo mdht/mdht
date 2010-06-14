@@ -55,6 +55,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getMaritalStatusCode <em>Marital Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getReligiousAffiliationCode <em>Religious Affiliation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getRaceCode <em>Race Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getSDTCRaceCodes <em>SDTC Race Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getEthnicGroupCode <em>Ethnic Group Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getGuardians <em>Guardian</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PatientImpl#getBirthplace <em>Birthplace</em>}</li>
@@ -167,6 +168,16 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	 * @ordered
 	 */
 	protected CE raceCode;
+
+	/**
+	 * The cached value of the '{@link #getSDTCRaceCodes() <em>SDTC Race Code</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCRaceCodes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CE> sDTCRaceCodes;
 
 	/**
 	 * The cached value of the '{@link #getEthnicGroupCode() <em>Ethnic Group Code</em>}' containment reference.
@@ -656,6 +667,18 @@ public class PatientImpl extends EObjectImpl implements Patient {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<CE> getSDTCRaceCodes() {
+		if (sDTCRaceCodes == null) {
+			sDTCRaceCodes = new EObjectContainmentEList<CE>(CE.class, this, CDAPackage.PATIENT__SDTC_RACE_CODE);
+		}
+		return sDTCRaceCodes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CE getEthnicGroupCode() {
 		return ethnicGroupCode;
 	}
@@ -927,6 +950,8 @@ public class PatientImpl extends EObjectImpl implements Patient {
 				return basicSetReligiousAffiliationCode(null, msgs);
 			case CDAPackage.PATIENT__RACE_CODE:
 				return basicSetRaceCode(null, msgs);
+			case CDAPackage.PATIENT__SDTC_RACE_CODE:
+				return ((InternalEList<?>)getSDTCRaceCodes()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PATIENT__ETHNIC_GROUP_CODE:
 				return basicSetEthnicGroupCode(null, msgs);
 			case CDAPackage.PATIENT__GUARDIAN:
@@ -967,6 +992,8 @@ public class PatientImpl extends EObjectImpl implements Patient {
 				return getReligiousAffiliationCode();
 			case CDAPackage.PATIENT__RACE_CODE:
 				return getRaceCode();
+			case CDAPackage.PATIENT__SDTC_RACE_CODE:
+				return getSDTCRaceCodes();
 			case CDAPackage.PATIENT__ETHNIC_GROUP_CODE:
 				return getEthnicGroupCode();
 			case CDAPackage.PATIENT__GUARDIAN:
@@ -1026,6 +1053,10 @@ public class PatientImpl extends EObjectImpl implements Patient {
 				return;
 			case CDAPackage.PATIENT__RACE_CODE:
 				setRaceCode((CE)newValue);
+				return;
+			case CDAPackage.PATIENT__SDTC_RACE_CODE:
+				getSDTCRaceCodes().clear();
+				getSDTCRaceCodes().addAll((Collection<? extends CE>)newValue);
 				return;
 			case CDAPackage.PATIENT__ETHNIC_GROUP_CODE:
 				setEthnicGroupCode((CE)newValue);
@@ -1092,6 +1123,9 @@ public class PatientImpl extends EObjectImpl implements Patient {
 			case CDAPackage.PATIENT__RACE_CODE:
 				setRaceCode((CE)null);
 				return;
+			case CDAPackage.PATIENT__SDTC_RACE_CODE:
+				getSDTCRaceCodes().clear();
+				return;
 			case CDAPackage.PATIENT__ETHNIC_GROUP_CODE:
 				setEthnicGroupCode((CE)null);
 				return;
@@ -1145,6 +1179,8 @@ public class PatientImpl extends EObjectImpl implements Patient {
 				return religiousAffiliationCode != null;
 			case CDAPackage.PATIENT__RACE_CODE:
 				return raceCode != null;
+			case CDAPackage.PATIENT__SDTC_RACE_CODE:
+				return sDTCRaceCodes != null && !sDTCRaceCodes.isEmpty();
 			case CDAPackage.PATIENT__ETHNIC_GROUP_CODE:
 				return ethnicGroupCode != null;
 			case CDAPackage.PATIENT__GUARDIAN:

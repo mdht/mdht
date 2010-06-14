@@ -37,6 +37,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssignedEntity;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getAddrs <em>Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getTelecoms <em>Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getAssignedPerson <em>Assigned Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getRepresentedOrganizations <em>Represented Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getNullFlavor <em>Null Flavor</em>}</li>
@@ -61,7 +62,7 @@ public interface AssignedEntity extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedEntity_RealmCode()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='realmCode' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<CS> getRealmCodes();
@@ -78,7 +79,7 @@ public interface AssignedEntity extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedEntity_TypeId()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='typeId' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -105,7 +106,7 @@ public interface AssignedEntity extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedEntity_TemplateId()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='templateId' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<II> getTemplateIds();
@@ -122,7 +123,7 @@ public interface AssignedEntity extends EObject {
 	 * @return the value of the '<em>Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedEntity_Id()
 	 * @model containment="true" required="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='id' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<II> getIds();
@@ -139,7 +140,7 @@ public interface AssignedEntity extends EObject {
 	 * @see #setCode(CE)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedEntity_Code()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='code' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	CE getCode();
@@ -166,7 +167,7 @@ public interface AssignedEntity extends EObject {
 	 * @return the value of the '<em>Addr</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedEntity_Addr()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='addr' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<AD> getAddrs();
@@ -183,10 +184,37 @@ public interface AssignedEntity extends EObject {
 	 * @return the value of the '<em>Telecom</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedEntity_Telecom()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='telecom' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<TEL> getTelecoms();
+
+	/**
+	 * Returns the value of the '<em><b>SDTC Patient</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>SDTC Patient</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>SDTC Patient</em>' containment reference.
+	 * @see #setSDTCPatient(SDTCPatient)
+	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedEntity_SDTCPatient()
+	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="name='patient' namespace='urn:hl7-org:sdtc' kind='element'"
+	 * @generated
+	 */
+	SDTCPatient getSDTCPatient();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getSDTCPatient <em>SDTC Patient</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>SDTC Patient</em>' containment reference.
+	 * @see #getSDTCPatient()
+	 * @generated
+	 */
+	void setSDTCPatient(SDTCPatient value);
 
 	/**
 	 * Returns the value of the '<em><b>Assigned Person</b></em>' containment reference.
@@ -248,6 +276,7 @@ public interface AssignedEntity extends EObject {
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedEntity_NullFlavor()
 	 * @model unsettable="true" ordered="false"
+	 *        extendedMetaData="name='nullFlavor' kind='attribute'"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -305,6 +334,7 @@ public interface AssignedEntity extends EObject {
 	 * @see #setClassCode(RoleClassAssignedEntity)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getAssignedEntity_ClassCode()
 	 * @model default="ASSIGNED" unsettable="true" ordered="false"
+	 *        extendedMetaData="name='classCode' kind='attribute'"
 	 * @generated
 	 */
 	RoleClassAssignedEntity getClassCode();

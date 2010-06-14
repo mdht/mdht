@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -33,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Person#getTypeId <em>Type Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Person#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Person#getNames <em>Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Person#getSDTCBirthTime <em>SDTC Birth Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Person#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Person#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Person#getDeterminerCode <em>Determiner Code</em>}</li>
@@ -56,7 +58,7 @@ public interface Person extends EObject {
 	 * @return the value of the '<em>Realm Code</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerson_RealmCode()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='realmCode' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<CS> getRealmCodes();
@@ -73,7 +75,7 @@ public interface Person extends EObject {
 	 * @see #setTypeId(InfrastructureRootTypeId)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerson_TypeId()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='typeId' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	InfrastructureRootTypeId getTypeId();
@@ -100,7 +102,7 @@ public interface Person extends EObject {
 	 * @return the value of the '<em>Template Id</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerson_TemplateId()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='templateId' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<II> getTemplateIds();
@@ -117,10 +119,37 @@ public interface Person extends EObject {
 	 * @return the value of the '<em>Name</em>' containment reference list.
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerson_Name()
 	 * @model containment="true" ordered="false"
-	 *        extendedMetaData="namespace='##targetNamespace'"
+	 *        extendedMetaData="name='name' namespace='##targetNamespace' kind='element'"
 	 * @generated
 	 */
 	EList<PN> getNames();
+
+	/**
+	 * Returns the value of the '<em><b>SDTC Birth Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>SDTC Birth Time</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>SDTC Birth Time</em>' containment reference.
+	 * @see #setSDTCBirthTime(TS)
+	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerson_SDTCBirthTime()
+	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="name='birthTime' namespace='urn:hl7-org:sdtc' kind='element'"
+	 * @generated
+	 */
+	TS getSDTCBirthTime();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.Person#getSDTCBirthTime <em>SDTC Birth Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>SDTC Birth Time</em>' containment reference.
+	 * @see #getSDTCBirthTime()
+	 * @generated
+	 */
+	void setSDTCBirthTime(TS value);
 
 	/**
 	 * Returns the value of the '<em><b>Null Flavor</b></em>' attribute.
@@ -138,6 +167,7 @@ public interface Person extends EObject {
 	 * @see #setNullFlavor(NullFlavor)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerson_NullFlavor()
 	 * @model unsettable="true" ordered="false"
+	 *        extendedMetaData="name='nullFlavor' kind='attribute'"
 	 * @generated
 	 */
 	NullFlavor getNullFlavor();
@@ -195,6 +225,7 @@ public interface Person extends EObject {
 	 * @see #setClassCode(EntityClass)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerson_ClassCode()
 	 * @model default="PSN" unsettable="true" ordered="false"
+	 *        extendedMetaData="name='classCode' kind='attribute'"
 	 * @generated
 	 */
 	EntityClass getClassCode();
@@ -252,6 +283,7 @@ public interface Person extends EObject {
 	 * @see #setDeterminerCode(EntityDeterminer)
 	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPerson_DeterminerCode()
 	 * @model default="INSTANCE" unsettable="true" ordered="false"
+	 *        extendedMetaData="name='determinerCode' kind='attribute'"
 	 * @generated
 	 */
 	EntityDeterminer getDeterminerCode();

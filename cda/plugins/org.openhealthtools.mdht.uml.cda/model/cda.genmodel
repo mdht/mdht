@@ -173,6 +173,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Patient/raceCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Patient/sDTCRaceCode"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Patient/ethnicGroupCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Patient/guardian"/>
@@ -219,6 +221,8 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Person/templateId"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Person/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//Person/sDTCBirthTime"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Person/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Person/classCode"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//Person/determinerCode"/>
@@ -419,11 +423,17 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//AssignedEntity/telecom"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//AssignedEntity/sDTCPatient"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//AssignedEntity/assignedPerson"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//AssignedEntity/representedOrganization"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AssignedEntity/nullFlavor"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//AssignedEntity/classCode"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//SDTCPatient">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//SDTCPatient/id"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Informant12">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -459,6 +469,8 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//RelatedEntity/telecom"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//RelatedEntity/effectiveTime"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//RelatedEntity/sDTCPatient"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//RelatedEntity/relatedPerson"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute cda.ecore#//RelatedEntity/nullFlavor"/>
@@ -604,6 +616,8 @@
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//AssociatedEntity/addr"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//AssociatedEntity/telecom"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference cda.ecore#//AssociatedEntity/sDTCPatient"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference cda.ecore#//AssociatedEntity/associatedPerson"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

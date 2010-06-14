@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Organization;
 import org.openhealthtools.mdht.uml.cda.Person;
+import org.openhealthtools.mdht.uml.cda.SDTCPatient;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
@@ -50,6 +51,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssignedEntity;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getAddrs <em>Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getTelecoms <em>Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getAssignedPerson <em>Assigned Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getRepresentedOrganizations <em>Represented Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.AssignedEntityImpl#getNullFlavor <em>Null Flavor</em>}</li>
@@ -129,6 +131,16 @@ public class AssignedEntityImpl extends EObjectImpl implements AssignedEntity {
 	 * @ordered
 	 */
 	protected EList<TEL> telecoms;
+
+	/**
+	 * The cached value of the '{@link #getSDTCPatient() <em>SDTC Patient</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCPatient()
+	 * @generated
+	 * @ordered
+	 */
+	protected SDTCPatient sDTCPatient;
 
 	/**
 	 * The cached value of the '{@link #getAssignedPerson() <em>Assigned Person</em>}' containment reference.
@@ -378,6 +390,49 @@ public class AssignedEntityImpl extends EObjectImpl implements AssignedEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SDTCPatient getSDTCPatient() {
+		return sDTCPatient;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSDTCPatient(SDTCPatient newSDTCPatient, NotificationChain msgs) {
+		SDTCPatient oldSDTCPatient = sDTCPatient;
+		sDTCPatient = newSDTCPatient;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, oldSDTCPatient, newSDTCPatient);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSDTCPatient(SDTCPatient newSDTCPatient) {
+		if (newSDTCPatient != sDTCPatient) {
+			NotificationChain msgs = null;
+			if (sDTCPatient != null)
+				msgs = ((InternalEObject)sDTCPatient).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, null, msgs);
+			if (newSDTCPatient != null)
+				msgs = ((InternalEObject)newSDTCPatient).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, null, msgs);
+			msgs = basicSetSDTCPatient(newSDTCPatient, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT, newSDTCPatient, newSDTCPatient));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Person getAssignedPerson() {
 		return assignedPerson;
 	}
@@ -542,6 +597,8 @@ public class AssignedEntityImpl extends EObjectImpl implements AssignedEntity {
 				return ((InternalEList<?>)getAddrs()).basicRemove(otherEnd, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__TELECOM:
 				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
+			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
+				return basicSetSDTCPatient(null, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
 				return basicSetAssignedPerson(null, msgs);
 			case CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION:
@@ -572,6 +629,8 @@ public class AssignedEntityImpl extends EObjectImpl implements AssignedEntity {
 				return getAddrs();
 			case CDAPackage.ASSIGNED_ENTITY__TELECOM:
 				return getTelecoms();
+			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
+				return getSDTCPatient();
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
 				return getAssignedPerson();
 			case CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION:
@@ -619,6 +678,9 @@ public class AssignedEntityImpl extends EObjectImpl implements AssignedEntity {
 				getTelecoms().clear();
 				getTelecoms().addAll((Collection<? extends TEL>)newValue);
 				return;
+			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
+				setSDTCPatient((SDTCPatient)newValue);
+				return;
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
 				setAssignedPerson((Person)newValue);
 				return;
@@ -665,6 +727,9 @@ public class AssignedEntityImpl extends EObjectImpl implements AssignedEntity {
 			case CDAPackage.ASSIGNED_ENTITY__TELECOM:
 				getTelecoms().clear();
 				return;
+			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
+				setSDTCPatient((SDTCPatient)null);
+				return;
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
 				setAssignedPerson((Person)null);
 				return;
@@ -703,6 +768,8 @@ public class AssignedEntityImpl extends EObjectImpl implements AssignedEntity {
 				return addrs != null && !addrs.isEmpty();
 			case CDAPackage.ASSIGNED_ENTITY__TELECOM:
 				return telecoms != null && !telecoms.isEmpty();
+			case CDAPackage.ASSIGNED_ENTITY__SDTC_PATIENT:
+				return sDTCPatient != null;
 			case CDAPackage.ASSIGNED_ENTITY__ASSIGNED_PERSON:
 				return assignedPerson != null;
 			case CDAPackage.ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION:

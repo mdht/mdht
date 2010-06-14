@@ -16,6 +16,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.openhealthtools.mdht.uml.cda.*;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.AssignedCustodian;
@@ -241,6 +242,10 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAssignedEntity(AssignedEntity object) {
 				return createAssignedEntityAdapter();
+			}
+			@Override
+			public Adapter caseSDTCPatient(SDTCPatient object) {
+				return createSDTCPatientAdapter();
 			}
 			@Override
 			public Adapter caseInformant12(Informant12 object) {
@@ -823,6 +828,20 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAssignedEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.SDTCPatient <em>SDTC Patient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.SDTCPatient
+	 * @generated
+	 */
+	public Adapter createSDTCPatientAdapter() {
 		return null;
 	}
 

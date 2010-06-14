@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.RelatedEntity;
+import org.openhealthtools.mdht.uml.cda.SDTCPatient;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
@@ -50,6 +51,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassMutualRelationship;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getAddrs <em>Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getTelecoms <em>Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getEffectiveTime <em>Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getSDTCPatient <em>SDTC Patient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getRelatedPerson <em>Related Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.RelatedEntityImpl#getClassCode <em>Class Code</em>}</li>
@@ -128,6 +130,16 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	 * @ordered
 	 */
 	protected IVL_TS effectiveTime;
+
+	/**
+	 * The cached value of the '{@link #getSDTCPatient() <em>SDTC Patient</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCPatient()
+	 * @generated
+	 * @ordered
+	 */
+	protected SDTCPatient sDTCPatient;
 
 	/**
 	 * The cached value of the '{@link #getRelatedPerson() <em>Related Person</em>}' containment reference.
@@ -398,6 +410,49 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SDTCPatient getSDTCPatient() {
+		return sDTCPatient;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSDTCPatient(SDTCPatient newSDTCPatient, NotificationChain msgs) {
+		SDTCPatient oldSDTCPatient = sDTCPatient;
+		sDTCPatient = newSDTCPatient;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_ENTITY__SDTC_PATIENT, oldSDTCPatient, newSDTCPatient);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSDTCPatient(SDTCPatient newSDTCPatient) {
+		if (newSDTCPatient != sDTCPatient) {
+			NotificationChain msgs = null;
+			if (sDTCPatient != null)
+				msgs = ((InternalEObject)sDTCPatient).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.RELATED_ENTITY__SDTC_PATIENT, null, msgs);
+			if (newSDTCPatient != null)
+				msgs = ((InternalEObject)newSDTCPatient).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.RELATED_ENTITY__SDTC_PATIENT, null, msgs);
+			msgs = basicSetSDTCPatient(newSDTCPatient, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_ENTITY__SDTC_PATIENT, newSDTCPatient, newSDTCPatient));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Person getRelatedPerson() {
 		return relatedPerson;
 	}
@@ -550,6 +605,8 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 				return ((InternalEList<?>)getTelecoms()).basicRemove(otherEnd, msgs);
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				return basicSetEffectiveTime(null, msgs);
+			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
+				return basicSetSDTCPatient(null, msgs);
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
 				return basicSetRelatedPerson(null, msgs);
 		}
@@ -578,6 +635,8 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 				return getTelecoms();
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				return getEffectiveTime();
+			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
+				return getSDTCPatient();
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
 				return getRelatedPerson();
 			case CDAPackage.RELATED_ENTITY__NULL_FLAVOR:
@@ -622,6 +681,9 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				setEffectiveTime((IVL_TS)newValue);
 				return;
+			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
+				setSDTCPatient((SDTCPatient)newValue);
+				return;
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
 				setRelatedPerson((Person)newValue);
 				return;
@@ -664,6 +726,9 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				setEffectiveTime((IVL_TS)null);
 				return;
+			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
+				setSDTCPatient((SDTCPatient)null);
+				return;
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
 				setRelatedPerson((Person)null);
 				return;
@@ -699,6 +764,8 @@ public class RelatedEntityImpl extends EObjectImpl implements RelatedEntity {
 				return telecoms != null && !telecoms.isEmpty();
 			case CDAPackage.RELATED_ENTITY__EFFECTIVE_TIME:
 				return effectiveTime != null;
+			case CDAPackage.RELATED_ENTITY__SDTC_PATIENT:
+				return sDTCPatient != null;
 			case CDAPackage.RELATED_ENTITY__RELATED_PERSON:
 				return relatedPerson != null;
 			case CDAPackage.RELATED_ENTITY__NULL_FLAVOR:

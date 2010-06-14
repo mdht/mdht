@@ -194,6 +194,15 @@ public interface CDAFactory extends EFactory {
 	AssignedEntity createAssignedEntity();
 
 	/**
+	 * Returns a new object of class '<em>SDTC Patient</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>SDTC Patient</em>'.
+	 * @generated
+	 */
+	SDTCPatient createSDTCPatient();
+
+	/**
 	 * Returns a new object of class '<em>Informant12</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
