@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.Authorization;
 import org.openhealthtools.mdht.uml.cda.Birthplace;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.Component1;
 import org.openhealthtools.mdht.uml.cda.Component2;
 import org.openhealthtools.mdht.uml.cda.Component3;
@@ -388,6 +389,10 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAct(Act object) {
 				return createActAdapter();
+			}
+			@Override
+			public Adapter caseClinicalStatement(ClinicalStatement object) {
+				return createClinicalStatementAdapter();
 			}
 			@Override
 			public Adapter caseSpecimen(Specimen object) {
@@ -1336,6 +1341,20 @@ public class CDAAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ClinicalStatement <em>Clinical Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalStatement
+	 * @generated
+	 */
+	public Adapter createClinicalStatementAdapter() {
 		return null;
 	}
 

@@ -31,6 +31,7 @@ import org.openhealthtools.mdht.uml.cda.Birthplace;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.CDAPlugin;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.Component1;
 import org.openhealthtools.mdht.uml.cda.Component2;
 import org.openhealthtools.mdht.uml.cda.Component3;
@@ -374,6 +375,8 @@ public class CDAValidator extends EObjectValidator {
 				return validateEntry((Entry)value, diagnostics, context);
 			case CDAPackage.ACT:
 				return validateAct((Act)value, diagnostics, context);
+			case CDAPackage.CLINICAL_STATEMENT:
+				return validateClinicalStatement((ClinicalStatement)value, diagnostics, context);
 			case CDAPackage.SPECIMEN:
 				return validateSpecimen((Specimen)value, diagnostics, context);
 			case CDAPackage.SPECIMEN_ROLE:
@@ -1034,6 +1037,15 @@ public class CDAValidator extends EObjectValidator {
 	 */
 	public boolean validateAct(Act act, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(act, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateClinicalStatement(ClinicalStatement clinicalStatement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(clinicalStatement, diagnostics, context);
 	}
 
 	/**

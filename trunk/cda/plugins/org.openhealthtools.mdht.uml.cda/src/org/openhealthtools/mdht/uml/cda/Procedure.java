@@ -13,7 +13,6 @@
 package org.openhealthtools.mdht.uml.cda;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
@@ -65,7 +64,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
  * @model
  * @generated
  */
-public interface Procedure extends EObject {
+public interface Procedure extends ClinicalStatement {
 	/**
 	 * Returns the value of the '<em><b>Realm Code</b></em>' containment reference list.
 	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.CS}.
