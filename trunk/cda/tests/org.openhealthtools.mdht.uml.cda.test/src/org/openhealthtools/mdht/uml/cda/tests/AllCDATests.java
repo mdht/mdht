@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.tests;
 
+import junit.framework.JUnit4TestAdapter;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.openhealthtools.mdht.uml.cda.operations.AllCDAOperationsTests;
@@ -23,5 +25,10 @@ import org.openhealthtools.mdht.uml.cda.operations.AllCDAOperationsTests;
 @RunWith(Suite.class)
 @Suite.SuiteClasses( { CDADeserliazationTest.class, CDASerializationTest.class, AllCDAOperationsTests.class })
 public class AllCDATests {
+	
+	public static junit.framework.Test suite() { 
+	    return new JUnit4TestAdapter(AllCDATests.class); 
+	}
+	
 	// Nothing
 } // AllCDATests
