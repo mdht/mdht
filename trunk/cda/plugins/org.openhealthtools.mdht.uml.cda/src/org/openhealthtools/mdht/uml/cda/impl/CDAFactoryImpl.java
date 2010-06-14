@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.openhealthtools.mdht.uml.cda.*;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.AssignedCustodian;
@@ -172,6 +173,7 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 			case CDAPackage.MAINTAINED_ENTITY: return createMaintainedEntity();
 			case CDAPackage.DATA_ENTERER: return createDataEnterer();
 			case CDAPackage.ASSIGNED_ENTITY: return createAssignedEntity();
+			case CDAPackage.SDTC_PATIENT: return createSDTCPatient();
 			case CDAPackage.INFORMANT12: return createInformant12();
 			case CDAPackage.RELATED_ENTITY: return createRelatedEntity();
 			case CDAPackage.CUSTODIAN: return createCustodian();
@@ -427,6 +429,16 @@ public class CDAFactoryImpl extends EFactoryImpl implements CDAFactory {
 	public AssignedEntity createAssignedEntity() {
 		AssignedEntityImpl assignedEntity = new AssignedEntityImpl();
 		return assignedEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SDTCPatient createSDTCPatient() {
+		SDTCPatientImpl sdtcPatient = new SDTCPatientImpl();
+		return sdtcPatient;
 	}
 
 	/**

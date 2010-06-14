@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.openhealthtools.mdht.uml.cda.*;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.AssignedCustodian;
@@ -301,6 +302,8 @@ public class CDAValidator extends EObjectValidator {
 				return validateDataEnterer((DataEnterer)value, diagnostics, context);
 			case CDAPackage.ASSIGNED_ENTITY:
 				return validateAssignedEntity((AssignedEntity)value, diagnostics, context);
+			case CDAPackage.SDTC_PATIENT:
+				return validateSDTCPatient((SDTCPatient)value, diagnostics, context);
 			case CDAPackage.INFORMANT12:
 				return validateInformant12((Informant12)value, diagnostics, context);
 			case CDAPackage.RELATED_ENTITY:
@@ -650,6 +653,15 @@ public class CDAValidator extends EObjectValidator {
 	 */
 	public boolean validateAssignedEntity(AssignedEntity assignedEntity, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(assignedEntity, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSDTCPatient(SDTCPatient sdtcPatient, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(sdtcPatient, diagnostics, context);
 	}
 
 	/**

@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityDeterminer;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -44,6 +45,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PersonImpl#getTypeId <em>Type Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PersonImpl#getTemplateIds <em>Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PersonImpl#getNames <em>Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PersonImpl#getSDTCBirthTime <em>SDTC Birth Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PersonImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PersonImpl#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.PersonImpl#getDeterminerCode <em>Determiner Code</em>}</li>
@@ -92,6 +94,16 @@ public class PersonImpl extends EObjectImpl implements Person {
 	 * @ordered
 	 */
 	protected EList<PN> names;
+
+	/**
+	 * The cached value of the '{@link #getSDTCBirthTime() <em>SDTC Birth Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCBirthTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected TS sDTCBirthTime;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -283,6 +295,49 @@ public class PersonImpl extends EObjectImpl implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TS getSDTCBirthTime() {
+		return sDTCBirthTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSDTCBirthTime(TS newSDTCBirthTime, NotificationChain msgs) {
+		TS oldSDTCBirthTime = sDTCBirthTime;
+		sDTCBirthTime = newSDTCBirthTime;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CDAPackage.PERSON__SDTC_BIRTH_TIME, oldSDTCBirthTime, newSDTCBirthTime);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSDTCBirthTime(TS newSDTCBirthTime) {
+		if (newSDTCBirthTime != sDTCBirthTime) {
+			NotificationChain msgs = null;
+			if (sDTCBirthTime != null)
+				msgs = ((InternalEObject)sDTCBirthTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PERSON__SDTC_BIRTH_TIME, null, msgs);
+			if (newSDTCBirthTime != null)
+				msgs = ((InternalEObject)newSDTCBirthTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CDAPackage.PERSON__SDTC_BIRTH_TIME, null, msgs);
+			msgs = basicSetSDTCBirthTime(newSDTCBirthTime, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERSON__SDTC_BIRTH_TIME, newSDTCBirthTime, newSDTCBirthTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
 	}
@@ -432,6 +487,8 @@ public class PersonImpl extends EObjectImpl implements Person {
 				return ((InternalEList<?>)getTemplateIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.PERSON__NAME:
 				return ((InternalEList<?>)getNames()).basicRemove(otherEnd, msgs);
+			case CDAPackage.PERSON__SDTC_BIRTH_TIME:
+				return basicSetSDTCBirthTime(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -452,6 +509,8 @@ public class PersonImpl extends EObjectImpl implements Person {
 				return getTemplateIds();
 			case CDAPackage.PERSON__NAME:
 				return getNames();
+			case CDAPackage.PERSON__SDTC_BIRTH_TIME:
+				return getSDTCBirthTime();
 			case CDAPackage.PERSON__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.PERSON__CLASS_CODE:
@@ -486,6 +545,9 @@ public class PersonImpl extends EObjectImpl implements Person {
 				getNames().clear();
 				getNames().addAll((Collection<? extends PN>)newValue);
 				return;
+			case CDAPackage.PERSON__SDTC_BIRTH_TIME:
+				setSDTCBirthTime((TS)newValue);
+				return;
 			case CDAPackage.PERSON__NULL_FLAVOR:
 				setNullFlavor((NullFlavor)newValue);
 				return;
@@ -519,6 +581,9 @@ public class PersonImpl extends EObjectImpl implements Person {
 			case CDAPackage.PERSON__NAME:
 				getNames().clear();
 				return;
+			case CDAPackage.PERSON__SDTC_BIRTH_TIME:
+				setSDTCBirthTime((TS)null);
+				return;
 			case CDAPackage.PERSON__NULL_FLAVOR:
 				unsetNullFlavor();
 				return;
@@ -548,6 +613,8 @@ public class PersonImpl extends EObjectImpl implements Person {
 				return templateIds != null && !templateIds.isEmpty();
 			case CDAPackage.PERSON__NAME:
 				return names != null && !names.isEmpty();
+			case CDAPackage.PERSON__SDTC_BIRTH_TIME:
+				return sDTCBirthTime != null;
 			case CDAPackage.PERSON__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.PERSON__CLASS_CODE:

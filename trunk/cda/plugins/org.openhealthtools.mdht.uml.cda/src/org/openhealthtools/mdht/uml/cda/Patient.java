@@ -41,6 +41,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getMaritalStatusCode <em>Marital Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getReligiousAffiliationCode <em>Religious Affiliation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getRaceCode <em>Race Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getSDTCRaceCodes <em>SDTC Race Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getEthnicGroupCode <em>Ethnic Group Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getGuardians <em>Guardian</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Patient#getBirthplace <em>Birthplace</em>}</li>
@@ -295,6 +296,23 @@ public interface Patient extends EObject {
 	 * @generated
 	 */
 	void setRaceCode(CE value);
+
+	/**
+	 * Returns the value of the '<em><b>SDTC Race Code</b></em>' containment reference list.
+	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.CE}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>SDTC Race Code</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>SDTC Race Code</em>' containment reference list.
+	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getPatient_SDTCRaceCode()
+	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="name='raceCode' namespace='urn:hl7-org:sdtc' kind='element'"
+	 * @generated
+	 */
+	EList<CE> getSDTCRaceCodes();
 
 	/**
 	 * Returns the value of the '<em><b>Ethnic Group Code</b></em>' containment reference.

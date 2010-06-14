@@ -729,13 +729,22 @@ public interface CDAPackage extends EPackage {
 	int PATIENT__RACE_CODE = 9;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Race Code</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATIENT__SDTC_RACE_CODE = 10;
+
+	/**
 	 * The feature id for the '<em><b>Ethnic Group Code</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__ETHNIC_GROUP_CODE = 10;
+	int PATIENT__ETHNIC_GROUP_CODE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Guardian</b></em>' containment reference list.
@@ -744,7 +753,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__GUARDIAN = 11;
+	int PATIENT__GUARDIAN = 12;
 
 	/**
 	 * The feature id for the '<em><b>Birthplace</b></em>' containment reference.
@@ -753,7 +762,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__BIRTHPLACE = 12;
+	int PATIENT__BIRTHPLACE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Language Communication</b></em>' containment reference list.
@@ -762,7 +771,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__LANGUAGE_COMMUNICATION = 13;
+	int PATIENT__LANGUAGE_COMMUNICATION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -771,7 +780,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__NULL_FLAVOR = 14;
+	int PATIENT__NULL_FLAVOR = 15;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -780,7 +789,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__CLASS_CODE = 15;
+	int PATIENT__CLASS_CODE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -789,7 +798,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT__DETERMINER_CODE = 16;
+	int PATIENT__DETERMINER_CODE = 17;
 
 	/**
 	 * The number of structural features of the '<em>Patient</em>' class.
@@ -798,7 +807,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATIENT_FEATURE_COUNT = 17;
+	int PATIENT_FEATURE_COUNT = 18;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.GuardianImpl <em>Guardian</em>}' class.
@@ -965,13 +974,22 @@ public interface CDAPackage extends EPackage {
 	int PERSON__NAME = 3;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Birth Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON__SDTC_BIRTH_TIME = 4;
+
+	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__NULL_FLAVOR = 4;
+	int PERSON__NULL_FLAVOR = 5;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -980,7 +998,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__CLASS_CODE = 5;
+	int PERSON__CLASS_CODE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -989,7 +1007,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__DETERMINER_CODE = 6;
+	int PERSON__DETERMINER_CODE = 7;
 
 	/**
 	 * The number of structural features of the '<em>Person</em>' class.
@@ -998,7 +1016,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_FEATURE_COUNT = 7;
+	int PERSON_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.OrganizationImpl <em>Organization</em>}' class.
@@ -2074,13 +2092,22 @@ public interface CDAPackage extends EPackage {
 	int ASSIGNED_ENTITY__TELECOM = 6;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNED_ENTITY__SDTC_PATIENT = 7;
+
+	/**
 	 * The feature id for the '<em><b>Assigned Person</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__ASSIGNED_PERSON = 7;
+	int ASSIGNED_ENTITY__ASSIGNED_PERSON = 8;
 
 	/**
 	 * The feature id for the '<em><b>Represented Organization</b></em>' containment reference list.
@@ -2089,7 +2116,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION = 8;
+	int ASSIGNED_ENTITY__REPRESENTED_ORGANIZATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2098,7 +2125,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__NULL_FLAVOR = 9;
+	int ASSIGNED_ENTITY__NULL_FLAVOR = 10;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -2107,7 +2134,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY__CLASS_CODE = 10;
+	int ASSIGNED_ENTITY__CLASS_CODE = 11;
 
 	/**
 	 * The number of structural features of the '<em>Assigned Entity</em>' class.
@@ -2116,7 +2143,35 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNED_ENTITY_FEATURE_COUNT = 11;
+	int ASSIGNED_ENTITY_FEATURE_COUNT = 12;
+
+	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.SDTCPatientImpl <em>SDTC Patient</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.openhealthtools.mdht.uml.cda.impl.SDTCPatientImpl
+	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSDTCPatient()
+	 * @generated
+	 */
+	int SDTC_PATIENT = 18;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDTC_PATIENT__ID = 0;
+
+	/**
+	 * The number of structural features of the '<em>SDTC Patient</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SDTC_PATIENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.Informant12Impl <em>Informant12</em>}' class.
@@ -2126,7 +2181,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getInformant12()
 	 * @generated
 	 */
-	int INFORMANT12 = 18;
+	int INFORMANT12 = 19;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -2217,7 +2272,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRelatedEntity()
 	 * @generated
 	 */
-	int RELATED_ENTITY = 19;
+	int RELATED_ENTITY = 20;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -2283,13 +2338,22 @@ public interface CDAPackage extends EPackage {
 	int RELATED_ENTITY__EFFECTIVE_TIME = 6;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATED_ENTITY__SDTC_PATIENT = 7;
+
+	/**
 	 * The feature id for the '<em><b>Related Person</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__RELATED_PERSON = 7;
+	int RELATED_ENTITY__RELATED_PERSON = 8;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -2298,7 +2362,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__NULL_FLAVOR = 8;
+	int RELATED_ENTITY__NULL_FLAVOR = 9;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -2307,7 +2371,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY__CLASS_CODE = 9;
+	int RELATED_ENTITY__CLASS_CODE = 10;
 
 	/**
 	 * The number of structural features of the '<em>Related Entity</em>' class.
@@ -2316,7 +2380,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATED_ENTITY_FEATURE_COUNT = 10;
+	int RELATED_ENTITY_FEATURE_COUNT = 11;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.CustodianImpl <em>Custodian</em>}' class.
@@ -2326,7 +2390,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getCustodian()
 	 * @generated
 	 */
-	int CUSTODIAN = 20;
+	int CUSTODIAN = 21;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -2399,7 +2463,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAssignedCustodian()
 	 * @generated
 	 */
-	int ASSIGNED_CUSTODIAN = 21;
+	int ASSIGNED_CUSTODIAN = 22;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -2472,7 +2536,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getCustodianOrganization()
 	 * @generated
 	 */
-	int CUSTODIAN_ORGANIZATION = 22;
+	int CUSTODIAN_ORGANIZATION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -2581,7 +2645,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getInformationRecipient()
 	 * @generated
 	 */
-	int INFORMATION_RECIPIENT = 23;
+	int INFORMATION_RECIPIENT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -2654,7 +2718,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getIntendedRecipient()
 	 * @generated
 	 */
-	int INTENDED_RECIPIENT = 24;
+	int INTENDED_RECIPIENT = 25;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -2763,7 +2827,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getLegalAuthenticator()
 	 * @generated
 	 */
-	int LEGAL_AUTHENTICATOR = 25;
+	int LEGAL_AUTHENTICATOR = 26;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -2863,7 +2927,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAuthenticator()
 	 * @generated
 	 */
-	int AUTHENTICATOR = 26;
+	int AUTHENTICATOR = 27;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -2954,7 +3018,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getParticipant1()
 	 * @generated
 	 */
-	int PARTICIPANT1 = 27;
+	int PARTICIPANT1 = 28;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3054,7 +3118,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAssociatedEntity()
 	 * @generated
 	 */
-	int ASSOCIATED_ENTITY = 28;
+	int ASSOCIATED_ENTITY = 29;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3120,13 +3184,22 @@ public interface CDAPackage extends EPackage {
 	int ASSOCIATED_ENTITY__TELECOM = 6;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Patient</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATED_ENTITY__SDTC_PATIENT = 7;
+
+	/**
 	 * The feature id for the '<em><b>Associated Person</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__ASSOCIATED_PERSON = 7;
+	int ASSOCIATED_ENTITY__ASSOCIATED_PERSON = 8;
 
 	/**
 	 * The feature id for the '<em><b>Scoping Organization</b></em>' containment reference.
@@ -3135,7 +3208,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__SCOPING_ORGANIZATION = 8;
+	int ASSOCIATED_ENTITY__SCOPING_ORGANIZATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -3144,7 +3217,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__NULL_FLAVOR = 9;
+	int ASSOCIATED_ENTITY__NULL_FLAVOR = 10;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -3153,7 +3226,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY__CLASS_CODE = 10;
+	int ASSOCIATED_ENTITY__CLASS_CODE = 11;
 
 	/**
 	 * The number of structural features of the '<em>Associated Entity</em>' class.
@@ -3162,7 +3235,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATED_ENTITY_FEATURE_COUNT = 11;
+	int ASSOCIATED_ENTITY_FEATURE_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.InFulfillmentOfImpl <em>In Fulfillment Of</em>}' class.
@@ -3172,7 +3245,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getInFulfillmentOf()
 	 * @generated
 	 */
-	int IN_FULFILLMENT_OF = 29;
+	int IN_FULFILLMENT_OF = 30;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3245,7 +3318,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getOrder()
 	 * @generated
 	 */
-	int ORDER = 30;
+	int ORDER = 31;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3345,7 +3418,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getDocumentationOf()
 	 * @generated
 	 */
-	int DOCUMENTATION_OF = 31;
+	int DOCUMENTATION_OF = 32;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3418,7 +3491,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getServiceEvent()
 	 * @generated
 	 */
-	int SERVICE_EVENT = 32;
+	int SERVICE_EVENT = 33;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3527,7 +3600,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getPerformer1()
 	 * @generated
 	 */
-	int PERFORMER1 = 33;
+	int PERFORMER1 = 34;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3618,7 +3691,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRelatedDocument()
 	 * @generated
 	 */
-	int RELATED_DOCUMENT = 34;
+	int RELATED_DOCUMENT = 35;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3691,7 +3764,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getParentDocument()
 	 * @generated
 	 */
-	int PARENT_DOCUMENT = 35;
+	int PARENT_DOCUMENT = 36;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3809,7 +3882,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAuthorization()
 	 * @generated
 	 */
-	int AUTHORIZATION = 36;
+	int AUTHORIZATION = 37;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3882,7 +3955,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getConsent()
 	 * @generated
 	 */
-	int CONSENT = 37;
+	int CONSENT = 38;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -3982,7 +4055,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getComponent1()
 	 * @generated
 	 */
-	int COMPONENT1 = 38;
+	int COMPONENT1 = 39;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -4055,7 +4128,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getEncompassingEncounter()
 	 * @generated
 	 */
-	int ENCOMPASSING_ENCOUNTER = 39;
+	int ENCOMPASSING_ENCOUNTER = 40;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -4191,7 +4264,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getResponsibleParty()
 	 * @generated
 	 */
-	int RESPONSIBLE_PARTY = 40;
+	int RESPONSIBLE_PARTY = 41;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -4264,7 +4337,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getEncounterParticipant()
 	 * @generated
 	 */
-	int ENCOUNTER_PARTICIPANT = 41;
+	int ENCOUNTER_PARTICIPANT = 42;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -4346,7 +4419,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getLocation()
 	 * @generated
 	 */
-	int LOCATION = 42;
+	int LOCATION = 43;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -4419,7 +4492,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getHealthCareFacility()
 	 * @generated
 	 */
-	int HEALTH_CARE_FACILITY = 43;
+	int HEALTH_CARE_FACILITY = 44;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -4519,7 +4592,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getComponent2()
 	 * @generated
 	 */
-	int COMPONENT2 = 44;
+	int COMPONENT2 = 45;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -4610,7 +4683,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getNonXMLBody()
 	 * @generated
 	 */
-	int NON_XML_BODY = 45;
+	int NON_XML_BODY = 46;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -4710,7 +4783,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getStructuredBody()
 	 * @generated
 	 */
-	int STRUCTURED_BODY = 46;
+	int STRUCTURED_BODY = 47;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -4810,7 +4883,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getComponent3()
 	 * @generated
 	 */
-	int COMPONENT3 = 47;
+	int COMPONENT3 = 48;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -4892,7 +4965,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSection()
 	 * @generated
 	 */
-	int SECTION = 48;
+	int SECTION = 49;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -5073,7 +5146,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getStrucDocText()
 	 * @generated
 	 */
-	int STRUC_DOC_TEXT = 49;
+	int STRUC_DOC_TEXT = 50;
 
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -5110,7 +5183,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSubject()
 	 * @generated
 	 */
-	int SUBJECT = 50;
+	int SUBJECT = 51;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -5201,7 +5274,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRelatedSubject()
 	 * @generated
 	 */
-	int RELATED_SUBJECT = 51;
+	int RELATED_SUBJECT = 52;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -5301,7 +5374,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSubjectPerson()
 	 * @generated
 	 */
-	int SUBJECT_PERSON = 52;
+	int SUBJECT_PERSON = 53;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -5401,7 +5474,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getEntry()
 	 * @generated
 	 */
-	int ENTRY = 53;
+	int ENTRY = 54;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -5555,7 +5628,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getClinicalStatement()
 	 * @generated
 	 */
-	int CLINICAL_STATEMENT = 55;
+	int CLINICAL_STATEMENT = 56;
 
 	/**
 	 * The number of structural features of the '<em>Clinical Statement</em>' class.
@@ -5574,7 +5647,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getAct()
 	 * @generated
 	 */
-	int ACT = 54;
+	int ACT = 55;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -5800,7 +5873,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSpecimen()
 	 * @generated
 	 */
-	int SPECIMEN = 56;
+	int SPECIMEN = 57;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -5873,7 +5946,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSpecimenRole()
 	 * @generated
 	 */
-	int SPECIMEN_ROLE = 57;
+	int SPECIMEN_ROLE = 58;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -5955,7 +6028,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getPlayingEntity()
 	 * @generated
 	 */
-	int PLAYING_ENTITY = 58;
+	int PLAYING_ENTITY = 59;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -6064,7 +6137,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getPerformer2()
 	 * @generated
 	 */
-	int PERFORMER2 = 59;
+	int PERFORMER2 = 60;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -6155,7 +6228,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getParticipant2()
 	 * @generated
 	 */
-	int PARTICIPANT2 = 60;
+	int PARTICIPANT2 = 61;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -6255,7 +6328,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getParticipantRole()
 	 * @generated
 	 */
-	int PARTICIPANT_ROLE = 61;
+	int PARTICIPANT_ROLE = 62;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -6382,7 +6455,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getDevice()
 	 * @generated
 	 */
-	int DEVICE = 62;
+	int DEVICE = 63;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -6482,7 +6555,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 63;
+	int ENTITY = 64;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -6582,7 +6655,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getEntryRelationship()
 	 * @generated
 	 */
-	int ENTRY_RELATIONSHIP = 64;
+	int ENTRY_RELATIONSHIP = 65;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -6772,7 +6845,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getEncounter()
 	 * @generated
 	 */
-	int ENCOUNTER = 65;
+	int ENCOUNTER = 66;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -6980,7 +7053,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getReference()
 	 * @generated
 	 */
-	int REFERENCE = 66;
+	int REFERENCE = 67;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -7089,7 +7162,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getExternalAct()
 	 * @generated
 	 */
-	int EXTERNAL_ACT = 67;
+	int EXTERNAL_ACT = 68;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -7189,7 +7262,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getExternalObservation()
 	 * @generated
 	 */
-	int EXTERNAL_OBSERVATION = 68;
+	int EXTERNAL_OBSERVATION = 69;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -7289,7 +7362,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getExternalProcedure()
 	 * @generated
 	 */
-	int EXTERNAL_PROCEDURE = 69;
+	int EXTERNAL_PROCEDURE = 70;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -7389,7 +7462,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getExternalDocument()
 	 * @generated
 	 */
-	int EXTERNAL_DOCUMENT = 70;
+	int EXTERNAL_DOCUMENT = 71;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -7507,7 +7580,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getPrecondition()
 	 * @generated
 	 */
-	int PRECONDITION = 71;
+	int PRECONDITION = 72;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -7580,7 +7653,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getCriterion()
 	 * @generated
 	 */
-	int CRITERION = 72;
+	int CRITERION = 73;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -7680,7 +7753,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getObservation()
 	 * @generated
 	 */
-	int OBSERVATION = 73;
+	int OBSERVATION = 74;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -7969,7 +8042,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getReferenceRange()
 	 * @generated
 	 */
-	int REFERENCE_RANGE = 74;
+	int REFERENCE_RANGE = 75;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -8042,7 +8115,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getObservationRange()
 	 * @generated
 	 */
-	int OBSERVATION_RANGE = 75;
+	int OBSERVATION_RANGE = 76;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -8151,7 +8224,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getObservationMedia()
 	 * @generated
 	 */
-	int OBSERVATION_MEDIA = 76;
+	int OBSERVATION_MEDIA = 77;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -8341,7 +8414,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getOrganizer()
 	 * @generated
 	 */
-	int ORGANIZER = 77;
+	int ORGANIZER = 78;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -8531,7 +8604,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getComponent4()
 	 * @generated
 	 */
-	int COMPONENT4 = 78;
+	int COMPONENT4 = 79;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -8703,7 +8776,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getProcedure()
 	 * @generated
 	 */
-	int PROCEDURE = 79;
+	int PROCEDURE = 80;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -8956,7 +9029,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRegionOfInterest()
 	 * @generated
 	 */
-	int REGION_OF_INTEREST = 80;
+	int REGION_OF_INTEREST = 81;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -9146,7 +9219,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRegionOfInterestValue()
 	 * @generated
 	 */
-	int REGION_OF_INTEREST_VALUE = 81;
+	int REGION_OF_INTEREST_VALUE = 82;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -9192,7 +9265,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSubstanceAdministration()
 	 * @generated
 	 */
-	int SUBSTANCE_ADMINISTRATION = 82;
+	int SUBSTANCE_ADMINISTRATION = 83;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -9481,7 +9554,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getConsumable()
 	 * @generated
 	 */
-	int CONSUMABLE = 83;
+	int CONSUMABLE = 84;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -9554,7 +9627,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getManufacturedProduct()
 	 * @generated
 	 */
-	int MANUFACTURED_PRODUCT = 84;
+	int MANUFACTURED_PRODUCT = 85;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -9654,7 +9727,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getLabeledDrug()
 	 * @generated
 	 */
-	int LABELED_DRUG = 85;
+	int LABELED_DRUG = 86;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -9745,7 +9818,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getMaterial()
 	 * @generated
 	 */
-	int MATERIAL = 86;
+	int MATERIAL = 87;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -9845,7 +9918,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSupply()
 	 * @generated
 	 */
-	int SUPPLY = 87;
+	int SUPPLY = 88;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -10098,7 +10171,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getProduct()
 	 * @generated
 	 */
-	int PRODUCT = 88;
+	int PRODUCT = 89;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -10171,7 +10244,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getComponent5()
 	 * @generated
 	 */
-	int COMPONENT5 = 89;
+	int COMPONENT5 = 90;
 
 	/**
 	 * The feature id for the '<em><b>Realm Code</b></em>' containment reference list.
@@ -10254,7 +10327,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getDocumentRoot()
 	 * @generated
 	 */
-	int DOCUMENT_ROOT = 90;
+	int DOCUMENT_ROOT = 91;
 
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -10310,7 +10383,7 @@ public interface CDAPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getRegistryDelegate()
 	 * @generated
 	 */
-	int REGISTRY_DELEGATE = 91;
+	int REGISTRY_DELEGATE = 92;
 
 	/**
 	 * The number of structural features of the '<em>Registry Delegate</em>' class.
@@ -11021,6 +11094,17 @@ public interface CDAPackage extends EPackage {
 	EReference getPatient_RaceCode();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.Patient#getSDTCRaceCodes <em>SDTC Race Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>SDTC Race Code</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.Patient#getSDTCRaceCodes()
+	 * @see #getPatient()
+	 * @generated
+	 */
+	EReference getPatient_SDTCRaceCode();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.Patient#getEthnicGroupCode <em>Ethnic Group Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11281,6 +11365,17 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPerson_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.Person#getSDTCBirthTime <em>SDTC Birth Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>SDTC Birth Time</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.Person#getSDTCBirthTime()
+	 * @see #getPerson()
+	 * @generated
+	 */
+	EReference getPerson_SDTCBirthTime();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.Person#getNullFlavor <em>Null Flavor</em>}'.
@@ -12493,6 +12588,17 @@ public interface CDAPackage extends EPackage {
 	EReference getAssignedEntity_Telecom();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getSDTCPatient <em>SDTC Patient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>SDTC Patient</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.AssignedEntity#getSDTCPatient()
+	 * @see #getAssignedEntity()
+	 * @generated
+	 */
+	EReference getAssignedEntity_SDTCPatient();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.AssignedEntity#getAssignedPerson <em>Assigned Person</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12535,6 +12641,27 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAssignedEntity_ClassCode();
+
+	/**
+	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.SDTCPatient <em>SDTC Patient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>SDTC Patient</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.SDTCPatient
+	 * @generated
+	 */
+	EClass getSDTCPatient();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.SDTCPatient#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Id</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.SDTCPatient#getId()
+	 * @see #getSDTCPatient()
+	 * @generated
+	 */
+	EReference getSDTCPatient_Id();
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.Informant12 <em>Informant12</em>}'.
@@ -12720,6 +12847,17 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRelatedEntity_EffectiveTime();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getSDTCPatient <em>SDTC Patient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>SDTC Patient</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.RelatedEntity#getSDTCPatient()
+	 * @see #getRelatedEntity()
+	 * @generated
+	 */
+	EReference getRelatedEntity_SDTCPatient();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.RelatedEntity#getRelatedPerson <em>Related Person</em>}'.
@@ -13624,6 +13762,17 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAssociatedEntity_Telecom();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getSDTCPatient <em>SDTC Patient</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>SDTC Patient</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.AssociatedEntity#getSDTCPatient()
+	 * @see #getAssociatedEntity()
+	 * @generated
+	 */
+	EReference getAssociatedEntity_SDTCPatient();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.AssociatedEntity#getAssociatedPerson <em>Associated Person</em>}'.
@@ -22104,6 +22253,14 @@ public interface CDAPackage extends EPackage {
 		EReference PATIENT__RACE_CODE = eINSTANCE.getPatient_RaceCode();
 
 		/**
+		 * The meta object literal for the '<em><b>SDTC Race Code</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATIENT__SDTC_RACE_CODE = eINSTANCE.getPatient_SDTCRaceCode();
+
+		/**
 		 * The meta object literal for the '<em><b>Ethnic Group Code</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -22298,6 +22455,14 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PERSON__NAME = eINSTANCE.getPerson_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>SDTC Birth Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERSON__SDTC_BIRTH_TIME = eINSTANCE.getPerson_SDTCBirthTime();
 
 		/**
 		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.
@@ -23210,6 +23375,14 @@ public interface CDAPackage extends EPackage {
 		EReference ASSIGNED_ENTITY__TELECOM = eINSTANCE.getAssignedEntity_Telecom();
 
 		/**
+		 * The meta object literal for the '<em><b>SDTC Patient</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNED_ENTITY__SDTC_PATIENT = eINSTANCE.getAssignedEntity_SDTCPatient();
+
+		/**
 		 * The meta object literal for the '<em><b>Assigned Person</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -23240,6 +23413,24 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ASSIGNED_ENTITY__CLASS_CODE = eINSTANCE.getAssignedEntity_ClassCode();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.SDTCPatientImpl <em>SDTC Patient</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.openhealthtools.mdht.uml.cda.impl.SDTCPatientImpl
+		 * @see org.openhealthtools.mdht.uml.cda.impl.CDAPackageImpl#getSDTCPatient()
+		 * @generated
+		 */
+		EClass SDTC_PATIENT = eINSTANCE.getSDTCPatient();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SDTC_PATIENT__ID = eINSTANCE.getSDTCPatient_Id();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.cda.impl.Informant12Impl <em>Informant12</em>}' class.
@@ -23380,6 +23571,14 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RELATED_ENTITY__EFFECTIVE_TIME = eINSTANCE.getRelatedEntity_EffectiveTime();
+
+		/**
+		 * The meta object literal for the '<em><b>SDTC Patient</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATED_ENTITY__SDTC_PATIENT = eINSTANCE.getRelatedEntity_SDTCPatient();
 
 		/**
 		 * The meta object literal for the '<em><b>Related Person</b></em>' containment reference feature.
@@ -24062,6 +24261,14 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ASSOCIATED_ENTITY__TELECOM = eINSTANCE.getAssociatedEntity_Telecom();
+
+		/**
+		 * The meta object literal for the '<em><b>SDTC Patient</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATED_ENTITY__SDTC_PATIENT = eINSTANCE.getAssociatedEntity_SDTCPatient();
 
 		/**
 		 * The meta object literal for the '<em><b>Associated Person</b></em>' containment reference feature.
