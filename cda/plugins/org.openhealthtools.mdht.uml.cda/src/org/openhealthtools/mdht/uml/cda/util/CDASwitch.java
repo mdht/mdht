@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.Authorization;
 import org.openhealthtools.mdht.uml.cda.Birthplace;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.Component1;
 import org.openhealthtools.mdht.uml.cda.Component2;
 import org.openhealthtools.mdht.uml.cda.Component3;
@@ -516,6 +517,13 @@ public class CDASwitch<T> {
 			case CDAPackage.ACT: {
 				Act act = (Act)theEObject;
 				T result = caseAct(act);
+				if (result == null) result = caseClinicalStatement(act);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CDAPackage.CLINICAL_STATEMENT: {
+				ClinicalStatement clinicalStatement = (ClinicalStatement)theEObject;
+				T result = caseClinicalStatement(clinicalStatement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -576,6 +584,7 @@ public class CDASwitch<T> {
 			case CDAPackage.ENCOUNTER: {
 				Encounter encounter = (Encounter)theEObject;
 				T result = caseEncounter(encounter);
+				if (result == null) result = caseClinicalStatement(encounter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -624,6 +633,7 @@ public class CDASwitch<T> {
 			case CDAPackage.OBSERVATION: {
 				Observation observation = (Observation)theEObject;
 				T result = caseObservation(observation);
+				if (result == null) result = caseClinicalStatement(observation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -642,12 +652,14 @@ public class CDASwitch<T> {
 			case CDAPackage.OBSERVATION_MEDIA: {
 				ObservationMedia observationMedia = (ObservationMedia)theEObject;
 				T result = caseObservationMedia(observationMedia);
+				if (result == null) result = caseClinicalStatement(observationMedia);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.ORGANIZER: {
 				Organizer organizer = (Organizer)theEObject;
 				T result = caseOrganizer(organizer);
+				if (result == null) result = caseClinicalStatement(organizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -660,12 +672,14 @@ public class CDASwitch<T> {
 			case CDAPackage.PROCEDURE: {
 				Procedure procedure = (Procedure)theEObject;
 				T result = caseProcedure(procedure);
+				if (result == null) result = caseClinicalStatement(procedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CDAPackage.REGION_OF_INTEREST: {
 				RegionOfInterest regionOfInterest = (RegionOfInterest)theEObject;
 				T result = caseRegionOfInterest(regionOfInterest);
+				if (result == null) result = caseClinicalStatement(regionOfInterest);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -681,6 +695,7 @@ public class CDASwitch<T> {
 			case CDAPackage.SUBSTANCE_ADMINISTRATION: {
 				SubstanceAdministration substanceAdministration = (SubstanceAdministration)theEObject;
 				T result = caseSubstanceAdministration(substanceAdministration);
+				if (result == null) result = caseClinicalStatement(substanceAdministration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -711,6 +726,7 @@ public class CDASwitch<T> {
 			case CDAPackage.SUPPLY: {
 				Supply supply = (Supply)theEObject;
 				T result = caseSupply(supply);
+				if (result == null) result = caseClinicalStatement(supply);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1564,6 +1580,21 @@ public class CDASwitch<T> {
 	 * @generated
 	 */
 	public T caseAct(Act object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Clinical Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Clinical Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseClinicalStatement(ClinicalStatement object) {
 		return null;
 	}
 

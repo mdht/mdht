@@ -18,9 +18,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.openhealthtools.mdht.uml.cda.Act;
@@ -53,6 +53,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActClassDocumentEntryOrganizer;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,7 +86,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActClassDocumentEntryOrganizer;
  *
  * @generated
  */
-public class OrganizerImpl extends EObjectImpl implements Organizer {
+public class OrganizerImpl extends ClinicalStatementImpl implements Organizer {
 	/**
 	 * The cached value of the '{@link #getRealmCodes() <em>Realm Code</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -1114,6 +1115,16 @@ public class OrganizerImpl extends EObjectImpl implements Organizer {
 	 */
 	public boolean hasTemplateId(String templateId) {
 		return OrganizerOperations.hasTemplateId(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<EObject> getEntryRelationshipTargets(x_ActRelationshipEntryRelationship typeCode, Object targetClass) {
+		return OrganizerOperations.getEntryRelationshipTargets(this, typeCode, targetClass);
 	}
 
 	/**

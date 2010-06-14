@@ -16,9 +16,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.OCL;
@@ -38,7 +36,6 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
-import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,13 +76,12 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Observation#hasSubstanceAdministrationTemplate(java.lang.String) <em>Has Substance Administration Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Observation#hasSupplyTemplate(java.lang.String) <em>Has Supply Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Observation#hasTemplateId(java.lang.String) <em>Has Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.Observation#getEntryRelationshipTargets(org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship, java.lang.Object) <em>Get Entry Relationship Targets</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ObservationOperations {
+public class ObservationOperations extends ClinicalStatementOperations {
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->
@@ -235,7 +231,7 @@ public class ObservationOperations {
 	public static  EList<Act> getActs(Observation observation) {
 		if (GET_ACTS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(9));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(10));
 			try {
 				GET_ACTS__EOCL_QRY = helper.createQuery(GET_ACTS__EOCL_EXP);
 			}
@@ -290,7 +286,7 @@ public class ObservationOperations {
 	public static  EList<Encounter> getEncounters(Observation observation) {
 		if (GET_ENCOUNTERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(11));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(12));
 			try {
 				GET_ENCOUNTERS__EOCL_QRY = helper.createQuery(GET_ENCOUNTERS__EOCL_EXP);
 			}
@@ -336,7 +332,7 @@ public class ObservationOperations {
 	public static  EList<Observation> getObservations(Observation observation) {
 		if (GET_OBSERVATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(12));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(13));
 			try {
 				GET_OBSERVATIONS__EOCL_QRY = helper.createQuery(GET_OBSERVATIONS__EOCL_EXP);
 			}
@@ -382,7 +378,7 @@ public class ObservationOperations {
 	public static  EList<ObservationMedia> getObservationMedia(Observation observation) {
 		if (GET_OBSERVATION_MEDIA__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(13));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(14));
 			try {
 				GET_OBSERVATION_MEDIA__EOCL_QRY = helper.createQuery(GET_OBSERVATION_MEDIA__EOCL_EXP);
 			}
@@ -428,7 +424,7 @@ public class ObservationOperations {
 	public static  EList<Organizer> getOrganizers(Observation observation) {
 		if (GET_ORGANIZERS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(14));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(15));
 			try {
 				GET_ORGANIZERS__EOCL_QRY = helper.createQuery(GET_ORGANIZERS__EOCL_EXP);
 			}
@@ -474,7 +470,7 @@ public class ObservationOperations {
 	public static  EList<Procedure> getProcedures(Observation observation) {
 		if (GET_PROCEDURES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(15));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(16));
 			try {
 				GET_PROCEDURES__EOCL_QRY = helper.createQuery(GET_PROCEDURES__EOCL_EXP);
 			}
@@ -520,7 +516,7 @@ public class ObservationOperations {
 	public static  EList<RegionOfInterest> getRegionsOfInterest(Observation observation) {
 		if (GET_REGIONS_OF_INTEREST__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(16));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(17));
 			try {
 				GET_REGIONS_OF_INTEREST__EOCL_QRY = helper.createQuery(GET_REGIONS_OF_INTEREST__EOCL_EXP);
 			}
@@ -575,7 +571,7 @@ public class ObservationOperations {
 	public static  EList<SubstanceAdministration> getSubstanceAdministrations(Observation observation) {
 		if (GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(18));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(19));
 			try {
 				GET_SUBSTANCE_ADMINISTRATIONS__EOCL_QRY = helper.createQuery(GET_SUBSTANCE_ADMINISTRATIONS__EOCL_EXP);
 			}
@@ -621,7 +617,7 @@ public class ObservationOperations {
 	public static  EList<Supply> getSupplies(Observation observation) {
 		if (GET_SUPPLIES__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(19));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(20));
 			try {
 				GET_SUPPLIES__EOCL_QRY = helper.createQuery(GET_SUPPLIES__EOCL_EXP);
 			}
@@ -667,7 +663,7 @@ public class ObservationOperations {
 	public static  boolean hasActTemplate(Observation observation, String templateId) {
 		if (HAS_ACT_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(20));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(21));
 			try {
 				HAS_ACT_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ACT_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -713,7 +709,7 @@ public class ObservationOperations {
 	public static  boolean hasCode(Observation observation, String code, String codeSystem, String codeSystemName) {
 		if (HAS_CODE__STRING_STRING_STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(21));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(22));
 			try {
 				HAS_CODE__STRING_STRING_STRING__EOCL_QRY = helper.createQuery(HAS_CODE__STRING_STRING_STRING__EOCL_EXP);
 			}
@@ -761,7 +757,7 @@ public class ObservationOperations {
 	public static  boolean hasEncounterTemplate(Observation observation, String templateId) {
 		if (HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(22));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(23));
 			try {
 				HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ENCOUNTER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -807,7 +803,7 @@ public class ObservationOperations {
 	public static  boolean hasObservationMediaTemplate(Observation observation, String templateId) {
 		if (HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(23));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(24));
 			try {
 				HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -853,7 +849,7 @@ public class ObservationOperations {
 	public static  boolean hasObservationTemplate(Observation observation, String templateId) {
 		if (HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(24));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(25));
 			try {
 				HAS_OBSERVATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_OBSERVATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -899,7 +895,7 @@ public class ObservationOperations {
 	public static  boolean hasOrganizerTemplate(Observation observation, String templateId) {
 		if (HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(25));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(26));
 			try {
 				HAS_ORGANIZER_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_ORGANIZER_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -945,7 +941,7 @@ public class ObservationOperations {
 	public static  boolean hasProcedureTemplate(Observation observation, String templateId) {
 		if (HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(26));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(27));
 			try {
 				HAS_PROCEDURE_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_PROCEDURE_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -991,7 +987,7 @@ public class ObservationOperations {
 	public static  boolean hasRegionOfInterestTemplate(Observation observation, String templateId) {
 		if (HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(27));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(28));
 			try {
 				HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1037,7 +1033,7 @@ public class ObservationOperations {
 	public static  boolean hasSubstanceAdministrationTemplate(Observation observation, String templateId) {
 		if (HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(28));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(29));
 			try {
 				HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1083,7 +1079,7 @@ public class ObservationOperations {
 	public static  boolean hasSupplyTemplate(Observation observation, String templateId) {
 		if (HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(29));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(30));
 			try {
 				HAS_SUPPLY_TEMPLATE__STRING__EOCL_QRY = helper.createQuery(HAS_SUPPLY_TEMPLATE__STRING__EOCL_EXP);
 			}
@@ -1129,7 +1125,7 @@ public class ObservationOperations {
 	public static  boolean hasTemplateId(Observation observation, String templateId) {
 		if (HAS_TEMPLATE_ID__STRING__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(30));
+			helper.setOperationContext(CDAPackage.Literals.OBSERVATION, CDAPackage.Literals.OBSERVATION.getEAllOperations().get(31));
 			try {
 				HAS_TEMPLATE_ID__STRING__EOCL_QRY = helper.createQuery(HAS_TEMPLATE_ID__STRING__EOCL_EXP);
 			}
@@ -1141,18 +1137,6 @@ public class ObservationOperations {
 		EvaluationEnvironment<?, ?, ?, ?, ?> environment = query.getEvaluationEnvironment();
 		environment.add("templateId", templateId);
 		return ((Boolean) query.evaluate(observation)).booleanValue();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public static  EList<EObject> getEntryRelationshipTargets(Observation observation, x_ActRelationshipEntryRelationship typeCode, Object targetClass) {
-		if (!(targetClass instanceof EClass))
-			throw new IllegalArgumentException("targetClass must be an EClass");
-			
-		return CDAUtil.getEntryRelationshipTargets(observation, typeCode, (EClass)targetClass);
 	}
 
 } // ObservationOperations
