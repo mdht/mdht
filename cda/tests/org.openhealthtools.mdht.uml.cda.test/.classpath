@@ -6,6 +6,5 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/org.openhealthtools.mdht.uml.hl7.datatypes"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.openhealthtools.mdht.uml.hl7.vocab"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.openhealthtools.mdht.uml.cda"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
