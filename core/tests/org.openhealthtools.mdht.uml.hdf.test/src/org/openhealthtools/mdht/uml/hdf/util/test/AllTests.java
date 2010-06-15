@@ -1,21 +1,17 @@
 package org.openhealthtools.mdht.uml.hdf.util.test;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import junit.framework.JUnit4TestAdapter;
 
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses( {RIMProfileUtilTest.class,NamedElementUtilTest.class,HL7ResourceUtilTest.class,XSDDatatypeUtilTest.class,MultiplicityElementUtilTest.class,PropertyUtilTest.class})
 public class AllTests {
-
-	public static Test suite() {
-		TestSuite suite = new TestSuite("Test for org.openhealthtools.mdht.uml.hdf.util.test");
-		//$JUnit-BEGIN$
-		suite.addTestSuite(RIMProfileUtilTest.class);
-		suite.addTestSuite(NamedElementUtilTest.class);
-		suite.addTestSuite(HL7ResourceUtilTest.class);
-		suite.addTestSuite(XSDDatatypeUtilTest.class);
-		suite.addTestSuite(MultiplicityElementUtilTest.class);
-		suite.addTestSuite(PropertyUtilTest.class);
-		//$JUnit-END$
-		return suite;
+	
+	public static junit.framework.Test suite() { 
+	    return new JUnit4TestAdapter(AllTests.class); 
 	}
 
 }
