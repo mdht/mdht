@@ -1353,11 +1353,10 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(functionalStatusSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateFunctionalStatusSection_validateFunctionalStatusSectionClinicalStatements(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateFunctionalStatusSection_validateFunctionalStatusSectionTemplateId(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateFunctionalStatusSection_validateFunctionalStatusSectionCode(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateFunctionalStatusSection_validateFunctionalStatusSectionTitle(functionalStatusSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateFunctionalStatusSection_validateFunctionalStatusSectionProblemAct(functionalStatusSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateFunctionalStatusSection_validateFunctionalStatusSectionResultOrganizer(functionalStatusSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateFunctionalStatusSection_validateHITSPFunctionalStatusSectionTemplateId(functionalStatusSection, diagnostics, context);
 		return result;
 	}
@@ -1594,12 +1593,11 @@ public class HITSPValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(immunizationsSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionClinicalStatements(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionCode(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionTitle(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionText(immunizationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionMedicationActivity(immunizationsSection, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validateImmunizationsSection_validateImmunizationsSectionSupplyActivity(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateImmunizationsSection_validateIHEImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= iheValidator.validateImmunizationsSection_validateIHEImmunizationsSectionImmunization(immunizationsSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateImmunizationsSection_validateHITSPImmunizationsSectionTemplateId(immunizationsSection, diagnostics, context);

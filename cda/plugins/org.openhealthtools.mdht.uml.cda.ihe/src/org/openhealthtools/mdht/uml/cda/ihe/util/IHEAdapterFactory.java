@@ -18,6 +18,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Organizer;
@@ -411,6 +412,10 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCCD_ImmunizationsSection(org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection object) {
 				return createCCD_ImmunizationsSectionAdapter();
+			}
+			@Override
+			public Adapter caseClinicalStatement(ClinicalStatement object) {
+				return createClinicalStatementAdapter();
 			}
 			@Override
 			public Adapter caseAct(Act object) {
@@ -1497,6 +1502,20 @@ public class IHEAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCCD_ImmunizationsSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.ClinicalStatement <em>Clinical Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.openhealthtools.mdht.uml.cda.ClinicalStatement
+	 * @generated
+	 */
+	public Adapter createClinicalStatementAdapter() {
 		return null;
 	}
 

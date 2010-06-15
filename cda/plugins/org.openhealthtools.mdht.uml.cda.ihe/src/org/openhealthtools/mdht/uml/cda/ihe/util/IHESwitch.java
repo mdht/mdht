@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Organizer;
@@ -202,6 +203,7 @@ public class IHESwitch<T> {
 				T result = caseConcernEntry(concernEntry);
 				if (result == null) result = caseProblemAct(concernEntry);
 				if (result == null) result = caseAct(concernEntry);
+				if (result == null) result = caseClinicalStatement(concernEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -226,6 +228,7 @@ public class IHESwitch<T> {
 				if (result == null) result = caseConcernEntry(problemConcernEntry);
 				if (result == null) result = caseProblemAct(problemConcernEntry);
 				if (result == null) result = caseAct(problemConcernEntry);
+				if (result == null) result = caseClinicalStatement(problemConcernEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -234,6 +237,7 @@ public class IHESwitch<T> {
 				T result = caseProblemEntry(problemEntry);
 				if (result == null) result = caseProblemObservation(problemEntry);
 				if (result == null) result = caseObservation(problemEntry);
+				if (result == null) result = caseClinicalStatement(problemEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -242,6 +246,7 @@ public class IHESwitch<T> {
 				T result = caseMedication(medication);
 				if (result == null) result = caseMedicationActivity(medication);
 				if (result == null) result = caseSubstanceAdministration(medication);
+				if (result == null) result = caseClinicalStatement(medication);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -259,6 +264,7 @@ public class IHESwitch<T> {
 				if (result == null) result = caseConcernEntry(allergyIntoleranceConcern);
 				if (result == null) result = caseProblemAct(allergyIntoleranceConcern);
 				if (result == null) result = caseAct(allergyIntoleranceConcern);
+				if (result == null) result = caseClinicalStatement(allergyIntoleranceConcern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -268,6 +274,7 @@ public class IHESwitch<T> {
 				if (result == null) result = caseProblemEntry(allergyIntolerance);
 				if (result == null) result = caseProblemObservation(allergyIntolerance);
 				if (result == null) result = caseObservation(allergyIntolerance);
+				if (result == null) result = caseClinicalStatement(allergyIntolerance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -285,6 +292,7 @@ public class IHESwitch<T> {
 				if (result == null) result = caseMedication(normalDose);
 				if (result == null) result = caseMedicationActivity(normalDose);
 				if (result == null) result = caseSubstanceAdministration(normalDose);
+				if (result == null) result = caseClinicalStatement(normalDose);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -294,6 +302,7 @@ public class IHESwitch<T> {
 				if (result == null) result = caseMedication(taperedDose);
 				if (result == null) result = caseMedicationActivity(taperedDose);
 				if (result == null) result = caseSubstanceAdministration(taperedDose);
+				if (result == null) result = caseClinicalStatement(taperedDose);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -303,6 +312,7 @@ public class IHESwitch<T> {
 				if (result == null) result = caseMedication(splitDose);
 				if (result == null) result = caseMedicationActivity(splitDose);
 				if (result == null) result = caseSubstanceAdministration(splitDose);
+				if (result == null) result = caseClinicalStatement(splitDose);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -312,6 +322,7 @@ public class IHESwitch<T> {
 				if (result == null) result = caseMedication(conditionalDose);
 				if (result == null) result = caseMedicationActivity(conditionalDose);
 				if (result == null) result = caseSubstanceAdministration(conditionalDose);
+				if (result == null) result = caseClinicalStatement(conditionalDose);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -321,6 +332,7 @@ public class IHESwitch<T> {
 				if (result == null) result = caseMedication(combinationMedication);
 				if (result == null) result = caseMedicationActivity(combinationMedication);
 				if (result == null) result = caseSubstanceAdministration(combinationMedication);
+				if (result == null) result = caseClinicalStatement(combinationMedication);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -347,6 +359,7 @@ public class IHESwitch<T> {
 				if (result == null) result = caseResultObservation(vitalSignObservation);
 				if (result == null) result = caseSimpleObservation(vitalSignObservation);
 				if (result == null) result = caseObservation(vitalSignObservation);
+				if (result == null) result = caseClinicalStatement(vitalSignObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -354,6 +367,7 @@ public class IHESwitch<T> {
 				SimpleObservation simpleObservation = (SimpleObservation)theEObject;
 				T result = caseSimpleObservation(simpleObservation);
 				if (result == null) result = caseObservation(simpleObservation);
+				if (result == null) result = caseClinicalStatement(simpleObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -363,6 +377,7 @@ public class IHESwitch<T> {
 				if (result == null) result = caseCCD_VitalSignsOrganizer(vitalSignsOrganizer);
 				if (result == null) result = caseResultOrganizer(vitalSignsOrganizer);
 				if (result == null) result = caseOrganizer(vitalSignsOrganizer);
+				if (result == null) result = caseClinicalStatement(vitalSignsOrganizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -576,6 +591,7 @@ public class IHESwitch<T> {
 				T result = caseCoverageEntry(coverageEntry);
 				if (result == null) result = caseCoverageActivity(coverageEntry);
 				if (result == null) result = caseAct(coverageEntry);
+				if (result == null) result = caseClinicalStatement(coverageEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -591,6 +607,7 @@ public class IHESwitch<T> {
 				T result = caseImmunization(immunization);
 				if (result == null) result = caseMedicationActivity(immunization);
 				if (result == null) result = caseSubstanceAdministration(immunization);
+				if (result == null) result = caseClinicalStatement(immunization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -600,6 +617,7 @@ public class IHESwitch<T> {
 				if (result == null) result = casePlanOfCareActivityObservation(observationRequestEntry);
 				if (result == null) result = caseObservation(observationRequestEntry);
 				if (result == null) result = casePlanOfCareActivity(observationRequestEntry);
+				if (result == null) result = caseClinicalStatement(observationRequestEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -624,6 +642,7 @@ public class IHESwitch<T> {
 				if (result == null) result = caseProcedureEntry(procedureEntryProcedureActivityProcedure);
 				if (result == null) result = caseProcedure(procedureEntryProcedureActivityProcedure);
 				if (result == null) result = caseProcedureActivity(procedureEntryProcedureActivityProcedure);
+				if (result == null) result = caseClinicalStatement(procedureEntryProcedureActivityProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -634,6 +653,7 @@ public class IHESwitch<T> {
 				if (result == null) result = caseProcedureEntry(procedureEntryPlanOfCareActivityProcedure);
 				if (result == null) result = caseProcedure(procedureEntryPlanOfCareActivityProcedure);
 				if (result == null) result = casePlanOfCareActivity(procedureEntryPlanOfCareActivityProcedure);
+				if (result == null) result = caseClinicalStatement(procedureEntryPlanOfCareActivityProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -641,6 +661,7 @@ public class IHESwitch<T> {
 				Comment comment = (Comment)theEObject;
 				T result = caseComment(comment);
 				if (result == null) result = caseAct(comment);
+				if (result == null) result = caseClinicalStatement(comment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -649,6 +670,7 @@ public class IHESwitch<T> {
 				T result = casePayerEntry(payerEntry);
 				if (result == null) result = casePolicyActivity(payerEntry);
 				if (result == null) result = caseAct(payerEntry);
+				if (result == null) result = caseClinicalStatement(payerEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1650,6 +1672,21 @@ public class IHESwitch<T> {
 	 * @generated
 	 */
 	public T caseCCD_ImmunizationsSection(org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Clinical Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Clinical Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseClinicalStatement(ClinicalStatement object) {
 		return null;
 	}
 
