@@ -17,6 +17,8 @@ import static org.junit.Assert.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -32,6 +34,18 @@ public class CDADeserliazationTest {
 	 */
 	public final static String SAMPLE_DOCUMENT = "resources/SampleCDADocument.xml";
 
+	
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {	
+		CDAUtil.loadPackages();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	
 	/**
 	 * Test that the sample document can be trivially deserialized.
 	 */
