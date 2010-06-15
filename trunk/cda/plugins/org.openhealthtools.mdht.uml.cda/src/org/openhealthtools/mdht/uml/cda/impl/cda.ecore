@@ -2857,6 +2857,13 @@
     <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="getEntryTargets" ordered="false" upperBound="-1" eType="#//ClinicalStatement">
+      <eParameters name="typeCode" ordered="false" lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_ActRelationshipEntry"/>
+      <eParameters name="targetClass" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </eOperations>
+    <eOperations name="getEntryTargets" ordered="false" upperBound="-1" eType="#//ClinicalStatement">
+      <eParameters name="targetClass" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"
         upperBound="-1" eType="ecore:EClass http://www.openhealthtools.org/mdht/uml/hl7/datatypes#//CS"
         containment="true">
@@ -3456,8 +3463,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClinicalStatement" abstract="true">
     <eOperations name="getEntryRelationshipTargets" ordered="false" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject">
+        eType="#//ClinicalStatement">
       <eParameters name="typeCode" ordered="false" lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_ActRelationshipEntryRelationship"/>
+      <eParameters name="targetClass" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </eOperations>
+    <eOperations name="getEntryRelationshipTargets" ordered="false" upperBound="-1"
+        eType="#//ClinicalStatement">
       <eParameters name="targetClass" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
     </eOperations>
   </eClassifiers>
@@ -5116,9 +5127,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="Organizer" eSuperTypes="#//ClinicalStatement">
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="getEntryRelationshipTargets" ordered="false"
-          upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject">
+          upperBound="-1" eType="#//ClinicalStatement">
         <eAnnotations source="redefines" references="#//ClinicalStatement/getEntryRelationshipTargets"/>
         <eParameters name="typeCode" ordered="false" lowerBound="1" eType="ecore:EEnum http://www.openhealthtools.org/mdht/uml/hl7/vocab#//x_ActRelationshipEntryRelationship"/>
+        <eParameters name="targetClass" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </contents>
+      <contents xsi:type="ecore:EOperation" name="getEntryRelationshipTargets" ordered="false"
+          upperBound="-1" eType="#//ClinicalStatement">
+        <eAnnotations source="redefines" references="#//ClinicalStatement/getEntryRelationshipTargets.1"/>
         <eParameters name="targetClass" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       </contents>
     </eAnnotations>
