@@ -328,4 +328,21 @@ public class IIImpl extends ANYImpl implements II {
 		return result.toString();
 	}
 
+	@Override
+	public boolean equals(Object arg) {
+		if (!(arg instanceof II)) {
+			return false;
+		}
+		II id2 = (II)arg;
+		
+		String id1Root = this.getRoot();
+		String id1Ext = this.getExtension();
+		String id2Root = id2.getRoot();
+		String id2Ext = id2.getExtension();
+		
+		return id1Root != null && id1Root.equals(id2Root)
+			&& (id1Ext == null && id2Ext == null)
+				|| (id1Ext != null && id1Ext.equals(id2Ext));
+	}
+
 } //IIImpl
