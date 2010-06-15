@@ -17,6 +17,9 @@
       [Enter License Description here.]
    </license>
 
+	<includes
+         id="org.openhealthtools.mdht.test.source"
+         version="0.0.0"/>
 
    <plugin
          id="org.openhealthtools.mdht.uml.cda.util.test"
