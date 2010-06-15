@@ -1,3 +1,28 @@
 Completion of CCD constraints
 -------------------------------------------
+* First pass section completion (without conf IDs)
+ - Document Header
+ - Alerts
+ - Problems
+ - Results
+ - Vitals Signs
+ - Immunization
+ 
+* Completion with conf IDs
+ - 
+ 
+
+ Issues
+ ------------------------------------------
+ * 
+ 
+ 
+Publishing
+-------------------------------------------
+* Appendix of defined templates, sorted by ID (as table)
+	- also referenced templates
+* Appendix of sorted Conf Rule IDs, with hyperlink to defining class
+* Appendix of referenced vocabulary
+* Table of section cardinality (see Cons Note, or as in HITSP)
 * 
+
