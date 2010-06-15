@@ -45,13 +45,12 @@ public interface ProblemAct extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.entryRelationship->forAll(entry : cda::EntryRelationship | (entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)
-	 *    implies entry.observation.oclIsKindOf(ccd::ProblemObservation) 
-	 *    or entry.observation.oclIsKindOf(ccd::AlertObservation))
+	 * self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, cda::ClinicalStatement)->forAll(target : cda::ClinicalStatement | not target.oclIsUndefined() and 
+	 *   (target.oclIsKindOf(ccd::ProblemObservation) or target.oclIsKindOf(ccd::AlertObservation)))
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.entryRelationship->forAll(entry : cda::EntryRelationship | (entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)\r\n   implies entry.observation.oclIsKindOf(ccd::ProblemObservation) \r\n   or entry.observation.oclIsKindOf(ccd::AlertObservation))'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, cda::ClinicalStatement)->forAll(target : cda::ClinicalStatement | not target.oclIsUndefined() and \r\n  (target.oclIsKindOf(ccd::ProblemObservation) or target.oclIsKindOf(ccd::AlertObservation)))'"
 	 * @generated
 	 */
 	boolean validateProblemActSubjectOfTarget(DiagnosticChain diagnostics, Map<Object, Object> context);

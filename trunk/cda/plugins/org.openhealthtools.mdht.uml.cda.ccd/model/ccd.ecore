@@ -725,10 +725,10 @@
     </eOperations>
     <eOperations name="ProblemActSubjectOfTarget" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entryRelationship->forAll(entry : cda::EntryRelationship | (entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)&#xD;&#xA;   implies entry.observation.oclIsKindOf(ccd::ProblemObservation) &#xD;&#xA;   or entry.observation.oclIsKindOf(ccd::AlertObservation))"/>
+        <details key="body" value="self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, cda::ClinicalStatement)->forAll(target : cda::ClinicalStatement | not target.oclIsUndefined() and &#xD;&#xA;  (target.oclIsKindOf(ccd::ProblemObservation) or target.oclIsKindOf(ccd::AlertObservation)))"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entryRelationship->forAll(entry : cda::EntryRelationship | (entry.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)&#xD;&#xA;   implies entry.observation.oclIsKindOf(ccd::ProblemObservation) &#xD;&#xA;   or entry.observation.oclIsKindOf(ccd::AlertObservation))"/>
+        <details key="documentation" value="self.getEntryRelationshipTargets(vocab::x_ActRelationshipEntryRelationship::SUBJ, cda::ClinicalStatement)->forAll(target : cda::ClinicalStatement | not target.oclIsUndefined() and &#xD;&#xA;  (target.oclIsKindOf(ccd::ProblemObservation) or target.oclIsKindOf(ccd::AlertObservation)))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2697,9 +2697,31 @@
       <details key="code.displayName" value="History of immunizations"/>
       <details key="constraints.validation.error" value="ImmunizationsSectionTemplateId ImmunizationsSectionCode ImmunizationsSectionTitle ImmunizationsSectionText"/>
       <details key="code.codeSystemName" value="LOINC"/>
-      <details key="constraints.validation.warning" value="ImmunizationsSectionMedicationActivity ImmunizationsSectionSupplyActivity"/>
+      <details key="constraints.validation.warning" value="ImmunizationsSectionClinicalStatements"/>
       <details key="code.code" value="11369-6"/>
     </eAnnotations>
+    <eOperations name="ImmunizationsSectionClinicalStatements" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.getEntryTargets(ccd::MedicationActivity)->size() > 0&#xD;&#xA;  or self.getEntryTargets(ccd::SupplyActivity)->size() > 0"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.getEntryTargets(ccd::MedicationActivity)->size() > 0&#xD;&#xA;  or self.getEntryTargets(ccd::SupplyActivity)->size() > 0"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eOperations name="ImmunizationsSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.6')"/>
@@ -2772,50 +2794,6 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="not self.text.oclIsUndefined()"/>
-      </eAnnotations>
-      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-        </eAnnotations>
-      </eParameters>
-      <eParameters name="context">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The cache of context-specific information."/>
-        </eAnnotations>
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-        </eGenericType>
-      </eParameters>
-    </eOperations>
-    <eOperations name="ImmunizationsSectionMedicationActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.substanceAdministration.oclIsUndefined() and entry.substanceAdministration.oclIsKindOf(ccd::MedicationActivity))"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.substanceAdministration.oclIsUndefined() and entry.substanceAdministration.oclIsKindOf(ccd::MedicationActivity))"/>
-      </eAnnotations>
-      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-        </eAnnotations>
-      </eParameters>
-      <eParameters name="context">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The cache of context-specific information."/>
-        </eAnnotations>
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-        </eGenericType>
-      </eParameters>
-    </eOperations>
-    <eOperations name="ImmunizationsSectionSupplyActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.supply.oclIsUndefined() and entry.supply.oclIsKindOf(ccd::SupplyActivity))"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.supply.oclIsUndefined() and entry.supply.oclIsKindOf(ccd::SupplyActivity))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4687,7 +4665,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionalStatusSection" eSuperTypes="../../org.openhealthtools.mdht.uml.cda/model/cda.ecore#//Section">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;i>Functional Status&lt;/i> describes the patient's status of normal functioning at the time the Care Record&#xD;&#xA;    was created. Functional statuses include information regarding the patient relative to:&#xD;&#xA;&lt;/p>&#xD;&#xA;&#xD;&#xA;    &lt;ul>&lt;li>Ambulatory ability&lt;/li>&#xD;&#xA;       &lt;li>Mental status or competency&lt;/li>&#xD;&#xA;        &lt;li>Activities of Daily Living (ADLs), including bathing, dressing, feeding, grooming&lt;/li>&#xD;&#xA;        &lt;li>Home / living situation having an effect on the health status of the patient&lt;/li>&#xD;&#xA;        &lt;li>Ability to care for self&lt;/li>&#xD;&#xA;        &lt;li>Social activity, including issues with social cognition, participation with&#xD;&#xA;        friends and acquaintances other than family members&lt;/li>&#xD;&#xA;       &lt;li>Occupation activity, including activities partly or directly related to working, housework or volunteering, family&#xD;&#xA;        and home responsibilities or activities related to home and family&lt;/li>&#xD;&#xA;      &lt;li>Communication ability, including issues with speech, writing or cognition required for communication&lt;/li>&#xD;&#xA;       &lt;li> Perception, including sight, hearing, taste, skin sensation, kinesthetic sense, proprioception, or&#xD;&#xA;        balance&lt;/li>&#xD;&#xA;&lt;/ul>&#xD;&#xA;&lt;p>&#xD;&#xA;    Any&#xD;&#xA;    deviation from normal function that the patient displays and is recorded in the record should be included. Of&#xD;&#xA;    particular interest are those limitations that would in any way interfere with self care or the medical therapeutic&#xD;&#xA;    process. In addition, an improvement, any change in or noting that the patient has normal functioning status is also&#xD;&#xA;    valid for inclusion.&#xD;&#xA;&lt;/p>"/>
+      <details key="documentation" value="&lt;p>&#xD;&#xA;    &lt;i>Functional Status&lt;/i> describes the patient's status of normal functioning at the time the Care Record&#xD;&#xA;    was created. Functional statuses include information regarding the patient relative to:&#xD;&#xA;&lt;/p>&#xD;&#xA;&#xD;&#xA;    &lt;ul>&lt;li>Ambulatory ability&lt;/li>&#xD;&#xA;       &lt;li>Mental status or competency&lt;/li>&#xD;&#xA;        &lt;li>Activities of Daily Living (ADLs), including bathing, dressing, feeding, grooming&lt;/li>&#xD;&#xA;        &lt;li>Home / living situation having an effect on the health status of the patient&lt;/li>&#xD;&#xA;        &lt;li>Ability to care for self&lt;/li>&#xD;&#xA;        &lt;li>Social activity, including issues with social cognition, participation with&#xD;&#xA;        friends and acquaintances other than family members&lt;/li>&#xD;&#xA;       &lt;li>Occupation activity, including activities partly or directly related to working, housework or volunteering, family&#xD;&#xA;        and home responsibilities or activities related to home and family&lt;/li>&#xD;&#xA;      &lt;li>Communication ability, including issues with speech, writing or cognition required for communication&lt;/li>&#xD;&#xA;       &lt;li> Perception, including sight, hearing, taste, skin sensation, kinesthetic sense, proprioception, or&#xD;&#xA;        balance&lt;/li>&#xD;&#xA;&lt;/ul>&#xD;&#xA;&lt;p>&#xD;&#xA;    Any&#xD;&#xA;    deviation from normal function that the patient displays and is recorded in the record should be included. Of&#xD;&#xA;    particular interest are those limitations that would in any way interfere with self care or the medical therapeutic&#xD;&#xA;    process. In addition, an improvement, any change in or noting that the patient has normal functioning status is also&#xD;&#xA;    valid for inclusion.&#xD;&#xA;&lt;/p>&#xD;&#xA;&lt;p>Functional Statuses can be expressed in 3 different forms. They can occur as a Problem, a Result or as text. Text can be employed if and only if the Functional Status is neither a Problem nor a Result. Functional Statuses expressed as Problems include relevant clinical conditions, diagnoses, symptoms and findings. Results are the interpretation or conclusion derived from a clinical assessment or test battery, such as the Instrumental Activities of Daily Living (IADL) scale or the Functional Status Index (FSI).&#xD;&#xA;&lt;/p>"/>
     </eAnnotations>
     <eAnnotations source="http://www.openhealthtools.org/mdht/uml/cda/annotation">
       <details key="code.codeSystem" value="2.16.840.1.113883.6.1"/>
@@ -4695,9 +4673,31 @@
       <details key="templateId.root" value="2.16.840.1.113883.10.20.1.5"/>
       <details key="constraints.validation.error" value="FunctionalStatusSectionTemplateId FunctionalStatusSectionCode FunctionalStatusSectionTitle"/>
       <details key="code.codeSystemName" value="LOINC"/>
-      <details key="constraints.validation.warning" value="FunctionalStatusSectionProblemAct FunctionalStatusSectionResultOrganizer"/>
+      <details key="constraints.validation.warning" value="FunctionalStatusSectionClinicalStatements"/>
       <details key="code.code" value="47420-5"/>
     </eAnnotations>
+    <eOperations name="FunctionalStatusSectionClinicalStatements" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.getEntryTargets(ccd::ProblemAct)->size() > 0&#xD;&#xA;  or self.getEntryTargets(ccd::ResultOrganizer)->size() > 0"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.getEntryTargets(ccd::ProblemAct)->size() > 0&#xD;&#xA;  or self.getEntryTargets(ccd::ResultOrganizer)->size() > 0"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
     <eOperations name="FunctionalStatusSectionTemplateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
         <details key="body" value="self.templateId->exists(id : datatypes::II | id.root = '2.16.840.1.113883.10.20.1.5')"/>
@@ -4748,50 +4748,6 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="not self.title.oclIsUndefined()"/>
-      </eAnnotations>
-      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-        </eAnnotations>
-      </eParameters>
-      <eParameters name="context">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The cache of context-specific information."/>
-        </eAnnotations>
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-        </eGenericType>
-      </eParameters>
-    </eOperations>
-    <eOperations name="FunctionalStatusSectionProblemAct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct))"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.act.oclIsUndefined() and entry.act.oclIsKindOf(ccd::ProblemAct))"/>
-      </eAnnotations>
-      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
-        </eAnnotations>
-      </eParameters>
-      <eParameters name="context">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The cache of context-specific information."/>
-        </eAnnotations>
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-        </eGenericType>
-      </eParameters>
-    </eOperations>
-    <eOperations name="FunctionalStatusSectionResultOrganizer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.entry->exists(entry : cda::Entry | not entry.organizer.oclIsUndefined() and entry.organizer.oclIsKindOf(ccd::ResultOrganizer))"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.entry->exists(entry : cda::Entry | not entry.organizer.oclIsUndefined() and entry.organizer.oclIsKindOf(ccd::ResultOrganizer))"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

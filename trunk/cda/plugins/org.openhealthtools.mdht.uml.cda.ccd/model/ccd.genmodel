@@ -502,6 +502,10 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//ImmunizationsSection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionClinicalStatements">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionClinicalStatements/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionClinicalStatements/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionTemplateId/context"/>
@@ -517,14 +521,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionText">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionText/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionText/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionMedicationActivity">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionMedicationActivity/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionMedicationActivity/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionSupplyActivity">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionSupplyActivity/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//ImmunizationsSection/ImmunizationsSectionSupplyActivity/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//EncountersActivity">
@@ -851,6 +847,10 @@
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//FunctionalStatusSection">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionClinicalStatements">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionClinicalStatements/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionClinicalStatements/context"/>
+      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionTemplateId/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionTemplateId/context"/>
@@ -862,14 +862,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionTitle">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionTitle/diagnostics"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionTitle/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionProblemAct">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionProblemAct/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionProblemAct/context"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionResultOrganizer">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionResultOrganizer/diagnostics"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ccd.ecore#//FunctionalStatusSection/FunctionalStatusSectionResultOrganizer/context"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ccd.ecore#//AdvanceDirectivesSection">
