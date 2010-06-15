@@ -16,6 +16,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.URIConverter;
@@ -31,6 +32,7 @@ import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.Component5;
 import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.Entry;
@@ -44,6 +46,7 @@ import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +90,8 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasSectionTemplate(java.lang.String) <em>Has Section Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasSupplyTemplate(java.lang.String) <em>Has Supply Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasTemplateId(java.lang.String) <em>Has Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getEntryTargets(org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry, java.lang.Object) <em>Get Entry Targets</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getEntryTargets(java.lang.Object) <em>Get Entry Targets</em>}</li>
  * </ul>
  * </p>
  *
@@ -1262,6 +1267,27 @@ public class SectionOperations {
 		EvaluationEnvironment<?, ?, ?, ?, ?> environment = query.getEvaluationEnvironment();
 		environment.add("templateId", templateId);
 		return ((Boolean) query.evaluate(section)).booleanValue();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static  EList<ClinicalStatement> getEntryTargets(Section section, x_ActRelationshipEntry typeCode, Object targetClass) {
+		if (targetClass != null && !(targetClass instanceof EClass))
+			throw new IllegalArgumentException("targetClass must be an EClass");
+			
+		return CDAUtil.getEntryTargets(section, typeCode, (EClass)targetClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static  EList<ClinicalStatement> getEntryTargets(Section section, Object targetClass) {
+		return getEntryTargets(section, null, (EClass)targetClass);
 	}
 	
 } // SectionOperations

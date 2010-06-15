@@ -8,7 +8,6 @@ package org.openhealthtools.mdht.uml.cda.impl;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
@@ -49,8 +48,17 @@ public abstract class ClinicalStatementImpl extends EObjectImpl implements Clini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EObject> getEntryRelationshipTargets(x_ActRelationshipEntryRelationship typeCode, Object targetClass) {
+	public EList<ClinicalStatement> getEntryRelationshipTargets(x_ActRelationshipEntryRelationship typeCode, Object targetClass) {
 		return ClinicalStatementOperations.getEntryRelationshipTargets(this, typeCode, targetClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ClinicalStatement> getEntryRelationshipTargets(Object targetClass) {
+		return ClinicalStatementOperations.getEntryRelationshipTargets(this, targetClass);
 	}
 
 } //ClinicalStatementImpl

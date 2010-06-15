@@ -21,6 +21,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry;
 
 /**
  * <!-- begin-user-doc -->
@@ -957,5 +958,21 @@ public interface Section extends EObject {
 	 * @generated
 	 */
 	boolean hasTemplateId(String templateId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false" typeCodeRequired="true" typeCodeOrdered="false" targetClassRequired="true" targetClassOrdered="false"
+	 * @generated
+	 */
+	EList<ClinicalStatement> getEntryTargets(x_ActRelationshipEntry typeCode, Object targetClass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false" targetClassRequired="true" targetClassOrdered="false"
+	 * @generated
+	 */
+	EList<ClinicalStatement> getEntryTargets(Object targetClass);
 	
 } // Section

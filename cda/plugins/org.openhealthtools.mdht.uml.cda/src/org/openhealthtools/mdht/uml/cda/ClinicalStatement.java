@@ -27,6 +27,14 @@ public interface ClinicalStatement extends EObject {
 	 * @model ordered="false" typeCodeRequired="true" typeCodeOrdered="false" targetClassRequired="true" targetClassOrdered="false"
 	 * @generated
 	 */
-	EList<EObject> getEntryRelationshipTargets(x_ActRelationshipEntryRelationship typeCode, Object targetClass);
+	EList<ClinicalStatement> getEntryRelationshipTargets(x_ActRelationshipEntryRelationship typeCode, Object targetClass);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false" targetClassRequired="true" targetClassOrdered="false"
+	 * @generated
+	 */
+	EList<ClinicalStatement> getEntryRelationshipTargets(Object targetClass);
 
 } // ClinicalStatement

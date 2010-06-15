@@ -1037,6 +1037,13 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/hasTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/hasTemplateId/templateId"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getEntryTargets">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/getEntryTargets/typeCode"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/getEntryTargets/targetClass"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//Section/getEntryTargets.1">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//Section/getEntryTargets.1/targetClass"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//StrucDocText">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -1256,6 +1263,9 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalStatement/getEntryRelationshipTargets">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalStatement/getEntryRelationshipTargets/typeCode"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalStatement/getEntryRelationshipTargets/targetClass"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalStatement/getEntryRelationshipTargets.1">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalStatement/getEntryRelationshipTargets.1/targetClass"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Specimen">

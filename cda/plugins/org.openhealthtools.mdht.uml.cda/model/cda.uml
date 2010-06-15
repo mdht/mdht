@@ -882,6 +882,27 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_U7mz0Hi_Ed-6wJLq2P_7OA" name="getEntryTargets" isQuery="true">
+        <ownedParameter xmi:id="_U7mz0Xi_Ed-6wJLq2P_7OA" name="typeCode">
+          <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__zOoR0DcEd6xYZuu1VKCVw"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_U7mz0ni_Ed-6wJLq2P_7OA" name="targetClass">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_U7mz03i_Ed-6wJLq2P_7OA" name="Parameter1" type="_Rm7eQHfTEd-6wJLq2P_7OA" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_U7mz1Hi_Ed-6wJLq2P_7OA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U7mz1Xi_Ed-6wJLq2P_7OA"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_WRBHkHi_Ed-6wJLq2P_7OA" name="getEntryTargets" isQuery="true">
+        <ownedParameter xmi:id="_WRBHkXi_Ed-6wJLq2P_7OA" name="targetClass">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_WRBHkni_Ed-6wJLq2P_7OA" name="Parameter1" type="_Rm7eQHfTEd-6wJLq2P_7OA" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WRBHk3i_Ed-6wJLq2P_7OA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WRBHlHi_Ed-6wJLq2P_7OA"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_r0FX0DxXEd6JwqSGecoePg" name="Entry">
       <ownedRule xmi:id="_8IM9wFBnEd6aGcsNlPFt8A" name="clinicalStatement" constrainedElement="_r0FX0DxXEd6JwqSGecoePg">
@@ -5007,10 +5028,18 @@
         <ownedParameter xmi:id="_1FHYsnfUEd-6wJLq2P_7OA" name="targetClass">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_1FHYs3fUEd-6wJLq2P_7OA" name="Parameter1" direction="return">
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
+        <ownedParameter xmi:id="_1FHYs3fUEd-6wJLq2P_7OA" name="Parameter1" type="_Rm7eQHfTEd-6wJLq2P_7OA" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1FHYtHfUEd-6wJLq2P_7OA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1FHYtXfUEd-6wJLq2P_7OA"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Ta_H4Hi6Ed-6wJLq2P_7OA" name="getEntryRelationshipTargets" isQuery="true">
+        <ownedParameter xmi:id="_Ta_H4Xi6Ed-6wJLq2P_7OA" name="targetClass">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_Ta_H4ni6Ed-6wJLq2P_7OA" name="Parameter1" type="_Rm7eQHfTEd-6wJLq2P_7OA" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ta_H43i6Ed-6wJLq2P_7OA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ta_H5Hi6Ed-6wJLq2P_7OA"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
@@ -9443,10 +9472,18 @@
         <ownedParameter xmi:id="_eZGJMnfTEd-6wJLq2P_7OA" name="targetClass">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_eZGJM3fTEd-6wJLq2P_7OA" name="Parameter1" direction="return">
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EObject"/>
+        <ownedParameter xmi:id="_eZGJM3fTEd-6wJLq2P_7OA" name="Parameter1" type="_Rm7eQHfTEd-6wJLq2P_7OA" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eZGJNHfTEd-6wJLq2P_7OA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eZGJNXfTEd-6wJLq2P_7OA"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_7NawoHi5Ed-6wJLq2P_7OA" name="getEntryRelationshipTargets" isQuery="true">
+        <ownedParameter xmi:id="_7Nawoni5Ed-6wJLq2P_7OA" name="targetClass">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EJavaObject"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_7Nawo3i5Ed-6wJLq2P_7OA" name="Parameter1" type="_Rm7eQHfTEd-6wJLq2P_7OA" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7NawpHi5Ed-6wJLq2P_7OA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7NawpXi5Ed-6wJLq2P_7OA"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
