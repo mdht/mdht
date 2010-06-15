@@ -12,6 +12,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.ccd.operations;
 
+import junit.framework.JUnit4TestAdapter;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -82,5 +84,10 @@ import org.junit.runners.Suite;
 	VitalSignsOrganizerOperationsTest.class,
 	VitalSignsSectionOperationsTest.class })
 	public class AllCCDOperationsTests {
+	
+	
+	public static junit.framework.Test suite() { 
+	    return new JUnit4TestAdapter(AllCCDOperationsTests.class); 
+	}
 	// Nothing
 } // AllCDATests
