@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
 import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
 import org.openhealthtools.mdht.uml.cda.Observation;
@@ -29,7 +30,6 @@ import org.openhealthtools.mdht.uml.cda.RegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
-import org.openhealthtools.mdht.uml.cda.ccd.*;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification;
@@ -190,6 +190,7 @@ public class CCDSwitch<T> {
 				ProblemAct problemAct = (ProblemAct)theEObject;
 				T result = caseProblemAct(problemAct);
 				if (result == null) result = caseAct(problemAct);
+				if (result == null) result = caseClinicalStatement(problemAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -197,6 +198,7 @@ public class CCDSwitch<T> {
 				ProblemObservation problemObservation = (ProblemObservation)theEObject;
 				T result = caseProblemObservation(problemObservation);
 				if (result == null) result = caseObservation(problemObservation);
+				if (result == null) result = caseClinicalStatement(problemObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -212,6 +214,7 @@ public class CCDSwitch<T> {
 				T result = caseProblemStatusObservation(problemStatusObservation);
 				if (result == null) result = caseStatusObservation(problemStatusObservation);
 				if (result == null) result = caseObservation(problemStatusObservation);
+				if (result == null) result = caseClinicalStatement(problemStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -219,6 +222,7 @@ public class CCDSwitch<T> {
 				StatusObservation statusObservation = (StatusObservation)theEObject;
 				T result = caseStatusObservation(statusObservation);
 				if (result == null) result = caseObservation(statusObservation);
+				if (result == null) result = caseClinicalStatement(statusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -227,6 +231,7 @@ public class CCDSwitch<T> {
 				T result = caseProblemHealthStatusObservation(problemHealthStatusObservation);
 				if (result == null) result = caseStatusObservation(problemHealthStatusObservation);
 				if (result == null) result = caseObservation(problemHealthStatusObservation);
+				if (result == null) result = caseClinicalStatement(problemHealthStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -234,6 +239,7 @@ public class CCDSwitch<T> {
 				EpisodeObservation episodeObservation = (EpisodeObservation)theEObject;
 				T result = caseEpisodeObservation(episodeObservation);
 				if (result == null) result = caseObservation(episodeObservation);
+				if (result == null) result = caseClinicalStatement(episodeObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -255,6 +261,7 @@ public class CCDSwitch<T> {
 				FamilyHistoryObservation familyHistoryObservation = (FamilyHistoryObservation)theEObject;
 				T result = caseFamilyHistoryObservation(familyHistoryObservation);
 				if (result == null) result = caseObservation(familyHistoryObservation);
+				if (result == null) result = caseClinicalStatement(familyHistoryObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -262,6 +269,7 @@ public class CCDSwitch<T> {
 				FamilyHistoryOrganizer familyHistoryOrganizer = (FamilyHistoryOrganizer)theEObject;
 				T result = caseFamilyHistoryOrganizer(familyHistoryOrganizer);
 				if (result == null) result = caseOrganizer(familyHistoryOrganizer);
+				if (result == null) result = caseClinicalStatement(familyHistoryOrganizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -269,6 +277,7 @@ public class CCDSwitch<T> {
 				ResultOrganizer resultOrganizer = (ResultOrganizer)theEObject;
 				T result = caseResultOrganizer(resultOrganizer);
 				if (result == null) result = caseOrganizer(resultOrganizer);
+				if (result == null) result = caseClinicalStatement(resultOrganizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -276,6 +285,7 @@ public class CCDSwitch<T> {
 				ResultObservation resultObservation = (ResultObservation)theEObject;
 				T result = caseResultObservation(resultObservation);
 				if (result == null) result = caseObservation(resultObservation);
+				if (result == null) result = caseClinicalStatement(resultObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -290,6 +300,7 @@ public class CCDSwitch<T> {
 				SocialHistoryObservation socialHistoryObservation = (SocialHistoryObservation)theEObject;
 				T result = caseSocialHistoryObservation(socialHistoryObservation);
 				if (result == null) result = caseObservation(socialHistoryObservation);
+				if (result == null) result = caseClinicalStatement(socialHistoryObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -311,6 +322,7 @@ public class CCDSwitch<T> {
 				EncountersActivity encountersActivity = (EncountersActivity)theEObject;
 				T result = caseEncountersActivity(encountersActivity);
 				if (result == null) result = caseEncounter(encountersActivity);
+				if (result == null) result = caseClinicalStatement(encountersActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -318,6 +330,7 @@ public class CCDSwitch<T> {
 				MedicationActivity medicationActivity = (MedicationActivity)theEObject;
 				T result = caseMedicationActivity(medicationActivity);
 				if (result == null) result = caseSubstanceAdministration(medicationActivity);
+				if (result == null) result = caseClinicalStatement(medicationActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -325,6 +338,7 @@ public class CCDSwitch<T> {
 				SupplyActivity supplyActivity = (SupplyActivity)theEObject;
 				T result = caseSupplyActivity(supplyActivity);
 				if (result == null) result = caseSupply(supplyActivity);
+				if (result == null) result = caseClinicalStatement(supplyActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -339,6 +353,7 @@ public class CCDSwitch<T> {
 				AlertObservation alertObservation = (AlertObservation)theEObject;
 				T result = caseAlertObservation(alertObservation);
 				if (result == null) result = caseObservation(alertObservation);
+				if (result == null) result = caseClinicalStatement(alertObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -346,6 +361,7 @@ public class CCDSwitch<T> {
 				ReactionObservation reactionObservation = (ReactionObservation)theEObject;
 				T result = caseReactionObservation(reactionObservation);
 				if (result == null) result = caseObservation(reactionObservation);
+				if (result == null) result = caseClinicalStatement(reactionObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -353,6 +369,7 @@ public class CCDSwitch<T> {
 				SeverityObservation severityObservation = (SeverityObservation)theEObject;
 				T result = caseSeverityObservation(severityObservation);
 				if (result == null) result = caseObservation(severityObservation);
+				if (result == null) result = caseClinicalStatement(severityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -361,6 +378,7 @@ public class CCDSwitch<T> {
 				T result = caseAlertStatusObservation(alertStatusObservation);
 				if (result == null) result = caseStatusObservation(alertStatusObservation);
 				if (result == null) result = caseObservation(alertStatusObservation);
+				if (result == null) result = caseClinicalStatement(alertStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -369,6 +387,7 @@ public class CCDSwitch<T> {
 				T result = caseCauseOfDeathObservation(causeOfDeathObservation);
 				if (result == null) result = caseFamilyHistoryObservation(causeOfDeathObservation);
 				if (result == null) result = caseObservation(causeOfDeathObservation);
+				if (result == null) result = caseClinicalStatement(causeOfDeathObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -383,6 +402,7 @@ public class CCDSwitch<T> {
 				MedicationSeriesNumberObservation medicationSeriesNumberObservation = (MedicationSeriesNumberObservation)theEObject;
 				T result = caseMedicationSeriesNumberObservation(medicationSeriesNumberObservation);
 				if (result == null) result = caseObservation(medicationSeriesNumberObservation);
+				if (result == null) result = caseClinicalStatement(medicationSeriesNumberObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -391,6 +411,7 @@ public class CCDSwitch<T> {
 				T result = caseMedicationStatusObservation(medicationStatusObservation);
 				if (result == null) result = caseStatusObservation(medicationStatusObservation);
 				if (result == null) result = caseObservation(medicationStatusObservation);
+				if (result == null) result = caseClinicalStatement(medicationStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -474,6 +495,7 @@ public class CCDSwitch<T> {
 				PurposeActivity purposeActivity = (PurposeActivity)theEObject;
 				T result = casePurposeActivity(purposeActivity);
 				if (result == null) result = caseAct(purposeActivity);
+				if (result == null) result = caseClinicalStatement(purposeActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -482,6 +504,7 @@ public class CCDSwitch<T> {
 				T result = caseVitalSignsOrganizer(vitalSignsOrganizer);
 				if (result == null) result = caseResultOrganizer(vitalSignsOrganizer);
 				if (result == null) result = caseOrganizer(vitalSignsOrganizer);
+				if (result == null) result = caseClinicalStatement(vitalSignsOrganizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -489,6 +512,7 @@ public class CCDSwitch<T> {
 				AdvanceDirectiveObservation advanceDirectiveObservation = (AdvanceDirectiveObservation)theEObject;
 				T result = caseAdvanceDirectiveObservation(advanceDirectiveObservation);
 				if (result == null) result = caseObservation(advanceDirectiveObservation);
+				if (result == null) result = caseClinicalStatement(advanceDirectiveObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -497,6 +521,7 @@ public class CCDSwitch<T> {
 				T result = caseAdvanceDirectiveStatusObservation(advanceDirectiveStatusObservation);
 				if (result == null) result = caseStatusObservation(advanceDirectiveStatusObservation);
 				if (result == null) result = caseObservation(advanceDirectiveStatusObservation);
+				if (result == null) result = caseClinicalStatement(advanceDirectiveStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -511,6 +536,7 @@ public class CCDSwitch<T> {
 				CoverageActivity coverageActivity = (CoverageActivity)theEObject;
 				T result = caseCoverageActivity(coverageActivity);
 				if (result == null) result = caseAct(coverageActivity);
+				if (result == null) result = caseClinicalStatement(coverageActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -518,6 +544,7 @@ public class CCDSwitch<T> {
 				PolicyActivity policyActivity = (PolicyActivity)theEObject;
 				T result = casePolicyActivity(policyActivity);
 				if (result == null) result = caseAct(policyActivity);
+				if (result == null) result = caseClinicalStatement(policyActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -525,6 +552,7 @@ public class CCDSwitch<T> {
 				AuthorizationActivity authorizationActivity = (AuthorizationActivity)theEObject;
 				T result = caseAuthorizationActivity(authorizationActivity);
 				if (result == null) result = caseAct(authorizationActivity);
+				if (result == null) result = caseClinicalStatement(authorizationActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -533,6 +561,7 @@ public class CCDSwitch<T> {
 				T result = casePlanOfCareActivityAct(planOfCareActivityAct);
 				if (result == null) result = caseAct(planOfCareActivityAct);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityAct);
+				if (result == null) result = caseClinicalStatement(planOfCareActivityAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -546,6 +575,7 @@ public class CCDSwitch<T> {
 				PatientInstruction patientInstruction = (PatientInstruction)theEObject;
 				T result = casePatientInstruction(patientInstruction);
 				if (result == null) result = caseAct(patientInstruction);
+				if (result == null) result = caseClinicalStatement(patientInstruction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -553,6 +583,7 @@ public class CCDSwitch<T> {
 				FulfillmentInstruction fulfillmentInstruction = (FulfillmentInstruction)theEObject;
 				T result = caseFulfillmentInstruction(fulfillmentInstruction);
 				if (result == null) result = caseAct(fulfillmentInstruction);
+				if (result == null) result = caseClinicalStatement(fulfillmentInstruction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -561,6 +592,7 @@ public class CCDSwitch<T> {
 				T result = caseFunctionalStatusObservation(functionalStatusObservation);
 				if (result == null) result = caseStatusObservation(functionalStatusObservation);
 				if (result == null) result = caseObservation(functionalStatusObservation);
+				if (result == null) result = caseClinicalStatement(functionalStatusObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -575,6 +607,7 @@ public class CCDSwitch<T> {
 				AgeObservation ageObservation = (AgeObservation)theEObject;
 				T result = caseAgeObservation(ageObservation);
 				if (result == null) result = caseObservation(ageObservation);
+				if (result == null) result = caseClinicalStatement(ageObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -583,6 +616,7 @@ public class CCDSwitch<T> {
 				T result = casePlanOfCareActivityObservation(planOfCareActivityObservation);
 				if (result == null) result = caseObservation(planOfCareActivityObservation);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityObservation);
+				if (result == null) result = caseClinicalStatement(planOfCareActivityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -591,6 +625,7 @@ public class CCDSwitch<T> {
 				T result = casePlanOfCareActivityEncounter(planOfCareActivityEncounter);
 				if (result == null) result = caseEncounter(planOfCareActivityEncounter);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityEncounter);
+				if (result == null) result = caseClinicalStatement(planOfCareActivityEncounter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -599,6 +634,7 @@ public class CCDSwitch<T> {
 				T result = casePlanOfCareActivityProcedure(planOfCareActivityProcedure);
 				if (result == null) result = caseProcedure(planOfCareActivityProcedure);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivityProcedure);
+				if (result == null) result = caseClinicalStatement(planOfCareActivityProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -607,6 +643,7 @@ public class CCDSwitch<T> {
 				T result = casePlanOfCareActivitySubstanceAdministration(planOfCareActivitySubstanceAdministration);
 				if (result == null) result = caseSubstanceAdministration(planOfCareActivitySubstanceAdministration);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivitySubstanceAdministration);
+				if (result == null) result = caseClinicalStatement(planOfCareActivitySubstanceAdministration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -615,6 +652,7 @@ public class CCDSwitch<T> {
 				T result = casePlanOfCareActivitySupply(planOfCareActivitySupply);
 				if (result == null) result = caseSupply(planOfCareActivitySupply);
 				if (result == null) result = casePlanOfCareActivity(planOfCareActivitySupply);
+				if (result == null) result = caseClinicalStatement(planOfCareActivitySupply);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -623,6 +661,7 @@ public class CCDSwitch<T> {
 				T result = caseProcedureActivityAct(procedureActivityAct);
 				if (result == null) result = caseAct(procedureActivityAct);
 				if (result == null) result = caseProcedureActivity(procedureActivityAct);
+				if (result == null) result = caseClinicalStatement(procedureActivityAct);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -631,6 +670,7 @@ public class CCDSwitch<T> {
 				T result = caseProcedureActivityObservation(procedureActivityObservation);
 				if (result == null) result = caseObservation(procedureActivityObservation);
 				if (result == null) result = caseProcedureActivity(procedureActivityObservation);
+				if (result == null) result = caseClinicalStatement(procedureActivityObservation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -639,6 +679,7 @@ public class CCDSwitch<T> {
 				T result = caseProcedureActivityProcedure(procedureActivityProcedure);
 				if (result == null) result = caseProcedure(procedureActivityProcedure);
 				if (result == null) result = caseProcedureActivity(procedureActivityProcedure);
+				if (result == null) result = caseClinicalStatement(procedureActivityProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1655,6 +1696,21 @@ public class CCDSwitch<T> {
 	 * @generated
 	 */
 	public T caseClinicalDocument(ClinicalDocument object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Clinical Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Clinical Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseClinicalStatement(ClinicalStatement object) {
 		return null;
 	}
 
