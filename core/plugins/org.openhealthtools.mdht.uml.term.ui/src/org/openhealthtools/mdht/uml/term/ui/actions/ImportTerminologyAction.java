@@ -193,7 +193,7 @@ public class ImportTerminologyAction implements IObjectActionDelegate {
 
 		if (index < values.length) {
 			if (values[index] != null) {
-				result = values[index].replaceAll("[^a-zA-Z0-9]", " ");
+				result = values[index].replaceAll("[^!-~]", " ");
 			}
 		}
 
