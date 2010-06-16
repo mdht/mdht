@@ -108,13 +108,9 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 						final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return ImmunizationsSectionOperations
-							.validateImmunizationsSectionMedicationActivity(
+							.validateImmunizationsSectionClinicalStatements(
 									(ImmunizationsSection) eObjectToTest,
-									diagnostician, map)
-							&& ImmunizationsSectionOperations
-									.validateImmunizationsSectionSupplyActivity(
-											(ImmunizationsSection) eObjectToTest,
-											diagnostician, map);
+									diagnostician, map);
 				}
 
 				@Override

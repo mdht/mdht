@@ -93,13 +93,9 @@ public class FunctionalStatusSectionOperationsTest extends CCDValidationTest {
 					final BasicDiagnostic diagnostician,
 					final Map<Object, Object> map) {
 				return FunctionalStatusSectionOperations
-				.validateFunctionalStatusSectionResultOrganizer(
+				.validateFunctionalStatusSectionClinicalStatements(
 						(FunctionalStatusSection) eObjectToTest,
-						diagnostician, map)
-						&& FunctionalStatusSectionOperations
-						.validateFunctionalStatusSectionProblemAct(
-								(FunctionalStatusSection) eObjectToTest,
-								diagnostician, map);
+						diagnostician, map);
 			}
 
 			@Override
