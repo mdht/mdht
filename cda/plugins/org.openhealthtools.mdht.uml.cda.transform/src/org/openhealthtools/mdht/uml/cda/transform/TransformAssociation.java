@@ -22,6 +22,7 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -91,6 +92,7 @@ public class TransformAssociation extends TransformAbstract {
 
 		String cdaTargetName = cdaTargetClass.getName();
 		String cdaTargetLowerName = cdaTargetName.substring(0, 1).toLowerCase() + cdaTargetName.substring(1);
+		String cdaTargetQName = cdaTargetClass.getQualifiedName();
 		
 		String targetName = targetClass.getName();
 //		String targetLowerName = targetName.substring(0, 1).toLowerCase() + targetName.substring(1);
@@ -98,6 +100,8 @@ public class TransformAssociation extends TransformAbstract {
 		
 		StringBuffer body = new StringBuffer();
 		Stereotype stereotype = null;
+		
+		StringBuffer operationBody = new StringBuffer();
 
 		if ((CDAModelUtil.isClinicalDocument(sourceClass) || CDAModelUtil.isSection(sourceClass))
 				&& CDAModelUtil.isSection(targetClass)) {
@@ -105,6 +109,9 @@ public class TransformAssociation extends TransformAbstract {
 			body.append("self.getAllSections()->");
 			body.append((sourceProperty.getUpper() == 1) ? "one(" : "exists(");
 			body.append("section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(" + targetQName + "))");
+			
+			// start building "getter" operation body
+			operationBody.append(body.toString().replace("one", "select").replace("exists", "select"));
 		} else {
 			String associationEnd = null;
 			String variableDeclaration = null;
@@ -167,6 +174,12 @@ public class TransformAssociation extends TransformAbstract {
 			}
 
 			body.append(")");
+			
+			// start building "getter" operation body
+			operationBody.append("self.get" + pluralize(cdaTargetName) + "()->select(");
+			operationBody.append(cdaTargetLowerName + " : " + cdaTargetQName + " | ");
+			operationBody.append("not " + cdaTargetLowerName + ".oclIsUndefined() and ");
+			operationBody.append(cdaTargetLowerName + ".oclIsKindOf(" + targetQName + "))");
 		}
 		
 		if (CDAModelUtil.getTemplateId(sourceClass) == null 
@@ -206,9 +219,38 @@ public class TransformAssociation extends TransformAbstract {
 			}
 		}
 		
+		// finish building "getter" operation body
+		if (sourceProperty.getUpper() == 1) {
+			operationBody.append("->asSequence()->first()");
+		}
+		operationBody.append(".oclAsType(" + targetQName + ")");
+		
+		// create "getter" operation
+		String operationName = "get" + ((sourceProperty.getUpper() == 1) ? targetName : pluralize(targetName));
+		Operation operation = sourceClass.createOwnedOperation(operationName, null, null, targetClass);
+		operation.setUpper(sourceProperty.getUpper());
+		
+		// create body constraint for "getter" operation
+		Constraint bodyConstraint = operation.createBodyCondition("body");
+		bodyConstraint.getConstrainedElements().add(operation);
+		
+		OpaqueExpression bodyExpression = (OpaqueExpression) bodyConstraint.createSpecification(null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+		bodyExpression.getLanguages().add("OCL");
+		bodyExpression.getBodies().add(operationBody.toString());
+		
 		removeModelElement(sourceProperty);
 		removeModelElement(association);
 		
 		return association;
+	}
+
+	private String pluralize(String name) {
+		if (name.endsWith("y")) {
+			return name.substring(0, name.length() - 1) + "ies";
+		}
+		if (name.endsWith("ia")) {
+			return name;
+		}
+		return name + "s";
 	}
 }
