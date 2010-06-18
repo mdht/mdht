@@ -9,15 +9,20 @@ Completion of CCD constraints
  - Immunization
  
 * Completion with conf IDs
- - 
+ - through CONF-68
  
 
  Issues
  ------------------------------------------
  * 
  
+Conformance rules not included
+-------------------------------------------
+CONF-7: CCD SHALL contain one or more ClinicalDocument / templateId.
+ * this could never fail in MDHT implementation
+
  
-Publishing
+Publishing TODO
 -------------------------------------------
 * Appendix of defined templates, sorted by ID (as table)
 	- also referenced templates
