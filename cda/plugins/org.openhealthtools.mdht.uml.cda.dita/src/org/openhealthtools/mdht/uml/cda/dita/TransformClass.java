@@ -102,12 +102,14 @@ public class TransformClass extends TransformAbstract {
 		}
 		writer.println();
 		writer.println("<ol conref=\"generated/_" + className + ".dita#classId/conformance\">");
+//		writer.println("<ol conref=\"generated/_" + className + ".dita#classId/aggregate\">");
 		writer.println("<li></li>");
 		writer.println("</ol>");
 		if (hl7Template != null) {
 			writer.println("<fig>");
 			writer.println("<title>" + UMLUtil.splitName(umlClass) + " example</title>");
-			writer.println("<codeblock>TODO: XML document snippet</codeblock>");
+			writer.println("<codeblock conref=\"generated/_" + className + ".dita#classId/example\">");
+			writer.println("</codeblock>");
 			writer.println("</fig>");
 		}
 		
