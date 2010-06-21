@@ -125,7 +125,7 @@
       <ownedRule xmi:id="_bb8HsHmYEd-pnJdGZX6q4Q" name="contentReference" constrainedElement="_Ze7UsGESEd69D7zx7EkLMA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_fUu-MHmYEd-pnJdGZX6q4Q">
           <language>Analysis</language>
-          <body>A CCD entry SHOULD explicitly reference its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1 &lt;content>).</body>
+          <body>A CCD entry SHOULD explicitly reference its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1 &amp;lt;content&amp;gt;).</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_tf1eQGESEd69D7zx7EkLMA">
@@ -1845,7 +1845,7 @@ This section is optional, however it is strongly recommended that it be present 
       <ownedRule xmi:id="_woHBsHogEd-OuuwcsTsBUQ" name="coveredPartyCodeValueSet" constrainedElement="_6M-toMJqEd6-XpBv2uxYrQ">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_05hMgHogEd-OuuwcsTsBUQ">
           <language>Analysis</language>
-          <body>The value for participant / participantRole / code in a policy activity’s covered party MAY be selected from ValueSet 2.16.840.1.113883.1.11.19809 PolicyOrProgramCoverageRoleType DYNAMIC.</body>
+          <body>The value for participant / participantRole / code in a policy activity's covered party MAY be selected from ValueSet 2.16.840.1.113883.1.11.19809 PolicyOrProgramCoverageRoleType DYNAMIC.</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_Abok0HohEd-OuuwcsTsBUQ" name="coveredPartyTime" constrainedElement="_6M-toMJqEd6-XpBv2uxYrQ">
@@ -2916,7 +2916,7 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:ConstraintValidation xmi:id="_1KeX4HmXEd-pnJdGZX6q4Q" message="CCD Continuity Of Care Document MAY satisfy: The value for component / structuredBody / component / section / entry / @typeCode MAY be 'DRIV' &quot;is derived from&quot; 2.16.840.1.113883.5.1002 ActRelationshipType STATIC, to indicate that the CDA Narrative Block is fully derived from the structured entries." severity="INFO" base_Constraint="_lAdnYHmXEd-pnJdGZX6q4Q">
     <ruleId>CONF-28</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_cPPz8HmYEd-pnJdGZX6q4Q" message="CCD Continuity Of Care Document SHOULD satisfy: A CCD entry SHOULD explicitly reference its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1 &lt;content>)." severity="WARNING" base_Constraint="_bb8HsHmYEd-pnJdGZX6q4Q">
+  <CDA:ConstraintValidation xmi:id="_cPPz8HmYEd-pnJdGZX6q4Q" message="CCD Continuity Of Care Document SHOULD satisfy: A CCD entry SHOULD explicitly reference its corresponding narrative (using the approach defined in CDA Release 2, section 4.3.5.1 &amp;lt;content&amp;gt;)." severity="WARNING" base_Constraint="_bb8HsHmYEd-pnJdGZX6q4Q">
     <ruleId>CONF-29</ruleId>
   </CDA:ConstraintValidation>
   <CDA:PropertyValidation xmi:id="_BP6qQHmZEd-pnJdGZX6q4Q" message="CCD Payers Section SHALL contain [1..1] text" base_Property="_AQgbsHmZEd-pnJdGZX6q4Q">
@@ -2951,7 +2951,7 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:ConstraintValidation xmi:id="_GLS6gHoaEd-pnJdGZX6q4Q" message="CCD Policy Activity SHALL satisfy: A policy activity contains exactly one participant [@typeCode='COV'], representing the covered party." base_Constraint="_4AN74HoZEd-pnJdGZX6q4Q">
     <ruleId>CONF-58</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:ConstraintValidation xmi:id="_1ivIoHogEd-OuuwcsTsBUQ" message="CCD Policy Activity MAY satisfy: The value for participant / participantRole / code in a policy activity’s covered party MAY be selected from ValueSet 2.16.840.1.113883.1.11.19809 PolicyOrProgramCoverageRoleType DYNAMIC." severity="INFO" base_Constraint="_woHBsHogEd-OuuwcsTsBUQ">
+  <CDA:ConstraintValidation xmi:id="_1ivIoHogEd-OuuwcsTsBUQ" message="CCD Policy Activity MAY satisfy: The value for participant / participantRole / code in a policy activity's covered party MAY be selected from ValueSet 2.16.840.1.113883.1.11.19809 PolicyOrProgramCoverageRoleType DYNAMIC." severity="INFO" base_Constraint="_woHBsHogEd-OuuwcsTsBUQ">
     <ruleId>CONF-61</ruleId>
   </CDA:ConstraintValidation>
   <CDA:ConstraintValidation xmi:id="_DJ0CUHohEd-OuuwcsTsBUQ" message="CCD Policy Activity MAY satisfy: A covered party in a policy activity MAY contain exactly one participant / time, to represent the time period over which the patient is covered." severity="INFO" base_Constraint="_Abok0HohEd-OuuwcsTsBUQ">
