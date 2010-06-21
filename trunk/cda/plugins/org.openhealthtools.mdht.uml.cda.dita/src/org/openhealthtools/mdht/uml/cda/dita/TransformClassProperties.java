@@ -6,21 +6,31 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
-import org.openhealthtools.mdht.uml.cda.resources.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.resources.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformClassProperties extends TransformAbstract {
+	
+	private InstanceGenerator instanceGenerator;
 
 	public TransformClassProperties(DitaTransformerOptions options) {
 		super(options);
+		
+		if (Platform.getBundle("org.openhealthtools.mdht.uml.cda") != null) {
+			instanceGenerator = new InstanceGenerator();
+			for (EPackage ePackage : options.getEPackages()) {
+				instanceGenerator.addEPackage(ePackage);
+			}
+		}
 	}
 
 	@Override
@@ -66,15 +76,6 @@ public class TransformClassProperties extends TransformAbstract {
 		if (cdaClass != null) {
 			writer.print("<shortdesc id=\"shortdesc\">");
 			if (!umlClass.equals(cdaClass)) {
-				// xref markup not allowed in shortdesc
-//				String xref = computeXrefCDA(umlClass, cdaClass);
-//				String format = xref.endsWith(".html") ? "format=\"html\" " : "";
-				
-//				StringBuffer cdaReference = new StringBuffer();
-//				cdaReference.append("<xref " + format + "href=\"" + xref + "\">");
-//				cdaReference.append("CDA ").append(cdaClassName);
-//				cdaReference.append("</xref>");
-			
 				writer.print("[" + cdaClassName + ": templateId <tt>" 
 						+ CDAModelUtil.getTemplateId(umlClass) + "</tt>]");
 			}
@@ -89,6 +90,15 @@ public class TransformClassProperties extends TransformAbstract {
 
 	private void appendBody(PrintWriter writer, Class umlClass) {
 		writer.println("<body>");
+		
+		appendConformanceRules(writer, umlClass);
+		appendExample(writer, umlClass);
+		
+		writer.println("</body>");
+		writer.println("</topic>");
+	}
+
+	private void appendConformanceRules(PrintWriter writer, Class umlClass) {
 		writer.println("<ol id=\"conformance\">");
 		
 		boolean hasRules = false;
@@ -113,25 +123,22 @@ public class TransformClassProperties extends TransformAbstract {
 		}
 
 		writer.println("</ol>");
-		writer.println("</body>");
-		writer.println("</topic>");
 	}
 
-//	private String computeXrefCDA(Element source, Class target) {
-//		String href = null;
-//		if (isSamePackage(source, target)) {
-//			href="../" + target.getName() + ".dita";
-//		}
-//		else {
-//			// http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda.doc/classes/Act.html
-//			href = "http://www.cdatools.org/infocenter/topic/org.openhealthtools.mdht.cda."
-//				+ "doc/classes/" + target.getName() + ".html";
-//		}
-//		return href;
-//	}
-//
-//	private boolean isSamePackage(Element first, Element second) {
-//		return first.getNearestPackage().equals(second.getNearestPackage());
-//	}
-	
+	private void appendExample(PrintWriter writer, Class umlClass) {
+		writer.print("<codeblock id=\"example\"><![CDATA[");
+
+		if (instanceGenerator != null) {
+			EObject eObject = instanceGenerator.createInstance(umlClass, 1);
+			if (eObject != null) {
+				instanceGenerator.save(eObject, writer);
+			}
+		}
+		else {
+			writer.print("TODO: XML document snippet");
+		}
+		
+		writer.println("]]></codeblock>");
+	}
+
 }
