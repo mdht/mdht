@@ -2141,6 +2141,7 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionTemplateId(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionCode(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionTitle(payersSection, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionText(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePayersSection_validatePayersSectionCoverageActivity(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePayersSection_validateIHEPayersSectionTemplateId(payersSection, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePayersSection_validateIHEPayersSectionCoverageEntry(payersSection, diagnostics, context);
@@ -3156,6 +3157,8 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(coverageEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(coverageEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coverageEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityInformationSource(coverageEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivitySequenceNumber(coverageEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityTemplateId(coverageEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityClassCode(coverageEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validateCoverageActivity_validateCoverageActivityMoodCode(coverageEntry, diagnostics, context);
@@ -3450,12 +3453,21 @@ public class IHEValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(payerEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(payerEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityPayerEntityIsRequired(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityCoveredPartyIsRequired(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityCoveredPartyTime(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivitySubscriberIsAllowed(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivitySubscriberTime(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityEntryRelationshipREFR(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityEntryRelationshipTarget(payerEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePayerEntry_validatePolicyActivityTemplateId(payerEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityClassCode(payerEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityMoodCode(payerEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityId(payerEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityStatusCode(payerEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityAuthorizationActivity(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityPayerEntity(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityCoveredParty(payerEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= ccdValidator.validatePolicyActivity_validatePolicyActivityPolicySubscriber(payerEntry, diagnostics, context);
 		return result;
 	}
 
