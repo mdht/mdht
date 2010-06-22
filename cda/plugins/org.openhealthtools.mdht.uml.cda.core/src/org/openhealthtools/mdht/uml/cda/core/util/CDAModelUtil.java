@@ -387,19 +387,35 @@ public class CDAModelUtil {
 			typeCodeDisplay = getLiteralValueLabel(association, entryRelationshipStereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE, profileEnum);
 		}
 
-		//TODO this is incomplete determination of XML element name
-		String elementName = "component";
 		Class cdaSourceClass = getCDAClass(property.getClass_());
+		Class endType = (property.getType() instanceof Class) 
+				? (Class)property.getType() : null;
+		Class cdaTargetClass = endType != null ? getCDAClass(endType) : null;
+		
+		//TODO this is incomplete determination of XML element name
+		String elementName = property.getName();
 		if (cdaSourceClass == null) {
 			elementName = property.getName();
-		} else if ("ClinicalDocument".equals(cdaSourceClass.getName())) {
+		}
+		else if ("ClinicalDocument".equals(cdaSourceClass.getName()) 
+				&& (CDAModelUtil.isSection(cdaTargetClass) || CDAModelUtil.isClinicalStatement(cdaTargetClass))) {
 			elementName = "component";
-		} else if ("Section".equals(cdaSourceClass.getName())) {
+		}
+		else if (CDAModelUtil.isSection(cdaSourceClass) 
+				&& (CDAModelUtil.isClinicalStatement(cdaTargetClass) || CDAModelUtil.isEntry(cdaTargetClass))) {
 			elementName = "entry";
-		} else if ("Organizer".equals(cdaSourceClass.getName())) {
+		} 
+		else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "component";
-		} else {
+		} 
+		else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			elementName = "entryRelationship";
+		} 
+		else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && "ParticipantRole".equals(cdaTargetClass.getName())) {
+			elementName = "participant";
+		} 
+		else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && "AssignedEntity".equals(cdaTargetClass.getName())) {
+			elementName = "performer";
 		}
 		
 		if (!markup) {
@@ -434,9 +450,6 @@ public class CDAModelUtil {
 			message.append(markup?"</li>":"");
 		}
 
-		Class endType = (property.getType() instanceof Class) 
-				? (Class)property.getType() : null;
-		
 		if (endType != null) {
 			message.append(markup?"\n<li>":", ");
 			message.append(markup?"<b>":"");
