@@ -9,8 +9,10 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemSectionOperations;
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
@@ -88,6 +90,15 @@ public class ProblemSectionImpl extends SectionImpl implements ProblemSection {
 	 */
 	public boolean validateProblemSectionProblemAct(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ProblemSectionOperations.validateProblemSectionProblemAct(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ProblemAct> getProblemActs() {
+		return ProblemSectionOperations.getProblemActs(this);
 	}
 
 	/**

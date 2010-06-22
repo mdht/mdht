@@ -1853,7 +1853,7 @@ This section is optional, however it is strongly recommended that it be present 
           <language>Analysis</language>
           <language>OCL</language>
           <body>A covered party in a policy activity MAY contain exactly one participant / time, to represent the time period over which the patient is covered.</body>
-          <body>self.participant->one(part : cda::Participant2 | not part.time.oclIsUndefined())</body>
+          <body>self.participant->one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::COV&#xD;&#xA;  implies not part.time.oclIsUndefined())</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_qbNg8HooEd-OuuwcsTsBUQ" name="subscriberIsAllowed" constrainedElement="_6M-toMJqEd6-XpBv2uxYrQ">
@@ -1869,7 +1869,7 @@ This section is optional, however it is strongly recommended that it be present 
           <language>Analysis</language>
           <language>OCL</language>
           <body>A subscriber in a policy activity MAY contain exactly one participant / time, to represent the time period for which the subscriber is enrolled.</body>
-          <body>self.participant->one(part : cda::Participant2 | not part.time.oclIsUndefined())</body>
+          <body>self.participant->one(part : cda::Participant2 | part.typeCode = vocab::ParticipationType::HLD&#xD;&#xA;  implies not part.time.oclIsUndefined())</body>
         </specification>
       </ownedRule>
       <ownedRule xmi:id="_tMMhYHpVEd-OuuwcsTsBUQ" name="entryRelationshipREFR" constrainedElement="_6M-toMJqEd6-XpBv2uxYrQ">
@@ -1885,7 +1885,7 @@ This section is optional, however it is strongly recommended that it be present 
           <language>Analysis</language>
           <language>OCL</language>
           <body>The target of a policy activity with entryRelationship / @typeCode='REFR' SHALL be an Authorization Activity or an Act, with Act [@classCode = 'ACT'] and Act [@moodCode = 'DEF'], representing a description of the coverage plan.</body>
-          <body>self.entryRelationship->forAll(rel : cda::EntryRelationship | rel.act.oclIsKindOf(ccd::AuthorizationActivity)&#xD;&#xA;  or rel.act.oclIsKindOf(ccd::PolicyActivityCoveragePlanDescription))</body>
+          <body>self.entryRelationship->forAll(rel : cda::EntryRelationship | rel.act.oclIsKindOf(ccd::AuthorizationActivity)&#xD;&#xA;  or rel.act.oclIsKindOf(ccd::CoveragePlanDescription))</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="_-W-B0MJqEd6-XpBv2uxYrQ">
@@ -2316,7 +2316,7 @@ Authorizations are represented using an act subordinate to the policy or program
     <packagedElement xmi:type="uml:Association" xmi:id="_RAdi4ThTEd-XUbK0vNqSPQ" memberEnd="_RAdi4DhTEd-XUbK0vNqSPQ _RAdi4jhTEd-XUbK0vNqSPQ">
       <ownedEnd xmi:id="_RAdi4jhTEd-XUbK0vNqSPQ" type="_o9nLAKPTEd6t_4WfM070fA" association="_RAdi4ThTEd-XUbK0vNqSPQ"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_GkCSAHoXEd-pnJdGZX6q4Q" name="PolicyActivityPayerEntity">
+    <packagedElement xmi:type="uml:Class" xmi:id="_GkCSAHoXEd-pnJdGZX6q4Q" name="PayerEntity">
       <generalization xmi:id="_O6MEoHoXEd-pnJdGZX6q4Q">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_6qmVsEcDEd6besF9iFIJkQ"/>
       </generalization>
@@ -2327,7 +2327,7 @@ Authorizations are represented using an act subordinate to the policy or program
         <redefinedProperty href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_9JenIEodEd6c3qsAxlFHaQ"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_JT_4MHoXEd-pnJdGZX6q4Q" name="PolicyActivityCoveredParty">
+    <packagedElement xmi:type="uml:Class" xmi:id="_JT_4MHoXEd-pnJdGZX6q4Q" name="CoveredParty">
       <generalization xmi:id="_NltlAHoXEd-pnJdGZX6q4Q">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#__QZaIEcZEd6besF9iFIJkQ"/>
       </generalization>
@@ -2347,7 +2347,7 @@ Authorizations are represented using an act subordinate to the policy or program
     <packagedElement xmi:type="uml:Association" xmi:id="_Na0uMHoYEd-pnJdGZX6q4Q" memberEnd="_Na0HIHoYEd-pnJdGZX6q4Q _Na0uMXoYEd-pnJdGZX6q4Q">
       <ownedEnd xmi:id="_Na0uMXoYEd-pnJdGZX6q4Q" type="_6M-toMJqEd6-XpBv2uxYrQ" association="_Na0uMHoYEd-pnJdGZX6q4Q"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_E4rTsHooEd-OuuwcsTsBUQ" name="PolicyActivitySubscriber">
+    <packagedElement xmi:type="uml:Class" xmi:id="_E4rTsHooEd-OuuwcsTsBUQ" name="PolicySubscriber">
       <generalization xmi:id="_K6xZAHooEd-OuuwcsTsBUQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#__QZaIEcZEd6besF9iFIJkQ"/>
       </generalization>
@@ -2361,7 +2361,7 @@ Authorizations are represented using an act subordinate to the policy or program
     <packagedElement xmi:type="uml:Association" xmi:id="_OgHIAXooEd-OuuwcsTsBUQ" memberEnd="_OgGg8HooEd-OuuwcsTsBUQ _OgHvEHooEd-OuuwcsTsBUQ">
       <ownedEnd xmi:id="_OgHvEHooEd-OuuwcsTsBUQ" type="_6M-toMJqEd6-XpBv2uxYrQ" association="_OgHIAXooEd-OuuwcsTsBUQ"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_4ElDYHpZEd-OuuwcsTsBUQ" name="PolicyActivityCoveragePlanDescription">
+    <packagedElement xmi:type="uml:Class" xmi:id="_4ElDYHpZEd-OuuwcsTsBUQ" name="CoveragePlanDescription">
       <generalization xmi:id="_7r024HpZEd-OuuwcsTsBUQ">
         <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
       </generalization>
@@ -2936,16 +2936,16 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:ConstraintValidation xmi:id="_nqxUsHmbEd-pnJdGZX6q4Q" message="CCD Coverage Activity MAY satisfy: entryRelationship contains sequenceNumber, which serves to prioritize the payment sources." severity="INFO" base_Constraint="_d2ohIHmbEd-pnJdGZX6q4Q">
     <ruleId>CONF-44</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:AssociationValidation xmi:id="_HkHZgHoYEd-pnJdGZX6q4Q" message="CCD Policy Activity SHALL contain [1..1] entryRelationship such that it, SHALL contain [1..1] Policy Activity Payer Entity" base_Association="_FsDEoXoYEd-pnJdGZX6q4Q">
+  <CDA:AssociationValidation xmi:id="_HkHZgHoYEd-pnJdGZX6q4Q" message="CCD Policy Activity SHALL contain [1..1] entryRelationship such that it, SHALL contain [1..1] Payer Entity" base_Association="_FsDEoXoYEd-pnJdGZX6q4Q">
     <ruleId>CONF-56</ruleId>
   </CDA:AssociationValidation>
-  <CDA:AssociationValidation xmi:id="_UxYFAHoYEd-pnJdGZX6q4Q" message="CCD Policy Activity SHALL contain [1..1] entryRelationship such that it, SHALL contain [1..1] Policy Activity Covered Party" base_Association="_Na0uMHoYEd-pnJdGZX6q4Q">
+  <CDA:AssociationValidation xmi:id="_UxYFAHoYEd-pnJdGZX6q4Q" message="CCD Policy Activity SHALL contain [1..1] entryRelationship such that it, SHALL contain [1..1] Covered Party" base_Association="_Na0uMHoYEd-pnJdGZX6q4Q">
     <ruleId>CONF-58</ruleId>
   </CDA:AssociationValidation>
-  <CDA:PropertyValidation xmi:id="_dVmI0HoYEd-pnJdGZX6q4Q" message="CCD Policy Activity Payer Entity SHALL contain [1..*] id" base_Property="_SndAkHoXEd-pnJdGZX6q4Q">
+  <CDA:PropertyValidation xmi:id="_dVmI0HoYEd-pnJdGZX6q4Q" message="CCD Payer Entity SHALL contain [1..*] id" base_Property="_SndAkHoXEd-pnJdGZX6q4Q">
     <ruleId>CONF-57</ruleId>
   </CDA:PropertyValidation>
-  <CDA:PropertyValidation xmi:id="_hkCfMHoYEd-pnJdGZX6q4Q" message="CCD Policy Activity Covered Party SHOULD contain [1..*] id" severity="WARNING" base_Property="_g6iPMHoYEd-pnJdGZX6q4Q">
+  <CDA:PropertyValidation xmi:id="_hkCfMHoYEd-pnJdGZX6q4Q" message="CCD Covered Party SHOULD contain [1..*] id" severity="WARNING" base_Property="_g6iPMHoYEd-pnJdGZX6q4Q">
     <ruleId>CONF-59</ruleId>
   </CDA:PropertyValidation>
   <CDA:ConstraintValidation xmi:id="_GLS6gHoaEd-pnJdGZX6q4Q" message="CCD Policy Activity SHALL satisfy: A policy activity contains exactly one participant [@typeCode='COV'], representing the covered party." base_Constraint="_4AN74HoZEd-pnJdGZX6q4Q">
@@ -2960,16 +2960,16 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:ConstraintValidation xmi:id="_sqEz8HoiEd-OuuwcsTsBUQ" message="CCD Policy Activity SHALL satisfy: A policy activity contains exactly one performer [@typeCode='PRF'], representing the payer." base_Constraint="_WzIV0HoiEd-OuuwcsTsBUQ">
     <ruleId>CONF-56</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:PropertyValidation xmi:id="_4vZVEHokEd-OuuwcsTsBUQ" message="CCD Policy Activity Covered Party SHOULD contain [1..1] code" severity="WARNING" base_Property="_kvBYAHoZEd-pnJdGZX6q4Q">
+  <CDA:PropertyValidation xmi:id="_4vZVEHokEd-OuuwcsTsBUQ" message="CCD Covered Party SHOULD contain [1..1] code" severity="WARNING" base_Property="_kvBYAHoZEd-pnJdGZX6q4Q">
     <ruleId>CONF-60</ruleId>
   </CDA:PropertyValidation>
-  <CDA:AssociationValidation xmi:id="_Uk_bkHooEd-OuuwcsTsBUQ" message="CCD Policy Activity MAY contain [1..1] entryRelationship such that it, SHALL contain [1..1] Policy Activity Subscriber" severity="INFO" base_Association="_OgHIAXooEd-OuuwcsTsBUQ">
+  <CDA:AssociationValidation xmi:id="_Uk_bkHooEd-OuuwcsTsBUQ" message="CCD Policy Activity MAY contain [1..1] entryRelationship such that it, SHALL contain [1..1] Policy Subscriber" severity="INFO" base_Association="_OgHIAXooEd-OuuwcsTsBUQ">
     <ruleId>CONF-63</ruleId>
   </CDA:AssociationValidation>
   <CDA:ConstraintValidation xmi:id="_1IF6YHooEd-OuuwcsTsBUQ" message="CCD Policy Activity MAY satisfy: A policy activity MAY contain exactly one participant [@typeCode='HLD'], representing the subscriber." severity="INFO" base_Constraint="_qbNg8HooEd-OuuwcsTsBUQ">
     <ruleId>CONF-63</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:PropertyValidation xmi:id="_F8N-4HopEd-OuuwcsTsBUQ" message="CCD Policy Activity Subscriber SHOULD contain [0..*] id" severity="WARNING" base_Property="_E1b9AHopEd-OuuwcsTsBUQ">
+  <CDA:PropertyValidation xmi:id="_F8N-4HopEd-OuuwcsTsBUQ" message="CCD Policy Subscriber SHOULD contain [0..*] id" severity="WARNING" base_Property="_E1b9AHopEd-OuuwcsTsBUQ">
     <ruleId>CONF-64</ruleId>
   </CDA:PropertyValidation>
   <CDA:ConstraintValidation xmi:id="_NrAPgHopEd-OuuwcsTsBUQ" message="CCD Policy Activity MAY satisfy: A subscriber in a policy activity MAY contain exactly one participant / time, to represent the time period for which the subscriber is enrolled." severity="INFO" base_Constraint="_LGvjAHopEd-OuuwcsTsBUQ">
@@ -2981,13 +2981,13 @@ Authorizations are represented using an act subordinate to the policy or program
   <CDA:ConstraintValidation xmi:id="_AbDtgHpXEd-OuuwcsTsBUQ" message="CCD Policy Activity SHALL satisfy: The target of a policy activity with entryRelationship / @typeCode='REFR' SHALL be an Authorization Activity or an Act, with Act [@classCode = 'ACT'] and Act [@moodCode = 'DEF'], representing a description of the coverage plan." base_Constraint="_3qtSMHpWEd-OuuwcsTsBUQ">
     <ruleId>CONF-67</ruleId>
   </CDA:ConstraintValidation>
-  <CDA:PropertyValidation xmi:id="_KkzdUHpaEd-OuuwcsTsBUQ" message="CCD Policy Activity Coverage Plan Description SHALL contain [1..1] @classCode = &quot;ACT&quot;" base_Property="_BBqTIHpaEd-OuuwcsTsBUQ">
+  <CDA:PropertyValidation xmi:id="_KkzdUHpaEd-OuuwcsTsBUQ" message="CCD Coverage Plan Description SHALL contain [1..1] @classCode = &quot;ACT&quot;" base_Property="_BBqTIHpaEd-OuuwcsTsBUQ">
     <ruleId>CONF-67</ruleId>
   </CDA:PropertyValidation>
-  <CDA:PropertyValidation xmi:id="_LnZiwHpaEd-OuuwcsTsBUQ" message="CCD Policy Activity Coverage Plan Description SHALL contain [1..1] @moodCode = &quot;DEF&quot;" base_Property="_BBq6MHpaEd-OuuwcsTsBUQ">
+  <CDA:PropertyValidation xmi:id="_LnZiwHpaEd-OuuwcsTsBUQ" message="CCD Coverage Plan Description SHALL contain [1..1] @moodCode = &quot;DEF&quot;" base_Property="_BBq6MHpaEd-OuuwcsTsBUQ">
     <ruleId>CONF-67</ruleId>
   </CDA:PropertyValidation>
-  <CDA:PropertyValidation xmi:id="_Mn2TIHpaEd-OuuwcsTsBUQ" message="CCD Policy Activity Coverage Plan Description SHALL contain [1..*] id" base_Property="_BBqTIXpaEd-OuuwcsTsBUQ">
+  <CDA:PropertyValidation xmi:id="_Mn2TIHpaEd-OuuwcsTsBUQ" message="CCD Coverage Plan Description SHALL contain [1..*] id" base_Property="_BBqTIXpaEd-OuuwcsTsBUQ">
     <ruleId>CONF-68</ruleId>
   </CDA:PropertyValidation>
 </xmi:XMI>

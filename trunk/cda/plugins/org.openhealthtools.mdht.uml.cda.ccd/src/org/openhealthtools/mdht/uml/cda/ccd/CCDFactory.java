@@ -455,6 +455,33 @@ public interface CCDFactory extends EFactory {
 	PolicyActivity createPolicyActivity();
 
 	/**
+	 * Returns a new object of class '<em>Payer Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Payer Entity</em>'.
+	 * @generated
+	 */
+	PayerEntity createPayerEntity();
+
+	/**
+	 * Returns a new object of class '<em>Covered Party</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Covered Party</em>'.
+	 * @generated
+	 */
+	CoveredParty createCoveredParty();
+
+	/**
+	 * Returns a new object of class '<em>Policy Subscriber</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Policy Subscriber</em>'.
+	 * @generated
+	 */
+	PolicySubscriber createPolicySubscriber();
+
+	/**
 	 * Returns a new object of class '<em>Authorization Activity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -597,6 +624,15 @@ public interface CCDFactory extends EFactory {
 	 * @generated
 	 */
 	ProcedureActivityProcedure createProcedureActivityProcedure();
+
+	/**
+	 * Returns a new object of class '<em>Coverage Plan Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Coverage Plan Description</em>'.
+	 * @generated
+	 */
+	CoveragePlanDescription createCoveragePlanDescription();
 
 	/**
 	 * Returns a new object of class '<em>Registry Delegate</em>'.

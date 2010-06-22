@@ -17,6 +17,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemActOperations;
 import org.openhealthtools.mdht.uml.cda.impl.ActImpl;
@@ -157,6 +158,15 @@ public class ProblemActImpl extends ActImpl implements ProblemAct {
 	 */
 	public boolean validateProblemActEpisodeObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ProblemActOperations.validateProblemActEpisodeObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EpisodeObservation getEpisodeObservation() {
+		return ProblemActOperations.getEpisodeObservation(this);
 	}
 
 	/**

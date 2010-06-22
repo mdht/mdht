@@ -9,9 +9,12 @@ package org.openhealthtools.mdht.uml.cda.ccd.impl;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
+import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AlertObservationOperations;
 import org.openhealthtools.mdht.uml.cda.impl.ObservationImpl;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -124,6 +127,24 @@ public class AlertObservationImpl extends ObservationImpl implements AlertObserv
 	 */
 	public boolean validateAlertObservationReactionObservation(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return AlertObservationOperations.validateAlertObservationReactionObservation(this, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AlertStatusObservation getAlertStatusObservation() {
+		return AlertObservationOperations.getAlertStatusObservation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ReactionObservation> getReactionObservations() {
+		return AlertObservationOperations.getReactionObservations(this);
 	}
 
 	/**

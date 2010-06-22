@@ -9,6 +9,7 @@ package org.openhealthtools.mdht.uml.cda.ccd;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.openhealthtools.mdht.uml.cda.Organizer;
 
 /**
@@ -142,6 +143,18 @@ public interface ResultOrganizer extends Organizer {
 	 * @generated
 	 */
 	boolean validateResultOrganizerResultObservation(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ResultObservation)).oclAsType(ccd::ResultObservation)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getObservations()->select(observation : cda::Observation | not observation.oclIsUndefined() and observation.oclIsKindOf(ccd::ResultObservation)).oclAsType(ccd::ResultObservation)'"
+	 * @generated
+	 */
+	EList<ResultObservation> getResultObservations();
 
 	/**
 	 * <!-- begin-user-doc -->

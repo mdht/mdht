@@ -13,6 +13,12 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityAct;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityProcedure;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PlanOfCareSectionOperations;
 import org.openhealthtools.mdht.uml.cda.impl.SectionImpl;
@@ -144,6 +150,60 @@ public class PlanOfCareSectionImpl extends SectionImpl implements PlanOfCareSect
 	 */
 	public EList<PlanOfCareActivity> getPlanOfCareActivities() {
 		return PlanOfCareSectionOperations.getPlanOfCareActivities(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlanOfCareActivityAct getPlanOfCareActivityAct() {
+		return PlanOfCareSectionOperations.getPlanOfCareActivityAct(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlanOfCareActivityEncounter getPlanOfCareActivityEncounter() {
+		return PlanOfCareSectionOperations.getPlanOfCareActivityEncounter(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlanOfCareActivityObservation getPlanOfCareActivityObservation() {
+		return PlanOfCareSectionOperations.getPlanOfCareActivityObservation(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlanOfCareActivityProcedure getPlanOfCareActivityProcedure() {
+		return PlanOfCareSectionOperations.getPlanOfCareActivityProcedure(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlanOfCareActivitySubstanceAdministration getPlanOfCareActivitySubstanceAdministration() {
+		return PlanOfCareSectionOperations.getPlanOfCareActivitySubstanceAdministration(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlanOfCareActivitySupply getPlanOfCareActivitySupply() {
+		return PlanOfCareSectionOperations.getPlanOfCareActivitySupply(this);
 	}
 
 	/**
